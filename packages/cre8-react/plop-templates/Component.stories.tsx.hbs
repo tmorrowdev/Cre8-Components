@@ -1,0 +1,17 @@
+import type { StoryObj } from '@storybook/react';
+import React from 'react';
+import { excludeRegexArray } from '../../../.storybook/preview';
+import { cre8{{pascalCase name}} } from '../..';
+
+export default {
+  title: 'In Development/{{pascalCase name}}',
+  component: cre8{{pascalCase name}},
+  parameters: { 
+    status: { type: 'inProgress' },
+    controls: {
+      exclude: new RegExp(`${excludeRegexArray.join('|')}`)
+    }
+  },
+};
+
+export const Default: StoryObj<typeof cre8{{pascalCase name}}> = { args: {} };

@@ -1,0 +1,46 @@
+@import 'design-tokens/core/scss/theming/component';
+
+/**
+ * 1)
+ */
+.c-medication-form {
+  display: flex;
+  flex-wrap: wrap;
+  margin: size(-1.5);
+  flex-direction: column;
+
+  @media all and (min-width: $cre8-bp-md) {
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+/**
+  * Slotted grid item within 1-2-4up Grid
+  */
+::slotted(*) {
+  width: 100%;
+  padding: size(1.5);
+
+  @media all and (min-width: $cre8-bp-md) {
+    width: 50%;
+  }
+
+  @media all and (min-width: $cre8-bp-xl) {
+    flex: 1;
+  }
+}
+
+::slotted(:first-child) {
+  @media all and (min-width: $cre8-bp-lg) {
+    flex: auto;
+    width: 20%;
+  }
+}
+
+::slotted(:last-child) {
+  @media all and (min-width: $cre8-bp-md) {
+    position: relative;
+    top: size(6.25);
+  }
+}

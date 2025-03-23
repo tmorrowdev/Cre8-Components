@@ -1,0 +1,54 @@
+@import 'design-tokens/core/scss/theming/component';
+
+:host {
+  display: block;
+}
+
+/**
+ * Skeleton Loader
+ * The hard coded value for color here is intentional and is uniform across all brands
+ */
+.cre8-c-skeleton-loader {
+  width: 100%;
+  height: auto;
+  border-radius: var(--cre8-border-radius-small);
+  aspect-ratio: 16 / 3;
+  background: linear-gradient(-90deg, #f6f6f6 0%, #ebebeb 50%, #f6f6f6 100%);
+  background-size: 400% 400%;
+  animation: pulse 1.25s linear infinite;  
+}
+
+/**
+ * Skeleton Loader - Rectangle
+ */
+.cre8-c-skeleton-loader--rectangle {
+  aspect-ratio: 16 / 6;
+}
+
+/**
+ * Skeleton Loader - Square
+ */
+.cre8-c-skeleton-loader--square {
+  aspect-ratio: 1 / 1;
+}
+
+/**
+ * Skeleton Loader - Circle
+ */
+.cre8-c-skeleton-loader--circle {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+
+/** 
+ * Pulsing animation for loading look
+ */
+@keyframes pulse {
+  0% {
+  background-position:  0% 0%;
+  }
+
+  100% {
+    background-position: -135% 0%;
+  }
+}

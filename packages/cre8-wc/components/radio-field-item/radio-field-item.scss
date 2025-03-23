@@ -1,0 +1,135 @@
+@import 'design-tokens/core/scss/theming/component';
+/*------------------------------------*\
+ #RADIO-FIELD-ITEM
+\*------------------------------------*/
+
+:host {
+  display: inline-flex;
+}
+
+/** 
+ * 1) Form field that is compose of a radio input, label, and optional fieldnote.
+ */
+.cre8-c-radio-field-item {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-bottom: size(1);
+  min-height: size(3);
+
+  /** 
+  * 1) Form field that is compose of a radio input, label, and optional fieldnote.
+  */
+  :host(:last-child) & {
+    margin-bottom: 0;
+  }
+}
+
+/** 
+* Radio field item input 
+*/
+.cre8-c-radio-field-item__input {
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: size(3);
+  min-width: size(3);
+  margin: 0;
+  z-index: 1;
+
+  .cre8-c-radio-field-item--disabled & {
+    cursor: not-allowed;
+  }
+}
+
+/** 
+* Radio field item custom radio container
+*/
+.cre8-c-radio-field-item__custom-radio {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: size(3);
+  width: size(3);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--cre8-border-radius-round);
+  border-width: var(--cre8-border-width-default);
+  border-style: var(--cre8-border-style-default);
+  background-color: var(--cre8-color-bg-default);
+  border-color: var(--cre8-color-border-strong);
+
+  /** 
+  * Radio field item custom radio focus visible  custom outline
+  */
+  .cre8-c-radio-field-item__input:focus-visible + & {
+    @include focus;
+
+    .cre8-c-radio-field-item--error & {
+      @include focusError;
+      border-color: var(--cre8-color-border-error);
+    }
+  }
+
+  /** 
+  * Radio field item custom radio within radio field with error
+  */
+  .cre8-c-radio-field-item--error & {
+    border-color: var(--cre8-color-border-error);
+  }
+
+  /** 
+  * Radio field item custom radio within radio field disabled
+  */
+  .cre8-c-radio-field-item--disabled & {
+    cursor: not-allowed;
+    background-color: var(--cre8-color-bg-disabled);
+    border-color: var(--cre8-color-border-disabled);
+  }
+}
+
+/** 
+ * Radio field item inner circle
+ */
+.cre8-c-radio-field-item__inner-circle {
+  display: none;
+
+  cursor: pointer;
+  height: size(1.5);
+  width: size(1.5);
+  background: var(--cre8-color-content-brand);
+  border-radius: var(--cre8-border-radius-round);
+
+  /** 
+  * Radio field item inner circle error
+  */
+  .cre8-c-radio-field-item--error & {
+    background: var(--cre8-color-bg-error-strong);
+  }
+
+  /** 
+  * Radio field item inner circle disabled
+  */
+  .cre8-c-radio-field-item--disabled & {
+    background: var(--cre8-color-content-disabled);
+  }
+
+  /** 
+ * Radio field item inner circle will display if the input is checked
+ */
+  .cre8-c-radio-field-item__input:checked + .cre8-c-radio-field-item__custom-radio & {
+    display: flex;
+  }
+}
+
+/** 
+ * Radio field item input 
+ */
+.cre8-c-radio-field-item__label {
+  margin-left: size(4);
+  @include cre8-typography-label-small;
+}

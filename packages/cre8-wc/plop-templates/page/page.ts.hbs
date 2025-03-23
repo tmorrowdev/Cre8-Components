@@ -1,0 +1,19 @@
+import {LitElement, html} from 'lit';
+import {customElement} from 'lit/decorators.js';
+
+@customElement('{{dashCase name}}')
+export class {{pascalCase name}} extends LitElement {
+render() {
+  return html`
+  <div>
+    Hello page
+  </div>
+  `;
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    '{{dashCase name}}': {{pascalCase name}};
+  }
+}

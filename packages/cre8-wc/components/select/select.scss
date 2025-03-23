@@ -1,0 +1,68 @@
+@import 'design-tokens/core/scss/theming/component';
+/*------------------------------------*\
+ #SELECT
+\*------------------------------------*/
+
+:host {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+/**
+ * Select Label
+ */
+.cre8-c-select__label {
+  @include label-styles;
+}
+
+/**
+ * Select Body
+ * 1) The div that contains the input and icons
+ */
+.cre8-c-select__body {
+  position: relative;
+}
+
+/**
+ * Select Input
+ * 1) The html5 select element
+ */
+.cre8-c-select__input {
+  @include input-styles;
+  padding-inline-end: size(5.5);
+  cursor: pointer;
+}
+
+/**
+ * Select Icon
+ * 1) The icons within the body container positioned absolutely over the input
+ */
+.cre8-c-select__icons {
+  position: absolute;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  inset-inline-end: size(1);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: size(1);
+  pointer-events: none;
+}
+
+/**
+ * Select Arrow Icon
+ */
+.cre8-c-select__icon-arrow {
+  margin-right: size(0.75);
+  width: size(1.5);
+  height: size(1.5);
+}
+
+/**
+ * Select field notes
+ */
+.cre8-c-select__field-note,
+.cre8-c-select__field-note-success,
+.cre8-c-select__field-note-error {
+  flex-basis: 100%;
+}

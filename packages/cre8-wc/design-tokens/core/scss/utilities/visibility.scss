@@ -1,0 +1,110 @@
+/**
+* #VISIBILITY UTILITIES
+*/
+
+/* Completely remove from the flow and screen readers. */
+.cre8-u-is-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Completely remove from the flow but leave available to screen readers. */
+.cre8-u-is-vishidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/**
+ * Hide element at sm breakpoint
+ */
+.cre8-u-hide-sm {
+  @media all and (min-width: $cre8-bp-sm) {
+    display: none !important;
+  }
+}
+
+/**
+ * Hide element at sm-2 breakpoint
+ */
+.cre8-u-hide-sm-2 {
+  @media all and (min-width: $cre8-bp-sm-2) {
+    display: none !important;
+  }
+}
+
+/**
+ * Hide element at md breakpoint
+ */
+.cre8-u-hide-md {
+  @media all and (min-width: $cre8-bp-md) {
+    display: none !important;
+  }
+}
+
+/**
+ * Hide element at lg breakpoint
+ */
+.cre8-u-hide-lg {
+  @media all and (min-width: $cre8-bp-lg) {
+    display: none !important;
+  }
+}
+
+/**
+ * Hide element at xl breakpoint
+ */
+.cre8-u-hide-xl {
+  @media all and (min-width: $cre8-bp-xl) {
+    display: none !important;
+  }
+}
+
+/**
+ * Show element at sm breakpoint
+ */
+.cre8-u-show-sm {
+  @media all and (max-width: $cre8-bp-sm) {
+    display: none !important;
+  }
+}
+
+/**
+ * Show element at sm-2 breakpoint
+ */
+.cre8-u-show-sm-2 {
+  @media all and (max-width: $cre8-bp-sm-2) {
+    display: none !important;
+  }
+}
+
+/**
+ * Show element at md breakpoint
+ */
+.cre8-u-show-md {
+  @media all and (max-width: $cre8-bp-md) {
+    display: none !important;
+  }
+}
+
+/**
+ * Show element at lg breakpoint
+ */
+.cre8-u-show-lg {
+  @media all and (max-width: $cre8-bp-lg) {
+    display: none !important;
+  }
+}
+
+/**
+ * Show element at xl breakpoint
+ */
+.cre8-u-show-xl {
+  @media all and (max-width: $cre8-bp-xl) {
+    display: none !important;
+  }
+}

@@ -1,0 +1,55 @@
+@import '../../../../cre8-wc/design-tokens/core/scss/theming/component.scss';
+
+// # EXPRESSSCRIPTSHEADER
+
+.c-express-scripts-header__nav-container {
+  display: none;
+  --cre8-nav-container-background: var(--cre8-color-bg-brand-strong);
+
+  .c-express-scripts-header.cre8-is-active & {
+    display: block;
+  }
+
+  @media all and (min-width: $cre8-bp-lg) {
+    display: block;
+  }
+}
+/**
+* Site header menu button
+* 1) Margin right added to center logo on small screens
+*/
+.c-express-scripts-header__menu-button {
+  position: relative;
+  top: 4px;
+  margin-left: size(2);
+
+  @media all and (min-width: $cre8-bp-lg) {
+    margin-left: 0;
+    display: none;
+  }
+}
+
+.c-express-scripts-header__utility-nav-search {
+  display: block;
+}
+
+.c-express-scripts-header__megamenu-grid {
+  display: block;
+  margin-bottom: size(6);
+}
+.c-express-scripts-header__heading {
+  display: inline-block;
+  margin-bottom: size(1.5);
+  color: var(--cre8-color-content-subtle);
+}
+.c-express-scripts-header__primary-nav {
+  width: 100%;
+}
+
+.c-express-scripts-header__log-out {
+  display: block;
+
+  @media all and (min-width: $cre8-bp-lg) {
+    margin-left: auto;
+  }
+}

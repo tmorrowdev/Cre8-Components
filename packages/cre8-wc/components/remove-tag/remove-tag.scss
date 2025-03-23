@@ -1,0 +1,94 @@
+@import 'design-tokens/core/scss/theming/component';
+
+/**
+ * Remove Tags are buttons with text accompanied by a Close icon.
+ */
+.cre8-c-remove-tag {
+    @include cre8-typography-label-small;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    appearance: none;
+    white-space: nowrap;
+    padding-left: var(--cre8-spacing-16);
+    padding-right: var(--cre8-spacing-16);
+    padding-top: var(--cre8-spacing-4);
+    padding-bottom: var(--cre8-spacing-4);
+    gap: var(--cre8-spacing-8);
+    border-width: var(--cre8-border-width-default);
+    border-style: var(--cre8-border-style-default);
+    cursor: pointer;
+
+    &:focus-visible {
+        @include focus;
+    }
+    /**
+    * Neutral remove tag
+    */
+    &.cre8-c-remove-tag--neutral {
+        background-color: var(--cre8-color-bg-default);
+        color: var(--cre8-color-content-default);
+        border-color: var(--cre8-color-border-strong);
+    
+        &:hover, &:focus {
+            background-color: var(--cre8-color-bg-default-hover);
+        }
+    }
+  
+    /**
+    * Branded remove tag
+    */
+    &.cre8-c-remove-tag--branded {
+        background-color: var(--cre8-color-bg-brand);
+        color: var(--cre8-color-content-default);
+        border-color: var(--cre8-color-border-transparent);
+    
+        &:hover, &:focus {
+          background-color: var(--cre8-color-bg-brand-hover);
+        }
+    }
+  
+    /**
+    * Neutral Hybrid remove tag
+    */
+    &.cre8-c-remove-tag--neutral-hybrid {
+        background-color: var(--cre8-color-bg-default);
+        color: var(--cre8-color-content-brand);
+        border-color: var(--cre8-color-border-strong);
+    
+        &:hover, &:focus {
+          background-color: var(--cre8-color-bg-default-hover);
+        }
+    }
+
+    /**
+    * Round remove tag
+    */
+    &.cre8-c-remove-tag--round {
+        border-radius: var(--cre8-border-radius-round);
+    }
+    
+    /**
+    * Square remove tag
+    */
+    &.cre8-c-remove-tag--square {
+        border-radius: var(--cre8-border-radius-small);
+    }
+
+    &:disabled {
+        background-color: var(--cre8-color-bg-disabled);
+        color: var(--cre8-color-content-disabled);
+        border-color: var(--cre8-color-border-disabled);
+        cursor: not-allowed;
+
+        &:hover, &:focus {
+            background-color: var(--cre8-color-bg-disabled);
+        }
+    }
+}
+
+.cre8-c-remove-tag-item__icon {
+    align-items: center;
+    width: size(2);
+    height: size(2);
+}

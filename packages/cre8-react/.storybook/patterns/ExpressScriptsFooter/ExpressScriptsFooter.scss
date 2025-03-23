@@ -1,0 +1,40 @@
+@import '../../../../cre8-wc/design-tokens/core/scss/theming/component.scss';
+
+// #EXPRESS SCRIPTS FOOTER
+
+/**
+ * 1) Sitefooter
+ */
+.c-express-scripts-footer {
+  display: block;
+}
+
+.c-footer-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.c-footer-nav__link {
+  color: var(--cre8-color-content-brand-knockout);
+  text-decoration: none;
+}
+
+.c-global-footer__small-text {
+  margin: 0;
+}
+
+.c-global-footer__small-text--first {
+  margin-top: 1rem;
+}
+
+.c-global-footer__small-text--last {
+  margin-bottom: 1rem;
+}
+
+.c-global-footer__copyright {
+  margin: 0;
+}

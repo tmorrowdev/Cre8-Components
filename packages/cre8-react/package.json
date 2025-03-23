@@ -1,0 +1,104 @@
+{
+  "name": "@cre8/cre8-react",
+  "version": "1.0.0-beta",
+  "description": "The React-powered cre8 design system library for Cigna web applications",
+  "license": "UNLICENSED",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "node": "./lib/index.js",
+      "default": "./lib/index.js"
+    },
+    "./lib/*": "./lib/index.js",
+    "./lib/": "./lib/",
+    "./lib/components/*": "./lib/components/*",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "start": "pnpm run storybook",
+    "build": "npm run lib",
+    "lib": "npm run lib.clear && tsc",
+    "lib.clear": "del-cli lib",
+    "lib.build": "run-p build:js",
+    "test": "react-scripts test --watchAll=false",
+    "test:watch": "react-scripts test",
+    "plop": "plop component",
+    "plop:page": "plop page",
+    "plop:recipe": "plop recipe",
+    "storybook": "storybook dev -p 9009",
+    "build-storybook": "del-cli dist && npx storybook build -o dist",
+    "lint": "eslint-config ./ --ext tsx,jsx,ts,js --ignore-path ../../.eslintignore",
+    "format": "eslint-config ./ --fix --ext tsx,jsx,ts,js --ignore-path ../../.eslintignore"
+  },
+  "dependencies": {
+    "@cre8/cre8-design-tokens": "file:../../cre8-cre8-design-tokens-1.0.0.tgz",
+    "@cre8/cre8-icons": "file:../../cre8-cre8-icons-0.6.0.tgz",
+    "@cre8/cre8-wc": "^1.0.0-beta",
+    "@lit-labs/react": "^1.1.1",
+    "classnames": "2.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browser": "./lib/index.js",
+  "entry": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.14.6",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-proposal-decorators": "^7.14.5",
+    "@babel/plugin-transform-typescript": "^7.14.6",
+    "@babel/preset-env": "^7.22.5",
+    "@babel/preset-react": "7.14.5",
+    "@etchteam/storybook-addon-css-variables-theme": "^1.5.1",
+    "@etchteam/storybook-addon-status": "^4.2.4",
+    "@storybook/addon-a11y": "^7.5.3",
+    "@storybook/addon-essentials": "^7.5.3",
+    "@storybook/addon-links": "^7.5.3",
+    "@storybook/addon-storyshots": "^7.5.3",
+    "@storybook/cli": "^7.5.3",
+    "@storybook/react": "^7.5.3",
+    "@storybook/react-webpack5": "^7.5.3",
+    "@storybook/types": "^7.5.3",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/node": "18.11.9",
+    "@types/react": "18.2.13",
+    "@types/react-dom": "18.2.6",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-transform-rename-import": "^2.3.0",
+    "css-loader": "6.7.4",
+    "del-cli": "^4.0.1",
+    "loader-utils": "^3.2.0",
+    "npm-run-all": "^4.1.5",
+    "plop": "^2.7.4",
+    "regenerator-runtime": "0.13.7",
+    "sass": "1.55.0",
+    "sass-loader": "^13.3.1",
+    "style-loader": "^3.3.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2",
+    "webpack": "^5.43.0",
+    "webpack-cli": "^4.7.2"
+  }
+}

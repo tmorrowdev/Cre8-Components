@@ -1,0 +1,11 @@
+import {html} from 'lit';
+import {spread} from '../../directives/spread';
+import './{{dashCase name}}';
+
+export default {
+  title: 'In Development/{{titleCase name}}',
+  component: 'cre8-{{dashCase name}}',
+  parameters: { status: { type: 'inProgress' } },
+};
+
+export const Default = (args) => html`<cre8-{{dashCase name}} ${spread(args)}>Hello world</cre8-{{dashCase name}}>`

@@ -1,0 +1,13 @@
+import {html} from 'lit';
+import './{{dashCase name}}';
+
+export default {
+  title: 'Pages/{{titleCase name}}',
+  component: '{{dashCase name}}',
+  parameters: { 
+    status: { type: 'inProgress' },
+    layout: 'fullscreen'
+  },
+};
+
+export const Default = (args) => html`<{{dashCase name}}>Hello world</{{dashCase name}}>`

@@ -1,0 +1,16 @@
+.DS_Store
+dist
+lib
+node_modules
+/.vscode
+/*.tgz
+storybook-static
+yarn-error.log
+coverage
+*.log
+.nx/cache/
+/.nvmrc
+/report/**
+**/report/
+/.yalc
+/yalc.lock

@@ -1,0 +1,21 @@
+@import 'design-tokens/core/scss/theming/component';
+
+/**
+ * 1)
+ */
+.cre8-c-vertical-card {
+  border-left-width: size(1);
+  border-left-style: var(--cre8-border-style-default);
+  border-left-color: #4378a4;
+  padding-left: size(3);
+  padding-top: size(4);
+  padding-bottom: size(4);
+}
+
+.cre8-c-vertical-card--secondary {
+  border-left-color: #15a4a7;
+}
+
+.cre8-c-vertical-card--tertiary {
+  border-left-color: #973894;
+}

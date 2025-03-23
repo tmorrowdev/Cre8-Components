@@ -1,0 +1,26 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+      "outDir": "dist/out-tsc",
+      "module": "commonjs",
+      "types": ["jest", "node", "@openwc/testing"],
+      "allowJs": true,
+      "lib": ["es2021", "dom"]
+    },
+    "include": [
+      "jest.config.js",
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      "**/*.test.tsx",
+      "**/*.spec.tsx",
+      "**/*.test.js",
+      "**/*.spec.js",
+      "**/*.test.jsx",
+      "**/*.spec.jsx",
+      ".storybook/**/*.spec.ts",
+      "**/*.d.ts",
+      "test/utils/snapshots.ts",
+      "./toBeAccessible.ts",
+      "./matchMedia.js"
+    ]
+  }

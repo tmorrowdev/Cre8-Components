@@ -1,0 +1,78 @@
+@import 'design-tokens/core/scss/theming/component';
+
+:root {
+  --cre8-l-max-width: 82.5rem;
+}
+
+cre8-layout {
+  --cre8-sidebar-width: 33%;
+}
+// @TODO get rid of this hack
+p,
+li {
+  font-size: 18px;
+  line-height: 32px;
+}
+/** @todo replace this with a proper component */
+.dei-feature {
+  padding-top: size(4);
+  padding-bottom: size(4);
+  background: var(--cre8-color-bg-brand-xstrong);
+  color: var(--cre8-color-content-knockout);
+  overflow: hidden;
+  position: relative;
+
+  @media all and (min-width: $cre8-bp-md) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+/** @todo replace this something more robust! */
+.dei-feature cre8-feature::part(feature) {
+  min-height: 550px;
+}
+
+.dei-feature cre8-feature::part(body) {
+  align-self: center;
+}
+
+.dei-feature cre8-feature::part(image) {
+  @media all and (min-width: $cre8-bp-md) {
+    position: absolute;
+    height: 100%;
+    max-width: 45%;
+    object-fit: cover;
+    right: 0;
+  }
+}
+
+/* These sections are basically here because utilities were broken */
+.dei-feature-section {
+  margin-bottom: size(12);
+}
+
+.we-stand-together-section {
+  margin-bottom: size(8);
+}
+
+.hear-from-our-leaders-section {
+  margin-bottom: size(8);
+}
+
+.how-were-making-it-happen-section {
+  margin-bottom: size(8);
+}
+
+.offer-ongoing-support-feature::part(image) {
+  border-radius: 0.625rem;
+  margin-bottom: size(8);
+}
+
+.logos-section {
+  margin-bottom: size(8);
+}
+
+.related-content-section {
+  margin-bottom: size(8);
+}
