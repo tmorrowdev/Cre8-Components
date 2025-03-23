@@ -41,7 +41,6 @@ yarn-error.log*
 !Utilities.css
 /src/css/design-system.css
 /src/design-tokens/vanilla/tier-2-applications/_theme-overrides.scss
-/*.tgz
 /.nx/cache/
 /.yalc
 /yalc.lock
