@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "module": "esNext",
+    "lib": [
+      "es2021",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "types": [
+      "resize-observer-browser",
+      "jest"
+    ],
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "sourceMap": true,
+    "inlineSources": true,
+    "outDir": "lib/",
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "plugins": [
+      {
+        "name": "ts-lit-plugin",
+        "strict": true
+      }
+    ],
+  },
+  "include": [
+    "**/**/*.ts",
+    "**/**/*.js",
+    "styles.d.ts",
+    "global.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "typings",
+    "components/**/*.stories.ts",
+    "dist",
+    "lib"
+  ]
+}

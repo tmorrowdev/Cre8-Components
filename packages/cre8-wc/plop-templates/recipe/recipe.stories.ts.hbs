@@ -1,0 +1,10 @@
+import {html} from 'lit';
+import './{{dashCase name}}';
+
+export default {
+  title: 'Recipes/{{titleCase name}}',
+  component: '{{dashCase name}}',
+  parameters: {status: {type: 'inProgress'}},
+};
+
+export const Default = (args) => html`<{{dashCase name}}>Hello world</{{dashCase name}}>`

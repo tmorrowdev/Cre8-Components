@@ -1,0 +1,115 @@
+@import 'design-tokens/core/scss/theming/component';
+
+/* ------------------------------------*\
+    #TAG
+\*------------------------------------ */
+
+:host {
+  display: inline-flex;
+}
+
+.cre8-c-tag {
+  @include cre8-typography-label-small;
+  display: flex;
+  align-items: center;
+  background-color: var(--cre8-color-bg-default);
+  border: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
+  color: var(--cre8-color-content-default);
+  cursor: pointer;
+  gap: var(--cre8-spacing-8);
+  padding: var(--cre8-spacing-4) var(--cre8-spacing-16);
+  transition: all var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
+  white-space: nowrap;
+}
+
+.cre8-c-tag--square {
+  border-radius: var(--cre8-border-radius-small);
+}
+
+.cre8-c-tag--round {
+  border-radius: var(--cre8-border-radius-round);
+}
+
+.cre8-c-tag--neutral {
+
+  &:hover,
+  &:focus {
+    background-color: var(--cre8-color-bg-default-hover); 
+    border: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
+  }
+}
+
+.cre8-c-tag--branded {
+  background-color: var(--cre8-color-bg-brand);
+  border: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-transparent);
+
+  &:hover,
+  &:focus {
+    background-color: var(--cre8-color-bg-brand-hover); 
+  }
+}
+
+.cre8-c-tag--neutral-hybrid {
+  color: var(--cre8-color-content-brand);
+
+  &:hover,
+  &:focus {
+    background-color: var(--cre8-color-bg-default-hover); 
+  }
+}
+
+.cre8-c-tag--neutral-selected,
+.cre8-c-tag--neutral-hybrid-selected {
+  background-color: var(--cre8-color-bg-brand-strong);
+  border: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-transparent);
+  color: var(--cre8-color-content-knockout);
+
+  &:hover,
+  &:focus {
+    background-color: var(--cre8-color-bg-brand-strong-hover);
+  }
+}
+
+.cre8-c-tag--branded-selected {
+  background-color: var(--cre8-color-bg-brand-xstrong);
+  border: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-transparent);
+  color: var(--cre8-color-content-knockout);
+
+  &:hover,
+  &:focus {
+    background-color: var(--cre8-color-bg-brand-xstrong-hover);
+  }
+}
+
+.cre8-c-tag:focus {
+  outline: var(--cre8-border-width-focus) var(--cre8-border-style-default) var(--cre8-color-border-active-outline);
+  outline-offset: var(--cre8-border-width-focus);
+}
+
+.cre8-c-tag.cre8-c-tag--disabled,
+.cre8-c-tag.cre8-c-tag--disabled:hover,
+.cre8-c-tag.cre8-c-tag--disabled:focus {
+  background-color: var(--cre8-color-bg-disabled);
+  border: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-disabled);
+  color: var(--cre8-color-content-disabled);
+  cursor: not-allowed;
+  outline: none;
+}
+
+.cre8-c-tag__input {
+  @include cre8-typography-body-small;
+  display: none;
+}
+
+.cre8-tag-text{
+  cursor: pointer;
+}
+
+.cre8-c-tag--disabled > .cre8-tag-text {
+  cursor: not-allowed;
+}
+
+cre8-icon {
+  display: flex;
+  align-items: center;
+}

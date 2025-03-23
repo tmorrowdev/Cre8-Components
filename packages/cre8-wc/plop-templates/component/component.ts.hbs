@@ -1,0 +1,32 @@
+import { html, unsafeCSS } from 'lit';
+import { Cre8Element } from '../cre8-element';
+import styles from './{{dashCase
+  name
+}}.scss';
+
+/**
+ * @slot - The component content
+ */
+export class cre8{{pascalCase name}} extends Cre8Element {
+    static get styles() {
+        return unsafeCSS(styles.toString());
+    }
+
+    render() {
+        const componentClassNames = this.componentClassNames('cre8-c-{{dashCase name}}', { });
+
+        return html`
+          <div class='${componentClassNames}'>
+            <slot></slot>
+          </div>
+        `;
+    }
+}
+
+if (customElements.get('cre8-{{dashCase name}}') === undefined) {
+    customElements.define('cre8-{{dashCase name}}', cre8{{pascalCase name}});
+}
+
+declare global { interface HTMLElementTagNameMap { 'cre8-{{dashCase name}}': cre8{{pascalCase name}}; } }
+
+export default cre8{{pascalCase name}};

@@ -1,0 +1,34 @@
+@import 'design-tokens/core/scss/theming/component';
+@import '@cre8/cre8-design-tokens/lib/web/layouts/breakpoints.scss';
+
+// #LAYOUT
+
+/**
+ * 1) Layout wrapper that houses layout section Components to create a layouts like
+ * sidebar layouts that are 1 row across and not a grid
+ */
+.cre8-c-layout {
+  display: grid;
+  flex: 1;
+  gap: size(2);
+  grid-template-columns: minmax(0, 1fr);
+
+  @media all and (min-width: $cre8-breakpoint-lg) {
+    gap: size(4);
+    grid-template-columns: minmax(0, 1fr) calc(var(--cre8-sidebar-width, 40%) - (size(1))); /* 2 */
+  }
+}
+
+/**
+ * Left sidebar layout
+ * 1) Layout that is stacked on small screens and turns into a left sidebar with main
+ * content to the right
+ * 2) The main column stretches the full width minus the sidebar width and gap.
+ *    The sidebar column has a minimum width value (enough to accommodate navigation
+ *    and other sidebar content) but stretches to fit the content placed inside it.
+ */
+.cre8-c-layout--left-sidebar {
+  @media all and (min-width: $cre8-breakpoint-lg) {
+    grid-template-columns: calc(var(--cre8-sidebar-width, 40%) - (size(1))) minmax(0, 1fr); /* 2 */
+  }
+}

@@ -1,0 +1,7 @@
+@import 'design-tokens/core/scss/theming/component';
+
+:host {
+  border: 1px dashed #69b3e7;
+  border-radius: 5px;
+  color: darken(#69b3e7, 20%);
+}

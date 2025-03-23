@@ -1,0 +1,12 @@
+@import 'design-tokens/core/scss/theming/component';
+
+// #LOGO
+
+/**
+ * 1) Brand's logo
+ */
+.cre8-c-logo {
+  display: block;
+  width: 120px; // @TODO: Remove this once we have a logo component
+  max-width: 20rem;
+}

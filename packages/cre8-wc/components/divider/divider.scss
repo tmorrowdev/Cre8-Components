@@ -1,0 +1,41 @@
+@import 'design-tokens/core/scss/theming/component';
+
+// #DIVIDER
+
+:host {
+  display: flex;
+}
+
+/**
+ * Divider Element
+ */
+.cre8-c-divider {
+  background-color: var(--cre8-color-border-default);
+  margin-top: size(1);
+  margin-bottom: size(1);
+}
+
+.cre8-c-divider--horizontal {
+  width: 100%;
+  height: var(--cre8-border-width-default);
+}
+
+.cre8-c-divider--vertical {
+  width: var(--cre8-border-width-default);
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: size(1);
+  margin-right: size(1);
+}
+
+/**
+* Divider colors
+*/
+.cre8-c-divider--brand {
+  background-color: var(--cre8-color-border-brand);
+}
+
+.cre8-c-divider--knockout {
+  background-color: var(--cre8-color-border-knockout);
+}

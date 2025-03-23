@@ -1,0 +1,63 @@
+@import 'design-tokens/core/scss/theming/component';
+
+// #HEADER
+
+/**
+  * 1) Global header where the navigation, logo, and other content lives across the entire site
+  */
+.cre8-c-header {
+  background: var(--cre8-header-background, var(--cre8-color-header-bg-default));
+  color: var(--cre8-color-content-default);
+  position: relative;
+  z-index: 3;
+}
+
+/**
+ * Header top section
+ * 1) Optional slot used for global navigation usually
+ */
+.cre8-c-header__top {
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+  background: var(--cre8-header-top-background);
+}
+
+/**
+ * Inner container of the header top section
+ * 1) Used to cap the width of the content within the header
+ */
+.cre8-c-header__top-inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: auto;
+}
+
+/**
+ * Header middle section
+ * 1) Section of the site used for the logo and primary navigation
+ */
+.cre8-c-header__middle {
+  width: 100%;
+  box-shadow: var(--cre8-theme-box-shadow-md);
+  border-bottom: var(--cre8-header-middle-border-bottom-color);
+}
+
+/**
+ * Inner container of the header middle section
+ * 1) Used to cap the width of the content within the header
+ */
+.cre8-c-header__middle-inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-top: size(2);
+  padding-bottom: size(2);
+}
+
+.cre8-c-header__bottom {
+  background: var(--cre8-header-bottom-background);
+  box-shadow: var(--cre8-header-bottom-box-shadow);
+}

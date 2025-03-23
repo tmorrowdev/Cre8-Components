@@ -1,0 +1,47 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+_site
+dist
+lib
+storybook-static
+storybook
+storybook-components
+
+# Component CSS
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.production.local
+.cache
+.idea
+
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+*.scssc
+
+.sass-cache
+/.vscode
+*.css
+*.css.map
+!prism.css
+!DesignTokens.css
+!Utilities.css
+/src/css/design-system.css
+/src/design-tokens/vanilla/tier-2-applications/_theme-overrides.scss
+/*.tgz
+/.nx/cache/
+/.yalc
+/yalc.lock

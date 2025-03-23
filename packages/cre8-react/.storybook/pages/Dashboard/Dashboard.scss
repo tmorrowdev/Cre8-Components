@@ -1,0 +1,18 @@
+@import '../../../../cre8-wc/design-tokens/core/scss/theming/component.scss';
+
+// TODO: Remove
+.page-container {
+  @media all and (min-width: $cre8-bp-lg) {
+    background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0);
+  }
+}
+
+// TODO: Remove
+.band__inner {
+  margin-left: 2rem;
+  margin-right: 2rem;
+
+  @media all and (min-width: $cre8-bp-lg) {
+    margin-right: 0;
+  }
+}

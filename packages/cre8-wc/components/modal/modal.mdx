@@ -1,0 +1,58 @@
+import {ArgsTable, Canvas, Meta, Story} from '@storybook/blocks';
+
+import * as ModalStories from './modal.stories';
+import * as SampleModalStories from '../../.storybook/patterns/sample-modal/sample-modal.stories';
+
+<Meta of={ModalStories} />
+
+# Modal
+
+Modal component should be used in all modal situations. It is natuarally composable and can even have a custom header and remove the close button.
+Here is code for the example below, a completely composed modal using slots:
+
+(note: adding `slot="header"` will insert the given element into the header section of the modal, same for `slot="footer"` and no given slot name will inset it into the body)
+
+```js
+<cre8-modal
+    ?isActive=${this.modalIsActive}
+    @close-modal="${() => this.toggleModal()}"
+    ariaLabel="This text describes modal to screen reader when focused on"
+>
+    <cre8-heading variant="title-large" ?brandColor=${true} slot="header">Modal Heading</cre8-heading>
+    <cre8-text-passage>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque netus nulla accumsan placerat.
+    </cre8-text-passage>
+    <cre8-button-group slot="footer" orientation="responsive-full-width">
+        <cre8-button variant="primary" text="Button"></cre8-button>
+        <cre8-button variant="tertiary" text="Button"></cre8-button>
+    </cre8-button-group>
+</cre8-modal>
+```
+
+<Story of={SampleModalStories.Default} meta={SampleModalStories} inline={false}/>
+
+If it is desired to create a utility modal. cre8Modal requires a status value (see props table below, and a UtilityModalTitle since all utility modals have a cre8-heading)
+Here is code for the error utility modal example below:
+
+``` js
+<cre8-modal
+    status="error"
+    utilityModalTitle="Modal Heading"
+    ?isActive=${this.modalIsActive}
+    @close-modal="${() => this.toggleModal()}"
+    ariaLabel="This text describes modal to screen reader when focused on"
+    >
+    <cre8-text-passage>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque netus nulla accumsan placerat. DEFAULT DESKTOP WIDTH:544
+    </cre8-text-passage>
+    <cre8-button-group slot="footer" orientation="responsive-full-width">
+        <cre8-button variant="primary" text="Button"></cre8-button>
+        <cre8-button variant="tertiary" text="Button"></cre8-button>
+    </cre8-button-group>
+</cre8-modal>
+```
+<Story of={SampleModalStories.Error} meta={SampleModalStories} inline={false}/>
+
+## Props
+
+<ArgsTable />
