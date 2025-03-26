@@ -39,13 +39,13 @@ export const parameters = {
   layout: 'padded',
   cssVariables: {
     files: {
-      'Cigna Healthcare': chc,
-      'The Cigna Group': tcg,
-      'Cigna Legacy': cignaLegacy,
-      'Evernorth': evernorth,
-      'PBM': pbm,
+      'Consumer': chc,
+      'Marketing': tcg,
+      'Legacy': cignaLegacy,
+      'Cre8': evernorth,
+      'Cre8-Legacy': pbm,
     },
-    defaultTheme: 'Evernorth',
+    defaultTheme: 'Cre8',
   },
   html: {
     root: '#root-inner',

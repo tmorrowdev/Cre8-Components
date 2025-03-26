@@ -12,7 +12,7 @@ module.exports = {
     '../components/**/*.stories.@(js|jsx|ts|tsx|mdx)',
     './components/icon-grid/icon-grid.stories.ts',
     './patterns/**/*.stories.@(js|jsx|ts|tsx|mdx)',
-    './components/system-docs/*.mdx',
+    './components/system-docs/*.mdx'
   ],
   refs: (config, { configType }) => {
     if (configType === 'DEVELOPMENT') {
@@ -36,7 +36,6 @@ module.exports = {
   addons: [
     getAbsolutePath('@etchteam/storybook-addon-css-variables-theme'),
     getAbsolutePath('@storybook/addon-a11y'),
-    getAbsolutePath('@etchteam/storybook-addon-status'),
     getAbsolutePath('@storybook/addon-essentials'),
     getAbsolutePath('@whitespace/storybook-addon-html')
   ],
