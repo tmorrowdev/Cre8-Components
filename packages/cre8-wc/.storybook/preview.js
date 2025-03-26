@@ -39,11 +39,11 @@ export const parameters = {
   layout: 'padded',
   cssVariables: {
     files: {
-      'Cre8 Healthcare': chc,
-      'The Cre8 Group': tcg,
-      'Cre8 Legacy': cre8Legacy,
+      'Consumer': chc,
+      'Marketing': tcg,
+      'Legacy': cre8Legacy,
       'Cre8': cre8,
-      'PBM': pbm,
+      'Cre8-Legacy': pbm,
     },
     defaultTheme: 'Cre8',
   },
