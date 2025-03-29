@@ -11,7 +11,6 @@ import evernorth from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8/c
 import pbm from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8/cre8-design-tokens/lib/web/brands/pbm/css/tokens_pbm.css';
 import tcg from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8/cre8-design-tokens/lib/web/brands/tcg/css/tokens_tcg.css';
 
-import DocumentationTemplate from './documentation-template.mdx';
 
 export const decorators = [cssVariablesTheme];
 
@@ -96,12 +95,6 @@ export const parameters = {
     expanded: true,
     exclude: excludeArray,
     sort: 'requiredFirst',
-  },
-  docs: {
-    page: DocumentationTemplate,
-    argTypes: {
-      exclude: excludeArray,
-    },
   },
   options: {
     storySort: {
