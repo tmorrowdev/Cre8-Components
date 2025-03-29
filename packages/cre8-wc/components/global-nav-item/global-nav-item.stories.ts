@@ -3,7 +3,7 @@ import {spread} from '../../directives/spread';
 import './global-nav-item';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Global Nav Item',
+  title: 'Cre8 Components/Global Nav Item',
   component: 'cre8-global-nav-item',
   parameters: { status: { type: 'inProgress' } },
 };

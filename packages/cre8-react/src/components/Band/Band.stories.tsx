@@ -3,7 +3,7 @@ import { cre8Band } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Band',
+  title: 'Cre8 Components/Band',
   component: cre8Band,
   parameters: {
     status: { type: 'inProgress' },

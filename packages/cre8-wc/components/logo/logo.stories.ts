@@ -4,7 +4,7 @@ import { spread } from '../../directives/spread';
 import './logo';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Logo',
+  title: 'Cre8 Components/Logo',
   component: 'cre8-logo',
   parameters: { status: { type: 'inProgress' } }
 };

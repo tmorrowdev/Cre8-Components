@@ -3,7 +3,7 @@ import { spread } from '../../directives/spread';
 import './page-header';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Page Header',
+  title: 'Cre8 Components/Page Header',
   component: 'cre8-page-header',
   parameters: { status: { type: 'notStarted' } }
 };

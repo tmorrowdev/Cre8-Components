@@ -4,7 +4,7 @@ import './band';
 
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Band',
+  title: 'Cre8 Components/Band',
   component: 'cre8-band',
   parameters: { status: { type: 'inProgress' } }
 };

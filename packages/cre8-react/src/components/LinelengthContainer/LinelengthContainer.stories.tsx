@@ -3,7 +3,7 @@ import { cre8LinelengthContainer } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/LinelengthContainer',
+  title: 'Cre8 Components/LinelengthContainer',
   component: cre8LinelengthContainer,
   parameters: {
     status: { type: 'inProgress' },

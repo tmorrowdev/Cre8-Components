@@ -3,7 +3,7 @@ import { cre8Footer } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Footer',
+  title: 'Cre8 Components/Footer',
   component: cre8Footer,
   parameters: {
     status: { type: 'inProgress' },

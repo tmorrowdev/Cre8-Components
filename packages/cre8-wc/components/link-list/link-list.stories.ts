@@ -4,7 +4,7 @@ import '../link-list-item/link-list-item';
 import './link-list';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Link List',
+  title: 'Cre8 Components/Link List',
   component: 'cre8-link-list',
   parameters: { status: { type: 'inProgress' } }
 };

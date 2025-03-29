@@ -3,7 +3,7 @@ import { cre8TextLink } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/TextLink',
+  title: 'Cre8 Components/TextLink',
   component: cre8TextLink,
   parameters: {
     status: { type: 'inProgress' },

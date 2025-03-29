@@ -3,7 +3,7 @@ import { cre8Layout } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Layout',
+  title: 'Cre8 Components/Layout',
   component: cre8Layout,
   parameters: {
     status: { type: 'inProgress' },

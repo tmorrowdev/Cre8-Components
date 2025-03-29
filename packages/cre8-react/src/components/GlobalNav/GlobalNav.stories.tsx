@@ -3,7 +3,7 @@ import { cre8GlobalNav, cre8GlobalNavItem } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/GlobalNav',
+  title: 'Cre8 Components/GlobalNav',
   component: cre8GlobalNav,
   subcomponents: { cre8GlobalNavItem } ,
   parameters: {

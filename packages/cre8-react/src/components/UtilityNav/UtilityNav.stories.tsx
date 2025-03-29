@@ -3,7 +3,7 @@ import { cre8UtilityNav, cre8UtilityNavItem } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/UtilityNav',
+  title: 'Cre8 Components/UtilityNav',
   component: cre8UtilityNav,
   subcomponents: { cre8UtilityNavItem },
   parameters: {
