@@ -5,7 +5,7 @@ import '../text-passage/text-passage';
 import './vertical-card';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Vertical Card',
+  title: 'Cre8 Components/Vertical Card',
   component: 'cre8-vertical-card',
   parameters: { status: { type: 'inProgress' } }
 };

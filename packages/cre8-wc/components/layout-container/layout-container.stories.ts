@@ -4,7 +4,7 @@ import { spread } from '../../directives/spread';
 import './layout-container';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Layout Container',
+  title: 'Cre8 Components/Layout Container',
   component: 'layout-container',
   parameters: { status: { type: 'inProgress' } }
 };

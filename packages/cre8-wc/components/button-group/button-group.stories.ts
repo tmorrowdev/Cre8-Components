@@ -3,7 +3,7 @@ import {spread} from '../../directives/spread';
 import './button-group';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Button Group',
+  title: 'Cre8 Components/Button Group',
   component: 'cre8-button-group',
   parameters: { status: { type: 'beta' } },
 };

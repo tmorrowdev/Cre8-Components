@@ -4,7 +4,7 @@ import '../list-item/list-item';
 import './list';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/List',
+  title: 'Cre8 Components/List',
   component: 'cre8-list',
   parameters: { status: { type: 'notStarted' } }
 };

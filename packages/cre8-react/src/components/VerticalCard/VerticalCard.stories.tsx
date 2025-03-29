@@ -3,7 +3,7 @@ import { cre8VerticalCard } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/VerticalCard',
+  title: 'Cre8 Components/VerticalCard',
   component: cre8VerticalCard,
   parameters: {
     status: { type: 'inProgress' },

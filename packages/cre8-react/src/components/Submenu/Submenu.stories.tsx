@@ -3,7 +3,7 @@ import { cre8Submenu, cre8SubmenuItem } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Submenu',
+  title: 'Cre8 Components/Submenu',
   component: cre8Submenu,
   subcomponents: { cre8SubmenuItem },
   parameters: {

@@ -98,7 +98,7 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['Documentation', 'cre8 Components', ' Patterns', 'Experimental Components'],
+      order: ['Documentation', 'cre8 Components', ' Patterns'],
     },
   },
 };

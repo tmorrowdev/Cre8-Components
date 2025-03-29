@@ -4,7 +4,7 @@ import '../submenu-item/submenu-item';
 import './submenu';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Submenu',
+  title: 'Cre8 Components/Submenu',
   component: 'cre8-submenu',
   parameters: { status: { type: 'inProgress' } }
 };

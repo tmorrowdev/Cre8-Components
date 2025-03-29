@@ -3,7 +3,7 @@ import { cre8Dropdown, cre8DropdownItem, cre8SplitButton } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/SplitButton',
+  title: 'Cre8 Components/SplitButton',
   component: cre8SplitButton,
   parameters: {
     status: { type: 'inProgress' },
