@@ -5,7 +5,7 @@ import { withActions } from '@storybook/addon-actions/decorator';
 import React from 'react';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Tertiary Nav',
+  title: 'Cre8 Components/Tertiary Nav',
   component: cre8TertiaryNav,
   subcomponents: { cre8TertiaryNavItem },
   parameters: {

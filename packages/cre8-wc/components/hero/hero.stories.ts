@@ -4,7 +4,7 @@ import '../text-passage/text-passage';
 import './hero';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Hero',
+  title: 'Cre8 Components/Hero',
   component: 'cre8-hero',
   parameters: { status: { type: 'notStarted' } }
 };

@@ -3,7 +3,7 @@ import { cre8GridItem } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/GridItem',
+  title: 'Cre8 Components/GridItem',
   component: cre8GridItem,
   parameters: {
     status: { type: 'inProgress' },

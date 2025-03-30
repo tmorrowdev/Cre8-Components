@@ -4,7 +4,7 @@ import { spread } from '../../directives/spread';
 import './header';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Header',
+  title: 'Cre8 Components/Header',
   component: 'cre8-header',
   parameters: { status: { type: 'inProgress' } }
 };

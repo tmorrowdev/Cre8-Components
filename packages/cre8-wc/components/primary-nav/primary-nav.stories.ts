@@ -4,7 +4,7 @@ import '../primary-nav-item/primary-nav-item';
 import './primary-nav';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Primary Nav',
+  title: 'Cre8 Components/Primary Nav',
   component: 'cre8-primary-nav',
   parameters: { status: { type: 'inProgress' } }
 };

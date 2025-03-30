@@ -5,7 +5,7 @@ import './tertiary-nav';
 import '../tertiary-nav-item/tertiary-nav-item';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Tertiary Nav',
+  title: 'Cre8 Components/Tertiary Nav',
   component: 'cre8-tertiary-nav',
   parameters: {
     status: { type: 'inProgress' },

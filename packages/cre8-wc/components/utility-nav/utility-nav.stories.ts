@@ -4,7 +4,7 @@ import '../utility-nav-item/utility-nav-item';
 import './utility-nav';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Utility Nav',
+  title: 'Cre8 Components/Utility Nav',
   component: 'cre8-utility-nav',
   parameters: { status: { type: 'inProgress' } }
 };

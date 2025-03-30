@@ -4,7 +4,7 @@ import '../global-nav-item/global-nav-item';
 import './global-nav';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Global Nav',
+  title: 'Cre8 Components/Global Nav',
   component: 'cre8-global-nav',
   parameters: { status: { type: 'inProgress' } }
 };

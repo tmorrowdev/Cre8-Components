@@ -3,7 +3,7 @@ import { cre8LayoutContainer, cre8LayoutSection } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/LayoutContainer',
+  title: 'Cre8 Components/LayoutContainer',
   component: cre8LayoutContainer,
   parameters: {
     subcomponents: { cre8LayoutSection },

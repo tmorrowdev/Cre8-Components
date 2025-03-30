@@ -5,7 +5,7 @@ import '../grid-item/grid-item';
 import './grid';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Grid',
+  title: 'Cre8 Components/Grid',
   component: 'cre8-grid',
   parameters: { status: { type: 'inProgress' } }
 };

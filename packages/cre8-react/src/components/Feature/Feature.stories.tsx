@@ -3,7 +3,7 @@ import { cre8Feature } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Feature',
+  title: 'Cre8 Components/Feature',
   component: cre8Feature,
   parameters: {
     status: { type: 'inProgress' },

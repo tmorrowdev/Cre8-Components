@@ -4,7 +4,7 @@ import { spread } from '../../directives/spread';
 import './linelength-container';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Linelength Container',
+  title: 'Cre8 Components/Linelength Container',
   component: 'cre8-linelength-container',
   parameters: { status: { type: 'inProgress' } }
 };

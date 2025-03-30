@@ -4,7 +4,7 @@ import { excludeRegexArray } from '../../../.storybook/preview';
 import { cre8Button, cre8ButtonGroup } from '../..';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/ButtonGroup',
+  title: 'Cre8 Components/ButtonGroup',
   component: cre8ButtonGroup,
   parameters: {
     status: { type: 'inProgress' },

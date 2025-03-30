@@ -4,7 +4,7 @@ import { spread } from '../../directives/spread';
 import './nav-container';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Nav Container',
+  title: 'Cre8 Components/Nav Container',
   component: 'cre8-nav-container',
   parameters: { status: { type: 'inProgress' } }
 };
