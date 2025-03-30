@@ -1,1 +1,0 @@
-module.exports = {'tcg': require('./brands/tcg/tokens-brand.js'),'pbm': require('./brands/pbm/tokens-brand.js'),'pharmacy': require('./brands/pharmacy/tokens-brand.js'),'legacy': require('./brands/legacy/tokens-brand.js'),'chc': require('./brands/chc/tokens-brand.js'),'cre8-legacy': require('./brands/cre8-legacy/tokens-brand.js'),'cre8': require('./brands/cre8/tokens-brand.js')}
