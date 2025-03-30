@@ -9,8 +9,8 @@ dependencies:
     specifier: ^1.0.5
     version: 1.0.5
   '@cre8/cre8-design-tokens':
-    specifier: file:cre8-cre8-design-tokens-1.0.1-beta.0.tgz
-    version: file:cre8-cre8-design-tokens-1.0.1-beta.0.tgz
+    specifier: file:cre8-cre8-design-tokens-1.0.1-beta.2.tgz
+    version: file:cre8-cre8-design-tokens-1.0.1-beta.2.tgz
   '@cre8/cre8-icons':
     specifier: file:../../cre8-cre8-icons-0.6.0.tgz
     version: file:../../cre8-cre8-icons-0.6.0.tgz(webpack@5.98.0)
@@ -13319,8 +13319,8 @@ packages:
       - webpack
     dev: false
 
-  file:cre8-cre8-design-tokens-1.0.1-beta.0.tgz:
-    resolution: {integrity: sha512-U9mJ9KMUYRKd3EHmD0Q0AmMTEkBbfc74oQzgfR2Mvk+SMS6s6tT6vZCPLHBIrOPZ5xsfF1lW2t0oTosW/Yi/PA==, tarball: file:cre8-cre8-design-tokens-1.0.1-beta.0.tgz}
+  file:cre8-cre8-design-tokens-1.0.1-beta.2.tgz:
+    resolution: {integrity: sha512-yTniSIfy9qfERPALz+p4MpPhjKmTBqIFtH4/qrlX2ON1WqqQovTxR+wcGFQOsB+Bq0Yz3iohZsXY/8gdLGvzZQ==, tarball: file:cre8-cre8-design-tokens-1.0.1-beta.2.tgz}
     name: '@cre8/cre8-design-tokens'
-    version: 1.0.1-beta.0
+    version: 1.0.1-beta.2
     dev: false
