@@ -5,7 +5,7 @@ import '../text-passage/text-passage';
 import './feature';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Feature',
+  title: 'Cre8 Components/Feature',
   component: 'cre8-feature',
   parameters: { status: { type: 'notStarted' } }
 };

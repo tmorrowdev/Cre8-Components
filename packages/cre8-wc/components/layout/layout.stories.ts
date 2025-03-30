@@ -5,7 +5,7 @@ import '../layout-section/layout-section';
 import './layout';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Layout',
+  title: 'Cre8 Components/Layout',
   component: 'cre8-layout',
   parameters: { status: { type: 'notStarted' } }
 };

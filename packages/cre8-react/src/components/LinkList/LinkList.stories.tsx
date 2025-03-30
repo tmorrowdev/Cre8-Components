@@ -3,7 +3,7 @@ import { cre8LinkList } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/LinkList',
+  title: 'Cre8 Components/LinkList',
   component: cre8LinkList,
   parameters: {
     status: { type: 'inProgress' },

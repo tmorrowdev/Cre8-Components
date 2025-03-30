@@ -3,7 +3,7 @@ import { cre8Header } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Header',
+  title: 'Cre8 Components/Header',
   component: cre8Header,
   parameters: {
     status: { type: 'inProgress' },

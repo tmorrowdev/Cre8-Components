@@ -3,7 +3,7 @@ import { spread } from '../../directives/spread';
 import './text-link';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Text Link',
+  title: 'Cre8 Components/Text Link',
   component: 'cre8-text-link',
   parameters: { status: { type: 'inProgress' } }
 };

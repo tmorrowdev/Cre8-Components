@@ -4,7 +4,7 @@ import { spread } from '../../directives/spread';
 import './footer';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Footer',
+  title: 'Cre8 Components/Footer',
   component: 'cre8-footer',
   parameters: { status: { type: 'inProgress' } }
 };

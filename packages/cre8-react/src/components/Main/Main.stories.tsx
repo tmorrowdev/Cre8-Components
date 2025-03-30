@@ -3,7 +3,7 @@ import { cre8Main } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Main',
+  title: 'Cre8 Components/Main',
   component: cre8Main,
   parameters: {
     status: { type: 'inProgress' },

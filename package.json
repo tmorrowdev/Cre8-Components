@@ -33,7 +33,7 @@
   },
   "private": true,
   "dependencies": {
-    "@cre8/cre8-design-tokens": "file:cre8-cre8-design-tokens-1.0.0.tgz",
+    "@cre8/cre8-design-tokens": "file:cre8-cre8-design-tokens-1.0.1-beta.2.tgz",
     "@cre8/cre8-icons": "file:cre8-cre8-icons-0.6.0.tgz",
     "@lit/react": "^1.0.7",
     "classnames": "2.3.2",

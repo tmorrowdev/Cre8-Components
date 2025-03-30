@@ -4,7 +4,7 @@ import '../dropdown/dropdown';
 import './split-button';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Split-Button',
+  title: 'Cre8 Components/Split-Button',
   component: 'cre8-split-button',
   parameters: { status: { type: 'inProgress' } }
 };

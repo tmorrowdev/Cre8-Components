@@ -3,7 +3,7 @@ import { cre8Logo } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Logo',
+  title: 'Cre8 Components/Logo',
   component: cre8Logo,
   parameters: {
     status: { type: 'inProgress' },

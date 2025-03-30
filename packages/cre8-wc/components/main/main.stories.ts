@@ -4,7 +4,7 @@ import { spread } from '../../directives/spread';
 import './main';
 
 export default {
-  title: 'DEPRECATED/DO NOT USE/Main',
+  title: 'Cre8 Components/Main',
   component: 'cre8-main',
   parameters: { status: { type: 'inProgress' } }
 };
