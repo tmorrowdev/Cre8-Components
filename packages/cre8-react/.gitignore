@@ -9,7 +9,7 @@
 # production
 /build
 _site
-dist
+
 lib
 storybook-static
 storybook
