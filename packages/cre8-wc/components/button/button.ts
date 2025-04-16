@@ -77,7 +77,7 @@ import styles from './button.scss';
      *
      */
 
-export class cre8Button extends Cre8FormElement {
+export class Cre8Button extends Cre8FormElement {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -411,7 +411,7 @@ export class cre8Button extends Cre8FormElement {
 }
 
 if (customElements.get('cre8-button') === undefined) {
-    customElements.define('cre8-button', cre8Button);
+    customElements.define('cre8-button', Cre8Button);
 }
 
-export default cre8Button;
+export default Cre8Button;

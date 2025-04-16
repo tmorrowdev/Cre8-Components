@@ -1,10 +1,10 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8ButtonGroup as cre8ButtonGroupElement } from '@cre8/cre8-wc/lib/components/button-group/button-group';
+import { createComponent } from '@lit/react';
+import { Cre8ButtonGroup as Cre8ButtonGroupElement } from '@cre8_dev/cre8-wc/lib/components/button-group/button-group';
 
-export const cre8ButtonGroup = createComponent({
+export const Cre8ButtonGroup = createComponent({
     react: React,
-    tagName: 'cre8-button-group',
-    elementClass: cre8ButtonGroupElement,
+    tagName: 'Cre8-button-group',
+    elementClass: Cre8ButtonGroupElement,
 
 });

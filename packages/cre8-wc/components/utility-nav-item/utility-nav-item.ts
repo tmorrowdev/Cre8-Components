@@ -4,7 +4,7 @@ import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import styles from './utility-nav-item.scss';
 
-export class cre8UtilityNavItem extends Cre8Element {
+export class Cre8UtilityNavItem extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -89,13 +89,13 @@ export class cre8UtilityNavItem extends Cre8Element {
 }
 
 if (customElements.get('cre8-utility-nav-item') === undefined) {
-    customElements.define('cre8-utility-nav-item', cre8UtilityNavItem);
+    customElements.define('cre8-utility-nav-item', Cre8UtilityNavItem);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-utility-nav-item': cre8UtilityNavItem;
+    'cre8-utility-nav-item': Cre8UtilityNavItem;
   }
 }
 
-export default cre8UtilityNavItem;
+export default Cre8UtilityNavItem;

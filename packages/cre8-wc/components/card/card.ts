@@ -23,7 +23,7 @@ import styles from './card.scss';
 * @slot header - (Optional) Content in the card's header
 * @slot footer - (Optional) Content in the card's footer
 */
-export class cre8Card extends Cre8Element {
+export class Cre8Card extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -68,13 +68,13 @@ export class cre8Card extends Cre8Element {
 }
 
 if (customElements.get('cre8-card') === undefined) {
-    customElements.define('cre8-card', cre8Card);
+    customElements.define('cre8-card', Cre8Card);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-card': cre8Card;
+    'cre8-card': Cre8Card;
   }
 }
 
-export default cre8Card;
+export default Cre8Card;

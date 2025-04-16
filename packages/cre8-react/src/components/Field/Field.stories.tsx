@@ -1,13 +1,13 @@
 import React from 'react';
 import type { StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { cre8Field } from '../..';
-import { cre8TextLink } from '../TextLink/TextLink';
+import { Cre8Field } from '../..';
+import { Cre8TextLink } from '../TextLink/TextLink';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-  title: 'cre8 Components/Field',
-  component: cre8Field,
+  title: 'Cre8 Components/Field',
+  component: Cre8Field,
   parameters: {
     status: { type: 'inProgress' },
     actions: {
@@ -17,7 +17,7 @@ export default {
       exclude: new RegExp(`${excludeRegexArray.join('|')}`),
     },
   },
-  render: (args) => <cre8Field {...args}></cre8Field>,
+  render: (args) => <Cre8Field {...args}></Cre8Field>,
   args: {
     placeholder: '',
     fieldNote: 'This is a field note.',
@@ -26,52 +26,52 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8Field> = {
+export const Default: StoryObj<typeof Cre8Field> = {
   args: {
     children: (
       <div slot="fieldNote">
-        Some optional help text or <cre8TextLink>helpful link</cre8TextLink>
+        Some optional help text or <Cre8TextLink>helpful link</Cre8TextLink>
       </div>
     ),
   },
 };
 
-export const Email: StoryObj<typeof cre8Field> = {
+export const Email: StoryObj<typeof Cre8Field> = {
   args: {
     label: 'Email Field',
     type: 'email',
   },
 };
 
-export const Number: StoryObj<typeof cre8Field> = {
+export const Number: StoryObj<typeof Cre8Field> = {
   args: {
     label: 'Number Field',
     type: 'number',
   },
 };
 
-export const Url: StoryObj<typeof cre8Field> = {
+export const Url: StoryObj<typeof Cre8Field> = {
   args: {
     label: 'Url Field',
     type: 'url',
   },
 };
 
-export const Tel: StoryObj<typeof cre8Field> = {
+export const Tel: StoryObj<typeof Cre8Field> = {
   args: {
     label: 'Telephone Field',
     type: 'tel',
   },
 };
 
-export const Password: StoryObj<typeof cre8Field> = {
+export const Password: StoryObj<typeof Cre8Field> = {
   args: {
     label: 'Password Field',
     type: 'password',
   },
 };
 
-export const Date: StoryObj<typeof cre8Field> = {
+export const Date: StoryObj<typeof Cre8Field> = {
   args: {
     label: 'Date Field',
     type: 'date',
@@ -79,7 +79,7 @@ export const Date: StoryObj<typeof cre8Field> = {
   },
 };
 
-export const MaxDate: StoryObj<typeof cre8Field> = {
+export const MaxDate: StoryObj<typeof Cre8Field> = {
   args: {
     type: 'date',
     label: 'Max date should not be 2025-01-01',
@@ -88,14 +88,14 @@ export const MaxDate: StoryObj<typeof cre8Field> = {
   },
 };
 
-export const Required: StoryObj<typeof cre8Field> = {
+export const Required: StoryObj<typeof Cre8Field> = {
   args: {
     label: 'Required Field',
     required: true,
   },
 };
 
-export const RequiredMaxlength: StoryObj<typeof cre8Field> = {
+export const RequiredMaxlength: StoryObj<typeof Cre8Field> = {
   args: {
     label: 'Required Field with Max Length',
     maxlength: '10',
@@ -103,7 +103,7 @@ export const RequiredMaxlength: StoryObj<typeof cre8Field> = {
   },
 };
 
-export const Disabled: StoryObj<typeof cre8Field> = {
+export const Disabled: StoryObj<typeof Cre8Field> = {
   args: {
     label: 'Disabled Field',
     value: 'Field value',
@@ -111,7 +111,7 @@ export const Disabled: StoryObj<typeof cre8Field> = {
   },
 };
 
-export const ReadOnly: StoryObj<typeof cre8Field> = {
+export const ReadOnly: StoryObj<typeof Cre8Field> = {
   args: {
     label: 'Readonly Field',
     value: 'Field value',
@@ -119,14 +119,14 @@ export const ReadOnly: StoryObj<typeof cre8Field> = {
   },
 };
 
-export const Fieldnote: StoryObj<typeof cre8Field> = {
+export const Fieldnote: StoryObj<typeof Cre8Field> = {
   args: {
     label: 'Field with a Field Note',
     fieldNote: 'This is a field note.',
   },
 };
 
-export const Error: StoryObj<typeof cre8Field> = {
+export const Error: StoryObj<typeof Cre8Field> = {
   args: {
     label: 'Field with Error Message and Field Note',
     isError: true,
@@ -135,7 +135,7 @@ export const Error: StoryObj<typeof cre8Field> = {
   },
 };
 
-export const Success: StoryObj<typeof cre8Field> = {
+export const Success: StoryObj<typeof Cre8Field> = {
   args: {
     label: 'Field with Success Message',
     isSuccess: true,
@@ -144,7 +144,7 @@ export const Success: StoryObj<typeof cre8Field> = {
   },
 };
 
-export const SingleMessage: StoryObj<typeof cre8Field> = {
+export const SingleMessage: StoryObj<typeof Cre8Field> = {
   args: {
     label: 'Field with Error Message',
     isError: 'true',

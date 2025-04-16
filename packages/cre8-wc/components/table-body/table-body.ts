@@ -6,7 +6,7 @@ import styles from './table-body.scss';
  * @slot - The component content
  */
 
-export class cre8TableBody extends Cre8Element {
+export class Cre8TableBody extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -23,13 +23,13 @@ export class cre8TableBody extends Cre8Element {
 }
 
 if (customElements.get('cre8-table-body') === undefined) {
-    customElements.define('cre8-table-body', cre8TableBody);
+    customElements.define('cre8-table-body', Cre8TableBody);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-table-body': cre8TableBody;
+    'cre8-table-body': Cre8TableBody;
   }
 }
 
-export default cre8TableBody;
+export default Cre8TableBody;

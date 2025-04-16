@@ -3,11 +3,11 @@ import headStyles from '../../cre8-wc/design-tokens/core/scss/theming/head.scss'
 
 import '!!style-loader!css-loader!../../cre8-wc/.storybook/css/styleguide-only.css';
 
-import cignaLegacy from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8/cre8-design-tokens/lib/web/brands/cigna-legacy/css/tokens_cigna-legacy.css';
-import chc from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8/cre8-design-tokens/lib/web/brands/chc/css/tokens_chc.css';
-import evernorth from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8/cre8-design-tokens/lib/web/brands/evernorth/css/tokens_evernorth.css';
-import pbm from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8/cre8-design-tokens/lib/web/brands/pbm/css/tokens_pbm.css';
-import tcg from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8/cre8-design-tokens/lib/web/brands/tcg/css/tokens_tcg.css';
+import cre8legacy from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8_dev/cre8-design-tokens/lib/web/brands/cre8-legacy/css/tokens_cre8-legacy.css';
+import consumer from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8_dev/cre8-design-tokens/lib/web/brands/consumer/css/tokens_consumer.css';
+import cre8 from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8_dev/cre8-design-tokens/lib/web/brands/cre8/css/tokens_cre8.css';
+import blue from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8_dev/cre8-design-tokens/lib/web/brands/blue/css/tokens_blue.css';
+import marketing from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8_dev/cre8-design-tokens/lib/web/brands/marketing/css/tokens_marketing.css';
 
 window.cre8_ICON_URL = './icons/cre8-icons.svg';
 
@@ -49,11 +49,11 @@ document.head.appendChild(headStyleElement);
 export const parameters = {
   cssVariables: {
     files: {
-      'Consumer': chc,
-      'Marketing': tcg,
-      'Legacy': cignaLegacy,
-      'Cre8': evernorth,
-      'Cre8-Legacy': pbm,
+      'Consumer': consumer,
+      'Marketing': marketing,
+      'Cre8Legacy': cre8legacy,
+      'Cre8': cre8,
+      'Blue': blue,
     },
     defaultTheme: 'Evernorth',
   },
@@ -100,7 +100,7 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['Documentation', 'cre8 Components', 'Experimental/Unreleased Components', 'Patterns'],
+      order: ['Documentation', 'Cre8 Components', 'Experimental/Unreleased Components', 'Patterns'],
     },
   },
 };

@@ -1,6 +1,6 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8Pagination as cre8PaginationElement } from '@cre8/cre8-wc/lib/components/pagination/pagination';
+import { createComponent } from '@lit/react';
+import { Cre8Pagination as Cre8PaginationElement } from '@cre8_dev/cre8-wc/lib/components/pagination/pagination';
 
 /**
  * The Pagination component is used to split up a large amount of results by showing only
@@ -41,13 +41,13 @@ import { cre8Pagination as cre8PaginationElement } from '@cre8/cre8-wc/lib/compo
  * via a programmatic selector, e.g. < section id=“results” aria-label="results-section" > or
  * < div role= “group” aria-label=“results” >.
  *
- * @dependency cre8-button, cre8-icon, cre8-pagination-counter
+ * @dependency Cre8-button, Cre8-icon, Cre8-pagination-counter
  * @csspart icon - distinguishes the page buttons from the icon buttons
  */
 
 
-export const cre8Pagination = createComponent({
+export const Cre8Pagination = createComponent({
     react: React,
-    tagName: 'cre8-pagination',
-    elementClass: cre8PaginationElement,
+    tagName: 'Cre8-pagination',
+    elementClass: Cre8PaginationElement,
 });

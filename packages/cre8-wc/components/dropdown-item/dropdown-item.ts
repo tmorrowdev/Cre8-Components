@@ -8,7 +8,7 @@ import styles from './dropdown-item.scss';
  * selectable option or action within the dropdown menu. It can be configured to trigger actions, navigate
  * to links, initiate commands when clicked.
  */
-export class cre8DropdownItem extends Cre8Element {
+export class Cre8DropdownItem extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -30,13 +30,13 @@ export class cre8DropdownItem extends Cre8Element {
 }
 
 if (customElements.get('cre8-dropdown-item') === undefined) {
-    customElements.define('cre8-dropdown-item', cre8DropdownItem);
+    customElements.define('cre8-dropdown-item', Cre8DropdownItem);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-dropdown-item': cre8DropdownItem;
+    'cre8-dropdown-item': Cre8DropdownItem;
   }
 }
 
-export default cre8DropdownItem;
+export default Cre8DropdownItem;

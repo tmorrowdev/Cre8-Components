@@ -1,6 +1,6 @@
 import { ReactiveController } from 'lit';
 import { Cre8FormElement } from '../cre8-form-element';
-import { cre8RadioFieldItem } from '../radio-field-item/radio-field-item';
+import { Cre8RadioFieldItem } from '../radio-field-item/radio-field-item';
 
 type FormElement = Cre8FormElement & { form: HTMLFormElement, name?: string, checked?: boolean };
 
@@ -107,7 +107,7 @@ export class SelectTileRadioController implements ReactiveController {
    */
     removeChecked() {
         const radioFieldItems = this.findAllElementsInSameRadioButtonGroup();
-        radioFieldItems.forEach((element: cre8RadioFieldItem) => {
+        radioFieldItems.forEach((element: Cre8RadioFieldItem) => {
             element.checked = false; /* 1 */
             element.setAttribute('tabindex', '-1'); /* 2 */
         });

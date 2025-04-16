@@ -1,7 +1,7 @@
 import React from 'react';
-import { createComponent, EventName } from '@lit-labs/react';
-import { cre8Tag as cre8TagElement } from '@cre8/cre8-wc/lib/components/tag/tag';
-import { cre8DomEvent } from '../../util/cre8DomEvent';
+import { createComponent, EventName } from '@lit/react';
+import { Cre8Tag as Cre8TagElement } from '@cre8_dev/cre8-wc/lib/components/tag/tag';
+import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 /**
  * The tag component allows you to make selections, filter content, or trigger actions. While buttons are
@@ -16,11 +16,11 @@ import { cre8DomEvent } from '../../util/cre8DomEvent';
  * checkbox tags can be used as an alternative to checkboxes.
  */
 
-export const cre8Tag = createComponent({
+export const Cre8Tag = createComponent({
     react: React,
-    tagName: 'cre8-tag',
-    elementClass: cre8TagElement,
+    tagName: 'Cre8-tag',
+    elementClass: Cre8TagElement,
     events: {
-        onChange: 'input' as EventName<cre8DomEvent<cre8TagElement>>,
+        onChange: 'input' as EventName<Cre8DomEvent<Cre8TagElement>>,
     },
 });

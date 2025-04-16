@@ -7,7 +7,7 @@ import styles from './page-counter.scss';
 /**
  * @slot - The component content
  */
-export class cre8PageCounter extends Cre8Element {
+export class Cre8PageCounter extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -63,7 +63,7 @@ export class cre8PageCounter extends Cre8Element {
 }
 
 if (customElements.get('cre8-page-counter') === undefined) {
-    customElements.define('cre8-page-counter', cre8PageCounter);
+    customElements.define('cre8-page-counter', Cre8PageCounter);
 }
 
-declare global { interface HTMLElementTagNameMap { 'cre8-page-counter': cre8PageCounter; } }
+declare global { interface HTMLElementTagNameMap { 'cre8-page-counter': Cre8PageCounter; } }

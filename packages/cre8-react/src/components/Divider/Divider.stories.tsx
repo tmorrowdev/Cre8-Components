@@ -1,6 +1,6 @@
 import React from 'react';
 import type { StoryObj } from '@storybook/react';
-import { cre8Divider } from '../..';
+import { Cre8Divider } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 interface invertedStyle {
@@ -8,15 +8,15 @@ interface invertedStyle {
 }
 const inverted: invertedStyle = {
     style: {
-        background: 'var(--cre8-color-bg-brand-strong)',
+        background: 'var(--Cre8-color-bg-brand-strong)',
         padding: '20px',
-        color: 'var(--cre8-color-content-knockout)',
+        color: 'var(--Cre8-color-content-knockout)',
     },
 };
 
 export default {
-    title: 'cre8 Components/Divider',
-    component: cre8Divider,
+    title: 'Cre8 Components/Divider',
+    component: Cre8Divider,
     parameters: {
         status: { type: 'inProgress' },
         controls: {
@@ -48,7 +48,7 @@ export const Horizontal: StoryObj<typeof React.JSX> = {
     render: (args) => (
         <React.Fragment>
             <p>Lorem ipsum dolor sit amet</p>
-            <cre8Divider variant={ args.variant } />
+            <Cre8Divider variant={ args.variant } />
             <p>Agam utroque scribentur eos id</p>
         </React.Fragment>
     ),
@@ -62,7 +62,7 @@ export const BrandHorizontal: StoryObj<typeof React.JSX> = {
     render: (args) => (
         <React.Fragment>
             <p>Lorem ipsum dolor sit amet</p>
-            <cre8Divider variant={ args.variant } status={ args.status } />
+            <Cre8Divider variant={ args.variant } status={ args.status } />
             <p>Agam utroque scribentur eos id</p>
         </React.Fragment>
     ),
@@ -77,7 +77,7 @@ export const KnockoutHorizontal : StoryObj<typeof React.JSX> = {
     render: (args) => (
         <div style={ inverted.style }>
             <p>Lorem ipsum dolor sit amet</p>
-            <cre8Divider variant={ args.variant } status={ args.status } />
+            <Cre8Divider variant={ args.variant } status={ args.status } />
             <p>Agam utroque scribentur eos id</p>
         </div>
     ),
@@ -95,7 +95,7 @@ export const HorizontalInFlowContainer: StoryObj<typeof React.JSX> = {
                 ullamcorper, ad sit graece utamur quaerendum. Erant adversarium sea ex. Nostrum fabellas referrentur has
                 in, qui duis omnis dolores ne.
             </p>
-            <cre8Divider variant={ args.variant } />
+            <Cre8Divider variant={ args.variant } />
             <p>
                 Agam utroque scribentur eos id, ex dolore accumsan similique duo, vel cu putant vocent singulis. Habeo
                 aeterno prompta an quo, duo natum maluisset no. Ex sint perpetua eum, mutat voluptaria comprehensam per
@@ -114,7 +114,7 @@ export const Vertical: StoryObj<typeof React.JSX> = {
     render: (args) => (
         <div style={ { display: 'flex' } }>
             <p>Lorem ipsum dolor sit amet</p>
-            <cre8Divider variant={ args.variant } />
+            <Cre8Divider variant={ args.variant } />
             <p>Agam utroque scribentur eos id</p>
         </div>
     ),
@@ -132,7 +132,7 @@ export const VerticalInFlowContainer: StoryObj<typeof React.JSX> = {
                 ullamcorper, ad sit graece utamur quaerendum. Erant adversarium sea ex. Nostrum fabellas referrentur has
                 in, qui duis omnis dolores ne.
             </p>
-            <cre8Divider variant={ args.variant } />
+            <Cre8Divider variant={ args.variant } />
             <p>
                 Agam utroque scribentur eos id, ex dolore accumsan similique duo, vel cu putant vocent singulis. Habeo
                 aeterno prompta an quo, duo natum maluisset no. Ex sint perpetua eum, mutat voluptaria comprehensam per

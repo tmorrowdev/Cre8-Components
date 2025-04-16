@@ -7,7 +7,7 @@ import styles from './tertiary-nav-item.scss';
 /**
  * @slot - The component content
  */
-export class cre8TertiaryNavItem extends Cre8Element {
+export class Cre8TertiaryNavItem extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -33,8 +33,8 @@ export class cre8TertiaryNavItem extends Cre8Element {
     /* 1 */
       const tertiaryNav = this.closest('cre8-tertiary-nav');
       const allTertiaryNavItems = tertiaryNav.shadowRoot.querySelector('slot')
-          .assignedElements({ flatten: false }) as cre8TertiaryNavItem[];
-      allTertiaryNavItems.forEach((item: cre8TertiaryNavItem) => {
+          .assignedElements({ flatten: false }) as Cre8TertiaryNavItem[];
+      allTertiaryNavItems.forEach((item: Cre8TertiaryNavItem) => {
           item.isCurrent = false;
       });
 
@@ -63,9 +63,9 @@ export class cre8TertiaryNavItem extends Cre8Element {
 }
 
 if (customElements.get('cre8-tertiary-nav-item') === undefined) {
-    customElements.define('cre8-tertiary-nav-item', cre8TertiaryNavItem);
+    customElements.define('cre8-tertiary-nav-item', Cre8TertiaryNavItem);
 }
 
-declare global { interface HTMLElementTagNameMap { 'cre8-tertiary-nav-item': cre8TertiaryNavItem; } }
+declare global { interface HTMLElementTagNameMap { 'cre8-tertiary-nav-item': Cre8TertiaryNavItem; } }
 
-export default cre8TertiaryNavItem;
+export default Cre8TertiaryNavItem;

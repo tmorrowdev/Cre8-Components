@@ -1,10 +1,10 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8BreadcrumbsItem as cre8BreadcrumbsItemElement } from '@cre8/cre8-wc/lib/components/breadcrumbs-item/breadcrumbs-item';
+import { createComponent } from '@lit/react';
+import { Cre8BreadcrumbsItem as Cre8BreadcrumbsItemElement } from '@cre8_dev/cre8-wc/lib/components/breadcrumbs-item/breadcrumbs-item';
 
-export const cre8BreadcrumbsItem = createComponent({
+export const Cre8BreadcrumbsItem = createComponent({
     react: React,
-    tagName: 'cre8-breadcrumbs-item',
-    elementClass: cre8BreadcrumbsItemElement,
+    tagName: 'Cre8-breadcrumbs-item',
+    elementClass: Cre8BreadcrumbsItemElement,
 
 });

@@ -3,7 +3,7 @@ import { property, query, queryAssignedElements } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import '../heading/heading';
 import styles from './popover.scss';
-import { cre8Button } from '../button/button';
+import { Cre8Button } from '../button/button';
 
 /**
  * The Popover is for progressive disclosure of relevant content often hidden behind a help or info icon.
@@ -11,7 +11,7 @@ import { cre8Button } from '../button/button';
  * @slot - The component content
  */
 
-export class cre8Popover extends Cre8Element {
+export class Cre8Popover extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -74,25 +74,25 @@ export class cre8Popover extends Cre8Element {
    * Query the popover panel element
    */
   @query('.cre8-c-popover')
-      _cre8Popover: HTMLElement;
+      _Cre8Popover: HTMLElement;
 
   /**
    * Query the popover panel element
    */
   @query('.cre8-c-popover__panel')
-      _cre8PopoverPanel: HTMLElement;
+      _Cre8PopoverPanel: HTMLElement;
 
   /**
    * Query the assigned elements in the trigger slot
    */
   @queryAssignedElements({ slot: 'trigger' })
-      _cre8PopoverTrigger: Array<HTMLElement>;
+      _Cre8PopoverTrigger: Array<HTMLElement>;
 
   /**
    * Query the assigned elements in the footer slot
    */
   @queryAssignedElements({ slot: 'footer' })
-      _cre8PopoverFooter: Array<HTMLElement>;
+      _Cre8PopoverFooter: Array<HTMLElement>;
 
   /**
    * Query the document direction value
@@ -149,11 +149,11 @@ export class cre8Popover extends Cre8Element {
   addAria() {
     /* 1 */
       let popoverTrigger;
-      if (this._cre8PopoverTrigger[0].tagName === 'cre8-BUTTON') {
-          popoverTrigger = this._cre8PopoverTrigger[0] as cre8Button;
+      if (this._Cre8PopoverTrigger[0].tagName === 'cre8-BUTTON') {
+          popoverTrigger = this._Cre8PopoverTrigger[0] as Cre8Button;
           popoverTrigger.buttonAriaExpanded = this.isActive ? this.isActive : false;
       } else {
-          popoverTrigger = this._cre8PopoverTrigger[0];
+          popoverTrigger = this._Cre8PopoverTrigger[0];
           popoverTrigger.setAttribute('aria-expanded', `${this.isActive ? this.isActive : false}`); /* 2 */
           popoverTrigger.setAttribute('type', 'button'); /* 3 */
       }
@@ -165,9 +165,9 @@ export class cre8Popover extends Cre8Element {
   dynamicPosition() {
     // TODO: Temporarily keep eslint complexity as warning. Update during specific story for this rule.
     /* eslint complexity: ["warn", 10] */
-      if (this.isDynamic && this._cre8PopoverPanel) {
+      if (this.isDynamic && this._Cre8PopoverPanel) {
           const body = document.querySelector('body').getBoundingClientRect();
-          const popoverPanel = this._cre8PopoverPanel.getBoundingClientRect();
+          const popoverPanel = this._Cre8PopoverPanel.getBoundingClientRect();
 
       /**
        * If popover panel breaks out the left side of the window, position it to the right
@@ -276,7 +276,7 @@ export class cre8Popover extends Cre8Element {
   }
 
   private _getFocusableElements(): HTMLElement[] {
-      const panelFocusableElements = Array.from(this._cre8PopoverFooter);
+      const panelFocusableElements = Array.from(this._Cre8PopoverFooter);
       return [...panelFocusableElements];
   }
 
@@ -328,8 +328,8 @@ export class cre8Popover extends Cre8Element {
     /* 1 */
       if (this.isActive && !this.isVisibleOnScroll) {
       /* 2 */
-          const popoverPanel = this._cre8PopoverPanel.getBoundingClientRect();
-          const popoverTrigger = this._cre8Popover;
+          const popoverPanel = this._Cre8PopoverPanel.getBoundingClientRect();
+          const popoverTrigger = this._Cre8Popover;
           const popoverHeight = popoverTrigger.clientHeight + popoverPanel.height + popoverPanel.top;
 
           if (popoverHeight < window.innerHeight) {
@@ -389,13 +389,13 @@ export class cre8Popover extends Cre8Element {
 }
 
 if (customElements.get('cre8-popover') === undefined) {
-    customElements.define('cre8-popover', cre8Popover);
+    customElements.define('cre8-popover', Cre8Popover);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-popover': cre8Popover;
+    'cre8-popover': Cre8Popover;
   }
 }
 
-export default cre8Popover;
+export default Cre8Popover;

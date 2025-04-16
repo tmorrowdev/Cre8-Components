@@ -15,7 +15,7 @@ import styles from './progress-steps-item.scss';
  *
  * @slot - The component content
  */
-export class cre8ProgressStepsItem extends Cre8Element {
+export class Cre8ProgressStepsItem extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -74,9 +74,9 @@ export class cre8ProgressStepsItem extends Cre8Element {
 }
 
 if (customElements.get('cre8-progress-steps-item') === undefined) {
-    customElements.define('cre8-progress-steps-item', cre8ProgressStepsItem);
+    customElements.define('cre8-progress-steps-item', Cre8ProgressStepsItem);
 }
 
-declare global { interface HTMLElementTagNameMap { 'cre8-progress-steps-item': cre8ProgressStepsItem; } }
+declare global { interface HTMLElementTagNameMap { 'cre8-progress-steps-item': Cre8ProgressStepsItem; } }
 
-export default cre8ProgressStepsItem;
+export default Cre8ProgressStepsItem;

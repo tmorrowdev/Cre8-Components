@@ -5,7 +5,7 @@ import styles from './grid-item.scss';
 /**
  * @slot - The content of the grid item
  */
-export class cre8GridItem extends Cre8Element {
+export class Cre8GridItem extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -22,13 +22,13 @@ export class cre8GridItem extends Cre8Element {
 }
 
 if (customElements.get('cre8-grid-item') === undefined) {
-    customElements.define('cre8-grid-item', cre8GridItem);
+    customElements.define('cre8-grid-item', Cre8GridItem);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-grid-item': cre8GridItem;
+    'cre8-grid-item': Cre8GridItem;
   }
 }
 
-export default cre8GridItem;
+export default Cre8GridItem;

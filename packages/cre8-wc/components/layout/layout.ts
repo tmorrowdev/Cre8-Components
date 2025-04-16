@@ -6,7 +6,7 @@ import styles from './layout.scss';
 /**
  * @slot - The layout content
  */
-export class cre8Layout extends Cre8Element {
+export class Cre8Layout extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -37,13 +37,13 @@ export class cre8Layout extends Cre8Element {
 }
 
 if (customElements.get('cre8-layout') === undefined) {
-    customElements.define('cre8-layout', cre8Layout);
+    customElements.define('cre8-layout', Cre8Layout);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-layout': cre8Layout;
+    'cre8-layout': Cre8Layout;
   }
 }
 
-export default cre8Layout;
+export default Cre8Layout;

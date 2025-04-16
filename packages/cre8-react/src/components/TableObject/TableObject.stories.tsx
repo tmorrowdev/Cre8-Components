@@ -1,13 +1,13 @@
 import type { StoryObj } from '@storybook/react';
 import React from 'react';
 import { excludeRegexArray } from '../../../.storybook/preview';
-import { cre8Table, cre8TableBody, cre8TableCell, cre8TableHeader, cre8TableHeaderCell, cre8TableObject, cre8TableRow } from '../..';
+import { Cre8Table, Cre8TableBody, Cre8TableCell, Cre8TableHeader, Cre8TableHeaderCell, Cre8TableObject, Cre8TableRow } from '../..';
 import { Fpo as ForPositionOnly } from '../../../.storybook/components/Fpo/Fpo';
 
 
 export default {
-  title: 'cre8 Components/Table/TableObject',
-  component: cre8TableObject,
+  title: 'Cre8 Components/Table/TableObject',
+  component: Cre8TableObject,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -16,48 +16,48 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8TableObject> = { args: {
+export const Default: StoryObj<typeof Cre8TableObject> = { args: {
   children: (
     <>
       <div slot="header">
         <ForPositionOnly>Content above table</ForPositionOnly>
       </div>
-      <cre8Table caption="Example Table">
-        <cre8TableHeader>
-          <cre8TableRow>
-            <cre8TableHeaderCell>Product Name</cre8TableHeaderCell>
-            <cre8TableHeaderCell>Price</cre8TableHeaderCell>
-            <cre8TableHeaderCell>Quantity</cre8TableHeaderCell>
-            <cre8TableHeaderCell>Total</cre8TableHeaderCell>
-          </cre8TableRow>
-        </cre8TableHeader>
-        <cre8TableBody>
-          <cre8TableRow>
-            <cre8TableCell>Product 1</cre8TableCell>
-            <cre8TableCell>$10.00</cre8TableCell>
-            <cre8TableCell>2</cre8TableCell>
-            <cre8TableCell>$20.00</cre8TableCell>
-          </cre8TableRow>
-          <cre8TableRow>
-            <cre8TableCell>Product 2</cre8TableCell>
-            <cre8TableCell>$15.00</cre8TableCell>
-            <cre8TableCell>1</cre8TableCell>
-            <cre8TableCell>$15.00</cre8TableCell>
-          </cre8TableRow>
-          <cre8TableRow>
-            <cre8TableCell>Product 3</cre8TableCell>
-            <cre8TableCell>$20.00</cre8TableCell>
-            <cre8TableCell>3</cre8TableCell>
-            <cre8TableCell>$60.00</cre8TableCell>
-          </cre8TableRow>
-          <cre8TableRow>
-            <cre8TableCell>Product 4</cre8TableCell>
-            <cre8TableCell>$5.00</cre8TableCell>
-            <cre8TableCell>4</cre8TableCell>
-            <cre8TableCell>$20.00</cre8TableCell>
-          </cre8TableRow>
-        </cre8TableBody>
-      </cre8Table>
+      <Cre8Table caption="Example Table">
+        <Cre8TableHeader>
+          <Cre8TableRow>
+            <Cre8TableHeaderCell>Product Name</Cre8TableHeaderCell>
+            <Cre8TableHeaderCell>Price</Cre8TableHeaderCell>
+            <Cre8TableHeaderCell>Quantity</Cre8TableHeaderCell>
+            <Cre8TableHeaderCell>Total</Cre8TableHeaderCell>
+          </Cre8TableRow>
+        </Cre8TableHeader>
+        <Cre8TableBody>
+          <Cre8TableRow>
+            <Cre8TableCell>Product 1</Cre8TableCell>
+            <Cre8TableCell>$10.00</Cre8TableCell>
+            <Cre8TableCell>2</Cre8TableCell>
+            <Cre8TableCell>$20.00</Cre8TableCell>
+          </Cre8TableRow>
+          <Cre8TableRow>
+            <Cre8TableCell>Product 2</Cre8TableCell>
+            <Cre8TableCell>$15.00</Cre8TableCell>
+            <Cre8TableCell>1</Cre8TableCell>
+            <Cre8TableCell>$15.00</Cre8TableCell>
+          </Cre8TableRow>
+          <Cre8TableRow>
+            <Cre8TableCell>Product 3</Cre8TableCell>
+            <Cre8TableCell>$20.00</Cre8TableCell>
+            <Cre8TableCell>3</Cre8TableCell>
+            <Cre8TableCell>$60.00</Cre8TableCell>
+          </Cre8TableRow>
+          <Cre8TableRow>
+            <Cre8TableCell>Product 4</Cre8TableCell>
+            <Cre8TableCell>$5.00</Cre8TableCell>
+            <Cre8TableCell>4</Cre8TableCell>
+            <Cre8TableCell>$20.00</Cre8TableCell>
+          </Cre8TableRow>
+        </Cre8TableBody>
+      </Cre8Table>
       <div slot="footer">
         <ForPositionOnly>Content below table</ForPositionOnly>
       </div>

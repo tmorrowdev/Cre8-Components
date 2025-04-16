@@ -38,7 +38,7 @@ export enum CalendarModal {
   None = 'none',
 }
 
-export class cre8Calendar extends Cre8Element {
+export class Cre8Calendar extends Cre8Element {
   static get styles() {
     return unsafeCSS(styles.toString());
   }
@@ -221,9 +221,9 @@ export class cre8Calendar extends Cre8Element {
   }
 
   static dateToString(date: Date): string {
-    return `${date.getFullYear()}-${cre8Calendar.formatMonthOrDayIndex(
+    return `${date.getFullYear()}-${Cre8Calendar.formatMonthOrDayIndex(
       date.getMonth()
-    )}-${cre8Calendar.formatDate(date.getDate())}`;
+    )}-${Cre8Calendar.formatDate(date.getDate())}`;
   }
 
   private async updateFocusForKeydown(newDate: Date): Promise<void> {
@@ -231,7 +231,7 @@ export class cre8Calendar extends Cre8Element {
     await this.updateComplete;
 
     const newFocus = this.shadowRoot?.querySelector<HTMLButtonElement>(
-      `button[datetime="${cre8Calendar.dateToString(newDate)}"]`
+      `button[datetime="${Cre8Calendar.dateToString(newDate)}"]`
     );
     newFocus.setAttribute('tabindex', '0');
     newFocus.focus();
@@ -239,7 +239,7 @@ export class cre8Calendar extends Cre8Element {
 
   private _handleCalendarKeyDown(e: KeyboardEvent) {
     const oldFocus = this.shadowRoot?.querySelector<HTMLButtonElement>(
-      `button[datetime="${cre8Calendar.dateToString(this.currentDate)}"]`
+      `button[datetime="${Cre8Calendar.dateToString(this.currentDate)}"]`
     );
     if (e.key === 'ArrowUp') {
       const newDate = new Date(
@@ -376,7 +376,7 @@ export class cre8Calendar extends Cre8Element {
       return html` <td>
         <button
           class="cre8-c-calendar__day-button cre8-c-calendar__different-month"
-          datetime="${cre8Calendar.dateToString(priorMonthDay)}"
+          datetime="${Cre8Calendar.dateToString(priorMonthDay)}"
           ?data-today="${isToday}"
           ?data-selected="${isSelected}"
           tabindex="-1"
@@ -386,9 +386,9 @@ export class cre8Calendar extends Cre8Element {
             month: 'long',
             day: 'numeric',
           }).format(
-            new Date(`${cre8Calendar.dateToString(priorMonthDay)}T00:00`)
+            new Date(`${Cre8Calendar.dateToString(priorMonthDay)}T00:00`)
           )}"
-          @click="${() => this.emitSelectedDate(cre8Calendar.dateToString(priorMonthDay))}"
+          @click="${() => this.emitSelectedDate(Cre8Calendar.dateToString(priorMonthDay))}"
         >
           ${new Intl.NumberFormat(this.locale).format(priorMonthDay.getDate())}
         </button>
@@ -422,7 +422,7 @@ export class cre8Calendar extends Cre8Element {
       return html` <td>
         <button
           class="cre8-c-calendar__day-button"
-          datetime="${cre8Calendar.dateToString(current)}"
+          datetime="${Cre8Calendar.dateToString(current)}"
           ?data-today="${isToday}"
           ?data-selected="${isSelected}"
           tabindex="${dayOfTheMonth === this.currentDate.getDate()
@@ -433,8 +433,8 @@ export class cre8Calendar extends Cre8Element {
             year: 'numeric',
             month: 'long',
             day: 'numeric',
-          }).format(new Date(`${cre8Calendar.dateToString(current)}T00:00`))}"
-          @click="${() => this.emitSelectedDate(cre8Calendar.dateToString(current))}"
+          }).format(new Date(`${Cre8Calendar.dateToString(current)}T00:00`))}"
+          @click="${() => this.emitSelectedDate(Cre8Calendar.dateToString(current))}"
         >
           ${new Intl.NumberFormat(this.locale).format(i + 1)}
         </button>
@@ -495,7 +495,7 @@ export class cre8Calendar extends Cre8Element {
       return html` <td>
         <button
           class="cre8-c-calendar__day-button cre8-c-calendar__different-month"
-          datetime="${cre8Calendar.dateToString(nextMonthDay)}"
+          datetime="${Cre8Calendar.dateToString(nextMonthDay)}"
           ?data-today="${isToday}"
           ?data-selected="${isSelected}"
           tabindex="-1"
@@ -505,9 +505,9 @@ export class cre8Calendar extends Cre8Element {
             month: 'long',
             day: 'numeric',
           }).format(
-            new Date(`${cre8Calendar.dateToString(nextMonthDay)}T00:00`)
+            new Date(`${Cre8Calendar.dateToString(nextMonthDay)}T00:00`)
           )}"
-          @click="${() => this.emitSelectedDate(cre8Calendar.dateToString(nextMonthDay))}"
+          @click="${() => this.emitSelectedDate(Cre8Calendar.dateToString(nextMonthDay))}"
         >
           ${new Intl.NumberFormat(this.locale).format(nextMonthDay.getDate())}
         </button>
@@ -539,7 +539,7 @@ export class cre8Calendar extends Cre8Element {
                       variant="secondary"
                       size="sm"
                       @click="${() => this.emitSelectedDate(
-                          cre8Calendar.dateToString(this.dateConfig.today)
+                          Cre8Calendar.dateToString(this.dateConfig.today)
                         )}"
                     ></cre8-button>
                     <cre8-button
@@ -547,7 +547,7 @@ export class cre8Calendar extends Cre8Element {
                       variant="secondary"
                       size="sm"
                       @click="${() => this.emitSelectedDate(
-                          cre8Calendar.dateToString(
+                          Cre8Calendar.dateToString(
                             new Date(
                               this.dateConfig.today.setDate(
                                 this.dateConfig.today.getDate() + 1
@@ -561,7 +561,7 @@ export class cre8Calendar extends Cre8Element {
                       variant="secondary"
                       size="sm"
                       @click="${() => this.emitSelectedDate(
-                          cre8Calendar.dateToString(
+                          Cre8Calendar.dateToString(
                             new Date(
                               this.dateConfig.today.setDate(
                                 this.dateConfig.today.getDate() + 2
@@ -600,11 +600,11 @@ export class cre8Calendar extends Cre8Element {
 }
 
 if (customElements.get('cre8-calendar') === undefined) {
-  customElements.define('cre8-calendar', cre8Calendar);
+  customElements.define('cre8-calendar', Cre8Calendar);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-calendar': cre8Calendar;
+    'cre8-calendar': Cre8Calendar;
   }
 }

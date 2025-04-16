@@ -1,6 +1,6 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8ProgressMeter as cre8ProgressMeterElement } from '@cre8/cre8-wc/lib/components/progress-meter/progress-meter';
+import { createComponent } from '@lit/react';
+import { Cre8ProgressMeter as Cre8ProgressMeterElement } from '@cre8_dev/cre8-wc/lib/components/progress-meter/progress-meter';
 
 /**
  * A progress meter provides feedback that the system is working and gives the user an indication of how much time they will wait.
@@ -10,9 +10,9 @@ import { cre8ProgressMeter as cre8ProgressMeterElement } from '@cre8/cre8-wc/lib
  * 1. Select a background from the “Surface” dropdown
  * 2. Select completion amount from the “Progress” dropdown
  */
-export const cre8ProgressMeter = createComponent({
+export const Cre8ProgressMeter = createComponent({
     react: React,
-    tagName: 'cre8-progress-meter',
-    elementClass: cre8ProgressMeterElement,
+    tagName: 'Cre8-progress-meter',
+    elementClass: Cre8ProgressMeterElement,
 
 });

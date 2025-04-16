@@ -2,11 +2,11 @@ import type { StoryObj } from '@storybook/react';
 import { withActions } from '@storybook/addon-actions/decorator';
 import React from 'react';
 import { excludeRegexArray } from '../../../.storybook/preview';
-import { cre8Pagination } from '../..';
+import { Cre8Pagination } from '../..';
 
 export default {
-  title: 'cre8 Components/Pagination',
-  component: cre8Pagination,
+  title: 'Cre8 Components/Pagination',
+  component: Cre8Pagination,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -37,15 +37,15 @@ export default {
   }
 };
 
-export const Default: StoryObj<typeof cre8Pagination> = { args: {} };
-export const Compact: StoryObj<typeof cre8Pagination> = { args: {
+export const Default: StoryObj<typeof Cre8Pagination> = { args: {} };
+export const Compact: StoryObj<typeof Cre8Pagination> = { args: {
   display: 'compact'
 } };
 
-export const IconOnly: StoryObj<typeof cre8Pagination> = { args: {
+export const IconOnly: StoryObj<typeof Cre8Pagination> = { args: {
   display: 'icon-only'
 } };
-export const HideLastAndFirstButtons: StoryObj<typeof cre8Pagination> = { args: {
+export const HideLastAndFirstButtons: StoryObj<typeof Cre8Pagination> = { args: {
   display: 'default',
   hideLastAndFirstButtons: true
 } };

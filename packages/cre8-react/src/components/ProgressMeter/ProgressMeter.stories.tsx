@@ -1,10 +1,10 @@
 import type { StoryObj } from '@storybook/react';
 import { excludeRegexArray } from '../../../.storybook/preview';
-import { cre8ProgressMeter } from '../..';
+import { Cre8ProgressMeter } from '../..';
 
 export default {
-  title: 'cre8 Components/Progress Meter',
-  component: cre8ProgressMeter,
+  title: 'Cre8 Components/Progress Meter',
+  component: Cre8ProgressMeter,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -13,21 +13,21 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8ProgressMeter> = {
+export const Default: StoryObj<typeof Cre8ProgressMeter> = {
   args: {
     label: 'Default progress label',
     value: 50,
   },
 };
 
-export const Empty: StoryObj<typeof cre8ProgressMeter> = {
+export const Empty: StoryObj<typeof Cre8ProgressMeter> = {
   args: {
     label: 'Empty progress label',
     value: 0,
   },
 };
 
-export const NotStrong: StoryObj<typeof cre8ProgressMeter> = {
+export const NotStrong: StoryObj<typeof Cre8ProgressMeter> = {
   args: {
     label: 'Default progress label',
     value: 25,
@@ -35,7 +35,7 @@ export const NotStrong: StoryObj<typeof cre8ProgressMeter> = {
   },
 };
 
-export const Weak: StoryObj<typeof cre8ProgressMeter> = {
+export const Weak: StoryObj<typeof Cre8ProgressMeter> = {
   args: {
     label: 'Weak progress label',
     value: 50,
@@ -43,7 +43,7 @@ export const Weak: StoryObj<typeof cre8ProgressMeter> = {
   },
 };
 
-export const Good: StoryObj<typeof cre8ProgressMeter> = {
+export const Good: StoryObj<typeof Cre8ProgressMeter> = {
   args: {
     label: 'Default progress label',
     value: 75,
@@ -51,7 +51,7 @@ export const Good: StoryObj<typeof cre8ProgressMeter> = {
   },
 };
 
-export const Excellent: StoryObj<typeof cre8ProgressMeter> = {
+export const Excellent: StoryObj<typeof Cre8ProgressMeter> = {
   args: {
     label: 'Default progress label',
     value: 100,

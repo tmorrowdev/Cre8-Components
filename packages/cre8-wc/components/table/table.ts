@@ -7,7 +7,7 @@ import styles from './table.scss';
  * @slot - The component content
  */
 
-export class cre8Table extends Cre8Element {
+export class Cre8Table extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -69,13 +69,13 @@ export class cre8Table extends Cre8Element {
 }
 
 if (customElements.get('cre8-table') === undefined) {
-    customElements.define('cre8-table', cre8Table);
+    customElements.define('cre8-table', Cre8Table);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-table': cre8Table;
+    'cre8-table': Cre8Table;
   }
 }
 
-export default cre8Table;
+export default Cre8Table;

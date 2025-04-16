@@ -1,6 +1,6 @@
 import { html, nothing, unsafeCSS } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
-import svgCaretDown from '@cre8/cre8-icons/lib/icons/System/Filled/Caret Down.svg?raw';
+import svgCaretDown from '@Cre8/cre8-icons/lib/icons/System/Filled/Caret Down.svg?raw';
 import { Cre8Element } from '../cre8-element';
 import styles from './dropdown.scss';
 
@@ -8,7 +8,7 @@ import styles from './dropdown.scss';
  * The Dropdown menu itself is a container that can host multiple interactive items, commonly formatted as a list
  */
 
-export class cre8Dropdown extends Cre8Element {
+export class Cre8Dropdown extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -106,12 +106,12 @@ export class cre8Dropdown extends Cre8Element {
 }
 
 if (customElements.get('cre8-dropdown') === undefined) {
-    customElements.define('cre8-dropdown', cre8Dropdown);
+    customElements.define('cre8-dropdown', Cre8Dropdown);
 }
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-dropdown': cre8Dropdown;
+    'cre8-dropdown': Cre8Dropdown;
   }
 }
 
-export default cre8Dropdown;
+export default Cre8Dropdown;

@@ -12,7 +12,7 @@ import styles from './radio-field-item.scss';
      * choose one, none or many options, use Checkbox instead.
      */
 
-export class cre8RadioFieldItem extends Cre8FormElement {
+export class Cre8RadioFieldItem extends Cre8FormElement {
     type = 'radio';
 
     static get styles() {
@@ -154,7 +154,7 @@ export class cre8RadioFieldItem extends Cre8FormElement {
     /**
      * Reset the radio field items tab indeces
      */
-    resetTabIndeces(radioFieldItems: cre8RadioFieldItem[]) {
+    resetTabIndeces(radioFieldItems: Cre8RadioFieldItem[]) {
         radioFieldItems.forEach((element: HTMLElement) => {
             element.shadowRoot.querySelector('.cre8-c-radio-field-item__input').setAttribute('tabindex', '0');
         });
@@ -169,7 +169,7 @@ export class cre8RadioFieldItem extends Cre8FormElement {
         if (this.parentNode) {
         /* 1 */
             const radioFieldItems = this.parentNode.querySelectorAll('cre8-radio-field-item');
-            radioFieldItems.forEach((element: cre8RadioFieldItem) => {
+            radioFieldItems.forEach((element: Cre8RadioFieldItem) => {
                 element.checked = false;
                 element.shadowRoot.querySelector('.cre8-c-radio-field-item__input').setAttribute('tabindex', '-1');
                 element.resetField(); /* 2 */
@@ -322,13 +322,13 @@ export class cre8RadioFieldItem extends Cre8FormElement {
 }
 
 if (customElements.get('cre8-radio-field-item') === undefined) {
-    customElements.define('cre8-radio-field-item', cre8RadioFieldItem);
+    customElements.define('cre8-radio-field-item', Cre8RadioFieldItem);
 }
 
 declare global {
     interface HTMLElementTagNameMap {
-        'cre8-radio-field-item': cre8RadioFieldItem;
+        'cre8-radio-field-item': Cre8RadioFieldItem;
     }
 }
 
-export default cre8RadioFieldItem;
+export default Cre8RadioFieldItem;

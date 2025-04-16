@@ -4,7 +4,7 @@ import { property, query } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import '../icon/icon';
 import '../field-note/field-note';
-import svgCheck from '@cre8/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
+import svgCheck from '@Cre8/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
 import styles from './checkbox-field-item.scss';
 import { Cre8FormElement } from '../cre8-form-element';
 
@@ -30,7 +30,7 @@ import { Cre8FormElement } from '../cre8-form-element';
  * - Always include a label written in sentence case.
  * - Avoid using the read-only and disabled states as much as possible.
  */
-export class cre8CheckboxFieldItem extends Cre8FormElement {
+export class Cre8CheckboxFieldItem extends Cre8FormElement {
     readonly type = 'checkbox';
 
     static get styles() {
@@ -342,13 +342,13 @@ export class cre8CheckboxFieldItem extends Cre8FormElement {
 }
 
 if (customElements.get('cre8-checkbox-field-item') === undefined) {
-    customElements.define('cre8-checkbox-field-item', cre8CheckboxFieldItem);
+    customElements.define('cre8-checkbox-field-item', Cre8CheckboxFieldItem);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-checkbox-field-item': cre8CheckboxFieldItem;
+    'cre8-checkbox-field-item': Cre8CheckboxFieldItem;
   }
 }
 
-export default cre8CheckboxFieldItem;
+export default Cre8CheckboxFieldItem;

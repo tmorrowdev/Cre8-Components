@@ -1,13 +1,13 @@
-import svgCaretUp from '@cre8/cre8-icons/lib/icons/System/Regular/Caret Up.svg?raw';
+import svgCaretUp from '@Cre8/cre8-icons/lib/icons/System/Regular/Caret Up.svg?raw';
 import { html, unsafeCSS } from 'lit';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon';
 import styles from './breadcrumbs-item.scss';
 
 /**
- * @slot - The component content, the expected slotted content is a cre8 Link or a String for the "terminal node"
+ * @slot - The component content, the expected slotted content is a Cre8 Link or a String for the "terminal node"
  */
-export class cre8BreadcrumbsItem extends Cre8Element {
+export class Cre8BreadcrumbsItem extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -42,13 +42,13 @@ export class cre8BreadcrumbsItem extends Cre8Element {
 }
 
 if (customElements.get('cre8-breadcrumbs-item') === undefined) {
-    customElements.define('cre8-breadcrumbs-item', cre8BreadcrumbsItem);
+    customElements.define('cre8-breadcrumbs-item', Cre8BreadcrumbsItem);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-breadcrumbs-item': cre8BreadcrumbsItem;
+    'cre8-breadcrumbs-item': Cre8BreadcrumbsItem;
   }
 }
 
-export default cre8BreadcrumbsItem;
+export default Cre8BreadcrumbsItem;

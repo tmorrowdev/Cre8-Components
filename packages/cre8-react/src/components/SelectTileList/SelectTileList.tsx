@@ -1,10 +1,10 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8SelectTileList as cre8SelectTileListElement } from '@cre8/cre8-wc/lib/components/select-tile-list/select-tile-list';
+import { createComponent } from '@lit/react';
+import { Cre8SelectTileList as Cre8SelectTileListElement } from '@cre8_dev/cre8-wc/lib/components/select-tile-list/select-tile-list';
 
-export const cre8SelectTileList = createComponent({
+export const Cre8SelectTileList = createComponent({
     react: React,
-    tagName: 'cre8-select-tile-list',
-    elementClass: cre8SelectTileListElement,
+    tagName: 'Cre8-select-tile-list',
+    elementClass: Cre8SelectTileListElement,
 
 });

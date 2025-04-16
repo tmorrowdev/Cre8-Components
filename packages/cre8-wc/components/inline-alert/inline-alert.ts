@@ -1,8 +1,8 @@
-import svgWarningFilled from '@cre8/cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
-import svgCheckCircle from '@cre8/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
-import svgInfoFilled from '@cre8/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
-import svgErrorFilled from '@cre8/cre8-icons/lib/icons/System/Filled/Error.svg?raw';
-import svgHelpFilled from '@cre8/cre8-icons/lib/icons/System/Filled/Help.svg?raw';
+import svgWarningFilled from '@Cre8/cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
+import svgCheckCircle from '@Cre8/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
+import svgInfoFilled from '@Cre8/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
+import svgErrorFilled from '@Cre8/cre8-icons/lib/icons/System/Filled/Error.svg?raw';
+import svgHelpFilled from '@Cre8/cre8-icons/lib/icons/System/Filled/Help.svg?raw';
 import { html, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
@@ -17,7 +17,7 @@ import '../icon/icon';
  *
  * @slot - The component content
  */
-export class cre8InlineAlert extends Cre8Element {
+export class Cre8InlineAlert extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -144,13 +144,13 @@ export class cre8InlineAlert extends Cre8Element {
 }
 
 if (customElements.get('cre8-inline-alert') === undefined) {
-    customElements.define('cre8-inline-alert', cre8InlineAlert);
+    customElements.define('cre8-inline-alert', Cre8InlineAlert);
 }
 
 declare global {
     interface HTMLElementTagNameMap {
-        'cre8-inline-alert': cre8InlineAlert;
+        'cre8-inline-alert': Cre8InlineAlert;
     }
 }
 
-export default cre8InlineAlert;
+export default Cre8InlineAlert;

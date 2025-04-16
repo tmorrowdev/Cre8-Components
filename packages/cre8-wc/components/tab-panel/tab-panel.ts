@@ -7,7 +7,7 @@ import styles from './tab-panel.scss';
  * @slot - The component content
  */
 
-export class cre8TabPanel extends Cre8Element {
+export class Cre8TabPanel extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -36,7 +36,7 @@ export class cre8TabPanel extends Cre8Element {
    * Query the tab panel element
    */
   @query('.cre8-c-tab-panel')
-      _cre8TabPanel: HTMLElement;
+      _Cre8TabPanel: HTMLElement;
 
   /**
    * First updated
@@ -45,7 +45,7 @@ export class cre8TabPanel extends Cre8Element {
   firstUpdated() {
     /* 1 */
       if (!this.skipFocusOnPanel) {
-          this._cre8TabPanel.setAttribute('tabindex', '0');
+          this._Cre8TabPanel.setAttribute('tabindex', '0');
       }
   }
 
@@ -63,13 +63,13 @@ export class cre8TabPanel extends Cre8Element {
 }
 
 if (customElements.get('cre8-tab-panel') === undefined) {
-    customElements.define('cre8-tab-panel', cre8TabPanel);
+    customElements.define('cre8-tab-panel', Cre8TabPanel);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-tab-panel': cre8TabPanel;
+    'cre8-tab-panel': Cre8TabPanel;
   }
 }
 
-export default cre8TabPanel;
+export default Cre8TabPanel;

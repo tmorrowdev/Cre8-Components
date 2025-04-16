@@ -1,11 +1,11 @@
 import type { StoryObj } from '@storybook/react';
 import React from 'react';
 import { excludeRegexArray } from '../../../.storybook/preview';
-import { cre8Button, cre8ButtonGroup } from '../..';
+import { Cre8Button, Cre8ButtonGroup } from '../..';
 
 export default {
   title: 'Cre8 Components/ButtonGroup',
-  component: cre8ButtonGroup,
+  component: Cre8ButtonGroup,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -14,21 +14,21 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8ButtonGroup> = { args: {
+export const Default: StoryObj<typeof Cre8ButtonGroup> = { args: {
   children: (
     <>
-      <cre8Button variant="primary" text="Button"></cre8Button>
-      <cre8Button variant="tertiary" text="Button"></cre8Button>
+      <Cre8Button variant="primary" text="Button"></Cre8Button>
+      <Cre8Button variant="tertiary" text="Button"></Cre8Button>
     </>
   )
 } };
 
-export const ResponsiveFullWidth: StoryObj<typeof cre8ButtonGroup> = { args: {
+export const ResponsiveFullWidth: StoryObj<typeof Cre8ButtonGroup> = { args: {
   orientation: "responsive-full-width",
   children: (
     <>
-      <cre8Button variant="primary" text="Button"></cre8Button>
-      <cre8Button variant="tertiary" text="Button"></cre8Button>
+      <Cre8Button variant="primary" text="Button"></Cre8Button>
+      <Cre8Button variant="tertiary" text="Button"></Cre8Button>
     </>
   )
 } };

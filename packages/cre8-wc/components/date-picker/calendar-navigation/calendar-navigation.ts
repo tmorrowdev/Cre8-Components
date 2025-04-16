@@ -7,7 +7,7 @@ import styles from './calendar-navigation.scss';
 import '../../button/button';
 import '../../icon/icon';
 
-export class cre8CalendarNavigation extends Cre8Element {
+export class Cre8CalendarNavigation extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -110,13 +110,13 @@ export class cre8CalendarNavigation extends Cre8Element {
 }
 
 if (customElements.get('cre8-calendar-navigation') === undefined) {
-    customElements.define('cre8-calendar-navigation', cre8CalendarNavigation);
+    customElements.define('cre8-calendar-navigation', Cre8CalendarNavigation);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-calendar-navigation': cre8CalendarNavigation;
+    'cre8-calendar-navigation': Cre8CalendarNavigation;
   }
 }
 
-export default cre8CalendarNavigation;
+export default Cre8CalendarNavigation;

@@ -4,8 +4,8 @@ import {
 } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { Cre8Element } from '../cre8-element';
-import { cre8TabPanel } from '../tab-panel/tab-panel';
-import { cre8Tab } from '../tab/tab';
+import { Cre8TabPanel } from '../tab-panel/tab-panel';
+import { Cre8Tab } from '../tab/tab';
 import styles from './tabs.scss';
 
 let tabId = 1;
@@ -38,7 +38,7 @@ let tabId = 1;
  * @slot panel - Container for each `cre8-tab-panel` content item
  */
 
-export class cre8Tabs extends Cre8Element {
+export class Cre8Tabs extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -80,7 +80,7 @@ export class cre8Tabs extends Cre8Element {
      * _*This property is dynamically set_
      */
     @state()
-        activeTab?: cre8Tab;
+        activeTab?: Cre8Tab;
 
     /**
      * If position from left is greater than 0, set isStart to false. Otherwise set isStart to true.
@@ -104,25 +104,25 @@ export class cre8Tabs extends Cre8Element {
      * Query all the tab items
      */
     @queryAssignedElements()
-        _cre8TabItems: Array<cre8Tab>;
+        _Cre8TabItems: Array<Cre8Tab>;
 
     /**
      * Query all the tab panels
      */
     @queryAssignedElements({ slot: 'panel' })
-        _cre8TabPanels: Array<cre8TabPanel>;
+        _Cre8TabPanels: Array<Cre8TabPanel>;
 
     /**
      * Query the tabs header element
      */
     @query('.cre8-c-tabs__header')
-        _cre8TabsHeader: HTMLElement;
+        _Cre8TabsHeader: HTMLElement;
 
     /**
      * Query the tabs header list element
      */
     @query('.cre8-c-tabs__list')
-        _cre8TabsHeaderList: HTMLElement;
+        _Cre8TabsHeaderList: HTMLElement;
 
     /**
      * Query the document direction value
@@ -183,7 +183,7 @@ export class cre8Tabs extends Cre8Element {
         await this.updateComplete;
 
         /* 2 */
-        this.activeTab = this._cre8TabItems[this.activeIndex] || this._cre8TabItems[0];
+        this.activeTab = this._Cre8TabItems[this.activeIndex] || this._Cre8TabItems[0];
         this.setActiveTab();
 
         /* 3 */
@@ -209,7 +209,7 @@ export class cre8Tabs extends Cre8Element {
                     this.removePreviousActiveTab(); /* 1 */
                 }
 
-                this.activeTab = this._cre8TabItems[this.activeIndex];
+                this.activeTab = this._Cre8TabItems[this.activeIndex];
                 this.setActiveTab(); /* 2 */
             }
         });
@@ -243,12 +243,12 @@ export class cre8Tabs extends Cre8Element {
      */
     setIsStart() {
         if (this.isRTL) {
-            if (this._cre8TabsHeaderList.scrollLeft > 0) {
+            if (this._Cre8TabsHeaderList.scrollLeft > 0) {
                 this.isStart = true;
             } else {
                 this.isStart = false;
             }
-        } else if (this._cre8TabsHeaderList.scrollLeft > 0) {
+        } else if (this._Cre8TabsHeaderList.scrollLeft > 0) {
             this.isStart = false;
         } else {
             this.isStart = true;
@@ -274,7 +274,7 @@ export class cre8Tabs extends Cre8Element {
      * than or equal to the window inner width or document client width
      */
     isInViewport() {
-        const lastChild = this._cre8TabItems[this._cre8TabItems.length - 1];
+        const lastChild = this._Cre8TabItems[this._Cre8TabItems.length - 1];
         const tabElement = lastChild.shadowRoot?.querySelector('.cre8-c-tab');
         if (!tabElement) {
             return false; // Return false if the tab element is not found
@@ -291,7 +291,7 @@ export class cre8Tabs extends Cre8Element {
      */
     setTabVariant() {
         if (this.size === 'sm') {
-            this._cre8TabItems.forEach((tab: cre8Tab) => {
+            this._Cre8TabItems.forEach((tab: Cre8Tab) => {
                 tab.size = 'sm';
             });
         }
@@ -304,7 +304,7 @@ export class cre8Tabs extends Cre8Element {
      * 3. Set the index and id on the tab-panel to match the tab.
      */
     setTabAttributes() {
-        this._cre8TabItems.forEach((tab, index) => {
+        this._Cre8TabItems.forEach((tab, index) => {
             /* 1 */
             tab.index = index;
 
@@ -315,7 +315,7 @@ export class cre8Tabs extends Cre8Element {
 
 
             /* 3 */
-            const tabPanel = this._cre8TabPanels[index];
+            const tabPanel = this._Cre8TabPanels[index];
             tabPanel.index = index;
         });
     }
@@ -330,7 +330,7 @@ export class cre8Tabs extends Cre8Element {
         this.activeTab.isActive = true;
 
         /* 2 */
-        const activeTabPanel = this._cre8TabPanels.find((tabPanel) => tabPanel.index === this.activeTab.index);
+        const activeTabPanel = this._Cre8TabPanels.find((tabPanel) => tabPanel.index === this.activeTab.index);
         if (activeTabPanel) {
             activeTabPanel.isActive = true;
         }
@@ -355,15 +355,15 @@ export class cre8Tabs extends Cre8Element {
         const { target } = event;
 
         /* 1 */
-        if (this._cre8TabItems.includes(target as cre8Tab)) {
+        if (this._Cre8TabItems.includes(target as Cre8Tab)) {
             /* 2 */
             if (this.activeTab) {
                 this.removePreviousActiveTab();
             }
 
             /* 3 */
-            this.activeTab = target as cre8Tab;
-            const activeIndex = this._cre8TabItems.findIndex((tab) => tab === this.activeTab);
+            this.activeTab = target as Cre8Tab;
+            const activeIndex = this._Cre8TabItems.findIndex((tab) => tab === this.activeTab);
             this.activeIndex = activeIndex;
             this.setActiveTab();
 
@@ -385,7 +385,7 @@ export class cre8Tabs extends Cre8Element {
     handleKeydown(event: KeyboardEvent) {
         /* 1 */
         const { target } = event;
-        const focused = document.activeElement as cre8Tab;
+        const focused = document.activeElement as Cre8Tab;
         if (!focused.matches('cre8-tab')) {
             return;
         }
@@ -393,22 +393,22 @@ export class cre8Tabs extends Cre8Element {
             /* 2 */
             case 'ArrowRight':
                 event.preventDefault();
-                this.setSelectedToNextTab(target as cre8Tab);
+                this.setSelectedToNextTab(target as Cre8Tab);
                 break;
             /* 3 */
             case 'ArrowLeft':
                 event.preventDefault();
-                this.setSelectedToPreviousTab(target as cre8Tab);
+                this.setSelectedToPreviousTab(target as Cre8Tab);
                 break;
             /* 4 */
             case 'Home':
                 event.preventDefault();
-                this.setSelectedToNextTab(this._cre8TabItems[this._cre8TabItems.length - 1]);
+                this.setSelectedToNextTab(this._Cre8TabItems[this._Cre8TabItems.length - 1]);
                 break;
             /* 5 */
             case 'End':
                 event.preventDefault();
-                this.setSelectedToPreviousTab(this._cre8TabItems[0]);
+                this.setSelectedToPreviousTab(this._Cre8TabItems[0]);
                 break;
             /* 6 */
             case 'Escape':
@@ -427,20 +427,20 @@ export class cre8Tabs extends Cre8Element {
      * 4. Emit custom event.
      * @fires tabChange
      */
-    setSelectedToPreviousTab(currentTab: cre8Tab) {
+    setSelectedToPreviousTab(currentTab: Cre8Tab) {
         /* 1 */
         const activeIndex = currentTab.index;
         this.removePreviousActiveTab();
 
         /* 2 */
-        const tabListLength = this._cre8TabItems.length - 1;
+        const tabListLength = this._Cre8TabItems.length - 1;
         if (activeIndex === 0) {
             this.activeIndex = tabListLength;
-            this.activeTab = this._cre8TabItems[tabListLength];
+            this.activeTab = this._Cre8TabItems[tabListLength];
         } else {
             const previousIndex = activeIndex - 1;
             this.activeIndex = previousIndex;
-            this.activeTab = this._cre8TabItems[previousIndex];
+            this.activeTab = this._Cre8TabItems[previousIndex];
         }
 
         /* 3 */
@@ -459,20 +459,20 @@ export class cre8Tabs extends Cre8Element {
      * 4. Emit custom event.
      * @fires tabChange
      */
-    setSelectedToNextTab(currentTab: cre8Tab) {
+    setSelectedToNextTab(currentTab: Cre8Tab) {
         /* 1 */
         const activeIndex = currentTab.index;
         this.removePreviousActiveTab();
 
         /* 2 */
-        const tabListLength = this._cre8TabItems.length - 1;
+        const tabListLength = this._Cre8TabItems.length - 1;
         if (activeIndex === tabListLength) {
             this.activeIndex = 0;
-            this.activeTab = this._cre8TabItems[0];
+            this.activeTab = this._Cre8TabItems[0];
         } else {
             const nextIndex = activeIndex + 1;
             this.activeIndex = nextIndex;
-            this.activeTab = this._cre8TabItems[nextIndex];
+            this.activeTab = this._Cre8TabItems[nextIndex];
         }
 
         /* 3 */
@@ -493,7 +493,7 @@ export class cre8Tabs extends Cre8Element {
         this.activeTab.isActive = false;
 
         /* 2 */
-        const activeTabPanel = this._cre8TabPanels.find((tabPanel) => tabPanel.index === this.activeTab.index);
+        const activeTabPanel = this._Cre8TabPanels.find((tabPanel) => tabPanel.index === this.activeTab.index);
         if (activeTabPanel) {
             activeTabPanel.isActive = false;
         }
@@ -544,13 +544,13 @@ export class cre8Tabs extends Cre8Element {
 }
 
 if (customElements.get('cre8-tabs') === undefined) {
-    customElements.define('cre8-tabs', cre8Tabs);
+    customElements.define('cre8-tabs', Cre8Tabs);
 }
 
 declare global {
     interface HTMLElementTagNameMap {
-        'cre8-tabs': cre8Tabs;
+        'cre8-tabs': Cre8Tabs;
     }
 }
 
-export default cre8Tabs;
+export default Cre8Tabs;

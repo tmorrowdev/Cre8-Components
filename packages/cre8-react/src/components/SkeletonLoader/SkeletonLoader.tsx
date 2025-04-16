@@ -1,6 +1,6 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8SkeletonLoader as cre8SkeletonLoaderElement } from '@cre8/cre8-wc/lib/components/skeleton-loader/skeleton-loader';
+import { createComponent } from '@lit/react';
+import { Cre8SkeletonLoader as Cre8SkeletonLoaderElement } from '@cre8_dev/cre8-wc/lib/components/skeleton-loader/skeleton-loader';
 
 /**
  * Skeleton Loader allows for the ability to create placeholder UI loading states.
@@ -23,8 +23,8 @@ import { cre8SkeletonLoader as cre8SkeletonLoaderElement } from '@cre8/cre8-wc/l
  * this is a decorative element only!
  */
 
-export const cre8SkeletonLoader = createComponent({
+export const Cre8SkeletonLoader = createComponent({
     react: React,
-    tagName: 'cre8-skeleton-loader',
-    elementClass: cre8SkeletonLoaderElement,
+    tagName: 'Cre8-skeleton-loader',
+    elementClass: Cre8SkeletonLoaderElement,
 });

@@ -1,6 +1,6 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8InlineAlert as cre8InlineAlertElement } from '@cre8/cre8-wc/lib/components/inline-alert/inline-alert';
+import { createComponent } from '@lit/react';
+import { Cre8InlineAlert as Cre8InlineAlertElement } from '@cre8_dev/cre8-wc/lib/components/inline-alert/inline-alert';
 
 /**
  * In cases when it is necessary to alert the user but a less strong message that cannot be dismissed is desired, use an in-line contextual alert message as the least "severe" message type. These can be displayed anywhere on the page, but should never cover content.
@@ -8,8 +8,8 @@ import { cre8InlineAlert as cre8InlineAlertElement } from '@cre8/cre8-wc/lib/com
  *
  */
 
-export const cre8InlineAlert = createComponent({
+export const Cre8InlineAlert = createComponent({
     react: React,
-    tagName: 'cre8-inline-alert',
-    elementClass: cre8InlineAlertElement,
+    tagName: 'Cre8-inline-alert',
+    elementClass: Cre8InlineAlertElement,
 });

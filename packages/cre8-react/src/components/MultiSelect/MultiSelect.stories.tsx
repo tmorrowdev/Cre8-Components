@@ -1,12 +1,12 @@
 import type { StoryFn, StoryObj } from '@storybook/react';
 import React from 'react';
 import { excludeRegexArray } from '../../../.storybook/preview';
-import { cre8MultiSelect } from '../..';
+import { Cre8MultiSelect } from '../..';
 import { withActions } from '@storybook/addon-actions/decorator';
 
 export default {
   title: 'In Development/MultiSelect',
-  component: cre8MultiSelect,
+  component: Cre8MultiSelect,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -22,7 +22,7 @@ export default {
     },
     decorators: [withActions],
   },
-  render: (args) => <cre8MultiSelect {...args}></cre8MultiSelect>,
+  render: (args) => <Cre8MultiSelect {...args}></Cre8MultiSelect>,
   args: {
     id: 'selectId',
     label: 'Choose you favorite food:',
@@ -30,14 +30,14 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8MultiSelect> = { args: {} };
+export const Default: StoryObj<typeof Cre8MultiSelect> = { args: {} };
 
 export const Wrapping: StoryFn = (args) => (
   <div style={{ width: '320px' }}>
-    <cre8MultiSelect
+    <Cre8MultiSelect
       items={['Bagel', 'Burger', 'Boat', 'Beefstick', 'Bacon']}
       label="Wrapping"
-    ></cre8MultiSelect>
+    ></Cre8MultiSelect>
   </div>
 );
 

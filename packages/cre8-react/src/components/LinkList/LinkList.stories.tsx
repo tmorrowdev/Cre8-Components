@@ -1,10 +1,10 @@
 import type { StoryObj } from '@storybook/react';
-import { cre8LinkList } from '../..';
+import { Cre8LinkList } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
   title: 'Cre8 Components/LinkList',
-  component: cre8LinkList,
+  component: Cre8LinkList,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -13,4 +13,4 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8LinkList> = { args: {} };
+export const Default: StoryObj<typeof Cre8LinkList> = { args: {} };

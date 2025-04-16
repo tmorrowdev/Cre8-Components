@@ -1,10 +1,10 @@
 import type { StoryObj } from '@storybook/react';
-import { cre8GridItem } from '../..';
+import { Cre8GridItem } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
   title: 'Cre8 Components/GridItem',
-  component: cre8GridItem,
+  component: Cre8GridItem,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -13,4 +13,4 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8GridItem> = { args: {} };
+export const Default: StoryObj<typeof Cre8GridItem> = { args: {} };

@@ -1,10 +1,10 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8CheckboxField as cre8CheckboxFieldElement } from '@cre8/cre8-wc/lib/components/checkbox-field/checkbox-field';
+import { createComponent } from '@lit/react';
+import { Cre8CheckboxField as Cre8CheckboxFieldElement } from '@cre8_dev/cre8-wc/lib/components/checkbox-field/checkbox-field';
 
-export const cre8CheckboxField = createComponent({
+export const Cre8CheckboxField = createComponent({
     react: React,
-    tagName: 'cre8-checkbox-field',
-    elementClass: cre8CheckboxFieldElement,
+    tagName: 'Cre8-checkbox-field',
+    elementClass: Cre8CheckboxFieldElement,
 
 });

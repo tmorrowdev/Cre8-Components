@@ -6,7 +6,7 @@ import styles from './header.scss';
 /**
  * @slot - The header content
  */
-export class cre8Header extends Cre8Element {
+export class Cre8Header extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -52,13 +52,13 @@ export class cre8Header extends Cre8Element {
 }
 
 if (customElements.get('cre8-header') === undefined) {
-    customElements.define('cre8-header', cre8Header);
+    customElements.define('cre8-header', Cre8Header);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-header': cre8Header;
+    'cre8-header': Cre8Header;
   }
 }
 
-export default cre8Header;
+export default Cre8Header;

@@ -6,7 +6,7 @@ import styles from './utility-nav.scss';
 /**
  * @slot - The utility nav items
  */
-export class cre8UtilityNav extends Cre8Element {
+export class Cre8UtilityNav extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -40,13 +40,13 @@ export class cre8UtilityNav extends Cre8Element {
 }
 
 if (customElements.get('cre8-utility-nav') === undefined) {
-    customElements.define('cre8-utility-nav', cre8UtilityNav);
+    customElements.define('cre8-utility-nav', Cre8UtilityNav);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-utility-nav': cre8UtilityNav;
+    'cre8-utility-nav': Cre8UtilityNav;
   }
 }
 
-export default cre8UtilityNav;
+export default Cre8UtilityNav;

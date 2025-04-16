@@ -1,9 +1,9 @@
-import { createComponent } from '@lit-labs/react';
-import { cre8Band as cre8BandElement } from '@cre8/cre8-wc/lib/components/band/band';
+import { createComponent } from '@lit/react';
+import { Cre8Band as Cre8BandElement } from '@cre8_dev/cre8-wc/lib/components/band/band';
 import React from 'react';
 
-export const cre8Band = createComponent({
+export const Cre8Band = createComponent({
     react: React,
-    tagName: 'cre8-band',
-    elementClass: cre8BandElement,
+    tagName: 'Cre8-band',
+    elementClass: Cre8BandElement,
 });

@@ -1,10 +1,10 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8TextLink as cre8TextLinkElement } from '@cre8/cre8-wc/lib/components/text-link/text-link';
+import { createComponent } from '@lit/react';
+import { Cre8TextLink as Cre8TextLinkElement } from '@cre8_dev/cre8-wc/lib/components/text-link/text-link';
 
-export const cre8TextLink = createComponent({
+export const Cre8TextLink = createComponent({
     react: React,
-    tagName: 'cre8-text-link',
-    elementClass: cre8TextLinkElement,
+    tagName: 'Cre8-text-link',
+    elementClass: Cre8TextLinkElement,
 
 });

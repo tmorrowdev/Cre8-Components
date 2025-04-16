@@ -23,7 +23,7 @@ import styles from './progress-steps.scss';
  *
  * @slot - The Progress Steps Item components that represent the steps in the multistep process.
  */
-export class cre8ProgressSteps extends Cre8Element {
+export class Cre8ProgressSteps extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -38,9 +38,9 @@ export class cre8ProgressSteps extends Cre8Element {
 }
 
 if (customElements.get('cre8-progress-steps') === undefined) {
-    customElements.define('cre8-progress-steps', cre8ProgressSteps);
+    customElements.define('cre8-progress-steps', Cre8ProgressSteps);
 }
 
-declare global { interface HTMLElementTagNameMap { 'cre8-progress-steps': cre8ProgressSteps; } }
+declare global { interface HTMLElementTagNameMap { 'cre8-progress-steps': Cre8ProgressSteps; } }
 
-export default cre8ProgressSteps;
+export default Cre8ProgressSteps;
