@@ -1,4 +1,4 @@
-import svgArrowLeft from '@cre8/cre8-icons/lib/icons/System/Regular/Arrow - Left.svg?raw';
+import svgArrowLeft from '@Cre8/cre8-icons/lib/icons/System/Regular/Arrow - Left.svg?raw';
 import {
     html, nothing, unsafeCSS,
 } from 'lit';
@@ -22,7 +22,7 @@ import styles from './link.scss';
  *
 */
 
-export class cre8Link extends Cre8Element {
+export class Cre8Link extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -184,13 +184,13 @@ export class cre8Link extends Cre8Element {
 }
 
 if (customElements.get('cre8-link') === undefined) {
-    customElements.define('cre8-link', cre8Link);
+    customElements.define('cre8-link', Cre8Link);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-link': cre8Link;
+    'cre8-link': Cre8Link;
   }
 }
 
-export default cre8Link;
+export default Cre8Link;

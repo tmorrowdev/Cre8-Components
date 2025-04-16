@@ -6,7 +6,7 @@ import styles from './layout-section.scss';
 /**
  * @slot - The content of the layout section
  */
-export class cre8LayoutSection extends Cre8Element {
+export class Cre8LayoutSection extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -40,13 +40,13 @@ export class cre8LayoutSection extends Cre8Element {
 }
 
 if (customElements.get('cre8-layout-section') === undefined) {
-    customElements.define('cre8-layout-section', cre8LayoutSection);
+    customElements.define('cre8-layout-section', Cre8LayoutSection);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-layout-section': cre8LayoutSection;
+    'cre8-layout-section': Cre8LayoutSection;
   }
 }
 
-export default cre8LayoutSection;
+export default Cre8LayoutSection;

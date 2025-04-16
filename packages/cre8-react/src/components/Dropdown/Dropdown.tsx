@@ -1,17 +1,17 @@
 import React from 'react';
-import { createComponent, EventName } from '@lit-labs/react';
-import { cre8Dropdown as cre8DropdownElement } from '@cre8/cre8-wc/lib/components/dropdown/dropdown';
-import { cre8DropdownItem as cre8DropdownItemElement } from '@cre8/cre8-wc/lib/components/dropdown-item/dropdown-item';
-import { cre8DomEvent } from '../../util/cre8DomEvent';
+import { createComponent, EventName } from '@lit/react';
+import { Cre8Dropdown as Cre8DropdownElement } from '@cre8_dev/cre8-wc/lib/components/dropdown/dropdown';
+import { Cre8DropdownItem as Cre8DropdownItemElement } from '@cre8_dev/cre8-wc/lib/components/dropdown-item/dropdown-item';
+import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 /**
  * The Dropdown menu itself is a container that can host multiple interactive items, commonly formatted as a list
  */
-export const cre8Dropdown = createComponent({
+export const Cre8Dropdown = createComponent({
     react: React,
-    tagName: 'cre8-dropdown',
-    elementClass: cre8DropdownElement,
+    tagName: 'Cre8-dropdown',
+    elementClass: Cre8DropdownElement,
     events: {
-        onDropdownItemSelected: 'dropdown-item-selected' as EventName<cre8DomEvent<cre8DropdownItemElement, cre8DropdownElement>>,
+        onDropdownItemSelected: 'dropdown-item-selected' as EventName<Cre8DomEvent<Cre8DropdownItemElement, Cre8DropdownElement>>,
     },
 });

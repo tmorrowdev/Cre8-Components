@@ -7,17 +7,17 @@ import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { html, nothing, unsafeCSS } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
-import svgCaretDown from '@cre8/cre8-icons/lib/icons/System/Regular/Caret Down.svg?raw';
-import svgClear from '@cre8/cre8-icons/lib/icons/System/Regular/Clear X.svg?raw';
+import svgCaretDown from '@Cre8/cre8-icons/lib/icons/System/Regular/Caret Down.svg?raw';
+import svgClear from '@Cre8/cre8-icons/lib/icons/System/Regular/Clear X.svg?raw';
 import styles from './multi-select.scss';
 import { Cre8Element } from '../cre8-element';
-import '@cre8/cre8-icons';
+import '@Cre8/cre8-icons';
 import '../remove-tag/remove-tag';
 import '../field-note/field-note';
 import '../button/button';
 import '../checkbox-field-item/checkbox-field-item';
 // eslint-disable-next-line import/no-named-as-default
-import cre8CheckboxFieldItem from '../checkbox-field-item/checkbox-field-item';
+import Cre8CheckboxFieldItem from '../checkbox-field-item/checkbox-field-item';
 
 /**
  * Multiselect is used when multiple options can be chosen from a static dropdown
@@ -28,7 +28,7 @@ import cre8CheckboxFieldItem from '../checkbox-field-item/checkbox-field-item';
  * Event `selectedItemsChange` emits whenever a tag is added or remove from the list and the
  * current list after the change is given in the detail.
  */
-export class cre8MultiSelect extends Cre8Element {
+export class Cre8MultiSelect extends Cre8Element {
   static get styles() {
     return unsafeCSS(styles.toString());
   }
@@ -283,7 +283,7 @@ export class cre8MultiSelect extends Cre8Element {
   }
 
   private _handleDropdownItemInput(item: string, e: InputEvent) {
-    const targetCheckbox = e.target as cre8CheckboxFieldItem;
+    const targetCheckbox = e.target as Cre8CheckboxFieldItem;
 
     if (targetCheckbox.checked) {
       this.selectedTagItems = this.selectedTagItems.concat(item);
@@ -467,13 +467,13 @@ export class cre8MultiSelect extends Cre8Element {
 }
 
 if (customElements.get('cre8-multi-select') === undefined) {
-  customElements.define('cre8-multi-select', cre8MultiSelect);
+  customElements.define('cre8-multi-select', Cre8MultiSelect);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-multi-select': cre8MultiSelect;
+    'cre8-multi-select': Cre8MultiSelect;
   }
 }
 
-export default cre8MultiSelect;
+export default Cre8MultiSelect;

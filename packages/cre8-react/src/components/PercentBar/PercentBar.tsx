@@ -1,7 +1,7 @@
 import React from 'react';
-import { createComponent, EventName } from '@lit-labs/react';
-import { cre8PercentBar as cre8PercentBarElement } from '@cre8/cre8-wc/lib/components/percent-bar/percent-bar';
-import { cre8DomEvent } from '../../util/cre8DomEvent';
+import { createComponent, EventName } from '@lit/react';
+import { Cre8PercentBar as Cre8PercentBarElement } from '@cre8_dev/cre8-wc/lib/components/percent-bar/percent-bar';
+import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 
 /**
@@ -10,11 +10,11 @@ import { cre8DomEvent } from '../../util/cre8DomEvent';
  * allows a user save their progress before exiting.
  */
 
-export const cre8PercentBar = createComponent({
+export const Cre8PercentBar = createComponent({
     react: React,
-    tagName: 'cre8-percent-bar',
-    elementClass: cre8PercentBarElement,
+    tagName: 'Cre8-percent-bar',
+    elementClass: Cre8PercentBarElement,
     events: {
-        onLeftActionButtonClick: 'leftActionButtonClick' as EventName<cre8DomEvent<cre8PercentBarElement>>,
+        onLeftActionButtonClick: 'leftActionButtonClick' as EventName<Cre8DomEvent<Cre8PercentBarElement>>,
     },
 });

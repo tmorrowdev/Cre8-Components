@@ -1,4 +1,4 @@
-import svgCheck from '@cre8/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
+import svgCheck from '@Cre8/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
 import { html, unsafeCSS } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
@@ -19,7 +19,7 @@ import styles from './tag.scss';
  *  - **checkbox** It allows for selecting options, It can be toggled on and off.
  */
 
-export class cre8Tag extends Cre8FormElement {
+export class Cre8Tag extends Cre8FormElement {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -136,7 +136,7 @@ export class cre8Tag extends Cre8FormElement {
 /**
 * Reset the radio field tags tab indeces
 */
-  resetTabIndeces(tags: cre8Tag[]) {
+  resetTabIndeces(tags: Cre8Tag[]) {
       tags.forEach((element: HTMLElement) => {
           element.shadowRoot.querySelector('.cre8-c-tag').setAttribute('tabindex', '0');
       });
@@ -151,7 +151,7 @@ export class cre8Tag extends Cre8FormElement {
       if (this.parentNode) {
       /* 1 */
           const tags = this.parentNode.querySelectorAll('cre8-tag');
-          tags.forEach((element: cre8Tag) => {
+          tags.forEach((element: Cre8Tag) => {
               element.isSelected = false;
               element.shadowRoot.querySelector('.cre8-c-tag').setAttribute('tabindex', '-1');
               element.resetField();
@@ -293,13 +293,13 @@ export class cre8Tag extends Cre8FormElement {
 }
 
 if (customElements.get('cre8-tag') === undefined) {
-    customElements.define('cre8-tag', cre8Tag);
+    customElements.define('cre8-tag', Cre8Tag);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-tag': cre8Tag;
+    'cre8-tag': Cre8Tag;
   }
 }
 
-export default cre8Tag;
+export default Cre8Tag;

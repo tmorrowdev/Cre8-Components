@@ -1,10 +1,10 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8Hero as cre8HeroElement } from '@cre8/cre8-wc/lib/components/hero/hero';
+import { createComponent } from '@lit/react';
+import { Cre8Hero as Cre8HeroElement } from '@cre8_dev/cre8-wc/lib/components/hero/hero';
 
-export const cre8Hero = createComponent({
+export const Cre8Hero = createComponent({
     react: React,
-    tagName: 'cre8-hero',
-    elementClass: cre8HeroElement,
+    tagName: 'Cre8-hero',
+    elementClass: Cre8HeroElement,
 
 });

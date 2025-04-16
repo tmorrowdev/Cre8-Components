@@ -8,7 +8,7 @@ import styles from './divider.scss';
  * It often contains a horizontal or vertical line.
 */
 
-export class cre8Divider extends Cre8Element {
+export class Cre8Divider extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -43,13 +43,13 @@ export class cre8Divider extends Cre8Element {
 }
 
 if (customElements.get('cre8-divider') === undefined) {
-    customElements.define('cre8-divider', cre8Divider);
+    customElements.define('cre8-divider', Cre8Divider);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-divider': cre8Divider;
+    'cre8-divider': Cre8Divider;
   }
 }
 
-export default cre8Divider;
+export default Cre8Divider;

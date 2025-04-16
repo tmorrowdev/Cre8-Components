@@ -1,10 +1,10 @@
 import type { StoryObj } from '@storybook/react';
-import { cre8Header } from '../..';
+import { Cre8Header } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
   title: 'Cre8 Components/Header',
-  component: cre8Header,
+  component: Cre8Header,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -13,4 +13,4 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8Header> = { args: {} };
+export const Default: StoryObj<typeof Cre8Header> = { args: {} };

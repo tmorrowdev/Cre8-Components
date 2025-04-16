@@ -20,7 +20,7 @@ import styles from './heading.scss';
      *
      * @slot - The heading text content
      */
-export class cre8Heading extends Cre8Element {
+export class Cre8Heading extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -154,13 +154,13 @@ export class cre8Heading extends Cre8Element {
 
 
 if (customElements.get('cre8-heading') === undefined) {
-    customElements.define('cre8-heading', cre8Heading);
+    customElements.define('cre8-heading', Cre8Heading);
 }
 
 declare global {
     interface HTMLElementTagNameMap {
-        'cre8-heading': cre8Heading;
+        'cre8-heading': Cre8Heading;
     }
 }
 
-export default cre8Heading;
+export default Cre8Heading;

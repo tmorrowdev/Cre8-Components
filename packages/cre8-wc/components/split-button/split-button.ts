@@ -7,7 +7,7 @@ import styles from './split-button.scss';
 /**
  * @slot - The component content , this will consist of the dropdown when the user clicks the caret
  */
-export class cre8SplitButton extends Cre8Element {
+export class Cre8SplitButton extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -80,13 +80,13 @@ export class cre8SplitButton extends Cre8Element {
 }
 
 if (customElements.get('cre8-split-button') === undefined) {
-    customElements.define('cre8-split-button', cre8SplitButton);
+    customElements.define('cre8-split-button', Cre8SplitButton);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-split-button': cre8SplitButton;
+    'cre8-split-button': Cre8SplitButton;
   }
 }
 
-export default cre8SplitButton;
+export default Cre8SplitButton;

@@ -6,7 +6,7 @@ import styles from './vertical-card.scss';
 /**
  * @slot - The component content
  */
-export class cre8VerticalCard extends Cre8Element {
+export class Cre8VerticalCard extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -38,13 +38,13 @@ export class cre8VerticalCard extends Cre8Element {
 }
 
 if (customElements.get('cre8-vertical-card') === undefined) {
-    customElements.define('cre8-vertical-card', cre8VerticalCard);
+    customElements.define('cre8-vertical-card', Cre8VerticalCard);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-vertical-card': cre8VerticalCard;
+    'cre8-vertical-card': Cre8VerticalCard;
   }
 }
 
-export default cre8VerticalCard;
+export default Cre8VerticalCard;

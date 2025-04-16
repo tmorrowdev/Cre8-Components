@@ -1,9 +1,9 @@
-import { createComponent } from '@lit-labs/react';
-import { cre8TertiaryNavItem as cre8TertiaryNavItemElement } from '@cre8/cre8-wc/lib/components/tertiary-nav-item/tertiary-nav-item';
+import { createComponent } from '@lit/react';
+import { Cre8TertiaryNavItem as Cre8TertiaryNavItemElement } from '@cre8_dev/cre8-wc/lib/components/tertiary-nav-item/tertiary-nav-item';
 import React from 'react';
 
-export const cre8TertiaryNavItem = createComponent({
+export const Cre8TertiaryNavItem = createComponent({
     react: React,
-    tagName: 'cre8-tertiary-nav-item',
-    elementClass: cre8TertiaryNavItemElement,
+    tagName: 'Cre8-tertiary-nav-item',
+    elementClass: Cre8TertiaryNavItemElement,
 });

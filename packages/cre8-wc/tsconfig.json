@@ -45,6 +45,7 @@
     "node_modules",
     "typings",
     "components/**/*.stories.ts",
+    "components/**/*.test.ts",
     "dist",
     "lib"
   ]

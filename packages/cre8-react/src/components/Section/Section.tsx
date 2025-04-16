@@ -1,10 +1,10 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8Section as cre8SectionElement } from '@cre8/cre8-wc/lib/components/section/section';
+import { createComponent } from '@lit/react';
+import { Cre8Section as Cre8SectionElement } from '@cre8_dev/cre8-wc/lib/components/section/section';
 
-export const cre8Section = createComponent({
+export const Cre8Section = createComponent({
     react: React,
-    tagName: 'cre8-section',
-    elementClass: cre8SectionElement,
+    tagName: 'Cre8-section',
+    elementClass: Cre8SectionElement,
 
 });

@@ -1,10 +1,10 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8GlobalNavItem as cre8GlobalNavItemElement } from '@cre8/cre8-wc/lib/components/global-nav-item/global-nav-item';
+import { createComponent } from '@lit/react';
+import { Cre8GlobalNavItem as Cre8GlobalNavItemElement } from '@cre8_dev/cre8-wc/lib/components/global-nav-item/global-nav-item';
 
-export const cre8GlobalNavItem = createComponent({
+export const Cre8GlobalNavItem = createComponent({
     react: React,
-    tagName: 'cre8-global-nav-item',
-    elementClass: cre8GlobalNavItemElement,
+    tagName: 'Cre8-global-nav-item',
+    elementClass: Cre8GlobalNavItemElement,
 
 });

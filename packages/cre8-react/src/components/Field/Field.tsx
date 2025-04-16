@@ -1,17 +1,17 @@
 import React from 'react';
-import { EventName, createComponent } from '@lit-labs/react';
-import { cre8Field as cre8FieldElement } from '@cre8/cre8-wc/lib/components/field/field';
-import { cre8DomEvent } from '../../util/cre8DomEvent';
+import { EventName, createComponent } from '@lit/react';
+import { Cre8Field as Cre8FieldElement } from '@cre8_dev/cre8-wc/lib/components/field/field';
+import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 /**
  * The Field component renders a form group with label, control, help text and validation styling. There are
  * convenience variants of Field to support HTML5 input types and static content.
  */
-export const cre8Field = createComponent({
+export const Cre8Field = createComponent({
     react: React,
-    tagName: 'cre8-field',
-    elementClass: cre8FieldElement,
+    tagName: 'Cre8-field',
+    elementClass: Cre8FieldElement,
     events: {
-        onChange: 'input' as EventName<cre8DomEvent<cre8FieldElement>>,
+        onChange: 'input' as EventName<Cre8DomEvent<Cre8FieldElement>>,
     },
 });

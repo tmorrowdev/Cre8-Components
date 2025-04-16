@@ -1,9 +1,9 @@
-import { createComponent } from '@lit-labs/react';
-import { cre8Header as cre8HeaderElement } from '@cre8/cre8-wc/lib/components/header/header';
+import { createComponent } from '@lit/react';
+import { Cre8Header as Cre8HeaderElement } from '@cre8_dev/cre8-wc/lib/components/header/header';
 import React from 'react';
 
-export const cre8Header = createComponent({
+export const Cre8Header = createComponent({
     react: React,
-    tagName: 'cre8-header',
-    elementClass: cre8HeaderElement,
+    tagName: 'Cre8-header',
+    elementClass: Cre8HeaderElement,
 });

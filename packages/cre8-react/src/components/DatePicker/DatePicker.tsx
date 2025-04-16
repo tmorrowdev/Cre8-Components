@@ -1,20 +1,20 @@
 import React from 'react';
-import { EventName, createComponent } from '@lit-labs/react';
-import { cre8DatePicker as cre8DatePickerElement } from '@cre8/cre8-wc/lib/components/date-picker/date-picker';
-import { cre8DomEvent } from '../../util/cre8DomEvent';
+import { EventName, createComponent } from '@lit/react';
+import { Cre8DatePicker as Cre8DatePickerElement } from '@cre8_dev/cre8-wc/lib/components/date-picker/date-picker';
+import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 /**
  * The Date Picker component renders a form group with label, control, help text and validation styling much
  * like the Field component but exclusively for type=date.
- * cre8DatePicker inherts the cre8Field component.
+ * Cre8DatePicker inherts the Cre8Field component.
  */
 
-export const cre8DatePicker = createComponent({
+export const Cre8DatePicker = createComponent({
     react: React,
-    tagName: 'cre8-date-picker',
-    elementClass: cre8DatePickerElement,
+    tagName: 'Cre8-date-picker',
+    elementClass: Cre8DatePickerElement,
     events: {
-        onChange: 'input' as EventName<cre8DomEvent<cre8DatePickerElement>>,
+        onChange: 'input' as EventName<Cre8DomEvent<Cre8DatePickerElement>>,
     },
 });
 

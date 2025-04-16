@@ -6,7 +6,7 @@ import styles from './submenu-item.scss';
 /**
  * @slot - The component content
  */
-export class cre8SubmenuItem extends Cre8Element {
+export class Cre8SubmenuItem extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -38,13 +38,13 @@ export class cre8SubmenuItem extends Cre8Element {
 }
 
 if (customElements.get('cre8-submenu-item') === undefined) {
-    customElements.define('cre8-submenu-item', cre8SubmenuItem);
+    customElements.define('cre8-submenu-item', Cre8SubmenuItem);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-submenu-item': cre8SubmenuItem;
+    'cre8-submenu-item': Cre8SubmenuItem;
   }
 }
 
-export default cre8SubmenuItem;
+export default Cre8SubmenuItem;

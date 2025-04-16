@@ -7,7 +7,7 @@ import styles from './primary-nav-item.scss';
     /**
      * @slot - The label for the navigation item
      */
-export class cre8PrimaryNavItem extends Cre8Element {
+export class Cre8PrimaryNavItem extends Cre8Element {
     /**
      * Primary nav item text
      */
@@ -113,7 +113,7 @@ export class cre8PrimaryNavItem extends Cre8Element {
         e.preventDefault();
         if (this.parentNode) {
             const navItems = this.parentNode.querySelectorAll('cre8-primary-nav-item');
-            navItems.forEach((element: cre8PrimaryNavItem) => {
+            navItems.forEach((element: Cre8PrimaryNavItem) => {
                 if (element !== this) {
                     element.isActive = false; /* 1 */
                 }
@@ -200,13 +200,13 @@ export class cre8PrimaryNavItem extends Cre8Element {
 }
 
 if (customElements.get('cre8-primary-nav-item') === undefined) {
-    customElements.define('cre8-primary-nav-item', cre8PrimaryNavItem);
+    customElements.define('cre8-primary-nav-item', Cre8PrimaryNavItem);
 }
 
 declare global {
     interface HTMLElementTagNameMap {
-        'cre8-primary-nav-item': cre8PrimaryNavItem;
+        'cre8-primary-nav-item': Cre8PrimaryNavItem;
     }
 }
 
-export default cre8PrimaryNavItem;
+export default Cre8PrimaryNavItem;

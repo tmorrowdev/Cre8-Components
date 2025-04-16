@@ -1,11 +1,11 @@
 import type { StoryObj } from '@storybook/react';
-import { cre8PrimaryNav, cre8PrimaryNavItem } from '../..';
+import { Cre8PrimaryNav, Cre8PrimaryNavItem } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
   title: 'Cre8 Components/PrimaryNav',
-  component: cre8PrimaryNav,
-  subcomponents: { cre8PrimaryNavItem },
+  component: Cre8PrimaryNav,
+  subcomponents: { Cre8PrimaryNavItem },
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -14,4 +14,4 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8PrimaryNav> = { args: {} };
+export const Default: StoryObj<typeof Cre8PrimaryNav> = { args: {} };

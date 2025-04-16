@@ -10,7 +10,7 @@ import styles from './field.scss';
  * The Field component renders a form group with label, control, help text and validation styling. There are
  * convenience variants of Field to support HTML5 input types and static content.
  */
-export class cre8Field extends Cre8FormElement {
+export class Cre8Field extends Cre8FormElement {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -353,13 +353,13 @@ export class cre8Field extends Cre8FormElement {
 }
 
 if (customElements.get('cre8-field') === undefined) {
-    customElements.define('cre8-field', cre8Field);
+    customElements.define('cre8-field', Cre8Field);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-field': cre8Field;
+    'cre8-field': Cre8Field;
   }
 }
 
-export default cre8Field;
+export default Cre8Field;

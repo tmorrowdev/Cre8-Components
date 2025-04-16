@@ -7,7 +7,7 @@ import styles from './button-group.scss';
  * @slot - The component content
  */
 
-export class cre8ButtonGroup extends Cre8Element {
+export class Cre8ButtonGroup extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -32,13 +32,13 @@ export class cre8ButtonGroup extends Cre8Element {
 }
 
 if (customElements.get('cre8-button-group') === undefined) {
-    customElements.define('cre8-button-group', cre8ButtonGroup);
+    customElements.define('cre8-button-group', Cre8ButtonGroup);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-button-group': cre8ButtonGroup;
+    'cre8-button-group': Cre8ButtonGroup;
   }
 }
 
-export default cre8ButtonGroup;
+export default Cre8ButtonGroup;

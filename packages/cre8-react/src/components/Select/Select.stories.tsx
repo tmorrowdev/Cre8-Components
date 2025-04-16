@@ -1,8 +1,8 @@
 import React from 'react';
 import type { StoryObj } from '@storybook/react';
 import { withActions } from '@storybook/addon-actions/decorator';
-import { cre8Select } from '../..';
-import { cre8Link } from '../Link/Link';
+import { Cre8Select } from '../..';
+import { Cre8Link } from '../Link/Link';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 const baseItems = [
@@ -42,8 +42,8 @@ const optionGroupItems = [
 ];
 
 export default {
-  title: 'cre8 Components/Select',
-  component: cre8Select,
+  title: 'Cre8 Components/Select',
+  component: Cre8Select,
   parameters: {
     status: { type: 'inProgress' },
     actions: {
@@ -61,39 +61,39 @@ export default {
   }
 };
 
-export const Default: StoryObj<typeof cre8Select> = {};
+export const Default: StoryObj<typeof Cre8Select> = {};
 
-export const Disabled: StoryObj<typeof cre8Select> = { args: {
+export const Disabled: StoryObj<typeof Cre8Select> = { args: {
   disabled: true,
 } };
 
-export const Preselected: StoryObj<typeof cre8Select> = { args: {
+export const Preselected: StoryObj<typeof Cre8Select> = { args: {
   value: 'option-item-1',
 } };
 
-export const FieldNote: StoryObj<typeof cre8Select> = { args: {
+export const FieldNote: StoryObj<typeof Cre8Select> = { args: {
   children: (
-    <div slot="fieldNote">Some optional help text or <cre8Link href="#">helpful link</cre8Link></div>
+    <div slot="fieldNote">Some optional help text or <Cre8Link href="#">helpful link</Cre8Link></div>
   )
 } };
 
-export const Error: StoryObj<typeof cre8Select> = { args: {
+export const Error: StoryObj<typeof Cre8Select> = { args: {
   isError: true,
   errorNote: 'Short, clear error message'
 } };
 
-export const Success: StoryObj<typeof cre8Select> = { args: {
+export const Success: StoryObj<typeof Cre8Select> = { args: {
   isSuccess: true,
   successNote: 'Short, clear success message'
 } };
 
-export const FieldnoteAndError: StoryObj<typeof cre8Select> = { args: {
+export const FieldnoteAndError: StoryObj<typeof Cre8Select> = { args: {
   fieldNote: "This is a field note.",
   isError: true,
   errorNote: 'Short, clear error message'
 } };
 
-export const FieldNoteAndSuccess: StoryObj<typeof cre8Select> = { args: {
+export const FieldNoteAndSuccess: StoryObj<typeof Cre8Select> = { args: {
   fieldNote: "This is a field note.",
   isSuccess: true,
   successNote: 'Short, clear success message'
@@ -117,6 +117,6 @@ export const FieldNoteAndSuccess: StoryObj<typeof cre8Select> = { args: {
  * ```
 */
 
-export const OptionGroup: StoryObj<typeof cre8Select> = { args: {
+export const OptionGroup: StoryObj<typeof Cre8Select> = { args: {
   items: optionGroupItems,
 } };

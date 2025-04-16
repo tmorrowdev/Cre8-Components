@@ -1,11 +1,11 @@
 import type { StoryObj } from '@storybook/react';
 import React from 'react';
 import { excludeRegexArray } from '../../../.storybook/preview.js';
-import { cre8Alert, cre8Button, cre8Link } from '../../index.js';
+import { Cre8Alert, Cre8Button, Cre8Link } from '../..';
 
 export default {
   title: 'IN DEVELOPMENT/Alert',
-  component: cre8Alert,
+  component: Cre8Alert,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -47,22 +47,22 @@ export default {
     children: (
       <>
       <span>Lorem ipsum dolor sit amet, consectetuer adipiscing</span>
-      <cre8Button
+      <Cre8Button
         variant="secondary"
         slot="cta"
         text="Button"
         size="sm"
         neutral
-      ></cre8Button>
+      ></Cre8Button>
       </>
 
     ),
   },
 };
 
-export const Default: StoryObj<typeof cre8Alert> = { args: {} };
+export const Default: StoryObj<typeof Cre8Alert> = { args: {} };
 
-export const DefaultWithLink: StoryObj<typeof cre8Alert> = {
+export const DefaultWithLink: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Default Not Dismissible Alert',
     variant: 'standalone',
@@ -71,17 +71,17 @@ export const DefaultWithLink: StoryObj<typeof cre8Alert> = {
     children: (
       <>
       <span>Lorem ipsum dolor sit amet, consectetuer adipiscing</span>
-      <cre8Link
+      <Cre8Link
         slot="cta"
         href="#"
         inverted
-      >Link</cre8Link>
+      >Link</Cre8Link>
       </>
     ),
   }
 };
 
-export const DefaultNotDismissible: StoryObj<typeof cre8Alert> = {
+export const DefaultNotDismissible: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Default Not Dismissible Alert',
     variant: 'standalone',
@@ -89,16 +89,16 @@ export const DefaultNotDismissible: StoryObj<typeof cre8Alert> = {
     children: (
       <>
       <span>Lorem ipsum dolor sit amet, consectetuer adipiscing</span>
-      <cre8Link
+      <Cre8Link
         slot="cta"
         href="#"
-      >Link</cre8Link>
+      >Link</Cre8Link>
       </>
     ),
   },
 };
 
-export const SubtleErrorStandAlone: StoryObj<typeof cre8Alert> = {
+export const SubtleErrorStandAlone: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Error Stand Alone',
     status: 'error',
@@ -107,7 +107,7 @@ export const SubtleErrorStandAlone: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const SubtleInfoStandAlone: StoryObj<typeof cre8Alert> = {
+export const SubtleInfoStandAlone: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Info Stand Alone',
     status: 'info',
@@ -116,7 +116,7 @@ export const SubtleInfoStandAlone: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const SubtleNotificationStandAlone: StoryObj<typeof cre8Alert> = {
+export const SubtleNotificationStandAlone: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Notification Stand Alone',
     status: 'notification',
@@ -125,7 +125,7 @@ export const SubtleNotificationStandAlone: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const SubtleNeutralStandAlone: StoryObj<typeof cre8Alert> = {
+export const SubtleNeutralStandAlone: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Neutral Stand Alone',
     status: 'neutral',
@@ -134,7 +134,7 @@ export const SubtleNeutralStandAlone: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const SubtleWarningStandAlone: StoryObj<typeof cre8Alert> = {
+export const SubtleWarningStandAlone: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Warning Stand Alone',
     status: 'warning',
@@ -143,7 +143,7 @@ export const SubtleWarningStandAlone: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const SubtleSuccessStandAlone: StoryObj<typeof cre8Alert> = {
+export const SubtleSuccessStandAlone: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Success Stand Alone',
     status: 'success',
@@ -152,7 +152,7 @@ export const SubtleSuccessStandAlone: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const StrongErrorStandAlone: StoryObj<typeof cre8Alert> = {
+export const StrongErrorStandAlone: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Error Stand Alone',
     status: 'error',
@@ -161,7 +161,7 @@ export const StrongErrorStandAlone: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const StrongInfoStandAlone: StoryObj<typeof cre8Alert> = {
+export const StrongInfoStandAlone: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Info Stand Alone',
     status: 'info',
@@ -170,7 +170,7 @@ export const StrongInfoStandAlone: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const StrongNotificationStandAlone: StoryObj<typeof cre8Alert> = {
+export const StrongNotificationStandAlone: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Notification Stand Alone',
     status: 'notification',
@@ -179,7 +179,7 @@ export const StrongNotificationStandAlone: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const StrongNeutralStandAlone: StoryObj<typeof cre8Alert> = {
+export const StrongNeutralStandAlone: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Neutral Stand Alone',
     status: 'neutral',
@@ -188,7 +188,7 @@ export const StrongNeutralStandAlone: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const StrongWarningStandAlone: StoryObj<typeof cre8Alert> = {
+export const StrongWarningStandAlone: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Warning Stand Alone',
     status: 'warning',
@@ -197,7 +197,7 @@ export const StrongWarningStandAlone: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const StrongSuccessStandAlone: StoryObj<typeof cre8Alert> = {
+export const StrongSuccessStandAlone: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Success Stand Alone',
     status: 'success',
@@ -206,7 +206,7 @@ export const StrongSuccessStandAlone: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const SubtleErrorBanner: StoryObj<typeof cre8Alert> = {
+export const SubtleErrorBanner: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Error Stand Alone',
     status: 'error',
@@ -215,7 +215,7 @@ export const SubtleErrorBanner: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const SubtleInfoBanner: StoryObj<typeof cre8Alert> = {
+export const SubtleInfoBanner: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Info Stand Alone',
     status: 'info',
@@ -224,7 +224,7 @@ export const SubtleInfoBanner: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const SubtleNotificationBanner: StoryObj<typeof cre8Alert> = {
+export const SubtleNotificationBanner: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Notification Stand Alone',
     status: 'notification',
@@ -233,7 +233,7 @@ export const SubtleNotificationBanner: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const SubtleNeutralBanner: StoryObj<typeof cre8Alert> = {
+export const SubtleNeutralBanner: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Neutral Stand Alone',
     status: 'neutral',
@@ -242,7 +242,7 @@ export const SubtleNeutralBanner: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const SubtleWarningBanner: StoryObj<typeof cre8Alert> = {
+export const SubtleWarningBanner: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Warning Stand Alone',
     status: 'warning',
@@ -251,7 +251,7 @@ export const SubtleWarningBanner: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const SubtleSuccessBanner: StoryObj<typeof cre8Alert> = {
+export const SubtleSuccessBanner: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Success Stand Alone',
     status: 'success',
@@ -260,7 +260,7 @@ export const SubtleSuccessBanner: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const StrongErrorBanner: StoryObj<typeof cre8Alert> = {
+export const StrongErrorBanner: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Error Stand Alone',
     status: 'error',
@@ -269,7 +269,7 @@ export const StrongErrorBanner: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const StrongInfoBanner: StoryObj<typeof cre8Alert> = {
+export const StrongInfoBanner: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Info Stand Alone',
     status: 'info',
@@ -278,7 +278,7 @@ export const StrongInfoBanner: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const StrongNotificationBanner: StoryObj<typeof cre8Alert> = {
+export const StrongNotificationBanner: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Notification Stand Alone',
     status: 'notification',
@@ -287,7 +287,7 @@ export const StrongNotificationBanner: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const StrongNeutralBanner: StoryObj<typeof cre8Alert> = {
+export const StrongNeutralBanner: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Neutral Stand Alone',
     status: 'neutral',
@@ -296,7 +296,7 @@ export const StrongNeutralBanner: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const StrongWarningBanner: StoryObj<typeof cre8Alert> = {
+export const StrongWarningBanner: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Warning Stand Alone',
     status: 'warning',
@@ -305,7 +305,7 @@ export const StrongWarningBanner: StoryObj<typeof cre8Alert> = {
   },
 };
 
-export const StrongSuccessBanner: StoryObj<typeof cre8Alert> = {
+export const StrongSuccessBanner: StoryObj<typeof Cre8Alert> = {
   args: {
     headerText: 'Success Stand Alone',
     status: 'success',

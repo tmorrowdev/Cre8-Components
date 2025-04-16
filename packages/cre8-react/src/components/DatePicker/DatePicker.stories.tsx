@@ -1,13 +1,13 @@
 import React from 'react';
 import type { StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { cre8DatePicker } from '../..';
-import { cre8TextLink } from '../TextLink/TextLink';
+import { Cre8DatePicker } from '../..';
+import { Cre8TextLink } from '../TextLink/TextLink';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-  title: 'cre8 Components/DatePicker',
-  component: cre8DatePicker,
+  title: 'Cre8 Components/DatePicker',
+  component: Cre8DatePicker,
   parameters: {
     status: { type: 'inProgress' },
     actions: {
@@ -22,7 +22,7 @@ export default {
       },
     },
   },
-  render: (args) => <cre8DatePicker {...args}></cre8DatePicker>,
+  render: (args) => <Cre8DatePicker {...args}></Cre8DatePicker>,
   args: {
     placeholder: '',
     fieldNote: 'This is a field note.',
@@ -31,12 +31,12 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8DatePicker> = {
+export const Default: StoryObj<typeof Cre8DatePicker> = {
   args: {
     label: 'Example Date Picker',
     children: (
       <div slot="fieldNote">
-        Some optional help text or <cre8TextLink>helpful link</cre8TextLink>
+        Some optional help text or <Cre8TextLink>helpful link</Cre8TextLink>
       </div>
     ),
   },
@@ -48,7 +48,7 @@ export const DefaultWithShortcuts = {
   },
 };
 
-export const Disabled: StoryObj<typeof cre8DatePicker> = {
+export const Disabled: StoryObj<typeof Cre8DatePicker> = {
   args: {
     label: 'Disabled Example',
     value: '2024-05-15',
@@ -56,7 +56,7 @@ export const Disabled: StoryObj<typeof cre8DatePicker> = {
   },
 };
 
-export const ReadOnly: StoryObj<typeof cre8DatePicker> = {
+export const ReadOnly: StoryObj<typeof Cre8DatePicker> = {
   args: {
     label: 'Readonly Example',
     value: '2024-05-15',
@@ -64,14 +64,14 @@ export const ReadOnly: StoryObj<typeof cre8DatePicker> = {
   },
 };
 
-export const Fieldnote: StoryObj<typeof cre8DatePicker> = {
+export const Fieldnote: StoryObj<typeof Cre8DatePicker> = {
   args: {
     label: 'Fieldnote Example',
     fieldNote: 'This is a field note.',
   },
 };
 
-export const Error: StoryObj<typeof cre8DatePicker> = {
+export const Error: StoryObj<typeof Cre8DatePicker> = {
   args: {
     label: 'Error Fieldnote Example',
     isError: true,
@@ -80,7 +80,7 @@ export const Error: StoryObj<typeof cre8DatePicker> = {
   },
 };
 
-export const Success: StoryObj<typeof cre8DatePicker> = {
+export const Success: StoryObj<typeof Cre8DatePicker> = {
   args: {
     label: 'Success Fieldnote Example',
     isSuccess: true,

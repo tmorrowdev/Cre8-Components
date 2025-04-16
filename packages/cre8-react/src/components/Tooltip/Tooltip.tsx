@@ -1,13 +1,13 @@
 import React from 'react';
-import { createComponent, EventName } from '@lit-labs/react';
-import { cre8Tooltip as cre8TooltipElement } from '@cre8/cre8-wc/lib/components/tooltip/tooltip';
-import { cre8DomEvent } from '../../util/cre8DomEvent';
+import { createComponent, EventName } from '@lit/react';
+import { Cre8Tooltip as Cre8TooltipElement } from '@cre8_dev/cre8-wc/lib/components/tooltip/tooltip';
+import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 
 /**
  * The purpose of tooltips is to provide a tip or hint about what a tool, icon, link, or other interaction does.
  * If you need to present a call to action with perhaps a button for the user to click, then use
- * [Popover](/docs/cre8-components-popover--docs) instead.
+ * [Popover](/docs/Cre8-components-popover--docs) instead.
  *
  * ##Tooltip Styles
  * There are 4 alignment options for Tooltips: Top, Bottom, Right, and Left. Default placement is Bottom, below the
@@ -37,12 +37,12 @@ import { cre8DomEvent } from '../../util/cre8DomEvent';
  * @slot default - Default, unnamed slot container for Tooltip text
  * @slot trigger - Named slot container for Tooltip element to trigger showing/hiding the Tooltip text
  */
-export const cre8Tooltip = createComponent({
+export const Cre8Tooltip = createComponent({
     react: React,
-    tagName: 'cre8-tooltip',
-    elementClass: cre8TooltipElement,
+    tagName: 'Cre8-tooltip',
+    elementClass: Cre8TooltipElement,
     events: {
-        onOpen: 'open' as EventName<cre8DomEvent<cre8TooltipElement>>,
-        onClose: 'close' as EventName<cre8DomEvent<cre8TooltipElement>>,
+        onOpen: 'open' as EventName<Cre8DomEvent<Cre8TooltipElement>>,
+        onClose: 'close' as EventName<Cre8DomEvent<Cre8TooltipElement>>,
     },
 });

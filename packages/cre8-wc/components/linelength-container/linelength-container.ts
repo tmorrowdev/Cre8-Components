@@ -5,7 +5,7 @@ import styles from './linelength-container.scss';
 /**
  * @slot - The component content
  */
-export class cre8LinelengthContainer extends Cre8Element {
+export class Cre8LinelengthContainer extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -22,13 +22,13 @@ export class cre8LinelengthContainer extends Cre8Element {
 }
 
 if (customElements.get('cre8-linelength-container') === undefined) {
-    customElements.define('cre8-linelength-container', cre8LinelengthContainer);
+    customElements.define('cre8-linelength-container', Cre8LinelengthContainer);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-linelength-container': cre8LinelengthContainer;
+    'cre8-linelength-container': Cre8LinelengthContainer;
   }
 }
 
-export default cre8LinelengthContainer;
+export default Cre8LinelengthContainer;

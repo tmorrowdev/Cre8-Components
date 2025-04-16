@@ -6,7 +6,7 @@ import styles from './hero.scss';
 /**
  * @slot - The component content
  */
-export class cre8Hero extends Cre8Element {
+export class Cre8Hero extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -67,13 +67,13 @@ export class cre8Hero extends Cre8Element {
 }
 
 if (customElements.get('cre8-hero') === undefined) {
-    customElements.define('cre8-hero', cre8Hero);
+    customElements.define('cre8-hero', Cre8Hero);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-hero': cre8Hero;
+    'cre8-hero': Cre8Hero;
   }
 }
 
-export default cre8Hero;
+export default Cre8Hero;

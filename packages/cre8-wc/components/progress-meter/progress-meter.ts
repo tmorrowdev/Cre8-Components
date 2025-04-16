@@ -14,7 +14,7 @@ export enum status {
  * the user an indication of how much time they will wait.
  * This indicator should be used when the system response time is longer and determinable.
  */
-export class cre8ProgressMeter extends Cre8Element {
+export class Cre8ProgressMeter extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -105,11 +105,11 @@ export class cre8ProgressMeter extends Cre8Element {
 }
 
 if (customElements.get('cre8-progress-meter') === undefined) {
-    customElements.define('cre8-progress-meter', cre8ProgressMeter);
+    customElements.define('cre8-progress-meter', Cre8ProgressMeter);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-progress-meter': cre8ProgressMeter;
+    'cre8-progress-meter': Cre8ProgressMeter;
   }
 }

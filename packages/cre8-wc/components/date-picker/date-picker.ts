@@ -2,15 +2,15 @@ import { html, nothing, unsafeCSS } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property, state } from 'lit/decorators.js';
 import styles from './date-picker.scss';
-import { cre8Field } from '../field/field';
+import { Cre8Field } from '../field/field';
 import './calendar/calendar';
 
 /**
  * The Date Picker component renders a form group with label, control, help text and validation styling much
  * like the Field component but exclusively for type=date.
- * cre8DatePicker inherts the cre8Field component.
+ * Cre8DatePicker inherts the Cre8Field component.
  */
-export class cre8DatePicker extends cre8Field {
+export class Cre8DatePicker extends Cre8Field {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -126,13 +126,13 @@ export class cre8DatePicker extends cre8Field {
 }
 
 if (customElements.get('cre8-date-picker') === undefined) {
-    customElements.define('cre8-date-picker', cre8DatePicker);
+    customElements.define('cre8-date-picker', Cre8DatePicker);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-date-picker': cre8DatePicker;
+    'cre8-date-picker': Cre8DatePicker;
   }
 }
 
-export default cre8DatePicker;
+export default Cre8DatePicker;

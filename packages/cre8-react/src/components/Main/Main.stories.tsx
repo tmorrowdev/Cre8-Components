@@ -1,10 +1,10 @@
 import type { StoryObj } from '@storybook/react';
-import { cre8Main } from '../..';
+import { Cre8Main } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
   title: 'Cre8 Components/Main',
-  component: cre8Main,
+  component: Cre8Main,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -13,4 +13,4 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8Main> = { args: {} };
+export const Default: StoryObj<typeof Cre8Main> = { args: {} };

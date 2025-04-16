@@ -8,7 +8,7 @@ import styles from './table-header-cell.scss';
  * @slot - The component content
  */
 
-export class cre8TableHeaderCell extends Cre8Element {
+export class Cre8TableHeaderCell extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -43,13 +43,13 @@ export class cre8TableHeaderCell extends Cre8Element {
 }
 
 if (customElements.get('cre8-table-header-cell') === undefined) {
-    customElements.define('cre8-table-header-cell', cre8TableHeaderCell);
+    customElements.define('cre8-table-header-cell', Cre8TableHeaderCell);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-table-header-cell': cre8TableHeaderCell;
+    'cre8-table-header-cell': Cre8TableHeaderCell;
   }
 }
 
-export default cre8TableHeaderCell;
+export default Cre8TableHeaderCell;
