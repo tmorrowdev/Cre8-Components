@@ -1,14 +1,14 @@
 import type { StoryObj } from '@storybook/react';
-import { cre8IconLegacy } from '../..';
+import { Cre8IconLegacy } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
-import cre8Icon from '@cre8/cre8-icons/lib/react/cre8Icon/';
+import Cre8Icon from '@cre8/cre8-icons';
 import React from 'react';
-import svgInfoFilled from '@cre8/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
+import svgInfoFilled from '@cre8/cre8-icons';
 
 
 export default {
-  title: 'cre8 Components/Icon',
-  component: cre8IconLegacy,
+  title: 'Cre8 Components/Icon',
+  component: Cre8IconLegacy,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -17,13 +17,12 @@ export default {
    },
 };
 
-export const Default: StoryObj<typeof cre8IconLegacy> = {
+export const Default: StoryObj<typeof Cre8IconLegacy> = {
   render: (args) => (
     <>
-    cre8Icon Usage: <br />
-    <cre8Icon svg={ svgInfoFilled } />
-    <p>cre8IconLegacy Usage: <br />
-    <cre8IconLegacy name="search" /></p>
+    Cre8Icon Usage: <br />
+    <p>Cre8IconLegacy Usage: <br />
+    <Cre8IconLegacy name="search" /></p>
     </>
   )
 };

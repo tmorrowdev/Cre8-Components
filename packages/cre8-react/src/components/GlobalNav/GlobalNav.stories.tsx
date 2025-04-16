@@ -1,11 +1,11 @@
 import type { StoryObj } from '@storybook/react';
-import { cre8GlobalNav, cre8GlobalNavItem } from '../..';
+import { Cre8GlobalNav, Cre8GlobalNavItem } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
   title: 'Cre8 Components/GlobalNav',
-  component: cre8GlobalNav,
-  subcomponents: { cre8GlobalNavItem } ,
+  component: Cre8GlobalNav,
+  subcomponents: { Cre8GlobalNavItem } ,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -14,4 +14,4 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8GlobalNav> = { args: {} };
+export const Default: StoryObj<typeof Cre8GlobalNav> = { args: {} };

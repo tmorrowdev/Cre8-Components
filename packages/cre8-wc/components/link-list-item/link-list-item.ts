@@ -7,7 +7,7 @@ import styles from './link-list-item.scss';
 /**
  * @slot - The default slot to put badges or other Components
  */
-export class cre8LinkListItem extends Cre8Element {
+export class Cre8LinkListItem extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -54,13 +54,13 @@ export class cre8LinkListItem extends Cre8Element {
 }
 
 if (customElements.get('cre8-link-list-item') === undefined) {
-    customElements.define('cre8-link-list-item', cre8LinkListItem);
+    customElements.define('cre8-link-list-item', Cre8LinkListItem);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-link-list-item': cre8LinkListItem;
+    'cre8-link-list-item': Cre8LinkListItem;
   }
 }
 
-export default cre8LinkListItem;
+export default Cre8LinkListItem;

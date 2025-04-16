@@ -1,6 +1,6 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8AccordionItem as cre8AccordionItemElement } from '@cre8/cre8-wc/lib/components/accordion-item/accordion-item';
+import { createComponent } from '@lit/react';
+import { Cre8AccordionItem as Cre8AccordionItemElement } from '@cre8_dev/cre8-wc/lib/components/accordion-item/accordion-item';
 
 /**
  *
@@ -14,8 +14,8 @@ import { cre8AccordionItem as cre8AccordionItemElement } from '@cre8/cre8-wc/lib
  * Avoid “nested” accordion items—that is, collapsible content within collapsible
  * content. This type of pattern goes against UX best practices.
  *
- * The cre8 accordion item header allows for two sizes:
- * 'sm' [cre8-typography-title-default] or 'lg' [cre8-typography-title-large]
+ * The Cre8 accordion item header allows for two sizes:
+ * 'sm' [Cre8-typography-title-default] or 'lg' [Cre8-typography-title-large]
  *
  * A chevron is used to indicate the “expand/collapse” action, though the entire
  * header area is clickable for the same action.
@@ -26,8 +26,8 @@ import { cre8AccordionItem as cre8AccordionItemElement } from '@cre8/cre8-wc/lib
  *
  */
 
-export const cre8AccordionItem = createComponent({
+export const Cre8AccordionItem = createComponent({
     react: React,
-    tagName: 'cre8-accordion-item',
-    elementClass: cre8AccordionItemElement,
+    tagName: 'Cre8-accordion-item',
+    elementClass: Cre8AccordionItemElement,
 });

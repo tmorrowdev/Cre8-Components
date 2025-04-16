@@ -6,7 +6,7 @@ import styles from './table-object.scss';
  * @slot - The component content
  */
 
-export class cre8TableObject extends Cre8Element {
+export class Cre8TableObject extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -35,13 +35,13 @@ export class cre8TableObject extends Cre8Element {
 }
 
 if (customElements.get('cre8-table-object') === undefined) {
-    customElements.define('cre8-table-object', cre8TableObject);
+    customElements.define('cre8-table-object', Cre8TableObject);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-table-object': cre8TableObject;
+    'cre8-table-object': Cre8TableObject;
   }
 }
 
-export default cre8TableObject;
+export default Cre8TableObject;

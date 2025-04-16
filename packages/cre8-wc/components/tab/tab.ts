@@ -7,7 +7,7 @@ import styles from './tab.scss';
  * @slot - The component content
  */
 
-export class cre8Tab extends Cre8Element {
+export class Cre8Tab extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -50,7 +50,7 @@ export class cre8Tab extends Cre8Element {
    * Query the tab element
    */
   @query('.cre8-c-tab')
-      _cre8Tab: HTMLButtonElement;
+      _Cre8Tab: HTMLButtonElement;
 
   /**
    * Updated
@@ -61,12 +61,12 @@ export class cre8Tab extends Cre8Element {
   override updated(changedProperties: PropertyValues) {
     /* 2 */
       if (changedProperties.has('ariaLabelledBy')) {
-          this._cre8Tab.setAttribute('id', this.ariaLabelledBy);
+          this._Cre8Tab.setAttribute('id', this.ariaLabelledBy);
       }
     /* 3 */
       if (changedProperties.has('isActive')) {
-          this._cre8Tab.setAttribute('tabindex', this.isActive ? '0' : '-1');
-          this._cre8Tab.setAttribute('aria-selected', `${this.isActive}`);
+          this._Cre8Tab.setAttribute('tabindex', this.isActive ? '0' : '-1');
+          this._Cre8Tab.setAttribute('aria-selected', `${this.isActive}`);
       }
   }
 
@@ -108,13 +108,13 @@ export class cre8Tab extends Cre8Element {
 }
 
 if (customElements.get('cre8-tab') === undefined) {
-    customElements.define('cre8-tab', cre8Tab);
+    customElements.define('cre8-tab', Cre8Tab);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-tab': cre8Tab;
+    'cre8-tab': Cre8Tab;
   }
 }
 
-export default cre8Tab;
+export default Cre8Tab;

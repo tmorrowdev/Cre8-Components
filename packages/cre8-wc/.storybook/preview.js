@@ -5,12 +5,13 @@ import '!!style-loader!css-loader!./css/styleguide-only.css';
 
 import headStyles from '!!style-loader!css-loader!sass-loader!../design-tokens/core/scss/theming/head.scss';
 
-import cignaLegacy from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8/cre8-design-tokens/lib/web/brands/cigna-legacy/css/tokens_cigna-legacy.css';
-import chc from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8/cre8-design-tokens/lib/web/brands/chc/css/tokens_chc.css';
-import evernorth from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8/cre8-design-tokens/lib/web/brands/evernorth/css/tokens_evernorth.css';
-import pbm from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8/cre8-design-tokens/lib/web/brands/pbm/css/tokens_pbm.css';
-import tcg from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8/cre8-design-tokens/lib/web/brands/tcg/css/tokens_tcg.css';
-
+import cre8Legacy from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8_dev/cre8-design-tokens/lib/web/brands/cre8-legacy/css/tokens_cre8-legacy.css';
+import consumer from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8_dev/cre8-design-tokens/lib/web/brands/consumer/css/tokens_consumer.css';
+import cre8 from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8_dev/cre8-design-tokens/lib/web/brands/cre8/css/tokens_cre8.css';
+import blue from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8_dev/cre8-design-tokens/lib/web/brands/blue/css/tokens_blue.css';
+import marketing from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8_dev/cre8-design-tokens/lib/web/brands/marketing/css/tokens_marketing.css';
+import femmecubator from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8_dev/cre8-design-tokens/lib/web/brands/femmecubator/css/tokens_femmecubator.css';
+import black from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8_dev/cre8-design-tokens/lib/web/brands/black/css/tokens_black.css';
 
 export const decorators = [cssVariablesTheme];
 
@@ -38,11 +39,14 @@ export const parameters = {
   layout: 'padded',
   cssVariables: {
     files: {
-      'Consumer': chc,
-      'Marketing': tcg,
-      'Legacy': cignaLegacy,
-      'Cre8': evernorth,
-      'Cre8-Legacy': pbm,
+      'Consumer': consumer,
+      'Marketing': marketing,
+      'Legacy': cre8Legacy,
+      'Cre8': cre8,
+      'Blue': blue,
+      'Femmecubator': femmecubator,
+      'Black': black
+
     },
     defaultTheme: 'Cre8',
   },

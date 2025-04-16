@@ -2,12 +2,12 @@ import type { StoryObj } from '@storybook/react';
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { excludeRegexArray } from '../../../.storybook/preview';
-import { cre8RadioFieldItem } from '../..';
-import { cre8RadioField } from '../RadioField/RadioField';
+import { Cre8RadioFieldItem } from '../..';
+import { Cre8RadioField } from '../RadioField/RadioField';
 
 export default {
-    title: 'cre8 Components/Radio-Field Item',
-    component: cre8RadioFieldItem,
+    title: 'Cre8 Components/Radio-Field Item',
+    component: Cre8RadioFieldItem,
     parameters: {
         status: { type: 'inProgress' },
         controls: {
@@ -15,9 +15,9 @@ export default {
         },
     },
     render: (args) => (
-        <cre8RadioField>
-            <cre8RadioFieldItem { ...args } />
-        </cre8RadioField>
+        <Cre8RadioField>
+            <Cre8RadioFieldItem { ...args } />
+        </Cre8RadioField>
     ),
     args: {
         name: 'radio-name',
@@ -27,20 +27,20 @@ export default {
     },
 };
 
-export const Default: StoryObj<typeof cre8RadioFieldItem> = {
+export const Default: StoryObj<typeof Cre8RadioFieldItem> = {
     args: {
         label: 'Label',
     },
 };
 
-export const Preselected: StoryObj<typeof cre8RadioFieldItem> = {
+export const Preselected: StoryObj<typeof Cre8RadioFieldItem> = {
     args: {
         label: 'Label',
         checked: true,
     },
 };
 
-export const Required: StoryObj<typeof cre8RadioFieldItem> = {
+export const Required: StoryObj<typeof Cre8RadioFieldItem> = {
     args: {
         label: 'Label',
         checked: true,
@@ -48,7 +48,7 @@ export const Required: StoryObj<typeof cre8RadioFieldItem> = {
     },
 };
 
-export const RequiredError: StoryObj<typeof cre8RadioFieldItem> = {
+export const RequiredError: StoryObj<typeof Cre8RadioFieldItem> = {
     args: {
         label: 'Label',
         isError: true,
@@ -56,7 +56,7 @@ export const RequiredError: StoryObj<typeof cre8RadioFieldItem> = {
     },
 };
 
-export const Error: StoryObj<typeof cre8RadioFieldItem> = {
+export const Error: StoryObj<typeof Cre8RadioFieldItem> = {
     args: {
         label: 'Label',
         checked: true,
@@ -64,7 +64,7 @@ export const Error: StoryObj<typeof cre8RadioFieldItem> = {
     },
 };
 
-export const Disabled: StoryObj<typeof cre8RadioFieldItem> = {
+export const Disabled: StoryObj<typeof Cre8RadioFieldItem> = {
     args: {
         label: 'Label',
         checked: true,
@@ -72,7 +72,7 @@ export const Disabled: StoryObj<typeof cre8RadioFieldItem> = {
     },
 };
 
-export const DefaultFieldNote: StoryObj<typeof cre8RadioFieldItem> = {
+export const DefaultFieldNote: StoryObj<typeof Cre8RadioFieldItem> = {
     args: {
         label: 'Label',
         fieldNote: 'This is a field note.',
@@ -80,7 +80,7 @@ export const DefaultFieldNote: StoryObj<typeof cre8RadioFieldItem> = {
     },
 };
 
-export const SuccessFieldNote: StoryObj<typeof cre8RadioFieldItem> = {
+export const SuccessFieldNote: StoryObj<typeof Cre8RadioFieldItem> = {
     args: {
         label: 'Label',
         fieldNote: 'This is a field note.',
@@ -90,7 +90,7 @@ export const SuccessFieldNote: StoryObj<typeof cre8RadioFieldItem> = {
     },
 };
 
-export const ErrorFieldNote: StoryObj<typeof cre8RadioFieldItem> = {
+export const ErrorFieldNote: StoryObj<typeof Cre8RadioFieldItem> = {
     args: {
         label: 'Label',
         fieldNote: 'This is an error field note.',
@@ -100,7 +100,7 @@ export const ErrorFieldNote: StoryObj<typeof cre8RadioFieldItem> = {
     },
 };
 
-export const LongTitle: StoryObj<typeof cre8RadioFieldItem> = {
+export const LongTitle: StoryObj<typeof Cre8RadioFieldItem> = {
     args: {
         label: 'This could mayhaps be the longest title that has ever been put on a radio field ever!',
     },

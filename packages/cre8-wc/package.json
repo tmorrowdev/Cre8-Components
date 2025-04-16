@@ -1,6 +1,6 @@
 {
-  "name": "@cre8/cre8-wc",
-  "version": "1.0.0-beta",
+  "name": "@cre8_dev/cre8-wc",
+  "version": "1.0.3",
   "description": "cre8 Web Components is a library of presentational UI web components to be consumed by Cigna web applications.",
   "scripts": {
     "start": "npm run build:custom-elements.json && npm run storybook",
@@ -30,20 +30,17 @@
     ".yalc"
   ],
   "exports": {
-    ".": {
-      "node": "./lib/index.js",
-      "default": "./lib/index.js"
-    },
+    ".": "./lib/index.js",
     "./lib/components/*": "./lib/components/*.js",
     "./lib/design-tokens/*": "./lib/design-tokens/*",
     "./lib/directives/*": "./lib/directives/*",
     "./lib/icons/*": "./lib/icons/*",
     "./lib/svgs/*": "./lib/svgs/*",
-    "./lib/theme.js": "./lib/theme.js"
+    "./lib/index.js": "./lib/index.js"
   },
   "dependencies": {
     "@a11y/focus-trap": "^1.0.5",
-    "@cre8/cre8-design-tokens": "file:cre8-cre8-design-tokens-1.0.1-beta.2.tgz",
+    "@cre8_dev/cre8-design-tokens": "1.0.3",
     "@cre8/cre8-icons": "file:../../cre8-cre8-icons-0.6.0.tgz",
     "classnames": "2.3.2",
     "lit": "^2.0.0-rc.1",

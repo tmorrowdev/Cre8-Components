@@ -43,7 +43,7 @@ import styles from './loading-spinner.scss';
  * meant for more inline loading states.
  *
  */
-export class cre8LoadingSpinner extends Cre8Element {
+export class Cre8LoadingSpinner extends Cre8Element {
     static styles = unsafeCSS(styles);
 
   /**
@@ -164,13 +164,13 @@ export class cre8LoadingSpinner extends Cre8Element {
   }
 }
 if (customElements.get('cre8-loading-spinner') === undefined) {
-    customElements.define('cre8-loading-spinner', cre8LoadingSpinner);
+    customElements.define('cre8-loading-spinner', Cre8LoadingSpinner);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-loading-spinner': cre8LoadingSpinner;
+    'cre8-loading-spinner': Cre8LoadingSpinner;
   }
 }
 
-export default cre8LoadingSpinner;
+export default Cre8LoadingSpinner;

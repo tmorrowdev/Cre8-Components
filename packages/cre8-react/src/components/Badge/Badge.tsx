@@ -1,5 +1,5 @@
-import { createComponent } from '@lit-labs/react';
-import { cre8Badge as cre8BadgeElement } from '@cre8/cre8-wc/lib/components/badge/badge';
+import { createComponent } from '@lit/react';
+import { Cre8Badge as Cre8BadgeElement } from '@cre8_dev/cre8-wc/lib/components/badge/badge';
 import React from 'react';
 
 /**
@@ -8,8 +8,8 @@ import React from 'react';
  *
  */
 
-export const cre8Badge = createComponent({
+export const Cre8Badge = createComponent({
     react: React,
-    tagName: 'cre8-badge',
-    elementClass: cre8BadgeElement,
+    tagName: 'Cre8-badge',
+    elementClass: Cre8BadgeElement,
 });

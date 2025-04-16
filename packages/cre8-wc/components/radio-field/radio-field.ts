@@ -15,7 +15,7 @@ import styles from './radio-field.scss';
  * @slot - The component content, which should be a set of `radio-field-item`s
  */
 
-export class cre8RadioField extends Cre8Element {
+export class Cre8RadioField extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -95,13 +95,13 @@ export class cre8RadioField extends Cre8Element {
 }
 
 if (customElements.get('cre8-radio-field') === undefined) {
-    customElements.define('cre8-radio-field', cre8RadioField);
+    customElements.define('cre8-radio-field', Cre8RadioField);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-radio-field': cre8RadioField;
+    'cre8-radio-field': Cre8RadioField;
   }
 }
 
-export default cre8RadioField;
+export default Cre8RadioField;

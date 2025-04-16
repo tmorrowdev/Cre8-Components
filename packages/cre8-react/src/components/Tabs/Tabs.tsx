@@ -1,7 +1,7 @@
 import React from 'react';
-import { EventName, createComponent } from '@lit-labs/react';
-import { cre8Tabs as cre8TabsElement } from '@cre8/cre8-wc/lib/components/tabs/tabs';
-import { cre8DomEvent } from '../../util/cre8DomEvent';
+import { EventName, createComponent } from '@lit/react';
+import { Cre8Tabs as Cre8TabsElement } from '@cre8_dev/cre8-wc/lib/components/tabs/tabs';
+import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 /**
  * Tabs are used to quickly navigate back and forth between views.
@@ -20,15 +20,15 @@ import { cre8DomEvent } from '../../util/cre8DomEvent';
  * - Try not to use more than six Tabs to keep the UI uncluttered.
  * - Do not stack Tabs on top of each other, and do not nest Tabs within Tabs. Find alternate ways of navigating page hierarchy.
  *
- * @slot default - Default, unnamed slot container for each `cre8-tab` button
- * @slot panel - Container for each `cre8-tab-panel` content item
+ * @slot default - Default, unnamed slot container for each `Cre8-tab` button
+ * @slot panel - Container for each `Cre8-tab-panel` content item
  */
 
-export const cre8Tabs = createComponent({
+export const Cre8Tabs = createComponent({
     react: React,
-    tagName: 'cre8-tabs',
-    elementClass: cre8TabsElement,
+    tagName: 'Cre8-tabs',
+    elementClass: Cre8TabsElement,
     events: {
-        onTabChange: 'tabChange' as EventName<cre8DomEvent<cre8TabsElement>>,
+        onTabChange: 'tabChange' as EventName<Cre8DomEvent<Cre8TabsElement>>,
     },
 });

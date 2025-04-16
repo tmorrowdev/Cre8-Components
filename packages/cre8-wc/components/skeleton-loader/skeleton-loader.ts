@@ -24,7 +24,7 @@ import styles from './skeleton-loader.scss';
  * this is a decorative element only!
  */
 
-export class cre8SkeletonLoader extends Cre8Element {
+export class Cre8SkeletonLoader extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -73,13 +73,13 @@ render() {
 }
 
 if (customElements.get('cre8-skeleton-loader') === undefined) {
-    customElements.define('cre8-skeleton-loader', cre8SkeletonLoader);
+    customElements.define('cre8-skeleton-loader', Cre8SkeletonLoader);
 }
 
 declare global {
     interface HTMLElementTagNameMap {
-        'cre8-skeleton-loader': cre8SkeletonLoader;
+        'cre8-skeleton-loader': Cre8SkeletonLoader;
     }
 }
 
-export default cre8SkeletonLoader;
+export default Cre8SkeletonLoader;

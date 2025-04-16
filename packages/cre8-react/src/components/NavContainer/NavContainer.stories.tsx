@@ -1,10 +1,10 @@
 import type { StoryObj } from '@storybook/react';
-import { cre8NavContainer } from '../..';
+import { Cre8NavContainer } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
   title: 'Cre8 Components/NavContainer',
-  component: cre8NavContainer,
+  component: Cre8NavContainer,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -13,4 +13,4 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8NavContainer> = { args: {} };
+export const Default: StoryObj<typeof Cre8NavContainer> = { args: {} };

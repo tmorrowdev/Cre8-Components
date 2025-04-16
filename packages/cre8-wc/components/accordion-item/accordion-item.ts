@@ -1,4 +1,4 @@
-import svgCaretUp from '@cre8/cre8-icons/lib/icons/System/Regular/Caret Up.svg?raw';
+import svgCaretUp from '@Cre8/cre8-icons/lib/icons/System/Regular/Caret Up.svg?raw';
 import { html, unsafeCSS } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
@@ -20,7 +20,7 @@ import styles from './accordion-item.scss';
  * Avoid “nested” accordion items—that is, collapsible content within collapsible content.
  * This type of pattern goes against UX best practices.
  *
- * The cre8 accordion item header allows for two sizes:
+ * The Cre8 accordion item header allows for two sizes:
  * 'sm' [cre8-typography-title-default] or 'lg' [cre8-typography-title-large]
  *
  * A chevron is used to indicate the “expand/collapse” action, though the entire
@@ -41,7 +41,7 @@ import styles from './accordion-item.scss';
  *
  */
 
-export class cre8AccordionItem extends Cre8Element {
+export class Cre8AccordionItem extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -283,12 +283,12 @@ export class cre8AccordionItem extends Cre8Element {
 }
 
 if (customElements.get('cre8-accordion-item') === undefined) {
-    customElements.define('cre8-accordion-item', cre8AccordionItem);
+    customElements.define('cre8-accordion-item', Cre8AccordionItem);
 }
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-accordion-item': cre8AccordionItem;
+    'cre8-accordion-item': Cre8AccordionItem;
   }
 }
 
-export default cre8AccordionItem;
+export default Cre8AccordionItem;

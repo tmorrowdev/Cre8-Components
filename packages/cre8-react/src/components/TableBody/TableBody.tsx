@@ -1,10 +1,10 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8TableBody as cre8TableBodyElement } from '@cre8/cre8-wc/lib/components/table-body/table-body';
+import { createComponent } from '@lit/react';
+import { Cre8TableBody as Cre8TableBodyElement } from '@cre8_dev/cre8-wc/lib/components/table-body/table-body';
 
-export const cre8TableBody = createComponent({
+export const Cre8TableBody = createComponent({
     react: React,
-    tagName: 'cre8-table-body',
-    elementClass: cre8TableBodyElement,
+    tagName: 'Cre8-table-body',
+    elementClass: Cre8TableBodyElement,
 
 });

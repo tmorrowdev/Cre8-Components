@@ -1,15 +1,15 @@
 import React from 'react';
 import type { StoryObj } from '@storybook/react';
-import { cre8FieldNote } from '../..';
-import { cre8TextLink } from '../TextLink/TextLink';
+import { Cre8FieldNote } from '../..';
+import { Cre8TextLink } from '../TextLink/TextLink';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-  title:'cre8 Components/Field Note',
+  title:'Cre8 Components/Field Note',
   render: (args) => (
-    <cre8FieldNote {...args}>{args.children}</cre8FieldNote>
+    <Cre8FieldNote {...args}>{args.children}</Cre8FieldNote>
   ),
-  component: cre8FieldNote,
+  component: Cre8FieldNote,
   parameters: { 
     status: { type: 'inProgress' },
     controls: {
@@ -28,40 +28,40 @@ export default {
   }
 };
 
-export const Default: StoryObj<typeof cre8FieldNote> = {
+export const Default: StoryObj<typeof Cre8FieldNote> = {
   args: { children: 'This is a field note.', },
 };
 
-export const BeginningLink: StoryObj<typeof cre8FieldNote> = { args: {
+export const BeginningLink: StoryObj<typeof Cre8FieldNote> = { args: {
   children: (
     <>
-      <cre8TextLink href="https://www.cigna.com">Helpful link</cre8TextLink> at the beginning of a field note
+      <Cre8TextLink href="https://www.cigna.com">Helpful link</Cre8TextLink> at the beginning of a field note
     </>
   )
 } };
 
-export const MiddleLink: StoryObj<typeof cre8FieldNote> = { args: {
+export const MiddleLink: StoryObj<typeof Cre8FieldNote> = { args: {
   children: (
     <>
-      This is a field note with a <cre8TextLink href="https://www.cigna.com">helpful link</cre8TextLink> in the middle of content
+      This is a field note with a <Cre8TextLink href="https://www.cigna.com">helpful link</Cre8TextLink> in the middle of content
     </>
   )
 } };
 
-export const EndingLink: StoryObj<typeof cre8FieldNote> = { args: {
+export const EndingLink: StoryObj<typeof Cre8FieldNote> = { args: {
   children: (
     <>
-      This is a field note with an ending <cre8TextLink href="https://www.cigna.com">helpful link</cre8TextLink>
+      This is a field note with an ending <Cre8TextLink href="https://www.cigna.com">helpful link</Cre8TextLink>
     </>
   )
 } };
 
-export const Error: StoryObj<typeof cre8FieldNote> = { args: {
+export const Error: StoryObj<typeof Cre8FieldNote> = { args: {
   isError: true,
   children: 'This is a field note with an error state.'
 } };
 
-export const Success: StoryObj<typeof cre8FieldNote> = { args: {
+export const Success: StoryObj<typeof Cre8FieldNote> = { args: {
   isSuccess: true,
   children: 'This is a field note with an success state.'
 } };

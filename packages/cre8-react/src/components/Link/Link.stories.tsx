@@ -1,15 +1,15 @@
 import type { StoryObj } from '@storybook/react';
 import React from 'react';
 import { excludeRegexArray } from '../../../.storybook/preview';
-import { cre8Badge, cre8Link } from '../..';
-import svgCalendar from '@cre8/cre8-icons/lib/icons/System/Regular/Calendar.svg?raw';
-import svgCheck from '@cre8/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
-import svgInfoFilled from '@cre8/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
-import svgHelp from '@cre8/cre8-icons/lib/icons/System/Regular/Help.svg?raw';
+import { Cre8Badge, Cre8Link } from '../..';
+import svgCalendar from '@Cre8/Cre8-icons/lib/icons/System/Regular/Calendar.svg?raw';
+import svgCheck from '@Cre8/Cre8-icons/lib/icons/System/Regular/Check.svg?raw';
+import svgInfoFilled from '@Cre8/Cre8-icons/lib/icons/System/Filled/Info.svg?raw';
+import svgHelp from '@Cre8/Cre8-icons/lib/icons/System/Regular/Help.svg?raw';
 
 export default {
-  title: 'cre8 Components/Link',
-  component: cre8Link,
+  title: 'Cre8 Components/Link',
+  component: Cre8Link,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -32,11 +32,11 @@ export default {
 
 
 
-export const Default: StoryObj<typeof cre8Link> = {
+export const Default: StoryObj<typeof Cre8Link> = {
   args: { children: <>Hello World</> },
 };
 
-export const IconBefore: StoryObj<typeof cre8Link> = {
+export const IconBefore: StoryObj<typeof Cre8Link> = {
   args: {
     href: '#',
     svg: svgCalendar,
@@ -45,7 +45,7 @@ export const IconBefore: StoryObj<typeof cre8Link> = {
   },
 };
 
-export const IconAfter: StoryObj<typeof cre8Link> = {
+export const IconAfter: StoryObj<typeof Cre8Link> = {
   args: {
     href: '#',
     svg: svgCheck,
@@ -54,24 +54,24 @@ export const IconAfter: StoryObj<typeof cre8Link> = {
   },
 };
 
-export const BadgeLink: StoryObj<typeof cre8Link> = {
+export const BadgeLink: StoryObj<typeof Cre8Link> = {
   args: {
     href: '#',
     children: (
       <>
         Hello World
-        <cre8Badge
+        <Cre8Badge
           text="17"
           slot="badge"
           status="info"
           variant="light"
-        ></cre8Badge>
+        ></Cre8Badge>
       </>
     ),
   },
 };
 
-export const CallToActionLink: StoryObj<typeof cre8Link> = {
+export const CallToActionLink: StoryObj<typeof Cre8Link> = {
   args: {
     href: '#',
     ctaLink: true,
@@ -80,7 +80,7 @@ export const CallToActionLink: StoryObj<typeof cre8Link> = {
   },
 };
 
-export const CallToActionLinkInverted: StoryObj<typeof cre8Link> = {
+export const CallToActionLinkInverted: StoryObj<typeof Cre8Link> = {
   args: {
     href: '#',
     ctaLink: true,
@@ -90,7 +90,7 @@ export const CallToActionLinkInverted: StoryObj<typeof cre8Link> = {
   },
 };
 
-export const NoUnderline: StoryObj<typeof cre8Link> = {
+export const NoUnderline: StoryObj<typeof Cre8Link> = {
   args: {
     href: '#',
     noUnderline: true,
@@ -98,7 +98,7 @@ export const NoUnderline: StoryObj<typeof cre8Link> = {
   },
 };
 
-export const NoUnderlineWithIcon: StoryObj<typeof cre8Link> = {
+export const NoUnderlineWithIcon: StoryObj<typeof Cre8Link> = {
   args: {
     href: '#',
     noUnderline: true,
@@ -108,7 +108,7 @@ export const NoUnderlineWithIcon: StoryObj<typeof cre8Link> = {
   },
 };
 
-export const Inverted: StoryObj<typeof cre8Link> = {
+export const Inverted: StoryObj<typeof Cre8Link> = {
   args: {
     href: '#',
     inverted: true,
@@ -119,7 +119,7 @@ export const Inverted: StoryObj<typeof cre8Link> = {
   },
 };
 
-export const InvtertedWithIcon: StoryObj<typeof cre8Link> = {
+export const InvtertedWithIcon: StoryObj<typeof Cre8Link> = {
   args: {
     href: '#',
     inverted: true,
@@ -132,7 +132,7 @@ export const InvtertedWithIcon: StoryObj<typeof cre8Link> = {
   },
 };
 
-export const SmallLinkWithIcon: StoryObj<typeof cre8Link> = {
+export const SmallLinkWithIcon: StoryObj<typeof Cre8Link> = {
   args: {
     href: '#',
     size: 'sm',
@@ -142,7 +142,7 @@ export const SmallLinkWithIcon: StoryObj<typeof cre8Link> = {
   },
 };
 
-export const LargeLinkWithIcon: StoryObj<typeof cre8Link> = {
+export const LargeLinkWithIcon: StoryObj<typeof Cre8Link> = {
   args: {
     href: '#',
     size: 'lg',

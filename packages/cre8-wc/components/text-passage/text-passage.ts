@@ -10,7 +10,7 @@ import styles from './text-passage.scss';
  *
  * # How to Use
  * 1. Code your text passage using any of the native html text elements (p, ol, ul, blockquote, cite, etc.)
- *    or other cre8 Components like cre8-heading and wrap them with the cre8-text-passage tags.
+ *    or other Cre8 Components like cre8-heading and wrap them with the cre8-text-passage tags.
  * 2. Choose between three sizes for your text content or apply inline styling if you need additional styling.
  * 3. For dark backgrounds, add the 'inverted' attribute to the <cre8-text-passage> tag.
  * 3. Your text-passage will render with brand-approved styling!
@@ -20,7 +20,7 @@ import styles from './text-passage.scss';
  *
  * @slot - The component content
  */
-export class cre8TextPassage extends Cre8Element {
+export class Cre8TextPassage extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -73,13 +73,13 @@ export class cre8TextPassage extends Cre8Element {
 }
 
 if (customElements.get('cre8-text-passage') === undefined) {
-    customElements.define('cre8-text-passage', cre8TextPassage);
+    customElements.define('cre8-text-passage', Cre8TextPassage);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-text-passage': cre8TextPassage;
+    'cre8-text-passage': Cre8TextPassage;
   }
 }
 
-export default cre8TextPassage;
+export default Cre8TextPassage;

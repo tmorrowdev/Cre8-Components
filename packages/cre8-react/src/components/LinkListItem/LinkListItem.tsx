@@ -1,9 +1,9 @@
-import { createComponent } from '@lit-labs/react';
-import { cre8LinkListItem as cre8LinkListItemElement } from '@cre8/cre8-wc/lib/components/link-list-item/link-list-item';
+import { createComponent } from '@lit/react';
+import { Cre8LinkListItem as Cre8LinkListItemElement } from '@cre8_dev/cre8-wc/lib/components/link-list-item/link-list-item';
 import React from 'react';
 
-export const cre8LinkListItem = createComponent({
+export const Cre8LinkListItem = createComponent({
     react: React,
-    tagName: 'cre8-link-list-item',
-    elementClass: cre8LinkListItemElement,
+    tagName: 'Cre8-link-list-item',
+    elementClass: Cre8LinkListItemElement,
 });

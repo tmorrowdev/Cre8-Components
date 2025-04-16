@@ -1,10 +1,10 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8ProgressStepsItem as cre8ProgressStepsItemElement } from '@cre8/cre8-wc/lib/components/progress-steps-item/progress-steps-item';
+import { createComponent } from '@lit/react';
+import { Cre8ProgressStepsItem as Cre8ProgressStepsItemElement } from '@cre8_dev/cre8-wc/lib/components/progress-steps-item/progress-steps-item';
 
 /**
  * The Progress Steps Item component is used to display a single step in a multi-step process.
- * It should be used as a child component of `cre8-progress-steps`.
+ * It should be used as a child component of `Cre8-progress-steps`.
  * These Components serve a contextual purpose and don't provide any functionality.
  *
  *
@@ -16,9 +16,9 @@ import { cre8ProgressStepsItem as cre8ProgressStepsItemElement } from '@cre8/cre
  *
  * @slot - The component content
  */
-export const cre8ProgressStepsItem = createComponent({
+export const Cre8ProgressStepsItem = createComponent({
     react: React,
-    tagName: 'cre8-progress-steps-item',
-    elementClass: cre8ProgressStepsItemElement,
+    tagName: 'Cre8-progress-steps-item',
+    elementClass: Cre8ProgressStepsItemElement,
 
 });

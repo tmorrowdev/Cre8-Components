@@ -8,12 +8,12 @@ dependencies:
   '@a11y/focus-trap':
     specifier: ^1.0.5
     version: 1.0.5
-  '@cre8/cre8-design-tokens':
-    specifier: file:cre8-cre8-design-tokens-1.0.1-beta.2.tgz
-    version: file:cre8-cre8-design-tokens-1.0.1-beta.2.tgz
   '@cre8/cre8-icons':
     specifier: file:../../cre8-cre8-icons-0.6.0.tgz
     version: file:../../cre8-cre8-icons-0.6.0.tgz(webpack@5.98.0)
+  '@cre8_dev/cre8-design-tokens':
+    specifier: 1.0.3
+    version: 1.0.3
   classnames:
     specifier: 2.3.2
     version: 2.3.2
@@ -1560,6 +1560,10 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@cre8_dev/cre8-design-tokens@1.0.3:
+    resolution: {integrity: sha512-qEy+1Cq34OK818m8qD7dFwFspbf2xlGdGA1uxyRjReohUg5fM72wbIiMX7mXm/j5jfx+ZRqnheSICJxK/qqHQQ==}
+    dev: false
 
   /@discoveryjs/json-ext@0.5.7:
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
@@ -13317,10 +13321,4 @@ packages:
       raw-loader: 4.0.2(webpack@5.98.0)
     transitivePeerDependencies:
       - webpack
-    dev: false
-
-  file:cre8-cre8-design-tokens-1.0.1-beta.2.tgz:
-    resolution: {integrity: sha512-yTniSIfy9qfERPALz+p4MpPhjKmTBqIFtH4/qrlX2ON1WqqQovTxR+wcGFQOsB+Bq0Yz3iohZsXY/8gdLGvzZQ==, tarball: file:cre8-cre8-design-tokens-1.0.1-beta.2.tgz}
-    name: '@cre8/cre8-design-tokens'
-    version: 1.0.1-beta.2
     dev: false

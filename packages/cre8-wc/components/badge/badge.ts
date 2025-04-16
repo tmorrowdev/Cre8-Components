@@ -19,7 +19,7 @@ export enum variant {
  * Badges should be organized inside a dedicated table row communicating status such as pending, approved or rejected.
  *
  */
-export class cre8Badge extends Cre8Element {
+export class Cre8Badge extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -56,9 +56,9 @@ export class cre8Badge extends Cre8Element {
    * SVG as a raw string
    * - For badges with icons, the icon is defined by this prop
    * - Pass in a raw svg as a String. We use raw string loader for this but any method of getting raw svgs will do
-   * - Import example:`import svgFeedback from '@cre8/cre8-icons/lib/icons/System/Regular/Feedback.svg?raw';`
+   * - Import example:`import svgFeedback from '@Cre8/cre8-icons/lib/icons/System/Regular/Feedback.svg?raw';`
    * - [cre8-icons Github repo](https://git.express-scripts.com/ExpressScripts/cre8-icons) This is the Github
-   * repo for cre8 icons, which includes a link to the storybook as well as relavant information for new icons
+   * repo for Cre8 icons, which includes a link to the storybook as well as relavant information for new icons
    */
   @property({ type: String })
       svg?: string;
@@ -84,11 +84,11 @@ export class cre8Badge extends Cre8Element {
 }
 
 if (customElements.get('cre8-badge') === undefined) {
-    customElements.define('cre8-badge', cre8Badge);
+    customElements.define('cre8-badge', Cre8Badge);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-badge': cre8Badge;
+    'cre8-badge': Cre8Badge;
   }
 }

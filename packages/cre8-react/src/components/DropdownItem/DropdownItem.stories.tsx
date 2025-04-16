@@ -1,12 +1,12 @@
 import type { StoryObj } from '@storybook/react';
-import { cre8Dropdown, cre8DropdownItem } from '../..';
+import { Cre8Dropdown, Cre8DropdownItem } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 
 export default {
   title: 'IN DEVELOPMENT/DropdownItem',
-  component: cre8DropdownItem,
+  component: Cre8DropdownItem,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -14,8 +14,8 @@ export default {
     }
   },
   render: (args) => (
-    <cre8Dropdown {...args}>
-    </cre8Dropdown>
+    <Cre8Dropdown {...args}>
+    </Cre8Dropdown>
   ),
   args: {
     buttonText: 'Select',
@@ -23,12 +23,12 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8Dropdown> = { args: {
+export const Default: StoryObj<typeof Cre8Dropdown> = { args: {
   children: (
       <>
-        <cre8DropdownItem>Item 1</cre8DropdownItem>
-        <cre8DropdownItem>Item 2 Item with longer text than default</cre8DropdownItem>
-        <cre8DropdownItem>Item 3</cre8DropdownItem>
+        <Cre8DropdownItem>Item 1</Cre8DropdownItem>
+        <Cre8DropdownItem>Item 2 Item with longer text than default</Cre8DropdownItem>
+        <Cre8DropdownItem>Item 3</Cre8DropdownItem>
       </>
     )
   } 

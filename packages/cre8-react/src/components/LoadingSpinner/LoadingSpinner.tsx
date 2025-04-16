@@ -1,6 +1,6 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8LoadingSpinner as cre8LoadingSpinnerElement } from '@cre8/cre8-wc/lib/components/loading-spinner/loading-spinner';
+import { createComponent } from '@lit/react';
+import { Cre8LoadingSpinner as Cre8LoadingSpinnerElement } from '@cre8_dev/cre8-wc/lib/components/loading-spinner/loading-spinner';
 
 /**
  * A loading spinner notifies the user that their request is being processed while the front end is retrieving data
@@ -31,14 +31,14 @@ import { cre8LoadingSpinner as cre8LoadingSpinnerElement } from '@cre8/cre8-wc/l
  * 1. Choose a size and use it according to context, guidance should be given by your design team.
  * 2. If you choose to use the determinate loader then you must also control the progress attribute's value which
  * controls the percentage of the circle that shows (values 0-100 accepted);
- * 3. For dark backgrounds, add the `inverted` attribute to the `<cre8-loading-spinner>` tag.
+ * 3. For dark backgrounds, add the `inverted` attribute to the `<Cre8-loading-spinner>` tag.
  * 4. For accessibility reasons, always include a label input unless explicitly informed to do otherwise by design or
  * accessibility teams.
  *
  */
-export const cre8LoadingSpinner = createComponent({
+export const Cre8LoadingSpinner = createComponent({
     react: React,
-    tagName: 'cre8-loading-spinner',
-    elementClass: cre8LoadingSpinnerElement,
+    tagName: 'Cre8-loading-spinner',
+    elementClass: Cre8LoadingSpinnerElement,
 
 });

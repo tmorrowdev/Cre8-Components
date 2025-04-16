@@ -9,7 +9,7 @@ import styles from './calendar-month-modal.scss';
 import '../../button/button';
 import '../../icon/icon';
 
-export class cre8CalendarMonthModal extends Cre8Element {
+export class Cre8CalendarMonthModal extends Cre8Element {
   static get styles() {
     return unsafeCSS(styles.toString());
   }
@@ -80,13 +80,13 @@ export class cre8CalendarMonthModal extends Cre8Element {
 }
 
 if (customElements.get('cre8-calendar-month-modal') === undefined) {
-  customElements.define('cre8-calendar-month-modal', cre8CalendarMonthModal);
+  customElements.define('cre8-calendar-month-modal', Cre8CalendarMonthModal);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-calendar-month-modal': cre8CalendarMonthModal;
+    'cre8-calendar-month-modal': Cre8CalendarMonthModal;
   }
 }
 
-export default cre8CalendarMonthModal;
+export default Cre8CalendarMonthModal;

@@ -5,7 +5,7 @@ import styles from './nav-container.scss';
 /**
  * @slot - The navigation container content
  */
-export class cre8NavContainer extends Cre8Element {
+export class Cre8NavContainer extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -22,13 +22,13 @@ export class cre8NavContainer extends Cre8Element {
 }
 
 if (customElements.get('cre8-nav-container') === undefined) {
-    customElements.define('cre8-nav-container', cre8NavContainer);
+    customElements.define('cre8-nav-container', Cre8NavContainer);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-nav-container': cre8NavContainer;
+    'cre8-nav-container': Cre8NavContainer;
   }
 }
 
-export default cre8NavContainer;
+export default Cre8NavContainer;

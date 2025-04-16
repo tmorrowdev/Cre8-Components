@@ -1,13 +1,13 @@
 import type { StoryObj } from '@storybook/react';
-import { cre8TertiaryNav, cre8TertiaryNavItem } from '../..';
+import { Cre8TertiaryNav, Cre8TertiaryNavItem } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 import { withActions } from '@storybook/addon-actions/decorator';
 import React from 'react';
 
 export default {
   title: 'Cre8 Components/Tertiary Nav',
-  component: cre8TertiaryNav,
-  subcomponents: { cre8TertiaryNavItem },
+  component: Cre8TertiaryNav,
+  subcomponents: { Cre8TertiaryNavItem },
   parameters: {
     status: { type: 'inProgress' },
     actions: {
@@ -21,19 +21,19 @@ export default {
   args: {
     children: (
       <>
-        <cre8TertiaryNavItem href="#" isCurrent={true}>Tertiary Nav Item 1</cre8TertiaryNavItem>
-        <cre8TertiaryNavItem href="#">Tertiary Nav Item 2</cre8TertiaryNavItem>
-        <cre8TertiaryNavItem href="#">Tertiary Nav Item 3</cre8TertiaryNavItem>
-        <cre8TertiaryNavItem href="#">Tertiary Nav Item 4</cre8TertiaryNavItem>
-        <cre8TertiaryNavItem href="#">Tertiary Nav Item 5</cre8TertiaryNavItem>
+        <Cre8TertiaryNavItem href="#" isCurrent={true}>Tertiary Nav Item 1</Cre8TertiaryNavItem>
+        <Cre8TertiaryNavItem href="#">Tertiary Nav Item 2</Cre8TertiaryNavItem>
+        <Cre8TertiaryNavItem href="#">Tertiary Nav Item 3</Cre8TertiaryNavItem>
+        <Cre8TertiaryNavItem href="#">Tertiary Nav Item 4</Cre8TertiaryNavItem>
+        <Cre8TertiaryNavItem href="#">Tertiary Nav Item 5</Cre8TertiaryNavItem>
       </>
     )
   }
 };
 
-export const Default: StoryObj<typeof cre8TertiaryNav> = { args: {} };
+export const Default: StoryObj<typeof Cre8TertiaryNav> = { args: {} };
 
-export const FullWidth: StoryObj<typeof cre8TertiaryNav> = { args: {
+export const FullWidth: StoryObj<typeof Cre8TertiaryNav> = { args: {
   fullWidth: true
 } };
 

@@ -40,7 +40,7 @@ import styles from './tooltip.scss';
  * @slot trigger - Named slot container for Tooltip element to trigger showing/hiding the Tooltip text
  */
 
-export class cre8Tooltip extends Cre8Element {
+export class Cre8Tooltip extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -128,13 +128,13 @@ export class cre8Tooltip extends Cre8Element {
    * Query the tooltip panel element
    */
   @query('.cre8-c-tooltip')
-      _cre8Tooltip: HTMLElement;
+      _Cre8Tooltip: HTMLElement;
 
   /**
    * Query the tooltip panel element
    */
   @query('.cre8-c-tooltip__panel')
-      _cre8TooltipPanel: HTMLElement;
+      _Cre8TooltipPanel: HTMLElement;
 
   /**
    * Query the document direction value
@@ -221,10 +221,10 @@ export class cre8Tooltip extends Cre8Element {
   dynamicPosition() {
     // TODO: Temporarily keep eslint complexity as warning. Update during specific story for this rule.
     /* eslint complexity: ["warn", 10] */
-      if (this.isDynamic && this._cre8TooltipPanel) {
+      if (this.isDynamic && this._Cre8TooltipPanel) {
           const body = document.querySelector('body').getBoundingClientRect();
-          const tooltipPanel = this._cre8TooltipPanel.getBoundingClientRect();
-          const tooltipHeight = this._cre8Tooltip.clientHeight + tooltipPanel.height + tooltipPanel.top;
+          const tooltipPanel = this._Cre8TooltipPanel.getBoundingClientRect();
+          const tooltipHeight = this._Cre8Tooltip.clientHeight + tooltipPanel.height + tooltipPanel.top;
 
       /**
        * If tooltip panel breaks out the left side of the window, position it to the right
@@ -364,13 +364,13 @@ export class cre8Tooltip extends Cre8Element {
 }
 
 if (customElements.get('cre8-tooltip') === undefined) {
-    customElements.define('cre8-tooltip', cre8Tooltip);
+    customElements.define('cre8-tooltip', Cre8Tooltip);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-tooltip': cre8Tooltip;
+    'cre8-tooltip': Cre8Tooltip;
   }
 }
 
-export default cre8Tooltip;
+export default Cre8Tooltip;

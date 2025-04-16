@@ -15,7 +15,7 @@ import styles from './checkbox-field.scss';
  *
  * @slot - The component content, which should be a set of `checkbox-field-item`s
  */
-export class cre8CheckboxField extends Cre8Element {
+export class Cre8CheckboxField extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -99,13 +99,13 @@ export class cre8CheckboxField extends Cre8Element {
 }
 
 if (customElements.get('cre8-checkbox-field') === undefined) {
-    customElements.define('cre8-checkbox-field', cre8CheckboxField);
+    customElements.define('cre8-checkbox-field', Cre8CheckboxField);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-checkbox-field': cre8CheckboxField;
+    'cre8-checkbox-field': Cre8CheckboxField;
   }
 }
 
-export default cre8CheckboxField;
+export default Cre8CheckboxField;

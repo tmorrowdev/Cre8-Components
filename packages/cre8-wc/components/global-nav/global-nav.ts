@@ -6,7 +6,7 @@ import styles from './global-nav.scss';
 /**
  * @slot - The primary navigation items
  */
-export class cre8GlobalNav extends Cre8Element {
+export class Cre8GlobalNav extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -52,13 +52,13 @@ export class cre8GlobalNav extends Cre8Element {
 }
 
 if (customElements.get('cre8-global-nav') === undefined) {
-    customElements.define('cre8-global-nav', cre8GlobalNav);
+    customElements.define('cre8-global-nav', Cre8GlobalNav);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-global-nav': cre8GlobalNav;
+    'cre8-global-nav': Cre8GlobalNav;
   }
 }
 
-export default cre8GlobalNav;
+export default Cre8GlobalNav;

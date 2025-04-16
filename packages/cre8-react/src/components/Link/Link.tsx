@@ -1,6 +1,6 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8Link as cre8LinkElement } from '@cre8/cre8-wc/lib/components/link/link';
+import { createComponent } from '@lit/react';
+import { Cre8Link as Cre8LinkElement } from '@cre8_dev/cre8-wc/lib/components/link/link';
 
 /**
  * Link Component are strictly used in the case where the component will take
@@ -17,9 +17,9 @@ import { cre8Link as cre8LinkElement } from '@cre8/cre8-wc/lib/components/link/l
  *
 */
 
-export const cre8Link = createComponent({
+export const Cre8Link = createComponent({
     react: React,
-    tagName: 'cre8-link',
-    elementClass: cre8LinkElement,
+    tagName: 'Cre8-link',
+    elementClass: Cre8LinkElement,
 
 });

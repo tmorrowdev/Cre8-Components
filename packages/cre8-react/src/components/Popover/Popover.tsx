@@ -1,19 +1,19 @@
 import React from 'react';
-import { createComponent, EventName } from '@lit-labs/react';
-import { cre8Popover as cre8PopoverElement } from '@cre8/cre8-wc/lib/components/popover/popover';
-import { cre8DomEvent } from '../../util/cre8DomEvent';
+import { createComponent, EventName } from '@lit/react';
+import { Cre8Popover as Cre8PopoverElement } from '@cre8_dev/cre8-wc/lib/components/popover/popover';
+import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 /**
  * The Popover is for progressive disclosure of relevant content often hidden behind a help or info icon.
  * Its content should be no longer than 3-4 lines in addition to a line of heading text and an optional button.
  */
 
-export const cre8Popover = createComponent({
+export const Cre8Popover = createComponent({
     react: React,
-    tagName: 'cre8-popover',
-    elementClass: cre8PopoverElement,
+    tagName: 'Cre8-popover',
+    elementClass: Cre8PopoverElement,
     events: {
-        onOpen: 'open' as EventName<cre8DomEvent<cre8PopoverElement>>,
-        onClose: 'close' as EventName<cre8DomEvent<cre8PopoverElement>>,
+        onOpen: 'open' as EventName<Cre8DomEvent<Cre8PopoverElement>>,
+        onClose: 'close' as EventName<Cre8DomEvent<Cre8PopoverElement>>,
     },
 });

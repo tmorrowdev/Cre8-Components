@@ -20,7 +20,7 @@ import styles from './section.scss';
  * It could be a cre8-text-passage, a cre8-card or any other block level html.
  */
 
-export class cre8Section extends Cre8Element {
+export class Cre8Section extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -54,13 +54,13 @@ export class cre8Section extends Cre8Element {
 }
 
 if (customElements.get('cre8-section') === undefined) {
-    customElements.define('cre8-section', cre8Section);
+    customElements.define('cre8-section', Cre8Section);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-section': cre8Section;
+    'cre8-section': Cre8Section;
   }
 }
 
-export default cre8Section;
+export default Cre8Section;

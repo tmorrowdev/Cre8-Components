@@ -1,10 +1,10 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8TableHeaderCell as cre8TableHeaderCellElement } from '@cre8/cre8-wc/lib/components/table-header-cell/table-header-cell';
+import { createComponent } from '@lit/react';
+import { Cre8TableHeaderCell as Cre8TableHeaderCellElement } from '@cre8_dev/cre8-wc/lib/components/table-header-cell/table-header-cell';
 
-export const cre8TableHeaderCell = createComponent({
+export const Cre8TableHeaderCell = createComponent({
     react: React,
-    tagName: 'cre8-table-header-cell',
-    elementClass: cre8TableHeaderCellElement,
+    tagName: 'Cre8-table-header-cell',
+    elementClass: Cre8TableHeaderCellElement,
 
 });

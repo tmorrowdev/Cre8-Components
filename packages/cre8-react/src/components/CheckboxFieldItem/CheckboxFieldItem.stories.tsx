@@ -1,19 +1,19 @@
 import type { StoryObj } from '@storybook/react';
 import React from 'react';
 import { excludeRegexArray } from '../../../.storybook/preview';
-import { cre8CheckboxFieldItem } from '../..';
+import { Cre8CheckboxFieldItem } from '../..';
 import { action } from '@storybook/addon-actions';
 
 export default {
-  title: 'cre8 Components/CheckboxFieldItem',
-  component: cre8CheckboxFieldItem,
+  title: 'Cre8 Components/CheckboxFieldItem',
+  component: Cre8CheckboxFieldItem,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
       exclude: new RegExp(`${excludeRegexArray.join('|')}`),
     },
   },
-  render: (args) => <cre8CheckboxFieldItem {...args}></cre8CheckboxFieldItem>,
+  render: (args) => <Cre8CheckboxFieldItem {...args}></Cre8CheckboxFieldItem>,
   args: {
     name: 'checkbox-name',
     value: 'checkbox-value',
@@ -29,20 +29,20 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8CheckboxFieldItem> = {
+export const Default: StoryObj<typeof Cre8CheckboxFieldItem> = {
   args: {
     label: 'Label',
   },
 };
 
-export const Preselected: StoryObj<typeof cre8CheckboxFieldItem> = {
+export const Preselected: StoryObj<typeof Cre8CheckboxFieldItem> = {
   args: {
     label: 'Label',
     checked: true,
   },
 };
 
-export const Disabled: StoryObj<typeof cre8CheckboxFieldItem> = {
+export const Disabled: StoryObj<typeof Cre8CheckboxFieldItem> = {
   args: {
     label: 'Label',
     disabled: true,
@@ -50,7 +50,7 @@ export const Disabled: StoryObj<typeof cre8CheckboxFieldItem> = {
   },
 };
 
-export const Required: StoryObj<typeof cre8CheckboxFieldItem> = {
+export const Required: StoryObj<typeof Cre8CheckboxFieldItem> = {
   args: {
     label: 'Label',
     required: true,
@@ -58,7 +58,7 @@ export const Required: StoryObj<typeof cre8CheckboxFieldItem> = {
   },
 };
 
-export const RequiredError: StoryObj<typeof cre8CheckboxFieldItem> = {
+export const RequiredError: StoryObj<typeof Cre8CheckboxFieldItem> = {
   args: {
     label: 'Label',
     required: true,
@@ -66,14 +66,14 @@ export const RequiredError: StoryObj<typeof cre8CheckboxFieldItem> = {
   },
 };
 
-export const DefaultFieldNote: StoryObj<typeof cre8CheckboxFieldItem> = {
+export const DefaultFieldNote: StoryObj<typeof Cre8CheckboxFieldItem> = {
   args: {
     label: 'Label',
     fieldNote: 'This is a field note.',
   },
 };
 
-export const ErrorFieldNote: StoryObj<typeof cre8CheckboxFieldItem> = {
+export const ErrorFieldNote: StoryObj<typeof Cre8CheckboxFieldItem> = {
   args: {
     label: 'Label',
     fieldNote: 'This is an error field note.',
@@ -82,7 +82,7 @@ export const ErrorFieldNote: StoryObj<typeof cre8CheckboxFieldItem> = {
   },
 };
 
-export const SuccessFieldNote: StoryObj<typeof cre8CheckboxFieldItem> = {
+export const SuccessFieldNote: StoryObj<typeof Cre8CheckboxFieldItem> = {
   args: {
     label: 'Label',
     fieldNote: 'This is a success field note.',
@@ -91,7 +91,7 @@ export const SuccessFieldNote: StoryObj<typeof cre8CheckboxFieldItem> = {
   },
 };
 
-export const LongTitle: StoryObj<typeof cre8CheckboxFieldItem> = {
+export const LongTitle: StoryObj<typeof Cre8CheckboxFieldItem> = {
   args: {
     label:
       'This could mayhaps be the longest title that has ever been put on a checkbox field ever!',

@@ -1,11 +1,11 @@
 import type { StoryObj } from '@storybook/react';
-import { cre8Submenu, cre8SubmenuItem } from '../..';
+import { Cre8Submenu, Cre8SubmenuItem } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
   title: 'Cre8 Components/Submenu',
-  component: cre8Submenu,
-  subcomponents: { cre8SubmenuItem },
+  component: Cre8Submenu,
+  subcomponents: { Cre8SubmenuItem },
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -14,4 +14,4 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8Submenu> = { args: {} };
+export const Default: StoryObj<typeof Cre8Submenu> = { args: {} };

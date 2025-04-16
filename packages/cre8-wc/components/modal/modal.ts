@@ -1,11 +1,11 @@
 import { PropertyValues, html, unsafeCSS } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import '../icon/icon';
-import svgError from '@cre8/cre8-icons/lib/icons/System/Regular/Error.svg?raw';
-import svgWarningFilled from '@cre8/cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
-import svgCheckCircle from '@cre8/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
-import svgInfoFilled from '@cre8/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
-import svgHelp from '@cre8/cre8-icons/lib/icons/System/Regular/Help.svg?raw';
+import svgError from '@Cre8/cre8-icons/lib/icons/System/Regular/Error.svg?raw';
+import svgWarningFilled from '@Cre8/cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
+import svgCheckCircle from '@Cre8/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
+import svgInfoFilled from '@Cre8/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
+import svgHelp from '@Cre8/cre8-icons/lib/icons/System/Regular/Help.svg?raw';
 import { Cre8Element } from '../cre8-element';
 import '@a11y/focus-trap';
 import styles from './modal.scss';
@@ -16,11 +16,11 @@ import styles from './modal.scss';
  * (note: adding `slot="header"` will insert the given element into the header section of the modal,
  * same for `slot="footer"` and no given slot name will inset it into the body)
  *
- * If it is desired to create a utility modal. cre8Modal requires a status value (see props table below,
+ * If it is desired to create a utility modal. Cre8Modal requires a status value (see props table below,
  * and a UtilityModalTitle since all utility modals have a cre8-heading)
  * @slot - The component content
  */
-export class cre8Modal extends Cre8Element {
+export class Cre8Modal extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -220,16 +220,16 @@ render() {
 }
 
 if (customElements.get('cre8-modal') === undefined) {
-    customElements.define('cre8-modal', cre8Modal);
+    customElements.define('cre8-modal', Cre8Modal);
 }
 
 export interface CloseModalEvent extends CustomEvent<{isActive: boolean}> {
     type: 'close-modal';
-    currentTarget: cre8Modal;
+    currentTarget: Cre8Modal;
 }
 
 declare global {
     interface HTMLElementTagNameMap {
-        'cre8-modal': cre8Modal;
+        'cre8-modal': Cre8Modal;
     }
 }

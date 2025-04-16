@@ -1,7 +1,6 @@
 /* eslint-disable indent */
 import { html, nothing, unsafeCSS } from 'lit';
-import svgCaretUp from '@cre8/cre8-icons/lib/icons/System/Regular/Caret Up.svg?raw';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
+import svgCaretUp from '@Cre8/cre8-icons/lib/icons/System/Regular/Caret Up.svg?raw';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import '../button/button';
@@ -14,7 +13,7 @@ import styles from './percent-bar.scss';
  * a percentage, an actionable icon that allows a user to revisit a prior step and an actionable link that
  * allows a user save their progress before exiting.
  */
-export class cre8PercentBar extends Cre8Element {
+export class Cre8PercentBar extends Cre8Element {
   static get styles() {
     return unsafeCSS(styles.toString());
   }
@@ -58,11 +57,11 @@ export class cre8PercentBar extends Cre8Element {
               <div lass="cre8-c-percent-bar__left-controls">
                 ${this.isFirstStep()
                   ? html` <cre8-button
-                      hideText="true"
+                      ?hideText=${true}
                       svg="${svgCaretUp}"
                       iconRotateDegree="-90"
                       variant="tertiary"
-                      disabled=${ifDefined(this.disableActionLeft)}
+                      ?disabled=${this.disableActionLeft}
                       @click="${this._handleClick}"
                     >
                     </cre8-button>`
@@ -87,13 +86,13 @@ export class cre8PercentBar extends Cre8Element {
 }
 
 if (customElements.get('cre8-percent-bar') === undefined) {
-  customElements.define('cre8-percent-bar', cre8PercentBar);
+  customElements.define('cre8-percent-bar', Cre8PercentBar);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-percent-bar': cre8PercentBar;
+    'cre8-percent-bar': Cre8PercentBar;
   }
 }
 
-export default cre8PercentBar;
+export default Cre8PercentBar;

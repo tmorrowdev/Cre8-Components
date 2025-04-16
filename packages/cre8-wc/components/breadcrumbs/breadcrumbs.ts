@@ -24,7 +24,7 @@ import styles from './breadcrumbs.scss';
  * @slot - The component content
  */
 
-export class cre8Breadcrumbs extends Cre8Element {
+export class Cre8Breadcrumbs extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -49,13 +49,13 @@ export class cre8Breadcrumbs extends Cre8Element {
 }
 
 if (customElements.get('cre8-breadcrumbs') === undefined) {
-    customElements.define('cre8-breadcrumbs', cre8Breadcrumbs);
+    customElements.define('cre8-breadcrumbs', Cre8Breadcrumbs);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-breadcrumbs': cre8Breadcrumbs;
+    'cre8-breadcrumbs': Cre8Breadcrumbs;
   }
 }
 
-export default cre8Breadcrumbs;
+export default Cre8Breadcrumbs;

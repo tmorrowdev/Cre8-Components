@@ -14,7 +14,7 @@ import styles from './accordion.scss';
  *
  */
 
-export class cre8Accordion extends Cre8Element {
+export class Cre8Accordion extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -62,12 +62,12 @@ export class cre8Accordion extends Cre8Element {
 }
 
 if (customElements.get('cre8-accordion') === undefined) {
-    customElements.define('cre8-accordion', cre8Accordion);
+    customElements.define('cre8-accordion', Cre8Accordion);
 }
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-accordion': cre8Accordion;
+    'cre8-accordion': Cre8Accordion;
   }
 }
 
-export default cre8Accordion;
+export default Cre8Accordion;

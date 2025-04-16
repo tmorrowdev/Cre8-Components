@@ -1,10 +1,10 @@
 import type { StoryObj } from '@storybook/react';
-import { cre8LinelengthContainer } from '../..';
+import { Cre8LinelengthContainer } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
   title: 'Cre8 Components/LinelengthContainer',
-  component: cre8LinelengthContainer,
+  component: Cre8LinelengthContainer,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -13,4 +13,4 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8LinelengthContainer> = { args: {} };
+export const Default: StoryObj<typeof Cre8LinelengthContainer> = { args: {} };

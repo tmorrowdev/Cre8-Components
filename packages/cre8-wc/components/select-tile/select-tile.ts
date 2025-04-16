@@ -1,4 +1,4 @@
-import svgCheck from '@cre8/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
+import svgCheck from '@Cre8/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
 import {
     LitElement, PropertyValues, html, unsafeCSS,
 } from 'lit';
@@ -46,7 +46,7 @@ import { SelectTileCheckboxController } from './select-tile-checkbox-controller'
      * @csspart ::part(body-body) - The element that wraps the "body" slot
      *
     */
-export class cre8SelectTile extends Cre8FormElement {
+export class Cre8SelectTile extends Cre8FormElement {
     static shadowRootOptions = { ...LitElement.shadowRootOptions, delegatesFocus: true };
 
     private _controller: SelectTileRadioController | SelectTileCheckboxController | undefined = undefined;
@@ -323,13 +323,13 @@ export class cre8SelectTile extends Cre8FormElement {
 }
 
 if (customElements.get('cre8-select-tile') === undefined) {
-    customElements.define('cre8-select-tile', cre8SelectTile);
+    customElements.define('cre8-select-tile', Cre8SelectTile);
 }
 
 declare global {
     interface HTMLElementTagNameMap {
-        'cre8-select-tile': cre8SelectTile;
+        'cre8-select-tile': Cre8SelectTile;
     }
 }
 
-export default cre8SelectTile;
+export default Cre8SelectTile;

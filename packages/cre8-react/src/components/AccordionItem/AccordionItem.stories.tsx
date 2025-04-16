@@ -1,11 +1,11 @@
 import type { StoryObj } from '@storybook/react';
 import React from 'react';
-import { cre8AccordionItem, cre8TextPassage } from '../..';
+import { Cre8AccordionItem, Cre8TextPassage } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-  title: 'cre8 Components/Accordion/Accordion Item',
-  component: cre8AccordionItem,
+  title: 'Cre8 Components/Accordion/Accordion Item',
+  component: Cre8AccordionItem,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -14,52 +14,52 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8AccordionItem> = {
+export const Default: StoryObj<typeof Cre8AccordionItem> = {
   args: {
     heading: 'Accordion Item Heading',
     children: (
       <>
-        <cre8TextPassage> Accordion panel 1 content </cre8TextPassage>
+        <Cre8TextPassage> Accordion panel 1 content </Cre8TextPassage>
       </>
     ),
   },
 };
 
-export const IconBefore: StoryObj<typeof cre8AccordionItem> = {
+export const IconBefore: StoryObj<typeof Cre8AccordionItem> = {
   args: {
     heading: 'Accordion Item Heading',
     iconBefore: true,
     children: (
       <>
-        <cre8TextPassage> Accordion panel 1 content </cre8TextPassage>
+        <Cre8TextPassage> Accordion panel 1 content </Cre8TextPassage>
       </>
     ),
   },
 };
-export const tertiaryIcon: StoryObj<typeof cre8AccordionItem> = {
+export const tertiaryIcon: StoryObj<typeof Cre8AccordionItem> = {
   args: {
     heading: 'Accordion Item Heading',
     tertiaryIcon: true,
     children: (
       <>
-        <cre8TextPassage> Accordion panel 1 content </cre8TextPassage>
+        <Cre8TextPassage> Accordion panel 1 content </Cre8TextPassage>
       </>
     ),
   },
 };
-export const tertiaryIconBefore: StoryObj<typeof cre8AccordionItem> = {
+export const tertiaryIconBefore: StoryObj<typeof Cre8AccordionItem> = {
   args: {
     heading: 'Accordion Item Heading',
     tertiaryIcon: true,
     iconBefore: true,
     children: (
       <>
-        <cre8TextPassage> Accordion panel 1 content </cre8TextPassage>
+        <Cre8TextPassage> Accordion panel 1 content </Cre8TextPassage>
       </>
     ),
   },
 };
-export const LargeHeader: StoryObj<typeof cre8AccordionItem> = {
+export const LargeHeader: StoryObj<typeof Cre8AccordionItem> = {
   args: {
     heading: 'Accordion Item Heading',
     tertiaryIcon: true,
@@ -67,12 +67,12 @@ export const LargeHeader: StoryObj<typeof cre8AccordionItem> = {
     size: 'lg',
     children: (
       <>
-        <cre8TextPassage> Accordion panel 1 content </cre8TextPassage>
+        <Cre8TextPassage> Accordion panel 1 content </Cre8TextPassage>
       </>
     ),
   },
 };
-export const BrandColoredHeader: StoryObj<typeof cre8AccordionItem> = {
+export const BrandColoredHeader: StoryObj<typeof Cre8AccordionItem> = {
   args: {
     heading: 'Accordion Item Heading',
     tertiaryIcon: true,
@@ -81,12 +81,12 @@ export const BrandColoredHeader: StoryObj<typeof cre8AccordionItem> = {
     size: 'sm',
     children: (
       <>
-        <cre8TextPassage> Accordion panel 1 content </cre8TextPassage>
+        <Cre8TextPassage> Accordion panel 1 content </Cre8TextPassage>
       </>
     ),
   },
 };
-export const HeadingTagVariantH2: StoryObj<typeof cre8AccordionItem> = {
+export const HeadingTagVariantH2: StoryObj<typeof Cre8AccordionItem> = {
   args: {
     heading: 'Accordion Item Heading',
     tertiaryIcon: true,
@@ -96,7 +96,7 @@ export const HeadingTagVariantH2: StoryObj<typeof cre8AccordionItem> = {
     headingTagVariant: 'h2',
     children: (
       <>
-        <cre8TextPassage> Accordion panel 1 content </cre8TextPassage>
+        <Cre8TextPassage> Accordion panel 1 content </Cre8TextPassage>
       </>
     ),
   },

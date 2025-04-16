@@ -1,6 +1,6 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8Divider as cre8DividerElement } from '@cre8/cre8-wc/lib/components/divider/divider';
+import { createComponent } from '@lit/react';
+import { Cre8Divider as Cre8DividerElement } from '@cre8_dev/cre8-wc/lib/components/divider/divider';
 
 /**
  * The divider component is a separator between sections of content or groups of items.
@@ -14,8 +14,8 @@ import { cre8Divider as cre8DividerElement } from '@cre8/cre8-wc/lib/components/
  * - The user can set status === "knockout" to set the divider to white color.
 */
 
-export const cre8Divider = createComponent({
+export const Cre8Divider = createComponent({
     react: React,
-    tagName: 'cre8-divider',
-    elementClass: cre8DividerElement,
+    tagName: 'Cre8-divider',
+    elementClass: Cre8DividerElement,
 });

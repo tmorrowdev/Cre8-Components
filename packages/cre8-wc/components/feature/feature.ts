@@ -6,7 +6,7 @@ import styles from './feature.scss';
 /**
  * @slot - The component content
  */
-export class cre8Feature extends Cre8Element {
+export class Cre8Feature extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -51,13 +51,13 @@ export class cre8Feature extends Cre8Element {
 }
 
 if (customElements.get('cre8-feature') === undefined) {
-    customElements.define('cre8-feature', cre8Feature);
+    customElements.define('cre8-feature', Cre8Feature);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-feature': cre8Feature;
+    'cre8-feature': Cre8Feature;
   }
 }
 
-export default cre8Feature;
+export default Cre8Feature;

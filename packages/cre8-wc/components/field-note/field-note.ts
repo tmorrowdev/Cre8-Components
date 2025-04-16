@@ -1,5 +1,5 @@
-import svgCheckCircle from '@cre8/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
-import svgErrorFilled from '@cre8/cre8-icons/lib/icons/System/Filled/Error.svg?raw';
+import svgCheckCircle from '@Cre8/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
+import svgErrorFilled from '@Cre8/cre8-icons/lib/icons/System/Filled/Error.svg?raw';
 import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
@@ -13,7 +13,7 @@ import styles from './field-note.scss';
  * @slot - The note content
  */
 
-export class cre8FieldNote extends Cre8Element {
+export class Cre8FieldNote extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -74,13 +74,13 @@ export class cre8FieldNote extends Cre8Element {
 }
 
 if (customElements.get('cre8-field-note') === undefined) {
-    customElements.define('cre8-field-note', cre8FieldNote);
+    customElements.define('cre8-field-note', Cre8FieldNote);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-field-note': cre8FieldNote;
+    'cre8-field-note': Cre8FieldNote;
   }
 }
 
-export default cre8FieldNote;
+export default Cre8FieldNote;

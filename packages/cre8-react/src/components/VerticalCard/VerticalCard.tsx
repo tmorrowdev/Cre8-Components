@@ -1,9 +1,9 @@
-import { createComponent } from '@lit-labs/react';
-import { cre8VerticalCard as cre8VerticalCardElement } from '@cre8/cre8-wc/lib/components/vertical-card/vertical-card';
+import { createComponent } from '@lit/react';
+import { Cre8VerticalCard as Cre8VerticalCardElement } from '@cre8_dev/cre8-wc/lib/components/vertical-card/vertical-card';
 import React from 'react';
 
-export const cre8VerticalCard = createComponent({
+export const Cre8VerticalCard = createComponent({
     react: React,
-    tagName: 'cre8-vertical-card',
-    elementClass: cre8VerticalCardElement,
+    tagName: 'Cre8-vertical-card',
+    elementClass: Cre8VerticalCardElement,
 });

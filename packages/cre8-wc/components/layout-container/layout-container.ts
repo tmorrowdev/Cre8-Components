@@ -6,7 +6,7 @@ import styles from './layout-container.scss';
 /**
  * @slot - The contents of the layout container
  */
-export class cre8LayoutContainer extends Cre8Element {
+export class Cre8LayoutContainer extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -32,13 +32,13 @@ export class cre8LayoutContainer extends Cre8Element {
 }
 
 if (customElements.get('cre8-layout-container') === undefined) {
-    customElements.define('cre8-layout-container', cre8LayoutContainer);
+    customElements.define('cre8-layout-container', Cre8LayoutContainer);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-layout-container': cre8LayoutContainer;
+    'cre8-layout-container': Cre8LayoutContainer;
   }
 }
 
-export default cre8LayoutContainer;
+export default Cre8LayoutContainer;

@@ -1,9 +1,9 @@
-import { createComponent } from '@lit-labs/react';
-import { cre8LayoutContainer as cre8LayoutContainerElement } from '@cre8/cre8-wc/lib/components/layout-container/layout-container';
+import { createComponent } from '@lit/react';
+import { Cre8LayoutContainer as Cre8LayoutContainerElement } from '@cre8_dev/cre8-wc/lib/components/layout-container/layout-container';
 import React from 'react';
 
-export const cre8LayoutContainer = createComponent({
+export const Cre8LayoutContainer = createComponent({
     react: React,
-    tagName: 'cre8-layout-container',
-    elementClass: cre8LayoutContainerElement,
+    tagName: 'Cre8-layout-container',
+    elementClass: Cre8LayoutContainerElement,
 });

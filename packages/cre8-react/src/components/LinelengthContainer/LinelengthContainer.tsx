@@ -1,10 +1,10 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8LinelengthContainer as cre8LinelengthContainerElement } from '@cre8/cre8-wc/lib/components/linelength-container/linelength-container';
+import { createComponent } from '@lit/react';
+import { Cre8LinelengthContainer as Cre8LinelengthContainerElement } from '@cre8_dev/cre8-wc/lib/components/linelength-container/linelength-container';
 
-export const cre8LinelengthContainer = createComponent({
+export const Cre8LinelengthContainer = createComponent({
     react: React,
-    tagName: 'cre8-linelength-container',
-    elementClass: cre8LinelengthContainerElement,
+    tagName: 'Cre8-linelength-container',
+    elementClass: Cre8LinelengthContainerElement,
 
 });

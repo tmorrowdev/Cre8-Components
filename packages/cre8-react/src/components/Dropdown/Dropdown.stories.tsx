@@ -1,12 +1,12 @@
 import type { StoryObj } from '@storybook/react';
-import { cre8Dropdown, cre8DropdownItem } from '../..';
+import { Cre8Dropdown, Cre8DropdownItem } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 
 export default {
   title: 'IN DEVELOPMENT/Dropdown',
-  component: cre8Dropdown,
+  component: Cre8Dropdown,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -19,8 +19,8 @@ export default {
     },
   },
   render: (args) => (
-    <cre8Dropdown {...args}>
-    </cre8Dropdown>
+    <Cre8Dropdown {...args}>
+    </Cre8Dropdown>
   ),
   args: {
     buttonText: 'Select',
@@ -28,68 +28,68 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8Dropdown> = { args: {
+export const Default: StoryObj<typeof Cre8Dropdown> = { args: {
   children: (
     <>
-      <cre8DropdownItem>Item 1</cre8DropdownItem>
-      <cre8DropdownItem>Item 2 Item with longer text than default</cre8DropdownItem>
-      <cre8DropdownItem>Item 3</cre8DropdownItem>
+      <Cre8DropdownItem>Item 1</Cre8DropdownItem>
+      <Cre8DropdownItem>Item 2 Item with longer text than default</Cre8DropdownItem>
+      <Cre8DropdownItem>Item 3</Cre8DropdownItem>
     </>
   )
 } };
 
-export const DropdownButton: StoryObj<typeof cre8Dropdown> = { args: {
+export const DropdownButton: StoryObj<typeof Cre8Dropdown> = { args: {
   buttonText: 'Button Dropdown',
   children: (
     <>
-      <cre8DropdownItem>Item 1</cre8DropdownItem>
-      <cre8DropdownItem>Item 2</cre8DropdownItem>
-      <cre8DropdownItem>Item 3</cre8DropdownItem>
-      <cre8DropdownItem>Item 4</cre8DropdownItem>
+      <Cre8DropdownItem>Item 1</Cre8DropdownItem>
+      <Cre8DropdownItem>Item 2</Cre8DropdownItem>
+      <Cre8DropdownItem>Item 3</Cre8DropdownItem>
+      <Cre8DropdownItem>Item 4</Cre8DropdownItem>
     </>
   )
 } };
 
-export const DropdownButtonWithScrollBar: StoryObj<typeof cre8Dropdown> = { args: {
+export const DropdownButtonWithScrollBar: StoryObj<typeof Cre8Dropdown> = { args: {
   buttonText: 'Dropdown Scroll',
   maxHeight: '100px',
   children: (
     <>
-      <cre8DropdownItem>Item 1</cre8DropdownItem>
-      <cre8DropdownItem>Item 2</cre8DropdownItem>
-      <cre8DropdownItem>Item 3</cre8DropdownItem>
-      <cre8DropdownItem>Item 4</cre8DropdownItem>
-      <cre8DropdownItem>Item 5</cre8DropdownItem>
-      <cre8DropdownItem>Item 6</cre8DropdownItem>
+      <Cre8DropdownItem>Item 1</Cre8DropdownItem>
+      <Cre8DropdownItem>Item 2</Cre8DropdownItem>
+      <Cre8DropdownItem>Item 3</Cre8DropdownItem>
+      <Cre8DropdownItem>Item 4</Cre8DropdownItem>
+      <Cre8DropdownItem>Item 5</Cre8DropdownItem>
+      <Cre8DropdownItem>Item 6</Cre8DropdownItem>
     </>
   )
 } };
 
-export const DropdownLink: StoryObj<typeof cre8Dropdown> = { args: {
+export const DropdownLink: StoryObj<typeof Cre8Dropdown> = { args: {
   buttonText: 'Link Dropdown',
   dropdownWithLink: true,
   children: (
     <>
-      <cre8DropdownItem>Item 1</cre8DropdownItem>
-      <cre8DropdownItem>Item 2</cre8DropdownItem>
-      <cre8DropdownItem>Item 3</cre8DropdownItem>
-      <cre8DropdownItem>Item 4</cre8DropdownItem>
+      <Cre8DropdownItem>Item 1</Cre8DropdownItem>
+      <Cre8DropdownItem>Item 2</Cre8DropdownItem>
+      <Cre8DropdownItem>Item 3</Cre8DropdownItem>
+      <Cre8DropdownItem>Item 4</Cre8DropdownItem>
     </>
   )
 } };
 
-export const DropdownLinkWithScrollBar: StoryObj<typeof cre8Dropdown> = { args: {
+export const DropdownLinkWithScrollBar: StoryObj<typeof Cre8Dropdown> = { args: {
   buttonText: 'Dropdown Scroll',
   dropdownWithLink: true,
   maxHeight: '100px',
   children: (
     <>
-      <cre8DropdownItem>Item 1</cre8DropdownItem>
-      <cre8DropdownItem>Item 2</cre8DropdownItem>
-      <cre8DropdownItem>Item 3</cre8DropdownItem>
-      <cre8DropdownItem>Item 4</cre8DropdownItem>
-      <cre8DropdownItem>Item 5</cre8DropdownItem>
-      <cre8DropdownItem>Item 6</cre8DropdownItem>
+      <Cre8DropdownItem>Item 1</Cre8DropdownItem>
+      <Cre8DropdownItem>Item 2</Cre8DropdownItem>
+      <Cre8DropdownItem>Item 3</Cre8DropdownItem>
+      <Cre8DropdownItem>Item 4</Cre8DropdownItem>
+      <Cre8DropdownItem>Item 5</Cre8DropdownItem>
+      <Cre8DropdownItem>Item 6</Cre8DropdownItem>
     </>
   )
 } };
@@ -98,7 +98,7 @@ export const DropdownLinkWithScrollBar: StoryObj<typeof cre8Dropdown> = { args: 
  * A callback event will be triggered upon selecting an item from the dropdown.
  * Please check the console log for output of callback for this example.
  */
-export const DropdownItemSelected: StoryObj<typeof cre8Dropdown> = { args: {
+export const DropdownItemSelected: StoryObj<typeof Cre8Dropdown> = { args: {
   onDropdownItemSelected: (e) => {
     const dropdownElement = e.currentTarget;
     const dropdownItemElement = e.target;
@@ -107,9 +107,9 @@ export const DropdownItemSelected: StoryObj<typeof cre8Dropdown> = { args: {
   },
   children: (
     <>
-      <cre8DropdownItem>Item 1</cre8DropdownItem>
-      <cre8DropdownItem>Item 2 Item with longer text than default</cre8DropdownItem>
-      <cre8DropdownItem>Item 3</cre8DropdownItem>
+      <Cre8DropdownItem>Item 1</Cre8DropdownItem>
+      <Cre8DropdownItem>Item 2 Item with longer text than default</Cre8DropdownItem>
+      <Cre8DropdownItem>Item 3</Cre8DropdownItem>
     </>
   )
 } };
