@@ -1,16 +1,16 @@
-import svgWarningFilled from '@cre8/cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
-import svgCheckCircle from '@cre8/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
-import svgInfoFilled from '@cre8/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
-import svgErrorFilled from '@cre8/cre8-icons/lib/icons/System/Filled/Error.svg?raw';
-import svgLightbulbFilled from '@cre8/cre8-icons/lib/icons/System/Filled/Lightbulb.svg?raw';
-import svgClose from '@cre8/cre8-icons/lib/icons/System/Regular/Close.svg?raw';
+import svgWarningFilled from '@Cre8/cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
+import svgCheckCircle from '@Cre8/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
+import svgInfoFilled from '@Cre8/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
+import svgErrorFilled from '@Cre8/cre8-icons/lib/icons/System/Filled/Error.svg?raw';
+import svgLightbulbFilled from '@Cre8/cre8-icons/lib/icons/System/Filled/Lightbulb.svg?raw';
+import svgClose from '@Cre8/cre8-icons/lib/icons/System/Regular/Close.svg?raw';
 import { html, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import '../button/button';
 import '../link/link';
 import '../heading/heading';
 import '../text-passage/text-passage';
-import '@cre8/cre8-icons';
+import '@Cre8/cre8-icons';
 import '../icon/icon';
 import { Cre8Element } from '../cre8-element';
 import styles from './alert.scss';
@@ -30,7 +30,7 @@ import styles from './alert.scss';
  *
  */
 
-export class cre8Alert extends Cre8Element {
+export class Cre8Alert extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -202,13 +202,13 @@ export class cre8Alert extends Cre8Element {
 }
 
 if (customElements.get('cre8-alert') === undefined) {
-    customElements.define('cre8-alert', cre8Alert);
+    customElements.define('cre8-alert', Cre8Alert);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-alert': cre8Alert;
+    'cre8-alert': Cre8Alert;
   }
 }
 
-export default cre8Alert;
+export default Cre8Alert;

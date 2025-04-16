@@ -1,7 +1,7 @@
-import { createComponent, type EventName } from '@lit-labs/react';
-import { cre8Select as cre8SelectElement } from '@cre8/cre8-wc/lib/components/select/select';
+import { createComponent, type EventName } from '@lit/react';
+import { Cre8Select as Cre8SelectElement } from '@cre8_dev/cre8-wc/lib/components/select/select';
 import React from 'react';
-import { type cre8DomEvent } from '../../util/cre8DomEvent';
+import { type Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 /**
  * The Select control is designed and built to be used for selecting between choices in a form.
@@ -28,11 +28,11 @@ import { type cre8DomEvent } from '../../util/cre8DomEvent';
  */
 
 
-export const cre8Select = createComponent({
+export const Cre8Select = createComponent({
     react: React,
-    tagName: 'cre8-select',
-    elementClass: cre8SelectElement,
+    tagName: 'Cre8-select',
+    elementClass: Cre8SelectElement,
     events: {
-        onChange: 'change' as EventName<cre8DomEvent<cre8SelectElement>>,
+        onChange: 'change' as EventName<Cre8DomEvent<Cre8SelectElement>>,
     },
 });

@@ -1,5 +1,5 @@
-import { createComponent } from '@lit-labs/react';
-import { cre8Button as cre8ButtonElement } from '@cre8/cre8-wc/lib/components/button/button';
+import { createComponent } from '@lit/react';
+import { Cre8Button as Cre8ButtonElement } from '@cre8_dev/cre8-wc/lib/components/button/button';
 import React from 'react';
 
 /**
@@ -69,8 +69,8 @@ import React from 'react';
  *
  */
 
-export const cre8Button = createComponent({
+export const Cre8Button = createComponent({
     react: React,
-    tagName: 'cre8-button',
-    elementClass: cre8ButtonElement,
+    tagName: 'Cre8-button',
+    elementClass: Cre8ButtonElement,
 });

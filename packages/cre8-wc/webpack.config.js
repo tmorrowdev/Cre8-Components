@@ -46,7 +46,10 @@ const entry = {
     filename: 'theme.js'
   },
   icon: './components/icon/icon.ts',
-  bundle: Object.entries(components).map(([, file]) => file)
+  index: {
+    import: './index.ts',
+    filename: './index.js',
+  },
 };
 
 /**

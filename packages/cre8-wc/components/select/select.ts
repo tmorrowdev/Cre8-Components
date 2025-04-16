@@ -1,4 +1,4 @@
-import svgCaretUp from '@cre8/cre8-icons/lib/icons/System/Regular/Caret Up.svg?raw';
+import svgCaretUp from '@Cre8/cre8-icons/lib/icons/System/Regular/Caret Up.svg?raw';
 import { html, nothing, unsafeCSS } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property, query, queryAll } from 'lit/decorators.js';
@@ -7,14 +7,14 @@ import { Cre8FormElement } from '../cre8-form-element';
 import '../field-note/field-note';
 import styles from './select.scss';
 
-export interface cre8SelectOption {
+export interface Cre8SelectOption {
   label: string;
   value: number | string;
 }
 
-export interface cre8SelectOptionGroup {
+export interface Cre8SelectOptionGroup {
   optGroupLabel: string;
-  options: cre8SelectOption[];
+  options: Cre8SelectOption[];
 }
 
 /**
@@ -46,7 +46,7 @@ export interface cre8SelectOptionGroup {
  * @slot fieldNote - Container for optional field note content
  */
 
-export class cre8Select extends Cre8FormElement {
+export class Cre8Select extends Cre8FormElement {
     readonly type = 'select';
 
     static get styles() {
@@ -54,16 +54,16 @@ export class cre8Select extends Cre8FormElement {
     }
 
   /**
-   * A mix of cre8SelectOption and cre8SelectOptionGroup definitions:
-   * - cre8SelectOption
+   * A mix of Cre8SelectOption and Cre8SelectOptionGroup definitions:
+   * - Cre8SelectOption
    *   - label: option label text - `string`
    *   - value: option value - `number | string`
-   * - cre8SelectOptionGroup
+   * - Cre8SelectOptionGroup
    *  - optGroupLabel: optgroup label text - `string`
-   *  - options: Array of multiple cre8SelectOption items - `cre8SelectOption[]`
+   *  - options: Array of multiple Cre8SelectOption items - `Cre8SelectOption[]`
    */
   @property({ type: Array })
-      items: Array<cre8SelectOption|cre8SelectOptionGroup> = [];
+      items: Array<Cre8SelectOption|Cre8SelectOptionGroup> = [];
 
   /**
    * The required label that appears above the select
@@ -258,9 +258,9 @@ export class cre8Select extends Cre8FormElement {
    * Render the select options
    */
   private _renderSelectOptions() {
-      return this.items.map((item: cre8SelectOption|cre8SelectOptionGroup) => {
+      return this.items.map((item: Cre8SelectOption|Cre8SelectOptionGroup) => {
           if ('options' in item) {
-              const selectedGroup = item.options.map((option: cre8SelectOption) => html`
+              const selectedGroup = item.options.map((option: Cre8SelectOption) => html`
                   <option value="${option.value}">${option.label}</option>
               `);
               return html`<optgroup label="${item.optGroupLabel}">
@@ -343,11 +343,11 @@ export class cre8Select extends Cre8FormElement {
 }
 
 if (customElements.get('cre8-select') === undefined) {
-    customElements.define('cre8-select', cre8Select);
+    customElements.define('cre8-select', Cre8Select);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-select': cre8Select;
+    'cre8-select': Cre8Select;
   }
 }

@@ -1,23 +1,23 @@
 /* eslint-disable import/no-unresolved */
-import svgCaretLeft from '@cre8/cre8-icons/lib/icons/System/Regular/Caret Left.svg?raw';
-import svgCaretRight from '@cre8/cre8-icons/lib/icons/System/Regular/Caret Right.svg?raw';
-import svgArrowRight from '@cre8/cre8-icons/lib/icons/System/Regular/Arrow - Right.svg?raw';
+import svgCaretLeft from '@Cre8/Cre8-icons/lib/icons/System/Regular/Caret Left.svg?raw';
+import svgCaretRight from '@Cre8/Cre8-icons/lib/icons/System/Regular/Caret Right.svg?raw';
+import svgArrowRight from '@Cre8/Cre8-icons/lib/icons/System/Regular/Arrow - Right.svg?raw';
 import type { StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import React from 'react';
 import { excludeRegexArray } from '../../../.storybook/preview';
-import { cre8DangerButton } from '../..';
+import { Cre8DangerButton } from '../..';
 
 export default {
   title: 'In Development/DangerButton',
-  component: cre8DangerButton,
+  component: Cre8DangerButton,
   parameters: { 
     status: { type: 'inProgress' },
     controls: {
       exclude: new RegExp(`${excludeRegexArray.join('|')}`)
     }
   },
-  render: (args) => <cre8DangerButton {...args}></cre8DangerButton>,
+  render: (args) => <Cre8DangerButton {...args}></Cre8DangerButton>,
   args: {
     text: 'Button',
     loading: false,
@@ -26,27 +26,27 @@ export default {
   }
 };
 
-export const Primary: StoryObj<typeof cre8DangerButton> = {
+export const Primary: StoryObj<typeof Cre8DangerButton> = {
   args: {
     text: 'Primary'
   } 
 };
 
-export const PrimarySubmit: StoryObj<typeof cre8DangerButton> = {
+export const PrimarySubmit: StoryObj<typeof Cre8DangerButton> = {
   args: {
     type: 'submit',
     text: 'Submit'
   } 
 };
 
-export const PrimaryDisabled: StoryObj<typeof cre8DangerButton> = {
+export const PrimaryDisabled: StoryObj<typeof Cre8DangerButton> = {
   args: {
     disabled: true,
     text: 'Button'
   } 
 };
 
-export const PrimaryInverted: StoryObj<typeof cre8DangerButton> = {
+export const PrimaryInverted: StoryObj<typeof Cre8DangerButton> = {
   args: {
     text: 'Primary',
     inverted: true,
@@ -56,7 +56,7 @@ export const PrimaryInverted: StoryObj<typeof cre8DangerButton> = {
   },
 };
 
-export const PrimaryDisabledInverted: StoryObj<typeof cre8DangerButton> = {
+export const PrimaryDisabledInverted: StoryObj<typeof Cre8DangerButton> = {
   args: {
     disabled: true,
     text: 'Button',
@@ -67,7 +67,7 @@ export const PrimaryDisabledInverted: StoryObj<typeof cre8DangerButton> = {
   },
 };
 
-export const IconBefore: StoryObj<typeof cre8DangerButton> = {
+export const IconBefore: StoryObj<typeof Cre8DangerButton> = {
   args: {
     svg: svgCaretLeft,
     iconPosition: 'before',
@@ -75,7 +75,7 @@ export const IconBefore: StoryObj<typeof cre8DangerButton> = {
   } 
 };
 
-export const IconAfter: StoryObj<typeof cre8DangerButton> = {
+export const IconAfter: StoryObj<typeof Cre8DangerButton> = {
   args: {
     svg: svgCaretRight,
     iconPosition: 'after',
@@ -83,14 +83,14 @@ export const IconAfter: StoryObj<typeof cre8DangerButton> = {
   } 
 };
 
-export const Secondary: StoryObj<typeof cre8DangerButton> = {
+export const Secondary: StoryObj<typeof Cre8DangerButton> = {
   args: {
     text: 'Button',
     variant: 'secondary'
   } 
 };
 
-export const SecondaryDisabled: StoryObj<typeof cre8DangerButton> = {
+export const SecondaryDisabled: StoryObj<typeof Cre8DangerButton> = {
   args: {
     disabled: true,
     text: 'Button',
@@ -98,7 +98,7 @@ export const SecondaryDisabled: StoryObj<typeof cre8DangerButton> = {
   } 
 };
 
-export const SecondaryInverted: StoryObj<typeof cre8DangerButton> = {
+export const SecondaryInverted: StoryObj<typeof Cre8DangerButton> = {
   args: {
     text: 'Button',
     variant: 'secondary',
@@ -109,7 +109,7 @@ export const SecondaryInverted: StoryObj<typeof cre8DangerButton> = {
   },
 };
 
-export const SecondaryInvertedDisabled: StoryObj<typeof cre8DangerButton> = {
+export const SecondaryInvertedDisabled: StoryObj<typeof Cre8DangerButton> = {
   args: {
     disabled: true,
     text: 'Button',
@@ -121,14 +121,14 @@ export const SecondaryInvertedDisabled: StoryObj<typeof cre8DangerButton> = {
   },
 };
 
-export const Tertiary: StoryObj<typeof cre8DangerButton> = {
+export const Tertiary: StoryObj<typeof Cre8DangerButton> = {
   args: {
     text: 'Button',
     variant: 'tertiary'
   } 
 };
 
-export const TertiaryDisabled: StoryObj<typeof cre8DangerButton> = {
+export const TertiaryDisabled: StoryObj<typeof Cre8DangerButton> = {
   args: {
     disabled: true,
     text: 'Button',
@@ -136,7 +136,7 @@ export const TertiaryDisabled: StoryObj<typeof cre8DangerButton> = {
   } 
 };
 
-export const TertiaryInverted: StoryObj<typeof cre8DangerButton> = {
+export const TertiaryInverted: StoryObj<typeof Cre8DangerButton> = {
   args: {
     text: 'Button',
     variant: 'tertiary',
@@ -147,7 +147,7 @@ export const TertiaryInverted: StoryObj<typeof cre8DangerButton> = {
   },
 };
 
-export const TertiaryInvertedDisabled: StoryObj<typeof cre8DangerButton> = {
+export const TertiaryInvertedDisabled: StoryObj<typeof Cre8DangerButton> = {
   args: {
     disabled: true,
     text: 'Button',
@@ -159,21 +159,21 @@ export const TertiaryInvertedDisabled: StoryObj<typeof cre8DangerButton> = {
   },
 };
 
-export const FullWidth: StoryObj<typeof cre8DangerButton> = {
+export const FullWidth: StoryObj<typeof Cre8DangerButton> = {
   args: {
     fullWidth: true,
     text: 'Button'
   } 
 };
 
-export const Small: StoryObj<typeof cre8DangerButton> = {
+export const Small: StoryObj<typeof Cre8DangerButton> = {
   args: {
     size: 'sm',
     text: 'Button'
   } 
 };
 
-export const SmallInverted: StoryObj<typeof cre8DangerButton> = {
+export const SmallInverted: StoryObj<typeof Cre8DangerButton> = {
   args: {
     size: 'sm',
     text: 'Button',
@@ -184,7 +184,7 @@ export const SmallInverted: StoryObj<typeof cre8DangerButton> = {
   },
 };
 
-export const SmallIconAfter: StoryObj<typeof cre8DangerButton> = {
+export const SmallIconAfter: StoryObj<typeof Cre8DangerButton> = {
   args: {
     svg: svgCaretRight,
     iconPosition: 'after',
@@ -193,14 +193,14 @@ export const SmallIconAfter: StoryObj<typeof cre8DangerButton> = {
   } 
 };
 
-export const Large: StoryObj<typeof cre8DangerButton> = {
+export const Large: StoryObj<typeof Cre8DangerButton> = {
   args: {
     size: 'lg',
     text: 'Button'
   } 
 };
 
-export const LargeInverted: StoryObj<typeof cre8DangerButton> = {
+export const LargeInverted: StoryObj<typeof Cre8DangerButton> = {
   args: {
     size: 'lg',
     text: 'Button',
@@ -211,7 +211,7 @@ export const LargeInverted: StoryObj<typeof cre8DangerButton> = {
   },
 };
 
-export const LargeIconAfter: StoryObj<typeof cre8DangerButton> = {
+export const LargeIconAfter: StoryObj<typeof Cre8DangerButton> = {
   args: {
     svg: svgCaretRight,
     iconPosition: 'after',
@@ -220,7 +220,7 @@ export const LargeIconAfter: StoryObj<typeof cre8DangerButton> = {
   } 
 };
 
-export const IconOnlyPrimary: StoryObj<typeof cre8DangerButton> = {
+export const IconOnlyPrimary: StoryObj<typeof Cre8DangerButton> = {
   args: {
     hideText: true,
     svg: svgArrowRight,
@@ -230,7 +230,7 @@ export const IconOnlyPrimary: StoryObj<typeof cre8DangerButton> = {
   } 
 };
 
-export const IconOnlyPrimaryInverted: StoryObj<typeof cre8DangerButton> = {
+export const IconOnlyPrimaryInverted: StoryObj<typeof Cre8DangerButton> = {
   args: {
     hideText: true,
     svg: svgArrowRight,
@@ -244,7 +244,7 @@ export const IconOnlyPrimaryInverted: StoryObj<typeof cre8DangerButton> = {
   },
 };
 
-export const IconOnlySecondary: StoryObj<typeof cre8DangerButton> = {
+export const IconOnlySecondary: StoryObj<typeof Cre8DangerButton> = {
   args: {
     hideText: true,
     svg: svgArrowRight,
@@ -254,7 +254,7 @@ export const IconOnlySecondary: StoryObj<typeof cre8DangerButton> = {
   } 
 };
 
-export const IconOnlySecondaryInverted: StoryObj<typeof cre8DangerButton> = {
+export const IconOnlySecondaryInverted: StoryObj<typeof Cre8DangerButton> = {
   args: {
     hideText: true,
     svg: svgArrowRight,
@@ -268,7 +268,7 @@ export const IconOnlySecondaryInverted: StoryObj<typeof cre8DangerButton> = {
   },
 };
 
-export const IconOnlyTertiary: StoryObj<typeof cre8DangerButton> = {
+export const IconOnlyTertiary: StoryObj<typeof Cre8DangerButton> = {
   args: {
     hideText: true,
     svg: svgArrowRight,
@@ -278,7 +278,7 @@ export const IconOnlyTertiary: StoryObj<typeof cre8DangerButton> = {
   } 
 };
 
-export const IconOnlyTertiaryInverted: StoryObj<typeof cre8DangerButton> = {
+export const IconOnlyTertiaryInverted: StoryObj<typeof Cre8DangerButton> = {
   args: {
     hideText: true,
     svg: svgArrowRight,
@@ -292,7 +292,7 @@ export const IconOnlyTertiaryInverted: StoryObj<typeof cre8DangerButton> = {
   },
 };
 
-export const Loading: StoryObj<typeof cre8DangerButton> = {
+export const Loading: StoryObj<typeof Cre8DangerButton> = {
   args: {
     loading: true,
     text: 'Submit',
@@ -300,7 +300,7 @@ export const Loading: StoryObj<typeof cre8DangerButton> = {
   } 
 };
 
-export const LoadingComplete: StoryObj<typeof cre8DangerButton> = {
+export const LoadingComplete: StoryObj<typeof Cre8DangerButton> = {
   args: {
     loadingComplete: true,
     text: 'Submit',

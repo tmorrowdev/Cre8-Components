@@ -6,7 +6,7 @@ import styles from './page-header.scss';
 /**
  * @slot - The page header content
  */
-export class cre8PageHeader extends Cre8Element {
+export class Cre8PageHeader extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -24,9 +24,9 @@ export class cre8PageHeader extends Cre8Element {
       <div class="${componentClassName}">
         <h1 class="cre8-c-page-header__title">
           ${this.heading}
-          ${this.slotNotEmpty('titcre8ter') && html`
+          ${this.slotNotEmpty('titCre8ter') && html`
           <div class="cre8-c-page-header__title-after">
-            <slot name="titcre8ter"></slot>
+            <slot name="titCre8ter"></slot>
           </div>`}
         </h1>
         <div class="cre8-c-page-header__description">
@@ -38,13 +38,13 @@ export class cre8PageHeader extends Cre8Element {
 }
 
 if (customElements.get('cre8-page-header') === undefined) {
-    customElements.define('cre8-page-header', cre8PageHeader);
+    customElements.define('cre8-page-header', Cre8PageHeader);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-page-header': cre8PageHeader;
+    'cre8-page-header': Cre8PageHeader;
   }
 }
 
-export default cre8PageHeader;
+export default Cre8PageHeader;

@@ -1,13 +1,13 @@
 import type { StoryObj } from '@storybook/react';
-import { cre8TagList, cre8Tag } from '../..';
+import { Cre8TagList, Cre8Tag } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 import React from 'react';
 
 export default {
   title: 'IN DEVELOPMENT/TagList',
-  component: cre8TagList,
-  subcomponents: { cre8Tag },
-  render: (args) => <cre8TagList { ...args } />,
+  component: Cre8TagList,
+  subcomponents: { Cre8Tag },
+  render: (args) => <Cre8TagList { ...args } />,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -19,46 +19,46 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8TagList> = { 
+export const Default: StoryObj<typeof Cre8TagList> = { 
   args: {
     label: 'Fruits',
     children: (
       <React.Fragment>
-        <cre8Tag type="checkbox" variant="neutral" shape="round" text="Orange"></cre8Tag>
-        <cre8Tag type="checkbox" variant="neutral" shape="round" text="Apple"></cre8Tag>
-        <cre8Tag type="checkbox" variant="neutral" shape="round" text="Pear"></cre8Tag>
-        <cre8Tag type="checkbox" variant="neutral" shape="round" text="Banana"></cre8Tag>
-        <cre8Tag type="checkbox" variant="neutral" shape="round" text="Peach"></cre8Tag>
+        <Cre8Tag type="checkbox" variant="neutral" shape="round" text="Orange"></Cre8Tag>
+        <Cre8Tag type="checkbox" variant="neutral" shape="round" text="Apple"></Cre8Tag>
+        <Cre8Tag type="checkbox" variant="neutral" shape="round" text="Pear"></Cre8Tag>
+        <Cre8Tag type="checkbox" variant="neutral" shape="round" text="Banana"></Cre8Tag>
+        <Cre8Tag type="checkbox" variant="neutral" shape="round" text="Peach"></Cre8Tag>
       </React.Fragment>
     ),
   }
 };
 
-export const CheckBox: StoryObj<typeof cre8TagList> = { 
+export const CheckBox: StoryObj<typeof Cre8TagList> = { 
   args: {
     label: 'Animals',
     children: (
       <React.Fragment>
-        <cre8Tag type="checkbox" variant="neutral" shape="round" text="Dog"></cre8Tag>
-        <cre8Tag type="checkbox" variant="neutral" shape="round" text="Cat"></cre8Tag>
-        <cre8Tag type="checkbox" variant="neutral" shape="round" text="Cow"></cre8Tag>
-        <cre8Tag type="checkbox" variant="neutral" shape="round" text="Fish"></cre8Tag>
-        <cre8Tag type="checkbox" variant="neutral" shape="round" text="Bear"></cre8Tag>
+        <Cre8Tag type="checkbox" variant="neutral" shape="round" text="Dog"></Cre8Tag>
+        <Cre8Tag type="checkbox" variant="neutral" shape="round" text="Cat"></Cre8Tag>
+        <Cre8Tag type="checkbox" variant="neutral" shape="round" text="Cow"></Cre8Tag>
+        <Cre8Tag type="checkbox" variant="neutral" shape="round" text="Fish"></Cre8Tag>
+        <Cre8Tag type="checkbox" variant="neutral" shape="round" text="Bear"></Cre8Tag>
       </React.Fragment>
     ),
   }
 };
 
-export const Radio: StoryObj<typeof cre8TagList> = { 
+export const Radio: StoryObj<typeof Cre8TagList> = { 
   args: {
     label: 'Emotions',
     children: (
       <React.Fragment>
-        <cre8Tag type="radio" variant="neutral" shape="round" text="Happy"></cre8Tag>
-        <cre8Tag type="radio" variant="neutral" shape="round" text="Sad"></cre8Tag>
-        <cre8Tag type="radio" variant="neutral" shape="round" text="Scared"></cre8Tag>
-        <cre8Tag type="radio" variant="neutral" shape="round" text="Angry"></cre8Tag>
-        <cre8Tag type="radio" variant="neutral" shape="round" text="Confused"></cre8Tag>
+        <Cre8Tag type="radio" variant="neutral" shape="round" text="Happy"></Cre8Tag>
+        <Cre8Tag type="radio" variant="neutral" shape="round" text="Sad"></Cre8Tag>
+        <Cre8Tag type="radio" variant="neutral" shape="round" text="Scared"></Cre8Tag>
+        <Cre8Tag type="radio" variant="neutral" shape="round" text="Angry"></Cre8Tag>
+        <Cre8Tag type="radio" variant="neutral" shape="round" text="Confused"></Cre8Tag>
       </React.Fragment>
     ),
   }

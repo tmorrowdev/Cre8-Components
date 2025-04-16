@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
-import svgClose from '@cre8/cre8-icons/lib/icons/System/Regular/Close.svg?raw';
+import svgClose from '@Cre8/cre8-icons/lib/icons/System/Regular/Close.svg?raw';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon';
 import styles from './remove-tag.scss';
@@ -21,7 +21,7 @@ export enum Color {
  * Clicking a Remove Tag causes it to disappear from the page or field (in the case of Multi-Select).
  * These tags always display a "Close" icon.
  */
-export class cre8RemoveTag extends Cre8Element {
+export class Cre8RemoveTag extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -97,13 +97,13 @@ export class cre8RemoveTag extends Cre8Element {
 }
 
 if (customElements.get('cre8-remove-tag') === undefined) {
-    customElements.define('cre8-remove-tag', cre8RemoveTag);
+    customElements.define('cre8-remove-tag', Cre8RemoveTag);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-remove-tag': cre8RemoveTag;
+    'cre8-remove-tag': Cre8RemoveTag;
   }
 }
 
-export default cre8RemoveTag;
+export default Cre8RemoveTag;

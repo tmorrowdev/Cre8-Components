@@ -9,7 +9,7 @@ import styles from './tag-list.scss';
  * The Tags must use the `neutral` variant and the `round` shape when they are inside a Tag List.
  * Tag List has a label that should be used to describe the purpose of the list.
  */
-export class cre8TagList extends Cre8Element {
+export class Cre8TagList extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -50,13 +50,13 @@ export class cre8TagList extends Cre8Element {
 }
 
 if (customElements.get('cre8-tag-list') === undefined) {
-    customElements.define('cre8-tag-list', cre8TagList);
+    customElements.define('cre8-tag-list', Cre8TagList);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-tag-list': cre8TagList;
+    'cre8-tag-list': Cre8TagList;
   }
 }
 
-export default cre8TagList;
+export default Cre8TagList;

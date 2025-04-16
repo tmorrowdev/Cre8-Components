@@ -6,7 +6,7 @@ import styles from './list.scss';
 /**
  * @slot - The list items
  */
-export class cre8List extends Cre8Element {
+export class Cre8List extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -50,13 +50,13 @@ export class cre8List extends Cre8Element {
 }
 
 if (customElements.get('cre8-list') === undefined) {
-    customElements.define('cre8-list', cre8List);
+    customElements.define('cre8-list', Cre8List);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-list': cre8List;
+    'cre8-list': Cre8List;
   }
 }
 
-export default cre8List;
+export default Cre8List;

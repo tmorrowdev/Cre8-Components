@@ -1,10 +1,10 @@
 import type { StoryObj } from '@storybook/react';
-import { cre8SkeletonLoader } from '../..';
+import { Cre8SkeletonLoader } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
-    title: 'cre8 Components/Skeleton Loader',
-    component: cre8SkeletonLoader,
+    title: 'Cre8 Components/Skeleton Loader',
+    component: Cre8SkeletonLoader,
     parameters: {
         status: { type: 'inProgress' },
         controls: {
@@ -19,40 +19,40 @@ export default {
     },
 };
 
-export const Default: StoryObj<typeof cre8SkeletonLoader> = { args: {} };
+export const Default: StoryObj<typeof Cre8SkeletonLoader> = { args: {} };
 
-export const Rectangle: StoryObj<typeof cre8SkeletonLoader> = {
+export const Rectangle: StoryObj<typeof Cre8SkeletonLoader> = {
     args: {
         variant: 'rectangle',
     },
 };
 
-export const Square: StoryObj<typeof cre8SkeletonLoader> = {
+export const Square: StoryObj<typeof Cre8SkeletonLoader> = {
     args: {
         variant: 'square',
     },
 };
 
-export const Circle: StoryObj<typeof cre8SkeletonLoader> = {
+export const Circle: StoryObj<typeof Cre8SkeletonLoader> = {
     args: {
         variant: 'circle',
     },
 };
 
-export const CustomHeightWidth: StoryObj<typeof cre8SkeletonLoader> = {
+export const CustomHeightWidth: StoryObj<typeof Cre8SkeletonLoader> = {
     args: {
         height: '20px',
         width: '300px',
     },
 };
 
-export const CustomHeight: StoryObj<typeof cre8SkeletonLoader> = {
+export const CustomHeight: StoryObj<typeof Cre8SkeletonLoader> = {
     args: {
         height: '100px',
     },
 };
 
-export const CustomWidth: StoryObj<typeof cre8SkeletonLoader> = {
+export const CustomWidth: StoryObj<typeof Cre8SkeletonLoader> = {
     args: {
         width: '100px',
     },

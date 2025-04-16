@@ -6,7 +6,7 @@ import styles from './tertiary-nav.scss';
 /**
  * @slot - The component content
  */
-export class cre8TertiaryNav extends Cre8Element {
+export class Cre8TertiaryNav extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -39,9 +39,9 @@ export class cre8TertiaryNav extends Cre8Element {
 }
 
 if (customElements.get('cre8-tertiary-nav') === undefined) {
-    customElements.define('cre8-tertiary-nav', cre8TertiaryNav);
+    customElements.define('cre8-tertiary-nav', Cre8TertiaryNav);
 }
 
-declare global { interface HTMLElementTagNameMap { 'cre8-tertiary-nav': cre8TertiaryNav; } }
+declare global { interface HTMLElementTagNameMap { 'cre8-tertiary-nav': Cre8TertiaryNav; } }
 
-export default cre8TertiaryNav;
+export default Cre8TertiaryNav;

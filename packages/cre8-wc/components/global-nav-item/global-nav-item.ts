@@ -7,7 +7,7 @@ import styles from './global-nav-item.scss';
     /**
      * @slot - The label for the navigation item
      */
-export class cre8GlobalNavItem extends Cre8Element {
+export class Cre8GlobalNavItem extends Cre8Element {
     /**
      * Primary nav item text
      */
@@ -112,7 +112,7 @@ export class cre8GlobalNavItem extends Cre8Element {
         e.preventDefault();
         if (this.parentNode) {
             const navItems = this.parentNode.querySelectorAll('cre8-global-nav-item');
-            navItems.forEach((element: cre8GlobalNavItem) => {
+            navItems.forEach((element: Cre8GlobalNavItem) => {
                 if (element !== this) {
                     element.isActive = false; /* 1 */
                 }
@@ -186,13 +186,13 @@ export class cre8GlobalNavItem extends Cre8Element {
 }
 
 if (customElements.get('cre8-global-nav-item') === undefined) {
-    customElements.define('cre8-global-nav-item', cre8GlobalNavItem);
+    customElements.define('cre8-global-nav-item', Cre8GlobalNavItem);
 }
 
 declare global {
     interface HTMLElementTagNameMap {
-        'cre8-global-nav-item': cre8GlobalNavItem;
+        'cre8-global-nav-item': Cre8GlobalNavItem;
     }
 }
 
-export default cre8GlobalNavItem;
+export default Cre8GlobalNavItem;

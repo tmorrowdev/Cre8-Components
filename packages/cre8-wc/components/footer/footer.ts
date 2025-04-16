@@ -7,7 +7,7 @@ import styles from './footer.scss';
  * @slot top - The top content (above the default slot)
  * @slot bottom - The bottom content (below the default slot)
  */
-export class cre8Footer extends Cre8Element {
+export class Cre8Footer extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -40,13 +40,13 @@ export class cre8Footer extends Cre8Element {
 }
 
 if (customElements.get('cre8-footer') === undefined) {
-    customElements.define('cre8-footer', cre8Footer);
+    customElements.define('cre8-footer', Cre8Footer);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-footer': cre8Footer;
+    'cre8-footer': Cre8Footer;
   }
 }
 
-export default cre8Footer;
+export default Cre8Footer;

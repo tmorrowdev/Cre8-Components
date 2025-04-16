@@ -7,7 +7,7 @@ import styles from './text-link.scss';
 /**
  * @slot - The component content
  */
-export class cre8TextLink extends Cre8Element {
+export class Cre8TextLink extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -69,13 +69,13 @@ export class cre8TextLink extends Cre8Element {
 }
 
 if (customElements.get('cre8-text-link') === undefined) {
-    customElements.define('cre8-text-link', cre8TextLink);
+    customElements.define('cre8-text-link', Cre8TextLink);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-text-link': cre8TextLink;
+    'cre8-text-link': Cre8TextLink;
   }
 }
 
-export default cre8TextLink;
+export default Cre8TextLink;

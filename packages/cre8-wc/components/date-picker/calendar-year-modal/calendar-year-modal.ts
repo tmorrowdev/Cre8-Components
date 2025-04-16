@@ -9,7 +9,7 @@ import styles from './calendar-year-modal.scss';
 import '../../button/button';
 import '../../icon/icon';
 
-export class cre8CalendarYearModal extends Cre8Element {
+export class Cre8CalendarYearModal extends Cre8Element {
   static get styles() {
     return unsafeCSS(styles.toString());
   }
@@ -125,13 +125,13 @@ export class cre8CalendarYearModal extends Cre8Element {
 }
 
 if (customElements.get('cre8-calendar-year-modal') === undefined) {
-  customElements.define('cre8-calendar-year-modal', cre8CalendarYearModal);
+  customElements.define('cre8-calendar-year-modal', Cre8CalendarYearModal);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-calendar-year-modal': cre8CalendarYearModal;
+    'cre8-calendar-year-modal': Cre8CalendarYearModal;
   }
 }
 
-export default cre8CalendarYearModal;
+export default Cre8CalendarYearModal;

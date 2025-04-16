@@ -1,9 +1,9 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8TabPanel as cre8TabPanelElement } from '@cre8/cre8-wc/lib/components/tab-panel/tab-panel';
+import { createComponent } from '@lit/react';
+import { Cre8TabPanel as Cre8TabPanelElement } from '@cre8_dev/cre8-wc/lib/components/tab-panel/tab-panel';
 
-export const cre8TabPanel = createComponent({
+export const Cre8TabPanel = createComponent({
     react: React,
-    tagName: 'cre8-tab-panel',
-    elementClass: cre8TabPanelElement,
+    tagName: 'Cre8-tab-panel',
+    elementClass: Cre8TabPanelElement,
 });

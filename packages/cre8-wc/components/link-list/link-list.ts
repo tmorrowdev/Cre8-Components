@@ -6,7 +6,7 @@ import styles from './link-list.scss';
 /**
  * @slot - The link list items
  */
-export class cre8LinkList extends Cre8Element {
+export class Cre8LinkList extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -68,13 +68,13 @@ export class cre8LinkList extends Cre8Element {
 }
 
 if (customElements.get('cre8-link-list') === undefined) {
-    customElements.define('cre8-link-list', cre8LinkList);
+    customElements.define('cre8-link-list', Cre8LinkList);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-link-list': cre8LinkList;
+    'cre8-link-list': Cre8LinkList;
   }
 }
 
-export default cre8LinkList;
+export default Cre8LinkList;

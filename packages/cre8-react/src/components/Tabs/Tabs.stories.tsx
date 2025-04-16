@@ -1,15 +1,15 @@
 import type { StoryObj } from '@storybook/react';
 import { withActions } from '@storybook/addon-actions/decorator';
-import { cre8Tabs } from '../..';
-import { cre8Tab } from '../Tab/Tab';
-import { cre8TabPanel } from '../TabPanel/TabPanel';
+import { Cre8Tabs } from '../..';
+import { Cre8Tab } from '../Tab/Tab';
+import { Cre8TabPanel } from '../TabPanel/TabPanel';
 import { Fpo } from '../../../.storybook/components/Fpo/Fpo';
 import { excludeRegexArray } from '../../../.storybook/preview';
 import React from 'react';
 
 export default {
-  title: 'cre8 Components/Tabs',
-  component: cre8Tabs,
+  title: 'Cre8 Components/Tabs',
+  component: Cre8Tabs,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -23,18 +23,18 @@ export default {
   args: {
     children: (
       <>
-        <cre8Tab>Tab 1</cre8Tab>
-        <cre8TabPanel slot="panel">
+        <Cre8Tab>Tab 1</Cre8Tab>
+        <Cre8TabPanel slot="panel">
           <Fpo>Tab 1 content</Fpo>
-        </cre8TabPanel>
-        <cre8Tab>Tab 2</cre8Tab>
-        <cre8TabPanel slot="panel">
+        </Cre8TabPanel>
+        <Cre8Tab>Tab 2</Cre8Tab>
+        <Cre8TabPanel slot="panel">
           <Fpo>Tab 2 content</Fpo>
-        </cre8TabPanel>
-        <cre8Tab>Tab 3</cre8Tab>
-        <cre8TabPanel slot="panel">
+        </Cre8TabPanel>
+        <Cre8Tab>Tab 3</Cre8Tab>
+        <Cre8TabPanel slot="panel">
           <Fpo>Tab 3 content</Fpo>
-        </cre8TabPanel>
+        </Cre8TabPanel>
       </>
     )
   },
@@ -43,17 +43,17 @@ export default {
   }
 };
 
-export const Default: StoryObj<typeof cre8Tabs> = { args: {} };
+export const Default: StoryObj<typeof Cre8Tabs> = { args: {} };
 
-export const FullWidth: StoryObj<typeof cre8Tabs> = { args: {
+export const FullWidth: StoryObj<typeof Cre8Tabs> = { args: {
   fullWidth: true,
 } };
 
-export const Small: StoryObj<typeof cre8Tabs> = { args: {
+export const Small: StoryObj<typeof Cre8Tabs> = { args: {
   size: 'sm'
 } };
 
-export const WithActiveIndex: StoryObj<typeof cre8Tabs> = { args: {
+export const WithActiveIndex: StoryObj<typeof Cre8Tabs> = { args: {
   activeIndex: 1
 } };
 
@@ -64,57 +64,57 @@ export const WithActiveIndex: StoryObj<typeof cre8Tabs> = { args: {
  * all Tabs and moving from one to the next would be a natural organic experience, instead of disjointed or disconnected.
  */
 
-export const WithOverflow: StoryObj<typeof cre8Tabs> = { args: {
+export const WithOverflow: StoryObj<typeof Cre8Tabs> = { args: {
   children: (
     <>
-      <cre8Tab>Tab 1</cre8Tab>
-      <cre8TabPanel slot="panel">
+      <Cre8Tab>Tab 1</Cre8Tab>
+      <Cre8TabPanel slot="panel">
         <Fpo>Tab 1 content</Fpo>
-      </cre8TabPanel>
-      <cre8Tab>Tab 2</cre8Tab>
-      <cre8TabPanel slot="panel">
+      </Cre8TabPanel>
+      <Cre8Tab>Tab 2</Cre8Tab>
+      <Cre8TabPanel slot="panel">
         <Fpo>Tab 2 content</Fpo>
-      </cre8TabPanel>
-      <cre8Tab>Tab 3</cre8Tab>
-      <cre8TabPanel slot="panel">
+      </Cre8TabPanel>
+      <Cre8Tab>Tab 3</Cre8Tab>
+      <Cre8TabPanel slot="panel">
         <Fpo>Tab 3 content</Fpo>
-      </cre8TabPanel>
-      <cre8Tab>Tab 4</cre8Tab>
-      <cre8TabPanel slot="panel">
+      </Cre8TabPanel>
+      <Cre8Tab>Tab 4</Cre8Tab>
+      <Cre8TabPanel slot="panel">
         <Fpo>Tab 4 content</Fpo>
-      </cre8TabPanel>
-      <cre8Tab>Tab 5</cre8Tab>
-      <cre8TabPanel slot="panel">
+      </Cre8TabPanel>
+      <Cre8Tab>Tab 5</Cre8Tab>
+      <Cre8TabPanel slot="panel">
         <Fpo>Tab 5 content</Fpo>
-      </cre8TabPanel>
-      <cre8Tab>Tab 6</cre8Tab>
-      <cre8TabPanel slot="panel">
+      </Cre8TabPanel>
+      <Cre8Tab>Tab 6</Cre8Tab>
+      <Cre8TabPanel slot="panel">
         <Fpo>Tab 6 content</Fpo>
-      </cre8TabPanel>
-      <cre8Tab>Tab 7</cre8Tab>
-      <cre8TabPanel slot="panel">
+      </Cre8TabPanel>
+      <Cre8Tab>Tab 7</Cre8Tab>
+      <Cre8TabPanel slot="panel">
         <Fpo>Tab 7 content</Fpo>
-      </cre8TabPanel>
-      <cre8Tab>Tab 8</cre8Tab>
-      <cre8TabPanel slot="panel">
+      </Cre8TabPanel>
+      <Cre8Tab>Tab 8</Cre8Tab>
+      <Cre8TabPanel slot="panel">
         <Fpo>Tab 8 content</Fpo>
-      </cre8TabPanel>
-      <cre8Tab>Tab 9</cre8Tab>
-      <cre8TabPanel slot="panel">
+      </Cre8TabPanel>
+      <Cre8Tab>Tab 9</Cre8Tab>
+      <Cre8TabPanel slot="panel">
         <Fpo>Tab 9 content</Fpo>
-      </cre8TabPanel>
-      <cre8Tab>Tab 10</cre8Tab>
-      <cre8TabPanel slot="panel">
+      </Cre8TabPanel>
+      <Cre8Tab>Tab 10</Cre8Tab>
+      <Cre8TabPanel slot="panel">
         <Fpo>Tab 10 content</Fpo>
-      </cre8TabPanel>
-      <cre8Tab>Tab 11</cre8Tab>
-      <cre8TabPanel slot="panel">
+      </Cre8TabPanel>
+      <Cre8Tab>Tab 11</Cre8Tab>
+      <Cre8TabPanel slot="panel">
         <Fpo>Tab 11 content</Fpo>
-      </cre8TabPanel>
-      <cre8Tab>Tab 12</cre8Tab>
-      <cre8TabPanel slot="panel">
+      </Cre8TabPanel>
+      <Cre8Tab>Tab 12</Cre8Tab>
+      <Cre8TabPanel slot="panel">
         <Fpo>Tab 12 content</Fpo>
-      </cre8TabPanel>
+      </Cre8TabPanel>
     </>
   )
 } };

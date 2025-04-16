@@ -1,10 +1,10 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8Submenu as cre8SubmenuElement } from '@cre8/cre8-wc/lib/components/submenu/submenu';
+import { createComponent } from '@lit/react';
+import { Cre8Submenu as Cre8SubmenuElement } from '@cre8_dev/cre8-wc/lib/components/submenu/submenu';
 
-export const cre8Submenu = createComponent({
+export const Cre8Submenu = createComponent({
     react: React,
-    tagName: 'cre8-submenu',
-    elementClass: cre8SubmenuElement,
+    tagName: 'Cre8-submenu',
+    elementClass: Cre8SubmenuElement,
 
 });

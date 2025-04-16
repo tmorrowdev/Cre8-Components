@@ -12,7 +12,7 @@ import styles from './select-tile-list.scss';
  * @slot "" - The default slot norminally contains multiple `<select-tile />` Components.
  * @cssprop "--cre8-select-tile-list-item-width" - Width of each child. Not used for horizontal.
  */
-export class cre8SelectTileList extends Cre8Element {
+export class Cre8SelectTileList extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -106,13 +106,13 @@ export class cre8SelectTileList extends Cre8Element {
 }
 
 if (customElements.get('cre8-select-tile-list') === undefined) {
-    customElements.define('cre8-select-tile-list', cre8SelectTileList);
+    customElements.define('cre8-select-tile-list', Cre8SelectTileList);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-select-tile-list': cre8SelectTileList;
+    'cre8-select-tile-list': Cre8SelectTileList;
   }
 }
 
-export default cre8SelectTileList;
+export default Cre8SelectTileList;

@@ -1,11 +1,11 @@
 import type { StoryObj } from '@storybook/react';
 import { excludeRegexArray } from '../../../.storybook/preview';
 import {withActions} from '@storybook/addon-actions/decorator';
-import { cre8RemoveTag } from '../..';
+import { Cre8RemoveTag } from '../..';
 
 export default {
   title: 'In Development/Remove Tag',
-  component: cre8RemoveTag,
+  component: Cre8RemoveTag,
   parameters: { 
     status: { type: 'inProgress' },
     controls: {
@@ -34,7 +34,7 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8RemoveTag> = { 
+export const Default: StoryObj<typeof Cre8RemoveTag> = { 
   args: {
     text: 'Tag text',
     color: 'neutral',
@@ -42,7 +42,7 @@ export const Default: StoryObj<typeof cre8RemoveTag> = {
   },
 };
 
-export const NeutralSquare: StoryObj<typeof cre8RemoveTag> = { 
+export const NeutralSquare: StoryObj<typeof Cre8RemoveTag> = { 
   args: {
     text: 'Tag text',
     color: 'neutral',
@@ -50,7 +50,7 @@ export const NeutralSquare: StoryObj<typeof cre8RemoveTag> = {
   },
 };
 
-export const NeutralHybridRound: StoryObj<typeof cre8RemoveTag> = { 
+export const NeutralHybridRound: StoryObj<typeof Cre8RemoveTag> = { 
   args: {
     text: 'Tag text',
     color: 'neutral-hybrid',
@@ -58,7 +58,7 @@ export const NeutralHybridRound: StoryObj<typeof cre8RemoveTag> = {
   },
 };
 
-export const NeutralHybridSquare: StoryObj<typeof cre8RemoveTag> = { 
+export const NeutralHybridSquare: StoryObj<typeof Cre8RemoveTag> = { 
   args: {
     text: 'Tag text',
     color: 'neutral-hybrid',
@@ -66,7 +66,7 @@ export const NeutralHybridSquare: StoryObj<typeof cre8RemoveTag> = {
   },
 };
 
-export const BrandedRound: StoryObj<typeof cre8RemoveTag> = { 
+export const BrandedRound: StoryObj<typeof Cre8RemoveTag> = { 
   args: {
     text: 'Tag text',
     color: 'branded',
@@ -74,7 +74,7 @@ export const BrandedRound: StoryObj<typeof cre8RemoveTag> = {
   },
 };
 
-export const BrandedSquare: StoryObj<typeof cre8RemoveTag> = { 
+export const BrandedSquare: StoryObj<typeof Cre8RemoveTag> = { 
   args: {
     text: 'Tag text',
     color: 'branded',

@@ -1,7 +1,7 @@
 import React from 'react';
-import { createComponent, EventName } from '@lit-labs/react';
-import { cre8MultiSelect as cre8MultiSelectElement } from '@cre8/cre8-wc/lib/components/multi-select/multi-select';
-import { cre8DomEvent } from '../../util/cre8DomEvent';
+import { createComponent, EventName } from '@lit/react';
+import { Cre8MultiSelect as Cre8MultiSelectElement } from '@cre8_dev/cre8-wc/lib/components/multi-select/multi-select';
+import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 /**
  * Multiselect is used when multiple options can be chosen from a static dropdown
@@ -13,11 +13,11 @@ import { cre8DomEvent } from '../../util/cre8DomEvent';
  * current list after the change is given in the detail.
  */
 
-export const cre8MultiSelect = createComponent({
+export const Cre8MultiSelect = createComponent({
     react: React,
-    tagName: 'cre8-multi-select',
-    elementClass: cre8MultiSelectElement,
+    tagName: 'Cre8-multi-select',
+    elementClass: Cre8MultiSelectElement,
     events: {
-        onSelectedItemsChange: 'selectedItemsChange' as EventName<cre8DomEvent<cre8MultiSelectElement>>,
+        onSelectedItemsChange: 'selectedItemsChange' as EventName<Cre8DomEvent<Cre8MultiSelectElement>>,
     },
 });

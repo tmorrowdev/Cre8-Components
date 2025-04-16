@@ -6,7 +6,7 @@ import styles from './band.scss';
 /**
  * @slot - The band content
  */
-export class cre8Band extends Cre8Element {
+export class Cre8Band extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -44,13 +44,13 @@ export class cre8Band extends Cre8Element {
 }
 
 if (customElements.get('cre8-band') === undefined) {
-    customElements.define('cre8-band', cre8Band);
+    customElements.define('cre8-band', Cre8Band);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-band': cre8Band;
+    'cre8-band': Cre8Band;
   }
 }
 
-export default cre8Band;
+export default Cre8Band;

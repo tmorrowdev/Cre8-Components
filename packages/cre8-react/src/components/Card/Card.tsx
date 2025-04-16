@@ -1,6 +1,6 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8Card as cre8CardElement } from '@cre8/cre8-wc/lib/components/card/card';
+import { createComponent } from '@lit/react';
+import { Cre8Card as Cre8CardElement } from '@cre8_dev/cre8-wc/lib/components/card/card';
 
 /** The card component acts a general container element for various content.
 *
@@ -14,9 +14,9 @@ import { cre8Card as cre8CardElement } from '@cre8/cre8-wc/lib/components/card/c
 *
 */
 
-export const cre8Card = createComponent({
+export const Cre8Card = createComponent({
     react: React,
-    tagName: 'cre8-card',
-    elementClass: cre8CardElement,
+    tagName: 'Cre8-card',
+    elementClass: Cre8CardElement,
 
 });

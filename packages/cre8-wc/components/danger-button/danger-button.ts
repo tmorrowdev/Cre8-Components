@@ -72,7 +72,7 @@ import { Cre8FormElement } from '../cre8-form-element';
      *
      */
 
-export class cre8DangerButton extends Cre8FormElement {
+export class Cre8DangerButton extends Cre8FormElement {
     static get styles() {
         return unsafeCSS(styles.toString());
     }
@@ -367,9 +367,9 @@ export class cre8DangerButton extends Cre8FormElement {
 }
 
 if (customElements.get('cre8-danger-button') === undefined) {
-    customElements.define('cre8-danger-button', cre8DangerButton);
+    customElements.define('cre8-danger-button', Cre8DangerButton);
 }
 
-declare global { interface HTMLElementTagNameMap { 'cre8-danger-button': cre8DangerButton; } }
+declare global { interface HTMLElementTagNameMap { 'cre8-danger-button': Cre8DangerButton; } }
 
-export default cre8DangerButton;
+export default Cre8DangerButton;

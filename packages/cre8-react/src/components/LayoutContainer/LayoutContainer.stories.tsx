@@ -1,12 +1,12 @@
 import type { StoryObj } from '@storybook/react';
-import { cre8LayoutContainer, cre8LayoutSection } from '../..';
+import { Cre8LayoutContainer, Cre8LayoutSection } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
   title: 'Cre8 Components/LayoutContainer',
-  component: cre8LayoutContainer,
+  component: Cre8LayoutContainer,
   parameters: {
-    subcomponents: { cre8LayoutSection },
+    subcomponents: { Cre8LayoutSection },
     status: { type: 'inProgress' },
     controls: {
       exclude: new RegExp(`${excludeRegexArray.join('|')}`)
@@ -14,4 +14,4 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8LayoutContainer> = { args: {} };
+export const Default: StoryObj<typeof Cre8LayoutContainer> = { args: {} };

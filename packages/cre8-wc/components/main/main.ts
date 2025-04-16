@@ -6,7 +6,7 @@ import styles from './main.scss';
 /**
  * @slot - The main content
  */
-export class cre8Main extends Cre8Element {
+export class Cre8Main extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
@@ -28,13 +28,13 @@ export class cre8Main extends Cre8Element {
 }
 
 if (customElements.get('cre8-main') === undefined) {
-    customElements.define('cre8-main', cre8Main);
+    customElements.define('cre8-main', Cre8Main);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-main': cre8Main;
+    'cre8-main': Cre8Main;
   }
 }
 
-export default cre8Main;
+export default Cre8Main;

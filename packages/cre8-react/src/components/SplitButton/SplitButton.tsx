@@ -1,10 +1,10 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8SplitButton as cre8SplitButtonElement } from '@cre8/cre8-wc/lib/components/split-button/split-button';
+import { createComponent } from '@lit/react';
+import { Cre8SplitButton as Cre8SplitButtonElement } from '@cre8_dev/cre8-wc/lib/components/split-button/split-button';
 
-export const cre8SplitButton = createComponent({
+export const Cre8SplitButton = createComponent({
     react: React,
-    tagName: 'cre8-split-button',
-    elementClass: cre8SplitButtonElement,
+    tagName: 'Cre8-split-button',
+    elementClass: Cre8SplitButtonElement,
 
 });

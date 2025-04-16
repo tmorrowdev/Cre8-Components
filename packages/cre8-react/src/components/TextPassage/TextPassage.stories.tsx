@@ -1,5 +1,5 @@
 import type { StoryObj } from '@storybook/react';
-import { cre8Heading, cre8TextPassage } from '../..';
+import { Cre8Heading, Cre8TextPassage } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 import React from 'react';
 
@@ -14,9 +14,9 @@ const inverted: invertedStyle = {
 };
 
 export default {
-  title: 'cre8 Components/Text-Passage',
-  component: cre8TextPassage,
-  subcomponents: cre8Heading,
+  title: 'Cre8 Components/Text-Passage',
+  component: Cre8TextPassage,
+  subcomponents: Cre8Heading,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -25,11 +25,11 @@ export default {
   },
   args: {},
   render: (args) => (
-    <cre8TextPassage inverted={args.inverted} size={args.size}>
+    <Cre8TextPassage inverted={args.inverted} size={args.size}>
       <>
-        <cre8Heading type="headline-default" brandColor>
+        <Cre8Heading type="headline-default" brandColor>
           This is a Text Passage Headline.
-        </cre8Heading>
+        </Cre8Heading>
         <p>
           A text passage contains arbitrary text that might come from a CMS. It
           should live within a container that caps the line length of the text
@@ -74,35 +74,35 @@ export default {
           nisi ut aliquip ex ea commodo consequat.
         </p>
       </>
-    </cre8TextPassage>
+    </Cre8TextPassage>
   ),
 };
 
-export const Default: StoryObj<typeof cre8TextPassage> = {
+export const Default: StoryObj<typeof Cre8TextPassage> = {
   args: {
     size: 'default',
     inverted: false,
   },
 };
-export const Small: StoryObj<typeof cre8TextPassage> = {
+export const Small: StoryObj<typeof Cre8TextPassage> = {
   args: {
     size: 'small',
   },
 };
-export const Large: StoryObj<typeof cre8TextPassage> = {
+export const Large: StoryObj<typeof Cre8TextPassage> = {
   args: {
     size: 'large',
   },
 };
-export const Inverted: StoryObj<typeof cre8TextPassage> = {
+export const Inverted: StoryObj<typeof Cre8TextPassage> = {
   args: {},
   render: () => (
     <>
       <div style={inverted.style}>
-        <cre8TextPassage inverted>
-          <cre8Heading type="headline-default" inverted brandColor>
+        <Cre8TextPassage inverted>
+          <Cre8Heading type="headline-default" inverted brandColor>
             This is a Text Passage Headline.
-          </cre8Heading>
+          </Cre8Heading>
           <p>
             A text passage contains arbitrary text that might come from a CMS.
             It should live within a container that caps the line length of the
@@ -152,7 +152,7 @@ export const Inverted: StoryObj<typeof cre8TextPassage> = {
             nisi ut aliquip ex ea commodo consequat.
           </p>
           <h5>Default Large Meta Text</h5>
-        </cre8TextPassage>
+        </Cre8TextPassage>
       </div>
     </>
   ),

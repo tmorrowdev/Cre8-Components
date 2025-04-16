@@ -1,26 +1,26 @@
 import type { StoryObj } from '@storybook/react';
-import { cre8Breadcrumbs, cre8BreadcrumbsItem, cre8Link } from '../..';
+import { Cre8Breadcrumbs, Cre8BreadcrumbsItem, Cre8Link } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 import React from 'react';
 
 export default {
-  title: 'cre8 Components/Breadcrumbs',
-  component: cre8Breadcrumbs,
-  subcomponents: { cre8BreadcrumbsItem },
+  title: 'Cre8 Components/Breadcrumbs',
+  component: Cre8Breadcrumbs,
+  subcomponents: { Cre8BreadcrumbsItem },
   parameters: {
     status: { type: 'inProgress' },
     controls: {
-      exclude: new RegExp(`${excludeRegexArray.join('|')}|^rendercre8BreadcrumbsItems$|^navigateToByMobile$|^navigateToByMobile$|^emitPathChangedEvent$`)
+      exclude: new RegExp(`${excludeRegexArray.join('|')}|^renderCre8BreadcrumbsItems$|^navigateToByMobile$|^navigateToByMobile$|^emitPathChangedEvent$`)
     }
   },
 };
 
-export const Default: StoryObj<typeof cre8Breadcrumbs> = { args: {
+export const Default: StoryObj<typeof Cre8Breadcrumbs> = { args: {
   children: (
     <>
-      <cre8BreadcrumbsItem> <cre8Link href="#">Grandparent</cre8Link></cre8BreadcrumbsItem>
-      <cre8BreadcrumbsItem> <cre8Link href="#">Parent</cre8Link></cre8BreadcrumbsItem>
-      <cre8BreadcrumbsItem>Current</cre8BreadcrumbsItem>
+      <Cre8BreadcrumbsItem> <Cre8Link href="#">Grandparent</Cre8Link></Cre8BreadcrumbsItem>
+      <Cre8BreadcrumbsItem> <Cre8Link href="#">Parent</Cre8Link></Cre8BreadcrumbsItem>
+      <Cre8BreadcrumbsItem>Current</Cre8BreadcrumbsItem>
     </>
   )
 } };

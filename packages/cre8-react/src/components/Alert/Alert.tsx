@@ -1,6 +1,6 @@
 import React from 'react';
-import { createComponent } from '@lit-labs/react';
-import { cre8Alert as cre8AlertElement } from '@cre8/cre8-wc/lib/components/alert/alert';
+import { createComponent } from '@lit/react';
+import { Cre8Alert as Cre8AlertElement } from '@cre8_dev/cre8-wc/lib/components/alert/alert';
 
 /**
  * The general purpose of an alert or notification is to draw the user’s attention
@@ -17,8 +17,8 @@ import { cre8Alert as cre8AlertElement } from '@cre8/cre8-wc/lib/components/aler
  *
  */
 
-export const cre8Alert = createComponent({
+export const Cre8Alert = createComponent({
     react: React,
-    tagName: 'cre8-alert',
-    elementClass: cre8AlertElement,
+    tagName: 'Cre8-alert',
+    elementClass: Cre8AlertElement,
 });

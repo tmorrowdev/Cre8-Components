@@ -5,16 +5,16 @@ import {
 } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { property, queryAll, state } from 'lit/decorators.js';
-import svgCaretLeft from '@cre8/cre8-icons/lib/icons/System/Regular/Caret Left.svg?raw';
-import svgFirstPage from '@cre8/cre8-icons/lib/icons/System/Regular/Caret Double Left.svg?raw';
-import svgLastPage from '@cre8/cre8-icons/lib/icons/System/Regular/Caret Double Right.svg?raw';
-import svgCaretRight from '@cre8/cre8-icons/lib/icons/System/Regular/Caret Right.svg?raw';
+import svgCaretLeft from '@Cre8/cre8-icons/lib/icons/System/Regular/Caret Left.svg?raw';
+import svgFirstPage from '@Cre8/cre8-icons/lib/icons/System/Regular/Caret Double Left.svg?raw';
+import svgLastPage from '@Cre8/cre8-icons/lib/icons/System/Regular/Caret Double Right.svg?raw';
+import svgCaretRight from '@Cre8/cre8-icons/lib/icons/System/Regular/Caret Right.svg?raw';
 import { Cre8Element } from '../cre8-element';
-import { cre8Button } from '../button/button';
+import { Cre8Button } from '../button/button';
 import { isMobile, screenSizes } from '../../utilities/is-mobile';
 import './page-counter/page-counter';
 import styles from './pagination.scss';
-import '@cre8/cre8-icons/lib/wc/Icon';
+import '@Cre8/cre8-icons/lib/wc/Icon';
 
 /**
  * The Pagination component is used to split up a large amount of results
@@ -67,13 +67,13 @@ import '@cre8/cre8-icons/lib/wc/Icon';
  * @cssproperty "--pagination-align-items" - controls vertical alignment of pagination
  */
 
-export class cre8Pagination extends Cre8Element {
+export class Cre8Pagination extends Cre8Element {
     static get styles() {
         return unsafeCSS(styles);
     }
 
     static elementDefinitions = {
-        'cre8-button': cre8Button,
+        'cre8-button': Cre8Button,
     };
 
   @state()
@@ -136,7 +136,7 @@ export class cre8Pagination extends Cre8Element {
       windowWidth!: number;
 
   @queryAll('cre8-button')
-      buttons: cre8Button[];
+      buttons: Cre8Button[];
 
   /**
   *
@@ -254,8 +254,8 @@ export class cre8Pagination extends Cre8Element {
 
   private _goToPage = (page: number, _buttonName?: string) => () => {
       const old = this._currentPage;
-      let focusButton: cre8Button;
-      this.buttons.forEach((b: cre8Button) => {
+      let focusButton: Cre8Button;
+      this.buttons.forEach((b: Cre8Button) => {
           if (b.hideText && (b.text === _buttonName)) {
               focusButton = b;
               (focusButton.shadowRoot!.querySelector('.cre8-c-button') as HTMLButtonElement).blur();
@@ -418,11 +418,11 @@ export class cre8Pagination extends Cre8Element {
 }
 
 if (customElements.get('cre8-pagination') === undefined) {
-    customElements.define('cre8-pagination', cre8Pagination);
+    customElements.define('cre8-pagination', Cre8Pagination);
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cre8-pagination': cre8Pagination;
+    'cre8-pagination': Cre8Pagination;
   }
 }

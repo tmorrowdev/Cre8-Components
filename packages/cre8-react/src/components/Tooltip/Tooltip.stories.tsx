@@ -2,18 +2,18 @@ import type { StoryObj, StoryFn } from '@storybook/react';
 import React from 'react';
 import { excludeRegexArray } from '../../../.storybook/preview';
 import { withActions } from '@storybook/addon-actions/decorator';
-import { cre8Tooltip } from '../..';
-import cre8Icon from '@cre8/cre8-icons/lib/react/cre8Icon/';
+import { Cre8Tooltip } from '../..';
+import Cre8Icon from '@Cre8/Cre8-icons/lib/react/Cre8Icon/';
 import { Props } from 'next/script';
-import { spread } from '../../../../cre8-wc/directives/spread';
+import { spread } from '../../../../Cre8-wc/directives/spread';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
-import { sanitizeInput } from '../../../../cre8-wc/utilities/story-helpers';
+import { sanitizeInput } from '../../../../Cre8-wc/utilities/story-helpers';
 import { html } from 'lit';
-import svgInfoFilled from '@cre8/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
+import svgInfoFilled from '@Cre8/Cre8-icons/lib/icons/System/Filled/Info.svg?raw';
 
 export default {
-  title: 'cre8 Components/Tooltip',
-  component: cre8Tooltip,
+  title: 'Cre8 Components/Tooltip',
+  component: Cre8Tooltip,
   parameters: {
     status: { type: 'inProgress' },
     controls: {
@@ -100,43 +100,43 @@ export default {
   },
 };
 
-export const Default: StoryObj<typeof cre8Tooltip> = { args: {} };
+export const Default: StoryObj<typeof Cre8Tooltip> = { args: {} };
 
-export const Knockout: StoryObj<typeof cre8Tooltip> = { args: {
+export const Knockout: StoryObj<typeof Cre8Tooltip> = { args: {
   knockout: true
 } };
 
-export const PositionTop: StoryObj<typeof cre8Tooltip> = { args: {
+export const PositionTop: StoryObj<typeof Cre8Tooltip> = { args: {
   position: 'top'
 } };
 
-export const PositionLeft: StoryObj<typeof cre8Tooltip> = { args: {
+export const PositionLeft: StoryObj<typeof Cre8Tooltip> = { args: {
   position: 'left'
 } };
 
-export const PositionRight: StoryObj<typeof cre8Tooltip> = { args: {
+export const PositionRight: StoryObj<typeof Cre8Tooltip> = { args: {
   position: 'right'
 } };
 
 const PositionDynamicTemplate: StoryFn<Props> = () => (
   <div style={{ padding: '3rem', height: '100vh', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
     <div style={{ display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'center' }}>
-      <cre8Tooltip isDynamic={true} position="top" svg={svgInfoFilled}>
+      <Cre8Tooltip isDynamic={true} position="top" svg={svgInfoFilled}>
         Lorem ipsum dolor sit amet, sed do eiusmod tempor
-      </cre8Tooltip>
+      </Cre8Tooltip>
     </div>
     <div style={{ display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'space-between' }}>
-      <cre8Tooltip isDynamic={true} position="right" svg={svgInfoFilled}>
+      <Cre8Tooltip isDynamic={true} position="right" svg={svgInfoFilled}>
         Lorem ipsum dolor sit amet, sed do eiusmod tempor
-      </cre8Tooltip>
-      <cre8Tooltip isDynamic={true} position="left" svg={svgInfoFilled}>
+      </Cre8Tooltip>
+      <Cre8Tooltip isDynamic={true} position="left" svg={svgInfoFilled}>
         Lorem ipsum dolor sit amet, sed do eiusmod tempor
-      </cre8Tooltip>
+      </Cre8Tooltip>
     </div>
     <div style={{ display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'center' }}>
-      <cre8Tooltip isDynamic={true} svg={svgInfoFilled}>
+      <Cre8Tooltip isDynamic={true} svg={svgInfoFilled}>
         Lorem ipsum dolor sit amet, sed do eiusmod tempor
-      </cre8Tooltip>
+      </Cre8Tooltip>
     </div>
   </div>
 );
