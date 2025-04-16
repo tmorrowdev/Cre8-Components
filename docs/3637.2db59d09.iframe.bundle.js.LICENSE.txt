@@ -1,0 +1,1 @@
+/*! For license information please see split-button.js.LICENSE.txt */
