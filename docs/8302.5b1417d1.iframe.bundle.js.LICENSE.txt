@@ -1,0 +1,9 @@
+/*! For license information please see submenu-item.js.LICENSE.txt */
+
+/*! For license information please see submenu.js.LICENSE.txt */
+
+/**
+ * @license
+ * Copyright 2018 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
