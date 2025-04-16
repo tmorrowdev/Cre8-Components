@@ -17,7 +17,7 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "start": "npm run storybook",
+    "start": "pnpm sb dev",
     "build": "npm run lib",
     "lib": "npm run lib.clear && tsc",
     "lib.clear": "del-cli lib",
@@ -28,7 +28,7 @@
     "plop:page": "plop page",
     "plop:recipe": "plop recipe",
     "storybook": "storybook dev -p 9009",
-    "build-storybook": "del-cli dist && npx storybook build -o dist",
+    "build-storybook": "del-cli dist && pnpm sb build -o dist",
     "lint": "eslint-config ./ --ext tsx,jsx,ts,js --ignore-path ../../.eslintignore",
     "format": "eslint-config ./ --fix --ext tsx,jsx,ts,js --ignore-path ../../.eslintignore"
   },
