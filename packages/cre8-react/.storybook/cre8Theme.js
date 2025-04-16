@@ -5,8 +5,8 @@ import pkg from '../package.json';
 export default create({
   base: 'light',
 
-  colorPrimary: '#0033ff',
-  colorSecondary: '#5CC862',
+  colorPrimary: '#0357A3',
+  colorSecondary: '#0357A3',
 
   // UI
   appBg: 'white',
@@ -24,7 +24,7 @@ export default create({
 
   // Toolbar default and active colors
   barTextColor: '#333333',
-  barSelectedColor: '#110081',
+  barSelectedColor: '#0357A3',
   barBg: '#ffffff',
 
   // Form colors
