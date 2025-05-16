@@ -4,7 +4,7 @@
     {
       "name": "cre8-accordion-item",
       "path": "./../components/accordion-item/accordion-item.ts",
-      "description": "\nThe accordion item component delivers large amounts of content in a small space\nthrough progressive disclosure. That is, the user gets key details about the\nunderlying content and can choose to expand that content within the constraints\nof the accordion item. Accordion Items work especially well on mobile interfaces or\nwhenever vertical space is at a premium.\n\n## HOW TO USE\nAvoid “nested” accordion items—that is, collapsible content within collapsible content.\nThis type of pattern goes against UX best practices.\n\nThe cre8 accordion item header allows for two sizes:\n'sm' [cre8-typography-title-default] or 'lg' [cre8-typography-title-large]\n\nA chevron is used to indicate the “expand/collapse” action, though the entire\nheader area is clickable for the same action.\n\n**NOTE**: The header of the accordion item uses h tags so be sure to choose the headingTagVariant that\nfits into the hierarchy of your html page layout. THIS WILL NOT CHANGE THE APPEARANCE OF THE HEADER.",
+      "description": "\nThe accordion item component delivers large amounts of content in a small space\nthrough progressive disclosure. That is, the user gets key details about the\nunderlying content and can choose to expand that content within the constraints\nof the accordion item. Accordion Items work especially well on mobile interfaces or\nwhenever vertical space is at a premium.\n\n## HOW TO USE\nAvoid “nested” accordion items—that is, collapsible content within collapsible content.\nThis type of pattern goes against UX best practices.\n\nThe Cre8 accordion item header allows for two sizes:\n'sm' [cre8-typography-title-default] or 'lg' [cre8-typography-title-large]\n\nA chevron is used to indicate the “expand/collapse” action, though the entire\nheader area is clickable for the same action.\n\n**NOTE**: The header of the accordion item uses h tags so be sure to choose the headingTagVariant that\nfits into the hierarchy of your html page layout. THIS WILL NOT CHANGE THE APPEARANCE OF THE HEADER.",
       "attributes": [
         {
           "name": "isActive",
@@ -300,7 +300,7 @@
         },
         {
           "name": "svg",
-          "description": "SVG as a raw string\n- For badges with icons, the icon is defined by this prop\n- Pass in a raw svg as a String. We use raw string loader for this but any method of getting raw svgs will do\n- Import example:`import svgFeedback from '@cre8/cre8-icons/lib/icons/System/Regular/Feedback.svg?raw';`\n- [cre8-icons Github repo](https://git.express-scripts.com/ExpressScripts/cre8-icons) This is the Github\nrepo for cre8 icons, which includes a link to the storybook as well as relavant information for new icons",
+          "description": "SVG as a raw string\n- For badges with icons, the icon is defined by this prop\n- Pass in a raw svg as a String. We use raw string loader for this but any method of getting raw svgs will do\n- Import example:`import svgFeedback from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Feedback.svg?raw';`\n- [cre8-icons Github repo](https://git.express-scripts.com/ExpressScripts/cre8-icons) This is the Github\nrepo for Cre8 icons, which includes a link to the storybook as well as relavant information for new icons",
           "type": "string | undefined"
         }
       ],
@@ -327,7 +327,7 @@
         {
           "name": "svg",
           "attribute": "svg",
-          "description": "SVG as a raw string\n- For badges with icons, the icon is defined by this prop\n- Pass in a raw svg as a String. We use raw string loader for this but any method of getting raw svgs will do\n- Import example:`import svgFeedback from '@cre8/cre8-icons/lib/icons/System/Regular/Feedback.svg?raw';`\n- [cre8-icons Github repo](https://git.express-scripts.com/ExpressScripts/cre8-icons) This is the Github\nrepo for cre8 icons, which includes a link to the storybook as well as relavant information for new icons",
+          "description": "SVG as a raw string\n- For badges with icons, the icon is defined by this prop\n- Pass in a raw svg as a String. We use raw string loader for this but any method of getting raw svgs will do\n- Import example:`import svgFeedback from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Feedback.svg?raw';`\n- [cre8-icons Github repo](https://git.express-scripts.com/ExpressScripts/cre8-icons) This is the Github\nrepo for Cre8 icons, which includes a link to the storybook as well as relavant information for new icons",
           "type": "string | undefined"
         }
       ]
@@ -374,7 +374,7 @@
       "slots": [
         {
           "name": "",
-          "description": "The component content, the expected slotted content is a cre8 Link or a String for the \"terminal node\""
+          "description": "The component content, the expected slotted content is a Cre8 Link or a String for the \"terminal node\""
         }
       ]
     },
@@ -1328,7 +1328,7 @@
     {
       "name": "cre8-date-picker",
       "path": "./../components/date-picker/date-picker.ts",
-      "description": "The Date Picker component renders a form group with label, control, help text and validation styling much\nlike the Field component but exclusively for type=date.\ncre8DatePicker inherts the cre8Field component.",
+      "description": "The Date Picker component renders a form group with label, control, help text and validation styling much\nlike the Field component but exclusively for type=date.\nCre8DatePicker inherts the Cre8Field component.",
       "attributes": [
         {
           "name": "hasShortcuts",
@@ -2456,7 +2456,7 @@
     {
       "name": "cre8-icon-legacy",
       "path": "./../components/icon/icon.ts",
-      "description": "\n<cre8-icon> is a web component, which can be used with any frontend framework and use any svg.\nIt takes raw svgs as props and renders them.\n\n**'cre8-icon-legacy'** will be **deprecated** in Web Components v0.5.0\n\n- [List of new figma icons](https://www.figma.com/file/j1a0rBkoH65XiGKfq7ppWa/Iconography?type=design&node-id=2037-5773&mode=design&t=6ZzC6KH3Gkxf3fj5-4)\n- The new `cre8-icon` from the cre8-icon package: https://static-dev.esi-memberweb-dev.aws.evernorthcloud.com/cre8-icons/.\n\n##Usability Considerations\n- If the icon is decorative: set `aria-hidden` to true.\n- If the icon is interactive (not decorative): set `aria-hidden` to false and add the `aria-label`\n- If the icon is key to functionality from a screen reader perspective, it is required to add `aria-label`\nwhich will describe the icon.\nFor example, if the icon is a close button, setting `aria-label=\"Close\"`will give\nthe SVG an aria-label to make it sufficiently accessible.\n\n[More information on Accessibility with cre8-icons](https://static-dev.esi-memberweb-dev.aws.evernorthcloud.com/cre8-icons/?path=/story/getting-started-accessibility--page)\n\n##How to use\ncre8 Web Components (cre8-wc) includes the `@cre8/cre8-icons` package.\nIf you need to install a newer version than what's included, please see\nthe [installation instructions for cre8-icons](https://git.express-scripts.com/ExpressScripts/cre8-icons#installation).\n- Import the component (this is the icon container): `import '@cre8/cre8-icons';`\n- Import an svg as a string: `import svgInfo from '!!raw-loader!@cre8/cre8-icons/lib/icons/System/Regular/Info.svg';`\n\nYour import paths may be different depending on your project's build configuration.\nPlease see [Importing Icons](https://static-dev.esi-memberweb-dev.aws.evernorthcloud.com/cre8-icons/?path=/story/icon-sets-importing-icons--page)\nof the `@cre8/cre8-icons` documentation for more information.",
+      "description": "\n<cre8-icon> is a web component, which can be used with any frontend framework and use any svg.\nIt takes raw svgs as props and renders them.\n\n**'cre8-icon-legacy'** will be **deprecated** in Web Components v0.5.0\n\n- [List of new figma icons](https://www.figma.com/file/j1a0rBkoH65XiGKfq7ppWa/Iconography?type=design&node-id=2037-5773&mode=design&t=6ZzC6KH3Gkxf3fj5-4)\n- The new `cre8-icon` from the cre8-icon package: https://static-dev.esi-memberweb-dev.aws.evernorthcloud.com/cre8-icons/.\n\n##Usability Considerations\n- If the icon is decorative: set `aria-hidden` to true.\n- If the icon is interactive (not decorative): set `aria-hidden` to false and add the `aria-label`\n- If the icon is key to functionality from a screen reader perspective, it is required to add `aria-label`\nwhich will describe the icon.\nFor example, if the icon is a close button, setting `aria-label=\"Close\"`will give\nthe SVG an aria-label to make it sufficiently accessible.\n\n[More information on Accessibility with cre8-icons](https://static-dev.esi-memberweb-dev.aws.evernorthcloud.com/cre8-icons/?path=/story/getting-started-accessibility--page)\n\n##How to use\nCre8 Web Components (cre8-wc) includes the `cre8_dev/cre8-icons` package.\nIf you need to install a newer version than what's included, please see\nthe [installation instructions for cre8-icons](https://git.express-scripts.com/ExpressScripts/cre8-icons#installation).\n- Import the component (this is the icon container): `import '@cre8_dev/cre8-icons';`\n- Import an svg as a string: `import svgInfo from '!!raw-loader!cre8_dev/cre8-icons/lib/icons/System/Regular/Info.svg';`\n\nYour import paths may be different depending on your project's build configuration.\nPlease see [Importing Icons](https://static-dev.esi-memberweb-dev.aws.evernorthcloud.com/cre8-icons/?path=/story/icon-sets-importing-icons--page)\nof the `cre8_dev/cre8-icons` documentation for more information.",
       "attributes": [
         {
           "name": "focusable",
@@ -3152,7 +3152,7 @@
     {
       "name": "cre8-modal",
       "path": "./../components/modal/modal.ts",
-      "description": "Modal component should be used in all modal situations.\nIt is natuarally composable and can even have a custom header and remove the close button.\n(note: adding `slot=\"header\"` will insert the given element into the header section of the modal,\nsame for `slot=\"footer\"` and no given slot name will inset it into the body)\n\nIf it is desired to create a utility modal. cre8Modal requires a status value (see props table below,\nand a UtilityModalTitle since all utility modals have a cre8-heading)",
+      "description": "Modal component should be used in all modal situations.\nIt is natuarally composable and can even have a custom header and remove the close button.\n(note: adding `slot=\"header\"` will insert the given element into the header section of the modal,\nsame for `slot=\"footer\"` and no given slot name will inset it into the body)\n\nIf it is desired to create a utility modal. Cre8Modal requires a status value (see props table below,\nand a UtilityModalTitle since all utility modals have a cre8-heading)",
       "attributes": [
         {
           "name": "isActive",
@@ -3484,8 +3484,8 @@
       "properties": [
         {
           "name": "elementDefinitions",
-          "type": "{ 'cre8-button': typeof cre8Button; }",
-          "default": "{\"cre8-button\":\"cre8Button\"}"
+          "type": "{ 'cre8-button': typeof Cre8Button; }",
+          "default": "{\"cre8-button\":\"Cre8Button\"}"
         },
         {
           "name": "totalResults",
@@ -3518,7 +3518,7 @@
         },
         {
           "name": "buttons",
-          "type": "cre8Button[]"
+          "type": "Cre8Button[]"
         },
         {
           "name": "hideLastAndFirstButtons",
@@ -3696,7 +3696,7 @@
           "name": "removeActiveOnScroll",
           "description": "Remove Active State on Scroll\n1. If a scroll event is fired and visibileOnScroll is not true, remove the active state\n2. If the popover height is less than the window height, then allow the active to remove on scroll",
           "type": "() => void",
-          "default": "\"() => {\\n    /* 1 */\\n      if (this.isActive && !this.isVisibleOnScroll) {\\n      /* 2 */\\n          const popoverPanel = this._cre8PopoverPanel.getBoundingClientRect();\\n          const popoverTrigger = this._cre8Popover;\\n          const popoverHeight = popoverTrigger.clientHeight + popoverPanel.height + popoverPanel.top;\\n\\n          if (popoverHeight < window.innerHeight) {\\n              this._toggleActive();\\n          }\\n      }\\n  }\""
+          "default": "\"() => {\\n    /* 1 */\\n      if (this.isActive && !this.isVisibleOnScroll) {\\n      /* 2 */\\n          const popoverPanel = this._Cre8PopoverPanel.getBoundingClientRect();\\n          const popoverTrigger = this._Cre8Popover;\\n          const popoverHeight = popoverTrigger.clientHeight + popoverPanel.height + popoverPanel.top;\\n\\n          if (popoverHeight < window.innerHeight) {\\n              this._toggleActive();\\n          }\\n      }\\n  }\""
         },
         {
           "name": "removeActive",
@@ -4724,8 +4724,8 @@
       "attributes": [
         {
           "name": "items",
-          "description": "A mix of cre8SelectOption and cre8SelectOptionGroup definitions:\n- cre8SelectOption\n  - label: option label text - `string`\n  - value: option value - `number | string`\n- cre8SelectOptionGroup\n - optGroupLabel: optgroup label text - `string`\n - options: Array of multiple cre8SelectOption items - `cre8SelectOption[]`",
-          "type": "(cre8SelectOption | cre8SelectOptionGroup)[]",
+          "description": "A mix of Cre8SelectOption and Cre8SelectOptionGroup definitions:\n- Cre8SelectOption\n  - label: option label text - `string`\n  - value: option value - `number | string`\n- Cre8SelectOptionGroup\n - optGroupLabel: optgroup label text - `string`\n - options: Array of multiple Cre8SelectOption items - `Cre8SelectOption[]`",
+          "type": "(Cre8SelectOption | Cre8SelectOptionGroup)[]",
           "default": "[]"
         },
         {
@@ -4799,8 +4799,8 @@
         {
           "name": "items",
           "attribute": "items",
-          "description": "A mix of cre8SelectOption and cre8SelectOptionGroup definitions:\n- cre8SelectOption\n  - label: option label text - `string`\n  - value: option value - `number | string`\n- cre8SelectOptionGroup\n - optGroupLabel: optgroup label text - `string`\n - options: Array of multiple cre8SelectOption items - `cre8SelectOption[]`",
-          "type": "(cre8SelectOption | cre8SelectOptionGroup)[]",
+          "description": "A mix of Cre8SelectOption and Cre8SelectOptionGroup definitions:\n- Cre8SelectOption\n  - label: option label text - `string`\n  - value: option value - `number | string`\n- Cre8SelectOptionGroup\n - optGroupLabel: optgroup label text - `string`\n - options: Array of multiple Cre8SelectOption items - `Cre8SelectOption[]`",
+          "type": "(Cre8SelectOption | Cre8SelectOptionGroup)[]",
           "default": "[]"
         },
         {
@@ -5458,7 +5458,7 @@
         {
           "name": "activeTab",
           "description": "The active tab\n\n_*This property is dynamically set_",
-          "type": "cre8Tab | undefined"
+          "type": "Cre8Tab | undefined"
         },
         {
           "name": "isStart",
@@ -5796,7 +5796,7 @@
     {
       "name": "cre8-text-passage",
       "path": "./../components/text-passage/text-passage.ts",
-      "description": "The text-passage component acts a general wrapper element\nfor any text content that needs to be used in your project.\n\n# How to Use\n1. Code your text passage using any of the native html text elements (p, ol, ul, blockquote, cite, etc.)\n   or other cre8 Components like cre8-heading and wrap them with the cre8-text-passage tags.\n2. Choose between three sizes for your text content or apply inline styling if you need additional styling.\n3. For dark backgrounds, add the 'inverted' attribute to the <cre8-text-passage> tag.\n3. Your text-passage will render with brand-approved styling!\n\n\nNOTE: It is recommended that you use the cre8-heading component for any heading elements in your HTML template",
+      "description": "The text-passage component acts a general wrapper element\nfor any text content that needs to be used in your project.\n\n# How to Use\n1. Code your text passage using any of the native html text elements (p, ol, ul, blockquote, cite, etc.)\n   or other Cre8 Components like cre8-heading and wrap them with the cre8-text-passage tags.\n2. Choose between three sizes for your text content or apply inline styling if you need additional styling.\n3. For dark backgrounds, add the 'inverted' attribute to the <cre8-text-passage> tag.\n3. Your text-passage will render with brand-approved styling!\n\n\nNOTE: It is recommended that you use the cre8-heading component for any heading elements in your HTML template",
       "attributes": [
         {
           "name": "inverted",

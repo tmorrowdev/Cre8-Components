@@ -1,4 +1,4 @@
-import svgCheck from '@Cre8/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
+import svgCheck from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
 import { html, unsafeCSS } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';

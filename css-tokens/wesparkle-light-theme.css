@@ -1,0 +1,50 @@
+/**
+ * Wesparkle Light Theme
+ * Semantic Token definitions generated from Figma 
+ */
+
+:root {
+  /* Background Colors */
+  --color-bg-default: #FFFFFF; /* base/color/white */
+  --color-bg-subtle: #F2F2F2; /* base/color/gray-05 */
+  --color-bg-strong: #E0E0E0; /* base/color/gray-15 */
+  --color-bg-disabled: #E0E0E0; /* base/color/gray-15 */
+  --color-bg-brand: #02F0E5; /* base/color/teal-50 */
+  --color-bg-brand-default: #E6FFFD; /* base/color/teal-05 */
+  --color-bg-brand-hover: #C8FBF9; /* base/color/teal-10 */
+  --color-bg-success: #EAFBF2; /* base/color/green-05 */
+  --color-bg-success-strong: #6FCF97; /* base/color/green-40 */
+  --color-bg-error: #FCEBEB; /* base/color/red-05 */
+  --color-bg-error-strong: #E36868; /* base/color/red-40 */
+  --color-bg-warning: #FEF8E6; /* base/color/yellow-05 */
+  --color-bg-warning-strong: #F2C94C; /* base/color/yellow-50 */
+  --color-bg-info: #EBF7FE; /* base/color/sky-05 */
+  --color-bg-info-strong: #56CCF2; /* base/color/sky-40 */
+  --color-bg-transparent: rgba(0, 0, 0, 0); /* base/color/transparent */
+  --color-bg-active: #02F0E5; /* base/color/teal-50 */
+  
+  /* Content Colors */
+  --color-content-default: #333333; /* base/color/gray-90 */
+  --color-content-subtle: #828282; /* base/color/gray-70 */
+  --color-content-disabled: #BDBDBD; /* base/color/gray-50 */
+  --color-content-knockout: #FFFFFF; /* base/color/white */
+  --color-content-brand: #007872; /* base/color/teal-70 */
+  --color-content-brand-subtle: #00A19A; /* base/color/teal-60 */
+  --color-content-brand-strong: #002A29; /* base/color/teal-95 */
+  --color-content-success: #219653; /* base/color/green-60 */
+  --color-content-success-icon: #27AE60; /* base/color/green-55 */
+  --color-content-error: #EB5757; /* base/color/red-50 */
+  --color-content-error-icon: #DB4242; /* base/color/red-55 */
+  --color-content-warning: #F2994A; /* base/color/orange-50 */
+  --color-content-warning-icon: #F2C94C; /* base/color/yellow-50 */
+  --color-content-info: #2D9CDB; /* base/color/sky-50 */
+  --color-content-info-icon: #2D9CDB; /* base/color/sky-50 */
+  --color-content-link: #00A19A; /* base/color/teal-60 */
+  --color-content-link-strong: #002A29; /* base/color/teal-95 */
+  
+  /* Border Colors */
+  --color-border-default: #E0E0E0; /* base/color/gray-15 */
+  --color-border-strong: #BDBDBD; /* base/color/gray-50 */
+  --color-border-disabled: #E0E0E0; /* base/color/gray-15 */
+  --color-border-knockout: #333333; /* base/color/gray-90 */
+} 

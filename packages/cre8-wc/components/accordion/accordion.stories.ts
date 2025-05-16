@@ -3,10 +3,11 @@ import '../icon/icon';
 import '../heading/heading';
 import './accordion';
 import type { Meta, StoryObj } from '@storybook/web-components';
-import { cre8Accordion } from './accordion';
+import './accordion';
 import { spread } from '../../directives/spread';
-
-interface Props extends cre8Accordion {
+import '../../scripts/agentric.js';
+import type Cre8Accordion from './accordion';
+interface Props extends Cre8Accordion {
 }
 type Story = StoryObj<Props>;
 
@@ -23,6 +24,7 @@ const meta = {
       control: {type: 'radio'}
     }
   },
+
   render: (args) =>
     html`
     <cre8-accordion ${spread(args)}>

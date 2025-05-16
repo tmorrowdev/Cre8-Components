@@ -1,5 +1,5 @@
 {
-  "compileOnSave": false,
+  "extends": "tsconfig.json",
   "compilerOptions": {
     "rootDir": ".",
     "sourceMap": true,

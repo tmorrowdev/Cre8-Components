@@ -5,16 +5,16 @@ import {
 } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { property, queryAll, state } from 'lit/decorators.js';
-import svgCaretLeft from '@Cre8/cre8-icons/lib/icons/System/Regular/Caret Left.svg?raw';
-import svgFirstPage from '@Cre8/cre8-icons/lib/icons/System/Regular/Caret Double Left.svg?raw';
-import svgLastPage from '@Cre8/cre8-icons/lib/icons/System/Regular/Caret Double Right.svg?raw';
-import svgCaretRight from '@Cre8/cre8-icons/lib/icons/System/Regular/Caret Right.svg?raw';
+import svgCaretLeft from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Left.svg?raw';
+import svgFirstPage from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Double Left.svg?raw';
+import svgLastPage from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Double Right.svg?raw';
+import svgCaretRight from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Right.svg?raw';
 import { Cre8Element } from '../cre8-element';
 import { Cre8Button } from '../button/button';
 import { isMobile, screenSizes } from '../../utilities/is-mobile';
 import './page-counter/page-counter';
 import styles from './pagination.scss';
-import '@Cre8/cre8-icons/lib/wc/Icon';
+import '@cre8_dev/cre8-icons/lib/wc/Icon';
 
 /**
  * The Pagination component is used to split up a large amount of results

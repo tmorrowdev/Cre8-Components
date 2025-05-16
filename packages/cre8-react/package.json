@@ -1,6 +1,6 @@
 {
   "name": "@cre8_dev/cre8-react",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "The React-powered cre8 design system library for Cigna web applications",
   "license": "UNLICENSED",
   "main": "lib/index.js",
@@ -33,9 +33,8 @@
     "format": "eslint-config ./ --fix --ext tsx,jsx,ts,js --ignore-path ../../.eslintignore"
   },
   "dependencies": {
-    "@cre8_dev/cre8-design-tokens": "1.0.3",
-    "@cre8/cre8-icons": "file:../../cre8-cre8-icons-0.6.0.tgz",
-    "@cre8_dev/cre8-wc": "1.0.3",
+    "@cre8_dev/cre8-design-tokens": "latest",
+    "@cre8_dev/cre8-wc": "1.0.5",
     "@lit/react": "^1.0.7",
     "classnames": "2.3.2",
     "react": "^18.2.0",

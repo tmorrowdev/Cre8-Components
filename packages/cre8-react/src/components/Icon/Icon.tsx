@@ -10,7 +10,7 @@ import React from 'react';
  * **'Cre8-icon-legacy'** will be **deprecated** in Web Components v0.5.0
  *
  * - [List of new figma icons](https://www.figma.com/file/j1a0rBkoH65XiGKfq7ppWa/Iconography?type=design&node-id=2037-5773&mode=design&t=6ZzC6KH3Gkxf3fj5-4)
- * - The new `Cre8-icon` from the Cre8-icon package: https://static-dev.esi-memberweb-dev.aws.evernorthcloud.com/Cre8-icons/.
+ * - The new `Cre8-icon` from the Cre8-icon package: https://static-dev.esi-memberweb-dev.aws.evernorthcloud.com/cre8-icons/.
  *
  * ##Usability Considerations
  * - If the icon is decorative: set `aria-hidden` to true.
@@ -20,18 +20,18 @@ import React from 'react';
  * For example, if the icon is a close button, setting `aria-label="Close"`will give
  * the SVG an aria-label to make it sufficiently accessible.
  *
- * [More information on Accessibility with Cre8-icons](https://static-dev.esi-memberweb-dev.aws.evernorthcloud.com/Cre8-icons/?path=/story/getting-started-accessibility--page)
+ * [More information on Accessibility with cre8-icons](https://static-dev.esi-memberweb-dev.aws.evernorthcloud.com/cre8-icons/?path=/story/getting-started-accessibility--page)
  *
  * ##How to use
- * Cre8 Web Components (Cre8-wc) includes the `@Cre8/Cre8-icons` package.
+ * Cre8 Web Components (Cre8-wc) includes the `cre8_dev/cre8-icons` package.
  * If you need to install a newer version than what's included, please see
- * the [installation instructions for Cre8-icons](https://git.express-scripts.com/ExpressScripts/Cre8-icons#installation).
- * - Import the component (this is the icon container): `import '@Cre8/Cre8-icons';`
- * - Import an svg as a string: `import svgInfo from '!!raw-loader!@Cre8/Cre8-icons/lib/icons/System/Regular/Info.svg';`
+ * the [installation instructions for cre8-icons](https://git.express-scripts.com/ExpressScripts/cre8-icons#installation).
+ * - Import the component (this is the icon container): `import '@cre8_dev/cre8-icons';`
+ * - Import an svg as a string: `import svgInfo from '!!raw-loader!cre8_dev/cre8-icons/lib/icons/System/Regular/Info.svg';`
  *
  * Your import paths may be different depending on your project's build configuration.
- * Please see [Importing Icons](https://static-dev.esi-memberweb-dev.aws.evernorthcloud.com/Cre8-icons/?path=/story/icon-sets-importing-icons--page)
- * of the `@Cre8/Cre8-icons` documentation for more information.
+ * Please see [Importing Icons](https://static-dev.esi-memberweb-dev.aws.evernorthcloud.com/cre8-icons/?path=/story/icon-sets-importing-icons--page)
+ * of the `cre8_dev/cre8-icons` documentation for more information.
  */
 
 export const Cre8IconLegacy = createComponent({

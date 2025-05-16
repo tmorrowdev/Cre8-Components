@@ -1,12 +1,12 @@
 import {html} from 'lit';
 import {spread} from '../../directives/spread';
-import '@cre8/cre8-icons';
+import '@cre8_dev/cre8-icons';
 import './progress-steps-item';
-import svgCheckCircle from '@cre8/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
-import svgError from '@cre8/cre8-icons/lib/icons/System/Filled/Error.svg?raw';
-import svgFilledCircleOne from '@cre8/cre8-icons/lib/icons/System/Filled/Circle One.svg?raw';
-import svgRegularCircleOne from '@cre8/cre8-icons/lib/icons/System/Regular/Circle One.svg?raw';
-import svgWarning from '@cre8/cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
+import svgCheckCircle from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
+import svgError from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Error.svg?raw';
+import svgFilledCircleOne from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Circle One.svg?raw';
+import svgRegularCircleOne from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Circle One.svg?raw';
+import svgWarning from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
 
 const meta = {
   title: 'In Development/Progress Steps Item',

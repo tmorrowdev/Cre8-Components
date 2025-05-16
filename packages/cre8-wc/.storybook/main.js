@@ -14,22 +14,6 @@ module.exports = {
     './patterns/**/*.stories.@(js|jsx|ts|tsx|mdx)',
     './components/system-docs/*.mdx'
   ],
-  refs: (config, { configType }) => {
-    if (configType === 'DEVELOPMENT') {
-      return {
-        'cre8-design-tokens': {
-          title: 'cre8 Design Tokens',
-          url: 'http://localhost:6008',
-        },
-      };
-    }
-    return {
-      'cre8-design-tokens': {
-        title: 'cre8 Design Tokens',
-        url: '../cre8-design-tokens',
-      },
-    };
-  },
   staticDirs: [
     './static',
   ], // Include any addons you'd like to use in Storybook

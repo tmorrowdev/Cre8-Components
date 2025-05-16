@@ -11,22 +11,6 @@ module.exports = {
     'patterns/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   staticDirs: ['./static'],
-  refs: (config, { configType }) => {
-    if (configType === 'DEVELOPMENT') {
-      return {
-        'cre8-design-tokens': {
-          title: 'cre8 Design Tokens',
-          url: 'http://localhost:6008',
-        },
-      };
-    }
-    return {
-      'cre8-design-tokens': {
-        title: 'cre8 Design Tokens',
-        url: '../cre8-design-tokens',
-      },
-    };
-  },
   addons: [
     getAbsolutePath('@storybook/addon-a11y'),
     getAbsolutePath('@storybook/addon-links'),

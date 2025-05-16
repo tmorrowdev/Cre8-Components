@@ -1,4 +1,4 @@
-import svgCheck from '@Cre8/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
+import svgCheck from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
 import {
     LitElement, PropertyValues, html, unsafeCSS,
 } from 'lit';

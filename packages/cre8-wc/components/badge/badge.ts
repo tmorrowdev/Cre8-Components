@@ -56,7 +56,7 @@ export class Cre8Badge extends Cre8Element {
    * SVG as a raw string
    * - For badges with icons, the icon is defined by this prop
    * - Pass in a raw svg as a String. We use raw string loader for this but any method of getting raw svgs will do
-   * - Import example:`import svgFeedback from '@Cre8/cre8-icons/lib/icons/System/Regular/Feedback.svg?raw';`
+   * - Import example:`import svgFeedback from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Feedback.svg?raw';`
    * - [cre8-icons Github repo](https://git.express-scripts.com/ExpressScripts/cre8-icons) This is the Github
    * repo for Cre8 icons, which includes a link to the storybook as well as relavant information for new icons
    */

@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { spread } from '../../directives/spread';
 import './badge';
-import svgFeedback from '@cre8/cre8-icons/lib/icons/System/Regular/Feedback.svg?raw';
+import svgFeedback from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Feedback.svg?raw';
 
  const meta = {
   title: 'cre8 Components/Badge',
@@ -37,7 +37,7 @@ export const Default = {
 
 /**
 * **Note** SVG is passed in as a raw string for badges with icons. The icon is defined by this argument 
-* *Import example:*`import svgFeedback from '@cre8/cre8-icons/lib/icons/System/Regular/Feedback.svg?raw';
+* *Import example:*`import svgFeedback from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Feedback.svg?raw';
 * 
 */
 export const IconVariant = {

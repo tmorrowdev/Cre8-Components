@@ -2,13 +2,13 @@ import type { StoryObj } from '@storybook/react';
 import React from 'react';
 import { excludeRegexArray } from '../../../.storybook/preview';
 import { Cre8ProgressSteps } from '../..';
-import svgCheckCircle from '@Cre8/Cre8-icons/lib/icons/System/Filled/Check.svg?raw';
-import svgError from '@Cre8/Cre8-icons/lib/icons/System/Filled/Error.svg?raw';
-import svgFilledCircleTwo from '@Cre8/Cre8-icons/lib/icons/System/Filled/Circle Two.svg?raw';
-import svgFilledCircleFive from '@Cre8/Cre8-icons/lib/icons/System/Filled/Circle Five.svg?raw';
-import svgRegularCircleThree from '@Cre8/Cre8-icons/lib/icons/System/Regular/Circle Three.svg?raw';
-import svgRegularCircleSix from '@Cre8/Cre8-icons/lib/icons/System/Regular/Circle Six.svg?raw';
-import svgWarning from '@Cre8/Cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
+import svgCheckCircle from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
+import svgError from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Error.svg?raw';
+import svgFilledCircleTwo from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Circle Two.svg?raw';
+import svgFilledCircleFive from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Circle Five.svg?raw';
+import svgRegularCircleThree from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Circle Three.svg?raw';
+import svgRegularCircleSix from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Circle Six.svg?raw';
+import svgWarning from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
 
 export default {
   title: 'In Development/ProgressSteps',

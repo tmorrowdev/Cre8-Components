@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
-import svgCaretLeft from '@cre8/cre8-icons/lib/icons/System/Regular/Caret Left.svg?raw';
-import svgCaretRight from '@cre8/cre8-icons/lib/icons/System/Regular/Caret Right.svg?raw';
-import svgArrowRight from '@cre8/cre8-icons/lib/icons/System/Regular/Arrow - Right.svg?raw';
+import svgCaretLeft from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Left.svg?raw';
+import svgCaretRight from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Right.svg?raw';
+import svgArrowRight from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Arrow - Right.svg?raw';
 import { html } from 'lit';
 import { spread } from '../../directives/spread';
 import './danger-button';

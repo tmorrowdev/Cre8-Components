@@ -1,6 +1,6 @@
 declare module '*.scss';
 
-declare module '@cre8/cre8-icons/*';
+declare module '@cre8_dev/cre8-icons/*';
 declare module '*.svg' {
     const content: string;
     export default content;

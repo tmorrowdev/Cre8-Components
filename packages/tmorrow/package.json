@@ -1,0 +1,34 @@
+{
+  "name": "tmorrow-portfolio",
+  "version": "1.0.0",
+  "description": "Tyler Morrow's Portfolio Website",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "web-dev-server --node-resolve --open --watch",
+    "build": "rimraf dist && rollup -c rollup.config.cjs",
+    "serve": "web-dev-server --root-dir dist --app-index index.html --open"
+  },
+  "keywords": [
+    "lit",
+    "web-components",
+    "typescript",
+    "portfolio"
+  ],
+  "author": "Tyler Morrow",
+  "license": "MIT",
+  "dependencies": {
+    "@cre8_dev/cre8-wc": "^1.0.0",
+    "lit": "^2.7.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@web/dev-server": "^0.1.35",
+    "rimraf": "^4.1.2",
+    "rollup": "^3.15.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.9.5"
+  }
+}

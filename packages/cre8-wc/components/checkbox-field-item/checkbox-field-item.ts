@@ -4,7 +4,7 @@ import { property, query } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import '../icon/icon';
 import '../field-note/field-note';
-import svgCheck from '@Cre8/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
+import svgCheck from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
 import styles from './checkbox-field-item.scss';
 import { Cre8FormElement } from '../cre8-form-element';
 

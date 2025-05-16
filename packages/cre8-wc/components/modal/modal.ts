@@ -1,11 +1,11 @@
 import { PropertyValues, html, unsafeCSS } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import '../icon/icon';
-import svgError from '@Cre8/cre8-icons/lib/icons/System/Regular/Error.svg?raw';
-import svgWarningFilled from '@Cre8/cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
-import svgCheckCircle from '@Cre8/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
-import svgInfoFilled from '@Cre8/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
-import svgHelp from '@Cre8/cre8-icons/lib/icons/System/Regular/Help.svg?raw';
+import svgError from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Error.svg?raw';
+import svgWarningFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
+import svgCheckCircle from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
+import svgInfoFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
+import svgHelp from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Help.svg?raw';
 import { Cre8Element } from '../cre8-element';
 import '@a11y/focus-trap';
 import styles from './modal.scss';

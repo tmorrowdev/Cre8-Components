@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tyler Morrow - Senior Frontend Engineer</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="./styles/theme.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--cre8-color-bg-default);
+      color: var(--cre8-color-content-default);
+      line-height: 1.5;
+    }
+    
+    :root {
+      --accent-color: var(--cre8-color-content-brand);
+      --accent-hover-color: var(--cre8-color-content-link-hover);
+      --cre8-font-weights-thin: 300;
+      --cre8-font-weights-normal: 400;
+      --cre8-font-weights-medium: 500;
+      --cre8-font-weights-semibold: 600;
+      --cre8-font-weights-bold: 700;
+    }
+  </style>
+  
+  <!-- Import our components bundle -->
+  <script type="module" src="./dist/index.js"></script>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>

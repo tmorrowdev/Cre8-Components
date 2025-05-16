@@ -1,0 +1,50 @@
+/**
+ * Wesparkle Dark Theme
+ * Semantic Token definitions generated from Figma 
+ */
+
+:root {
+  /* Background Colors */
+  --color-bg-default: #333333; /* base/color/gray-90 */
+  --color-bg-subtle: #4F4F4F; /* base/color/gray-85 */
+  --color-bg-strong: #828282; /* base/color/gray-70 */
+  --color-bg-disabled: #828282; /* base/color/gray-70 */
+  --color-bg-brand: #02F0E5; /* base/color/teal-50 */
+  --color-bg-brand-default: #003E3C; /* base/color/teal-85 */
+  --color-bg-brand-hover: #002A29; /* base/color/teal-95 */
+  --color-bg-success: #084C2E; /* base/color/green-90 */
+  --color-bg-success-strong: #27AE60; /* base/color/green-55 */
+  --color-bg-error: #611818; /* base/color/red-90 */
+  --color-bg-error-strong: #EB5757; /* base/color/red-50 */
+  --color-bg-warning: #704D0F; /* base/color/yellow-90 */
+  --color-bg-warning-strong: #F2C94C; /* base/color/yellow-50 */
+  --color-bg-info: #0B3B57; /* base/color/sky-90 */
+  --color-bg-info-strong: #2D9CDB; /* base/color/sky-50 */
+  --color-bg-transparent: rgba(0, 0, 0, 0); /* base/color/transparent */
+  --color-bg-active: #02F0E5; /* base/color/teal-50 */
+  
+  /* Content Colors */
+  --color-content-default: #FFFFFF; /* base/color/white */
+  --color-content-subtle: #BDBDBD; /* base/color/gray-50 */
+  --color-content-disabled: #4F4F4F; /* base/color/gray-85 */
+  --color-content-knockout: #333333; /* base/color/gray-90 */
+  --color-content-brand: #A5FAF6; /* base/color/teal-25 */
+  --color-content-brand-subtle: #02F0E5; /* base/color/teal-50 */
+  --color-content-brand-strong: #E6FFFD; /* base/color/teal-05 */
+  --color-content-success: #6FCF97; /* base/color/green-40 */
+  --color-content-success-icon: #27AE60; /* base/color/green-55 */
+  --color-content-error: #EB5757; /* base/color/red-50 */
+  --color-content-error-icon: #E36868; /* base/color/red-40 */
+  --color-content-warning: #F2994A; /* base/color/orange-50 */
+  --color-content-warning-icon: #F2C94C; /* base/color/yellow-50 */
+  --color-content-info: #56CCF2; /* base/color/sky-40 */
+  --color-content-info-icon: #2D9CDB; /* base/color/sky-50 */
+  --color-content-link: #02F0E5; /* base/color/teal-50 */
+  --color-content-link-strong: #E6FFFD; /* base/color/teal-05 */
+  
+  /* Border Colors */
+  --color-border-default: #4F4F4F; /* base/color/gray-85 */
+  --color-border-strong: #BDBDBD; /* base/color/gray-50 */
+  --color-border-disabled: #4F4F4F; /* base/color/gray-85 */
+  --color-border-knockout: #FFFFFF; /* base/color/white */
+} 

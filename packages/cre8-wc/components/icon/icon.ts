@@ -5,45 +5,45 @@ import { TemplateResult, html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 
 // These replace icons from `cre8-wc/icons/*`.
-import svgAdd from '@Cre8/cre8-icons/lib/icons/System/Regular/Add.svg?raw';
-import svgArrowLeft from '@Cre8/cre8-icons/lib/icons/System/Regular/Arrow - Left.svg?raw';
-import svgChat from '@Cre8/cre8-icons/lib/icons/System/Filled/Chat Default.svg?raw';
-import svgCalendar from '@Cre8/cre8-icons/lib/icons/System/Regular/Calendar.svg?raw';
-import svgCaretDown from '@Cre8/cre8-icons/lib/icons/System/Filled/Caret Down.svg?raw';
-import svgCheckCircle from '@Cre8/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
-import svgCheck from '@Cre8/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
-import svgClose from '@Cre8/cre8-icons/lib/icons/System/Regular/Close.svg?raw';
-import svgDownload from '@Cre8/cre8-icons/lib/icons/System/Filled/Download.svg?raw';
-import svgEdit from '@Cre8/cre8-icons/lib/icons/System/Regular/Edit.svg?raw';
-import svgEllipsis from '@Cre8/cre8-icons/lib/icons/System/Filled/Ellipsis.svg?raw';
-import svgMessageFilled from '@Cre8/cre8-icons/lib/icons/System/Filled/Message Unread.svg?raw';
-import svgMessage from '@Cre8/cre8-icons/lib/icons/System/Regular/Message Unread.svg?raw';
-import svgError from '@Cre8/cre8-icons/lib/icons/System/Regular/Error.svg?raw';
-import svgExternal from '@Cre8/cre8-icons/lib/icons/System/Regular/External Link.svg?raw';
-import svgMedication from '@Cre8/cre8-icons/lib/icons/System/Regular/Medication.svg?raw';
-import svgGlobe from '@Cre8/cre8-icons/lib/icons/System/Regular/Globe.svg?raw';
-import svgHandHeart from '@Cre8/cre8-icons/lib/icons/System/Regular/Wellness.svg?raw';
-import svgHelp from '@Cre8/cre8-icons/lib/icons/System/Regular/Help.svg?raw';
-import svgInfoFilled from '@Cre8/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
-import svgCaretUp from '@Cre8/cre8-icons/lib/icons/System/Regular/Caret Up.svg?raw';
-import svgLightbulb from '@Cre8/cre8-icons/lib/icons/System/Regular/Lightbulb.svg?raw';
-import svgLocation from '@Cre8/cre8-icons/lib/icons/System/Filled/Location.svg?raw';
-import svgMenu from '@Cre8/cre8-icons/lib/icons/System/Regular/Menu.svg?raw';
-import svgMinus from '@Cre8/cre8-icons/lib/icons/System/Regular/Minus.svg?raw';
-import svgAccountFilled from '@Cre8/cre8-icons/lib/icons/System/Filled/Account.svg?raw';
-import svgNotification from '@Cre8/cre8-icons/lib/icons/System/Regular/Notification.svg?raw';
-import svgRefill from '@Cre8/cre8-icons/lib/icons/Marketing/Duotone/Refill.svg?raw';
-import svgAccount from '@Cre8/cre8-icons/lib/icons/System/Regular/Account.svg?raw';
-import svgPlayFilled from '@Cre8/cre8-icons/lib/icons/System/Filled/Play Arrow.svg?raw';
-import svgPlayCircle from '@Cre8/cre8-icons/lib/icons/System/Regular/Play Circle.svg?raw';
-import svgSpinner from '@Cre8/cre8-icons/lib/icons/System/Regular/Spinner/75.svg?raw';
-import svgUndo from '@Cre8/cre8-icons/lib/icons/System/Regular/Undo.svg?raw';
-import svgSearch from '@Cre8/cre8-icons/lib/icons/System/Regular/Search.svg?raw';
-import svgCart from '@Cre8/cre8-icons/lib/icons/System/Regular/Cart.svg?raw';
-import svgRectangle from '@Cre8/cre8-icons/lib/icons/System/Filled/Shape/Rectangle.svg?raw';
-import svgVaccine from '@Cre8/cre8-icons/lib/icons/Marketing/Duotone/Vaccinations.svg?raw';
-import svgWarningFilled from '@Cre8/cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
-import svgCaretDoubleRight from '@Cre8/cre8-icons/lib/icons/System/Regular/Caret Double Right.svg?raw';
+import svgAdd from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Add.svg?raw';
+import svgArrowLeft from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Arrow - Left.svg?raw';
+import svgChat from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Chat Default.svg?raw';
+import svgCalendar from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Calendar.svg?raw';
+import svgCaretDown from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Caret Down.svg?raw';
+import svgCheckCircle from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
+import svgCheck from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
+import svgClose from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Close.svg?raw';
+import svgDownload from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Download.svg?raw';
+import svgEdit from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Edit.svg?raw';
+import svgEllipsis from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Ellipsis.svg?raw';
+import svgMessageFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Message Unread.svg?raw';
+import svgMessage from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Message Unread.svg?raw';
+import svgError from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Error.svg?raw';
+import svgExternal from '@cre8_dev/cre8-icons/lib/icons/System/Regular/External Link.svg?raw';
+import svgMedication from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Medication.svg?raw';
+import svgGlobe from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Globe.svg?raw';
+import svgHandHeart from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Wellness.svg?raw';
+import svgHelp from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Help.svg?raw';
+import svgInfoFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
+import svgCaretUp from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Up.svg?raw';
+import svgLightbulb from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Lightbulb.svg?raw';
+import svgLocation from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Location.svg?raw';
+import svgMenu from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Menu.svg?raw';
+import svgMinus from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Minus.svg?raw';
+import svgAccountFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Account.svg?raw';
+import svgNotification from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Notification.svg?raw';
+import svgRefill from '@cre8_dev/cre8-icons/lib/icons/Marketing/Duotone/Refill.svg?raw';
+import svgAccount from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Account.svg?raw';
+import svgPlayFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Play Arrow.svg?raw';
+import svgPlayCircle from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Play Circle.svg?raw';
+import svgSpinner from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Spinner/75.svg?raw';
+import svgUndo from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Undo.svg?raw';
+import svgSearch from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Search.svg?raw';
+import svgCart from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Cart.svg?raw';
+import svgRectangle from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Shape/Rectangle.svg?raw';
+import svgVaccine from '@cre8_dev/cre8-icons/lib/icons/Marketing/Duotone/Vaccinations.svg?raw';
+import svgWarningFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
+import svgCaretDoubleRight from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Double Right.svg?raw';
 import svgFatArrowUp from './icons/arrow-fat-up-fill.svg?raw';
 import svgErrorAlt from './icons/error-alt.svg?raw';
 import svgEsi from './icons/express-scripts.svg?raw'; // get from cre8-assets in the future?
@@ -66,7 +66,7 @@ import svgTwitter from './icons/twitter.svg?raw';
 import { Cre8Element } from '../cre8-element';
 import styles from './icon.scss';
 import iconSprite from '../../icons/cre8-icons.svg';
-import '@Cre8/cre8-icons';
+import '@cre8_dev/cre8-icons';
 
 /**
  *
@@ -89,15 +89,15 @@ import '@Cre8/cre8-icons';
  * [More information on Accessibility with cre8-icons](https://static-dev.esi-memberweb-dev.aws.evernorthcloud.com/cre8-icons/?path=/story/getting-started-accessibility--page)
  *
  * ##How to use
- * Cre8 Web Components (cre8-wc) includes the `@Cre8/cre8-icons` package.
+ * Cre8 Web Components (cre8-wc) includes the `cre8_dev/cre8-icons` package.
  * If you need to install a newer version than what's included, please see
  * the [installation instructions for cre8-icons](https://git.express-scripts.com/ExpressScripts/cre8-icons#installation).
- * - Import the component (this is the icon container): `import '@Cre8/cre8-icons';`
- * - Import an svg as a string: `import svgInfo from '!!raw-loader!@Cre8/cre8-icons/lib/icons/System/Regular/Info.svg';`
+ * - Import the component (this is the icon container): `import '@cre8_dev/cre8-icons';`
+ * - Import an svg as a string: `import svgInfo from '!!raw-loader!cre8_dev/cre8-icons/lib/icons/System/Regular/Info.svg';`
  *
  * Your import paths may be different depending on your project's build configuration.
  * Please see [Importing Icons](https://static-dev.esi-memberweb-dev.aws.evernorthcloud.com/cre8-icons/?path=/story/icon-sets-importing-icons--page)
- * of the `@Cre8/cre8-icons` documentation for more information.
+ * of the `cre8_dev/cre8-icons` documentation for more information.
  */
 
 export class Cre8IconLegacy extends Cre8Element {

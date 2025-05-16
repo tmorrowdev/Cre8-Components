@@ -1,0 +1,545 @@
+@import './fonts.css';
+:root {
+    /* HEADER STYLES */
+    --cre8-desktop-menu-padding-vertical-padding: 0.75rem;
+    --cre8-desktop-menu-padding-horizontal-padding: 1rem;
+    --cre8-color-header-bg-default: #FFFFFF;
+    --cre8-color-header-bg-secondary: #F7F7F7;
+    --cre8-color-header-bg-tertiary: #682A8F;
+    --cre8-color-header-menu-bg-default: #FFFFFF;
+    --cre8-color-header-menu-bg-active: #682A8F;
+    --cre8-color-header-menu-bg-focus: #682A8F;
+    --cre8-color-header-menu-content-default: #000000;
+    --cre8-color-header-menu-content-active: #FFFFFF;
+    --cre8-color-header-menu-content-focus: #FFFFFF;
+    --cre8-color-header-menu-border-default: rgba(0, 0, 0, 0.0);
+    --cre8-color-header-menu-bg-hover: #F7F7F7;
+    --cre8-color-header-menu-content-hover: #682A8F;
+    --cre8-color-header-menu-border-hover: rgba(0, 0, 0, 0.0);
+    --cre8-color-header-menu-bg-pressed: #F7F7F7;
+    --cre8-color-header-menu-content-pressed: #682A8F;
+    --cre8-color-header-menu-border-pressed: rgba(0, 0, 0, 0.0);
+    --cre8-color-header-menu-border-active: rgba(0, 0, 0, 0.0);
+    --cre8-color-header-menu-border-focus: rgba(0, 0, 0, 0.0);
+    --cre8-color-header-submenu-bg-default: #FFFFFF;
+    --cre8-color-header-submenu-bg-focus: #682A8F;
+    --cre8-color-header-submenu-content-default: #682A8F;
+    --cre8-color-header-submenu-bg-hover: #682A8F;
+    --cre8-color-header-submenu-content-hover: #FFFFFF;
+    --cre8-color-header-submenu-content-focus: #FFFFFF;
+    --cre8-color-header-submenu-bg-pressed: #682A8F;
+    --cre8-color-header-submenu-content-pressed: #FFFFFF;
+    
+    /* FOOTER STYLES */
+    --cre8-color-footer-bg-default: #F7F7F7;
+    --cre8-color-footer-bg-secondary: #FFFFFF;
+    --cre8-color-footer-content-default: #000000;
+    --cre8-color-footer-content-secondary: #FFFFFF;
+    --cre8-color-footer-link-default: #682A8F;
+    --cre8-color-footer-link-hover: #9D7FBA;
+    
+    /* SPACING */
+    --cre8-spacing-0: 0rem;
+    --cre8-spacing-2: 0.125rem;
+    --cre8-spacing-4: 0.25rem;
+    --cre8-spacing-6: 0.375rem;
+    --cre8-spacing-8: 0.5rem;
+    --cre8-spacing-12: 0.75rem;
+    --cre8-spacing-14: 0.875rem;
+    --cre8-spacing-16: 1rem;
+    --cre8-spacing-18: 1.125rem;
+    --cre8-spacing-24: 1.5rem;
+    --cre8-spacing-32: 2rem;
+    --cre8-spacing-40: 2.5rem;
+    --cre8-spacing-48: 3rem;
+    --cre8-spacing-64: 4rem;
+    --cre8-spacing-80: 5rem;
+    --cre8-spacing-96: 6rem;
+    --cre8-spacing-120: 7.5rem;
+    --cre8-spacing-160: 10rem;
+    
+    /* BUTTON STYLES */
+    --cre8-color-button-primary-bg: #682A8F;
+    --cre8-color-button-primary-bg-hover: #541E75;
+    --cre8-color-button-primary-bg-active: #401658;
+    --cre8-color-button-primary-bg-disabled: #E0E0E0;
+    --cre8-color-button-primary-border: #682A8F;
+    --cre8-color-button-primary-border-hover: #541E75;
+    --cre8-color-button-primary-border-active: #401658;
+    --cre8-color-button-primary-border-disabled: #E0E0E0;
+    --cre8-color-button-primary-content: #FFFFFF;
+    --cre8-color-button-primary-content-hover: #FFFFFF;
+    --cre8-color-button-primary-content-active: #FFFFFF;
+    --cre8-color-button-primary-content-disabled: #909090;
+    --cre8-color-button-primary-outline: #401658;
+    
+    --cre8-color-button-secondary-bg: #9D7FBA;
+    --cre8-color-button-secondary-bg-hover: #9D7FBA;
+    --cre8-color-button-secondary-bg-active: #9D7FBA;
+    --cre8-color-button-secondary-bg-disabled: #E0E0E0;
+    --cre8-color-button-secondary-border: #9D7FBA;
+    --cre8-color-button-secondary-border-hover: #682A8F;
+    --cre8-color-button-secondary-border-active: #401658;
+    --cre8-color-button-secondary-border-disabled: #A0A0A0;
+    --cre8-color-button-secondary-content: #682A8F;
+    --cre8-color-button-secondary-content-hover: #682A8F;
+    --cre8-color-button-secondary-content-active: #401658;
+    --cre8-color-button-secondary-content-disabled: #909090;
+    --cre8-color-button-secondary-outline: #401658;
+    
+    --cre8-color-button-tertiary-bg: rgba(0, 0, 0, 0.0);
+    --cre8-color-button-tertiary-bg-hover: rgba(0, 0, 0, 0.0);
+    --cre8-color-button-tertiary-bg-active: rgba(0, 0, 0, 0.0);
+    --cre8-color-button-tertiary-bg-disabled: rgba(0, 0, 0, 0.0);
+    --cre8-color-button-tertiary-border: rgba(0, 0, 0, 0.0);
+    --cre8-color-button-tertiary-border-hover: #401658;
+    --cre8-color-button-tertiary-border-active: #401658;
+    --cre8-color-button-tertiary-border-disabled: rgba(0, 0, 0, 0.0);
+    --cre8-color-button-tertiary-content: #682A8F;
+    --cre8-color-button-tertiary-content-hover: #401658;
+    --cre8-color-button-tertiary-content-active: #401658;
+    --cre8-color-button-tertiary-content-disabled: #909090;
+    --cre8-color-button-tertiary-outline: #401658;
+    
+    /* BUTTON PADDING */
+    --cre8-button-padding-vertical-small: 0.5rem;
+    --cre8-button-padding-vertical-medium: 0.75rem;
+    --cre8-button-padding-vertical-icon-only: 0.25rem;
+    --cre8-button-padding-vertical-large: 1rem;
+    --cre8-button-padding-horizontal-small: 1rem;
+    --cre8-button-padding-horizontal-medium: 1.5rem;
+    --cre8-button-padding-horizontal-large: 2rem;
+    --cre8-button-padding-horizontal-icon-only: 0.25rem;
+    
+    /* BACKGROUND COLORS */
+    --cre8-color-bg-default: #FFFFFF;
+    --cre8-color-bg-subtle: #F7F7F7;
+    --cre8-color-bg-strong: #000000;
+    --cre8-color-bg-disabled: #E0E0E0;
+    --cre8-color-bg-success: #E8F4F2;
+    --cre8-color-bg-success-strong: #007766;
+    --cre8-color-bg-error: #FEE8E8;
+    --cre8-color-bg-error-strong: #BB4242;
+    --cre8-color-bg-warning: #FFF5E5;
+    --cre8-color-bg-warning-strong: #E89F12;
+    --cre8-color-bg-info: #EDF1F7;
+    --cre8-color-bg-info-strong: #682A8F;
+    --cre8-color-bg-attention: #E8F4F7;
+    --cre8-color-bg-attention-strong: #682A8F;
+    --cre8-color-bg-default-hover: #EDF1F7;
+    --cre8-color-bg-brand: #EDF1F7;
+    --cre8-color-bg-brand-hover: #9D7FBA;
+    --cre8-color-bg-brand-strong: #682A8F;
+    --cre8-color-bg-brand-strong-hover: #541E75;
+    --cre8-color-bg-brand-strong-active: #401658;
+    --cre8-color-bg-brand-xstrong: #401658;
+    --cre8-color-bg-brand-xstrong-hover: #2F1045;
+    --cre8-color-bg-brand-xstrong-active: #2F1045;
+    --cre8-color-bg-opacity-transparent: rgba(0, 0, 0, 0.0);
+    --cre8-color-bg-opacity-default: rgba(0, 0, 0, 0.50);
+    --cre8-color-bg-active: #000000;
+    
+    /* CONTENT COLORS */
+    --cre8-color-content-default: #000000;
+    --cre8-color-content-subtle: #666666;
+    --cre8-color-content-disabled: #909090;
+    --cre8-color-content-link-disabled: #909090;
+    --cre8-color-content-knockout: #FFFFFF;
+    --cre8-color-content-success: #00473D;
+    --cre8-color-content-success-icon: #007766;
+    --cre8-color-content-error: #BB4242;
+    --cre8-color-content-error-icon: #EA5353;
+    --cre8-color-content-attention-icon: #401658;
+    --cre8-color-content-brand-knockout: #EDF1F7;
+    --cre8-color-content-brand: #682A8F;
+    --cre8-color-content-brand-strong: #682A8F;
+    --cre8-color-content-link: #682A8F;
+    --cre8-color-content-link-hover: #541E75;
+    --cre8-color-content-link-active: #401658;
+    --cre8-color-content-link-visited: #7522D9;
+    --cre8-color-content-warning-icon: #E89F12;
+    --cre8-color-content-info-icon: #682A8F;
+    
+    /* BORDER COLORS */
+    --cre8-color-border-default: #D5D5D5;
+    --cre8-color-border-strong: #909090;
+    --cre8-color-border-knockout: #FFFFFF;
+    --cre8-color-border-disabled: #A0A0A0;
+    --cre8-color-border-success: #007766;
+    --cre8-color-border-error: #EA5353;
+    --cre8-color-border-warning: #E89F12;
+    --cre8-color-border-info: #401658;
+    --cre8-color-border-attention: #401658;
+    --cre8-color-border-brand: #682A8F;
+    --cre8-color-border-brand-subtle: #9D7FBA;
+    --cre8-color-border-brand-strong: #682A8F;
+    --cre8-color-border-transparent: rgba(0, 0, 0, 0.0);
+    --cre8-color-border-active-outline: #682A8F;
+    
+    /* FONT SIZES */
+    --cre8-font-size-0: 0.75rem;
+    --cre8-font-size-1: 0.875rem;
+    --cre8-font-size-2: 1rem;
+    --cre8-font-size-3: 1.125rem;
+    --cre8-font-size-4: 1.25rem;
+    --cre8-font-size-5: 1.5rem;
+    --cre8-font-size-6: 1.75rem;
+    --cre8-font-size-7: 2rem;
+    --cre8-font-size-8: 2.5rem;
+    --cre8-font-size-9: 3rem;
+    --cre8-font-size-10: 3.5rem;
+    --cre8-font-size-11: 4rem;
+    --cre8-font-size-12: 4.5rem;
+    
+    /* LETTER SPACING */
+    --cre8-letter-spacing-0: -1.5;
+    --cre8-letter-spacing-1: -1;
+    --cre8-letter-spacing-2: -0.5;
+    --cre8-letter-spacing-3: 0;
+    --cre8-letter-spacing-4: 2;
+    --cre8-letter-spacing-5: 1;
+    --cre8-letter-spacing-6: 1.5;
+    
+    /* PARAGRAPH SPACING */
+    --cre8-paragraph-spacing-0: 0;
+    
+    /* TEXT CASE */
+    --cre8-text-case-none: none;
+    --cre8-text-case-uppercase: uppercase;
+    
+    /* TEXT DECORATION */
+    --cre8-text-decoration-none: none;
+    --cre8-text-decoration-underline: underline;
+    
+    /* PARAGRAPH INDENT */
+    --cre8-paragraph-indent-0: 0px;
+    
+    /* BORDER RADIUS */
+    --cre8-border-radius-small: 4px;
+    --cre8-border-radius-default: 8px;
+    --cre8-border-radius-large: 16px;
+    --cre8-border-radius-round: 900px;
+    --cre8-border-radius-button: 8px;
+    --cre8-border-radius-badge: 4px;
+    --cre8-border-radius-tabs: 8px;
+    --cre8-border-radius-container: 16px;
+    --cre8-border-radius-field: 8px;
+    
+    /* BORDER WIDTH */
+    --cre8-border-width-none: 0rem;
+    --cre8-border-width-default: 0.0625rem;
+    --cre8-border-width-focus: 0.125rem;
+    --cre8-border-width-large: 0.25rem;
+    --cre8-border-width-button-tertiary-outline-focus: 0.125rem;
+    --cre8-border-width-button-default: 0.125rem;
+    --cre8-border-width-tab-selected: 0.125rem;
+    
+    /* BORDER STYLE */
+    --cre8-border-style-button-tertiary-outline-focus: solid;
+    --cre8-border-style-default: solid;
+    
+    /* SHADOWS */
+    --cre8-shadow-default: 0 8px 6px 0 rgba(0,0,0,0.1);
+    --cre8-shadow-button: none;
+    --cre8-shadow-none: none;
+    --cre8-shadow-large: 0 10px 12px 0 rgba(0,0,0,0.2);
+    --cre8-shadow-small: 0 1px 2px 1px rgba(0,0,0,0.2);
+    
+    /* LINK COLORS */
+    --cre8-color-link-bg-active: #333333;
+    
+    /* FONT FAMILIES */
+    --cre8-font-families-nb-akademie: InterstateRegular,Arial, "Helvetica Neue", sans-serif;
+    
+    /* FONT WEIGHTS */
+    --cre8-font-weights-nb-akademie-0: 400;
+    --cre8-font-weights-nb-akademie-1: 500;
+    --cre8-font-weights-nb-akademie-2: 700;
+    
+    /* LINE HEIGHTS */
+    --cre8-line-heights-0: 1.25;
+    --cre8-line-heights-1: 1.12;
+    --cre8-line-heights-2: 1.14;
+    --cre8-line-heights-3: 1.2;
+    --cre8-line-heights-4: 1.3;
+    --cre8-line-heights-5: 1.33;
+    --cre8-line-heights-6: 1.4;
+    --cre8-line-heights-7: 1.5;
+    --cre8-line-heights-8: 1.43;
+    --cre8-line-heights-9: 1.11;
+    --cre8-line-heights-10: 1.13;
+    --cre8-line-heights-11: 1.16;
+    --cre8-line-heights-12: 0.48;
+    --cre8-line-heights-13: 0.4;
+    --cre8-line-heights-14: 0.32;
+    --cre8-line-heights-15: 0.28;
+    --cre8-line-heights-16: 0.24;
+    --cre8-line-heights-17: 0.2;
+    --cre8-line-heights-18: 0.16;
+    
+    /* ICON SIZES */
+    --cre8-icon-size-small: 0.875rem;
+    --cre8-icon-size-default: 1rem;
+    --cre8-icon-size-large: 1.125rem;
+    
+    /* BADGE PADDING */
+    --cre8-badge-padding-horizontal: 0.375rem;
+    --cre8-badge-padding-vertical: 0.125rem;
+    
+    /* PROGRESS METER */
+    --cre8-progress-meter-height: 0.5rem;
+    
+    /* BREAKPOINTS */
+    --cre8-breakpoints-bp-xsm: 23.4375rem;
+    --cre8-breakpoints-bp-sm: 35rem;
+    --cre8-breakpoints-bp-md: 48rem;
+    --cre8-breakpoints-bp-lg: 60rem;
+    --cre8-breakpoints-bp-xl: 75rem;
+    --cre8-breakpoints-bp-xxl: 87.5rem;
+    --cre8-typography-body-xlarge-font-family: #cccccc;
+    --cre8-typography-body-xlarge-font-size: 1rem;
+    --cre8-typography-body-xlarge-font-weight: #cccccc;
+    --cre8-typography-body-xlarge-line-height: 1.5;
+    --cre8-typography-body-xlarge-text-decoration: #cccccc;
+    --cre8-typography-body-xlarge-text-transform: #cccccc;
+    --cre8-typography-body-xlarge-strong-font-family: #cccccc;
+    --cre8-typography-body-xlarge-strong-font-size: 1rem;
+    --cre8-typography-body-xlarge-strong-font-weight: #cccccc;
+    --cre8-typography-body-xlarge-strong-line-height: 1.5;
+    --cre8-typography-body-xlarge-strong-text-decoration: #cccccc;
+    --cre8-typography-body-xlarge-strong-text-transform: #cccccc;
+    --cre8-typography-body-xlarge-link-font-family: #cccccc;
+    --cre8-typography-body-xlarge-link-font-size: 1rem;
+    --cre8-typography-body-xlarge-link-font-weight: #cccccc;
+    --cre8-typography-body-xlarge-link-line-height: 1.5;
+    --cre8-typography-body-xlarge-link-text-decoration: #cccccc;
+    --cre8-typography-body-xlarge-link-text-transform: #cccccc;
+    --cre8-typography-body-large-font-family: #cccccc;
+    --cre8-typography-body-large-font-size: 1rem;
+    --cre8-typography-body-large-font-weight: #cccccc;
+    --cre8-typography-body-large-line-height: 1.5;
+    --cre8-typography-body-large-text-decoration: #cccccc;
+    --cre8-typography-body-large-text-transform: #cccccc;
+    --cre8-typography-body-large-strong-font-family: #cccccc;
+    --cre8-typography-body-large-strong-font-size: 1rem;
+    --cre8-typography-body-large-strong-font-weight: #cccccc;
+    --cre8-typography-body-large-strong-line-height: 1.5;
+    --cre8-typography-body-large-strong-text-decoration: #cccccc;
+    --cre8-typography-body-large-strong-text-transform: #cccccc;
+    --cre8-typography-body-default-font-family: #cccccc;
+    --cre8-typography-body-default-font-size: 1rem;
+    --cre8-typography-body-default-font-weight: #cccccc;
+    --cre8-typography-body-default-line-height: 1.5;
+    --cre8-typography-body-default-text-decoration: #cccccc;
+    --cre8-typography-body-default-text-transform: #cccccc;
+    --cre8-typography-body-default-strong-font-family: #cccccc;
+    --cre8-typography-body-default-strong-font-size: 1rem;
+    --cre8-typography-body-default-strong-font-weight: #cccccc;
+    --cre8-typography-body-default-strong-line-height: 1.5;
+    --cre8-typography-body-default-strong-text-decoration: #cccccc;
+    --cre8-typography-body-default-strong-text-transform: #cccccc;
+    --cre8-typography-body-small-font-family: #cccccc;
+    --cre8-typography-body-small-font-size: 1rem;
+    --cre8-typography-body-small-font-weight: #cccccc;
+    --cre8-typography-body-small-line-height: 1.5;
+    --cre8-typography-body-small-text-decoration: #cccccc;
+    --cre8-typography-body-small-text-transform: #cccccc;
+    --cre8-typography-body-small-strong-font-family: #cccccc;
+    --cre8-typography-body-small-strong-font-size: 1rem;
+    --cre8-typography-body-small-strong-font-weight: #cccccc;
+    --cre8-typography-body-small-strong-line-height: 1.5;
+    --cre8-typography-body-small-strong-text-decoration: #cccccc;
+    --cre8-typography-body-small-strong-text-transform: #cccccc;
+    --cre8-typography-body-large-link-font-family: #cccccc;
+    --cre8-typography-body-large-link-font-size: 1rem;
+    --cre8-typography-body-large-link-font-weight: #cccccc;
+    --cre8-typography-body-large-link-line-height: 1.5;
+    --cre8-typography-body-large-link-text-decoration: #cccccc;
+    --cre8-typography-body-large-link-text-transform: #cccccc;
+    --cre8-typography-body-default-link-font-family: #cccccc;
+    --cre8-typography-body-default-link-font-size: 1rem;
+    --cre8-typography-body-default-link-font-weight: #cccccc;
+    --cre8-typography-body-default-link-line-height: 1.5;
+    --cre8-typography-body-default-link-text-decoration: #cccccc;
+    --cre8-typography-body-default-link-text-transform: #cccccc;
+    --cre8-typography-body-small-link-font-family: #cccccc;
+    --cre8-typography-body-small-link-font-size: 1rem;
+    --cre8-typography-body-small-link-font-weight: #cccccc;
+    --cre8-typography-body-small-link-line-height: 1.5;
+    --cre8-typography-body-small-link-text-decoration: #cccccc;
+    --cre8-typography-body-small-link-text-transform: #cccccc;
+    --cre8-typography-label-default-font-family: #cccccc;
+    --cre8-typography-label-default-font-size: 1rem;
+    --cre8-typography-label-default-font-weight: #cccccc;
+    --cre8-typography-label-default-line-height: 1.5;
+    --cre8-typography-label-default-text-decoration: #cccccc;
+    --cre8-typography-label-default-text-transform: #cccccc;
+    --cre8-typography-label-large-font-family: #cccccc;
+    --cre8-typography-label-large-font-size: 1rem;
+    --cre8-typography-label-large-font-weight: #cccccc;
+    --cre8-typography-label-large-line-height: 1.5;
+    --cre8-typography-label-large-text-decoration: #cccccc;
+    --cre8-typography-label-large-text-transform: #cccccc;
+    --cre8-typography-label-small-font-family: #cccccc;
+    --cre8-typography-label-small-font-size: 1rem;
+    --cre8-typography-label-small-font-weight: #cccccc;
+    --cre8-typography-label-small-line-height: 1.5;
+    --cre8-typography-label-small-text-decoration: #cccccc;
+    --cre8-typography-label-small-text-transform: #cccccc;
+    --cre8-typography-title-xlarge-font-family: #cccccc;
+    --cre8-typography-title-xlarge-font-size: 1rem;
+    --cre8-typography-title-xlarge-font-weight: #cccccc;
+    --cre8-typography-title-xlarge-line-height: 1.5;
+    --cre8-typography-title-xlarge-text-decoration: #cccccc;
+    --cre8-typography-title-xlarge-text-transform: #cccccc;
+    --cre8-typography-title-xlarge-mobile-font-family: #cccccc;
+    --cre8-typography-title-xlarge-mobile-font-size: 1rem;
+    --cre8-typography-title-xlarge-mobile-font-weight: #cccccc;
+    --cre8-typography-title-xlarge-mobile-line-height: 1.5;
+    --cre8-typography-title-xlarge-mobile-text-decoration: #cccccc;
+    --cre8-typography-title-xlarge-mobile-text-transform: #cccccc;
+    --cre8-typography-title-large-font-family: #cccccc;
+    --cre8-typography-title-large-font-size: 1rem;
+    --cre8-typography-title-large-font-weight: #cccccc;
+    --cre8-typography-title-large-line-height: 1.5;
+    --cre8-typography-title-large-text-decoration: #cccccc;
+    --cre8-typography-title-large-text-transform: #cccccc;
+    --cre8-typography-title-large-mobile-font-family: #cccccc;
+    --cre8-typography-title-large-mobile-font-size: 1rem;
+    --cre8-typography-title-large-mobile-font-weight: #cccccc;
+    --cre8-typography-title-large-mobile-line-height: 1.5;
+    --cre8-typography-title-large-mobile-text-decoration: #cccccc;
+    --cre8-typography-title-large-mobile-text-transform: #cccccc;
+    --cre8-typography-title-default-font-family: #cccccc;
+    --cre8-typography-title-default-font-size: 1rem;
+    --cre8-typography-title-default-font-weight: #cccccc;
+    --cre8-typography-title-default-line-height: 1.5;
+    --cre8-typography-title-default-text-decoration: #cccccc;
+    --cre8-typography-title-default-text-transform: #cccccc;
+    --cre8-typography-title-default-mobile-font-family: #cccccc;
+    --cre8-typography-title-default-mobile-font-size: 1rem;
+    --cre8-typography-title-default-mobile-font-weight: #cccccc;
+    --cre8-typography-title-default-mobile-line-height: 1.5;
+    --cre8-typography-title-default-mobile-text-decoration: #cccccc;
+    --cre8-typography-title-default-mobile-text-transform: #cccccc;
+    --cre8-typography-title-small-font-family: #cccccc;
+    --cre8-typography-title-small-font-size: 1rem;
+    --cre8-typography-title-small-font-weight: #cccccc;
+    --cre8-typography-title-small-line-height: 1.5;
+    --cre8-typography-title-small-text-decoration: #cccccc;
+    --cre8-typography-title-small-text-transform: #cccccc;
+    --cre8-typography-title-small-mobile-font-family: #cccccc;
+    --cre8-typography-title-small-mobile-font-size: 1rem;
+    --cre8-typography-title-small-mobile-font-weight: #cccccc;
+    --cre8-typography-title-small-mobile-line-height: 1.5;
+    --cre8-typography-title-small-mobile-text-decoration: #cccccc;
+    --cre8-typography-title-small-mobile-text-transform: #cccccc;
+    --cre8-typography-headline-large-font-family: #cccccc;
+    --cre8-typography-headline-large-font-size: 1rem;
+    --cre8-typography-headline-large-font-weight: #cccccc;
+    --cre8-typography-headline-large-line-height: 1.5;
+    --cre8-typography-headline-large-text-decoration: #cccccc;
+    --cre8-typography-headline-large-text-transform: #cccccc;
+    --cre8-typography-headline-large-mobile-font-family: #cccccc;
+    --cre8-typography-headline-large-mobile-font-size: 1rem;
+    --cre8-typography-headline-large-mobile-font-weight: #cccccc;
+    --cre8-typography-headline-large-mobile-line-height: 1.5;
+    --cre8-typography-headline-large-mobile-text-decoration: #cccccc;
+    --cre8-typography-headline-large-mobile-text-transform: #cccccc;
+    --cre8-typography-headline-default-font-family: #cccccc;
+    --cre8-typography-headline-default-font-size: 1rem;
+    --cre8-typography-headline-default-font-weight: #cccccc;
+    --cre8-typography-headline-default-line-height: 1.5;
+    --cre8-typography-headline-default-text-decoration: #cccccc;
+    --cre8-typography-headline-default-text-transform: #cccccc;
+    --cre8-typography-headline-default-mobile-font-family: #cccccc;
+    --cre8-typography-headline-default-mobile-font-size: 1rem;
+    --cre8-typography-headline-default-mobile-font-weight: #cccccc;
+    --cre8-typography-headline-default-mobile-line-height: 1.5;
+    --cre8-typography-headline-default-mobile-text-decoration: #cccccc;
+    --cre8-typography-headline-default-mobile-text-transform: #cccccc;
+    --cre8-typography-headline-small-font-family: #cccccc;
+    --cre8-typography-headline-small-font-size: 1rem;
+    --cre8-typography-headline-small-font-weight: #cccccc;
+    --cre8-typography-headline-small-line-height: 1.5;
+    --cre8-typography-headline-small-text-decoration: #cccccc;
+    --cre8-typography-headline-small-text-transform: #cccccc;
+    --cre8-typography-headline-small-mobile-font-family: #cccccc;
+    --cre8-typography-headline-small-mobile-font-size: 1rem;
+    --cre8-typography-headline-small-mobile-font-weight: #cccccc;
+    --cre8-typography-headline-small-mobile-line-height: 1.5;
+    --cre8-typography-headline-small-mobile-text-decoration: #cccccc;
+    --cre8-typography-headline-small-mobile-text-transform: #cccccc;
+    --cre8-typography-headline-xsmall-font-family: #cccccc;
+    --cre8-typography-headline-xsmall-font-size: 1rem;
+    --cre8-typography-headline-xsmall-font-weight: #cccccc;
+    --cre8-typography-headline-xsmall-line-height: 1.5;
+    --cre8-typography-headline-xsmall-text-decoration: #cccccc;
+    --cre8-typography-headline-xsmall-text-transform: #cccccc;
+    --cre8-typography-headline-xsmall-mobile-font-family: #cccccc;
+    --cre8-typography-headline-xsmall-mobile-font-size: 1rem;
+    --cre8-typography-headline-xsmall-mobile-font-weight: #cccccc;
+    --cre8-typography-headline-xsmall-mobile-line-height: 1.5;
+    --cre8-typography-headline-xsmall-mobile-text-decoration: #cccccc;
+    --cre8-typography-headline-xsmall-mobile-text-transform: #cccccc;
+    --cre8-typography-display-large-font-family: #cccccc;
+    --cre8-typography-display-large-font-size: 1rem;
+    --cre8-typography-display-large-font-weight: #cccccc;
+    --cre8-typography-display-large-line-height: 1.5;
+    --cre8-typography-display-large-text-decoration: #cccccc;
+    --cre8-typography-display-large-text-transform: #cccccc;
+    --cre8-typography-display-large-mobile-font-family: #cccccc;
+    --cre8-typography-display-large-mobile-font-size: 1rem;
+    --cre8-typography-display-large-mobile-font-weight: #cccccc;
+    --cre8-typography-display-large-mobile-line-height: 1.5;
+    --cre8-typography-display-large-mobile-text-decoration: #cccccc;
+    --cre8-typography-display-large-mobile-text-transform: #cccccc;
+    --cre8-typography-display-default-font-family: #cccccc;
+    --cre8-typography-display-default-font-size: 1rem;
+    --cre8-typography-display-default-font-weight: #cccccc;
+    --cre8-typography-display-default-line-height: 1.5;
+    --cre8-typography-display-default-text-decoration: #cccccc;
+    --cre8-typography-display-default-text-transform: #cccccc;
+    --cre8-typography-display-default-mobile-font-family: #cccccc;
+    --cre8-typography-display-default-mobile-font-size: 1rem;
+    --cre8-typography-display-default-mobile-font-weight: #cccccc;
+    --cre8-typography-display-default-mobile-line-height: 1.5;
+    --cre8-typography-display-default-mobile-text-decoration: #cccccc;
+    --cre8-typography-display-default-mobile-text-transform: #cccccc;
+    --cre8-typography-display-small-font-family: #cccccc;
+    --cre8-typography-display-small-font-size: 1rem;
+    --cre8-typography-display-small-font-weight: #cccccc;
+    --cre8-typography-display-small-line-height: 1.5;
+    --cre8-typography-display-small-text-decoration: #cccccc;
+    --cre8-typography-display-small-text-transform: #cccccc;
+    --cre8-typography-display-small-mobile-font-family: #cccccc;
+    --cre8-typography-display-small-mobile-font-size: 1rem;
+    --cre8-typography-display-small-mobile-font-weight: #cccccc;
+    --cre8-typography-display-small-mobile-line-height: 1.5;
+    --cre8-typography-display-small-mobile-text-decoration: #cccccc;
+    --cre8-typography-display-small-mobile-text-transform: #cccccc;
+    --cre8-typography-meta-default-font-family: #cccccc;
+    --cre8-typography-meta-default-font-size: 1rem;
+    --cre8-typography-meta-default-font-weight: #cccccc;
+    --cre8-typography-meta-default-line-height: 1.5;
+    --cre8-typography-meta-default-text-decoration: #cccccc;
+    --cre8-typography-meta-default-text-transform: #cccccc;
+    --cre8-typography-meta-default-sentence-case-font-family: #cccccc;
+    --cre8-typography-meta-default-sentence-case-font-size: 1rem;
+    --cre8-typography-meta-default-sentence-case-font-weight: #cccccc;
+    --cre8-typography-meta-default-sentence-case-line-height: 1.5;
+    --cre8-typography-meta-default-sentence-case-text-decoration: #cccccc;
+    --cre8-typography-meta-default-sentence-case-text-transform: #cccccc;
+    --cre8-typography-meta-large-font-family: #cccccc;
+    --cre8-typography-meta-large-font-size: 1rem;
+    --cre8-typography-meta-large-font-weight: #cccccc;
+    --cre8-typography-meta-large-line-height: 1.5;
+    --cre8-typography-meta-large-text-decoration: #cccccc;
+    --cre8-typography-meta-large-text-transform: #cccccc;
+    --cre8-typography-meta-small-font-family: #cccccc;
+    --cre8-typography-meta-small-font-size: 1rem;
+    --cre8-typography-meta-small-font-weight: #cccccc;
+    --cre8-typography-meta-small-line-height: 1.5;
+    --cre8-typography-meta-small-text-decoration: #cccccc;
+    --cre8-typography-meta-small-text-transform: #cccccc;
+}

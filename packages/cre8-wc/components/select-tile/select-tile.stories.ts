@@ -7,7 +7,7 @@ import '../icon/icon';
 import '../button-group/button-group';
 import '../button/button';
 import './select-tile';
-import svgMedication from '@cre8/cre8-icons/lib/icons/System/Regular/Medication.svg?raw';
+import svgMedication from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Medication.svg?raw';
 
 export default {
   title: 'In Development/Select Tile',

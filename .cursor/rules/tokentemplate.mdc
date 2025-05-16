@@ -1,0 +1,13 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+
+# Design Token Generation template
+
+- You are a design engineer who has learned the techniques of atomic design and proper design token naming and architecture. 
+- As you are aware, when a multi-themed design system decides on a design token architecture, missing even one design token can break a theme. As such, it is VITAL that you use all of the semantic tokens found in the ustom properties defined in [tokens_brand.css](mdc:tokens_brand.css) to generate new themes.To assign typography changes, its equally essential that you create a global token layer like this one [tokens_brand.css](mdc:node_modules/@cre8_dev/cre8-design-tokens/lib/web/brands/evernorth/css/tokens_brand.css).
+- Additionally, you are to use the @cre8_dev/cre8-wc web component npm package for as much of any generated UI that is requested. If you need to generate custom UI please confirm any custom overrides for component styles that involves changing the values defined for that theme. The documentation on properties/attributes and events for each component can be found in [custom-elements.json](mdc:packages/cre8-wc/.storybook/custom-elements.json)
+
+

@@ -1,7 +1,8 @@
 {
   "name": "@cre8_dev/cre8-web-components",
-  "version": "1.0.0-beta",
+  "version": "1.0.4",
   "license": "MIT",
+  "type": "module",
   "workspaces": {
     "packages": [
       "packages/*"
@@ -29,13 +30,15 @@
     "cre8-react:sb:build": "pnpm workspace @cre8/cre8-react build-storybook",
     "cre8-react:plop": "pnpm workspace @cre8/cre8-react plop",
     "cre8-react:plop:recipe": "pnpm workspace @cre8/cre8-react plop:recipe",
-    "cre8-react:plop:page": "pnpm workspace @cre8/cre8-react plop:page"
+    "cre8-react:plop:page": "pnpm workspace @cre8/cre8-react plop:page",
+    "cre8-tokens": "tsc --declaration --outDir scripts/tokens/generated ./scripts/generateWesparkleTokens.ts"
   },
   "private": true,
   "dependencies": {
-    "@cre8/cre8-design-tokens": "file:cre8-cre8-design-tokens-1.0.1-beta.2.tgz",
-    "@cre8/cre8-icons": "file:cre8-cre8-icons-0.6.0.tgz",
+    "@cre8_dev/cre8-design-tokens": "1.0.3",
+    "@cre8_dev/cre8-icons": "file:cre8_dev-cre8-icons-0.11.0.tgz",
     "@lit/react": "^1.0.7",
+    "agentrpc": "^0.0.16",
     "classnames": "2.3.2",
     "core-js": "3.6.5",
     "next": "13.0.0",
@@ -51,7 +54,6 @@
   "devDependencies": {
     "@babel/preset-react": "7.23.3",
     "@builder.io/sdk": "^6.0.4",
-    "@cre8/eslint-config": "file:cre8-eslint-config-6.1.0.tgz",
     "@esm-bundle/chai": "^4.3.4-fix.0",
     "@nrwl/jest": "15.4.2",
     "@nrwl/linter": "15.4.2",
@@ -66,15 +68,20 @@
     "@storybook/addon-actions": "^8.6.8",
     "@storybook/react-webpack5": "^7.5.3",
     "@svgr/webpack": "6.1.2",
+    "@types/bun": "latest",
     "@types/node": "18.11.9",
     "@types/react": "18.2.13",
     "@types/react-dom": "18.2.6",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
+    "css": "^3.0.0",
     "jest-axe": "^6.0.0",
     "lodash": "^4.17.21",
+    "minimist": "^1.2.8",
     "nx": "15.4.2",
+    "openai": "^4.96.0",
     "postcss": "8.4.20",
+    "puppeteer": "^24.7.2",
     "react-refresh": "0.10.0",
     "react-test-renderer": "18.2.0",
     "sass": "1.55.0",
@@ -89,7 +96,7 @@
     "url-loader": "4.1.1"
   },
   "engines": {
-    "node": ">=18",
+    "node": ">=20",
     "pnpm": ">=8"
   },
   "packageManager": "pnpm@8.11.0"

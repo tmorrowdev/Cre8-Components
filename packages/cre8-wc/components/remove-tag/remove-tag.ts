@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
-import svgClose from '@Cre8/cre8-icons/lib/icons/System/Regular/Close.svg?raw';
+import svgClose from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Close.svg?raw';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon';
 import styles from './remove-tag.scss';
