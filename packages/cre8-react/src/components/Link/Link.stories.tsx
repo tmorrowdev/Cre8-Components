@@ -2,10 +2,10 @@ import type { StoryObj } from '@storybook/react';
 import React from 'react';
 import { excludeRegexArray } from '../../../.storybook/preview';
 import { Cre8Badge, Cre8Link } from '../..';
-import svgCalendar from '@Cre8/Cre8-icons/lib/icons/System/Regular/Calendar.svg?raw';
-import svgCheck from '@Cre8/Cre8-icons/lib/icons/System/Regular/Check.svg?raw';
-import svgInfoFilled from '@Cre8/Cre8-icons/lib/icons/System/Filled/Info.svg?raw';
-import svgHelp from '@Cre8/Cre8-icons/lib/icons/System/Regular/Help.svg?raw';
+import svgCalendar from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Calendar.svg?raw';
+import svgCheck from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
+import svgInfoFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
+import svgHelp from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Help.svg?raw';
 
 export default {
   title: 'Cre8 Components/Link',

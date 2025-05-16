@@ -3,10 +3,10 @@ import { spread } from '../../directives/spread';
 import '../badge/badge';
 import './link';
 import { Meta, StoryObj } from '@storybook/web-components';
-import svgCalendar from '@cre8/cre8-icons/lib/icons/System/Regular/Calendar.svg?raw';
-import svgCheck from '@cre8/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
-import svgInfoFilled from '@cre8/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
-import svgHelp from '@cre8/cre8-icons/lib/icons/System/Regular/Help.svg?raw';
+import svgCalendar from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Calendar.svg?raw';
+import svgCheck from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
+import svgInfoFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
+import svgHelp from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Help.svg?raw';
 
 const meta: Meta = {
   title: 'cre8 Components/Link',

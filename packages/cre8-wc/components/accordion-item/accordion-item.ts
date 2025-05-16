@@ -1,4 +1,4 @@
-import svgCaretUp from '@Cre8/cre8-icons/lib/icons/System/Regular/Caret Up.svg?raw';
+import svgCaretUp from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Up.svg?raw';
 import { html, unsafeCSS } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { ifDefined } from 'lit-html/directives/if-defined.js';

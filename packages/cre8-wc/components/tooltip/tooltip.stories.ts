@@ -5,7 +5,7 @@ import { sanitizeInput } from '../../utilities/story-helpers';
 import { withActions } from '@storybook/addon-actions/decorator';
 import '../icon/icon';
 import './tooltip';
-import svgInfoFilled from '@cre8/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
+import svgInfoFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
 
 export default {
   title: 'cre8 Components/Tooltip',

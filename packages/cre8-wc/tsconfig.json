@@ -25,6 +25,7 @@
     "noImplicitAny": true,
     "noImplicitThis": true,
     "moduleResolution": "node",
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
@@ -40,7 +41,7 @@
     "**/**/*.js",
     "styles.d.ts",
     "global.d.ts"
-  ],
+, "scripts/generateWesparkleThemes.ts", "extract-tokens.cjs"  ],
   "exclude": [
     "node_modules",
     "typings",

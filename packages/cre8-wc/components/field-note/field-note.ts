@@ -1,5 +1,5 @@
-import svgCheckCircle from '@Cre8/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
-import svgErrorFilled from '@Cre8/cre8-icons/lib/icons/System/Filled/Error.svg?raw';
+import svgCheckCircle from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
+import svgErrorFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Error.svg?raw';
 import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { ifDefined } from 'lit-html/directives/if-defined.js';

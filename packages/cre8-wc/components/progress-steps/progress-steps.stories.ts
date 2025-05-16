@@ -3,13 +3,13 @@ import { spread } from '../../directives/spread';
 import './progress-steps';
 import '../progress-steps-item/progress-steps-item';
 import '../divider/divider';
-import svgCheckCircle from '@cre8/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
-import svgError from '@cre8/cre8-icons/lib/icons/System/Filled/Error.svg?raw';
-import svgFilledCircleTwo from '@cre8/cre8-icons/lib/icons/System/Filled/Circle Two.svg?raw';
-import svgFilledCircleFive from '@cre8/cre8-icons/lib/icons/System/Filled/Circle Five.svg?raw';
-import svgRegularCircleThree from '@cre8/cre8-icons/lib/icons/System/Regular/Circle Three.svg?raw';
-import svgRegularCircleSix from '@cre8/cre8-icons/lib/icons/System/Regular/Circle Six.svg?raw';
-import svgWarning from '@cre8/cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
+import svgCheckCircle from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
+import svgError from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Error.svg?raw';
+import svgFilledCircleTwo from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Circle Two.svg?raw';
+import svgFilledCircleFive from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Circle Five.svg?raw';
+import svgRegularCircleThree from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Circle Three.svg?raw';
+import svgRegularCircleSix from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Circle Six.svg?raw';
+import svgWarning from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
 
 export default {
   title: 'In Development/Progress Steps',

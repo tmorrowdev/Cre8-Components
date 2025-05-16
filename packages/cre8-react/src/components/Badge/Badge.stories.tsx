@@ -1,7 +1,7 @@
 import type { StoryObj } from '@storybook/react';
 import { Cre8Badge } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
-import svgFeedback from '@Cre8/Cre8-icons/lib/icons/System/Regular/Feedback.svg?raw';
+import svgFeedback from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Feedback.svg?raw';
 
 export default {
   title: 'Cre8 Components/Badge',

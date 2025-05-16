@@ -1,4 +1,4 @@
-import svgCaretUp from '@Cre8/cre8-icons/lib/icons/System/Regular/Caret Up.svg?raw';
+import svgCaretUp from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Up.svg?raw';
 import { html, unsafeCSS } from 'lit';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon';

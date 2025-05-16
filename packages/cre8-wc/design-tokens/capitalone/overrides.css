@@ -1,0 +1,33 @@
+/* Capital One theme overrides */
+@import '../../node_modules/@cre8_dev/cre8-design-tokens/lib/web/mixins/typography-usage.scss';
+:root {
+  /* Primary brand blue (Capital One Regal Blue) */
+  --cre8-color-bg-brand: #004878;
+  --cre8-color-bg-brand-hover: #00395E;
+  --cre8-color-bg-brand-strong: #002B43;
+  --cre8-color-bg-brand-xstrong: #001A2F;
+  --cre8-color-content-brand: #004878;
+  --cre8-color-content-brand-strong: #004878;
+  --cre8-color-content-link: #004878;
+  --cre8-color-content-link-hover: #00395E;
+  --cre8-color-content-link-active: #002B43;
+
+  /* Accent red (Capital One Punch) */
+  --cre8-color-bg-attention: #D22E1E;
+  --cre8-color-bg-error-strong: #D22E1E;
+  --cre8-color-content-attention-icon: #D22E1E;
+  --cre8-color-content-error-icon: #D22E1E;
+  --cre8-color-button-secondary-bg: #D22E1E;
+  --cre8-color-button-secondary-bg-hover: #B9231A;
+  --cre8-color-button-secondary-bg-active: #9A1E17;
+  --cre8-color-button-secondary-content: #FFFFFF;
+
+  /* Border brand color */
+  --cre8-color-border-brand: #004878;
+
+  /* Button primary using brand blue */
+  --cre8-color-button-primary-bg: #004878;
+  --cre8-color-button-primary-bg-hover: #00395E;
+  --cre8-color-button-primary-bg-active: #002B43;
+  --cre8-color-button-primary-content: #FFFFFF;
+} 

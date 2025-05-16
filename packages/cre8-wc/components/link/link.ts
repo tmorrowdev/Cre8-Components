@@ -1,4 +1,4 @@
-import svgArrowLeft from '@Cre8/cre8-icons/lib/icons/System/Regular/Arrow - Left.svg?raw';
+import svgArrowLeft from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Arrow - Left.svg?raw';
 import {
     html, nothing, unsafeCSS,
 } from 'lit';

@@ -1,0 +1,67 @@
+```css
+:root {
+    /* Colors */
+    --color-core-black: var(--color-core-black, #000);
+    --color-core-red-50: var(--color-core-red-50, #ef8e92);
+    --color-core-red-100: var(--color-core-red-100, #de1c24);
+    --color-core-red-130: var(--color-core-red-130, #9b1419);
+    --color-core-gray-50: var(--color-core-gray-50, #babbbe);
+    --color-core-green-50: var(--color-core-green-50, #95c381);
+    --color-core-green-100: var(--color-core-green-100, #2a8703);
+    --color-core-spark-50: var(--color-core-spark-50, #ffe190);
+    --color-core-spark-100: var(--color-core-spark-100, #ffc220);
+    --color-core-white: var(--color-core-white, #fff);
+    --color-core-gray-160: var(--color-core-gray-160, #2e2f32);
+    --color-core-gray-100: var(--color-core-gray-100, #74767c);
+    --color-core-blue-130: var(--color-core-blue-130, #004f9a);
+    --color-core-blue-160: var(--color-core-blue-160, #002d58);
+    --color-core-transparent: var(--color-core-transparent, #0000);
+    --color-core-purple-100: var(--color-core-purple-100, #63327e);
+    --color-core-orange-100: var(--color-core-orange-100, #fa6400);
+    --color-core-orange-120: var(--color-core-orange-120, #c83c00);
+    --color-core-pink-100: var(--color-core-pink-100, #cb2c90);
+    
+    /* Backgrounds */
+    --background-light: linear-gradient(to right, #f6f6f6 8%, #f0f0f0 18%, #f6f6f6 33%);
+    --background-transparent: #0000;
+    
+    /* Font Sizes */
+    --font-size-12: 12px;
+    --font-size-14: 14px;
+    --font-size-16: 16px;
+    --font-size-20: 20px;
+    --font-size-24: 24px;
+    --font-size-28: 28px;
+    --font-size-1rem: 1rem;
+    --font-size-1-5rem: 1.5rem;
+    --font-size-2rem: 2rem;
+    --font-size-2-25rem: 2.25rem;
+    --font-size-2-5rem: 2.5rem;
+    
+    /* Line Heights */
+    --line-height-normal: 1.5;
+    --line-height-1-15: 1.15;
+    --line-height-2: 2;
+    --line-height-2-5: 2.5;
+    
+    /* Spacings */
+    --spacing-0: 0;
+    --spacing-1rem: 1rem;
+    --spacing-0-5rem: .5rem;
+    --spacing-2rem: 2rem;
+    --spacing-1-25rem: 1.25rem;
+    
+    /* Border Radii */
+    --border-radius-small: .25rem;
+    --border-radius-medium: .5rem;
+    --border-radius-large: 1rem;
+    --border-radius-full: 9999px;
+    
+    /* Shadows */
+    --shadow-xs: inset 0 0 0 .0625rem var(--color-core-gray-100, #74767c);
+    --shadow-sm: inset 0 0 0 .0625rem var(--color-core-spark-150, #803d10);
+    --shadow-md: 0 .3125rem .625rem .1875rem #00000026;
+}
+``` 
+
+This CSS snippet contains the outlined design tokens mapped to appropriate CSS custom properties based on the provided values for colors, backgrounds, font sizes, line heights, spacings, border radii, and shadows.

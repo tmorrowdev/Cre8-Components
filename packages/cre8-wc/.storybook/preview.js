@@ -5,6 +5,9 @@ import '!!style-loader!css-loader!./css/styleguide-only.css';
 
 import headStyles from '!!style-loader!css-loader!sass-loader!../design-tokens/core/scss/theming/head.scss';
 
+import starbucks from '!!style-loader?injectType=lazyStyleTag!css-loader!../design-tokens/starbucks/tokens.css';
+import target from '!!style-loader?injectType=lazyStyleTag!css-loader!../design-tokens/target/tokens.css';
+import capitalOne from '!!style-loader?injectType=lazyStyleTag!css-loader!../design-tokens/capitalone/tokens.css';
 import cre8Legacy from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8_dev/cre8-design-tokens/lib/web/brands/cre8-legacy/css/tokens_cre8-legacy.css';
 import consumer from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8_dev/cre8-design-tokens/lib/web/brands/consumer/css/tokens_consumer.css';
 import cre8 from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8_dev/cre8-design-tokens/lib/web/brands/cre8/css/tokens_cre8.css';
@@ -45,8 +48,10 @@ export const parameters = {
       'Cre8': cre8,
       'Blue': blue,
       'Femmecubator': femmecubator,
-      'Black': black
-
+      'Black': black,
+      'Capital One': capitalOne,
+      'Target': target,
+      'Starbucks': starbucks
     },
     defaultTheme: 'Cre8',
   },

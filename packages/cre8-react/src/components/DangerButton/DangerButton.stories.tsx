@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
-import svgCaretLeft from '@Cre8/Cre8-icons/lib/icons/System/Regular/Caret Left.svg?raw';
-import svgCaretRight from '@Cre8/Cre8-icons/lib/icons/System/Regular/Caret Right.svg?raw';
-import svgArrowRight from '@Cre8/Cre8-icons/lib/icons/System/Regular/Arrow - Right.svg?raw';
+import svgCaretLeft from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Left.svg?raw';
+import svgCaretRight from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Right.svg?raw';
+import svgArrowRight from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Arrow - Right.svg?raw';
 import type { StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import React from 'react';
