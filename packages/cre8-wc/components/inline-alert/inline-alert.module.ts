@@ -1,0 +1,164 @@
+import { css } from 'lit';
+const styles = css`@import '../../design-tokens/core/scss/theming/component';
+
+:host {
+  display: inline-flex;
+}
+:host([fullWidth]) {
+  display: flex;
+}
+
+/**
+ * Inline alert
+ */
+.cre8-c-inline-alert {
+  @include cre8-typography-body-default();
+  font-weight: normal;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: size(1);
+  padding: size(2);
+  color: var(--cre8-color-content-default);
+  background-color: var(--cre8-color-bg-info);
+  border-color: var(--cre8-color-border-info);
+  border-width: var(--cre8-border-width-default);
+  border-style: var(--cre8-border-style-default);
+  border-radius: var(--cre8-border-radius-default);
+}
+
+/**
+ * Full-width inline alert
+ */
+.cre8-c-inline-alert--full-width {
+  width: 100%;
+}
+
+/**
+ * Inline alert with error variant
+ */
+.cre8-c-inline-alert--error {
+  background-color: var(--cre8-color-bg-error);
+  border-color: var(--cre8-color-border-error);
+}
+
+/**
+ * Inline alert with warning variant
+ */
+.cre8-c-inline-alert--warning {
+  background-color: var(--cre8-color-bg-warning);
+  border-color: var(--cre8-color-border-warning);
+}
+
+/**
+ * Inline alert with success variant
+ */
+.cre8-c-inline-alert--success {
+  background-color: var(--cre8-color-bg-success);
+  border-color: var(--cre8-color-border-success);
+}
+
+/**
+ * Inline alert with attention variant
+ */
+.cre8-c-inline-alert--attention {
+  background-color: var(--cre8-color-bg-attention);
+  border-color: var(--cre8-color-border-attention);
+}
+
+/**
+ * Inline alert with neutral variant
+ */
+.cre8-c-inline-alert--neutral {
+  background-color: var(--cre8-color-bg-subtle);
+  border-color: var(--cre8-color-border-strong);
+}
+
+/**
+ * Inline alert with variant - transparent
+ */
+.cre8-c-inline-alert--transparent {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  gap: size(1);
+  border-radius: none;
+}
+
+/**
+ * Inline alert with variant - transparent and error
+ */
+.cre8-c-inline-alert--transparent.cre8-c-inline-alert--error {
+  color: var(--cre8-color-content-error);
+}
+
+/**
+ * Inline alert with variant - transparent and success
+ */
+.cre8-c-inline-alert--transparent.cre8-c-inline-alert--success {
+  color: var(--cre8-color-content-success);
+}
+
+/**
+ * Inline alert icon
+ */
+.cre8-c-inline-alert__icon {
+  position: relative;
+  color: var(--cre8-color-content-info-icon);
+  height: size(3);
+  width: size(3);
+
+  /**
+   * Inline alert icon for error variant
+   */
+  .cre8-c-inline-alert--error & {
+    color: var(--cre8-color-content-error-icon);
+  }
+
+  /**
+   * Inline alert icon for warning variant
+   */
+  .cre8-c-inline-alert--warning & {
+    color: var(--cre8-color-content-warning-icon);
+  }
+
+  /**
+   * Inline alert icon for success variant
+   */
+  .cre8-c-inline-alert--success & {
+    color: var(--cre8-color-content-success-icon);
+  }
+
+  /**
+   * Inline alert icon for help variant
+   * Inline alert icon for info variant
+   */
+   .cre8-c-inline-alert--help,
+   .cre8-c-inline-alert--info
+    & {
+    color: var(--cre8-color-content-info-icon);
+  }
+
+  /**
+   * Inline alert icon for attention variant
+   */
+  .cre8-c-inline-alert--attention & {
+    color: var(--cre8-color-content-attention-icon);
+  }
+
+  /**
+   * Inline alert icon for neutral variant
+   */
+  .cre8-c-inline-alert--neutral & {
+    color: var(--cre8-color-content-default);
+  }
+
+  /**
+   * Inline alert icon
+   */
+  .cre8-c-inline-alert--transparent & {
+    top: 0;
+    padding: size(0.25);
+  }
+}
+`;
+export default styles;

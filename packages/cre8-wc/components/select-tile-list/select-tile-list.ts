@@ -4,7 +4,7 @@ import { property } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { Cre8Element } from '../cre8-element';
 import '../field-note/field-note';
-import styles from './select-tile-list.scss';
+import styles from './select-tile-list.module';
 
 /**
  * Select Tile List is a container design to hold multiple Select Tile Components.
@@ -13,9 +13,7 @@ import styles from './select-tile-list.scss';
  * @cssprop "--cre8-select-tile-list-item-width" - Width of each child. Not used for horizontal.
  */
 export class Cre8SelectTileList extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /**
    * Whether to show the tiles side by side (columns) or stacked vertically (rows).

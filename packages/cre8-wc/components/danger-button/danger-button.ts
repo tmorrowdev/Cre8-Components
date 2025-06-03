@@ -4,7 +4,7 @@ import { ifDefined } from 'lit-html/directives/if-defined.js';
 import '../icon/icon';
 import '../loading-spinner/loading-spinner';
 import { property, query } from 'lit/decorators.js';
-import styles from './danger-button.scss';
+import styles from './danger-button.module';
 import { Cre8FormElement } from '../cre8-form-element';
 
 /**
@@ -73,9 +73,7 @@ import { Cre8FormElement } from '../cre8-form-element';
      */
 
 export class Cre8DangerButton extends Cre8FormElement {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
     /**
      *

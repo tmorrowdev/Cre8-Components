@@ -1,14 +1,12 @@
 import { html, unsafeCSS } from 'lit';
 import { Cre8Element } from '../cre8-element';
-import styles from './linelength-container.scss';
+import styles from './linelength-container.module';
 
 /**
  * @slot - The component content
  */
 export class Cre8LinelengthContainer extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
     render() {
         const componentClassNames = this.componentClassNames('cre8-c-linelength-container', {});

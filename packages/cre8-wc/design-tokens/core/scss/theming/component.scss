@@ -1,4 +1,8 @@
-@import '../base/reset';
-@import '../abstracts/variables';
-@import '../utilities/animation';
 @import '@cre8_dev/cre8-design-tokens/lib/web/mixins/typography-usage.scss';
+@import './reset';
+@import './breakpoints';
+@import './animation';
+@import './functions';
+
+
+@import './variables';

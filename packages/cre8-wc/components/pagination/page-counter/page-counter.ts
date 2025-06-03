@@ -2,15 +2,13 @@
 import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../../cre8-element';
-import styles from './page-counter.scss';
+import styles from './page-counter.module';
 
 /**
  * @slot - The component content
  */
 export class Cre8PageCounter extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   @property({ type: Boolean, reflect: true })
       rangeVariant?: boolean;

@@ -1,17 +1,15 @@
 import { html, nothing, unsafeCSS } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
-import svgCaretDown from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Caret Down.svg?raw';
+import svgCaretDown from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Caret_Down.svg?raw';
 import { Cre8Element } from '../cre8-element';
-import styles from './dropdown.scss';
+import styles from './dropdown.module';
 
 /**
  * The Dropdown menu itself is a container that can host multiple interactive items, commonly formatted as a list
  */
 
 export class Cre8Dropdown extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
     @state() open = false;
 

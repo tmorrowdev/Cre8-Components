@@ -1,0 +1,1020 @@
+{
+  "id": "VariableCollectionId:combined:1",
+  "name": "Combined Variable Collection",
+  "modes": {
+    "305:0": "Mode 1",
+    "326:0": "Wesparkle Light Theme",
+    "975:0": "WeSparkle Dark Theme",
+    "3325:0": "Femmecubator Light Theme",
+    "4984:2": "Femmecubator Dark Theme",
+    "4984:0": "Default Theme Desktop",
+    "4988:0": "Femmecubator Desktop",
+    "4988:1": "Default Theme Mobile",
+    "4988:2": "Femmecubator Mobile",
+    "363:0": "Mode 1"
+  },
+  "variableIds": [
+    "VariableID:325:1657","VariableID:326:245","VariableID:326:246","VariableID:326:247","VariableID:326:248","VariableID:326:249","VariableID:326:250","VariableID:326:251","VariableID:326:252","VariableID:6981:5084","VariableID:6981:5085","VariableID:6981:5086","VariableID:6981:5087","VariableID:6981:5088","VariableID:6981:5089","VariableID:6981:5090","VariableID:6981:5091","VariableID:6981:5092","VariableID:363:35294","VariableID:326:253","VariableID:326:254","VariableID:326:255","VariableID:326:256","VariableID:326:257","VariableID:326:258","VariableID:326:259","VariableID:326:260","VariableID:326:261","VariableID:326:262","VariableID:326:263","VariableID:326:264","VariableID:326:265","VariableID:326:266","VariableID:326:267","VariableID:326:268","VariableID:326:269","VariableID:326:271","VariableID:326:272","VariableID:326:273","VariableID:326:285","VariableID:326:284","VariableID:326:283","VariableID:326:282","VariableID:326:281","VariableID:326:280","VariableID:326:279","VariableID:326:278","VariableID:326:277","VariableID:326:275","VariableID:326:304","VariableID:363:35295","VariableID:363:35297","VariableID:363:35298","VariableID:363:35299","VariableID:363:35300","VariableID:363:35301","VariableID:363:35302","VariableID:363:35303","VariableID:363:35304","VariableID:363:35305","VariableID:363:35307","VariableID:363:35308","VariableID:363:35309","VariableID:363:35310","VariableID:363:35311","VariableID:454:2225","VariableID:454:2226","VariableID:454:2227","VariableID:454:2228","VariableID:454:2229",
+    "VariableID:326:289","VariableID:326:288","VariableID:326:287","VariableID:326:290","VariableID:326:291","VariableID:326:292","VariableID:326:293","VariableID:437:1057","VariableID:326:294","VariableID:326:295","VariableID:326:296","VariableID:326:297","VariableID:326:299","VariableID:326:298","VariableID:326:300","VariableID:326:301","VariableID:326:305","VariableID:326:302","VariableID:331:61","VariableID:326:323","VariableID:326:324","VariableID:326:325","VariableID:326:326","VariableID:326:327","VariableID:332:541","VariableID:326:328","VariableID:326:329","VariableID:326:330","VariableID:326:331","VariableID:326:332","VariableID:326:333","VariableID:326:335","VariableID:332:578","VariableID:326:334","VariableID:326:306","VariableID:326:307","VariableID:326:308","VariableID:326:309","VariableID:326:310","VariableID:326:311","VariableID:326:312","VariableID:326:313","VariableID:326:314","VariableID:326:315","VariableID:326:316","VariableID:326:317","VariableID:326:318","VariableID:326:319","VariableID:326:320","VariableID:326:321","VariableID:326:322","VariableID:331:70","VariableID:588:4724","VariableID:363:35389","VariableID:363:35390","VariableID:363:35391","VariableID:363:35392","VariableID:363:35393","VariableID:363:35395","VariableID:363:35396","VariableID:363:35397","VariableID:363:35398","VariableID:363:35399","VariableID:363:35400","VariableID:363:35401","VariableID:363:35402","VariableID:363:35403","VariableID:363:35404","VariableID:363:35405","VariableID:454:2230","VariableID:454:2231","VariableID:454:2232","VariableID:596:3227","VariableID:455:2233","VariableID:455:2234","VariableID:6994:3657","VariableID:6994:3658","VariableID:6994:3659","VariableID:6994:3660","VariableID:6994:3661","VariableID:6994:3662","VariableID:6994:3663","VariableID:6994:3664","VariableID:6994:3665","VariableID:6994:3666","VariableID:6994:3667","VariableID:6994:3668","VariableID:6994:3669","VariableID:6994:3670","VariableID:6994:3671","VariableID:6994:3672","VariableID:6994:3673","VariableID:6994:3674","VariableID:6994:3675","VariableID:6994:3676","VariableID:6994:3677","VariableID:6994:3678","VariableID:6994:3679","VariableID:6994:3680","VariableID:6994:3681","VariableID:6994:3682","VariableID:6994:3683","VariableID:6994:3684","VariableID:6994:3685","VariableID:6994:3686","VariableID:6994:3687","VariableID:6994:3688","VariableID:6994:3689","VariableID:6994:3690","VariableID:6994:3691","VariableID:6994:3692","VariableID:6994:3693","VariableID:6994:3694","VariableID:6994:3695","VariableID:6994:3696","VariableID:6994:3697","VariableID:6994:3698","VariableID:6994:3699","VariableID:6994:3700","VariableID:6994:3701","VariableID:6994:3702","VariableID:6994:3703","VariableID:6994:3704","VariableID:6994:3705","VariableID:6994:3706","VariableID:6994:3707","VariableID:6994:3708","VariableID:6994:3709",
+    "VariableID:469:4987","VariableID:470:4999","VariableID:463:2887","VariableID:463:2888","VariableID:437:1058","VariableID:437:1059","VariableID:437:1060","VariableID:590:2027","VariableID:437:1061","VariableID:590:2028","VariableID:596:2098","VariableID:448:1179","VariableID:590:2029","VariableID:590:2030","VariableID:590:2031","VariableID:451:1338","VariableID:596:2099","VariableID:596:2100","VariableID:596:2101","VariableID:596:2102","VariableID:596:2103","VariableID:596:2104","VariableID:596:2105","VariableID:596:2106","VariableID:596:2107","VariableID:596:2108","VariableID:596:2109","VariableID:596:2110","VariableID:596:2111",
+    "VariableID:4984:645","VariableID:4984:5420","VariableID:4984:5422","VariableID:4984:5423","VariableID:4984:5424","VariableID:4984:5426","VariableID:4984:5427","VariableID:4984:5428","VariableID:4988:877","VariableID:4984:5429","VariableID:4988:942","VariableID:4988:876","VariableID:4984:5430","VariableID:4984:5431","VariableID:4988:943","VariableID:4988:944","VariableID:4988:945","VariableID:4988:946","VariableID:4988:947","VariableID:4988:948","VariableID:4988:949","VariableID:4988:950"
+  ],
+  "variables": [
+    {
+      "id": "VariableID:325:1657",
+      "value": "Global Value 1"
+    },
+    {
+      "id": "VariableID:326:245",
+      "value": "Global Value 2"
+    },
+    {
+      "id": "VariableID:326:246",
+      "value": "Global Value 3"
+    },
+    {
+      "id": "VariableID:326:247",
+      "value": "Global Value 4"
+    },
+    {
+      "id": "VariableID:326:248",
+      "value": "Global Value 5"
+    },
+    {
+      "id": "VariableID:326:249",
+      "value": "Global Value 6"
+    },
+    {
+      "id": "VariableID:326:250",
+      "value": "Global Value 7"
+    },
+    {
+      "id": "VariableID:326:251",
+      "value": "Global Value 8"
+    },
+    {
+      "id": "VariableID:326:252",
+      "value": "Global Value 9"
+    },
+    {
+      "id": "VariableID:6981:5084",
+      "value": "Global Value 10"
+    },
+    {
+      "id": "VariableID:6981:5085",
+      "value": "Global Value 11"
+    },
+    {
+      "id": "VariableID:6981:5086",
+      "value": "Global Value 12"
+    },
+    {
+      "id": "VariableID:6981:5087",
+      "value": "Global Value 13"
+    },
+    {
+      "id": "VariableID:6981:5088",
+      "value": "Global Value 14"
+    },
+    {
+      "id": "VariableID:6981:5089",
+      "value": "Global Value 15"
+    },
+    {
+      "id": "VariableID:6981:5090",
+      "value": "Global Value 16"
+    },
+    {
+      "id": "VariableID:6981:5091",
+      "value": "Global Value 17"
+    },
+    {
+      "id": "VariableID:6981:5092",
+      "value": "Global Value 18"
+    },
+    {
+      "id": "VariableID:363:35294",
+      "value": "Global Value 19"
+    },
+    {
+      "id": "VariableID:326:253",
+      "value": "Global Value 20"
+    },
+    {
+      "id": "VariableID:326:254",
+      "value": "Global Value 21"
+    },
+    {
+      "id": "VariableID:326:255",
+      "value": "Global Value 22"
+    },
+    {
+      "id": "VariableID:326:256",
+      "value": "Global Value 23"
+    },
+    {
+      "id": "VariableID:326:257",
+      "value": "Global Value 24"
+    },
+    {
+      "id": "VariableID:326:258",
+      "value": "Global Value 25"
+    },
+    {
+      "id": "VariableID:326:259",
+      "value": "Global Value 26"
+    },
+    {
+      "id": "VariableID:326:260",
+      "value": "Global Value 27"
+    },
+    {
+      "id": "VariableID:326:261",
+      "value": "Global Value 28"
+    },
+    {
+      "id": "VariableID:326:262",
+      "value": "Global Value 29"
+    },
+    {
+      "id": "VariableID:326:263",
+      "value": "Global Value 30"
+    },
+    {
+      "id": "VariableID:326:264",
+      "value": "Global Value 31"
+    },
+    {
+      "id": "VariableID:326:265",
+      "value": "Global Value 32"
+    },
+    {
+      "id": "VariableID:326:266",
+      "value": "Global Value 33"
+    },
+    {
+      "id": "VariableID:326:267",
+      "value": "Global Value 34"
+    },
+    {
+      "id": "VariableID:326:268",
+      "value": "Global Value 35"
+    },
+    {
+      "id": "VariableID:326:269",
+      "value": "Global Value 36"
+    },
+    {
+      "id": "VariableID:326:271",
+      "value": "Global Value 37"
+    },
+    {
+      "id": "VariableID:326:272",
+      "value": "Global Value 38"
+    },
+    {
+      "id": "VariableID:326:273",
+      "value": "Global Value 39"
+    },
+    {
+      "id": "VariableID:326:285",
+      "value": "Global Value 40"
+    },
+    {
+      "id": "VariableID:326:284",
+      "value": "Global Value 41"
+    },
+    {
+      "id": "VariableID:326:283",
+      "value": "Global Value 42"
+    },
+    {
+      "id": "VariableID:326:282",
+      "value": "Global Value 43"
+    },
+    {
+      "id": "VariableID:326:281",
+      "value": "Global Value 44"
+    },
+    {
+      "id": "VariableID:326:280",
+      "value": "Global Value 45"
+    },
+    {
+      "id": "VariableID:326:279",
+      "value": "Global Value 46"
+    },
+    {
+      "id": "VariableID:326:278",
+      "value": "Global Value 47"
+    },
+    {
+      "id": "VariableID:326:277",
+      "value": "Global Value 48"
+    },
+    {
+      "id": "VariableID:326:275",
+      "value": "Global Value 49"
+    },
+    {
+      "id": "VariableID:326:304",
+      "value": "Global Value 50"
+    },
+    {
+      "id": "VariableID:363:35295",
+      "value": "Global Value 51"
+    },
+    {
+      "id": "VariableID:363:35297",
+      "value": "Global Value 52"
+    },
+    {
+      "id": "VariableID:363:35298",
+      "value": "Global Value 53"
+    },
+    {
+      "id": "VariableID:363:35299",
+      "value": "Global Value 54"
+    },
+    {
+      "id": "VariableID:363:35300",
+      "value": "Global Value 55"
+    },
+    {
+      "id": "VariableID:363:35301",
+      "value": "Global Value 56"
+    },
+    {
+      "id": "VariableID:363:35302",
+      "value": "Global Value 57"
+    },
+    {
+      "id": "VariableID:363:35303",
+      "value": "Global Value 58"
+    },
+    {
+      "id": "VariableID:363:35304",
+      "value": "Global Value 59"
+    },
+    {
+      "id": "VariableID:363:35305",
+      "value": "Global Value 60"
+    },
+    {
+      "id": "VariableID:363:35307",
+      "value": "Global Value 61"
+    },
+    {
+      "id": "VariableID:363:35308",
+      "value": "Global Value 62"
+    },
+    {
+      "id": "VariableID:363:35309",
+      "value": "Global Value 63"
+    },
+    {
+      "id": "VariableID:363:35310",
+      "value": "Global Value 64"
+    },
+    {
+      "id": "VariableID:363:35311",
+      "value": "Global Value 65"
+    },
+    {
+      "id": "VariableID:454:2225",
+      "value": "Global Value 66"
+    },
+    {
+      "id": "VariableID:454:2226",
+      "value": "Global Value 67"
+    },
+    {
+      "id": "VariableID:454:2227",
+      "value": "Global Value 68"
+    },
+    {
+      "id": "VariableID:454:2228",
+      "value": "Global Value 69"
+    },
+    {
+      "id": "VariableID:454:2229",
+      "value": "Global Value 70"
+    },
+    {
+      "id": "VariableID:326:289",
+      "value": "Semantic Value 1"
+    },
+    {
+      "id": "VariableID:326:288",
+      "value": "Semantic Value 2"
+    },
+    {
+      "id": "VariableID:326:287",
+      "value": "Semantic Value 3"
+    },
+    {
+      "id": "VariableID:326:290",
+      "value": "Semantic Value 4"
+    },
+    {
+      "id": "VariableID:326:291",
+      "value": "Semantic Value 5"
+    },
+    {
+      "id": "VariableID:326:292",
+      "value": "Semantic Value 6"
+    },
+    {
+      "id": "VariableID:326:293",
+      "value": "Semantic Value 7"
+    },
+    {
+      "id": "VariableID:437:1057",
+      "value": "Semantic Value 8"
+    },
+    {
+      "id": "VariableID:326:294",
+      "value": "Semantic Value 9"
+    },
+    {
+      "id": "VariableID:326:295",
+      "value": "Semantic Value 10"
+    },
+    {
+      "id": "VariableID:326:296",
+      "value": "Semantic Value 11"
+    },
+    {
+      "id": "VariableID:326:297",
+      "value": "Semantic Value 12"
+    },
+    {
+      "id": "VariableID:326:299",
+      "value": "Semantic Value 13"
+    },
+    {
+      "id": "VariableID:326:298",
+      "value": "Semantic Value 14"
+    },
+    {
+      "id": "VariableID:326:300",
+      "value": "Semantic Value 15"
+    },
+    {
+      "id": "VariableID:326:301",
+      "value": "Semantic Value 16"
+    },
+    {
+      "id": "VariableID:326:305",
+      "value": "Semantic Value 17"
+    },
+    {
+      "id": "VariableID:326:302",
+      "value": "Semantic Value 18"
+    },
+    {
+      "id": "VariableID:331:61",
+      "value": "Semantic Value 19"
+    },
+    {
+      "id": "VariableID:326:323",
+      "value": "Semantic Value 20"
+    },
+    {
+      "id": "VariableID:326:324",
+      "value": "Semantic Value 21"
+    },
+    {
+      "id": "VariableID:326:325",
+      "value": "Semantic Value 22"
+    },
+    {
+      "id": "VariableID:326:326",
+      "value": "Semantic Value 23"
+    },
+    {
+      "id": "VariableID:326:327",
+      "value": "Semantic Value 24"
+    },
+    {
+      "id": "VariableID:332:541",
+      "value": "Semantic Value 25"
+    },
+    {
+      "id": "VariableID:326:328",
+      "value": "Semantic Value 26"
+    },
+    {
+      "id": "VariableID:326:329",
+      "value": "Semantic Value 27"
+    },
+    {
+      "id": "VariableID:326:330",
+      "value": "Semantic Value 28"
+    },
+    {
+      "id": "VariableID:326:331",
+      "value": "Semantic Value 29"
+    },
+    {
+      "id": "VariableID:326:332",
+      "value": "Semantic Value 30"
+    },
+    {
+      "id": "VariableID:326:333",
+      "value": "Semantic Value 31"
+    },
+    {
+      "id": "VariableID:326:335",
+      "value": "Semantic Value 32"
+    },
+    {
+      "id": "VariableID:332:578",
+      "value": "Semantic Value 33"
+    },
+    {
+      "id": "VariableID:326:334",
+      "value": "Semantic Value 34"
+    },
+    {
+      "id": "VariableID:326:306",
+      "value": "Semantic Value 35"
+    },
+    {
+      "id": "VariableID:326:307",
+      "value": "Semantic Value 36"
+    },
+    {
+      "id": "VariableID:326:308",
+      "value": "Semantic Value 37"
+    },
+    {
+      "id": "VariableID:326:309",
+      "value": "Semantic Value 38"
+    },
+    {
+      "id": "VariableID:326:310",
+      "value": "Semantic Value 39"
+    },
+    {
+      "id": "VariableID:326:311",
+      "value": "Semantic Value 40"
+    },
+    {
+      "id": "VariableID:326:312",
+      "value": "Semantic Value 41"
+    },
+    {
+      "id": "VariableID:326:313",
+      "value": "Semantic Value 42"
+    },
+    {
+      "id": "VariableID:326:314",
+      "value": "Semantic Value 43"
+    },
+    {
+      "id": "VariableID:326:315",
+      "value": "Semantic Value 44"
+    },
+    {
+      "id": "VariableID:326:316",
+      "value": "Semantic Value 45"
+    },
+    {
+      "id": "VariableID:326:317",
+      "value": "Semantic Value 46"
+    },
+    {
+      "id": "VariableID:326:318",
+      "value": "Semantic Value 47"
+    },
+    {
+      "id": "VariableID:326:319",
+      "value": "Semantic Value 48"
+    },
+    {
+      "id": "VariableID:326:320",
+      "value": "Semantic Value 49"
+    },
+    {
+      "id": "VariableID:326:321",
+      "value": "Semantic Value 50"
+    },
+    {
+      "id": "VariableID:326:322",
+      "value": "Semantic Value 51"
+    },
+    {
+      "id": "VariableID:331:70",
+      "value": "Semantic Value 52"
+    },
+    {
+      "id": "VariableID:588:4724",
+      "value": "Semantic Value 53"
+    },
+    {
+      "id": "VariableID:363:35389",
+      "value": "Semantic Value 54"
+    },
+    {
+      "id": "VariableID:363:35390",
+      "value": "Semantic Value 55"
+    },
+    {
+      "id": "VariableID:363:35391",
+      "value": "Semantic Value 56"
+    },
+    {
+      "id": "VariableID:363:35392",
+      "value": "Semantic Value 57"
+    },
+    {
+      "id": "VariableID:363:35393",
+      "value": "Semantic Value 58"
+    },
+    {
+      "id": "VariableID:363:35395",
+      "value": "Semantic Value 59"
+    },
+    {
+      "id": "VariableID:363:35396",
+      "value": "Semantic Value 60"
+    },
+    {
+      "id": "VariableID:363:35397",
+      "value": "Semantic Value 61"
+    },
+    {
+      "id": "VariableID:363:35398",
+      "value": "Semantic Value 62"
+    },
+    {
+      "id": "VariableID:363:35399",
+      "value": "Semantic Value 63"
+    },
+    {
+      "id": "VariableID:363:35400",
+      "value": "Semantic Value 64"
+    },
+    {
+      "id": "VariableID:363:35401",
+      "value": "Semantic Value 65"
+    },
+    {
+      "id": "VariableID:363:35402",
+      "value": "Semantic Value 66"
+    },
+    {
+      "id": "VariableID:363:35403",
+      "value": "Semantic Value 67"
+    },
+    {
+      "id": "VariableID:363:35404",
+      "value": "Semantic Value 68"
+    },
+    {
+      "id": "VariableID:363:35405",
+      "value": "Semantic Value 69"
+    },
+    {
+      "id": "VariableID:454:2230",
+      "value": "Semantic Value 70"
+    },
+    {
+      "id": "VariableID:454:2231",
+      "value": "Semantic Value 71"
+    },
+    {
+      "id": "VariableID:454:2232",
+      "value": "Semantic Value 72"
+    },
+    {
+      "id": "VariableID:596:3227",
+      "value": "Semantic Value 73"
+    },
+    {
+      "id": "VariableID:455:2233",
+      "value": "Semantic Value 74"
+    },
+    {
+      "id": "VariableID:455:2234",
+      "value": "Semantic Value 75"
+    },
+    {
+      "id": "VariableID:6994:3657",
+      "value": "Semantic Value 76"
+    },
+    {
+      "id": "VariableID:6994:3658",
+      "value": "Semantic Value 77"
+    },
+    {
+      "id": "VariableID:6994:3659",
+      "value": "Semantic Value 78"
+    },
+    {
+      "id": "VariableID:6994:3660",
+      "value": "Semantic Value 79"
+    },
+    {
+      "id": "VariableID:6994:3661",
+      "value": "Semantic Value 80"
+    },
+    {
+      "id": "VariableID:6994:3662",
+      "value": "Semantic Value 81"
+    },
+    {
+      "id": "VariableID:6994:3663",
+      "value": "Semantic Value 82"
+    },
+    {
+      "id": "VariableID:6994:3664",
+      "value": "Semantic Value 83"
+    },
+    {
+      "id": "VariableID:6994:3665",
+      "value": "Semantic Value 84"
+    },
+    {
+      "id": "VariableID:6994:3666",
+      "value": "Semantic Value 85"
+    },
+    {
+      "id": "VariableID:6994:3667",
+      "value": "Semantic Value 86"
+    },
+    {
+      "id": "VariableID:6994:3668",
+      "value": "Semantic Value 87"
+    },
+    {
+      "id": "VariableID:6994:3669",
+      "value": "Semantic Value 88"
+    },
+    {
+      "id": "VariableID:6994:3670",
+      "value": "Semantic Value 89"
+    },
+    {
+      "id": "VariableID:6994:3671",
+      "value": "Semantic Value 90"
+    },
+    {
+      "id": "VariableID:6994:3672",
+      "value": "Semantic Value 91"
+    },
+    {
+      "id": "VariableID:6994:3673",
+      "value": "Semantic Value 92"
+    },
+    {
+      "id": "VariableID:6994:3674",
+      "value": "Semantic Value 93"
+    },
+    {
+      "id": "VariableID:6994:3675",
+      "value": "Semantic Value 94"
+    },
+    {
+      "id": "VariableID:6994:3676",
+      "value": "Semantic Value 95"
+    },
+    {
+      "id": "VariableID:6994:3677",
+      "value": "Semantic Value 96"
+    },
+    {
+      "id": "VariableID:6994:3678",
+      "value": "Semantic Value 97"
+    },
+    {
+      "id": "VariableID:6994:3679",
+      "value": "Semantic Value 98"
+    },
+    {
+      "id": "VariableID:6994:3680",
+      "value": "Semantic Value 99"
+    },
+    {
+      "id": "VariableID:6994:3681",
+      "value": "Semantic Value 100"
+    },
+    {
+      "id": "VariableID:6994:3682",
+      "value": "Semantic Value 101"
+    },
+    {
+      "id": "VariableID:6994:3683",
+      "value": "Semantic Value 102"
+    },
+    {
+      "id": "VariableID:6994:3684",
+      "value": "Semantic Value 103"
+    },
+    {
+      "id": "VariableID:6994:3685",
+      "value": "Semantic Value 104"
+    },
+    {
+      "id": "VariableID:6994:3686",
+      "value": "Semantic Value 105"
+    },
+    {
+      "id": "VariableID:6994:3687",
+      "value": "Semantic Value 106"
+    },
+    {
+      "id": "VariableID:6994:3688",
+      "value": "Semantic Value 107"
+    },
+    {
+      "id": "VariableID:6994:3689",
+      "value": "Semantic Value 108"
+    },
+    {
+      "id": "VariableID:6994:3690",
+      "value": "Semantic Value 109"
+    },
+    {
+      "id": "VariableID:6994:3691",
+      "value": "Semantic Value 110"
+    },
+    {
+      "id": "VariableID:6994:3692",
+      "value": "Semantic Value 111"
+    },
+    {
+      "id": "VariableID:6994:3693",
+      "value": "Semantic Value 112"
+    },
+    {
+      "id": "VariableID:6994:3694",
+      "value": "Semantic Value 113"
+    },
+    {
+      "id": "VariableID:6994:3695",
+      "value": "Semantic Value 114"
+    },
+    {
+      "id": "VariableID:6994:3696",
+      "value": "Semantic Value 115"
+    },
+    {
+      "id": "VariableID:6994:3697",
+      "value": "Semantic Value 116"
+    },
+    {
+      "id": "VariableID:6994:3698",
+      "value": "Semantic Value 117"
+    },
+    {
+      "id": "VariableID:6994:3699",
+      "value": "Semantic Value 118"
+    },
+    {
+      "id": "VariableID:6994:3700",
+      "value": "Semantic Value 119"
+    },
+    {
+      "id": "VariableID:6994:3701",
+      "value": "Semantic Value 120"
+    },
+    {
+      "id": "VariableID:6994:3702",
+      "value": "Semantic Value 121"
+    },
+    {
+      "id": "VariableID:6994:3703",
+      "value": "Semantic Value 122"
+    },
+    {
+      "id": "VariableID:6994:3704",
+      "value": "Semantic Value 123"
+    },
+    {
+      "id": "VariableID:6994:3705",
+      "value": "Semantic Value 124"
+    },
+    {
+      "id": "VariableID:6994:3706",
+      "value": "Semantic Value 125"
+    },
+    {
+      "id": "VariableID:6994:3707",
+      "value": "Semantic Value 126"
+    },
+    {
+      "id": "VariableID:6994:3708",
+      "value": "Semantic Value 127"
+    },
+    {
+      "id": "VariableID:6994:3709",
+      "value": "Semantic Value 128"
+    },
+    {
+      "id": "VariableID:469:4987",
+      "value": "Component Value 1"
+    },
+    {
+      "id": "VariableID:470:4999",
+      "value": "Component Value 2"
+    },
+    {
+      "id": "VariableID:463:2887",
+      "value": "Component Value 3"
+    },
+    {
+      "id": "VariableID:463:2888",
+      "value": "Component Value 4"
+    },
+    {
+      "id": "VariableID:437:1058",
+      "value": "Component Value 5"
+    },
+    {
+      "id": "VariableID:437:1059",
+      "value": "Component Value 6"
+    },
+    {
+      "id": "VariableID:437:1060",
+      "value": "Component Value 7"
+    },
+    {
+      "id": "VariableID:590:2027",
+      "value": "Component Value 8"
+    },
+    {
+      "id": "VariableID:437:1061",
+      "value": "Component Value 9"
+    },
+    {
+      "id": "VariableID:590:2028",
+      "value": "Component Value 10"
+    },
+    {
+      "id": "VariableID:596:2098",
+      "value": "Component Value 11"
+    },
+    {
+      "id": "VariableID:448:1179",
+      "value": "Component Value 12"
+    },
+    {
+      "id": "VariableID:590:2029",
+      "value": "Component Value 13"
+    },
+    {
+      "id": "VariableID:590:2030",
+      "value": "Component Value 14"
+    },
+    {
+      "id": "VariableID:590:2031",
+      "value": "Component Value 15"
+    },
+    {
+      "id": "VariableID:451:1338",
+      "value": "Component Value 16"
+    },
+    {
+      "id": "VariableID:596:2099",
+      "value": "Component Value 17"
+    },
+    {
+      "id": "VariableID:596:2100",
+      "value": "Component Value 18"
+    },
+    {
+      "id": "VariableID:596:2101",
+      "value": "Component Value 19"
+    },
+    {
+      "id": "VariableID:596:2102",
+      "value": "Component Value 20"
+    },
+    {
+      "id": "VariableID:596:2103",
+      "value": "Component Value 21"
+    },
+    {
+      "id": "VariableID:596:2104",
+      "value": "Component Value 22"
+    },
+    {
+      "id": "VariableID:596:2105",
+      "value": "Component Value 23"
+    },
+    {
+      "id": "VariableID:596:2106",
+      "value": "Component Value 24"
+    },
+    {
+      "id": "VariableID:596:2107",
+      "value": "Component Value 25"
+    },
+    {
+      "id": "VariableID:596:2108",
+      "value": "Component Value 26"
+    },
+    {
+      "id": "VariableID:596:2109",
+      "value": "Component Value 27"
+    },
+    {
+      "id": "VariableID:596:2110",
+      "value": "Component Value 28"
+    },
+    {
+      "id": "VariableID:596:2111",
+      "value": "Component Value 29"
+    },
+    {
+      "id": "VariableID:4984:645",
+      "value": "Typography Value 1"
+    },
+    {
+      "id": "VariableID:4984:5420",
+      "value": "Typography Value 2"
+    },
+    {
+      "id": "VariableID:4984:5422",
+      "value": "Typography Value 3"
+    },
+    {
+      "id": "VariableID:4984:5423",
+      "value": "Typography Value 4"
+    },
+    {
+      "id": "VariableID:4984:5424",
+      "value": "Typography Value 5"
+    },
+    {
+      "id": "VariableID:4984:5426",
+      "value": "Typography Value 6"
+    },
+    {
+      "id": "VariableID:4984:5427",
+      "value": "Typography Value 7"
+    },
+    {
+      "id": "VariableID:4984:5428",
+      "value": "Typography Value 8"
+    },
+    {
+      "id": "VariableID:4988:877",
+      "value": "Typography Value 9"
+    },
+    {
+      "id": "VariableID:4984:5429",
+      "value": "Typography Value 10"
+    },
+    {
+      "id": "VariableID:4988:942",
+      "value": "Typography Value 11"
+    },
+    {
+      "id": "VariableID:4988:876",
+      "value": "Typography Value 12"
+    },
+    {
+      "id": "VariableID:4984:5430",
+      "value": "Typography Value 13"
+    },
+    {
+      "id": "VariableID:4984:5431",
+      "value": "Typography Value 14"
+    },
+    {
+      "id": "VariableID:4988:943",
+      "value": "Typography Value 15"
+    },
+    {
+      "id": "VariableID:4988:944",
+      "value": "Typography Value 16"
+    },
+    {
+      "id": "VariableID:4988:945",
+      "value": "Typography Value 17"
+    },
+    {
+      "id": "VariableID:4988:946",
+      "value": "Typography Value 18"
+    },
+    {
+      "id": "VariableID:4988:947",
+      "value": "Typography Value 19"
+    },
+    {
+      "id": "VariableID:4988:948",
+      "value": "Typography Value 20"
+    },
+    {
+      "id": "VariableID:4988:949",
+      "value": "Typography Value 21"
+    },
+    {
+      "id": "VariableID:4988:950",
+      "value": "Typography Value 22"
+    }
+  ]
+}

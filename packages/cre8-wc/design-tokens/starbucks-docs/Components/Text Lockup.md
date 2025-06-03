@@ -1,0 +1,42 @@
+# Page: Text Lockup
+
+*ID: 6915:1067*
+
+- **Title & Description** (Type: COMPONENT_SET, ID: 4916:2353)
+  - BorderRadius: 5px
+  - Strokes Ref: [stroke_hiwakuf](../GlobalStyles/Colors.md#stroke-hiwakuf) (See Color Styles for Borders)
+  - Layout Style Ref: [layout_hwl601x](../GlobalStyles/LayoutAndSpacing.md#layout-hwl601x) (See Layout Styles)
+  - <a name="component-6915:1067-4910:209"></a>**COMPONENT DEFINITION:** **Alignment=Left** (Type: COMPONENT, ID: 4910:209)
+    - Layout Style Ref: [layout_h5vrvxx](../GlobalStyles/LayoutAndSpacing.md#layout-h5vrvxx) (See Layout Styles)
+    - **Eyebrow text** (Type: TEXT, ID: 3356:2347)
+      - Text Content: "Eyebrow text"
+      - TextStyle Ref: [text_h6pza6r](../GlobalStyles/Typography.md#text-h6pza6r) (See Typography Styles)
+      - Fills Ref: [fill_hcyk3m7](../GlobalStyles/Colors.md#fill-hcyk3m7) (See Color Styles)
+      - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+    - **Book a coffee session** (Type: TEXT, ID: 4917:2357)
+      - Text Content: "Book a coffee session"
+      - TextStyle Ref: [text_hkjjtsc](../GlobalStyles/Typography.md#text-hkjjtsc) (See Typography Styles)
+      - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+      - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+    - **Donec varius turpis semper, vehicula dolor quis, blandit diam. Pellentesque ultrices sagittis lacus, sed pellentesque arcu vehicula ut. Phasellus elementum, elit nec molestie aliquet, erat leo rutrum nunc, in fringilla nulla tortor sed quam.** (Type: TEXT, ID: 3356:2348)
+      - Text Content: "Donec varius turpis semper, vehicula dolor quis, blandit diam. Pellentesque ultrices sagittis lacus, sed pellentesque arcu vehicula ut. Phasellus elementum, elit nec molestie aliquet, erat leo rutrum nunc, in fringilla nulla tortor sed quam. "
+      - TextStyle Ref: [text_h9arp47](../GlobalStyles/Typography.md#text-h9arp47) (See Typography Styles)
+      - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+      - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+  - <a name="component-6915:1067-4916:2354"></a>**COMPONENT DEFINITION:** **Alignment=Center** (Type: COMPONENT, ID: 4916:2354)
+    - Layout Style Ref: [layout_ho36uzj](../GlobalStyles/LayoutAndSpacing.md#layout-ho36uzj) (See Layout Styles)
+    - **Eyebrow text** (Type: TEXT, ID: 4916:2355)
+      - Text Content: "Eyebrow text"
+      - TextStyle Ref: [text_hfjjuyt](../GlobalStyles/Typography.md#text-hfjjuyt) (See Typography Styles)
+      - Fills Ref: [fill_hcyk3m7](../GlobalStyles/Colors.md#fill-hcyk3m7) (See Color Styles)
+      - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+    - **Book a coffee session** (Type: TEXT, ID: 4917:2373)
+      - Text Content: "Book a coffee session"
+      - TextStyle Ref: [text_hoiz0bq](../GlobalStyles/Typography.md#text-hoiz0bq) (See Typography Styles)
+      - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+      - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+    - **Donec varius turpis semper, vehicula dolor quis, blandit diam. Pellentesque ultrices sagittis lacus, sed pellentesque arcu vehicula ut. Phasellus elementum, elit nec molestie aliquet, erat leo rutrum nunc, in fringilla nulla tortor sed quam.** (Type: TEXT, ID: 4916:2356)
+      - Text Content: "Donec varius turpis semper, vehicula dolor quis, blandit diam. Pellentesque ultrices sagittis lacus, sed pellentesque arcu vehicula ut. Phasellus elementum, elit nec molestie aliquet, erat leo rutrum nunc, in fringilla nulla tortor sed quam. "
+      - TextStyle Ref: [text_hx8rcgb](../GlobalStyles/Typography.md#text-hx8rcgb) (See Typography Styles)
+      - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+      - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)

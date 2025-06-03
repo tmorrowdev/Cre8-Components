@@ -1,15 +1,13 @@
 import { html, unsafeCSS } from 'lit';
 import { Cre8Element } from '../cre8-element';
-import styles from './table-object.scss';
+import styles from './table-object.module';
 
 /**
  * @slot - The component content
  */
 
 export class Cre8TableObject extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
     render() {
         const componentClassNames = this.componentClassNames('cre8-c-table-object', {});

@@ -1,0 +1,1725 @@
+# Component Analysis Report
+
+## Summary
+
+- **Total Components**: 846
+- **Complexity Score**: 100/100
+- **Consistency Score**: 0/100
+- **Implementation Effort**: HIGH
+
+## Atomic Design Hierarchy
+
+### Atoms (378)
+- Type=Default, ↕️ Size=Large (Icon Only)
+- Type=Disabled, ↕️ Size=Large (Icon Only)
+- Type=Destructive, ↕️ Size=Large (Icon Only)
+- Type=Default, ↕️ Size=Small (Icon Only)
+- Type=Disabled, ↕️ Size=Small (Icon Only)
+- Type=Destructive, ↕️ Size=Small (Icon Only)
+- Type=Default, ↕️ Size=Large (Icon Only)
+- Type=Disabled, ↕️ Size=Large (Icon Only)
+- Type=Destructive, ↕️ Size=Large (Icon Only)
+- Type=Default, ↕️ Size=Small (Icon Only)
+- Type=Disabled, ↕️ Size=Small (Icon Only)
+- Type=Destructive, ↕️ Size=Small (Icon Only)
+- Type=Default, ↕️ Size=Large (Icon Only)
+- Type=Disabled, ↕️ Size=Large (Icon Only)
+- Type=Destructive, ↕️ Size=Large (Icon Only)
+- Type=Default, ↕️ Size=Small (Icon Only)
+- Type=Disabled, ↕️ Size=Small (Icon Only)
+- Type=Destructive, ↕️ Size=Small (Icon Only)
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Medium (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Default, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes
+- ↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Active, Inverse=Yes
+- ↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=No
+- ↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes
+
+### Molecules (466)
+- Type=Default, ↕️ Size=Large
+- Type=Disabled, ↕️ Size=Large
+- Type=Loading, ↕️ Size=Large
+- Type=Loading, ↕️ Size=Small
+- Type=Destructive, ↕️ Size=Large
+- Type=Default, ↕️ Size=Small
+- Type=Disabled, ↕️ Size=Small
+- Type=Destructive, ↕️ Size=Small
+- Type=Default, ↕️ Size=Large
+- Type=Disabled, ↕️ Size=Large
+- Type=Loading, ↕️ Size=Large
+- Type=Destructive, ↕️ Size=Large
+- Type=Default, ↕️ Size=Small
+- Type=Disabled, ↕️ Size=Small
+- Type=Loading, ↕️ Size=Small
+- Type=Destructive, ↕️ Size=Small
+- Type=Default, ↕️ Size=Large
+- Type=Disabled, ↕️ Size=Large
+- Type=Loading, ↕️ Size=Large
+- Type=Destructive, ↕️ Size=Large
+- Type=Default, ↕️ Size=Small
+- Type=Disabled, ↕️ Size=Small
+- Type=Loading, ↕️ Size=Small
+- Type=Destructive, ↕️ Size=Small
+- Color Documentation Row
+- Type=COLOR TOKEN SWATCH
+- Type=TYPOGRAPHY TOKEN SWATCH
+- ↕️ Size=Large, State=Default, Inverse=No
+- ↕️ Size=Large, State=Hover, Inverse=No
+- ↕️ Size=Large, State=Focus, Inverse=No
+- ↕️ Size=Large, State=Default, Inverse=Yes
+- ↕️ Size=Large, State=Hover, Inverse=Yes
+- ↕️ Size=Large, State=Focus, Inverse=Yes
+- ↕️ Size=Large, State=Active, Inverse=No
+- ↕️ Size=Large, State=Active, Inverse=Yes
+- ↕️ Size=Large, State=Disabled, Inverse=No
+- ↕️ Size=Large, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Loading, Inverse=No
+- ↕️ Size=Large, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=Yes
+- ↕️ Size=Medium, State=Default, Inverse=No
+- ↕️ Size=Medium, State=Hover, Inverse=No
+- ↕️ Size=Medium, State=Focus, Inverse=No
+- ↕️ Size=Small, State=Default, Inverse=No
+- ↕️ Size=Small, State=Hover, Inverse=No
+- ↕️ Size=Small, State=Focus, Inverse=No
+- ↕️ Size=Medium, State=Default, Inverse=Yes
+- ↕️ Size=Medium, State=Hover, Inverse=Yes
+- ↕️ Size=Medium, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Default, Inverse=Yes
+- ↕️ Size=Small, State=Hover, Inverse=Yes
+- ↕️ Size=Small, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Default, Inverse=No
+- ↕️ Size=Large, State=Hover, Inverse=No
+- ↕️ Size=Large, State=Focus, Inverse=No
+- ↕️ Size=Large, State=Default, Inverse=Yes
+- ↕️ Size=Large, State=Hover, Inverse=Yes
+- ↕️ Size=Large, State=Focus, Inverse=Yes
+- ↕️ Size=Large, State=Active, Inverse=No
+- ↕️ Size=Large, State=Active, Inverse=Yes
+- ↕️ Size=Large, State=Disabled, Inverse=No
+- ↕️ Size=Large, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Loading, Inverse=No
+- ↕️ Size=Large, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=Yes
+- ↕️ Size=Medium, State=Default, Inverse=No
+- ↕️ Size=Medium, State=Hover, Inverse=No
+- ↕️ Size=Medium, State=Focus, Inverse=No
+- ↕️ Size=Small, State=Default, Inverse=No
+- ↕️ Size=Small, State=Hover, Inverse=No
+- ↕️ Size=Small, State=Focus, Inverse=No
+- ↕️ Size=Medium, State=Default, Inverse=Yes
+- ↕️ Size=Medium, State=Hover, Inverse=Yes
+- ↕️ Size=Medium, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Default, Inverse=Yes
+- ↕️ Size=Small, State=Hover, Inverse=Yes
+- ↕️ Size=Small, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Default, Inverse=No
+- ↕️ Size=Large, State=Hover, Inverse=No
+- ↕️ Size=Large, State=Focus, Inverse=No
+- ↕️ Size=Large, State=Default, Inverse=Yes
+- ↕️ Size=Large, State=Hover, Inverse=Yes
+- ↕️ Size=Large, State=Focus, Inverse=Yes
+- ↕️ Size=Large, State=Active, Inverse=No
+- ↕️ Size=Large, State=Active, Inverse=Yes
+- ↕️ Size=Large, State=Disabled, Inverse=No
+- ↕️ Size=Large, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Loading, Inverse=No
+- ↕️ Size=Large, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=Yes
+- ↕️ Size=Medium, State=Default, Inverse=No
+- ↕️ Size=Medium, State=Hover, Inverse=No
+- ↕️ Size=Medium, State=Focus, Inverse=No
+- ↕️ Size=Small, State=Default, Inverse=No
+- ↕️ Size=Small, State=Hover, Inverse=No
+- ↕️ Size=Small, State=Focus, Inverse=No
+- ↕️ Size=Medium, State=Default, Inverse=Yes
+- ↕️ Size=Medium, State=Hover, Inverse=Yes
+- ↕️ Size=Medium, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Default, Inverse=Yes
+- ↕️ Size=Small, State=Hover, Inverse=Yes
+- ↕️ Size=Small, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Default, Inverse=No
+- ↕️ Size=Large, State=Hover, Inverse=No
+- ↕️ Size=Large, State=Focus, Inverse=No
+- ↕️ Size=Large, State=Default, Inverse=Yes
+- ↕️ Size=Large, State=Hover, Inverse=Yes
+- ↕️ Size=Large, State=Focus, Inverse=Yes
+- ↕️ Size=Large, State=Active, Inverse=No
+- ↕️ Size=Large, State=Active, Inverse=Yes
+- ↕️ Size=Large, State=Disabled, Inverse=No
+- ↕️ Size=Large, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Loading, Inverse=No
+- ↕️ Size=Large, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=Yes
+- ↕️ Size=Medium, State=Default, Inverse=No
+- ↕️ Size=Medium, State=Hover, Inverse=No
+- ↕️ Size=Medium, State=Focus, Inverse=No
+- ↕️ Size=Small, State=Default, Inverse=No
+- ↕️ Size=Small, State=Hover, Inverse=No
+- ↕️ Size=Small, State=Focus, Inverse=No
+- ↕️ Size=Medium, State=Default, Inverse=Yes
+- ↕️ Size=Medium, State=Hover, Inverse=Yes
+- ↕️ Size=Medium, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Default, Inverse=Yes
+- ↕️ Size=Small, State=Hover, Inverse=Yes
+- ↕️ Size=Small, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Default, Inverse=No
+- ↕️ Size=Large, State=Hover, Inverse=No
+- ↕️ Size=Large, State=Focus, Inverse=No
+- ↕️ Size=Large, State=Default, Inverse=Yes
+- ↕️ Size=Large, State=Hover, Inverse=Yes
+- ↕️ Size=Large, State=Focus, Inverse=Yes
+- ↕️ Size=Large, State=Active, Inverse=No
+- ↕️ Size=Large, State=Active, Inverse=Yes
+- ↕️ Size=Large, State=Disabled, Inverse=No
+- ↕️ Size=Large, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Loading, Inverse=No
+- ↕️ Size=Large, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=Yes
+- ↕️ Size=Medium, State=Default, Inverse=No
+- ↕️ Size=Medium, State=Hover, Inverse=No
+- ↕️ Size=Medium, State=Focus, Inverse=No
+- ↕️ Size=Small, State=Default, Inverse=No
+- ↕️ Size=Small, State=Hover, Inverse=No
+- ↕️ Size=Small, State=Focus, Inverse=No
+- ↕️ Size=Medium, State=Default, Inverse=Yes
+- ↕️ Size=Medium, State=Hover, Inverse=Yes
+- ↕️ Size=Medium, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Default, Inverse=Yes
+- ↕️ Size=Small, State=Hover, Inverse=Yes
+- ↕️ Size=Small, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Default, Inverse=No
+- ↕️ Size=Large, State=Hover, Inverse=No
+- ↕️ Size=Large, State=Focus, Inverse=No
+- ↕️ Size=Large, State=Default, Inverse=Yes
+- ↕️ Size=Large, State=Hover, Inverse=Yes
+- ↕️ Size=Large, State=Focus, Inverse=Yes
+- ↕️ Size=Large, State=Active, Inverse=No
+- ↕️ Size=Large, State=Active, Inverse=Yes
+- ↕️ Size=Large, State=Disabled, Inverse=No
+- ↕️ Size=Large, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Loading, Inverse=No
+- ↕️ Size=Large, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=Yes
+- ↕️ Size=Medium, State=Default, Inverse=No
+- ↕️ Size=Medium, State=Hover, Inverse=No
+- ↕️ Size=Medium, State=Focus, Inverse=No
+- ↕️ Size=Small, State=Default, Inverse=No
+- ↕️ Size=Small, State=Hover, Inverse=No
+- ↕️ Size=Small, State=Focus, Inverse=No
+- ↕️ Size=Medium, State=Default, Inverse=Yes
+- ↕️ Size=Medium, State=Hover, Inverse=Yes
+- ↕️ Size=Medium, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Default, Inverse=Yes
+- ↕️ Size=Small, State=Hover, Inverse=Yes
+- ↕️ Size=Small, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Default, Inverse=No
+- ↕️ Size=Large, State=Hover, Inverse=No
+- ↕️ Size=Large, State=Focus, Inverse=No
+- ↕️ Size=Large, State=Default, Inverse=Yes
+- ↕️ Size=Large, State=Hover, Inverse=Yes
+- ↕️ Size=Large, State=Focus, Inverse=Yes
+- ↕️ Size=Large, State=Active, Inverse=No
+- ↕️ Size=Large, State=Active, Inverse=Yes
+- ↕️ Size=Large, State=Disabled, Inverse=No
+- ↕️ Size=Large, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Loading, Inverse=No
+- ↕️ Size=Large, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=Yes
+- ↕️ Size=Medium, State=Default, Inverse=No
+- ↕️ Size=Medium, State=Hover, Inverse=No
+- ↕️ Size=Medium, State=Focus, Inverse=No
+- ↕️ Size=Small, State=Default, Inverse=No
+- ↕️ Size=Small, State=Hover, Inverse=No
+- ↕️ Size=Small, State=Focus, Inverse=No
+- ↕️ Size=Medium, State=Default, Inverse=Yes
+- ↕️ Size=Medium, State=Hover, Inverse=Yes
+- ↕️ Size=Medium, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Default, Inverse=Yes
+- ↕️ Size=Small, State=Hover, Inverse=Yes
+- ↕️ Size=Small, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Default, Inverse=No
+- ↕️ Size=Large, State=Hover, Inverse=No
+- ↕️ Size=Large, State=Focus, Inverse=No
+- ↕️ Size=Large, State=Default, Inverse=Yes
+- ↕️ Size=Large, State=Hover, Inverse=Yes
+- ↕️ Size=Large, State=Focus, Inverse=Yes
+- ↕️ Size=Large, State=Active, Inverse=No
+- ↕️ Size=Large, State=Active, Inverse=Yes
+- ↕️ Size=Large, State=Disabled, Inverse=No
+- ↕️ Size=Large, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Loading, Inverse=No
+- ↕️ Size=Large, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=Yes
+- ↕️ Size=Medium, State=Default, Inverse=No
+- ↕️ Size=Medium, State=Hover, Inverse=No
+- ↕️ Size=Medium, State=Focus, Inverse=No
+- ↕️ Size=Small, State=Default, Inverse=No
+- ↕️ Size=Small, State=Hover, Inverse=No
+- ↕️ Size=Small, State=Focus, Inverse=No
+- ↕️ Size=Medium, State=Default, Inverse=Yes
+- ↕️ Size=Medium, State=Hover, Inverse=Yes
+- ↕️ Size=Medium, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Default, Inverse=Yes
+- ↕️ Size=Small, State=Hover, Inverse=Yes
+- ↕️ Size=Small, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Default, Inverse=No
+- ↕️ Size=Large, State=Hover, Inverse=No
+- ↕️ Size=Large, State=Focus, Inverse=No
+- ↕️ Size=Large, State=Default, Inverse=Yes
+- ↕️ Size=Large, State=Hover, Inverse=Yes
+- ↕️ Size=Large, State=Focus, Inverse=Yes
+- ↕️ Size=Large, State=Active, Inverse=No
+- ↕️ Size=Large, State=Active, Inverse=Yes
+- ↕️ Size=Large, State=Disabled, Inverse=No
+- ↕️ Size=Large, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Loading, Inverse=No
+- ↕️ Size=Large, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=Yes
+- ↕️ Size=Medium, State=Default, Inverse=No
+- ↕️ Size=Medium, State=Hover, Inverse=No
+- ↕️ Size=Medium, State=Focus, Inverse=No
+- ↕️ Size=Small, State=Default, Inverse=No
+- ↕️ Size=Small, State=Hover, Inverse=No
+- ↕️ Size=Small, State=Focus, Inverse=No
+- ↕️ Size=Medium, State=Default, Inverse=Yes
+- ↕️ Size=Medium, State=Hover, Inverse=Yes
+- ↕️ Size=Medium, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Default, Inverse=Yes
+- ↕️ Size=Small, State=Hover, Inverse=Yes
+- ↕️ Size=Small, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Default, Inverse=No
+- ↕️ Size=Large, State=Hover, Inverse=No
+- ↕️ Size=Large, State=Focus, Inverse=No
+- ↕️ Size=Large, State=Default, Inverse=Yes
+- ↕️ Size=Large, State=Hover, Inverse=Yes
+- ↕️ Size=Large, State=Focus, Inverse=Yes
+- ↕️ Size=Large, State=Active, Inverse=No
+- ↕️ Size=Large, State=Active, Inverse=Yes
+- ↕️ Size=Large, State=Disabled, Inverse=No
+- ↕️ Size=Large, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Loading, Inverse=No
+- ↕️ Size=Large, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=Yes
+- ↕️ Size=Medium, State=Default, Inverse=No
+- ↕️ Size=Medium, State=Hover, Inverse=No
+- ↕️ Size=Medium, State=Focus, Inverse=No
+- ↕️ Size=Small, State=Default, Inverse=No
+- ↕️ Size=Small, State=Hover, Inverse=No
+- ↕️ Size=Small, State=Focus, Inverse=No
+- ↕️ Size=Medium, State=Default, Inverse=Yes
+- ↕️ Size=Medium, State=Hover, Inverse=Yes
+- ↕️ Size=Medium, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Default, Inverse=Yes
+- ↕️ Size=Small, State=Hover, Inverse=Yes
+- ↕️ Size=Small, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Default, Inverse=No
+- ↕️ Size=Large, State=Hover, Inverse=No
+- ↕️ Size=Large, State=Focus, Inverse=No
+- ↕️ Size=Large, State=Default, Inverse=Yes
+- ↕️ Size=Large, State=Hover, Inverse=Yes
+- ↕️ Size=Large, State=Focus, Inverse=Yes
+- ↕️ Size=Large, State=Active, Inverse=No
+- ↕️ Size=Large, State=Active, Inverse=Yes
+- ↕️ Size=Large, State=Disabled, Inverse=No
+- ↕️ Size=Large, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Loading, Inverse=No
+- ↕️ Size=Large, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=Yes
+- ↕️ Size=Medium, State=Default, Inverse=No
+- ↕️ Size=Medium, State=Hover, Inverse=No
+- ↕️ Size=Medium, State=Focus, Inverse=No
+- ↕️ Size=Small, State=Default, Inverse=No
+- ↕️ Size=Small, State=Hover, Inverse=No
+- ↕️ Size=Small, State=Focus, Inverse=No
+- ↕️ Size=Medium, State=Default, Inverse=Yes
+- ↕️ Size=Medium, State=Hover, Inverse=Yes
+- ↕️ Size=Medium, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Default, Inverse=Yes
+- ↕️ Size=Small, State=Hover, Inverse=Yes
+- ↕️ Size=Small, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Default, Inverse=No
+- ↕️ Size=Large, State=Hover, Inverse=No
+- ↕️ Size=Large, State=Focus, Inverse=No
+- ↕️ Size=Large, State=Default, Inverse=Yes
+- ↕️ Size=Large, State=Hover, Inverse=Yes
+- ↕️ Size=Large, State=Focus, Inverse=Yes
+- ↕️ Size=Large, State=Active, Inverse=No
+- ↕️ Size=Large, State=Active, Inverse=Yes
+- ↕️ Size=Large, State=Disabled, Inverse=No
+- ↕️ Size=Large, State=Disabled, Inverse=Yes
+- ↕️ Size=Large, State=Loading, Inverse=No
+- ↕️ Size=Large, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=No
+- ↕️ Size=Medium, State=Loading, Inverse=Yes
+- ↕️ Size=Small, State=Loading, Inverse=Yes
+- ↕️ Size=Medium, State=Default, Inverse=No
+- ↕️ Size=Medium, State=Hover, Inverse=No
+- ↕️ Size=Medium, State=Focus, Inverse=No
+- ↕️ Size=Small, State=Default, Inverse=No
+- ↕️ Size=Small, State=Hover, Inverse=No
+- ↕️ Size=Small, State=Focus, Inverse=No
+- ↕️ Size=Medium, State=Default, Inverse=Yes
+- ↕️ Size=Medium, State=Hover, Inverse=Yes
+- ↕️ Size=Medium, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Default, Inverse=Yes
+- ↕️ Size=Small, State=Hover, Inverse=Yes
+- ↕️ Size=Small, State=Focus, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=No
+- ↕️ Size=Medium, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Active, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=No
+- ↕️ Size=Medium, State=Disabled, Inverse=Yes
+- ↕️ Size=Small, State=Disabled, Inverse=Yes
+- brand=chc
+- brand=evernorth
+- Price-Item
+- cost-breakdown
+- type=success
+- type=info
+- type=empathy
+
+### Organisms (2)
+- Color Documentation Header
+- Typography Documentation Header
+
+## Implementation Readiness
+
+### Ready to Implement (0)
+
+### Needs Specification (846)
+- **Type=Default, ↕️ Size=Large**: Requires more detailed specification
+- **Type=Default, ↕️ Size=Large (Icon Only)**: Requires more detailed specification
+- **Type=Disabled, ↕️ Size=Large (Icon Only)**: Requires more detailed specification
+- **Type=Destructive, ↕️ Size=Large (Icon Only)**: Requires more detailed specification
+- **Type=Default, ↕️ Size=Small (Icon Only)**: Requires more detailed specification
+- **Type=Disabled, ↕️ Size=Small (Icon Only)**: Requires more detailed specification
+- **Type=Destructive, ↕️ Size=Small (Icon Only)**: Requires more detailed specification
+- **Type=Disabled, ↕️ Size=Large**: Requires more detailed specification
+- **Type=Loading, ↕️ Size=Large**: Requires more detailed specification
+- **Type=Loading, ↕️ Size=Small**: Requires more detailed specification
+- **Type=Destructive, ↕️ Size=Large**: Requires more detailed specification
+- **Type=Default, ↕️ Size=Small**: Requires more detailed specification
+- **Type=Disabled, ↕️ Size=Small**: Requires more detailed specification
+- **Type=Destructive, ↕️ Size=Small**: Requires more detailed specification
+- **Type=Default, ↕️ Size=Large**: Requires more detailed specification
+- **Type=Default, ↕️ Size=Large (Icon Only)**: Requires more detailed specification
+- **Type=Disabled, ↕️ Size=Large (Icon Only)**: Requires more detailed specification
+- **Type=Destructive, ↕️ Size=Large (Icon Only)**: Requires more detailed specification
+- **Type=Default, ↕️ Size=Small (Icon Only)**: Requires more detailed specification
+- **Type=Disabled, ↕️ Size=Small (Icon Only)**: Requires more detailed specification
+- **Type=Destructive, ↕️ Size=Small (Icon Only)**: Requires more detailed specification
+- **Type=Disabled, ↕️ Size=Large**: Requires more detailed specification
+- **Type=Loading, ↕️ Size=Large**: Requires more detailed specification
+- **Type=Destructive, ↕️ Size=Large**: Requires more detailed specification
+- **Type=Default, ↕️ Size=Small**: Requires more detailed specification
+- **Type=Disabled, ↕️ Size=Small**: Requires more detailed specification
+- **Type=Loading, ↕️ Size=Small**: Requires more detailed specification
+- **Type=Destructive, ↕️ Size=Small**: Requires more detailed specification
+- **Type=Default, ↕️ Size=Large**: Requires more detailed specification
+- **Type=Default, ↕️ Size=Large (Icon Only)**: Requires more detailed specification
+- **Type=Disabled, ↕️ Size=Large (Icon Only)**: Requires more detailed specification
+- **Type=Destructive, ↕️ Size=Large (Icon Only)**: Requires more detailed specification
+- **Type=Default, ↕️ Size=Small (Icon Only)**: Requires more detailed specification
+- **Type=Disabled, ↕️ Size=Small (Icon Only)**: Requires more detailed specification
+- **Type=Destructive, ↕️ Size=Small (Icon Only)**: Requires more detailed specification
+- **Type=Disabled, ↕️ Size=Large**: Requires more detailed specification
+- **Type=Loading, ↕️ Size=Large**: Requires more detailed specification
+- **Type=Destructive, ↕️ Size=Large**: Requires more detailed specification
+- **Type=Default, ↕️ Size=Small**: Requires more detailed specification
+- **Type=Disabled, ↕️ Size=Small**: Requires more detailed specification
+- **Type=Loading, ↕️ Size=Small**: Requires more detailed specification
+- **Type=Destructive, ↕️ Size=Small**: Requires more detailed specification
+- **Color Documentation Header**: Requires more detailed specification
+- **Typography Documentation Header**: Requires more detailed specification
+- **Color Documentation Row**: Requires more detailed specification
+- **Type=COLOR TOKEN SWATCH**: Requires more detailed specification
+- **Type=TYPOGRAPHY TOKEN SWATCH**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small (Icon Only), State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Large, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Loading, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Medium, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Default, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Hover, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Focus, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Active, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=No**: Requires more detailed specification
+- **↕️ Size=Medium, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **↕️ Size=Small, State=Disabled, Inverse=Yes**: Requires more detailed specification
+- **brand=chc**: Requires more detailed specification
+- **brand=evernorth**: Requires more detailed specification
+- **Price-Item**: Requires more detailed specification
+- **cost-breakdown**: Requires more detailed specification
+- **type=success**: Requires more detailed specification
+- **type=info**: Requires more detailed specification
+- **type=empathy**: Requires more detailed specification
+
+### Has Issues (0)
+
+## Design Patterns
+
+## Key Recommendations
+
+- Found 846 components across 0 design patterns
+- 0 components are ready for implementation
+- Focus on implementing 378 atoms first as building blocks
+- Consider standardizing component variants and properties

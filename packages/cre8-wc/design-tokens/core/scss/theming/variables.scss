@@ -1,0 +1,407 @@
+
+
+
+// Global CSS custom properties that aren't part of a themes dcre8gn tokens
+:root {
+  --size-base-unit: 0.5rem;
+}
+
+/**
+ * RTL support for values logical properties can't automatically adjust for
+ * 1) Percentage based horizontal translate values need to be flipped
+ * 2) Background gradients using "to-right" or "to-left" need to be switched to using deg values.
+ * 3) Inverse items that have 45degs
+ */
+[dir='rtl'] {
+  --rtlTranslateX: 50%; /* 1 */
+  --rtlGradientToRight: 270deg; /* 2 */
+  --rtlRotate45Inverse: -45deg; /* 3 */
+}
+
+// Size
+// 1) The size function multiplies a provided value ($number)
+//    by the base sizing unit (--size-base-unit)
+// 2) $number should be limited to integers (e.g. 3) or half integers (e.g. 1.5)
+
+
+// Form label styles
+// TODO: Revisit
+@mixin label-styles() {
+  @include cre8-typography-label-small();
+  display: block;
+  margin-bottom: size(1);
+}
+
+// Inverted form label styles
+// TODO: Revisit
+@mixin label-inverted-styles() {
+  color: var(--cre8-color-content-knockout);
+}
+
+@mixin checkbox-styles() {
+  /**
+   * Checkbox control input
+   * 1) Make control dimensions same as outer container
+   * 2) Hide native form controls
+   */
+  .cre8-c-checkbox__input {
+    display: block;
+    margin: 0;
+    z-index: 4;
+    width: size(3); /* 1 */
+    height: size(3); /* 1 */
+    cursor: pointer;
+    opacity: 0; /* 2 */
+
+    /**
+     * Disabled checkbox input
+     */
+    &:disabled {
+      cursor: not-allowed;
+    }
+
+    /**
+     * Focus visible for checkbox input
+     */
+    &:focus-visible {
+      @include focus();
+    }
+  }
+
+  /**
+   * Custom checkbox
+   * 1) Make control dimensions same as outer container
+   */
+  .cre8-c-checkbox__custom-check {
+    position: absolute;
+    top: 0; /* 1 */
+    right: 0; /* 1 */
+    bottom: 0; /* 1 */
+    left: 0; /* 1 */
+    width: size(3);
+    height: size(3);
+    flex-shrink: 0;
+    z-index: 1;
+
+    /**
+     * Custom checkbox background
+     * 1) Make control dimensions same as outer container
+     * 2) Stack background behind checkbox foreground
+     */
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; /* 1 */
+      right: 0; /* 1 */
+      bottom: 0; /* 1 */
+      left: 0; /* 1 */
+      z-index: 1; /* 2 */
+      display: block;
+      border: var(--cre8-border-width-default) solid var(--cre8-color-border-default);
+      background-color: var(--cre8-color-bg-default);
+      border-radius: var(--cre8-border-radius-default);
+
+      /**
+       * Custom checkbox background inside of hovered control
+       */
+      .cre8-c-checkbox__input:hover + & {
+        border-color: var(--cre8-color-border-default-hover);
+      }
+
+      /**
+       * Custom checkbox background inside of disabled control
+       */
+      .cre8-c-checkbox__input:disabled + & {
+        border-color: var(--cre8-color-border-subtle);
+        background-color: var(--cre8-color-bg-subtle);
+        cursor: not-allowed;
+      }
+
+      /**
+       * Custom checkbox background inside of checked control
+       */
+      .cre8-c-checkbox__input:checked + & {
+        background-color: var(--cre8-color-bg-brand);
+        border-color: transparent;
+      }
+
+      /**
+       * Custom checkbox background inside of checked and hovered control
+       */
+      .cre8-c-checkbox__input:checked:hover + & {
+        background-color: var(--cre8-color-bg-brand-hover);
+        border-color: transparent;
+      }
+
+      /**
+       * Custom checkbox background inside of checked control
+       */
+      .cre8-c-checkbox__input:checked:disabled + & {
+        background-color: var(--cre8-color-bg-brand-disabled);
+        border-color: transparent;
+      }
+    }
+
+    /**
+     * Custom checkbox checkmark
+     * 1) Position checkmark in center of box
+     * 2) Hide checkmark based by default
+     */
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%; /* 1 */
+      left: 50%; /* 1 */
+      z-index: 2;
+      display: block;
+      width: 12px;
+      height: 13px;
+      transform: translate(-50%, -50%);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M3.35,12a1.75,1.75,0,0,1-.78-.18A1.81,1.81,0,0,1,2,11.31L.14,8.89a.69.69,0,0,1,.14-1,.7.7,0,0,1,1,.13l1.8,2.42a.41.41,0,0,0,.13.1.3.3,0,0,0,.16,0,.28.28,0,0,0,.15,0,.38.38,0,0,0,.12-.1L10.73.3a.7.7,0,1,1,1.14.8L4.76,11.26a1.68,1.68,0,0,1-.61.54,1.92,1.92,0,0,1-.78.2Z' fill='%233f3f3f'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      opacity: 0; /* 2 */
+
+      /**
+       * Actual checkbox of the checked input
+       * 1) Hide checkmark based on if input is checked
+       */
+      .cre8-c-checkbox__input:checked + & {
+        opacity: 1; /* 1 */
+      }
+    }
+  }
+
+  /**
+   * Apply "indeterminate" style to checkbox. "Indeterminate" states are for
+   * checkboxes masked states of the checkbox. More here - https://css-tricks.com/indeterminate-checkboxes/
+   */
+  .cre8-is-indeterminate .cre8-c-checkbox__input:not(:checked) {
+    &:hover + .cre8-c-checkbox__custom-check::before {
+      background-color: var(--cre8-color-bg-brand-hover);
+      border-color: transparent;
+    }
+
+    /**
+     * Apply disabled "indeterminate" styles to checkbox
+     */
+    &:disabled + .cre8-c-checkbox__custom-check::before {
+      background-color: var(--cre8-color-bg-brand-disabled);
+      border-color: transparent;
+    }
+
+    /**
+     * Apply "indeterminate" styles to checkbox
+     */
+    + .cre8-c-checkbox__custom-check {
+      &::before {
+        background-color: var(--cre8-color-bg-brand);
+        border-color: transparent;
+      }
+
+      /**
+       * "Indeterminate" state SVG style (just a - instead of a ✓)
+       */
+      &::after {
+        opacity: 1;
+        width: 10px;
+        height: 4px;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 1.52'%3E%3Cpath d='M9.24,1.52H.76A.76.76,0,0,1,.76,0H9.24a.76.76,0,0,1,0,1.52Z' fill='%233f3f3f'/%3E%3C/svg%3E");
+      }
+    }
+  }
+}
+
+@mixin input-styles() {
+  @include cre8-typography-body-default();
+  @include focusTransparent();
+  -webkit-appearance: none;
+  width: 100%;
+  border-width: var(--cre8-border-width-default);
+  border-style: solid;
+  border-color: var(--cre8-color-border-strong);
+  border-radius: var(--cre8-border-radius-default);
+  padding: size(1.5) size(1);
+  color: var(--cre8-color-content-default);
+  background-color: var(--cre8-color-bg-default);
+  transition: outline-color var(--cre8-anim-fade-quick) var(--cre8-anim-ease), border-color var(--cre8-anim-fade-quick) var(--cre8-anim-ease), background-color var(--cre8-anim-fade-quick) var(--cre8-anim-ease), color var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
+
+  /**
+   * Hover, focus, active, and focus-visible styles for default input elements
+   */
+  &:hover:not(:disabled),
+  &:focus:not(:disabled),
+  &:active:not(:disabled),
+  &:focus-visible {
+    @include focus();
+
+    /**
+     * Error state
+     */
+    .cre8-is-error & {
+      outline-color: var(--cre8-color-border-error);
+    }
+
+    /**
+     * Success state
+     */
+    .cre8-is-success & {
+      outline-color: var(--cre8-color-border-success);
+    }
+  }
+
+  /**
+   * Disabled styles for default input elements
+   */
+  &:disabled {
+    background-color: var(--cre8-color-bg-disabled);
+    border-color: var(--cre8-color-border-disabled);
+    color: var(--cre8-color-content-disabled);
+    cursor: not-allowed;
+
+    /**
+     * Disabled text colors
+     */
+    &::placeholder {
+      color: var(--cre8-color-content-disabled);
+    }
+  }
+
+  /**
+   * Placeholder styles for default input elements
+   */
+  &::placeholder {
+    color: var(--cre8-color-content-subtle);
+  }
+
+  /**
+   * Error state for default input elements
+   */
+  .cre8-is-error & {
+    border-color: var(--cre8-color-border-error);
+  }
+
+  /**
+   * Success state for default input elements
+   */
+  .cre8-is-success & {
+    border-color: var(--cre8-color-border-success);
+  }
+}
+
+//------------------------------------//
+//   #TEXT LINK STYLES
+//------------------------------------//
+
+// Text Link Styles
+@mixin text-link() {
+  @include cre8-typography-body-default;
+  color: var(--cre8-color-content-link);
+
+  &:hover {
+    color: var(--cre8-color-content-link-hover);
+    background-color: transparent;
+  }
+
+  &:active {
+    color: var(--cre8-color-content-link-active);
+  }
+
+  &:visited {
+    color: var(--cre8-color-content-link-visited);
+  }
+
+  &:focus-visible {
+    @include focus();
+  }
+}
+
+@mixin text-link-inverted() {
+  @include cre8-typography-label-default;
+  color: var(--cre8-color-content-link);
+  text-decoration: underline;
+
+  &:hover {
+    color: var(--cre8-color-content-link-hover);
+    background-color: transparent;
+  }
+
+  &:focus-visible {
+    @include focusInverted();
+  }
+}
+
+@mixin text-link-brand() {
+  @include cre8-typography-label-default;
+  color: var(--cre8-color-content-knockout-brand);
+  text-decoration: underline;
+
+  &:hover {
+    color: var(--cre8-color-content-knockout-brand-hover);
+    background-color: transparent;
+  }
+
+  &:focus-visible {
+    @include focusInverted();
+  }
+}
+
+//------------------------------------//
+//   #FOCUS
+//------------------------------------//
+
+/**
+ * Visible focus outline for elements on a light background
+ */
+@mixin focus() {
+  outline: var(--cre8-border-width-focus) solid var(--cre8-color-border-active-outline);
+  outline-offset: size(0.25);
+}
+
+/**
+ * Visible focus outline for elements with an error status
+ */
+@mixin focusError() {
+  outline: var(--cre8-border-width-focus) solid var(--cre8-color-border-error);
+  outline-offset: size(0.25);
+}
+
+/**
+ * Visible focus outline for elements on a dark background
+ */
+@mixin focusInverted() {
+  outline: var(--cre8-border-width-focus) solid var(--cre8-theme-color-focus-ring-inverted);
+  outline-offset: size(0.25);
+}
+/**
+* Focus state for themes that need a dashed outline for focus
+* state
+**/
+@mixin focusTertiary() {
+  outline: var(--cre8-border-width-focus) var(--cre8-border-style-button-tertiary-outline-focus) var(--cre8-color-border-active-outline);
+  outline-offset: size(0.25);
+}
+
+/**
+ * Invisible focus outline for elements that need a more visible
+ * focus state for high-contrast mode
+ */
+@mixin focusTransparent() {
+  outline: var(--cre8-border-width-focus) solid transparent;
+  outline-offset: size(0.25);
+}
+
+/**
+ * Visually hidden from display
+ */
+@mixin visuallyHidden() {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+

@@ -1,15 +1,13 @@
 import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './main.scss';
+import styles from './main.module';
 
 /**
  * @slot - The main content
  */
 export class Cre8Main extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles);
-    }
+    static styles = [styles];
 
   /**
    * Full height variant

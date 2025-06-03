@@ -5,7 +5,7 @@
 import { TemplateResult, html, unsafeCSS } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { Cre8Element } from '../../cre8-element';
-import styles from './calendar-year-modal.scss';
+import styles from './calendar-year-modal.module';
 import '../../button/button';
 import '../../icon/icon';
 

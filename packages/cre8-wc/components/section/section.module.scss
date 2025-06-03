@@ -1,0 +1,31 @@
+@import '/design-tokens/core/scss/theming/component';
+
+#SECTION
+
+
+/**
+ * 1) A major section of a page (<section> tag) with a title and optional description.
+ */
+.cre8-c-section {
+  margin-bottom: size(4);
+  display: block;
+}
+
+/**
+ * Section header
+ * 1) Contains the section title and possibly a description
+ */
+.cre8-c-section-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/**
+* Section body
+*/
+.cre8-c-section__body {
+  padding-top: size(2);
+  @media all and (min-width: component.$cre8-breakpoint-lg) {
+    padding-top: size(4);
+  }
+}

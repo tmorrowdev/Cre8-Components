@@ -1,7 +1,7 @@
 import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './divider.scss';
+import styles from './divider.module';
 
 /**
  * The divider component is a separator between sections of content or groups of items.
@@ -9,9 +9,7 @@ import styles from './divider.scss';
 */
 
 export class Cre8Divider extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /**
    * Divider variants

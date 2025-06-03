@@ -1,7 +1,7 @@
 import { html, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './loading-spinner.scss';
+import styles from './loading-spinner.module';
 
 /**
  * A loading spinner notifies the user that their request is being processed while the front end is retrieving data

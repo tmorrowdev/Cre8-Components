@@ -1,15 +1,13 @@
 import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './hero.scss';
+import styles from './hero.module';
 
 /**
  * @slot - The component content
  */
 export class Cre8Hero extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /**
    * Image source

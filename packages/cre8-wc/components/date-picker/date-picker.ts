@@ -1,7 +1,7 @@
 import { html, nothing, unsafeCSS } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property, state } from 'lit/decorators.js';
-import styles from './date-picker.scss';
+import styles from './date-picker.module';
 import { Cre8Field } from '../field/field';
 import './calendar/calendar';
 
@@ -11,9 +11,7 @@ import './calendar/calendar';
  * Cre8DatePicker inherts the Cre8Field component.
  */
 export class Cre8DatePicker extends Cre8Field {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   @state() showCalendar = false;
 

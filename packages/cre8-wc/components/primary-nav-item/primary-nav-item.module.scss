@@ -1,0 +1,167 @@
+@import '/design-tokens/core/scss/theming/component';
+
+// #PRIMARY NAV ITEM
+
+/**
+ * Actual primary nav list item
+ */
+.cre8-c-primary-nav__item {
+  border-bottom-width: var(--cre8-border-width-default);
+  border-bottom-style: var(--cre8-border-style-default);
+  border-bottom-color: var(--cre8-color-border-subtle);
+
+  @media all and (min-width: component.$cre8-breakpoint-lg) {
+    border-bottom: none;
+  }
+}
+
+/**
+ * Content within the primary nav item
+ */
+.cre8-c-primary-nav__item-content {
+  display: flex;
+  align-items: baseline;
+}
+
+/**
+ * Primary navigation link
+ * 1) Used to remove any sort of default button styles when a button tag is rendered
+ */
+.cre8-c-primary-nav__link {
+  @include cre8-typography-label-default;
+  display: flex;
+  align-items: center;
+  appearance: none; /* 1 */
+  background: transparent; /* 1 */
+  border: none;
+  //border: 1px solid var(--cre8-color-header-menu-border-default); /* 1 */
+  white-space: nowrap;
+  width: 100%;
+  margin: 0;
+  padding: size(2) size(4);
+  color: var(--cre8-primary-nav-link-color, var(--cre8-color-header-menu-content-default));
+  text-decoration: none;
+  transition: all var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    //border-color: var(--cre8-color-header-menu-border-hover);
+    background: var(--cre8-color-header-menu-bg-hover);
+    color: var(--cre8-color-header-menu-content-hover);
+  }
+
+  &:active {
+    border-color: var(--cre8-color-header-menu-border-pressed);
+    background: var(--cre8-color-header-menu-bg-pressed);
+    color: var(--cre8-color-header-menu-content-pressed);
+  }
+
+  /**
+  * Primary navigation link within active primary nav item
+  */
+  .cre8-c-primary-nav__item.cre8-is-active & {
+    background: var(--cre8-color-bg-brand);
+    color: var(--cre8-color-header-menu-content-hover);
+  }
+
+  /**
+  * Medium screen primary navigation
+  */
+  @media all and (min-width: component.$cre8-breakpoint-lg) {
+    padding: size(2) size(1);
+  }
+
+  @media all and (min-width: component.$cre8-breakpoint-lg) {
+    padding: size(2);
+    border-bottom: none;
+  }
+}
+
+/**
+ * Icon within primary navigation item
+ */
+cre8-icon-legacy {
+  --cre8-icon-height: #{size(1.5)}; /* 1 */
+  --cre8-icon-width: #{size(1.5)}; /* 1 */
+  margin-left: auto;
+  transition: transform var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
+
+  /**
+  * Icon within active primary nav item
+  * 1) Rotate the icon to show that the dropdown is open
+  */
+  .cre8-c-primary-nav__item.cre8-is-active & {
+    transform: rotate(-180deg); /* 1 */
+  }
+
+  @media all and (min-width: component.$cre8-breakpoint-lg) {
+    margin-left: size(1);
+  }
+}
+
+/**
+ * Primary nav item panel
+ * 1) Panel for the dropdown content
+ * 1) Hide when not active
+ */
+.cre8-c-primary-nav__item-panel {
+  //display: none;
+  visibility: hidden; /* 1 */
+  width: 100%;
+  height: 0; /* 1 */
+  overflow: hidden; /* 1 */
+  background: transparent;
+  opacity: 0; /* 1 */
+  transition: all 0s var(--cre8-anim-ease);
+  z-index: -1;
+
+  @media all and (min-width: component.$cre8-breakpoint-lg) {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: auto;
+    box-shadow: var(--cre8-theme-box-shadow-md);
+  }
+
+  /**
+  * Primary nav item panel within active item
+  * 1) Show the primary nav item dropdown
+  */
+  .cre8-c-primary-nav__item.cre8-is-active & {
+    display: block;
+    visibility: visible; /* 1 */
+    height: auto; /* 1 */
+    padding-top: size(4);
+    padding-bottom: size(4);
+    background: var(--cre8-color-bg-default);
+    opacity: 1; /* 1 */
+    z-index: 1;
+    transition: opacity var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
+  }
+}
+
+/**
+* Primary nav item panel inner container
+* 1) Container within primary nav item panel that caps the content width and aligns
+*/
+.cre8-c-primary-nav__item-panel-inner {
+  /**
+  * Primary nav item inner container within megamenu item
+  * 1) Cap the content width and center
+  */
+  .cre8-c-primary-nav__item--megamenu & {
+    max-width: 70rem; /* 1 */
+    padding-right: size(4);
+    padding-left: size(4);
+    margin: 0 auto; /* 1 */
+  }
+}
+
+.cre8-c-primary-nav__item-before {
+  margin-right: size(1);
+}
+
+.cre8-c-primary-nav__item-after {
+  margin-left: size(1);
+}

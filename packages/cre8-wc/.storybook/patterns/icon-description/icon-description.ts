@@ -1,72 +1,47 @@
-import classnames from 'classnames';
-import { html, unsafeCSS } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import { Cre8Element } from '../../../components/cre8-element';
-import styles from './icon-description.scss';
+import { css } from 'lit';
+const styles = css`@import 'design-tokens/core/scss/theming/component';
 
 /**
- * An example element.
- *
+ * 1)
  */
-@customElement('icon-description')
-export class IconDescription extends Cre8Element {
-  static get styles() {
-    return unsafeCSS(styles.toString());
-  }
+.c-icon-description {
+  display: flex;
+  gap: size(1);
+}
 
-  /**
-   * Horizontal alignment variants
-   * - **right** renders the icon and text horizontally aligned right
-   */
-  @property()
-  align?: 'end';
-  /**
-   * Append to the class name. Used for passing in utility classes
-   */
-  @property()
-  styleModifier?: string;
+.c-icon-description--sm {
+  @include cre8-typography-label-small;
+}
 
-  /**
-   * Size variants
-   * - **sm** renders an icon and description smaller than the default
-   */
-  @property()
-  size?: 'sm';
+.c-icon-description--light {
+  @include cre8-typography-body-default;
+}
 
-  /**
-   * Vertical alignment variants
-   * - **center** renders the icon and text vertically centered
-   */
-  @property()
-  verticalAlign?: 'center';
+.c-icon-description--align-end {
+  justify-content: flex-end;
+}
 
-  /**
-   * Weight variant
-   */
-  @property()
-  weight?: 'light';
+.c-icon-description--valign-center {
+  align-items: center;
+}
 
-  render() {
-    const componentClassName = classnames('c-icon-description', this.styleModifier, {
-      'c-icon-description--sm': this.size === 'sm',
-      'c-icon-description--valign-center': this.verticalAlign === 'center',
-      'c-icon-description--align-end': this.align === 'end',
-      'c-icon-description--light': this.weight === 'light'
-    });
-
-    return html`
-      <div class="${componentClassName}">
-        ${this.slotNotEmpty('header') && html`<div class="c-icon-description__header"><slot name="header"></slot></div>`}
-        <div class="c-icon-description__body">
-          <slot></slot>
-        </div>
-      </div>
-    `;
+.c-icon-description__header {
+  .c-icon-description--sm & {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 2rem;
   }
 }
 
-declare global {
-  interface HTMLElementTagNameMap {
-    'icon-description': IconDescription;
+::slotted(cre8-icon-legacy) {
+  --cre8-icon-height: #{size(6)};
+  --cre8-icon-width: #{size(6)};
+
+  .c-icon-description--sm & {
+    --cre8-icon-height: #{size(2)};
+    --cre8-icon-width: #{size(2)};
   }
 }
+`;
+export default styles;

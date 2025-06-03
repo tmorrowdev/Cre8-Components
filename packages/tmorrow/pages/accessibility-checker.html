@@ -1,0 +1,967 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Accessibility Simulator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        .color-swatch {
+            width: 100%;
+            height: 80px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .color-swatch:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .vision-filter {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .compliance-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.75rem;
+        }
+        
+        .compliance-badge.pass {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+        
+        .compliance-badge.fail {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+        
+        input[type="color"] {
+            -webkit-appearance: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+        
+        input[type="color"]::-webkit-color-swatch {
+            border: none;
+            border-radius: 8px;
+        }
+        
+        .tab {
+            cursor: pointer;
+            padding: 10px 16px;
+            border-radius: 8px 8px 0 0;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .tab.active {
+            background-color: #4f46e5;
+            color: white;
+        }
+        
+        .tab:not(.active):hover {
+            background-color: #e0e7ff;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Vision deficiency filters using SVG */
+        .deuteranopia {
+            filter: url('#deuteranopia-filter');
+        }
+        
+        .protanopia {
+            filter: url('#protanopia-filter');
+        }
+        
+        .tritanopia {
+            filter: url('#tritanopia-filter');
+        }
+        
+        .achromatopsia {
+            filter: url('#achromatopsia-filter');
+        }
+        
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .suggestion-swatch {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-right: 4px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .suggestion-swatch:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- SVG Filters for Color Vision Deficiencies -->
+    <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
+        <defs>
+            <!-- Deuteranopia (green-blind) -->
+            <filter id="deuteranopia-filter">
+                <feColorMatrix type="matrix" values="0.625, 0.375, 0, 0, 0, 0.7, 0.3, 0, 0, 0, 0, 0.3, 0.7, 0, 0, 0, 0, 0, 1, 0"/>
+            </filter>
+            
+            <!-- Protanopia (red-blind) -->
+            <filter id="protanopia-filter">
+                <feColorMatrix type="matrix" values="0.567, 0.433, 0, 0, 0, 0.558, 0.442, 0, 0, 0, 0, 0.242, 0.758, 0, 0, 0, 0, 0, 1, 0"/>
+            </filter>
+            
+            <!-- Tritanopia (blue-blind) -->
+            <filter id="tritanopia-filter">
+                <feColorMatrix type="matrix" values="0.95, 0.05, 0, 0, 0, 0, 0.433, 0.567, 0, 0, 0, 0.475, 0.525, 0, 0, 0, 0, 0, 1, 0"/>
+            </filter>
+            
+            <!-- Achromatopsia (monochromacy) -->
+            <filter id="achromatopsia-filter">
+                <feColorMatrix type="matrix" values="0.299, 0.587, 0.114, 0, 0, 0.299, 0.587, 0.114, 0, 0, 0.299, 0.587, 0.114, 0, 0, 0, 0, 0, 1, 0"/>
+            </filter>
+        </defs>
+    </svg>
+
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <header class="mb-8 text-center">
+            <h1 class="text-4xl font-bold text-indigo-700 mb-2">Color Accessibility Simulator</h1>
+            <p class="text-lg text-gray-600">Test how your color palette appears to people with different vision impairments</p>
+        </header>
+        
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800">Color Palette</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <!-- Color 1 -->
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <div class="flex items-center justify-between mb-3">
+                        <label class="font-medium text-gray-700">Primary Color</label>
+                        <div class="flex items-center">
+                            <input type="color" id="color1" value="#3366CC" class="mr-2">
+                            <input type="text" id="color1-hex" value="#3366CC" class="w-24 px-2 py-1 border rounded text-sm">
+                        </div>
+                    </div>
+                    <div class="color-swatch mb-3" id="color1-swatch" style="background-color: #3366CC;"></div>
+                    <div class="text-sm text-gray-500">Used for primary buttons, links, and highlights</div>
+                </div>
+                
+                <!-- Color 2 -->
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <div class="flex items-center justify-between mb-3">
+                        <label class="font-medium text-gray-700">Secondary Color</label>
+                        <div class="flex items-center">
+                            <input type="color" id="color2" value="#FF9900" class="mr-2">
+                            <input type="text" id="color2-hex" value="#FF9900" class="w-24 px-2 py-1 border rounded text-sm">
+                        </div>
+                    </div>
+                    <div class="color-swatch mb-3" id="color2-swatch" style="background-color: #FF9900;"></div>
+                    <div class="text-sm text-gray-500">Used for call-to-actions and important elements</div>
+                </div>
+                
+                <!-- Color 3 -->
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <div class="flex items-center justify-between mb-3">
+                        <label class="font-medium text-gray-700">Accent Color</label>
+                        <div class="flex items-center">
+                            <input type="color" id="color3" value="#66CC33" class="mr-2">
+                            <input type="text" id="color3-hex" value="#66CC33" class="w-24 px-2 py-1 border rounded text-sm">
+                        </div>
+                    </div>
+                    <div class="color-swatch mb-3" id="color3-swatch" style="background-color: #66CC33;"></div>
+                    <div class="text-sm text-gray-500">Used for success states and positive indicators</div>
+                </div>
+            </div>
+            
+            <div class="flex flex-wrap gap-2 mb-4">
+                <div class="tooltip">
+                    <button id="add-color-btn" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition">
+                        Add Color
+                    </button>
+                    <span class="tooltip-text">Add another color to your palette</span>
+                </div>
+                
+                <div class="tooltip">
+                    <button id="reset-btn" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition">
+                        Reset to Default
+                    </button>
+                    <span class="tooltip-text">Reset to the default color palette</span>
+                </div>
+                
+                <div class="tooltip ml-auto">
+                    <select id="compliance-level" class="px-4 py-2 bg-white border border-gray-300 rounded-md">
+                        <option value="AA">WCAG AA</option>
+                        <option value="AAA">WCAG AAA</option>
+                    </select>
+                    <span class="tooltip-text">Select WCAG compliance level</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tabs -->
+        <div class="mb-2 flex border-b border-gray-200">
+            <div class="tab active" data-tab="simulation">Vision Simulation</div>
+            <div class="tab" data-tab="contrast">Contrast Checker</div>
+            <div class="tab" data-tab="suggestions">Suggestions</div>
+        </div>
+        
+        <!-- Tab Content -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <!-- Vision Simulation Tab -->
+            <div id="simulation-tab" class="tab-content active">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Normal Vision -->
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold mb-3 text-center">Normal Vision</h3>
+                        <div class="space-y-3">
+                            <div class="color-swatch normal-vision" data-color="1" style="background-color: #3366CC;"></div>
+                            <div class="color-swatch normal-vision" data-color="2" style="background-color: #FF9900;"></div>
+                            <div class="color-swatch normal-vision" data-color="3" style="background-color: #66CC33;"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Deuteranopia -->
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold mb-3 text-center">Deuteranopia</h3>
+                        <p class="text-xs text-gray-500 mb-3 text-center">Green-blind (affects ~6% of males)</p>
+                        <div class="space-y-3">
+                            <div class="color-swatch vision-filter deuteranopia" data-color="1" style="background-color: #3366CC;"></div>
+                            <div class="color-swatch vision-filter deuteranopia" data-color="2" style="background-color: #FF9900;"></div>
+                            <div class="color-swatch vision-filter deuteranopia" data-color="3" style="background-color: #66CC33;"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Protanopia -->
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold mb-3 text-center">Protanopia</h3>
+                        <p class="text-xs text-gray-500 mb-3 text-center">Red-blind (affects ~1% of males)</p>
+                        <div class="space-y-3">
+                            <div class="color-swatch vision-filter protanopia" data-color="1" style="background-color: #3366CC;"></div>
+                            <div class="color-swatch vision-filter protanopia" data-color="2" style="background-color: #FF9900;"></div>
+                            <div class="color-swatch vision-filter protanopia" data-color="3" style="background-color: #66CC33;"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tritanopia -->
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold mb-3 text-center">Tritanopia</h3>
+                        <p class="text-xs text-gray-500 mb-3 text-center">Blue-blind (rare, <0.01% of population)</p>
+                        <div class="space-y-3">
+                            <div class="color-swatch vision-filter tritanopia" data-color="1" style="background-color: #3366CC;"></div>
+                            <div class="color-swatch vision-filter tritanopia" data-color="2" style="background-color: #FF9900;"></div>
+                            <div class="color-swatch vision-filter tritanopia" data-color="3" style="background-color: #66CC33;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <h3 class="font-semibold mb-3">Sample UI Elements</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Normal Vision UI -->
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="text-sm font-medium mb-3 text-center">Normal Vision</h4>
+                            <div class="p-3 rounded-lg border border-gray-200 bg-white">
+                                <button class="w-full py-2 rounded-md text-white font-medium mb-3" id="normal-primary-btn" style="background-color: #3366CC;">Primary Button</button>
+                                <button class="w-full py-2 rounded-md text-white font-medium mb-3" id="normal-secondary-btn" style="background-color: #FF9900;">Secondary Button</button>
+                                <div class="p-2 rounded-md mb-3" id="normal-success-alert" style="background-color: #66CC33;">
+                                    <p class="text-white text-sm">Success Message</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Deuteranopia UI -->
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="text-sm font-medium mb-3 text-center">Deuteranopia</h4>
+                            <div class="p-3 rounded-lg border border-gray-200 bg-white deuteranopia">
+                                <button class="w-full py-2 rounded-md text-white font-medium mb-3" style="background-color: #3366CC;">Primary Button</button>
+                                <button class="w-full py-2 rounded-md text-white font-medium mb-3" style="background-color: #FF9900;">Secondary Button</button>
+                                <div class="p-2 rounded-md mb-3" style="background-color: #66CC33;">
+                                    <p class="text-white text-sm">Success Message</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Protanopia UI -->
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="text-sm font-medium mb-3 text-center">Protanopia</h4>
+                            <div class="p-3 rounded-lg border border-gray-200 bg-white protanopia">
+                                <button class="w-full py-2 rounded-md text-white font-medium mb-3" style="background-color: #3366CC;">Primary Button</button>
+                                <button class="w-full py-2 rounded-md text-white font-medium mb-3" style="background-color: #FF9900;">Secondary Button</button>
+                                <div class="p-2 rounded-md mb-3" style="background-color: #66CC33;">
+                                    <p class="text-white text-sm">Success Message</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Tritanopia UI -->
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="text-sm font-medium mb-3 text-center">Tritanopia</h4>
+                            <div class="p-3 rounded-lg border border-gray-200 bg-white tritanopia">
+                                <button class="w-full py-2 rounded-md text-white font-medium mb-3" style="background-color: #3366CC;">Primary Button</button>
+                                <button class="w-full py-2 rounded-md text-white font-medium mb-3" style="background-color: #FF9900;">Secondary Button</button>
+                                <div class="p-2 rounded-md mb-3" style="background-color: #66CC33;">
+                                    <p class="text-white text-sm">Success Message</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contrast Checker Tab -->
+            <div id="contrast-tab" class="tab-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Contrast Checker -->
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold mb-4">Contrast Checker</h3>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Foreground Color</label>
+                            <div class="flex items-center">
+                                <input type="color" id="fg-color" value="#FFFFFF" class="mr-2">
+                                <input type="text" id="fg-color-hex" value="#FFFFFF" class="w-24 px-2 py-1 border rounded text-sm">
+                                <button class="ml-2 px-2 py-1 bg-gray-200 text-xs rounded" id="swap-colors">Swap</button>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Background Color</label>
+                            <div class="flex items-center">
+                                <input type="color" id="bg-color" value="#3366CC" class="mr-2">
+                                <input type="text" id="bg-color-hex" value="#3366CC" class="w-24 px-2 py-1 border rounded text-sm">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Text Size</label>
+                            <select id="text-size" class="w-full px-2 py-1 border rounded">
+                                <option value="normal">Normal Text (16px)</option>
+                                <option value="large">Large Text (18px+)</option>
+                            </select>
+                        </div>
+                        
+                        <button id="check-contrast" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition">Check Contrast</button>
+                    </div>
+                    
+                    <!-- Contrast Results -->
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold mb-4">Contrast Results</h3>
+                        
+                        <div id="contrast-preview" class="p-6 rounded-lg mb-4 flex items-center justify-center" style="background-color: #3366CC;">
+                            <p id="preview-text" class="text-xl font-medium" style="color: #FFFFFF;">Sample Text</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium">Contrast Ratio:</span>
+                                <span id="contrast-ratio" class="text-lg font-bold">8.59:1</span>
+                            </div>
+                            
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm">WCAG AA (Normal Text):</span>
+                                <span id="wcag-aa-normal" class="compliance-badge pass">PASS</span>
+                            </div>
+                            
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm">WCAG AA (Large Text):</span>
+                                <span id="wcag-aa-large" class="compliance-badge pass">PASS</span>
+                            </div>
+                            
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm">WCAG AAA (Normal Text):</span>
+                                <span id="wcag-aaa-normal" class="compliance-badge pass">PASS</span>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">WCAG AAA (Large Text):</span>
+                                <span id="wcag-aaa-large" class="compliance-badge pass">PASS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Suggestions Tab -->
+            <div id="suggestions-tab" class="tab-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Color Palette Analysis -->
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold mb-4">Color Palette Analysis</h3>
+                        
+                        <div id="palette-analysis" class="mb-4">
+                            <div class="mb-3">
+                                <h4 class="text-sm font-medium mb-1">Primary Color (#3366CC)</h4>
+                                <div class="flex items-center">
+                                    <div class="w-6 h-6 rounded mr-2" style="background-color: #3366CC;"></div>
+                                    <div>
+                                        <div class="text-xs">Contrast with white: <span class="font-medium">4.5:1</span> <span class="compliance-badge pass">AA</span></div>
+                                        <div class="text-xs">Contrast with black: <span class="font-medium">5.7:1</span> <span class="compliance-badge pass">AA</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <h4 class="text-sm font-medium mb-1">Secondary Color (#FF9900)</h4>
+                                <div class="flex items-center">
+                                    <div class="w-6 h-6 rounded mr-2" style="background-color: #FF9900;"></div>
+                                    <div>
+                                        <div class="text-xs">Contrast with white: <span class="font-medium">2.1:1</span> <span class="compliance-badge fail">Fail</span></div>
+                                        <div class="text-xs">Contrast with black: <span class="font-medium">8.2:1</span> <span class="compliance-badge pass">AAA</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <h4 class="text-sm font-medium mb-1">Accent Color (#66CC33)</h4>
+                                <div class="flex items-center">
+                                    <div class="w-6 h-6 rounded mr-2" style="background-color: #66CC33;"></div>
+                                    <div>
+                                        <div class="text-xs">Contrast with white: <span class="font-medium">1.8:1</span> <span class="compliance-badge fail">Fail</span></div>
+                                        <div class="text-xs">Contrast with black: <span class="font-medium">9.3:1</span> <span class="compliance-badge pass">AAA</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-3 bg-blue-50 border border-blue-200 rounded-md">
+                            <h4 class="text-sm font-medium text-blue-800 mb-1">Color Blindness Concerns</h4>
+                            <p class="text-xs text-blue-700">Your green and orange colors may be difficult to distinguish for people with deuteranopia or protanopia.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Suggested Alternatives -->
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-semibold mb-4">Suggested Alternatives</h3>
+                        
+                        <div class="mb-4">
+                            <h4 class="text-sm font-medium mb-2">For Secondary Color (#FF9900)</h4>
+                            <p class="text-xs text-gray-600 mb-2">These alternatives provide better contrast with white text:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <div class="tooltip">
+                                    <div class="suggestion-swatch" style="background-color: #D97706;" data-color="#D97706" data-target="color2"></div>
+                                    <span class="tooltip-text">#D97706 - Better contrast with white</span>
+                                </div>
+                                <div class="tooltip">
+                                    <div class="suggestion-swatch" style="background-color: #B45309;" data-color="#B45309" data-target="color2"></div>
+                                    <span class="tooltip-text">#B45309 - AAA compliant with white</span>
+                                </div>
+                                <div class="tooltip">
+                                    <div class="suggestion-swatch" style="background-color: #C2410C;" data-color="#C2410C" data-target="color2"></div>
+                                    <span class="tooltip-text">#C2410C - Better for color blindness</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h4 class="text-sm font-medium mb-2">For Accent Color (#66CC33)</h4>
+                            <p class="text-xs text-gray-600 mb-2">These alternatives provide better contrast with white text:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <div class="tooltip">
+                                    <div class="suggestion-swatch" style="background-color: #4D7C0F;" data-color="#4D7C0F" data-target="color3"></div>
+                                    <span class="tooltip-text">#4D7C0F - AAA compliant with white</span>
+                                </div>
+                                <div class="tooltip">
+                                    <div class="suggestion-swatch" style="background-color: #3F6212;" data-color="#3F6212" data-target="color3"></div>
+                                    <span class="tooltip-text">#3F6212 - High contrast with white</span>
+                                </div>
+                                <div class="tooltip">
+                                    <div class="suggestion-swatch" style="background-color: #15803D;" data-color="#15803D" data-target="color3"></div>
+                                    <span class="tooltip-text">#15803D - Better for deuteranopia</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-3 bg-indigo-50 border border-indigo-200 rounded-md">
+                            <h4 class="text-sm font-medium text-indigo-800 mb-1">Accessible Color Palette</h4>
+                            <p class="text-xs text-indigo-700 mb-2">Try this WCAG AAA compliant palette that works well for color blindness:</p>
+                            <div class="flex gap-2">
+                                <div class="tooltip">
+                                    <div class="suggestion-swatch" style="background-color: #1D4ED8;" data-color="#1D4ED8" data-target="color1"></div>
+                                    <span class="tooltip-text">Primary: #1D4ED8</span>
+                                </div>
+                                <div class="tooltip">
+                                    <div class="suggestion-swatch" style="background-color: #B45309;" data-color="#B45309" data-target="color2"></div>
+                                    <span class="tooltip-text">Secondary: #B45309</span>
+                                </div>
+                                <div class="tooltip">
+                                    <div class="suggestion-swatch" style="background-color: #15803D;" data-color="#15803D" data-target="color3"></div>
+                                    <span class="tooltip-text">Accent: #15803D</span>
+                                </div>
+                                <button id="apply-palette" class="ml-2 px-2 py-1 bg-indigo-600 text-white text-xs rounded hover:bg-indigo-700">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="text-center text-gray-500 text-sm">
+            <p>Color Accessibility Simulator - Test your designs for WCAG compliance and color vision deficiencies</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize variables
+            let colorCount = 3;
+            const defaultColors = ['#3366CC', '#FF9900', '#66CC33'];
+            
+            // Tab switching
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabId = tab.getAttribute('data-tab');
+                    
+                    // Remove active class from all tabs and contents
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to selected tab and content
+                    tab.classList.add('active');
+                    document.getElementById(`${tabId}-tab`).classList.add('active');
+                });
+            });
+            
+            // Color input handling
+            function setupColorInput(index) {
+                const colorInput = document.getElementById(`color${index}`);
+                const hexInput = document.getElementById(`color${index}-hex`);
+                const swatch = document.getElementById(`color${index}-swatch`);
+                
+                if (!colorInput || !hexInput || !swatch) return;
+                
+                colorInput.addEventListener('input', () => {
+                    const color = colorInput.value;
+                    hexInput.value = color.toUpperCase();
+                    swatch.style.backgroundColor = color;
+                    updateColorSwatches(index, color);
+                    updateUIElements();
+                    updatePaletteAnalysis();
+                });
+                
+                hexInput.addEventListener('input', () => {
+                    let color = hexInput.value;
+                    if (color.match(/^#[0-9A-Fa-f]{6}$/)) {
+                        colorInput.value = color;
+                        swatch.style.backgroundColor = color;
+                        updateColorSwatches(index, color);
+                        updateUIElements();
+                        updatePaletteAnalysis();
+                    }
+                });
+                
+                hexInput.addEventListener('blur', () => {
+                    let color = hexInput.value;
+                    if (!color.startsWith('#')) {
+                        color = '#' + color;
+                    }
+                    if (color.match(/^#[0-9A-Fa-f]{3}$/)) {
+                        color = '#' + color[1] + color[1] + color[2] + color[2] + color[3] + color[3];
+                    }
+                    if (color.match(/^#[0-9A-Fa-f]{6}$/)) {
+                        hexInput.value = color.toUpperCase();
+                        colorInput.value = color;
+                        swatch.style.backgroundColor = color;
+                        updateColorSwatches(index, color);
+                        updateUIElements();
+                        updatePaletteAnalysis();
+                    } else {
+                        hexInput.value = colorInput.value.toUpperCase();
+                    }
+                });
+            }
+            
+            // Set up initial color inputs
+            for (let i = 1; i <= colorCount; i++) {
+                setupColorInput(i);
+            }
+            
+            // Update color swatches in vision simulation
+            function updateColorSwatches(index, color) {
+                const normalSwatches = document.querySelectorAll(`.normal-vision[data-color="${index}"]`);
+                const deuteranopiaSwatches = document.querySelectorAll(`.deuteranopia[data-color="${index}"]`);
+                const protanopiaSwatches = document.querySelectorAll(`.protanopia[data-color="${index}"]`);
+                const tritanopiaSwatches = document.querySelectorAll(`.tritanopia[data-color="${index}"]`);
+                
+                normalSwatches.forEach(swatch => swatch.style.backgroundColor = color);
+                deuteranopiaSwatches.forEach(swatch => swatch.style.backgroundColor = color);
+                protanopiaSwatches.forEach(swatch => swatch.style.backgroundColor = color);
+                tritanopiaSwatches.forEach(swatch => swatch.style.backgroundColor = color);
+            }
+            
+            // Update UI elements with current colors
+            function updateUIElements() {
+                const color1 = document.getElementById('color1').value;
+                const color2 = document.getElementById('color2').value;
+                const color3 = document.getElementById('color3').value;
+                
+                // Update normal vision UI elements
+                document.getElementById('normal-primary-btn').style.backgroundColor = color1;
+                document.getElementById('normal-secondary-btn').style.backgroundColor = color2;
+                document.getElementById('normal-success-alert').style.backgroundColor = color3;
+                
+                // Update contrast checker background color
+                document.getElementById('bg-color').value = color1;
+                document.getElementById('bg-color-hex').value = color1.toUpperCase();
+                document.getElementById('contrast-preview').style.backgroundColor = color1;
+                
+                // Update contrast results
+                updateContrastResults();
+            }
+            
+            // Add new color to palette
+            document.getElementById('add-color-btn').addEventListener('click', () => {
+                if (colorCount >= 5) return; // Limit to 5 colors
+                
+                colorCount++;
+                const colorPalette = document.querySelector('.grid.grid-cols-1.md\\:grid-cols-3.gap-6.mb-6');
+                
+                // Create new color input
+                const newColorDiv = document.createElement('div');
+                newColorDiv.className = 'bg-gray-50 p-4 rounded-lg';
+                newColorDiv.innerHTML = `
+                    <div class="flex items-center justify-between mb-3">
+                        <label class="font-medium text-gray-700">Color ${colorCount}</label>
+                        <div class="flex items-center">
+                            <input type="color" id="color${colorCount}" value="#6B7280" class="mr-2">
+                            <input type="text" id="color${colorCount}-hex" value="#6B7280" class="w-24 px-2 py-1 border rounded text-sm">
+                        </div>
+                    </div>
+                    <div class="color-swatch mb-3" id="color${colorCount}-swatch" style="background-color: #6B7280;"></div>
+                    <div class="text-sm text-gray-500">Additional color</div>
+                `;
+                
+                colorPalette.appendChild(newColorDiv);
+                
+                // Add new swatches to vision simulation
+                const visionContainers = document.querySelectorAll('.space-y-3');
+                visionContainers.forEach(container => {
+                    const newSwatch = document.createElement('div');
+                    newSwatch.className = container.firstElementChild.className;
+                    newSwatch.setAttribute('data-color', colorCount);
+                    newSwatch.style.backgroundColor = '#6B7280';
+                    container.appendChild(newSwatch);
+                });
+                
+                // Set up event listeners for new color
+                setupColorInput(colorCount);
+                updatePaletteAnalysis();
+            });
+            
+            // Reset to default colors
+            document.getElementById('reset-btn').addEventListener('click', () => {
+                for (let i = 1; i <= Math.min(colorCount, defaultColors.length); i++) {
+                    const colorInput = document.getElementById(`color${i}`);
+                    const hexInput = document.getElementById(`color${i}-hex`);
+                    const swatch = document.getElementById(`color${i}-swatch`);
+                    
+                    if (colorInput && hexInput && swatch) {
+                        colorInput.value = defaultColors[i-1];
+                        hexInput.value = defaultColors[i-1].toUpperCase();
+                        swatch.style.backgroundColor = defaultColors[i-1];
+                        updateColorSwatches(i, defaultColors[i-1]);
+                    }
+                }
+                
+                updateUIElements();
+                updatePaletteAnalysis();
+            });
+            
+            // Contrast checker functionality
+            const fgColorInput = document.getElementById('fg-color');
+            const fgHexInput = document.getElementById('fg-color-hex');
+            const bgColorInput = document.getElementById('bg-color');
+            const bgHexInput = document.getElementById('bg-color-hex');
+            const previewText = document.getElementById('preview-text');
+            const contrastPreview = document.getElementById('contrast-preview');
+            
+            fgColorInput.addEventListener('input', () => {
+                const color = fgColorInput.value;
+                fgHexInput.value = color.toUpperCase();
+                previewText.style.color = color;
+                updateContrastResults();
+            });
+            
+            fgHexInput.addEventListener('input', () => {
+                let color = fgHexInput.value;
+                if (color.match(/^#[0-9A-Fa-f]{6}$/)) {
+                    fgColorInput.value = color;
+                    previewText.style.color = color;
+                    updateContrastResults();
+                }
+            });
+            
+            bgColorInput.addEventListener('input', () => {
+                const color = bgColorInput.value;
+                bgHexInput.value = color.toUpperCase();
+                contrastPreview.style.backgroundColor = color;
+                updateContrastResults();
+            });
+            
+            bgHexInput.addEventListener('input', () => {
+                let color = bgHexInput.value;
+                if (color.match(/^#[0-9A-Fa-f]{6}$/)) {
+                    bgColorInput.value = color;
+                    contrastPreview.style.backgroundColor = color;
+                    updateContrastResults();
+                }
+            });
+            
+            // Swap foreground and background colors
+            document.getElementById('swap-colors').addEventListener('click', () => {
+                const fgColor = fgColorInput.value;
+                const bgColor = bgColorInput.value;
+                
+                fgColorInput.value = bgColor;
+                fgHexInput.value = bgColor.toUpperCase();
+                bgColorInput.value = fgColor;
+                bgHexInput.value = fgColor.toUpperCase();
+                
+                previewText.style.color = bgColor;
+                contrastPreview.style.backgroundColor = fgColor;
+                
+                updateContrastResults();
+            });
+            
+            // Check contrast button
+            document.getElementById('check-contrast').addEventListener('click', updateContrastResults);
+            
+            // Calculate contrast ratio
+            function calculateContrastRatio(color1, color2) {
+                // Convert hex to RGB
+                const rgb1 = hexToRgb(color1);
+                const rgb2 = hexToRgb(color2);
+                
+                // Calculate luminance
+                const luminance1 = calculateLuminance(rgb1);
+                const luminance2 = calculateLuminance(rgb2);
+                
+                // Calculate contrast ratio
+                const ratio = (Math.max(luminance1, luminance2) + 0.05) / (Math.min(luminance1, luminance2) + 0.05);
+                
+                return ratio;
+            }
+            
+            function hexToRgb(hex) {
+                const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+                return result ? {
+                    r: parseInt(result[1], 16),
+                    g: parseInt(result[2], 16),
+                    b: parseInt(result[3], 16)
+                } : null;
+            }
+            
+            function calculateLuminance(rgb) {
+                // Convert RGB to linear values
+                let r = rgb.r / 255;
+                let g = rgb.g / 255;
+                let b = rgb.b / 255;
+                
+                // Apply gamma correction
+                r = r <= 0.03928 ? r / 12.92 : Math.pow((r + 0.055) / 1.055, 2.4);
+                g = g <= 0.03928 ? g / 12.92 : Math.pow((g + 0.055) / 1.055, 2.4);
+                b = b <= 0.03928 ? b / 12.92 : Math.pow((b + 0.055) / 1.055, 2.4);
+                
+                // Calculate luminance
+                return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+            }
+            
+            // Update contrast results
+            function updateContrastResults() {
+                const fgColor = fgColorInput.value;
+                const bgColor = bgColorInput.value;
+                const textSize = document.getElementById('text-size').value;
+                
+                const ratio = calculateContrastRatio(fgColor, bgColor);
+                document.getElementById('contrast-ratio').textContent = ratio.toFixed(2) + ':1';
+                
+                // Update WCAG compliance badges
+                const wcagAaNormal = document.getElementById('wcag-aa-normal');
+                const wcagAaLarge = document.getElementById('wcag-aa-large');
+                const wcagAaaNormal = document.getElementById('wcag-aaa-normal');
+                const wcagAaaLarge = document.getElementById('wcag-aaa-large');
+                
+                // AA: 4.5:1 for normal text, 3:1 for large text
+                // AAA: 7:1 for normal text, 4.5:1 for large text
+                
+                if (ratio >= 4.5) {
+                    wcagAaNormal.textContent = 'PASS';
+                    wcagAaNormal.className = 'compliance-badge pass';
+                } else {
+                    wcagAaNormal.textContent = 'FAIL';
+                    wcagAaNormal.className = 'compliance-badge fail';
+                }
+                
+                if (ratio >= 3) {
+                    wcagAaLarge.textContent = 'PASS';
+                    wcagAaLarge.className = 'compliance-badge pass';
+                } else {
+                    wcagAaLarge.textContent = 'FAIL';
+                    wcagAaLarge.className = 'compliance-badge fail';
+                }
+                
+                if (ratio >= 7) {
+                    wcagAaaNormal.textContent = 'PASS';
+                    wcagAaaNormal.className = 'compliance-badge pass';
+                } else {
+                    wcagAaaNormal.textContent = 'FAIL';
+                    wcagAaaNormal.className = 'compliance-badge fail';
+                }
+                
+                if (ratio >= 4.5) {
+                    wcagAaaLarge.textContent = 'PASS';
+                    wcagAaaLarge.className = 'compliance-badge pass';
+                } else {
+                    wcagAaaLarge.textContent = 'FAIL';
+                    wcagAaaLarge.className = 'compliance-badge fail';
+                }
+                
+                // Update text size in preview
+                if (textSize === 'large') {
+                    previewText.style.fontSize = '24px';
+                } else {
+                    previewText.style.fontSize = '16px';
+                }
+            }
+            
+            // Update palette analysis
+            function updatePaletteAnalysis() {
+                const paletteAnalysis = document.getElementById('palette-analysis');
+                paletteAnalysis.innerHTML = '';
+                
+                for (let i = 1; i <= colorCount; i++) {
+                    const colorInput = document.getElementById(`color${i}`);
+                    if (!colorInput) continue;
+                    
+                    const color = colorInput.value;
+                    const contrastWithWhite = calculateContrastRatio(color, '#FFFFFF').toFixed(1);
+                    const contrastWithBlack = calculateContrastRatio(color, '#000000').toFixed(1);
+                    
+                    const whitePass = contrastWithWhite >= 4.5 ? 'pass' : 'fail';
+                    const blackPass = contrastWithBlack >= 4.5 ? 'pass' : 'fail';
+                    
+                    const whiteLevel = contrastWithWhite >= 7 ? 'AAA' : (contrastWithWhite >= 4.5 ? 'AA' : 'Fail');
+                    const blackLevel = contrastWithBlack >= 7 ? 'AAA' : (contrastWithBlack >= 4.5 ? 'AA' : 'Fail');
+                    
+                    const colorName = i === 1 ? 'Primary Color' : (i === 2 ? 'Secondary Color' : (i === 3 ? 'Accent Color' : `Color ${i}`));
+                    
+                    const colorDiv = document.createElement('div');
+                    colorDiv.className = 'mb-3';
+                    colorDiv.innerHTML = `
+                        <h4 class="text-sm font-medium mb-1">${colorName} (${color.toUpperCase()})</h4>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 rounded mr-2" style="background-color: ${color};"></div>
+                            <div>
+                                <div class="text-xs">Contrast with white: <span class="font-medium">${contrastWithWhite}:1</span> <span class="compliance-badge ${whitePass}">${whiteLevel}</span></div>
+                                <div class="text-xs">Contrast with black: <span class="font-medium">${contrastWithBlack}:1</span> <span class="compliance-badge ${blackPass}">${blackLevel}</span></div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    paletteAnalysis.appendChild(colorDiv);
+                }
+            }
+            
+            // Apply suggested color palette
+            document.getElementById('apply-palette').addEventListener('click', () => {
+                document.getElementById('color1').value = '#1D4ED8';
+                document.getElementById('color1-hex').value = '#1D4ED8';
+                document.getElementById('color1-swatch').style.backgroundColor = '#1D4ED8';
+                
+                document.getElementById('color2').value = '#B45309';
+                document.getElementById('color2-hex').value = '#B45309';
+                document.getElementById('color2-swatch').style.backgroundColor = '#B45309';
+                
+                document.getElementById('color3').value = '#15803D';
+                document.getElementById('color3-hex').value = '#15803D';
+                document.getElementById('color3-swatch').style.backgroundColor = '#15803D';
+                
+                updateColorSwatches(1, '#1D4ED8');
+                updateColorSwatches(2, '#B45309');
+                updateColorSwatches(3, '#15803D');
+                
+                updateUIElements();
+                updatePaletteAnalysis();
+            });
+            
+            // Apply suggested colors when clicking on swatches
+            const suggestionSwatches = document.querySelectorAll('.suggestion-swatch');
+            suggestionSwatches.forEach(swatch => {
+                swatch.addEventListener('click', () => {
+                    const color = swatch.getAttribute('data-color');
+                    const target = swatch.getAttribute('data-target');
+                    
+                    document.getElementById(target).value = color;
+                    document.getElementById(`${target}-hex`).value = color.toUpperCase();
+                    document.getElementById(`${target}-swatch`).style.backgroundColor = color;
+                    
+                    const index = target.replace('color', '');
+                    updateColorSwatches(index, color);
+                    updateUIElements();
+                    updatePaletteAnalysis();
+                });
+            });
+            
+            // Initialize
+            updateContrastResults();
+            updatePaletteAnalysis();
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9417621604cdb602',t:'MTc0NzUyOTY2NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

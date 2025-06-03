@@ -5,7 +5,7 @@
 import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './breadcrumbs.scss';
+import styles from './breadcrumbs.module';
 
 /**
  * The breadcrumbs component is a secondary navigation pattern that helps a user understand where the user is located.
@@ -25,9 +25,7 @@ import styles from './breadcrumbs.scss';
  */
 
 export class Cre8Breadcrumbs extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /**
    * aria-label attribute to designate at name for the nav. Can be override by user

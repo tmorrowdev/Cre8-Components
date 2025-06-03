@@ -1,7 +1,7 @@
 import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './card.scss';
+import styles from './card.module';
 
 /** The card component acts a general container element sectioned off by slots: `header`, `body`, `footer`.
 *
@@ -24,9 +24,7 @@ import styles from './card.scss';
 * @slot footer - (Optional) Content in the card's footer
 */
 export class Cre8Card extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles);
-    }
+    static styles = [styles];
 
   /**
    * Style variants

@@ -1,0 +1,34 @@
+import { css } from 'lit';
+const styles = css`@import '../../design-tokens/core/scss/theming/component';
+
+// #BAND
+
+/**
+ * 1) A container with a background that can house various recipes of Components within
+ */
+.cre8-c-band {
+  background: var(--cre8-color-bg-subtle);
+  padding: size(3) 0;
+
+  @media all and (min-width:$cre8-breakpoint-xl) {
+    padding: size(4) 0;
+  }
+}
+
+/**
+ * Branded variant
+ */
+.cre8-c-band--branded {
+  color: var(--cre8-color-content-knockout);
+  background: var(--cre8-theme-color-utility-information);
+}
+
+/**
+ * Full height
+ * 1) Height set to 100% to fill a container like a sidebar
+ */
+.cre8-c-band--full-height {
+  height: 100%;
+}
+`;
+export default styles;

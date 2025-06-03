@@ -1,0 +1,3617 @@
+# Page: 🚧 Prima Color Styles
+
+*ID: 27652:894*
+
+- **Semantic** (Type: FRAME, ID: 27652:1024)
+  - Layout Style Ref: [layout_h141men](../GlobalStyles/LayoutAndSpacing.md#layout-h141men) (See Layout Styles)
+  - **Doc** (Type: FRAME, ID: 27652:1025)
+    - Layout Style Ref: [layout_h8h11u0](../GlobalStyles/LayoutAndSpacing.md#layout-h8h11u0) (See Layout Styles)
+    - **Title** (Type: INSTANCE, ID: 27652:1026)
+      - (Instance of a component. Main Component ID: [27652:909](../UnknownPage.md#component-UnknownPage-27652:909). Further details depend on main component definition.)
+      - Fills Ref: [fill_h2zcu0u](../GlobalStyles/Colors.md#fill-h2zcu0u) (See Color Styles)
+      - Layout Style Ref: [layout_h6oi8zj](../GlobalStyles/LayoutAndSpacing.md#layout-h6oi8zj) (See Layout Styles)
+      - **Title-content** (Type: FRAME, ID: I27652:1026;5065:8767)
+        - Layout Style Ref: [layout_hatu0sg](../GlobalStyles/LayoutAndSpacing.md#layout-hatu0sg) (See Layout Styles)
+        - **brand-name** (Type: FRAME, ID: I27652:1026;5065:8732)
+          - Layout Style Ref: [layout_hl6vicn](../GlobalStyles/LayoutAndSpacing.md#layout-hl6vicn) (See Layout Styles)
+          - **logo** (Type: GROUP, ID: I27652:1026;5065:6699)
+            - Layout Style Ref: [layout_hdznyh7](../GlobalStyles/LayoutAndSpacing.md#layout-hdznyh7) (See Layout Styles)
+            - **logo 1** (Type: RECTANGLE, ID: I27652:1026;6903:5240)
+              - Fills Ref: [fill_hykvkqd](../GlobalStyles/Colors.md#fill-hykvkqd) (See Color Styles)
+              - Layout Style Ref: [layout_hwl601x](../GlobalStyles/LayoutAndSpacing.md#layout-hwl601x) (See Layout Styles)
+          - **Equity: Wesparkle Theme** (Type: TEXT, ID: I27652:1026;5065:6713)
+            - Text Content: "Aroris Health DS"
+            - TextStyle Ref: [text_hje7lmq](../GlobalStyles/Typography.md#text-hje7lmq) (See Typography Styles)
+            - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+            - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+        - **GLOBAL COLORS** (Type: TEXT, ID: I27652:1026;5040:3092)
+          - Text Content: "SEMANTIC TIER COLORS"
+          - TextStyle Ref: [text_hnwlmvk](../GlobalStyles/Typography.md#text-hnwlmvk) (See Typography Styles)
+          - Fills Ref: [fill_htynfkc](../GlobalStyles/Colors.md#fill-htynfkc) (See Color Styles)
+          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+    - **Main** (Type: FRAME, ID: 27652:1027)
+      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+      - Layout Style Ref: [layout_hstkjyu](../GlobalStyles/LayoutAndSpacing.md#layout-hstkjyu) (See Layout Styles)
+      - **Elements** (Type: FRAME, ID: 27652:1028)
+        - Layout Style Ref: [layout_h8da0rn](../GlobalStyles/LayoutAndSpacing.md#layout-h8da0rn) (See Layout Styles)
+        - **intro** (Type: INSTANCE, ID: 27652:1029)
+          - (Instance of a component. Main Component ID: [27652:919](../UnknownPage.md#component-UnknownPage-27652:919). Further details depend on main component definition.)
+          - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+          - Layout Style Ref: [layout_h1rgw6w](../GlobalStyles/LayoutAndSpacing.md#layout-h1rgw6w) (See Layout Styles)
+          - **_TITLE** (Type: INSTANCE, ID: I27652:1029;5065:7477)
+            - (Instance of a component. Main Component ID: [5386:47](../UnknownPage.md#component-UnknownPage-5386:47). Further details depend on main component definition.)
+            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+            - Layout Style Ref: [layout_hbci9qx](../GlobalStyles/LayoutAndSpacing.md#layout-hbci9qx) (See Layout Styles)
+            - **Title** (Type: TEXT, ID: I27652:1029;5065:7477;76:5885)
+              - Text Content: "About Tier 2 Colors"
+              - TextStyle Ref: [text_hcgnimj](../GlobalStyles/Typography.md#text-hcgnimj) (See Typography Styles)
+              - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
+              - Layout Style Ref: [layout_htca7n3](../GlobalStyles/LayoutAndSpacing.md#layout-htca7n3) (See Layout Styles)
+          - **_PARAGRAPH** (Type: INSTANCE, ID: I27652:1029;5065:7479)
+            - (Instance of a component. Main Component ID: [5386:51](../UnknownPage.md#component-UnknownPage-5386:51). Further details depend on main component definition.)
+            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+            - Layout Style Ref: [layout_hhstpqm](../GlobalStyles/LayoutAndSpacing.md#layout-hhstpqm) (See Layout Styles)
+            - **Paragraph** (Type: TEXT, ID: I27652:1029;5065:7479;239:4420)
+              - Text Content: "These are the semantic styles that give an extra layer of context on element names (ie. bg-default is used for the main surface white), color category (ie. bg-error or bg -warning), interaction (ie. bg-brand-hover). Enables theming across different brands."
+              - TextStyle Ref: [text_htn6v78](../GlobalStyles/Typography.md#text-htn6v78) (See Typography Styles)
+              - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+              - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+        - **category** (Type: INSTANCE, ID: 27652:1030)
+          - BorderRadius: 24px
+          - (Instance of a component. Main Component ID: [27652:930](../UnknownPage.md#component-UnknownPage-27652:930). Further details depend on main component definition.)
+          - Fills Ref: [fill_h2vzd2w](../GlobalStyles/Colors.md#fill-h2vzd2w) (See Color Styles)
+          - Layout Style Ref: [layout_hmdw02q](../GlobalStyles/LayoutAndSpacing.md#layout-hmdw02q) (See Layout Styles)
+          - **text** (Type: FRAME, ID: I27652:1030;5067:2096)
+            - Layout Style Ref: [layout_hbythny](../GlobalStyles/LayoutAndSpacing.md#layout-hbythny) (See Layout Styles)
+            - **Background** (Type: TEXT, ID: I27652:1030;5065:7463)
+              - Text Content: "Background"
+              - TextStyle Ref: [text_hypsdup](../GlobalStyles/Typography.md#text-hypsdup) (See Typography Styles)
+              - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+              - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+            - **The background palette includes any static page or component background: control, card, container backgrounds, etc.** (Type: TEXT, ID: I27652:1030;5065:7464)
+              - Text Content: "The background palette includes any static page or component background: control, card, container backgrounds, etc."
+              - TextStyle Ref: [text_hikw1rg](../GlobalStyles/Typography.md#text-hikw1rg) (See Typography Styles)
+              - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+              - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+        - **Swatches** (Type: FRAME, ID: 27652:1031)
+          - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
+          - **CATEGORIES** (Type: FRAME, ID: 27652:1032)
+            - Layout Style Ref: [layout_h78r72t](../GlobalStyles/LayoutAndSpacing.md#layout-h78r72t) (See Layout Styles)
+            - **BG** (Type: FRAME, ID: 27652:1033)
+              - Layout Style Ref: [layout_hjblsut](../GlobalStyles/LayoutAndSpacing.md#layout-hjblsut) (See Layout Styles)
+              - **Main** (Type: FRAME, ID: 27652:1034)
+                - Layout Style Ref: [layout_h6i214e](../GlobalStyles/LayoutAndSpacing.md#layout-h6i214e) (See Layout Styles)
+                - **NEUTRAL** (Type: FRAME, ID: 27652:1035)
+                  - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
+                  - **Neutral** (Type: TEXT, ID: 27652:1036)
+                    - Text Content: "Neutral"
+                    - TextStyle Ref: [text_h33c98b](../GlobalStyles/Typography.md#text-h33c98b) (See Typography Styles)
+                    - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                    - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                  - **swatches** (Type: FRAME, ID: 27652:1037)
+                    - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1038)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1038;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1038;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                          - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1038;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1038;5041:1486)
+                            - Text Content: "bg-default
+global: neutral-white
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1039)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1039;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1039;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_h2vzd2w](../GlobalStyles/Colors.md#fill-h2vzd2w) (See Color Styles)
+                          - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1039;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1039;5041:1486)
+                            - Text Content: "bg-subtle
+global: neutral-10
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1040)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1040;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1040;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_h25ofw8](../GlobalStyles/Colors.md#fill-h25ofw8) (See Color Styles)
+                          - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1040;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1040;5041:1486)
+                            - Text Content: "bg-disabled
+global: neutral-30
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1041)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1041;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1041;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_h5u7d51](../GlobalStyles/Colors.md#fill-h5u7d51) (See Color Styles)
+                          - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1041;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1041;5041:1486)
+                            - Text Content: "bg-strong
+global: neutral-70
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                - **BRAND** (Type: FRAME, ID: 27652:1042)
+                  - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
+                  - **Brand** (Type: TEXT, ID: 27652:1043)
+                    - Text Content: "Brand"
+                    - TextStyle Ref: [text_h33c98b](../GlobalStyles/Typography.md#text-h33c98b) (See Typography Styles)
+                    - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                    - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                  - **swatches** (Type: FRAME, ID: 27652:1044)
+                    - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1045)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1045;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1045;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_h2zcu0u](../GlobalStyles/Colors.md#fill-h2zcu0u) (See Color Styles)
+                          - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1045;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1045;5041:1486)
+                            - Text Content: "bg-brand
+global: purple-50
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1046)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1046;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1046;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_h2zcu0u](../GlobalStyles/Colors.md#fill-h2zcu0u) (See Color Styles)
+                          - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1046;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1046;5041:1486)
+                            - Text Content: "bg-brand-subtle
+global: purple-05
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1047)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1047;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1047;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hpe4ifl](../GlobalStyles/Colors.md#fill-hpe4ifl) (See Color Styles)
+                          - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1047;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1047;5041:1486)
+                            - Text Content: "bg-brand-moderate
+global: purple-20
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1048)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1048;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1048;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hki0sq1](../GlobalStyles/Colors.md#fill-hki0sq1) (See Color Styles)
+                          - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1048;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1048;5041:1486)
+                            - Text Content: "bg-brand-strong
+global: purple-80
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                - **UTILITY** (Type: FRAME, ID: 27652:1049)
+                  - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
+                  - **Utility** (Type: TEXT, ID: 27652:1050)
+                    - Text Content: "Utility"
+                    - TextStyle Ref: [text_h33c98b](../GlobalStyles/Typography.md#text-h33c98b) (See Typography Styles)
+                    - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                    - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                  - **swatches** (Type: FRAME, ID: 27652:1051)
+                    - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                    - **Frame 28488** (Type: FRAME, ID: 27652:1052)
+                      - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1053)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1053;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1053;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_hwdqe3u](../GlobalStyles/Colors.md#fill-hwdqe3u) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1053;5041:1485)
+                            - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1053;5041:1486)
+                              - Text Content: "bg-success
+global: green-15
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1054)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1054;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1054;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_havxudv](../GlobalStyles/Colors.md#fill-havxudv) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1054;5041:1485)
+                            - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1054;5041:1486)
+                              - Text Content: "bg-error
+global: red-15
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1055)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1055;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1055;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_h3hi3l1](../GlobalStyles/Colors.md#fill-h3hi3l1) (See Color Styles)
+                            - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1055;5041:1485)
+                            - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1055;5041:1486)
+                              - Text Content: "bg-warning
+global: yellow-20
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1056)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1056;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1056;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_h2zcu0u](../GlobalStyles/Colors.md#fill-h2zcu0u) (See Color Styles)
+                            - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1056;5041:1485)
+                            - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1056;5041:1486)
+                              - Text Content: "bg-info
+global: neutral-30
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **Frame 28485** (Type: FRAME, ID: 27652:1057)
+                      - Layout Style Ref: [layout_hvzqd2p](../GlobalStyles/LayoutAndSpacing.md#layout-hvzqd2p) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1058)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1058;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1058;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_hu3kl8i](../GlobalStyles/Colors.md#fill-hu3kl8i) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1058;5041:1485)
+                            - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1058;5041:1486)
+                              - Text Content: "bg-success-strong
+global: green-50
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1059)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1059;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1059;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_hp8s4qw](../GlobalStyles/Colors.md#fill-hp8s4qw) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1059;5041:1485)
+                            - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1059;5041:1486)
+                              - Text Content: "bg-error-strong
+global: red-50
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1060)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1060;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1060;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_hbig4pk](../GlobalStyles/Colors.md#fill-hbig4pk) (See Color Styles)
+                            - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1060;5041:1485)
+                            - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1060;5041:1486)
+                              - Text Content: "bg-warning-strong
+global: yellow-50
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1061)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1061;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1061;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_h9o37e](../GlobalStyles/Colors.md#fill-h9o37e) (See Color Styles)
+                            - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1061;5041:1485)
+                            - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1061;5041:1486)
+                              - Text Content: "bg-info-strong
+global: sky-50
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                - **MISC** (Type: FRAME, ID: 27652:1062)
+                  - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                  - **Misc** (Type: TEXT, ID: 27652:1063)
+                    - Text Content: "Misc"
+                    - TextStyle Ref: [text_h33c98b](../GlobalStyles/Typography.md#text-h33c98b) (See Typography Styles)
+                    - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                    - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                  - **swatches** (Type: FRAME, ID: 27652:1064)
+                    - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1065)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1065;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1065;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                          - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1065;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1065;5041:1486)
+                            - Text Content: "bg-active
+global: neutral-black
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1066)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1066;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1066;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hhj77jh](../GlobalStyles/Colors.md#fill-hhj77jh) (See Color Styles)
+                          - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1066;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1066;5041:1486)
+                            - Text Content: "bg-transparent
+global: white, 0%
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+            - **CONTENT** (Type: FRAME, ID: 27652:1067)
+              - Layout Style Ref: [layout_h78r72t](../GlobalStyles/LayoutAndSpacing.md#layout-h78r72t) (See Layout Styles)
+              - **category** (Type: INSTANCE, ID: 27652:1068)
+                - BorderRadius: 24px
+                - (Instance of a component. Main Component ID: [27652:930](../UnknownPage.md#component-UnknownPage-27652:930). Further details depend on main component definition.)
+                - Fills Ref: [fill_h2vzd2w](../GlobalStyles/Colors.md#fill-h2vzd2w) (See Color Styles)
+                - Layout Style Ref: [layout_hmdw02q](../GlobalStyles/LayoutAndSpacing.md#layout-hmdw02q) (See Layout Styles)
+                - **text** (Type: FRAME, ID: I27652:1068;5067:2096)
+                  - Layout Style Ref: [layout_hbythny](../GlobalStyles/LayoutAndSpacing.md#layout-hbythny) (See Layout Styles)
+                  - **Background** (Type: TEXT, ID: I27652:1068;5065:7463)
+                    - Text Content: "Content"
+                    - TextStyle Ref: [text_hypsdup](../GlobalStyles/Typography.md#text-hypsdup) (See Typography Styles)
+                    - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                    - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                  - **The background palette includes any static page or component background: control, card, container backgrounds, etc.** (Type: TEXT, ID: I27652:1068;5065:7464)
+                    - Text Content: "The opposite to background — any element that sits in the foreground, such as text, icons, or foreground graphics."
+                    - TextStyle Ref: [text_h2mtcoy](../GlobalStyles/Typography.md#text-h2mtcoy) (See Typography Styles)
+                    - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                    - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+              - **Main** (Type: FRAME, ID: 27652:1069)
+                - Layout Style Ref: [layout_hal81wl](../GlobalStyles/LayoutAndSpacing.md#layout-hal81wl) (See Layout Styles)
+                - **NEUTRAL** (Type: FRAME, ID: 27652:1070)
+                  - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                  - **Neutral** (Type: TEXT, ID: 27652:1071)
+                    - Text Content: "Neutral"
+                    - TextStyle Ref: [text_h33c98b](../GlobalStyles/Typography.md#text-h33c98b) (See Typography Styles)
+                    - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                    - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                  - **swatches** (Type: FRAME, ID: 27652:1072)
+                    - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1073)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1073;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1073;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_h5u7d51](../GlobalStyles/Colors.md#fill-h5u7d51) (See Color Styles)
+                          - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1073;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1073;5041:1486)
+                            - Text Content: "content-default
+global: neutral-90
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1074)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1074;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1074;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_h2vzd2w](../GlobalStyles/Colors.md#fill-h2vzd2w) (See Color Styles)
+                          - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1074;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1074;5041:1486)
+                            - Text Content: "content-subtle
+global: neutral-80
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1075)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1075;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1075;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hsjk5x](../GlobalStyles/Colors.md#fill-hsjk5x) (See Color Styles)
+                          - Strokes Ref: [stroke_htloyif](../GlobalStyles/Colors.md#stroke-htloyif) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1075;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1075;5041:1486)
+                            - Text Content: "content-disabled
+global: neutral-60
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1076)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1076;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1076;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                          - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1076;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1076;5041:1486)
+                            - Text Content: "content-knockout 
+global: neutral-white
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                - **BRAND** (Type: FRAME, ID: 27652:1077)
+                  - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                  - **Brand** (Type: TEXT, ID: 27652:1078)
+                    - Text Content: "Brand"
+                    - TextStyle Ref: [text_h33c98b](../GlobalStyles/Typography.md#text-h33c98b) (See Typography Styles)
+                    - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                    - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                  - **swatches** (Type: FRAME, ID: 27652:1079)
+                    - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1080)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1080;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1080;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_h9o37e](../GlobalStyles/Colors.md#fill-h9o37e) (See Color Styles)
+                          - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1080;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1080;5041:1486)
+                            - Text Content: "content-brand
+global: blue-50
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1081)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1081;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1081;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_h2zcu0u](../GlobalStyles/Colors.md#fill-h2zcu0u) (See Color Styles)
+                          - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1081;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1081;5041:1486)
+                            - Text Content: "content-brand-knockout
+global: blue-05
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1082)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1082;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1082;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_htynfkc](../GlobalStyles/Colors.md#fill-htynfkc) (See Color Styles)
+                          - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1082;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1082;5041:1486)
+                            - Text Content: "content-brand-strong
+global: blue-70
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                - **UTILITY** (Type: FRAME, ID: 27652:1083)
+                  - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                  - **Utility** (Type: TEXT, ID: 27652:1084)
+                    - Text Content: "Utility"
+                    - TextStyle Ref: [text_h33c98b](../GlobalStyles/Typography.md#text-h33c98b) (See Typography Styles)
+                    - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                    - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                  - **swatches** (Type: FRAME, ID: 27652:1085)
+                    - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1086)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1086;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1086;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hio67ql](../GlobalStyles/Colors.md#fill-hio67ql) (See Color Styles)
+                          - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1086;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1086;5041:1486)
+                            - Text Content: "content-success
+global: green-90
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1087)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1087;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1087;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hgfbezf](../GlobalStyles/Colors.md#fill-hgfbezf) (See Color Styles)
+                          - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1087;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1087;5041:1486)
+                            - Text Content: "content-error
+global: red-90
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1088)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1088;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1088;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hsbl4j4](../GlobalStyles/Colors.md#fill-hsbl4j4) (See Color Styles)
+                          - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1088;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1088;5041:1486)
+                            - Text Content: "content-warning
+ global: yellow-95
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1089)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1089;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1089;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hhxaal9](../GlobalStyles/Colors.md#fill-hhxaal9) (See Color Styles)
+                          - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1089;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1089;5041:1486)
+                            - Text Content: "info
+global: sky-90
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                  - **swatches** (Type: FRAME, ID: 27652:1090)
+                    - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1091)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1091;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1091;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hu3kl8i](../GlobalStyles/Colors.md#fill-hu3kl8i) (See Color Styles)
+                          - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1091;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1091;5041:1486)
+                            - Text Content: "content-success-icon
+global: green-50
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1092)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1092;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1092;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hp8s4qw](../GlobalStyles/Colors.md#fill-hp8s4qw) (See Color Styles)
+                          - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1092;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1092;5041:1486)
+                            - Text Content: "content-error-icon
+global: red-50
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1093)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1093;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1093;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hbig4pk](../GlobalStyles/Colors.md#fill-hbig4pk) (See Color Styles)
+                          - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1093;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1093;5041:1486)
+                            - Text Content: "content-warning-icon
+global: yellow-50
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1094)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1094;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1094;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hqt3p01](../GlobalStyles/Colors.md#fill-hqt3p01) (See Color Styles)
+                          - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1094;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1094;5041:1486)
+                            - Text Content: "info-icon
+global: sky-50
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                - **LINK** (Type: FRAME, ID: 27652:1095)
+                  - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                  - **Link** (Type: TEXT, ID: 27652:1096)
+                    - Text Content: "Link"
+                    - TextStyle Ref: [text_h33c98b](../GlobalStyles/Typography.md#text-h33c98b) (See Typography Styles)
+                    - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                    - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                  - **swatches** (Type: FRAME, ID: 27652:1097)
+                    - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1098)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1098;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1098;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hcaba14](../GlobalStyles/Colors.md#fill-hcaba14) (See Color Styles)
+                          - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1098;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1098;5041:1486)
+                            - Text Content: "content-link-default
+global: blue-50
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1099)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1099;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1099;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hrxf8js](../GlobalStyles/Colors.md#fill-hrxf8js) (See Color Styles)
+                          - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1099;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1099;5041:1486)
+                            - Text Content: "content-link-hover
+global: blue-70
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1100)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1100;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1100;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_ht6ql2h](../GlobalStyles/Colors.md#fill-ht6ql2h) (See Color Styles)
+                          - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1100;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1100;5041:1486)
+                            - Text Content: "content-link-active
+global: blue-90
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1101)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1101;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1101;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hukxreb](../GlobalStyles/Colors.md#fill-hukxreb) (See Color Styles)
+                          - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1101;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1101;5041:1486)
+                            - Text Content: "content-link-disabled
+global: gray-80
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+            - **BORDER** (Type: FRAME, ID: 27652:1102)
+              - Layout Style Ref: [layout_h2675t](../GlobalStyles/LayoutAndSpacing.md#layout-h2675t) (See Layout Styles)
+              - **category** (Type: INSTANCE, ID: 27652:1103)
+                - BorderRadius: 24px
+                - (Instance of a component. Main Component ID: [27652:930](../UnknownPage.md#component-UnknownPage-27652:930). Further details depend on main component definition.)
+                - Fills Ref: [fill_h2vzd2w](../GlobalStyles/Colors.md#fill-h2vzd2w) (See Color Styles)
+                - Layout Style Ref: [layout_hmdw02q](../GlobalStyles/LayoutAndSpacing.md#layout-hmdw02q) (See Layout Styles)
+                - **text** (Type: FRAME, ID: I27652:1103;5067:2096)
+                  - Layout Style Ref: [layout_hbythny](../GlobalStyles/LayoutAndSpacing.md#layout-hbythny) (See Layout Styles)
+                  - **Background** (Type: TEXT, ID: I27652:1103;5065:7463)
+                    - Text Content: "Border"
+                    - TextStyle Ref: [text_hypsdup](../GlobalStyles/Typography.md#text-hypsdup) (See Typography Styles)
+                    - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                    - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                  - **The background palette includes any static page or component background: control, card, container backgrounds, etc.** (Type: TEXT, ID: I27652:1103;5065:7464)
+                    - Text Content: "The border palette covers frame borders, page and content dividers, and component borders (input controls, form fields, etc)"
+                    - TextStyle Ref: [text_h2mtcoy](../GlobalStyles/Typography.md#text-h2mtcoy) (See Typography Styles)
+                    - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                    - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+              - **Main** (Type: FRAME, ID: 27652:1104)
+                - Layout Style Ref: [layout_hlzixd0](../GlobalStyles/LayoutAndSpacing.md#layout-hlzixd0) (See Layout Styles)
+                - **NEUTRAL** (Type: FRAME, ID: 27652:1105)
+                  - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                  - **Neutral** (Type: TEXT, ID: 27652:1106)
+                    - Text Content: "Neutral"
+                    - TextStyle Ref: [text_h33c98b](../GlobalStyles/Typography.md#text-h33c98b) (See Typography Styles)
+                    - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                    - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                  - **swatches** (Type: FRAME, ID: 27652:1107)
+                    - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1108)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1108;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1108;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hsjk5x](../GlobalStyles/Colors.md#fill-hsjk5x) (See Color Styles)
+                          - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1108;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1108;5041:1486)
+                            - Text Content: "border-default
+global: gray-60
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1109)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1109;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1109;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hukxreb](../GlobalStyles/Colors.md#fill-hukxreb) (See Color Styles)
+                          - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1109;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1109;5041:1486)
+                            - Text Content: "border-strong
+global: gray-80
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1110)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1110;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1110;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hsjk5x](../GlobalStyles/Colors.md#fill-hsjk5x) (See Color Styles)
+                          - Strokes Ref: [stroke_htloyif](../GlobalStyles/Colors.md#stroke-htloyif) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1110;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1110;5041:1486)
+                            - Text Content: "border-disabled
+global: gray-60
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1111)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1111;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1111;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                          - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1111;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1111;5041:1486)
+                            - Text Content: "border-knockout
+global: white
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                - **BRAND** (Type: FRAME, ID: 27652:1112)
+                  - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                  - **Brand** (Type: TEXT, ID: 27652:1113)
+                    - Text Content: "Brand"
+                    - TextStyle Ref: [text_h33c98b](../GlobalStyles/Typography.md#text-h33c98b) (See Typography Styles)
+                    - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                    - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                  - **swatches** (Type: FRAME, ID: 27652:1114)
+                    - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1115)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1115;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1115;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_h9o37e](../GlobalStyles/Colors.md#fill-h9o37e) (See Color Styles)
+                          - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1115;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1115;5041:1486)
+                            - Text Content: "border-brand
+global: blue-50
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1116)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1116;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1116;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hpe4ifl](../GlobalStyles/Colors.md#fill-hpe4ifl) (See Color Styles)
+                          - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1116;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1116;5041:1486)
+                            - Text Content: "border-brand-moderate
+global: blue-25
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1117)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1117;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1117;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_h2zcu0u](../GlobalStyles/Colors.md#fill-h2zcu0u) (See Color Styles)
+                          - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1117;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1117;5041:1486)
+                            - Text Content: "border-brand-subtle
+global: blue-05
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1118)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1118;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1118;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hrxf8js](../GlobalStyles/Colors.md#fill-hrxf8js) (See Color Styles)
+                          - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1118;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1118;5041:1486)
+                            - Text Content: "border-brand-strong
+global: blue-70
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                - **UTILITY** (Type: FRAME, ID: 27652:1119)
+                  - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                  - **Utility** (Type: TEXT, ID: 27652:1120)
+                    - Text Content: "Utility"
+                    - TextStyle Ref: [text_h33c98b](../GlobalStyles/Typography.md#text-h33c98b) (See Typography Styles)
+                    - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                    - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                  - **swatches** (Type: FRAME, ID: 27652:1121)
+                    - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1122)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1122;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1122;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hu3kl8i](../GlobalStyles/Colors.md#fill-hu3kl8i) (See Color Styles)
+                          - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1122;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1122;5041:1486)
+                            - Text Content: "border-success
+global: green-50
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1123)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1123;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1123;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hp8s4qw](../GlobalStyles/Colors.md#fill-hp8s4qw) (See Color Styles)
+                          - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1123;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1123;5041:1486)
+                            - Text Content: "border-error
+global: red-50
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1124)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1124;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1124;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hbig4pk](../GlobalStyles/Colors.md#fill-hbig4pk) (See Color Styles)
+                          - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1124;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1124;5041:1486)
+                            - Text Content: "border-warning
+global: yellow-50
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **swatch** (Type: INSTANCE, ID: 27652:1125)
+                      - BorderRadius: 16px
+                      - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                      - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                      - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                      - **main** (Type: FRAME, ID: I27652:1125;5041:1483)
+                        - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                        - **color** (Type: IMAGE-SVG, ID: I27652:1125;5041:1484)
+                          - BorderRadius: 0px 0px 0px 0px
+                          - Fills Ref: [fill_hqt3p01](../GlobalStyles/Colors.md#fill-hqt3p01) (See Color Styles)
+                          - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                        - **color-name** (Type: FRAME, ID: I27652:1125;5041:1485)
+                          - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                          - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1125;5041:1486)
+                            - Text Content: "border-info
+global: sky-50
+"
+                            - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                            - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                            - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                  - **MISC** (Type: FRAME, ID: 27652:1126)
+                    - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                    - **Frame 28487** (Type: FRAME, ID: 27652:1127)
+                      - Layout Style Ref: [layout_hbkzwhu](../GlobalStyles/LayoutAndSpacing.md#layout-hbkzwhu) (See Layout Styles)
+                      - **Misc** (Type: TEXT, ID: 27652:1128)
+                        - Text Content: "Misc"
+                        - TextStyle Ref: [text_h33c98b](../GlobalStyles/Typography.md#text-h33c98b) (See Typography Styles)
+                        - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                        - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                    - **Frame 28488** (Type: FRAME, ID: 27652:1129)
+                      - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1130)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1130;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1130;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_hukxreb](../GlobalStyles/Colors.md#fill-hukxreb) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1130;5041:1485)
+                            - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1130;5041:1486)
+                              - Text Content: "border-divider
+global: neutral-black
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1131)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1131;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1131;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                            - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1131;5041:1485)
+                            - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1131;5041:1486)
+                              - Text Content: "border-active
+global: neutral-black
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1132)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1132;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1132;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_hhj77jh](../GlobalStyles/Colors.md#fill-hhj77jh) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1132;5041:1485)
+                            - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1132;5041:1486)
+                              - Text Content: "border-transparent
+global: white, 0%
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+- **Semantic** (Type: FRAME, ID: 27652:1133)
+  - Layout Style Ref: [layout_h6a7g9x](../GlobalStyles/LayoutAndSpacing.md#layout-h6a7g9x) (See Layout Styles)
+  - **Doc** (Type: FRAME, ID: 27652:1134)
+    - Layout Style Ref: [layout_hiam48r](../GlobalStyles/LayoutAndSpacing.md#layout-hiam48r) (See Layout Styles)
+    - **Title** (Type: INSTANCE, ID: 27652:1135)
+      - (Instance of a component. Main Component ID: [27652:909](../UnknownPage.md#component-UnknownPage-27652:909). Further details depend on main component definition.)
+      - Fills Ref: [fill_h2zcu0u](../GlobalStyles/Colors.md#fill-h2zcu0u) (See Color Styles)
+      - Layout Style Ref: [layout_h3oe4a9](../GlobalStyles/LayoutAndSpacing.md#layout-h3oe4a9) (See Layout Styles)
+      - **container** (Type: FRAME, ID: I27652:1135;5065:8767)
+        - Layout Style Ref: [layout_hatu0sg](../GlobalStyles/LayoutAndSpacing.md#layout-hatu0sg) (See Layout Styles)
+        - **brand-name** (Type: FRAME, ID: I27652:1135;5065:8732)
+          - Layout Style Ref: [layout_hl6vicn](../GlobalStyles/LayoutAndSpacing.md#layout-hl6vicn) (See Layout Styles)
+          - **logo** (Type: GROUP, ID: I27652:1135;5065:6699)
+            - Layout Style Ref: [layout_hdznyh7](../GlobalStyles/LayoutAndSpacing.md#layout-hdznyh7) (See Layout Styles)
+            - **logo 1** (Type: RECTANGLE, ID: I27652:1135;6903:5240)
+              - Fills Ref: [fill_hykvkqd](../GlobalStyles/Colors.md#fill-hykvkqd) (See Color Styles)
+              - Layout Style Ref: [layout_hwl601x](../GlobalStyles/LayoutAndSpacing.md#layout-hwl601x) (See Layout Styles)
+          - **Equity: Wesparkle Theme** (Type: TEXT, ID: I27652:1135;5065:6713)
+            - Text Content: "Aroris Health DS"
+            - TextStyle Ref: [text_hje7lmq](../GlobalStyles/Typography.md#text-hje7lmq) (See Typography Styles)
+            - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+            - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+        - **GLOBAL COLORS** (Type: TEXT, ID: I27652:1135;5040:3092)
+          - Text Content: "GLOBAL COLORS"
+          - TextStyle Ref: [text_hnwlmvk](../GlobalStyles/Typography.md#text-hnwlmvk) (See Typography Styles)
+          - Fills Ref: [fill_htynfkc](../GlobalStyles/Colors.md#fill-htynfkc) (See Color Styles)
+          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+    - **Main** (Type: FRAME, ID: 27652:1136)
+      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+      - Layout Style Ref: [layout_h660uq9](../GlobalStyles/LayoutAndSpacing.md#layout-h660uq9) (See Layout Styles)
+      - **Elements** (Type: FRAME, ID: 27652:1137)
+        - Layout Style Ref: [layout_h8d88zx](../GlobalStyles/LayoutAndSpacing.md#layout-h8d88zx) (See Layout Styles)
+        - **intro** (Type: INSTANCE, ID: 27652:1138)
+          - (Instance of a component. Main Component ID: [27652:919](../UnknownPage.md#component-UnknownPage-27652:919). Further details depend on main component definition.)
+          - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+          - Layout Style Ref: [layout_h9o853z](../GlobalStyles/LayoutAndSpacing.md#layout-h9o853z) (See Layout Styles)
+          - **_TITLE** (Type: INSTANCE, ID: I27652:1138;5065:7477)
+            - (Instance of a component. Main Component ID: [5386:47](../UnknownPage.md#component-UnknownPage-5386:47). Further details depend on main component definition.)
+            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+            - Layout Style Ref: [layout_hbci9qx](../GlobalStyles/LayoutAndSpacing.md#layout-hbci9qx) (See Layout Styles)
+            - **Title** (Type: TEXT, ID: I27652:1138;5065:7477;76:5885)
+              - Text Content: "About Tier 1 Colors"
+              - TextStyle Ref: [text_hcgnimj](../GlobalStyles/Typography.md#text-hcgnimj) (See Typography Styles)
+              - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
+              - Layout Style Ref: [layout_htca7n3](../GlobalStyles/LayoutAndSpacing.md#layout-htca7n3) (See Layout Styles)
+          - **_PARAGRAPH** (Type: INSTANCE, ID: I27652:1138;5065:7479)
+            - (Instance of a component. Main Component ID: [5386:51](../UnknownPage.md#component-UnknownPage-5386:51). Further details depend on main component definition.)
+            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+            - Layout Style Ref: [layout_hhstpqm](../GlobalStyles/LayoutAndSpacing.md#layout-hhstpqm) (See Layout Styles)
+            - **Paragraph** (Type: TEXT, ID: I27652:1138;5065:7479;239:4420)
+              - Text Content: "A survey of all colors used in your system. Colors are divided based on context of use.   Brand colors primarily represent the main color that has more than 50% coverage, it is used to represent the brand identity. Utility colors are colors that support all types of alert components. Utility is typically tested vigorously to ensure that they are accessible.
+Neutral colors are used for text, background and must also meet WCAG standards for AA minimum standard color contrast."
+              - TextStyle Ref: [text_htn6v78](../GlobalStyles/Typography.md#text-htn6v78) (See Typography Styles)
+              - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+              - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+        - **Frame 28498** (Type: FRAME, ID: 27652:1139)
+          - Layout Style Ref: [layout_h54adk2](../GlobalStyles/LayoutAndSpacing.md#layout-h54adk2) (See Layout Styles)
+          - **Frame 28495** (Type: FRAME, ID: 27652:1140)
+            - Layout Style Ref: [layout_hlsie1q](../GlobalStyles/LayoutAndSpacing.md#layout-hlsie1q) (See Layout Styles)
+            - **Frame 28500** (Type: FRAME, ID: 27652:1141)
+              - Layout Style Ref: [layout_hlsie1q](../GlobalStyles/LayoutAndSpacing.md#layout-hlsie1q) (See Layout Styles)
+              - **Frame 28499** (Type: FRAME, ID: 27652:1142)
+                - Layout Style Ref: [layout_hlsie1q](../GlobalStyles/LayoutAndSpacing.md#layout-hlsie1q) (See Layout Styles)
+                - **Frame 28494** (Type: FRAME, ID: 27652:1143)
+                  - Layout Style Ref: [layout_h54adk2](../GlobalStyles/LayoutAndSpacing.md#layout-h54adk2) (See Layout Styles)
+                  - **Frame 28495** (Type: FRAME, ID: 27652:1144)
+                    - Layout Style Ref: [layout_hx1x1tf](../GlobalStyles/LayoutAndSpacing.md#layout-hx1x1tf) (See Layout Styles)
+                    - **category** (Type: INSTANCE, ID: 27652:1145)
+                      - BorderRadius: 24px
+                      - (Instance of a component. Main Component ID: [27652:1004](../UnknownPage.md#component-UnknownPage-27652:1004). Further details depend on main component definition.)
+                      - Fills Ref: [fill_h2vzd2w](../GlobalStyles/Colors.md#fill-h2vzd2w) (See Color Styles)
+                      - Layout Style Ref: [layout_hwj8zrk](../GlobalStyles/LayoutAndSpacing.md#layout-hwj8zrk) (See Layout Styles)
+                      - **text** (Type: FRAME, ID: I27652:1145;8905:3698)
+                        - Layout Style Ref: [layout_hbythny](../GlobalStyles/LayoutAndSpacing.md#layout-hbythny) (See Layout Styles)
+                        - **Background** (Type: TEXT, ID: I27652:1145;8905:3699)
+                          - Text Content: "Brand"
+                          - TextStyle Ref: [text_hypsdup](../GlobalStyles/Typography.md#text-hypsdup) (See Typography Styles)
+                          - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                          - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                    - **Frame 28493** (Type: FRAME, ID: 27652:1146)
+                      - Layout Style Ref: [layout_h78r72t](../GlobalStyles/LayoutAndSpacing.md#layout-h78r72t) (See Layout Styles)
+                      - **BG** (Type: FRAME, ID: 27652:1147)
+                        - Layout Style Ref: [layout_hjblsut](../GlobalStyles/LayoutAndSpacing.md#layout-hjblsut) (See Layout Styles)
+                        - **Main** (Type: FRAME, ID: 27652:1148)
+                          - Layout Style Ref: [layout_h6i214e](../GlobalStyles/LayoutAndSpacing.md#layout-h6i214e) (See Layout Styles)
+                          - **BRAND** (Type: FRAME, ID: 27652:1149)
+                            - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
+                            - **swatches** (Type: FRAME, ID: 27652:1150)
+                              - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                              - **swatch** (Type: INSTANCE, ID: 27652:1151)
+                                - BorderRadius: 16px
+                                - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                                - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                                - **main** (Type: FRAME, ID: I27652:1151;5041:1483)
+                                  - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                                  - **color** (Type: IMAGE-SVG, ID: I27652:1151;5041:1484)
+                                    - BorderRadius: 0px 0px 0px 0px
+                                    - Fills Ref: [fill_h2zcu0u](../GlobalStyles/Colors.md#fill-h2zcu0u) (See Color Styles)
+                                    - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                    - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                                  - **color-name** (Type: FRAME, ID: I27652:1151;5041:1485)
+                                    - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                    - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1151;5041:1486)
+                                      - Text Content: "purple-05
+value: #ECE7FA
+"
+                                      - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                      - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                      - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                              - **swatch** (Type: INSTANCE, ID: 27652:1152)
+                                - BorderRadius: 16px
+                                - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                                - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                                - **main** (Type: FRAME, ID: I27652:1152;5041:1483)
+                                  - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                                  - **color** (Type: IMAGE-SVG, ID: I27652:1152;5041:1484)
+                                    - BorderRadius: 0px 0px 0px 0px
+                                    - Fills Ref: [fill_hv8zqh4](../GlobalStyles/Colors.md#fill-hv8zqh4) (See Color Styles)
+                                    - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                    - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                                  - **color-name** (Type: FRAME, ID: I27652:1152;5041:1485)
+                                    - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                    - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1152;5041:1486)
+                                      - Text Content: "purple-15
+value: #c6b6f0
+"
+                                      - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                      - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                      - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                              - **swatch** (Type: INSTANCE, ID: 27652:1153)
+                                - BorderRadius: 16px
+                                - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                                - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                                - **main** (Type: FRAME, ID: I27652:1153;5041:1483)
+                                  - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                                  - **color** (Type: IMAGE-SVG, ID: I27652:1153;5041:1484)
+                                    - BorderRadius: 0px 0px 0px 0px
+                                    - Fills Ref: [fill_hpe4ifl](../GlobalStyles/Colors.md#fill-hpe4ifl) (See Color Styles)
+                                    - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                                    - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                                  - **color-name** (Type: FRAME, ID: I27652:1153;5041:1485)
+                                    - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                    - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1153;5041:1486)
+                                      - Text Content: "purple-25
+value: #a086e6
+"
+                                      - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                      - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                      - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                              - **swatch** (Type: INSTANCE, ID: 27652:1154)
+                                - BorderRadius: 16px
+                                - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                                - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                                - **main** (Type: FRAME, ID: I27652:1154;5041:1483)
+                                  - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                                  - **color** (Type: IMAGE-SVG, ID: I27652:1154;5041:1484)
+                                    - BorderRadius: 0px 0px 0px 0px
+                                    - Fills Ref: [fill_htfgpqd](../GlobalStyles/Colors.md#fill-htfgpqd) (See Color Styles)
+                                    - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                                    - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                                  - **color-name** (Type: FRAME, ID: I27652:1154;5041:1485)
+                                    - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                    - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1154;5041:1486)
+                                      - Text Content: "purple-30
+value: #8c6de0
+"
+                                      - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                      - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                      - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                              - **swatch** (Type: INSTANCE, ID: 27652:1155)
+                                - BorderRadius: 16px
+                                - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                                - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                                - **main** (Type: FRAME, ID: I27652:1155;5041:1483)
+                                  - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                                  - **color** (Type: IMAGE-SVG, ID: I27652:1155;5041:1484)
+                                    - BorderRadius: 0px 0px 0px 0px
+                                    - Fills Ref: [fill_h4tfhfe](../GlobalStyles/Colors.md#fill-h4tfhfe) (See Color Styles)
+                                    - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                                    - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                                  - **color-name** (Type: FRAME, ID: I27652:1155;5041:1485)
+                                    - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                    - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1155;5041:1486)
+                                      - Text Content: "purple-40
+value: 663dd6
+"
+                                      - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                      - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                      - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                      - **BG** (Type: FRAME, ID: 27652:1156)
+                        - Layout Style Ref: [layout_hjblsut](../GlobalStyles/LayoutAndSpacing.md#layout-hjblsut) (See Layout Styles)
+                        - **Main** (Type: FRAME, ID: 27652:1157)
+                          - Layout Style Ref: [layout_h6i214e](../GlobalStyles/LayoutAndSpacing.md#layout-h6i214e) (See Layout Styles)
+                          - **BRAND** (Type: FRAME, ID: 27652:1158)
+                            - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
+                            - **swatches** (Type: FRAME, ID: 27652:1159)
+                              - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                              - **swatch** (Type: INSTANCE, ID: 27652:1160)
+                                - BorderRadius: 16px
+                                - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                                - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                                - **main** (Type: FRAME, ID: I27652:1160;5041:1483)
+                                  - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                                  - **color** (Type: IMAGE-SVG, ID: I27652:1160;5041:1484)
+                                    - BorderRadius: 0px 0px 0px 0px
+                                    - Fills Ref: [fill_h9o37e](../GlobalStyles/Colors.md#fill-h9o37e) (See Color Styles)
+                                    - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                    - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                                  - **color-name** (Type: FRAME, ID: I27652:1160;5041:1485)
+                                    - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                    - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1160;5041:1486)
+                                      - Text Content: "purple-50
+value: #400CCC
+"
+                                      - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                      - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                      - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                              - **swatch** (Type: INSTANCE, ID: 27652:1161)
+                                - BorderRadius: 16px
+                                - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                                - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                                - **main** (Type: FRAME, ID: I27652:1161;5041:1483)
+                                  - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                                  - **color** (Type: IMAGE-SVG, ID: I27652:1161;5041:1484)
+                                    - BorderRadius: 0px 0px 0px 0px
+                                    - Fills Ref: [fill_hewr3dm](../GlobalStyles/Colors.md#fill-hewr3dm) (See Color Styles)
+                                    - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                    - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                                  - **color-name** (Type: FRAME, ID: I27652:1161;5041:1485)
+                                    - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                    - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1161;5041:1486)
+                                      - Text Content: "purple-60
+value: #330AA3
+"
+                                      - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                      - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                      - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                              - **swatch** (Type: INSTANCE, ID: 27652:1162)
+                                - BorderRadius: 16px
+                                - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                                - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                                - **main** (Type: FRAME, ID: I27652:1162;5041:1483)
+                                  - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                                  - **color** (Type: IMAGE-SVG, ID: I27652:1162;5041:1484)
+                                    - BorderRadius: 0px 0px 0px 0px
+                                    - Fills Ref: [fill_htynfkc](../GlobalStyles/Colors.md#fill-htynfkc) (See Color Styles)
+                                    - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                    - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                                  - **color-name** (Type: FRAME, ID: I27652:1162;5041:1485)
+                                    - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                    - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1162;5041:1486)
+                                      - Text Content: "purple-70
+value: #26077A
+"
+                                      - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                      - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                      - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                              - **swatch** (Type: INSTANCE, ID: 27652:1163)
+                                - BorderRadius: 16px
+                                - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                                - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                                - **main** (Type: FRAME, ID: I27652:1163;5041:1483)
+                                  - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                                  - **color** (Type: IMAGE-SVG, ID: I27652:1163;5041:1484)
+                                    - BorderRadius: 0px 0px 0px 0px
+                                    - Fills Ref: [fill_hcwt4gr](../GlobalStyles/Colors.md#fill-hcwt4gr) (See Color Styles)
+                                    - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                                    - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                                  - **color-name** (Type: FRAME, ID: I27652:1163;5041:1485)
+                                    - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                    - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1163;5041:1486)
+                                      - Text Content: "purple-80
+value: #200666
+"
+                                      - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                      - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                      - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                              - **swatch** (Type: INSTANCE, ID: 27652:1164)
+                                - BorderRadius: 16px
+                                - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                                - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                                - **main** (Type: FRAME, ID: I27652:1164;5041:1483)
+                                  - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                                  - **color** (Type: IMAGE-SVG, ID: I27652:1164;5041:1484)
+                                    - BorderRadius: 0px 0px 0px 0px
+                                    - Fills Ref: [fill_hki0sq1](../GlobalStyles/Colors.md#fill-hki0sq1) (See Color Styles)
+                                    - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                                    - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                                  - **color-name** (Type: FRAME, ID: I27652:1164;5041:1485)
+                                    - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                    - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1164;5041:1486)
+                                      - Text Content: "purple-90
+value: #1A0552
+"
+                                      - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                      - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                      - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+              - **Frame 28504** (Type: FRAME, ID: 27652:1165)
+                - Layout Style Ref: [layout_hlsie1q](../GlobalStyles/LayoutAndSpacing.md#layout-hlsie1q) (See Layout Styles)
+                - **category** (Type: INSTANCE, ID: 27652:1166)
+                  - BorderRadius: 24px
+                  - (Instance of a component. Main Component ID: [27652:930](../UnknownPage.md#component-UnknownPage-27652:930). Further details depend on main component definition.)
+                  - Fills Ref: [fill_h2vzd2w](../GlobalStyles/Colors.md#fill-h2vzd2w) (See Color Styles)
+                  - Layout Style Ref: [layout_hmdw02q](../GlobalStyles/LayoutAndSpacing.md#layout-hmdw02q) (See Layout Styles)
+                  - **text** (Type: FRAME, ID: I27652:1166;5067:2096)
+                    - Layout Style Ref: [layout_hbythny](../GlobalStyles/LayoutAndSpacing.md#layout-hbythny) (See Layout Styles)
+                    - **Background** (Type: TEXT, ID: I27652:1166;5065:7463)
+                      - Text Content: "Utility"
+                      - TextStyle Ref: [text_hypsdup](../GlobalStyles/Typography.md#text-hypsdup) (See Typography Styles)
+                      - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                      - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                - **Frame 28503** (Type: FRAME, ID: 27652:1167)
+                  - Layout Style Ref: [layout_h54adk2](../GlobalStyles/LayoutAndSpacing.md#layout-h54adk2) (See Layout Styles)
+                  - **Frame 28497** (Type: FRAME, ID: 27652:1168)
+                    - Layout Style Ref: [layout_hlw0npd](../GlobalStyles/LayoutAndSpacing.md#layout-hlw0npd) (See Layout Styles)
+                    - **swatches** (Type: FRAME, ID: 27652:1169)
+                      - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1170)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1170;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1170;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_hwdqe3u](../GlobalStyles/Colors.md#fill-hwdqe3u) (See Color Styles)
+                            - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1170;5041:1485)
+                            - Layout Style Ref: [layout_hesztnn](../GlobalStyles/LayoutAndSpacing.md#layout-hesztnn) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1170;5041:1486)
+                              - Text Content: "green-15
+value: #D4EFDF
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1171)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1171;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1171;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_hxmhh6d](../GlobalStyles/Colors.md#fill-hxmhh6d) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1171;5041:1485)
+                            - Layout Style Ref: [layout_hesztnn](../GlobalStyles/LayoutAndSpacing.md#layout-hesztnn) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1171;5041:1486)
+                              - Text Content: "green-30
+value: #7DCEA0
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1172)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1172;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1172;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_hu3kl8i](../GlobalStyles/Colors.md#fill-hu3kl8i) (See Color Styles)
+                            - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1172;5041:1485)
+                            - Layout Style Ref: [layout_hesztnn](../GlobalStyles/LayoutAndSpacing.md#layout-hesztnn) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1172;5041:1486)
+                              - Text Content: "green-50
+value: #27AE60
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1173)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1173;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1173;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_hque73a](../GlobalStyles/Colors.md#fill-hque73a) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1173;5041:1485)
+                            - Layout Style Ref: [layout_hesztnn](../GlobalStyles/LayoutAndSpacing.md#layout-hesztnn) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1173;5041:1486)
+                              - Text Content: "green-70
+value: #1F8B4D
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1174)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1174;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1174;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_hio67ql](../GlobalStyles/Colors.md#fill-hio67ql) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1174;5041:1485)
+                            - Layout Style Ref: [layout_hesztnn](../GlobalStyles/LayoutAndSpacing.md#layout-hesztnn) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1174;5041:1486)
+                              - Text Content: "green-90
+value: #17683A
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                    - **swatches** (Type: FRAME, ID: 27652:1175)
+                      - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1176)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1176;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1176;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_havxudv](../GlobalStyles/Colors.md#fill-havxudv) (See Color Styles)
+                            - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1176;5041:1485)
+                            - Layout Style Ref: [layout_hesztnn](../GlobalStyles/LayoutAndSpacing.md#layout-hesztnn) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1176;5041:1486)
+                              - Text Content: "red-15
+value: #FBDDDD
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1177)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1177;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1177;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_hvptwlk](../GlobalStyles/Colors.md#fill-hvptwlk) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1177;5041:1485)
+                            - Layout Style Ref: [layout_hesztnn](../GlobalStyles/LayoutAndSpacing.md#layout-hesztnn) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1177;5041:1486)
+                              - Text Content: "red-30
+value: #F5ABAB
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1178)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1178;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1178;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_hp8s4qw](../GlobalStyles/Colors.md#fill-hp8s4qw) (See Color Styles)
+                            - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1178;5041:1485)
+                            - Layout Style Ref: [layout_hesztnn](../GlobalStyles/LayoutAndSpacing.md#layout-hesztnn) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1178;5041:1486)
+                              - Text Content: "red-50
+value: #EB5757
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1179)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1179;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1179;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_hqhrag4](../GlobalStyles/Colors.md#fill-hqhrag4) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1179;5041:1485)
+                            - Layout Style Ref: [layout_hesztnn](../GlobalStyles/LayoutAndSpacing.md#layout-hesztnn) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1179;5041:1486)
+                              - Text Content: "red-70
+value: #BC4646
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1180)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1180;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1180;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_hgfbezf](../GlobalStyles/Colors.md#fill-hgfbezf) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1180;5041:1485)
+                            - Layout Style Ref: [layout_hesztnn](../GlobalStyles/LayoutAndSpacing.md#layout-hesztnn) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1180;5041:1486)
+                              - Text Content: "red-90
+value: #8D3434
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                    - **swatches** (Type: FRAME, ID: 27652:1181)
+                      - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1182)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1182;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1182;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_h3hi3l1](../GlobalStyles/Colors.md#fill-h3hi3l1) (See Color Styles)
+                            - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1182;5041:1485)
+                            - Layout Style Ref: [layout_hesztnn](../GlobalStyles/LayoutAndSpacing.md#layout-hesztnn) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1182;5041:1486)
+                              - Text Content: "yellow-20
+value: #FAE9B7
+"
+                              - TextStyle Ref: [text_h7a7jsn](../GlobalStyles/Typography.md#text-h7a7jsn) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1183)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1183;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1183;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_h8haxnf](../GlobalStyles/Colors.md#fill-h8haxnf) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1183;5041:1485)
+                            - Layout Style Ref: [layout_hesztnn](../GlobalStyles/LayoutAndSpacing.md#layout-hesztnn) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1183;5041:1486)
+                              - Text Content: "yellow-30
+value: #F7DF94
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1184)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1184;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1184;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_hbig4pk](../GlobalStyles/Colors.md#fill-hbig4pk) (See Color Styles)
+                            - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1184;5041:1485)
+                            - Layout Style Ref: [layout_hesztnn](../GlobalStyles/LayoutAndSpacing.md#layout-hesztnn) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1184;5041:1486)
+                              - Text Content: "yellow-50
+value: #F2C94C
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1185)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1185;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1185;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_h8eryo7](../GlobalStyles/Colors.md#fill-h8eryo7) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1185;5041:1485)
+                            - Layout Style Ref: [layout_hesztnn](../GlobalStyles/LayoutAndSpacing.md#layout-hesztnn) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1185;5041:1486)
+                              - Text Content: "yellow-70
+value: #DAB544
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                      - **swatch** (Type: INSTANCE, ID: 27652:1186)
+                        - BorderRadius: 16px
+                        - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                        - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                        - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                        - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                        - **main** (Type: FRAME, ID: I27652:1186;5041:1483)
+                          - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                          - **color** (Type: IMAGE-SVG, ID: I27652:1186;5041:1484)
+                            - BorderRadius: 0px 0px 0px 0px
+                            - Fills Ref: [fill_hsbl4j4](../GlobalStyles/Colors.md#fill-hsbl4j4) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                          - **color-name** (Type: FRAME, ID: I27652:1186;5041:1485)
+                            - Layout Style Ref: [layout_hesztnn](../GlobalStyles/LayoutAndSpacing.md#layout-hesztnn) (See Layout Styles)
+                            - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1186;5041:1486)
+                              - Text Content: "yellow-95
+value: #30280F
+"
+                              - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                              - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                              - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                    - **Main** (Type: FRAME, ID: 27652:1187)
+                      - Layout Style Ref: [layout_hal81wl](../GlobalStyles/LayoutAndSpacing.md#layout-hal81wl) (See Layout Styles)
+                      - **UTILITY** (Type: FRAME, ID: 27652:1188)
+                        - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                        - **swatches** (Type: FRAME, ID: 27652:1189)
+                          - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1190)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1190;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1190;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_hfk42am](../GlobalStyles/Colors.md#fill-hfk42am) (See Color Styles)
+                                - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1190;5041:1485)
+                                - Layout Style Ref: [layout_hesztnn](../GlobalStyles/LayoutAndSpacing.md#layout-hesztnn) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1190;5041:1486)
+                                  - Text Content: "sky-15
+value: #C0E1F4
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1191)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1191;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1191;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_h3ld1jf](../GlobalStyles/Colors.md#fill-h3ld1jf) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1191;5041:1485)
+                                - Layout Style Ref: [layout_hesztnn](../GlobalStyles/LayoutAndSpacing.md#layout-hesztnn) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1191;5041:1486)
+                                  - Text Content: "sky-50
+value: #81C4E9
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1192)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1192;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1192;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_hqt3p01](../GlobalStyles/Colors.md#fill-hqt3p01) (See Color Styles)
+                                - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1192;5041:1485)
+                                - Layout Style Ref: [layout_hesztnn](../GlobalStyles/LayoutAndSpacing.md#layout-hesztnn) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1192;5041:1486)
+                                  - Text Content: "sky-50
+value: #2D9CDB
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1193)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1193;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1193;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_h44i163](../GlobalStyles/Colors.md#fill-h44i163) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1193;5041:1485)
+                                - Layout Style Ref: [layout_hesztnn](../GlobalStyles/LayoutAndSpacing.md#layout-hesztnn) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1193;5041:1486)
+                                  - Text Content: "sky-70
+value: #247DAF
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1194)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1194;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1194;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_hhxaal9](../GlobalStyles/Colors.md#fill-hhxaal9) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1194;5041:1485)
+                                - Layout Style Ref: [layout_hesztnn](../GlobalStyles/LayoutAndSpacing.md#layout-hesztnn) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1194;5041:1486)
+                                  - Text Content: "sky-90
+value: #174E6E
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+              - **Frame 28505** (Type: FRAME, ID: 27652:1195)
+                - Layout Style Ref: [layout_hlsie1q](../GlobalStyles/LayoutAndSpacing.md#layout-hlsie1q) (See Layout Styles)
+                - **category** (Type: INSTANCE, ID: 27652:1196)
+                  - BorderRadius: 24px
+                  - (Instance of a component. Main Component ID: [27652:930](../UnknownPage.md#component-UnknownPage-27652:930). Further details depend on main component definition.)
+                  - Fills Ref: [fill_h2vzd2w](../GlobalStyles/Colors.md#fill-h2vzd2w) (See Color Styles)
+                  - Layout Style Ref: [layout_hmdw02q](../GlobalStyles/LayoutAndSpacing.md#layout-hmdw02q) (See Layout Styles)
+                  - **text** (Type: FRAME, ID: I27652:1196;5067:2096)
+                    - Layout Style Ref: [layout_hbythny](../GlobalStyles/LayoutAndSpacing.md#layout-hbythny) (See Layout Styles)
+                    - **Background** (Type: TEXT, ID: I27652:1196;5065:7463)
+                      - Text Content: "Neutral"
+                      - TextStyle Ref: [text_hypsdup](../GlobalStyles/Typography.md#text-hypsdup) (See Typography Styles)
+                      - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                      - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                - **Swatches** (Type: FRAME, ID: 27652:1197)
+                  - Layout Style Ref: [layout_h54adk2](../GlobalStyles/LayoutAndSpacing.md#layout-h54adk2) (See Layout Styles)
+                  - **CATEGORIES** (Type: FRAME, ID: 27652:1198)
+                    - Layout Style Ref: [layout_hjvgc4a](../GlobalStyles/LayoutAndSpacing.md#layout-hjvgc4a) (See Layout Styles)
+                    - **Main** (Type: FRAME, ID: 27652:1199)
+                      - Layout Style Ref: [layout_hlzixd0](../GlobalStyles/LayoutAndSpacing.md#layout-hlzixd0) (See Layout Styles)
+                      - **NEUTRAL** (Type: FRAME, ID: 27652:1200)
+                        - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                        - **swatches** (Type: FRAME, ID: 27652:1201)
+                          - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1202)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1202;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1202;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1202;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1202;5041:1486)
+                                  - Text Content: "white
+value: gray-60
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1203)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1203;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1203;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_h2vzd2w](../GlobalStyles/Colors.md#fill-h2vzd2w) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1203;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1203;5041:1486)
+                                  - Text Content: "gray-10
+value: #FAFAFA
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1204)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1204;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1204;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_htr1npi](../GlobalStyles/Colors.md#fill-htr1npi) (See Color Styles)
+                                - Strokes Ref: [stroke_htloyif](../GlobalStyles/Colors.md#stroke-htloyif) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1204;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1204;5041:1486)
+                                  - Text Content: "gray-20
+value: #EFEFEF
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1205)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1205;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1205;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_h25ofw8](../GlobalStyles/Colors.md#fill-h25ofw8) (See Color Styles)
+                                - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1205;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1205;5041:1486)
+                                  - Text Content: "gray-30
+value: #E0E0E0
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1206)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1206;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1206;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_hhbb2m8](../GlobalStyles/Colors.md#fill-hhbb2m8) (See Color Styles)
+                                - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1206;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1206;5041:1486)
+                                  - Text Content: "gray-40
+value: #CFCFCF
+"
+                                  - TextStyle Ref: [text_h7a7jsn](../GlobalStyles/Typography.md#text-h7a7jsn) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **BORDER** (Type: FRAME, ID: 27652:1207)
+                      - Layout Style Ref: [layout_h2675t](../GlobalStyles/LayoutAndSpacing.md#layout-h2675t) (See Layout Styles)
+                      - **Main** (Type: FRAME, ID: 27652:1208)
+                        - Layout Style Ref: [layout_hlzixd0](../GlobalStyles/LayoutAndSpacing.md#layout-hlzixd0) (See Layout Styles)
+                        - **NEUTRAL** (Type: FRAME, ID: 27652:1209)
+                          - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                          - **swatches** (Type: FRAME, ID: 27652:1210)
+                            - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                            - **swatch** (Type: INSTANCE, ID: 27652:1211)
+                              - BorderRadius: 16px
+                              - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                              - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                              - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                              - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                              - **main** (Type: FRAME, ID: I27652:1211;5041:1483)
+                                - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                                - **color** (Type: IMAGE-SVG, ID: I27652:1211;5041:1484)
+                                  - BorderRadius: 0px 0px 0px 0px
+                                  - Fills Ref: [fill_h4yry77](../GlobalStyles/Colors.md#fill-h4yry77) (See Color Styles)
+                                  - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                  - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                                - **color-name** (Type: FRAME, ID: I27652:1211;5041:1485)
+                                  - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                  - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1211;5041:1486)
+                                    - Text Content: "gray-50
+value: #BDBDBD
+"
+                                    - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                    - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                    - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                            - **swatch** (Type: INSTANCE, ID: 27652:1212)
+                              - BorderRadius: 16px
+                              - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                              - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                              - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                              - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                              - **main** (Type: FRAME, ID: I27652:1212;5041:1483)
+                                - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                                - **color** (Type: IMAGE-SVG, ID: I27652:1212;5041:1484)
+                                  - BorderRadius: 0px 0px 0px 0px
+                                  - Fills Ref: [fill_hsjk5x](../GlobalStyles/Colors.md#fill-hsjk5x) (See Color Styles)
+                                  - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                  - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                                - **color-name** (Type: FRAME, ID: I27652:1212;5041:1485)
+                                  - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                  - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1212;5041:1486)
+                                    - Text Content: "gray-60
+value: #9C9C9C
+"
+                                    - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                    - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                    - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                            - **swatch** (Type: INSTANCE, ID: 27652:1213)
+                              - BorderRadius: 16px
+                              - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                              - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                              - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                              - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                              - **main** (Type: FRAME, ID: I27652:1213;5041:1483)
+                                - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                                - **color** (Type: IMAGE-SVG, ID: I27652:1213;5041:1484)
+                                  - BorderRadius: 0px 0px 0px 0px
+                                  - Fills Ref: [fill_h5u7d51](../GlobalStyles/Colors.md#fill-h5u7d51) (See Color Styles)
+                                  - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                                  - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                                - **color-name** (Type: FRAME, ID: I27652:1213;5041:1485)
+                                  - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                  - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1213;5041:1486)
+                                    - Text Content: "gray-70
+value: #828282
+"
+                                    - TextStyle Ref: [text_h7a7jsn](../GlobalStyles/Typography.md#text-h7a7jsn) (See Typography Styles)
+                                    - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                    - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                            - **swatch** (Type: INSTANCE, ID: 27652:1214)
+                              - BorderRadius: 16px
+                              - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                              - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                              - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                              - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                              - **main** (Type: FRAME, ID: I27652:1214;5041:1483)
+                                - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                                - **color** (Type: IMAGE-SVG, ID: I27652:1214;5041:1484)
+                                  - BorderRadius: 0px 0px 0px 0px
+                                  - Fills Ref: [fill_hukxreb](../GlobalStyles/Colors.md#fill-hukxreb) (See Color Styles)
+                                  - Strokes Ref: [stroke_htloyif](../GlobalStyles/Colors.md#stroke-htloyif) (See Color Styles for Borders)
+                                  - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                                - **color-name** (Type: FRAME, ID: I27652:1214;5041:1485)
+                                  - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                  - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1214;5041:1486)
+                                    - Text Content: "gray-80
+value: #4F4F4F
+"
+                                    - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                    - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                    - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                            - **swatch** (Type: INSTANCE, ID: 27652:1215)
+                              - BorderRadius: 16px
+                              - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                              - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                              - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                              - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                              - **main** (Type: FRAME, ID: I27652:1215;5041:1483)
+                                - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                                - **color** (Type: IMAGE-SVG, ID: I27652:1215;5041:1484)
+                                  - BorderRadius: 0px 0px 0px 0px
+                                  - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                                  - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                  - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                                - **color-name** (Type: FRAME, ID: I27652:1215;5041:1485)
+                                  - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                  - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1215;5041:1486)
+                                    - Text Content: "black
+value: #333333
+"
+                                    - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                    - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                    - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                    - **category** (Type: INSTANCE, ID: 27652:1216)
+                      - BorderRadius: 24px
+                      - (Instance of a component. Main Component ID: [27652:930](../UnknownPage.md#component-UnknownPage-27652:930). Further details depend on main component definition.)
+                      - Fills Ref: [fill_h2vzd2w](../GlobalStyles/Colors.md#fill-h2vzd2w) (See Color Styles)
+                      - Layout Style Ref: [layout_hmdw02q](../GlobalStyles/LayoutAndSpacing.md#layout-hmdw02q) (See Layout Styles)
+                      - **text** (Type: FRAME, ID: I27652:1216;5067:2096)
+                        - Layout Style Ref: [layout_hbythny](../GlobalStyles/LayoutAndSpacing.md#layout-hbythny) (See Layout Styles)
+                        - **Background** (Type: TEXT, ID: I27652:1216;5065:7463)
+                          - Text Content: "Accents , Secondary or Gradients"
+                          - TextStyle Ref: [text_hypsdup](../GlobalStyles/Typography.md#text-hypsdup) (See Typography Styles)
+                          - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                          - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+- **Semantic** (Type: FRAME, ID: 27652:1217)
+  - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
+  - **Doc** (Type: FRAME, ID: 27652:1218)
+    - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
+    - **Title** (Type: INSTANCE, ID: 27652:1219)
+      - (Instance of a component. Main Component ID: [27652:909](../UnknownPage.md#component-UnknownPage-27652:909). Further details depend on main component definition.)
+      - Fills Ref: [fill_h2zcu0u](../GlobalStyles/Colors.md#fill-h2zcu0u) (See Color Styles)
+      - Layout Style Ref: [layout_h3oe4a9](../GlobalStyles/LayoutAndSpacing.md#layout-h3oe4a9) (See Layout Styles)
+      - **container** (Type: FRAME, ID: I27652:1219;5065:8767)
+        - Layout Style Ref: [layout_hatu0sg](../GlobalStyles/LayoutAndSpacing.md#layout-hatu0sg) (See Layout Styles)
+        - **brand-name** (Type: FRAME, ID: I27652:1219;5065:8732)
+          - Layout Style Ref: [layout_hl6vicn](../GlobalStyles/LayoutAndSpacing.md#layout-hl6vicn) (See Layout Styles)
+          - **logo** (Type: GROUP, ID: I27652:1219;5065:6699)
+            - Layout Style Ref: [layout_hdznyh7](../GlobalStyles/LayoutAndSpacing.md#layout-hdznyh7) (See Layout Styles)
+            - **logo 1** (Type: RECTANGLE, ID: I27652:1219;6903:5240)
+              - Fills Ref: [fill_hykvkqd](../GlobalStyles/Colors.md#fill-hykvkqd) (See Color Styles)
+              - Layout Style Ref: [layout_hwl601x](../GlobalStyles/LayoutAndSpacing.md#layout-hwl601x) (See Layout Styles)
+          - **Equity: Wesparkle Theme** (Type: TEXT, ID: I27652:1219;5065:6713)
+            - Text Content: "Aroris Health DS"
+            - TextStyle Ref: [text_hje7lmq](../GlobalStyles/Typography.md#text-hje7lmq) (See Typography Styles)
+            - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+            - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+        - **GLOBAL COLORS** (Type: TEXT, ID: I27652:1219;5040:3092)
+          - Text Content: "COMPONENT TIER COLORS"
+          - TextStyle Ref: [text_hnwlmvk](../GlobalStyles/Typography.md#text-hnwlmvk) (See Typography Styles)
+          - Fills Ref: [fill_htynfkc](../GlobalStyles/Colors.md#fill-htynfkc) (See Color Styles)
+          - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+    - **Main** (Type: FRAME, ID: 27652:1220)
+      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+      - Layout Style Ref: [layout_hstkjyu](../GlobalStyles/LayoutAndSpacing.md#layout-hstkjyu) (See Layout Styles)
+      - **Elements** (Type: FRAME, ID: 27652:1221)
+        - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
+        - **intro** (Type: INSTANCE, ID: 27652:1222)
+          - (Instance of a component. Main Component ID: [27652:919](../UnknownPage.md#component-UnknownPage-27652:919). Further details depend on main component definition.)
+          - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+          - Layout Style Ref: [layout_h1rgw6w](../GlobalStyles/LayoutAndSpacing.md#layout-h1rgw6w) (See Layout Styles)
+          - **_TITLE** (Type: INSTANCE, ID: I27652:1222;5065:7477)
+            - (Instance of a component. Main Component ID: [5386:47](../UnknownPage.md#component-UnknownPage-5386:47). Further details depend on main component definition.)
+            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+            - Layout Style Ref: [layout_hbci9qx](../GlobalStyles/LayoutAndSpacing.md#layout-hbci9qx) (See Layout Styles)
+            - **Title** (Type: TEXT, ID: I27652:1222;5065:7477;76:5885)
+              - Text Content: "About Tier 1 Colors"
+              - TextStyle Ref: [text_hcgnimj](../GlobalStyles/Typography.md#text-hcgnimj) (See Typography Styles)
+              - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
+              - Layout Style Ref: [layout_htca7n3](../GlobalStyles/LayoutAndSpacing.md#layout-htca7n3) (See Layout Styles)
+          - **_PARAGRAPH** (Type: INSTANCE, ID: I27652:1222;5065:7479)
+            - (Instance of a component. Main Component ID: [5386:51](../UnknownPage.md#component-UnknownPage-5386:51). Further details depend on main component definition.)
+            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+            - Layout Style Ref: [layout_hhstpqm](../GlobalStyles/LayoutAndSpacing.md#layout-hhstpqm) (See Layout Styles)
+            - **Paragraph** (Type: TEXT, ID: I27652:1222;5065:7479;239:4420)
+              - Text Content: "Buttons have their own color scope. 
+
+This method is to help compartmentalize the semantic color set in a way that prevents color decisions from affecting any “x” component that doesn’t line up with semantic bg, content or border colors.
+
+ie. states need to be more custom, and button types primary, secondary or tertiary have its own color decisions to follow."
+              - TextStyle Ref: [text_htn6v78](../GlobalStyles/Typography.md#text-htn6v78) (See Typography Styles)
+              - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+              - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+        - **Swatches** (Type: FRAME, ID: 27652:1223)
+          - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
+          - **CATEGORIES** (Type: FRAME, ID: 27652:1224)
+            - Layout Style Ref: [layout_h78r72t](../GlobalStyles/LayoutAndSpacing.md#layout-h78r72t) (See Layout Styles)
+            - **Frame 28489** (Type: FRAME, ID: 27652:1225)
+              - Layout Style Ref: [layout_hjvgc4a](../GlobalStyles/LayoutAndSpacing.md#layout-hjvgc4a) (See Layout Styles)
+              - **category** (Type: INSTANCE, ID: 27652:1226)
+                - BorderRadius: 24px
+                - (Instance of a component. Main Component ID: [27652:930](../UnknownPage.md#component-UnknownPage-27652:930). Further details depend on main component definition.)
+                - Fills Ref: [fill_h2vzd2w](../GlobalStyles/Colors.md#fill-h2vzd2w) (See Color Styles)
+                - Layout Style Ref: [layout_hmdw02q](../GlobalStyles/LayoutAndSpacing.md#layout-hmdw02q) (See Layout Styles)
+                - **text** (Type: FRAME, ID: I27652:1226;5067:2096)
+                  - Layout Style Ref: [layout_hbythny](../GlobalStyles/LayoutAndSpacing.md#layout-hbythny) (See Layout Styles)
+                  - **Background** (Type: TEXT, ID: I27652:1226;5065:7463)
+                    - Text Content: "Primary Button"
+                    - TextStyle Ref: [text_hypsdup](../GlobalStyles/Typography.md#text-hypsdup) (See Typography Styles)
+                    - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                    - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+              - **Frame 28492** (Type: FRAME, ID: 27652:1227)
+                - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                - **Frame 28491** (Type: FRAME, ID: 27652:1228)
+                  - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                  - **text** (Type: FRAME, ID: 27652:1229)
+                    - Layout Style Ref: [layout_hbythny](../GlobalStyles/LayoutAndSpacing.md#layout-hbythny) (See Layout Styles)
+                    - **Background** (Type: TEXT, ID: 27652:1230)
+                      - Text Content: "Background"
+                      - TextStyle Ref: [text_hypsdup](../GlobalStyles/Typography.md#text-hypsdup) (See Typography Styles)
+                      - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                      - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                  - **BG** (Type: FRAME, ID: 27652:1232)
+                    - Layout Style Ref: [layout_hjblsut](../GlobalStyles/LayoutAndSpacing.md#layout-hjblsut) (See Layout Styles)
+                    - **Main** (Type: FRAME, ID: 27652:1233)
+                      - Layout Style Ref: [layout_h6i214e](../GlobalStyles/LayoutAndSpacing.md#layout-h6i214e) (See Layout Styles)
+                      - **BRAND** (Type: FRAME, ID: 27652:1234)
+                        - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
+                        - **swatches** (Type: FRAME, ID: 27652:1235)
+                          - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1236)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1236;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1236;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_h2zcu0u](../GlobalStyles/Colors.md#fill-h2zcu0u) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1236;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1236;5041:1486)
+                                  - Text Content: "button-primary-bg-default
+global: purple-50
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1237)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54u58a](../GlobalStyles/LayoutAndSpacing.md#layout-h54u58a) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1237;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1237;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_hv8zqh4](../GlobalStyles/Colors.md#fill-hv8zqh4) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1237;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1237;5041:1486)
+                                  - Text Content: "button-primary-bg-hover
+value: #c6b6f0
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1238)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1238;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1238;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_hpe4ifl](../GlobalStyles/Colors.md#fill-hpe4ifl) (See Color Styles)
+                                - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1238;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1238;5041:1486)
+                                  - Text Content: "button-primary-bg-active
+value: #a086e6
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1239)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1239;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1239;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_hpe4ifl](../GlobalStyles/Colors.md#fill-hpe4ifl) (See Color Styles)
+                                - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1239;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1239;5041:1486)
+                                  - Text Content: "button-primary-bg-disabled
+value: #a086e6
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                - **text** (Type: FRAME, ID: 27652:1240)
+                  - Layout Style Ref: [layout_hbythny](../GlobalStyles/LayoutAndSpacing.md#layout-hbythny) (See Layout Styles)
+                  - **Border** (Type: TEXT, ID: 27652:1241)
+                    - Text Content: "Border"
+                    - TextStyle Ref: [text_hypsdup](../GlobalStyles/Typography.md#text-hypsdup) (See Typography Styles)
+                    - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                    - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                - **Frame 28491** (Type: FRAME, ID: 27652:1243)
+                  - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                  - **BG** (Type: FRAME, ID: 27652:1244)
+                    - Layout Style Ref: [layout_hjblsut](../GlobalStyles/LayoutAndSpacing.md#layout-hjblsut) (See Layout Styles)
+                    - **Main** (Type: FRAME, ID: 27652:1245)
+                      - Layout Style Ref: [layout_h6i214e](../GlobalStyles/LayoutAndSpacing.md#layout-h6i214e) (See Layout Styles)
+                      - **BRAND** (Type: FRAME, ID: 27652:1246)
+                        - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
+                        - **swatches** (Type: FRAME, ID: 27652:1247)
+                          - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1248)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1248;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1248;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_h2zcu0u](../GlobalStyles/Colors.md#fill-h2zcu0u) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1248;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1248;5041:1486)
+                                  - Text Content: "button-primary-border-default
+value: #ECE7FA
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1249)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54u58a](../GlobalStyles/LayoutAndSpacing.md#layout-h54u58a) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1249;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1249;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_hv8zqh4](../GlobalStyles/Colors.md#fill-hv8zqh4) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1249;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1249;5041:1486)
+                                  - Text Content: "button-primary-border-hover
+value: #c6b6f0
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1250)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1250;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1250;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_hpe4ifl](../GlobalStyles/Colors.md#fill-hpe4ifl) (See Color Styles)
+                                - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1250;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1250;5041:1486)
+                                  - Text Content: "button-primary-border-active
+value: #a086e6
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1251)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1251;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1251;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_hpe4ifl](../GlobalStyles/Colors.md#fill-hpe4ifl) (See Color Styles)
+                                - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1251;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1251;5041:1486)
+                                  - Text Content: "button-primary-border-disabled
+value: #a086e6
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                - **Frame 28490** (Type: FRAME, ID: 27652:1252)
+                  - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                  - **text** (Type: FRAME, ID: 27652:1253)
+                    - Layout Style Ref: [layout_hbythny](../GlobalStyles/LayoutAndSpacing.md#layout-hbythny) (See Layout Styles)
+                    - **Border** (Type: TEXT, ID: 27652:1254)
+                      - Text Content: "Border"
+                      - TextStyle Ref: [text_hypsdup](../GlobalStyles/Typography.md#text-hypsdup) (See Typography Styles)
+                      - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                      - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                  - **BG** (Type: FRAME, ID: 27652:1256)
+                    - Layout Style Ref: [layout_hjblsut](../GlobalStyles/LayoutAndSpacing.md#layout-hjblsut) (See Layout Styles)
+                    - **Main** (Type: FRAME, ID: 27652:1257)
+                      - Layout Style Ref: [layout_h6i214e](../GlobalStyles/LayoutAndSpacing.md#layout-h6i214e) (See Layout Styles)
+                      - **BRAND** (Type: FRAME, ID: 27652:1258)
+                        - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
+                        - **swatches** (Type: FRAME, ID: 27652:1259)
+                          - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1260)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1260;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1260;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_h9o37e](../GlobalStyles/Colors.md#fill-h9o37e) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1260;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1260;5041:1486)
+                                  - Text Content: "purple-50
+value: #400CCC
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1261)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1261;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1261;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_hewr3dm](../GlobalStyles/Colors.md#fill-hewr3dm) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1261;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1261;5041:1486)
+                                  - Text Content: "purple-60
+value: #330AA3
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1262)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1262;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1262;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_htynfkc](../GlobalStyles/Colors.md#fill-htynfkc) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1262;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1262;5041:1486)
+                                  - Text Content: "purple-70
+value: #26077A
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                - **Frame 28490** (Type: FRAME, ID: 27652:1263)
+                  - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                  - **text** (Type: FRAME, ID: 27652:1264)
+                    - Layout Style Ref: [layout_hbythny](../GlobalStyles/LayoutAndSpacing.md#layout-hbythny) (See Layout Styles)
+                    - **Content** (Type: TEXT, ID: 27652:1265)
+                      - Text Content: "Content"
+                      - TextStyle Ref: [text_hypsdup](../GlobalStyles/Typography.md#text-hypsdup) (See Typography Styles)
+                      - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                      - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                  - **BG** (Type: FRAME, ID: 27652:1267)
+                    - Layout Style Ref: [layout_hjblsut](../GlobalStyles/LayoutAndSpacing.md#layout-hjblsut) (See Layout Styles)
+                    - **Main** (Type: FRAME, ID: 27652:1268)
+                      - Layout Style Ref: [layout_h6i214e](../GlobalStyles/LayoutAndSpacing.md#layout-h6i214e) (See Layout Styles)
+                      - **BRAND** (Type: FRAME, ID: 27652:1269)
+                        - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
+                        - **swatches** (Type: FRAME, ID: 27652:1270)
+                          - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1271)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1271;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1271;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_h9o37e](../GlobalStyles/Colors.md#fill-h9o37e) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1271;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1271;5041:1486)
+                                  - Text Content: "purple-50
+value: #400CCC
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1272)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1272;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1272;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_hewr3dm](../GlobalStyles/Colors.md#fill-hewr3dm) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1272;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1272;5041:1486)
+                                  - Text Content: "purple-60
+value: #330AA3
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1273)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1273;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1273;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_htynfkc](../GlobalStyles/Colors.md#fill-htynfkc) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1273;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1273;5041:1486)
+                                  - Text Content: "purple-70
+value: #26077A
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+            - **Frame 28489** (Type: FRAME, ID: 27652:1274)
+              - Layout Style Ref: [layout_hjvgc4a](../GlobalStyles/LayoutAndSpacing.md#layout-hjvgc4a) (See Layout Styles)
+              - **category** (Type: INSTANCE, ID: 27652:1275)
+                - BorderRadius: 24px
+                - (Instance of a component. Main Component ID: [27652:930](../UnknownPage.md#component-UnknownPage-27652:930). Further details depend on main component definition.)
+                - Fills Ref: [fill_h2vzd2w](../GlobalStyles/Colors.md#fill-h2vzd2w) (See Color Styles)
+                - Layout Style Ref: [layout_hmdw02q](../GlobalStyles/LayoutAndSpacing.md#layout-hmdw02q) (See Layout Styles)
+                - **text** (Type: FRAME, ID: I27652:1275;5067:2096)
+                  - Layout Style Ref: [layout_hbythny](../GlobalStyles/LayoutAndSpacing.md#layout-hbythny) (See Layout Styles)
+                  - **Background** (Type: TEXT, ID: I27652:1275;5065:7463)
+                    - Text Content: "Primary Button"
+                    - TextStyle Ref: [text_hypsdup](../GlobalStyles/Typography.md#text-hypsdup) (See Typography Styles)
+                    - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                    - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+              - **Frame 28492** (Type: FRAME, ID: 27652:1276)
+                - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                - **Frame 28491** (Type: FRAME, ID: 27652:1277)
+                  - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                  - **text** (Type: FRAME, ID: 27652:1278)
+                    - Layout Style Ref: [layout_hbythny](../GlobalStyles/LayoutAndSpacing.md#layout-hbythny) (See Layout Styles)
+                    - **Background** (Type: TEXT, ID: 27652:1279)
+                      - Text Content: "Background"
+                      - TextStyle Ref: [text_hypsdup](../GlobalStyles/Typography.md#text-hypsdup) (See Typography Styles)
+                      - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                      - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                  - **BG** (Type: FRAME, ID: 27652:1281)
+                    - Layout Style Ref: [layout_hjblsut](../GlobalStyles/LayoutAndSpacing.md#layout-hjblsut) (See Layout Styles)
+                    - **Main** (Type: FRAME, ID: 27652:1282)
+                      - Layout Style Ref: [layout_h6i214e](../GlobalStyles/LayoutAndSpacing.md#layout-h6i214e) (See Layout Styles)
+                      - **BRAND** (Type: FRAME, ID: 27652:1283)
+                        - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
+                        - **swatches** (Type: FRAME, ID: 27652:1284)
+                          - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1285)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1285;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1285;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_h2zcu0u](../GlobalStyles/Colors.md#fill-h2zcu0u) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1285;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1285;5041:1486)
+                                  - Text Content: "purple-05
+value: #ECE7FA
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1286)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1286;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1286;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_hv8zqh4](../GlobalStyles/Colors.md#fill-hv8zqh4) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1286;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1286;5041:1486)
+                                  - Text Content: "purple-15
+value: #c6b6f0
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1287)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1287;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1287;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_hpe4ifl](../GlobalStyles/Colors.md#fill-hpe4ifl) (See Color Styles)
+                                - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1287;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1287;5041:1486)
+                                  - Text Content: "purple-25
+value: #a086e6
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                - **Frame 28490** (Type: FRAME, ID: 27652:1288)
+                  - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                  - **text** (Type: FRAME, ID: 27652:1289)
+                    - Layout Style Ref: [layout_hbythny](../GlobalStyles/LayoutAndSpacing.md#layout-hbythny) (See Layout Styles)
+                    - **Border** (Type: TEXT, ID: 27652:1290)
+                      - Text Content: "Border"
+                      - TextStyle Ref: [text_hypsdup](../GlobalStyles/Typography.md#text-hypsdup) (See Typography Styles)
+                      - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                      - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                  - **BG** (Type: FRAME, ID: 27652:1292)
+                    - Layout Style Ref: [layout_hjblsut](../GlobalStyles/LayoutAndSpacing.md#layout-hjblsut) (See Layout Styles)
+                    - **Main** (Type: FRAME, ID: 27652:1293)
+                      - Layout Style Ref: [layout_h6i214e](../GlobalStyles/LayoutAndSpacing.md#layout-h6i214e) (See Layout Styles)
+                      - **BRAND** (Type: FRAME, ID: 27652:1294)
+                        - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
+                        - **swatches** (Type: FRAME, ID: 27652:1295)
+                          - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1296)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1296;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1296;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_h9o37e](../GlobalStyles/Colors.md#fill-h9o37e) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1296;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1296;5041:1486)
+                                  - Text Content: "purple-50
+value: #400CCC
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1297)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1297;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1297;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_hewr3dm](../GlobalStyles/Colors.md#fill-hewr3dm) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1297;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1297;5041:1486)
+                                  - Text Content: "purple-60
+value: #330AA3
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1298)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1298;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1298;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_htynfkc](../GlobalStyles/Colors.md#fill-htynfkc) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1298;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1298;5041:1486)
+                                  - Text Content: "purple-70
+value: #26077A
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                - **Frame 28490** (Type: FRAME, ID: 27652:1299)
+                  - Layout Style Ref: [layout_h5kalf1](../GlobalStyles/LayoutAndSpacing.md#layout-h5kalf1) (See Layout Styles)
+                  - **text** (Type: FRAME, ID: 27652:1300)
+                    - Layout Style Ref: [layout_hbythny](../GlobalStyles/LayoutAndSpacing.md#layout-hbythny) (See Layout Styles)
+                    - **Content** (Type: TEXT, ID: 27652:1301)
+                      - Text Content: "Content"
+                      - TextStyle Ref: [text_hypsdup](../GlobalStyles/Typography.md#text-hypsdup) (See Typography Styles)
+                      - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+                      - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+                  - **BG** (Type: FRAME, ID: 27652:1303)
+                    - Layout Style Ref: [layout_hjblsut](../GlobalStyles/LayoutAndSpacing.md#layout-hjblsut) (See Layout Styles)
+                    - **Main** (Type: FRAME, ID: 27652:1304)
+                      - Layout Style Ref: [layout_h6i214e](../GlobalStyles/LayoutAndSpacing.md#layout-h6i214e) (See Layout Styles)
+                      - **BRAND** (Type: FRAME, ID: 27652:1305)
+                        - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
+                        - **swatches** (Type: FRAME, ID: 27652:1306)
+                          - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1307)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1307;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1307;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_h9o37e](../GlobalStyles/Colors.md#fill-h9o37e) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1307;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1307;5041:1486)
+                                  - Text Content: "purple-50
+value: #400CCC
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1308)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1308;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1308;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_hewr3dm](../GlobalStyles/Colors.md#fill-hewr3dm) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1308;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1308;5041:1486)
+                                  - Text Content: "purple-60
+value: #330AA3
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+                          - **swatch** (Type: INSTANCE, ID: 27652:1309)
+                            - BorderRadius: 16px
+                            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+                            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+                            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+                            - **main** (Type: FRAME, ID: I27652:1309;5041:1483)
+                              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                              - **color** (Type: IMAGE-SVG, ID: I27652:1309;5041:1484)
+                                - BorderRadius: 0px 0px 0px 0px
+                                - Fills Ref: [fill_htynfkc](../GlobalStyles/Colors.md#fill-htynfkc) (See Color Styles)
+                                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                              - **color-name** (Type: FRAME, ID: I27652:1309;5041:1485)
+                                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1309;5041:1486)
+                                  - Text Content: "purple-70
+value: #26077A
+"
+                                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+- **05.20 - RAMPING COLORS** (Type: SECTION, ID: 27652:1310)
+  - Fills Ref: [fill_haxjbjd](../GlobalStyles/Colors.md#fill-haxjbjd) (See Color Styles)
+  - Strokes Ref: [stroke_h6tm46h](../GlobalStyles/Colors.md#stroke-h6tm46h) (See Color Styles for Borders)
+  - Layout Style Ref: [layout_hwl601x](../GlobalStyles/LayoutAndSpacing.md#layout-hwl601x) (See Layout Styles)
+  - **Frame 28502** (Type: FRAME, ID: 27652:1318)
+    - Layout Style Ref: [layout_hpmiwr2](../GlobalStyles/LayoutAndSpacing.md#layout-hpmiwr2) (See Layout Styles)
+    - **BG** (Type: FRAME, ID: 27652:1325)
+      - Layout Style Ref: [layout_hx1x1tf](../GlobalStyles/LayoutAndSpacing.md#layout-hx1x1tf) (See Layout Styles)
+      - **Main** (Type: FRAME, ID: 27652:1326)
+        - Layout Style Ref: [layout_h6i214e](../GlobalStyles/LayoutAndSpacing.md#layout-h6i214e) (See Layout Styles)
+        - **BRAND** (Type: FRAME, ID: 27652:1327)
+          - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
+          - **swatches** (Type: FRAME, ID: 27652:1328)
+            - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+            - **swatch** (Type: INSTANCE, ID: 27652:1329)
+              - BorderRadius: 16px
+              - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+              - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+              - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+              - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+              - **main** (Type: FRAME, ID: I27652:1329;5041:1483)
+                - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                - **color** (Type: IMAGE-SVG, ID: I27652:1329;5041:1484)
+                  - BorderRadius: 0px 0px 0px 0px
+                  - Fills Ref: [fill_halp1ks](../GlobalStyles/Colors.md#fill-halp1ks) (See Color Styles)
+                  - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                  - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                - **color-name** (Type: FRAME, ID: I27652:1329;5041:1485)
+                  - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                  - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1329;5041:1486)
+                    - Text Content: "rose-05
+value: #f2e6f6
+"
+                    - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                    - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                    - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+            - **swatch** (Type: INSTANCE, ID: 27652:1330)
+              - BorderRadius: 16px
+              - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+              - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+              - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+              - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+              - **main** (Type: FRAME, ID: I27652:1330;5041:1483)
+                - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                - **color** (Type: IMAGE-SVG, ID: I27652:1330;5041:1484)
+                  - BorderRadius: 0px 0px 0px 0px
+                  - Fills Ref: [fill_h3ux2cm](../GlobalStyles/Colors.md#fill-h3ux2cm) (See Color Styles)
+                  - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                  - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                - **color-name** (Type: FRAME, ID: I27652:1330;5041:1485)
+                  - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                  - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1330;5041:1486)
+                    - Text Content: "rose-10
+value: #e5cced
+"
+                    - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                    - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                    - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+            - **swatch** (Type: INSTANCE, ID: 27652:1331)
+              - BorderRadius: 16px
+              - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+              - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+              - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+              - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+              - **main** (Type: FRAME, ID: I27652:1331;5041:1483)
+                - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                - **color** (Type: IMAGE-SVG, ID: I27652:1331;5041:1484)
+                  - BorderRadius: 0px 0px 0px 0px
+                  - Fills Ref: [fill_hicmsy4](../GlobalStyles/Colors.md#fill-hicmsy4) (See Color Styles)
+                  - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                  - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                - **color-name** (Type: FRAME, ID: I27652:1331;5041:1485)
+                  - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                  - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1331;5041:1486)
+                    - Text Content: "rose-15
+value:#d8b3e5
+"
+                    - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                    - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                    - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+            - **swatch** (Type: INSTANCE, ID: 27652:1332)
+              - BorderRadius: 16px
+              - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+              - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+              - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+              - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+              - **main** (Type: FRAME, ID: I27652:1332;5041:1483)
+                - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                - **color** (Type: IMAGE-SVG, ID: I27652:1332;5041:1484)
+                  - BorderRadius: 0px 0px 0px 0px
+                  - Fills Ref: [fill_h9xd4ff](../GlobalStyles/Colors.md#fill-h9xd4ff) (See Color Styles)
+                  - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                  - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                - **color-name** (Type: FRAME, ID: I27652:1332;5041:1485)
+                  - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                  - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1332;5041:1486)
+                    - Text Content: "rose-20
+value:#cb99dc
+"
+                    - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                    - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                    - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+            - **swatch** (Type: INSTANCE, ID: 27652:1333)
+              - BorderRadius: 16px
+              - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+              - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+              - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+              - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+              - **main** (Type: FRAME, ID: I27652:1333;5041:1483)
+                - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                - **color** (Type: IMAGE-SVG, ID: I27652:1333;5041:1484)
+                  - BorderRadius: 0px 0px 0px 0px
+                  - Fills Ref: [fill_h4o75kx](../GlobalStyles/Colors.md#fill-h4o75kx) (See Color Styles)
+                  - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                  - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                - **color-name** (Type: FRAME, ID: I27652:1333;5041:1485)
+                  - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                  - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1333;5041:1486)
+                    - Text Content: "rose-25
+value:#be80d3
+"
+                    - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                    - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                    - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+            - **swatch** (Type: INSTANCE, ID: 27652:1334)
+              - BorderRadius: 16px
+              - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+              - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+              - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+              - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+              - **main** (Type: FRAME, ID: I27652:1334;5041:1483)
+                - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                - **color** (Type: IMAGE-SVG, ID: I27652:1334;5041:1484)
+                  - BorderRadius: 0px 0px 0px 0px
+                  - Fills Ref: [fill_hkahf19](../GlobalStyles/Colors.md#fill-hkahf19) (See Color Styles)
+                  - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                  - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                - **color-name** (Type: FRAME, ID: I27652:1334;5041:1485)
+                  - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                  - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1334;5041:1486)
+                    - Text Content: "rose-30
+value:#b066ca
+"
+                    - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                    - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                    - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+            - **swatch** (Type: INSTANCE, ID: 27652:1335)
+              - BorderRadius: 16px
+              - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+              - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+              - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+              - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+              - **main** (Type: FRAME, ID: I27652:1335;5041:1483)
+                - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                - **color** (Type: IMAGE-SVG, ID: I27652:1335;5041:1484)
+                  - BorderRadius: 0px 0px 0px 0px
+                  - Fills Ref: [fill_h5tbhrt](../GlobalStyles/Colors.md#fill-h5tbhrt) (See Color Styles)
+                  - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                  - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                - **color-name** (Type: FRAME, ID: I27652:1335;5041:1485)
+                  - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                  - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1335;5041:1486)
+                    - Text Content: "rose-35
+value:#a34dc1
+"
+                    - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                    - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                    - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+            - **swatch** (Type: INSTANCE, ID: 27652:1336)
+              - BorderRadius: 16px
+              - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+              - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+              - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+              - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+              - **main** (Type: FRAME, ID: I27652:1336;5041:1483)
+                - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                - **color** (Type: IMAGE-SVG, ID: I27652:1336;5041:1484)
+                  - BorderRadius: 0px 0px 0px 0px
+                  - Fills Ref: [fill_hjzt4sr](../GlobalStyles/Colors.md#fill-hjzt4sr) (See Color Styles)
+                  - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                  - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                - **color-name** (Type: FRAME, ID: I27652:1336;5041:1485)
+                  - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                  - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1336;5041:1486)
+                    - Text Content: "rose-40
+value:#9633b9
+"
+                    - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                    - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                    - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+            - **swatch** (Type: INSTANCE, ID: 27652:1337)
+              - BorderRadius: 16px
+              - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+              - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+              - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+              - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+              - **main** (Type: FRAME, ID: I27652:1337;5041:1483)
+                - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                - **color** (Type: IMAGE-SVG, ID: I27652:1337;5041:1484)
+                  - BorderRadius: 0px 0px 0px 0px
+                  - Fills Ref: [fill_hygz792](../GlobalStyles/Colors.md#fill-hygz792) (See Color Styles)
+                  - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                  - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                - **color-name** (Type: FRAME, ID: I27652:1337;5041:1485)
+                  - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                  - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1337;5041:1486)
+                    - Text Content: "rose-45
+value:#891ab0
+"
+                    - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                    - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                    - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+            - **swatch** (Type: INSTANCE, ID: 27652:1338)
+              - BorderRadius: 16px
+              - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+              - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+              - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+              - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+              - **main** (Type: FRAME, ID: I27652:1338;5041:1483)
+                - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+                - **color** (Type: IMAGE-SVG, ID: I27652:1338;5041:1484)
+                  - BorderRadius: 0px 0px 0px 0px
+                  - Fills Ref: [fill_hygz792](../GlobalStyles/Colors.md#fill-hygz792) (See Color Styles)
+                  - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                  - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+                - **color-name** (Type: FRAME, ID: I27652:1338;5041:1485)
+                  - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                  - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1338;5041:1486)
+                    - Text Content: "rose-50
+value: #891ab0
+"
+                    - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                    - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                    - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+  - **BG** (Type: FRAME, ID: 27652:1339)
+    - Layout Style Ref: [layout_hx1x1tf](../GlobalStyles/LayoutAndSpacing.md#layout-hx1x1tf) (See Layout Styles)
+    - **Main** (Type: FRAME, ID: 27652:1340)
+      - Layout Style Ref: [layout_h6i214e](../GlobalStyles/LayoutAndSpacing.md#layout-h6i214e) (See Layout Styles)
+      - **BRAND** (Type: FRAME, ID: 27652:1341)
+        - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
+        - **swatches** (Type: FRAME, ID: 27652:1342)
+          - Layout Style Ref: [layout_h3ria3n](../GlobalStyles/LayoutAndSpacing.md#layout-h3ria3n) (See Layout Styles)
+          - **swatch** (Type: INSTANCE, ID: 27652:1343)
+            - BorderRadius: 16px
+            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+            - **main** (Type: FRAME, ID: I27652:1343;5041:1483)
+              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+              - **color** (Type: IMAGE-SVG, ID: I27652:1343;5041:1484)
+                - BorderRadius: 0px 0px 0px 0px
+                - Fills Ref: [fill_hevgj7x](../GlobalStyles/Colors.md#fill-hevgj7x) (See Color Styles)
+                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+              - **color-name** (Type: FRAME, ID: I27652:1343;5041:1485)
+                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1343;5041:1486)
+                  - Text Content: "rose-05
+value: #700096
+"
+                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+          - **swatch** (Type: INSTANCE, ID: 27652:1344)
+            - BorderRadius: 16px
+            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+            - **main** (Type: FRAME, ID: I27652:1344;5041:1483)
+              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+              - **color** (Type: IMAGE-SVG, ID: I27652:1344;5041:1484)
+                - BorderRadius: 0px 0px 0px 0px
+                - Fills Ref: [fill_h3ux2cm](../GlobalStyles/Colors.md#fill-h3ux2cm) (See Color Styles)
+                - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+              - **color-name** (Type: FRAME, ID: I27652:1344;5041:1485)
+                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1344;5041:1486)
+                  - Text Content: "rose-10
+value: #630086
+"
+                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+          - **swatch** (Type: INSTANCE, ID: 27652:1345)
+            - BorderRadius: 16px
+            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+            - **main** (Type: FRAME, ID: I27652:1345;5041:1483)
+              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+              - **color** (Type: IMAGE-SVG, ID: I27652:1345;5041:1484)
+                - BorderRadius: 0px 0px 0px 0px
+                - Fills Ref: [fill_hicmsy4](../GlobalStyles/Colors.md#fill-hicmsy4) (See Color Styles)
+                - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+              - **color-name** (Type: FRAME, ID: I27652:1345;5041:1485)
+                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1345;5041:1486)
+                  - Text Content: "rose-15
+value:#630086
+"
+                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+          - **swatch** (Type: INSTANCE, ID: 27652:1346)
+            - BorderRadius: 16px
+            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+            - **main** (Type: FRAME, ID: I27652:1346;5041:1483)
+              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+              - **color** (Type: IMAGE-SVG, ID: I27652:1346;5041:1484)
+                - BorderRadius: 0px 0px 0px 0px
+                - Fills Ref: [fill_h9xd4ff](../GlobalStyles/Colors.md#fill-h9xd4ff) (See Color Styles)
+                - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+              - **color-name** (Type: FRAME, ID: I27652:1346;5041:1485)
+                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1346;5041:1486)
+                  - Text Content: "rose-20
+value:#cb99dc
+"
+                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+          - **swatch** (Type: INSTANCE, ID: 27652:1347)
+            - BorderRadius: 16px
+            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+            - **main** (Type: FRAME, ID: I27652:1347;5041:1483)
+              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+              - **color** (Type: IMAGE-SVG, ID: I27652:1347;5041:1484)
+                - BorderRadius: 0px 0px 0px 0px
+                - Fills Ref: [fill_h4o75kx](../GlobalStyles/Colors.md#fill-h4o75kx) (See Color Styles)
+                - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+              - **color-name** (Type: FRAME, ID: I27652:1347;5041:1485)
+                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1347;5041:1486)
+                  - Text Content: "rose-25
+value:#be80d3
+"
+                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+          - **swatch** (Type: INSTANCE, ID: 27652:1348)
+            - BorderRadius: 16px
+            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+            - **main** (Type: FRAME, ID: I27652:1348;5041:1483)
+              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+              - **color** (Type: IMAGE-SVG, ID: I27652:1348;5041:1484)
+                - BorderRadius: 0px 0px 0px 0px
+                - Fills Ref: [fill_hkahf19](../GlobalStyles/Colors.md#fill-hkahf19) (See Color Styles)
+                - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+              - **color-name** (Type: FRAME, ID: I27652:1348;5041:1485)
+                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1348;5041:1486)
+                  - Text Content: "rose-30
+value:#b066ca
+"
+                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+          - **swatch** (Type: INSTANCE, ID: 27652:1349)
+            - BorderRadius: 16px
+            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+            - **main** (Type: FRAME, ID: I27652:1349;5041:1483)
+              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+              - **color** (Type: IMAGE-SVG, ID: I27652:1349;5041:1484)
+                - BorderRadius: 0px 0px 0px 0px
+                - Fills Ref: [fill_h5tbhrt](../GlobalStyles/Colors.md#fill-h5tbhrt) (See Color Styles)
+                - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+              - **color-name** (Type: FRAME, ID: I27652:1349;5041:1485)
+                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1349;5041:1486)
+                  - Text Content: "rose-35
+value:#a34dc1
+"
+                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+          - **swatch** (Type: INSTANCE, ID: 27652:1350)
+            - BorderRadius: 16px
+            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+            - **main** (Type: FRAME, ID: I27652:1350;5041:1483)
+              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+              - **color** (Type: IMAGE-SVG, ID: I27652:1350;5041:1484)
+                - BorderRadius: 0px 0px 0px 0px
+                - Fills Ref: [fill_hjzt4sr](../GlobalStyles/Colors.md#fill-hjzt4sr) (See Color Styles)
+                - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+              - **color-name** (Type: FRAME, ID: I27652:1350;5041:1485)
+                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1350;5041:1486)
+                  - Text Content: "rose-40
+value:#9633b9
+"
+                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+          - **swatch** (Type: INSTANCE, ID: 27652:1351)
+            - BorderRadius: 16px
+            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+            - **main** (Type: FRAME, ID: I27652:1351;5041:1483)
+              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+              - **color** (Type: IMAGE-SVG, ID: I27652:1351;5041:1484)
+                - BorderRadius: 0px 0px 0px 0px
+                - Fills Ref: [fill_hygz792](../GlobalStyles/Colors.md#fill-hygz792) (See Color Styles)
+                - Strokes Ref: [stroke_h7o8qhb](../GlobalStyles/Colors.md#stroke-h7o8qhb) (See Color Styles for Borders)
+                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+              - **color-name** (Type: FRAME, ID: I27652:1351;5041:1485)
+                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1351;5041:1486)
+                  - Text Content: "rose-40
+value:#891ab0
+"
+                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+          - **swatch** (Type: INSTANCE, ID: 27652:1352)
+            - BorderRadius: 16px
+            - (Instance of a component. Main Component ID: [27652:937](../UnknownPage.md#component-UnknownPage-27652:937). Further details depend on main component definition.)
+            - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+            - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+            - Layout Style Ref: [layout_h54tdsl](../GlobalStyles/LayoutAndSpacing.md#layout-h54tdsl) (See Layout Styles)
+            - **main** (Type: FRAME, ID: I27652:1352;5041:1483)
+              - Layout Style Ref: [layout_h8s84ks](../GlobalStyles/LayoutAndSpacing.md#layout-h8s84ks) (See Layout Styles)
+              - **color** (Type: IMAGE-SVG, ID: I27652:1352;5041:1484)
+                - BorderRadius: 0px 0px 0px 0px
+                - Fills Ref: [fill_hygz792](../GlobalStyles/Colors.md#fill-hygz792) (See Color Styles)
+                - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+                - Layout Style Ref: [layout_hbvi186](../GlobalStyles/LayoutAndSpacing.md#layout-hbvi186) (See Layout Styles)
+              - **color-name** (Type: FRAME, ID: I27652:1352;5041:1485)
+                - Layout Style Ref: [layout_hkdhjj1](../GlobalStyles/LayoutAndSpacing.md#layout-hkdhjj1) (See Layout Styles)
+                - **bg-strong global: base/neutral-70** (Type: TEXT, ID: I27652:1352;5041:1486)
+                  - Text Content: "rose-10
+value: #891ab0
+"
+                  - TextStyle Ref: [text_hnl24me](../GlobalStyles/Typography.md#text-hnl24me) (See Typography Styles)
+                  - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+                  - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)

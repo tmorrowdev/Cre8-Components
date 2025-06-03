@@ -2,7 +2,7 @@ import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { Cre8Element } from '../cre8-element';
-import styles from './tag-list.scss';
+import styles from './tag-list.module';
 
 /**
  * Tag List must have children which are Tag components that are of type `checkbox` or `radio`.
@@ -10,9 +10,7 @@ import styles from './tag-list.scss';
  * Tag List has a label that should be used to describe the purpose of the list.
  */
 export class Cre8TagList extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /**
    * Tag list legend label

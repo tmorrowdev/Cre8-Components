@@ -1,7 +1,7 @@
 import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './section.scss';
+import styles from './section.module';
 /**
  * The section component acts as a block level HTML element that takes a 'headline' property
  * that renders the section's heading which wraps around any HTML template
@@ -21,9 +21,7 @@ import styles from './section.scss';
  */
 
 export class Cre8Section extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles);
-    }
+    static styles = [styles];
 
   /**
    * The Headline will be rendered as the Section Headline with the correct brand styling applied

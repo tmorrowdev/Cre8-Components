@@ -19,7 +19,6 @@ export { Cre8TableBody } from './components/table-body/table-body';
 export { Cre8Table } from './components/table/table';
 export { Cre8TabPanel } from './components/tab-panel/tab-panel';
 export { Cre8Tab } from './components/tab/tab';
-// export { Cre8Switch } from './components/switch/switch'; // Commented out since module not found
 export { Cre8SubmenuItem } from './components/submenu-item/submenu-item';
 export { Cre8Submenu } from './components/submenu/submenu';
 export { Cre8SplitButton } from './components/split-button/split-button';
@@ -83,3 +82,4 @@ export { Cre8FormElement } from './components/cre8-form-element';
 export { Cre8RemoveTag } from './components/remove-tag/remove-tag';
 export { Cre8DangerButton } from './components/danger-button/danger-button';
 export { Cre8PercentBar } from './components/percent-bar/percent-bar';
+export { Cre8Chart } from './components/chart/chart';

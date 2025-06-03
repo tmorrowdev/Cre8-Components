@@ -2,15 +2,13 @@ import { html, unsafeCSS } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './text-link.scss';
+import styles from './text-link.module';
 
 /**
  * @slot - The component content
  */
 export class Cre8TextLink extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /**
    * The link URL

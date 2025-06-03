@@ -1,0 +1,33 @@
+@import '/design-tokens/core/scss/theming/component';
+/*------------------------------------*\
+ #TERTIARY-NAV
+\*------------------------------------*/ 
+
+:host {
+  display: flex;
+}
+
+/**
+ * Tertiary nav
+ */
+.cre8-c-tertiary-nav {
+  width: 100%;
+  max-width: size(30);
+}
+
+/**
+ * Tertiary nav full width
+ */
+.cre8-c-tertiary-nav--full-width {
+  max-width: none;
+}
+
+/**
+ * Tertiary nav list
+ */
+.cre8-c-tertiary-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+

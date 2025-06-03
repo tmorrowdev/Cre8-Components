@@ -5,16 +5,15 @@ import {
 } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { property, queryAll, state } from 'lit/decorators.js';
-import svgCaretLeft from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Left.svg?raw';
-import svgFirstPage from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Double Left.svg?raw';
-import svgLastPage from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Double Right.svg?raw';
-import svgCaretRight from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Right.svg?raw';
+import svgCaretLeft from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Left.svg?raw';
+import svgFirstPage from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Double_Left.svg?raw';
+import svgLastPage from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Double_Right.svg?raw';
+import svgCaretRight from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Right.svg?raw';
 import { Cre8Element } from '../cre8-element';
-import { Cre8Button } from '../button/button';
+import {Cre8Button} from '../button/button';
 import { isMobile, screenSizes } from '../../utilities/is-mobile';
 import './page-counter/page-counter';
-import styles from './pagination.scss';
-import '@cre8_dev/cre8-icons/lib/wc/Icon';
+import styles from './pagination.module';
 
 /**
  * The Pagination component is used to split up a large amount of results
@@ -68,9 +67,7 @@ import '@cre8_dev/cre8-icons/lib/wc/Icon';
  */
 
 export class Cre8Pagination extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles);
-    }
+    static styles = [styles];
 
     static elementDefinitions = {
         'cre8-button': Cre8Button,
@@ -93,11 +90,11 @@ export class Cre8Pagination extends Cre8Element {
    * @attr number
    */
   @property({ type: Number, reflect: true })
-  get pageSize() {
+  get pagesize() {
       return this._pageSize;
   }
 
-  set pageSize(newSize: number) {
+  set pagesize(newSize: number) {
       const oldSize = this._pageSize;
       this._pageSize = newSize;
       this.requestUpdate('pageSize', oldSize);
@@ -136,7 +133,7 @@ export class Cre8Pagination extends Cre8Element {
       windowWidth!: number;
 
   @queryAll('cre8-button')
-      buttons: Cre8Button[];
+      buttons: typeof Cre8Button[];
 
   /**
   *
@@ -179,7 +176,7 @@ export class Cre8Pagination extends Cre8Element {
 
 
   private get totalPages(): number {
-      return Math.ceil(this.totalResults / this.pageSize);
+      return Math.ceil(this.totalResults / this.pagesize);
   }
 
   private get hasNoPreviousPage() {
@@ -210,9 +207,9 @@ export class Cre8Pagination extends Cre8Element {
 
   protected async firstUpdated() {
       await this.updateComplete;
-      if (this._pageSize !== this.pageSize) {
+      if (this._pageSize !== this.pagesize) {
           const old = this._pageSize;
-          this._pageSize = this.pageSize;
+          this._pageSize = this.pagesize;
           this.requestUpdate('pageSize', old);
       }
       this.windowWidth = window.innerWidth;
@@ -255,7 +252,8 @@ export class Cre8Pagination extends Cre8Element {
   private _goToPage = (page: number, _buttonName?: string) => () => {
       const old = this._currentPage;
       let focusButton: Cre8Button;
-      this.buttons.forEach((b: Cre8Button) => {
+      this.buttons.forEach((_: typeof Cre8Button) => {
+       const b = new Cre8Button();
           if (b.hideText && (b.text === _buttonName)) {
               focusButton = b;
               (focusButton.shadowRoot!.querySelector('.cre8-c-button') as HTMLButtonElement).blur();

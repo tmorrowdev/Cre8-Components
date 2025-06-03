@@ -1,6 +1,7 @@
 import {LitElement, html, unsafeCSS} from 'lit';
+import { ifDefined } from 'lit-html/directives/if-defined.js';
 import {customElement, property} from 'lit/decorators.js';
-import styles from './f-po.scss';
+import styles from './f-po.module';
 
 @customElement('f-po')
 export class FPO extends LitElement {
@@ -16,7 +17,7 @@ export class FPO extends LitElement {
 
   render() {
     return html`
-      <div class="f-po ${this.styleModifier}" style="${this.inlineStyle}">
+      <div class="f-po ${this.styleModifier}" style="${ifDefined(this.inlineStyle)}">
         <slot></slot>
       </div>
     `;

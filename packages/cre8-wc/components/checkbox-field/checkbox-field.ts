@@ -4,7 +4,7 @@ import { property } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { Cre8Element } from '../cre8-element';
 import '../field-note/field-note';
-import styles from './checkbox-field.scss';
+import styles from './checkbox-field.module';
 
 /**
  * Checkbox Field is the parent container for `checkbox-field-item`.
@@ -16,9 +16,7 @@ import styles from './checkbox-field.scss';
  * @slot - The component content, which should be a set of `checkbox-field-item`s
  */
 export class Cre8CheckboxField extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /**
    * Checkbox container legend label

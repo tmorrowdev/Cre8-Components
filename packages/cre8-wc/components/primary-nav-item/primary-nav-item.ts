@@ -2,7 +2,7 @@ import { html, unsafeCSS } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property, state } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './primary-nav-item.scss';
+import styles from './primary-nav-item.module';
 
     /**
      * @slot - The label for the navigation item
@@ -38,9 +38,7 @@ export class Cre8PrimaryNavItem extends Cre8Element {
     @state()
         isActive?: boolean;
 
-    static get styles() {
-        return unsafeCSS(styles);
-    }
+    static styles = [styles];
 
     /**
      * Initialize functions

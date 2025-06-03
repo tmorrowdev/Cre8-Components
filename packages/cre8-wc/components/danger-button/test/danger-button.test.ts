@@ -1,11 +1,11 @@
-import svgCaretLeft from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Left.svg?raw';
-import svgCaretRight from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Right.svg?raw';
+import svgCaretLeft from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Left.svg?raw?raw';
+import svgCaretRight from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Right.svg?raw?raw';
 import { fixture, oneEvent } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../danger-button';
 import userEvent from '@testing-library/user-event';
-import { cre8LoadingSpinner } from '../../loading-spinner/loading-spinner';
-import { cre8DangerButton } from '../danger-button';
+import cre8LoadingSpinner  from '../../loading-spinner/loading-spinner';
+import  cre8DangerButton  from '../danger-button';
 
 describe('danger-button', () => {
     test('renders correctly', async () => {

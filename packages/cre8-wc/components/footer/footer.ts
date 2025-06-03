@@ -1,6 +1,6 @@
 import { html, unsafeCSS } from 'lit';
 import { Cre8Element } from '../cre8-element';
-import styles from './footer.scss';
+import styles from './footer.module';
 
 /**
  * @slot - The footer content
@@ -8,9 +8,7 @@ import styles from './footer.scss';
  * @slot bottom - The bottom content (below the default slot)
  */
 export class Cre8Footer extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles);
-    }
+    static styles = [styles];
 
     render() {
         const componentClassName = this.componentClassNames('cre8-c-footer', {});

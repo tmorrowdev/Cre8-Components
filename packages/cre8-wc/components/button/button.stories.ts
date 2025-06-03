@@ -1,8 +1,8 @@
 import type { Meta } from '@storybook/web-components';
-import {html} from 'lit';
+import { html } from 'lit';
 import { spread } from '../../directives/spread';
 import './button';
-import svgCaretUp from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Up.svg?raw';
+import svgCaretUp from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Up.svg?raw';
 
 const meta: Meta = {
   title: 'cre8 Components/Button',
@@ -13,54 +13,54 @@ const meta: Meta = {
       type: 'figma',
       url: 'https://www.figma.com/file/WkOaGhOMq5lOGwAUfASz8K/ESI-PBM-Web?node-id=4651%3A51525&t=3jUKYPYoGMClqBbL-1',
     },
-    status: {type: 'inProgress'},
+    status: { type: 'inProgress' },
     actions: {
       handles: ['click', 'submit'],
     },
   },
   argTypes: {
-    ariaLive: { options: ['assertive', 'polite'], control: 'radio'},
-    buttonAriaExpanded: {control: 'boolean'},
-    disabled: {control: 'boolean'},
-    fullWidth: {control: 'boolean'},
-    hideText: {control: 'boolean'},
-    iconName: {control: 'text'}, // iconName will be deprecated
-    svg: {control: 'text'},
-    iconRotateDegree: {control: 'text'},
+    ariaLive: { options: ['assertive', 'polite'], control: 'radio' },
+    buttonAriaExpanded: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    fullWidth: { control: 'boolean' },
+    hideText: { control: 'boolean' },
+    iconName: { control: 'text' }, // iconName will be deprecated
+    svg: { control: 'text' },
+    iconRotateDegree: { control: 'text' },
     iconPosition: {
       options: ['before', 'after'],
-      control: { type: 'radio' }
+      control: { type: 'radio' },
     },
-    inverse: {control: 'boolean'},
-    loading: {control: 'boolean'},
-    loadingComplete: {control: 'boolean'},
+    inverse: { control: 'boolean' },
+    loading: { control: 'boolean' },
+    loadingComplete: { control: 'boolean' },
     text: {
-      control: 'text'
+      control: 'text',
     },
     href: {
-      control: 'text'
+      control: 'text',
     },
     size: {
       options: ['sm', 'md', 'lg'],
-      control: { type: 'radio' }
+      control: { type: 'radio' },
     },
     variant: {
       options: ['primary', 'secondary', 'tertiary'],
-      control: { type: 'radio' }
-    }
+      control: { type: 'radio' },
+    },
   },
   args: {
     text: 'Button',
     loading: undefined,
     size: 'md',
-  }
+  },
 };
 export default meta;
 
 export const Primary = {
   args: {
-    text: 'Primary'
-  }
+    text: 'Primary',
+  },
 };
 
 /**
@@ -69,15 +69,16 @@ export const Primary = {
 export const PrimarySubmit = {
   args: {
     type: 'submit',
-    text: 'Submit'
-  }
+    text: 'Submit',
+  },
 };
 
 export const PrimaryDisabled = {
   args: {
     disabled: true,
-    text: 'Button'
-  }
+    text: 'Button',
+    buttonAriaExpanded: false,
+  },
 };
 
 export const PrimaryInverse = {
@@ -89,7 +90,7 @@ export const PrimaryInverse = {
   parameters: {
     backgrounds: { default: 'dark' },
   },
-}
+};
 
 export const PrimaryInverseDisabled = {
   args: {
@@ -109,8 +110,7 @@ export const PrimaryInverseLoading = {
     text: 'Button',
     variant: 'primary',
     inverse: true,
-  }
-  ,
+  },
   parameters: {
     backgrounds: { default: 'dark' },
   },
@@ -121,7 +121,7 @@ export const PrimaryInverseSmall = {
     text: 'Button',
     variant: 'primary',
     inverse: true,
-    size: 'sm'
+    size: 'sm',
   },
   parameters: {
     backgrounds: { default: 'dark' },
@@ -136,7 +136,7 @@ export const PrimaryInverseIconOnly = {
     iconPosition: 'after',
     text: 'Button With Visually Hidden Text',
     variant: 'primary',
-    inverse: true
+    inverse: true,
   },
   parameters: {
     backgrounds: { default: 'dark' },
@@ -148,7 +148,7 @@ export const PrimaryInverseFullWidth = {
     fullWidth: true,
     text: 'Button',
     variant: 'primary',
-    inverse: true
+    inverse: true,
   },
   parameters: {
     backgrounds: { default: 'dark' },
@@ -160,32 +160,32 @@ export const IconBefore = {
     svg: svgCaretUp,
     iconRotateDegree: '-90',
     iconPosition: 'before',
-    text: 'Button'
-  }
+    text: 'Button',
+  },
 };
 
-export const IconAfter  = {
+export const IconAfter = {
   args: {
     svg: svgCaretUp,
     iconRotateDegree: '90',
     iconPosition: 'after',
-    text: 'Button'
-  }
+    text: 'Button',
+  },
 };
 
 export const Secondary = {
   args: {
     text: 'Button',
-    variant: 'secondary'
-  }
+    variant: 'secondary',
+  },
 };
 
 export const SecondaryDisabled = {
   args: {
     disabled: true,
     text: 'Button',
-    variant: 'secondary'
-  }
+    variant: 'secondary',
+  },
 };
 
 export const SecondaryNeutral = {
@@ -193,7 +193,7 @@ export const SecondaryNeutral = {
     text: 'Button',
     variant: 'secondary',
     neutral: true,
-  }
+  },
 };
 
 export const SecondaryNeutralDisabled = {
@@ -202,7 +202,7 @@ export const SecondaryNeutralDisabled = {
     text: 'Button',
     variant: 'secondary',
     neutral: true,
-  }
+  },
 };
 
 export const SecondaryNeutralLoading = {
@@ -211,7 +211,7 @@ export const SecondaryNeutralLoading = {
     text: 'Button',
     variant: 'secondary',
     neutral: true,
-  }
+  },
 };
 
 export const SecondaryNeutralInverse = {
@@ -256,7 +256,7 @@ export const SecondaryInverse = {
   args: {
     text: 'Button',
     variant: 'secondary',
-    inverse: true
+    inverse: true,
   },
   parameters: {
     backgrounds: { default: 'dark' },
@@ -268,7 +268,7 @@ export const SecondaryInverseDisabled = {
     disabled: true,
     text: 'Button',
     variant: 'secondary',
-    inverse: true
+    inverse: true,
   },
   parameters: {
     backgrounds: { default: 'dark' },
@@ -280,7 +280,7 @@ export const SecondaryInverseLoading = {
     loading: true,
     text: 'Button',
     variant: 'secondary',
-    inverse: true
+    inverse: true,
   },
   parameters: {
     backgrounds: { default: 'dark' },
@@ -292,7 +292,7 @@ export const SecondaryInverseSmall = {
     text: 'Button',
     variant: 'secondary',
     inverse: true,
-    size: 'sm'
+    size: 'sm',
   },
   parameters: {
     backgrounds: { default: 'dark' },
@@ -307,7 +307,7 @@ export const SecondaryInverseIconOnly = {
     iconPosition: 'after',
     text: 'Button With Visually Hidden Text',
     variant: 'secondary',
-    inverse: true
+    inverse: true,
   },
   parameters: {
     backgrounds: { default: 'dark' },
@@ -319,7 +319,7 @@ export const SecondaryInverseFullWidth = {
     fullWidth: true,
     text: 'Button',
     variant: 'secondary',
-    inverse: true
+    inverse: true,
   },
   parameters: {
     backgrounds: { default: 'dark' },
@@ -329,24 +329,24 @@ export const SecondaryInverseFullWidth = {
 export const Tertiary = {
   args: {
     text: 'Button',
-    variant: 'tertiary'
-  }
+    variant: 'tertiary',
+  },
 };
 
 export const TertiaryDisabled = {
   args: {
     disabled: true,
     text: 'Button',
-    variant: 'tertiary'
-  }
+    variant: 'tertiary',
+  },
 };
 
 export const TertiaryNeutral = {
   args: {
     text: 'Button',
     variant: 'tertiary',
-    neutral: true
-  }
+    neutral: true,
+  },
 };
 
 export const TertiaryNeutralDisabled = {
@@ -354,8 +354,8 @@ export const TertiaryNeutralDisabled = {
     text: 'Button',
     variant: 'tertiary',
     neutral: true,
-    disabled: true
-  }
+    disabled: true,
+  },
 };
 
 export const TertiaryNeutralLoading = {
@@ -363,8 +363,8 @@ export const TertiaryNeutralLoading = {
     text: 'Button',
     variant: 'tertiary',
     neutral: true,
-    loading: true
-  }
+    loading: true,
+  },
 };
 
 export const TertiaryInverse = {
@@ -383,7 +383,7 @@ export const TertiaryInverseNeutral = {
     text: 'Button',
     variant: 'tertiary',
     inverse: true,
-    neutral: true
+    neutral: true,
   },
   parameters: {
     backgrounds: { default: 'dark' },
@@ -395,7 +395,7 @@ export const TertiaryInverseDisabled = {
     disabled: true,
     text: 'Button',
     variant: 'tertiary',
-    inverse: true
+    inverse: true,
   },
   parameters: {
     backgrounds: { default: 'dark' },
@@ -407,7 +407,7 @@ export const TertiaryInverseLoading = {
     loading: true,
     text: 'Button',
     variant: 'tertiary',
-    inverse: true
+    inverse: true,
   },
   parameters: {
     backgrounds: { default: 'dark' },
@@ -419,7 +419,7 @@ export const TertiaryInverseSmall = {
     text: 'Button',
     variant: 'tertiary',
     inverse: true,
-    size: 'sm'
+    size: 'sm',
   },
   parameters: {
     backgrounds: { default: 'dark' },
@@ -434,7 +434,7 @@ export const TertiaryInverseIconOnly = {
     iconPosition: 'after',
     text: 'Button With Visually Hidden Text',
     variant: 'tertiary',
-    inverse: true
+    inverse: true,
   },
   parameters: {
     backgrounds: { default: 'dark' },
@@ -446,7 +446,7 @@ export const TertiaryInverseFullWidth = {
     fullWidth: true,
     text: 'Button',
     variant: 'tertiary',
-    inverse: true
+    inverse: true,
   },
   parameters: {
     backgrounds: { default: 'dark' },
@@ -457,14 +457,14 @@ export const FullWidth = {
   args: {
     fullWidth: true,
     text: 'Button',
-  }
+  },
 };
 
-export const Small= {
+export const Small = {
   args: {
     size: 'sm',
     text: 'Button',
-  }
+  },
 };
 
 export const SmallIconAfter = {
@@ -473,15 +473,15 @@ export const SmallIconAfter = {
     iconRotateDegree: '90',
     iconPosition: 'after',
     size: 'sm',
-    text: 'Button'
-  }
+    text: 'Button',
+  },
 };
 
 export const Large = {
   args: {
     size: 'lg',
     text: 'Button',
-  }
+  },
 };
 
 export const LargeIconAfter = {
@@ -490,8 +490,8 @@ export const LargeIconAfter = {
     iconRotateDegree: '90',
     iconPosition: 'after',
     size: 'lg',
-    text: 'Button'
-  }
+    text: 'Button',
+  },
 };
 
 /**
@@ -506,8 +506,8 @@ export const IconOnlyPrimary = {
     iconRotateDegree: '90',
     iconPosition: 'after',
     text: 'Button With Visually Hidden Text',
-    variant: 'primary'
-  }
+    variant: 'primary',
+  },
 };
 
 export const IconOnlySecondary = {
@@ -517,8 +517,8 @@ export const IconOnlySecondary = {
     iconRotateDegree: '90',
     iconPosition: 'after',
     text: 'Button With Visually Hidden Text',
-    variant: 'secondary'
-  }
+    variant: 'secondary',
+  },
 };
 
 export const IconOnlySecondaryNeutralInverse = {
@@ -530,7 +530,7 @@ export const IconOnlySecondaryNeutralInverse = {
     text: 'Button With Visually Hidden Text',
     variant: 'secondary',
     inverse: true,
-    neutral: true
+    neutral: true,
   },
   parameters: {
     backgrounds: { default: 'dark' },
@@ -544,8 +544,8 @@ export const IconOnlyTertiary = {
     iconRotateDegree: '90',
     iconPosition: 'after',
     text: 'Button With Visually Hidden Text',
-    variant: 'tertiary'
-  }
+    variant: 'tertiary',
+  },
 };
 
 export const IconOnlyNeutralTertiary = {
@@ -556,8 +556,8 @@ export const IconOnlyNeutralTertiary = {
     iconPosition: 'after',
     text: 'Button With Visually Hidden Text',
     variant: 'tertiary',
-    neutral: true
-  }
+    neutral: true,
+  },
 };
 
 export const IconOnlyNeutralInverseTertiary = {
@@ -569,26 +569,25 @@ export const IconOnlyNeutralInverseTertiary = {
     text: 'Button With Visually Hidden Text',
     variant: 'tertiary',
     neutral: true,
-    inverse: true
+    inverse: true,
   },
   parameters: {
     backgrounds: { default: 'dark' },
   },
 };
 
-
 export const Loading = {
   args: {
     loading: true,
     text: 'Submit',
-    variant: 'primary'
-  }
+    variant: 'primary',
+  },
 };
 
 export const LoadingComplete = {
   args: {
     loadingComplete: true,
     text: 'Submit',
-    variant: 'primary'
-  }
+    variant: 'primary',
+  },
 };

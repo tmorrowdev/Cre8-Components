@@ -1,0 +1,37 @@
+@import '../../design-tokens/core/scss/theming/component' ;
+
+:host{
+  display: block;
+}
+
+/** 
+ * Field Label 
+ */ 
+.cre8-c-field__label {
+  @include label-styles();
+}
+
+/** 
+ * Field Body
+ * 1) The div that contains the input and icons 
+ */ 
+.cre8-c-field__body {
+  position: relative;
+}
+
+/** 
+ * Field Input 
+ * 1) The html5 input element
+ */ 
+.cre8-c-field__input {
+  @include input-styles;
+  
+  /**
+   * Readonly input styles
+   */
+  &:read-only {
+    background-color: var(--cre8-color-bg-disabled);
+    border-color: var(--cre8-color-border-disabled);
+    cursor: default;
+  }
+}

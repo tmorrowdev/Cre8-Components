@@ -1,16 +1,14 @@
 import { html, unsafeCSS, PropertyValues } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './tab.scss';
+import styles from './tab.module';
 
 /**
  * @slot - The component content
  */
 
 export class Cre8Tab extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /**
    * Tab sizes

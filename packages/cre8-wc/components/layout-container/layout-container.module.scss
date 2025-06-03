@@ -1,0 +1,23 @@
+@import '/design-tokens/core/scss/theming/component';
+
+// #LAYOUT CONTAINER
+
+/**
+ * Layout Container
+ * 1) Caps the width of the content to the maximum width
+ *    and centers the container
+ */
+.cre8-l-layout-container {
+  width: 100%;
+  max-width: var(--cre8-l-max-width);
+  padding-right: size(2);
+  padding-left: size(2);
+  margin: 0 auto;
+}
+
+.cre8-l-layout-container--full-height {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+}

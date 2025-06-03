@@ -1,0 +1,137 @@
+@import '/design-tokens/core/scss/theming/component';
+
+
+:host {
+  display: inline;
+  text-align: left;
+}
+/**
+ * DefaultHeading component styling/Heading title-large
+ */
+.cre8-c-heading,
+.cre8-c-heading--title-large {
+  @include cre8-typography-title-large();
+  margin: 0;
+  color: var(--cre8-color-content-default);
+}
+
+/**
+ * Heading with theme headline-large preset applied
+ */
+.cre8-c-heading--headline-large {
+  @include cre8-typography-headline-large();
+}
+
+/**
+ * Heading with theme headline-default preset applied
+ */
+.cre8-c-heading--headline-default {
+  @include cre8-typography-headline-default();
+}
+
+/**
+ * Heading with theme headline-small preset applied
+ */
+.cre8-c-heading--headline-small {
+  @include cre8-typography-headline-small();
+}
+
+/**
+ * Heading with theme title-xlarge preset applied
+ */
+.cre8-c-heading--title-xlarge {
+  @include cre8-typography-title-xlarge();
+}
+
+/**
+ * Heading with theme title-large preset applied
+ */
+.cre8-c-heading--title-large {
+  @include cre8-typography-title-large();
+}
+
+/**
+ * Heading with theme title-default preset applied
+ */
+.cre8-c-heading--title-default {
+  @include cre8-typography-title-default();
+}
+
+/**
+ * Heading with theme title-small preset applied
+ */
+.cre8-c-heading--title-small {
+  @include cre8-typography-title-small();
+}
+/**
+ * Heading with theme display-small preset applied
+ */
+.cre8-c-heading--display-small {
+  @include cre8-typography-display-small();
+}
+
+/**
+ * Heading with theme display-default preset applied
+ */
+.cre8-c-heading--display-default {
+  @include cre8-typography-display-default();
+}
+
+/**
+ * Heading with theme label-large preset applied
+ */
+.cre8-c-heading--label-large {
+  @include cre8-typography-label-large();
+}
+
+/**
+ * Heading with theme label-default preset applied
+ */
+.cre8-c-heading--label-default {
+  @include cre8-typography-label-default();
+}
+
+/**
+ * Heading with theme label-small preset applied
+ */
+.cre8-c-heading--label-small {
+  @include cre8-typography-label-small();
+}
+
+/**
+ * Heading with theme meta-default preset applied
+ */
+.cre8-c-heading--meta-large {
+  @include cre8-typography-meta-large();
+  text-transform: uppercase;
+}
+
+/**
+ * Heading with theme meta-default preset applied
+ */
+.cre8-c-heading--meta-default {
+  @include cre8-typography-meta-default();
+  text-transform: uppercase;
+}
+
+/**
+ * Heading with theme meta-small preset applied
+ */
+.cre8-c-heading--meta-small {
+  @include cre8-typography-meta-small();
+  text-transform: uppercase;
+}
+
+/**
+ * Heading with brand color applied
+ */
+.cre8-c-heading--brand-color {
+  color: var(--cre8-color-content-brand-strong);
+  &.cre8-c-heading--inverted {
+    color: var(--cre8-color-content-brand-knockout);
+  }
+}
+
+.cre8-c-heading--inverted {
+  color: var(--cre8-color-content-knockout);
+}

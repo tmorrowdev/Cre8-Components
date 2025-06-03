@@ -1,15 +1,13 @@
 import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './tertiary-nav.scss';
+import styles from './tertiary-nav.module';
 
 /**
  * @slot - The component content
  */
 export class Cre8TertiaryNav extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /**
    * Allows the tertiary nav to take up the full width of it parent container

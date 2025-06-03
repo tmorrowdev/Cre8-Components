@@ -1,4 +1,4 @@
-import svgHelp from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Help.svg?raw';
+import svgHelp from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Help.svg?raw';
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../link';

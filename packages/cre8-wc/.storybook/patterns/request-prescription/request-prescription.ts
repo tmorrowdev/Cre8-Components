@@ -1,39 +1,20 @@
-import classnames from 'classnames';
-import { html, unsafeCSS } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import { Cre8Element } from '../../../components/cre8-element';
-import styles from './request-prescription.scss';
+import { css } from 'lit';
+const styles = css`@import 'design-tokens/core/scss/theming/component' ;
 
 /**
- * An example element.
- *
+ * 1)
  */
-@customElement('request-prescription')
-export class RequestPrescription extends Cre8Element {
-  static get styles() {
-    return unsafeCSS(styles.toString());
-  }
-
-  /**
-   * Append to the class name. Used for passing in utility classes
-   */
-  @property()
-  styleModifier?: string;
-
-  render() {
-    const componentClassName = classnames('c-request-prescription', this.styleModifier, {});
-
-    return html`
-      <div class="${componentClassName}">
-        <slot></slot>
-        ${this.slotNotEmpty('footer') && html`<div class="c-request-prescription__footer"><slot name="footer"></slot></div>`}
-      </div>
-    `;
-  }
+.c-request-prescription {
+  @include cre8-typography-body-large();
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: size(5);
+  border: var(--cre8-theme-border-width) dashed var(--cre8-color-border-default);
 }
 
-declare global {
-  interface HTMLElementTagNameMap {
-    'request-prescription': RequestPrescription;
-  }
+.c-request-prescription__footer {
+  margin-top: size(2);
 }
+`;
+export default styles;

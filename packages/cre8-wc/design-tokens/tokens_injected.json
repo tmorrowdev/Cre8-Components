@@ -1,0 +1,38 @@
+{
+  "asset": {
+    "font": {
+      "NB Akademie": {
+        "400": {
+          "normal": {
+            "value": "NB Akademie-Regular",
+            "formats": [
+              "woff2",
+              "woff"
+            ],
+            "type": "fontFiles"
+          }
+        },
+        "500": {
+          "medium": {
+            "value": "NB Akademie-Medium",
+            "formats": [
+              "woff2",
+              "woff"
+            ],
+            "type": "fontFiles"
+          }
+        },
+        "700": {
+          "normal": {
+            "value": "NB Akademie-Bold",
+            "formats": [
+              "woff2",
+              "woff"
+            ],
+            "type": "fontFiles"
+          }
+        }
+      }
+    }
+  }
+}

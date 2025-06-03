@@ -1,9 +1,7 @@
-@import '@cre8_dev/cre8-design-tokens/lib/web/mixins/typography-usage';
-@import '../base/reset';
-@import '../utilities/colors';
-@import '../abstracts/variables';
-@import '../utilities/visibility';
-@import '../utilities/spacing';
-@import '../utilities/display';
-@import '../base/body';
-@import '../base/media';
+@import './colors';
+@import './visibility';
+@import './spacing';
+@import './display';
+@import './body';
+@import './media';
+@import './functions';

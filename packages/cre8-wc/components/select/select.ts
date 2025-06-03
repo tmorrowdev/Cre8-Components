@@ -1,11 +1,11 @@
-import svgCaretUp from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Up.svg?raw';
+import svgCaretUp from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Up.svg?raw';
 import { html, nothing, unsafeCSS } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property, query, queryAll } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { Cre8FormElement } from '../cre8-form-element';
 import '../field-note/field-note';
-import styles from './select.scss';
+import styles from './select.module';
 
 export interface Cre8SelectOption {
   label: string;
@@ -49,9 +49,7 @@ export interface Cre8SelectOptionGroup {
 export class Cre8Select extends Cre8FormElement {
     readonly type = 'select';
 
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /**
    * A mix of Cre8SelectOption and Cre8SelectOptionGroup definitions:

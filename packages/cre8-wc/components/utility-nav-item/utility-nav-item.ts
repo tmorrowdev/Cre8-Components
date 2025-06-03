@@ -2,12 +2,10 @@ import { html, nothing, unsafeCSS } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './utility-nav-item.scss';
+import styles from './utility-nav-item.module';
 
 export class Cre8UtilityNavItem extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles);
-    }
+    static styles = [styles];
 
   /**
    * Hide text toggle

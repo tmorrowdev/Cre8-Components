@@ -1,8 +1,8 @@
 import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import lightDomStyles from './text-passage-light-dom.scss';
-import styles from './text-passage.scss';
+import lightDomStyles from './text-passage-light-dom.module';
+import styles from './text-passage.module';
 
 /**
  * The text-passage component acts a general wrapper element
@@ -21,9 +21,7 @@ import styles from './text-passage.scss';
  * @slot - The component content
  */
 export class Cre8TextPassage extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles);
-    }
+    static styles = [styles];
 
   /**
    * Inverted variant
@@ -51,7 +49,7 @@ export class Cre8TextPassage extends Cre8Element {
       if (!lightDomExists) {
           const lightDomStyle = document.createElement('style');
           lightDomStyle.id = 'cre8-text-passage-styles';
-          lightDomStyle.innerHTML = lightDomStyles;
+          lightDomStyle.innerHTML = lightDomStyles.cssText;
           document.head.appendChild(lightDomStyle);
       }
   }

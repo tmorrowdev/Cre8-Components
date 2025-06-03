@@ -1,12 +1,12 @@
 /* eslint-disable indent */
 import { html, nothing, unsafeCSS } from 'lit';
-import svgCaretUp from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Up.svg?raw';
+import svgCaretUp from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Up.svg?raw';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import '../button/button';
 import '../text-passage/text-passage';
 import '../progress-meter/progress-meter';
-import styles from './percent-bar.scss';
+import styles from './percent-bar.module';
 
 /**
  * The percent bar visually indicates a user's current progress and has a few features: a basic display bar with

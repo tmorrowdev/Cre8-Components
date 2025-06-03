@@ -1,15 +1,13 @@
 import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './primary-nav.scss';
+import styles from './primary-nav.module';
 
 /**
  * @slot - The primary navigation items
  */
 export class Cre8PrimaryNav extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles);
-    }
+    static styles = [styles];
 
   /**
    * Inverted variant

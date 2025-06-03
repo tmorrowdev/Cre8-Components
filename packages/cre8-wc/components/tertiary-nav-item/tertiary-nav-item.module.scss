@@ -1,0 +1,50 @@
+@import '/design-tokens/core/scss/theming/component';
+/*------------------------------------*\
+ #TERTIARY-NAV-ITEM
+\*------------------------------------*/ 
+
+:host {
+  display: contents;
+}
+
+/**
+ * Tertiary nav item link
+ */
+.cre8-c-tertiary-nav-item__link {
+  @include cre8-typography-body-default();
+  display: flex;
+  align-items: center;
+  gap: size(1); 
+  padding: size(1) size(1) size(1) size(2);
+  color: var(--cre8-color-content-brand-strong);
+  background-color: var(--cre8-color-bg-default);
+  border-block-end: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-default);
+  text-decoration: none;
+  transition: all var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
+  width: 100%;
+
+  /**
+   * Tertiary nav item link hover & focus state
+   */
+  &:hover,
+  &:focus {
+    background-color: var(--cre8-color-bg-subtle);
+  }
+
+  /**
+   * Tertiary nav item link focus visible state
+   */
+  &:focus-visible {
+    @include focus;
+  }
+
+  /**
+   * Tertiary nav item link active/current state
+   */
+  &:active,
+  .cre8-is-current & {
+    color: var(--cre8-color-content-default);
+    background-color: var(--cre8-color-bg-subtle);
+  }
+}
+

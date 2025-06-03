@@ -1,12 +1,11 @@
 import {html} from 'lit';
 import {spread} from '../../directives/spread';
-import '@cre8_dev/cre8-icons';
 import './progress-steps-item';
-import svgCheckCircle from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
-import svgError from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Error.svg?raw';
-import svgFilledCircleOne from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Circle One.svg?raw';
-import svgRegularCircleOne from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Circle One.svg?raw';
-import svgWarning from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
+import svgCheckCircle from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Check.svg?raw';
+import svgError from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Error.svg?raw';
+import svgFilledCircleOne from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Circle_One.svg?raw';
+import svgRegularCircleOne from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Circle_One.svg?raw';
+import svgWarning from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Warning.svg?raw';
 
 const meta = {
   title: 'In Development/Progress Steps Item',

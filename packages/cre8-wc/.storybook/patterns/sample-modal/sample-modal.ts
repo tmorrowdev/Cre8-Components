@@ -5,7 +5,7 @@ import '../../../components/modal/modal';
 import '../../../components/button-group/button-group';
 import '../../../components/button/button';
 import '../../../components/heading/heading';
-import styles from './sample-modal.scss';
+import styles from './sample-modal.module';
 import {ifDefined} from 'lit-html/directives/if-defined.js';
 
 /**
@@ -13,7 +13,7 @@ import {ifDefined} from 'lit-html/directives/if-defined.js';
  */
 export class SampleModal extends LitElement {
   static get styles() {
-    return unsafeCSS(styles.toString());
+    return unsafeCSS(styles);
   }
 
   /**
@@ -42,15 +42,13 @@ export class SampleModal extends LitElement {
    *  Not dismissible modal
    */
    @property({type: Boolean})
-   notDismissible?: boolean;
+   notDismissible: boolean = false
 
   /* Toggle the Modal */
   toggleModal() {
     this.modalIsActive = !this.modalIsActive;
     if (!this.modalIsActive) {
-      const triggerButton = this.shadowRoot
-        ?.querySelector<HTMLElement>('cre8-button')
-        ?.shadowRoot?.querySelector<HTMLButtonElement | HTMLAnchorElement>('.cre8-c-button');
+      const triggerButton = this.shadowRoot?.querySelector<HTMLElement>('cre8-button')?.shadowRoot?.querySelector<HTMLButtonElement | HTMLAnchorElement>('.cre8-c-button');
       if (triggerButton) {
         triggerButton.focus();
       }
@@ -65,7 +63,7 @@ export class SampleModal extends LitElement {
       <cre8-modal
         status="${ifDefined(this.status)}"
         utilityModalTitle="Modal Heading"
-        notDismissible="${ifDefined(this.notDismissible)}"
+        ?notDismissible=${(this.notDismissible)}
         ?isActive=${this.modalIsActive}
         @close-modal="${() => this.toggleModal()}"
         ariaLabel="This text describes modal to screen reader when focused on"

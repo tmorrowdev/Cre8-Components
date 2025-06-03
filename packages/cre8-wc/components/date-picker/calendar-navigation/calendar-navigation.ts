@@ -3,14 +3,12 @@
 import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../../cre8-element';
-import styles from './calendar-navigation.scss';
+import styles from './calendar-navigation.module';
 import '../../button/button';
 import '../../icon/icon';
 
 export class Cre8CalendarNavigation extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   @property({ type: String, reflect: true })
       monthName: string;

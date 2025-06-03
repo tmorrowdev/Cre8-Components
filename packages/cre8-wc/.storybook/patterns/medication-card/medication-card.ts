@@ -1,46 +1,37 @@
-import classnames from 'classnames';
-import { html, unsafeCSS } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-import { Cre8Element } from '../../../components/cre8-element';
-import '../../../components/card/card';
-import '../../../components/icon/icon';
-import styles from './medication-card.scss';
+import { css } from 'lit';
+const styles = css`@import 'design-tokens/core/scss/theming/component';
 
 /**
- * An example element.
- *
+ * 1)
  */
-@customElement('medication-card')
-export class MedicationCard extends Cre8Element {
-  static get styles() {
-    return unsafeCSS(styles.toString());
-  }
 
-  /**
-   * Append to the class name. Used for passing in utility classes
-   */
-  @property()
-  styleModifier?: string;
-
-  render() {
-    const componentClassName = classnames('c-medication-card', this.styleModifier, {});
-
-    return html`
-      <cre8-card class="${componentClassName}">
-        <div slot="header" class="c-medication-card__header">
-          <cre8-icon-legacy class="c-medication-card__icon" name="rx"></cre8-icon-legacy>
-          <slot name="heading"></slot>
-          ${this.slotNotEmpty('headingAfter') && html`<div class="c-medication-card__heading-after"><slot name="headingAfter"></slot></div> `}
-        </div>
-        <slot></slot>
-        ${this.slotNotEmpty('footer') && html`<div slot="footer" class="c-medication-card__footer"><slot name="footer"></slot></div>`}
-      </cre8-card>
-    `;
-  }
+div.c-medication-card__header {
+  display: flex;
+  align-items: center;
+  padding: size(2);
 }
 
-declare global {
-  interface HTMLElementTagNameMap {
-    'medication-card': MedicationCard;
+.c-medication-card__icon {
+  --cre8-icon-height: #{size(3)};
+  --cre8-icon-width: #{size(3)};
+  --cre8-icon-fill: var(--cre8-color-content-subtle);
+  margin-right: size(2);
+}
+
+.c-medication-card__heading-after {
+  @include cre8-typography-body-default;
+  margin-left: auto;
+
+  ::slotted(div) {
+    display: flex;
+    gap: size(1);
+    align-items: center;
   }
 }
+.c-medication-card__footer {
+  @include cre8-typography-body-default;
+  padding: size(1) size(2);
+  border-top: var(--cre8-theme-border-width) var(--cre8-border-style-default) var(--cre8-color-border-default);
+}
+`;
+export default styles;

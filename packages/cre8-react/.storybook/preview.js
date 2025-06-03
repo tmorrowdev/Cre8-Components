@@ -2,6 +2,7 @@ import cssVariablesTheme from '@etchteam/storybook-addon-css-variables-theme';
 import headStyles from '../../cre8-wc/design-tokens/core/scss/theming/head.scss';
 
 import '!!style-loader!css-loader!../../cre8-wc/.storybook/css/styleguide-only.css';
+import femmecubator from '!!style-loader?injectType=lazyStyleTag!css-loader!../../cre8-wc/design-tokens/femmecubator/tokens_femmecubator.css';
 import starbucks from '!!style-loader?injectType=lazyStyleTag!css-loader!../../cre8-wc/design-tokens/starbucks/tokens.css';
 import target from '!!style-loader?injectType=lazyStyleTag!css-loader!../../cre8-wc/design-tokens/target/tokens.css';
 import capitalOne from '!!style-loader?injectType=lazyStyleTag!css-loader!../../cre8-wc/design-tokens/capitalone/tokens.css';
@@ -11,7 +12,8 @@ import cre8 from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8_dev/cr
 import blue from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8_dev/cre8-design-tokens/lib/web/brands/blue/css/tokens_blue.css';
 import marketing from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8_dev/cre8-design-tokens/lib/web/brands/marketing/css/tokens_marketing.css';
 import black from '!!style-loader?injectType=lazyStyleTag!css-loader!@cre8_dev/cre8-design-tokens/lib/web/brands/black/css/tokens_black.css';
-
+import theme from '!!style-loader?injectType=lazyStyleTag!css-loader!../tokens_cre8.css';
+import equity from '!!style-loader?injectType=lazyStyleTag!css-loader!sass-loader!../../../equityDS/equity.css';
 window.cre8_ICON_URL = './icons/cre8-icons.svg';
 
 export const decorators = [cssVariablesTheme];
@@ -51,7 +53,8 @@ document.head.appendChild(headStyleElement);
 
 export const parameters = {
   cssVariables: {
-    files: {
+    files: { 
+      'femmecubator': femmecubator,
       "target":target, 
       "capital one": capitalOne, 
       "starbucks": starbucks, 
@@ -60,7 +63,8 @@ export const parameters = {
       "cre8": cre8, 
       "blue": blue, 
       "marketing": marketing, 
-      "black": black},
+      "black": black,
+      "theme": theme,},
     defaultTheme: 'Evernorth',
   },
   status: {

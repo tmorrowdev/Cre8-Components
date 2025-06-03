@@ -1,0 +1,46 @@
+@import '/design-tokens/core/scss/theming/component';
+
+//## ACCORDION
+
+:host {
+  display: block;
+}
+
+.cre8-c-accordion {
+  --cre8-accordion-border-top: var(--cre8-border-width-none);
+  --cre8-accordion-border-bottom: var(--cre8-border-width-none);
+  ::slotted(cre8-accordion:not(:last-child)) {
+    --cre8-accordion-border-bottom: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-default);
+  }
+  border: var(--cre8-border-width-none);
+  border-radius: var(--cre8-border-radius-none);
+}
+
+.cre8-c-inner-divider {
+  ::slotted(cre8-accordion-item:last-child) {
+    border-bottom: var(--cre8-border-width-none);
+  }
+  ::slotted(cre8-accordion-item:not(first-child)) {
+    border-top: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-default);
+  }
+  ::slotted(cre8-accordion-item:first-child) {
+    border-top: var(--cre8-border-width-none);
+  }
+}
+
+.cre8-c-accordion--border-rectangle {
+  border: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-default);
+  border-radius: var(--cre8-border-radius-none);
+}
+
+.cre8-c-accordion--border-rounded-bottom {
+  border: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-default);
+  border-radius: 0 0 var(--cre8-border-radius-default) var(--cre8-border-radius-default);
+}
+.cre8-c-accordion--border-rounded {
+  border: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-default);
+  border-radius: var(--cre8-border-radius-default);
+}
+.cre8-c-accordiong-group--list {
+  list-style: none;
+}

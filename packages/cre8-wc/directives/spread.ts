@@ -26,7 +26,7 @@ class Spread extends Directive {
         return noChange;
     }
 
-    render() {
+    render(_props: any) {
         return '';
     }
 }

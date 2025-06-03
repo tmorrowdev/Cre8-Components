@@ -1,0 +1,53 @@
+import { css } from 'lit';
+const styles = css`@import '../../design-tokens/core/scss/theming/component';
+
+// #LIST
+
+/**
+ * 1) Generic stacked list that allows for styling of borders in between items
+ */
+.cre8-c-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: size(2);
+}
+
+/**
+ * Slotted list item compponent
+ * TODO: Add tier 2 variable that is used for light borders for cards, table rows, etc.
+ */
+::slotted(cre8-list-item) {
+  display: block;
+  padding-top: size(2);
+  padding-bottom: size(2);
+  border-bottom: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-subtle);
+
+  /**
+  * List item with bare list
+  * 1) Remove the border between items
+  */
+  .cre8-c-list--bare & {
+    border-bottom: 0; /* 1 */
+  }
+
+  /**
+  * List item with condensed list
+  * 1) Reduce padding between items compared to the default
+  */
+  .cre8-c-list--condensed & {
+    padding-top: size(1);
+    padding-bottom: size(1);
+  }
+
+  /**
+  * List item with padded list
+  * 1) Increase padding between items compared to the default
+  */
+  .cre8-c-list--padded & {
+    padding-top: size(4);
+    padding-bottom: size(4);
+  }
+}
+`;
+export default styles;

@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": ".",
     "target": "es2021",
     "module": "esNext",
     "lib": [
@@ -10,7 +12,11 @@
     "types": [
       "resize-observer-browser",
       "jest"
-    ],
+       ],
+       "typeRoots": [
+        "./node_modules/@types",
+        "src/types"
+       ],
     "declaration": true,
     "declarationMap": true,
     "emitDeclarationOnly": true,
@@ -41,7 +47,7 @@
     "**/**/*.js",
     "styles.d.ts",
     "global.d.ts"
-, "scripts/generateWesparkleThemes.ts", "extract-tokens.cjs"  ],
+  ],
   "exclude": [
     "node_modules",
     "typings",

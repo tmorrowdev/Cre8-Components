@@ -1,4 +1,4 @@
-import svgCaretUp from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Up.svg?raw';
+import svgCaretUp from '../../icons/System/Regular/Caret_Up.svg?raw';
 import { html, unsafeCSS } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
@@ -6,7 +6,7 @@ import classnames from 'classnames';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon';
 import '../button/button';
-import styles from './accordion-item.scss';
+import styles from './accordion-item.module';
 
 /**
  *
@@ -42,9 +42,7 @@ import styles from './accordion-item.scss';
  */
 
 export class Cre8AccordionItem extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /**
    *
@@ -249,7 +247,7 @@ export class Cre8AccordionItem extends Cre8Element {
         ? 'cre8-c-accordion-item__tertiary-icon cre8-c-accordion-item__icon-before'
         : 'cre8-c-accordion-item__icon cre8-c-accordion-item__icon-before'}
                 >
-                  <cre8-icon rotate="180" svg='${svgCaretUp}' aria-hidden="true"></cre8-icon>
+                  <cre8-icon rotate="180" svg=${svgCaretUp} aria-hidden="true"></cre8-icon>
                 </div>
                 ${this.heading ?? html` <slot name="heading"></slot>`}
             </div>

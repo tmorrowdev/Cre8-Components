@@ -1,0 +1,36 @@
+import { css } from 'lit';
+const styles = css`@import '../../design-tokens/core/scss/theming/component';
+
+/*------------------------------------*\
+ #CHECKBOX-FIELD
+\*------------------------------------*/
+
+:host {
+  display: flex;
+}
+
+/** 
+ * 1) Fieldset used for checkbox items
+ */
+.cre8-c-checkbox-field {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/** 
+   * Checkbox field legend
+   */
+.cre8-c-checkbox-field__legend {
+  @include cre8-typography-label-small();
+  margin-bottom: size(1);
+}
+
+/** 
+   * Checkbox list
+   */
+.cre8-c-checkbox-field__list {
+  display: flex;
+  flex-direction: column;
+}`;
+export default styles;
