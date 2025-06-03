@@ -1,0 +1,34 @@
+import { css } from 'lit';
+const styles = css`@import '../../design-tokens/core/scss/theming/component';
+
+/*------------------------------------*\
+#TABLE HEADER
+\*------------------------------------*/
+
+/**
+* Set the host to display the contents within the table wrapper
+*/
+:host {
+  display: contents;
+}
+
+/**
+ * Table header stlyes
+ * 1) Responsive table header behavior
+ * 2) Override row behavior and variants
+ */
+.cre8-c-table__header {
+  display: var(--cre8-table-header-display, table-header-group); /* 1 */
+  text-align: left;
+  --cre8-table-row-odd-background: none; /* 2 */
+  --cre8-table-row-odd-hover-background: none; /* 2 */
+
+  /**
+   * Override responsive setting
+   */
+  @media all and (min-width:$cre8-breakpoint-md) {
+    display: table-header-group;
+  }
+}
+`;
+export default styles;

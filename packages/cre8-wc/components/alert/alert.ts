@@ -1,19 +1,19 @@
-import svgWarningFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
-import svgCheckCircle from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
-import svgInfoFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
-import svgErrorFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Error.svg?raw';
-import svgLightbulbFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Lightbulb.svg?raw';
-import svgClose from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Close.svg?raw';
+import svgWarningFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Warning.svg?raw';
+import svgCheckCircle from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Check.svg?raw';
+import svgInfoFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Info.svg?raw';
+import svgErrorFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Error.svg?raw';
+import svgLightbulbFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Lightbulb.svg?raw';
+import svgClose from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Close.svg?raw';
 import { html, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import '../button/button';
 import '../link/link';
 import '../heading/heading';
 import '../text-passage/text-passage';
-import '@cre8_dev/cre8-icons';
 import '../icon/icon';
+
 import { Cre8Element } from '../cre8-element';
-import styles from './alert.scss';
+import styles from './alert.module';
 
 /**
  * The general purpose of an alert or notification is to draw the user’s attention
@@ -31,9 +31,7 @@ import styles from './alert.scss';
  */
 
 export class Cre8Alert extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /** The alert type. */
   @property({ reflect: true })

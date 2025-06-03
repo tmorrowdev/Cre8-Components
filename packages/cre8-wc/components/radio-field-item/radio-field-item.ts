@@ -4,7 +4,7 @@ import { property, query } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { Cre8FormElement } from '../cre8-form-element';
 import '../field-note/field-note';
-import styles from './radio-field-item.scss';
+import styles from './radio-field-item.module';
 
     /**
      * A Radio Field Item adds a radio button to a Radio Field. Radio buttons let a user choose only one of several
@@ -15,9 +15,7 @@ import styles from './radio-field-item.scss';
 export class Cre8RadioFieldItem extends Cre8FormElement {
     type = 'radio';
 
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
     /**
      * Identifies the element that provides a detailed, extended description for the object.

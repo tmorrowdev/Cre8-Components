@@ -1,0 +1,43 @@
+import { css } from 'lit';
+const styles = css`
+@import '../../design-tokens/core/scss/theming/component';
+
+/*------------------------------------*\
+#TABLE CELL
+\*------------------------------------*/
+
+/**
+* Set the host to display the contents within the table row wrapper
+*/
+:host {
+    display: contents;
+}
+
+.cre8-c-table__cell {
+    display: var(--cre8-table-row-display, table-cell);
+    border-bottom-width: var(--cre8-table-cell-border-bottom-width, var(--cre8-border-width-default));
+    border-bottom-style: var(--cre8-border-style-default);
+    border-bottom-color: var(--cre8-table-cell-border-bottom-color, var(--cre8-color-border-default));
+    padding: var(--cre8-spacing-8);
+    text-align: left;
+
+    &:before {
+        @include cre8-typography-label-default;
+        display: block;
+        content: var(--cre8-table-cell-before-content, none);
+
+        @media all and (min-width:$cre8-breakpoint-md) {
+            content: none;
+        }
+    }
+
+    @media all and (min-width:$cre8-breakpoint-md) {
+        display: table-cell;
+    }
+}
+
+.cre8-c-table__cell--bare {
+    border-bottom-color: transparent;
+}
+`;
+export default styles;

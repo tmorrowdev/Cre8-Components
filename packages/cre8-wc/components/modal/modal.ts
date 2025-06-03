@@ -1,14 +1,14 @@
 import { PropertyValues, html, unsafeCSS } from 'lit';
 import { property, query } from 'lit/decorators.js';
-import '../icon/icon';
-import svgError from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Error.svg?raw';
-import svgWarningFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
-import svgCheckCircle from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
-import svgInfoFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
-import svgHelp from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Help.svg?raw';
+import svgError from '../../icons/System/Regular/Error.svg?raw';
+import svgWarningFilled from '../../icons/System/Filled/Warning.svg?raw';
+import svgCheckCircle from '../../icons/System/Filled/Check.svg?raw';
+import svgInfoFilled from '../../icons/System/Filled/Info.svg?raw';
+import svgHelp from '../../icons/System/Regular/Help.svg?raw';
 import { Cre8Element } from '../cre8-element';
+import '../icon/icon.js';
 import '@a11y/focus-trap';
-import styles from './modal.scss';
+import styles from './modal.module';
 
 /**
  * Modal component should be used in all modal situations.
@@ -21,9 +21,7 @@ import styles from './modal.scss';
  * @slot - The component content
  */
 export class Cre8Modal extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
 /**
  * Query the modal window
@@ -150,15 +148,15 @@ updated(changedProperties: PropertyValues<this>) {
 mapStatusToIconModal = (status: string) => {
     switch (status) {
         case 'error':
-            return html`<cre8-icon class="cre8-modal-icon" svg='${svgError}' aria-hidden='true'></cre8-icon>`;
+            return html`<cre8-icon class="cre8-modal-icon" svg=${svgError} aria-hidden='true'></cre8-icon>`;
         case 'success':
-            return html`<cre8-icon class="cre8-modal-icon" svg='${svgCheckCircle}' aria-hidden='true'></cre8-icon>`;
+            return html`<cre8-icon class="cre8-modal-icon" svg=${svgCheckCircle} aria-hidden='true'></cre8-icon>`;
         case 'warning':
-            return html`<cre8-icon class="cre8-modal-icon" svg='${svgWarningFilled}' aria-hidden='true'></cre8-icon>`;
+            return html`<cre8-icon class="cre8-modal-icon" svg=${svgWarningFilled} aria-hidden='true'></cre8-icon>`;
         case 'help':
-            return html`<cre8-icon class="cre8-modal-icon" svg='${svgHelp}' aria-hidden='true'></cre8-icon>`;
+            return html`<cre8-icon class="cre8-modal-icon" svg=${svgHelp} aria-hidden='true'></cre8-icon>`;
         case 'info':
-            return html`<cre8-icon class="cre8-modal-icon" svg='${svgInfoFilled}' aria-hidden='true'></cre8-icon>`;
+            return html`<cre8-icon class="cre8-modal-icon" svg=${svgInfoFilled} aria-hidden='true'></cre8-icon>`;
         default:
             return null;
     }

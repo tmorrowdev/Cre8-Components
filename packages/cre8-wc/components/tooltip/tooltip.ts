@@ -3,7 +3,7 @@ import { property, query } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './tooltip.scss';
+import styles from './tooltip.module';
 
 /**
  * The purpose of tooltips is to provide a tip or hint about what a tool, icon, link, or other interaction does.
@@ -41,9 +41,7 @@ import styles from './tooltip.scss';
  */
 
 export class Cre8Tooltip extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /**
    * Positions the tooltip panel absolutely to the icon. Position overrides `isDynamic`.

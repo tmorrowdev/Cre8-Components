@@ -7,7 +7,7 @@ import {
  TemplateResult, html, nothing, unsafeCSS,
 } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
-import styles from './calendar.scss';
+import styles from './calendar.module';
 import { Cre8Element } from '../../cre8-element';
 
 import '../../icon/icon';

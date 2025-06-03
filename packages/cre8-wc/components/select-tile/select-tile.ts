@@ -1,4 +1,4 @@
-import svgCheck from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
+import svgCheck from '../../icons/System/Regular/Check.svg?raw';
 import {
     LitElement, PropertyValues, html, unsafeCSS,
 } from 'lit';
@@ -9,7 +9,7 @@ import { nanoid } from 'nanoid';
 import { Cre8FormElement } from '../cre8-form-element';
 import '../icon/icon';
 
-import styles from './select-tile.scss';
+import styles from './select-tile.module';
 import { SelectTileRadioController } from './select-tile-radio-controller';
 import { SelectTileCheckboxController } from './select-tile-checkbox-controller';
 
@@ -63,9 +63,7 @@ export class Cre8SelectTile extends Cre8FormElement {
     @query('input')
         field!: HTMLInputElement;
 
-    static get styles() {
-        return unsafeCSS(styles);
-    }
+    static styles = [styles];
 
     /**
      * Style variants
@@ -240,10 +238,10 @@ export class Cre8SelectTile extends Cre8FormElement {
             type=${this.type}
             id=${this.fieldId}
             aria-describedby="${ifDefined(this.ariaDescribedBy)}"
-            required=${ifDefined(this.required)}
+            ?required=${this.required}
             name=${this.name}
             .value=${this.value}
-            disabled="${ifDefined(this.disabled)}"
+            ?disabled="${this.disabled}"
             .checked="${this.checked}"
         />
         `;

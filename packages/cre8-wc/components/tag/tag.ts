@@ -1,11 +1,11 @@
-import svgCheck from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
+import svgCheck from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Check.svg?raw';
 import { html, unsafeCSS } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { Cre8FormElement } from '../cre8-form-element';
 import '../icon/icon';
-import styles from './tag.scss';
+import styles from './tag.module';
 
 /**
  * The tag component allows you to make selections, filter content, or trigger actions. While buttons are
@@ -20,9 +20,7 @@ import styles from './tag.scss';
  */
 
 export class Cre8Tag extends Cre8FormElement {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   @property()
       text: string;
@@ -245,12 +243,12 @@ export class Cre8Tag extends Cre8FormElement {
   /**
   * access role when tag embedded in tag-list
   */
-  private _getRole() {
+  private _getRole(): 'listitem' | undefined {
       const tagContainer = this.closest('cre8-tag-list');
       if (tagContainer) {
           return 'listitem';
       }
-      return '';
+      return undefined;
   }
 
   render() {

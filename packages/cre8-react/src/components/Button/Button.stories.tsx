@@ -3,7 +3,8 @@ import { Cre8Button } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 import { action } from '@storybook/addon-actions'
 import React from 'react';
-import svgCaretUp from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Up.svg?raw';
+import svgCaretUp from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret_Up.svg';
+import type { JSX } from 'react/jsx-runtime';
 
 export default {
   title: 'Cre8 Components/Button',
@@ -14,7 +15,7 @@ export default {
       exclude: new RegExp(`${excludeRegexArray.join('|')}`)
     }
   },
-  render: (args) => (
+  render: (args: any) => (
     <Cre8Button {...args}>
     </Cre8Button>
   ),
@@ -102,7 +103,7 @@ export const PrimaryInverseIconOnly: StoryObj<typeof Cre8Button> = {
   args: {
     hideText: true,
     svg: svgCaretUp,
-    iconRotateDegree: '90',
+    iconRotateDegree: 90,
     iconPosition: 'after',
     text: 'Button With Visually Hidden Text',
     variant: 'primary',
@@ -274,7 +275,7 @@ export const SecondaryInverseIconOnly: StoryObj<typeof Cre8Button> = {
   args: {
     hideText: true,
     svg: svgCaretUp,
-    iconRotateDegree: '90',
+    iconRotateDegree: 90,
     iconPosition: 'after',
     text: 'Button With Visually Hidden Text',
     variant: 'secondary',
@@ -401,7 +402,7 @@ export const TertiaryInverseIconOnly: StoryObj<typeof Cre8Button> = {
   args: {
     hideText: true,
     svg: svgCaretUp,
-    iconRotateDegree: '90',
+    iconRotateDegree: 90,
     iconPosition: 'after',
     text: 'Button With Visually Hidden Text',
     variant: 'tertiary',

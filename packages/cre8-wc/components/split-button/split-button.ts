@@ -2,15 +2,13 @@ import { html, unsafeCSS } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import '../button/button';
-import styles from './split-button.scss';
+import styles from './split-button.module';
 
 /**
  * @slot - The component content , this will consist of the dropdown when the user clicks the caret
  */
 export class Cre8SplitButton extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   @state()
       dropdownOpen = false;

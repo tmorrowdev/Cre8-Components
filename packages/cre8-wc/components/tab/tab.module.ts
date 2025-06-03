@@ -1,0 +1,86 @@
+import { css } from 'lit';
+const styles = css`@import '../../design-tokens/core/scss/theming/component';
+/*------------------------------------*\
+ #TAB
+\*------------------------------------*/
+
+/**
+ * Tab host
+ */
+:host {
+  display: contents;
+}
+
+/**
+ * Tab
+ * 1. Make border appear to be inside the tab
+ */
+.cre8-c-tab {
+  @include cre8-typography-label-default();
+  position: relative;
+  display: flex;
+  margin: 0;
+  flex-shrink: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  gap: size(1);
+  color: var(--cre8-color-content-default);
+  background-color: transparent;
+  border: 0;
+  border-block-end: var(--cre8-border-width-tab-selected) var(--cre8-border-style-default) var(--cre8-color-border-default);
+  padding-block-start: size(1);
+  padding-inline-end: size(3);
+  padding-block-end: calc(size(1) - var(--cre8-border-width-tab-selected)); /* 1 */
+  padding-inline-start: size(3);
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color var(--cre8-anim-fade-quick) var(--cre8-anim-ease), background-color var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
+
+  /**
+   * Tab hover state
+   */
+  &:hover {
+    background-color: var(--cre8-color-bg-brand-hover);
+  }
+
+  /**
+   * Tab focus visible state
+   * 1. Make the focus appear inside the tab to prevent the bottom border from showing
+   */
+  &:focus-visible {
+    @include focus;
+    outline-offset: calc(#{var(--cre8-border-width-focus)} * -1); /* 1 */
+    border-radius: var(--cre8-border-radius-small);
+    border-block-end-color: transparent;
+  }
+}
+
+/**
+ * Tab active state
+ */
+.cre8-c-tab.cre8-is-active:not(:focus-visible) {
+  color: var(--cre8-color-content-brand-strong);
+  background-color: transparent;
+  border-block-end: var(--cre8-border-width-tab-selected) var(--cre8-border-style-default) var(--cre8-color-border-brand-strong);
+  padding-block-end: calc(size(1) - var(--cre8-border-width-tab-selected)); /* 1 */
+}
+
+/**
+ * Tab small
+ */
+.cre8-c-tab.cre8-c-tab--small {
+  @include cre8-typography-label-small();
+  padding-block-start: size(0.5);
+  padding-inline-end: size(2);
+  padding-block-end: calc(size(0.5) - var(--cre8-border-width-tab-selected)); /* 1 */
+  padding-inline-start: size(2);
+
+  /**
+   * Tab small active state
+   */
+  &.cre8-is-active:not(:focus-visible) {
+    padding-block-end: calc(size(0.5) - var(--cre8-border-width-tab-selected)); /* 1 */
+  }
+}`;
+export default styles;

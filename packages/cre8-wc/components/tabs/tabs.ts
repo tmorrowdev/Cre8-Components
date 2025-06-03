@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid';
 import { Cre8Element } from '../cre8-element';
 import { Cre8TabPanel } from '../tab-panel/tab-panel';
 import { Cre8Tab } from '../tab/tab';
-import styles from './tabs.scss';
+import styles from './tabs.module';
 
 let tabId = 1;
 
@@ -39,9 +39,7 @@ let tabId = 1;
  */
 
 export class Cre8Tabs extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
     /**
      * Tab sizes

@@ -1,0 +1,22 @@
+import { css } from 'lit';
+const styles = css`@import '../../design-tokens/core/scss/theming/component';
+
+// #BREADCRUMBS
+
+:host {
+  display: inline-flex;
+}
+
+/**
+ * 1) An ordered list of navigational hierarchy showing the user where they are on the site
+ */
+.cre8-c-breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: size(1);
+}
+`;
+export default styles;

@@ -1,0 +1,58 @@
+
+:root {
+    /* Color Tokens */
+    --cre8-color-primary: #FFC72C; /* Bright Yellow - Brand Primary */
+    --cre8-color-secondary: #C8102E; /* Bright Red - Brand Secondary */
+    --cre8-color-accent: #1EAEDB; /* Sky Blue - Playful Accent */
+    --cre8-color-success: #68B631; /* Green - Success Indicator */
+    --cre8-color-warning: #FFC72C; /* Yellow - Warning Indicator */
+    --cre8-color-danger: #C8102E; /* Red - Danger Indicator */
+    --cre8-color-info: #1EAEDB; /* Blue - Info Indicator */
+    --cre8-color-surface: #FFFFFF; /* White - Surface Color */
+    --cre8-color-background: #F9F9F9; /* Light Background */
+    --cre8-color-text: #333333; /* Dark Text Color */
+    --cre8-color-text-light: #FFFFFF; /* Light Text Color for contrast */
+    --cre8-color-border: #E0E0E0; /* Light Border Color */
+    
+    /* Typography Tokens */
+    --cre8-font-family: "Helvetica Neue", Arial, sans-serif; /* Primary Font Family */
+    --cre8-font-size-xs: 0.75rem; /* 12px - Extra Small */
+    --cre8-font-size-sm: 0.875rem; /* 14px - Small */
+    --cre8-font-size-md: 1rem; /* 16px - Medium */
+    --cre8-font-size-lg: 1.125rem; /* 18px - Large */
+    --cre8-font-size-xl: 1.25rem; /* 20px - Extra Large */
+    --cre8-font-size-2xl: 1.5rem; /* 24px - 2X Extra Large */
+    --cre8-font-size-3xl: 1.875rem; /* 30px - 3X Extra Large */
+    --cre8-font-size-4xl: 2.25rem; /* 36px - 4X Extra Large */
+    
+    /* Spacing Tokens */
+    --cre8-space-xs: 0.25rem; /* 4px - Extra Small */
+    --cre8-space-sm: 0.5rem; /* 8px - Small */
+    --cre8-space-md: 0.75rem; /* 12px - Medium */
+    --cre8-space-lg: 1rem; /* 16px - Large */
+    --cre8-space-xl: 1.5rem; /* 24px - Extra Large */
+    --cre8-space-2xl: 2rem; /* 32px - 2X Extra Large */
+    --cre8-space-3xl: 3rem; /* 48px - 3X Extra Large */
+    --cre8-space-4xl: 4rem; /* 64px - 4X Extra Large */
+    
+    /* Border Radius Tokens */
+    --cre8-radius-none: 0; /* No Radius */
+    --cre8-radius-sm: 0.25rem; /* 4px - Small Radius */
+    --cre8-radius-md: 0.5rem; /* 8px - Medium Radius */
+    --cre8-radius-lg: 0.75rem; /* 12px - Large Radius */
+    --cre8-radius-xl: 1rem; /* 16px - Extra Large Radius */
+    --cre8-radius-full: 9999px; /* Full Radius for circles */
+    
+    /* Shadow Tokens */
+    --cre8-shadow-none: none; /* No Shadow */
+    --cre8-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1); /* Small Shadow */
+    --cre8-shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1); /* Medium Shadow */
+    --cre8-shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.1); /* Large Shadow */
+    
+    /* Breakpoint Tokens */
+    --cre8-breakpoint-sm: 400px; /* Small Devices */
+    --cre8-breakpoint-md: 768px; /* Medium Devices */
+    --cre8-breakpoint-lg: 1024px; /* Large Devices */
+    --cre8-breakpoint-xl: 1280px; /* Extra Large Devices */
+    --cre8-breakpoint-2xl: 1440px; /* 2X Extra Large Devices */
+}

@@ -1,14 +1,12 @@
 import { html, unsafeCSS } from 'lit';
 import { Cre8Element } from '../cre8-element';
-import styles from './list-item.scss';
+import styles from './list-item.module';
 
 /**
  * @slot - The content of the list item
  */
 export class Cre8ListItem extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles);
-    }
+    static styles = [styles];
 
     // Set the role before rendering for better accessibility
     // Because we're settting this role, we don't wrap the slot in an <li>

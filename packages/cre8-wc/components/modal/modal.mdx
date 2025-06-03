@@ -1,4 +1,4 @@
-import {ArgsTable, Canvas, Meta, Story} from '@storybook/blocks';
+import {Controls, Canvas, Meta, Story} from 'storybook/internal/docs-tools';
 
 import * as ModalStories from './modal.stories';
 import * as SampleModalStories from '../../.storybook/patterns/sample-modal/sample-modal.stories';
@@ -38,8 +38,8 @@ Here is code for the error utility modal example below:
 <cre8-modal
     status="error"
     utilityModalTitle="Modal Heading"
-    ?isActive=${this.modalIsActive}
-    @close-modal="${() => this.toggleModal()}"
+    isActive="${this.modalIsActive}"
+    @close-modal=${() => this.toggleModal()}
     ariaLabel="This text describes modal to screen reader when focused on"
     >
     <cre8-text-passage>
@@ -55,4 +55,4 @@ Here is code for the error utility modal example below:
 
 ## Props
 
-<ArgsTable />
+<Controls />

@@ -1,8 +1,8 @@
-import svgCaretUp from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Up.svg?raw';
+import svgCaretUp from '../../icons/System/Regular/Caret_Up.svg?raw';
 import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './table-row.scss';
+import styles from './table-row.module';
 import '../button/button';
 import '../table-cell/table-cell';
 
@@ -11,9 +11,7 @@ import '../table-cell/table-cell';
  */
 
 export class Cre8TableRow extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
     toggleIsExpanded() {
         this.isExpanded = !this.isExpanded;

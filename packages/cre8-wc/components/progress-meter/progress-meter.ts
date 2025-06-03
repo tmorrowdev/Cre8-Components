@@ -2,7 +2,7 @@ import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { Cre8Element } from '../cre8-element';
-import styles from './progress-meter.scss';
+import styles from './progress-meter.module';
 
 
 export enum status {
@@ -15,9 +15,7 @@ export enum status {
  * This indicator should be used when the system response time is longer and determinable.
  */
 export class Cre8ProgressMeter extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /**
    * Progress Status

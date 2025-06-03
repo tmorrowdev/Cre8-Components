@@ -1,11 +1,11 @@
-import svgArrowLeft from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Arrow - Left.svg?raw';
+import svgArrowLeft from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Arrow_-_Left.svg?raw';
 import {
     html, nothing, unsafeCSS,
 } from 'lit';
 import { property } from 'lit/decorators.js';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './link.scss';
+import styles from './link.module';
 
 /**
  * Link Component are strictly used in the case where the component will take
@@ -23,9 +23,7 @@ import styles from './link.scss';
 */
 
 export class Cre8Link extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /**
    * Href attribute of the anchor tag

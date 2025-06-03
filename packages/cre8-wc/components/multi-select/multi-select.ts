@@ -7,11 +7,10 @@ import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { html, nothing, unsafeCSS } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
-import svgCaretDown from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Down.svg?raw';
-import svgClear from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Clear X.svg?raw';
-import styles from './multi-select.scss';
+import svgCaretDown from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Down.svg?raw';
+import svgClear from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Clear_X.svg?raw';
+import styles from './multi-select.module';
 import { Cre8Element } from '../cre8-element';
-import '@cre8_dev/cre8-icons';
 import '../remove-tag/remove-tag';
 import '../field-note/field-note';
 import '../button/button';
@@ -417,7 +416,7 @@ export class Cre8MultiSelect extends Cre8Element {
           </div>
           <div class="cre8-c-multi-select__icons-wrapper">
             <cre8-button
-              hideText="true"
+              ?hideText=${true}
               svg="${svgClear}"
               text="Clear All"
               variant="tertiary"
@@ -427,7 +426,7 @@ export class Cre8MultiSelect extends Cre8Element {
             >
             </cre8-button>
             <cre8-button
-              hideText="true"
+              ?hideText=${true}
               svg="${svgCaretDown}"
               variant="tertiary"
               ?disabled="${this.disabled}"

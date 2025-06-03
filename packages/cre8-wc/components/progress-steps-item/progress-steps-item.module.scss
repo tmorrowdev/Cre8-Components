@@ -1,0 +1,91 @@
+@import '/design-tokens/core/scss/theming/component';
+
+:host(:first-child)::part(left-divider),
+:host(:last-child)::part(right-divider){
+  visibility: hidden;
+}
+
+.cre8-c-progress-steps-item--complete {
+  --divider-color-left: var(--cre8-color-border-brand);
+  --divider-color-right: var(--cre8-color-border-brand);
+  --icon-color: var(--cre8-color-content-brand);
+  --name-color: var(--cre8-color-content-brand);
+}
+
+.cre8-c-progress-steps-item--current {
+  --divider-color-left: var(--cre8-color-border-brand);
+  --divider-color-right: var(--cre8-color-border-strong);
+  --icon-color: var(--cre8-color-content-brand);
+  --name-color: var(--cre8-color-content-brand);
+}
+
+.cre8-c-progress-steps-item--error {
+  --divider-color-left: var(--cre8-color-border-brand);
+  --divider-color-right: var(--cre8-color-border-strong);
+  --icon-color: var(--cre8-color-content-error-icon);
+  --name-color: var(--cre8-color-content-error);
+}
+
+.cre8-c-progress-steps-item--incomplete {
+  --divider-color-left: var(--cre8-color-border-strong);
+  --divider-color-right: var(--cre8-color-border-strong);
+  --icon-color: var(--cre8-color-content-subtle);
+  --name-color: var(--cre8-color-content-subtle);
+}
+
+.cre8-c-progress-steps-item--warning {
+  --divider-color-left: var(--cre8-color-border-brand);
+  --divider-color-right: var(--cre8-color-border-strong);
+  --icon-color: var(--cre8-color-content-warning-icon);
+  --name-color: var(--cre8-color-content-default);
+}
+
+.cre8-c-progress-steps-item {
+  @include cre8-typography-title-small();
+  text-align: center;
+}
+
+.cre8-c-progress-steps-item__top-container {
+  align-items: center;
+  display: flex;
+  padding-bottom: var(--cre8-spacing-8);
+}
+
+.cre8-c-progress-steps-item__svg {
+  color: var(--icon-color);
+  height: size(2.5);
+  margin-left: var(--cre8-spacing-8);
+  margin-right: var(--cre8-spacing-8);
+  width: size(2.5);
+  svg {
+    height: size(2.5);
+    width: size(2.5);
+  }
+}
+
+.cre8-c-progress-steps-item__message {
+  @include cre8-typography-body-small;
+  padding-left: var(--cre8-spacing-16);
+  padding-right: var(--cre8-spacing-16);
+}
+
+.cre8-c-progress-steps-item__name {
+  @include cre8-typography-title-small;
+  color: var(--name-color);
+  padding-left: var(--cre8-spacing-16);
+  padding-right: var(--cre8-spacing-16);
+}
+
+.cre8-c-progress-steps-item__divider--left,
+.cre8-c-progress-steps-item__divider--right{
+  height: size(0.25);
+  width: 100%;
+}
+
+.cre8-c-progress-steps-item__divider--left {
+  background-color: var(--divider-color-left);
+}
+
+.cre8-c-progress-steps-item__divider--right {
+  background-color: var(--divider-color-right);
+}

@@ -1,39 +1,49 @@
-import {LitElement, html, unsafeCSS} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
-import classnames from 'classnames';
-import styles from './medication-form.scss';
+import { css } from 'lit';
+const styles = css`@import 'design-tokens/core/scss/theming/component' ;
 
 /**
- * An example element.
- *
+ * 1)
  */
-@customElement('medication-form')
-export class MedicationForm extends LitElement {
-  static get styles() {
-    return unsafeCSS(styles.toString());
-  }
+.c-medication-form {
+  display: flex;
+  flex-wrap: wrap;
+  margin: size(-1.5);
+  flex-direction: column;
 
-  /**
-   * Append to the class name. Used for passing in utility classes
-   */
-  @property()
-  styleModifier?: string;
-
-
-  render() {
-    const componentClassName = classnames('c-medication-form', this.styleModifier, {
-    });
-
-    return html`
-      <div class="${componentClassName}">
-       <slot></slot>
-      </div>
-    `;
+  @media all and (min-width: component.$cre8-breakpoint-md) {
+    flex-direction: row;
+    width: 100%;
   }
 }
 
-declare global {
-  interface HTMLElementTagNameMap {
-    'medication-form': MedicationForm;
+/**
+  * Slotted grid item within 1-2-4up Grid
+  */
+::slotted(*) {
+  width: 100%;
+  padding: size(1.5);
+
+  @media all and (min-width: component.$cre8-breakpoint-md) {
+    width: 50%;
+  }
+
+  @media all and (min-width: component.$cre8-breakpoint-xl) {
+    flex: 1;
   }
 }
+
+::slotted(:first-child) {
+  @media all and (min-width: component.$cre8-breakpoint-lg) {
+    flex: auto;
+    width: 20%;
+  }
+}
+
+::slotted(:last-child) {
+  @media all and (min-width: component.$cre8-breakpoint-md) {
+    position: relative;
+    top: size(6.25);
+  }
+}
+`;
+export default styles;

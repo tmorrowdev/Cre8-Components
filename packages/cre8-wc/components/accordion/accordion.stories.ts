@@ -5,7 +5,6 @@ import './accordion';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import './accordion';
 import { spread } from '../../directives/spread';
-import '../../scripts/agentric.js';
 import type Cre8Accordion from './accordion';
 interface Props extends Cre8Accordion {
 }

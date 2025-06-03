@@ -1,7 +1,7 @@
 import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './dropdown-item.scss';
+import styles from './dropdown-item.module';
 
 /**
  * The Dropdown item component is designed to be used with Dropdown component, each item represents a
@@ -9,9 +9,7 @@ import styles from './dropdown-item.scss';
  * to links, initiate commands when clicked.
  */
 export class Cre8DropdownItem extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   @property({ type: String })
       ariaLabel = '';

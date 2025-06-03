@@ -1,16 +1,14 @@
-import svgCaretUp from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Up.svg?raw';
+import svgCaretUp from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Up.svg?raw';
 import { html, unsafeCSS } from 'lit';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon';
-import styles from './breadcrumbs-item.scss';
+import styles from './breadcrumbs-item.module';
 
 /**
  * @slot - The component content, the expected slotted content is a Cre8 Link or a String for the "terminal node"
  */
 export class Cre8BreadcrumbsItem extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
     // Set the role before rendering for better accessibility
     // Because we're settting this role, we don't wrap the slot in an <li>

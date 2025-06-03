@@ -1,0 +1,101 @@
+@import '/design-tokens/core/scss/theming/component';
+/*------------------------------------*\
+ #TABS
+\*------------------------------------*/
+
+:host {
+  display: block;
+}
+
+/**
+ * Tabs header
+ */
+.cre8-c-tabs__header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  overflow: hidden;
+
+  /**
+   * Tabs inner where the beginning of the tabs list isn't fully in the viewport
+   */
+  .cre8-c-tabs:not(.cre8-is-start) & {
+    /**
+     * Left overflow gradient for the tabs list
+     */
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      pointer-events: none;
+      background: linear-gradient(var(--rtlGradientToRight, 90deg), var(--cre8-color-bg-default), rgb(255 255 255 / 0.1%) 30%);
+      height: 100%;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      width: size(6);
+      z-index: 1;
+    }
+  }
+
+  /**
+   * Tabs inner where the end of the tabs list isn't fully in the viewport
+   */
+  .cre8-c-tabs:not(.cre8-is-end) & {
+    /**
+     * Right overflow gradient for the tabs list
+     */
+    &::after {
+      content: '';
+      display: block !important;
+      position: absolute;
+      pointer-events: none;
+      background: linear-gradient(var(--rtlGradientToRight, 90deg), rgb(255 255 255 / 0.1%) 30%, var(--cre8-color-bg-default));
+      height: 100%;
+      inset-block-start: 0;
+      inset-inline-end: 0;
+      width: size(6);
+      z-index: 1;
+    }
+  }
+}
+
+/**
+ * Tabs list
+ * 1) The div that contains the cre8-tab's
+ */
+.cre8-c-tabs__list {
+  display: flex;
+  overflow: auto;
+  width: 100%;
+  margin: 0;
+  position: relative;
+  padding: var(--cre8-border-width-focus);
+
+  /**
+   * Visually hides the scrollbar
+   */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/**
+ * Tabs body
+ * 1) The div that contains the tab panel content
+ */
+.cre8-c-tabs__body {
+  padding-block-start: size(2);
+
+  /**
+   * Full Width Variant - border default bar across tabs
+   */
+   .cre8-c-tabs--full-width & {
+    border-top: var(--cre8-border-width-tab-selected) var(--cre8-border-style-default) var(--cre8-color-border-default);
+    // To match the border of the tabs to this full width line
+    // Shift border up by the tab bottom border width + Width of the padding on the list of tabs
+    margin-top: calc(var(--cre8-border-width-tab-selected) * -2);
+  }
+}

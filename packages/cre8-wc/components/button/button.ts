@@ -4,7 +4,7 @@ import { property, query } from 'lit/decorators.js';
 import { Cre8FormElement } from '../cre8-form-element';
 import '../icon/icon';
 import '../loading-spinner/loading-spinner';
-import styles from './button.scss';
+import styles from './button.module';
 
     /**
      * The size and state of buttons on the screen serve as visual cues for the user
@@ -78,9 +78,7 @@ import styles from './button.scss';
      */
 
 export class Cre8Button extends Cre8FormElement {
-    static get styles() {
-        return unsafeCSS(styles);
-    }
+   static styles = [styles];
 
     /**
      * The button text. Should be as short and simple as possible, ideally a maximum of 3 words.
@@ -360,10 +358,10 @@ export class Cre8Button extends Cre8FormElement {
         return html` <button
             class="${componentClassName}"
             part="button"
-            aria-disabled=${ifDefined(this.loading)}
+            aria-disabled="${ifDefined(this.loading)}"
             ?disabled=${this.disabled}
             @click="${this._buttonClick}"
-            aria-expanded=${ifDefined(this.buttonAriaExpanded)}
+            aria-expanded="${ifDefined(this.buttonAriaExpanded)}"
         >
             <slot name="before"></slot>
             ${this.generateIconBefore()}

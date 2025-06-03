@@ -1,15 +1,13 @@
 import { html, unsafeCSS } from 'lit';
 import { state } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './header.scss';
+import styles from './header.module';
 
 /**
  * @slot - The header content
  */
 export class Cre8Header extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles);
-    }
+    static styles = [styles];
 
   /**
    * Is active state

@@ -1,0 +1,18 @@
+import { css } from 'lit';
+const styles = css`@import '../../design-tokens/core/scss/theming/component';
+
+::slotted(*) {
+  flex: 1;
+}
+
+.cre8-c-progress-steps {
+  display: flex;
+  flex-direction: row;
+  margin: var(--cre8-spacing-24);
+
+  @media (max-width:$cre8-breakpoint-md) {
+    flex-direction: column;
+  }
+}
+`;
+export default styles;

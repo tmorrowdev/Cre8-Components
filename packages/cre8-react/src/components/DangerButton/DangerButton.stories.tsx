@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
-import svgCaretLeft from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Left.svg?raw';
-import svgCaretRight from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret Right.svg?raw';
-import svgArrowRight from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Arrow - Right.svg?raw';
+import svgCaretLeft from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret_Left.svg';
+import svgCaretRight from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret_Right.svg';
+import svgArrowRight from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Arrow_-_Right.svg';
 import type { StoryObj } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import React from 'react';
@@ -17,7 +17,7 @@ export default {
       exclude: new RegExp(`${excludeRegexArray.join('|')}`)
     }
   },
-  render: (args) => <Cre8DangerButton {...args}></Cre8DangerButton>,
+  render: (args:any) => <Cre8DangerButton {...args}></Cre8DangerButton>,
   args: {
     text: 'Button',
     loading: false,

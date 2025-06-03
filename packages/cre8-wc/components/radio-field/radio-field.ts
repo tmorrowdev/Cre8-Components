@@ -3,7 +3,7 @@ import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import '../field-note/field-note';
-import styles from './radio-field.scss';
+import styles from './radio-field.module';
 
 /**
  * Radio Field is the parent container for `radio-field-item`.
@@ -16,9 +16,7 @@ import styles from './radio-field.scss';
  */
 
 export class Cre8RadioField extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /**
    * Radio Field Note

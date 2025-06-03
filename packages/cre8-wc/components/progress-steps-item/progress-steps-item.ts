@@ -1,7 +1,7 @@
 import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './progress-steps-item.scss';
+import styles from './progress-steps-item.module';
 
 /**
  * The Progress Steps Item component is used to display a single step in a multi-step process.
@@ -16,9 +16,7 @@ import styles from './progress-steps-item.scss';
  * @slot - The component content
  */
 export class Cre8ProgressStepsItem extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
     /**
      * Optional message to display under the step name.
@@ -62,7 +60,7 @@ export class Cre8ProgressStepsItem extends Cre8Element {
             <div class='cre8-c-progress-steps-item__top-container'>
               <div class='cre8-c-progress-steps-item__divider--left' part='left-divider'></div>
               <span class='cre8-c-progress-steps-item__svg'>
-                <cre8-icon svg='${this.svg}' aria-hidden='true'>
+                <cre8-icon svg='${this.svg}' aria-hidden='true'></cre8-icon>
               </span>
               <div class='cre8-c-progress-steps-item__divider--right' part='right-divider'></div>
             </div>

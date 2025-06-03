@@ -1,15 +1,13 @@
 import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './utility-nav.scss';
+import styles from './utility-nav.module';
 
 /**
  * @slot - The utility nav items
  */
 export class Cre8UtilityNav extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles);
-    }
+    static styles = [styles];
 
   /**
    * Inverted variant

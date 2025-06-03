@@ -2,16 +2,14 @@ import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './table-header-cell.scss';
+import styles from './table-header-cell.module';
 
 /**
  * @slot - The component content
  */
 
 export class Cre8TableHeaderCell extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /**
    * Colspan attribute on th

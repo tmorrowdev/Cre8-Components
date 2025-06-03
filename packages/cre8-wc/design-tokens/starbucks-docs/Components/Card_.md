@@ -1,0 +1,82 @@
+# Page: Cards
+
+*ID: 3330:87*
+
+- **Avatar With Info** (Type: COMPONENT_SET, ID: 4910:201)
+  - BorderRadius: 5px
+  - Strokes Ref: [stroke_hiwakuf](../GlobalStyles/Colors.md#stroke-hiwakuf) (See Color Styles for Borders)
+  - Layout Style Ref: [layout_hwl601x](../GlobalStyles/LayoutAndSpacing.md#layout-hwl601x) (See Layout Styles)
+  - <a name="component-3330:87-3356:2362"></a>**COMPONENT DEFINITION:** **type=Person** (Type: COMPONENT, ID: 3356:2362)
+    - Layout Style Ref: [layout_hgdtuch](../GlobalStyles/LayoutAndSpacing.md#layout-hgdtuch) (See Layout Styles)
+    - **Avatar-Variants (old version)** (Type: INSTANCE, ID: 7072:8298)
+      - BorderRadius: 900px
+      - (Instance of a component. Main Component ID: [7067:6749](../UnknownPage.md#component-UnknownPage-7067:6749). Further details depend on main component definition.)
+      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+      - Layout Style Ref: [layout_hdznyh7](../GlobalStyles/LayoutAndSpacing.md#layout-hdznyh7) (See Layout Styles)
+      - **Vector** (Type: IMAGE-SVG, ID: I7072:8298;7067:6750)
+        - Fills Ref: [fill_h25ofw8](../GlobalStyles/Colors.md#fill-h25ofw8) (See Color Styles)
+        - Layout Style Ref: [layout_hwl601x](../GlobalStyles/LayoutAndSpacing.md#layout-hwl601x) (See Layout Styles)
+    - **Frame 2** (Type: FRAME, ID: 3356:2356)
+      - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
+      - **Full name** (Type: TEXT, ID: 3356:2354)
+        - Text Content: "Full name"
+        - TextStyle Ref: [text_hc0opic](../GlobalStyles/Typography.md#text-hc0opic) (See Typography Styles)
+        - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+        - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+      - **Count - Coach Specialities** (Type: TEXT, ID: 3356:2355)
+        - Text Content: "Count - Coach Specialities"
+        - TextStyle Ref: [text_h9arp47](../GlobalStyles/Typography.md#text-h9arp47) (See Typography Styles)
+        - Fills Ref: [fill_hsjk5x](../GlobalStyles/Colors.md#fill-hsjk5x) (See Color Styles)
+        - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+  - <a name="component-3330:87-4910:202"></a>**COMPONENT DEFINITION:** **type=Event** (Type: COMPONENT, ID: 4910:202)
+    - Layout Style Ref: [layout_hgdtuch](../GlobalStyles/LayoutAndSpacing.md#layout-hgdtuch) (See Layout Styles)
+    - **Avatar-Variants (old version)** (Type: INSTANCE, ID: 7072:8469)
+      - BorderRadius: 900px
+      - (Instance of a component. Main Component ID: [7067:6749](../UnknownPage.md#component-UnknownPage-7067:6749). Further details depend on main component definition.)
+      - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
+      - Layout Style Ref: [layout_hdznyh7](../GlobalStyles/LayoutAndSpacing.md#layout-hdznyh7) (See Layout Styles)
+      - **Vector** (Type: IMAGE-SVG, ID: I7072:8469;7067:6750)
+        - Fills Ref: [fill_h25ofw8](../GlobalStyles/Colors.md#fill-h25ofw8) (See Color Styles)
+        - Layout Style Ref: [layout_hwl601x](../GlobalStyles/LayoutAndSpacing.md#layout-hwl601x) (See Layout Styles)
+    - **Frame 2** (Type: FRAME, ID: 4910:204)
+      - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
+      - **Date & Time** (Type: TEXT, ID: 4910:205)
+        - Text Content: "Date & Time"
+        - TextStyle Ref: [text_hc0opic](../GlobalStyles/Typography.md#text-hc0opic) (See Typography Styles)
+        - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
+        - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+      - **Full Name - Title** (Type: TEXT, ID: 4910:206)
+        - Text Content: "Full Name - Title"
+        - TextStyle Ref: [text_h9arp47](../GlobalStyles/Typography.md#text-h9arp47) (See Typography Styles)
+        - Fills Ref: [fill_hsjk5x](../GlobalStyles/Colors.md#fill-hsjk5x) (See Color Styles)
+        - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+- <a name="component-3330:87-4926:304"></a>**COMPONENT DEFINITION:** **List Card** (Type: COMPONENT, ID: 4926:304)
+  - BorderRadius: 4px
+  - Strokes Ref: [stroke_h7nekvq](../GlobalStyles/Colors.md#stroke-h7nekvq) (See Color Styles for Borders)
+  - Layout Style Ref: [layout_h131l60](../GlobalStyles/LayoutAndSpacing.md#layout-h131l60) (See Layout Styles)
+  - **day and month** (Type: FRAME, ID: 4926:291)
+    - BorderRadius: 4px
+    - Fills Ref: [fill_hjokjbk](../GlobalStyles/Colors.md#fill-hjokjbk) (See Color Styles)
+    - Layout Style Ref: [layout_hiyv25x](../GlobalStyles/LayoutAndSpacing.md#layout-hiyv25x) (See Layout Styles)
+    - **day** (Type: TEXT, ID: 4926:289)
+      - Text Content: "8"
+      - TextStyle Ref: [text_hfjjuyt](../GlobalStyles/Typography.md#text-hfjjuyt) (See Typography Styles)
+      - Fills Ref: [fill_hcyk3m7](../GlobalStyles/Colors.md#fill-hcyk3m7) (See Color Styles)
+      - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+    - **month** (Type: TEXT, ID: 4926:290)
+      - Text Content: "Jan"
+      - TextStyle Ref: [text_hajk053](../GlobalStyles/Typography.md#text-hajk053) (See Typography Styles)
+      - Fills Ref: [fill_hcyk3m7](../GlobalStyles/Colors.md#fill-hcyk3m7) (See Color Styles)
+      - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+  - **date & description** (Type: FRAME, ID: 4926:287)
+    - Layout Style Ref: [layout_h4k3fcy](../GlobalStyles/LayoutAndSpacing.md#layout-h4k3fcy) (See Layout Styles)
+    - **4:00 PM** (Type: TEXT, ID: 4926:285)
+      - Text Content: "4:00 PM"
+      - TextStyle Ref: [text_hc0opic](../GlobalStyles/Typography.md#text-hc0opic) (See Typography Styles)
+      - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
+      - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+    - **Mobile Web Development - Join our mobile development class to maser the skills needed to build cutting edge something or other** (Type: TEXT, ID: 4926:286)
+      - Text Content: "Mobile Web Development - Join our mobile development class to maser the skills needed to build cutting edge something or other"
+      - TextStyle Ref: [text_h9arp47](../GlobalStyles/Typography.md#text-h9arp47) (See Typography Styles)
+      - Fills Ref: [fill_hukxreb](../GlobalStyles/Colors.md#fill-hukxreb) (See Color Styles)
+      - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)

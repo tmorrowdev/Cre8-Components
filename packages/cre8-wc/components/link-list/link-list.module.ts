@@ -1,0 +1,109 @@
+import { css } from 'lit';
+const styles = css`@import '../../design-tokens/core/scss/theming/component';
+/**
+ * A list of hyperlinks
+ * 1) Override preset line-height value to condense link text. Note: this should
+ *    be done sparingly to control wrapping text for specific scenarios
+ */
+.cre8-c-link-list {
+  @include cre8-typography-body-default;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin-top: size(-2);
+  list-style: none;
+
+  /**
+  * Slotted link list item
+  */
+  ::slotted(cre8-link-list-item) {
+    margin-top: size(2);
+  }
+}
+
+/**
+ * A secondary link list
+ * 1) Uses a more subtle treatment than the default link list
+ * 2) TODO: Create a tier 2 token for secondary link colors
+ */
+.cre8-c-link-list--secondary {
+  --cre8-link-list-item-active-text-color: var(--cre8-color-content-default); /* 2 */
+  color: var(--cre8-color-content-subtle);
+}
+
+/**
+ * Inverted link list
+ * 1) Link list on a dark background
+ */
+.cre8-c-link-list--inverted {
+  --cre8-link-list-link-color: var(--cre8-color-content-knockout);
+}
+
+/**
+* Display link list
+*/
+.cre8-c-link-list--display {
+  color: var(--cre8-color-content-strong);
+}
+
+/**
+ * Condensed link list
+ * 1) Removes spacing between link list items
+ */
+.cre8-c-link-list--condensed {
+  margin-top: size(-1.25);
+
+  /**
+  * Slotted link list item within condensed link list
+  */
+  ::slotted(cre8-link-list-item) {
+    margin-top: size(1.25);
+  }
+}
+
+/**
+ * Small link list
+ */
+.cre8-c-link-list--sm {
+  @include cre8-typography-body-small;
+}
+
+/**
+ * Horizontal behavior
+ * 1) Displays as a horizontal list
+ */
+.cre8-c-link-list--horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: size(-1) 0 0 size(-2);
+
+  /**
+  * Slotted link list item within horizontal link list
+  */
+  ::slotted(cre8-link-list-item) {
+    margin-top: size(1);
+    margin-left: size(2);
+  }
+}
+
+/**
+ * Responsive behavior
+ * 1) Displays as a horizontal list on small screens and moves to a vertical
+ */
+.cre8-c-link-list--responsive {
+  @media all and (max-width:$cre8-breakpoint-md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: size(-1) 0 0 size(-2);
+
+    /**
+    * Slotted link list item within responsive link list
+    */
+    ::slotted(cre8-link-list-item) {
+      margin-top: size(1);
+      margin-left: size(2);
+    }
+  }
+}
+`;
+export default styles;

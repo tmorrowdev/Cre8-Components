@@ -4,8 +4,8 @@ import { property, query } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import '../icon/icon';
 import '../field-note/field-note';
-import svgCheck from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
-import styles from './checkbox-field-item.scss';
+import svgCheck from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Check.svg?raw';
+import styles from './checkbox-field-item.module';
 import { Cre8FormElement } from '../cre8-form-element';
 
 /**
@@ -33,9 +33,7 @@ import { Cre8FormElement } from '../cre8-form-element';
 export class Cre8CheckboxFieldItem extends Cre8FormElement {
     readonly type = 'checkbox';
 
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /**
    * The checkbox label

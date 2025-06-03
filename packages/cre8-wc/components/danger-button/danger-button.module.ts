@@ -1,0 +1,532 @@
+import { css } from 'lit';
+const styles = css`@import '../../design-tokens/core/scss/theming/component';
+
+:host {
+  display: inline-flex;
+}
+:host([fullWidth]) {
+  display: flex;
+
+}
+/**
+ * 1) Danger Button or link that has functionality to it
+ */
+
+/**
+ * Primary button
+ */
+.cre8-c-danger-button {
+  @include cre8-typography-label-default();
+  width: var(--cre8-button-width, auto);
+  height: var(--cre8-button-height, auto);
+  min-width: var(--cre8-button-min-width, auto);
+  min-height: var(--cre8-button-min-height, auto);
+  justify-content: center;
+  text-align: center;
+  margin-top: var( --cre8-button-margin-top, 0);
+  margin-bottom: var( --cre8-button-margin-bottom, 0);
+  margin-left: var( --cre8-button-margin-left, 0);
+  margin-right: var( --cre8-button-margin-right, 0);
+  display: inline-flex;
+  align-items: center;
+  border-width: var(--cre8-border-width-button-default);
+  box-shadow: var(--cre8-shadow-button);
+  padding-top: var(--cre8-button-padding-vertical-medium);
+  padding-right: var(--cre8-button-padding-horizontal-medium);
+  padding-bottom: var(--cre8-button-padding-vertical-medium);
+  padding-left: var(--cre8-button-padding-horizontal-medium);
+  margin: 0;
+  cursor: pointer;
+  border-style: var(--cre8-border-style-default);
+  transition: revert;
+  transform: revert;
+  white-space: nowrap;
+  &:hover,
+  &:focus,
+  &:active,
+  &:focus-visible {
+    border-style: var(--cre8-border-style-default);
+    box-shadow: none;
+    transform: revert;
+    transition: revert;
+  }
+  &.cre8-c-danger-button--primary {
+    background: var(--cre8-color-button-primary-danger-bg);
+    border-width: var(--cre8-border-width-button-default);
+    border-color: var(--cre8-color-button-primary-danger-border);
+    border-radius: var(--cre8-border-radius-button);
+    box-shadow: var(--cre8-shadow-button);
+    color: var(--cre8-color-button-primary-danger-content);
+    --cre8-icon-fill: var(--cre8-color-button-primary-danger-content);
+    &:hover,
+    &:focus {
+      box-shadow: none;
+      --cre8-icon-fill: var(--cre8-color-button-primary-danger-content-hover);
+      color: var(--cre8-color-button-primary-danger-content-hover);
+      border-color: var(--cre8-color-button-primary-danger-border-hover);
+      background: var(--cre8-color-button-primary-danger-bg-hover);
+      text-decoration: none;
+      &:focus {
+        @includefocus();
+      }
+    }
+    &:active,
+    &.cre8-c-danger-button--loading {
+      box-shadow: none;
+      color: var(--cre8-color-button-primary-danger-content-active);
+      --cre8-icon-fill: var(--cre8-color-button-primary-danger-content-active);
+      border-color: var(--cre8-color-button-primary-danger-border-active);
+      background-color: var(--cre8-color-button-primary-danger-bg-active);
+    }
+    &:focus-visible{
+      @includefocus();
+    }
+    &.cre8-c-danger-button--loading{
+      cursor: not-allowed;
+    }
+/**
+ * Disabled primary and secondary button
+ */
+  &:disabled {
+    box-shadow: none;
+    background-color: var(--cre8-color-button-primary-danger-bg-disabled);
+    border-color: var(--cre8-color-button-primary-danger-border-disabled);
+    color: var(--cre8-color-button-primary-danger-content-disabled);
+    --cre8-icon-fill: var(--cre8-color-button-primary-danger-content-disabled);
+    cursor: not-allowed;
+    outline: none;
+    &:hover,
+    &:focus,
+    &:active,
+    &:focus-visible {
+      outline: none;
+      background-color: var(--cre8-color-button-primary-danger-bg-disabled);
+      border-color: var(--cre8-color-button-primary-danger-border-disabled);
+      color: var(--cre8-color-button-primary-danger-content-disabled);
+      --cre8-icon-fill: var(--cre8-color-button-primary-danger-content-disabled);
+    }
+  }
+
+  &.cre8-c-danger-button--inverted {
+    background-color: var(--cre8-color-button-primary-danger-inverse-bg);
+    border-color: var(--cre8-color-button-primary-danger-inverse-border);
+    color: var(--cre8-color-button-primary-danger-inverse-content);
+  
+    &:hover,
+    &:focus {
+     background-color: var(--cre8-color-button-primary-danger-inverse-bg-hover);
+     border-color: var(--cre8-color-button-primary-danger-inverse-border-hover);
+     color: var(--cre8-color-button-primary-danger-inverse-content-hover);
+    }
+
+    &:focus {
+      outline-color: var(--cre8-color-button-primary-danger-inverse-outline);
+     }
+
+    &:active {
+      background-color: var(--cre8-color-button-primary-danger-inverse-bg-active);
+      border-color: var(--cre8-color-button-primary-danger-inverse-border-active);
+      color: var(--cre8-color-button-primary-danger-inverse-content-active);
+     
+    &.cre8-c-danger-button--loading {
+      --cre8-icon-fill: var(--cre8-color-button-primary-danger-content-active);
+      }
+    }
+
+    &:disabled { 
+      outline: none;
+      cursor: not-allowed;
+      background-color: var(--cre8-color-button-primary-danger-inverse-bg-disabled);
+      border-color: var(--cre8-color-button-primary-danger-inverse-border-disabled);
+      color: var(--cre8-color-button-primary-danger-inverse-content-disabled);
+    }
+  }
+}
+
+/**
+ * Secondary button
+ * The icon button shares the styles of the standard secondary button
+ */
+  &.cre8-c-danger-button--secondary {
+    background-color: var(--cre8-color-button-secondary-danger-bg);
+    border-color: var(--cre8-color-button-secondary-danger-border);
+    color: var(--cre8-color-button-secondary-danger-content);
+    --cre8-icon-fill: var(--cre8-color-button-secondary-danger-content);
+    border-radius: var(--cre8-border-radius-button);
+    border-width: var(--cre8-border-width-button-default);
+
+  &:hover,
+  &:focus {
+    background-color: var(--cre8-color-button-secondary-danger-bg-hover);
+    border-color: var(--cre8-color-button-secondary-danger-border-hover);
+    color: var(--cre8-color-button-secondary-danger-content-hover);
+    --cre8-icon-fill: var(--cre8-color-button-secondary-danger-content-hover);
+    &:focus {
+      @include focus;
+    }
+  }
+  &:active,
+  &.cre8-c-danger-button--loading {
+    transition: none;
+    transform: none;
+    background-color: var(--cre8-color-button-secondary-danger-bg-active);
+    border-color: var(--cre8-color-button-secondary-danger-border-active);
+    color: var(--cre8-color-button-secondary-danger-content-active);
+    --cre8-icon-fill: var(--cre8-color-button-secondary-danger-content-active);
+  }
+  &:focus-visible {
+    @include focus;
+  }
+  &.cre8-c-danger-button--loading {
+    cursor: not-allowed;
+  }
+
+  &:disabled {
+    box-shadow: none;
+    background-color: var(--cre8-color-button-secondary-danger-bg-disabled);
+    border-color: var(--cre8-color-button-secondary-danger-border-disabled);
+    color: var(--cre8-color-button-secondary-danger-content-disabled);
+    --cre8-icon-fill: var(--cre8-color-button-secondary-danger-content-disabled);
+    outline: none;
+    border-radius: var(--cre8-border-radius-button);
+    border-width: var(--cre8-border-width-button-default);
+    cursor: not-allowed;
+    &:hover,
+    &:focus,
+    &:active,
+    &:focus-visible {
+      outline: none;
+      background-color: var(--cre8-color-button-secondary-danger-bg-disabled);
+      border-color: var(--cre8-color-button-secondary-danger-border-disabled);
+      color: var(--cre8-color-button-secondary-danger-content-disabled);
+      --cre8-icon-fill: var(--cre8-color-button-secondary-danger-content-disabled);
+    }
+  }
+
+  &.cre8-c-danger-button--inverted {
+    background-color: var(--cre8-color-button-secondary-danger-inverse-bg);
+    border-color: var(--cre8-color-button-secondary-danger-inverse-border);
+    color: var(--cre8-color-button-secondary-danger-inverse-content);
+  
+    &:hover,
+    &:focus {
+     background-color: var(--cre8-color-button-secondary-danger-inverse-bg-hover);
+     border-color: var(--cre8-color-button-secondary-danger-inverse-border-hover);
+     color: var(--cre8-color-button-secondary-danger-inverse-content-hover);
+    }
+
+    &:focus {
+      outline-color: var(--cre8-color-button-secondary-danger-inverse-outline);
+     }
+
+    &:active {
+      background-color: var(--cre8-color-button-secondary-danger-inverse-bg-active);
+      border-color: var(--cre8-color-button-secondary-danger-inverse-border-active);
+      color: var(--cre8-color-button-secondary-danger-inverse-content-active);
+     
+    &.cre8-c-danger-button--loading {
+      --cre8-icon-fill: var(--cre8-color-button-secondary-danger-content-active);
+      }
+    }
+
+    &:disabled { 
+      outline: none;
+      cursor: not-allowed;
+      background-color: var(--cre8-color-button-secondary-danger-inverse-bg-disabled);
+      border-color: var(--cre8-color-button-secondary-danger-inverse-border-disabled);
+      color: var(--cre8-color-button-secondary-danger-inverse-content-disabled);
+    }
+  }
+}
+
+  /**
+ * Tertiary button
+ */
+  &.cre8-c-danger-button--tertiary {
+    border-radius: var(--cre8-border-radius-button);
+    background-color: var(--cre8-color-button-tertiary-danger-bg);
+    border-width: var(--cre8-border-width-button-default);
+    border-color: var(--cre8-color-button-tertiary-danger-border);
+    color: var(--cre8-color-button-tertiary-danger-content);
+    --cre8-icon-fill: var(--cre8-color-button-tertiary-danger-content);
+    box-shadow: none;
+    &:hover,
+    &:focus {
+      border-radius: var(--cre8-border-radius-button);
+      background-color: var(--cre8-color-button-tertiary-danger-bg-hover);
+      border-width: var(--cre8-border-width-button-default, --cre8-border-width-none);
+      border-color: var(--cre8-color-button-tertiary-danger-border-hover);
+      color: var(--cre8-color-button-tertiary-danger-content-hover);
+      --cre8-icon-fill: var(--cre8-color-button-tertiary-danger-content-hover);
+      &:focus {
+        @include focusTertiary();
+      }
+    }
+  &:active,
+  &.cre8-c-danger-button--loading {
+    border-radius: var(--cre8-border-radius-button);
+    background-color: var(--cre8-color-button-tertiary-danger-bg-active);
+    border-color: var(--cre8-color-button-tertiary-danger-border-active);
+    border-width: var(--cre8-border-width-button-default);
+    color: var(--cre8-color-button-tertiary-danger-content-active);
+    --cre8-icon-fill: var(--cre8-color-button-tertiary-danger-content-active);
+  }
+  &:focus-visible {
+    @include focusTertiary();
+  }
+  &.cre8-c-danger-button--loading {
+    cursor: not-allowed;
+  }
+  &:disabled {
+    background-color: var(--cre8-color-button-tertiary-danger-bg-disabled);
+    border-color: transparent;
+    color: var(--cre8-color-button-tertiary-danger-content-disabled);
+    --cre8-icon-fill: var(--cre8-color-button-tertiary-danger-content-disabled);
+    outline: none;
+    box-shadow: none;
+    cursor: not-allowed;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      background-color: var(--cre8-color-button-tertiary-danger-bg-disabled);
+      color: var(--cre8-color-button-tertiary-danger-content-disabled);
+      --cre8-icon-fill: var(--cre8-color-button-tertiary-danger-content-disabled);
+    }
+    &:active,
+    &:focus-visible {
+      outline: none;
+      box-shadow: none;
+      background-color: var(--cre8-color-button-tertiary-danger-bg-disabled);
+      color: var(--cre8-color-button-tertiary-danger-content-disabled);
+      --cre8-icon-fill: var(--cre8-color-button-tertiary-danger-content-disabled);
+    }
+  }
+
+  &.cre8-c-danger-button--inverted {
+    background-color: var(--cre8-color-button-tertiary-danger-inverse-bg);
+    border-color: var(--cre8-color-button-tertiary-danger-inverse-border);
+    color: var(--cre8-color-button-tertiary-danger-inverse-content);
+  
+    &:hover,
+    &:focus {
+     background-color: var(--cre8-color-button-tertiary-danger-inverse-bg-hover);
+     border-color: var(--cre8-color-button-tertiary-danger-inverse-border-hover);
+     color: var(--cre8-color-button-tertiary-danger-inverse-content-hover);
+    }
+
+    &:focus {
+      outline-color: var(--cre8-color-button-tertiary-danger-inverse-outline);
+    }
+
+    &:active {
+      background-color: var(--cre8-color-button-tertiary-danger-inverse-bg-active);
+      border-color: var(--cre8-color-button-tertiary-danger-inverse-border-active);
+      color: var(--cre8-color-button-tertiary-danger-inverse-content-active);
+     
+      &.cre8-c-danger-button--loading {
+        --cre8-icon-fill: var(--cre8-color-button-tertiary-danger-content-active);
+      }
+    }
+
+    &:disabled { 
+      outline: none;
+      cursor: not-allowed;
+      background-color: var(--cre8-color-button-tertiary-danger-inverse-bg-disabled);
+      border-color: var(--cre8-color-button-tertiary-danger-inverse-border-disabled);
+      color: var(--cre8-color-button-tertiary-danger-inverse-content-disabled);
+    }
+  }
+}
+
+  &.cre8-c-danger-button.cre8-c-danger-button--secondary.cre8-c-danger-button--split-button-text {
+    border-radius: var(--cre8-border-radius-button) var(--cre8-border-radius-none) var(--cre8-border-radius-none) var(--cre8-border-radius-button);
+    border-color: var(--cre8-color-button-secondary-danger-border);
+    border-width: var(--cre8-border-width-button-default);
+    color: var(--cre8-color-button-secondary-danger-content);
+    &:active,
+    &:focus-visible {
+      outline: none;
+    }
+    &.cre8-c-danger-button--lg {
+      padding: var(--cre8-button-padding-vertical-large) var(--cre8-button-padding-horizontal-large);
+    }
+    &.cre8-c-danger-button--sm {
+      padding: var(--cre8-button-padding-vertical-small) var(--cre8-button-padding-horizontal-small);
+    }
+  }
+
+  &.cre8-c-danger-button.cre8-c-danger-button--icon-only.cre8-c-danger-button--split-button-caret {
+    padding: var(--cre8-button-padding-vertical-medium);
+    border-radius: var(--cre8-border-radius-none) var(--cre8-border-radius-button) var(--cre8-border-radius-button) var(--cre8-border-radius-none);
+    height: 100%;
+    border-left: none !important ;
+    border-collapse: collapse;
+    background: var(--cre8-color-button-secondary-danger-bg);
+    border-color: var(--cre8-color-button-secondary-danger-border);
+    border-width: var(--cre8-border-width-button-default);
+    color: var(--cre8-color-button-secondary-danger-content);
+    --cre8-icon-fill: var(--cre8-color-button-secondary-danger-content);
+
+    &:hover,
+    &:focus {
+      background: var(--cre8-color-button-secondary-danger-bg-hover);
+      border-color: var(--cre8-color-button-secondary-danger-border-hover);
+      --cre8-icon-fill: var(--cre8-color-button-secondary-danger-content-hover);
+      outline: none;
+      border-left: none;
+      border-collapse: collapse;
+    }
+    &:active,
+    &:focus-visible {
+      background: var(--cre8-color-button-secondary-danger-bg-active);
+      border-color: var(--cre8-color-button-secondary-danger-border-active);
+      --cre8-icon-fill: var(--cre8-color-button-secondary-danger-content-active);
+      outline: none;
+      border-left: none;
+      border-collapse: collapse;
+    }
+  }
+}
+.cre8-c-danger-button--lg {
+  padding: var(--cre8-button-padding-vertical-large);
+}
+.cre8-c-danger-button--sm {
+  padding: var(--cre8-button-padding-vertical-small);
+}
+
+.cre8-c-danger-button--icon-only {
+  padding: var(--cre8-button-padding-vertical-small);
+  color: var(--cre8-icon-fill, currentColor);
+}
+
+/**
+ * Full-width button
+ */
+.cre8-c-danger-button--full-width {
+  width: 100%;
+  display: flex;
+}
+
+/**
+ * Small button
+ */
+.cre8-c-danger-button--sm {
+  @include cre8-typography-label-small();
+  padding-top: var(--cre8-button-padding-vertical-small);
+  padding-right: var(--cre8-button-padding-horizontal-small);
+  padding-bottom: var(--cre8-button-padding-vertical-small);
+  padding-left: var(--cre8-button-padding-horizontal-small);
+}
+
+/**
+ * Large button
+ */
+.cre8-c-danger-button--lg {
+  @include cre8-typography-label-large();
+  padding-top: var(--cre8-button-padding-vertical-large);
+  padding-right: var(--cre8-button-padding-horizontal-large);
+  padding-bottom: var(--cre8-button-padding-vertical-large);
+  padding-left: var(--cre8-button-padding-horizontal-large);
+}
+
+/**
+  * Icon within small button
+  */
+.cre8-c-danger-button--sm cre8-icon {
+  --cre8-icon-height: var(--cre8-icon-size-small);
+  --cre8-icon-width: var(--cre8-icon-size-small);
+
+  /**
+       * Button text directly after button icon within small button
+       */
+}
+
+/**
+  * Icon within large button
+  */
+.cre8-c-danger-button--lg cre8-icon {
+  --cre8-icon-height: var(--cre8-icon-size-large);
+  --cre8-icon-width: var(--cre8-icon-size-large);
+}
+
+::slotted(*) {
+  margin-right: 0;
+}
+/**
+ * Button icon directly before button text
+ */
+
+cre8-icon + .cre8-c-danger-button__text:not(.cre8-u-is-vishidden) {
+  margin-left: size(1);
+  display: inline-flex;
+}
+
+/**
+   * Button icon directly after button text
+   */
+.cre8-c-danger-button__text:not(.cre8-u-is-vishidden) + cre8-icon {
+  margin-left: size(1);
+  display: inline-flex;
+}
+/**
+   * Button icon only
+   */
+.cre8-c-danger-button:has(.cre8-c-danger-button__text.cre8-u-is-vishidden) + cre8-icon {
+  border-radius: var(--cre8-border-radius-button);
+}
+.cre8-c-danger-button__text.cre8-u-is-vishidden + cre8-icon {
+  margin-left: 0px;
+  margin-right: 0px;
+  display: flex;
+}
+.cre8-c-danger-button__text.cre8-u-is-vishidden {
+  @include visuallyHidden();
+}
+
+.cre8-c-danger-button--primary.cre8-c-danger-button--loading {
+  --cre8-icon-fill: var(--cre8-color-content-knockout);
+}
+.cre8-c-danger-button--secondary.cre8-c-danger-button--loading,
+.cre8-c-danger-button--tertiary.cre8-c-danger-button--loading {
+  --cre8-icon-fill: var(--cre8-color-button-secondary-danger-content-active);
+}
+
+/**
+ * Aria live span
+ */
+.cre8-u-is-vishidden {
+  --cre8-icon-height: 0px;
+  --cre8-icon-width: 0px;
+  max-width: fit-content;
+  min-width: 0px;
+  width: auto;
+  height: auto;
+  max-height: fit-content;
+  min-width: 0px;
+
+  @include visuallyHidden;
+}
+
+cre8-icon.cre8-u-is-vishidden {
+  @include visuallyHidden;
+}
+
+cre8-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+span.cre8-c-danger-button__icon {
+  margin-left: size(1);
+  max-width: fit-content;
+  min-width: 0px;
+  width: auto;
+  height: auto;
+  max-height: fit-content;
+  min-width: 0px;
+}
+`;
+export default styles;

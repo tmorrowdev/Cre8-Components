@@ -4,8 +4,8 @@ import { excludeRegexArray } from '../../../.storybook/preview';
 import { Cre8ProgressStepsItem } from '../..';
 import svgCheckCircle from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
 import svgError from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Error.svg?raw';
-import svgFilledCircleOne from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Circle One.svg?raw';
-import svgRegularCircleOne from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Circle One.svg?raw';
+import svgFilledCircleOne from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Circle_One.svg?raw';
+import svgRegularCircleOne from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Circle_One.svg?raw';
 import svgWarning from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
 
 export default {

@@ -2,7 +2,7 @@ import { html, nothing, unsafeCSS } from 'lit';
 import { property, query, queryAssignedElements } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import '../heading/heading';
-import styles from './popover.scss';
+import styles from './popover.module';
 import { Cre8Button } from '../button/button';
 
 /**
@@ -12,9 +12,7 @@ import { Cre8Button } from '../button/button';
  */
 
 export class Cre8Popover extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /**
    * The heading text that appears at the top of the popover panel. Should only be 2-3 lines max.

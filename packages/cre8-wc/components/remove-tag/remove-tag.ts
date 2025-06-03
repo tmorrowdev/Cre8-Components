@@ -1,10 +1,10 @@
 import classnames from 'classnames';
 import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
-import svgClose from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Close.svg?raw';
+import svgClose from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Close.svg?raw';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon';
-import styles from './remove-tag.scss';
+import styles from './remove-tag.module';
 
 export enum Shape {
   Round = 'round',
@@ -22,9 +22,7 @@ export enum Color {
  * These tags always display a "Close" icon.
  */
 export class Cre8RemoveTag extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /**
    * The tag text

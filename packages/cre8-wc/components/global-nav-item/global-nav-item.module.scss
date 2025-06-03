@@ -1,0 +1,79 @@
+@import '/design-tokens/core/scss/theming/component';
+
+// #PRIMARY NAV ITEM
+
+/**
+ * Actual primary nav list item
+ */
+
+/**
+ * Content within the primary nav item
+ */
+.cre8-c-global-nav__item-content {
+  display: flex;
+  align-items: baseline;
+}
+
+/**
+ * Primary navigation link
+ * 1) Used to remove any sort of default button styles when a button tag is rendered
+ */
+.cre8-c-global-nav__link {
+  @include cre8-typography-body-small;
+  display: flex;
+  align-items: center;
+  appearance: none; /* 1 */
+  background: transparent; /* 1 */
+  border: none;
+  //border: 1px solid var(--cre8-color-header-menu-border-default); /* 1 */
+  white-space: nowrap;
+  width: 100%;
+  margin: 0;
+  padding: size(1) size(2);
+  color: var(--cre8-global-nav-link-color, var(--cre8-color-content-subtle));
+  text-decoration: none;
+  transition: all var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    //border-color: var(--cre8-color-header-menu-border-hover);
+    background: var(--cre8-color-header-menu-bg-hover);
+    color: var(--cre8-color-header-menu-content-hover);
+  }
+
+  &:active {
+    border-color: var(--cre8-color-header-menu-border-pressed);
+    background: var(--cre8-color-header-menu-bg-pressed);
+    color: var(--cre8-color-header-menu-content-pressed);
+  }
+}
+
+/**
+ * Icon within primary navigation item
+ * 1) TODO: Figure out how to pass down size(1.5) instead of static rem value
+ */
+cre8-icon-legacy {
+  --cre8-icon-height: #{size(1)}; /* 1 */
+  --cre8-icon-width: #{size(1)}; /* 1 */
+  margin-left: auto;
+  transition: transform var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
+
+  /**
+  * Icon within active primary nav item
+  * 1) Rotate the icon to show that the dropdown is open
+  */
+  .cre8-c-global-nav__item.cre8-is-active & {
+    transform: rotate(-180deg); /* 1 */
+  }
+
+  @media all and (min-width: component.$cre8-breakpoint-lg) {
+    margin-left: size(1);
+  }
+}
+
+.cre8-c-global-nav__item-after {
+  --cre8-icon-height: #{size(1.5)};
+  --cre8-icon-width: #{size(1.5)};
+  margin-left: size(1);
+}

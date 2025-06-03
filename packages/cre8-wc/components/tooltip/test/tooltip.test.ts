@@ -1,4 +1,4 @@
-import svgInfoFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
+import svgInfoFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Info.svg?raw';
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../tooltip';

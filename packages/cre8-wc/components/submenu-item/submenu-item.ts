@@ -1,15 +1,13 @@
 import { html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './submenu-item.scss';
+import styles from './submenu-item.module';
 
 /**
  * @slot - The component content
  */
 export class Cre8SubmenuItem extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /**
    * The link URL

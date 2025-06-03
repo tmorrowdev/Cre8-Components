@@ -1,0 +1,104 @@
+@import '/design-tokens/core/scss/theming/component';
+
+/**
+ * 1) Progress Meter
+ * 2) Progress bar fill color custom property
+ */
+
+ :host {
+  display: block;
+ }
+
+.cre8-c-progress-meter__progress {
+  --cre8-progress-meter-background: var(--cre8-color-content-brand); /* 2 */
+  width: 100%;
+  height: var(--cre8-progress-meter-height, size(1));
+  background: var(--cre8-color-bg-transparent);
+  border-width: var(--cre8-border-width-default);
+  border-style: var(--cre8-border-style-default);
+  border-color: var(--cre8-color-border-strong);
+  border-radius: var(--cre8-border-radius-round);
+
+  .cre8-c-progress-meter--knockout & {
+    --cre8-progress-meter-background: var(--cre8-color-content-brand-knockout);
+    border-color: var(--cre8-color-border-default);
+  }
+  
+  /**
+  * Progress bar background styling error
+  */
+  .cre8-c-progress-meter--error & {
+    --cre8-progress-meter-background: var(--cre8-color-bg-error-strong);
+  }
+
+  /**
+  * Progress bar background styling warning
+  */
+  .cre8-c-progress-meter--warning & {
+    --cre8-progress-meter-background: var(--cre8-color-bg-warning-strong);
+  }
+
+  /**
+  * Progress bar background styling success
+  */
+  .cre8-c-progress-meter--success & {
+    --cre8-progress-meter-background: var(--cre8-color-bg-success-strong);
+  }
+
+
+  /**
+  * Progress bar background styling indeterminate
+  */
+  .cre8-c-progress-meter--indeterminate & {
+    --cre8-progress-meter-background: repeating-linear-gradient(
+      -45deg,
+      #009bdf,
+      #009bdf 10px,
+      #00628e 10px,
+      #00628e 20px
+    ); // TODO Possibly tokenize these
+  }
+}
+
+/**
+ * Progress bar sr-only escriptor
+ */
+.cre8-c-progress-meter__sr-only {
+  @include visuallyHidden;
+}
+
+
+/**
+ * Progress bar background styling
+ */
+progress {
+  color: var(--cre8-progress-meter-background);
+  appearance: none;
+}
+
+/**
+ * Progress bar background styling for Mozilla
+ */
+progress::-moz-progress-bar {
+  background: var(--cre8-progress-meter-background);
+  border-radius: var(--cre8-border-radius-round);
+}
+
+/**
+ * Progress bar background styling for Safari and Chrome
+ */
+progress::-webkit-progress-bar {
+  background: var(--cre8-color-bg-subtle);
+  border-radius: var(--cre8-border-radius-round);
+}
+progress::-webkit-progress-value {
+  background: var(--cre8-progress-meter-background);
+  border-radius: var(--cre8-border-radius-round);
+}
+
+/**
+ * Hide Label except for screen readers
+ */
+.cre8-c-progress-meter__label {
+  @include visuallyHidden;
+}

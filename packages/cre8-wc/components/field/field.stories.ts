@@ -6,7 +6,7 @@ import './field';
 export default {
   title: 'cre8 Components/Field',
   component: 'cre8-field',
-  render: (args) => html`<cre8-field ${spread(args)}></cre8-field>`,
+  render: (args: any) => html`<cre8-field ${spread(args)}></cre8-field>`,
   parameters: {
     status: {type: 'inProgress'},
     actions: {

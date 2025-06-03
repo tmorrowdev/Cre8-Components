@@ -1,0 +1,66 @@
+@import '/design-tokens/core/scss/theming/component';
+
+:host {
+  display: var(--pagination-display, inline-flex);
+  justify-content: var(--pagination-justify-content, center);
+  align-items: var(--pagination-align-items, center);
+  --cre8-button-width: 2rem;
+  --cre8-button-height: 2rem;
+  --cre8-button-min-width: 2rem;
+  --cre8-button-min-height: 2rem;
+  --cre8-button-padding-horizontal-small: 0px;
+  --cre8-button-padding-vertical-small: 0px;
+
+  }
+
+  *, ::slotted(*), *:before, *:after {
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    --cre8-button-margin-right: var(--cre8-spacing-2);
+    --cre8-button-margin-left: var(--cre8-spacing-2);
+    margin-right: var(--cre8-button-margin-right);
+    margin-left: var(--cre8-button-margin-left);
+
+    align-items: center;
+}
+
+  [aria-current='true'], #current{
+    --cre8-color-button-tertiary-bg: var( --cre8-color-bg-strong);
+    --cre8-color-button-tertiary-content: var(--cre8-color-content-knockout);
+    --cre8-color-button-tertiary-border: var(--cre8-color-border-transparent);
+   &:hover, &:active{
+      border-radius: var(--cre8-border-radius-button);
+   --cre8-color-button-tertiary-bg-hover: var(--cre8-color-bg-strong);
+    --cre8-color-button-tertiary-content-hover: var(--cre8-color-content-knockout);
+
+   &:focus, &:focus-visible, &:focus-within{
+      border-radius: var(--cre8-border-radius-button);
+
+      --cre8-color-button-tertiary-bg-active: var(--cre8-color-bg-strong);
+      --cre8-color-button-tertiary-content-active: var(--cre8-color-content-knockout);
+      @include component.focus();
+    }
+  }
+  }
+
+.cre8-c-pagination--compact, .cre8-c-pagination--icon-only, .cre8-c-pagination--range {
+  --cre8-button-width: 3rem;
+  --cre8-button-height: 3rem;
+  --cre8-button-min-width: 3rem;
+  --cre8-button-min-height: 3rem;
+}
+
+.cre8-c-pagionation__icon {
+  fill: var(--cre8-color-button-tertiary-content);
+}
+.cre8-c-pagination__icon:has(cre8-button:disabled){
+  color: var(--cre8-color-button-tertiary-content-disabled);
+}
+
+.cre8-c-pagination [aria-disabled="true"]{
+  fill: var(--cre8-color-content-default);
+  --cre8-color-button-tertiary-content: var(--cre8-color-content-default);
+}

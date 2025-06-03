@@ -1,0 +1,68 @@
+import { css } from 'lit';
+const styles = css`@import '../../design-tokens/core/scss/theming/component';
+
+/**
+ * 1) General text link used across the product
+ */
+.cre8-c-text-link {
+  @include cre8-typography-body-default-link();
+  display: inline-flex;
+  color: var(--cre8-color-content-link);
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    color: var(--cre8-color-content-link-hover);
+  }
+
+  &:active {
+    color: var(--cre8-color-content-link-active);
+  }
+
+  &:visited {
+    color: var(--cre8-color-content-link-visited);
+  }
+}
+
+/**
+* Display text link
+* 1) Used for items like article title links
+*/
+.cre8-c-text-link--display {
+  color: var(--cre8-color-content-default);
+}
+
+/**
+ * A secondary link list
+ * 1) Uses a more subtle treatment than the default link list
+ */
+.cre8-c-text-link--secondary {
+  color: var(--cre8-color-content-subtle);
+}
+
+/**
+* Inverted text link
+* 1) Used on dark backgrounds
+*/
+.cre8-c-text-link--inverted {
+  color: var(--cre8-color-content-knockout);
+}
+
+/**
+* Small text link
+* 1) Shrink the typography size
+*/
+.cre8-c-text-link--sm {
+  @include cre8-typography-body-small();
+}
+
+/**
+* Text link after
+* 1) Container used to place items after the text link
+*/
+.cre8-c-text-link__after {
+  margin-left: size(1);
+}
+`;
+export default styles;

@@ -1,14 +1,12 @@
 import { html, unsafeCSS } from 'lit';
 import { Cre8Element } from '../cre8-element';
-import styles from './nav-container.scss';
+import styles from './nav-container.module';
 
 /**
  * @slot - The navigation container content
  */
 export class Cre8NavContainer extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles);
-    }
+    static styles = [styles];
 
     render() {
         const componentClassName = this.componentClassNames('cre8-c-nav-container', {});

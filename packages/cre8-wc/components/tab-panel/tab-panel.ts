@@ -1,16 +1,14 @@
 import { html, unsafeCSS } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './tab-panel.scss';
+import styles from './tab-panel.module';
 
 /**
  * @slot - The component content
  */
 
 export class Cre8TabPanel extends Cre8Element {
-    static get styles() {
-        return unsafeCSS(styles.toString());
-    }
+    static styles = [styles];
 
   /**
    * This will remove focus on panel element
