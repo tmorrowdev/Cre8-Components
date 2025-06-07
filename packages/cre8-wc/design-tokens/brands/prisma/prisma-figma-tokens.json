@@ -1,0 +1,107 @@
+{
+  "prisma": {
+    "colors": {
+      "primary": {
+        "green": {
+          "500": "#25A55A",
+          "description": "Primary Prisma green - main brand color"
+        }
+      },
+      "secondary": {
+        "blue": {
+          "500": "#116DFF",
+          "description": "Secondary Prisma blue - accent color"
+        }
+      },
+      "neutral": {
+        "white": "#FFFFFF",
+        "black": "#000624",
+        "gray": {
+          "100": "#ECEFF3",
+          "300": "#D6E6FE",
+          "500": "#868AA5"
+        }
+      },
+      "status": {
+        "success": "#25A55A",
+        "error": "#FF6D63",
+        "warning": "#FFD16E",
+        "info": "#116DFF"
+      }
+    },
+    "typography": {
+      "fontFamily": {
+        "primary": "Open Sans",
+        "fallback": "Arial, sans-serif"
+      },
+      "fontWeight": {
+        "light": 200,
+        "regular": 400,
+        "medium": 500,
+        "semiBold": 600,
+        "bold": 700
+      },
+      "fontSize": {
+        "xs": "0.75rem",
+        "sm": "0.875rem",
+        "base": "1rem",
+        "lg": "1.125rem",
+        "xl": "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "1.75rem",
+        "4xl": "2rem",
+        "5xl": "2.5rem",
+        "6xl": "3rem",
+        "7xl": "3.5rem",
+        "8xl": "4rem",
+        "9xl": "4.5rem",
+        "10xl": "5rem"
+      },
+      "lineHeight": {
+        "tight": 1.12,
+        "snug": 1.25,
+        "normal": 1.5,
+        "relaxed": 1.43
+      }
+    },
+    "spacing": {
+      "0": "0rem",
+      "1": "0.125rem",
+      "2": "0.25rem",
+      "3": "0.375rem",
+      "4": "0.5rem",
+      "6": "0.75rem",
+      "7": "0.875rem",
+      "8": "1rem",
+      "9": "1.125rem",
+      "12": "1.5rem",
+      "16": "2rem",
+      "20": "2.5rem",
+      "24": "3rem",
+      "32": "4rem",
+      "40": "5rem",
+      "48": "6rem",
+      "60": "7.5rem",
+      "80": "10rem"
+    },
+    "borderRadius": {
+      "none": "0px",
+      "sm": "4px",
+      "base": "8px",
+      "lg": "16px",
+      "full": "900px"
+    },
+    "borderWidth": {
+      "none": "0rem",
+      "thin": "0.0625rem",
+      "base": "0.125rem",
+      "thick": "0.25rem"
+    },
+    "shadow": {
+      "none": "none",
+      "sm": "0 1px 2px 1px rgba(0,0,0,0.2)",
+      "base": "0 8px 6px 0 rgba(0,0,0,0.1)",
+      "lg": "0 10px 12px 0 rgba(0,0,0,0.2)"
+    }
+  }
+}
