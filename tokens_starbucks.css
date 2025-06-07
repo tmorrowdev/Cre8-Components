@@ -1,0 +1,41 @@
+/* Starbucks theme tokens imported as-is */
+:root {
+  --starbucks-brand-blue: #007bff;
+  --colorWhite: #ffffff;
+  --colorNeutralCool: #f9f9f9;
+  --colorNeutralWarm: #f2f0eb;
+  --colorCeramic: #edebe9;
+  --colorBlack: #000000;
+  --colorGreenStarbucks: #006241;
+  --colorGreenAccent: #00754A;
+  --colorGreenLight: #d4e9e2;
+  --colorGreenUplift: #2b5148;
+  --colorHouseGreen: #1E3932;
+  --colorGold: #cba258;
+  --colorGoldLight: #dfc49d;
+  --colorGoldLightest: #faf6ee;
+  --colorRed: #c82014;
+  --colorYellow: #fbbc05;
+  --rewardsGreen: #33433d;
+  --sliderColor: #006241;
+  --cardBackgroundColor: #ffffff;
+  /* Aliases to design system tokens */
+  --cre8-color-brand-primary: var(--colorGreenStarbucks);
+  --cre8-color-bg-default: var(--colorWhite);
+  --cre8-color-bg-alt: var(--colorNeutralCool);
+  --cre8-color-bg-inverse: var(--colorBlack);
+  --cre8-color-success: var(--colorGreenStarbucks);
+  --cre8-color-accent: var(--colorGreenAccent);
+  --cre8-color-warning: var(--colorGold);
+  --cre8-color-error: var(--colorRed);
+  --cre8-color-info: var(--colorGoldLightest);
+  --cre8-color-link: var(--starbucks-brand-blue);
+  --cre8-color-border: var(--colorCeramic);
+  --cre8-color-surface: var(--colorNeutralWarm);
+  --cre8-color-surface-alt: var(--colorGreenLight);
+  --cre8-color-surface-inverse: var(--colorHouseGreen);
+  --cre8-color-highlight: var(--colorGoldLight);
+  --cre8-color-slider: var(--sliderColor);
+  --cre8-color-card-bg: var(--cardBackgroundColor);
+  /* Add more aliases as needed for your design system */
+}
