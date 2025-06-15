@@ -4,6 +4,6 @@ import React from 'react';
 
 export const Cre8TextPassage = createComponent({
     react: React,
-    tagName: 'Cre8-text-passage',
+    tagName: 'cre8-text-passage',
     elementClass: Cre8TextPassageElement,
 });

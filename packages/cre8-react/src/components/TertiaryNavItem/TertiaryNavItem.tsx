@@ -4,6 +4,6 @@ import React from 'react';
 
 export const Cre8TertiaryNavItem = createComponent({
     react: React,
-    tagName: 'Cre8-tertiary-nav-item',
+    tagName: 'cre8-tertiary-nav-item',
     elementClass: Cre8TertiaryNavItemElement,
 });

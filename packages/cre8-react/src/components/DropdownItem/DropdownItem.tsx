@@ -10,7 +10,7 @@ import { Cre8DomEvent } from '../../util/Cre8DomEvent';
  */
 export const Cre8DropdownItem = createComponent({
     react: React,
-    tagName: 'Cre8-dropdown-item',
+    tagName: 'cre8-dropdown-item',
     elementClass: Cre8DropdownItemElement,
     events: {
         onDropdownItemSelected: 'dropdown-item-selected' as EventName<Cre8DomEvent<Cre8DropdownItemElement>>,

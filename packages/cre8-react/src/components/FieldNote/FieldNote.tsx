@@ -9,7 +9,7 @@ import { Cre8FieldNote as Cre8FieldNoteElement } from '@cre8_dev/cre8-wc/lib/com
 
 export const Cre8FieldNote = createComponent({
     react: React,
-    tagName: 'Cre8-field-note',
+    tagName: 'cre8-field-note',
     elementClass: Cre8FieldNoteElement,
 
 });

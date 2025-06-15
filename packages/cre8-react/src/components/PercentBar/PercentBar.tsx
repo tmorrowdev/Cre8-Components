@@ -12,7 +12,7 @@ import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 export const Cre8PercentBar = createComponent({
     react: React,
-    tagName: 'Cre8-percent-bar',
+    tagName: 'cre8-percent-bar',
     elementClass: Cre8PercentBarElement,
     events: {
         onLeftActionButtonClick: 'leftActionButtonClick' as EventName<Cre8DomEvent<Cre8PercentBarElement>>,

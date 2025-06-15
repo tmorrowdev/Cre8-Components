@@ -19,6 +19,6 @@ import { Cre8Alert as Cre8AlertElement } from '@cre8_dev/cre8-wc/lib/components/
 
 export const Cre8Alert = createComponent({
     react: React,
-    tagName: 'Cre8-alert',
+    tagName: 'cre8-alert',
     elementClass: Cre8AlertElement,
 });

@@ -4,6 +4,6 @@ import React from 'react';
 
 export const Cre8Band = createComponent({
     react: React,
-    tagName: 'Cre8-band',
+    tagName: 'cre8-band',
     elementClass: Cre8BandElement,
 });

@@ -4,6 +4,6 @@ import React from 'react';
 
 export const Cre8Footer = createComponent({
     react: React,
-    tagName: 'Cre8-footer',
+    tagName: 'cre8-footer',
     elementClass: Cre8FooterElement,
 });

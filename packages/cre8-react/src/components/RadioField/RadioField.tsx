@@ -11,7 +11,7 @@ import { Cre8RadioField as Cre8RadioFieldElement } from '@cre8_dev/cre8-wc/lib/c
  */
 export const Cre8RadioField = createComponent({
     react: React,
-    tagName: 'Cre8-radio-field',
+    tagName: 'cre8-radio-field',
     elementClass: Cre8RadioFieldElement,
 
 });

@@ -10,7 +10,7 @@ import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 export const Cre8Popover = createComponent({
     react: React,
-    tagName: 'Cre8-popover',
+    tagName: 'cre8-popover',
     elementClass: Cre8PopoverElement,
     events: {
         onOpen: 'open' as EventName<Cre8DomEvent<Cre8PopoverElement>>,

@@ -4,7 +4,7 @@ import { Cre8SplitButton as Cre8SplitButtonElement } from '@cre8_dev/cre8-wc/lib
 
 export const Cre8SplitButton = createComponent({
     react: React,
-    tagName: 'Cre8-split-button',
+    tagName: 'cre8-split-button',
     elementClass: Cre8SplitButtonElement,
 
 });

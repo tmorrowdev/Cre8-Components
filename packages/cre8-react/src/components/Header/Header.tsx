@@ -4,6 +4,6 @@ import React from 'react';
 
 export const Cre8Header = createComponent({
     react: React,
-    tagName: 'Cre8-header',
+    tagName: 'cre8-header',
     elementClass: Cre8HeaderElement,
 });

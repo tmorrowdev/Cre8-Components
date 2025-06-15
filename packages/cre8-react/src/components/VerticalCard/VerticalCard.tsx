@@ -4,6 +4,6 @@ import React from 'react';
 
 export const Cre8VerticalCard = createComponent({
     react: React,
-    tagName: 'Cre8-vertical-card',
+    tagName: 'cre8-vertical-card',
     elementClass: Cre8VerticalCardElement,
 });

@@ -4,6 +4,6 @@ import { Cre8TabPanel as Cre8TabPanelElement } from '@cre8_dev/cre8-wc/lib/compo
 
 export const Cre8TabPanel = createComponent({
     react: React,
-    tagName: 'Cre8-tab-panel',
+    tagName: 'cre8-tab-panel',
     elementClass: Cre8TabPanelElement,
 });

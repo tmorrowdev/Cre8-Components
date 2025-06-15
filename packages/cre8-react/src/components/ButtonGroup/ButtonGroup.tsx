@@ -4,7 +4,7 @@ import { Cre8ButtonGroup as Cre8ButtonGroupElement } from '@cre8_dev/cre8-wc/lib
 
 export const Cre8ButtonGroup = createComponent({
     react: React,
-    tagName: 'Cre8-button-group',
+    tagName: 'cre8-button-group',
     elementClass: Cre8ButtonGroupElement,
 
 });

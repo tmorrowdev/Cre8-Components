@@ -48,6 +48,6 @@ import { Cre8Pagination as Cre8PaginationElement } from '@cre8_dev/cre8-wc/lib/c
 
 export const Cre8Pagination = createComponent({
     react: React,
-    tagName: 'Cre8-pagination',
+    tagName: 'cre8-pagination',
     elementClass: Cre8PaginationElement,
 });

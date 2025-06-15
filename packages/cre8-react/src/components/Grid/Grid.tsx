@@ -4,6 +4,6 @@ import React from 'react';
 
 export const Cre8Grid = createComponent({
     react: React,
-    tagName: 'Cre8-grid',
+    tagName: 'cre8-grid',
     elementClass: Cre8GridElement,
 });

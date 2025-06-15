@@ -4,6 +4,6 @@ import React from 'react';
 
 export const Cre8Main = createComponent({
     react: React,
-    tagName: 'Cre8-main',
+    tagName: 'cre8-main',
     elementClass: Cre8MainElement,
 });

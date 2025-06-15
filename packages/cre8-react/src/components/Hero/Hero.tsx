@@ -4,7 +4,7 @@ import { Cre8Hero as Cre8HeroElement } from '@cre8_dev/cre8-wc/lib/components/he
 
 export const Cre8Hero = createComponent({
     react: React,
-    tagName: 'Cre8-hero',
+    tagName: 'cre8-hero',
     elementClass: Cre8HeroElement,
 
 });

@@ -18,7 +18,7 @@ import { Cre8ProgressStepsItem as Cre8ProgressStepsItemElement } from '@cre8_dev
  */
 export const Cre8ProgressStepsItem = createComponent({
     react: React,
-    tagName: 'Cre8-progress-steps-item',
+    tagName: 'cre8-progress-steps-item',
     elementClass: Cre8ProgressStepsItemElement,
 
 });

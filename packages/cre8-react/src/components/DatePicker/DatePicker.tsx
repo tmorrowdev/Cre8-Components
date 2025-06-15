@@ -11,7 +11,7 @@ import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 export const Cre8DatePicker = createComponent({
     react: React,
-    tagName: 'Cre8-date-picker',
+    tagName: 'cre8-date-picker',
     elementClass: Cre8DatePickerElement,
     events: {
         onChange: 'input' as EventName<Cre8DomEvent<Cre8DatePickerElement>>,

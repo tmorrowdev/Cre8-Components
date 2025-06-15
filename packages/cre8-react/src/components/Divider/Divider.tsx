@@ -16,6 +16,6 @@ import { Cre8Divider as Cre8DividerElement } from '@cre8_dev/cre8-wc/lib/compone
 
 export const Cre8Divider = createComponent({
     react: React,
-    tagName: 'Cre8-divider',
+    tagName: 'cre8-divider',
     elementClass: Cre8DividerElement,
 });

@@ -71,6 +71,6 @@ import React from 'react';
 
 export const Cre8Button = createComponent({
     react: React,
-    tagName: 'Cre8-button',
+    tagName: 'cre8-button',
     elementClass: Cre8ButtonElement,
 });

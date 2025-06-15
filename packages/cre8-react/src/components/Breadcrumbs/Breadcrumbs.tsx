@@ -20,7 +20,7 @@ import { Cre8Breadcrumbs as Cre8BreadcrumbsElement } from '@cre8_dev/cre8-wc/lib
 
 export const Cre8Breadcrumbs = createComponent({
     react: React,
-    tagName: 'Cre8-breadcrumbs',
+    tagName: 'cre8-breadcrumbs',
     elementClass: Cre8BreadcrumbsElement,
 
 });

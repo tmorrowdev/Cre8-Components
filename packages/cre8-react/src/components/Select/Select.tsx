@@ -30,7 +30,7 @@ import { type Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 export const Cre8Select = createComponent({
     react: React,
-    tagName: 'Cre8-select',
+    tagName: 'cre8-select',
     elementClass: Cre8SelectElement,
     events: {
         onChange: 'change' as EventName<Cre8DomEvent<Cre8SelectElement>>,

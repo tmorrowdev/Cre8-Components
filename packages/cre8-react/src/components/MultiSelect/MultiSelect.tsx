@@ -15,7 +15,7 @@ import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 export const Cre8MultiSelect = createComponent({
     react: React,
-    tagName: 'Cre8-multi-select',
+    tagName: 'cre8-multi-select',
     elementClass: Cre8MultiSelectElement,
     events: {
         onSelectedItemsChange: 'selectedItemsChange' as EventName<Cre8DomEvent<Cre8MultiSelectElement>>,

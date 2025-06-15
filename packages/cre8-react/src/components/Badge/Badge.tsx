@@ -10,6 +10,6 @@ import React from 'react';
 
 export const Cre8Badge = createComponent({
     react: React,
-    tagName: 'Cre8-badge',
+    tagName: 'cre8-badge',
     elementClass: Cre8BadgeElement,
 });

@@ -4,7 +4,7 @@ import { Cre8LinelengthContainer as Cre8LinelengthContainerElement } from '@cre8
 
 export const Cre8LinelengthContainer = createComponent({
     react: React,
-    tagName: 'Cre8-linelength-container',
+    tagName: 'cre8-linelength-container',
     elementClass: Cre8LinelengthContainerElement,
 
 });

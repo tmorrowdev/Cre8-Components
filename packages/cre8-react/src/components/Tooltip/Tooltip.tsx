@@ -39,7 +39,7 @@ import { Cre8DomEvent } from '../../util/Cre8DomEvent';
  */
 export const Cre8Tooltip = createComponent({
     react: React,
-    tagName: 'Cre8-tooltip',
+    tagName: 'cre8-tooltip',
     elementClass: Cre8TooltipElement,
     events: {
         onOpen: 'open' as EventName<Cre8DomEvent<Cre8TooltipElement>>,

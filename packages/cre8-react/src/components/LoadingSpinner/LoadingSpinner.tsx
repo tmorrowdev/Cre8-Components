@@ -38,7 +38,7 @@ import { Cre8LoadingSpinner as Cre8LoadingSpinnerElement } from '@cre8_dev/cre8-
  */
 export const Cre8LoadingSpinner = createComponent({
     react: React,
-    tagName: 'Cre8-loading-spinner',
+    tagName: 'cre8-loading-spinner',
     elementClass: Cre8LoadingSpinnerElement,
 
 });

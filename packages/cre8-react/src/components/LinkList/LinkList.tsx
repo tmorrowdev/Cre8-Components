@@ -4,6 +4,6 @@ import React from 'react';
 
 export const Cre8LinkList = createComponent({
     react: React,
-    tagName: 'Cre8-link-list',
+    tagName: 'cre8-link-list',
     elementClass: Cre8LinkListElement,
 });

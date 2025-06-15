@@ -9,7 +9,7 @@ import { Cre8DomEvent } from '../../util/Cre8DomEvent';
  */
 export const Cre8Field = createComponent({
     react: React,
-    tagName: 'Cre8-field',
+    tagName: 'cre8-field',
     elementClass: Cre8FieldElement,
     events: {
         onChange: 'input' as EventName<Cre8DomEvent<Cre8FieldElement>>,

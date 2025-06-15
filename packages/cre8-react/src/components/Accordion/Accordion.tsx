@@ -15,6 +15,6 @@ import { Cre8Accordion as Cre8AccordionElement } from '@cre8_dev/cre8-wc/lib/com
 
 export const Cre8Accordion = createComponent({
     react: React,
-    tagName: 'Cre8-accordion',
+    tagName: 'cre8-accordion',
     elementClass: Cre8AccordionElement,
 });
