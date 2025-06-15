@@ -25,6 +25,6 @@ import { Cre8SkeletonLoader as Cre8SkeletonLoaderElement } from '@cre8_dev/cre8-
 
 export const Cre8SkeletonLoader = createComponent({
     react: React,
-    tagName: 'Cre8-skeleton-loader',
+    tagName: 'cre8-skeleton-loader',
     elementClass: Cre8SkeletonLoaderElement,
 });

@@ -4,7 +4,7 @@ import { Cre8GlobalNav as Cre8GlobalNavElement } from '@cre8_dev/cre8-wc/lib/com
 
 export const Cre8GlobalNav = createComponent({
     react: React,
-    tagName: 'Cre8-global-nav',
+    tagName: 'cre8-global-nav',
     elementClass: Cre8GlobalNavElement,
 
 });

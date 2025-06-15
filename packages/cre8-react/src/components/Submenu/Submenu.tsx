@@ -4,7 +4,7 @@ import { Cre8Submenu as Cre8SubmenuElement } from '@cre8_dev/cre8-wc/lib/compone
 
 export const Cre8Submenu = createComponent({
     react: React,
-    tagName: 'Cre8-submenu',
+    tagName: 'cre8-submenu',
     elementClass: Cre8SubmenuElement,
 
 });

@@ -4,7 +4,7 @@ import { Cre8TableBody as Cre8TableBodyElement } from '@cre8_dev/cre8-wc/lib/com
 
 export const Cre8TableBody = createComponent({
     react: React,
-    tagName: 'Cre8-table-body',
+    tagName: 'cre8-table-body',
     elementClass: Cre8TableBodyElement,
 
 });

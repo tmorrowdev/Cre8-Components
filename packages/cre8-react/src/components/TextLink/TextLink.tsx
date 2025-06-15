@@ -4,7 +4,7 @@ import { Cre8TextLink as Cre8TextLinkElement } from '@cre8_dev/cre8-wc/lib/compo
 
 export const Cre8TextLink = createComponent({
     react: React,
-    tagName: 'Cre8-text-link',
+    tagName: 'cre8-text-link',
     elementClass: Cre8TextLinkElement,
 
 });

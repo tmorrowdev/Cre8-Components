@@ -19,7 +19,7 @@ import { Cre8Link as Cre8LinkElement } from '@cre8_dev/cre8-wc/lib/components/li
 
 export const Cre8Link = createComponent({
     react: React,
-    tagName: 'Cre8-link',
+    tagName: 'cre8-link',
     elementClass: Cre8LinkElement,
 
 });

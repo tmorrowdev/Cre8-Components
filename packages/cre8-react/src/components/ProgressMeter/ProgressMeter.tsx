@@ -12,7 +12,7 @@ import { Cre8ProgressMeter as Cre8ProgressMeterElement } from '@cre8_dev/cre8-wc
  */
 export const Cre8ProgressMeter = createComponent({
     react: React,
-    tagName: 'Cre8-progress-meter',
+    tagName: 'cre8-progress-meter',
     elementClass: Cre8ProgressMeterElement,
 
 });

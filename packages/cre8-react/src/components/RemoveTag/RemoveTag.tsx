@@ -5,7 +5,7 @@ import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 export const Cre8RemoveTag = createComponent({
     react: React,
-    tagName: 'Cre8-remove-tag',
+    tagName: 'cre8-remove-tag',
     elementClass: Cre8RemoveTagElement,
     events: {
         onRemoveTagClicked: 'removeTagClicked' as EventName<Cre8DomEvent<Cre8RemoveTagElement>>,

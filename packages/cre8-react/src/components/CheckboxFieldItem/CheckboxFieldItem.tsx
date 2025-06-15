@@ -8,7 +8,7 @@ import { Cre8DomEvent } from '../../util/Cre8DomEvent';
  */
 export const Cre8CheckboxFieldItem = createComponent({
     react: React,
-    tagName: 'Cre8-checkbox-field-item',
+    tagName: 'cre8-checkbox-field-item',
     elementClass: Cre8CheckboxFieldItemElement,
     events: {
         onChange: 'input' as EventName<Cre8DomEvent<Cre8CheckboxFieldItemElement>>,

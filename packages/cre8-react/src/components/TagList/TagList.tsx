@@ -9,6 +9,6 @@ import { Cre8TagList as Cre8TagListElement } from '@cre8_dev/cre8-wc/lib/compone
  */
 export const Cre8TagList = createComponent({
     react: React,
-    tagName: 'Cre8-tag-list',
+    tagName: 'cre8-tag-list',
     elementClass: Cre8TagListElement,
 });

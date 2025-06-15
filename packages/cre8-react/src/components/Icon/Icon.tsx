@@ -36,6 +36,6 @@ import React from 'react';
 
 export const Cre8IconLegacy = createComponent({
     react: React,
-    tagName: 'Cre8-icon-legacy',
+    tagName: 'cre8-icon-legacy',
     elementClass: Cre8IconLegacyElement,
 });

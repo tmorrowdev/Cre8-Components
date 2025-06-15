@@ -4,6 +4,6 @@ import { Cre8Tab as Cre8TabElement } from '@cre8_dev/cre8-wc/lib/components/tab/
 
 export const Cre8Tab = createComponent({
     react: React,
-    tagName: 'Cre8-tab',
+    tagName: 'cre8-tab',
     elementClass: Cre8TabElement,
 });

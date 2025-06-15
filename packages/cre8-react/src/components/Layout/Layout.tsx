@@ -4,6 +4,6 @@ import React from 'react';
 
 export const Cre8Layout = createComponent({
     react: React,
-    tagName: 'Cre8-layout',
+    tagName: 'cre8-layout',
     elementClass: Cre8LayoutElement,
 });

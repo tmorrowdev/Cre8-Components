@@ -10,7 +10,7 @@ import { Cre8DomEvent } from '../../util/Cre8DomEvent';
  */
 export const Cre8RadioFieldItem = createComponent({
     react: React,
-    tagName: 'Cre8-radio-field-item',
+    tagName: 'cre8-radio-field-item',
     elementClass: Cre8RadioFieldItemElement,
     events: {
         onChange: 'input' as EventName<Cre8DomEvent<Cre8RadioFieldItemElement>>,
