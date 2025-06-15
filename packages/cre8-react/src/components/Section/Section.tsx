@@ -4,7 +4,7 @@ import { Cre8Section as Cre8SectionElement } from '@cre8_dev/cre8-wc/lib/compone
 
 export const Cre8Section = createComponent({
     react: React,
-    tagName: 'Cre8-section',
+    tagName: 'cre8-section',
     elementClass: Cre8SectionElement,
 
 });

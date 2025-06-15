@@ -4,7 +4,7 @@ import { Cre8TableHeaderCell as Cre8TableHeaderCellElement } from '@cre8_dev/cre
 
 export const Cre8TableHeaderCell = createComponent({
     react: React,
-    tagName: 'Cre8-table-header-cell',
+    tagName: 'cre8-table-header-cell',
     elementClass: Cre8TableHeaderCellElement,
 
 });

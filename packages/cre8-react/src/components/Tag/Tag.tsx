@@ -18,7 +18,7 @@ import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 export const Cre8Tag = createComponent({
     react: React,
-    tagName: 'Cre8-tag',
+    tagName: 'cre8-tag',
     elementClass: Cre8TagElement,
     events: {
         onChange: 'input' as EventName<Cre8DomEvent<Cre8TagElement>>,

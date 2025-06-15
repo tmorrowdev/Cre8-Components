@@ -5,7 +5,7 @@ import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 export const Cre8SelectTile = createComponent({
     react: React,
-    tagName: 'Cre8-select-tile',
+    tagName: 'cre8-select-tile',
     elementClass: Cre8SelectTileElement,
     events: {
         onBlur: 'blur' as EventName<Cre8DomEvent<Cre8SelectTileElement> & FocusEvent>,

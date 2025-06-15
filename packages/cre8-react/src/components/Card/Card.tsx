@@ -16,7 +16,7 @@ import { Cre8Card as Cre8CardElement } from '@cre8_dev/cre8-wc/lib/components/ca
 
 export const Cre8Card = createComponent({
     react: React,
-    tagName: 'Cre8-card',
+    tagName: 'cre8-card',
     elementClass: Cre8CardElement,
 
 });

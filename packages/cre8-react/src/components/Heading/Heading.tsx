@@ -19,6 +19,6 @@ import React from 'react';
 
 export const Cre8Heading = createComponent({
     react: React,
-    tagName: 'Cre8-heading',
+    tagName: 'cre8-heading',
     elementClass: Cre8HeadingElement,
 });

@@ -10,6 +10,6 @@ import { Cre8InlineAlert as Cre8InlineAlertElement } from '@cre8_dev/cre8-wc/lib
 
 export const Cre8InlineAlert = createComponent({
     react: React,
-    tagName: 'Cre8-inline-alert',
+    tagName: 'cre8-inline-alert',
     elementClass: Cre8InlineAlertElement,
 });

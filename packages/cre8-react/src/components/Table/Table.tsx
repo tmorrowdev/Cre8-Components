@@ -4,7 +4,7 @@ import { Cre8Table as Cre8TableElement } from '@cre8_dev/cre8-wc/lib/components/
 
 export const Cre8Table = createComponent({
     react: React,
-    tagName: 'Cre8-table',
+    tagName: 'cre8-table',
     elementClass: Cre8TableElement,
 
 });

@@ -28,6 +28,6 @@ import { Cre8AccordionItem as Cre8AccordionItemElement } from '@cre8_dev/cre8-wc
 
 export const Cre8AccordionItem = createComponent({
     react: React,
-    tagName: 'Cre8-accordion-item',
+    tagName: 'cre8-accordion-item',
     elementClass: Cre8AccordionItemElement,
 });

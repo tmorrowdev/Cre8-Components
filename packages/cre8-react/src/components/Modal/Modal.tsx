@@ -4,7 +4,7 @@ import { Cre8Modal as Cre8ModalElement, type CloseModalEvent } from '@cre8_dev/c
 
 export const Cre8Modal = createComponent({
     react: React,
-    tagName: 'Cre8-modal',
+    tagName: 'cre8-modal',
     elementClass: Cre8ModalElement,
     events: {
          /** Event emitted when the close button is clicked. Use this

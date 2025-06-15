@@ -4,6 +4,6 @@ import React from 'react';
 
 export const Cre8NavContainer = createComponent({
     react: React,
-    tagName: 'Cre8-nav-container',
+    tagName: 'cre8-nav-container',
     elementClass: Cre8NavContainerElement,
 });

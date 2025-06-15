@@ -26,7 +26,7 @@ import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 export const Cre8Tabs = createComponent({
     react: React,
-    tagName: 'Cre8-tabs',
+    tagName: 'cre8-tabs',
     elementClass: Cre8TabsElement,
     events: {
         onTabChange: 'tabChange' as EventName<Cre8DomEvent<Cre8TabsElement>>,

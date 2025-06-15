@@ -4,6 +4,6 @@ import React from 'react';
 
 export const Cre8UtilityNavItem = createComponent({
     react: React,
-    tagName: 'Cre8-utility-nav-item',
+    tagName: 'cre8-utility-nav-item',
     elementClass: Cre8UtilityNavItemElement,
 });
