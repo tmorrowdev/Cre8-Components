@@ -1,0 +1,22 @@
+import pandas as pd
+from mcp_data_viz_tool import MCPDataVisualizationAgent
+
+# Load the CSV file
+file_path = '/Users/tylersmbp/Documents/Bookexcel.csv'
+with open(file_path, 'r') as file:
+    content = file.read()
+
+# Initialize the data visualization agent
+agent = MCPDataVisualizationAgent()
+
+# Analyze the data
+response = await agent.analyze_data(content=content, filename='Bookexcel.csv')
+
+# Save the HTML component to a file
+html_file_path = '/Users/tylersmbp/Documents/visualization.html'
+with open(html_file_path, 'w') as html_file:
+    html_file.write(response.html_component)
+
+# Open the HTML file in the browser
+import webbrowser
+webbrowser.open(f'file://{html_file_path}')

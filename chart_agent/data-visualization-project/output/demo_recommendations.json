@@ -1,0 +1,118 @@
+{
+  "data_profile": {
+    "row_count": 49,
+    "column_count": 15,
+    "column_types": {
+      "numeric": [
+        "Budget",
+        "Spend",
+        "Impressions",
+        "Clicks",
+        "Conversions",
+        "Revenue",
+        "CPC",
+        "ROAS"
+      ],
+      "categorical": [
+        "Campaign_Type",
+        "CTR"
+      ],
+      "temporal": [
+        "Start_Date",
+        "End_Date"
+      ],
+      "text": [
+        "campaign",
+        "Channel",
+        "Region"
+      ]
+    }
+  },
+  "key_fields": {
+    "metrics": [
+      "Impressions",
+      "Clicks",
+      "Conversions",
+      "Revenue",
+      "CPC",
+      "ROAS"
+    ],
+    "dimensions": [
+      "Campaign_Type",
+      "CTR"
+    ],
+    "time_dimension": "Start_Date"
+  },
+  "recommendations": {
+    "dashboard_title": "Marketing Campaign Performance Dashboard",
+    "dashboard_structure": "grid",
+    "charts": [
+      {
+        "chart_type": "line",
+        "title": "Impressions Over Time",
+        "x": "Start_Date",
+        "y": "Impressions",
+        "priority": 1
+      },
+      {
+        "chart_type": "line",
+        "title": "Clicks Over Time",
+        "x": "Start_Date",
+        "y": "Clicks",
+        "priority": 1
+      },
+      {
+        "chart_type": "bar",
+        "title": "Impressions by Campaign Type",
+        "x": "Campaign_Type",
+        "y": "Impressions",
+        "priority": 2
+      },
+      {
+        "chart_type": "pie",
+        "title": "Distribution by Campaign Type",
+        "labels": "Campaign_Type",
+        "values": "Impressions",
+        "priority": 3
+      },
+      {
+        "chart_type": "scatter",
+        "title": "Correlation: Impressions vs Clicks",
+        "x": "Impressions",
+        "y": "Clicks",
+        "color": "Campaign_Type",
+        "priority": 4
+      },
+      {
+        "chart_type": "heatmap",
+        "title": "Correlation Matrix",
+        "columns": [
+          "Impressions",
+          "Clicks",
+          "Conversions",
+          "Revenue",
+          "CPC",
+          "ROAS"
+        ],
+        "priority": 5
+      }
+    ]
+  },
+  "insights": [
+    {
+      "type": "outliers",
+      "message": "Detected 1 outliers in CPC that may affect visualization",
+      "severity": "info"
+    },
+    {
+      "type": "outliers",
+      "message": "Detected 1 outliers in ROAS that may affect visualization",
+      "severity": "info"
+    },
+    {
+      "type": "trend",
+      "message": "Strong upward trend detected in Impressions",
+      "severity": "info"
+    }
+  ]
+}

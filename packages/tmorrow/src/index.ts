@@ -1,1 +1,2 @@
-import './app';
+import {AppRoot} from './app';
+export {AppRoot};

@@ -1,16 +1,17 @@
 import { LitElement, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import './components/about-section';
-import './components/experience-section';
-import './components/skills-section';
-import './components/projects-section';
-import './components/certifications-section';
-import './components/contact-section';
-import './components/footer-component';
-import './components/header-component';
+import './components/about-section.js';
+import './components/experience-section.js';
+import './components/skills-section.js';
+import './components/projects-section.js';
+import './components/certifications-section.js';
+import './components/contact-section.js';
+import './components/footer-component.js';
+import './components/header-component.js';
 
 @customElement('app-root')
 export class AppRoot extends LitElement {
+ 
 
  onConnectedCallback(){
     super.connectedCallback();

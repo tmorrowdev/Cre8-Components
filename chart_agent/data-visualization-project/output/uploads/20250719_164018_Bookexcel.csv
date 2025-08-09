@@ -1,0 +1,49 @@
+﻿Month,Campaign_Name,Channel,Budget,Spend,Impressions,Clicks,Conversions,Revenue,CTR,Conversion_Rate,CPC,ROAS,Region,Campaign_Type
+January,New Year Sale,Google Ads,15000,14250,125000,3750,225,45000,3.0,6.0,3.80,3.16,North America,Seasonal
+January,Brand Awareness Q1,Facebook,8000,7650,95000,1900,76,15200,2.0,4.0,4.03,1.99,North America,Brand
+January,Email Newsletter,Email Marketing,2000,1800,25000,2500,150,22500,10.0,6.0,0.72,12.50,Global,Retention
+January,Retargeting Campaign,Display Ads,5000,4750,80000,1600,96,14400,2.0,6.0,2.97,3.03,North America,Retargeting
+February,Valentine's Special,Instagram,12000,11400,110000,3300,198,35640,3.0,6.0,3.45,3.13,North America,Seasonal
+February,Brand Awareness Q1,Google Ads,10000,9500,100000,2500,125,25000,2.5,5.0,3.80,2.63,Europe,Brand
+February,Email Newsletter,Email Marketing,2200,2000,27500,2750,165,24750,10.0,6.0,0.73,12.38,Global,Retention
+February,Mobile App Install,Mobile Ads,8000,7600,90000,1800,108,16200,2.0,6.0,4.22,2.13,Asia Pacific,Acquisition
+March,Spring Sale,Google Ads,18000,17100,140000,4200,294,58800,3.0,7.0,4.07,3.44,North America,Seasonal
+March,Brand Awareness Q1,Facebook,9000,8550,105000,2100,84,16800,2.0,4.0,4.07,1.96,Europe,Brand
+March,Email Newsletter,Email Marketing,2500,2250,30000,3000,180,27000,10.0,6.0,0.75,12.00,Global,Retention
+March,LinkedIn B2B,LinkedIn,6000,5700,15000,450,36,21600,3.0,8.0,12.67,3.79,North America,B2B
+April,Easter Promotion,Instagram,14000,13300,120000,3600,252,50400,3.0,7.0,3.69,3.79,Europe,Seasonal
+April,Brand Awareness Q2,Google Ads,11000,10450,115000,2875,144,28800,2.5,5.0,3.63,2.76,North America,Brand
+April,Email Newsletter,Email Marketing,2500,2250,30000,3000,180,27000,10.0,6.0,0.75,12.00,Global,Retention
+April,Video Campaign,YouTube,15000,14250,200000,4000,240,36000,2.0,6.0,3.56,2.53,Global,Video
+May,Mother's Day Special,Facebook,16000,15200,130000,3900,273,54600,3.0,7.0,3.90,3.59,North America,Seasonal
+May,Brand Awareness Q2,Instagram,12000,11400,125000,2500,100,20000,2.0,4.0,4.56,1.75,Europe,Brand
+May,Email Newsletter,Email Marketing,2800,2520,32000,3200,192,28800,10.0,6.0,0.79,11.43,Global,Retention
+May,Search Engine Marketing,Bing Ads,8000,7600,70000,1750,105,15750,2.5,6.0,4.34,2.07,North America,Search
+June,Summer Kickoff,Google Ads,20000,19000,150000,4500,315,63000,3.0,7.0,4.22,3.32,Global,Seasonal
+June,Brand Awareness Q2,Facebook,10000,9500,110000,2200,88,17600,2.0,4.0,4.32,1.85,Asia Pacific,Brand
+June,Email Newsletter,Email Marketing,3000,2700,35000,3500,210,31500,10.0,6.0,0.77,11.67,Global,Retention
+June,Influencer Partnership,Social Media,25000,23750,180000,5400,378,75600,3.0,7.0,4.40,3.18,North America,Influencer
+July,Mid-Year Sale,Google Ads,25000,23750,180000,5400,432,86400,3.0,8.0,4.40,3.64,North America,Seasonal
+July,Brand Awareness Q3,Instagram,13000,12350,135000,2700,108,21600,2.0,4.0,4.57,1.75,Global,Brand
+July,Email Newsletter,Email Marketing,3200,2880,38000,3800,228,34200,10.0,6.0,0.76,11.88,Global,Retention
+July,Podcast Sponsorship,Audio Ads,12000,11400,50000,1000,60,12000,2.0,6.0,11.40,1.05,North America,Audio
+August,Back to School,Facebook,22000,20900,170000,5100,357,71400,3.0,7.0,4.10,3.42,North America,Seasonal
+August,Brand Awareness Q3,Google Ads,14000,13300,140000,3500,175,35000,2.5,5.0,3.80,2.63,Europe,Brand
+August,Email Newsletter,Email Marketing,3500,3150,40000,4000,240,36000,10.0,6.0,0.79,11.43,Global,Retention
+August,Affiliate Marketing,Affiliate Network,18000,17100,0,0,285,57000,0.0,0.0,60.00,3.33,Global,Affiliate
+September,Fall Collection,Instagram,20000,19000,160000,4800,336,67200,3.0,7.0,3.96,3.54,Europe,Seasonal
+September,Brand Awareness Q3,Facebook,12000,11400,125000,2500,100,20000,2.0,4.0,4.56,1.75,Asia Pacific,Brand
+September,Email Newsletter,Email Marketing,3500,3150,40000,4000,240,36000,10.0,6.0,0.79,11.43,Global,Retention
+September,Native Advertising,Content Marketing,15000,14250,100000,2000,140,28000,2.0,7.0,10.18,1.96,North America,Content
+October,Halloween Special,Google Ads,18000,17100,145000,4350,348,69600,3.0,8.0,3.93,4.07,North America,Seasonal
+October,Brand Awareness Q4,Instagram,15000,14250,140000,2800,112,22400,2.0,4.0,5.09,1.57,Global,Brand
+October,Email Newsletter,Email Marketing,3800,3420,42000,4200,252,37800,10.0,6.0,0.81,11.05,Global,Retention
+October,Connected TV,CTV Ads,20000,19000,120000,1200,72,14400,1.0,6.0,15.83,0.76,North America,Video
+November,Black Friday,Google Ads,35000,33250,250000,7500,750,150000,3.0,10.0,4.43,4.51,Global,Seasonal
+November,Black Friday,Facebook,30000,28500,220000,6600,528,105600,3.0,8.0,4.32,3.71,Global,Seasonal
+November,Email Newsletter,Email Marketing,4000,3600,45000,4500,270,40500,10.0,6.0,0.80,11.25,Global,Retention
+November,Cyber Monday,Instagram,25000,23750,200000,6000,480,96000,3.0,8.0,3.96,4.04,Global,Seasonal
+December,Holiday Campaign,Google Ads,30000,28500,220000,6600,462,92400,3.0,7.0,4.32,3.24,Global,Seasonal
+December,Brand Awareness Q4,Facebook,16000,15200,150000,3000,120,24000,2.0,4.0,5.07,1.58,Global,Brand
+December,Email Newsletter,Email Marketing,4200,3780,47000,4700,282,42300,10.0,6.0,0.80,11.19,Global,Retention
+December,Year-End Sale,Instagram,28000,26600,210000,6300,441,88200,3.0,7.0,4.22,3.32,Global,Seasonal

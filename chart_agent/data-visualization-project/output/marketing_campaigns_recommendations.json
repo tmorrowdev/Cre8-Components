@@ -1,0 +1,27 @@
+{
+  "recommendations": {
+    "dashboard_title": "Data Dashboard",
+    "dashboard_structure": "grid",
+    "charts": [
+      {
+        "title": "Top Campaign Name by Cost",
+        "chart_type": "bar",
+        "x": "Campaign Name",
+        "y": "Cost"
+      },
+      {
+        "title": "Cost vs Leads Generated",
+        "chart_type": "scatter",
+        "x": "Cost",
+        "y": "Leads Generated"
+      },
+      {
+        "title": "Cost Over Time",
+        "chart_type": "line",
+        "x": "Start Date",
+        "y": "Cost"
+      }
+    ]
+  },
+  "insights": []
+}

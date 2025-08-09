@@ -1,0 +1,362 @@
+import { LitElement, html, css, PropertyValues, TemplateResult } from 'lit';
+import { customElement, property, state } from 'lit/decorators.js';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+
+interface ParsedContent {
+  markdown: string;
+  htmlSnippets: Array<{
+    id: string;
+    content: string;
+    placeholder: string;
+  }>;
+}
+
+@customElement('markdown-iframe-viewer')
+export class MarkdownIframeViewer extends LitElement {
+  @property({ type: String }) markdown = '';
+  @property({ type: Number }) maxHeight = 400;
+  @property({ type: Boolean }) responsive = true;
+
+  @state() private parsedContent: ParsedContent | null = null;
+  @state() private renderedMarkdown = '';
+  @state() private isLoading = false;
+  @state() private error = '';
+
+  static styles = css`
+    :host {
+      display: block;
+      width: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--cre8-on-surface-color, #374151);
+    }
+
+    .markdown-content {
+      width: 100%;
+    }
+
+    .markdown-content h1,
+    .markdown-content h2,
+    .markdown-content h3,
+    .markdown-content h4,
+    .markdown-content h5,
+    .markdown-content h6 {
+      margin: 1.5em 0 0.5em 0;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .markdown-content h1 { font-size: 2em; }
+    .markdown-content h2 { font-size: 1.5em; }
+    .markdown-content h3 { font-size: 1.25em; }
+
+    .markdown-content p {
+      margin: 1em 0;
+    }
+
+    .markdown-content ul, .markdown-content ol {
+      margin: 1em 0;
+      padding-left: 2em;
+    }
+
+    .markdown-content blockquote {
+      margin: 1em 0;
+      padding: 0.5em 1em;
+      border-left: 4px solid var(--cre8-primary-color, #2563eb);
+      background: var(--cre8-surface-variant-color, #f8f9fa);
+    }
+
+    .markdown-content code {
+      background: var(--cre8-surface-variant-color, #f1f5f9);
+      padding: 0.125em 0.25em;
+      border-radius: 3px;
+      font-family: 'Monaco', 'Menlo', monospace;
+      font-size: 0.875em;
+    }
+
+    .markdown-content pre {
+      background: var(--cre8-surface-variant-color, #f8f9fa);
+      padding: 1em;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 1em 0;
+    }
+
+    .markdown-content pre code {
+      background: none;
+      padding: 0;
+    }
+
+    .chart-iframe {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      margin: 1em 0;
+      background: white;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .chart-iframe.responsive {
+      aspect-ratio: 16 / 9;
+      max-height: var(--max-height);
+    }
+
+    .chart-iframe.fixed {
+      height: var(--max-height);
+    }
+
+    .loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2em;
+      color: var(--cre8-on-surface-variant-color, #6b7280);
+      font-size: 14px;
+    }
+
+    .error {
+      padding: 1em;
+      margin: 1em 0;
+      background: var(--cre8-error-container-color, #fef2f2);
+      color: var(--cre8-on-error-container-color, #991b1b);
+      border-radius: 6px;
+      border-left: 4px solid var(--cre8-error-color, #dc2626);
+    }
+
+    .spinner {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--cre8-surface-variant-color, #f3f4f6);
+      border-top: 2px solid var(--cre8-primary-color, #2563eb);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-right: 8px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 768px) {
+      .chart-iframe.responsive {
+        aspect-ratio: 4 / 3;
+      }
+    }
+  `;
+
+  protected willUpdate(changedProperties: PropertyValues): void {
+    if (changedProperties.has('markdown') && this.markdown) {
+      this.processMarkdown();
+    }
+    if (changedProperties.has('maxHeight')) {
+      this.style.setProperty('--max-height', `${this.maxHeight}px`);
+    }
+  }
+
+  private async processMarkdown(): Promise<void> {
+    this.isLoading = true;
+    this.error = '';
+
+    try {
+      // Parse the markdown to extract HTML snippets
+      this.parsedContent = this.parseMarkdownContent(this.markdown);
+      
+      // Convert markdown to HTML and replace placeholders with iframes
+      this.renderedMarkdown = await this.renderMarkdownWithIframes(this.parsedContent);
+      
+      this.isLoading = false;
+    } catch (err) {
+      this.error = `Failed to process markdown: ${err instanceof Error ? err.message : 'Unknown error'}`;
+      this.isLoading = false;
+    }
+  }
+
+  private parseMarkdownContent(markdown: string): ParsedContent {
+    const htmlSnippets: Array<{ id: string; content: string; placeholder: string }> = [];
+    
+    // Regex to match HTML blocks that contain full HTML documents
+    // Looking for blocks that start with <!DOCTYPE html> or <html>
+    const htmlBlockRegex = /```html\s*(<!DOCTYPE html>[\s\S]*?<\/html>|<html[\s\S]*?<\/html>)\s*```/gi;
+    
+    let modifiedMarkdown = markdown;
+    let match;
+    let counter = 0;
+
+    while ((match = htmlBlockRegex.exec(markdown)) !== null) {
+      const id = `chart-${counter++}`;
+      const placeholder = `__CHART_PLACEHOLDER_${id}__`;
+      
+      htmlSnippets.push({
+        id,
+        content: match[1].trim(),
+        placeholder
+      });
+      
+      // Replace the HTML block with a placeholder
+      modifiedMarkdown = modifiedMarkdown.replace(match[0], placeholder);
+    }
+
+    return {
+      markdown: modifiedMarkdown,
+      htmlSnippets
+    };
+  }
+
+  private async renderMarkdownWithIframes(parsedContent: ParsedContent): Promise<string> {
+    // Simple markdown to HTML conversion (you might want to use a proper markdown library)
+    let html = this.simpleMarkdownToHtml(parsedContent.markdown);
+    
+    // Replace placeholders with iframe HTML
+    parsedContent.htmlSnippets.forEach(snippet => {
+      const iframeHtml = this.createIframeForSnippet(snippet);
+      html = html.replace(snippet.placeholder, iframeHtml);
+    });
+    
+    return html;
+  }
+
+  private simpleMarkdownToHtml(markdown: string): string {
+    return markdown
+      // Headers
+      .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+      .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+      .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+      // Bold
+      .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
+      // Italic
+      .replace(/\*(.*)\*/gim, '<em>$1</em>')
+      // Code blocks (non-HTML)
+      .replace(/```(\w+)?\n([\s\S]*?)```/gim, '<pre><code>$2</code></pre>')
+      // Inline code
+      .replace(/`([^`]+)`/gim, '<code>$1</code>')
+      // Links
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/gim, '<a href="$2">$1</a>')
+      // Line breaks
+      .replace(/\n\n/gim, '</p><p>')
+      .replace(/\n/gim, '<br>')
+      // Wrap in paragraphs
+      .replace(/^(.+)$/gim, '<p>$1</p>')
+      // Clean up empty paragraphs and extra breaks
+      .replace(/<p><\/p>/gim, '')
+      .replace(/<p><br><\/p>/gim, '')
+      .replace(/<p>(<h[1-6]>.*<\/h[1-6]>)<\/p>/gim, '$1')
+      .replace(/<p>(<pre>.*<\/pre>)<\/p>/gim, '$1');
+  }
+
+  private createIframeForSnippet(snippet: { id: string; content: string }): string {
+    // Enhance the HTML content with responsive styling and messaging
+    const enhancedContent = this.enhanceHtmlContent(snippet.content);
+    const encodedContent = encodeURIComponent(enhancedContent);
+    
+    return `<iframe 
+      id="iframe-${snippet.id}"
+      class="chart-iframe ${this.responsive ? 'responsive' : 'fixed'}"
+      src="data:text/html;charset=utf-8,${encodedContent}"
+      sandbox="allow-scripts allow-same-origin"
+      loading="lazy"
+      onload="this.style.height = this.contentWindow.document.body.scrollHeight + 'px'"
+    ></iframe>`;
+  }
+
+  private enhanceHtmlContent(htmlContent: string): string {
+    // Add responsive viewport and messaging if not already present
+    if (!htmlContent.includes('<meta name="viewport"')) {
+      htmlContent = htmlContent.replace(
+        '<head>',
+        '<head>\n<meta name="viewport" content="width=device-width, initial-scale=1.0">'
+      );
+    }
+
+    // Add auto-resize script
+    const resizeScript = `
+      <script>
+        function updateHeight() {
+          const height = Math.max(
+            document.body.scrollHeight,
+            document.body.offsetHeight,
+            document.documentElement.clientHeight,
+            document.documentElement.scrollHeight,
+            document.documentElement.offsetHeight
+          );
+          window.parent.postMessage({ 
+            type: 'resize', 
+            height: height,
+            id: '${this.parsedContent?.htmlSnippets[0]?.id || 'chart'}'
+          }, '*');
+        }
+        
+        window.addEventListener('load', () => {
+          setTimeout(updateHeight, 100);
+          // Try again after a longer delay for charts that load asynchronously
+          setTimeout(updateHeight, 1000);
+        });
+        
+        window.addEventListener('resize', updateHeight);
+        
+        // Watch for dynamic content changes
+        if (typeof MutationObserver !== 'undefined') {
+          const observer = new MutationObserver(updateHeight);
+          observer.observe(document.body, { 
+            childList: true, 
+            subtree: true, 
+            attributes: true 
+          });
+        }
+      </script>
+    `;
+
+    // Insert the script before closing body tag
+    if (htmlContent.includes('</body>')) {
+      htmlContent = htmlContent.replace('</body>', resizeScript + '\n</body>');
+    } else {
+      htmlContent += resizeScript;
+    }
+
+    return htmlContent;
+  }
+
+  protected firstUpdated(): void {
+    // Listen for iframe resize messages
+    window.addEventListener('message', (event) => {
+      if (event.data?.type === 'resize') {
+        const iframe = this.shadowRoot?.querySelector(`#iframe-chart-${event.data.id}`) as HTMLIFrameElement;
+        if (iframe && event.source === iframe.contentWindow && !this.responsive) {
+          iframe.style.height = `${Math.min(event.data.height + 10, this.maxHeight)}px`;
+        }
+      }
+    });
+  }
+
+  render() {
+    if (this.isLoading) {
+      return html`
+        <div class="loading">
+          <div class="spinner"></div>
+          Processing markdown...
+        </div>
+      `;
+    }
+
+    if (this.error) {
+      return html`
+        <div class="error">
+          ${this.error}
+        </div>
+      `;
+    }
+
+    return html`
+      <div class="markdown-content">
+        ${unsafeHTML(this.renderedMarkdown)}
+      </div>
+    `;
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'markdown-iframe-viewer': MarkdownIframeViewer;
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "data_profile": {
+    "row_count": 48,
+    "column_count": 15,
+    "column_types": {
+      "numeric": [
+        "Budget",
+        "Spend",
+        "Impressions",
+        "Clicks",
+        "Conversions",
+        "Revenue",
+        "CTR",
+        "Conversion_Rate",
+        "CPC",
+        "ROAS"
+      ],
+      "categorical": [
+        "Region"
+      ],
+      "temporal": [],
+      "text": [
+        "Month",
+        "campaign",
+        "Channel",
+        "Campaign_Type"
+      ]
+    }
+  },
+  "key_fields": {
+    "metrics": [
+      "Impressions",
+      "Clicks",
+      "Conversions",
+      "Revenue",
+      "CTR",
+      "Conversion_Rate",
+      "CPC",
+      "ROAS"
+    ],
+    "dimensions": [
+      "Region"
+    ],
+    "time_dimension": null
+  },
+  "recommendations": {
+    "dashboard_title": "Marketing Campaign Performance Dashboard",
+    "dashboard_structure": "grid",
+    "charts": [
+      {
+        "chart_type": "bar",
+        "title": "Impressions by Region",
+        "x": "Region",
+        "y": "Impressions",
+        "priority": 1
+      },
+      {
+        "chart_type": "pie",
+        "title": "Distribution by Region",
+        "labels": "Region",
+        "values": "Impressions",
+        "priority": 3
+      },
+      {
+        "chart_type": "scatter",
+        "title": "Correlation: Impressions vs Clicks",
+        "x": "Impressions",
+        "y": "Clicks",
+        "color": "Region",
+        "priority": 4
+      },
+      {
+        "chart_type": "heatmap",
+        "title": "Correlation Matrix",
+        "columns": [
+          "Impressions",
+          "Clicks",
+          "Conversions",
+          "Revenue",
+          "CTR",
+          "Conversion_Rate",
+          "CPC",
+          "ROAS"
+        ],
+        "priority": 5
+      }
+    ]
+  },
+  "insights": [
+    {
+      "type": "outliers",
+      "message": "Detected 1 outliers in Conversions that may affect visualization",
+      "severity": "info"
+    },
+    {
+      "type": "outliers",
+      "message": "Detected 1 outliers in Revenue that may affect visualization",
+      "severity": "info"
+    },
+    {
+      "type": "outliers",
+      "message": "Detected 1 outliers in Conversion_Rate that may affect visualization",
+      "severity": "info"
+    },
+    {
+      "type": "outliers",
+      "message": "Detected 1 outliers in CPC that may affect visualization",
+      "severity": "info"
+    }
+  ]
+}

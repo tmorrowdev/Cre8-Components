@@ -18,7 +18,7 @@
   "author": "Tyler Morrow",
   "license": "MIT",
   "dependencies": {
-    "@cre8_dev/cre8-wc": "^1.0.0",
+    "@cre8_dev/cre8-wc": "^1.0.5",
     "lit": "^2.7.0"
   },
   "devDependencies": {

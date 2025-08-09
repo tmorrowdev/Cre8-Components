@@ -94,7 +94,7 @@ async function generateTokensWithAI(groups: CssTokenGroups): Promise<string> {
     `Shadows: ${groups.shadows.join(', ')}\n\n` +
     `Please map each category to the appropriate CSS custom properties as defined in \`@cre8_dev/cre8-design-tokens\` and return a complete CSS snippet.`;
 
-  if (!process.env.OPENAI_API_KEY) {
+  if (!process.env.ANTHROPIC_API_KEY) {
     console.error('Error: OPENAI_API_KEY environment variable is not set.');
     process.exit(1);
   }
@@ -102,7 +102,7 @@ async function generateTokensWithAI(groups: CssTokenGroups): Promise<string> {
   const { OpenAI } = await import('openai');
   const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
   const response = await client.chat.completions.create({
-    model: 'gpt-4.1',
+    model: 'claude-4-sonnet-20240229',
     messages: [
       { role: 'system', content: systemMessage },
       { role: 'user', content: userPrompt }

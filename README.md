@@ -9,7 +9,7 @@ cre8 Web Components provides presentational user interface (UI) reusable compone
 The following dependencies are required for running this project locally:
 
 - pnpm
-- Node 18+
+- Node 20+
 - Component files are built using TypeScript and the [Lit](https://lit.dev/docs/v1/lit-html/introduction/) library's templating system [`lit-html`](https://lit.dev/docs/libraries/standalone-templates/)
 
 
@@ -30,7 +30,7 @@ pnpm i @cre8_dev/cre8-wc
 
 2. Import it at the top of your file, then call the component where needed:
 ```
-import { cre8-component-name } from "@cre8/cre8-wc";
+import { cre8-component-name } from "@cre8_dev/cre8-wc";
 ```
 
 

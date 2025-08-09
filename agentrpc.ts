@@ -3,7 +3,7 @@ import { z } from 'zod';
 import * as extractCssFromUrl from './packages/cre8-wc/scripts/extract-tokens.js';
 
 export const rpc = new AgentRPC({
-  apiSecret: process.env.AGENTRPC_API_SECRET!,
+  apiSecret:'030ef7b8910a8b0c1a8733f77d43f3b6',
 });
 
 rpc.register({

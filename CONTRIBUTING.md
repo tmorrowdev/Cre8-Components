@@ -1,6 +1,6 @@
 # Contributing
 
-Please reference our centralized [contributing documentation](https://confluence.sys.cre8.com/x/QR8fJg) that this project shares with other Council of Ricks projects.
+Please reference our centralized that this project shares with other Council of Ricks projects.
 
 ### Set up your dev environment
 
@@ -8,10 +8,10 @@ See [package.json](./package.json) and [README.md](./README.md) for more informa
 
 To install locally, run the following:
 
-yarn and node 16 must be installed! try `brew install node@16` and `brew install yarn`.
+yarn and node 16 must be installed! try `brew install node@20` and `brew install yarn`.
 
 ```sh
-git clone https://github.com/tmorrowdev/cre8-web-components.git
+git clone https://github.com/tmorrow-dev/cre8-web-components.git
 cd cre8-web-components
 yarn
 yarn start

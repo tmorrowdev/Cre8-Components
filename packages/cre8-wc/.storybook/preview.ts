@@ -15,7 +15,6 @@ import femmecubator from '../design-tokens/brands/femmecubator/css/tokens_femmec
 import prisma from '../design-tokens/brands/prisma/tokens_prisma.module.js';
 import starbucks from '../design-tokens/brands/starbucks/tokens_starbucks.module.js';
 import bolt from '../design-tokens/brands/bolt/tokens_bolt.theme.js';
-import netflix from '../design-tokens/tokens_netflix.theme.js';
 
 // Prism styles (Storybook only for docs)
 import prismcss from './components/system-docs/prism.module.js';
@@ -47,8 +46,8 @@ const themeStyles = [
   { name: 'Femmecubator', styles: femmecubator },
   { name: 'Prisma', styles: prisma },
   { name: 'Starbucks', styles: starbucks },
-  { name: 'Bolt', styles: bolt },
-  { name: 'Netflix', styles: netflix }
+  { name: 'Bolt', styles: bolt }
+ 
 ];
 
 // Inject all theme styles with unique IDs
@@ -78,8 +77,7 @@ const preview: Preview = {
           { value: 'Femmecubator', title: 'Femmecubator' },
           { value: 'Prisma', title: 'Prisma' },
           { value: 'Starbucks', title: 'Starbucks' },
-          { value: 'Bolt', title: 'Bolt' },
-          { value: 'Netflix', title: 'Netflix' }
+          { value: 'Bolt', title: 'Bolt' }
         ],
         dynamicTitle: true,
       },
