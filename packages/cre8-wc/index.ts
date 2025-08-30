@@ -51,7 +51,7 @@ export { Cre8LayoutSection } from './components/layout-section/layout-section';
 export { Cre8LayoutContainer } from './components/layout-container/layout-container';
 export { Cre8Layout } from './components/layout/layout';
 export { Cre8InlineAlert } from './components/inline-alert/inline-alert';
-export { Cre8IconLegacy } from './components/icon/icon';
+export { default as Cre8Icon } from './components/icon/icon';
 export { Cre8Hero } from './components/hero/hero';
 export { Cre8Heading } from './components/heading/heading';
 export { Cre8Header } from './components/header/header';

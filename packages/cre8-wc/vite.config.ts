@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import { glob } from 'glob';
+import glob from 'glob';
 import fs from 'fs';
 import dts from 'vite-plugin-dts';
 
@@ -72,8 +72,7 @@ export default defineConfig({
       exclude: [
         '**/*.test.ts',
         '**/*.stories.ts'
-      ],
-      skipDiagnostics: true
+      ]
     })
   ],
   assetsInclude: ['**/*.scss'],
@@ -104,14 +103,21 @@ export default defineConfig({
           return `assets/[name].[ext]`;
         },
       },
-      external: (id, parent) => {
-        // Don't make entry modules external
-        if (!parent) return false;
-        // Don't bundle lit or other external dependencies
-        if (id.includes('lit') || id.includes('node_modules')) return true;
-        // Handle SVG imports with ?raw or ?.raw suffix from @cre8_dev/cre8-icons
-        return false;
-      }
+      external: [
+        'lit',
+        'lit-html',
+        'lit/decorators.js',
+        '@cre8_dev/cre8-design-tokens',
+        '@cre8_dev/cre8-icons',
+        /^@cre8_dev\/cre8-icons\/lib\//,
+        'nanoid',
+        'classnames',
+        '@a11y/focus-trap',
+        'chart.js',
+        'zod',
+        'agentrpc',
+        /\.scss$/
+      ]
     },
     copyPublicDir: false,
     sourcemap: true,
@@ -124,11 +130,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        includePaths: [
-          './design-tokens/core/scss',
-          './design-tokens',
-          '.'
-        ],
+        api: 'modern-compiler',
         silenceDeprecations: ['import'],
         additionalData: `@import "./design-tokens/core/scss/theming/head.module.css";`
       }
