@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import { glob } from 'glob';
 import fs from 'fs';
+import dts from 'vite-plugin-dts';
 
 // Get base components
 const baseComponents = glob.sync('./components/*.ts').reduce((acc, baseComponentPath) => {
@@ -58,6 +59,24 @@ const entry = {
 };
 
 export default defineConfig({
+  plugins: [
+    dts({
+      outDir: 'lib',
+      include: [
+        'components/**/*.ts',
+        'index.ts',
+        'design-tokens/**/*.ts',
+        'directives/**/*.ts',
+        'utilities/**/*.ts'
+      ],
+      exclude: [
+        '**/*.test.ts',
+        '**/*.stories.ts'
+      ],
+      skipDiagnostics: true
+    })
+  ],
+  assetsInclude: ['**/*.scss'],
   build: {
     lib: {
       entry,
@@ -95,53 +114,30 @@ export default defineConfig({
       }
     },
     copyPublicDir: false,
+    sourcemap: true,
+    minify: false, // Keep unminified for better debugging
+    target: 'es2021'
+  },
+  resolve: {
+    extensions: ['.js', '.cjs', '.ts', '.jsx', '.tsx','.svg?raw', '.scss','.scss', '.css', '.otf', '.ttf', '.yml']
   },
   css: {
     preprocessorOptions: {
       scss: {
+        includePaths: [
+          './design-tokens/core/scss',
+          './design-tokens',
+          '.'
+        ],
+        silenceDeprecations: ['import'],
         additionalData: `@import "./design-tokens/core/scss/theming/head.module.css";`
       }
     }
-  },
-  resolve: {
-    extensions: ['.js', '.cjs', '.ts', '.jsx', '.tsx','.svg?raw', '.scss','.scss', '.css', '.otf', '.ttf', '.yml']
   },
   esbuild: {
     // Use a custom loader to preprocess TypeScript files
     loader: 'ts',
     include: /\.(ts|js)$/,
     exclude: [],
-  },
-  plugins: [
-    // Custom plugin to copy assets
-    {
-      name: 'copy-assets',
-      generateBundle() {
-        // Copy icons to consolidated SVG
-        const iconFiles = glob.sync('icons/*.svg');
-        if (iconFiles.length > 0) {
-          // For now, just copy individual icons - you may want to consolidate them
-          iconFiles.forEach(file => {
-            const content = fs.readFileSync(file, 'utf-8');
-            this.emitFile({
-              type: 'asset',
-              fileName: `icons/${file.replace('icons/', '')}`,
-              source: content
-            });
-          });
-        }
-
-        // Copy design tokens
-        const tokenFiles = glob.sync('design-tokens/**/*.scss', { nodir: false });
-        tokenFiles.forEach(file => {
-          const content = fs.readFileSync(file);
-          this.emitFile({
-            type: 'asset',
-            fileName: file,
-            source: content
-          });
-        });
-      }
-    }
-  ]
+  }
 });
