@@ -29,6 +29,7 @@
   },
   "type": "module",
   "module": "lib/index.js",
+  "types": "lib/index.d.ts",
   "keywords": [
     "web-components",
     "lit-element",
