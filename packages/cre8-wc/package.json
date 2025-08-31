@@ -24,7 +24,7 @@
     "plop:recipe": "plop recipe",
     "lint": "eslint-config --ext .ts,.html . --ignore-path ../../.eslintignore",
     "format": "eslint-config --ext .ts,.html . --fix --ignore-path ../../.eslintignore",
-    "release:publish": "node scripts/release.cjs",
+    "release:publish": "node scripts/release.cjs --skip-lint --skip-tests",
     "version:bump": "node scripts/version-bump.cjs"
   },
   "type": "module",

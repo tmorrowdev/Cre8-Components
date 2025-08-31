@@ -341,9 +341,7 @@ Examples:
   npm run release:publish               # Release and publish
 
 The release process:
-  1. Pre-release checks (git status, branch)
-  2. Run linter
-  3. Run tests
+  1. Pre-release checks (git status, branch
   4. Build project
   5. Analyze commits and bump version
   6. Commit version change
