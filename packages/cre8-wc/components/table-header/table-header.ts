@@ -1,6 +1,6 @@
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import { Cre8Element } from '../cre8-element';
-import styles from './table-header.module';
+import styles from './table-header.styles.js';
 
 /**
  * @slot - The component content

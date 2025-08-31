@@ -1,8 +1,8 @@
 import svgCaretUp from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Up.svg?raw';
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon';
-import styles from './breadcrumbs-item.module';
+import styles from './breadcrumbs-item.styles.js';
 
 /**
  * @slot - The component content, the expected slotted content is a Cre8 Link or a String for the "terminal node"

@@ -1,4 +1,4 @@
-import { PropertyValues, html, unsafeCSS } from 'lit';
+import { PropertyValues, html,  } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import svgError from '../../icons/System/Regular/Error.svg?raw';
 import svgWarningFilled from '../../icons/System/Filled/Warning.svg?raw';
@@ -8,7 +8,7 @@ import svgHelp from '../../icons/System/Regular/Help.svg?raw';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon.js';
 import '@a11y/focus-trap';
-import styles from './modal.module';
+import styles from './modal.styles.js';
 
 /**
  * Modal component should be used in all modal situations.

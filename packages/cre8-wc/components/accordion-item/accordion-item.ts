@@ -1,12 +1,12 @@
 import svgCaretUp from '../../icons/System/Regular/Caret_Up.svg?raw';
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import classnames from 'classnames';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon';
 import '../button/button';
-import styles from './accordion-item.module';
+import styles from './accordion-item.styles.js';
 
 /**
  *

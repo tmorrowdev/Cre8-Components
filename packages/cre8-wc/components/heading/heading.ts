@@ -1,7 +1,7 @@
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './heading.module';
+import styles from './heading.styles.js';
 
     /**
      *  HTML headings are titles or subtitles that you want to display on a webpage. The H1 is the most important and H6

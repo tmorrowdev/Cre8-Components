@@ -1,6 +1,6 @@
 import svgCheck from '../../icons/System/Regular/Check.svg?raw';
 import {
-    LitElement, PropertyValues, html, unsafeCSS,
+    LitElement, PropertyValues, html,
 } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
@@ -9,7 +9,7 @@ import { nanoid } from 'nanoid';
 import { Cre8FormElement } from '../cre8-form-element';
 import '../icon/icon';
 
-import styles from './select-tile.module';
+import styles from './select-tile.styles.js';
 import { SelectTileRadioController } from './select-tile-radio-controller';
 import { SelectTileCheckboxController } from './select-tile-checkbox-controller';
 

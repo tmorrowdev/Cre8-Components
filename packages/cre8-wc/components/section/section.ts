@@ -1,7 +1,7 @@
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './section.module';
+import styles from './section.styles.js';
 /**
  * The section component acts as a block level HTML element that takes a 'headline' property
  * that renders the section's heading which wraps around any HTML template

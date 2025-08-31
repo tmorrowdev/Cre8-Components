@@ -1,10 +1,10 @@
 import classnames from 'classnames';
-import { html, unsafeCSS, nothing } from 'lit';
+import { html, nothing } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import '../icon/icon';
 import '../loading-spinner/loading-spinner';
 import { property, query } from 'lit/decorators.js';
-import styles from './danger-button.module';
+import styles from './danger-button.styles.js';
 import { Cre8FormElement } from '../cre8-form-element';
 
 /**

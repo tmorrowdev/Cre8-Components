@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable lit/no-template-map */
 import {
-    html, HTMLTemplateResult, nothing, unsafeCSS,
+    html, HTMLTemplateResult, nothing,
 } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { property, queryAll, state } from 'lit/decorators.js';
@@ -13,7 +13,7 @@ import { Cre8Element } from '../cre8-element';
 import {Cre8Button} from '../button/button';
 import { isMobile, screenSizes } from '../../utilities/is-mobile';
 import './page-counter/page-counter';
-import styles from './pagination.module';
+import styles from './pagination.styles.js';
 
 /**
  * The Pagination component is used to split up a large amount of results

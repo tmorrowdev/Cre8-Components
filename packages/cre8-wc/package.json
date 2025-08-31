@@ -1,10 +1,11 @@
 {
   "name": "@cre8_dev/cre8-wc",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "cre8 Web Components is a library of presentational UI web components to be consumed by Cre8 web applications.",
+  "license": "BSD-3-Clause",
   "scripts": {
     "start": "pnpm run build:custom-elements.json && pnpm run storybook",
-    "build": "del-cli lib && vite build && tsc",
+    "build": "rm -rf lib && vite build && tsc",
     "build:watch": "vite build --watch",
     "build:custom-elements.json": "npx @custom-elements-manifest/analyzer analyze --litelement --globs \"components/*/*.ts\" --outdir .storybook",
     "test": "jest --verbose",
@@ -22,9 +23,12 @@
     "plop:page": "plop page",
     "plop:recipe": "plop recipe",
     "lint": "eslint-config --ext .ts,.html . --ignore-path ../../.eslintignore",
-    "format": "eslint-config --ext .ts,.html . --fix --ignore-path ../../.eslintignore"
+    "format": "eslint-config --ext .ts,.html . --fix --ignore-path ../../.eslintignore",
+    "release:publish": "node scripts/release.cjs",
+    "version:bump": "node scripts/version-bump.cjs"
   },
   "type": "module",
+  "module": "lib/index.js",
   "keywords": [
     "web-components",
     "lit-element",
@@ -38,13 +42,17 @@
     ".yalc"
   ],
   "exports": {
-    ".": "./lib/index.js",
-    "./lib/components/*": "./lib/components/*.js",
-    "./lib/design-tokens/*": "./lib/design-tokens/*",
-    "./lib/directives/*": "./lib/directives/*",
-    "./lib/icons/*": "./lib/icons/*",
-    "./lib/svgs/*": "./lib/svgs/*",
-    "./lib/index.js": "./lib/index.js"
+    "./components/**/*": {
+      "import": "./components/*.js",
+      "types": "./components/*.d.ts",
+      "default": "./components/*.js"
+    },
+    "./icons/*": "./icons/*",
+    "./svgs/*": "./svgs/*",
+    "./index.js": "./index.js"
+  },
+  "repository": {
+    "url": "https://github.com/tmorrowdev/Cre8-Components.git"
   },
   "dependencies": {
     "@a11y/focus-trap": "^1.0.5",
@@ -67,6 +75,7 @@
     "@custom-elements-manifest/analyzer": "^0.10.4",
     "@mdx-js/react": "^3.1.0",
     "@mdx-js/rollup": "^3.1.0",
+    "@skypack/package-check": "^0.2.2",
     "@storybook/addon-a11y": "9.1.0-alpha.1",
     "@storybook/addon-docs": "9.1.0-alpha.1",
     "@storybook/addon-essentials": "9.0.0-alpha.12",
@@ -100,6 +109,7 @@
     "lint-staged": "^11.0.1",
     "loader-utils": "^3.2.0",
     "marked": "^15.0.12",
+    "node-sass": "9.0.0",
     "openai": "^4.96.0",
     "path": "^0.12.7",
     "plop": "^2.7.4",
@@ -109,7 +119,6 @@
     "react-docgen-typescript": "^2.2.2",
     "react-dom": "^19.1.0",
     "sanitize-html": "^2.11.0",
-    "node-sass": "9.0.0",
     "storybook": "^9.0.2",
     "style-dictionary": "^3.1.1",
     "style-loader": "^3.3.3",

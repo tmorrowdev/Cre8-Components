@@ -1,8 +1,8 @@
 import { property } from "lit/decorators.js";
 import { Cre8Element } from '../cre8-element';
 import {Chart, ChartType}  from 'chart.js';
-import { html, unsafeCSS } from "lit";
-import styles from './chart.module';
+import { html,  } from "lit";
+import styles from './chart.styles.js';
 
 export class Cre8Chart extends Cre8Element {
     static styles = [styles];

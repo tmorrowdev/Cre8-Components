@@ -1,11 +1,11 @@
 import svgCheck from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Check.svg?raw';
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { Cre8FormElement } from '../cre8-form-element';
 import '../icon/icon';
-import styles from './tag.module';
+import styles from './tag.styles.js';
 
 /**
  * The tag component allows you to make selections, filter content, or trigger actions. While buttons are

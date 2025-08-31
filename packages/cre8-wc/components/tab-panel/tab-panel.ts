@@ -1,7 +1,7 @@
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './tab-panel.module';
+import styles from './tab-panel.styles.js';
 
 /**
  * @slot - The component content

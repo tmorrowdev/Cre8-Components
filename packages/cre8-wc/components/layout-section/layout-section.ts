@@ -1,7 +1,7 @@
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './layout-section.module';
+import styles from './layout-section.styles.js';
 
 /**
  * @slot - The content of the layout section

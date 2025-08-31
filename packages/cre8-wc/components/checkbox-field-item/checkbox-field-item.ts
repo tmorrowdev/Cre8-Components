@@ -1,11 +1,11 @@
-import { html, nothing, unsafeCSS } from 'lit';
+import { html, nothing,  } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property, query } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import '../icon/icon';
 import '../field-note/field-note';
 import svgCheck from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Check.svg?raw';
-import styles from './checkbox-field-item.module';
+import styles from './checkbox-field-item.styles.js';
 import { Cre8FormElement } from '../cre8-form-element';
 
 /**

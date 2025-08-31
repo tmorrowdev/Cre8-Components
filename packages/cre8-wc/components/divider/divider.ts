@@ -1,7 +1,7 @@
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './divider.module';
+import styles from './divider.styles.js';
 
 /**
  * The divider component is a separator between sections of content or groups of items.

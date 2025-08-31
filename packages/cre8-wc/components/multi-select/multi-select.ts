@@ -4,12 +4,12 @@
 /* eslint-disable indent */
 
 import { ifDefined } from 'lit-html/directives/if-defined.js';
-import { html, nothing, unsafeCSS } from 'lit';
+import { html, nothing,  } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import svgCaretDown from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Down.svg?raw';
 import svgClear from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Clear_X.svg?raw';
-import styles from './multi-select.module';
+import styles from './multi-select.styles.js';
 import { Cre8Element } from '../cre8-element';
 import '../remove-tag/remove-tag';
 import '../field-note/field-note';
@@ -28,9 +28,8 @@ import Cre8CheckboxFieldItem from '../checkbox-field-item/checkbox-field-item';
  * current list after the change is given in the detail.
  */
 export class Cre8MultiSelect extends Cre8Element {
-  static get styles() {
-    return unsafeCSS(styles.toString());
-  }
+  static styles = [styles];
+  
 
   /**
    * The list of string items the user can choose in the dropdown

@@ -1,7 +1,7 @@
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './skeleton-loader.module';
+import styles from './skeleton-loader.styles.js';
 
 /**
  * Skeleton Loader allows for the ability to create placeholder UI loading states.

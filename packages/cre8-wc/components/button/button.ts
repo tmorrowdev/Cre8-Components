@@ -1,10 +1,10 @@
-import { html, nothing, unsafeCSS } from 'lit';
+import { html, nothing,  } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property, query } from 'lit/decorators.js';
 import { Cre8FormElement } from '../cre8-form-element';
 import '../icon/icon';
 import '../loading-spinner/loading-spinner';
-import styles from './button.module';
+import styles from './button.styles.js';
 
     /**
      * The size and state of buttons on the screen serve as visual cues for the user

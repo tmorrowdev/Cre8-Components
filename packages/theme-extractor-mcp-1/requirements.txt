@@ -1,5 +1,0 @@
-Gradio
-anthropic
-jsonschema
-pydantic
-requests
