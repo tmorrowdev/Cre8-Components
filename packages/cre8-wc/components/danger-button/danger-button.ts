@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import { html, unsafeCSS, nothing } from 'lit';
+import { html, nothing } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import '../icon/icon';
 import '../loading-spinner/loading-spinner';

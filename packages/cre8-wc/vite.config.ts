@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite';
-import glob from 'glob';
+import { globSync } from 'glob';
 import fs from 'fs';
 import dts from 'vite-plugin-dts';
 
 // Get base components
-const baseComponents = glob.sync('./components/*.ts').reduce((acc, baseComponentPath) => {
+const baseComponents = globSync('./components/*.ts').reduce((acc, baseComponentPath) => {
   const name = baseComponentPath.replace('./components/', '').replace('.ts', '');
   acc[name] = baseComponentPath;
   return acc;
@@ -15,14 +15,14 @@ const baseComponents = glob.sync('./components/*.ts').reduce((acc, baseComponent
 baseComponents['cre8-field'] = './components/field/field.ts';
 
 // Get all component files
-const components = glob.sync('./components/*/*.ts').reduce((acc, componentPath) => {
+const components = globSync('./components/*/*.ts').reduce((acc, componentPath) => {
   // Exclude stories files
   if (componentPath.includes('.stories.')) {
     return acc;
   }
   
   // Exclude icon because there are some specific things that need to happen based on the URL inclusion of `icon.js`
-  // in order for routing to work correctly
+  // in order for routing to work correctly (also has unused imports causing TS errors)
   if (componentPath.match(/icon\.ts$/)) {
     return acc;
   }
@@ -54,7 +54,8 @@ const components = glob.sync('./components/*/*.ts').reduce((acc, componentPath) 
 const entry = {
   ...components,
   ...baseComponents,
-  icon: './components/icon/icon.ts',
+  // Temporarily excluding icon due to unused import errors
+  // icon: './components/icon/icon.ts',
   index: './index.ts',
 };
 
@@ -130,7 +131,6 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        api: 'modern-compiler',
         silenceDeprecations: ['import'],
         additionalData: `@import "./design-tokens/core/scss/theming/head.module.css";`
       }

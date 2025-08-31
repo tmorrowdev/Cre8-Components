@@ -1,5 +1,5 @@
-import svgCaretUp from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Up.svg?raw';
-import { html, unsafeCSS } from 'lit';
+import svgCaretUp from '../../icons/System/Regular/Caret_Up.svg?raw';
+import { html } from 'lit';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon';
 import styles from './breadcrumbs-item.module';

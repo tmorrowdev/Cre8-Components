@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import { html, unsafeCSS } from 'lit';
+import { html } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon';
@@ -54,7 +54,7 @@ export class Cre8Badge extends Cre8Element {
    * SVG as a raw string
    * - For badges with icons, the icon is defined by this prop
    * - Pass in a raw svg as a String. We use raw string loader for this but any method of getting raw svgs will do
-   * - Import example:`import svgFeedback from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Feedback.svg?raw';`
+   * - Import example:`import svgFeedback from '@cre8_dev/cre8-icons/icons/System/Regular/Feedback.svg?raw';`
    * - [cre8-icons Github repo](https://github.com/tmorrowdev/cre8-icons) This is the Github
    * repo for Cre8 icons, which includes a link to the storybook as well as relavant information for new icons
    */

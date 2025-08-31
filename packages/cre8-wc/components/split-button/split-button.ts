@@ -1,4 +1,4 @@
-import { html, unsafeCSS } from 'lit';
+import { html } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import '../button/button';

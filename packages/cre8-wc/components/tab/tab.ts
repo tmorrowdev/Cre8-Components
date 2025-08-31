@@ -1,4 +1,4 @@
-import { html, unsafeCSS, PropertyValues } from 'lit';
+import { html, PropertyValues } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import styles from './tab.module';

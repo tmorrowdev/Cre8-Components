@@ -1,6 +1,6 @@
 import svgCheck from '../../icons/System/Regular/Check.svg?raw';
 import {
-    LitElement, PropertyValues, html, unsafeCSS,
+    LitElement, PropertyValues, html,
 } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { ifDefined } from 'lit-html/directives/if-defined.js';

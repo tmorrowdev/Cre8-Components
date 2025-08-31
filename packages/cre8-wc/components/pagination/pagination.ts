@@ -1,14 +1,14 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable lit/no-template-map */
 import {
-    html, HTMLTemplateResult, nothing, unsafeCSS,
+    html, HTMLTemplateResult, nothing,
 } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { property, queryAll, state } from 'lit/decorators.js';
-import svgCaretLeft from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Left.svg?raw';
-import svgFirstPage from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Double_Left.svg?raw';
-import svgLastPage from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Double_Right.svg?raw';
-import svgCaretRight from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Right.svg?raw';
+import svgCaretLeft from '../../icons/System/Regular/Caret_Left.svg?raw';
+import svgFirstPage from '../../icons/System/Regular/Caret_Double_Left.svg?raw';
+import svgLastPage from '../../icons/System/Regular/Caret_Double_Right.svg?raw';
+import svgCaretRight from '../../icons/System/Regular/Caret_Right.svg?raw';
 import { Cre8Element } from '../cre8-element';
 import {Cre8Button} from '../button/button';
 import { isMobile, screenSizes } from '../../utilities/is-mobile';

@@ -1,4 +1,4 @@
-import { html, unsafeCSS } from 'lit';
+import { html } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { ifDefined } from 'lit/directives/if-defined.js';

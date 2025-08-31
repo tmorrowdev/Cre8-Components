@@ -1,9 +1,9 @@
-import svgWarningFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Warning.svg?raw';
-import svgCheckCircle from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Check.svg?raw';
-import svgInfoFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Info.svg?raw';
-import svgErrorFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Error.svg?raw';
-import svgHelpFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Help.svg?raw';
-import { html, nothing, unsafeCSS } from 'lit';
+import svgWarningFilled from '../../icons/System/Filled/Warning.svg?raw';
+import svgCheckCircle from '../../icons/System/Filled/Check.svg?raw';
+import svgInfoFilled from '../../icons/System/Filled/Info.svg?raw';
+import svgErrorFilled from '../../icons/System/Filled/Error.svg?raw';
+import svgHelpFilled from '../../icons/System/Filled/Help.svg?raw';
+import { html, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import styles from './inline-alert.module';

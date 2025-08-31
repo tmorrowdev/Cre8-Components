@@ -1,4 +1,4 @@
-import { html, unsafeCSS } from 'lit';
+import { html } from 'lit';
 import {
     property, query, queryAssignedElements, state,
 } from 'lit/decorators.js';

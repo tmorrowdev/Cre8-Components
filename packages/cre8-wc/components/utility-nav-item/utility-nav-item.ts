@@ -1,4 +1,4 @@
-import { html, nothing, unsafeCSS } from 'lit';
+import { html, nothing } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';

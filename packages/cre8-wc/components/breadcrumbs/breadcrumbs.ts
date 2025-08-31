@@ -2,7 +2,7 @@
 * <slot> is a non-content element, which is permitted as a direct child within a list
 * Ref https://dequeuniversity.com/rules/axe/4.8/list regarding non-content elements
 */
-import { html, unsafeCSS } from 'lit';
+import { html } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import styles from './breadcrumbs.module';

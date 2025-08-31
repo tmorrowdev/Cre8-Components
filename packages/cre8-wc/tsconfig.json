@@ -3,7 +3,7 @@
     "rootDir": ".",
     "baseUrl": ".",
     "target": "es2021",
-    "module": "esNext",
+    "module": "NodeNext",
     "lib": [
       "es2021",
       "DOM",
@@ -15,7 +15,6 @@
        ],
        "typeRoots": [
         "./node_modules/@types",
-        "src/types"
        ],
     "declaration": true,
     "declarationMap": true,
@@ -30,7 +29,7 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
@@ -43,14 +42,13 @@
     ],
   },
   "include": [
-    "**/**/*.ts",
-    "**/**/*.js",
+    "**/*.ts",
+    "**/*.js",
     "styles.d.ts",
     "global.d.ts"
   ],
   "exclude": [
     "node_modules",
-    "typings",
     "components/**/*.stories.ts",
     "components/**/*.test.ts",
     "dist",

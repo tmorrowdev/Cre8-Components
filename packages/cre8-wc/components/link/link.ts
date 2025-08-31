@@ -1,6 +1,6 @@
-import svgArrowLeft from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Arrow_-_Left.svg?raw';
+import svgArrowLeft from '../../icons/System/Filled/Arrow_-_Left.svg?raw';
 import {
-    html, nothing, unsafeCSS,
+    html, nothing,
 } from 'lit';
 import { property } from 'lit/decorators.js';
 import { ifDefined } from 'lit-html/directives/if-defined.js';

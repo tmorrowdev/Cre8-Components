@@ -2,7 +2,7 @@ import type { Meta } from '@storybook/web-components';
 import { html } from 'lit';
 import { spread } from '../../directives/spread';
 import './button';
-import svgCaretUp from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Up.svg?raw';
+import svgCaretUp from '@cre8_dev/cre8-icons/icons/System/Regular/Caret_Up.svg?raw';
 
 const meta: Meta = {
   title: 'cre8 Components/Button',
