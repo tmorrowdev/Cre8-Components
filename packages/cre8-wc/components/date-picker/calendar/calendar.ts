@@ -4,10 +4,10 @@
 
 /* TODO: remove eslint disable on no-template-arrow */
 import {
- TemplateResult, html, nothing, unsafeCSS,
+ TemplateResult, html, nothing,
 } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
-import styles from './calendar.module';
+import styles from './calendar.styles.js';
 import { Cre8Element } from '../../cre8-element';
 
 import '../../icon/icon';
@@ -39,9 +39,8 @@ export enum CalendarModal {
 }
 
 export class Cre8Calendar extends Cre8Element {
-  static get styles() {
-    return unsafeCSS(styles.toString());
-  }
+  static styles = [styles];
+
 
   /**
    * Query the navigation wrapper

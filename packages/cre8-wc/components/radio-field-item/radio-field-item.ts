@@ -1,10 +1,10 @@
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property, query } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { Cre8FormElement } from '../cre8-form-element';
 import '../field-note/field-note';
-import styles from './radio-field-item.module';
+import styles from './radio-field-item.styles.js';
 
     /**
      * A Radio Field Item adds a radio button to a Radio Field. Radio buttons let a user choose only one of several

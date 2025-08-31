@@ -4,7 +4,7 @@ import svgInfoFilled from '/Users/tylersmbp/Projects/cre8-web-components/package
 import svgErrorFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Error.svg?raw';
 import svgLightbulbFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Lightbulb.svg?raw';
 import svgClose from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Close.svg?raw';
-import { html, nothing, unsafeCSS } from 'lit';
+import { html, nothing,  } from 'lit';
 import { property } from 'lit/decorators.js';
 import '../button/button';
 import '../link/link';
@@ -13,7 +13,7 @@ import '../text-passage/text-passage';
 import '../icon/icon';
 
 import { Cre8Element } from '../cre8-element';
-import styles from './alert.module';
+import styles from './alert.styles.js';
 
 /**
  * The general purpose of an alert or notification is to draw the user’s attention

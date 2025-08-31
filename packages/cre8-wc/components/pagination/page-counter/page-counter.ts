@@ -1,8 +1,8 @@
 /* eslint-disable import/prefer-default-export */
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../../cre8-element';
-import styles from './page-counter.module';
+import styles from './page-counter.styles.js';
 
 /**
  * @slot - The component content

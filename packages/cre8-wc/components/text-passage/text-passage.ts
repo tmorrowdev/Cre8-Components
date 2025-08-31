@@ -1,8 +1,8 @@
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import lightDomStyles from './text-passage-light-dom.module';
-import styles from './text-passage.module';
+import lightDomStyles from './text-passage-light-dom.styles.js';
+import styles from './text-passage.styles.js';
 
 /**
  * The text-passage component acts a general wrapper element

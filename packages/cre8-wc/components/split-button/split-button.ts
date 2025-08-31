@@ -1,8 +1,8 @@
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import '../button/button';
-import styles from './split-button.module';
+import styles from './split-button.styles.js';
 
 /**
  * @slot - The component content , this will consist of the dropdown when the user clicks the caret

@@ -1,8 +1,8 @@
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './tertiary-nav-item.module';
+import styles from './tertiary-nav-item.styles.js';
 
 /**
  * @slot - The component content

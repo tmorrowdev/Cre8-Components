@@ -1,9 +1,9 @@
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './tooltip.module';
+import styles from './tooltip.styles.js';
 
 /**
  * The purpose of tooltips is to provide a tip or hint about what a tool, icon, link, or other interaction does.

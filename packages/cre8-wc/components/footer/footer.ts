@@ -1,6 +1,6 @@
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import { Cre8Element } from '../cre8-element';
-import styles from './footer.module';
+import styles from './footer.styles.js';
 
 /**
  * @slot - The footer content

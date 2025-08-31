@@ -2,17 +2,16 @@
 /* eslint-disable indent */
 
 /* TODO: remove eslint disable on no-template-arrow */
-import { TemplateResult, html, unsafeCSS } from 'lit';
+import { TemplateResult, html,  } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { Cre8Element } from '../../cre8-element';
-import styles from './calendar-month-modal.module';
+import styles from './calendar-month-modal.styles.js';
 import '../../button/button';
 import '../../icon/icon';
 
 export class Cre8CalendarMonthModal extends Cre8Element {
-  static get styles() {
-    return unsafeCSS(styles.toString());
-  }
+  static styles = [styles];
+
 
   @state() monthNames: Array<string>;
 

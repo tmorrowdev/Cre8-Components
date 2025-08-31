@@ -1,8 +1,8 @@
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import { property } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { Cre8Element } from '../cre8-element';
-import styles from './tag-list.module';
+import styles from './tag-list.styles.js';
 
 /**
  * Tag List must have children which are Tag components that are of type `checkbox` or `radio`.

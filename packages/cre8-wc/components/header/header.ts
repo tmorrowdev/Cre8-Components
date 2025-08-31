@@ -1,7 +1,7 @@
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import { state } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './header.module';
+import styles from './header.styles.js';
 
 /**
  * @slot - The header content

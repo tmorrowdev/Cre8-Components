@@ -1,4 +1,4 @@
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import {
     property, query, queryAssignedElements, state,
 } from 'lit/decorators.js';
@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid';
 import { Cre8Element } from '../cre8-element';
 import { Cre8TabPanel } from '../tab-panel/tab-panel';
 import { Cre8Tab } from '../tab/tab';
-import styles from './tabs.module';
+import styles from './tabs.styles.js';
 
 let tabId = 1;
 

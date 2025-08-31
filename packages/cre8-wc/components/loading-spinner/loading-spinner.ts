@@ -1,7 +1,7 @@
-import { html, nothing, unsafeCSS } from 'lit';
+import { html, nothing,  } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './loading-spinner.module';
+import styles from './loading-spinner.styles.js';
 
 /**
  * A loading spinner notifies the user that their request is being processed while the front end is retrieving data
@@ -44,7 +44,7 @@ import styles from './loading-spinner.module';
  *
  */
 export class Cre8LoadingSpinner extends Cre8Element {
-    static styles = unsafeCSS(styles);
+    static styles = (styles);
 
   /**
    * Mode of the spinner, defaults to indeterminate.

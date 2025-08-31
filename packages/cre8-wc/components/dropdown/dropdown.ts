@@ -1,8 +1,8 @@
-import { html, nothing, unsafeCSS } from 'lit';
+import { html, nothing,  } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import svgCaretDown from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Caret_Down.svg?raw';
 import { Cre8Element } from '../cre8-element';
-import styles from './dropdown.module';
+import styles from './dropdown.styles.js';
 
 /**
  * The Dropdown menu itself is a container that can host multiple interactive items, commonly formatted as a list

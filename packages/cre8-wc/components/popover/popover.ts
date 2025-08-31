@@ -1,8 +1,8 @@
-import { html, nothing, unsafeCSS } from 'lit';
+import { html, nothing,  } from 'lit';
 import { property, query, queryAssignedElements } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import '../heading/heading';
-import styles from './popover.module';
+import styles from './popover.styles.js';
 import { Cre8Button } from '../button/button';
 
 /**

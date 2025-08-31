@@ -1,11 +1,11 @@
 import svgArrowLeft from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Arrow_-_Left.svg?raw';
 import {
-    html, nothing, unsafeCSS,
+    html, nothing,
 } from 'lit';
 import { property } from 'lit/decorators.js';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './link.module';
+import styles from './link.styles.js';
 
 /**
  * Link Component are strictly used in the case where the component will take

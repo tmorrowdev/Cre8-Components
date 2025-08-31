@@ -1,11 +1,10 @@
 import svgCheckCircle from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Check.svg?raw';
 import svgErrorFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Error.svg?raw';
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import { property } from 'lit/decorators.js';
-import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon';
-import styles from './field-note.module';
+import styles from './field-note.styles.js';
 
 /**
  * Field Note gives direction on how to fill out a form field and to alert users of form errors and successes.

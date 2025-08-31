@@ -1,10 +1,10 @@
 import classnames from 'classnames';
-import { html, unsafeCSS } from 'lit';
+import { html,  } from 'lit';
 import { property } from 'lit/decorators.js';
 import svgClose from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Close.svg?raw';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon';
-import styles from './remove-tag.module';
+import styles from './remove-tag.styles.js';
 
 export enum Shape {
   Round = 'round',

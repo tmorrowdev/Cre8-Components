@@ -1,7 +1,7 @@
-import { html, nothing, unsafeCSS } from 'lit';
+import { html, nothing } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property, state } from 'lit/decorators.js';
-import styles from './date-picker.module';
+import styles from './date-picker.styles.js';
 import { Cre8Field } from '../field/field';
 import './calendar/calendar';
 
@@ -10,7 +10,8 @@ import './calendar/calendar';
  * like the Field component but exclusively for type=date.
  * Cre8DatePicker inherts the Cre8Field component.
  */
-export class Cre8DatePicker extends Cre8Field {
+export class Cre8DatePicker extends  Cre8Field {
+   
     static styles = [styles];
 
   @state() showCalendar = false;
@@ -81,10 +82,9 @@ export class Cre8DatePicker extends Cre8Field {
             name="${ifDefined(this.name)}"
             max=${ifDefined(this.max)}
             min=${ifDefined(this.min)}
-            .value="${ifDefined(this.value)}"
-            readonly=${ifDefined(this.readonly)}
-            required=${ifDefined(this.required)}
-            aria-invalid=${this.required ? !!this.isError : ifDefined(this.isError)}
+            value="${ifDefined(this.value)}"
+            ?readonly=${this.readonly}
+            ?required=${this.required}
             ?disabled="${this.disabled}"
             aria-describedby="${ifDefined(this.fieldNoteAria())}"
             placeholder="${ifDefined(this.placeholder)}"
@@ -105,7 +105,7 @@ export class Cre8DatePicker extends Cre8Field {
         ${this.showCalendar
         ? html`<cre8-calendar
               fieldDate="${ifDefined(this.value)}"
-              hasShortcuts="${ifDefined(this.hasShortcuts)}"
+              ?hasShortcuts=${this.hasShortcuts}
               @dateSelect="${this.handleCalendarSelect}"
               @outsideClick="${this.handleOutsideClick}"
             ></cre8-calendar>`

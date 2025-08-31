@@ -1,10 +1,10 @@
-import { html, nothing, unsafeCSS } from 'lit';
+import { html, nothing,  } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property, query } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { Cre8FormElement } from '../cre8-form-element';
 import '../field-note/field-note';
-import styles from './field.module';
+import styles from './field.styles.js';
 
 /**
  * The Field component renders a form group with label, control, help text and validation styling. There are
