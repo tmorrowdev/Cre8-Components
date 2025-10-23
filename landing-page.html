@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=width=device-width, initial-scale=1.0">
+    <title>Cre8 Components - Modern Web Components Library</title>
+
+    <!-- Import Web Components -->
+    <script type="module">
+        import {
+            Cre8Header,
+            Cre8PrimaryNav,
+            Cre8PrimaryNavItem,
+            Cre8Hero,
+            Cre8Button,
+            Cre8Card,
+            Cre8Badge,
+            Cre8Feature,
+            Cre8Grid,
+            Cre8GridItem,
+            Cre8Section,
+            Cre8Heading,
+            Cre8TextPassage,
+            Cre8Footer,
+            Cre8LinkList,
+            Cre8LinkListItem,
+            Cre8Accordion,
+            Cre8AccordionItem,
+            Cre8Alert,
+            Cre8Icon,
+            Cre8Divider
+        } from './packages/cre8-wc/index.js';
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .features-section {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #2d3748;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #2d3748;
+        }
+
+        .feature-description {
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        .components-section {
+            padding: 80px 20px;
+        }
+
+        .component-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stats-section {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .faq-section {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .cta-section {
+            padding: 80px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-link:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Navigation -->
+    <cre8-header>
+        <cre8-primary-nav>
+            <cre8-primary-nav-item href="#home" isActive>Home</cre8-primary-nav-item>
+            <cre8-primary-nav-item href="#features">Features</cre8-primary-nav-item>
+            <cre8-primary-nav-item href="#components">Components</cre8-primary-nav-item>
+            <cre8-primary-nav-item href="#docs">Documentation</cre8-primary-nav-item>
+            <cre8-primary-nav-item href="#about">About</cre8-primary-nav-item>
+        </cre8-primary-nav>
+    </cre8-header>
+
+    <!-- Hero Section -->
+    <section class="hero-content" id="home">
+        <div class="container">
+            <h1 class="hero-title">Build Faster with Cre8 Components</h1>
+            <p class="hero-subtitle">
+                A modern, accessible web components library built with Lit.
+                87+ production-ready components for enterprise applications.
+            </p>
+            <div class="hero-buttons">
+                <cre8-button
+                    text="Get Started"
+                    variant="primary"
+                    size="lg"
+                ></cre8-button>
+                <cre8-button
+                    text="View Components"
+                    variant="secondary"
+                    size="lg"
+                    inverse
+                ></cre8-button>
+                <cre8-button
+                    text="GitHub"
+                    variant="tertiary"
+                    size="lg"
+                    inverse
+                ></cre8-button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alert Banner -->
+    <cre8-alert status="info" ariaLabel="New version available">
+        New version 1.0.7 is now available! Check out the latest features and improvements.
+    </cre8-alert>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Cre8 Components?</h2>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">Lightning Fast</h3>
+                    <p class="feature-description">
+                        Built with Lit for minimal bundle size and maximum performance.
+                        Components load instantly and render efficiently.
+                    </p>
+                    <cre8-badge text="High Performance" status="success" variant="light"></cre8-badge>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">♿</div>
+                    <h3 class="feature-title">Accessible by Default</h3>
+                    <p class="feature-description">
+                        WCAG 2.1 compliant components with full keyboard navigation,
+                        screen reader support, and ARIA attributes.
+                    </p>
+                    <cre8-badge text="WCAG 2.1" status="success" variant="light"></cre8-badge>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">Fully Themeable</h3>
+                    <p class="feature-description">
+                        Customize with CSS custom properties, design tokens, and theme system.
+                        Multiple brand themes supported out of the box.
+                    </p>
+                    <cre8-badge text="Design Tokens" status="info" variant="light"></cre8-badge>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3 class="feature-title">87+ Components</h3>
+                    <p class="feature-description">
+                        Comprehensive library covering UI elements, forms, navigation,
+                        tables, modals, and more. Everything you need to build modern apps.
+                    </p>
+                    <cre8-badge text="Complete Library" status="attention" variant="light"></cre8-badge>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Responsive Design</h3>
+                    <p class="feature-description">
+                        Mobile-first approach with responsive layouts that work seamlessly
+                        across all devices and screen sizes.
+                    </p>
+                    <cre8-badge text="Mobile Ready" status="success" variant="light"></cre8-badge>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3 class="feature-title">Framework Agnostic</h3>
+                    <p class="feature-description">
+                        Use with React, Vue, Angular, or vanilla JavaScript.
+                        Web Components work everywhere without dependencies.
+                    </p>
+                    <cre8-badge text="Universal" status="info" variant="light"></cre8-badge>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Trusted by Developers</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">87+</div>
+                    <div class="stat-label">Components</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">TypeScript</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">WCAG 2.1</div>
+                    <div class="stat-label">Accessible</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">v1.0.7</div>
+                    <div class="stat-label">Latest Version</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Components Showcase Section -->
+    <section class="components-section" id="components">
+        <div class="container">
+            <h2 class="section-title">Component Showcase</h2>
+
+            <div class="component-showcase">
+                <!-- Card Component Example -->
+                <cre8-card variant="vertical">
+                    <div slot="header" style="padding: 20px; background: #667eea; color: white;">
+                        <h3 style="margin: 0;">Card Component</h3>
+                    </div>
+                    <div style="padding: 20px;">
+                        <p>Flexible card component with header, body, and footer slots.
+                        Supports both horizontal and vertical layouts.</p>
+                        <br>
+                        <cre8-badge text="Popular" status="success"></cre8-badge>
+                    </div>
+                    <div slot="footer" style="padding: 15px; background: #f8f9fa;">
+                        <cre8-button text="Learn More" variant="primary" size="sm"></cre8-button>
+                    </div>
+                </cre8-card>
+
+                <!-- Another Card -->
+                <cre8-card variant="vertical">
+                    <div slot="header" style="padding: 20px; background: #764ba2; color: white;">
+                        <h3 style="margin: 0;">Button Components</h3>
+                    </div>
+                    <div style="padding: 20px;">
+                        <p>Multiple button variants with loading states, icons, and sizes.</p>
+                        <br>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <cre8-button text="Primary" variant="primary" size="sm"></cre8-button>
+                            <cre8-button text="Secondary" variant="secondary" size="sm"></cre8-button>
+                            <cre8-button text="Tertiary" variant="tertiary" size="sm"></cre8-button>
+                        </div>
+                    </div>
+                    <div slot="footer" style="padding: 15px; background: #f8f9fa;">
+                        <cre8-badge text="Essential" status="info"></cre8-badge>
+                    </div>
+                </cre8-card>
+
+                <!-- Third Card -->
+                <cre8-card variant="vertical">
+                    <div slot="header" style="padding: 20px; background: #48bb78; color: white;">
+                        <h3 style="margin: 0;">Form Components</h3>
+                    </div>
+                    <div style="padding: 20px;">
+                        <p>Complete form controls with validation, date pickers, selects,
+                        checkboxes, and radio buttons.</p>
+                        <br>
+                        <cre8-badge text="Form Ready" status="success"></cre8-badge>
+                        <cre8-badge text="Validated" status="info"></cre8-badge>
+                    </div>
+                    <div slot="footer" style="padding: 15px; background: #f8f9fa;">
+                        <cre8-button text="Explore Forms" variant="primary" size="sm"></cre8-button>
+                    </div>
+                </cre8-card>
+            </div>
+
+            <cre8-divider style="margin: 60px 0;"></cre8-divider>
+
+            <!-- More Component Examples -->
+            <h3 style="text-align: center; font-size: 2rem; margin-bottom: 40px; color: #2d3748;">
+                Additional Components
+            </h3>
+
+            <cre8-grid>
+                <cre8-grid-item>
+                    <cre8-feature
+                        heading="Navigation"
+                        description="Primary, utility, and tertiary navigation components with breadcrumbs and global nav options.">
+                    </cre8-feature>
+                </cre8-grid-item>
+                <cre8-grid-item>
+                    <cre8-feature
+                        heading="Data Display"
+                        description="Tables, lists, progress meters, charts, and skeleton loaders for data visualization.">
+                    </cre8-feature>
+                </cre8-grid-item>
+                <cre8-grid-item>
+                    <cre8-feature
+                        heading="Overlays"
+                        description="Modals, tooltips, popovers, and alerts for enhanced user interactions.">
+                    </cre8-feature>
+                </cre8-grid-item>
+                <cre8-grid-item>
+                    <cre8-feature
+                        heading="Layout"
+                        description="Grid system, sections, containers, and layout components for page structure.">
+                    </cre8-feature>
+                </cre8-grid-item>
+            </cre8-grid>
+        </div>
+    </section>
+
+    <!-- FAQ Section with Accordion -->
+    <section class="faq-section" id="docs">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <cre8-accordion borderType="rectangle" hasDivider>
+                <cre8-accordion-item heading="How do I install Cre8 Components?" isActive>
+                    <div style="padding: 20px;">
+                        <p>Install via npm or pnpm:</p>
+                        <pre style="background: #2d3748; color: #fff; padding: 15px; border-radius: 5px; margin-top: 10px;">pnpm install @cre8_dev/cre8-wc</pre>
+                        <p style="margin-top: 15px;">Then import the components you need:</p>
+                        <pre style="background: #2d3748; color: #fff; padding: 15px; border-radius: 5px; margin-top: 10px;">import { Cre8Button } from '@cre8_dev/cre8-wc';</pre>
+                    </div>
+                </cre8-accordion-item>
+
+                <cre8-accordion-item heading="Are the components accessible?">
+                    <div style="padding: 20px;">
+                        <p>Yes! All components are built with accessibility in mind and follow WCAG 2.1 guidelines.
+                        They include proper ARIA attributes, keyboard navigation, and screen reader support.</p>
+                    </div>
+                </cre8-accordion-item>
+
+                <cre8-accordion-item heading="Can I use these with React/Vue/Angular?">
+                    <div style="padding: 20px;">
+                        <p>Absolutely! Cre8 Components are standard Web Components, so they work with any framework
+                        or no framework at all. They're framework-agnostic and compatible with React, Vue, Angular,
+                        Svelte, or vanilla JavaScript.</p>
+                    </div>
+                </cre8-accordion-item>
+
+                <cre8-accordion-item heading="How do I customize the theme?">
+                    <div style="padding: 20px;">
+                        <p>Cre8 Components support multiple theming approaches:</p>
+                        <ul style="margin-top: 10px; margin-left: 20px;">
+                            <li>CSS custom properties for quick color changes</li>
+                            <li>Design tokens for comprehensive theme customization</li>
+                            <li>CSS parts for component-specific styling</li>
+                            <li>Pre-built themes (Cre8, Brand, Starbucks)</li>
+                        </ul>
+                    </div>
+                </cre8-accordion-item>
+
+                <cre8-accordion-item heading="Is this library production-ready?">
+                    <div style="padding: 20px;">
+                        <p>The library is currently in beta (v1.0.7). While many components are stable and being used
+                        in production environments, we recommend thorough testing before deploying to production.
+                        The API may still have minor changes before the 2.0 stable release.</p>
+                    </div>
+                </cre8-accordion-item>
+            </cre8-accordion>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Build Something Amazing?</h2>
+            <p class="cta-subtitle">
+                Start using Cre8 Components today and accelerate your development workflow.
+            </p>
+            <div class="hero-buttons">
+                <cre8-button
+                    text="Get Started Now"
+                    variant="primary"
+                    size="lg"
+                ></cre8-button>
+                <cre8-button
+                    text="View Documentation"
+                    variant="secondary"
+                    size="lg"
+                    inverse
+                ></cre8-button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="about">
+        <div class="container">
+            <cre8-footer>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Documentation</a>
+                    <a href="#" class="footer-link">GitHub</a>
+                    <a href="#" class="footer-link">Storybook</a>
+                    <a href="#" class="footer-link">Contributing</a>
+                    <a href="#" class="footer-link">License</a>
+                </div>
+                <p style="opacity: 0.8; margin-top: 20px;">
+                    &copy; 2025 Cre8 Components. Built with Lit. Licensed under MIT.
+                </p>
+            </cre8-footer>
+        </div>
+    </footer>
+
+</body>
+</html>
