@@ -1,0 +1,504 @@
+@import './breakpoints';
+/**
+* # SPACING UTILITY CLASSES
+*/
+
+/**
+* # MARGIN
+*/
+
+/**
+  * Margin none
+  * 1) Forces margin none to 0
+  */
+.cre8-u-margin-none {
+  margin: 0 !important;
+}
+
+/**
+  * Margin small
+  * 1) Forces margin small to 0.5rem
+  */
+.cre8-u-margin-sm {
+  margin: size(1) !important;
+}
+
+/**
+  * Margin medium
+  * 1) Forces margin medium to 1rem
+  */
+.cre8-u-margin-md {
+  margin: size(2) !important;
+}
+
+/**
+  * Margin large
+  * 1) Forces margin large to size(3)
+  */
+.cre8-u-margin-lg {
+  margin: size(3) !important;
+}
+
+/**
+  * Margin xl
+  * 1) Forces margin xl to 2rem
+  */
+.cre8-u-margin-xl {
+  margin: size(4) !important;
+}
+
+/**
+  * Margin xxl
+  * 1) Forces margin to 4rem
+  */
+.cre8-u-margin-xxl {
+  margin: size(8) !important;
+}
+
+/**
+  * Margin top none
+  * 1) Forces margin top to 0
+  */
+.cre8-u-margin-top-none {
+  margin-top: 0 !important;
+}
+
+/**
+  * Margin top small
+  * 1) Forces margin top to 0.5rem
+  */
+.cre8-u-margin-top-sm {
+  margin-top: size(1) !important;
+}
+
+/**
+  * Margin top medium
+  * 1) Forces margin top to 1rem
+  */
+.cre8-u-margin-top-md {
+  margin-top: size(2) !important;
+}
+
+/**
+  * Margin top large
+  * 1) Forces margin top to size(3)
+  */
+.cre8-u-margin-top-lg {
+  margin-top: size(3) !important;
+}
+
+/**
+  * Margin top xl
+  * 1) Forces margin top to 2rem
+  */
+.cre8-u-margin-top-xl {
+  margin-top: size(4) !important;
+}
+
+/**
+  * Margin top xxl
+  * 1) Forces margin top to 4rem
+  */
+.cre8-u-margin-top-xxl {
+  margin-top: size(8) !important;
+}
+
+/**
+    * Margin right none
+    * 1) Forces margin right to 0
+    */
+.cre8-u-margin-right-none {
+  margin-right: 0 !important;
+}
+
+/**
+  * Margin right small
+  * 1) Forces margin right to 0.5rem
+  */
+.cre8-u-margin-right-sm {
+  margin-right: size(1) !important;
+}
+
+/**
+  * Margin right medium
+  * 1) Forces margin right to 1rem
+  */
+.cre8-u-margin-right-md {
+  margin-right: size(2) !important;
+}
+
+/**
+    * Margin right large
+    * 1) Forces margin right to size(3)
+    */
+.cre8-u-margin-right-lg {
+  margin-right: size(3) !important;
+}
+
+/**
+    * Margin right xl
+    * 1) Forces margin right to 2rem
+    */
+.cre8-u-margin-right-xl {
+  margin-right: size(4) !important;
+}
+
+/**
+  * Margin right xxl
+  * 1) Forces margin right to 4rem
+  */
+.cre8-u-margin-right-xxl {
+  margin-right: size(8) !important;
+}
+
+/**
+  * Margin bottom none
+  * 1) Forces margin bottom to 0
+  */
+.cre8-u-margin-bottom-none {
+  margin-bottom: 0 !important;
+}
+
+/**
+  * Margin bottom small
+  * 1) Forces margin bottom to 0.5rem
+  */
+.cre8-u-margin-bottom-sm {
+  margin-bottom: size(1) !important;
+}
+
+/**
+  * Margin bottom medium
+  * 1) Forces margin bottom to 1rem
+  */
+.cre8-u-margin-bottom-md {
+  margin-bottom: size(2) !important;
+}
+
+/**
+  * Margin bottom large
+  * 1) Forces margin bottom to size(3)
+  */
+.cre8-u-margin-bottom-lg {
+  margin-bottom: size(3) !important;
+}
+
+/**
+  * Margin bottom xl
+  * 1) Forces margin bottom to 2rem
+  */
+.cre8-u-margin-bottom-xl {
+  margin-bottom: size(4) !important;
+}
+
+/**
+  * Margin bottom xxl
+  * 1) Forces margin bottom to 4rem
+  */
+.cre8-u-margin-bottom-xxl {
+  margin-bottom: size(8) !important;
+}
+
+/**
+  * Margin bottom xl
+  * 1) Forces margin bottom to 2rem on small screens and 4rem on large screens
+  */
+.cre8-u-margin-bottom-xl-xxl {
+  margin-bottom: size(4) !important;
+
+  @media all and (min-width:$cre8-breakpoint-md) {
+    margin-bottom: size(8) !important;
+  }
+}
+
+/**
+  * Margin left none
+  * 1) Forces margin left to 0
+  */
+.cre8-u-margin-left-none {
+  margin-left: 0 !important;
+}
+
+/**
+  * Margin left small
+  * 1) Forces margin left to 0.5rem
+  */
+.cre8-u-margin-left-sm {
+  margin-left: size(1) !important;
+}
+
+/**
+  * Margin left medium
+  * 1) Forces margin left to 1rem
+  */
+.cre8-u-margin-left-md {
+  margin-left: size(2) !important;
+}
+
+/**
+  * Margin left large
+  * 1) Forces margin left to 1.5rem
+  */
+.cre8-u-margin-left-lg {
+  margin-left: size(3) !important;
+}
+
+/**
+  * Margin left xl
+  * 1) Forces margin left to 2rem
+  */
+.cre8-u-margin-left-xl {
+  margin-left: size(4) !important;
+}
+
+/**
+  * Margin left xxl
+  * 1) Forces margin left to 4rem
+  */
+.cre8-u-margin-left-xxl {
+  margin-left: size(8) !important;
+}
+
+/**
+* #PADDING
+*/
+
+/**
+  * Padding none
+  * 1) Forces padding none to 0
+  */
+.cre8-u-padding-none {
+  padding: 0 !important;
+}
+
+/**
+  * Padding small
+  * 1) Forces padding small to 0.5rem
+  */
+.cre8-u-padding-sm {
+  padding: size(1) !important;
+}
+
+/**
+  * Padding medium
+  * 1) Forces padding medium to 1rem
+  */
+.cre8-u-padding-md {
+  padding: size(2) !important;
+}
+
+/**
+  * Padding large
+  * 1) Forces padding large to size(3)
+  */
+.cre8-u-padding-lg {
+  padding: size(3) !important;
+}
+
+/**
+  * Padding xl
+  * 1) Forces padding xl to 2rem
+  */
+.cre8-u-padding-xl {
+  padding: size(4) !important;
+}
+
+/**
+  * Padding xxl
+  * 1) Forces padding xxl to 4rem
+  */
+.cre8-u-padding-xxl {
+  padding: size(8) !important;
+}
+
+/**
+  * Padding top none
+  * 1) Forces padding top to 0
+  */
+.cre8-u-padding-top-none {
+  padding-top: 0 !important;
+}
+
+/**
+  * Padding top small
+  * 1) Forces padding top to 0.5rem
+  */
+.cre8-u-padding-top-sm {
+  padding-top: size(1) !important;
+}
+
+/**
+  * Padding top medium
+  * 1) Forces padding top to 1rem
+  */
+.cre8-u-padding-top-md {
+  padding-top: size(2) !important;
+}
+
+/**
+  * Padding top large
+  * 1) Forces padding top to size(3)
+  */
+.cre8-u-padding-top-lg {
+  padding-top: size(3) !important;
+}
+
+/**
+  * Padding top xl
+  * 1) Forces padding top to 2rem
+  */
+.cre8-u-padding-top-xl {
+  padding-top: size(4) !important;
+}
+
+/**
+  * Padding top xxl
+  * 1) Forces padding top xxl to 4rem
+  */
+.cre8-u-padding-top-xxl {
+  padding-top: size(8) !important;
+}
+
+/**
+    * Padding right none
+    * 1) Forces padding right to 0
+    */
+.cre8-u-padding-right-none {
+  padding-right: 0 !important;
+}
+
+/**
+  * Padding right small
+  * 1) Forces padding right to 0.5rem
+  */
+.cre8-u-padding-right-sm {
+  padding-right: size(1) !important;
+}
+
+/**
+  * Padding right medium
+  * 1) Forces padding right to 1rem
+  */
+.cre8-u-padding-right-md {
+  padding-right: size(2) !important;
+}
+
+/**
+    * Padding right large
+    * 1) Forces padding right to size(3)
+    */
+.cre8-u-padding-right-lg {
+  padding-right: size(3) !important;
+}
+
+/**
+    * Padding right xl
+    * 1) Forces padding right to 2rem
+    */
+.cre8-u-padding-right-xl {
+  padding-right: size(4) !important;
+}
+
+/**
+  * Padding right xxl
+  * 1) Forces padding right xxl to 4rem
+  */
+.cre8-u-padding-right-xxl {
+  padding-right: size(8) !important;
+}
+
+/**
+  * Padding bottom none
+  * 1) Forces padding bottom to 0
+  */
+.cre8-u-padding-bottom-none {
+  padding-bottom: 0 !important;
+}
+
+/**
+  * Padding bottom small
+  * 1) Forces padding bottom to 0.5rem
+  */
+.cre8-u-padding-bottom-sm {
+  padding-bottom: size(1) !important;
+}
+
+/**
+  * Padding bottom medium
+  * 1) Forces padding bottom to 1rem
+  */
+.cre8-u-padding-bottom-md {
+  padding-bottom: size(2) !important;
+}
+
+/**
+  * Padding bottom large
+  * 1) Forces padding bottom to size(3)
+  */
+.cre8-u-padding-bottom-lg {
+  padding-bottom: size(3) !important;
+}
+
+/**
+  * Padding bottom xl
+  * 1) Forces padding bottom to 2rem
+  */
+.cre8-u-padding-bottom-xl {
+  padding-bottom: size(4) !important;
+}
+
+/**
+  * Padding bottom xxl
+  * 1) Forces padding bottom xxl to 4rem
+  */
+.cre8-u-padding-bottom-xxl {
+  padding-bottom: size(8) !important;
+}
+
+/**
+  * Padding left none
+  * 1) Forces padding left to 0
+  */
+.cre8-u-padding-left-none {
+  padding-left: 0 !important;
+}
+
+/**
+  * Padding left small
+  * 1) Forces padding left to 0.5rem
+  */
+.cre8-u-padding-left-sm {
+  padding-left: size(1) !important;
+}
+
+/**
+  * Padding left medium
+  * 1) Forces padding left to 1rem
+  */
+.cre8-u-padding-left-md {
+  padding-left: size(2) !important;
+}
+
+/**
+  * Padding left large
+  * 1) Forces padding left to 1.5rem
+  */
+.cre8-u-padding-left-lg {
+  padding-left: size(3) !important;
+}
+
+/**
+  * Padding left xl
+  * 1) Forces padding left to 2rem
+  */
+.cre8-u-padding-left-xl {
+  padding-left: size(4) !important;
+}
+
+/**
+  * Padding left xxl
+  * 1) Forces padding left xxl to 4rem
+  */
+.cre8-u-padding-left-xxl {
+  padding-left: size(8) !important;
+}

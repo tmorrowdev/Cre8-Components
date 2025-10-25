@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Component Style Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .demo-card {
+            background: white;
+            margin: 20px 0;
+            border-radius: 8px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Card Component Style Test</h1>
+    <p>This page tests that the card component has its styles properly bundled.</p>
+
+    <div class="demo-card">
+        <h2>Test 1: Basic Card</h2>
+        <cre8-card>
+            <div slot="header">
+                <h3>Card Header</h3>
+            </div>
+            <p>This is the card body content. The card should have proper styling applied.</p>
+            <div slot="footer">
+                <button>Footer Button</button>
+            </div>
+        </cre8-card>
+    </div>
+
+    <div class="demo-card">
+        <h2>Test 2: Horizontal Card</h2>
+        <cre8-card variant="horizontal">
+            <div slot="header">
+                <h3>Horizontal Header</h3>
+            </div>
+            <p>This card should display horizontally based on the variant attribute.</p>
+            <div slot="footer">
+                <button>Horizontal Footer</button>
+            </div>
+        </cre8-card>
+    </div>
+
+    <div class="demo-card">
+        <h2>Test 3: Bare Card</h2>
+        <cre8-card variant="bare">
+            <div slot="header">
+                <h3>Bare Card Header</h3>
+            </div>
+            <p>This is a bare variant card with minimal styling.</p>
+            <div slot="footer">
+                <button>Bare Footer</button>
+            </div>
+        </cre8-card>
+    </div>
+
+    <div class="demo-card">
+        <h2>Style Check Results</h2>
+        <div id="style-check">Checking component styles...</div>
+    </div>
+
+    <!-- Import the card component with bundled styles -->
+    <script type="module" src="./lib-test-card/components/card/card.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait a moment for the component to register and render
+            setTimeout(() => {
+                const styleResults = [];
+                
+                // Check if the component is registered
+                if (customElements.get('cre8-card')) {
+                    styleResults.push('✅ cre8-card component is registered');
+                } else {
+                    styleResults.push('❌ cre8-card component is NOT registered');
+                }
+                
+                // Check if components have rendered with correct classes
+                const cards = document.querySelectorAll('cre8-card');
+                if (cards.length > 0) {
+                    styleResults.push(`✅ Found ${cards.length} card components in DOM`);
+                    
+                    // Check the first card for shadow DOM and styles
+                    const firstCard = cards[0];
+                    if (firstCard.shadowRoot) {
+                        styleResults.push('✅ Card has shadow DOM');
+                        
+                        // Check for our CSS classes in shadow DOM
+                        const cardElement = firstCard.shadowRoot.querySelector('.cre8-c-card');
+                        if (cardElement) {
+                            styleResults.push('✅ Card has .cre8-c-card class applied');
+                            
+                            // Check computed styles
+                            const computedStyle = window.getComputedStyle(cardElement);
+                            if (computedStyle.display) {
+                                styleResults.push(`✅ Card display style: ${computedStyle.display}`);
+                            }
+                            if (computedStyle.flexDirection) {
+                                styleResults.push(`✅ Card flex-direction: ${computedStyle.flexDirection}`);
+                            }
+                        } else {
+                            styleResults.push('❌ Card does NOT have .cre8-c-card class');
+                        }
+                    } else {
+                        styleResults.push('❌ Card does NOT have shadow DOM');
+                    }
+                } else {
+                    styleResults.push('❌ No card components found in DOM');
+                }
+                
+                // Display results
+                document.getElementById('style-check').innerHTML = 
+                    '<strong>Style Bundle Test Results:</strong><br>' + 
+                    styleResults.join('<br>');
+                
+                // Console output for debugging
+                console.log('Card Style Test Results:', styleResults);
+                
+                // Log component definition
+                const CardClass = customElements.get('cre8-card');
+                if (CardClass) {
+                    console.log('Card component class:', CardClass);
+                    console.log('Card component has styles:', !!CardClass.styles);
+                }
+                
+            }, 100);
+        });
+    </script>
+</body>
+</html>

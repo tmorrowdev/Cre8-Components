@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReactiveElement + LitElement Bundle Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .status {
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+        .code {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 ReactiveElement + LitElement Bundle Test</h1>
+    <p>This test verifies that ReactiveElement and LitElement are fully bundled and working in the component.</p>
+
+    <div class="test-section">
+        <h2>Test Component</h2>
+        <cre8-card id="test-card" variant="horizontal">
+            <div slot="header">
+                <h3>Reactive Properties Test</h3>
+            </div>
+            <div>
+                <p><strong>Current variant:</strong> <span id="current-variant">horizontal</span></p>
+                <p><strong>Component ready:</strong> <span id="component-ready">Checking...</span></p>
+                <button id="change-variant">Change Variant</button>
+            </div>
+            <div slot="footer">
+                <small>ReactiveElement should react to property changes</small>
+            </div>
+        </cre8-card>
+    </div>
+
+    <div class="test-section">
+        <h2>Bundle Analysis</h2>
+        <div id="bundle-results">Analyzing bundle...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>Component Introspection</h2>
+        <div id="component-analysis">Loading component...</div>
+    </div>
+
+    <!-- ONLY import the component - no other dependencies -->
+    <script type="module" src="./lib-test-card/components/card/card.js"></script>
+    
+    <script>
+        let currentVariant = 'horizontal';
+        const variants = ['horizontal', 'bare', 'horizontal-bare', undefined];
+        let variantIndex = 0;
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                runTests();
+                setupInteractivity();
+            }, 200);
+        });
+        
+        function runTests() {
+            const results = [];
+            
+            // Test 1: Component Registration
+            const CardClass = customElements.get('cre8-card');
+            if (CardClass) {
+                results.push({ msg: '✅ Component registered successfully', type: 'success' });
+                
+                // Test 2: Inheritance Chain Analysis
+                const card = document.getElementById('test-card');
+                if (card) {
+                    results.push({ msg: '✅ Component instance exists', type: 'success' });
+                    
+                    // Test ReactiveElement features
+                    if (card.shadowRoot) {
+                        results.push({ msg: '✅ Shadow DOM created (ReactiveElement working)', type: 'success' });
+                    } else {
+                        results.push({ msg: '❌ No shadow DOM (ReactiveElement missing)', type: 'error' });
+                    }
+                    
+                    // Test LitElement features
+                    if (typeof card.render === 'function') {
+                        results.push({ msg: '✅ render() method exists (LitElement working)', type: 'success' });
+                    } else {
+                        results.push({ msg: '❌ No render() method (LitElement missing)', type: 'error' });
+                    }
+                    
+                    // Test property reactivity
+                    if (card.hasOwnProperty('variant') || 'variant' in card) {
+                        results.push({ msg: '✅ Reactive properties available', type: 'success' });
+                    } else {
+                        results.push({ msg: '⚠️ Variant property not detected', type: 'info' });
+                    }
+                    
+                    // Test property descriptor (ReactiveElement feature)
+                    const descriptor = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(card), 'variant') ||
+                                     Object.getOwnPropertyDescriptor(card.constructor.prototype, 'variant');
+                    if (descriptor) {
+                        results.push({ msg: '✅ Property descriptors working (ReactiveElement)', type: 'success' });
+                    }
+                    
+                    // Test update mechanism
+                    if (typeof card.requestUpdate === 'function') {
+                        results.push({ msg: '✅ requestUpdate() available (ReactiveElement)', type: 'success' });
+                    } else {
+                        results.push({ msg: '❌ requestUpdate() missing (ReactiveElement issue)', type: 'error' });
+                    }
+                    
+                    // Test lifecycle
+                    if (typeof card.connectedCallback === 'function') {
+                        results.push({ msg: '✅ Lifecycle methods available', type: 'success' });
+                    }
+                    
+                } else {
+                    results.push({ msg: '❌ Component instance not found', type: 'error' });
+                }
+                
+                // Test 3: Class Analysis
+                const proto = CardClass.prototype;
+                const inheritanceChain = [];
+                let current = proto;
+                
+                while (current && current !== Object.prototype) {
+                    inheritanceChain.push(current.constructor.name || 'Anonymous');
+                    current = Object.getPrototypeOf(current);
+                }
+                
+                results.push({ 
+                    msg: `✅ Inheritance chain: ${inheritanceChain.join(' → ')}`, 
+                    type: 'info' 
+                });
+                
+            } else {
+                results.push({ msg: '❌ Component not registered', type: 'error' });
+            }
+            
+            // Display results
+            document.getElementById('bundle-results').innerHTML = results.map(r => 
+                `<div class="status ${r.type}">${r.msg}</div>`
+            ).join('');
+            
+            // Component analysis
+            const card = document.getElementById('test-card');
+            if (card && CardClass) {
+                const analysis = `
+                    <div class="code">
+                    <strong>Component Class:</strong> ${CardClass.name}<br>
+                    <strong>Observed Attributes:</strong> ${CardClass.observedAttributes ? CardClass.observedAttributes.join(', ') : 'None'}<br>
+                    <strong>Has Shadow Root:</strong> ${!!card.shadowRoot}<br>
+                    <strong>Shadow Root Mode:</strong> ${card.shadowRoot ? card.shadowRoot.mode : 'N/A'}<br>
+                    <strong>Element Properties:</strong> ${CardClass.elementProperties ? CardClass.elementProperties.size : 'N/A'}<br>
+                    <strong>Current Variant:</strong> ${card.variant || 'default'}
+                    </div>
+                `;
+                document.getElementById('component-analysis').innerHTML = analysis;
+            }
+        }
+        
+        function setupInteractivity() {
+            const card = document.getElementById('test-card');
+            const button = document.getElementById('change-variant');
+            const variantSpan = document.getElementById('current-variant');
+            const readySpan = document.getElementById('component-ready');
+            
+            if (card && button) {
+                readySpan.textContent = '✅ Ready';
+                readySpan.style.color = 'green';
+                
+                button.addEventListener('click', () => {
+                    variantIndex = (variantIndex + 1) % variants.length;
+                    const newVariant = variants[variantIndex];
+                    
+                    // Test ReactiveElement property setting
+                    if (newVariant) {
+                        card.variant = newVariant;
+                        card.setAttribute('variant', newVariant);
+                    } else {
+                        card.removeAttribute('variant');
+                        delete card.variant;
+                    }
+                    
+                    variantSpan.textContent = newVariant || 'default';
+                    
+                    console.log('🔄 Variant changed to:', newVariant);
+                    console.log('📋 Component state:', {
+                        variant: card.variant,
+                        attribute: card.getAttribute('variant'),
+                        shadowRoot: !!card.shadowRoot
+                    });
+                });
+            } else {
+                readySpan.textContent = '❌ Not ready';
+                readySpan.style.color = 'red';
+            }
+        }
+        
+        // Global error handling
+        window.addEventListener('error', (e) => {
+            console.error('🚨 Error:', e.error);
+            document.getElementById('bundle-results').innerHTML += 
+                `<div class="status error">❌ Runtime Error: ${e.message}</div>`;
+        });
+        
+        console.log('🧪 ReactiveElement + LitElement test initialized');
+    </script>
+</body>
+</html>

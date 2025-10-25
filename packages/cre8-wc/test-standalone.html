@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cre8 Components Standalone Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-section {
+            margin: 40px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .test-section h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .import-method {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cre8 Web Components - Standalone Usage Test</h1>
+    
+    <div class="test-section">
+        <h2>1. Individual Component Import (ES Module)</h2>
+        <div class="import-method">
+            &lt;script type="module" src="./lib-components/card/components/card/card.js"&gt;&lt;/script&gt;
+        </div>
+        <cre8-card>
+            <h3>Card Component Test</h3>
+            <p>This card component was imported individually with all dependencies bundled.</p>
+        </cre8-card>
+    </div>
+
+    <div class="test-section">
+        <h2>2. Button Component</h2>
+        <div class="import-method">
+            &lt;script type="module" src="./lib-components/cre8-element/components/cre8-element/cre8-element.js"&gt;&lt;/script&gt;<br>
+            &lt;script type="module" src="./lib-components/cre8-form-element/components/cre8-form-element/cre8-form-element.js"&gt;&lt;/script&gt;
+        </div>
+        <p>Base components loaded for button functionality.</p>
+    </div>
+
+    <div class="test-section">
+        <h2>3. Layout Components</h2>
+        <cre8-layout>
+            <cre8-layout-container>
+                <h3>Layout Container Test</h3>
+                <p>Testing layout components with bundled dependencies.</p>
+            </cre8-layout-container>
+        </cre8-layout>
+    </div>
+
+    <div class="test-section">
+        <h2>Usage Instructions</h2>
+        <h3>Individual Component Usage:</h3>
+        <ol>
+            <li><strong>ES Module Import:</strong> Use <code>&lt;script type="module" src="./lib-components/{component-name}/components/{component-name}/{component-name}.js"&gt;&lt;/script&gt;</code></li>
+            <li><strong>Dependencies:</strong> All Lit and other dependencies are bundled, no additional imports needed</li>
+            <li><strong>Web Components:</strong> Once imported, use components as regular HTML elements</li>
+        </ol>
+        
+        <h3>Available Individual Components:</h3>
+        <ul>
+            <li>cre8-element (base component)</li>
+            <li>cre8-form-element (base form component)</li>
+            <li>cre8-field (base field component)</li>
+            <li>card</li>
+            <li>layout, layout-container</li>
+            <li>And many more... (check lib-components directory)</li>
+        </ul>
+    </div>
+
+    <!-- Load individual components -->
+    <script type="module" src="./lib-components/card/components/card/card.js"></script>
+    <script type="module" src="./lib-components/cre8-element/components/cre8-element/cre8-element.js"></script>
+    <script type="module" src="./lib-components/layout/components/layout/layout.js"></script>
+    <script type="module" src="./lib-components/layout-container/components/layout-container/layout-container.js"></script>
+
+    <script>
+        // Test that components are properly registered
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Testing component registration...');
+            
+            // Check if custom elements are defined
+            const testComponents = ['cre8-card', 'cre8-layout', 'cre8-layout-container'];
+            testComponents.forEach(componentName => {
+                if (customElements.get(componentName)) {
+                    console.log(`✅ ${componentName} is properly registered`);
+                } else {
+                    console.log(`❌ ${componentName} is not registered`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

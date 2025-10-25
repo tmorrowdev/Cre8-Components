@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Isolation Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .test-card {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .status {
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Component Isolation Test</h1>
+    <p>This page tests if the component works completely standalone without any external dependencies.</p>
+    
+    <div id="test-results">
+        <div class="status info">🔄 Testing component isolation...</div>
+    </div>
+
+    <div class="test-card">
+        <h2>Test Component</h2>
+        <cre8-card>
+            <div slot="header">
+                <h3>Isolated Card Test</h3>
+            </div>
+            <p><strong>If you can see this card with proper styling, then Lit and all dependencies are properly bundled!</strong></p>
+            <p>This component should work without any external CDN links or additional imports.</p>
+            <div slot="footer">
+                <em>Footer content - bundled styles should apply</em>
+            </div>
+        </cre8-card>
+    </div>
+
+    <!-- ONLY import the single component - NO other dependencies -->
+    <script type="module" src="./lib-test-card/components/card/card.js"></script>
+    
+    <script>
+        const results = [];
+        
+        function addResult(message, type = 'info') {
+            results.push({ message, type });
+            updateDisplay();
+        }
+        
+        function updateDisplay() {
+            const container = document.getElementById('test-results');
+            container.innerHTML = results.map(r => 
+                `<div class="status ${r.type}">${r.message}</div>`
+            ).join('');
+        }
+        
+        // Test 1: Check if component loads
+        document.addEventListener('DOMContentLoaded', () => {
+            addResult('📋 DOM loaded, testing component registration...', 'info');
+            
+            setTimeout(() => {
+                // Test 2: Component registration
+                if (customElements.get('cre8-card')) {
+                    addResult('✅ cre8-card component is registered', 'success');
+                    
+                    // Test 3: Component rendering
+                    const card = document.querySelector('cre8-card');
+                    if (card) {
+                        addResult('✅ Card component found in DOM', 'success');
+                        
+                        // Test 4: Shadow DOM
+                        if (card.shadowRoot) {
+                            addResult('✅ Card has shadow DOM (Lit is working)', 'success');
+                            
+                            // Test 5: Styles applied
+                            const cardElement = card.shadowRoot.querySelector('.cre8-c-card');
+                            if (cardElement) {
+                                addResult('✅ Card styles are applied (.cre8-c-card found)', 'success');
+                                
+                                // Test 6: Check computed styles
+                                const computedStyle = window.getComputedStyle(cardElement);
+                                if (computedStyle.display === 'flex') {
+                                    addResult('✅ CSS styles working (display: flex detected)', 'success');
+                                } else {
+                                    addResult(`⚠️ CSS may not be fully applied (display: ${computedStyle.display})`, 'error');
+                                }
+                                
+                                // Test 7: Check for slots
+                                const headerSlot = card.shadowRoot.querySelector('slot[name="header"]');
+                                const bodySlot = card.shadowRoot.querySelector('slot:not([name])');
+                                const footerSlot = card.shadowRoot.querySelector('slot[name="footer"]');
+                                
+                                if (headerSlot && bodySlot && footerSlot) {
+                                    addResult('✅ All slots are working (Lit templating working)', 'success');
+                                } else {
+                                    addResult('❌ Some slots missing (Lit may not be fully bundled)', 'error');
+                                }
+                                
+                                // Final result
+                                addResult('🎉 ISOLATION TEST PASSED - Component is fully standalone!', 'success');
+                                
+                            } else {
+                                addResult('❌ No .cre8-c-card element found (styles not applied)', 'error');
+                            }
+                        } else {
+                            addResult('❌ No shadow DOM (Lit not working)', 'error');
+                        }
+                    } else {
+                        addResult('❌ Card component not found in DOM', 'error');
+                    }
+                } else {
+                    addResult('❌ cre8-card component not registered', 'error');
+                }
+                
+                // Debug info
+                console.log('🔍 Debug Info:');
+                console.log('Custom elements registry:', customElements);
+                console.log('Card class:', customElements.get('cre8-card'));
+                console.log('Global Lit presence:', {
+                    LitElement: window.LitElement,
+                    html: window.html,
+                    css: window.css
+                });
+                
+            }, 200);
+        });
+        
+        // Test for any errors
+        window.addEventListener('error', (e) => {
+            addResult(`❌ JavaScript Error: ${e.message}`, 'error');
+        });
+        
+        // Test for module load errors
+        window.addEventListener('unhandledrejection', (e) => {
+            addResult(`❌ Module Error: ${e.reason}`, 'error');
+        });
+    </script>
+</body>
+</html>
