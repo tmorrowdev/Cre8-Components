@@ -45,7 +45,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  * 1) Container to place things like badges after an item
  */
 .cre8-c-link-list__item-before {
-  margin-right: size(1);
+  margin-right: calc(var(--size-base-unit) * 1);
 }
 
 /**
@@ -53,12 +53,12 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  * 1) Container to place things like badges after an item
  */
 .cre8-c-link-list__item-after {
-  margin-left: size(1);
+  margin-left: calc(var(--size-base-unit) * 1);
 }
 
 ::slotted(cre8-icon-legacy) {
-  --cre8-icon-height: #{size(3)};
-  --cre8-icon-width: #{size(3)};
+  --cre8-icon-height: #{calc(var(--size-base-unit) * 3)};
+  --cre8-icon-width: #{calc(var(--size-base-unit) * 3)};
 }
 `;
 export default styles;

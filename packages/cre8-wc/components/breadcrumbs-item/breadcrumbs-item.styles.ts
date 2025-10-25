@@ -26,12 +26,12 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 * Breadcrumbs icon
 */
 cre8-icon {
-  margin-left: size(1);
+  margin-left: calc(var(--size-base-unit) * 1);
   color: var(--cre8-color-content-subtle);
   display: inline-flex;
   svg {
-    height: size(2);
-    width: size(2);
+    height: calc(var(--size-base-unit) * 2);
+    width: calc(var(--size-base-unit) * 2);
   }
 }
 `;

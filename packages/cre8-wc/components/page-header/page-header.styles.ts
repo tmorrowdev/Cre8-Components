@@ -5,7 +5,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  * 1) Headline of a page with an h1 heading and optional description
  */
 .cre8-c-page-header {
-  margin-bottom: size(4);
+  margin-bottom: calc(var(--size-base-unit) * 4);
 }
 
 /**
@@ -24,8 +24,8 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 .cre8-c-page-header__title-after {
   display: inline-block;
   position: relative;
-  bottom: size(1.25);
-  margin-left: size(2);
+  bottom: calc(var(--size-base-unit) * 1.25);
+  margin-left: calc(var(--size-base-unit) * 2);
 }
 
 /**

@@ -14,6 +14,7 @@
   "scripts": {
     "start": "pnpm cre8-wc:start",
     "cre8-wc:build": "pnpm workspace @cre8/cre8-wc build",
+    "cre8-wc:build-cdn": "pnpm workspace @cre8/cre8-wc build-cdn",
     "cre8-wc:lint": "pnpm workspace @cre8/cre8-wc lint",
     "cre8-wc:format": "pnpm workspace @cre8/cre8-wc format",
     "cre8-wc:start": "pnpm workspace @cre8/cre8-wc start",
@@ -36,7 +37,7 @@
   "private": true,
   "dependencies": {
     "@cre8_dev/cre8-design-tokens": "1.0.3",
-    "@cre8_dev/cre8-icons": "file:cre8_dev-cre8-icons-0.11.0.tgz",
+    "@cre8_dev/cre8-icons": "^1.0.0",
     "@lit/react": "^1.0.7",
     "agentrpc": "^0.0.16",
     "classnames": "2.3.2",

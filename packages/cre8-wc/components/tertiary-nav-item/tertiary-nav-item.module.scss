@@ -14,8 +14,8 @@
   @include cre8-typography-body-default();
   display: flex;
   align-items: center;
-  gap: size(1); 
-  padding: size(1) size(1) size(1) size(2);
+  gap: calc(var(--size-base-unit) * 1); 
+  padding: calc(var(--size-base-unit) * 1) calc(var(--size-base-unit) * 1) calc(var(--size-base-unit) * 1) calc(var(--size-base-unit) * 2);
   color: var(--cre8-color-content-brand-strong);
   background-color: var(--cre8-color-bg-default);
   border-block-end: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-default);

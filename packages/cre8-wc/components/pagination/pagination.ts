@@ -5,10 +5,10 @@ import {
 } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { property, queryAll, state } from 'lit/decorators.js';
-import svgCaretLeft from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Left.svg?raw';
-import svgFirstPage from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Double_Left.svg?raw';
-import svgLastPage from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Double_Right.svg?raw';
-import svgCaretRight from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Right.svg?raw';
+import svgCaretLeft from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret_Left.svg?raw';
+import svgFirstPage from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret_Double_Left.svg?raw';
+import svgLastPage from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret_Double_Right.svg?raw';
+import svgCaretRight from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret_Right.svg?raw';
 import { Cre8Element } from '../cre8-element';
 import {Cre8Button} from '../button/button';
 import { isMobile, screenSizes } from '../../utilities/is-mobile';
@@ -89,13 +89,13 @@ export class Cre8Pagination extends Cre8Element {
    * how many elements will displayVariant per page, indicated by business to typically be 20
    * @attr number
    */
-  @property({ type: Number, reflect: true })
-  get pagesize() {
-      return this._pageSize;
+  @property()
+  get pagesize(_pageSize: number ) {
+      return _pageSize;
   }
 
-  set pagesize(newSize: number) {
-      const oldSize = this._pageSize;
+  set pagecalc(size: number, newSize:number) {
+      const oldSize = size;
       this._pageSize = newSize;
       this.requestUpdate('pageSize', oldSize);
   }
@@ -187,11 +187,11 @@ export class Cre8Pagination extends Cre8Element {
       return this._currentPage >= this.totalPages;
   }
 
-  private _onHandleResize() {
+  private _onHandleRecalc(size: number ) {
       this.requestUpdate();
   }
 
-  handleResize() {
+  handleRecalc() {
       this._onHandleResize.bind(this);
   }
 
@@ -217,7 +217,7 @@ export class Cre8Pagination extends Cre8Element {
           if (this.windowWidth !== window.innerWidth) {
               const oldWidth = this.windowWidth;
               this.windowWidth = window.innerWidth;
-              this.handleResize();
+              this.handleRecalc(var(--size-base-unit) * );
               this.requestUpdate('isResponsive', oldWidth);
           }
       });

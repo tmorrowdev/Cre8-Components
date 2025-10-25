@@ -62,7 +62,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 * 1) Container used to place items after the text link
 */
 .cre8-c-text-link__after {
-  margin-left: size(1);
+  margin-left: calc(var(--size-base-unit) * 1);
 }
 `;
 export default styles;

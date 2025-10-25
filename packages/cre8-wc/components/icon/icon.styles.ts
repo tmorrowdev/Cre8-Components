@@ -19,8 +19,8 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 }
 
 .cre8-c-icon {
-  height: var(--cre8-icon-height, size(2));
-  width: var(--cre8-icon-width, size(2));
+  height: var(--cre8-icon-height, calc(var(--size-base-unit) * 2));
+  width: var(--cre8-icon-width, calc(var(--size-base-unit) * 2));
   fill: var(--cre8-icon-fill, currentColor);
 }  
 // stylelint-disable selector-no-qualifying-type, max-nesting-depth

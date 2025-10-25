@@ -32,13 +32,13 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  * 2) Take up the remaining space on medr screens
  */
 .cre8-c-feature__body {
-  margin-bottom: size(4);
+  margin-bottom: calc(var(--size-base-unit) * 4);
 
   @media all and (min-width:$cre8-breakpoint-md) {
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding-right: size(4);
+    padding-right: calc(var(--size-base-unit) * 4);
     margin-bottom: 0;
   }
 }

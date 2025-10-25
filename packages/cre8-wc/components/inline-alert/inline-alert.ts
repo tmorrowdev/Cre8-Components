@@ -1,8 +1,8 @@
-import svgWarningFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Warning.svg?raw';
-import svgCheckCircle from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Check.svg?raw';
-import svgInfoFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Info.svg?raw';
-import svgErrorFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Error.svg?raw';
-import svgHelpFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Help.svg?raw';
+import svgWarningFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
+import svgCheckCircle from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
+import svgInfoFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
+import svgErrorFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Error.svg?raw';
+import svgHelpFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Help.svg?raw';
 import { html, nothing,  } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';

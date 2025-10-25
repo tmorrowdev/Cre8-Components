@@ -16,7 +16,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   margin: 0;
   padding: 0;
   list-style: none;
-  gap: size(1);
+  gap: calc(var(--size-base-unit) * 1);
 }
 `;
 export default styles;

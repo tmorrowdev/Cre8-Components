@@ -1,1 +1,19 @@
-.cre8-u-display-flex{display:flex !important}.cre8-u-display-block{display:block !important}
+/**
+* #DISPLAY UTILITIES
+*/
+/**
+ * Display flex utility class
+ */
+.cre8-u-display-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+/**
+ * Display block utility class
+ */
+.cre8-u-display-block {
+  display: block !important;
+}
+/*# sourceMappingURL=display.css.map */

@@ -21,7 +21,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   --cre8-u-icon-display: flex;
   --cre8-u-icon-align-items: center;
   --cre8-u-icon-justify-content: center;
-  padding: size(3) size(1);
+  padding: calc(var(--size-base-unit) * 3) calc(var(--size-base-unit) * 1);
 }
 .cre8-c-accordion-item--small cre8-heading button {
   @include cre8-typography-title-default();
@@ -30,9 +30,9 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   @include cre8-typography-title-large();
 }
 .cre8-c-accordion-item__body {
-  margin-right: size(0);
-  margin-left: size(0);
-  padding: size(0);
+  margin-right: calc(var(--size-base-unit) * 0);
+  margin-left: calc(var(--size-base-unit) * 0);
+  padding: calc(var(--size-base-unit) * 0);
   overflow: hidden;
   visibility: hidden;
   transition: height var(--cre8-anim-fade-quick) var(--cre8-anim-ease), visibility var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
@@ -45,18 +45,18 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 .cre8-c-accordion-item__body-inner {
   display: flex;
   @include cre8-typography-body-default();
-  padding: size(1) size(6) size(0) size(1);
+  padding: calc(var(--size-base-unit) * 1) calc(var(--size-base-unit) * 6) calc(var(--size-base-unit) * 0) calc(var(--size-base-unit) * 1);
 }
 
 cre8-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: size(3);
-  min-height: size(3);
-  min-width: size(3);
+  height: calc(var(--size-base-unit) * 3);
+  min-height: calc(var(--size-base-unit) * 3);
+  min-width: calc(var(--size-base-unit) * 3);
   transition: transform var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
-  width: size(3);
+  width: calc(var(--size-base-unit) * 3);
 
   .cre8-c-accordion-item.cre8-is-active & {
     transform: rotate(180deg);
@@ -69,13 +69,13 @@ cre8-icon {
   border-radius: var(--cre8-border-radius-round);
   color: var(--cre8-color-content-knockout);
   display: flex;
-  height: size(4);
+  height: calc(var(--size-base-unit) * 4);
   justify-content: center;
-  margin-left: size(1);
-  margin-right: size(0.25);
-  min-height: size(4);
-  min-width: size(4);
-  width: size(4);
+  margin-left: calc(var(--size-base-unit) * 1);
+  margin-right: calc(var(--size-base-unit) * 0.25);
+  min-height: calc(var(--size-base-unit) * 4);
+  min-width: calc(var(--size-base-unit) * 4);
+  width: calc(var(--size-base-unit) * 4);
 
   .cre8-c-accordion-item.cre8-is-active & {
     background: var(--cre8-color-button-secondary-bg);
@@ -90,7 +90,7 @@ cre8-icon {
 
     &:focus {
       border-radius: var(--cre8-border-radius-default);
-      box-shadow: size(0) size(0) size(0) size(0.25) var(--cre8-color-border-active-outline);
+      box-shadow: calc(var(--size-base-unit) * 0) calc(var(--size-base-unit) * 0) calc(var(--size-base-unit) * 0) calc(var(--size-base-unit) * 0.25) var(--cre8-color-border-active-outline);
       outline: none;
 
       .cre8-c-accordion-item__icon {
@@ -114,7 +114,7 @@ cre8-icon {
   background-color: var(--cre8-color-bg-transparent);
   border: var(--cre8-border-width-none);
   cursor: pointer;
-  padding: size(0.5) size(1);
+  padding: calc(var(--size-base-unit) * 0.5) calc(var(--size-base-unit) * 1);
   overflow-x: hidden;
   transition: color var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
   width: 100%;
@@ -126,7 +126,7 @@ cre8-icon {
   &.cre8-u-justify-content-start {
     justify-content: flex-start;
     .cre8-c-accordion-item__icon-before {
-      margin-left: size(0);
+      margin-left: calc(var(--size-base-unit) * 0);
     }
   }
 
@@ -150,7 +150,7 @@ cre8-icon {
 
   &:focus {
     border-radius: var(--cre8-border-radius-default);
-    box-shadow: size(0) size(0) size(0) size(0.25) var(--cre8-color-border-active-outline);
+    box-shadow: calc(var(--size-base-unit) * 0) calc(var(--size-base-unit) * 0) calc(var(--size-base-unit) * 0) calc(var(--size-base-unit) * 0.25) var(--cre8-color-border-active-outline);
     outline: none;
 
     .cre8-c-accordion-item__icon {
@@ -167,12 +167,12 @@ cre8-icon {
 }
 .cre8-c-accordion-item--icon-before {
   .cre8-c-accordion-item__body {
-    margin-left: size(5);
+    margin-left: calc(var(--size-base-unit) * 5);
   }
 }
 
 .cre8-c-accordion-item__icon-before {
-  margin-right: size(1.5);
+  margin-right: calc(var(--size-base-unit) * 1.5);
 
   h4[slot='header'] {
     display: block;

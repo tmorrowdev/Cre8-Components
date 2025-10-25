@@ -13,7 +13,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  */
 .cre8-c-tertiary-nav {
   width: 100%;
-  max-width: size(30);
+  max-width: calc(var(--size-base-unit) * 30);
 }
 
 /**

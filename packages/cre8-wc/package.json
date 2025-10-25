@@ -6,6 +6,9 @@
   "scripts": {
     "start": "pnpm run build:custom-elements.json && pnpm run storybook",
     "build": "rm -rf lib && vite build && tsc",
+    "build-cdn": "rm -rf lib-cdn && vite build --config vite.cdn.config.ts",
+    "build-standalone": "rm -rf lib-standalone && vite build --config vite.standalone.config.ts",
+    "build-individual": "rm -rf lib-components && node build-individual-components.js",
     "build:watch": "vite build --watch",
     "build:custom-elements.json": "npx @custom-elements-manifest/analyzer analyze --litelement --globs \"components/*/*.ts\" --outdir .storybook",
     "test": "jest --verbose",
@@ -58,6 +61,7 @@
   "dependencies": {
     "@a11y/focus-trap": "^1.0.5",
     "@cre8_dev/cre8-design-tokens": "1.0.3",
+    "@cre8_dev/cre8-icons": "^1.0.2",
     "agentrpc": "^0.0.16",
     "chart.js": "^4.4.9",
     "classnames": "2.3.2",
@@ -120,6 +124,7 @@
     "react-docgen-typescript": "^2.2.2",
     "react-dom": "^19.1.0",
     "sanitize-html": "^2.11.0",
+    "sass": "^1.91.0",
     "storybook": "^9.0.2",
     "style-dictionary": "^3.1.1",
     "style-loader": "^3.3.3",

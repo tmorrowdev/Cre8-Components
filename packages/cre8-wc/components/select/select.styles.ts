@@ -30,7 +30,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  */
 .cre8-c-select__input {
   @include input-styles;
-  padding-inline-end: size(5.5);
+  padding-inline-end: calc(var(--size-base-unit) * 5.5);
   cursor: pointer;
 }
 
@@ -42,11 +42,11 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   position: absolute;
   inset-block-start: 50%;
   transform: translateY(-50%);
-  inset-inline-end: size(1);
+  inset-inline-end: calc(var(--size-base-unit) * 1);
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: size(1);
+  gap: calc(var(--size-base-unit) * 1);
   pointer-events: none;
 }
 
@@ -54,9 +54,9 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  * Select Arrow Icon
  */
 .cre8-c-select__icon-arrow {
-  margin-right: size(0.75);
-  width: size(1.5);
-  height: size(1.5);
+  margin-right: calc(var(--size-base-unit) * 0.75);
+  width: calc(var(--size-base-unit) * 1.5);
+  height: calc(var(--size-base-unit) * 1.5);
 }
 
 /**

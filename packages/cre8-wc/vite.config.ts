@@ -3,16 +3,13 @@ import { glob } from 'glob';
 import fs from 'fs';
 
 // Get base components
-const baseComponents = glob.sync('./components/*.ts').reduce((acc, baseComponentPath) => {
-  const name = baseComponentPath.replace('./components/', '').replace('.ts', '');
-  acc[name] = baseComponentPath;
-  return acc;
-}, {} as Record<string, string>);
+const baseComponents: Record<string, string> & {} = {}
 
 // Only cre8-element and cre8-form-element are in the above location
 // To allow extending off a web component it must be listed below
 baseComponents['cre8-field'] = './components/field/field.ts';
-
+baseComponents['cre8-element'] = './components/cre8-element.ts'
+baseComponents['cre8-form-element'] = './components/cre8-form-element.ts'
 // Get all component files
 const components = glob.sync('./components/*/*.ts').reduce((acc, componentPath) => {
   // Exclude stories files

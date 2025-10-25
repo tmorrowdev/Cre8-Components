@@ -10,5 +10,5 @@
  */
  .cre8-c-pagination__text{
   @include cre8-typography-label-small();
-  padding: size(1);
+  padding: calc(var(--size-base-unit) * 1);
  }

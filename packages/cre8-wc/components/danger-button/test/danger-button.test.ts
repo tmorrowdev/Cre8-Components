@@ -1,5 +1,5 @@
-import svgCaretLeft from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Left.svg?raw?raw';
-import svgCaretRight from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Right.svg?raw?raw';
+import svgCaretLeft from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret_Left.svg?raw?raw';
+import svgCaretRight from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret_Right.svg?raw?raw';
 import { fixture, oneEvent } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../danger-button';

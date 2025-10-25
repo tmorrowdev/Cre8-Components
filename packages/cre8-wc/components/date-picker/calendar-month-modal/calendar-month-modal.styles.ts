@@ -2,7 +2,7 @@ import { css } from 'lit';
 const styles = css`@import '../../design-tokens/core/scss/theming/component';
 
 .cre8-c-calendar-month-modal {
-  padding: size(1);
+  padding: calc(var(--size-base-unit) * 1);
 }
 
 /* grid */

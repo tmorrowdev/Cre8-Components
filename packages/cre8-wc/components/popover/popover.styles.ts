@@ -27,21 +27,21 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  inset-block-start: calc(100% + #{size(1.5)});
+  inset-block-start: calc(100% + #{calc(var(--size-base-unit) * 1.5)});
   inset-block-end: auto;
   inset-inline-start: 50%;
   inset-inline-end: auto;
   transform: translateX(var(--rtlTranslateX, -50%));
   display: flex;
   flex-direction: column;
-  gap: size(1);
-  width: size(32);
+  gap: calc(var(--size-base-unit) * 1);
+  width: calc(var(--size-base-unit) * 32);
   z-index: 400; /* 1 */
   background-color: var(--cre8-color-bg-default);
   border: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
   border-radius: var(--cre8-border-radius-default);
   box-shadow: var(--cre8-shadow-default);
-  padding: size(2);
+  padding: calc(var(--size-base-unit) * 2);
 
   /**
    * Focus state for popover panel
@@ -71,7 +71,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
    */
   .cre8-c-popover--top & {
     inset-block-start: auto;
-    inset-block-end: calc(100% + #{size(1.5)});
+    inset-block-end: calc(100% + #{calc(var(--size-base-unit) * 1.5)});
     inset-inline-start: 50%;
     inset-inline-end: auto;
     transform: translateX(var(--rtlTranslateX, -50%));
@@ -84,7 +84,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
     inset-block-start: 50%;
     inset-block-end: auto;
     inset-inline-start: auto;
-    inset-inline-end: calc(100% + #{size(1.5)});
+    inset-inline-end: calc(100% + #{calc(var(--size-base-unit) * 1.5)});
     transform: translateY(-50%);
   }
 
@@ -94,7 +94,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   .cre8-c-popover--right & {
     inset-block-start: 50%;
     inset-block-end: auto;
-    inset-inline-start: calc(100% + #{size(1.5)});
+    inset-inline-start: calc(100% + #{calc(var(--size-base-unit) * 1.5)});
     inset-inline-end: auto;
     transform: translateY(-50%);
   }
@@ -106,14 +106,14 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 .cre8-c-popover__panel::before {
   content: '';
   display: block;
-  width: size(1.5);
-  height: size(1.5);
+  width: calc(var(--size-base-unit) * 1.5);
+  height: calc(var(--size-base-unit) * 1.5);
   position: absolute;
   margin: auto;
   background-color: var(--cre8-color-bg-default);
   border-block-start: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
   border-inline-start: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
-  inset-block-start: calc((var(--cre8-border-width-default) + #{size(0.75)}) * -1);
+  inset-block-start: calc((var(--cre8-border-width-default) + #{calc(var(--size-base-unit) * 0.75)}) * -1);
   inset-inline-start: 50%;
   transform: translateX(var(--rtlTranslateX, -50%)) rotate(45deg);
 
@@ -122,7 +122,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
    */
   .cre8-c-popover--top & {
     inset-block-start: auto;
-    inset-block-end: calc((var(--cre8-border-width-default) + #{size(0.75)}) * -1);
+    inset-block-end: calc((var(--cre8-border-width-default) + #{calc(var(--size-base-unit) * 0.75)}) * -1);
     border-block-start: none;
     border-inline-start: none;
     border-block-end: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
@@ -136,7 +136,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
     inset-block-start: 50%;
     inset-block-end: auto;
     inset-inline-start: auto;
-    inset-inline-end: calc((var(--cre8-border-width-default) + #{size(0.75)}) * -1);
+    inset-inline-end: calc((var(--cre8-border-width-default) + #{calc(var(--size-base-unit) * 0.75)}) * -1);
     border-block-start: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
     border-inline-start: none;
     border-block-end: none;
@@ -150,7 +150,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   .cre8-c-popover--right & {
     inset-block-start: 50%;
     inset-block-end: auto;
-    inset-inline-start: calc((var(--cre8-border-width-default) + #{size(0.75)}) * -1);
+    inset-inline-start: calc((var(--cre8-border-width-default) + #{calc(var(--size-base-unit) * 0.75)}) * -1);
     inset-inline-end: auto;
     border-block-start: none;
     border-inline-start: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
@@ -166,7 +166,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  */
 .cre8-c-popover__footer {
   display: flex;
-  gap: size(2);
+  gap: calc(var(--size-base-unit) * 2);
 }
 `;
 export default styles;

@@ -7,7 +7,7 @@
  * 1) A major section of a page (<section> tag) with a title and optional description.
  */
 .cre8-c-section {
-  margin-bottom: size(4);
+  margin-bottom: calc(var(--size-base-unit) * 4);
   display: block;
 }
 
@@ -24,8 +24,8 @@
 * Section body
 */
 .cre8-c-section__body {
-  padding-top: size(2);
+  padding-top: calc(var(--size-base-unit) * 2);
   @media all and (min-width: component.$cre8-breakpoint-lg) {
-    padding-top: size(4);
+    padding-top: calc(var(--size-base-unit) * 4);
   }
 }

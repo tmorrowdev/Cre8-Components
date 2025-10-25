@@ -38,13 +38,13 @@ input[type="date"]::-webkit-input-placeholder {
 
 .cre8-c-date-picker__calendar-icon-button {
   position: absolute;
-  right: size(1);
+  right: calc(var(--size-base-unit) * 1);
   background: var(--cre8-color-bg-default);
   border: none;
   border-radius: 0;
 
-  --cre8-icon-height: size(3);
-  --cre8-icon-width: size(3); 
+  --cre8-icon-height: calc(var(--size-base-unit) * 3);
+  --cre8-icon-width: calc(var(--size-base-unit) * 3); 
 
   .cre8-c-date-picker--disabled &, .cre8-c-date-picker--read-only & {
     background: var(--cre8-color-bg-disabled);

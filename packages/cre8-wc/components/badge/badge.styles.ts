@@ -39,8 +39,8 @@ const styles = css`
 * Creating space between icon and text
 */
 cre8-icon {
-  height: var(--cre8-icon-height, size(2));
-  margin-right: size(0.5);
+  height: var(--cre8-icon-height, calc(var(--size-base-unit) * 2));
+  margin-right: calc(var(--size-base-unit) * 0.5);
 }
 
 /**

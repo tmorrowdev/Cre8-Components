@@ -20,7 +20,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 */
 .cre8-c-utility-nav__list {
   display: flex;
-  margin: size(-2) 0 0 size(-2);
+  margin: calc(var(--size-base-unit) * -2) 0 0 calc(var(--size-base-unit) * -2);
   padding: 0;
   list-style: none;
 
@@ -28,8 +28,8 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   * Slotted utility nav item
   */
   ::slotted(cre8-utility-nav-item) {
-    margin-left: size(2);
-    margin-top: size(2);
+    margin-left: calc(var(--size-base-unit) * 2);
+    margin-top: calc(var(--size-base-unit) * 2);
   }
 }
 `;

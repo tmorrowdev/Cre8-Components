@@ -7,7 +7,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   border-radius: var(--cre8-border-radius-default);
   border-width: var(--cre8-border-width-default);
   border-style: var(--cre8-border-style-default);
-  margin-top: size(0.5);
+  margin-top: calc(var(--size-base-unit) * 0.5);
   background-color: var(--cre8-color-bg-default);
   position: absolute;
 }
@@ -17,11 +17,11 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   display: inline-flex;
   justify-content: center;
   width: 100%;
-  padding-top: size(2);
-  padding-bottom: size(1);
+  padding-top: calc(var(--size-base-unit) * 2);
+  padding-bottom: calc(var(--size-base-unit) * 1);
 
   cre8-button + cre8-button {
-    padding-left: size(1);
+    padding-left: calc(var(--size-base-unit) * 1);
   }
 
   cre8-button {

@@ -9,8 +9,8 @@ dependencies:
     specifier: 1.0.3
     version: 1.0.3
   '@cre8_dev/cre8-icons':
-    specifier: file:cre8_dev-cre8-icons-0.11.0.tgz
-    version: file:cre8_dev-cre8-icons-0.11.0.tgz(webpack@5.98.0)
+    specifier: ^1.0.0
+    version: 1.0.0(webpack@5.98.0)
   '@lit/react':
     specifier: ^1.0.7
     version: 1.0.7(@types/react@18.2.13)
@@ -1588,6 +1588,15 @@ packages:
 
   /@cre8_dev/cre8-design-tokens@1.0.3:
     resolution: {integrity: sha512-qEy+1Cq34OK818m8qD7dFwFspbf2xlGdGA1uxyRjReohUg5fM72wbIiMX7mXm/j5jfx+ZRqnheSICJxK/qqHQQ==}
+    dev: false
+
+  /@cre8_dev/cre8-icons@1.0.0(webpack@5.98.0):
+    resolution: {integrity: sha512-VVi0ByI74VReOQg0pMUjLF8v5ADbGaKZpM8kv6E4Xra3C5Zcco2XbYvQa5gFo/wO8qcj+r77APRQOgfY/bNzjA==}
+    engines: {node: '>=20'}
+    dependencies:
+      raw-loader: 4.0.2(webpack@5.98.0)
+    transitivePeerDependencies:
+      - webpack
     dev: false
 
   /@cspotcode/source-map-support@0.8.1:
@@ -14048,16 +14057,4 @@ packages:
     resolution: {integrity: sha512-DDh2Ab+A/B+9mJyajPjHFPWfYU1H+pdun4wnnk0OcQTNjem1XQSZ2CDW+rfZEUDjv5M19SBqAkjZi0x5wuB5Qw==}
     dependencies:
       tslib: 2.3.0
-    dev: false
-
-  file:cre8_dev-cre8-icons-0.11.0.tgz(webpack@5.98.0):
-    resolution: {integrity: sha512-g40cl2thpWjPc9JvqnpZqmtg/VCAps/qukj4oit6mXvjDcCZEtWA5LHrqQa3JadSOOXgbKXTCPJG6X5/eHQtQA==, tarball: file:cre8_dev-cre8-icons-0.11.0.tgz}
-    id: file:cre8_dev-cre8-icons-0.11.0.tgz
-    name: '@cre8_dev/cre8-icons'
-    version: 0.11.0
-    engines: {node: '>=20'}
-    dependencies:
-      raw-loader: 4.0.2(webpack@5.98.0)
-    transitivePeerDependencies:
-      - webpack
     dev: false

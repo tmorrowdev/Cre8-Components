@@ -15,7 +15,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   flex-direction: column;
   height: 100%;
   width: 100%;
-  padding: size(2);
+  padding: calc(var(--size-base-unit) * 2);
   gap: 1rem;
   border-color: var(--cre8-color-border-default);
   border-width: var(--cre8-border-width-default);
@@ -77,8 +77,8 @@ input:checked + .cre8-c-select-tile {
 
     .cre8-c-select-tile__custom-radio {
       position: absolute;
-      top: size(1);
-      right: size(1);
+      top: calc(var(--size-base-unit) * 1);
+      right: calc(var(--size-base-unit) * 1);
     }
   }
 }
@@ -213,8 +213,8 @@ input:checked + .cre8-c-select-tile {
 
 @mixin cre8-c-select-radio-top-right($breakpoint: 0) {
   position: absolute;
-  top: size(1);
-  right: size(1);
+  top: calc(var(--size-base-unit) * 1);
+  right: calc(var(--size-base-unit) * 1);
   @if $breakpoint != 0 {
     @media all and (min-width: $breakpoint) {
       position: static;
@@ -228,8 +228,8 @@ input:checked + .cre8-c-select-tile {
 .cre8-c-select-tile__custom-radio {
   display: flex;
   flex: none;
-  height: size(3);
-  width: size(3);
+  height: calc(var(--size-base-unit) * 3);
+  width: calc(var(--size-base-unit) * 3);
   cursor: pointer;
   align-items: center;
   justify-content: center;
@@ -289,16 +289,16 @@ input:checked + .cre8-c-select-tile {
   display: none;
 
   cursor: pointer;
-  height: size(1.5);
-  width: size(1.5);
+  height: calc(var(--size-base-unit) * 1.5);
+  width: calc(var(--size-base-unit) * 1.5);
   background: var(--cre8-color-content-brand);
   border-radius: var(--cre8-border-radius-round);
 
   /** Check radio variant */
   .cre8-c-select-tile__custom-radio-check & {
     flex: none;
-    height: size(3);
-    width: size(3);
+    height: calc(var(--size-base-unit) * 3);
+    width: calc(var(--size-base-unit) * 3);
     align-items: center;
     justify-content: center;
   }
@@ -334,8 +334,8 @@ input:checked + .cre8-c-select-tile {
  .cre8-c-select-tile__custom-checkbox {
   display: flex;
   flex: none;
-  height: size(3);
-  width: size(3);
+  height: calc(var(--size-base-unit) * 3);
+  width: calc(var(--size-base-unit) * 3);
   cursor: pointer;
   align-items: center;
   justify-content: center;

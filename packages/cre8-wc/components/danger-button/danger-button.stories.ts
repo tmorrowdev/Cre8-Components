@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
-import svgCaretLeft from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Left.svg?raw';
-import svgCaretRight from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Right.svg?raw';
-import svgArrowRight from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Arrow_-_Right.svg?raw';
+import svgCaretLeft from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret_Left.svg?raw';
+import svgCaretRight from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret_Right.svg?raw';
+import svgArrowRight from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Arrow_-_Right.svg?raw';
 import { html } from 'lit';
 import { spread } from '../../directives/spread';
 import './danger-button';
@@ -22,7 +22,10 @@ const meta = {
     disabled: {control: 'boolean'},
     fullWidth: {control: 'boolean'},
     hideText: {control: 'boolean'},
-    svg: {control: 'text'},
+    svg: {
+      control: 'select', 
+      options: [svgArrowRight, svgCaretLeft, svgCaretRight]  
+    },
     iconRotateDegree: {control: 'text'},
     iconPosition: {
       options: ['before', 'after'],

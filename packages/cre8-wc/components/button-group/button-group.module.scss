@@ -14,7 +14,7 @@
 .cre8-c-button-group {
   display: flex;
   flex-wrap: wrap;
-  gap: size(2);
+  gap: calc(var(--size-base-unit) * 2);
 }
 
 /**

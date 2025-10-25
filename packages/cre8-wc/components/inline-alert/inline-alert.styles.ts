@@ -16,8 +16,8 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   font-weight: normal;
   display: inline-flex;
   align-items: flex-start;
-  gap: size(1);
-  padding: size(2);
+  gap: calc(var(--size-base-unit) * 1);
+  padding: calc(var(--size-base-unit) * 2);
   color: var(--cre8-color-content-default);
   background-color: var(--cre8-color-bg-info);
   border-color: var(--cre8-color-border-info);
@@ -80,7 +80,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   padding: 0;
   border: none;
   background-color: transparent;
-  gap: size(1);
+  gap: calc(var(--size-base-unit) * 1);
   border-radius: none;
 }
 
@@ -104,8 +104,8 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 .cre8-c-inline-alert__icon {
   position: relative;
   color: var(--cre8-color-content-info-icon);
-  height: size(3);
-  width: size(3);
+  height: calc(var(--size-base-unit) * 3);
+  width: calc(var(--size-base-unit) * 3);
 
   /**
    * Inline alert icon for error variant
@@ -157,7 +157,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
    */
   .cre8-c-inline-alert--transparent & {
     top: 0;
-    padding: size(0.25);
+    padding: calc(var(--size-base-unit) * 0.25);
   }
 }
 `;

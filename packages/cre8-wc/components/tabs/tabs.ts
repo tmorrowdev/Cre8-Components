@@ -219,7 +219,7 @@ export class Cre8Tabs extends Cre8Element {
      * 2. On resize, If last child is fully in the viewport, set isEnd to true. Otherwise, set isEnd to false.
      * @fires resize
      */
-    handleResize() {
+    handleResize( ) {
         this.setIsStart(); /* 1 */
         this.setIsEnd(); /* 2 */
     }

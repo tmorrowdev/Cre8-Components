@@ -8,7 +8,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  */
 .cre8-c-hero {
   position: relative;
-  margin-bottom: size(4);
+  margin-bottom: calc(var(--size-base-unit) * 4);
 
   @media all and (min-width:$cre8-breakpoint-md) {
     height: 40vh;
@@ -37,7 +37,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 .cre8-c-hero__body {
   display: flex;
   flex-direction: column;
-  padding-top: size(2);
+  padding-top: calc(var(--size-base-unit) * 2);
 
   @media all and (min-width:$cre8-breakpoint-md) {
     position: absolute;
@@ -45,8 +45,8 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
     justify-content: flex-end;
     width: 100%;
     height: 100%;
-    padding-top: size(4);
-    padding-bottom: size(4);
+    padding-top: calc(var(--size-base-unit) * 4);
+    padding-bottom: calc(var(--size-base-unit) * 4);
   }
 
   /**

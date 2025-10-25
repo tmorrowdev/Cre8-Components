@@ -34,7 +34,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
       height: 100%;
       inset-block-start: 0;
       inset-inline-start: 0;
-      width: size(6);
+      width: calc(var(--size-base-unit) * 6);
       z-index: 1;
     }
   }
@@ -55,7 +55,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
       height: 100%;
       inset-block-start: 0;
       inset-inline-end: 0;
-      width: size(6);
+      width: calc(var(--size-base-unit) * 6);
       z-index: 1;
     }
   }
@@ -88,7 +88,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  * 1) The div that contains the tab panel content
  */
 .cre8-c-tabs__body {
-  padding-block-start: size(2);
+  padding-block-start: calc(var(--size-base-unit) * 2);
 
   /**
    * Full Width Variant - border default bar across tabs
