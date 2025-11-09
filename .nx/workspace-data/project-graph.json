@@ -359,7 +359,7 @@
           "description": "cre8 Web Components is a library of presentational UI web components to be consumed by Cigna web applications.",
           "js": {
             "packageName": "@cre8_dev/cre8-wc",
-            "packageVersion": "1.0.7",
+            "packageVersion": "1.0.9",
             "packageExports": {
               "./components/**/*": {
                 "import": "./components/*.js",
@@ -34159,5 +34159,5 @@
   },
   "version": "6.0",
   "errors": [],
-  "computedAt": 1762629504754
+  "computedAt": 1762656470166
 }
