@@ -6,16 +6,12 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": ".cursor/rules/custom-rule.mdc",
-        "hash": "2287628738847710778"
+        "file": "agentrpc.ts",
+        "hash": "5387326119030547798"
       },
       {
         "file": ".cursor/rules/token-generator.mdc",
         "hash": "2022174108188322361"
-      },
-      {
-        "file": ".cursor/rules/tokentemplate.mdc",
-        "hash": "1499651608693981323"
       },
       {
         "file": ".editorconfig",
@@ -26,124 +22,112 @@
         "hash": "10252928758611610480"
       },
       {
-        "file": ".github/ISSUE_TEMPLATE/bug_report.md",
-        "hash": "11777024348086003744"
-      },
-      {
-        "file": ".github/ISSUE_TEMPLATE/feature_request.md",
-        "hash": "239163076449248677"
-      },
-      {
-        "file": ".github/ISSUE_TEMPLATE/question.md",
-        "hash": "9352388009145431088"
-      },
-      {
-        "file": ".github/PULL_REQUEST_TEMPLATE.md",
-        "hash": "9471591869005341748"
-      },
-      {
-        "file": ".github/instructions/convert-styles-to-ts.prompt.md",
-        "hash": "17089112734459629603"
-      },
-      {
-        "file": ".github/instructions/theme-generator.prompt.md",
-        "hash": "401935176109158637"
-      },
-      {
-        "file": ".gitignore",
-        "hash": "18329016575560911308"
-      },
-      {
-        "file": ".npmrc",
-        "hash": "14682905260052756868"
-      },
-      {
-        "file": ".yarnrc.yml",
-        "hash": "14342564384712544891"
-      },
-      {
-        "file": "CHANGELOG.md",
-        "hash": "11263775560645233535"
+        "file": "css-tokens/wesparkle-light-theme.css",
+        "hash": "1962826988174540996"
       },
       {
         "file": "CONTRIBUTING.md",
         "hash": "10301251840464020290"
       },
       {
-        "file": "README.md",
-        "hash": "6036756661614531336"
-      },
-      {
-        "file": "agentrpc.ts",
-        "hash": "5387326119030547798"
-      },
-      {
-        "file": "babel.config.json",
-        "hash": "5546405625092116747"
-      },
-      {
-        "file": "cre8-wc.code-workspace",
-        "hash": "6590053847653711996"
-      },
-      {
-        "file": "css-tokens/wesparkle-dark-theme.css",
-        "hash": "892732768396608569"
-      },
-      {
-        "file": "css-tokens/wesparkle-light-theme.css",
-        "hash": "1962826988174540996"
+        "file": "storybook-index.html",
+        "hash": "16072990587163894686"
       },
       {
         "file": "custom-elements.json",
         "hash": "14787729171302403853"
       },
       {
-        "file": "figma.css",
-        "hash": "8336627131174862035"
+        "file": ".github/instructions/theme-generator.prompt.md",
+        "hash": "401935176109158637"
       },
       {
-        "file": "landing-page.html",
-        "hash": "14338458278700984776"
+        "file": ".github/instructions/convert-styles-to-ts.prompt.md",
+        "hash": "17089112734459629603"
+      },
+      {
+        "file": ".cursor/rules/tokentemplate.mdc",
+        "hash": "1499651608693981323"
+      },
+      {
+        "file": ".github/ISSUE_TEMPLATE/question.md",
+        "hash": "9352388009145431088"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "18329016575560911308"
+      },
+      {
+        "file": "README.md",
+        "hash": "6036756661614531336"
+      },
+      {
+        "file": ".npmrc",
+        "hash": "14682905260052756868"
       },
       {
         "file": "nx.json",
         "hash": "17174457513851787559"
       },
       {
-        "file": "package.json",
-        "hash": "11601073979223616404"
-      },
-      {
-        "file": "pnpm-lock.yaml",
-        "hash": "14672629264234712162"
-      },
-      {
-        "file": "publish-storybook.sh",
-        "hash": "1610124664741528526"
-      },
-      {
-        "file": "storybook-index.html",
-        "hash": "16072990587163894686"
+        "file": ".yarnrc.yml",
+        "hash": "14342564384712544891"
       },
       {
         "file": "tokens.css",
         "hash": "1727971261762682840"
       },
       {
+        "file": "tokens_cre8.css",
+        "hash": "2807111819425758229"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "7027302742028750983"
+      },
+      {
+        "file": "landing-page.html",
+        "hash": "14338458278700984776"
+      },
+      {
+        "file": ".github/PULL_REQUEST_TEMPLATE.md",
+        "hash": "9471591869005341748"
+      },
+      {
+        "file": "figma.css",
+        "hash": "8336627131174862035"
+      },
+      {
+        "file": "babel.config.json",
+        "hash": "5546405625092116747"
+      },
+      {
+        "file": "pnpm-lock.yaml",
+        "hash": "14672629264234712162"
+      },
+      {
+        "file": "tokens_starbucks.css",
+        "hash": "6533384812763389286"
+      },
+      {
         "file": "tokens_bolt.theme.ts",
         "hash": "7395272328495887176"
+      },
+      {
+        "file": "css-tokens/wesparkle-dark-theme.css",
+        "hash": "892732768396608569"
+      },
+      {
+        "file": ".cursor/rules/custom-rule.mdc",
+        "hash": "2287628738847710778"
       },
       {
         "file": "tokens_brand.css",
         "hash": "11671698387902748261"
       },
       {
-        "file": "tokens_cre8.css",
-        "hash": "2807111819425758229"
-      },
-      {
-        "file": "tokens_starbucks.css",
-        "hash": "6533384812763389286"
+        "file": "package.json",
+        "hash": "11601073979223616404"
       },
       {
         "file": "tokens_starbucks.theme.ts",
@@ -154,8 +138,24 @@
         "hash": "8608594362684733718"
       },
       {
-        "file": "tsconfig.json",
-        "hash": "7027302742028750983"
+        "file": ".github/ISSUE_TEMPLATE/bug_report.md",
+        "hash": "11777024348086003744"
+      },
+      {
+        "file": "CHANGELOG.md",
+        "hash": "11263775560645233535"
+      },
+      {
+        "file": ".github/ISSUE_TEMPLATE/feature_request.md",
+        "hash": "239163076449248677"
+      },
+      {
+        "file": "cre8-wc.code-workspace",
+        "hash": "6590053847653711996"
+      },
+      {
+        "file": "publish-storybook.sh",
+        "hash": "1610124664741528526"
       }
     ],
     "projectFileMap": {
@@ -8517,7 +8517,7 @@
         },
         {
           "file": "packages/cre8-wc/tsconfig.json",
-          "hash": "16214768714717501595"
+          "hash": "17251650068106546643"
         },
         {
           "file": "packages/cre8-wc/utilities/is-mobile.ts",
