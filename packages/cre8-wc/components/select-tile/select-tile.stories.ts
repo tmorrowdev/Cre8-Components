@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { withActions } from '@storybook/addon-actions/decorator';
+import { withActions } from 'storybook/internal/preview-api';
 import '../../.storybook/components/f-po/f-po';
 import '../../.storybook/components/example-inline/example-inline';
 import { spread } from '../../directives/spread';
@@ -7,7 +7,7 @@ import '../icon/icon';
 import '../button-group/button-group';
 import '../button/button';
 import './select-tile';
-import svgMedication from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Medication.svg?raw';
+import svgMedication from '../../icons/System/Regular/Medication.svg?raw';
 
 export default {
   title: 'In Development/Select Tile',

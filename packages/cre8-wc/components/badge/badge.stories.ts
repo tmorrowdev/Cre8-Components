@@ -1,12 +1,12 @@
 import { html } from 'lit';
 import { spread } from '../../directives/spread';
-import './badge';
-import svgFeedback from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Feedback.svg?raw';
+import './badge.styles';
+import svgFeedback from '../../icons/System/Regular/Feedback.svg?raw';
 
- const meta = {
+const meta = {
   title: 'cre8 Components/Badge',
   component: 'cre8-badge',
-  render: (args) => html`<cre8-badge ${spread(args)}></cre8-badge>`,
+  render: (args: any) => html`<cre8-badge ${spread(args)}></cre8-badge>`,
   parameters: { status: { type: 'inProgress' } },
   argTypes: {
     text: {
@@ -22,9 +22,7 @@ import svgFeedback from '/Users/tylersmbp/Projects/cre8-web-components/packages/
     }
   },
   args: {
-    status: undefined,
-    text: 'Badge',
-    variant: undefined
+    text: 'Badge'
   }
 };
 export default meta;
@@ -36,10 +34,10 @@ export const Default = {
 };
 
 /**
-* **Note** SVG is passed in as a raw string for badges with icons. The icon is defined by this argument 
-* *Import example:*`import svgFeedback from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Feedback.svg?raw';
-* 
-*/
+ * **Note** SVG is passed in as a raw string for badges with icons. The icon is defined by this argument
+ *
+ * *Import example:* `import svgFeedback from '../../icons/System/Regular/Feedback.svg?raw';`
+ */
 export const IconVariant = {
   args: {
     status: 'default',
@@ -77,10 +75,8 @@ export const Info = {
 };
 
 /**
-* **Note** Certain brands don't currently use the `Attention` status
-*
-*/
-
+ * **Note** Certain brands don't currently use the `Attention` status
+ */
 export const Attention = {
   args: {
     status: 'attention',
@@ -128,10 +124,8 @@ export const InfoLight = {
 };
 
 /**
-* **Note** Certain brands don't currently use the `Attention` status
-*
-*/
-
+ * **Note** Certain brands don't currently use the `Attention` status
+ */
 export const AttentionLight = {
   args: {
     status: 'attention',

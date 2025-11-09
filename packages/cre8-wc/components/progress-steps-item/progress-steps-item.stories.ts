@@ -1,11 +1,11 @@
 import {html} from 'lit';
 import {spread} from '../../directives/spread';
 import './progress-steps-item';
-import svgCheckCircle from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Check.svg?raw';
-import svgError from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Error.svg?raw';
-import svgFilledCircleOne from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Circle_One.svg?raw';
-import svgRegularCircleOne from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Circle_One.svg?raw';
-import svgWarning from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Warning.svg?raw';
+import svgCheckCircle from '../../icons/System/Filled/Check.svg?raw';
+import svgError from '../../icons/System/Filled/Error.svg?raw';
+import svgFilledCircleOne from '../../icons/System/Filled/Circle_One.svg?raw';
+import svgRegularCircleOne from '../../icons/System/Regular/Circle_One.svg?raw';
+import svgWarning from '../../icons/System/Filled/Warning.svg?raw';
 
 const meta = {
   title: 'In Development/Progress Steps Item',

@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=width=device-width, initial-scale=1.0">
     <title>Cre8 Components - Modern Web Components Library</title>
-
+    <script type="importmap">
+        {
+            "imports": {
+                "@cre8_dev/cre8-wc": "https://cdn.jsdelivr.net/npm/@cre8_dev/cre8-wc@latest/lib/index.min.js"
+            }
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@cre8_dev/cre8-design-tokens/lib/web/brands/cre8/css/tokens_cre8.css">
     <!-- Import Web Components -->
     <script type="module">
         import {
@@ -29,7 +36,7 @@
             Cre8Alert,
             Cre8Icon,
             Cre8Divider
-        } from './packages/cre8-wc/index.js';
+        } from '@cre8_dev/cre8-wc';
     </script>
 
     <style>

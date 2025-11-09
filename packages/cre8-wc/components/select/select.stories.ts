@@ -2,7 +2,7 @@ import { html } from 'lit';
 import { spread } from '../../directives/spread';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { sanitizeInput } from '../../utilities/story-helpers';
-import { withActions } from '@storybook/addon-actions/decorator';
+import { withActions } from 'storybook/internal/preview-api';
 import '../link/link';
 import './select';
 

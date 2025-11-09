@@ -5,20 +5,20 @@ import './css/styleguide-only.css';
 
 // import starbucksStyles from '../design-tokens/starbucks/tokens.module';
 // import target from '../design-tokens/target/tokens.module.css';
-import * as cre8Legacy from '../design-tokens/brands/cre8-legacy/css/tokens_cre8-legacy.module.js';
-import consumer from '../design-tokens/brands/consumer/css/tokens_consumer.module.js';
-import cre8 from '../design-tokens/brands/cre8/css/tokens_cre8.module.js';
-import blue from '../design-tokens/brands/blue/css/tokens_blue.module.js';
-import marketing from '../design-tokens/brands/marketing/css/tokens_marketing.module.js';
-import black from '../design-tokens/brands/black/css/tokens_black.module.js';
-import femmecubator from '../design-tokens/brands/femmecubator/css/tokens_femmecubator2.module.js';
-import prisma from '../design-tokens/brands/prisma/tokens_prisma.module.js';
-import starbucks from '../design-tokens/brands/starbucks/tokens_starbucks.module.js';
-import bolt from '../design-tokens/brands/bolt/tokens_bolt.theme.js';
-import netflix from '../design-tokens/tokens_netflix.theme.js';
+import * as cre8Legacy from '../design-tokens/brands/cre8-legacy/css/tokens_cre8-legacy.module.ts';
+import consumer from '../design-tokens/brands/consumer/css/tokens_consumer.module.ts';
+import cre8 from '../design-tokens/brands/cre8/css/tokens_cre8.module.ts';
+import blue from '../design-tokens/brands/blue/css/tokens_blue.module.ts';
+import marketing from '../design-tokens/brands/marketing/css/tokens_marketing.module.ts';
+import black from '../design-tokens/brands/black/css/tokens_black.module.ts';
+import femmecubator from '../design-tokens/brands/femmecubator/css/tokens_femmecubator2.module.ts';
+import prisma from '../design-tokens/brands/prisma/tokens_prisma.module.ts';
+import starbucks from '../design-tokens/brands/starbucks/tokens_starbucks.module.ts';
+import bolt from '../design-tokens/brands/bolt/tokens_bolt.theme.ts';
+import netflix from '../design-tokens/tokens_netflix.theme.ts';
 
 // Prism styles (Storybook only for docs)
-import prismcss from './components/system-docs/prism.module.js';
+import prismcss from './components/system-docs/prism.module.ts';
 const prismStyleElement = document.createElement('style');
 prismStyleElement.innerHTML = prismcss as unknown as string;
 document.head.appendChild(prismStyleElement);
@@ -29,7 +29,7 @@ document.head.appendChild(prismStyleElement);
 import customElements from './custom-elements.json';
 setCustomElementsManifest(customElements);
 
-import headStyles from '../design-tokens/core/scss/theming/head.module.js';
+import headStyles from '../design-tokens/core/scss/theming/head.module.ts';
 
 const headStyleElement = document.createElement('style') as HTMLStyleElement;
 headStyleElement.innerHTML = headStyles as unknown as string;

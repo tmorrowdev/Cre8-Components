@@ -2,7 +2,7 @@ import { html, nothing } from 'lit';
 import './pagination';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { cre8Pagination } from './pagination';
-import { withActions } from '@storybook/addon-actions/decorator';
+import { withActions } from 'storybook/internal/preview-api';
 import './page-counter/page-counter';
 
 

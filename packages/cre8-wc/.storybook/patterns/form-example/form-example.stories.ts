@@ -1,7 +1,7 @@
 import {html} from 'lit';
 import './form-example';
 import { action } from '@storybook/addon-actions';
-import { withActions } from '@storybook/addon-actions/decorator';
+import { withActions } from 'storybook/internal/preview-api';
 
 export default {
   title: 'Examples/Form Example',

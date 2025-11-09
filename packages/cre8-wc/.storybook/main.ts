@@ -16,9 +16,9 @@ const config: StorybookConfig = {
     './static'
   ], // Include any addons you'd like to use in Storybook
   addons: [
+    '@storybook/addon-docs',
     '@storybook/addon-themes',
     '@storybook/addon-a11y',
-    '@storybook/addon-essentials',
     '@whitespace/storybook-addon-html'
   ],
   // Customize Vite config
@@ -29,7 +29,14 @@ const config: StorybookConfig = {
       css: {
         preprocessorOptions: {
           scss: {
-            additionalData: `@import "../design-tokens/core/scss/theming/head.scss";`
+            additionalData: (content: string, filePath: string) => {
+              // Only add the import if we're not already in the theming directory
+              // to avoid circular dependencies
+              if (filePath.includes('design-tokens/core/scss/theming')) {
+                return content;
+              }
+              return `@import "../design-tokens/core/scss/theming/head.scss";\n${content}`;
+            }
           }
         }
       },

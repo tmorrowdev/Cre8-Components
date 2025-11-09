@@ -2,10 +2,10 @@ import { html } from 'lit';
 import { spread } from '../../directives/spread';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { sanitizeInput } from '../../utilities/story-helpers';
-import { withActions } from '@storybook/addon-actions/decorator';
+import { withActions } from 'storybook/internal/preview-api';
 import '../icon/icon';
 import './tooltip';
-import svgInfoFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Info.svg?raw';
+import svgInfoFilled from '../../icons/System/Filled/Info.svg?raw';
 
 export default {
   title: 'cre8 Components/Tooltip',

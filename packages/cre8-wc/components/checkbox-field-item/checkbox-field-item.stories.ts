@@ -2,7 +2,7 @@ import { html } from 'lit';
 import '../field-note/field-note';
 import './checkbox-field-item';
 import { spread } from '../../directives/spread';
-import { withActions } from '@storybook/addon-actions/decorator';
+import { withActions } from 'storybook/internal/preview-api';
 
 export default {
   title: 'cre8 Components/Checkbox Field Item',
