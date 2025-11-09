@@ -1,6 +1,6 @@
 {
   "name": "@cre8_dev/cre8-wc",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "cre8 Web Components is a library of presentational UI web components to be consumed by Cre8 web applications.",
   "license": "BSD-3-Clause",
   "scripts": {
