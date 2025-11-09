@@ -11,11 +11,8 @@
     ],
     "types": [
       "resize-observer-browser",
-      "jest"
-       ],
-       "typeRoots": [
-        "./node_modules/@types",
-        "src/types"
+      "jest",
+      "node"
        ],
     "declaration": true,
     "declarationMap": true,
@@ -45,13 +42,12 @@
   "include": [
     "**/**/*.ts",
     "**/**/*.js",
-    "styles.d.ts",
-    "global.d.ts"
+    "src/types/styles.d.ts",
+    "src/types/global.d.ts"
   ],
   "exclude": [
     "node_modules",
     "typings",
-    "components/**/*.stories.ts",
     "components/**/*.test.ts",
     "dist",
     "lib"

@@ -2,7 +2,7 @@ import { html } from 'lit';
 import { spread } from '../../directives/spread';
 import './multi-select';
 import '../remove-tag/remove-tag';
-import { withActions } from '@storybook/addon-actions/decorator';
+import { withActions } from 'storybook/internal/preview-api';
 
 const baseItems = ['Bagel', 'Boat', 'Bungus'];
 

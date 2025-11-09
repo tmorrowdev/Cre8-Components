@@ -1,4 +1,4 @@
-import svgCaretUp from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Up.svg?raw';
+import svgCaretRight from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Right.svg?raw';
 import { html,  } from 'lit';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon';
@@ -27,7 +27,7 @@ export class Cre8BreadcrumbsItem extends Cre8Element {
       <div class="${componentClassNames}">
         <slot></slot>
         <cre8-icon
-          svg="${svgCaretUp}"
+          svg="${svgCaretRight}"
           rotate="90"
           container-class="cre8-c-icon-wrapper"
           aria-hidden="true"
