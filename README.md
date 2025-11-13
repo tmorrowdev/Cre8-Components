@@ -3,7 +3,7 @@
 
 # cre8 Web Components (Beta)
 
-cre8 Web Components provides presentational user interface (UI) reusable components to be consumed by Cigna web applications. It's built using [web components](https://www.webcomponents.org/introduction) that are based on existing, native HTML web standards.
+cre8 Web Components provides presentational user interface (UI) reusable components to be consumed by any codebase. It's built using [web components](https://www.webcomponents.org/introduction) that are based on existing, native HTML web standards.
 
 ## Dependencies
 The following dependencies are required for running this project locally:
