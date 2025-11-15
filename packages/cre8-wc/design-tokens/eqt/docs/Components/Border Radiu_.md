@@ -326,7 +326,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5491:25731;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5491:25731;245:4877)
-        - Text Content: "The Cigna Group Base Library"
+        - Text Content: "The # Group Base Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -617,7 +617,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5491:26531;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5491:26531;245:4877)
-        - Text Content: "Cigna Healthcare Base Web Library"
+        - Text Content: "# #care Base Web Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -1163,7 +1163,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5491:25816;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5491:25816;245:4877)
-        - Text Content: "The Cigna Group Base Library"
+        - Text Content: "The # Group Base Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -1418,7 +1418,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5491:26616;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5491:26616;245:4877)
-        - Text Content: "Cigna Healthcare Base Web Library"
+        - Text Content: "# #care Base Web Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -1928,7 +1928,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5491:25830;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5491:25830;245:4877)
-        - Text Content: "The Cigna Group Base Library"
+        - Text Content: "The # Group Base Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -2182,7 +2182,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5491:26630;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5491:26630;245:4877)
-        - Text Content: "Cigna Healthcare Base Web Library"
+        - Text Content: "# #care Base Web Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -2436,7 +2436,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I12450:17833;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I12450:17833;245:4877)
-        - Text Content: "DO NOT USE Cigna Healthcare 2.0 Base Web Library"
+        - Text Content: "DO NOT USE # #care 2.0 Base Web Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)

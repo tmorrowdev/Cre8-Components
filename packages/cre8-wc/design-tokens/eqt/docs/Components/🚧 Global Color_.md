@@ -2695,7 +2695,7 @@
               - TextStyle Ref: [text_hlofjx6](../GlobalStyles/Typography.md#text-hlofjx6) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
-- **Cigna Healthcare - Global Brand Color Tokens** (Type: FRAME, ID: 5433:13397)
+- **# #care - Global Brand Color Tokens** (Type: FRAME, ID: 5433:13397)
   - BorderRadius: 24px
   - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
   - Layout Style Ref: [layout_h141men](../GlobalStyles/LayoutAndSpacing.md#layout-h141men) (See Layout Styles)
@@ -2732,7 +2732,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5433:13398;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5433:13398;245:4877)
-        - Text Content: "Cigna Healthcare"
+        - Text Content: "# #care"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -4483,7 +4483,7 @@
               - TextStyle Ref: [text_hlofjx6](../GlobalStyles/Typography.md#text-hlofjx6) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
-- **Cigna Healthcare - Global Brand Color Tokens** (Type: FRAME, ID: 12447:16074)
+- **# #care - Global Brand Color Tokens** (Type: FRAME, ID: 12447:16074)
   - BorderRadius: 24px
   - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
   - Layout Style Ref: [layout_h141men](../GlobalStyles/LayoutAndSpacing.md#layout-h141men) (See Layout Styles)
@@ -4520,7 +4520,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I12447:16075;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I12447:16075;245:4877)
-        - Text Content: "Cigna Healthcare 2.0"
+        - Text Content: "# #care 2.0"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -6475,7 +6475,7 @@
     - TextStyle Ref: [text_hspiadh](../GlobalStyles/Typography.md#text-hspiadh) (See Typography Styles)
     - Fills Ref: [fill_hq79idz](../GlobalStyles/Colors.md#fill-hq79idz) (See Color Styles)
     - Layout Style Ref: [layout_hkmnimc](../GlobalStyles/LayoutAndSpacing.md#layout-hkmnimc) (See Layout Styles)
-- **The Cigna Group - Global Brand Color Tokens** (Type: FRAME, ID: 5433:16273)
+- **The # Group - Global Brand Color Tokens** (Type: FRAME, ID: 5433:16273)
   - BorderRadius: 24px
   - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
   - Layout Style Ref: [layout_h141men](../GlobalStyles/LayoutAndSpacing.md#layout-h141men) (See Layout Styles)
@@ -6512,7 +6512,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5433:16274;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5433:16274;245:4877)
-        - Text Content: "The Cigna Group"
+        - Text Content: "The # Group"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)

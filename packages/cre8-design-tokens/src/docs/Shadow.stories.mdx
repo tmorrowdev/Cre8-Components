@@ -1,0 +1,48 @@
+import { Meta, Markdown, Canvas } from '@storybook/addon-docs';
+
+<style>    
+{`
+.shadowDiv {
+  background-color: #f6f6f6;
+  border-radius: 50px;
+  display: block;
+  height:50px;
+  margin: 30px;
+  width: 50px;
+}
+`}
+</style>
+
+<Meta
+    title="Design Tokens/Shadow"
+/>
+
+# Shadow Tokens
+
+The shadow palette adds shadow effects around an object's frame. The tokens are in the unit of measurement: pixels.
+<table>
+    <tbody>
+        <tr>
+            <th>Token</th>
+            <th>Description</th>
+            <th>Shows as</th>
+        </tr>
+        <tr>
+            <td>**cre8-shadow-small**</td>
+            <td>Add small shadow effect for the object.</td>
+            <td><div className="shadowDiv" style={{ boxShadow: '0 1px 2px 1px rgba(0, 0, 0, 0.2)'}}></div></td>
+        </tr>
+        <tr>
+            <td>**cre8-shadow-default**</td>
+            <td>Add the default size shadow effect for the object.</td>
+            <td><div className="shadowDiv" style={{ boxShadow: '0 8px 6px 0 rgba(0, 0, 0, 0.1)'}}></div></td>
+
+        </tr>
+        <tr>
+            <td>**cre8-shadow-large**</td>
+            <td>Add the larger size shadow effect for the object.</td>
+            <td><div className="shadowDiv" style={{ boxShadow: '0 10px 12px 0 rgba(0, 0, 0, 0.2)'}}></div></td>
+
+        </tr>
+    </tbody>
+</table>

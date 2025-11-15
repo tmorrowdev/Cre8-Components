@@ -62,7 +62,7 @@ export class Cre8InlineAlert extends Cre8Element {
 
     /*
     * Maps modal icons and modal status variants to what the alt text of the related icon should be see:
-    * https://digital.cigna.com/patterns-and-Components/informational-display/alerts-and-notifications#query=alerts
+    *#
     * this provides the recommendated alt text of different statuses
     */
     private mapStatusToIconInlineAlert(status: string) {

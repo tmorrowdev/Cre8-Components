@@ -242,8 +242,8 @@
     - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
     - Strokes Ref: [stroke_h475po5](../GlobalStyles/Colors.md#stroke-h475po5) (See Color Styles for Borders)
     - Layout Style Ref: [layout_hk5qq2j](../GlobalStyles/LayoutAndSpacing.md#layout-hk5qq2j) (See Layout Styles)
-    - **Copay/Coinsurance** (Type: TEXT, ID: 691:1844)
-      - Text Content: "Copay/Coinsurance"
+    - **Copay/Co#** (Type: TEXT, ID: 691:1844)
+      - Text Content: "Copay/Co#"
       - TextStyle Ref: [text_hy6admg](../GlobalStyles/Typography.md#text-hy6admg) (See Typography Styles)
       - Fills Ref: [fill_hni0ojx](../GlobalStyles/Colors.md#fill-hni0ojx) (See Color Styles)
       - Layout Style Ref: [layout_htca7n3](../GlobalStyles/LayoutAndSpacing.md#layout-htca7n3) (See Layout Styles)
@@ -305,7 +305,7 @@
     - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
     - Strokes Ref: [stroke_h475po5](../GlobalStyles/Colors.md#stroke-h475po5) (See Color Styles for Borders)
     - Layout Style Ref: [layout_hk5qq2j](../GlobalStyles/LayoutAndSpacing.md#layout-hk5qq2j) (See Layout Styles)
-    - **Copay/Coinsurance** (Type: TEXT, ID: 691:1856)
+    - **Copay/Co#** (Type: TEXT, ID: 691:1856)
       - Text Content: "Out-of-Pocket"
       - TextStyle Ref: [text_hy6admg](../GlobalStyles/Typography.md#text-hy6admg) (See Typography Styles)
       - Fills Ref: [fill_hni0ojx](../GlobalStyles/Colors.md#fill-hni0ojx) (See Color Styles)
@@ -338,7 +338,7 @@
       - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
       - Layout Style Ref: [layout_hdznyh7](../GlobalStyles/LayoutAndSpacing.md#layout-hdznyh7) (See Layout Styles)
     - **Get a better underst** (Type: TEXT, ID: 691:1861)
-      - Text Content: "Get a better understanding of how you and your health plan work together to pay for your medication."
+      - Text Content: "Get a better understanding of how you and your # plan work together to pay for your medication."
       - TextStyle Ref: [text_hc1v7cc](../GlobalStyles/Typography.md#text-hc1v7cc) (See Typography Styles)
       - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
       - Layout Style Ref: [layout_htca7n3](../GlobalStyles/LayoutAndSpacing.md#layout-htca7n3) (See Layout Styles)

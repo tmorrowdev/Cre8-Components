@@ -1,0 +1,30 @@
+import { Meta, Markdown, Canvas } from '@storybook/addon-docs';
+
+<Meta
+    title="Typography Mixins/Display"
+/>
+
+# Display Mixins
+
+Large type reserved for short stats or branded headings, appropriate for dashboards or marketing sections.
+
+**Example:**
+
+```css
+@import '~@esi/cre8-design-tokens/lib/web/mixins/typography-usage';
+
+.display {
+  @include cre8-typography-display-default;
+}
+```
+**Desktop**
+
+* cre8-typography-display-small
+* cre8-typography-display-default
+* cre8-typography-display-large
+
+**Mobile**
+
+* cre8-typography-display-small-mobile
+* cre8-typography-display-default-mobile
+* cre8-typography-display-large-mobile

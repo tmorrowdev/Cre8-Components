@@ -713,7 +713,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5491:25746;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5491:25746;245:4877)
-        - Text Content: "The Cigna Group Base Library"
+        - Text Content: "The # Group Base Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -958,7 +958,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5491:25770;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5491:25770;245:4877)
-        - Text Content: "The Cigna Group Base Library"
+        - Text Content: "The # Group Base Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -1172,7 +1172,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5491:25793;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5491:25793;245:4877)
-        - Text Content: "The Cigna Group Base Library"
+        - Text Content: "The # Group Base Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -1387,7 +1387,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5491:26546;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5491:26546;245:4877)
-        - Text Content: "Cigna Healthcare Base Web Library"
+        - Text Content: "# #care Base Web Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -1632,7 +1632,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5491:26570;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5491:26570;245:4877)
-        - Text Content: "Cigna Healthcare Base Web Library"
+        - Text Content: "# #care Base Web Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -1846,7 +1846,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5491:26593;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5491:26593;245:4877)
-        - Text Content: "Cigna Healthcare Base Web Library"
+        - Text Content: "# #care Base Web Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -2061,7 +2061,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5491:27358;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5491:27358;245:4877)
-        - Text Content: "Cigna Legacy Base Web Library"
+        - Text Content: "# Legacy Base Web Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -2306,7 +2306,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5491:27382;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5491:27382;245:4877)
-        - Text Content: "Cigna Legacy Base Web Library"
+        - Text Content: "# Legacy Base Web Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -2520,7 +2520,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5491:27405;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5491:27405;245:4877)
-        - Text Content: "Cigna Legacy Base Web Library"
+        - Text Content: "# Legacy Base Web Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)

@@ -27,20 +27,20 @@ export const Default = {
 
 export const BeginningLink = {
   args: {
-    slot: `<cre8-text-link href="https://www.cigna.com">Helpful link</cre8-text-link> at the beginning of a field note`
+    slot: `<cre8-text-link href="#">Helpful link</cre8-text-link> at the beginning of a field note`
   },
 };
 
 
 export const MiddleLink = {
   args: {
-    slot: `This is a field note with a <cre8-text-link href="https://www.cigna.com">helpful link</cre8-text-link> in the middle of content`
+    slot: `This is a field note with a <cre8-text-link href="#">helpful link</cre8-text-link> in the middle of content`
   },
 };
 
 export const EndingLink = {
   args: {
-    slot: `This is a field note with an ending <cre8-text-link href="https://www.cigna.com">helpful link</cre8-text-link>`
+    slot: `This is a field note with an ending <cre8-text-link href="#">helpful link</cre8-text-link>`
   },
 };
 

@@ -1,0 +1,20 @@
+{
+  "tokenSetOrder": [
+    "pharmacy/tokens_pharmacy",
+    "pharmacy/tokens_injected",
+    "pbm/tokens_pbm",
+    "pbm/tokens_injected",
+    "ers/tokens_ers",
+    "trs/tokens_trs",
+    "tcg/tokens_tcg",
+    "tcg/tokens_injected",
+    "healthkit/tokens_healthkit",
+    "healthkit/tokens_injected",
+    "cre8/tokens_cre8",
+    "cre8/tokens_injected",
+    "chc/tokens_chc",
+    "chc/tokens_injected",
+    "cigna-legacy/tokens_cigna-legacy",
+    "cigna-legacy/tokens_injected"
+  ]
+}

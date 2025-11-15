@@ -1,0 +1,65 @@
+import { Meta } from '@storybook/addon-docs';
+import breakpoint from '../assets/breakpoints.jpg';
+
+<Meta 
+    title="Design Tokens/Breakpoints"
+/>
+
+# Breakpoint Tokens
+
+> **Note:** Breakpoints can only be used with Sass files. The `var()` CSS function doesn't work within media query usage, so these tokens are provided as Sass variables. [See more here](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties#sect1). 
+
+Every website is accessed via devices with different screen sizes and resolutions. The software has to render perfectly across each screen size. Content or images cannot be distorted, cut out, or obscured.
+
+**These breakpoint tokens are global to the cre8 Design System, meaning, all brands currently share the same breakpoints.** We find that keeping all brands on the same breakpoints allows for more stable and predictable experiences when developing applications and designing mockups.
+
+
+## Importing the Breakpoints
+
+> **Note:** If your project uses a component library such as [@esi/ui-components](https://git.express-scripts.com/ExpressScripts/ui-components) or [@esi/cre8-web-components](https://git.express-scripts.com/ExpressScripts/cre8-web-components), breakpoint functionality
+that aligns with the cre8 Design System typically already exists at the component level.
+
+
+Include the import to the breakpoints file at the top of your file:
+
+```scss
+@import '@esi/cre8-design-tokens/lib/web/layouts/breakpoints.scss'
+```
+
+Add the token into your media query usage in your `scss` file:
+
+```scss
+.your-css-class {
+    // Styles that happen at all breakpoints
+}
+
+@media (min-width: $cre8-breakpoint-sm) {
+    .your-css-class {
+        // Styles that only happen at small breakpoint
+    }
+}
+```
+
+## Breakpoint Tokens
+<img src={breakpoint} alt="Choosing breakpoints" width="500"/>
+<table>
+    <thead>
+        <tr>
+            <th>Token</th><th>Value</th><th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>**cre8-breakpoint-xsm**</td><td>375px</td><td>Extra small breakpoint for smallest viewport usage</td></tr>
+        <tr><td>**cre8-breakpoint-sm**</td><td>560px</td><td>Small breakpoint</td></tr>
+        <tr><td>**cre8-breakpoint-md**</td><td>768px</td><td>Medium breakpoint</td></tr>
+        <tr><td>**cre8-breakpoint-lg**</td><td>960px</td><td>Large breakpoint</td></tr>
+        <tr><td>**cre8-breakpoint-xl**</td><td>1200px</td><td>Extra-large breakpoint</td></tr>
+        <tr><td>**cre8-breakpoint-xxl**</td><td>1400px</td><td>Largest breakpoint for largest viewport usage</td></tr>
+    </tbody>
+</table>
+
+## Additional Resources
+* [Sass Variables Documentation](https://sass-lang.com/documentation/variables/)
+* [Responsive Design (MDN)](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
+* [Using media queries (MDN)](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries)
+* [A Complete Guide to Media Queries (CSS Tricks)](https://css-tricks.com/a-complete-guide-to-css-media-queries/)

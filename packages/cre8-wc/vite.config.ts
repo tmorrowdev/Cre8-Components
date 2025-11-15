@@ -76,7 +76,7 @@ export default defineConfig({
           if (/\.(css|scss)$/.test(assetInfo.name!)) {
             return `components/[name]/[name].[ext]`;
           }
-          if (/\.(svg\?raw|svg)$/.test(assetInfo.name!)) {
+          if (/\.(svg)$/.test(assetInfo.name!)) {
             return `svgs/[name].[ext]`;
           }
           if (/\.(woff|woff2|eot|ttf|otf)$/.test(assetInfo.name!)) {
@@ -104,7 +104,7 @@ export default defineConfig({
     }
   },
   resolve: {
-    extensions: ['.js', '.cjs', '.ts', '.jsx', '.tsx','.svg?raw', '.scss','.scss', '.css', '.otf', '.ttf', '.yml']
+    extensions: ['.js', '.cjs', '.ts', '.jsx', '.tsx', '.scss', '.css', '.otf', '.ttf', '.yml']
   },
   esbuild: {
     // Use a custom loader to preprocess TypeScript files

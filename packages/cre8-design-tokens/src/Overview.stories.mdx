@@ -1,0 +1,60 @@
+import { Meta, Markdown } from '@storybook/addon-docs';
+import ImageFile from './assets/designtoken.jpg';
+import brands from './assets/branding.jpg';
+import whatisit from './assets/whatisit.jpg';
+
+<Meta
+    title="Getting Started/What is a Design Token?"
+/>
+
+# What is a Design Token?
+According to the [Design Tokens W3C Community group](https://www.designtokens.org/glossary/), a design token is, at a high level:
+
+The single source of truth to name and store a design decision, distributed so teams can use it across design tools and coding languages.
+
+<img src={whatisit} alt="What is Design Token?"/>
+
+## How do we manage a more complex ecosystem?
+
+That's been really challenging in the past, and so our teams have been looking into new techniques and strategies to enable us across brands, platforms, and technologies. One of these approaches is building within a headless methodology and design tokens. We've built centralized, brand-agnostic base components and our brand libraries pull from these same base components. The visual attributes are actually determined by the design tokens - so color, typography, border radius are all tokenized. Design tokens are often called the DNA of a design system, they enable us to more easily re-theme and then creating new themes or new custom themes becomes easier as well.
+
+Design tokens connect our technologies in new ways, not only are design tokens consistent between design and development, but they also they can be leveraged across web and mobile, and they go across different web front-end technologies where it hasn't been easy to bridge in the past. And so when paired with web components we can now have a single coded component library to go across react, angular, and other FE frameworks.
+
+Design Tokens are a powerful concept in design systems that help ensure consistency and flexibility across various platforms and products. They serve as the atomic units of design, containing values like colors, typography, spacing, and more. By centralizing these values, teams can maintain a cohesive visual identity.
+
+<ul>
+    <li>
+        <a href="https://confluence.sys.cigna.com/pages/viewpage.action?pageId=877807689" target="_blank">Learn more about our methodology.</a>
+    </li>
+    <li>
+        <a href="https://confluence.sys.cigna.com/pages/viewpage.action?pageId=879110082" target="_blank">Learn more about web components.</a>
+    </li>
+</ul>
+
+## Common Questions
+
+### Why use design tokens? 
+
+Tokens enable a design system to have a single source of truth. They provide a repository for recording and tracking style choices and changes. Because tokens are reusable and purpose-driven, they can define system-wide updates to themes and contexts for use. Tokens allow design decisions to be documented in a platform-agnostic and shareable format.
+
+When using tokens for design and implementation, style updates will propagate consistently through an entire brand or suite of products for a brand.
+
+<ul>
+    <li>Features like dynamic and custom client theming customization are possible with tokens.</li>
+<li>As cre8's visual language evolves, changes can be made once across the system and products. No more finding and replacing hard-coded values everywhere.</li>
+
+<li>Tokens are how we'll implement our newest visual foundations. This will deliver visual consistency and other improvements to cre8 Design System.</li>
+</ul>
+
+<img src={brands} alt="cre8 Design System supporting multi brands"/>
+
+As cre8 design system evolves and our themes mature, certain values will change.
+Design tokens help you track these changes and help ensure consistency across experiences
+and products.
+We also have more information for designers and developers alike surrounding:
+
+<ul>
+    <li><a href="https://confluence.sys.cigna.com/display/WIPMDL/Implementing+Design+Tokens+in+Design" target="_blank">Implementing Design Tokens in Design</a></li>
+    <li><a href="https://confluence.sys.cigna.com/display/WIPMDL/Implementing+Design+Tokens+in+Development" target="_blank">Implementing Design Tokens in Development</a></li>
+    <li><a href="https://confluence.sys.cigna.com/display/WIPMDL/Brand+Library+Resources" target="_blank">Where to find your brand library resources</a></li>
+</ul>

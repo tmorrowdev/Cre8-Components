@@ -6,11 +6,11 @@ import './css/styleguide-only.css';
 // import starbucksStyles from '../design-tokens/starbucks/tokens.module';
 // import target from '../design-tokens/target/tokens.module.css';
 import * as cre8Legacy from '../design-tokens/brands/cre8-legacy/css/tokens_cre8-legacy.module.ts';
-import consumer from '../design-tokens/brands/consumer/css/tokens_consumer.module.ts';
+import legacy from '../design-tokens/brands/legacy/css/tokens_legacy.module.ts';
 import cre8 from '../design-tokens/brands/cre8/css/tokens_cre8.module.ts';
-import blue from '../design-tokens/brands/blue/css/tokens_blue.module.ts';
+import blue from '../design-tokens/brands/legacy/css/tokens_legacy.module.ts';
 import marketing from '../design-tokens/brands/marketing/css/tokens_marketing.module.ts';
-import black from '../design-tokens/brands/black/css/tokens_black.module.ts';
+import minimalist from '../design-tokens/brands/minimalist/css/tokens_minimalist.module.ts';
 import femmecubator from '../design-tokens/brands/femmecubator/css/tokens_femmecubator2.module.ts';
 import prisma from '../design-tokens/brands/prisma/tokens_prisma.module.ts';
 import starbucks from '../design-tokens/brands/starbucks/tokens_starbucks.module.ts';
@@ -40,10 +40,10 @@ const excludeArray = ['shadowRootOptions', 'formAssociated', 'field'];
 const themeStyles = [
   { name: 'Cre8 Default', styles: cre8 },
   { name: 'Cre8 Legacy', styles: cre8Legacy },
-  { name: 'Consumer', styles: consumer },
+  { name: 'Legacy', styles: legacy },
   { name: 'Blue', styles: blue },
   { name: 'Marketing', styles: marketing },
-  { name: 'Black', styles: black },
+  { name: 'Minimalist', styles: minimalist },
   { name: 'Femmecubator', styles: femmecubator },
   { name: 'Prisma', styles: prisma },
   { name: 'Starbucks', styles: starbucks },

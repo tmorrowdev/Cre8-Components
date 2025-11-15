@@ -6,156 +6,696 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": "agentrpc.ts",
-        "hash": "5387326119030547798"
+        "file": "tokens_starbucks.theme.ts",
+        "hash": "1277432133668789489"
       },
       {
-        "file": ".cursor/rules/token-generator.mdc",
-        "hash": "2022174108188322361"
+        "file": "packages/cre8-design-tokens/tokens/cobrands/cobrand_pbm.json",
+        "hash": "16635121780463263079"
       },
       {
-        "file": ".editorconfig",
-        "hash": "5592615788401970258"
+        "file": "packages/cre8-design-tokens/tokens/brands/$themes.json",
+        "hash": "17427963481338123745"
       },
       {
-        "file": ".eslintignore",
-        "hash": "10252928758611610480"
+        "file": "packages/cre8-design-tokens/assets/fonts/pbm/OFL.txt",
+        "hash": "12241655655843042214"
       },
       {
-        "file": "css-tokens/wesparkle-light-theme.css",
-        "hash": "1962826988174540996"
+        "file": "packages/cre8-design-tokens/assets/fonts/chc/ValueSerif-Bold-Pro.woff2",
+        "hash": "16321054153119640805"
       },
       {
-        "file": "CONTRIBUTING.md",
-        "hash": "10301251840464020290"
+        "file": "packages/cre8-design-tokens/assets/fonts/chc/ValueSans-Bold-Pro.woff2",
+        "hash": "5148369434375539081"
       },
       {
-        "file": "storybook-index.html",
-        "hash": "16072990587163894686"
+        "file": "packages/cre8-design-tokens/tokens/brands/assets/fonts/Aeonik-Light.woff",
+        "hash": "15493412826185628163"
       },
       {
-        "file": "custom-elements.json",
-        "hash": "14787729171302403853"
+        "file": "packages/cre8-design-tokens/assets/fonts/evernorth/NB Akademie-Regular.woff",
+        "hash": "14261114296242241557"
       },
       {
-        "file": ".github/instructions/theme-generator.prompt.md",
-        "hash": "401935176109158637"
+        "file": "packages/cre8-design-tokens/src/docs/Background.stories.mdx",
+        "hash": "6283322162574416086"
       },
       {
-        "file": ".github/instructions/convert-styles-to-ts.prompt.md",
-        "hash": "17089112734459629603"
+        "file": "packages/cre8-design-tokens/build.js",
+        "hash": "13453699502468312173"
       },
       {
-        "file": ".cursor/rules/tokentemplate.mdc",
-        "hash": "1499651608693981323"
+        "file": "packages/cre8-design-tokens/src/docs/TypographyMixins.stories.mdx",
+        "hash": "14014479318936085286"
       },
       {
-        "file": ".github/ISSUE_TEMPLATE/question.md",
-        "hash": "9352388009145431088"
-      },
-      {
-        "file": ".gitignore",
-        "hash": "18329016575560911308"
-      },
-      {
-        "file": "README.md",
-        "hash": "6036756661614531336"
-      },
-      {
-        "file": ".npmrc",
-        "hash": "14682905260052756868"
-      },
-      {
-        "file": "nx.json",
-        "hash": "17174457513851787559"
-      },
-      {
-        "file": ".yarnrc.yml",
-        "hash": "14342564384712544891"
-      },
-      {
-        "file": "tokens.css",
-        "hash": "1727971261762682840"
-      },
-      {
-        "file": "tokens_cre8.css",
-        "hash": "2807111819425758229"
-      },
-      {
-        "file": "tsconfig.json",
-        "hash": "7027302742028750983"
+        "file": "packages/cre8-design-tokens/.yarnrc.yml",
+        "hash": "8250234060492911497"
       },
       {
         "file": "landing-page.html",
         "hash": "14338458278700984776"
       },
       {
-        "file": ".github/PULL_REQUEST_TEMPLATE.md",
-        "hash": "9471591869005341748"
-      },
-      {
         "file": "figma.css",
         "hash": "8336627131174862035"
       },
       {
-        "file": "babel.config.json",
-        "hash": "5546405625092116747"
+        "file": "packages/cre8-design-tokens/src/docs/TitleMixins.stories.mdx",
+        "hash": "4662364831320946131"
       },
       {
-        "file": "pnpm-lock.yaml",
-        "hash": "14672629264234712162"
+        "file": "packages/cre8-design-tokens/assets/fonts/cigna-legacy/Montserrat-SemiBold.ttf",
+        "hash": "9675147696396086952"
       },
       {
-        "file": "tokens_starbucks.css",
-        "hash": "6533384812763389286"
+        "file": "packages/cre8-design-tokens/assets/fonts/cigna-legacy/OpenSans-Regular.ttf",
+        "hash": "10344322237178324465"
+      },
+      {
+        "file": "packages/cre8-design-tokens/.github/CODE_OF_CONDUCT.md",
+        "hash": "12875299076091391055"
+      },
+      {
+        "file": "README.md",
+        "hash": "6036756661614531336"
+      },
+      {
+        "file": "agentrpc.ts",
+        "hash": "5387326119030547798"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/assets/leafDS.png",
+        "hash": "727497867136920341"
+      },
+      {
+        "file": "packages/cre8-design-tokens/tokens/brands/cre8/tokens_cre8.json",
+        "hash": "15898219679769714539"
       },
       {
         "file": "tokens_bolt.theme.ts",
         "hash": "7395272328495887176"
       },
       {
-        "file": "css-tokens/wesparkle-dark-theme.css",
-        "hash": "892732768396608569"
+        "file": "packages/cre8-design-tokens/src/Changelog.stories.mdx",
+        "hash": "484775183581508493"
       },
       {
-        "file": ".cursor/rules/custom-rule.mdc",
-        "hash": "2287628738847710778"
+        "file": "packages/cre8-design-tokens/.github/CONTRIBUTING.md",
+        "hash": "14344810599904416193"
       },
       {
-        "file": "tokens_brand.css",
-        "hash": "11671698387902748261"
+        "file": ".cursor/rules/tokentemplate.mdc",
+        "hash": "1499651608693981323"
       },
       {
-        "file": "package.json",
-        "hash": "11601073979223616404"
+        "file": "packages/cre8-design-tokens/src/assets/metaheadline.jpg",
+        "hash": "10508012697310468728"
       },
       {
-        "file": "tokens_starbucks.theme.ts",
-        "hash": "1277432133668789489"
+        "file": "packages/cre8-design-tokens/assets/fonts/chc/ValueSans-Medium-Pro.woff2",
+        "hash": "16457044077071712898"
       },
       {
-        "file": "tsconfig.base.json",
-        "hash": "8608594362684733718"
+        "file": "packages/cre8-design-tokens/.eslintrc.js",
+        "hash": "11111941853448940650"
       },
       {
-        "file": ".github/ISSUE_TEMPLATE/bug_report.md",
-        "hash": "11777024348086003744"
+        "file": ".github/ISSUE_TEMPLATE/question.md",
+        "hash": "9352388009145431088"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/pharmacy/Aeonik-Regular.woff",
+        "hash": "6559327985557630931"
+      },
+      {
+        "file": "packages/cre8-design-tokens/formats/brandFormat.js",
+        "hash": "10240902960331264794"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/pharmacy/Aeonik-Light.woff2",
+        "hash": "16568445817094764755"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/Overview.stories.mdx",
+        "hash": "4196984723720247327"
+      },
+      {
+        "file": ".github/instructions/theme-generator.prompt.md",
+        "hash": "401935176109158637"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/docs/MetaMixins.stories.mdx",
+        "hash": "6577716688727176552"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/docs/Shadow.stories.mdx",
+        "hash": "18338514222286437405"
+      },
+      {
+        "file": "packages/cre8-design-tokens/build.test.js",
+        "hash": "17608193013463378480"
+      },
+      {
+        "file": ".github/PULL_REQUEST_TEMPLATE.md",
+        "hash": "9471591869005341748"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/cigna-legacy/OpenSans-SemiBold.ttf",
+        "hash": "15397559135108484599"
+      },
+      {
+        "file": "packages/cre8-design-tokens/CHANGELOG.md",
+        "hash": "1417046180637611697"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/pbm/rubik-v4-latin-regular.woff",
+        "hash": "17350668966749432348"
+      },
+      {
+        "file": "packages/cre8-design-tokens/tokens/Semantic_ All Brands.json",
+        "hash": "10736890783759145891"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/cigna-legacy/Montserrat-Bold.ttf",
+        "hash": "17323325024112426535"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/docs/Content.stories.mdx",
+        "hash": "10263082668175274696"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/evernorth/NB Akademie-Medium.woff2",
+        "hash": "2144405277595546342"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/docs/LabelMixins.stories.mdx",
+        "hash": "10475019110975687402"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/pbm/rubik-v4-latin-regular.woff2",
+        "hash": "4271747604949756255"
+      },
+      {
+        "file": "storybook-index.html",
+        "hash": "16072990587163894686"
+      },
+      {
+        "file": "css-tokens/wesparkle-light-theme.css",
+        "hash": "1962826988174540996"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/docs/Spacing.stories.mdx",
+        "hash": "4393106163121600258"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/assets/breakpoints.jpg",
+        "hash": "14239780572949539181"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/assets/welcome.svg",
+        "hash": "5604888496864255202"
+      },
+      {
+        "file": "packages/cre8-design-tokens/.storybook/main.js",
+        "hash": "17998970538949526590"
+      },
+      {
+        "file": "packages/cre8-design-tokens/tokens/brands/$metadata.json",
+        "hash": "9817636055640749428"
+      },
+      {
+        "file": "packages/cre8-design-tokens/.storybook/manager.js",
+        "hash": "84821430808539923"
+      },
+      {
+        "file": "tokens.css",
+        "hash": "1727971261762682840"
+      },
+      {
+        "file": "packages/cre8-design-tokens/transforms/brandTransform.test.js",
+        "hash": "17946071862226111439"
+      },
+      {
+        "file": "packages/cre8-design-tokens/tokens/brands/minimalist/tokens_minimalist.json",
+        "hash": "13846783409026768870"
+      },
+      {
+        "file": "packages/cre8-design-tokens/tokens/brands/blue/tokens_blue.json",
+        "hash": "12751077833025633412"
+      },
+      {
+        "file": "packages/cre8-design-tokens/.storybook/preview.js",
+        "hash": "8411669462363312568"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/healthkit/NB Akademie-Bold.woff",
+        "hash": "10736354793489210177"
+      },
+      {
+        "file": "packages/cre8-design-tokens/.babelrc",
+        "hash": "1389868326933519382"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/pbm/rubik-v4-latin-500.woff",
+        "hash": "13014397370975702447"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/Contributing.stories.mdx",
+        "hash": "5394898451861864160"
+      },
+      {
+        "file": "packages/cre8-design-tokens/leaf-leaf-design-tokens-1.7.0.tgz",
+        "hash": "11955766359307329905"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/healthkit/NB Akademie-Regular.woff2",
+        "hash": "8422776101015575033"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/evernorth/NB Akademie-Medium.woff",
+        "hash": "2753227650291020345"
+      },
+      {
+        "file": ".eslintignore",
+        "hash": "10252928758611610480"
       },
       {
         "file": "CHANGELOG.md",
         "hash": "11263775560645233535"
       },
       {
+        "file": "packages/cre8-design-tokens/tokens/brands/assets/fonts/Aeonik-Regular.woff",
+        "hash": "6559327985557630931"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/evernorth/Inter-SemiBold.woff2",
+        "hash": "15506184938680589546"
+      },
+      {
+        "file": "packages/cre8-design-tokens/.github/ISSUE_TEMPLATE/question.md",
+        "hash": "8750165509050110450"
+      },
+      {
+        "file": "CONTRIBUTING.md",
+        "hash": "10301251840464020290"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/pharmacy/Aeonik-Light.woff",
+        "hash": "15493412826185628163"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/evernorth/NB Akademie-Bold.woff",
+        "hash": "10736354793489210177"
+      },
+      {
+        "file": "packages/cre8-design-tokens/.storybook/uiTheme.js",
+        "hash": "4146980390914516505"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/docs/native/NativeMixins.stories.mdx",
+        "hash": "17066744217713070780"
+      },
+      {
+        "file": "packages/cre8-design-tokens/formats/brandFormat.test.js",
+        "hash": "8161571531533161053"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/healthkit/NB Akademie-Medium.woff",
+        "hash": "2753227650291020345"
+      },
+      {
+        "file": "packages/cre8-design-tokens/tokens/brands/femmecubator/tokens_injected.json",
+        "hash": "6838627337880409677"
+      },
+      {
+        "file": "packages/cre8-design-tokens/actions/brandAction.js",
+        "hash": "1878767407329389240"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/chc/ValueSansRegular-Pro.woff2",
+        "hash": "13978687447473896757"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/pharmacy/Aeonik-Regular.woff2",
+        "hash": "741258449757716479"
+      },
+      {
+        "file": "packages/cre8-design-tokens/tokens/brands/assets/fonts/Aeonik-Bold.woff2",
+        "hash": "15841124439525307680"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/assets/whatisit.jpg",
+        "hash": "2228195077423382156"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/Howtochoose.stories.mdx",
+        "hash": "7759200633439448641"
+      },
+      {
+        "file": "packages/cre8-design-tokens/tokens/cobrands/cobrand.json",
+        "hash": "9397582051313191580"
+      },
+      {
+        "file": ".cursor/rules/token-generator.mdc",
+        "hash": "2022174108188322361"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/assets/designtoken.jpg",
+        "hash": "2174464308277034798"
+      },
+      {
+        "file": "tokens_brand.css",
+        "hash": "11671698387902748261"
+      },
+      {
+        "file": "packages/cre8-design-tokens/CONTRIBUTING.md",
+        "hash": "9171325276726843563"
+      },
+      {
+        "file": "packages/cre8-design-tokens/tokens/brands/assets/fonts/Aeonik-Light.woff2",
+        "hash": "16568445817094764755"
+      },
+      {
+        "file": ".npmrc",
+        "hash": "14682905260052756868"
+      },
+      {
+        "file": "packages/cre8-design-tokens/.github/ISSUE_TEMPLATE/feature_request.md",
+        "hash": "239163076449248677"
+      },
+      {
+        "file": "packages/cre8-design-tokens/transforms/brandTransform.js",
+        "hash": "18172171663190171619"
+      },
+      {
+        "file": "packages/cre8-design-tokens/cobrand_config.js",
+        "hash": "1838533170861737067"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "18329016575560911308"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/Installation.stories.mdx",
+        "hash": "14183102091775294304"
+      },
+      {
+        "file": "tokens_cre8.css",
+        "hash": "2807111819425758229"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/evernorth/Inter-SemiBold.woff",
+        "hash": "11382987288228852798"
+      },
+      {
+        "file": ".github/instructions/convert-styles-to-ts.prompt.md",
+        "hash": "17089112734459629603"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/docs/Border.stories.mdx",
+        "hash": "16483869161315725470"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/docs/Breakpoints.stories.mdx",
+        "hash": "7942362481451221969"
+      },
+      {
+        "file": "packages/cre8-design-tokens/tokens/cobrands/ers.json",
+        "hash": "7532545049275088478"
+      },
+      {
+        "file": "packages/cre8-design-tokens/Jenkinsfile",
+        "hash": "9289172925822860227"
+      },
+      {
+        "file": "packages/cre8-design-tokens/pnpm-lock.yaml",
+        "hash": "17911527191120036147"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/assets/branding.jpg",
+        "hash": "17249475362328960777"
+      },
+      {
+        "file": "packages/cre8-design-tokens/README.md",
+        "hash": "11048777243659753947"
+      },
+      {
+        "file": "packages/cre8-design-tokens/tokens/brands/assets/fonts/Aeonik-Regular.woff2",
+        "hash": "741258449757716479"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/cigna-legacy/Montserrat-Regular.ttf",
+        "hash": "13446203465775010039"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/pbm/rubik-v4-latin-300.woff2",
+        "hash": "2703991623094515340"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/docs/HeadlineMixins.stories.mdx",
+        "hash": "1884489490179707553"
+      },
+      {
+        "file": "packages/cre8-design-tokens/.github/PULL_REQUEST_TEMPLATE.md",
+        "hash": "1690390208833338009"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/healthkit/NB Akademie-Regular.woff",
+        "hash": "14261114296242241557"
+      },
+      {
+        "file": "packages/cre8-design-tokens/.github/ISSUE_TEMPLATE/bug_report.md",
+        "hash": "3811061355018727161"
+      },
+      {
+        "file": "packages/cre8-design-tokens/.storybook/preview-head.html",
+        "hash": "3664159742409761193"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/assets/metamixin.jpg",
+        "hash": "12979999911127379779"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/healthkit/NB Akademie-Medium.woff2",
+        "hash": "2144405277595546342"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/pbm/rubik-v4-latin-500.woff2",
+        "hash": "5723414812533010104"
+      },
+      {
+        "file": "packages/cre8-design-tokens/stylelint.config.js",
+        "hash": "15948089000772478944"
+      },
+      {
+        "file": "packages/cre8-design-tokens/tokens/cobrands/trs.json",
+        "hash": "11275558057742107871"
+      },
+      {
+        "file": ".yarnrc.yml",
+        "hash": "14342564384712544891"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/evernorth/Inter-Medium.woff",
+        "hash": "1818205952116760960"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/cigna-legacy/OpenSans-Bold.ttf",
+        "hash": "659712964613684678"
+      },
+      {
+        "file": ".github/ISSUE_TEMPLATE/bug_report.md",
+        "hash": "11777024348086003744"
+      },
+      {
+        "file": "package.json",
+        "hash": "11601073979223616404"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/tcg/Montserrat-Bold.ttf",
+        "hash": "17323325024112426535"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/pharmacy/Aeonik-Bold.woff",
+        "hash": "3664390439435570533"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/docs/BodyMixins.stories.mdx",
+        "hash": "1732077519488914920"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/evernorth/Inter-Medium.woff2",
+        "hash": "9139216803289685971"
+      },
+      {
+        "file": "packages/cre8-design-tokens/tokens/Globals_ White Label.json",
+        "hash": "14322548777740035262"
+      },
+      {
         "file": ".github/ISSUE_TEMPLATE/feature_request.md",
         "hash": "239163076449248677"
       },
       {
-        "file": "cre8-wc.code-workspace",
-        "hash": "6590053847653711996"
+        "file": "packages/cre8-design-tokens/assets/fonts/tcg/Montserrat-SemiBold.ttf",
+        "hash": "9675147696396086952"
+      },
+      {
+        "file": "packages/cre8-design-tokens/.storybook/manager-head.html",
+        "hash": "18304746863593127988"
+      },
+      {
+        "file": "packages/cre8-design-tokens/tokens/brands/femmecubator/tokens_femmecubator.json",
+        "hash": "11681040149623333652"
+      },
+      {
+        "file": "packages/cre8-design-tokens/.storybook/static/leafDS.png",
+        "hash": "727497867136920341"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/healthkit/NB Akademie-Bold.woff2",
+        "hash": "7110846727337360964"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/tcg/Montserrat-Medium.ttf",
+        "hash": "16487949518222715094"
+      },
+      {
+        "file": "nx.json",
+        "hash": "17174457513851787559"
+      },
+      {
+        "file": "pnpm-lock.yaml",
+        "hash": "14672629264234712162"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/docs/DisplayMixins.stories.mdx",
+        "hash": "7244275568368689537"
+      },
+      {
+        "file": "packages/cre8-design-tokens/tokens/brands/blue-v1/tokens_blue-v1.json",
+        "hash": "11193628168095634671"
+      },
+      {
+        "file": "packages/cre8-design-tokens/ROADMAP.md",
+        "hash": "1205825049665352708"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "8608594362684733718"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/evernorth/Inter-Regular.woff",
+        "hash": "6767441284119706840"
+      },
+      {
+        "file": "packages/cre8-design-tokens/tokens/headless/headlessFigmaTokens.json",
+        "hash": "10087417422247088244"
+      },
+      {
+        "file": "packages/cre8-design-tokens/.gitignore",
+        "hash": "15913899665399882001"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/cms/cobrands/erstex.css",
+        "hash": "13308223452491291970"
+      },
+      {
+        "file": "packages/cre8-design-tokens/tokens/brands/assets/fonts/Aeonik-Bold.woff",
+        "hash": "3664390439435570533"
       },
       {
         "file": "publish-storybook.sh",
         "hash": "1610124664741528526"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/evernorth/Inter-Bold.woff",
+        "hash": "13642241820383549950"
+      },
+      {
+        "file": "packages/cre8-design-tokens/.storybook/static/leaf.png",
+        "hash": "12905045280555339773"
+      },
+      {
+        "file": "tokens_starbucks.css",
+        "hash": "6533384812763389286"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/pbm/rubik-v4-latin-300.woff",
+        "hash": "2696487330039477131"
+      },
+      {
+        "file": "custom-elements.json",
+        "hash": "14787729171302403853"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/assets/borderColor.jpg",
+        "hash": "12731603973957992972"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/evernorth/Inter-Bold.woff2",
+        "hash": "17140375088009895541"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/evernorth/NB Akademie-Regular.woff2",
+        "hash": "8422776101015575033"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/Welcome.stories.mdx",
+        "hash": "14318755194843869786"
+      },
+      {
+        "file": "packages/cre8-design-tokens/src/assets/contentColor.jpg",
+        "hash": "13150296119154756742"
+      },
+      {
+        "file": "css-tokens/wesparkle-dark-theme.css",
+        "hash": "892732768396608569"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/evernorth/NB Akademie-Bold.woff2",
+        "hash": "7110846727337360964"
+      },
+      {
+        "file": ".cursor/rules/custom-rule.mdc",
+        "hash": "2287628738847710778"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/evernorth/Inter-Regular.woff2",
+        "hash": "17664637104799932616"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "7027302742028750983"
+      },
+      {
+        "file": "packages/cre8-design-tokens/tokens/brands/marketing/tokens_marketing.json",
+        "hash": "12568581518506375681"
+      },
+      {
+        "file": ".editorconfig",
+        "hash": "5592615788401970258"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/pharmacy/Aeonik-Bold.woff2",
+        "hash": "15841124439525307680"
+      },
+      {
+        "file": "packages/cre8-design-tokens/assets/fonts/tcg/Montserrat-Regular.ttf",
+        "hash": "13446203465775010039"
+      },
+      {
+        "file": "packages/cre8-design-tokens/jest.config.js",
+        "hash": "8028018892780853263"
+      },
+      {
+        "file": "babel.config.json",
+        "hash": "5546405625092116747"
+      },
+      {
+        "file": "cre8-wc.code-workspace",
+        "hash": "6590053847653711996"
       }
     ],
     "projectFileMap": {
@@ -2802,7 +3342,7 @@
         },
         {
           "file": "packages/cre8-wc/.storybook/custom-elements.json",
-          "hash": "1653941000755828405"
+          "hash": "6265999105024863332"
         },
         {
           "file": "packages/cre8-wc/.storybook/images/hero-image.png",
@@ -2926,7 +3466,7 @@
         },
         {
           "file": "packages/cre8-wc/.storybook/preview.ts",
-          "hash": "15233729343993128892"
+          "hash": "7315273358975872824"
         },
         {
           "file": "packages/cre8-wc/.storybook/static/Image.png",
@@ -3038,7 +3578,7 @@
         },
         {
           "file": "packages/cre8-wc/README.md",
-          "hash": "12713617303014819707"
+          "hash": "14923364146784267019"
         },
         {
           "file": "packages/cre8-wc/__mocks__/nanoid.js",
@@ -3114,7 +3654,7 @@
         },
         {
           "file": "packages/cre8-wc/components/badge/badge.stories.ts",
-          "hash": "650539585022325725"
+          "hash": "10078867302085886194"
         },
         {
           "file": "packages/cre8-wc/components/badge/badge.styles.ts",
@@ -3306,7 +3846,7 @@
         },
         {
           "file": "packages/cre8-wc/components/cre8-form-element.ts",
-          "hash": "4658618052701857085"
+          "hash": "15205004625949195823"
         },
         {
           "file": "packages/cre8-wc/components/danger-button/danger-button.module.scss",
@@ -3394,7 +3934,7 @@
         },
         {
           "file": "packages/cre8-wc/components/date-picker/date-picker.ts",
-          "hash": "15083869072801867063"
+          "hash": "11875281669773307262"
         },
         {
           "file": "packages/cre8-wc/components/date-picker/test/date-picker.test.ts",
@@ -3482,7 +4022,7 @@
         },
         {
           "file": "packages/cre8-wc/components/field-note/field-note.stories.ts",
-          "hash": "8593407852979942548"
+          "hash": "11776317673065666117"
         },
         {
           "file": "packages/cre8-wc/components/field-note/field-note.styles.ts",
@@ -3750,7 +4290,7 @@
         },
         {
           "file": "packages/cre8-wc/components/inline-alert/inline-alert.ts",
-          "hash": "8214647446595726841"
+          "hash": "10509986215955211558"
         },
         {
           "file": "packages/cre8-wc/components/inline-alert/test/inline-alert.test.ts",
@@ -3962,7 +4502,7 @@
         },
         {
           "file": "packages/cre8-wc/components/modal/modal.ts",
-          "hash": "11435818604912704232"
+          "hash": "8378294962900691443"
         },
         {
           "file": "packages/cre8-wc/components/modal/test/modal.test.ts",
@@ -4825,112 +5365,840 @@
           "hash": "8422776101015575033"
         },
         {
-          "file": "packages/cre8-wc/design-tokens/brands/black/assets/fonts/Aeonik-Bold.woff",
-          "hash": "3664390439435570533"
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/_base.scss",
+          "hash": "4447825168687373693"
         },
         {
-          "file": "packages/cre8-wc/design-tokens/brands/black/assets/fonts/Aeonik-Bold.woff2",
-          "hash": "15841124439525307680"
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/badge.scss",
+          "hash": "3065580744543405574"
         },
         {
-          "file": "packages/cre8-wc/design-tokens/brands/black/assets/fonts/Aeonik-Light.woff",
-          "hash": "15493412826185628163"
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/bg.scss",
+          "hash": "13872362037974849223"
         },
         {
-          "file": "packages/cre8-wc/design-tokens/brands/black/assets/fonts/Aeonik-Light.woff2",
-          "hash": "16568445817094764755"
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/border-style.scss",
+          "hash": "13158190061846743832"
         },
         {
-          "file": "packages/cre8-wc/design-tokens/brands/black/assets/fonts/Aeonik-Regular.woff",
-          "hash": "6559327985557630931"
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/border.scss",
+          "hash": "231418742212368018"
         },
         {
-          "file": "packages/cre8-wc/design-tokens/brands/black/assets/fonts/Aeonik-Regular.woff2",
-          "hash": "741258449757716479"
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/borderRadius.scss",
+          "hash": "2886850836302891096"
         },
         {
-          "file": "packages/cre8-wc/design-tokens/brands/black/css/fonts.css",
-          "hash": "13342766218928978811"
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/borderWidth.scss",
+          "hash": "822761801397907758"
         },
         {
-          "file": "packages/cre8-wc/design-tokens/brands/black/css/tokens_black.module.ts",
-          "hash": "6156482429450950400"
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/breakpoint.scss",
+          "hash": "14505366964570099452"
         },
         {
-          "file": "packages/cre8-wc/design-tokens/brands/black/css/tokens_brand.css",
-          "hash": "18043297223610642666"
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/button.scss",
+          "hash": "3844040440555441212"
         },
         {
-          "file": "packages/cre8-wc/design-tokens/brands/blue/assets/fonts/OFL.txt",
-          "hash": "12241655655843042214"
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/content.scss",
+          "hash": "2350479868976739204"
         },
         {
-          "file": "packages/cre8-wc/design-tokens/brands/blue/assets/fonts/rubik-v4-latin-300.woff",
-          "hash": "2696487330039477131"
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/css/fonts.css",
+          "hash": "13202890960884704699"
         },
         {
-          "file": "packages/cre8-wc/design-tokens/brands/blue/assets/fonts/rubik-v4-latin-300.woff2",
-          "hash": "2703991623094515340"
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/css/tokens_blue-v1.css",
+          "hash": "12684709634446502887"
         },
         {
-          "file": "packages/cre8-wc/design-tokens/brands/blue/assets/fonts/rubik-v4-latin-500.woff",
-          "hash": "13014397370975702447"
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/css/tokens_brand.css",
+          "hash": "13731248470374936542"
         },
         {
-          "file": "packages/cre8-wc/design-tokens/brands/blue/assets/fonts/rubik-v4-latin-500.woff2",
-          "hash": "5723414812533010104"
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/desktop-menu.scss",
+          "hash": "13851420807973045618"
         },
         {
-          "file": "packages/cre8-wc/design-tokens/brands/blue/assets/fonts/rubik-v4-latin-regular.woff",
-          "hash": "17350668966749432348"
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/fontFamilies.scss",
+          "hash": "11368091738376059820"
         },
         {
-          "file": "packages/cre8-wc/design-tokens/brands/blue/assets/fonts/rubik-v4-latin-regular.woff2",
-          "hash": "4271747604949756255"
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/fontSize.scss",
+          "hash": "11893415109067253571"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/fontWeights.scss",
+          "hash": "7824310553712561531"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/footer.scss",
+          "hash": "5507982896919917488"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/header.scss",
+          "hash": "1302486106541636464"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/icon-size.scss",
+          "hash": "13554077463074809117"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/letterSpacing.scss",
+          "hash": "16402999932315816451"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/lineHeights.scss",
+          "hash": "7044868271285083397"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/link.scss",
+          "hash": "2835907405419337270"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/paragraphIndent.scss",
+          "hash": "7753116321830365424"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/paragraphSpacing.scss",
+          "hash": "16772346511180518718"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/shadow.scss",
+          "hash": "63977163289217042"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/spacing.scss",
+          "hash": "6813840733010461253"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/textCase.scss",
+          "hash": "7221388201125899435"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/textDecoration.scss",
+          "hash": "7338062231929026676"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/tokens-all-blue-v1.scss",
+          "hash": "2918703348648855231"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue-v1/tokens-brand.scss",
+          "hash": "3903595346120813633"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/_base.scss",
+          "hash": "5106167651322065131"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/badge.scss",
+          "hash": "16786148368508884175"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/bg.scss",
+          "hash": "16269193336301848544"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/border-style.scss",
+          "hash": "13904434772074977175"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/border.scss",
+          "hash": "16379452024457331365"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/borderRadius.scss",
+          "hash": "12442111640085522032"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/borderWidth.scss",
+          "hash": "464614668701670607"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/breakpoint.scss",
+          "hash": "13324739642227840381"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/button.scss",
+          "hash": "3451908929601942882"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/content.scss",
+          "hash": "11290997981092625488"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/css/assets/fonts/ValueSans-Bold-Pro.woff2",
+          "hash": "5148369434375539081"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/css/assets/fonts/ValueSans-Medium-Pro.woff2",
+          "hash": "16457044077071712898"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/css/assets/fonts/ValueSansRegular-Pro.woff2",
+          "hash": "13978687447473896757"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/css/assets/fonts/ValueSerif-Bold-Pro.woff2",
+          "hash": "16321054153119640805"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/css/fonts.css",
+          "hash": "11418317896221391657"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/css/tokens_blue.css",
+          "hash": "11257357759871014226"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/css/tokens_blue.module.ts",
+          "hash": "18040741553103767413"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/css/tokens_brand.css",
+          "hash": "14017126956895001952"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/desktop-menu.scss",
+          "hash": "7581941654024401388"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/fontFamilies.scss",
+          "hash": "3428633646195745696"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/fontSize.scss",
+          "hash": "13313020442468367555"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/fontWeights.scss",
+          "hash": "2771566029157081857"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/footer.scss",
+          "hash": "5811495390355592894"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/header.scss",
+          "hash": "14013500575648331867"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/icon-size.scss",
+          "hash": "12142582767641893421"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/letterSpacing.scss",
+          "hash": "2900779078582122753"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/lineHeights.scss",
+          "hash": "16649381247640269563"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/link.scss",
+          "hash": "15863907436678350330"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/paragraphIndent.scss",
+          "hash": "11227946727103438798"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/paragraphSpacing.scss",
+          "hash": "5605013130633238958"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/progress-meter.scss",
+          "hash": "18108163207354028409"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/shadow.scss",
+          "hash": "18367635396690345330"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/spacing.scss",
+          "hash": "8145336953772527207"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/textCase.scss",
+          "hash": "13567125956558874653"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/textDecoration.scss",
+          "hash": "9095888132285079461"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/tokens-all-blue.scss",
+          "hash": "10455387084864691506"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/blue/tokens-brand.scss",
+          "hash": "17792121154161368878"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/_base.scss",
+          "hash": "13349546330189839766"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/badge.scss",
+          "hash": "11805243199811311345"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/bg.scss",
+          "hash": "7066190203700476794"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/border-style.scss",
+          "hash": "18394229547969729496"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/border.scss",
+          "hash": "3586716663096686166"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/borderRadius.scss",
+          "hash": "2703033881381319129"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/borderWidth.scss",
+          "hash": "1342299074617248927"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/breakpoint.scss",
+          "hash": "12774926635862486342"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/button.scss",
+          "hash": "5342621214528057695"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/content.scss",
+          "hash": "6068136985410553073"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/css/fonts.css",
+          "hash": "9760168451141339510"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/css/tokens_brand.css",
+          "hash": "12431790511026121365"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/css/tokens_cre8.css",
+          "hash": "1470217387697403429"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/desktop-menu.scss",
+          "hash": "4447673408254668869"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/fontFamilies.scss",
+          "hash": "5396900109928853314"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/fontSize.scss",
+          "hash": "14691557007020325132"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/fontWeights.scss",
+          "hash": "8727159812929806398"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/footer.scss",
+          "hash": "9778986406119434968"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/header.scss",
+          "hash": "6040584496954300695"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/icon-size.scss",
+          "hash": "13849501814635673909"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/letterSpacing.scss",
+          "hash": "10797881611075992472"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/lineHeights.scss",
+          "hash": "3781293318500229445"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/link.scss",
+          "hash": "4691042302975285728"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/paragraphIndent.scss",
+          "hash": "18141501318547118346"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/paragraphSpacing.scss",
+          "hash": "9481479058060823027"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/progress-meter.scss",
+          "hash": "2137975923080679763"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/shadow.scss",
+          "hash": "1350860945553044531"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/spacing.scss",
+          "hash": "15349395546757202269"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/textCase.scss",
+          "hash": "17194315481632689048"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/textDecoration.scss",
+          "hash": "17345344104568088799"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/tokens-all-cre8.scss",
+          "hash": "17640911149116914889"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/cre8/tokens-brand.scss",
+          "hash": "16751326847155563390"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/femmecubator/base.scss",
+          "hash": "4846599460366894233"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/femmecubator/border.scss",
+          "hash": "11175680604240998681"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/femmecubator/color.scss",
+          "hash": "3469799537676757749"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/femmecubator/css/fonts.css",
+          "hash": "9760168451141339510"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/femmecubator/css/tokens_brand.css",
+          "hash": "11938802533204374133"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/femmecubator/spacing.scss",
+          "hash": "7965517529861133532"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/femmecubator/tokens-all-femmecubator.scss",
+          "hash": "2617994655931834068"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/femmecubator/tokens-brand.scss",
+          "hash": "4017610303055463262"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/_base.scss",
+          "hash": "14480498179846251439"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/badge.scss",
+          "hash": "5368071328256163333"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/bg.scss",
+          "hash": "10300186514670184249"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/border-style.scss",
+          "hash": "7654673388959820613"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/border.scss",
+          "hash": "5099732432558383392"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/borderRadius.scss",
+          "hash": "16954644130839541233"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/borderWidth.scss",
+          "hash": "18380965402457677288"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/breakpoint.scss",
+          "hash": "12138342574497429868"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/button.scss",
+          "hash": "4280280691425529625"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/content.scss",
+          "hash": "17737310304779578011"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/css/fonts.css",
+          "hash": "2949495871108459932"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/css/tokens_brand.css",
+          "hash": "16418481301174070053"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/css/tokens_legacy.css",
+          "hash": "9241773980252565862"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/desktop-menu.scss",
+          "hash": "10821416942200581675"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/fontFamilies.scss",
+          "hash": "13421305030767274108"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/fontSize.scss",
+          "hash": "12492415221298336160"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/fontWeights.scss",
+          "hash": "6387881891721372597"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/footer.scss",
+          "hash": "18155664197319278159"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/header.scss",
+          "hash": "260332352171278072"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/icon-size.scss",
+          "hash": "12495453673209296932"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/letterSpacing.scss",
+          "hash": "4229191390997231407"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/lineHeights.scss",
+          "hash": "16611390498712341305"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/paragraphIndent.scss",
+          "hash": "15134783305763528969"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/paragraphSpacing.scss",
+          "hash": "11595661384353672514"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/progress-meter.scss",
+          "hash": "4884178112646276302"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/shadow.scss",
+          "hash": "1162806289394920154"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/spacing.scss",
+          "hash": "8743521001796805751"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/textCase.scss",
+          "hash": "15623085101590273343"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/textDecoration.scss",
+          "hash": "5621063478105245713"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/tokens-all-legacy.scss",
+          "hash": "9482747772853009554"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/legacy/tokens-brand.scss",
+          "hash": "17890698173650451705"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/_base.scss",
+          "hash": "13077511185554306785"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/asset.scss",
+          "hash": "13697016615341424376"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/badge.scss",
+          "hash": "2964955215395914793"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/bg.scss",
+          "hash": "10425025958569302595"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/border-style.scss",
+          "hash": "15097884454483124447"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/border.scss",
+          "hash": "14318086460072501171"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/borderRadius.scss",
+          "hash": "1488912886226720651"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/borderWidth.scss",
+          "hash": "13754790939689352289"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/breakpoint.scss",
+          "hash": "17430630894521457689"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/button.scss",
+          "hash": "492614811395223783"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/content.scss",
+          "hash": "1300297491832237934"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/css/fonts.css",
+          "hash": "1291430102501531321"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/css/tokens_brand.css",
+          "hash": "3703162899768161955"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/css/tokens_marketing.css",
+          "hash": "2493588716087885029"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/desktop-menu.scss",
+          "hash": "5212459483326560670"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/fontFamilies.scss",
+          "hash": "17108248707745388408"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/fontSize.scss",
+          "hash": "3510274287238572780"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/fontWeights.scss",
+          "hash": "2116193621316313668"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/footer.scss",
+          "hash": "13335002350379959881"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/header.scss",
+          "hash": "5061269134319555966"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/icon-size.scss",
+          "hash": "10104211017112647585"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/letterSpacing.scss",
+          "hash": "5041851407517231044"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/lineHeights.scss",
+          "hash": "1821155220827859174"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/link.scss",
+          "hash": "11451090605078591705"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/paragraphIndent.scss",
+          "hash": "6943973175220782589"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/paragraphSpacing.scss",
+          "hash": "7524655632428368452"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/progress-meter.scss",
+          "hash": "6072161231877268689"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/shadow.scss",
+          "hash": "5348971741694878410"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/spacing.scss",
+          "hash": "17558636096924418411"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/textCase.scss",
+          "hash": "10762368161279752632"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/textDecoration.scss",
+          "hash": "13684205777486620097"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/tokens-all-marketing.scss",
+          "hash": "9307798921045427333"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/marketing/tokens-brand.scss",
+          "hash": "12689225475671573805"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/_base.scss",
+          "hash": "2234863757138412168"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/asset.scss",
+          "hash": "2701472645195878622"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/badge.scss",
+          "hash": "1694253908257461892"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/bg.scss",
+          "hash": "11868446728104343190"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/border-style.scss",
+          "hash": "6401177744976479607"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/border.scss",
+          "hash": "2235645356967779084"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/borderRadius.scss",
+          "hash": "10549183364964957307"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/borderWidth.scss",
+          "hash": "875807136516552089"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/breakpoint.scss",
+          "hash": "12278185928807706101"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/button.scss",
+          "hash": "11993919647903072929"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/content.scss",
+          "hash": "14808207531247186456"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/css/fonts.css",
+          "hash": "4211421747010223375"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/css/tokens_brand.css",
+          "hash": "7603975291290903714"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/css/tokens_minimalist.css",
+          "hash": "15745134564177368750"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/desktop-menu.scss",
+          "hash": "1290913915781840828"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/fontFamilies.scss",
+          "hash": "2088211348265312669"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/fontFamily.scss",
+          "hash": "17544972010906301710"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/fontSize.scss",
+          "hash": "2816744551666846769"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/fontWeights.scss",
+          "hash": "8340333658068848711"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/footer.scss",
+          "hash": "4895348119349361197"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/header.scss",
+          "hash": "3423799653136443760"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/icon-size.scss",
+          "hash": "14961672510967239022"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/letterSpacing.scss",
+          "hash": "9838087434293620895"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/lineHeights.scss",
+          "hash": "6053078031965106218"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/paragraphIndent.scss",
+          "hash": "14447048521428869759"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/paragraphSpacing.scss",
+          "hash": "12293802823581931724"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/progress-meter.scss",
+          "hash": "16353612159494948893"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/shadow.scss",
+          "hash": "11410651075449419321"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/spacing.scss",
+          "hash": "7893811175623568696"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/textCase.scss",
+          "hash": "15522758256445384822"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/textDecoration.scss",
+          "hash": "14269581948920462547"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/tokens-all-minimalist.scss",
+          "hash": "2900141279765319111"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands copy/minimalist/tokens-brand.scss",
+          "hash": "7394405449983606516"
         },
         {
           "file": "packages/cre8-wc/design-tokens/brands/blue/css/fonts.css",
-          "hash": "14809289582554327066"
+          "hash": "10864511690280411096"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands/blue/css/tokens_blue.css",
+          "hash": "11257357759871014226"
         },
         {
           "file": "packages/cre8-wc/design-tokens/brands/blue/css/tokens_blue.module.ts",
-          "hash": "3521751114350757219"
-        },
-        {
-          "file": "packages/cre8-wc/design-tokens/brands/blue/css/tokens_brand.css",
-          "hash": "12916051429660161843"
+          "hash": "13504397267900290558"
         },
         {
           "file": "packages/cre8-wc/design-tokens/brands/bolt/tokens_bolt.theme.ts",
           "hash": "7395272328495887176"
-        },
-        {
-          "file": "packages/cre8-wc/design-tokens/brands/consumer/assets/fonts/ValueSans-Bold-Pro.woff2",
-          "hash": "5148369434375539081"
-        },
-        {
-          "file": "packages/cre8-wc/design-tokens/brands/consumer/assets/fonts/ValueSans-Medium-Pro.woff2",
-          "hash": "16457044077071712898"
-        },
-        {
-          "file": "packages/cre8-wc/design-tokens/brands/consumer/assets/fonts/ValueSansRegular-Pro.woff2",
-          "hash": "13978687447473896757"
-        },
-        {
-          "file": "packages/cre8-wc/design-tokens/brands/consumer/assets/fonts/ValueSerif-Bold-Pro.woff2",
-          "hash": "16321054153119640805"
-        },
-        {
-          "file": "packages/cre8-wc/design-tokens/brands/consumer/css/fonts.css",
-          "hash": "683127435216729587"
-        },
-        {
-          "file": "packages/cre8-wc/design-tokens/brands/consumer/css/tokens_brand.css",
-          "hash": "2980686556858875337"
-        },
-        {
-          "file": "packages/cre8-wc/design-tokens/brands/consumer/css/tokens_consumer.module.ts",
-          "hash": "18040741553103767413"
         },
         {
           "file": "packages/cre8-wc/design-tokens/brands/cre8-legacy/assets/fonts/Montserrat-Bold.ttf",
@@ -4962,7 +6230,7 @@
         },
         {
           "file": "packages/cre8-wc/design-tokens/brands/cre8-legacy/css/tokens_brand.css",
-          "hash": "5348997267063842542"
+          "hash": "6738963969887115089"
         },
         {
           "file": "packages/cre8-wc/design-tokens/brands/cre8-legacy/css/tokens_cre8-legacy.css",
@@ -4973,62 +6241,6 @@
           "hash": "1582556034503030096"
         },
         {
-          "file": "packages/cre8-wc/design-tokens/brands/cre8/assets/fonts/Inter-Bold.woff",
-          "hash": "13642241820383549950"
-        },
-        {
-          "file": "packages/cre8-wc/design-tokens/brands/cre8/assets/fonts/Inter-Bold.woff2",
-          "hash": "17140375088009895541"
-        },
-        {
-          "file": "packages/cre8-wc/design-tokens/brands/cre8/assets/fonts/Inter-Medium.woff",
-          "hash": "1818205952116760960"
-        },
-        {
-          "file": "packages/cre8-wc/design-tokens/brands/cre8/assets/fonts/Inter-Medium.woff2",
-          "hash": "9139216803289685971"
-        },
-        {
-          "file": "packages/cre8-wc/design-tokens/brands/cre8/assets/fonts/Inter-Regular.woff",
-          "hash": "6767441284119706840"
-        },
-        {
-          "file": "packages/cre8-wc/design-tokens/brands/cre8/assets/fonts/Inter-Regular.woff2",
-          "hash": "17664637104799932616"
-        },
-        {
-          "file": "packages/cre8-wc/design-tokens/brands/cre8/assets/fonts/Inter-SemiBold.woff",
-          "hash": "11382987288228852798"
-        },
-        {
-          "file": "packages/cre8-wc/design-tokens/brands/cre8/assets/fonts/Inter-SemiBold.woff2",
-          "hash": "15506184938680589546"
-        },
-        {
-          "file": "packages/cre8-wc/design-tokens/brands/cre8/assets/fonts/NB Akademie-Bold.woff",
-          "hash": "10736354793489210177"
-        },
-        {
-          "file": "packages/cre8-wc/design-tokens/brands/cre8/assets/fonts/NB Akademie-Bold.woff2",
-          "hash": "7110846727337360964"
-        },
-        {
-          "file": "packages/cre8-wc/design-tokens/brands/cre8/assets/fonts/NB Akademie-Medium.woff",
-          "hash": "2753227650291020345"
-        },
-        {
-          "file": "packages/cre8-wc/design-tokens/brands/cre8/assets/fonts/NB Akademie-Medium.woff2",
-          "hash": "2144405277595546342"
-        },
-        {
-          "file": "packages/cre8-wc/design-tokens/brands/cre8/assets/fonts/NB Akademie-Regular.woff",
-          "hash": "14261114296242241557"
-        },
-        {
-          "file": "packages/cre8-wc/design-tokens/brands/cre8/assets/fonts/NB Akademie-Regular.woff2",
-          "hash": "8422776101015575033"
-        },
-        {
           "file": "packages/cre8-wc/design-tokens/brands/cre8/css/fonts.css",
           "hash": "8077317217157914349"
         },
@@ -5037,8 +6249,12 @@
           "hash": "4641563024305940808"
         },
         {
+          "file": "packages/cre8-wc/design-tokens/brands/cre8/css/tokens_cre8.css",
+          "hash": "4455043032953237672"
+        },
+        {
           "file": "packages/cre8-wc/design-tokens/brands/cre8/css/tokens_cre8.module.ts",
-          "hash": "6268622081903960917"
+          "hash": "3654031190246693846"
         },
         {
           "file": "packages/cre8-wc/design-tokens/brands/femmecubator/README.md",
@@ -5135,6 +6351,14 @@
         {
           "file": "packages/cre8-wc/design-tokens/brands/marketing/css/tokens_marketing.module.ts",
           "hash": "10431926444288868040"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands/minimalist/css/tokens_minimalist.css",
+          "hash": "2247165080936273477"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/brands/minimalist/css/tokens_minimalist.module.ts",
+          "hash": "1432449073600572080"
         },
         {
           "file": "packages/cre8-wc/design-tokens/brands/prisma/README.md",
@@ -5458,23 +6682,23 @@
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/Components/Accent Color_.md",
-          "hash": "15370800966879649226"
+          "hash": "13071157273521863124"
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/Components/Blur.md",
-          "hash": "4087270816601647475"
+          "hash": "9602221116508556855"
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/Components/Border Radiu_.md",
-          "hash": "9122711281520973414"
+          "hash": "7262170223724392510"
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/Components/Border Style.md",
-          "hash": "15039586433460072752"
+          "hash": "8215410385412547001"
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/Components/Border Width.md",
-          "hash": "12107808824347464789"
+          "hash": "877365490112363912"
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/Components/Breakpoint.md",
@@ -5482,11 +6706,11 @@
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/Components/Cigna Healthcare 2.0 .md",
-          "hash": "7773587417426355475"
+          "hash": "2095815334380709789"
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/Components/Component Color_.md",
-          "hash": "13757712095951736906"
+          "hash": "3819374916751082008"
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/Components/Cover.md",
@@ -5498,31 +6722,31 @@
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/Components/Example Page Migration.md",
-          "hash": "9892600086053473038"
+          "hash": "16588925683884864645"
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/Components/Fallback Typography.md",
-          "hash": "10855072419219547058"
+          "hash": "12705199197298472606"
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/Components/How to u_e Variable_.md",
-          "hash": "8703333919615615395"
+          "hash": "16025508388485777026"
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/Components/Playground.md",
-          "hash": "3974591516967317789"
+          "hash": "15230958127739299897"
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/Components/Semantic Color_.md",
-          "hash": "5285381382703940021"
+          "hash": "17307752985862248505"
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/Components/Semantic Typography.md",
-          "hash": "7340683905876382879"
+          "hash": "11972976269543683714"
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/Components/Shadow.md",
-          "hash": "5188929959906104448"
+          "hash": "1739322021620114688"
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/Components/Size.md",
@@ -5530,19 +6754,19 @@
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/Components/🚧 Global Color_.md",
-          "hash": "11553396991165716340"
+          "hash": "5755636028112708638"
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/Components/🚧 Global Typography.md",
-          "hash": "15756422300124517314"
+          "hash": "6478484555988577527"
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/Components/🚧 Prima Color Style_.md",
-          "hash": "14598522651425754537"
+          "hash": "12922289460955017209"
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/Components/🚧 Spacing.md",
-          "hash": "2876215245418261294"
+          "hash": "401262606473726179"
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/GlobalStyles/Colors.md",
@@ -5562,7 +6786,7 @@
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/docs/_Overview.md",
-          "hash": "7595163692737931834"
+          "hash": "9621519229614465366"
         },
         {
           "file": "packages/cre8-wc/design-tokens/eqt/eqt.tokens.json",
@@ -5593,12 +6817,20 @@
           "hash": "3244421341483603138"
         },
         {
+          "file": "packages/cre8-wc/design-tokens/layouts/breakpoints.scss",
+          "hash": "13792129378505804421"
+        },
+        {
           "file": "packages/cre8-wc/design-tokens/mcdonalds/theme.json",
           "hash": "10293081333056824139"
         },
         {
           "file": "packages/cre8-wc/design-tokens/mcdonalds/tokens.module.css",
           "hash": "6405245716608268336"
+        },
+        {
+          "file": "packages/cre8-wc/design-tokens/mixins/typography-usage.scss",
+          "hash": "1384320838380329304"
         },
         {
           "file": "packages/cre8-wc/design-tokens/remap-docs-tokens.cjs",
@@ -5902,7 +7134,7 @@
         },
         {
           "file": "packages/cre8-wc/docs/CODE_GUIDELINES.md",
-          "hash": "16778336223241907316"
+          "hash": "12434110484047061022"
         },
         {
           "file": "packages/cre8-wc/docs/THEME_GENERATOR.md",
@@ -5951,6 +7183,10 @@
         {
           "file": "packages/cre8-wc/fonts/Aeonik-Regular.woff2",
           "hash": "741258449757716479"
+        },
+        {
+          "file": "packages/cre8-wc/global.d.ts",
+          "hash": "4660789360612174411"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Adherence.svg",
@@ -6017,8 +7253,16 @@
           "hash": "882011782073654484"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/COVID.ts",
+          "hash": "13469773694858992507"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/COVID_Test.svg",
           "hash": "6055562158150110984"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/COVID_Test.ts",
+          "hash": "13656731580807257538"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Calendar.svg",
@@ -6089,228 +7333,456 @@
           "hash": "9443979556018906074"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Coffee.ts",
+          "hash": "10136226470223716476"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Compass.svg",
           "hash": "1087368046582316549"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Compass.ts",
+          "hash": "13298614059987540348"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Computer.svg",
           "hash": "12711290705886489836"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Computer.ts",
+          "hash": "1838526113992767620"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Coupon.svg",
           "hash": "10627325943837181999"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Coupon.ts",
+          "hash": "14473140453259014104"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Credit_Card.svg",
           "hash": "5437454841686036203"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Credit_Card.ts",
+          "hash": "3006227869362684174"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Cystic_Fibrosis.svg",
           "hash": "15470790664664551467"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Cystic_Fibrosis.ts",
+          "hash": "771101058274101373"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Dermatology.svg",
           "hash": "12823611333479042758"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Dermatology.ts",
+          "hash": "16931099624238900974"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Device_Mobile.svg",
           "hash": "2965277536083702030"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Device_Mobile.ts",
+          "hash": "2167987321414003036"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Diabetes.svg",
           "hash": "12626060456507564714"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Diabetes.ts",
+          "hash": "3465050715809917055"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Diabetes_Device.svg",
           "hash": "12866030495679089070"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Diabetes_Device.ts",
+          "hash": "17195741748769670744"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Directional_Signs.svg",
           "hash": "16836277806549942085"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Directional_Signs.ts",
+          "hash": "2540141307181452369"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Disaster_Center.svg",
           "hash": "3445643875909181700"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Disaster_Center.ts",
+          "hash": "546606343886870051"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Doctor.svg",
           "hash": "17343877899447967975"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Doctor.ts",
+          "hash": "18213793372987824029"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Dollar.svg",
           "hash": "16860493915048544378"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Dollar.ts",
+          "hash": "12761737696594699985"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Dollar_Bill.svg",
           "hash": "13616380366742266524"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Dollar_Bill.ts",
+          "hash": "6215711608571857102"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Dollar_Down.svg",
           "hash": "5350817006851352735"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Dollar_Down.ts",
+          "hash": "3391834678748989427"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Dollar_Up.svg",
           "hash": "8262523483228870176"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Dollar_Up.ts",
+          "hash": "11075543707351073984"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Download.svg",
           "hash": "5396755507851328034"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Download.ts",
+          "hash": "8203291449490822542"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Earth.svg",
           "hash": "4969971216425843181"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Earth.ts",
+          "hash": "8358152775016717449"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Easy.svg",
           "hash": "7019199068976359624"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Easy.ts",
+          "hash": "15014754908073589656"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Eating.svg",
           "hash": "11863947823966853764"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Eating.ts",
+          "hash": "10309538682164812117"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Edit.svg",
           "hash": "15094465262786496249"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Edit.ts",
+          "hash": "8860814530646027175"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Endocrine.svg",
           "hash": "16636589870683126632"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Endocrine.ts",
+          "hash": "10579699215043242518"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Exclamation_Mark.svg",
           "hash": "829841866311780466"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Exclamation_Mark.ts",
+          "hash": "5626050709105936229"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Feedback.svg",
           "hash": "6051952110647704468"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Feedback.ts",
+          "hash": "16377865594454208138"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Fertility.svg",
           "hash": "8156121189912539730"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Fertility.ts",
+          "hash": "13344178182458654099"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/First_Aid_Kit.svg",
           "hash": "9711416603726541210"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/First_Aid_Kit.ts",
+          "hash": "17055849839164877553"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Gauge.svg",
           "hash": "7564247167806136465"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Gauge.ts",
+          "hash": "12319902900864835386"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Gavel.svg",
           "hash": "3304313506052934902"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Gavel.ts",
+          "hash": "15115105732956431936"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Glasses.svg",
           "hash": "8454351582335874273"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Glasses.ts",
+          "hash": "2421341515423225500"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Golf.svg",
           "hash": "7884219119905760744"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Golf.ts",
+          "hash": "12260564778435093445"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Government.svg",
           "hash": "16061241032372603689"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Government.ts",
+          "hash": "6448055645296522527"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Graduation_Cap.svg",
           "hash": "8138960101640274700"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Graduation_Cap.ts",
+          "hash": "8235661567019774250"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/HIV.svg",
           "hash": "1855522785942450746"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/HIV.ts",
+          "hash": "6757295631956399648"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Headphones.svg",
           "hash": "8397683724990247300"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Headphones.ts",
+          "hash": "2590069332999943399"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Health_App.svg",
           "hash": "10161274204786257952"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Health_App.ts",
+          "hash": "12592761441311977632"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Hearing.svg",
           "hash": "9002315457724802457"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Hearing.ts",
+          "hash": "14309129854915563261"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Heart.svg",
           "hash": "4434603164298782871"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Heart.ts",
+          "hash": "11636984945979748869"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Heart_Monitor.svg",
           "hash": "7916470904256243945"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Heart_Monitor.ts",
+          "hash": "13481851319233130436"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Heart_With_Medical_Symbol.svg",
           "hash": "4064188415211538156"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Heart_With_Medical_Symbol.ts",
+          "hash": "5449420133446596039"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Hepatology.svg",
           "hash": "12405388221388845889"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Hepatology.ts",
+          "hash": "14777426593466455002"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Hierarchy.svg",
           "hash": "13036560126710708097"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Hierarchy.ts",
+          "hash": "1470407674778073199"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Home_Delivery.svg",
           "hash": "9293567356765127161"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Home_Delivery.ts",
+          "hash": "12448359531212806863"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Hospital.svg",
           "hash": "14514268118865198300"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Hospital.ts",
+          "hash": "3527406845925778346"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Immune_Disorders.svg",
           "hash": "8234639251841803679"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Immune_Disorders.ts",
+          "hash": "9684216056295981944"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Inhaler.svg",
           "hash": "16039090118569285031"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Inhaler.ts",
+          "hash": "16296289324143605274"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Interactive.svg",
           "hash": "399469307056043742"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Interactive.ts",
+          "hash": "3214472967867099742"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Key.svg",
           "hash": "10339744862965982447"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Key.ts",
+          "hash": "13443250215012798301"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Lab_Beaker.svg",
           "hash": "7056396140594866017"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Lab_Beaker.ts",
+          "hash": "17962313178799120677"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Laptop.svg",
           "hash": "5377073453476207848"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Laptop.ts",
+          "hash": "18352818117910815651"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/License.svg",
           "hash": "1646405301565757101"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/License.ts",
+          "hash": "10817181276057834000"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Life_Buoy.svg",
           "hash": "15022056405104570710"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Life_Buoy.ts",
+          "hash": "14766175300397996388"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Lightbulb.svg",
           "hash": "2696738257823957996"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Lightbulb.ts",
+          "hash": "11246318148270777084"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Line_Chart.svg",
           "hash": "11907602518152109705"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Line_Chart.ts",
+          "hash": "3529169595989438306"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Line_Chart_Down.svg",
           "hash": "18038146813240001163"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Line_Chart_Down.ts",
+          "hash": "3474164668088889546"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Line_Chart_Up.svg",
           "hash": "3327140925519800391"
         },
         {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/Line_Chart_Up.ts",
+          "hash": "13767893587110223020"
+        },
+        {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/List_Clipboard.svg",
           "hash": "10897090928544920302"
+        },
+        {
+          "file": "packages/cre8-wc/icons/Marketing/Duotone/List_Clipboard.ts",
+          "hash": "18080117269090872185"
         },
         {
           "file": "packages/cre8-wc/icons/Marketing/Duotone/Location.svg",
@@ -6989,6 +8461,10 @@
           "hash": "10413617345539069113"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Filled/Favorite/Full.ts",
+          "hash": "12602449697639889721"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Filled/Feedback.svg",
           "hash": "4162370783197396502"
         },
@@ -7225,8 +8701,16 @@
           "hash": "12658315880885433263"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Filled/Shape/Circle.ts",
+          "hash": "13628554326417214555"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Filled/Shape/Rectangle.svg",
           "hash": "8396980778753191370"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Filled/Shape/Rectangle.ts",
+          "hash": "8528093747272674904"
         },
         {
           "file": "packages/cre8-wc/icons/System/Filled/Share.svg",
@@ -7257,168 +8741,336 @@
           "hash": "9040886941237422185"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Filled/Syringe.ts",
+          "hash": "609909655677666569"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Filled/Table_Sort.svg",
           "hash": "489508362510352086"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Filled/Table_Sort.ts",
+          "hash": "14757691188454800636"
         },
         {
           "file": "packages/cre8-wc/icons/System/Filled/Timer.svg",
           "hash": "15436058452671175450"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Filled/Timer.ts",
+          "hash": "2889946080438758829"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Filled/Trash.svg",
           "hash": "11568986263159928595"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Filled/Trash.ts",
+          "hash": "2828891022465660040"
         },
         {
           "file": "packages/cre8-wc/icons/System/Filled/Undo.svg",
           "hash": "7889346668481794841"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Filled/Undo.ts",
+          "hash": "6348103139399769080"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Filled/Unlock.svg",
           "hash": "4333741564834772761"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Filled/Unlock.ts",
+          "hash": "4092860946807333943"
         },
         {
           "file": "packages/cre8-wc/icons/System/Filled/Upload.svg",
           "hash": "17102113760974331236"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Filled/Upload.ts",
+          "hash": "16685439519815709623"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Filled/Upload_Cloud.svg",
           "hash": "3459460786615639473"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Filled/Upload_Cloud.ts",
+          "hash": "4446977843001213638"
         },
         {
           "file": "packages/cre8-wc/icons/System/Filled/User_Plus.svg",
           "hash": "10386599779804591257"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Filled/User_Plus.ts",
+          "hash": "17022888922023685171"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Filled/Video_Camera.svg",
           "hash": "8737620637259395359"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Filled/Video_Camera.ts",
+          "hash": "5771457230967954391"
         },
         {
           "file": "packages/cre8-wc/icons/System/Filled/Virus.svg",
           "hash": "14779085278668844274"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Filled/Virus.ts",
+          "hash": "11964939935380052889"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Filled/Visibility_False.svg",
           "hash": "14472284235254441097"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Filled/Visibility_False.ts",
+          "hash": "2875638193748712200"
         },
         {
           "file": "packages/cre8-wc/icons/System/Filled/Visibility_True.svg",
           "hash": "12784119925934117964"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Filled/Visibility_True.ts",
+          "hash": "15497322423480151585"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Filled/Volume.svg",
           "hash": "1126274464205540898"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Filled/Volume.ts",
+          "hash": "3700213791574793826"
         },
         {
           "file": "packages/cre8-wc/icons/System/Filled/Warning.svg",
           "hash": "420759406397730485"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Filled/Warning.ts",
+          "hash": "7042343077715539921"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Filled/Wellness.svg",
           "hash": "15656182662368584288"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Filled/Wellness.ts",
+          "hash": "13983297103647120223"
         },
         {
           "file": "packages/cre8-wc/icons/System/Filled/Window_Maximize.svg",
           "hash": "6316818295769764503"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Filled/Window_Maximize.ts",
+          "hash": "16246591322294860019"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Filled/Window_Minimize.svg",
           "hash": "8484286952716082966"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Filled/Window_Minimize.ts",
+          "hash": "13499284785180881919"
         },
         {
           "file": "packages/cre8-wc/icons/System/Filled/Zip_File.svg",
           "hash": "11216629773016173773"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Filled/Zip_File.ts",
+          "hash": "5439052521795675222"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Filled/Zoom_In.svg",
           "hash": "725493735083188714"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Filled/Zoom_In.ts",
+          "hash": "2530774875632944088"
         },
         {
           "file": "packages/cre8-wc/icons/System/Filled/Zoom_Out.svg",
           "hash": "5958652147133806561"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Filled/Zoom_Out.ts",
+          "hash": "14617835143652379750"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Regular/Account.svg",
           "hash": "6519654113478961226"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Regular/Account.ts",
+          "hash": "1824999195691355131"
         },
         {
           "file": "packages/cre8-wc/icons/System/Regular/Account_Menu.svg",
           "hash": "1717987272595036814"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Regular/Account_Menu.ts",
+          "hash": "2092565183604241923"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Regular/Account_Settings.svg",
           "hash": "7445501635082026944"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Regular/Account_Settings.ts",
+          "hash": "889696244279634350"
         },
         {
           "file": "packages/cre8-wc/icons/System/Regular/Add.svg",
           "hash": "3648030487116111115"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Regular/Add.ts",
+          "hash": "16246773587365944898"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Regular/Arrow_-_Left.svg",
           "hash": "12501825963383054998"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Regular/Arrow_-_Left.ts",
+          "hash": "9901201647065195529"
         },
         {
           "file": "packages/cre8-wc/icons/System/Regular/Arrow_-_Right.svg",
           "hash": "12156813250115108071"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Regular/Arrow_-_Right.ts",
+          "hash": "11817969181149510211"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Regular/Arrow_Down.svg",
           "hash": "10816054760633664561"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Regular/Arrow_Down.ts",
+          "hash": "4017799645047183357"
         },
         {
           "file": "packages/cre8-wc/icons/System/Regular/Arrow_Up.svg",
           "hash": "1205077226145844143"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Regular/Arrow_Up.ts",
+          "hash": "11742798011405999292"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Regular/Attachment.svg",
           "hash": "14173228138957847810"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Regular/Attachment.ts",
+          "hash": "14789129119119577099"
         },
         {
           "file": "packages/cre8-wc/icons/System/Regular/AutoRefill.svg",
           "hash": "8309223044573842934"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Regular/AutoRefill.ts",
+          "hash": "7184550403615276224"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Regular/Autopay.svg",
           "hash": "14512211647592640281"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Regular/Autopay.ts",
+          "hash": "1613005683807930276"
         },
         {
           "file": "packages/cre8-wc/icons/System/Regular/Bone.svg",
           "hash": "4363769942451525819"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Regular/Bone.ts",
+          "hash": "3123640434112045586"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Regular/Calendar.svg",
           "hash": "7520796660071852169"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Regular/Calendar.ts",
+          "hash": "1314298753435715468"
         },
         {
           "file": "packages/cre8-wc/icons/System/Regular/Calendar_No_Numbers.svg",
           "hash": "98350654539620671"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Regular/Calendar_No_Numbers.ts",
+          "hash": "7434651603556642717"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Regular/Call.svg",
           "hash": "8652148838793620256"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Regular/Call.ts",
+          "hash": "18085599232319303759"
         },
         {
           "file": "packages/cre8-wc/icons/System/Regular/Care.svg",
           "hash": "16239967080347051116"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Regular/Care.ts",
+          "hash": "889156749621625967"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Regular/Caret_Double_Left.svg",
           "hash": "7823459862573451783"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Regular/Caret_Double_Left.ts",
+          "hash": "16871592149806061867"
         },
         {
           "file": "packages/cre8-wc/icons/System/Regular/Caret_Double_Right.svg",
           "hash": "6357713790475446387"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Regular/Caret_Double_Right.ts",
+          "hash": "1657573332891442657"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Regular/Caret_Down.svg",
           "hash": "5056072285057426573"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Regular/Caret_Down.ts",
+          "hash": "18350980361640316914"
         },
         {
           "file": "packages/cre8-wc/icons/System/Regular/Caret_Left.svg",
           "hash": "9502541283748074938"
         },
         {
+          "file": "packages/cre8-wc/icons/System/Regular/Caret_Left.ts",
+          "hash": "7537163187033221240"
+        },
+        {
           "file": "packages/cre8-wc/icons/System/Regular/Caret_Right.svg",
           "hash": "1754341471499777678"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Regular/Caret_Right.ts",
+          "hash": "5972611478622661694"
         },
         {
           "file": "packages/cre8-wc/icons/System/Regular/Caret_Up.svg",
@@ -7435,6 +9087,10 @@
         {
           "file": "packages/cre8-wc/icons/System/Regular/Chat_Default.svg",
           "hash": "1568464210861530194"
+        },
+        {
+          "file": "packages/cre8-wc/icons/System/Regular/Chat_Default.ts",
+          "hash": "15586762685750330052"
         },
         {
           "file": "packages/cre8-wc/icons/System/Regular/Chat_Loading.svg",
@@ -8350,7 +10006,7 @@
         },
         {
           "file": "packages/cre8-wc/package.json",
-          "hash": "3714987616727433406",
+          "hash": "14731804610410885611",
           "deps": [
             "npm:@babel/core",
             "npm:@babel/plugin-proposal-decorators",
@@ -8429,11 +10085,11 @@
         },
         {
           "file": "packages/cre8-wc/pnpm-lock.yaml",
-          "hash": "3561315847333970218"
+          "hash": "17368481115449660430"
         },
         {
           "file": "packages/cre8-wc/script/package.json",
-          "hash": "16393144837344621585"
+          "hash": "609074758515112264"
         },
         {
           "file": "packages/cre8-wc/scripts/agentric.js",
@@ -8476,10 +10132,6 @@
           "hash": "2185836638847292961"
         },
         {
-          "file": "packages/cre8-wc/src/types/global.d.ts",
-          "hash": "4660789360612174411"
-        },
-        {
           "file": "packages/cre8-wc/src/types/styles.d.ts",
           "hash": "408409424938133933"
         },
@@ -8517,7 +10169,7 @@
         },
         {
           "file": "packages/cre8-wc/tsconfig.json",
-          "hash": "17251650068106546643"
+          "hash": "17116022722766466096"
         },
         {
           "file": "packages/cre8-wc/utilities/is-mobile.ts",
@@ -8529,7 +10181,7 @@
         },
         {
           "file": "packages/cre8-wc/vite.config.ts",
-          "hash": "18174238349076587050"
+          "hash": "17153524926708499164"
         }
       ]
     }

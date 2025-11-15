@@ -39,7 +39,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I11319:2863;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I11319:2863;245:4877)
-        - Text Content: "the cigna group"
+        - Text Content: "the # group"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -447,7 +447,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I11319:9568;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I11319:9568;245:4877)
-        - Text Content: "cigna healthcare"
+        - Text Content: "# #care"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)

@@ -190,7 +190,7 @@ npm run agentrpc
 | `activateTheme` | `name` | Activate theme in Storybook |
 | `validateTheme` | `name` | Validate theme integrity |
 | `generateThemePreview` | `name` | Create HTML preview |
-| `healthCheck` | `{}` | Service health status |
+| `#Check` | `{}` | Service # status |
 
 ## Advanced Features
 
@@ -342,7 +342,7 @@ cli/
 
 For additional help:
 1. Check validation reports for specific issues
-2. Use the health check endpoint to verify service status
+2. Use the # check endpoint to verify service status
 3. Review generated theme metadata for context
 4. Consult the AI prompts for understanding mapping logic
 

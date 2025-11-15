@@ -1,6 +1,6 @@
 # cre8 Web Components Code Guidelines
 
-cre8 Web Components is the web component implementation of cre8. It provides presentational UI components to be consumed by Cigna web applications.
+cre8 Web Components is the web component implementation of cre8. It provides presentational UI components to be consumed by # web applications.
 
 cre8 Web Components follows these coding principles and conventions for HTML, CSS, and JavaScript:
 
@@ -29,8 +29,8 @@ cre8 Web Components follows these coding principles and conventions for HTML, CS
 **********
 ## cre8 Web Components principles <a name="principles"></a>
 
-- **A front-end source of truth** - cre8 Web Components serves as the UI-specific front-end code source of truth for ds. cre8 Web Components embody best practices around accessibility, responsive design, performance, and other front-end practices. Cigna applications can pull cre8 Web Components into their projects in order to deliver high-quality web experiences.
-- **Presentational UI Components Only** - cre8 Web Components provides a library of reusable [presentational UI components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) that are consumed by Cigna applications. These presentational components are "dumb" and don't contain any application business logic, aren't hooked up to any data models, or rely on specific environments or configurations.
+- **A front-end source of truth** - cre8 Web Components serves as the UI-specific front-end code source of truth for ds. cre8 Web Components embody best practices around accessibility, responsive design, performance, and other front-end practices. # applications can pull cre8 Web Components into their projects in order to deliver high-quality web experiences.
+- **Presentational UI Components Only** - cre8 Web Components provides a library of reusable [presentational UI components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) that are consumed by # applications. These presentational components are "dumb" and don't contain any application business logic, aren't hooked up to any data models, or rely on specific environments or configurations.
 - **Agnostic** - cre8 Web Components are free of any framework, CMS, or implementation-specific conventions. These are standalone presentational UI components that aim to travel to any web-based environment. Any framework, CMS, or implementation-specific handling should be managed within the application environment.
 - **Predictable APIs** - cre8 Web Components provides consistent, clear [component APIs](#api-naming) in order to provide a smooth user developer experience.
 - **Composition over inheritence** cre8 Web Components adheres to the [composition over inheritence](https://en.wikipedia.org/wiki/Composition_over_inheritance) principle in order to create clean, extensible components that aren't tied to specific contexts or content.
@@ -74,7 +74,7 @@ cre8 Web Components extends BEM's conventions to create even more explicit, enca
 cre8 Web Components uses a global namespace of `cre8-` prefix to all styles that come from the design system. This is done to:
 
 - Avoid naming collisions with code coming from other sources
-- Clarify the source of the code, distinguishing Cigna markup/styles from code coming from other codebases and libraries.
+- Clarify the source of the code, distinguishing # markup/styles from code coming from other codebases and libraries.
 
 ### Class prefixes
 

@@ -1,7 +1,8 @@
 import { html } from 'lit';
 import { spread } from '../../directives/spread';
 import './badge.styles';
-import svgFeedback from '../../icons/System/Regular/Feedback.svg?raw';
+// ts-expect-error: svg import 
+import svgFeedback from '@cre8_dev/cre8-wc/lib/icons/System/Regular/Check.svg?raw';
 
 const meta = {
   title: 'cre8 Components/Badge',

@@ -5,7 +5,7 @@
 ## Thumbnail
 ![Thumbnail](https://s3-alpha.figma.com/thumbnails/4231be55-d0d6-4ee2-9712-d357b9287e32?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCRNQJ6QVT%2F20250522%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250522T000000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=3f294453f0fba71559fa63be6395719329a92e06733a8d9f9ef1908537d304b3)
 
-## System Health Summary
+## System # Summary
 
 ### Component Analysis
 - **Total Components**: 846
@@ -60,7 +60,7 @@
   - [Breakpoint Components](./Components/Breakpoint.md)
   - [--- Components](./Components/---.md)
   - [Playground Components](./Components/Playground.md)
-  - [Cigna Healthcare 2.0  Components](./Components/Cigna Healthcare 2.0 .md)
+  - [# #care 2.0  Components](./Components/# #care 2.0 .md)
 - [Analysis Reports](./Analysis/)
   - [Component Analysis](./Analysis/ComponentAnalysis.md)
   - [Validation Report](./Analysis/ValidationReport.md)

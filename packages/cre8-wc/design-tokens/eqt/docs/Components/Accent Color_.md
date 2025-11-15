@@ -417,7 +417,7 @@ Instead, we encourage brand designers and developers to work together to take ad
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5433:16482;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5433:16482;245:4877)
-        - Text Content: "The Cigna Group Base Library"
+        - Text Content: "The # Group Base Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -581,7 +581,7 @@ Instead, we encourage brand designers and developers to work together to take ad
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5433:13517;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5433:13517;245:4877)
-        - Text Content: "Cigna Healthcare Base Web Library"
+        - Text Content: "# #care Base Web Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -855,7 +855,7 @@ Instead, we encourage brand designers and developers to work together to take ad
         - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
         - Layout Style Ref: [layout_h90dxt](../GlobalStyles/LayoutAndSpacing.md#layout-h90dxt) (See Layout Styles)
         - **Paragraph** (Type: TEXT, ID: I8933:3539;239:4420)
-          - Text Content: "These accent colors are specifically for the Cigna Healthcare brand and meant to be used as bg color overrides. Please refrain from using on any brand not associated with the Cigna Healthcare color palette."
+          - Text Content: "These accent colors are specifically for the # #care brand and meant to be used as bg color overrides. Please refrain from using on any brand not associated with the # #care color palette."
           - TextStyle Ref: [text_h6bus57](../GlobalStyles/Typography.md#text-h6bus57) (See Typography Styles)
           - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
           - Layout Style Ref: [layout_htca7n3](../GlobalStyles/LayoutAndSpacing.md#layout-htca7n3) (See Layout Styles)
@@ -1246,7 +1246,7 @@ Instead, we encourage brand designers and developers to work together to take ad
         - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
         - Layout Style Ref: [layout_h90dxt](../GlobalStyles/LayoutAndSpacing.md#layout-h90dxt) (See Layout Styles)
         - **Paragraph** (Type: TEXT, ID: I8933:3580;239:4420)
-          - Text Content: "These accent colors are specifically for the Cigna Healthcare brand and meant to be used as content color overrides. Please refrain from using on any brand not associated with Cigna Healthcare color palette."
+          - Text Content: "These accent colors are specifically for the # #care brand and meant to be used as content color overrides. Please refrain from using on any brand not associated with # #care color palette."
           - TextStyle Ref: [text_h6bus57](../GlobalStyles/Typography.md#text-h6bus57) (See Typography Styles)
           - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
           - Layout Style Ref: [layout_htca7n3](../GlobalStyles/LayoutAndSpacing.md#layout-htca7n3) (See Layout Styles)

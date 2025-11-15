@@ -1,0 +1,38 @@
+{
+  "asset": {
+    "font": {
+      "Rubik": {
+        "300": {
+          "normal": {
+            "value": "rubik-v4-latin-300",
+            "formats": [
+              "woff2",
+              "woff"
+            ],
+            "type": "fontFiles"
+          }
+        },
+        "400": {
+          "normal": {
+            "value": "rubik-v4-latin-regular",
+            "formats": [
+              "woff2",
+              "woff"
+            ],
+            "type": "fontFiles"
+          }
+        },
+        "500": {
+          "normal": {
+            "value": "rubik-v4-latin-500",
+            "formats": [
+              "woff2",
+              "woff"
+            ],
+            "type": "fontFiles"
+          }
+        }
+      }
+    }
+  }
+}

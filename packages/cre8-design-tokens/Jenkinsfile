@@ -1,0 +1,91 @@
+library 'epf'
+
+def approvers = 'O_BA20094_ADMIN,O_BA20094_CONTRIBUTORS'
+def deployableBranches = '^develop$|^release.*|^hotfix.*|^testing.*'
+def s3Folder = 'cre8-design-tokens'
+def invalidationPath = '/' + s3Folder + '*'
+
+env.CNP_DEPLOYABLE_BRANCHES = '^develop$,^release.*,^hotfix.*,^testing.*'
+env.CNP_DEFAULT_NPM_IMAGE = 'cnp/cnp-docker-node16:latest'
+env.CNP_AWS_IDP_PROVIDER = 'okta'
+env.CNP_STATIC_AWS_CRED_DEV='DAWS-ESI-MEMBERWEB'
+env.CNP_STATIC_AWS_CRED_QA='TAWS-ESI-MEMBERWEB'
+
+// disables cnp-preflight-check-git-settings module because we are using Github Rulesets instead
+env.CNP_OVERRIDE_COMMON = 'true'
+
+List phasesToRun = [
+    [
+        moduleType: "npm",
+        moduleName: "cnp-build-npm-create",
+        subCommand: "build",
+        branchPattern: '.*',
+        isProductionDeployment: false,
+        container             : [
+            memory: 8000,
+            cpu: 2500
+        ]
+    ],
+    [
+        moduleType            : 'static-aws',
+        moduleName            : 'cnp-deploy-static-aws',
+        subCommand            : 'deploy',
+        branchPattern         : deployableBranches,
+        sdlcEnvironment       : 'Dev',
+        isProductionDeployment: false,
+        args                  : [
+            awsAccountId          : '305171387263',
+            awsRoleName           : 'DEPLOYER',
+            awsUsername           : env.CNP_STATIC_AWS_CRED_DEV,
+            deployPath            : 'enorth-memberweb-static-dev-candidate-primary-305171387263/' + s3Folder + ',enorth-memberweb-static-dev-candidate-failover-305171387263/' + s3Folder,
+            artifact              : 'lookup:publishUrl',
+            exclude               : '*.gz',
+            env                   : 'dev',
+            invalidationPath      : invalidationPath
+        ]
+    ],
+    [
+        emailRecipients: '',
+        branchPattern: deployableBranches,
+        lintingTypes: [
+            approvalrequest: [
+                timeOut: 120,
+                message: 'Do you want to deploy to dev (non-candidate)?',
+                id: 'cnpApprove',
+                submitter: approvers,
+                failedStatus: 'ABORTED'
+            ],
+        ],
+    ],
+    [
+        moduleType            : 'static-aws',
+        moduleName            : 'cnp-deploy-static-aws',
+        subCommand            : 'cutover',
+        branchPattern         : deployableBranches,
+        sdlcEnvironment       : 'Dev',
+        isProductionDeployment: false,
+        args                  : [
+            awsAccountId          : '305171387263',
+            awsRoleName           : 'DEPLOYER',
+            awsUsername           : env.CNP_STATIC_AWS_CRED_DEV,
+            sourcePath            : 'enorth-memberweb-static-dev-candidate-primary-305171387263/' + s3Folder,
+            deployPath            : 'enorth-memberweb-static-dev-primary-305171387263/' + s3Folder + ',enorth-memberweb-static-dev-failover-305171387263/' + s3Folder,
+            artifact              : 'lookup:publishUrl',
+            exclude               : '*.gz',
+            env                   : 'dev',
+            invalidationPath      : invalidationPath
+        ]
+    ],
+]
+
+cignaBuildFlow {
+    githubConnectionName = 'github'
+    githubCredentialsId = 'GIT_TOKEN'
+    cloudName = 'cre8-design-tokens-openshift-devops1'
+    phases = phasesToRun
+    logHistoryCount = 10 // raise from default 5
+    logHistoryAge = 60 // raise from default 14
+    additionalProperties = [
+        disableConcurrentBuilds()
+    ]
+}

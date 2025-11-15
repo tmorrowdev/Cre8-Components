@@ -1,7 +1,7 @@
 {
   "name": "@cre8_dev/cre8-wc",
   "version": "1.0.10",
-  "description": "cre8 Web Components is a library of presentational UI web components to be consumed by Cigna web applications.",
+  "description": "cre8 Web Components is a library of presentational UI web components to be consumed by # web applications.",
   "license": "BSD-3-Clause",
   "scripts": {
     "start": "pnpm run build:custom-elements.json && pnpm run storybook",
@@ -48,16 +48,20 @@
       "types": "./components/*.d.ts",
       "default": "./components/*.js"
     },
-    "./icons/*": "./icons/*",
-    "./svgs/*": "./svgs/*",
-    "./index.js": "./index.js"
+    "./icons/*": {
+      "import": "./icons/*",
+      "types": "./icons/*",
+      "default": "./icons/*"
+    },
+    "./global.d.ts": "./global.d.ts",
+    "./package.json": "./package.json"
   },
   "repository": {
     "url": "https://github.com/tmorrowdev/Cre8-Components.git"
   },
   "dependencies": {
     "@a11y/focus-trap": "^1.0.5",
-    "@cre8_dev/cre8-design-tokens": "1.0.3",
+    "@cre8_dev/cre8-design-tokens": "1.0.10",
     "agentrpc": "^0.0.16",
     "chart.js": "^4.5.1",
     "classnames": "2.5.1",
