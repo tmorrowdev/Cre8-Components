@@ -114,6 +114,930 @@
         "hash": "11601073979223616404"
       },
       {
+        "file": "packages/cre8-design-tokens/lib/cre8_dev-cre8-design-tokens-1.0.10.tgz",
+        "hash": "15908037610262279334"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/package.json",
+        "hash": "9233123626810989366"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/react-native/brands/blue-v1/tokens-brand.d.ts",
+        "hash": "15563327323091766965"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/react-native/brands/blue-v1/tokens-brand.js",
+        "hash": "14043983196971946337"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/react-native/brands/blue/tokens-brand.d.ts",
+        "hash": "6919488815809830955"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/react-native/brands/blue/tokens-brand.js",
+        "hash": "1733062912232799777"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/react-native/brands/cre8/tokens-brand.d.ts",
+        "hash": "14642258521156759059"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/react-native/brands/cre8/tokens-brand.js",
+        "hash": "3150335971977220803"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/react-native/brands/femmecubator/tokens-brand.d.ts",
+        "hash": "17233832106217118156"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/react-native/brands/femmecubator/tokens-brand.js",
+        "hash": "3903229352822283253"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/react-native/brands/legacy/tokens-brand.d.ts",
+        "hash": "10426891585787094008"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/react-native/brands/legacy/tokens-brand.js",
+        "hash": "11107485499910728401"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/react-native/brands/marketing/tokens-brand.d.ts",
+        "hash": "13582231082168681836"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/react-native/brands/marketing/tokens-brand.js",
+        "hash": "18228941519503834106"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/react-native/brands/minimalist/tokens-brand.d.ts",
+        "hash": "9758343394504253699"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/react-native/brands/minimalist/tokens-brand.js",
+        "hash": "9089117686755625189"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/react-native/index.d.ts",
+        "hash": "6136563404598739840"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/react-native/index.js",
+        "hash": "12825167219414125555"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/support/brands/blue-v1/blue-v1-sass-support.scss",
+        "hash": "6031212534771560196"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/support/brands/blue/blue-sass-support.scss",
+        "hash": "7818288875572617438"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/support/brands/cre8/cre8-sass-support.scss",
+        "hash": "13263129960076185408"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/support/brands/femmecubator/femmecubator-sass-support.scss",
+        "hash": "9953558131970404677"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/support/brands/legacy/legacy-sass-support.scss",
+        "hash": "6594111021724707134"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/support/brands/marketing/marketing-sass-support.scss",
+        "hash": "2836473915350567840"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/support/brands/minimalist/minimalist-sass-support.scss",
+        "hash": "1254820893955660872"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/_base.scss",
+        "hash": "4447825168687373693"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/badge.scss",
+        "hash": "3065580744543405574"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/bg.scss",
+        "hash": "13872362037974849223"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/border-style.scss",
+        "hash": "13158190061846743832"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/border.scss",
+        "hash": "231418742212368018"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/borderRadius.scss",
+        "hash": "2886850836302891096"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/borderWidth.scss",
+        "hash": "822761801397907758"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/breakpoint.scss",
+        "hash": "14505366964570099452"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/button.scss",
+        "hash": "3844040440555441212"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/content.scss",
+        "hash": "2350479868976739204"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/css/fonts.css",
+        "hash": "13202890960884704699"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/css/tokens_blue-v1.css",
+        "hash": "12684709634446502887"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/css/tokens_brand.css",
+        "hash": "13731248470374936542"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/desktop-menu.scss",
+        "hash": "13851420807973045618"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/fontFamilies.scss",
+        "hash": "11368091738376059820"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/fontSize.scss",
+        "hash": "11893415109067253571"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/fontWeights.scss",
+        "hash": "7824310553712561531"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/footer.scss",
+        "hash": "5507982896919917488"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/header.scss",
+        "hash": "1302486106541636464"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/icon-size.scss",
+        "hash": "13554077463074809117"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/letterSpacing.scss",
+        "hash": "16402999932315816451"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/lineHeights.scss",
+        "hash": "7044868271285083397"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/link.scss",
+        "hash": "2835907405419337270"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/paragraphIndent.scss",
+        "hash": "7753116321830365424"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/paragraphSpacing.scss",
+        "hash": "16772346511180518718"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/shadow.scss",
+        "hash": "63977163289217042"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/spacing.scss",
+        "hash": "6813840733010461253"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/textCase.scss",
+        "hash": "7221388201125899435"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/textDecoration.scss",
+        "hash": "7338062231929026676"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/tokens-all-blue-v1.scss",
+        "hash": "2918703348648855231"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue-v1/tokens-brand.scss",
+        "hash": "3903595346120813633"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/_base.scss",
+        "hash": "5106167651322065131"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/badge.scss",
+        "hash": "16786148368508884175"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/bg.scss",
+        "hash": "16269193336301848544"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/border-style.scss",
+        "hash": "13904434772074977175"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/border.scss",
+        "hash": "16379452024457331365"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/borderRadius.scss",
+        "hash": "12442111640085522032"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/borderWidth.scss",
+        "hash": "464614668701670607"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/breakpoint.scss",
+        "hash": "13324739642227840381"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/button.scss",
+        "hash": "3451908929601942882"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/content.scss",
+        "hash": "11290997981092625488"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/css/fonts.css",
+        "hash": "10864511690280411096"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/css/tokens_blue.css",
+        "hash": "11257357759871014226"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/css/tokens_brand.css",
+        "hash": "14017126956895001952"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/desktop-menu.scss",
+        "hash": "7581941654024401388"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/fontFamilies.scss",
+        "hash": "3428633646195745696"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/fontSize.scss",
+        "hash": "13313020442468367555"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/fontWeights.scss",
+        "hash": "2771566029157081857"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/footer.scss",
+        "hash": "5811495390355592894"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/header.scss",
+        "hash": "14013500575648331867"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/icon-size.scss",
+        "hash": "12142582767641893421"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/letterSpacing.scss",
+        "hash": "2900779078582122753"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/lineHeights.scss",
+        "hash": "16649381247640269563"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/link.scss",
+        "hash": "15863907436678350330"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/paragraphIndent.scss",
+        "hash": "11227946727103438798"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/paragraphSpacing.scss",
+        "hash": "5605013130633238958"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/progress-meter.scss",
+        "hash": "18108163207354028409"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/shadow.scss",
+        "hash": "18367635396690345330"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/spacing.scss",
+        "hash": "8145336953772527207"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/textCase.scss",
+        "hash": "13567125956558874653"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/textDecoration.scss",
+        "hash": "9095888132285079461"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/tokens-all-blue.scss",
+        "hash": "10455387084864691506"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/blue/tokens-brand.scss",
+        "hash": "17792121154161368878"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/_base.scss",
+        "hash": "13349546330189839766"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/badge.scss",
+        "hash": "11805243199811311345"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/bg.scss",
+        "hash": "7066190203700476794"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/border-style.scss",
+        "hash": "18394229547969729496"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/border.scss",
+        "hash": "3586716663096686166"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/borderRadius.scss",
+        "hash": "2703033881381319129"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/borderWidth.scss",
+        "hash": "1342299074617248927"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/breakpoint.scss",
+        "hash": "12774926635862486342"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/button.scss",
+        "hash": "5342621214528057695"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/content.scss",
+        "hash": "6068136985410553073"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/css/fonts.css",
+        "hash": "9760168451141339510"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/css/tokens_brand.css",
+        "hash": "12431790511026121365"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/css/tokens_cre8.css",
+        "hash": "1470217387697403429"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/desktop-menu.scss",
+        "hash": "4447673408254668869"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/fontFamilies.scss",
+        "hash": "5396900109928853314"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/fontSize.scss",
+        "hash": "14691557007020325132"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/fontWeights.scss",
+        "hash": "8727159812929806398"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/footer.scss",
+        "hash": "9778986406119434968"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/header.scss",
+        "hash": "6040584496954300695"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/icon-size.scss",
+        "hash": "13849501814635673909"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/letterSpacing.scss",
+        "hash": "10797881611075992472"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/lineHeights.scss",
+        "hash": "3781293318500229445"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/link.scss",
+        "hash": "4691042302975285728"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/paragraphIndent.scss",
+        "hash": "18141501318547118346"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/paragraphSpacing.scss",
+        "hash": "9481479058060823027"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/progress-meter.scss",
+        "hash": "2137975923080679763"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/shadow.scss",
+        "hash": "1350860945553044531"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/spacing.scss",
+        "hash": "15349395546757202269"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/textCase.scss",
+        "hash": "17194315481632689048"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/textDecoration.scss",
+        "hash": "17345344104568088799"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/tokens-all-cre8.scss",
+        "hash": "17640911149116914889"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/cre8/tokens-brand.scss",
+        "hash": "16751326847155563390"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/femmecubator/base.scss",
+        "hash": "4846599460366894233"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/femmecubator/border.scss",
+        "hash": "11175680604240998681"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/femmecubator/color.scss",
+        "hash": "3469799537676757749"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/femmecubator/css/fonts.css",
+        "hash": "9760168451141339510"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/femmecubator/css/tokens_brand.css",
+        "hash": "11938802533204374133"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/femmecubator/spacing.scss",
+        "hash": "7965517529861133532"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/femmecubator/tokens-all-femmecubator.scss",
+        "hash": "2617994655931834068"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/femmecubator/tokens-brand.scss",
+        "hash": "4017610303055463262"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/_base.scss",
+        "hash": "14480498179846251439"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/badge.scss",
+        "hash": "5368071328256163333"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/bg.scss",
+        "hash": "10300186514670184249"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/border-style.scss",
+        "hash": "7654673388959820613"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/border.scss",
+        "hash": "5099732432558383392"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/borderRadius.scss",
+        "hash": "16954644130839541233"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/borderWidth.scss",
+        "hash": "18380965402457677288"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/breakpoint.scss",
+        "hash": "12138342574497429868"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/button.scss",
+        "hash": "4280280691425529625"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/content.scss",
+        "hash": "17737310304779578011"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/css/fonts.css",
+        "hash": "2949495871108459932"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/css/tokens_brand.css",
+        "hash": "16418481301174070053"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/css/tokens_legacy.css",
+        "hash": "9241773980252565862"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/desktop-menu.scss",
+        "hash": "10821416942200581675"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/fontFamilies.scss",
+        "hash": "13421305030767274108"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/fontSize.scss",
+        "hash": "12492415221298336160"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/fontWeights.scss",
+        "hash": "6387881891721372597"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/footer.scss",
+        "hash": "18155664197319278159"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/header.scss",
+        "hash": "260332352171278072"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/icon-size.scss",
+        "hash": "12495453673209296932"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/letterSpacing.scss",
+        "hash": "4229191390997231407"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/lineHeights.scss",
+        "hash": "16611390498712341305"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/paragraphIndent.scss",
+        "hash": "15134783305763528969"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/paragraphSpacing.scss",
+        "hash": "11595661384353672514"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/progress-meter.scss",
+        "hash": "4884178112646276302"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/shadow.scss",
+        "hash": "1162806289394920154"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/spacing.scss",
+        "hash": "8743521001796805751"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/textCase.scss",
+        "hash": "15623085101590273343"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/textDecoration.scss",
+        "hash": "5621063478105245713"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/tokens-all-legacy.scss",
+        "hash": "9482747772853009554"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/legacy/tokens-brand.scss",
+        "hash": "17890698173650451705"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/_base.scss",
+        "hash": "13077511185554306785"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/asset.scss",
+        "hash": "13697016615341424376"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/badge.scss",
+        "hash": "2964955215395914793"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/bg.scss",
+        "hash": "10425025958569302595"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/border-style.scss",
+        "hash": "15097884454483124447"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/border.scss",
+        "hash": "14318086460072501171"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/borderRadius.scss",
+        "hash": "1488912886226720651"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/borderWidth.scss",
+        "hash": "13754790939689352289"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/breakpoint.scss",
+        "hash": "17430630894521457689"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/button.scss",
+        "hash": "492614811395223783"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/content.scss",
+        "hash": "1300297491832237934"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/css/fonts.css",
+        "hash": "1291430102501531321"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/css/tokens_brand.css",
+        "hash": "3703162899768161955"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/css/tokens_marketing.css",
+        "hash": "2493588716087885029"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/desktop-menu.scss",
+        "hash": "5212459483326560670"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/fontFamilies.scss",
+        "hash": "17108248707745388408"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/fontSize.scss",
+        "hash": "3510274287238572780"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/fontWeights.scss",
+        "hash": "2116193621316313668"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/footer.scss",
+        "hash": "13335002350379959881"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/header.scss",
+        "hash": "5061269134319555966"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/icon-size.scss",
+        "hash": "10104211017112647585"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/letterSpacing.scss",
+        "hash": "5041851407517231044"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/lineHeights.scss",
+        "hash": "1821155220827859174"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/link.scss",
+        "hash": "11451090605078591705"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/paragraphIndent.scss",
+        "hash": "6943973175220782589"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/paragraphSpacing.scss",
+        "hash": "7524655632428368452"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/progress-meter.scss",
+        "hash": "6072161231877268689"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/shadow.scss",
+        "hash": "5348971741694878410"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/spacing.scss",
+        "hash": "17558636096924418411"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/textCase.scss",
+        "hash": "10762368161279752632"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/textDecoration.scss",
+        "hash": "13684205777486620097"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/tokens-all-marketing.scss",
+        "hash": "9307798921045427333"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/marketing/tokens-brand.scss",
+        "hash": "12689225475671573805"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/_base.scss",
+        "hash": "2234863757138412168"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/asset.scss",
+        "hash": "2701472645195878622"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/badge.scss",
+        "hash": "1694253908257461892"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/bg.scss",
+        "hash": "11868446728104343190"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/border-style.scss",
+        "hash": "6401177744976479607"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/border.scss",
+        "hash": "2235645356967779084"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/borderRadius.scss",
+        "hash": "10549183364964957307"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/borderWidth.scss",
+        "hash": "875807136516552089"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/breakpoint.scss",
+        "hash": "12278185928807706101"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/button.scss",
+        "hash": "11993919647903072929"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/content.scss",
+        "hash": "14808207531247186456"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/css/fonts.css",
+        "hash": "4211421747010223375"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/css/tokens_brand.css",
+        "hash": "7603975291290903714"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/css/tokens_minimalist.css",
+        "hash": "15745134564177368750"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/desktop-menu.scss",
+        "hash": "1290913915781840828"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/fontFamilies.scss",
+        "hash": "2088211348265312669"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/fontFamily.scss",
+        "hash": "17544972010906301710"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/fontSize.scss",
+        "hash": "2816744551666846769"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/fontWeights.scss",
+        "hash": "8340333658068848711"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/footer.scss",
+        "hash": "4895348119349361197"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/header.scss",
+        "hash": "3423799653136443760"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/icon-size.scss",
+        "hash": "14961672510967239022"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/letterSpacing.scss",
+        "hash": "9838087434293620895"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/lineHeights.scss",
+        "hash": "6053078031965106218"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/paragraphIndent.scss",
+        "hash": "14447048521428869759"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/paragraphSpacing.scss",
+        "hash": "12293802823581931724"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/progress-meter.scss",
+        "hash": "16353612159494948893"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/shadow.scss",
+        "hash": "11410651075449419321"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/spacing.scss",
+        "hash": "7893811175623568696"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/textCase.scss",
+        "hash": "15522758256445384822"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/textDecoration.scss",
+        "hash": "14269581948920462547"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/tokens-all-minimalist.scss",
+        "hash": "2900141279765319111"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/brands/minimalist/tokens-brand.scss",
+        "hash": "7394405449983606516"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/cobrands/cobrand.css",
+        "hash": "18338189732312612715"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/cobrands/cobrand_pbm.css",
+        "hash": "10209685277637420681"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/cobrands/ers.css",
+        "hash": "8381158065293162714"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/cobrands/trs.css",
+        "hash": "17197285158726035191"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/layouts/breakpoints.scss",
+        "hash": "13792129378505804421"
+      },
+      {
+        "file": "packages/cre8-design-tokens/lib/web/mixins/typography-usage.scss",
+        "hash": "16299701412523162243"
+      },
+      {
         "file": "pnpm-lock.yaml",
         "hash": "14672629264234712162"
       },
@@ -151,11 +1075,11 @@
       },
       {
         "file": "tsconfig.base.json",
-        "hash": "548223777544344966"
+        "hash": "8608594362684733718"
       },
       {
         "file": "tsconfig.json",
-        "hash": "3198994152542118131"
+        "hash": "7027302742028750983"
       }
     ],
     "projectFileMap": {
@@ -258,7 +1182,7 @@
         },
         {
           "file": "packages/cre8-wc/.storybook/custom-elements.json",
-          "hash": "7768583216998511797"
+          "hash": "1653941000755828405"
         },
         {
           "file": "packages/cre8-wc/.storybook/images/hero-image.png",
@@ -274,7 +1198,7 @@
         },
         {
           "file": "packages/cre8-wc/.storybook/main.ts",
-          "hash": "11619836647558162626"
+          "hash": "6288045513193501311"
         },
         {
           "file": "packages/cre8-wc/.storybook/manager-head.html",
@@ -570,7 +1494,7 @@
         },
         {
           "file": "packages/cre8-wc/components/badge/badge.stories.ts",
-          "hash": "15451467634199846080"
+          "hash": "650539585022325725"
         },
         {
           "file": "packages/cre8-wc/components/badge/badge.styles.ts",
@@ -610,7 +1534,7 @@
         },
         {
           "file": "packages/cre8-wc/components/breadcrumbs-item/breadcrumbs-item.ts",
-          "hash": "15730976359898476315"
+          "hash": "3299215788247771359"
         },
         {
           "file": "packages/cre8-wc/components/breadcrumbs-item/test/breadcrumbs-item.test.ts",
@@ -1402,7 +2326,7 @@
         },
         {
           "file": "packages/cre8-wc/components/modal/modal.mdx",
-          "hash": "12069442071160554534"
+          "hash": "5404346230872569124"
         },
         {
           "file": "packages/cre8-wc/components/modal/modal.module.scss",
@@ -5806,7 +6730,7 @@
         },
         {
           "file": "packages/cre8-wc/package.json",
-          "hash": "1065709272863860773",
+          "hash": "3714987616727433406",
           "deps": [
             "npm:@babel/core",
             "npm:@babel/plugin-proposal-decorators",
@@ -5885,7 +6809,7 @@
         },
         {
           "file": "packages/cre8-wc/pnpm-lock.yaml",
-          "hash": "8767233658385736560"
+          "hash": "3561315847333970218"
         },
         {
           "file": "packages/cre8-wc/script/package.json",
@@ -5973,7 +6897,7 @@
         },
         {
           "file": "packages/cre8-wc/tsconfig.json",
-          "hash": "18060923011764294521"
+          "hash": "16214768714717501595"
         },
         {
           "file": "packages/cre8-wc/utilities/is-mobile.ts",
@@ -5986,6 +6910,1176 @@
         {
           "file": "packages/cre8-wc/vite.config.ts",
           "hash": "18174238349076587050"
+        }
+      ],
+      "@cre8_dev/cre8-react": [
+        {
+          "file": "packages/cre8-react/.editorconfig",
+          "hash": "5233391011250845746"
+        },
+        {
+          "file": "packages/cre8-react/.eslintrc.js",
+          "hash": "7589935559180500017"
+        },
+        {
+          "file": "packages/cre8-react/.gitignore",
+          "hash": "330278387671121491"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/components/Fpo/Fpo.scss",
+          "hash": "11279290725888988002"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/components/Fpo/Fpo.tsx",
+          "hash": "6463700890978852591"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/cre8Theme.js",
+          "hash": "10223203749688836817"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/main.js",
+          "hash": "16071075148636478002"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/manager-head.html",
+          "hash": "8681610143744159191"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/manager.js",
+          "hash": "16292348060222596418"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/middleware.js",
+          "hash": "17585016187019476958"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/pages/Dashboard/Dashboard.scss",
+          "hash": "5001191062269139392"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/patterns/PharmacyFooter/PharmacyFooter.scss",
+          "hash": "11300312329106341040"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/patterns/PharmacyFooter/PharmacyFooter.tsx",
+          "hash": "7018208929653119683"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/patterns/PharmacyHeader/PharmacyHeader.scss",
+          "hash": "5158106758834137234"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/patterns/PharmacyHeader/PharmacyHeader.tsx",
+          "hash": "12978253050931239200"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/patterns/FormExample/FormExample.stories.tsx",
+          "hash": "4108482918118225507"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/patterns/FormExample/FormExample.tsx",
+          "hash": "14257973853989338955"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/patterns/IconDescription/IconDescription.scss",
+          "hash": "17595916241231167874"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/patterns/IconDescription/IconDescription.stories.tsx",
+          "hash": "1441006649595703614"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/patterns/IconDescription/IconDescription.tsx",
+          "hash": "7123233465817671900"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/preview.js",
+          "hash": "8935250976138200003"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/static/favicon.ico",
+          "hash": "2949791817221603359"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/static/icons/cre8-icons.svg",
+          "hash": "7876145439354247420"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/static/index.html",
+          "hash": "1157416733889261112"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/static/cre8-icons.svg",
+          "hash": "12726762868111859054"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/static/logo192.png",
+          "hash": "7585273181698778288"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/static/logo512.png",
+          "hash": "9339365414554387981"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/static/manifest.json",
+          "hash": "1447645250373428393"
+        },
+        {
+          "file": "packages/cre8-react/.storybook/static/robots.txt",
+          "hash": "2790380794362165217"
+        },
+        {
+          "file": "packages/cre8-react/README.md",
+          "hash": "3371979437747579054"
+        },
+        {
+          "file": "packages/cre8-react/babel.config.js",
+          "hash": "10421803382569996505"
+        },
+        {
+          "file": "packages/cre8-react/cre8_dev-cre8-icons-0.11.0.tgz",
+          "hash": "5474396003040255916"
+        },
+        {
+          "file": "packages/cre8-react/declaration.d.ts",
+          "hash": "4598581592734337117"
+        },
+        {
+          "file": "packages/cre8-react/fonts/Aeonik-Bold.woff",
+          "hash": "3664390439435570533"
+        },
+        {
+          "file": "packages/cre8-react/fonts/Aeonik-Bold.woff2",
+          "hash": "15841124439525307680"
+        },
+        {
+          "file": "packages/cre8-react/fonts/Aeonik-Light.woff",
+          "hash": "15493412826185628163"
+        },
+        {
+          "file": "packages/cre8-react/fonts/Aeonik-Light.woff2",
+          "hash": "16568445817094764755"
+        },
+        {
+          "file": "packages/cre8-react/fonts/Aeonik-Regular.woff",
+          "hash": "6559327985557630931"
+        },
+        {
+          "file": "packages/cre8-react/fonts/Aeonik-Regular.woff2",
+          "hash": "741258449757716479"
+        },
+        {
+          "file": "packages/cre8-react/package.json",
+          "hash": "11199714093252992025",
+          "deps": [
+            "npm:@babel/core",
+            "npm:@babel/plugin-proposal-decorators",
+            "npm:@babel/plugin-transform-typescript",
+            "npm:@babel/preset-env",
+            "npm:@babel/preset-react",
+            "npm:@storybook/react",
+            "npm:@testing-library/user-event",
+            "npm:@types/node",
+            "npm:@types/react",
+            "npm:@types/react-dom",
+            "npm:@typescript-eslint/eslint-plugin",
+            "npm:@typescript-eslint/parser",
+            "npm:babel-loader",
+            "npm:css-loader",
+            "npm:loader-utils",
+            "npm:regenerator-runtime",
+            "npm:sass",
+            "npm:sass-loader",
+            "npm:style-loader",
+            "npm:ts-node",
+            "npm:typescript",
+            "npm:@cre8_dev/cre8-design-tokens",
+            "npm:@lit/react",
+            "npm:classnames",
+            "npm:react",
+            "npm:react-dom"
+          ]
+        },
+        {
+          "file": "packages/cre8-react/plop-templates/Component.stories.tsx.hbs",
+          "hash": "11883504791460714579"
+        },
+        {
+          "file": "packages/cre8-react/plop-templates/Component.tsx.hbs",
+          "hash": "5814544441068094071"
+        },
+        {
+          "file": "packages/cre8-react/plop-templates/Page.stories.tsx.hbs",
+          "hash": "1885087520931880677"
+        },
+        {
+          "file": "packages/cre8-react/plop-templates/Page.tsx.hbs",
+          "hash": "889927316933277141"
+        },
+        {
+          "file": "packages/cre8-react/plop-templates/Recipe.scss.hbs",
+          "hash": "17994578026228011746"
+        },
+        {
+          "file": "packages/cre8-react/plop-templates/Recipe.stories.tsx.hbs",
+          "hash": "15717045789442395543"
+        },
+        {
+          "file": "packages/cre8-react/plop-templates/Recipe.tsx.hbs",
+          "hash": "8802357153529945982"
+        },
+        {
+          "file": "packages/cre8-react/plopfile.js",
+          "hash": "15703588814703145015"
+        },
+        {
+          "file": "packages/cre8-react/pnpm-lock.yaml",
+          "hash": "10998521404417152102"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Accordion/Accordion.stories.tsx",
+          "hash": "7903545773654852595"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Accordion/Accordion.tsx",
+          "hash": "13626536664488011579"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Accordion/index.tsx",
+          "hash": "5476821407842445683"
+        },
+        {
+          "file": "packages/cre8-react/src/components/AccordionItem/AccordionItem.stories.tsx",
+          "hash": "15086071913073540917"
+        },
+        {
+          "file": "packages/cre8-react/src/components/AccordionItem/AccordionItem.tsx",
+          "hash": "9166477651061101093"
+        },
+        {
+          "file": "packages/cre8-react/src/components/AccordionItem/index.tsx",
+          "hash": "6720591062304773736"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Alert/Alert.stories.tsx",
+          "hash": "7135536416620995291"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Alert/Alert.tsx",
+          "hash": "15622603945006501338"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Alert/index.tsx",
+          "hash": "18224673667939297836"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Badge/Badge.stories.tsx",
+          "hash": "187292865309238307"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Badge/Badge.tsx",
+          "hash": "6006774402860640557"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Badge/index.tsx",
+          "hash": "14663468232077114161"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Band/Band.stories.tsx",
+          "hash": "3874754361121420946"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Band/Band.tsx",
+          "hash": "17183146930179875531"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Band/index.tsx",
+          "hash": "12911316790799421986"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Breadcrumbs/Breadcrumbs.stories.tsx",
+          "hash": "9286634790196318890"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Breadcrumbs/Breadcrumbs.tsx",
+          "hash": "3424305689222116433"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Breadcrumbs/index.tsx",
+          "hash": "16281106072966030511"
+        },
+        {
+          "file": "packages/cre8-react/src/components/BreadcrumbsItem/BreadcrumbsItem.tsx",
+          "hash": "9663409339812571218"
+        },
+        {
+          "file": "packages/cre8-react/src/components/BreadcrumbsItem/index.tsx",
+          "hash": "11568613816756558025"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Button/Button.stories.tsx",
+          "hash": "9103676291058984270"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Button/Button.tsx",
+          "hash": "18003364681339392512"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Button/index.ts",
+          "hash": "13071534322901307428"
+        },
+        {
+          "file": "packages/cre8-react/src/components/ButtonGroup/ButtonGroup.stories.tsx",
+          "hash": "3204698972675615969"
+        },
+        {
+          "file": "packages/cre8-react/src/components/ButtonGroup/ButtonGroup.tsx",
+          "hash": "18141958173104875945"
+        },
+        {
+          "file": "packages/cre8-react/src/components/ButtonGroup/index.tsx",
+          "hash": "4376916160872563405"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Card/Card.stories.tsx",
+          "hash": "16531116430240620428"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Card/Card.tsx",
+          "hash": "2580398084958607196"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Card/index.tsx",
+          "hash": "9101593940483212797"
+        },
+        {
+          "file": "packages/cre8-react/src/components/CheckboxField/CheckboxField.stories.tsx",
+          "hash": "12099299320292151144"
+        },
+        {
+          "file": "packages/cre8-react/src/components/CheckboxField/CheckboxField.tsx",
+          "hash": "10739995003527003584"
+        },
+        {
+          "file": "packages/cre8-react/src/components/CheckboxField/index.tsx",
+          "hash": "190835315883261954"
+        },
+        {
+          "file": "packages/cre8-react/src/components/CheckboxFieldItem/CheckboxFieldItem.stories.tsx",
+          "hash": "18044289832692981077"
+        },
+        {
+          "file": "packages/cre8-react/src/components/CheckboxFieldItem/CheckboxFieldItem.tsx",
+          "hash": "6583439896169848553"
+        },
+        {
+          "file": "packages/cre8-react/src/components/CheckboxFieldItem/index.tsx",
+          "hash": "9680741810947197419"
+        },
+        {
+          "file": "packages/cre8-react/src/components/DangerButton/DangerButton.stories.tsx",
+          "hash": "10050161767438281494"
+        },
+        {
+          "file": "packages/cre8-react/src/components/DangerButton/DangerButton.tsx",
+          "hash": "5262119340591024374"
+        },
+        {
+          "file": "packages/cre8-react/src/components/DangerButton/index.tsx",
+          "hash": "13618698520417265495"
+        },
+        {
+          "file": "packages/cre8-react/src/components/DatePicker/DatePicker.stories.tsx",
+          "hash": "16758811300138036531"
+        },
+        {
+          "file": "packages/cre8-react/src/components/DatePicker/DatePicker.tsx",
+          "hash": "6431816075750013912"
+        },
+        {
+          "file": "packages/cre8-react/src/components/DatePicker/index.tsx",
+          "hash": "2124569702606288101"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Divider/Divider.stories.tsx",
+          "hash": "3657256464299594268"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Divider/Divider.tsx",
+          "hash": "7636847426512606023"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Divider/index.tsx",
+          "hash": "2007158861621127955"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Dropdown/Dropdown.stories.tsx",
+          "hash": "16622528407604269423"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Dropdown/Dropdown.tsx",
+          "hash": "15655589520297571406"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Dropdown/index.tsx",
+          "hash": "11954201363853916154"
+        },
+        {
+          "file": "packages/cre8-react/src/components/DropdownItem/DropdownItem.stories.tsx",
+          "hash": "17021685592976619385"
+        },
+        {
+          "file": "packages/cre8-react/src/components/DropdownItem/DropdownItem.tsx",
+          "hash": "15066679878989722972"
+        },
+        {
+          "file": "packages/cre8-react/src/components/DropdownItem/index.tsx",
+          "hash": "7179550194049729928"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Feature/Feature.stories.tsx",
+          "hash": "2848058539013416314"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Feature/Feature.tsx",
+          "hash": "5398448520374504635"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Feature/index.tsx",
+          "hash": "591566553826698463"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Field/Field.stories.tsx",
+          "hash": "8062955846488581691"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Field/Field.tsx",
+          "hash": "1596954172598742959"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Field/index.tsx",
+          "hash": "7305792391226079100"
+        },
+        {
+          "file": "packages/cre8-react/src/components/FieldNote/FieldNote.stories.tsx",
+          "hash": "5513678751307395767"
+        },
+        {
+          "file": "packages/cre8-react/src/components/FieldNote/FieldNote.tsx",
+          "hash": "2363793014355764323"
+        },
+        {
+          "file": "packages/cre8-react/src/components/FieldNote/index.tsx",
+          "hash": "12498265893673190622"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Footer/Footer.stories.tsx",
+          "hash": "4440330428552169421"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Footer/Footer.tsx",
+          "hash": "7300837752533914803"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Footer/index.tsx",
+          "hash": "13217032514544095680"
+        },
+        {
+          "file": "packages/cre8-react/src/components/GlobalNav/GlobalNav.stories.tsx",
+          "hash": "5016579914535690688"
+        },
+        {
+          "file": "packages/cre8-react/src/components/GlobalNav/GlobalNav.tsx",
+          "hash": "6879553930085115914"
+        },
+        {
+          "file": "packages/cre8-react/src/components/GlobalNav/index.tsx",
+          "hash": "10098937943184194586"
+        },
+        {
+          "file": "packages/cre8-react/src/components/GlobalNavItem/GlobalNavItem.tsx",
+          "hash": "16921184258094270654"
+        },
+        {
+          "file": "packages/cre8-react/src/components/GlobalNavItem/index.tsx",
+          "hash": "8736959100302616463"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Grid/Grid.stories.tsx",
+          "hash": "15243934769498707308"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Grid/Grid.tsx",
+          "hash": "16805867720840355899"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Grid/index.tsx",
+          "hash": "15214464681348869140"
+        },
+        {
+          "file": "packages/cre8-react/src/components/GridItem/GridItem.stories.tsx",
+          "hash": "14528363564156409684"
+        },
+        {
+          "file": "packages/cre8-react/src/components/GridItem/GridItem.tsx",
+          "hash": "7249696111101797992"
+        },
+        {
+          "file": "packages/cre8-react/src/components/GridItem/index.tsx",
+          "hash": "17959643249326196621"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Header/Header.stories.tsx",
+          "hash": "2927153080974357340"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Header/Header.tsx",
+          "hash": "1852705769875519656"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Header/index.tsx",
+          "hash": "1891330823667362207"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Heading/Heading.stories.tsx",
+          "hash": "5756985794831153056"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Heading/Heading.tsx",
+          "hash": "13225900895576397235"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Heading/index.tsx",
+          "hash": "11799105359266635962"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Hero/Hero.stories.tsx",
+          "hash": "12680680590925906855"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Hero/Hero.tsx",
+          "hash": "12099333267583041905"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Hero/index.tsx",
+          "hash": "13365055584349734815"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Icon/Icon.stories.tsx",
+          "hash": "6422701095765842945"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Icon/Icon.tsx",
+          "hash": "9999335348100045575"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Icon/index.tsx",
+          "hash": "9835106078402400376"
+        },
+        {
+          "file": "packages/cre8-react/src/components/InlineAlert/InlineAlert.stories.tsx",
+          "hash": "6465803924659521416"
+        },
+        {
+          "file": "packages/cre8-react/src/components/InlineAlert/InlineAlert.tsx",
+          "hash": "1055158930011954491"
+        },
+        {
+          "file": "packages/cre8-react/src/components/InlineAlert/index.tsx",
+          "hash": "268326476552949105"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Layout/Layout.stories.tsx",
+          "hash": "2805761002658221467"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Layout/Layout.tsx",
+          "hash": "4938866022215449014"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Layout/index.tsx",
+          "hash": "11428388953633328739"
+        },
+        {
+          "file": "packages/cre8-react/src/components/LayoutContainer/LayoutContainer.stories.tsx",
+          "hash": "6409828046685206838"
+        },
+        {
+          "file": "packages/cre8-react/src/components/LayoutContainer/LayoutContainer.tsx",
+          "hash": "3284498324287187975"
+        },
+        {
+          "file": "packages/cre8-react/src/components/LayoutContainer/index.tsx",
+          "hash": "11621773325944273695"
+        },
+        {
+          "file": "packages/cre8-react/src/components/LayoutSection/LayoutSection.tsx",
+          "hash": "9771365017460963193"
+        },
+        {
+          "file": "packages/cre8-react/src/components/LayoutSection/index.tsx",
+          "hash": "4906775080354051214"
+        },
+        {
+          "file": "packages/cre8-react/src/components/LinelengthContainer/LinelengthContainer.stories.tsx",
+          "hash": "2846939587208225379"
+        },
+        {
+          "file": "packages/cre8-react/src/components/LinelengthContainer/LinelengthContainer.tsx",
+          "hash": "17725926666388573146"
+        },
+        {
+          "file": "packages/cre8-react/src/components/LinelengthContainer/index.tsx",
+          "hash": "6999300546761076081"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Link/Link.stories.tsx",
+          "hash": "1594687727698061849"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Link/Link.tsx",
+          "hash": "3317557782905483685"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Link/index.tsx",
+          "hash": "6441871656973882665"
+        },
+        {
+          "file": "packages/cre8-react/src/components/LinkList/LinkList.stories.tsx",
+          "hash": "8616021960136164865"
+        },
+        {
+          "file": "packages/cre8-react/src/components/LinkList/LinkList.tsx",
+          "hash": "14886322554418954027"
+        },
+        {
+          "file": "packages/cre8-react/src/components/LinkList/index.tsx",
+          "hash": "12012649365291274468"
+        },
+        {
+          "file": "packages/cre8-react/src/components/LinkListItem/LinkListItem.tsx",
+          "hash": "3410362954435527856"
+        },
+        {
+          "file": "packages/cre8-react/src/components/LinkListItem/index.tsx",
+          "hash": "2996271800095793959"
+        },
+        {
+          "file": "packages/cre8-react/src/components/LoadingSpinner/LoadingSpinner.stories.tsx",
+          "hash": "5289441931629201497"
+        },
+        {
+          "file": "packages/cre8-react/src/components/LoadingSpinner/LoadingSpinner.tsx",
+          "hash": "7062343281373708368"
+        },
+        {
+          "file": "packages/cre8-react/src/components/LoadingSpinner/index.tsx",
+          "hash": "18056227299506365184"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Logo/Logo.stories.tsx",
+          "hash": "7274947276738462797"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Logo/Logo.tsx",
+          "hash": "6269470686191644169"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Logo/index.tsx",
+          "hash": "6396849716960178944"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Main/Main.stories.tsx",
+          "hash": "6231698855141290278"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Main/Main.tsx",
+          "hash": "9648624642929970283"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Main/index.tsx",
+          "hash": "2351846103899082813"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Modal/Modal.stories.tsx",
+          "hash": "9582213610009437917"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Modal/Modal.tsx",
+          "hash": "12942469423717663397"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Modal/index.tsx",
+          "hash": "961978680870062395"
+        },
+        {
+          "file": "packages/cre8-react/src/components/MultiSelect/MultiSelect.stories.tsx",
+          "hash": "10326738638531458398"
+        },
+        {
+          "file": "packages/cre8-react/src/components/MultiSelect/MultiSelect.tsx",
+          "hash": "17335620548244394185"
+        },
+        {
+          "file": "packages/cre8-react/src/components/MultiSelect/index.tsx",
+          "hash": "1958252467217412800"
+        },
+        {
+          "file": "packages/cre8-react/src/components/NavContainer/NavContainer.stories.tsx",
+          "hash": "4800744303380437431"
+        },
+        {
+          "file": "packages/cre8-react/src/components/NavContainer/NavContainer.tsx",
+          "hash": "12882179894549338568"
+        },
+        {
+          "file": "packages/cre8-react/src/components/NavContainer/index.tsx",
+          "hash": "8845537090334385947"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Pagination/Pagination.stories.tsx",
+          "hash": "16101823251163263221"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Pagination/Pagination.tsx",
+          "hash": "5936246286951296783"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Pagination/index.tsx",
+          "hash": "9970907889015637342"
+        },
+        {
+          "file": "packages/cre8-react/src/components/PercentBar/PercentBar.stories.tsx",
+          "hash": "11350637864778770431"
+        },
+        {
+          "file": "packages/cre8-react/src/components/PercentBar/PercentBar.tsx",
+          "hash": "10142030459303564285"
+        },
+        {
+          "file": "packages/cre8-react/src/components/PercentBar/index.tsx",
+          "hash": "6260486853737717667"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Popover/Popover.stories.tsx",
+          "hash": "15604203784655897093"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Popover/Popover.tsx",
+          "hash": "1683359407661952422"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Popover/index.tsx",
+          "hash": "10165565951759916721"
+        },
+        {
+          "file": "packages/cre8-react/src/components/PrimaryNav/PrimaryNav.stories.tsx",
+          "hash": "18170975823739361738"
+        },
+        {
+          "file": "packages/cre8-react/src/components/PrimaryNav/PrimaryNav.tsx",
+          "hash": "16552669806561606381"
+        },
+        {
+          "file": "packages/cre8-react/src/components/PrimaryNav/index.tsx",
+          "hash": "67986889470669343"
+        },
+        {
+          "file": "packages/cre8-react/src/components/PrimaryNavItem/PrimaryNavItem.tsx",
+          "hash": "12492983414745213817"
+        },
+        {
+          "file": "packages/cre8-react/src/components/PrimaryNavItem/index.tsx",
+          "hash": "8897078427164095445"
+        },
+        {
+          "file": "packages/cre8-react/src/components/ProgressMeter/ProgressMeter.stories.tsx",
+          "hash": "3496337809850079828"
+        },
+        {
+          "file": "packages/cre8-react/src/components/ProgressMeter/ProgressMeter.tsx",
+          "hash": "8793741825297502589"
+        },
+        {
+          "file": "packages/cre8-react/src/components/ProgressMeter/index.tsx",
+          "hash": "16509297074105390221"
+        },
+        {
+          "file": "packages/cre8-react/src/components/ProgressSteps/ProgressSteps.stories.tsx",
+          "hash": "1411335094395336687"
+        },
+        {
+          "file": "packages/cre8-react/src/components/ProgressSteps/ProgressSteps.tsx",
+          "hash": "14258407612157478061"
+        },
+        {
+          "file": "packages/cre8-react/src/components/ProgressSteps/index.tsx",
+          "hash": "6568242586819903096"
+        },
+        {
+          "file": "packages/cre8-react/src/components/ProgressStepsItem/ProgressStepsItem.stories.tsx",
+          "hash": "8754903503928505407"
+        },
+        {
+          "file": "packages/cre8-react/src/components/ProgressStepsItem/ProgressStepsItem.tsx",
+          "hash": "563874365588265240"
+        },
+        {
+          "file": "packages/cre8-react/src/components/ProgressStepsItem/index.tsx",
+          "hash": "11270164701340773729"
+        },
+        {
+          "file": "packages/cre8-react/src/components/RadioField/RadioField.stories.tsx",
+          "hash": "7715588860617300325"
+        },
+        {
+          "file": "packages/cre8-react/src/components/RadioField/RadioField.tsx",
+          "hash": "1303127582016461733"
+        },
+        {
+          "file": "packages/cre8-react/src/components/RadioField/index.tsx",
+          "hash": "15958262835199746096"
+        },
+        {
+          "file": "packages/cre8-react/src/components/RadioFieldItem/RadioFieldItem.stories.tsx",
+          "hash": "10469162519053909947"
+        },
+        {
+          "file": "packages/cre8-react/src/components/RadioFieldItem/RadioFieldItem.tsx",
+          "hash": "15232912189194183618"
+        },
+        {
+          "file": "packages/cre8-react/src/components/RadioFieldItem/index.tsx",
+          "hash": "13222947810135251019"
+        },
+        {
+          "file": "packages/cre8-react/src/components/RemoveTag/RemoveTag.stories.tsx",
+          "hash": "15611791241015476353"
+        },
+        {
+          "file": "packages/cre8-react/src/components/RemoveTag/RemoveTag.tsx",
+          "hash": "1821022701848708338"
+        },
+        {
+          "file": "packages/cre8-react/src/components/RemoveTag/index.tsx",
+          "hash": "4486133444856057884"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Section/Section.stories.tsx",
+          "hash": "5233499389634441701"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Section/Section.tsx",
+          "hash": "16509530266159482550"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Section/index.tsx",
+          "hash": "8039545748468514318"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Select/Select.stories.tsx",
+          "hash": "13604887745817883662"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Select/Select.tsx",
+          "hash": "10850949366149441154"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Select/index.tsx",
+          "hash": "16348485623229369813"
+        },
+        {
+          "file": "packages/cre8-react/src/components/SelectTile/SelectTile.stories.tsx",
+          "hash": "6842487376610792778"
+        },
+        {
+          "file": "packages/cre8-react/src/components/SelectTile/SelectTile.tsx",
+          "hash": "16106323572158849598"
+        },
+        {
+          "file": "packages/cre8-react/src/components/SelectTile/index.tsx",
+          "hash": "13657082582626669050"
+        },
+        {
+          "file": "packages/cre8-react/src/components/SelectTileList/SelectTileList.stories.tsx",
+          "hash": "15870832434253354324"
+        },
+        {
+          "file": "packages/cre8-react/src/components/SelectTileList/SelectTileList.tsx",
+          "hash": "15828827018477551090"
+        },
+        {
+          "file": "packages/cre8-react/src/components/SelectTileList/index.tsx",
+          "hash": "13162890138715259184"
+        },
+        {
+          "file": "packages/cre8-react/src/components/SkeletonLoader/SkeletonLoader.stories.tsx",
+          "hash": "507903337126662598"
+        },
+        {
+          "file": "packages/cre8-react/src/components/SkeletonLoader/SkeletonLoader.tsx",
+          "hash": "13033439205422381741"
+        },
+        {
+          "file": "packages/cre8-react/src/components/SkeletonLoader/index.tsx",
+          "hash": "13187936300283036375"
+        },
+        {
+          "file": "packages/cre8-react/src/components/SplitButton/SplitButton.stories.tsx",
+          "hash": "8640794054204062109"
+        },
+        {
+          "file": "packages/cre8-react/src/components/SplitButton/SplitButton.tsx",
+          "hash": "14684068054135283022"
+        },
+        {
+          "file": "packages/cre8-react/src/components/SplitButton/index.tsx",
+          "hash": "2477593369925576569"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Submenu/Submenu.stories.tsx",
+          "hash": "16659879675467992537"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Submenu/Submenu.tsx",
+          "hash": "17561019196958796983"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Submenu/index.tsx",
+          "hash": "50380401555733747"
+        },
+        {
+          "file": "packages/cre8-react/src/components/SubmenuItem/SubmenuItem.tsx",
+          "hash": "15595859812138782359"
+        },
+        {
+          "file": "packages/cre8-react/src/components/SubmenuItem/index.tsx",
+          "hash": "3074444215070820103"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Tab/Tab.tsx",
+          "hash": "4899725013919470337"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Tab/index.tsx",
+          "hash": "6146594853673204800"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TabPanel/TabPanel.tsx",
+          "hash": "16776170545485525971"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TabPanel/index.tsx",
+          "hash": "12022620104822387824"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Table/Table.stories.tsx",
+          "hash": "53251404742523832"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Table/Table.tsx",
+          "hash": "591954544148948524"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Table/index.tsx",
+          "hash": "1737326205370154182"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TableBody/TableBody.tsx",
+          "hash": "14942422817040264820"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TableBody/index.tsx",
+          "hash": "1998342751327467005"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TableCell/TableCell.tsx",
+          "hash": "2893382193086812270"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TableCell/index.tsx",
+          "hash": "17297810648538855073"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TableHeader/TableHeader.tsx",
+          "hash": "625476613294649981"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TableHeader/index.tsx",
+          "hash": "15166580204373380644"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TableHeaderCell/TableHeaderCell.tsx",
+          "hash": "1276702312241779307"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TableHeaderCell/index.tsx",
+          "hash": "12840695611750810025"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TableObject/TableObject.stories.tsx",
+          "hash": "6965671778505521949"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TableObject/TableObject.tsx",
+          "hash": "14275455701834058522"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TableObject/index.tsx",
+          "hash": "18186299241526374295"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TableRow/TableRow.tsx",
+          "hash": "15999408851575029123"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TableRow/index.tsx",
+          "hash": "3923715452802248748"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Tabs/Tabs.stories.tsx",
+          "hash": "14057402913851237301"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Tabs/Tabs.tsx",
+          "hash": "10872855598393825623"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Tabs/index.tsx",
+          "hash": "556936361761431116"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Tag/Tag.stories.tsx",
+          "hash": "2448280504802273202"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Tag/Tag.tsx",
+          "hash": "7247726876541447729"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Tag/index.tsx",
+          "hash": "6425926686383628588"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TagList/TagList.stories.tsx",
+          "hash": "5853036146270396633"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TagList/TagList.tsx",
+          "hash": "230089309405899844"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TagList/index.tsx",
+          "hash": "10713936106233060181"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TertiaryNav/TertiaryNav.stories.tsx",
+          "hash": "3989260646735380734"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TertiaryNav/TertiaryNav.tsx",
+          "hash": "12882840514910660120"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TertiaryNav/index.tsx",
+          "hash": "17005223278989604981"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TertiaryNavItem/TertiaryNavItem.tsx",
+          "hash": "17337271794733472458"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TertiaryNavItem/index.tsx",
+          "hash": "16767407009356377762"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TextLink/TextLink.stories.tsx",
+          "hash": "13823150785763909163"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TextLink/TextLink.tsx",
+          "hash": "8639399658223687482"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TextLink/index.tsx",
+          "hash": "14329691679099537001"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TextPassage/TextPassage.stories.tsx",
+          "hash": "10401062184839559023"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TextPassage/TextPassage.tsx",
+          "hash": "410061248793862582"
+        },
+        {
+          "file": "packages/cre8-react/src/components/TextPassage/index.tsx",
+          "hash": "108005872274663077"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Tooltip/Tooltip.stories.tsx",
+          "hash": "7948172415394721026"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Tooltip/Tooltip.tsx",
+          "hash": "11166113965783662028"
+        },
+        {
+          "file": "packages/cre8-react/src/components/Tooltip/index.tsx",
+          "hash": "18160921599671382834"
+        },
+        {
+          "file": "packages/cre8-react/src/components/UtilityNav/UtilityNav.stories.tsx",
+          "hash": "5886859572202553195"
+        },
+        {
+          "file": "packages/cre8-react/src/components/UtilityNav/UtilityNav.tsx",
+          "hash": "14427880259388469231"
+        },
+        {
+          "file": "packages/cre8-react/src/components/UtilityNav/index.tsx",
+          "hash": "1529218633830044839"
+        },
+        {
+          "file": "packages/cre8-react/src/components/UtilityNavItem/UtilityNavItem.tsx",
+          "hash": "6705985405727395915"
+        },
+        {
+          "file": "packages/cre8-react/src/components/UtilityNavItem/index.tsx",
+          "hash": "14219408613098140070"
+        },
+        {
+          "file": "packages/cre8-react/src/components/VerticalCard/VerticalCard.stories.tsx",
+          "hash": "2019703481071943828"
+        },
+        {
+          "file": "packages/cre8-react/src/components/VerticalCard/VerticalCard.tsx",
+          "hash": "11825568088712083526"
+        },
+        {
+          "file": "packages/cre8-react/src/components/VerticalCard/index.tsx",
+          "hash": "1556039447770925182"
+        },
+        {
+          "file": "packages/cre8-react/src/custom.d.ts",
+          "hash": "16119276421185882375"
+        },
+        {
+          "file": "packages/cre8-react/src/index.ts",
+          "hash": "13568586787485686217"
+        },
+        {
+          "file": "packages/cre8-react/src/util/Cre8DomEvent.ts",
+          "hash": "4791187880772720394"
+        },
+        {
+          "file": "packages/cre8-react/tsconfig.json",
+          "hash": "2521350542019838808"
+        },
+        {
+          "file": "packages/cre8-react/vite.config.ts",
+          "hash": "2940393238645190023"
         }
       ],
       "dist": [
@@ -7360,1176 +9454,6 @@
         {
           "file": "packages/cre8-react/dist/stories.json",
           "hash": "14346059326559512843"
-        }
-      ],
-      "@cre8_dev/cre8-react": [
-        {
-          "file": "packages/cre8-react/.editorconfig",
-          "hash": "5233391011250845746"
-        },
-        {
-          "file": "packages/cre8-react/.eslintrc.js",
-          "hash": "7589935559180500017"
-        },
-        {
-          "file": "packages/cre8-react/.gitignore",
-          "hash": "330278387671121491"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/components/Fpo/Fpo.scss",
-          "hash": "11279290725888988002"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/components/Fpo/Fpo.tsx",
-          "hash": "6463700890978852591"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/cre8Theme.js",
-          "hash": "10223203749688836817"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/main.js",
-          "hash": "16071075148636478002"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/manager-head.html",
-          "hash": "8681610143744159191"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/manager.js",
-          "hash": "16292348060222596418"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/middleware.js",
-          "hash": "17585016187019476958"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/pages/Dashboard/Dashboard.scss",
-          "hash": "5001191062269139392"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/patterns/PharmacyFooter/PharmacyFooter.scss",
-          "hash": "11300312329106341040"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/patterns/PharmacyFooter/PharmacyFooter.tsx",
-          "hash": "7018208929653119683"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/patterns/PharmacyHeader/PharmacyHeader.scss",
-          "hash": "5158106758834137234"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/patterns/PharmacyHeader/PharmacyHeader.tsx",
-          "hash": "12978253050931239200"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/patterns/FormExample/FormExample.stories.tsx",
-          "hash": "4108482918118225507"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/patterns/FormExample/FormExample.tsx",
-          "hash": "14257973853989338955"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/patterns/IconDescription/IconDescription.scss",
-          "hash": "17595916241231167874"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/patterns/IconDescription/IconDescription.stories.tsx",
-          "hash": "1441006649595703614"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/patterns/IconDescription/IconDescription.tsx",
-          "hash": "7123233465817671900"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/preview.js",
-          "hash": "8935250976138200003"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/static/favicon.ico",
-          "hash": "2949791817221603359"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/static/icons/cre8-icons.svg",
-          "hash": "7876145439354247420"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/static/index.html",
-          "hash": "1157416733889261112"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/static/cre8-icons.svg",
-          "hash": "12726762868111859054"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/static/logo192.png",
-          "hash": "7585273181698778288"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/static/logo512.png",
-          "hash": "9339365414554387981"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/static/manifest.json",
-          "hash": "1447645250373428393"
-        },
-        {
-          "file": "packages/cre8-react/.storybook/static/robots.txt",
-          "hash": "2790380794362165217"
-        },
-        {
-          "file": "packages/cre8-react/README.md",
-          "hash": "3371979437747579054"
-        },
-        {
-          "file": "packages/cre8-react/babel.config.js",
-          "hash": "10421803382569996505"
-        },
-        {
-          "file": "packages/cre8-react/cre8_dev-cre8-icons-0.11.0.tgz",
-          "hash": "5474396003040255916"
-        },
-        {
-          "file": "packages/cre8-react/declaration.d.ts",
-          "hash": "4598581592734337117"
-        },
-        {
-          "file": "packages/cre8-react/fonts/Aeonik-Bold.woff",
-          "hash": "3664390439435570533"
-        },
-        {
-          "file": "packages/cre8-react/fonts/Aeonik-Bold.woff2",
-          "hash": "15841124439525307680"
-        },
-        {
-          "file": "packages/cre8-react/fonts/Aeonik-Light.woff",
-          "hash": "15493412826185628163"
-        },
-        {
-          "file": "packages/cre8-react/fonts/Aeonik-Light.woff2",
-          "hash": "16568445817094764755"
-        },
-        {
-          "file": "packages/cre8-react/fonts/Aeonik-Regular.woff",
-          "hash": "6559327985557630931"
-        },
-        {
-          "file": "packages/cre8-react/fonts/Aeonik-Regular.woff2",
-          "hash": "741258449757716479"
-        },
-        {
-          "file": "packages/cre8-react/package.json",
-          "hash": "11199714093252992025",
-          "deps": [
-            "npm:@babel/core",
-            "npm:@babel/plugin-proposal-decorators",
-            "npm:@babel/plugin-transform-typescript",
-            "npm:@babel/preset-env",
-            "npm:@babel/preset-react",
-            "npm:@storybook/react",
-            "npm:@testing-library/user-event",
-            "npm:@types/node",
-            "npm:@types/react",
-            "npm:@types/react-dom",
-            "npm:@typescript-eslint/eslint-plugin",
-            "npm:@typescript-eslint/parser",
-            "npm:babel-loader",
-            "npm:css-loader",
-            "npm:loader-utils",
-            "npm:regenerator-runtime",
-            "npm:sass",
-            "npm:sass-loader",
-            "npm:style-loader",
-            "npm:ts-node",
-            "npm:typescript",
-            "npm:@cre8_dev/cre8-design-tokens",
-            "npm:@lit/react",
-            "npm:classnames",
-            "npm:react",
-            "npm:react-dom"
-          ]
-        },
-        {
-          "file": "packages/cre8-react/plop-templates/Component.stories.tsx.hbs",
-          "hash": "11883504791460714579"
-        },
-        {
-          "file": "packages/cre8-react/plop-templates/Component.tsx.hbs",
-          "hash": "5814544441068094071"
-        },
-        {
-          "file": "packages/cre8-react/plop-templates/Page.stories.tsx.hbs",
-          "hash": "1885087520931880677"
-        },
-        {
-          "file": "packages/cre8-react/plop-templates/Page.tsx.hbs",
-          "hash": "889927316933277141"
-        },
-        {
-          "file": "packages/cre8-react/plop-templates/Recipe.scss.hbs",
-          "hash": "17994578026228011746"
-        },
-        {
-          "file": "packages/cre8-react/plop-templates/Recipe.stories.tsx.hbs",
-          "hash": "15717045789442395543"
-        },
-        {
-          "file": "packages/cre8-react/plop-templates/Recipe.tsx.hbs",
-          "hash": "8802357153529945982"
-        },
-        {
-          "file": "packages/cre8-react/plopfile.js",
-          "hash": "15703588814703145015"
-        },
-        {
-          "file": "packages/cre8-react/pnpm-lock.yaml",
-          "hash": "10998521404417152102"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Accordion/Accordion.stories.tsx",
-          "hash": "7903545773654852595"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Accordion/Accordion.tsx",
-          "hash": "13626536664488011579"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Accordion/index.tsx",
-          "hash": "5476821407842445683"
-        },
-        {
-          "file": "packages/cre8-react/src/components/AccordionItem/AccordionItem.stories.tsx",
-          "hash": "15086071913073540917"
-        },
-        {
-          "file": "packages/cre8-react/src/components/AccordionItem/AccordionItem.tsx",
-          "hash": "9166477651061101093"
-        },
-        {
-          "file": "packages/cre8-react/src/components/AccordionItem/index.tsx",
-          "hash": "6720591062304773736"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Alert/Alert.stories.tsx",
-          "hash": "7135536416620995291"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Alert/Alert.tsx",
-          "hash": "15622603945006501338"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Alert/index.tsx",
-          "hash": "18224673667939297836"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Badge/Badge.stories.tsx",
-          "hash": "187292865309238307"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Badge/Badge.tsx",
-          "hash": "6006774402860640557"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Badge/index.tsx",
-          "hash": "14663468232077114161"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Band/Band.stories.tsx",
-          "hash": "3874754361121420946"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Band/Band.tsx",
-          "hash": "17183146930179875531"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Band/index.tsx",
-          "hash": "12911316790799421986"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Breadcrumbs/Breadcrumbs.stories.tsx",
-          "hash": "9286634790196318890"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Breadcrumbs/Breadcrumbs.tsx",
-          "hash": "3424305689222116433"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Breadcrumbs/index.tsx",
-          "hash": "16281106072966030511"
-        },
-        {
-          "file": "packages/cre8-react/src/components/BreadcrumbsItem/BreadcrumbsItem.tsx",
-          "hash": "9663409339812571218"
-        },
-        {
-          "file": "packages/cre8-react/src/components/BreadcrumbsItem/index.tsx",
-          "hash": "11568613816756558025"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Button/Button.stories.tsx",
-          "hash": "9103676291058984270"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Button/Button.tsx",
-          "hash": "18003364681339392512"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Button/index.ts",
-          "hash": "13071534322901307428"
-        },
-        {
-          "file": "packages/cre8-react/src/components/ButtonGroup/ButtonGroup.stories.tsx",
-          "hash": "3204698972675615969"
-        },
-        {
-          "file": "packages/cre8-react/src/components/ButtonGroup/ButtonGroup.tsx",
-          "hash": "18141958173104875945"
-        },
-        {
-          "file": "packages/cre8-react/src/components/ButtonGroup/index.tsx",
-          "hash": "4376916160872563405"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Card/Card.stories.tsx",
-          "hash": "16531116430240620428"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Card/Card.tsx",
-          "hash": "2580398084958607196"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Card/index.tsx",
-          "hash": "9101593940483212797"
-        },
-        {
-          "file": "packages/cre8-react/src/components/CheckboxField/CheckboxField.stories.tsx",
-          "hash": "12099299320292151144"
-        },
-        {
-          "file": "packages/cre8-react/src/components/CheckboxField/CheckboxField.tsx",
-          "hash": "10739995003527003584"
-        },
-        {
-          "file": "packages/cre8-react/src/components/CheckboxField/index.tsx",
-          "hash": "190835315883261954"
-        },
-        {
-          "file": "packages/cre8-react/src/components/CheckboxFieldItem/CheckboxFieldItem.stories.tsx",
-          "hash": "18044289832692981077"
-        },
-        {
-          "file": "packages/cre8-react/src/components/CheckboxFieldItem/CheckboxFieldItem.tsx",
-          "hash": "6583439896169848553"
-        },
-        {
-          "file": "packages/cre8-react/src/components/CheckboxFieldItem/index.tsx",
-          "hash": "9680741810947197419"
-        },
-        {
-          "file": "packages/cre8-react/src/components/DangerButton/DangerButton.stories.tsx",
-          "hash": "10050161767438281494"
-        },
-        {
-          "file": "packages/cre8-react/src/components/DangerButton/DangerButton.tsx",
-          "hash": "5262119340591024374"
-        },
-        {
-          "file": "packages/cre8-react/src/components/DangerButton/index.tsx",
-          "hash": "13618698520417265495"
-        },
-        {
-          "file": "packages/cre8-react/src/components/DatePicker/DatePicker.stories.tsx",
-          "hash": "16758811300138036531"
-        },
-        {
-          "file": "packages/cre8-react/src/components/DatePicker/DatePicker.tsx",
-          "hash": "6431816075750013912"
-        },
-        {
-          "file": "packages/cre8-react/src/components/DatePicker/index.tsx",
-          "hash": "2124569702606288101"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Divider/Divider.stories.tsx",
-          "hash": "3657256464299594268"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Divider/Divider.tsx",
-          "hash": "7636847426512606023"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Divider/index.tsx",
-          "hash": "2007158861621127955"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Dropdown/Dropdown.stories.tsx",
-          "hash": "16622528407604269423"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Dropdown/Dropdown.tsx",
-          "hash": "15655589520297571406"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Dropdown/index.tsx",
-          "hash": "11954201363853916154"
-        },
-        {
-          "file": "packages/cre8-react/src/components/DropdownItem/DropdownItem.stories.tsx",
-          "hash": "17021685592976619385"
-        },
-        {
-          "file": "packages/cre8-react/src/components/DropdownItem/DropdownItem.tsx",
-          "hash": "15066679878989722972"
-        },
-        {
-          "file": "packages/cre8-react/src/components/DropdownItem/index.tsx",
-          "hash": "7179550194049729928"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Feature/Feature.stories.tsx",
-          "hash": "2848058539013416314"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Feature/Feature.tsx",
-          "hash": "5398448520374504635"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Feature/index.tsx",
-          "hash": "591566553826698463"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Field/Field.stories.tsx",
-          "hash": "8062955846488581691"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Field/Field.tsx",
-          "hash": "1596954172598742959"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Field/index.tsx",
-          "hash": "7305792391226079100"
-        },
-        {
-          "file": "packages/cre8-react/src/components/FieldNote/FieldNote.stories.tsx",
-          "hash": "5513678751307395767"
-        },
-        {
-          "file": "packages/cre8-react/src/components/FieldNote/FieldNote.tsx",
-          "hash": "2363793014355764323"
-        },
-        {
-          "file": "packages/cre8-react/src/components/FieldNote/index.tsx",
-          "hash": "12498265893673190622"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Footer/Footer.stories.tsx",
-          "hash": "4440330428552169421"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Footer/Footer.tsx",
-          "hash": "7300837752533914803"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Footer/index.tsx",
-          "hash": "13217032514544095680"
-        },
-        {
-          "file": "packages/cre8-react/src/components/GlobalNav/GlobalNav.stories.tsx",
-          "hash": "5016579914535690688"
-        },
-        {
-          "file": "packages/cre8-react/src/components/GlobalNav/GlobalNav.tsx",
-          "hash": "6879553930085115914"
-        },
-        {
-          "file": "packages/cre8-react/src/components/GlobalNav/index.tsx",
-          "hash": "10098937943184194586"
-        },
-        {
-          "file": "packages/cre8-react/src/components/GlobalNavItem/GlobalNavItem.tsx",
-          "hash": "16921184258094270654"
-        },
-        {
-          "file": "packages/cre8-react/src/components/GlobalNavItem/index.tsx",
-          "hash": "8736959100302616463"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Grid/Grid.stories.tsx",
-          "hash": "15243934769498707308"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Grid/Grid.tsx",
-          "hash": "16805867720840355899"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Grid/index.tsx",
-          "hash": "15214464681348869140"
-        },
-        {
-          "file": "packages/cre8-react/src/components/GridItem/GridItem.stories.tsx",
-          "hash": "14528363564156409684"
-        },
-        {
-          "file": "packages/cre8-react/src/components/GridItem/GridItem.tsx",
-          "hash": "7249696111101797992"
-        },
-        {
-          "file": "packages/cre8-react/src/components/GridItem/index.tsx",
-          "hash": "17959643249326196621"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Header/Header.stories.tsx",
-          "hash": "2927153080974357340"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Header/Header.tsx",
-          "hash": "1852705769875519656"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Header/index.tsx",
-          "hash": "1891330823667362207"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Heading/Heading.stories.tsx",
-          "hash": "5756985794831153056"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Heading/Heading.tsx",
-          "hash": "13225900895576397235"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Heading/index.tsx",
-          "hash": "11799105359266635962"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Hero/Hero.stories.tsx",
-          "hash": "12680680590925906855"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Hero/Hero.tsx",
-          "hash": "12099333267583041905"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Hero/index.tsx",
-          "hash": "13365055584349734815"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Icon/Icon.stories.tsx",
-          "hash": "6422701095765842945"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Icon/Icon.tsx",
-          "hash": "9999335348100045575"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Icon/index.tsx",
-          "hash": "9835106078402400376"
-        },
-        {
-          "file": "packages/cre8-react/src/components/InlineAlert/InlineAlert.stories.tsx",
-          "hash": "6465803924659521416"
-        },
-        {
-          "file": "packages/cre8-react/src/components/InlineAlert/InlineAlert.tsx",
-          "hash": "1055158930011954491"
-        },
-        {
-          "file": "packages/cre8-react/src/components/InlineAlert/index.tsx",
-          "hash": "268326476552949105"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Layout/Layout.stories.tsx",
-          "hash": "2805761002658221467"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Layout/Layout.tsx",
-          "hash": "4938866022215449014"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Layout/index.tsx",
-          "hash": "11428388953633328739"
-        },
-        {
-          "file": "packages/cre8-react/src/components/LayoutContainer/LayoutContainer.stories.tsx",
-          "hash": "6409828046685206838"
-        },
-        {
-          "file": "packages/cre8-react/src/components/LayoutContainer/LayoutContainer.tsx",
-          "hash": "3284498324287187975"
-        },
-        {
-          "file": "packages/cre8-react/src/components/LayoutContainer/index.tsx",
-          "hash": "11621773325944273695"
-        },
-        {
-          "file": "packages/cre8-react/src/components/LayoutSection/LayoutSection.tsx",
-          "hash": "9771365017460963193"
-        },
-        {
-          "file": "packages/cre8-react/src/components/LayoutSection/index.tsx",
-          "hash": "4906775080354051214"
-        },
-        {
-          "file": "packages/cre8-react/src/components/LinelengthContainer/LinelengthContainer.stories.tsx",
-          "hash": "2846939587208225379"
-        },
-        {
-          "file": "packages/cre8-react/src/components/LinelengthContainer/LinelengthContainer.tsx",
-          "hash": "17725926666388573146"
-        },
-        {
-          "file": "packages/cre8-react/src/components/LinelengthContainer/index.tsx",
-          "hash": "6999300546761076081"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Link/Link.stories.tsx",
-          "hash": "1594687727698061849"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Link/Link.tsx",
-          "hash": "3317557782905483685"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Link/index.tsx",
-          "hash": "6441871656973882665"
-        },
-        {
-          "file": "packages/cre8-react/src/components/LinkList/LinkList.stories.tsx",
-          "hash": "8616021960136164865"
-        },
-        {
-          "file": "packages/cre8-react/src/components/LinkList/LinkList.tsx",
-          "hash": "14886322554418954027"
-        },
-        {
-          "file": "packages/cre8-react/src/components/LinkList/index.tsx",
-          "hash": "12012649365291274468"
-        },
-        {
-          "file": "packages/cre8-react/src/components/LinkListItem/LinkListItem.tsx",
-          "hash": "3410362954435527856"
-        },
-        {
-          "file": "packages/cre8-react/src/components/LinkListItem/index.tsx",
-          "hash": "2996271800095793959"
-        },
-        {
-          "file": "packages/cre8-react/src/components/LoadingSpinner/LoadingSpinner.stories.tsx",
-          "hash": "5289441931629201497"
-        },
-        {
-          "file": "packages/cre8-react/src/components/LoadingSpinner/LoadingSpinner.tsx",
-          "hash": "7062343281373708368"
-        },
-        {
-          "file": "packages/cre8-react/src/components/LoadingSpinner/index.tsx",
-          "hash": "18056227299506365184"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Logo/Logo.stories.tsx",
-          "hash": "7274947276738462797"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Logo/Logo.tsx",
-          "hash": "6269470686191644169"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Logo/index.tsx",
-          "hash": "6396849716960178944"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Main/Main.stories.tsx",
-          "hash": "6231698855141290278"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Main/Main.tsx",
-          "hash": "9648624642929970283"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Main/index.tsx",
-          "hash": "2351846103899082813"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Modal/Modal.stories.tsx",
-          "hash": "9582213610009437917"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Modal/Modal.tsx",
-          "hash": "12942469423717663397"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Modal/index.tsx",
-          "hash": "961978680870062395"
-        },
-        {
-          "file": "packages/cre8-react/src/components/MultiSelect/MultiSelect.stories.tsx",
-          "hash": "10326738638531458398"
-        },
-        {
-          "file": "packages/cre8-react/src/components/MultiSelect/MultiSelect.tsx",
-          "hash": "17335620548244394185"
-        },
-        {
-          "file": "packages/cre8-react/src/components/MultiSelect/index.tsx",
-          "hash": "1958252467217412800"
-        },
-        {
-          "file": "packages/cre8-react/src/components/NavContainer/NavContainer.stories.tsx",
-          "hash": "4800744303380437431"
-        },
-        {
-          "file": "packages/cre8-react/src/components/NavContainer/NavContainer.tsx",
-          "hash": "12882179894549338568"
-        },
-        {
-          "file": "packages/cre8-react/src/components/NavContainer/index.tsx",
-          "hash": "8845537090334385947"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Pagination/Pagination.stories.tsx",
-          "hash": "16101823251163263221"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Pagination/Pagination.tsx",
-          "hash": "5936246286951296783"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Pagination/index.tsx",
-          "hash": "9970907889015637342"
-        },
-        {
-          "file": "packages/cre8-react/src/components/PercentBar/PercentBar.stories.tsx",
-          "hash": "11350637864778770431"
-        },
-        {
-          "file": "packages/cre8-react/src/components/PercentBar/PercentBar.tsx",
-          "hash": "10142030459303564285"
-        },
-        {
-          "file": "packages/cre8-react/src/components/PercentBar/index.tsx",
-          "hash": "6260486853737717667"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Popover/Popover.stories.tsx",
-          "hash": "15604203784655897093"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Popover/Popover.tsx",
-          "hash": "1683359407661952422"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Popover/index.tsx",
-          "hash": "10165565951759916721"
-        },
-        {
-          "file": "packages/cre8-react/src/components/PrimaryNav/PrimaryNav.stories.tsx",
-          "hash": "18170975823739361738"
-        },
-        {
-          "file": "packages/cre8-react/src/components/PrimaryNav/PrimaryNav.tsx",
-          "hash": "16552669806561606381"
-        },
-        {
-          "file": "packages/cre8-react/src/components/PrimaryNav/index.tsx",
-          "hash": "67986889470669343"
-        },
-        {
-          "file": "packages/cre8-react/src/components/PrimaryNavItem/PrimaryNavItem.tsx",
-          "hash": "12492983414745213817"
-        },
-        {
-          "file": "packages/cre8-react/src/components/PrimaryNavItem/index.tsx",
-          "hash": "8897078427164095445"
-        },
-        {
-          "file": "packages/cre8-react/src/components/ProgressMeter/ProgressMeter.stories.tsx",
-          "hash": "3496337809850079828"
-        },
-        {
-          "file": "packages/cre8-react/src/components/ProgressMeter/ProgressMeter.tsx",
-          "hash": "8793741825297502589"
-        },
-        {
-          "file": "packages/cre8-react/src/components/ProgressMeter/index.tsx",
-          "hash": "16509297074105390221"
-        },
-        {
-          "file": "packages/cre8-react/src/components/ProgressSteps/ProgressSteps.stories.tsx",
-          "hash": "1411335094395336687"
-        },
-        {
-          "file": "packages/cre8-react/src/components/ProgressSteps/ProgressSteps.tsx",
-          "hash": "14258407612157478061"
-        },
-        {
-          "file": "packages/cre8-react/src/components/ProgressSteps/index.tsx",
-          "hash": "6568242586819903096"
-        },
-        {
-          "file": "packages/cre8-react/src/components/ProgressStepsItem/ProgressStepsItem.stories.tsx",
-          "hash": "8754903503928505407"
-        },
-        {
-          "file": "packages/cre8-react/src/components/ProgressStepsItem/ProgressStepsItem.tsx",
-          "hash": "563874365588265240"
-        },
-        {
-          "file": "packages/cre8-react/src/components/ProgressStepsItem/index.tsx",
-          "hash": "11270164701340773729"
-        },
-        {
-          "file": "packages/cre8-react/src/components/RadioField/RadioField.stories.tsx",
-          "hash": "7715588860617300325"
-        },
-        {
-          "file": "packages/cre8-react/src/components/RadioField/RadioField.tsx",
-          "hash": "1303127582016461733"
-        },
-        {
-          "file": "packages/cre8-react/src/components/RadioField/index.tsx",
-          "hash": "15958262835199746096"
-        },
-        {
-          "file": "packages/cre8-react/src/components/RadioFieldItem/RadioFieldItem.stories.tsx",
-          "hash": "10469162519053909947"
-        },
-        {
-          "file": "packages/cre8-react/src/components/RadioFieldItem/RadioFieldItem.tsx",
-          "hash": "15232912189194183618"
-        },
-        {
-          "file": "packages/cre8-react/src/components/RadioFieldItem/index.tsx",
-          "hash": "13222947810135251019"
-        },
-        {
-          "file": "packages/cre8-react/src/components/RemoveTag/RemoveTag.stories.tsx",
-          "hash": "15611791241015476353"
-        },
-        {
-          "file": "packages/cre8-react/src/components/RemoveTag/RemoveTag.tsx",
-          "hash": "1821022701848708338"
-        },
-        {
-          "file": "packages/cre8-react/src/components/RemoveTag/index.tsx",
-          "hash": "4486133444856057884"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Section/Section.stories.tsx",
-          "hash": "5233499389634441701"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Section/Section.tsx",
-          "hash": "16509530266159482550"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Section/index.tsx",
-          "hash": "8039545748468514318"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Select/Select.stories.tsx",
-          "hash": "13604887745817883662"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Select/Select.tsx",
-          "hash": "10850949366149441154"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Select/index.tsx",
-          "hash": "16348485623229369813"
-        },
-        {
-          "file": "packages/cre8-react/src/components/SelectTile/SelectTile.stories.tsx",
-          "hash": "6842487376610792778"
-        },
-        {
-          "file": "packages/cre8-react/src/components/SelectTile/SelectTile.tsx",
-          "hash": "16106323572158849598"
-        },
-        {
-          "file": "packages/cre8-react/src/components/SelectTile/index.tsx",
-          "hash": "13657082582626669050"
-        },
-        {
-          "file": "packages/cre8-react/src/components/SelectTileList/SelectTileList.stories.tsx",
-          "hash": "15870832434253354324"
-        },
-        {
-          "file": "packages/cre8-react/src/components/SelectTileList/SelectTileList.tsx",
-          "hash": "15828827018477551090"
-        },
-        {
-          "file": "packages/cre8-react/src/components/SelectTileList/index.tsx",
-          "hash": "13162890138715259184"
-        },
-        {
-          "file": "packages/cre8-react/src/components/SkeletonLoader/SkeletonLoader.stories.tsx",
-          "hash": "507903337126662598"
-        },
-        {
-          "file": "packages/cre8-react/src/components/SkeletonLoader/SkeletonLoader.tsx",
-          "hash": "13033439205422381741"
-        },
-        {
-          "file": "packages/cre8-react/src/components/SkeletonLoader/index.tsx",
-          "hash": "13187936300283036375"
-        },
-        {
-          "file": "packages/cre8-react/src/components/SplitButton/SplitButton.stories.tsx",
-          "hash": "8640794054204062109"
-        },
-        {
-          "file": "packages/cre8-react/src/components/SplitButton/SplitButton.tsx",
-          "hash": "14684068054135283022"
-        },
-        {
-          "file": "packages/cre8-react/src/components/SplitButton/index.tsx",
-          "hash": "2477593369925576569"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Submenu/Submenu.stories.tsx",
-          "hash": "16659879675467992537"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Submenu/Submenu.tsx",
-          "hash": "17561019196958796983"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Submenu/index.tsx",
-          "hash": "50380401555733747"
-        },
-        {
-          "file": "packages/cre8-react/src/components/SubmenuItem/SubmenuItem.tsx",
-          "hash": "15595859812138782359"
-        },
-        {
-          "file": "packages/cre8-react/src/components/SubmenuItem/index.tsx",
-          "hash": "3074444215070820103"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Tab/Tab.tsx",
-          "hash": "4899725013919470337"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Tab/index.tsx",
-          "hash": "6146594853673204800"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TabPanel/TabPanel.tsx",
-          "hash": "16776170545485525971"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TabPanel/index.tsx",
-          "hash": "12022620104822387824"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Table/Table.stories.tsx",
-          "hash": "53251404742523832"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Table/Table.tsx",
-          "hash": "591954544148948524"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Table/index.tsx",
-          "hash": "1737326205370154182"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TableBody/TableBody.tsx",
-          "hash": "14942422817040264820"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TableBody/index.tsx",
-          "hash": "1998342751327467005"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TableCell/TableCell.tsx",
-          "hash": "2893382193086812270"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TableCell/index.tsx",
-          "hash": "17297810648538855073"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TableHeader/TableHeader.tsx",
-          "hash": "625476613294649981"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TableHeader/index.tsx",
-          "hash": "15166580204373380644"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TableHeaderCell/TableHeaderCell.tsx",
-          "hash": "1276702312241779307"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TableHeaderCell/index.tsx",
-          "hash": "12840695611750810025"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TableObject/TableObject.stories.tsx",
-          "hash": "6965671778505521949"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TableObject/TableObject.tsx",
-          "hash": "14275455701834058522"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TableObject/index.tsx",
-          "hash": "18186299241526374295"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TableRow/TableRow.tsx",
-          "hash": "15999408851575029123"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TableRow/index.tsx",
-          "hash": "3923715452802248748"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Tabs/Tabs.stories.tsx",
-          "hash": "14057402913851237301"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Tabs/Tabs.tsx",
-          "hash": "10872855598393825623"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Tabs/index.tsx",
-          "hash": "556936361761431116"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Tag/Tag.stories.tsx",
-          "hash": "2448280504802273202"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Tag/Tag.tsx",
-          "hash": "7247726876541447729"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Tag/index.tsx",
-          "hash": "6425926686383628588"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TagList/TagList.stories.tsx",
-          "hash": "5853036146270396633"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TagList/TagList.tsx",
-          "hash": "230089309405899844"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TagList/index.tsx",
-          "hash": "10713936106233060181"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TertiaryNav/TertiaryNav.stories.tsx",
-          "hash": "3989260646735380734"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TertiaryNav/TertiaryNav.tsx",
-          "hash": "12882840514910660120"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TertiaryNav/index.tsx",
-          "hash": "17005223278989604981"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TertiaryNavItem/TertiaryNavItem.tsx",
-          "hash": "17337271794733472458"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TertiaryNavItem/index.tsx",
-          "hash": "16767407009356377762"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TextLink/TextLink.stories.tsx",
-          "hash": "13823150785763909163"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TextLink/TextLink.tsx",
-          "hash": "8639399658223687482"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TextLink/index.tsx",
-          "hash": "14329691679099537001"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TextPassage/TextPassage.stories.tsx",
-          "hash": "10401062184839559023"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TextPassage/TextPassage.tsx",
-          "hash": "410061248793862582"
-        },
-        {
-          "file": "packages/cre8-react/src/components/TextPassage/index.tsx",
-          "hash": "108005872274663077"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Tooltip/Tooltip.stories.tsx",
-          "hash": "7948172415394721026"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Tooltip/Tooltip.tsx",
-          "hash": "11166113965783662028"
-        },
-        {
-          "file": "packages/cre8-react/src/components/Tooltip/index.tsx",
-          "hash": "18160921599671382834"
-        },
-        {
-          "file": "packages/cre8-react/src/components/UtilityNav/UtilityNav.stories.tsx",
-          "hash": "5886859572202553195"
-        },
-        {
-          "file": "packages/cre8-react/src/components/UtilityNav/UtilityNav.tsx",
-          "hash": "14427880259388469231"
-        },
-        {
-          "file": "packages/cre8-react/src/components/UtilityNav/index.tsx",
-          "hash": "1529218633830044839"
-        },
-        {
-          "file": "packages/cre8-react/src/components/UtilityNavItem/UtilityNavItem.tsx",
-          "hash": "6705985405727395915"
-        },
-        {
-          "file": "packages/cre8-react/src/components/UtilityNavItem/index.tsx",
-          "hash": "14219408613098140070"
-        },
-        {
-          "file": "packages/cre8-react/src/components/VerticalCard/VerticalCard.stories.tsx",
-          "hash": "2019703481071943828"
-        },
-        {
-          "file": "packages/cre8-react/src/components/VerticalCard/VerticalCard.tsx",
-          "hash": "11825568088712083526"
-        },
-        {
-          "file": "packages/cre8-react/src/components/VerticalCard/index.tsx",
-          "hash": "1556039447770925182"
-        },
-        {
-          "file": "packages/cre8-react/src/custom.d.ts",
-          "hash": "16119276421185882375"
-        },
-        {
-          "file": "packages/cre8-react/src/index.ts",
-          "hash": "13568586787485686217"
-        },
-        {
-          "file": "packages/cre8-react/src/util/Cre8DomEvent.ts",
-          "hash": "4791187880772720394"
-        },
-        {
-          "file": "packages/cre8-react/tsconfig.json",
-          "hash": "2521350542019838808"
-        },
-        {
-          "file": "packages/cre8-react/vite.config.ts",
-          "hash": "2940393238645190023"
         }
       ]
     }
