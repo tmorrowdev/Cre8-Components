@@ -1,0 +1,16 @@
+{
+  "name": "@cre8_dev/cre8-design-tokens",
+  "version": "1.0.11",
+  "description": "",
+  "files": [
+    "README.md",
+    "lib",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "npm run clean && node ./build.js && npm run build-storybook",
+    "clean": "rm -rf lib",
+    "storybook": "storybook dev -p 6008",
+    "build-storybook": "storybook build --output-dir dist/"
+  }
+}

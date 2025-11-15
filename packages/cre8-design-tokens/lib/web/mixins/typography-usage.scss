@@ -1,0 +1,452 @@
+
+// Typography usage provided via mixins.
+// Typography applications are Tier 2 values that map
+// typography presets to high-level UI applications.
+
+@import '../layouts/breakpoints.scss';
+
+                    @mixin cre8-typography-body-xlarge() {
+                        font-family: var(--cre8-typography-body-xlarge-font-family); 
+                        font-size: var(--cre8-typography-body-xlarge-font-size);
+                        font-weight: var(--cre8-typography-body-xlarge-font-weight);
+                        line-height: var(--cre8-typography-body-xlarge-line-height);
+                        text-decoration: var(--cre8-typography-body-xlarge-text-decoration);
+                        text-transform: var(--cre8-typography-body-xlarge-text-transform);
+                    };
+
+                    @mixin cre8-typography-body-xlarge-strong() {
+                        font-family: var(--cre8-typography-body-xlarge-strong-font-family); 
+                        font-size: var(--cre8-typography-body-xlarge-strong-font-size);
+                        font-weight: var(--cre8-typography-body-xlarge-strong-font-weight);
+                        line-height: var(--cre8-typography-body-xlarge-strong-line-height);
+                        text-decoration: var(--cre8-typography-body-xlarge-strong-text-decoration);
+                        text-transform: var(--cre8-typography-body-xlarge-strong-text-transform);
+                    };
+
+                    @mixin cre8-typography-body-xlarge-link() {
+                        font-family: var(--cre8-typography-body-xlarge-link-font-family); 
+                        font-size: var(--cre8-typography-body-xlarge-link-font-size);
+                        font-weight: var(--cre8-typography-body-xlarge-link-font-weight);
+                        line-height: var(--cre8-typography-body-xlarge-link-line-height);
+                        text-decoration: var(--cre8-typography-body-xlarge-link-text-decoration);
+                        text-transform: var(--cre8-typography-body-xlarge-link-text-transform);
+                    };
+
+                    @mixin cre8-typography-body-large() {
+                        font-family: var(--cre8-typography-body-large-font-family); 
+                        font-size: var(--cre8-typography-body-large-font-size);
+                        font-weight: var(--cre8-typography-body-large-font-weight);
+                        line-height: var(--cre8-typography-body-large-line-height);
+                        text-decoration: var(--cre8-typography-body-large-text-decoration);
+                        text-transform: var(--cre8-typography-body-large-text-transform);
+                    };
+
+                    @mixin cre8-typography-body-large-strong() {
+                        font-family: var(--cre8-typography-body-large-strong-font-family); 
+                        font-size: var(--cre8-typography-body-large-strong-font-size);
+                        font-weight: var(--cre8-typography-body-large-strong-font-weight);
+                        line-height: var(--cre8-typography-body-large-strong-line-height);
+                        text-decoration: var(--cre8-typography-body-large-strong-text-decoration);
+                        text-transform: var(--cre8-typography-body-large-strong-text-transform);
+                    };
+
+                    @mixin cre8-typography-body-default() {
+                        font-family: var(--cre8-typography-body-default-font-family); 
+                        font-size: var(--cre8-typography-body-default-font-size);
+                        font-weight: var(--cre8-typography-body-default-font-weight);
+                        line-height: var(--cre8-typography-body-default-line-height);
+                        text-decoration: var(--cre8-typography-body-default-text-decoration);
+                        text-transform: var(--cre8-typography-body-default-text-transform);
+                    };
+
+                    @mixin cre8-typography-body-default-strong() {
+                        font-family: var(--cre8-typography-body-default-strong-font-family); 
+                        font-size: var(--cre8-typography-body-default-strong-font-size);
+                        font-weight: var(--cre8-typography-body-default-strong-font-weight);
+                        line-height: var(--cre8-typography-body-default-strong-line-height);
+                        text-decoration: var(--cre8-typography-body-default-strong-text-decoration);
+                        text-transform: var(--cre8-typography-body-default-strong-text-transform);
+                    };
+
+                    @mixin cre8-typography-body-small() {
+                        font-family: var(--cre8-typography-body-small-font-family); 
+                        font-size: var(--cre8-typography-body-small-font-size);
+                        font-weight: var(--cre8-typography-body-small-font-weight);
+                        line-height: var(--cre8-typography-body-small-line-height);
+                        text-decoration: var(--cre8-typography-body-small-text-decoration);
+                        text-transform: var(--cre8-typography-body-small-text-transform);
+                    };
+
+                    @mixin cre8-typography-body-small-strong() {
+                        font-family: var(--cre8-typography-body-small-strong-font-family); 
+                        font-size: var(--cre8-typography-body-small-strong-font-size);
+                        font-weight: var(--cre8-typography-body-small-strong-font-weight);
+                        line-height: var(--cre8-typography-body-small-strong-line-height);
+                        text-decoration: var(--cre8-typography-body-small-strong-text-decoration);
+                        text-transform: var(--cre8-typography-body-small-strong-text-transform);
+                    };
+
+                    @mixin cre8-typography-body-large-link() {
+                        font-family: var(--cre8-typography-body-large-link-font-family); 
+                        font-size: var(--cre8-typography-body-large-link-font-size);
+                        font-weight: var(--cre8-typography-body-large-link-font-weight);
+                        line-height: var(--cre8-typography-body-large-link-line-height);
+                        text-decoration: var(--cre8-typography-body-large-link-text-decoration);
+                        text-transform: var(--cre8-typography-body-large-link-text-transform);
+                    };
+
+                    @mixin cre8-typography-body-default-link() {
+                        font-family: var(--cre8-typography-body-default-link-font-family); 
+                        font-size: var(--cre8-typography-body-default-link-font-size);
+                        font-weight: var(--cre8-typography-body-default-link-font-weight);
+                        line-height: var(--cre8-typography-body-default-link-line-height);
+                        text-decoration: var(--cre8-typography-body-default-link-text-decoration);
+                        text-transform: var(--cre8-typography-body-default-link-text-transform);
+                    };
+
+                    @mixin cre8-typography-body-small-link() {
+                        font-family: var(--cre8-typography-body-small-link-font-family); 
+                        font-size: var(--cre8-typography-body-small-link-font-size);
+                        font-weight: var(--cre8-typography-body-small-link-font-weight);
+                        line-height: var(--cre8-typography-body-small-link-line-height);
+                        text-decoration: var(--cre8-typography-body-small-link-text-decoration);
+                        text-transform: var(--cre8-typography-body-small-link-text-transform);
+                    };
+
+                    @mixin cre8-typography-label-default() {
+                        font-family: var(--cre8-typography-label-default-font-family); 
+                        font-size: var(--cre8-typography-label-default-font-size);
+                        font-weight: var(--cre8-typography-label-default-font-weight);
+                        line-height: var(--cre8-typography-label-default-line-height);
+                        text-decoration: var(--cre8-typography-label-default-text-decoration);
+                        text-transform: var(--cre8-typography-label-default-text-transform);
+                    };
+
+                    @mixin cre8-typography-label-large() {
+                        font-family: var(--cre8-typography-label-large-font-family); 
+                        font-size: var(--cre8-typography-label-large-font-size);
+                        font-weight: var(--cre8-typography-label-large-font-weight);
+                        line-height: var(--cre8-typography-label-large-line-height);
+                        text-decoration: var(--cre8-typography-label-large-text-decoration);
+                        text-transform: var(--cre8-typography-label-large-text-transform);
+                    };
+
+                    @mixin cre8-typography-label-small() {
+                        font-family: var(--cre8-typography-label-small-font-family); 
+                        font-size: var(--cre8-typography-label-small-font-size);
+                        font-weight: var(--cre8-typography-label-small-font-weight);
+                        line-height: var(--cre8-typography-label-small-line-height);
+                        text-decoration: var(--cre8-typography-label-small-text-decoration);
+                        text-transform: var(--cre8-typography-label-small-text-transform);
+                    };
+@mixin cre8-typography-title-xlarge() {
+                        font-family: var(--cre8-typography-title-xlarge-mobile-font-family); 
+                        font-size: var(--cre8-typography-title-xlarge-mobile-font-size);
+                        font-weight: var(--cre8-typography-title-xlarge-mobile-font-weight);
+                        line-height: var(--cre8-typography-title-xlarge-mobile-line-height);
+                        text-decoration: var(--cre8-typography-title-xlarge-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-title-xlarge-mobile-text-transform);
+                        @media all and (min-width: $cre8-breakpoint-md) {
+                            font-family: var(--cre8-typography-title-xlarge-font-family); 
+                            font-size: var(--cre8-typography-title-xlarge-font-size);
+                            font-weight: var(--cre8-typography-title-xlarge-font-weight);
+                            line-height: var(--cre8-typography-title-xlarge-line-height);
+                            text-decoration: var(--cre8-typography-title-xlarge-text-decoration);
+                            text-transform: var(--cre8-typography-title-xlarge-text-transform);
+                        }
+                    };
+
+                    @mixin cre8-typography-title-xlarge-mobile() {
+                        font-family: var(--cre8-typography-title-xlarge-mobile-font-family); 
+                        font-size: var(--cre8-typography-title-xlarge-mobile-font-size);
+                        font-weight: var(--cre8-typography-title-xlarge-mobile-font-weight);
+                        line-height: var(--cre8-typography-title-xlarge-mobile-line-height);
+                        text-decoration: var(--cre8-typography-title-xlarge-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-title-xlarge-mobile-text-transform);
+                    };
+@mixin cre8-typography-title-large() {
+                        font-family: var(--cre8-typography-title-large-mobile-font-family); 
+                        font-size: var(--cre8-typography-title-large-mobile-font-size);
+                        font-weight: var(--cre8-typography-title-large-mobile-font-weight);
+                        line-height: var(--cre8-typography-title-large-mobile-line-height);
+                        text-decoration: var(--cre8-typography-title-large-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-title-large-mobile-text-transform);
+                        @media all and (min-width: $cre8-breakpoint-md) {
+                            font-family: var(--cre8-typography-title-large-font-family); 
+                            font-size: var(--cre8-typography-title-large-font-size);
+                            font-weight: var(--cre8-typography-title-large-font-weight);
+                            line-height: var(--cre8-typography-title-large-line-height);
+                            text-decoration: var(--cre8-typography-title-large-text-decoration);
+                            text-transform: var(--cre8-typography-title-large-text-transform);
+                        }
+                    };
+
+                    @mixin cre8-typography-title-large-mobile() {
+                        font-family: var(--cre8-typography-title-large-mobile-font-family); 
+                        font-size: var(--cre8-typography-title-large-mobile-font-size);
+                        font-weight: var(--cre8-typography-title-large-mobile-font-weight);
+                        line-height: var(--cre8-typography-title-large-mobile-line-height);
+                        text-decoration: var(--cre8-typography-title-large-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-title-large-mobile-text-transform);
+                    };
+@mixin cre8-typography-title-default() {
+                        font-family: var(--cre8-typography-title-default-mobile-font-family); 
+                        font-size: var(--cre8-typography-title-default-mobile-font-size);
+                        font-weight: var(--cre8-typography-title-default-mobile-font-weight);
+                        line-height: var(--cre8-typography-title-default-mobile-line-height);
+                        text-decoration: var(--cre8-typography-title-default-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-title-default-mobile-text-transform);
+                        @media all and (min-width: $cre8-breakpoint-md) {
+                            font-family: var(--cre8-typography-title-default-font-family); 
+                            font-size: var(--cre8-typography-title-default-font-size);
+                            font-weight: var(--cre8-typography-title-default-font-weight);
+                            line-height: var(--cre8-typography-title-default-line-height);
+                            text-decoration: var(--cre8-typography-title-default-text-decoration);
+                            text-transform: var(--cre8-typography-title-default-text-transform);
+                        }
+                    };
+
+                    @mixin cre8-typography-title-default-mobile() {
+                        font-family: var(--cre8-typography-title-default-mobile-font-family); 
+                        font-size: var(--cre8-typography-title-default-mobile-font-size);
+                        font-weight: var(--cre8-typography-title-default-mobile-font-weight);
+                        line-height: var(--cre8-typography-title-default-mobile-line-height);
+                        text-decoration: var(--cre8-typography-title-default-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-title-default-mobile-text-transform);
+                    };
+@mixin cre8-typography-title-small() {
+                        font-family: var(--cre8-typography-title-small-mobile-font-family); 
+                        font-size: var(--cre8-typography-title-small-mobile-font-size);
+                        font-weight: var(--cre8-typography-title-small-mobile-font-weight);
+                        line-height: var(--cre8-typography-title-small-mobile-line-height);
+                        text-decoration: var(--cre8-typography-title-small-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-title-small-mobile-text-transform);
+                        @media all and (min-width: $cre8-breakpoint-md) {
+                            font-family: var(--cre8-typography-title-small-font-family); 
+                            font-size: var(--cre8-typography-title-small-font-size);
+                            font-weight: var(--cre8-typography-title-small-font-weight);
+                            line-height: var(--cre8-typography-title-small-line-height);
+                            text-decoration: var(--cre8-typography-title-small-text-decoration);
+                            text-transform: var(--cre8-typography-title-small-text-transform);
+                        }
+                    };
+
+                    @mixin cre8-typography-title-small-mobile() {
+                        font-family: var(--cre8-typography-title-small-mobile-font-family); 
+                        font-size: var(--cre8-typography-title-small-mobile-font-size);
+                        font-weight: var(--cre8-typography-title-small-mobile-font-weight);
+                        line-height: var(--cre8-typography-title-small-mobile-line-height);
+                        text-decoration: var(--cre8-typography-title-small-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-title-small-mobile-text-transform);
+                    };
+@mixin cre8-typography-headline-large() {
+                        font-family: var(--cre8-typography-headline-large-mobile-font-family); 
+                        font-size: var(--cre8-typography-headline-large-mobile-font-size);
+                        font-weight: var(--cre8-typography-headline-large-mobile-font-weight);
+                        line-height: var(--cre8-typography-headline-large-mobile-line-height);
+                        text-decoration: var(--cre8-typography-headline-large-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-headline-large-mobile-text-transform);
+                        @media all and (min-width: $cre8-breakpoint-md) {
+                            font-family: var(--cre8-typography-headline-large-font-family); 
+                            font-size: var(--cre8-typography-headline-large-font-size);
+                            font-weight: var(--cre8-typography-headline-large-font-weight);
+                            line-height: var(--cre8-typography-headline-large-line-height);
+                            text-decoration: var(--cre8-typography-headline-large-text-decoration);
+                            text-transform: var(--cre8-typography-headline-large-text-transform);
+                        }
+                    };
+
+                    @mixin cre8-typography-headline-large-mobile() {
+                        font-family: var(--cre8-typography-headline-large-mobile-font-family); 
+                        font-size: var(--cre8-typography-headline-large-mobile-font-size);
+                        font-weight: var(--cre8-typography-headline-large-mobile-font-weight);
+                        line-height: var(--cre8-typography-headline-large-mobile-line-height);
+                        text-decoration: var(--cre8-typography-headline-large-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-headline-large-mobile-text-transform);
+                    };
+@mixin cre8-typography-headline-default() {
+                        font-family: var(--cre8-typography-headline-default-mobile-font-family); 
+                        font-size: var(--cre8-typography-headline-default-mobile-font-size);
+                        font-weight: var(--cre8-typography-headline-default-mobile-font-weight);
+                        line-height: var(--cre8-typography-headline-default-mobile-line-height);
+                        text-decoration: var(--cre8-typography-headline-default-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-headline-default-mobile-text-transform);
+                        @media all and (min-width: $cre8-breakpoint-md) {
+                            font-family: var(--cre8-typography-headline-default-font-family); 
+                            font-size: var(--cre8-typography-headline-default-font-size);
+                            font-weight: var(--cre8-typography-headline-default-font-weight);
+                            line-height: var(--cre8-typography-headline-default-line-height);
+                            text-decoration: var(--cre8-typography-headline-default-text-decoration);
+                            text-transform: var(--cre8-typography-headline-default-text-transform);
+                        }
+                    };
+
+                    @mixin cre8-typography-headline-default-mobile() {
+                        font-family: var(--cre8-typography-headline-default-mobile-font-family); 
+                        font-size: var(--cre8-typography-headline-default-mobile-font-size);
+                        font-weight: var(--cre8-typography-headline-default-mobile-font-weight);
+                        line-height: var(--cre8-typography-headline-default-mobile-line-height);
+                        text-decoration: var(--cre8-typography-headline-default-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-headline-default-mobile-text-transform);
+                    };
+@mixin cre8-typography-headline-small() {
+                        font-family: var(--cre8-typography-headline-small-mobile-font-family); 
+                        font-size: var(--cre8-typography-headline-small-mobile-font-size);
+                        font-weight: var(--cre8-typography-headline-small-mobile-font-weight);
+                        line-height: var(--cre8-typography-headline-small-mobile-line-height);
+                        text-decoration: var(--cre8-typography-headline-small-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-headline-small-mobile-text-transform);
+                        @media all and (min-width: $cre8-breakpoint-md) {
+                            font-family: var(--cre8-typography-headline-small-font-family); 
+                            font-size: var(--cre8-typography-headline-small-font-size);
+                            font-weight: var(--cre8-typography-headline-small-font-weight);
+                            line-height: var(--cre8-typography-headline-small-line-height);
+                            text-decoration: var(--cre8-typography-headline-small-text-decoration);
+                            text-transform: var(--cre8-typography-headline-small-text-transform);
+                        }
+                    };
+
+                    @mixin cre8-typography-headline-small-mobile() {
+                        font-family: var(--cre8-typography-headline-small-mobile-font-family); 
+                        font-size: var(--cre8-typography-headline-small-mobile-font-size);
+                        font-weight: var(--cre8-typography-headline-small-mobile-font-weight);
+                        line-height: var(--cre8-typography-headline-small-mobile-line-height);
+                        text-decoration: var(--cre8-typography-headline-small-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-headline-small-mobile-text-transform);
+                    };
+@mixin cre8-typography-headline-xsmall() {
+                        font-family: var(--cre8-typography-headline-xsmall-mobile-font-family); 
+                        font-size: var(--cre8-typography-headline-xsmall-mobile-font-size);
+                        font-weight: var(--cre8-typography-headline-xsmall-mobile-font-weight);
+                        line-height: var(--cre8-typography-headline-xsmall-mobile-line-height);
+                        text-decoration: var(--cre8-typography-headline-xsmall-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-headline-xsmall-mobile-text-transform);
+                        @media all and (min-width: $cre8-breakpoint-md) {
+                            font-family: var(--cre8-typography-headline-xsmall-font-family); 
+                            font-size: var(--cre8-typography-headline-xsmall-font-size);
+                            font-weight: var(--cre8-typography-headline-xsmall-font-weight);
+                            line-height: var(--cre8-typography-headline-xsmall-line-height);
+                            text-decoration: var(--cre8-typography-headline-xsmall-text-decoration);
+                            text-transform: var(--cre8-typography-headline-xsmall-text-transform);
+                        }
+                    };
+
+                    @mixin cre8-typography-headline-xsmall-mobile() {
+                        font-family: var(--cre8-typography-headline-xsmall-mobile-font-family); 
+                        font-size: var(--cre8-typography-headline-xsmall-mobile-font-size);
+                        font-weight: var(--cre8-typography-headline-xsmall-mobile-font-weight);
+                        line-height: var(--cre8-typography-headline-xsmall-mobile-line-height);
+                        text-decoration: var(--cre8-typography-headline-xsmall-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-headline-xsmall-mobile-text-transform);
+                    };
+@mixin cre8-typography-display-large() {
+                        font-family: var(--cre8-typography-display-large-mobile-font-family); 
+                        font-size: var(--cre8-typography-display-large-mobile-font-size);
+                        font-weight: var(--cre8-typography-display-large-mobile-font-weight);
+                        line-height: var(--cre8-typography-display-large-mobile-line-height);
+                        text-decoration: var(--cre8-typography-display-large-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-display-large-mobile-text-transform);
+                        @media all and (min-width: $cre8-breakpoint-md) {
+                            font-family: var(--cre8-typography-display-large-font-family); 
+                            font-size: var(--cre8-typography-display-large-font-size);
+                            font-weight: var(--cre8-typography-display-large-font-weight);
+                            line-height: var(--cre8-typography-display-large-line-height);
+                            text-decoration: var(--cre8-typography-display-large-text-decoration);
+                            text-transform: var(--cre8-typography-display-large-text-transform);
+                        }
+                    };
+
+                    @mixin cre8-typography-display-large-mobile() {
+                        font-family: var(--cre8-typography-display-large-mobile-font-family); 
+                        font-size: var(--cre8-typography-display-large-mobile-font-size);
+                        font-weight: var(--cre8-typography-display-large-mobile-font-weight);
+                        line-height: var(--cre8-typography-display-large-mobile-line-height);
+                        text-decoration: var(--cre8-typography-display-large-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-display-large-mobile-text-transform);
+                    };
+@mixin cre8-typography-display-default() {
+                        font-family: var(--cre8-typography-display-default-mobile-font-family); 
+                        font-size: var(--cre8-typography-display-default-mobile-font-size);
+                        font-weight: var(--cre8-typography-display-default-mobile-font-weight);
+                        line-height: var(--cre8-typography-display-default-mobile-line-height);
+                        text-decoration: var(--cre8-typography-display-default-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-display-default-mobile-text-transform);
+                        @media all and (min-width: $cre8-breakpoint-md) {
+                            font-family: var(--cre8-typography-display-default-font-family); 
+                            font-size: var(--cre8-typography-display-default-font-size);
+                            font-weight: var(--cre8-typography-display-default-font-weight);
+                            line-height: var(--cre8-typography-display-default-line-height);
+                            text-decoration: var(--cre8-typography-display-default-text-decoration);
+                            text-transform: var(--cre8-typography-display-default-text-transform);
+                        }
+                    };
+
+                    @mixin cre8-typography-display-default-mobile() {
+                        font-family: var(--cre8-typography-display-default-mobile-font-family); 
+                        font-size: var(--cre8-typography-display-default-mobile-font-size);
+                        font-weight: var(--cre8-typography-display-default-mobile-font-weight);
+                        line-height: var(--cre8-typography-display-default-mobile-line-height);
+                        text-decoration: var(--cre8-typography-display-default-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-display-default-mobile-text-transform);
+                    };
+@mixin cre8-typography-display-small() {
+                        font-family: var(--cre8-typography-display-small-mobile-font-family); 
+                        font-size: var(--cre8-typography-display-small-mobile-font-size);
+                        font-weight: var(--cre8-typography-display-small-mobile-font-weight);
+                        line-height: var(--cre8-typography-display-small-mobile-line-height);
+                        text-decoration: var(--cre8-typography-display-small-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-display-small-mobile-text-transform);
+                        @media all and (min-width: $cre8-breakpoint-md) {
+                            font-family: var(--cre8-typography-display-small-font-family); 
+                            font-size: var(--cre8-typography-display-small-font-size);
+                            font-weight: var(--cre8-typography-display-small-font-weight);
+                            line-height: var(--cre8-typography-display-small-line-height);
+                            text-decoration: var(--cre8-typography-display-small-text-decoration);
+                            text-transform: var(--cre8-typography-display-small-text-transform);
+                        }
+                    };
+
+                    @mixin cre8-typography-display-small-mobile() {
+                        font-family: var(--cre8-typography-display-small-mobile-font-family); 
+                        font-size: var(--cre8-typography-display-small-mobile-font-size);
+                        font-weight: var(--cre8-typography-display-small-mobile-font-weight);
+                        line-height: var(--cre8-typography-display-small-mobile-line-height);
+                        text-decoration: var(--cre8-typography-display-small-mobile-text-decoration);
+                        text-transform: var(--cre8-typography-display-small-mobile-text-transform);
+                    };
+
+                    @mixin cre8-typography-meta-default() {
+                        font-family: var(--cre8-typography-meta-default-font-family); 
+                        font-size: var(--cre8-typography-meta-default-font-size);
+                        font-weight: var(--cre8-typography-meta-default-font-weight);
+                        line-height: var(--cre8-typography-meta-default-line-height);
+                        text-decoration: var(--cre8-typography-meta-default-text-decoration);
+                        text-transform: var(--cre8-typography-meta-default-text-transform);
+                    };
+
+                    @mixin cre8-typography-meta-default-sentence-case() {
+                        font-family: var(--cre8-typography-meta-default-sentence-case-font-family); 
+                        font-size: var(--cre8-typography-meta-default-sentence-case-font-size);
+                        font-weight: var(--cre8-typography-meta-default-sentence-case-font-weight);
+                        line-height: var(--cre8-typography-meta-default-sentence-case-line-height);
+                        text-decoration: var(--cre8-typography-meta-default-sentence-case-text-decoration);
+                        text-transform: var(--cre8-typography-meta-default-sentence-case-text-transform);
+                    };
+
+                    @mixin cre8-typography-meta-large() {
+                        font-family: var(--cre8-typography-meta-large-font-family); 
+                        font-size: var(--cre8-typography-meta-large-font-size);
+                        font-weight: var(--cre8-typography-meta-large-font-weight);
+                        line-height: var(--cre8-typography-meta-large-line-height);
+                        text-decoration: var(--cre8-typography-meta-large-text-decoration);
+                        text-transform: var(--cre8-typography-meta-large-text-transform);
+                    };
+
+                    @mixin cre8-typography-meta-small() {
+                        font-family: var(--cre8-typography-meta-small-font-family); 
+                        font-size: var(--cre8-typography-meta-small-font-size);
+                        font-weight: var(--cre8-typography-meta-small-font-weight);
+                        line-height: var(--cre8-typography-meta-small-line-height);
+                        text-decoration: var(--cre8-typography-meta-small-text-decoration);
+                        text-transform: var(--cre8-typography-meta-small-text-transform);
+                    };
