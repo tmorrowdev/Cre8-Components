@@ -20,7 +20,7 @@
               - Fills Ref: [fill_hykvkqd](../GlobalStyles/Colors.md#fill-hykvkqd) (See Color Styles)
               - Layout Style Ref: [layout_hwl601x](../GlobalStyles/LayoutAndSpacing.md#layout-hwl601x) (See Layout Styles)
           - **Equity: Wesparkle Theme** (Type: TEXT, ID: I27652:1026;5065:6713)
-            - Text Content: "Aroris Health DS"
+            - Text Content: "Aroris # DS"
             - TextStyle Ref: [text_hje7lmq](../GlobalStyles/Typography.md#text-hje7lmq) (See Typography Styles)
             - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
             - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
@@ -1401,7 +1401,7 @@ global: white, 0%
               - Fills Ref: [fill_hykvkqd](../GlobalStyles/Colors.md#fill-hykvkqd) (See Color Styles)
               - Layout Style Ref: [layout_hwl601x](../GlobalStyles/LayoutAndSpacing.md#layout-hwl601x) (See Layout Styles)
           - **Equity: Wesparkle Theme** (Type: TEXT, ID: I27652:1135;5065:6713)
-            - Text Content: "Aroris Health DS"
+            - Text Content: "Aroris # DS"
             - TextStyle Ref: [text_hje7lmq](../GlobalStyles/Typography.md#text-hje7lmq) (See Typography Styles)
             - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
             - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
@@ -2452,7 +2452,7 @@ value: #333333
               - Fills Ref: [fill_hykvkqd](../GlobalStyles/Colors.md#fill-hykvkqd) (See Color Styles)
               - Layout Style Ref: [layout_hwl601x](../GlobalStyles/LayoutAndSpacing.md#layout-hwl601x) (See Layout Styles)
           - **Equity: Wesparkle Theme** (Type: TEXT, ID: I27652:1219;5065:6713)
-            - Text Content: "Aroris Health DS"
+            - Text Content: "Aroris # DS"
             - TextStyle Ref: [text_hje7lmq](../GlobalStyles/Typography.md#text-hje7lmq) (See Typography Styles)
             - Fills Ref: [fill_hg3xwfr](../GlobalStyles/Colors.md#fill-hg3xwfr) (See Color Styles)
             - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)

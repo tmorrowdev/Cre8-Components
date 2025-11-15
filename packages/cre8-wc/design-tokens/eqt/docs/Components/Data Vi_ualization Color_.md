@@ -258,7 +258,7 @@
             - **Message** (Type: FRAME, ID: I5386:3116;7058:127889;1204:1396)
               - Layout Style Ref: [layout_hakeewi](../GlobalStyles/LayoutAndSpacing.md#layout-hakeewi) (See Layout Styles)
               - **Heading** (Type: TEXT, ID: I5386:3116;7058:127889;1204:1397)
-                - Text Content: "Alternate-sequence only to be used in Legacy"
+                - Text Content: "Alternate-sequence only to be used in #kit"
                 - TextStyle Ref: [text_hx3r16l](../GlobalStyles/Typography.md#text-hx3r16l) (See Typography Styles)
                 - Fills Ref: [fill_hni0ojx](../GlobalStyles/Colors.md#fill-hni0ojx) (See Color Styles)
                 - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)

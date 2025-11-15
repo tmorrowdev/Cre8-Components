@@ -39,7 +39,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5433:13677;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5433:13677;245:4877)
-        - Text Content: "Cre8 Healthcare Base Library"
+        - Text Content: "# #care Base Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -1179,7 +1179,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5433:13750;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5433:13750;245:4877)
-        - Text Content: "Cre8 Healthcare Base Library"
+        - Text Content: "# #care Base Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -1823,7 +1823,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5433:13799;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5433:13799;245:4877)
-        - Text Content: "cre8 healthcare BRAND THEME LIBRARY"
+        - Text Content: "# #care BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -3006,7 +3006,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5433:13890;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5433:13890;245:4877)
-        - Text Content: "cre8 healthcareBRAND THEME LIBRARY"
+        - Text Content: "# #careBRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -3910,7 +3910,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5433:13971;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5433:13971;245:4877)
-        - Text Content: "cre8 healthcare BRAND THEME LIBRARY"
+        - Text Content: "# #care BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -4353,7 +4353,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I6873:8987;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I6873:8987;245:4877)
-        - Text Content: "cre8 healthcare BRAND THEME LIBRARY"
+        - Text Content: "# #care BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -4796,7 +4796,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5433:14004;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5433:14004;245:4877)
-        - Text Content: "cre8 healthcare BRAND THEME LIBRARY"
+        - Text Content: "# #care BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -5239,7 +5239,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I6873:9020;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I6873:9020;245:4877)
-        - Text Content: "cre8 healthcare BRAND THEME LIBRARY"
+        - Text Content: "# #care BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -11546,7 +11546,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5433:18993;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5433:18993;245:4877)
-        - Text Content: "the cre8 group BRAND THEME LIBRARY"
+        - Text Content: "the # group BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -12368,7 +12368,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5433:19059;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5433:19059;245:4877)
-        - Text Content: "the cre8 group BRAND THEME LIBRARY"
+        - Text Content: "the # group BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -13551,7 +13551,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5433:19150;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5433:19150;245:4877)
-        - Text Content: "the cre8 group THEME LIBRARY"
+        - Text Content: "the # group THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -14734,7 +14734,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5433:19241;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5433:19241;245:4877)
-        - Text Content: "the cre8 group BRAND THEME LIBRARY"
+        - Text Content: "the # group BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -15638,7 +15638,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5433:19322;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5433:19322;245:4877)
-        - Text Content: "the cre8 group BRAND THEME LIBRARY"
+        - Text Content: "the # group BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -16524,7 +16524,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I7888:9207;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I7888:9207;245:4877)
-        - Text Content: "cre8 healthcare BRAND THEME LIBRARY"
+        - Text Content: "# #care BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -16967,7 +16967,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I7888:9975;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I7888:9975;245:4877)
-        - Text Content: "the cre8 group BRAND THEME LIBRARY"
+        - Text Content: "the # group BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -17853,7 +17853,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I7888:9240;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I7888:9240;245:4877)
-        - Text Content: "cre8 healthcare BRAND THEME LIBRARY"
+        - Text Content: "# #care BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -18296,7 +18296,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I7957:11025;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I7957:11025;245:4877)
-        - Text Content: "the cre8 group BRAND THEME LIBRARY"
+        - Text Content: "the # group BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -19182,7 +19182,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I7888:9273;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I7888:9273;245:4877)
-        - Text Content: "cre8 healthcare BRAND THEME LIBRARY"
+        - Text Content: "# #care BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -19625,7 +19625,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I7957:11282;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I7957:11282;245:4877)
-        - Text Content: "the cre8 group BRAND THEME LIBRARY"
+        - Text Content: "the # group BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -20068,7 +20068,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I6873:9119;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I6873:9119;245:4877)
-        - Text Content: "the cre8 group BRAND THEME LIBRARY"
+        - Text Content: "the # group BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -20511,7 +20511,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5433:19355;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5433:19355;245:4877)
-        - Text Content: "the cre8 group BRAND THEME LIBRARY"
+        - Text Content: "the # group BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -21397,7 +21397,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I7888:9306;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I7888:9306;245:4877)
-        - Text Content: "cre8 healthcare BRAND THEME LIBRARY"
+        - Text Content: "# #care BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -21840,7 +21840,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I7888:10074;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I7888:10074;245:4877)
-        - Text Content: "the cre8 group BRAND THEME LIBRARY"
+        - Text Content: "the # group BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -22726,7 +22726,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I7888:9339;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I7888:9339;245:4877)
-        - Text Content: "cre8 healthcare BRAND THEME LIBRARY"
+        - Text Content: "# #care BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -23169,7 +23169,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I7957:11153;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I7957:11153;245:4877)
-        - Text Content: "the cre8 group BRAND THEME LIBRARY"
+        - Text Content: "the # group BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -24055,7 +24055,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I7888:9372;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I7888:9372;245:4877)
-        - Text Content: "cre8 healthcare BRAND THEME LIBRARY"
+        - Text Content: "# #care BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -24498,7 +24498,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I7957:11315;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I7957:11315;245:4877)
-        - Text Content: "the cre8 group BRAND THEME LIBRARY"
+        - Text Content: "the # group BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -24941,7 +24941,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I6873:9152;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I6873:9152;245:4877)
-        - Text Content: "the cre8 group BRAND THEME LIBRARY"
+        - Text Content: "the # group BRAND THEME LIBRARY"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -27247,7 +27247,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5491:13999;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5491:13999;245:4877)
-        - Text Content: "Cre8 Legacy Base Web Library"
+        - Text Content: "# Legacy Base Web Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -27983,7 +27983,7 @@ Components that have nuanced needs, like subtle color gradations, that are not i
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5491:14061;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5491:14061;245:4877)
-        - Text Content: "Cre8 Legacy Base Web Library"
+        - Text Content: "# Legacy Base Web Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)

@@ -234,7 +234,7 @@ rgba(0, 0, 0, 0.1)"
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5491:25844;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5491:25844;245:4877)
-        - Text Content: "The Cre8 Group Base Library"
+        - Text Content: "The # Group Base Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -429,7 +429,7 @@ rgba(0, 0, 0, 0.1)"
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I5491:26644;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I5491:26644;245:4877)
-        - Text Content: "Cre8 Healthcare Base Web Library"
+        - Text Content: "# #care Base Web Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -624,7 +624,7 @@ rgba(0, 0, 0, 0.1)"
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I12447:5783;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I12447:5783;245:4877)
-        - Text Content: "DO NOT USE Cre8 Healthcare 2.0 Base Web Library"
+        - Text Content: "DO NOT USE # #care 2.0 Base Web Library"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)

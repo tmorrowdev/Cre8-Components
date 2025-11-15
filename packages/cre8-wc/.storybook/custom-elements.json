@@ -1528,6 +1528,131 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/breadcrumbs/breadcrumbs.stories.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "Default",
+          "parameters": [
+            {
+              "name": "args"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "components/breadcrumbs/breadcrumbs.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Default",
+          "declaration": {
+            "name": "Default",
+            "module": "components/breadcrumbs/breadcrumbs.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/breadcrumbs/breadcrumbs.styles.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "styles",
+          "default": "css`@import '../../design-tokens/core/scss/theming/component'; // #BREADCRUMBS :host { display: inline-flex; } /** * 1) An ordered list of navigational hierarchy showing the user where they are on the site */ .cre8-c-breadcrumbs__list { display: flex; flex-wrap: wrap; margin: 0; padding: 0; list-style: none; gap: size(1); } `"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "styles",
+            "module": "components/breadcrumbs/breadcrumbs.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/breadcrumbs/breadcrumbs.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "The breadcrumbs component is a secondary navigation pattern that helps a user understand where the user is located.\nThe breadcrumbs component shows the users their current location relative to the information architecture\nIt enables the users to quickly move up to a parent level or previous location.\n\n## How to Use\n\n- Import 'Breadcrumbs' component.\n- Add the pages in the path of the breadcrumbs using `cre8-breadcrumbs-item`.\nAll the pages in the breadcrumbs component should be interactive.\n- All the page should link to their respective pages (except the current page) using `cre8-link`.\n- The current page is included in the breadcrumbs trail.\n- The current page is always the last text listed and is not an interactive link.",
+          "name": "Cre8Breadcrumbs",
+          "slots": [
+            {
+              "description": "The component content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "navAriaLabel",
+              "type": {
+                "text": "string"
+              },
+              "default": "'breadcrumbs'",
+              "description": "aria-label attribute to designate at name for the nav. Can be override by user",
+              "attribute": "navAriaLabel"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "navAriaLabel",
+              "type": {
+                "text": "string"
+              },
+              "default": "'breadcrumbs'",
+              "description": "aria-label attribute to designate at name for the nav. Can be override by user",
+              "fieldName": "navAriaLabel"
+            }
+          ],
+          "superclass": {
+            "name": "Cre8Element",
+            "module": "/components/cre8-element"
+          },
+          "tagName": "cre8-breadcrumbs",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Cre8Breadcrumbs",
+          "declaration": {
+            "name": "Cre8Breadcrumbs",
+            "module": "components/breadcrumbs/breadcrumbs.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cre8-breadcrumbs",
+          "declaration": {
+            "name": "Cre8Breadcrumbs",
+            "module": "components/breadcrumbs/breadcrumbs.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Cre8Breadcrumbs",
+            "module": "components/breadcrumbs/breadcrumbs.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/badge/badge.stories.ts",
       "declarations": [
         {
@@ -1983,77 +2108,6 @@
           "declaration": {
             "name": "Cre8Badge",
             "module": "components/badge/badge.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/breadcrumbs-item/breadcrumbs-item.styles.ts",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "styles",
-          "default": "css`@import '../../design-tokens/core/scss/theming/component'; :host { display: inline-flex; } /** * 1) Singular item within the breadcrumbs component that contains a link elsewhere on the site */ .cre8-c-breadcrumbs--item { display: inline-flex; align-items: center; /** * Breadcrumbs caret doesn't display for last breadcrumb item */ :host(:last-child) & { cre8-icon { display: none; } } } /** * Breadcrumbs icon */ cre8-icon { margin-left: size(1); color: var(--cre8-color-content-subtle); display: inline-flex; svg { height: size(2); width: size(2); } } `"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "styles",
-            "module": "components/breadcrumbs-item/breadcrumbs-item.styles.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/breadcrumbs-item/breadcrumbs-item.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Cre8BreadcrumbsItem",
-          "slots": [
-            {
-              "description": "The component content, the expected slotted content is a Cre8 Link or a String for the \"terminal node\"",
-              "name": ""
-            }
-          ],
-          "members": [],
-          "superclass": {
-            "name": "Cre8Element",
-            "module": "/components/cre8-element"
-          },
-          "tagName": "cre8-breadcrumbs-item",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "Cre8BreadcrumbsItem",
-          "declaration": {
-            "name": "Cre8BreadcrumbsItem",
-            "module": "components/breadcrumbs-item/breadcrumbs-item.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cre8-breadcrumbs-item",
-          "declaration": {
-            "name": "Cre8BreadcrumbsItem",
-            "module": "components/breadcrumbs-item/breadcrumbs-item.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Cre8BreadcrumbsItem",
-            "module": "components/breadcrumbs-item/breadcrumbs-item.ts"
           }
         }
       ]
@@ -3396,44 +3450,12 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/breadcrumbs/breadcrumbs.stories.ts",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "Default",
-          "parameters": [
-            {
-              "name": "args"
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "components/breadcrumbs/breadcrumbs.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Default",
-          "declaration": {
-            "name": "Default",
-            "module": "components/breadcrumbs/breadcrumbs.stories.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/breadcrumbs/breadcrumbs.styles.ts",
+      "path": "components/breadcrumbs-item/breadcrumbs-item.styles.ts",
       "declarations": [
         {
           "kind": "variable",
           "name": "styles",
-          "default": "css`@import '../../design-tokens/core/scss/theming/component'; // #BREADCRUMBS :host { display: inline-flex; } /** * 1) An ordered list of navigational hierarchy showing the user where they are on the site */ .cre8-c-breadcrumbs__list { display: flex; flex-wrap: wrap; margin: 0; padding: 0; list-style: none; gap: size(1); } `"
+          "default": "css`@import '../../design-tokens/core/scss/theming/component'; :host { display: inline-flex; } /** * 1) Singular item within the breadcrumbs component that contains a link elsewhere on the site */ .cre8-c-breadcrumbs--item { display: inline-flex; align-items: center; /** * Breadcrumbs caret doesn't display for last breadcrumb item */ :host(:last-child) & { cre8-icon { display: none; } } } /** * Breadcrumbs icon */ cre8-icon { margin-left: size(1); color: var(--cre8-color-content-subtle); display: inline-flex; svg { height: size(2); width: size(2); } } `"
         }
       ],
       "exports": [
@@ -3442,79 +3464,57 @@
           "name": "default",
           "declaration": {
             "name": "styles",
-            "module": "components/breadcrumbs/breadcrumbs.styles.ts"
+            "module": "components/breadcrumbs-item/breadcrumbs-item.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "components/breadcrumbs/breadcrumbs.ts",
+      "path": "components/breadcrumbs-item/breadcrumbs-item.ts",
       "declarations": [
         {
           "kind": "class",
-          "description": "The breadcrumbs component is a secondary navigation pattern that helps a user understand where the user is located.\nThe breadcrumbs component shows the users their current location relative to the information architecture\nIt enables the users to quickly move up to a parent level or previous location.\n\n## How to Use\n\n- Import 'Breadcrumbs' component.\n- Add the pages in the path of the breadcrumbs using `cre8-breadcrumbs-item`.\nAll the pages in the breadcrumbs component should be interactive.\n- All the page should link to their respective pages (except the current page) using `cre8-link`.\n- The current page is included in the breadcrumbs trail.\n- The current page is always the last text listed and is not an interactive link.",
-          "name": "Cre8Breadcrumbs",
+          "description": "",
+          "name": "Cre8BreadcrumbsItem",
           "slots": [
             {
-              "description": "The component content",
+              "description": "The component content, the expected slotted content is a Cre8 Link or a String for the \"terminal node\"",
               "name": ""
             }
           ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "navAriaLabel",
-              "type": {
-                "text": "string"
-              },
-              "default": "'breadcrumbs'",
-              "description": "aria-label attribute to designate at name for the nav. Can be override by user",
-              "attribute": "navAriaLabel"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "navAriaLabel",
-              "type": {
-                "text": "string"
-              },
-              "default": "'breadcrumbs'",
-              "description": "aria-label attribute to designate at name for the nav. Can be override by user",
-              "fieldName": "navAriaLabel"
-            }
-          ],
+          "members": [],
           "superclass": {
             "name": "Cre8Element",
             "module": "/components/cre8-element"
           },
-          "tagName": "cre8-breadcrumbs",
+          "tagName": "cre8-breadcrumbs-item",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "Cre8Breadcrumbs",
+          "name": "Cre8BreadcrumbsItem",
           "declaration": {
-            "name": "Cre8Breadcrumbs",
-            "module": "components/breadcrumbs/breadcrumbs.ts"
+            "name": "Cre8BreadcrumbsItem",
+            "module": "components/breadcrumbs-item/breadcrumbs-item.ts"
           }
         },
         {
           "kind": "custom-element-definition",
-          "name": "cre8-breadcrumbs",
+          "name": "cre8-breadcrumbs-item",
           "declaration": {
-            "name": "Cre8Breadcrumbs",
-            "module": "components/breadcrumbs/breadcrumbs.ts"
+            "name": "Cre8BreadcrumbsItem",
+            "module": "components/breadcrumbs-item/breadcrumbs-item.ts"
           }
         },
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "Cre8Breadcrumbs",
-            "module": "components/breadcrumbs/breadcrumbs.ts"
+            "name": "Cre8BreadcrumbsItem",
+            "module": "components/breadcrumbs-item/breadcrumbs-item.ts"
           }
         }
       ]
@@ -8489,7 +8489,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{ args: { slot: `<cre8-text-link href=\"https://www.cre8.com\">Helpful link</cre8-text-link> at the beginning of a field note` }, }"
+          "default": "{ args: { slot: `<cre8-text-link href=\"#\">Helpful link</cre8-text-link> at the beginning of a field note` }, }"
         },
         {
           "kind": "variable",
@@ -8497,7 +8497,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{ args: { slot: `This is a field note with a <cre8-text-link href=\"https://www.cre8.com\">helpful link</cre8-text-link> in the middle of content` }, }"
+          "default": "{ args: { slot: `This is a field note with a <cre8-text-link href=\"#\">helpful link</cre8-text-link> in the middle of content` }, }"
         },
         {
           "kind": "variable",
@@ -8505,7 +8505,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{ args: { slot: `This is a field note with an ending <cre8-text-link href=\"https://www.cre8.com\">helpful link</cre8-text-link>` }, }"
+          "default": "{ args: { slot: `This is a field note with an ending <cre8-text-link href=\"#\">helpful link</cre8-text-link>` }, }"
         },
         {
           "kind": "variable",

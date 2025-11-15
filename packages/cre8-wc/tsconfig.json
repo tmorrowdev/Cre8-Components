@@ -43,7 +43,7 @@
     "**/**/*.ts",
     "**/**/*.js",
     "src/types/styles.d.ts",
-    "src/types/global.d.ts"
+    "global.d.ts"
   ],
   "exclude": [
     "node_modules",

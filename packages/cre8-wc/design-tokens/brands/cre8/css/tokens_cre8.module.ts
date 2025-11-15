@@ -1,6 +1,4 @@
-import {css} from 'lit'; 
-
-const cre8 = css`
+const cre8 = `
 @font-face {
 	font-family: 'Inter';
 	font-style: normal;
@@ -37,8 +35,7 @@ const cre8 = css`
 	font-display: fallback;
 }
 :root{
-
-      --cre8-desktop-menu-padding-vertical-padding: 1rem;
+   --cre8-desktop-menu-padding-vertical-padding: 1rem;
   --cre8-desktop-menu-padding-horizontal-padding: 0.5rem;
   --cre8-color-header-bg-default: #ffffff;
   --cre8-color-header-inverse-bg-default: #0c8599;
@@ -767,7 +764,8 @@ const cre8 = css`
       --cre8-typography-meta-small-font-weight: var(--cre8-font-weights-inter-2);
       --cre8-typography-meta-small-line-height: var(--cre8-line-heights-3);
       --cre8-typography-meta-small-text-decoration: var(--cre8-text-decoration-none);
-      --cre8-typography-meta-small-text-transform: var(--cre8-text-case-uppercase);}
-      `;
+      --cre8-typography-meta-small-text-transform: var(--cre8-text-case-uppercase);
+}
+`;
 
 export default cre8;

@@ -1,0 +1,175 @@
+/* Copied from existing cobrand template - styles for cobrand logo  */
+.siteHeader.logoBlock .logo .logoLink {
+    background: url('../../art/site/cobrand/logo/erstex.gif') 0 0 no-repeat !important;
+    height: 88px;
+    margin: -5px 0 0 -20px;
+    padding: 10px 0;
+    width: 460px;
+}
+
+/* cre8 Design System */
+/* Using ERS specific tokens from cre8 Design Tokens */
+/* https://github.com/tmorrowdev/cre8-design-tokens */
+:root {
+    --cre8-color-button-primary-bg: #567632;
+    --cre8-color-button-primary-bg-hover: #122c00;
+    --cre8-color-button-primary-bg-active: #122c00;
+    --cre8-color-button-primary-bg-disabled: #dcdddf;
+    --cre8-color-button-primary-border: #567632;
+    --cre8-color-button-primary-border-hover: #122c00;
+    --cre8-color-button-primary-border-active: #122c00;
+    --cre8-color-button-primary-border-disabled: #c6c6c6;
+    --cre8-color-button-primary-content: #fff;
+    --cre8-color-button-primary-content-hover: #fff;
+    --cre8-color-button-primary-content-active: #fff;
+    --cre8-color-button-primary-content-disabled: #949494;
+    --cre8-color-button-primary-outline: #122c00;
+    --cre8-color-button-secondary-bg: #fff;
+    --cre8-color-button-secondary-bg-hover: #fff;
+    --cre8-color-button-secondary-bg-active: #fff;
+    --cre8-color-button-secondary-bg-disabled: #c6c6c6;
+    --cre8-color-button-secondary-border: #567632;
+    --cre8-color-button-secondary-border-hover: #122c00;
+    --cre8-color-button-secondary-border-active: #122c00;
+    --cre8-color-button-secondary-border-disabled: #c6c6c6;
+    --cre8-color-button-secondary-content: #567632;
+    --cre8-color-button-secondary-content-hover: #122c00;
+    --cre8-color-button-secondary-content-active: #122c00;
+    --cre8-color-button-secondary-content-disabled: #949494;
+    --cre8-color-button-secondary-outline: #122c00;
+    --cre8-color-button-tertiary-bg: rgba(0, 0, 0, 0);
+    --cre8-color-button-tertiary-bg-hover: rgba(0, 0, 0, 0);
+    --cre8-color-button-tertiary-bg-active: rgba(0, 0, 0, 0);
+    --cre8-color-button-tertiary-bg-disabled: rgba(0, 0, 0, 0);
+    --cre8-color-button-tertiary-border: rgba(0, 0, 0, 0);
+    --cre8-color-button-tertiary-border-hover: rgba(0, 0, 0, 0);
+    --cre8-color-button-tertiary-border-active: rgba(0, 0, 0, 0);
+    --cre8-color-button-tertiary-border-disabled: rgba(0, 0, 0, 0);
+    --cre8-color-button-tertiary-content: #567632;
+    --cre8-color-button-tertiary-content-hover: #122c00;
+    --cre8-color-button-tertiary-content-active: #122c00;
+    --cre8-color-button-tertiary-content-disabled: #949494;
+    --cre8-color-button-tertiary-outline: #122c00;
+    --cre8-color-header-bg-default: #567632;
+    --cre8-color-header-inverse-bg-default: #fff;
+    --cre8-color-header-bg-secondary: #fff;
+    --cre8-color-header-inverse-bg-secondary: #fff;
+    --cre8-color-header-bg-tertiary: #567632;
+    --cre8-color-header-inverse-bg-tertiary: #567632;
+    --cre8-color-header-menu-bg-default: #567632;
+    --cre8-color-header-menu-inverse-bg-default: #567632;
+    --cre8-color-header-menu-bg-selected: #567632;
+    --cre8-color-header-menu-inverse-bg-selected: #567632;
+    --cre8-color-header-menu-content-default: #fff;
+    --cre8-color-header-menu-inverse-content-default: #fff;
+    --cre8-color-header-menu-border-default: #fff;
+    --cre8-color-header-menu-inverse-border-default: #fff;
+    --cre8-color-header-menu-bg-hover: #fff;
+    --cre8-color-header-menu-inverse-bg-hover: #fff;
+    --cre8-color-header-menu-content-hover: #567632;
+    --cre8-color-header-menu-inverse-content-hover: #567632;
+    --cre8-color-header-menu-border-hover: #fff;
+    --cre8-color-header-menu-inverse-border-hover: #fff;
+    --cre8-color-header-menu-bg-pressed: #fff;
+    --cre8-color-header-menu-inverse-bg-pressed: #fff;
+    --cre8-color-header-menu-bg-focus: #fff;
+    --cre8-color-header-menu-inverse-bg-focus: #fff;
+    --cre8-color-header-menu-bg-active: #fff;
+    --cre8-color-header-menu-inverse-bg-active: #fff;
+    --cre8-color-header-menu-content-pressed: #567632;
+    --cre8-color-header-menu-inverse-content-pressed: #567632;
+    --cre8-color-header-menu-content-active: #567632;
+    --cre8-color-header-menu-inverse-content-active: #567632;
+    --cre8-color-header-menu-content-focus: #567632;
+    --cre8-color-header-menu-inverse-content-focus: #567632;
+    --cre8-color-header-menu-content-selected: #fff;
+    --cre8-color-header-menu-inverse-content-selected: #fff;
+    --cre8-color-header-menu-border-pressed: #fff;
+    --cre8-color-header-menu-inverse-border-pressed: #fff;
+    --cre8-color-header-menu-border-focus: #fff;
+    --cre8-color-header-menu-inverse-border-focus: #fff;
+    --cre8-color-header-menu-border-active: #fff;
+    --cre8-color-header-menu-inverse-border-active: #fff;
+    --cre8-color-header-menu-border-selected: #567632;
+    --cre8-color-header-menu-inverse-border-selected: #567632;
+    --cre8-color-header-submenu-bg-default: #fff;
+    --cre8-color-header-submenu-inverse-bg-default: #fff;
+    --cre8-color-header-submenu-content-default: #567632;
+    --cre8-color-header-submenu-inverse-content-default: #567632;
+    --cre8-color-header-submenu-bg-hover: #567632;
+    --cre8-color-header-submenu-inverse-bg-hover: #567632;
+    --cre8-color-header-submenu-content-hover: #fff;
+    --cre8-color-header-submenu-inverse-content-hover: #fff;
+    --cre8-color-header-submenu-content-active: #567632;
+    --cre8-color-header-submenu-inverse-content-active: #567632;
+    --cre8-color-header-submenu-content-focus: #fff;
+    --cre8-color-header-submenu-inverse-content-focus: #fff;
+    --cre8-color-header-submenu-bg-pressed: #567632;
+    --cre8-color-header-submenu-inverse-bg-pressed: #567632;
+    --cre8-color-header-submenu-bg-active: #fff;
+    --cre8-color-header-submenu-inverse-bg-active: #fff;
+    --cre8-color-header-submenu-bg-focus: #567632;
+    --cre8-color-header-submenu-inverse-bg-focus: #567632;
+    --cre8-color-header-submenu-content-pressed: #fff;
+    --cre8-color-header-submenu-inverse-content-pressed: #fff;
+    --cre8-color-header-submenu-content-selected: #567632;
+    --cre8-color-header-submenu-inverse-content-selected: #567632;
+    --cre8-color-header-submenu-bg-selected: #fff;
+    --cre8-color-header-submenu-inverse-bg-selected: #fff;
+    --cre8-color-header-submenu-border-default: #fff;
+    --cre8-color-header-submenu-inverse-border-default: #fff;
+    --cre8-color-header-submenu-border-hover: #567632;
+    --cre8-color-header-submenu-inverse-border-hover: #567632;
+    --cre8-color-header-submenu-border-focus: #567632;
+    --cre8-color-header-submenu-inverse-border-focus: #567632;
+    --cre8-color-header-submenu-border-active: #fff;
+    --cre8-color-header-submenu-inverse-border-active: #fff;
+    --cre8-color-header-submenu-border-pressed: #fff;
+    --cre8-color-header-submenu-inverse-border-pressed: #fff;
+    --cre8-color-header-submenu-border-selected: #fff;
+    --cre8-color-header-submenu-inverse-border-selected: #fff;
+}
+  
+
+.siteHeader .cart-button-wrapper svg.mini-cart-button path,
+.siteHeader span[class*='id-card-icon'] svg path {
+    fill: var(--cre8-color-header-submenu-content-default);
+}
+
+.siteHeader .cart-button-wrapper span[class*='shopping-cart-label'] {
+    background-color: var(--cre8-color-header-submenu-content-default);
+    color: var(--cre8-color-header-menu-content-default);
+}
+
+.consumer-body-wrapper .global-header-wrapper {
+    background-color: var(--cre8-color-header-bg-secondary);
+}
+
+.consumer-body-wrapper .mega-menu-wrapper {
+    background-color: var(--cre8-color-header-bg-default);
+}
+
+.consumer-footer-wrapper div[class*='content'] {
+    background-color: var(--cre8-color-footer-bg-default);
+}
+
+@media(max-width: 768px) {
+    .siteHeader .cart-button-wrapper svg.mini-cart-button path,
+    .siteHeader span[class*='id-card-icon'] svg path {
+        fill: var(--cre8-color-header-menu-content-default);
+    }
+
+    .siteHeader .cart-button-wrapper span[class*='shopping-cart-label'] {
+        background-color: var(--cre8-color-header-menu-content-default);
+        color: var(--cre8-color-header-submenu-content-default);
+    }
+
+    .mega-menu-wrapper ul li[class*='navSeparator'] {
+        background-color: var(--cre8-color-header-menu-bg-hover);
+    }
+
+    .mega-menu-wrapper ul li button:hover {
+        background-color: var(--cre8-color-header-menu-bg-hover);
+        color: var(--cre8-color-header-menu-content-hover);
+    }
+}

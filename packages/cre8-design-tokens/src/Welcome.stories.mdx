@@ -1,0 +1,18 @@
+import { Meta, Markdown } from '@storybook/addon-docs';
+import ImageFile from './assets/welcome.svg';
+import VersionInfo from '../package.json';
+
+<Meta
+    title="Getting Started/Welcome"
+/>
+
+<img src={ImageFile}/>
+
+export const TokenVersion = VersionInfo.version;
+
+# Version {TokenVersion}
+ 
+Design Tokens are a powerful concept in design systems that help ensure consistency and flexibility across various platforms and products. They serve as the atomic units of design and code, containing values like colors, typography, spacing, and more. By centralizing these values, teams can maintain a cohesive visual identity.
+
+> **Please note:** Base design tokens(`cre8-base`) are for internal Design System Team use only. **DO NOT USE** Base tokens in applications directly, **use** [Semantic Tokens](?path=/docs/getting-started-choosing-the-right-token--docs). 
+Base tokens are NOT for public use and have been removed from v(1.5.0).

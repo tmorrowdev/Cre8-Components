@@ -142,7 +142,7 @@ updated(changedProperties: PropertyValues<this>) {
 
 /*
 * Maps modal icons and modal status variants to what the alt text of the related icon should be
-* see: (https://digital.cre8.com/patterns-and-Components/informational-display/alerts-and-notifications#query=alerts)
+* see: (https://digital.#.com/patterns-and-Components/informational-display/alerts-and-notifications#query=alerts)
 * this provides the recommendated alt text of different statuses
 */
 mapStatusToIconModal = (status: string) => {

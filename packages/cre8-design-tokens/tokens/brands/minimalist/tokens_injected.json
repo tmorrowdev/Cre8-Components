@@ -1,0 +1,38 @@
+{
+  "asset": {
+    "font": {
+      "Aeonik": {
+        "300": {
+          "normal": {
+            "value": "Aeonik-Light",
+            "formats": [
+              "woff2",
+              "woff"
+            ],
+            "type": "asset"
+          }
+        },
+        "400": {
+          "normal": {
+            "value": "Aeonik-Regular",
+            "formats": [
+              "woff2",
+              "woff"
+            ],
+            "type": "asset"
+          }
+        },
+        "700": {
+          "normal": {
+            "value": "Aeonik-Bold",
+            "formats": [
+              "woff2",
+              "woff"
+            ],
+            "type": "asset"
+          }
+        }
+      }
+    }
+  }
+}

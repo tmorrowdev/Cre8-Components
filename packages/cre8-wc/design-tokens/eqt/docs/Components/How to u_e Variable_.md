@@ -922,7 +922,7 @@ https://www.thegoodlineheight.com/
 
 Need to complete the following:
 Finish mapping all type styles to variables
-Mapping correct values to PBM, Pharmacy, Cre8 Legacy + UC"
+Mapping correct values to PBM, Pharmacy, # Legacy + UC"
       - TextStyle Ref: [text_hyj5ric](../GlobalStyles/Typography.md#text-hyj5ric) (See Typography Styles)
       - Fills Ref: [fill_h3odtby](../GlobalStyles/Colors.md#fill-h3odtby) (See Color Styles)
       - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)

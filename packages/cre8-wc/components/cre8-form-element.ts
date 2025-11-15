@@ -25,7 +25,7 @@ export abstract class Cre8FormElement extends Cre8Element {
    * Contains properties and methods that allows the element
    * to participate fully in the HTML form it's in.
    */
-  internals: Cre8ElementInternals;
+  internals: ElementInternals;
 
   /**
    * @protected
