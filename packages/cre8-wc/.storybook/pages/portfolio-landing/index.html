@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tyler Morrow - Software Engineer and AI Solutions Architect. Building innovative solutions with code and AI.">
+  <meta name="keywords" content="Tyler Morrow, Software Engineer, AI Solutions Architect, Portfolio, Developer">
+  <meta name="author" content="Tyler Morrow">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tyler Morrow | Software Engineer & AI Solutions Architect">
+  <meta property="og:description" content="Building innovative solutions with code and AI.">
+
+  <title>Tyler Morrow | Software Engineer & AI Solutions Architect</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* === NEOBRUTALISM DESIGN TOKENS === */
+    :root {
+      --neo-black: #1a1a2e;
+      --neo-white: #fefefe;
+      --neo-cream: #fffbf0;
+      --neo-pink: #ff6b9d;
+      --neo-purple: #c44dff;
+      --neo-blue: #4d9fff;
+      --neo-yellow: #ffe156;
+      --neo-green: #4dff88;
+      --neo-orange: #ff8c42;
+
+      --neo-border-width: 4px;
+      --neo-border-width-thick: 6px;
+      --neo-shadow-offset: 8px;
+      --neo-shadow-offset-sm: 4px;
+      --neo-shadow-offset-lg: 12px;
+
+      --font-display: 'Space Grotesk', system-ui, sans-serif;
+      --font-mono: 'Space Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--font-display);
+    }
+
+    .portfolio-landing {
+      position: relative;
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--neo-cream) 0%, #fff5eb 50%, #f0e6ff 100%);
+      overflow: hidden;
+    }
+
+    /* === PIXELATED BACKGROUND CANVAS === */
+    .pixel-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* === NOISE OVERLAY === */
+    .noise-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    /* === MAIN CONTENT === */
+    .content {
+      position: relative;
+      z-index: 10;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    /* === HERO SECTION === */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4rem;
+      max-width: 1400px;
+      width: 100%;
+    }
+
+    @media (max-width: 1024px) {
+      .hero {
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+
+    .hero-card {
+      background: var(--neo-white);
+      border: var(--neo-border-width-thick) solid var(--neo-black);
+      box-shadow: var(--neo-shadow-offset-lg) var(--neo-shadow-offset-lg) 0 var(--neo-black);
+      padding: 3rem 4rem;
+      max-width: 700px;
+      position: relative;
+      transform: rotate(-1deg);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-card:hover {
+      transform: rotate(0deg) translateY(-4px);
+      box-shadow: 16px 16px 0 var(--neo-black);
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: 20px;
+      width: 60px;
+      height: 24px;
+      background: var(--neo-yellow);
+      border: var(--neo-border-width) solid var(--neo-black);
+      transform: rotate(-3deg);
+    }
+
+    @media (max-width: 768px) {
+      .hero-card {
+        padding: 2rem;
+        transform: rotate(0deg);
+      }
+    }
+
+    /* === TYPOGRAPHY === */
+    .greeting {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--neo-white);
+      background: var(--neo-pink);
+      border: var(--neo-border-width) solid var(--neo-black);
+      box-shadow: var(--neo-shadow-offset-sm) var(--neo-shadow-offset-sm) 0 var(--neo-black);
+      padding: 0.5rem 1.25rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.1em;
+      text-transform: lowercase;
+    }
+
+    .name {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--neo-black);
+      margin-bottom: 1.5rem;
+    }
+
+    .highlight {
+      display: block;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      background: linear-gradient(135deg, var(--neo-purple) 0%, var(--neo-pink) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+    }
+
+    .role-container {
+      margin-bottom: 2.5rem;
+    }
+
+    .role {
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      font-weight: 500;
+      color: var(--neo-black);
+      line-height: 1.6;
+    }
+
+    .role-highlight {
+      font-weight: 700;
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .role-highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      z-index: -1;
+      transform: skewX(-5deg);
+    }
+
+    .role:first-child .role-highlight::after {
+      background: var(--neo-blue);
+    }
+
+    .role:last-child .role-highlight::after {
+      background: var(--neo-purple);
+      opacity: 0.6;
+    }
+
+    /* === BUTTONS === */
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 1rem 2rem;
+      border: var(--neo-border-width) solid var(--neo-black);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--neo-black);
+      color: var(--neo-white);
+      box-shadow: var(--neo-shadow-offset-sm) var(--neo-shadow-offset-sm) 0 var(--neo-purple);
+    }
+
+    .btn-primary:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 var(--neo-purple);
+    }
+
+    .btn-primary:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 var(--neo-purple);
+    }
+
+    .btn-secondary {
+      background: var(--neo-white);
+      color: var(--neo-black);
+      box-shadow: var(--neo-shadow-offset-sm) var(--neo-shadow-offset-sm) 0 var(--neo-black);
+    }
+
+    .btn-secondary:hover {
+      background: var(--neo-yellow);
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 var(--neo-black);
+    }
+
+    .btn-secondary:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 var(--neo-black);
+    }
+
+    .btn-arrow {
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover .btn-arrow {
+      transform: translateX(4px);
+    }
+
+    /* === DECORATIVE ELEMENTS === */
+    .decorative-elements {
+      position: relative;
+      width: 300px;
+      height: 300px;
+    }
+
+    @media (max-width: 1024px) {
+      .decorative-elements {
+        display: none;
+      }
+    }
+
+    .shape {
+      position: absolute;
+      border: var(--neo-border-width-thick) solid var(--neo-black);
+    }
+
+    .shape-1 {
+      width: 120px;
+      height: 120px;
+      background: var(--neo-yellow);
+      top: 0;
+      right: 0;
+      box-shadow: var(--neo-shadow-offset) var(--neo-shadow-offset) 0 var(--neo-black);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .shape-2 {
+      width: 80px;
+      height: 80px;
+      background: var(--neo-pink);
+      bottom: 60px;
+      left: 0;
+      border-radius: 50%;
+      box-shadow: var(--neo-shadow-offset) var(--neo-shadow-offset) 0 var(--neo-black);
+      animation: float 5s ease-in-out infinite 0.5s;
+    }
+
+    .shape-3 {
+      background: var(--neo-blue);
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      width: 100px;
+      height: 86px;
+      bottom: 0;
+      right: 40px;
+      border: none;
+      filter: drop-shadow(var(--neo-shadow-offset) var(--neo-shadow-offset) 0 var(--neo-black));
+      animation: float 6s ease-in-out infinite 1s;
+    }
+
+    .pixel-art {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .pixel-row {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+
+    .pixel-row span {
+      width: 16px;
+      height: 16px;
+      background: var(--neo-purple);
+      border: 2px solid var(--neo-black);
+    }
+
+    /* === BOTTOM NAVIGATION === */
+    .bottom-nav {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.5rem;
+      background: var(--neo-white);
+      border: var(--neo-border-width) solid var(--neo-black);
+      box-shadow: var(--neo-shadow-offset-sm) var(--neo-shadow-offset-sm) 0 var(--neo-black);
+      padding: 0.75rem 1rem;
+      z-index: 100;
+    }
+
+    @media (max-width: 600px) {
+      .bottom-nav {
+        bottom: 1rem;
+        padding: 0.5rem;
+        gap: 0.25rem;
+      }
+    }
+
+    .nav-link {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--neo-black);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 2px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      background: var(--neo-yellow);
+      border-color: var(--neo-black);
+    }
+
+    @media (max-width: 600px) {
+      .nav-link {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.6rem;
+      }
+    }
+
+    /* === SCROLL INDICATOR === */
+    .scroll-indicator {
+      position: fixed;
+      bottom: 6rem;
+      right: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .scroll-indicator {
+        display: none;
+      }
+    }
+
+    .scroll-text {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--neo-black);
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .scroll-arrow {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .scroll-arrow span {
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid var(--neo-black);
+      border-bottom: 2px solid var(--neo-black);
+      transform: rotate(45deg);
+      animation: scrollBounce 1.5s ease-in-out infinite;
+    }
+
+    .scroll-arrow span:nth-child(2) {
+      animation-delay: 0.15s;
+    }
+
+    .scroll-arrow span:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    /* === ANIMATIONS === */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(5deg);
+      }
+    }
+
+    @keyframes scrollBounce {
+      0%, 100% {
+        opacity: 0.3;
+        transform: rotate(45deg) translateY(0);
+      }
+      50% {
+        opacity: 1;
+        transform: rotate(45deg) translateY(6px);
+      }
+    }
+
+    /* === RESPONSIVE ADJUSTMENTS === */
+    @media (max-width: 480px) {
+      .content {
+        padding: 1rem;
+      }
+
+      .hero-card {
+        padding: 1.5rem;
+      }
+
+      .hero-card::before {
+        width: 40px;
+        height: 18px;
+        top: -10px;
+        left: 15px;
+      }
+
+      .greeting {
+        font-size: 1rem;
+        padding: 0.4rem 1rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="portfolio-landing">
+    <canvas id="pixelCanvas" class="pixel-canvas"></canvas>
+
+    <div class="noise-overlay"></div>
+
+    <main class="content">
+      <div class="hero">
+        <div class="hero-card">
+          <span class="greeting">hello</span>
+          <h1 class="name">
+            my name is
+            <span class="highlight">Tyler Morrow</span>
+          </h1>
+          <div class="role-container">
+            <p class="role">
+              I'm a <span class="role-highlight">Software Engineer</span>
+            </p>
+            <p class="role">
+              and <span class="role-highlight">AI Solutions Architect</span>
+            </p>
+          </div>
+
+          <div class="cta-buttons">
+            <button class="btn btn-primary">
+              View My Work
+              <span class="btn-arrow">→</span>
+            </button>
+            <button class="btn btn-secondary">
+              Get In Touch
+            </button>
+          </div>
+        </div>
+
+        <div class="decorative-elements">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+          <div class="pixel-art">
+            <div class="pixel-row">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="pixel-row">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="pixel-row">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="bottom-nav">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="scroll-indicator">
+        <span class="scroll-text">Scroll</span>
+        <div class="scroll-arrow">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Pixelated Background Animation
+    class PixelBackground {
+      constructor() {
+        this.canvas = document.getElementById('pixelCanvas');
+        this.ctx = this.canvas.getContext('2d');
+        this.pixels = [];
+        this.mouseX = 0;
+        this.mouseY = 0;
+
+        this.init();
+        this.animate();
+
+        window.addEventListener('mousemove', (e) => {
+          this.mouseX = e.clientX;
+          this.mouseY = e.clientY;
+        });
+
+        window.addEventListener('resize', () => this.init());
+      }
+
+      init() {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+
+        const pixelCount = Math.floor((window.innerWidth * window.innerHeight) / 8000);
+        this.pixels = Array.from({ length: pixelCount }, () => ({
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+          size: Math.floor(Math.random() * 12) + 4,
+          opacity: Math.random() * 0.6 + 0.2,
+          speed: Math.random() * 0.5 + 0.1,
+          hue: Math.random() * 60 + 320, // Pink to purple range
+        }));
+      }
+
+      animate() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+        this.pixels.forEach((pixel, index) => {
+          // Calculate distance from mouse
+          const dx = this.mouseX - pixel.x;
+          const dy = this.mouseY - pixel.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          // Repel pixels from mouse
+          if (distance < 150) {
+            const force = (150 - distance) / 150;
+            pixel.x -= (dx / distance) * force * 3;
+            pixel.y -= (dy / distance) * force * 3;
+          }
+
+          // Gentle floating movement
+          pixel.y -= pixel.speed;
+          pixel.x += Math.sin(Date.now() * 0.001 + index) * 0.3;
+
+          // Reset pixel if it goes off screen
+          if (pixel.y < -pixel.size) {
+            pixel.y = this.canvas.height + pixel.size;
+            pixel.x = Math.random() * this.canvas.width;
+          }
+          if (pixel.x < -pixel.size) pixel.x = this.canvas.width;
+          if (pixel.x > this.canvas.width + pixel.size) pixel.x = 0;
+
+          // Draw pixelated square
+          this.ctx.fillStyle = `hsla(${pixel.hue}, 80%, 65%, ${pixel.opacity})`;
+          this.ctx.fillRect(
+            Math.floor(pixel.x / 4) * 4,
+            Math.floor(pixel.y / 4) * 4,
+            pixel.size,
+            pixel.size
+          );
+        });
+
+        requestAnimationFrame(() => this.animate());
+      }
+    }
+
+    // Initialize on load
+    document.addEventListener('DOMContentLoaded', () => {
+      new PixelBackground();
+    });
+  </script>
+</body>
+</html>
