@@ -1,5 +1,5 @@
 import { createComponent } from '@lit/react';
-import { Cre8Button as Cre8ButtonElement } from '@cre8_dev/cre8-wc/lib/components/button/button';
+import { Cre8Button as Cre8ButtonElement } from '@cre8_dev/cre8-wc';
 import React from 'react';
 
 /**

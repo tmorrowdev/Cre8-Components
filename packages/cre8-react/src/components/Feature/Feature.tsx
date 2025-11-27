@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent } from '@lit/react';
-import { Cre8Feature as Cre8FeatureElement } from '@cre8_dev/cre8-wc/lib/components/feature/feature';
+import { Cre8Feature as Cre8FeatureElement } from '@cre8_dev/cre8-wc';
 
 export const Cre8Feature = createComponent({
     react: React,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent } from '@lit/react';
-import { Cre8Alert as Cre8AlertElement } from '@cre8_dev/cre8-wc/lib/components/alert/alert';
+import { Cre8Alert as Cre8AlertElement } from '@cre8_dev/cre8-wc';
 
 /**
  * The general purpose of an alert or notification is to draw the user’s attention

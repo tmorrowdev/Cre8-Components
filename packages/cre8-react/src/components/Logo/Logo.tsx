@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent } from '@lit/react';
-import { Cre8Logo as Cre8LogoElement } from '@cre8_dev/cre8-wc/lib/components/logo/logo';
+import { Cre8Logo as Cre8LogoElement } from '@cre8_dev/cre8-wc';
 
 export const Cre8Logo = createComponent({
     react: React,

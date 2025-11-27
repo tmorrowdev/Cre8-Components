@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent } from '@lit/react';
-import { Cre8TableHeaderCell as Cre8TableHeaderCellElement } from '@cre8_dev/cre8-wc/lib/components/table-header-cell/table-header-cell';
+import { Cre8TableHeaderCell as Cre8TableHeaderCellElement } from '@cre8_dev/cre8-wc';
 
 export const Cre8TableHeaderCell = createComponent({
     react: React,

@@ -1,5 +1,5 @@
 import { createComponent, type EventName } from '@lit/react';
-import { Cre8Select as Cre8SelectElement } from '@cre8_dev/cre8-wc/lib/components/select/select';
+import { Cre8Select as Cre8SelectElement } from '@cre8_dev/cre8-wc';
 import React from 'react';
 import { type Cre8DomEvent } from '../../util/Cre8DomEvent';
 

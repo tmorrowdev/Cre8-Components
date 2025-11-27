@@ -1,5 +1,5 @@
 import { createComponent } from '@lit/react';
-import { Cre8Badge as Cre8BadgeElement } from '@cre8_dev/cre8-wc/lib/components/badge/badge';
+import { Cre8Badge as Cre8BadgeElement } from '@cre8_dev/cre8-wc';
 import React from 'react';
 
 /**

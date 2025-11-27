@@ -1,5 +1,5 @@
 import { createComponent } from '@lit/react';
-import { Cre8UtilityNavItem as Cre8UtilityNavItemElement } from '@cre8_dev/cre8-wc/lib/components/utility-nav-item/utility-nav-item';
+import { Cre8UtilityNavItem as Cre8UtilityNavItemElement } from '@cre8_dev/cre8-wc';
 import React from 'react';
 
 export const Cre8UtilityNavItem = createComponent({
