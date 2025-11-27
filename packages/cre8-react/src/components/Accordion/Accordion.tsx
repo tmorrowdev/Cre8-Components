@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent } from '@lit/react';
-import { Cre8Accordion as Cre8AccordionElement } from '@cre8_dev/cre8-wc/lib/components/accordion/accordion';
+import { Cre8Accordion as Cre8AccordionElement } from '@cre8_dev/cre8-wc';
 
 /**
  * The component is a vertically stacked list of headers that reveal or hide sections of related content on a page.

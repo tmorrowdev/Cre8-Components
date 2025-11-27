@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent } from '@lit/react';
-import { Cre8LoadingSpinner as Cre8LoadingSpinnerElement } from '@cre8_dev/cre8-wc/lib/components/loading-spinner/loading-spinner';
+import { Cre8LoadingSpinner as Cre8LoadingSpinnerElement } from '@cre8_dev/cre8-wc';
 
 /**
  * A loading spinner notifies the user that their request is being processed while the front end is retrieving data

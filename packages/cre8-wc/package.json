@@ -1,6 +1,6 @@
 {
   "name": "@cre8_dev/cre8-wc",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "cre8 Web Components is a library of presentational UI web components to be consumed by Cigna web applications.",
   "license": "BSD-3-Clause",
   "scripts": {

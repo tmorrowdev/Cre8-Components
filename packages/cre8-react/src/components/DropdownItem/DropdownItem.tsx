@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent, EventName } from '@lit/react';
-import { Cre8DropdownItem as Cre8DropdownItemElement } from '@cre8_dev/cre8-wc/lib/components/dropdown-item/dropdown-item';
+import { Cre8DropdownItem as Cre8DropdownItemElement } from '@cre8_dev/cre8-wc';
 import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 /**

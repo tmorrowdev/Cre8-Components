@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent } from '@lit/react';
-import { Cre8DangerButton as Cre8DangerButtonElement } from '@cre8_dev/cre8-wc/lib/components/danger-button/danger-button';
+import { Cre8DangerButton as Cre8DangerButtonElement } from '@cre8_dev/cre8-wc';
 
 export const Cre8DangerButton = createComponent({
     react: React,
