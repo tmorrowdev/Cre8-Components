@@ -5,7 +5,8 @@
   "type": "module",
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/*",
+      "apps/*"
     ],
     "nohoist": [
       "**/jest"
@@ -31,12 +32,14 @@
     "cre8-react:plop": "pnpm workspace @cre8/cre8-react plop",
     "cre8-react:plop:recipe": "pnpm workspace @cre8/cre8-react plop:recipe",
     "cre8-react:plop:page": "pnpm workspace @cre8/cre8-react plop:page",
+    "ai-demo:dev": "pnpm workspace @cre8/ai-elements-demo dev",
+    "ai-demo:build": "pnpm workspace @cre8/ai-elements-demo build",
+    "ai-demo:start": "pnpm workspace @cre8/ai-elements-demo start",
     "cre8-tokens": "tsc --declaration --outDir scripts/tokens/generated ./scripts/generateWesparkleTokens.ts"
   },
   "private": true,
   "dependencies": {
     "@cre8_dev/cre8-design-tokens": "1.0.3",
-    "@cre8_dev/cre8-icons": "file:cre8_dev-cre8-icons-0.11.0.tgz",
     "@lit/react": "^1.0.7",
     "agentrpc": "^0.0.16",
     "classnames": "2.3.2",

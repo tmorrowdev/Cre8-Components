@@ -1,0 +1,1598 @@
+{
+  "apps/ai-elements-demo": {
+    "root": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "name": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "tags": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "tags.npm:private": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.0": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.1": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.2": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.3": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageName": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageVersion": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.isInPackageManagerWorkspaces": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev.executor": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev.options": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev.metadata": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev.options.script": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev.metadata.scriptContent": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.dev.metadata.runCommand": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.executor": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.options": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.metadata": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.options.script": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.metadata.scriptContent": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.metadata.runCommand": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.executor": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.options": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.metadata": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.options.script": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.metadata.scriptContent": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.metadata.runCommand": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.executor": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.options": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.metadata": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.options.script": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.metadata.scriptContent": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.metadata.runCommand": [
+      "apps/ai-elements-demo/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.dependsOn": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "packages/cre8-react": {
+    "root": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "name": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "tags": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "tags.npm:public": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.0": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.1": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.2": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.3": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.4": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.5": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.6": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.7": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.8": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.9": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.10": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.11": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.12": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.13": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.description": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageName": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageVersion": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageExports": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageMain": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.isInPackageManagerWorkspaces": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.executor": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.options": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.metadata": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.options.script": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.metadata.scriptContent": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.metadata.runCommand": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.executor": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.options": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.metadata": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.options.script": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.metadata.scriptContent": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.metadata.runCommand": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lib": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lib.executor": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lib.options": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lib.metadata": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lib.options.script": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lib.metadata.scriptContent": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lib.metadata.runCommand": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lib.clear": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lib.clear.executor": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lib.clear.options": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lib.clear.metadata": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lib.clear.options.script": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lib.clear.metadata.scriptContent": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lib.clear.metadata.runCommand": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lib.build": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lib.build.executor": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lib.build.options": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lib.build.metadata": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lib.build.options.script": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lib.build.metadata.scriptContent": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lib.build.metadata.runCommand": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.executor": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.options": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.metadata": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.options.script": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.metadata.scriptContent": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.metadata.runCommand": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:watch": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:watch.executor": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:watch.options": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:watch.metadata": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:watch.options.script": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:watch.metadata.scriptContent": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:watch.metadata.runCommand": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop.executor": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop.options": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop.metadata": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop.options.script": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop.metadata.scriptContent": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop.metadata.runCommand": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:page": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:page.executor": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:page.options": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:page.metadata": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:page.options.script": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:page.metadata.scriptContent": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:page.metadata.runCommand": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:recipe": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:recipe.executor": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:recipe.options": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:recipe.metadata": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:recipe.options.script": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:recipe.metadata.scriptContent": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:recipe.metadata.runCommand": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.storybook": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.storybook.executor": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.storybook.options": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.storybook.metadata": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.storybook.options.script": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.storybook.metadata.scriptContent": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.storybook.metadata.runCommand": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build-storybook": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build-storybook.executor": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build-storybook.options": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build-storybook.metadata": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build-storybook.options.script": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build-storybook.metadata.scriptContent": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build-storybook.metadata.runCommand": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.executor": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.options": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.metadata": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.options.script": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.metadata.scriptContent": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.metadata.runCommand": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.format": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.format.executor": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.format.options": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.format.metadata": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.format.options.script": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.format.metadata.scriptContent": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.format.metadata.runCommand": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.executor": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.dependsOn": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.options": [
+      "packages/cre8-react/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.dependsOn": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "packages/cre8-wc": {
+    "root": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "name": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "tags": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "tags.npm:public": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "tags.npm:web-components": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "tags.npm:lit-element": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "tags.npm:typescript": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "tags.npm:lit": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.0": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.1": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.2": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.3": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.4": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.5": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.6": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.7": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.8": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.9": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.10": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.11": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.12": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.13": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.14": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.15": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.16": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.17": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.18": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.19": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.20": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.21": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.description": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageName": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageVersion": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageExports": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.isInPackageManagerWorkspaces": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build:watch": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build:watch.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build:watch.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build:watch.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build:watch.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build:watch.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build:watch.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build:custom-elements.json": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build:custom-elements.json.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build:custom-elements.json.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build:custom-elements.json.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build:custom-elements.json.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build:custom-elements.json.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build:custom-elements.json.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:jenkins": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:jenkins.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:jenkins.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:jenkins.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:jenkins.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:jenkins.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:jenkins.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.storybook-docs": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.storybook-docs.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.storybook-docs.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.storybook-docs.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.storybook-docs.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.storybook-docs.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.storybook-docs.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.storybook": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.storybook.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.storybook.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.storybook.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.storybook.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.storybook.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.storybook.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build-storybook": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build-storybook.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build-storybook.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build-storybook.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build-storybook.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build-storybook.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build-storybook.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.extract-tokens": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.extract-tokens.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.extract-tokens.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.extract-tokens.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.extract-tokens.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.extract-tokens.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.extract-tokens.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.convert-scss-to-ts": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.convert-scss-to-ts.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.convert-scss-to-ts.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.convert-scss-to-ts.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.convert-scss-to-ts.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.convert-scss-to-ts.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.convert-scss-to-ts.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.agentrpc": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.agentrpc.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.agentrpc.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.agentrpc.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.agentrpc.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.agentrpc.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.agentrpc.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.generate-theme": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.generate-theme.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.generate-theme.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.generate-theme.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.generate-theme.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.generate-theme.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.generate-theme.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.theme-manager": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.theme-manager.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.theme-manager.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.theme-manager.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.theme-manager.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.theme-manager.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.theme-manager.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.theme-validator": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.theme-validator.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.theme-validator.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.theme-validator.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.theme-validator.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.theme-validator.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.theme-validator.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:page": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:page.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:page.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:page.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:page.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:page.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:page.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:recipe": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:recipe.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:recipe.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:recipe.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:recipe.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:recipe.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.plop:recipe.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.format": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.format.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.format.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.format.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.format.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.format.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.format.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:publish": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:publish.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:publish.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:publish.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:publish.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:publish.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.release:publish.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.version:bump": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.version:bump.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.version:bump.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.version:bump.metadata": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.version:bump.options.script": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.version:bump.metadata.scriptContent": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.version:bump.metadata.runCommand": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.executor": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.dependsOn": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.nx-release-publish.options": [
+      "packages/cre8-wc/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.build.dependsOn": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.inputs": [
+      "nx.json",
+      "nx/target-defaults"
+    ],
+    "targets.build.parallelism": [
+      "nx.json",
+      "nx/target-defaults"
+    ]
+  },
+  "packages/cre8-react/dist": {
+    "root": [
+      "packages/cre8-react/dist/project.json",
+      "nx/core/project-json"
+    ],
+    "generatedAt": [
+      "packages/cre8-react/dist/project.json",
+      "nx/core/project-json"
+    ],
+    "hasCustomBabel": [
+      "packages/cre8-react/dist/project.json",
+      "nx/core/project-json"
+    ],
+    "hasCustomWebpack": [
+      "packages/cre8-react/dist/project.json",
+      "nx/core/project-json"
+    ],
+    "hasStaticDirs": [
+      "packages/cre8-react/dist/project.json",
+      "nx/core/project-json"
+    ],
+    "hasStorybookEslint": [
+      "packages/cre8-react/dist/project.json",
+      "nx/core/project-json"
+    ],
+    "refCount": [
+      "packages/cre8-react/dist/project.json",
+      "nx/core/project-json"
+    ],
+    "monorepo": [
+      "packages/cre8-react/dist/project.json",
+      "nx/core/project-json"
+    ],
+    "packageManager": [
+      "packages/cre8-react/dist/project.json",
+      "nx/core/project-json"
+    ],
+    "preview": [
+      "packages/cre8-react/dist/project.json",
+      "nx/core/project-json"
+    ],
+    "framework": [
+      "packages/cre8-react/dist/project.json",
+      "nx/core/project-json"
+    ],
+    "builder": [
+      "packages/cre8-react/dist/project.json",
+      "nx/core/project-json"
+    ],
+    "renderer": [
+      "packages/cre8-react/dist/project.json",
+      "nx/core/project-json"
+    ],
+    "storybookVersion": [
+      "packages/cre8-react/dist/project.json",
+      "nx/core/project-json"
+    ],
+    "storybookVersionSpecifier": [
+      "packages/cre8-react/dist/project.json",
+      "nx/core/project-json"
+    ],
+    "language": [
+      "packages/cre8-react/dist/project.json",
+      "nx/core/project-json"
+    ],
+    "storybookPackages": [
+      "packages/cre8-react/dist/project.json",
+      "nx/core/project-json"
+    ],
+    "addons": [
+      "packages/cre8-react/dist/project.json",
+      "nx/core/project-json"
+    ]
+  }
+}

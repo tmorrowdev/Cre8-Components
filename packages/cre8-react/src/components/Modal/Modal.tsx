@@ -1,6 +1,7 @@
 import React from 'react';
 import { EventName, createComponent } from '@lit/react';
-import { Cre8Modal as Cre8ModalElement, type CloseModalEvent } from '@cre8_dev/cre8-wc/lib/components/modal/modal';
+import { Cre8Modal as Cre8ModalElement } from '@cre8_dev/cre8-wc';
+import { CloseModalEvent } from '@cre8_dev/cre8-wc/lib/components/modal/modal';
 
 export const Cre8Modal = createComponent({
     react: React,
@@ -10,6 +11,6 @@ export const Cre8Modal = createComponent({
          /** Event emitted when the close button is clicked. Use this
           * when managing `isActive`'s state.
          */
-        onClose: 'close-modal' as EventName<CloseModalEvent>,
+        onCloseModal: 'close-modal' as EventName<CloseModalEvent>,
     },
 });

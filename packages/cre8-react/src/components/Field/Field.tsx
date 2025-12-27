@@ -1,6 +1,6 @@
 import React from 'react';
 import { EventName, createComponent } from '@lit/react';
-import { Cre8Field as Cre8FieldElement } from '@cre8_dev/cre8-wc/lib/components/field/field';
+import { Cre8Field as Cre8FieldElement } from '@cre8_dev/cre8-wc';
 import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 /**

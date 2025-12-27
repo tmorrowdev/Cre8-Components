@@ -1,5 +1,5 @@
 import { createComponent } from '@lit/react';
-import { Cre8IconLegacy as Cre8IconLegacyElement } from '@cre8_dev/cre8-wc/lib/components/icon/icon';
+import { Cre8Icon as Cre8IconElement } from '@cre8_dev/cre8-wc';
 import React from 'react';
 
 /**
@@ -34,8 +34,8 @@ import React from 'react';
  * of the `cre8_dev/cre8-icons` documentation for more information.
  */
 
-export const Cre8IconLegacy = createComponent({
+export const Cre8Icon = createComponent({
     react: React,
-    tagName: 'Cre8-icon-legacy',
-    elementClass: Cre8IconLegacyElement,
+    tagName: 'Cre8Icon',
+    elementClass: Cre8IconElement,
 });

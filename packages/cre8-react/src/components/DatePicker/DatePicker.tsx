@@ -1,6 +1,6 @@
 import React from 'react';
 import { EventName, createComponent } from '@lit/react';
-import { Cre8DatePicker as Cre8DatePickerElement } from '@cre8_dev/cre8-wc/lib/components/date-picker/date-picker';
+import { Cre8DatePicker as Cre8DatePickerElement } from '@cre8_dev/cre8-wc';
 import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 /**

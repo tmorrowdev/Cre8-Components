@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent, EventName } from '@lit/react';
-import { Cre8PercentBar as Cre8PercentBarElement } from '@cre8_dev/cre8-wc/lib/components/percent-bar/percent-bar';
+import { Cre8PercentBar as Cre8PercentBarElement } from '@cre8_dev/cre8-wc';
 import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 

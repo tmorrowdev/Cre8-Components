@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent } from '@lit/react';
-import { Cre8Divider as Cre8DividerElement } from '@cre8_dev/cre8-wc/lib/components/divider/divider';
+import { Cre8Divider as Cre8DividerElement } from '@cre8_dev/cre8-wc';
 
 /**
  * The divider component is a separator between sections of content or groups of items.

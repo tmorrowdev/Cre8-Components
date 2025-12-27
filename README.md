@@ -36,6 +36,27 @@ import { cre8-component-name } from "@cre8/cre8-wc";
 
 
 
+## Demo Applications
+
+### AI Elements Demo
+
+A Next.js demonstration app showcasing how [AI Elements](https://www.npmjs.com/package/ai-elements) can work alongside cre8-react components. The demo includes:
+
+- AI chat interface using the Vercel AI SDK
+- Integration with AI Elements components
+- Examples of using cre8-react alongside modern AI components
+
+**Quick Start:**
+```bash
+# From the repository root
+cd apps/ai-elements-demo
+cp .env.example .env.local
+# Add your OpenAI API key or AI Gateway key to .env.local
+pnpm ai-demo:dev
+```
+
+See the [AI Elements Demo README](apps/ai-elements-demo/README.md) for detailed documentation.
+
 ## Storybook
 
 ### How to Run Storybook:
