@@ -1,0 +1,26 @@
+Failed to start or connect to the Nx Daemon process.
+
+Messages from the log:
+node:internal/modules/cjs/loader:1393
+  throw err;
+  ^
+
+Error: Cannot find module '/Users/tylersmbp/Projects/cre8-web-components/node_modules/.pnpm/nx@22.0.2/node_modules/nx/src/daemon/server/start.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1390:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1032:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1037:22)
+    at Module._load (node:internal/modules/cjs/loader:1199:37)
+    at c._load (node:electron/js2c/node_init:2:17993)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:186:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.20.0
+
+
+
+More information: /Users/tylersmbp/Projects/cre8-web-components/.nx/workspace-data/d/daemon.log

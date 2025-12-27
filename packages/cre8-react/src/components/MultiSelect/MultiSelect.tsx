@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent, EventName } from '@lit/react';
-import { Cre8MultiSelect as Cre8MultiSelectElement } from '@cre8_dev/cre8-wc/lib/components/multi-select/multi-select';
+import { Cre8MultiSelect as Cre8MultiSelectElement } from '@cre8_dev/cre8-wc';
 import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 /**

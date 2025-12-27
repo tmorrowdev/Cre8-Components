@@ -1,0 +1,34 @@
+{
+  "name": "cre8-components",
+  "metadata": {
+    "description": "Claude Code plugins for CRE8 Web Components - a design system with 85+ UI components built with Lit",
+    "version": "1.0.0",
+    "pluginRoot": "./cre8-wc-plugin"
+  },
+  "owner": {
+    "name": "CRE8 Dev Team",
+    "url": "https://github.com/tmorrowdev/Cre8-Components"
+  },
+  "plugins": [
+    {
+      "name": "cre8-wc",
+      "source": "./cre8-wc-plugin",
+      "description": "CRE8 Web Components documentation and guidance. Provides component API docs, installation guides, and usage examples for @cre8_dev/cre8-wc.",
+      "version": "1.0.0",
+      "author": {
+        "name": "CRE8 Dev Team"
+      },
+      "homepage": "https://github.com/tmorrowdev/Cre8-Components",
+      "repository": "https://github.com/tmorrowdev/Cre8-Components",
+      "license": "BSD-3-Clause",
+      "keywords": [
+        "web-components",
+        "lit",
+        "design-system",
+        "ui-components",
+        "cre8"
+      ],
+      "category": "development"
+    }
+  ]
+}

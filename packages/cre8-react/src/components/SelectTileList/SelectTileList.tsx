@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent } from '@lit/react';
-import { Cre8SelectTileList as Cre8SelectTileListElement } from '@cre8_dev/cre8-wc/lib/components/select-tile-list/select-tile-list';
+import { Cre8SelectTileList as Cre8SelectTileListElement } from '@cre8_dev/cre8-wc';
 
 export const Cre8SelectTileList = createComponent({
     react: React,

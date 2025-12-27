@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent } from '@lit/react';
-import { Cre8ProgressStepsItem as Cre8ProgressStepsItemElement } from '@cre8_dev/cre8-wc/lib/components/progress-steps-item/progress-steps-item';
+import { Cre8ProgressStepsItem as Cre8ProgressStepsItemElement } from '@cre8_dev/cre8-wc';
 
 /**
  * The Progress Steps Item component is used to display a single step in a multi-step process.

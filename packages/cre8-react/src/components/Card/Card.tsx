@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent } from '@lit/react';
-import { Cre8Card as Cre8CardElement } from '@cre8_dev/cre8-wc/lib/components/card/card';
+import { Cre8Card as Cre8CardElement } from '@cre8_dev/cre8-wc';
 
 /** The card component acts a general container element for various content.
 *

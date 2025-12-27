@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent, EventName } from '@lit/react';
-import { Cre8SelectTile as Cre8SelectTileElement } from '@cre8_dev/cre8-wc/lib/components/select-tile/select-tile';
+import { Cre8SelectTile as Cre8SelectTileElement } from '@cre8_dev/cre8-wc';
 import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 export const Cre8SelectTile = createComponent({
