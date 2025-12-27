@@ -12,35 +12,30 @@ A Claude Code plugin that provides documentation and guidance for using the **@c
 
 ## Installation
 
-### Option 1: Install from GitHub
+### Option 1: Install from Marketplace (Recommended)
 
 ```bash
-claude plugin install github:tmorrowdev/Cre8-Components/cre8-wc-plugin
+# Add the CRE8 marketplace
+/plugin marketplace add tmorrowdev/Cre8-Components
+
+# Install the plugin
+/plugin install cre8-wc@cre8-components
 ```
 
-### Option 2: Install from Local Directory
+### Option 2: Direct Install from GitHub
+
+```bash
+/plugin install github:tmorrowdev/Cre8-Components/cre8-wc-plugin
+```
+
+### Option 3: Install from Local Directory
 
 ```bash
 # Clone the repository
 git clone https://github.com/tmorrowdev/Cre8-Components.git
 
 # Install the plugin
-claude plugin install ./Cre8-Components/cre8-wc-plugin
-```
-
-### Option 3: Add to Plugin Marketplace
-
-Add this to your marketplace configuration:
-
-```json
-{
-  "plugins": [
-    {
-      "name": "cre8-wc",
-      "url": "github:tmorrowdev/Cre8-Components/cre8-wc-plugin"
-    }
-  ]
-}
+/plugin install ./Cre8-Components/cre8-wc-plugin
 ```
 
 ## Usage
