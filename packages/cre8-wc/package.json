@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "@a11y/focus-trap": "^1.0.5",
-    "@cre8_dev/cre8-design-tokens": "1.0.1-beta.2",
+    "@cre8_dev/cre8-design-tokens": "1.0.3",
     "agentrpc": "^0.0.16",
     "chart.js": "^4.4.9",
     "classnames": "2.3.2",
@@ -81,6 +81,7 @@
     "@storybook/addon-docs": "9.1.0-alpha.1",
     "@storybook/addon-essentials": "9.0.0-alpha.12",
     "@storybook/addon-themes": "9.1.0-alpha.1",
+    "@storybook/blocks": "9.0.0-alpha.17",
     "@storybook/builder-vite": "9.0.2",
     "@storybook/react": "^9.0.2",
     "@storybook/web-components": "^9.0.2",

@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent } from '@lit/react';
-import { Cre8ProgressSteps as Cre8ProgressStepsElement } from '@cre8_dev/cre8-wc';
+import { Cre8ProgressMeter as Cre8ProgressMeterElement } from '@cre8_dev/cre8-wc';
 
 /**
  * The Progress Steps component is used to display where a user is in a multistep process.
@@ -23,9 +23,9 @@ import { Cre8ProgressSteps as Cre8ProgressStepsElement } from '@cre8_dev/cre8-wc
  *
  * @slot - The Progress Steps Item components that represent the steps in the multistep process.
  */
-export const Cre8ProgressSteps = createComponent({
+export const Cre8ProgressMeter = createComponent({
     react: React,
-    tagName: 'Cre8-progress-steps',
-    elementClass: Cre8ProgressStepsElement,
+    tagName: 'Cre8ProgressMeter',
+    elementClass: Cre8ProgressMeterElement,
 
 });

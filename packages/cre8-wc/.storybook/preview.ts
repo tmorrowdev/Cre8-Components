@@ -1,16 +1,15 @@
 import { setCustomElementsManifest } from '@storybook/web-components';
 import type { Preview } from '@storybook/web-components';
 
-import './css/styleguide-only.css';
 
 // import starbucksStyles from '../design-tokens/starbucks/tokens.module';
 // import target from '../design-tokens/target/tokens.module.css';
-import * as cre8Legacy from '../design-tokens/brands/cre8-legacy/css/tokens_cre8-legacy.module.js';
+import cre8Legacy from '../design-tokens/brands/cre8-legacy/css/tokens_cre8-legacy.module.js';
 import consumer from '../design-tokens/brands/consumer/css/tokens_consumer.module.js';
 import cre8 from '../design-tokens/brands/cre8/css/tokens_cre8.module.js';
 import blue from '../design-tokens/brands/blue/css/tokens_blue.module.js';
 import marketing from '../design-tokens/brands/marketing/css/tokens_marketing.module.js';
-import black from '../design-tokens/brands/black/css/tokens_black.module.js';
+import black from '../../../node_modules/@cre8_dev/cre8-design-tokens/lib/web/brands/black/css/tokens_black.js';
 import femmecubator from '../design-tokens/brands/femmecubator/css/tokens_femmecubator2.module.js';
 import prisma from '../design-tokens/brands/prisma/tokens_prisma.module.js';
 import starbucks from '../design-tokens/brands/starbucks/tokens_starbucks.module.js';

@@ -1,1 +1,1 @@
-export * from './ProgressSteps';
+export * from './index';

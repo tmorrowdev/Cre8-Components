@@ -1,5 +1,9 @@
+@import '@cre8_dev/cre8-design-tokens/lib/web/mixins/typography-usage.scss';
 
-
+// Size function - multiplies value by base unit (0.5rem)
+@function size($multiplier) {
+  @return calc(#{$multiplier} * var(--size-base-unit));
+}
 
 // Global CSS custom properties that aren't part of a themes dcre8gn tokens
 :root {

@@ -34,11 +34,11 @@
   },
   "dependencies": {
     "@cre8_dev/cre8-design-tokens": "latest",
-    "@cre8_dev/cre8-wc": "1.0.5",
-    "@lit/react": "^1.0.7",
+    "@cre8_dev/cre8-wc": "1.0.13",
+    "@lit/react": "^1.0.8",
     "classnames": "2.3.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "browser": "./lib/index.js",
   "entry": "lib/index.js",
@@ -62,8 +62,6 @@
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.14.6",
-    "@babel/plugin-proposal-class-properties": "^7.14.5",
-    "@babel/plugin-proposal-decorators": "^7.14.5",
     "@babel/plugin-transform-typescript": "^7.14.6",
     "@babel/preset-env": "^7.22.5",
     "@babel/preset-react": "7.14.5",
@@ -84,6 +82,7 @@
     "@types/react-dom": "18.2.6",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.0",
     "babel-loader": "^8.2.2",
     "babel-plugin-transform-rename-import": "^2.3.0",
     "css-loader": "6.7.4",
@@ -97,7 +96,6 @@
     "style-loader": "^3.3.3",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2",
-    "vite": "^5.0.0",
-    "@vitejs/plugin-react": "^4.0.0"
+    "vite": "^5.0.0"
   }
 }
