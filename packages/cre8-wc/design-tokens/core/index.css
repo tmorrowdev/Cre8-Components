@@ -1,0 +1,16 @@
+/**
+ * CRE8 Design System - Core Token Entry Point
+ * ============================================
+ *
+ * This file imports all core token files in the correct order.
+ * Import this file to get the complete base token set with typography.
+ *
+ * Usage:
+ *   @import '@cre8_dev/cre8-design-tokens/core/index.css';
+ *
+ * Or for theme-specific usage:
+ *   @import '@cre8_dev/cre8-design-tokens/brands/femmecubator/css/tokens_femmecubator.css';
+ */
+
+@import './tokens_base.css';
+@import './tokens_typography.css';
