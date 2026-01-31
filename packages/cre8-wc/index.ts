@@ -1,5 +1,5 @@
-export { Cre8Element, type DetailObj, type Cre8DispatchProps, type Cre8Event } from './components/cre8-element.js';
-export { Cre8FormElement } from './components/cre8-form-element.js';
+export { type Cre8Element} from './components/cre8-element.js';
+export { type Cre8FormElement } from './components/cre8-form-element.js';
 export { Cre8Accordion } from './components/accordion/accordion.js';
 export { Cre8AccordionItem } from './components/accordion-item/accordion-item.js';
 export { Cre8UtilityNav } from './components/utility-nav/utility-nav.js';

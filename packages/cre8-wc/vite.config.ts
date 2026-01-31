@@ -6,9 +6,10 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// Get base components
+// Get base components - these are .ts files directly in ./components/
 const baseComponents = glob.sync('./components/*.ts').reduce((acc, baseComponentPath) => {
-  const name = baseComponentPath.replace('./components/', '').replace('.ts', '');
+  // Extract just the filename without path or extension
+  const name = path.basename(baseComponentPath, '.ts');
   acc[name] = baseComponentPath;
   return acc;
 }, {} as Record<string, string>);
@@ -17,13 +18,22 @@ const baseComponents = glob.sync('./components/*.ts').reduce((acc, baseComponent
 // To allow extending off a web component it must be listed below
 baseComponents['cre8-field'] = './components/field/field.ts';
 
+// List of base component names for checking extends
+const baseComponentNames = Object.keys(baseComponents).map((baseComponent) => (
+  // convert dash-case to UpperCamelCase
+  baseComponent
+    .split('-')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join('')
+));
+
 // Get all component files
 const components = glob.sync('./components/*/*.ts').reduce((acc, componentPath) => {
   // Exclude stories files
   if (componentPath.includes('.stories.')) {
     return acc;
   }
-  
+
   // Exclude icon because there are some specific things that need to happen based on the URL inclusion of `icon.js`
   // in order for routing to work correctly
   if (componentPath.match(/icon\.ts$/)) {
@@ -32,20 +42,13 @@ const components = glob.sync('./components/*/*.ts').reduce((acc, componentPath) 
 
   // Excludes any components that are not extending the base components.
   const contents = fs.readFileSync(componentPath, 'utf-8');
-  const baseComponentNames = Object.keys(baseComponents).map((baseComponent) => (
-    // convert dash-case to UpperCamelCase
-    baseComponent
-      .split('-')
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join('')
-  ));
-  
-  const extendsBaseComponent = baseComponentNames.some((baseComponentName) => 
+
+  const extendsBaseComponent = baseComponentNames.some((baseComponentName) =>
     contents.includes(`extends ${baseComponentName}`)
   );
-  
+
   if (extendsBaseComponent) {
-    const name = componentPath.replace('./components/', '').replace('.ts', '').split('/').pop()!;
+    const name = path.basename(componentPath, '.ts');
     acc[name] = componentPath;
   } else {
     console.warn(`${componentPath} doesn't extend any base components: ${baseComponentNames.join(', ')}`);
@@ -70,9 +73,13 @@ export default defineConfig({
     outDir: 'lib',
     rollupOptions: {
       output: {
+
         entryFileNames: (chunkInfo) => {
-          if (chunkInfo.name === 'index') {
-            return 'index.js';
+          if (Object.keys(baseComponents).includes(chunkInfo.name)) {
+            return `components/${chunkInfo.name}.js`;
+          }
+          else if (chunkInfo.name === 'index') {
+            return "index.js"
           }
           return `components/${chunkInfo.name}/${chunkInfo.name}.js`;
         },
