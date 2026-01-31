@@ -10,7 +10,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin: size(-1.5);
+  margin: calc(8px * -1.5);
 }
 
 /**
@@ -25,7 +25,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  * 1) Spacing between grid items is smaller than default
  */
 .cre8-c-grid--gap-sm {
-  margin: size(-0.5);
+  margin: calc(8px * -0.5);
 }
 
 /**
@@ -33,7 +33,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  * 1) Spacing between grid items is larger than default
  */
 .cre8-c-grid--gap-lg {
-  margin: size(-2);
+  margin: calc(8px * -2);
 }
 
 /**
@@ -163,7 +163,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  */
 ::slotted(cre8-grid-item) {
   display: block;
-  padding: size(1.5);
+  padding: calc(8px * 1.5);
 
   /**
   * Slotted grid item within grid with no gap between items
@@ -176,14 +176,14 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   * Slotted grid item within grid with small gap between items
   */
   .cre8-c-grid--gap-sm > & {
-    padding: size(0.5);
+    padding: calc(8px * 0.5);
   }
 
   /**
   * Slotted grid item within grid with large gap between items
   */
   .cre8-c-grid--gap-lg > & {
-    padding: size(2);
+    padding: calc(8px * 2);
   }
 
   /**

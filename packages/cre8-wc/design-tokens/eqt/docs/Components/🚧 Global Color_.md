@@ -4239,7 +4239,7 @@
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
     - **Title** (Type: TEXT, ID: 5433:13494)
-      - Text Content: "Leaf Green"
+      - Text Content: "cre8 Green"
       - TextStyle Ref: [text_h88kxq8](../GlobalStyles/Typography.md#text-h88kxq8) (See Typography Styles)
       - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
       - Layout Style Ref: [layout_htca7n3](../GlobalStyles/LayoutAndSpacing.md#layout-htca7n3) (See Layout Styles)
@@ -6226,7 +6226,7 @@
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
     - **Title** (Type: TEXT, ID: 12447:16171)
-      - Text Content: "Leaf Green"
+      - Text Content: "cre8 Green"
       - TextStyle Ref: [text_h88kxq8](../GlobalStyles/Typography.md#text-h88kxq8) (See Typography Styles)
       - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
       - Layout Style Ref: [layout_htca7n3](../GlobalStyles/LayoutAndSpacing.md#layout-htca7n3) (See Layout Styles)

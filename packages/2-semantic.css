@@ -1,0 +1,80 @@
+/**
+ * Do not edit directly - auto-generated from Figma tokens
+ * Tier 2: Semantic - Purpose-based tokens (references Tier 1)
+ */
+
+:root {
+  --cre8-bg-active: var(--cre8-neutral-100);
+  --cre8-bg-default: var(--cre8-neutral-white);
+  --cre8-bg-default-hover: var(--cre8-cyan-05);
+  --cre8-bg-default-active: var(--cre8-cyan-10);
+  --cre8-bg-subtle: var(--cre8-champagne-05);
+  --cre8-bg-moderate: var(--cre8-neutral-60);
+  --cre8-bg-inverse-moderate: var(--cre8-neutral-40);
+  --cre8-bg-strong: var(--cre8-neutral-100);
+  --cre8-bg-disabled: var(--cre8-neutral-10);
+  --cre8-bg-brand: var(--cre8-cyan-05);
+  --cre8-bg-brand-active: var(--cre8-cyan-20);
+  --cre8-bg-brand-hover: var(--cre8-cyan-10);
+  --cre8-bg-brand-strong: var(--cre8-cyan-70);
+  --cre8-bg-brand-strong-hover: var(--cre8-cyan-80);
+  --cre8-bg-brand-strong-active: var(--cre8-cyan-90);
+  --cre8-bg-brand-xstrong: var(--cre8-cyan-80);
+  --cre8-bg-brand-xstrong-hover: var(--cre8-cyan-90);
+  --cre8-bg-brand-xstrong-active: var(--cre8-cyan-90);
+  --cre8-bg-success: var(--cre8-green-60);
+  --cre8-bg-success-strong: var(--cre8-green-100);
+  --cre8-bg-error: var(--cre8-coral-05);
+  --cre8-bg-error-strong: var(--cre8-coral-60);
+  --cre8-bg-warning: var(--cre8-yellow-05);
+  --cre8-bg-warning-strong: var(--cre8-yellow-30);
+  --cre8-bg-info: var(--cre8-sky-blue-20);
+  --cre8-bg-info-strong: var(--cre8-sky-blue-60);
+  --cre8-bg-attention: var(--cre8-grape-30);
+  --cre8-bg-attention-strong: var(--cre8-grape-80);
+  --cre8-bg-opacity-transparent: var(--cre8-opacity-transparent);
+  --cre8-bg-opacity-default: var(--cre8-opacity-neutral-50);
+  --cre8-bg-inverse-active: var(--cre8-neutral-white);
+  --cre8-content-default: var(--cre8-neutral-100);
+  --cre8-content-subtle: var(--cre8-neutral-70);
+  --cre8-content-disabled: var(--cre8-neutral-50);
+  --cre8-content-knockout: var(--cre8-neutral-white);
+  --cre8-content-brand: var(--cre8-cyan-70);
+  --cre8-content-brand-strong: var(--cre8-cyan-70);
+  --cre8-content-brand-knockout: var(--cre8-grape-05);
+  --cre8-content-success: var(--cre8-green-60);
+  --cre8-content-success-icon: var(--cre8-green-60);
+  --cre8-content-error: var(--cre8-coral-60);
+  --cre8-content-error-icon: var(--cre8-coral-60);
+  --cre8-content-warning-icon: var(--cre8-neutral-100);
+  --cre8-content-info-icon: var(--cre8-sky-blue-60);
+  --cre8-content-attention-icon: var(--cre8-cyan-60);
+  --cre8-content-link: var(--cre8-cyan-70);
+  --cre8-content-inverse-link: var(--cre8-grape-20);
+  --cre8-content-link-hover: var(--cre8-cyan-80);
+  --cre8-content-inverse-link-hover: var(--cre8-grape-30);
+  --cre8-content-link-focus: var(--cre8-neutral-white);
+  --cre8-content-inverse-link-focus: var(--cre8-neutral-100);
+  --cre8-content-link-visited: var(--cre8-purple-100);
+  --cre8-content-inverse-link-visited: var(--cre8-purple-20);
+  --cre8-content-link-disabled: var(--cre8-neutral-50);
+  --cre8-content-inverse-link-disabled: var(--cre8-neutral-10);
+  --cre8-content-link-active: var(--cre8-cyan-90);
+  --cre8-content-inverse-link-active: var(--cre8-grape-40);
+  --cre8-border-default: var(--cre8-neutral-20);
+  --cre8-border-strong: var(--cre8-neutral-70);
+  --cre8-border-knockout: var(--cre8-neutral-white);
+  --cre8-border-disabled: var(--cre8-neutral-40);
+  --cre8-border-brand: var(--cre8-cyan-70);
+  --cre8-border-brand-subtle: var(--cre8-cyan-40);
+  --cre8-border-brand-strong: var(--cre8-cyan-70);
+  --cre8-border-success: var(--cre8-green-90);
+  --cre8-border-error: var(--cre8-coral-50);
+  --cre8-border-warning: var(--cre8-yellow-30);
+  --cre8-border-info: var(--cre8-sky-blue-60);
+  --cre8-border-attention: var(--cre8-grape-70);
+  --cre8-border-transparent: var(--cre8-opacity-transparent);
+  --cre8-border-active-outline: var(--cre8-cyan-80);
+  --cre8-border-inverse-active-outline: var(--cre8-grape-20);
+  --cre8-link-bg-active: #333333;
+}

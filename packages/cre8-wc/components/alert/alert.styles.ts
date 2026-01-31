@@ -63,7 +63,7 @@ dialog {
 
 .cre8-c-alert--standalone {
   border-radius: var(--cre8-border-radius-default);
-  width: size(45);
+  width: calc(8px * 45);
 
   .cre8-c-alert__container {
     display: flex;

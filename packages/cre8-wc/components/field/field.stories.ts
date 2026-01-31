@@ -1,6 +1,5 @@
 import {html} from 'lit';
 import {spread} from '../../directives/spread';
-import {withActions} from 'storybook/internal/preview-api';
 import './field';
 
 export default {
@@ -13,7 +12,6 @@ export default {
       handles: ['input', 'change', 'blur'],
     },
   },
-  decorators: [withActions],
   argTypes: {
     ariaDescribedBy: {
       control: 'text',

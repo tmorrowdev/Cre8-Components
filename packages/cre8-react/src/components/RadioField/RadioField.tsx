@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent } from '@lit/react';
-import { Cre8RadioField as Cre8RadioFieldElement } from '@cre8_dev/cre8-wc/lib/components/radio-field/radio-field';
+import { Cre8RadioField as Cre8RadioFieldElement } from '@tmorrow/cre8-wc/lib/components/radio-field/radio-field';
 
 /**
  * Radio Field is the parent container for `radio-field-item`.

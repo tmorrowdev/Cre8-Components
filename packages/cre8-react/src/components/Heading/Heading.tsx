@@ -1,5 +1,5 @@
 import { createComponent } from '@lit/react';
-import { Cre8Heading as Cre8HeadingElement } from '@cre8_dev/cre8-wc/lib/components/heading/heading';
+import { Cre8Heading as Cre8HeadingElement } from '@tmorrow/cre8-wc/lib/components/heading/heading';
 import React from 'react';
 
 /**

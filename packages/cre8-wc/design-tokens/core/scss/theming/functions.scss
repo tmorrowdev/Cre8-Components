@@ -1,4 +1,0 @@
-
-@function size($value) {
-  @return calc(var(--size-base-unit) * #{$value});
-}

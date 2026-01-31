@@ -10,6 +10,7 @@
   display: inline-flex;
   position: relative;
 }
+
 .cre8-c-dropdown {
   border: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
   box-shadow: var(--cre8-shadow-default);
@@ -30,12 +31,12 @@
 
 .cre8-c-dropdown--icon-button {
   color: var(--cre8-color-button-secondary-content);
-  margin-top: size(1);
+  margin-top: calc(8px * 1);
 }
 
 .cre8-c-dropdown--icon-link {
   color: var(--cre8-color-content-link);
-  margin-top: size(1);
+  margin-top: calc(8px * 1);
 }
 
 .cre8-c-dropdown--toggle {
@@ -57,7 +58,7 @@
 
 .cre8-c-dropdown--link {
   color: var(--cre8-color-content-link);
-  background-color:  var(--cre8-color-bg-transparent);
+  background-color: var(--cre8-color-bg-transparent);
   text-decoration: underline;
 }
 

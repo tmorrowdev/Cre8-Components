@@ -15,8 +15,8 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component.scss
   display: flex;
   position: relative;
   align-items: center;
-  margin-bottom: size(1);
-  min-height: size(3);
+  margin-bottom: calc(8px * 1);
+  min-height: calc(8px * 3);
 
   /** 
   * 1) Form field that is compose of a radio input, label, and optional fieldnote.
@@ -35,8 +35,8 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component.scss
   position: absolute;
   top: 0;
   left: 0;
-  height: size(3);
-  min-width: size(3);
+  height: calc(8px * 3);
+  min-width: calc(8px * 3);
   margin: 0;
   z-index: 1;
 
@@ -53,8 +53,8 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component.scss
   position: absolute;
   top: 0;
   left: 0;
-  height: size(3);
-  width: size(3);
+  height: calc(8px * 3);
+  width: calc(8px * 3);
   cursor: pointer;
   align-items: center;
   justify-content: center;
@@ -100,8 +100,8 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component.scss
   display: none;
 
   cursor: pointer;
-  height: size(1.5);
-  width: size(1.5);
+  height: calc(8px * 1.5);
+  width: calc(8px * 1.5);
   background: var(--cre8-color-content-brand);
   border-radius: var(--cre8-border-radius-round);
 
@@ -131,7 +131,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component.scss
  * Radio field item input 
  */
 .cre8-c-radio-field-item__label {
-  margin-left: size(4);
+  margin-left: calc(8px * 4);
   @include cre8-typography-label-small;
 }
 `;

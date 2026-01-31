@@ -6,7 +6,7 @@ const styles = css`@import 'design-tokens/core/scss/theming/component';
  */
 .c-icon-description {
   display: flex;
-  gap: size(1);
+  gap: calc(8px * 1);
 }
 
 .c-icon-description--sm {
@@ -35,12 +35,12 @@ const styles = css`@import 'design-tokens/core/scss/theming/component';
 }
 
 ::slotted(cre8-icon-legacy) {
-  --cre8-icon-height: #{size(6)};
-  --cre8-icon-width: #{size(6)};
+  --cre8-icon-height: #{calc(8px * 6)};
+  --cre8-icon-width: #{calc(8px * 6)};
 
   .c-icon-description--sm & {
-    --cre8-icon-height: #{size(2)};
-    --cre8-icon-width: #{size(2)};
+    --cre8-icon-height: #{calc(8px * 2)};
+    --cre8-icon-width: #{calc(8px * 2)};
   }
 }
 `;

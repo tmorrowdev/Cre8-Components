@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent } from '@lit/react';
-import { Cre8Breadcrumbs as Cre8BreadcrumbsElement } from '@cre8_dev/cre8-wc/lib/components/breadcrumbs/breadcrumbs';
+import { Cre8Breadcrumbs as Cre8BreadcrumbsElement } from '@tmorrow/cre8-wc/lib/components/breadcrumbs/breadcrumbs';
 
 /**
  * The breadcrumbs component is a secondary navigation pattern that helps a user understand where the user is located.

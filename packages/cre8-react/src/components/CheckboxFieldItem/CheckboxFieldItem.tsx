@@ -1,6 +1,6 @@
 import React from 'react';
 import { EventName, createComponent } from '@lit/react';
-import { Cre8CheckboxFieldItem as Cre8CheckboxFieldItemElement } from '@cre8_dev/cre8-wc/lib/components/checkbox-field-item/checkbox-field-item';
+import { Cre8CheckboxFieldItem as Cre8CheckboxFieldItemElement } from '@tmorrow/cre8-wc/lib/components/checkbox-field-item/checkbox-field-item';
 import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 /**

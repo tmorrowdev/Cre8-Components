@@ -8,7 +8,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  * 1) A major section of a page (<section> tag) with a title and optional description.
  */
 .cre8-c-section {
-  margin-bottom: size(4);
+  margin-bottom: calc(8px * 4);
   display: block;
 }
 
@@ -25,9 +25,9 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 * Section body
 */
 .cre8-c-section__body {
-  padding-top: size(2);
+  padding-top: calc(8px * 2);
   @media all and (min-width:$cre8-breakpoint-lg) {
-    padding-top: size(4);
+    padding-top: calc(8px * 4);
   }
 }
 `;

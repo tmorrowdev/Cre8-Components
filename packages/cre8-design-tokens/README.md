@@ -1,9 +1,11 @@
 # cre8-design-tokens
+
 A repository for storing and managing design tokens for the [Enterprise Design System](https://confluence.sys.cre8.com/display/WIPMDL).
 
 > [View the Storybook for this project](https://docs.cre8.dev/cre8-design-tokens/)
 
 ## Dependencies
+
 - yarn (any version >= 1.0 will use the [locally installed version](https://classic.yarnpkg.com/en/docs/yarnrc#toc-yarn-path))
 - [Style Dictionary](https://amzn.github.io/style-dictionary/#/) 3.0.0+
 - Node >= 14.18.1
@@ -15,6 +17,7 @@ Install `design-tokens` in your project:
 ```
 yarn add @tmorrow/cre8-design-tokens
 ```
+
 > Using the [@tmorrow/ui-components](https://github.com/tmorrowdev/ui-components)? The design-tokens package is already installed in that library! Please follow the configuration instructions within the uic.
 
 ### Cre8 Developers
@@ -49,6 +52,7 @@ If your project is using Sass variables:
 // Replace `brand-name` with the brand name your project needs
 `@import '@tmorrow/cre8-design-tokens/lib/web/brands/brand-name/tokens-brand.scss';`
 ```
+
 **Note**: Refrain from importing or using SASS variables located in the `@tmorrow/cre8-design-tokens/lib/web/brands/brand-name/css/_base.css` files found in each brand theme. Any SASS variable starting with `$cre8-base-` is an internal artifact and subject to change without notice. In future versions of this library, these files will not be importable.
 
 If your project is using CSS Custom Properties:
@@ -57,6 +61,7 @@ If your project is using CSS Custom Properties:
 // Replace `brand-name` with the brand name your project needs
 @import '@tmorrow/cre8-design-tokens/lib/web/brands/brand-name/css/tokens-brand.css';
 ```
+
 **Note**: Need to support dynamic theming? Use the CSS Custom Properties option!
 
 **Warning**: Internal variables are included in some scopes. These variables start with `--cre8-base-`. Please refrain from using these variables as they are subject to change (in both value and availability) without notice.
@@ -85,19 +90,20 @@ If your project is using CSS Custom Properties:
 
 The name of the game is to keep things as locked down as possible, until there is a need for it. We encourage brand designers and developers to work together to take advantage of custom css overrides in order to allow for these brand level use cases.
 
-Again, by utilizing these accent tokens, you are departing from the dynamic theming of your application across brands. Accept these tokens at your own risk as these are changes that the design system cannot maintain on your behalf and is maintenance that your product team is taking on. 
+Again, by utilizing these accent tokens, you are departing from the dynamic theming of your application across brands. Accept these tokens at your own risk as these are changes that the design system cannot maintain on your behalf and is maintenance that your product team is taking on.
 
 ## Storybook URLs
+
 This project deploys its Storybook for documentation at the following AWS sites:
 
-- Beta Version: https://www-dev-candidate.pharmacy.com/cre8-design-tokens/ 
-- Released Version: https://docs.cre8.dev/cre8-design-tokens/ 
+- Beta Version: <https://www-dev-candidate.pharmacy.com/cre8-design-tokens/>
+- Released Version: <https://docs.cre8.dev/cre8-design-tokens/>
 
 ## References & Further Reading
+
 - [Design Tokens W3C Community Group](https://www.designtokens.org/)
 - [Style Dictionary API](https://amzn.github.io/style-dictionary/#/api)
 - [Style Dictionary Pre-defined Transform Groups](https://amzn.github.io/style-dictionary/#/transform_groups?id=pre-defined-transform-groups)
 - [Design Tokens POC Demo](https://confluence.sys.cre8.com/display/WIPMDL/Design+tokens+demo+-+Aug+16%2C+2021)
 - [Dynamic Theming Demo, 2023](https://confluence.sys.cre8.com/display/WIPMDL/Dynamic+Theming+Demo+-+Apr+7%2C+2023)
 - [Design Token Docs in Confluence](https://confluence.sys.cre8.com/pages/viewpage.action?pageId=639569302)
-

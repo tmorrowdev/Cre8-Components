@@ -28,7 +28,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   color: var(--cre8-color-content-knockout);
 }
 ::slotted(.header) {
-  margin-bottom: size(1.5);
+  margin-bottom: calc(8px * 1.5);
 }
 `;
 export default styles;

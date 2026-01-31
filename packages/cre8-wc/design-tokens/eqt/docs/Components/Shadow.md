@@ -123,7 +123,7 @@
         - **DESCRIPTION** (Type: FRAME, ID: I5491:24750;930:25524)
           - Layout Style Ref: [layout_h4k3fcy](../GlobalStyles/LayoutAndSpacing.md#layout-h4k3fcy) (See Layout Styles)
           - **global-token-value** (Type: TEXT, ID: I5491:24750;930:25525)
-            - Text Content: "0px 1px 2px 1px 
+            - Text Content: "0px 1px 2px 1px
 rgba(0, 0, 0, 0.2)"
             - TextStyle Ref: [text_hp6k801](../GlobalStyles/Typography.md#text-hp6k801) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
@@ -158,7 +158,7 @@ rgba(0, 0, 0, 0.2)"
         - **DESCRIPTION** (Type: FRAME, ID: I5491:24751;930:25524)
           - Layout Style Ref: [layout_h4k3fcy](../GlobalStyles/LayoutAndSpacing.md#layout-h4k3fcy) (See Layout Styles)
           - **global-token-value** (Type: TEXT, ID: I5491:24751;930:25525)
-            - Text Content: "0 0.5rem 0.375rem -0.375rem 
+            - Text Content: "0 0.5rem 0.375rem -0.375rem
 rgba(0, 0, 0, 0.1)"
             - TextStyle Ref: [text_hp6k801](../GlobalStyles/Typography.md#text-hp6k801) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
@@ -318,7 +318,7 @@ rgba(0, 0, 0, 0.1)"
         - **DESCRIPTION** (Type: FRAME, ID: I5491:25852;930:25524)
           - Layout Style Ref: [layout_h4k3fcy](../GlobalStyles/LayoutAndSpacing.md#layout-h4k3fcy) (See Layout Styles)
           - **global-token-value** (Type: TEXT, ID: I5491:25852;930:25525)
-            - Text Content: "0px 1px 2px 1px 
+            - Text Content: "0px 1px 2px 1px
 rgba(0, 0, 0, 0.2)"
             - TextStyle Ref: [text_hp6k801](../GlobalStyles/Typography.md#text-hp6k801) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
@@ -353,7 +353,7 @@ rgba(0, 0, 0, 0.2)"
         - **DESCRIPTION** (Type: FRAME, ID: I5491:25853;930:25524)
           - Layout Style Ref: [layout_h4k3fcy](../GlobalStyles/LayoutAndSpacing.md#layout-h4k3fcy) (See Layout Styles)
           - **global-token-value** (Type: TEXT, ID: I5491:25853;930:25525)
-            - Text Content: "0 0.5rem 0.375rem -0.375rem 
+            - Text Content: "0 0.5rem 0.375rem -0.375rem
 rgba(0, 0, 0, 0.1)"
             - TextStyle Ref: [text_hp6k801](../GlobalStyles/Typography.md#text-hp6k801) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
@@ -513,7 +513,7 @@ rgba(0, 0, 0, 0.1)"
         - **DESCRIPTION** (Type: FRAME, ID: I5491:26652;930:25524)
           - Layout Style Ref: [layout_h4k3fcy](../GlobalStyles/LayoutAndSpacing.md#layout-h4k3fcy) (See Layout Styles)
           - **global-token-value** (Type: TEXT, ID: I5491:26652;930:25525)
-            - Text Content: "0px 1px 2px 1px 
+            - Text Content: "0px 1px 2px 1px
 rgba(0, 0, 0, 0.2)"
             - TextStyle Ref: [text_hp6k801](../GlobalStyles/Typography.md#text-hp6k801) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
@@ -548,7 +548,7 @@ rgba(0, 0, 0, 0.2)"
         - **DESCRIPTION** (Type: FRAME, ID: I5491:26653;930:25524)
           - Layout Style Ref: [layout_h4k3fcy](../GlobalStyles/LayoutAndSpacing.md#layout-h4k3fcy) (See Layout Styles)
           - **global-token-value** (Type: TEXT, ID: I5491:26653;930:25525)
-            - Text Content: "0 0.5rem 0.375rem -0.375rem 
+            - Text Content: "0 0.5rem 0.375rem -0.375rem
 rgba(0, 0, 0, 0.1)"
             - TextStyle Ref: [text_hp6k801](../GlobalStyles/Typography.md#text-hp6k801) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
@@ -708,7 +708,7 @@ rgba(0, 0, 0, 0.1)"
         - **DESCRIPTION** (Type: FRAME, ID: I12447:5791;930:25524)
           - Layout Style Ref: [layout_h4k3fcy](../GlobalStyles/LayoutAndSpacing.md#layout-h4k3fcy) (See Layout Styles)
           - **global-token-value** (Type: TEXT, ID: I12447:5791;930:25525)
-            - Text Content: "0px 1px 2px 1px 
+            - Text Content: "0px 1px 2px 1px
 rgba(0, 0, 0, 0.2)"
             - TextStyle Ref: [text_hp6k801](../GlobalStyles/Typography.md#text-hp6k801) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
@@ -743,7 +743,7 @@ rgba(0, 0, 0, 0.2)"
         - **DESCRIPTION** (Type: FRAME, ID: I12447:5792;930:25524)
           - Layout Style Ref: [layout_h4k3fcy](../GlobalStyles/LayoutAndSpacing.md#layout-h4k3fcy) (See Layout Styles)
           - **global-token-value** (Type: TEXT, ID: I12447:5792;930:25525)
-            - Text Content: "0 0.5rem 0.375rem -0.375rem 
+            - Text Content: "0 0.5rem 0.375rem -0.375rem
 rgba(0, 0, 0, 0.1)"
             - TextStyle Ref: [text_hp6k801](../GlobalStyles/Typography.md#text-hp6k801) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)

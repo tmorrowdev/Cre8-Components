@@ -22,6 +22,7 @@
     &:focus-visible {
         @include focus;
     }
+
     /**
     * Neutral remove tag
     */
@@ -29,12 +30,13 @@
         background-color: var(--cre8-color-bg-default);
         color: var(--cre8-color-content-default);
         border-color: var(--cre8-color-border-strong);
-    
-        &:hover, &:focus {
+
+        &:hover,
+        &:focus {
             background-color: var(--cre8-color-bg-default-hover);
         }
     }
-  
+
     /**
     * Branded remove tag
     */
@@ -42,12 +44,13 @@
         background-color: var(--cre8-color-bg-brand);
         color: var(--cre8-color-content-default);
         border-color: var(--cre8-color-border-transparent);
-    
-        &:hover, &:focus {
-          background-color: var(--cre8-color-bg-brand-hover);
+
+        &:hover,
+        &:focus {
+            background-color: var(--cre8-color-bg-brand-hover);
         }
     }
-  
+
     /**
     * Neutral Hybrid remove tag
     */
@@ -55,9 +58,10 @@
         background-color: var(--cre8-color-bg-default);
         color: var(--cre8-color-content-brand);
         border-color: var(--cre8-color-border-strong);
-    
-        &:hover, &:focus {
-          background-color: var(--cre8-color-bg-default-hover);
+
+        &:hover,
+        &:focus {
+            background-color: var(--cre8-color-bg-default-hover);
         }
     }
 
@@ -67,7 +71,7 @@
     &.cre8-c-remove-tag--round {
         border-radius: var(--cre8-border-radius-round);
     }
-    
+
     /**
     * Square remove tag
     */
@@ -81,7 +85,8 @@
         border-color: var(--cre8-color-border-disabled);
         cursor: not-allowed;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             background-color: var(--cre8-color-bg-disabled);
         }
     }
@@ -89,6 +94,6 @@
 
 .cre8-c-remove-tag-item__icon {
     align-items: center;
-    width: size(2);
-    height: size(2);
+    width: calc(8px * 2);
+    height: calc(8px * 2);
 }

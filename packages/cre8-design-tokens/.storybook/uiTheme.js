@@ -1,13 +1,13 @@
 import { create } from '@storybook/theming';
-import '../lib/web/brands/tcg/css/tokens_tcg.css';
+import '../lib/web/brands/cre8/css/tokens_cre8.css';
 import pkg from '../package.json';
 
 export default create({
     base: 'light',
     colorPrimary: '#0033ff',
     colorSecondary: '#5CC862',
-    fontBase: 'Montserrat',
-    fontCode: 'Montserrat',
+    fontBase: 'Inter',
+    fontCode: 'Inter',
     fontSize: '20',
     appBg: '#fff',
     appContentBg: '#fff',
@@ -23,5 +23,4 @@ export default create({
                     <span class="version">v${pkg.version}</span>
                 </div>
               `,
-    brandUrl: 'https://github.com/tmorrowdev/cre8-design-tokens',
 });

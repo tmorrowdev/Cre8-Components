@@ -51,7 +51,7 @@ export { Cre8LayoutSection } from './components/LayoutSection';
 export { Cre8LayoutContainer } from './components/LayoutContainer';
 export { Cre8Layout } from './components/Layout';
 export { Cre8InlineAlert } from './components/InlineAlert';
-export { Cre8IconLegacy } from './components/Icon';
+export { Cre8Icon, Cre8IconLegacy } from './components/Icon';
 export { Cre8Hero } from './components/Hero';
 export { Cre8Heading } from './components/Heading';
 export { Cre8Header } from './components/Header';
@@ -77,10 +77,13 @@ export { Cre8Breadcrumbs } from './components/Breadcrumbs';
 export { Cre8Band } from './components/Band';
 export { Cre8Badge } from './components/Badge';
 export { Cre8Alert } from './components/Alert';
-export { Cre8VerticalCard } from './components/VerticalCard/VerticalCard';
+// TODO: VerticalCard component doesn't exist in cre8-wc yet
+// export { Cre8VerticalCard } from './components/VerticalCard/VerticalCard';
 export { Cre8Accordion } from './components/Accordion';
 export { Cre8RemoveTag } from './components/RemoveTag';
-export { Cre8ProgressSteps } from './components/ProgressSteps';
-export { Cre8ProgressStepsItem } from './components/ProgressStepsItem';
+// TODO: ProgressSteps components not exported from cre8-wc index
+// export { Cre8ProgressSteps } from './components/ProgressSteps';
+// export { Cre8ProgressStepsItem } from './components/ProgressStepsItem';
 export { Cre8PercentBar } from './components/PercentBar';
 export { Cre8DangerButton } from './components/DangerButton';
+export { LandingPage } from './components/LandingPage';

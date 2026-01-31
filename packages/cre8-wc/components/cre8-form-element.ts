@@ -27,6 +27,7 @@ export abstract class Cre8FormElement extends Cre8Element {
    */
   internals: ElementInternals;
 
+   
   /**
    * @protected
    * @internal
@@ -35,6 +36,7 @@ export abstract class Cre8FormElement extends Cre8Element {
    */
   internalValue: string;
 
+  protected name?: string
   /**
    * @internal
    *

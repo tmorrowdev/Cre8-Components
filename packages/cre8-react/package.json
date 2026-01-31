@@ -1,6 +1,6 @@
 {
-  "name": "@cre8_dev/cre8-react",
-  "version": "1.0.5",
+  "name": "@tmorrow/cre8-react",
+  "version": "1.0.15",
   "description": "The React-powered cre8 design system library for Cre8 web applications",
   "license": "UNLICENSED",
   "main": "lib/index.js",
@@ -33,9 +33,9 @@
     "format": "eslint-config ./ --fix --ext tsx,jsx,ts,js --ignore-path ../../.eslintignore"
   },
   "dependencies": {
-    "@cre8_dev/cre8-design-tokens": "^1.0.3",
-    "@cre8_dev/cre8-wc": "1.0.8",
     "@lit/react": "^1.0.8",
+    "@storybook/builder-vite": "^10.2.0",
+    "@tmorrow/cre8-wc": "1.0.15",
     "classnames": "2.5.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"

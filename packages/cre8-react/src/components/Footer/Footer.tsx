@@ -1,5 +1,5 @@
 import { createComponent } from '@lit/react';
-import { Cre8Footer as Cre8FooterElement } from '@cre8_dev/cre8-wc/lib/components/footer/footer';
+import { Cre8Footer as Cre8FooterElement } from '@tmorrow/cre8-wc/lib/components/footer/footer';
 import React from 'react';
 
 export const Cre8Footer = createComponent({

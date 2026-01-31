@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent } from '@lit/react';
-import { Cre8Hero as Cre8HeroElement } from '@cre8_dev/cre8-wc/lib/components/hero/hero';
+import { Cre8Hero as Cre8HeroElement } from '@tmorrow/cre8-wc/lib/components/hero/hero';
 
 export const Cre8Hero = createComponent({
     react: React,

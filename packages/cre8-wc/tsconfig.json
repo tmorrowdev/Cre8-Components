@@ -51,6 +51,7 @@
     "components/**/*.stories.ts",
     "components/**/*.test.ts",
     "dist",
-    "lib"
+    "lib",
+    "react-wrappers"
   ]
 }

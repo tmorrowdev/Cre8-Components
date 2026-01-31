@@ -144,7 +144,7 @@
     - **.Utility** (Type: INSTANCE, ID: I3419:2286;2002:4809)
       - (Instance of a component. Main Component ID: [12700:31139](../UnknownPage.md#component-UnknownPage-12700:31139). Further details depend on main component definition.)
       - Layout Style Ref: [layout_hhibiau](../GlobalStyles/LayoutAndSpacing.md#layout-hhibiau) (See Layout Styles)
-      - ** Tertiary Button** (Type: INSTANCE, ID: I3419:2286;2002:4809;2002:4633)
+      - **Tertiary Button** (Type: INSTANCE, ID: I3419:2286;2002:4809;2002:4633)
         - (Instance of a component. Main Component ID: [3419:2099](../UnknownPage.md#component-UnknownPage-3419:2099). Further details depend on main component definition.)
         - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
         - **ButtonBase** (Type: INSTANCE, ID: I3419:2286;2002:4809;2002:4633;2027:34960)
@@ -168,7 +168,7 @@
             - TextStyle Ref: [text_he86tu1](../GlobalStyles/Typography.md#text-he86tu1) (See Typography Styles)
             - Fills Ref: [fill_hrog9dj](../GlobalStyles/Colors.md#fill-hrog9dj) (See Color Styles)
             - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
-      - ** Tertiary Button** (Type: INSTANCE, ID: I3419:2286;2002:4809;2002:4634)
+      - **Tertiary Button** (Type: INSTANCE, ID: I3419:2286;2002:4809;2002:4634)
         - (Instance of a component. Main Component ID: [3419:2099](../UnknownPage.md#component-UnknownPage-3419:2099). Further details depend on main component definition.)
         - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
         - **ButtonBase** (Type: INSTANCE, ID: I3419:2286;2002:4809;2002:4634;2027:34960)
@@ -199,7 +199,7 @@
           - (Instance of a component. Main Component ID: [691:736](../UnknownPage.md#component-UnknownPage-691:736). Further details depend on main component definition.)
           - Fills Ref: [fill_ha0fr6b](../GlobalStyles/Colors.md#fill-ha0fr6b) (See Color Styles)
           - Layout Style Ref: [layout_hzh0qa3](../GlobalStyles/LayoutAndSpacing.md#layout-hzh0qa3) (See Layout Styles)
-      - ** Tertiary Button** (Type: INSTANCE, ID: I3419:2286;2002:4809;2002:4636)
+      - **Tertiary Button** (Type: INSTANCE, ID: I3419:2286;2002:4809;2002:4636)
         - (Instance of a component. Main Component ID: [3419:2255](../UnknownPage.md#component-UnknownPage-3419:2255). Further details depend on main component definition.)
         - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
         - **ButtonBase** (Type: INSTANCE, ID: I3419:2286;2002:4809;2002:4636;19766:142529)
@@ -218,7 +218,7 @@
               - **Vector** (Type: IMAGE-SVG, ID: I3419:2286;2002:4809;2002:4636;19766:142529;2451:411;2238:2861;2784:44)
                 - Fills Ref: [fill_hrog9dj](../GlobalStyles/Colors.md#fill-hrog9dj) (See Color Styles)
                 - Layout Style Ref: [layout_hwl601x](../GlobalStyles/LayoutAndSpacing.md#layout-hwl601x) (See Layout Styles)
-      - ** Tertiary Button** (Type: INSTANCE, ID: I3419:2286;2002:4809;2002:4638)
+      - **Tertiary Button** (Type: INSTANCE, ID: I3419:2286;2002:4809;2002:4638)
         - (Instance of a component. Main Component ID: [3419:2255](../UnknownPage.md#component-UnknownPage-3419:2255). Further details depend on main component definition.)
         - Layout Style Ref: [layout_hsopre1](../GlobalStyles/LayoutAndSpacing.md#layout-hsopre1) (See Layout Styles)
         - **ButtonBase** (Type: INSTANCE, ID: I3419:2286;2002:4809;2002:4638;19766:142529)
@@ -975,8 +975,8 @@ For more information about State Boards of Pharmacy visit State Board of Pharmac
           - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
     - **TITLE/SUBTITLE** (Type: FRAME, ID: 703:414)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
-      - **Cre8 design system** (Type: TEXT, ID: 703:415)
-        - Text Content: "Cre8 design system"
+      - **cre8 design system** (Type: TEXT, ID: 703:415)
+        - Text Content: "cre8 design system"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -1008,7 +1008,7 @@ For more information about State Boards of Pharmacy visit State Board of Pharmac
             - Text Content: "This is where the majority of your time will be spent depending on how up to date your files are with the design system. Turn on Variables and LATEST library associated with brand in the files.
 
 In this example:
-turn on Cre8 Design System: Tokens
+turn on cre8 Design System: Tokens
 for instructions on ho  w to use Variables, please see our documentation
 for further information regarding Variables and what they are, please see Figma’s documentation
 turn on Cre8 Base Web Library
@@ -1035,7 +1035,7 @@ Remember, the Global Web Components library has been in deprecation state for se
             - **Paragraph** (Type: TEXT, ID: 703:436)
               - Text Content: "By doing all of that mapping at the first step, you are preparing your file for that sweet, sweet flip! You may have noticed that components like the header didn’t come out quite right, and that’s okay! Header is currently a Pattern level component (as of 10/27/2023), and we are working towards a global header that satisfies the needs of all of the brands. Until then, we will swap that component out in the third step.
 
-PSA: Brand Iconography: 
+PSA: Brand Iconography:
 The Iconography library for all brands is unified under a single library now. Any system level iconography that you would need for any migration work will now pull from that library under System Iconography. All old iconography in that library is now tagged with Pre-Deprecation and is slated for removal once the iconography is fully integrated into the libraries. "
               - TextStyle Ref: [text_h6bus57](../GlobalStyles/Typography.md#text-h6bus57) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
@@ -1092,9 +1092,9 @@ The Iconography library for all brands is unified under a single library now. An
           - Fills Ref: [fill_h4k0xqp](../GlobalStyles/Colors.md#fill-h4k0xqp) (See Color Styles)
           - Layout Style Ref: [layout_hdznyh7](../GlobalStyles/LayoutAndSpacing.md#layout-hdznyh7) (See Layout Styles)
         - **Two dropdowns will appear. One from the library you want to swap out, and one that is default empty. Note all of the styles and components currently used in the project file. Once you find the library you want to swap to, select it. Depending on the connection, Figma might take a second to find the like minded styles and components that match up to what you’re trying to swap out. Good things come to those who are patient (or have a slow internet connection). From there, you can cherry pick what you’d like to swap out or instead swap everything out. This will occur once you select the Swap Library button in the bottom right hand corner.** (Type: TEXT, ID: 703:498)
-          - Text Content: "Two dropdowns will appear. One from the library you want to swap out, and one that is default empty. Note all of the styles and components currently used in the project file. 
+          - Text Content: "Two dropdowns will appear. One from the library you want to swap out, and one that is default empty. Note all of the styles and components currently used in the project file.
 
-Once you find the library you want to swap to, select it. Depending on the connection, Figma might take a second to find the like minded styles and components that match up to what you’re trying to swap out. Good things come to those who are patient (or have a slow internet connection). 
+Once you find the library you want to swap to, select it. Depending on the connection, Figma might take a second to find the like minded styles and components that match up to what you’re trying to swap out. Good things come to those who are patient (or have a slow internet connection).
 
 From there, you can cherry pick what you’d like to swap out or instead swap everything out. This will occur once you select the Swap Library button in the bottom right hand corner. "
           - TextStyle Ref: [text_h5qkukc](../GlobalStyles/Typography.md#text-h5qkukc) (See Typography Styles)

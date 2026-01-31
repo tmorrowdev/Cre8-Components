@@ -54,8 +54,8 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   display: flex;
   align-items: center;
   width: 100%;
-  padding-top: size(2);
-  padding-bottom: size(2);
+  padding-top: calc(8px * 2);
+  padding-bottom: calc(8px * 2);
 }
 
 .cre8-c-header__bottom {

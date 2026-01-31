@@ -380,6 +380,7 @@ Instead, we encourage brand designers and developers to work together to take ad
               - TextStyle Ref: [text_hlofjx6](../GlobalStyles/Typography.md#text-hlofjx6) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+
 - **Pattern Library Color Tokens** (Type: FRAME, ID: 5433:16481)
   - BorderRadius: 24px
   - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)

@@ -13,7 +13,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 .cre8-c-progress-meter__progress {
   --cre8-progress-meter-background: var(--cre8-color-content-brand); /* 2 */
   width: 100%;
-  height: var(--cre8-progress-meter-height, size(1));
+  height: var(--cre8-progress-meter-height, calc(8px * 1));
   background: var(--cre8-color-bg-transparent);
   border-width: var(--cre8-border-width-default);
   border-style: var(--cre8-border-style-default);

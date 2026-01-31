@@ -1,5 +1,8 @@
 import type { StorybookConfig } from '@storybook/web-components-vite';
-
+import path from 'path';
+import { fileURLToPath } from 'url';
+                                                                                                                                                 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));  
 const config: StorybookConfig = {
   core: {
     disableTelemetry: true,
@@ -18,8 +21,7 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-docs',
     '@storybook/addon-themes',
-    '@storybook/addon-a11y',
-    '@whitespace/storybook-addon-html'
+    '@storybook/addon-a11y'
   ],
   // Customize Vite config
   async viteFinal(config) {
@@ -36,7 +38,11 @@ const config: StorybookConfig = {
                 return content;
               }
               return `@import "../design-tokens/core/scss/theming/head.scss";\n${content}`;
-            }
+            },
+            includePaths: [
+              path.resolve(__dirname, '../node_modules/@tmorrow/cre8-design-tokens'),
+              path.resolve(__dirname, '../node_modules')
+            ]
           }
         }
       },

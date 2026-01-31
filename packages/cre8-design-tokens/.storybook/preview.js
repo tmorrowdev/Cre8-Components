@@ -1,5 +1,5 @@
 import uiTheme from './uiTheme';
-import '../lib/web/brands/tcg/css/tokens_tcg.css';
+import '../lib/web/brands/cre8/css/tokens_cre8.css';
 
 export const parameters = {
     viewMode: 'docs',

@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent } from '@lit/react';
-import { Cre8Pagination as Cre8PaginationElement } from '@cre8_dev/cre8-wc/lib/components/pagination/pagination';
+import { Cre8Pagination as Cre8PaginationElement } from '@tmorrow/cre8-wc/lib/components/pagination/pagination';
 
 /**
  * The Pagination component is used to split up a large amount of results by showing only

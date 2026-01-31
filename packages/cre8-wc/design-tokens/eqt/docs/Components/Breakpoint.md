@@ -39,7 +39,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I11140:248;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I11140:248;245:4877)
-        - Text Content: "Cre8 Design System"
+        - Text Content: "cre8 Design System"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -68,7 +68,7 @@
         - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
         - Layout Style Ref: [layout_h7ea135](../GlobalStyles/LayoutAndSpacing.md#layout-h7ea135) (See Layout Styles)
         - **Paragraph** (Type: TEXT, ID: I11140:250;241:4433;239:4420)
-          - Text Content: "Every website is accessed via devices with different screen sizes and resolutions. The software has to render perfectly across each screen size. Content or images cannot be distorted, cut out, or obscured. These breakpoint tokens are global to the Cre8 Design System, meaning, all brands currently share the same We find that keeping all brands on the same breakpoints allows for more stable and predictable experiences when developing applications and designing mockups."
+          - Text Content: "Every website is accessed via devices with different screen sizes and resolutions. The software has to render perfectly across each screen size. Content or images cannot be distorted, cut out, or obscured. These breakpoint tokens are global to the cre8 Design System, meaning, all brands currently share the same We find that keeping all brands on the same breakpoints allows for more stable and predictable experiences when developing applications and designing mockups."
           - TextStyle Ref: [text_h6bus57](../GlobalStyles/Typography.md#text-h6bus57) (See Typography Styles)
           - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
           - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)

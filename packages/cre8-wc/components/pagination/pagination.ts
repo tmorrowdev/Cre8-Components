@@ -90,11 +90,11 @@ export class Cre8Pagination extends Cre8Element {
    * @attr number
    */
   @property({ type: Number, reflect: true })
-  get pagesize() {
+  get pageSize() {
       return this._pageSize;
   }
 
-  set pagesize(newSize: number) {
+  set pageSize(newSize: number) {
       const oldSize = this._pageSize;
       this._pageSize = newSize;
       this.requestUpdate('pageSize', oldSize);
@@ -176,7 +176,7 @@ export class Cre8Pagination extends Cre8Element {
 
 
   private get totalPages(): number {
-      return Math.ceil(this.totalResults / this.pagesize);
+      return Math.ceil(this.totalResults / this.pageSize);
   }
 
   private get hasNoPreviousPage() {
@@ -207,9 +207,9 @@ export class Cre8Pagination extends Cre8Element {
 
   protected async firstUpdated() {
       await this.updateComplete;
-      if (this._pageSize !== this.pagesize) {
+      if (this._pageSize !== this.pageSize) {
           const old = this._pageSize;
-          this._pageSize = this.pagesize;
+          this._pageSize = this.pageSize;
           this.requestUpdate('pageSize', old);
       }
       this.windowWidth = window.innerWidth;

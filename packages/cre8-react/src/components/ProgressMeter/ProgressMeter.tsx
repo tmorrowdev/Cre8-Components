@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent } from '@lit/react';
-import { Cre8ProgressMeter as Cre8ProgressMeterElement } from '@cre8_dev/cre8-wc/lib/components/progress-meter/progress-meter';
+import { Cre8ProgressMeter as Cre8ProgressMeterElement } from '@tmorrow/cre8-wc/lib/components/progress-meter/progress-meter';
 
 /**
  * A progress meter provides feedback that the system is working and gives the user an indication of how much time they will wait.

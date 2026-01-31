@@ -20,13 +20,16 @@ cre8 Web Components follows these coding principles and conventions for HTML, CS
 - [Directory Structure](#directory)
 
 **********
-## Important Note! Components are located in one of 3 directories based on their status and/or purpose:
-  1. **cre8 Components**: This indicates that the component is accepted and will be supported by us for any bug fixes filed in our github issues! This also means the Enterprise Design Team and Accessibility has reviewed the component for brand alignment and performed the required a11y testing. 
+
+## Important Note! Components are located in one of 3 directories based on their status and/or purpose
+
+  1. **cre8 Components**: This indicates that the component is accepted and will be supported by us for any bug fixes filed in our github issues! This also means the Enterprise Design Team and Accessibility has reviewed the component for brand alignment and performed the required a11y testing.
   2. **Experimental**: This indicates the component is either somewhere along the roadmap to completion, is only included to provide a container element outside the concerns of the design system, or it is possible it works but hasn't gone through the whole process of acceptance. Components in this category are not supported and any bugs found should be reported but will only be fixed if/when they are released as cre8 Components
 
-  3. **Patterns**: These are typically composite components or multiple components which are meant to communicate with one another to perform a common pattern. They are included here as an example of implementation for consuming teams. 
+  3. **Patterns**: These are typically composite components or multiple components which are meant to communicate with one another to perform a common pattern. They are included here as an example of implementation for consuming teams.
 
 **********
+
 ## cre8 Web Components principles <a name="principles"></a>
 
 - **A front-end source of truth** - cre8 Web Components serves as the UI-specific front-end code source of truth for ds. cre8 Web Components embody best practices around accessibility, responsive design, performance, and other front-end practices. # applications can pull cre8 Web Components into their projects in order to deliver high-quality web experiences.
@@ -274,11 +277,11 @@ There may also be instances where a component needs flexibility with a custom pr
 
 ```css
 .cre8-c-card {
-  padding: var(--cre8-card-padding, size(2));
+  padding: var(--cre8-card-padding, calc(8px * 2));
 }
 ```
 
-By default this card has 16px (`size(2)`) of padding around it, but if a downstream team needed to remove all padding, they could set `--cre8-card-padding: 0;` in their code and that would get passed into the card. Basically this padding property says, "If `--cre8-card-padding` exists, use that. Otherwise fall back to 16px (`size(2)`). This cascade should only be added after careful consideration.
+By default this card has 16px (`calc(8px * 2)`) of padding around it, but if a downstream team needed to remove all padding, they could set `--cre8-card-padding: 0;` in their code and that would get passed into the card. Basically this padding property says, "If `--cre8-card-padding` exists, use that. Otherwise fall back to 16px (`calc(8px * 2)`). This cascade should only be added after careful consideration.
 
 Lastly, CSS Custom Properties can help allow parents of composable components to set a variant without needing to declare a `variant` property on every child element. A good example is with `link-list`:
 
@@ -336,7 +339,7 @@ cre8 Web Components builds web components using [LitElement](https://lit.dev/) w
 - **Avoid too much complexity**
   1. Keep your functions/methods simple. Don't have too many branching paths
   2. Break your code into smaller methods
-  3. Avoid using switch/case unless you really need to https://refactoring.guru/smells/switch-statements
+  3. Avoid using switch/case unless you really need to <https://refactoring.guru/smells/switch-statements>
 - **Check against failure early**
   1. Try to return out failure conditions out of methods
 
@@ -454,10 +457,10 @@ The cre8 components use a `header`, `body`, and `footer` convention for a lot of
 
 ### Events
 
-While some components are static and don't require any interactivity, other components require functionality. For these components, we need to declare a event method. For event handling, we want to go a step further and privatize the method so consuming teams know not to call it in use by pre-fixing these methods with `private _handleOn[Event Name]`. For example: 
+While some components are static and don't require any interactivity, other components require functionality. For these components, we need to declare a event method. For event handling, we want to go a step further and privatize the method so consuming teams know not to call it in use by pre-fixing these methods with `private _handleOn[Event Name]`. For example:
 
-* We want to normalize naming @click handlers with `private _handleOnClick()`. 
-* If it's a `keydown` event handler, call it `private _handleOnKeydown()`.
+- We want to normalize naming @click handlers with `private _handleOnClick()`.
+- If it's a `keydown` event handler, call it `private _handleOnKeydown()`.
 
 Try to avoid using `on[Event Name]` since it conflicts with React wrappers downstream. Not all methods and functions are associated with one type of event, so using something like `private _toggleDropdown()` is a clear name without needing to look much at documentation.
 
@@ -538,13 +541,14 @@ Combining the two is extra fun.
 In this section, **consumer** refers to a developer who consumes cre8 Web Components, that is, they use it in their project.
 
 ### Web Components
+
 #### Composed
 
-All events have a property named `composed`. See https://developer.mozilla.org/en-US/docs/Web/API/Event/composed
+All events have a property named `composed`. See <https://developer.mozilla.org/en-US/docs/Web/API/Event/composed>
 
 - If `composed` is `false`, the event stops propagating when it hits a Shadow DOM boundary.
 - If `composed` is `true`, the event propagates past the Shadow DOM boundary, but is retargeted to the custom element
-    - the related property [composedPath](https://developer.mozilla.org/en-US/docs/Web/API/Event/composedPath) is the "array of the objects on which listeners will be invoked"
+  - the related property [composedPath](https://developer.mozilla.org/en-US/docs/Web/API/Event/composedPath) is the "array of the objects on which listeners will be invoked"
 
 For custom events, we decide if composed is true or false.
 
@@ -554,7 +558,6 @@ Important events:
 
 - the **`change`** event is `composed: false`
 - the **`input`** event is `composed: true`
-
 
 This means that if a consumer adds an event listener to a cre8 component that wraps an element that emits the `input` and `change` events, if cre8 does nothing special, then the `input` event will just work, but their callback for the `change` event will never fire.
 
@@ -568,8 +571,6 @@ The browser `input` event fires first, then the `change` event.
 
 If cre8 puts its event handlers on the `change` event, and a consumer puts their event handlers on the `input` events, then the consumer's event handler would run first, and they would see the old, stale properties of the cre8 web component during that callback.
 
-
-
 #### `stopPropagation` and `preventDefault` and re-firing events
 
 [`stopPropagation`](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) and [`preventDefault`](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) do different things.
@@ -578,25 +579,25 @@ Consumers often use `preventDefault` on forms to keep them from submitting, usua
 
 cre8 sometimes needs to stop the propagation of an event, that is, keep consumer's event handlers from firing. That is the job of `stopPropagation`.
 
-Some events are not cancellable, see https://developer.mozilla.org/en-US/docs/Web/API/Event/cancelable That only affects `preventDefault`, you can still stop the propagation of the event.
-
-
+Some events are not cancellable, see <https://developer.mozilla.org/en-US/docs/Web/API/Event/cancelable> That only affects `preventDefault`, you can still stop the propagation of the event.
 
 For example, cre8 might want to listen for an `input` event, stop the propagation of that `input` event, and then fire its own custom `input` event with additional details. If it doesn't call `stopPropgation`, then the consumer would see two events.
 
 But for an event that is not `composed`, such as `change`, there is no need to `stopPropgation`. Because they are not `composed`, the consumer won't receive the `change` events from inside the shadow DOM at all, unless cre8 fires a custom event.
 
 ### React and React Wrappers
+
 #### Synthetic Events
 
-In React, when you use a property to add an event listener on a DOM element, then the events are synthetic. See https://react.dev/reference/react-dom/components/common
+In React, when you use a property to add an event listener on a DOM element, then the events are synthetic. See <https://react.dev/reference/react-dom/components/common>
 
 For example:
+
 ```jsx
 <div onClick={handleOnClick} />
 ```
 
-On https://react.dev/reference/react-dom/components/input React documents that:
+On <https://react.dev/reference/react-dom/components/input> React documents that:
 
 > `onChange``: An [Event handler](https://react.dev/reference/react-dom/components/common#event-handler) function. Required for [controlled inputs](https://react.dev/reference/react-dom/components/input#controlling-an-input-with-a-state-variable). Fires immediately when the input’s value is changed by the user (for example, it fires on every keystroke). Behaves like the browser [input event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event).
 
@@ -681,10 +682,9 @@ export function ModalWrapper({
 export default ModalWrapper;
 ```
 
-
 #### Mapping Events in `@lit/react`
 
-See https://lit.dev/docs/frameworks/react/#events
+See <https://lit.dev/docs/frameworks/react/#events>
 
 There's a couple of gotchas here.
 
@@ -698,7 +698,7 @@ You can also use the mapping to map one name to another event. For example, Reac
 
 Double check any mapped events against that cre8 component's implementation and look for timing bugs. For example, if you map something to the `input` event, but the component internally updates its state based on the `change` event (which fires after `input`), then consumers will see stale values!
 
-## Component directory structure:
+## Component directory structure
 
 The design system's component directory (inside `src/components`) contains all of the design system's components. The structure is as follows:
 

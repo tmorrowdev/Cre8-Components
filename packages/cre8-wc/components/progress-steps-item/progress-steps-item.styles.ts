@@ -54,13 +54,13 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 
 .cre8-c-progress-steps-item__svg {
   color: var(--icon-color);
-  height: size(2.5);
+  height: calc(8px * 2.5);
   margin-left: var(--cre8-spacing-8);
   margin-right: var(--cre8-spacing-8);
-  width: size(2.5);
+  width: calc(8px * 2.5);
   svg {
-    height: size(2.5);
-    width: size(2.5);
+    height: calc(8px * 2.5);
+    width: calc(8px * 2.5);
   }
 }
 
@@ -79,7 +79,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 
 .cre8-c-progress-steps-item__divider--left,
 .cre8-c-progress-steps-item__divider--right{
-  height: size(0.25);
+  height: calc(8px * 0.25);
   width: 100%;
 }
 

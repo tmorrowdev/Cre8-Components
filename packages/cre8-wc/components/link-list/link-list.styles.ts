@@ -10,14 +10,14 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   display: flex;
   flex-direction: column;
   padding: 0;
-  margin-top: size(-2);
+  margin-top: calc(8px * -2);
   list-style: none;
 
   /**
   * Slotted link list item
   */
   ::slotted(cre8-link-list-item) {
-    margin-top: size(2);
+    margin-top: calc(8px * 2);
   }
 }
 
@@ -51,13 +51,13 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  * 1) Removes spacing between link list items
  */
 .cre8-c-link-list--condensed {
-  margin-top: size(-1.25);
+  margin-top: calc(8px * -1.25);
 
   /**
   * Slotted link list item within condensed link list
   */
   ::slotted(cre8-link-list-item) {
-    margin-top: size(1.25);
+    margin-top: calc(8px * 1.25);
   }
 }
 
@@ -75,14 +75,14 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 .cre8-c-link-list--horizontal {
   flex-direction: row;
   flex-wrap: wrap;
-  margin: size(-1) 0 0 size(-2);
+  margin: calc(8px * -1) 0 0 calc(8px * -2);
 
   /**
   * Slotted link list item within horizontal link list
   */
   ::slotted(cre8-link-list-item) {
-    margin-top: size(1);
-    margin-left: size(2);
+    margin-top: calc(8px * 1);
+    margin-left: calc(8px * 2);
   }
 }
 
@@ -94,14 +94,14 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   @media all and (max-width:$cre8-breakpoint-md) {
     flex-direction: row;
     flex-wrap: wrap;
-    margin: size(-1) 0 0 size(-2);
+    margin: calc(8px * -1) 0 0 calc(8px * -2);
 
     /**
     * Slotted link list item within responsive link list
     */
     ::slotted(cre8-link-list-item) {
-      margin-top: size(1);
-      margin-left: size(2);
+      margin-top: calc(8px * 1);
+      margin-left: calc(8px * 2);
     }
   }
 }

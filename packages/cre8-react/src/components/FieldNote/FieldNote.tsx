@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent } from '@lit/react';
-import { Cre8FieldNote as Cre8FieldNoteElement } from '@cre8_dev/cre8-wc/lib/components/field-note/field-note';
+import { Cre8FieldNote as Cre8FieldNoteElement } from '@tmorrow/cre8-wc/lib/components/field-note/field-note';
 
 /**
  * Field Note gives direction on how to fill out a form field and to alert users of form errors and successes.

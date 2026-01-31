@@ -1,6 +1,10 @@
 import { defineConfig } from 'vite';
 import { glob } from 'glob';
 import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Get base components
 const baseComponents = glob.sync('./components/*.ts').reduce((acc, baseComponentPath) => {
@@ -85,21 +89,34 @@ export default defineConfig({
           return `assets/[name].[ext]`;
         },
       },
-      external: (id, parent) => {
-        // Don't make entry modules external
-        if (!parent) return false;
-        // Don't bundle lit or other external dependencies
-        if (id.includes('lit') || id.includes('node_modules')) return true;
-        // Handle SVG imports with ?raw or ?.raw suffix from @cre8_dev/cre8-icons
-        return false;
-      }
+      external: [
+        // External Lit dependencies - keep as external with proper package names
+        'lit',
+        'lit/decorators.js',
+        'lit/directives/if-defined.js',
+        'lit/directives/class-map.js',
+        'lit/directives/style-map.js',
+        'lit/directives/repeat.js',
+        'lit/directives/unsafe-html.js',
+        'lit-html',
+        'lit-html/directives/if-defined.js',
+        // External utility dependencies
+        'classnames',
+        'nanoid',
+        '@a11y/focus-trap',
+        'chart.js',
+      ]
     },
     copyPublicDir: false,
   },
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "./design-tokens/core/scss/theming/head.module.css";`
+        additionalData: `@import "./design-tokens/core/scss/theming/head.module.css";`,
+        includePaths: [
+          path.resolve(__dirname, 'node_modules/@tmorrow/cre8-design-tokens'),
+          path.resolve(__dirname, 'node_modules')
+        ]
       }
     }
   },
