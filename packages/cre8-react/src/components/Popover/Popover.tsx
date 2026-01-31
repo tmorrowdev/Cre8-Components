@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent, EventName } from '@lit/react';
-import { Cre8Popover as Cre8PopoverElement } from '@cre8_dev/cre8-wc/lib/components/popover/popover';
+import { Cre8Popover as Cre8PopoverElement } from '@tmorrow/cre8-wc/lib/components/popover/popover';
 import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 /**

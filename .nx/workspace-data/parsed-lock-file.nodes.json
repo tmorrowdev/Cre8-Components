@@ -3038,7 +3038,7 @@
     "data": {
       "version": "10.0.6",
       "packageName": "@storybook/core-webpack",
-      "hash": "sha512-zoLG/gQFvCrQ39E84fj4qGBxfovAKDD0yGPtwJwrnTnLEAFISdN4YANrWS7hquxk3tPujgGJwbFpQkghekz4bA=="
+      "hash": "sha512-zoLG/gQFvCrQ39E84fj4qGBxfovAKDD0yGPtwJwrnTncre8ISdN4YANrWS7hquxk3tPujgGJwbFpQkghekz4bA=="
     }
   },
   "npm:@storybook/global": {

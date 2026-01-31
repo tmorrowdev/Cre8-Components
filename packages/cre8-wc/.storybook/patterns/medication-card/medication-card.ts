@@ -8,14 +8,14 @@ const styles = css`@import 'design-tokens/core/scss/theming/component';
 div.c-medication-card__header {
   display: flex;
   align-items: center;
-  padding: size(2);
+  padding: calc(8px * 2);
 }
 
 .c-medication-card__icon {
-  --cre8-icon-height: #{size(3)};
-  --cre8-icon-width: #{size(3)};
+  --cre8-icon-height: #{calc(8px * 3)};
+  --cre8-icon-width: #{calc(8px * 3)};
   --cre8-icon-fill: var(--cre8-color-content-subtle);
-  margin-right: size(2);
+  margin-right: calc(8px * 2);
 }
 
 .c-medication-card__heading-after {
@@ -24,13 +24,13 @@ div.c-medication-card__header {
 
   ::slotted(div) {
     display: flex;
-    gap: size(1);
+    gap: calc(8px * 1);
     align-items: center;
   }
 }
 .c-medication-card__footer {
   @include cre8-typography-body-default;
-  padding: size(1) size(2);
+  padding: calc(8px * 1) calc(8px * 2);
   border-top: var(--cre8-theme-border-width) var(--cre8-border-style-default) var(--cre8-color-border-default);
 }
 `;

@@ -1,1 +1,1 @@
-module.exports = require('@esi/jest-config');
+module.exports = require('@tmorrow/jest-config');

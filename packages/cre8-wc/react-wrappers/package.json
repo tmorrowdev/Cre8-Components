@@ -1,0 +1,47 @@
+{
+  "name": "@tmorrow/cre8-react",
+  "version": "1.0.16",
+  "description": "React wrappers for cre8 web components",
+  "license": "BSD-3-Clause",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "types": "./lib/index.d.ts"
+    },
+    "./lib/*": "./lib/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@tmorrow/cre8-wc": "^1.0.16",
+    "@lit/react": "^1.0.8"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "typescript": "^5.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tmorrowdev/Cre8-Components.git"
+  },
+  "keywords": [
+    "react",
+    "web-components",
+    "lit",
+    "cre8",
+    "design-system"
+  ]
+}

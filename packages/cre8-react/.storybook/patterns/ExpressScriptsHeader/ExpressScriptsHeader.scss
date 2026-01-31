@@ -14,6 +14,7 @@
     display: block;
   }
 }
+
 /**
 * Site header menu button
 * 1) Margin right added to center logo on small screens
@@ -21,7 +22,7 @@
 .c-express-scripts-header__menu-button {
   position: relative;
   top: 4px;
-  margin-left: size(2);
+  margin-left: calc(8px * 2);
 
   @media all and (min-width: $cre8-bp-lg) {
     margin-left: 0;
@@ -35,13 +36,15 @@
 
 .c-express-scripts-header__megamenu-grid {
   display: block;
-  margin-bottom: size(6);
+  margin-bottom: calc(8px * 6);
 }
+
 .c-express-scripts-header__heading {
   display: inline-block;
-  margin-bottom: size(1.5);
+  margin-bottom: calc(8px * 1.5);
   color: var(--cre8-color-content-subtle);
 }
+
 .c-express-scripts-header__primary-nav {
   width: 100%;
 }

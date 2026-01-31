@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent } from '@lit/react';
-import { Cre8Link as Cre8LinkElement } from '@cre8_dev/cre8-wc/lib/components/link/link';
+import { Cre8Link as Cre8LinkElement } from '@tmorrow/cre8-wc/lib/components/link/link';
 
 /**
  * Link Component are strictly used in the case where the component will take

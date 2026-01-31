@@ -81,21 +81,21 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 
 .cre8-c-link__icon {
   display: inline-flex;
-  height: size(3);
-  width: size(3);
+  height: calc(8px * 3);
+  width: calc(8px * 3);
 
   .cre8-c-link--sm & {
     --cre8-icon-height: var(--cre8-icon-size-small);
     --cre8-icon-width: var(--cre8-icon-size-small);
-    height: size(2.75);
-    width: size(2.75);
+    height: calc(8px * 2.75);
+    width: calc(8px * 2.75);
   }
 
   .cre8-c-link--lg & {
     --cre8-icon-height: var(--cre8-icon-size-large);
     --cre8-icon-width: var(--cre8-icon-size-large);
-    height: size(3.25);
-    width: size(3.25);
+    height: calc(8px * 3.25);
+    width: calc(8px * 3.25);
   }
 }
 
@@ -108,28 +108,28 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 .cre8-c-link__cta-wrapper {
   color: var(--cre8-color-button-primary-content); // TODO: token not defined
   display: inline-flex;
-  margin-left: size(1);
+  margin-left: calc(8px * 1);
   padding: var(--cre8-spacing-4);
   background-color: var(--cre8-color-content-link);
   border-radius:  var(--cre8-border-radius-round);
   border-width: var(--cre8-border-width-button-default);
 
   svg {
-    height: size(2);
-    width: size(2);
+    height: calc(8px * 2);
+    width: calc(8px * 2);
   }
 }
 
 .cre8-c-link__icon.before {
-  padding-right: size(1);
+  padding-right: calc(8px * 1);
 }
 
 .cre8-c-link__icon.after {
-  padding-left: size(1);
+  padding-left: calc(8px * 1);
 }
 
 ::slotted([slot='badge']) {
-  padding-left: size(1);
+  padding-left: calc(8px * 1);
 }
 
 .cre8-c-link--inverted {
@@ -185,7 +185,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
       background-color:  var(--cre8-color-content-inverse-link);
       color: var(--cre8-color-content-inverse-link-focus);
       outline: var(--cre8-border-width-focus) var(--cre8-border-style-default)  var(--cre8-color-content-inverse-link); //TODO: token not exists cre8-color-border-inverse-active-outline
-      outline-offset: size(0.25);
+      outline-offset: calc(8px * 0.25);
     }
   }
 }

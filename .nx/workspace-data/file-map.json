@@ -86,7 +86,7 @@
         "hash": "5387326119030547798"
       },
       {
-        "file": "packages/cre8-design-tokens/src/assets/leafDS.png",
+        "file": "packages/cre8-design-tokens/src/assets/cre8DS.png",
         "hash": "727497867136920341"
       },
       {
@@ -266,7 +266,7 @@
         "hash": "5394898451861864160"
       },
       {
-        "file": "packages/cre8-design-tokens/leaf-leaf-design-tokens-1.7.0.tgz",
+        "file": "packages/cre8-design-tokens/cre8-cre8-design-tokens-1.7.0.tgz",
         "hash": "11955766359307329905"
       },
       {
@@ -550,7 +550,7 @@
         "hash": "11681040149623333652"
       },
       {
-        "file": "packages/cre8-design-tokens/.storybook/static/leafDS.png",
+        "file": "packages/cre8-design-tokens/.storybook/static/cre8DS.png",
         "hash": "727497867136920341"
       },
       {
@@ -614,7 +614,7 @@
         "hash": "13642241820383549950"
       },
       {
-        "file": "packages/cre8-design-tokens/.storybook/static/leaf.png",
+        "file": "packages/cre8-design-tokens/.storybook/static/cre8.png",
         "hash": "12905045280555339773"
       },
       {
@@ -789,7 +789,7 @@
           "hash": "2949791817221603359"
         },
         {
-          "file": "packages/cre8-react/.storybook/static/icons/leaf-icons.svg",
+          "file": "packages/cre8-react/.storybook/static/icons/cre8-icons.svg",
           "hash": "7876145439354247420"
         },
         {
@@ -797,7 +797,7 @@
           "hash": "1157416733889261112"
         },
         {
-          "file": "packages/cre8-react/.storybook/static/leaf-icons.svg",
+          "file": "packages/cre8-react/.storybook/static/cre8-icons.svg",
           "hash": "12726762868111859054"
         },
         {
@@ -2915,7 +2915,7 @@
           "hash": "10676544082008852045"
         },
         {
-          "file": "packages/cre8-react/dist/icons/leaf-icons.svg",
+          "file": "packages/cre8-react/dist/icons/cre8-icons.svg",
           "hash": "7876145439354247420"
         },
         {
@@ -2931,11 +2931,11 @@
           "hash": "16061832963884769718"
         },
         {
-          "file": "packages/cre8-react/dist/leaf-icons.svg",
+          "file": "packages/cre8-react/dist/cre8-icons.svg",
           "hash": "12726762868111859054"
         },
         {
-          "file": "packages/cre8-react/dist/leaf.png",
+          "file": "packages/cre8-react/dist/cre8.png",
           "hash": "12905045280555339773"
         },
         {
@@ -3561,15 +3561,15 @@
           "hash": "18429993954624588882"
         },
         {
-          "file": "packages/cre8-wc/.storybook/static/leaf.png",
+          "file": "packages/cre8-wc/.storybook/static/cre8.png",
           "hash": "12905045280555339773"
         },
         {
-          "file": "packages/cre8-wc/.storybook/static/leafDS.png",
+          "file": "packages/cre8-wc/.storybook/static/cre8DS.png",
           "hash": "727497867136920341"
         },
         {
-          "file": "packages/cre8-wc/.storybook/static/leafLogo.svg",
+          "file": "packages/cre8-wc/.storybook/static/cre8Logo.svg",
           "hash": "2398315403703028241"
         },
         {

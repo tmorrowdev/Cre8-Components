@@ -12,7 +12,7 @@
     - Layout Style Ref: [layout_hjez3ou](../GlobalStyles/LayoutAndSpacing.md#layout-hjez3ou) (See Layout Styles)
     - **LOGO + STATUS** (Type: FRAME, ID: I5491:24742;245:4869)
       - Layout Style Ref: [layout_hyz6fuq](../GlobalStyles/LayoutAndSpacing.md#layout-hyz6fuq) (See Layout Styles)
-      - **leaf logo** (Type: GROUP, ID: I5491:24742;245:4870)
+      - **cre8 logo** (Type: GROUP, ID: I5491:24742;245:4870)
         - Layout Style Ref: [layout_hdznyh7](../GlobalStyles/LayoutAndSpacing.md#layout-hdznyh7) (See Layout Styles)
         - **Subtract** (Type: IMAGE-SVG, ID: I5491:24742;245:4871)
           - Fills Ref: [fill_h1bono0](../GlobalStyles/Colors.md#fill-h1bono0) (See Color Styles)
@@ -123,7 +123,7 @@
         - **DESCRIPTION** (Type: FRAME, ID: I5491:24750;930:25524)
           - Layout Style Ref: [layout_h4k3fcy](../GlobalStyles/LayoutAndSpacing.md#layout-h4k3fcy) (See Layout Styles)
           - **global-token-value** (Type: TEXT, ID: I5491:24750;930:25525)
-            - Text Content: "0px 1px 2px 1px 
+            - Text Content: "0px 1px 2px 1px
 rgba(0, 0, 0, 0.2)"
             - TextStyle Ref: [text_hp6k801](../GlobalStyles/Typography.md#text-hp6k801) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
@@ -158,7 +158,7 @@ rgba(0, 0, 0, 0.2)"
         - **DESCRIPTION** (Type: FRAME, ID: I5491:24751;930:25524)
           - Layout Style Ref: [layout_h4k3fcy](../GlobalStyles/LayoutAndSpacing.md#layout-h4k3fcy) (See Layout Styles)
           - **global-token-value** (Type: TEXT, ID: I5491:24751;930:25525)
-            - Text Content: "0 0.5rem 0.375rem -0.375rem 
+            - Text Content: "0 0.5rem 0.375rem -0.375rem
 rgba(0, 0, 0, 0.1)"
             - TextStyle Ref: [text_hp6k801](../GlobalStyles/Typography.md#text-hp6k801) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
@@ -207,7 +207,7 @@ rgba(0, 0, 0, 0.1)"
     - Layout Style Ref: [layout_hjez3ou](../GlobalStyles/LayoutAndSpacing.md#layout-hjez3ou) (See Layout Styles)
     - **LOGO + STATUS** (Type: FRAME, ID: I5491:25844;245:4869)
       - Layout Style Ref: [layout_hyz6fuq](../GlobalStyles/LayoutAndSpacing.md#layout-hyz6fuq) (See Layout Styles)
-      - **leaf logo** (Type: GROUP, ID: I5491:25844;245:4870)
+      - **cre8 logo** (Type: GROUP, ID: I5491:25844;245:4870)
         - Layout Style Ref: [layout_hdznyh7](../GlobalStyles/LayoutAndSpacing.md#layout-hdznyh7) (See Layout Styles)
         - **Subtract** (Type: IMAGE-SVG, ID: I5491:25844;245:4871)
           - Fills Ref: [fill_h1bono0](../GlobalStyles/Colors.md#fill-h1bono0) (See Color Styles)
@@ -318,7 +318,7 @@ rgba(0, 0, 0, 0.1)"
         - **DESCRIPTION** (Type: FRAME, ID: I5491:25852;930:25524)
           - Layout Style Ref: [layout_h4k3fcy](../GlobalStyles/LayoutAndSpacing.md#layout-h4k3fcy) (See Layout Styles)
           - **global-token-value** (Type: TEXT, ID: I5491:25852;930:25525)
-            - Text Content: "0px 1px 2px 1px 
+            - Text Content: "0px 1px 2px 1px
 rgba(0, 0, 0, 0.2)"
             - TextStyle Ref: [text_hp6k801](../GlobalStyles/Typography.md#text-hp6k801) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
@@ -353,7 +353,7 @@ rgba(0, 0, 0, 0.2)"
         - **DESCRIPTION** (Type: FRAME, ID: I5491:25853;930:25524)
           - Layout Style Ref: [layout_h4k3fcy](../GlobalStyles/LayoutAndSpacing.md#layout-h4k3fcy) (See Layout Styles)
           - **global-token-value** (Type: TEXT, ID: I5491:25853;930:25525)
-            - Text Content: "0 0.5rem 0.375rem -0.375rem 
+            - Text Content: "0 0.5rem 0.375rem -0.375rem
 rgba(0, 0, 0, 0.1)"
             - TextStyle Ref: [text_hp6k801](../GlobalStyles/Typography.md#text-hp6k801) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
@@ -402,7 +402,7 @@ rgba(0, 0, 0, 0.1)"
     - Layout Style Ref: [layout_hjez3ou](../GlobalStyles/LayoutAndSpacing.md#layout-hjez3ou) (See Layout Styles)
     - **LOGO + STATUS** (Type: FRAME, ID: I5491:26644;245:4869)
       - Layout Style Ref: [layout_hyz6fuq](../GlobalStyles/LayoutAndSpacing.md#layout-hyz6fuq) (See Layout Styles)
-      - **leaf logo** (Type: GROUP, ID: I5491:26644;245:4870)
+      - **cre8 logo** (Type: GROUP, ID: I5491:26644;245:4870)
         - Layout Style Ref: [layout_hdznyh7](../GlobalStyles/LayoutAndSpacing.md#layout-hdznyh7) (See Layout Styles)
         - **Subtract** (Type: IMAGE-SVG, ID: I5491:26644;245:4871)
           - Fills Ref: [fill_h1bono0](../GlobalStyles/Colors.md#fill-h1bono0) (See Color Styles)
@@ -513,7 +513,7 @@ rgba(0, 0, 0, 0.1)"
         - **DESCRIPTION** (Type: FRAME, ID: I5491:26652;930:25524)
           - Layout Style Ref: [layout_h4k3fcy](../GlobalStyles/LayoutAndSpacing.md#layout-h4k3fcy) (See Layout Styles)
           - **global-token-value** (Type: TEXT, ID: I5491:26652;930:25525)
-            - Text Content: "0px 1px 2px 1px 
+            - Text Content: "0px 1px 2px 1px
 rgba(0, 0, 0, 0.2)"
             - TextStyle Ref: [text_hp6k801](../GlobalStyles/Typography.md#text-hp6k801) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
@@ -548,7 +548,7 @@ rgba(0, 0, 0, 0.2)"
         - **DESCRIPTION** (Type: FRAME, ID: I5491:26653;930:25524)
           - Layout Style Ref: [layout_h4k3fcy](../GlobalStyles/LayoutAndSpacing.md#layout-h4k3fcy) (See Layout Styles)
           - **global-token-value** (Type: TEXT, ID: I5491:26653;930:25525)
-            - Text Content: "0 0.5rem 0.375rem -0.375rem 
+            - Text Content: "0 0.5rem 0.375rem -0.375rem
 rgba(0, 0, 0, 0.1)"
             - TextStyle Ref: [text_hp6k801](../GlobalStyles/Typography.md#text-hp6k801) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
@@ -597,7 +597,7 @@ rgba(0, 0, 0, 0.1)"
     - Layout Style Ref: [layout_hjez3ou](../GlobalStyles/LayoutAndSpacing.md#layout-hjez3ou) (See Layout Styles)
     - **LOGO + STATUS** (Type: FRAME, ID: I12447:5783;245:4869)
       - Layout Style Ref: [layout_hyz6fuq](../GlobalStyles/LayoutAndSpacing.md#layout-hyz6fuq) (See Layout Styles)
-      - **leaf logo** (Type: GROUP, ID: I12447:5783;245:4870)
+      - **cre8 logo** (Type: GROUP, ID: I12447:5783;245:4870)
         - Layout Style Ref: [layout_hdznyh7](../GlobalStyles/LayoutAndSpacing.md#layout-hdznyh7) (See Layout Styles)
         - **Subtract** (Type: IMAGE-SVG, ID: I12447:5783;245:4871)
           - Fills Ref: [fill_h1bono0](../GlobalStyles/Colors.md#fill-h1bono0) (See Color Styles)
@@ -708,7 +708,7 @@ rgba(0, 0, 0, 0.1)"
         - **DESCRIPTION** (Type: FRAME, ID: I12447:5791;930:25524)
           - Layout Style Ref: [layout_h4k3fcy](../GlobalStyles/LayoutAndSpacing.md#layout-h4k3fcy) (See Layout Styles)
           - **global-token-value** (Type: TEXT, ID: I12447:5791;930:25525)
-            - Text Content: "0px 1px 2px 1px 
+            - Text Content: "0px 1px 2px 1px
 rgba(0, 0, 0, 0.2)"
             - TextStyle Ref: [text_hp6k801](../GlobalStyles/Typography.md#text-hp6k801) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
@@ -743,7 +743,7 @@ rgba(0, 0, 0, 0.2)"
         - **DESCRIPTION** (Type: FRAME, ID: I12447:5792;930:25524)
           - Layout Style Ref: [layout_h4k3fcy](../GlobalStyles/LayoutAndSpacing.md#layout-h4k3fcy) (See Layout Styles)
           - **global-token-value** (Type: TEXT, ID: I12447:5792;930:25525)
-            - Text Content: "0 0.5rem 0.375rem -0.375rem 
+            - Text Content: "0 0.5rem 0.375rem -0.375rem
 rgba(0, 0, 0, 0.1)"
             - TextStyle Ref: [text_hp6k801](../GlobalStyles/Typography.md#text-hp6k801) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)

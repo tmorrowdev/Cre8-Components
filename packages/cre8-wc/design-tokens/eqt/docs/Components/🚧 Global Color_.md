@@ -12,7 +12,7 @@
     - Layout Style Ref: [layout_hjez3ou](../GlobalStyles/LayoutAndSpacing.md#layout-hjez3ou) (See Layout Styles)
     - **LOGO + STATUS** (Type: FRAME, ID: I5386:1396;245:4869)
       - Layout Style Ref: [layout_hyz6fuq](../GlobalStyles/LayoutAndSpacing.md#layout-hyz6fuq) (See Layout Styles)
-      - **leaf logo** (Type: GROUP, ID: I5386:1396;245:4870)
+      - **cre8 logo** (Type: GROUP, ID: I5386:1396;245:4870)
         - Layout Style Ref: [layout_hdznyh7](../GlobalStyles/LayoutAndSpacing.md#layout-hdznyh7) (See Layout Styles)
         - **Subtract** (Type: IMAGE-SVG, ID: I5386:1396;245:4871)
           - Fills Ref: [fill_h1bono0](../GlobalStyles/Colors.md#fill-h1bono0) (See Color Styles)
@@ -2705,7 +2705,7 @@
     - Layout Style Ref: [layout_hjez3ou](../GlobalStyles/LayoutAndSpacing.md#layout-hjez3ou) (See Layout Styles)
     - **LOGO + STATUS** (Type: FRAME, ID: I5433:13398;245:4869)
       - Layout Style Ref: [layout_hyz6fuq](../GlobalStyles/LayoutAndSpacing.md#layout-hyz6fuq) (See Layout Styles)
-      - **leaf logo** (Type: GROUP, ID: I5433:13398;245:4870)
+      - **cre8 logo** (Type: GROUP, ID: I5433:13398;245:4870)
         - Layout Style Ref: [layout_hdznyh7](../GlobalStyles/LayoutAndSpacing.md#layout-hdznyh7) (See Layout Styles)
         - **Subtract** (Type: IMAGE-SVG, ID: I5433:13398;245:4871)
           - Fills Ref: [fill_h1bono0](../GlobalStyles/Colors.md#fill-h1bono0) (See Color Styles)
@@ -4239,7 +4239,7 @@
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
     - **Title** (Type: TEXT, ID: 5433:13494)
-      - Text Content: "Leaf Green"
+      - Text Content: "cre8 Green"
       - TextStyle Ref: [text_h88kxq8](../GlobalStyles/Typography.md#text-h88kxq8) (See Typography Styles)
       - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
       - Layout Style Ref: [layout_htca7n3](../GlobalStyles/LayoutAndSpacing.md#layout-htca7n3) (See Layout Styles)
@@ -4493,7 +4493,7 @@
     - Layout Style Ref: [layout_hjez3ou](../GlobalStyles/LayoutAndSpacing.md#layout-hjez3ou) (See Layout Styles)
     - **LOGO + STATUS** (Type: FRAME, ID: I12447:16075;245:4869)
       - Layout Style Ref: [layout_hyz6fuq](../GlobalStyles/LayoutAndSpacing.md#layout-hyz6fuq) (See Layout Styles)
-      - **leaf logo** (Type: GROUP, ID: I12447:16075;245:4870)
+      - **cre8 logo** (Type: GROUP, ID: I12447:16075;245:4870)
         - Layout Style Ref: [layout_hdznyh7](../GlobalStyles/LayoutAndSpacing.md#layout-hdznyh7) (See Layout Styles)
         - **Subtract** (Type: IMAGE-SVG, ID: I12447:16075;245:4871)
           - Fills Ref: [fill_h1bono0](../GlobalStyles/Colors.md#fill-h1bono0) (See Color Styles)
@@ -6226,7 +6226,7 @@
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
     - **Title** (Type: TEXT, ID: 12447:16171)
-      - Text Content: "Leaf Green"
+      - Text Content: "cre8 Green"
       - TextStyle Ref: [text_h88kxq8](../GlobalStyles/Typography.md#text-h88kxq8) (See Typography Styles)
       - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
       - Layout Style Ref: [layout_htca7n3](../GlobalStyles/LayoutAndSpacing.md#layout-htca7n3) (See Layout Styles)
@@ -6485,7 +6485,7 @@
     - Layout Style Ref: [layout_hjez3ou](../GlobalStyles/LayoutAndSpacing.md#layout-hjez3ou) (See Layout Styles)
     - **LOGO + STATUS** (Type: FRAME, ID: I5433:16274;245:4869)
       - Layout Style Ref: [layout_hyz6fuq](../GlobalStyles/LayoutAndSpacing.md#layout-hyz6fuq) (See Layout Styles)
-      - **leaf logo** (Type: GROUP, ID: I5433:16274;245:4870)
+      - **cre8 logo** (Type: GROUP, ID: I5433:16274;245:4870)
         - Layout Style Ref: [layout_hdznyh7](../GlobalStyles/LayoutAndSpacing.md#layout-hdznyh7) (See Layout Styles)
         - **Subtract** (Type: IMAGE-SVG, ID: I5433:16274;245:4871)
           - Fills Ref: [fill_h1bono0](../GlobalStyles/Colors.md#fill-h1bono0) (See Color Styles)

@@ -2,29 +2,26 @@ import { html, nothing } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property, query, state } from 'lit/decorators.js';
 import styles from './date-picker.styles';
-import { Cre8FormElement } from '../cre8-form-element';
+import { Cre8Field } from '../field/field';
 import './calendar/calendar';
 
 /**
  * The Date Picker component renders a form group with label, control, help text and validation styling much
  * like the Field component but exclusively for type=date.
- * Cre8DatePicker inherts the Cre8Field component.
+ * Cre8DatePicker inherits the Cre8Field component.
  */
-export class Cre8DatePicker extends  Cre8FormElement {
-   static formAssociated = true;
+export class Cre8DatePicker extends Cre8Field {
    @query('input[type="date"]')
-    field:  HTMLInputElement;
+   override field!: HTMLInputElement;
 
    /**
     * The type of the form field.
     * For Date Picker, this is always 'date'.
     */
-   override type: string = 'date';
-    static styles = [styles];
+   override type: 'text' | 'email' | 'number' | 'url' | 'tel' | 'password' | 'date' = 'date';
+   static override styles = [styles];
 
   @state() showCalendar = false;
-  @state() disabled: boolean;
-  @state() readonly: boolean;
 
   /**
    * Quick Shortcuts Variant
@@ -33,14 +30,6 @@ export class Cre8DatePicker extends  Cre8FormElement {
    */
   @property({ type: Boolean, reflect: true })
       hasShortcuts?: boolean;
-
-      connectedCallback(): void {
-      super.connectedCallback();
-      this.field.attachInternals();
-      this.field.disabled = this.disabled;
-      this.field.readOnly = this.readonly;
-      this.internals.setFormValue(this.value);
-      }
   /**
    * Handle Date On Input
    * 1) Set the input's value equal to the event.target.value when the input is changed.

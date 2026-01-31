@@ -1,4 +1,4 @@
-@import '/design-tokens/core/scss/theming/component';
+@import '../../design-tokens/core/scss/theming/component';
 
 // #CARD
 
@@ -17,24 +17,26 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
-  padding: size(3);
-  gap: size(2);
+  padding: calc(8px * 3);
+  gap: calc(8px * 2);
   border-color: var(--cre8-color-border-default);
   border-style: var(--cre8-border-style-default);
   border-width: var(--cre8-border-width-default);
   border-radius: var(--cre8-border-radius-default);
   background: var(--cre8-color-bg-default);
 }
+
 /**
  * Horizontal card
  * 1) Organized block with flex-direction set to row so that header => footer appears
  * from left to right rather than top to bottom
  */
-.cre8-c-card--horizontal{
+.cre8-c-card--horizontal {
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
+
 /**
  * Bare card
  * 1) Organized block without a border, background, or padding
@@ -45,12 +47,13 @@
   gap: 0;
   box-shadow: none;
 }
+
 /**
  * Horizontal-bare card
  * 1) Organized block with flex-direction set to row so that header => footer appears
  * from left to right rather than top to bottom without a border, background, or padding
  */
-.cre8-c-card--horizontal-bare{
+.cre8-c-card--horizontal-bare {
   flex-direction: row;
   border: 0;
   padding: 0;
@@ -59,14 +62,18 @@
   align-items: center;
   justify-content: center;
 }
+
 /**
  * Center aligned card
  * 1) Center content and text within the card
  */
 .cre8-c-card--align-center {
-  text-align: center; /* 1 */
-  align-items: center; /* 1 */
-  justify-content: center; /* 1 */
+  text-align: center;
+  /* 1 */
+  align-items: center;
+  /* 1 */
+  justify-content: center;
+  /* 1 */
 }
 
 /**
@@ -83,7 +90,8 @@
  */
 .cre8-c-card__header {
   display: block;
-  flex: none; /* 1 */
+  flex: none;
+  /* 1 */
 }
 
 /**
@@ -92,7 +100,8 @@
  */
 .cre8-c-card__body {
   display: block;
-  flex: 1 1 auto; /* 1 */
+  flex: 1 1 auto;
+  /* 1 */
 
 }
 
@@ -102,11 +111,13 @@
  */
 .cre8-c-card__footer {
   display: block;
-  flex: none; /* 1 */
+  flex: none;
+  /* 1 */
 
   .cre8-c-card--bare & {
     padding: 0;
   }
+
   .cre8-c-card--horizontal-bare & {
     padding: 0;
   }

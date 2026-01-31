@@ -12,7 +12,7 @@
     - Layout Style Ref: [layout_hjez3ou](../GlobalStyles/LayoutAndSpacing.md#layout-hjez3ou) (See Layout Styles)
     - **LOGO + STATUS** (Type: FRAME, ID: I5386:976;245:4869)
       - Layout Style Ref: [layout_hyz6fuq](../GlobalStyles/LayoutAndSpacing.md#layout-hyz6fuq) (See Layout Styles)
-      - **leaf logo** (Type: GROUP, ID: I5386:976;245:4870)
+      - **cre8 logo** (Type: GROUP, ID: I5386:976;245:4870)
         - Layout Style Ref: [layout_hdznyh7](../GlobalStyles/LayoutAndSpacing.md#layout-hdznyh7) (See Layout Styles)
         - **Subtract** (Type: IMAGE-SVG, ID: I5386:976;245:4871)
           - Fills Ref: [fill_h1bono0](../GlobalStyles/Colors.md#fill-h1bono0) (See Color Styles)
@@ -380,6 +380,7 @@ Instead, we encourage brand designers and developers to work together to take ad
               - TextStyle Ref: [text_hlofjx6](../GlobalStyles/Typography.md#text-hlofjx6) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
+
 - **Pattern Library Color Tokens** (Type: FRAME, ID: 5433:16481)
   - BorderRadius: 24px
   - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
@@ -390,7 +391,7 @@ Instead, we encourage brand designers and developers to work together to take ad
     - Layout Style Ref: [layout_hjez3ou](../GlobalStyles/LayoutAndSpacing.md#layout-hjez3ou) (See Layout Styles)
     - **LOGO + STATUS** (Type: FRAME, ID: I5433:16482;245:4869)
       - Layout Style Ref: [layout_hyz6fuq](../GlobalStyles/LayoutAndSpacing.md#layout-hyz6fuq) (See Layout Styles)
-      - **leaf logo** (Type: GROUP, ID: I5433:16482;245:4870)
+      - **cre8 logo** (Type: GROUP, ID: I5433:16482;245:4870)
         - Layout Style Ref: [layout_hdznyh7](../GlobalStyles/LayoutAndSpacing.md#layout-hdznyh7) (See Layout Styles)
         - **Subtract** (Type: IMAGE-SVG, ID: I5433:16482;245:4871)
           - Fills Ref: [fill_h1bono0](../GlobalStyles/Colors.md#fill-h1bono0) (See Color Styles)
@@ -554,7 +555,7 @@ Instead, we encourage brand designers and developers to work together to take ad
     - Layout Style Ref: [layout_hjez3ou](../GlobalStyles/LayoutAndSpacing.md#layout-hjez3ou) (See Layout Styles)
     - **LOGO + STATUS** (Type: FRAME, ID: I5433:13517;245:4869)
       - Layout Style Ref: [layout_hyz6fuq](../GlobalStyles/LayoutAndSpacing.md#layout-hyz6fuq) (See Layout Styles)
-      - **leaf logo** (Type: GROUP, ID: I5433:13517;245:4870)
+      - **cre8 logo** (Type: GROUP, ID: I5433:13517;245:4870)
         - Layout Style Ref: [layout_hdznyh7](../GlobalStyles/LayoutAndSpacing.md#layout-hdznyh7) (See Layout Styles)
         - **Subtract** (Type: IMAGE-SVG, ID: I5433:13517;245:4871)
           - Fills Ref: [fill_h1bono0](../GlobalStyles/Colors.md#fill-h1bono0) (See Color Styles)
@@ -733,13 +734,13 @@ Instead, we encourage brand designers and developers to work together to take ad
             - Fills Ref: [fill_h4lavpj](../GlobalStyles/Colors.md#fill-h4lavpj) (See Color Styles)
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
-            - **leaf-green-10** (Type: TEXT, ID: 8933:3515)
-              - Text Content: "leaf-green-10"
+            - **cre8-green-10** (Type: TEXT, ID: 8933:3515)
+              - Text Content: "cre8-green-10"
               - TextStyle Ref: [text_hlofjx6](../GlobalStyles/Typography.md#text-hlofjx6) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
-          - **leaf-green-10** (Type: TEXT, ID: 8933:3516)
-            - Text Content: "leaf-green-10"
+          - **cre8-green-10** (Type: TEXT, ID: 8933:3516)
+            - Text Content: "cre8-green-10"
             - TextStyle Ref: [text_hig6jfr](../GlobalStyles/Typography.md#text-hig6jfr) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
             - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -756,13 +757,13 @@ Instead, we encourage brand designers and developers to work together to take ad
             - Fills Ref: [fill_h4lavpj](../GlobalStyles/Colors.md#fill-h4lavpj) (See Color Styles)
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
-            - **leaf-green-50** (Type: TEXT, ID: 8933:3523)
-              - Text Content: "leaf-green-50"
+            - **cre8-green-50** (Type: TEXT, ID: 8933:3523)
+              - Text Content: "cre8-green-50"
               - TextStyle Ref: [text_hlofjx6](../GlobalStyles/Typography.md#text-hlofjx6) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
-          - **leaf-green-50** (Type: TEXT, ID: 8933:3524)
-            - Text Content: "leaf-green-50"
+          - **cre8-green-50** (Type: TEXT, ID: 8933:3524)
+            - Text Content: "cre8-green-50"
             - TextStyle Ref: [text_hig6jfr](../GlobalStyles/Typography.md#text-hig6jfr) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
             - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -779,13 +780,13 @@ Instead, we encourage brand designers and developers to work together to take ad
             - Fills Ref: [fill_h4lavpj](../GlobalStyles/Colors.md#fill-h4lavpj) (See Color Styles)
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
-            - **leaf-green-100** (Type: TEXT, ID: 8933:3531)
-              - Text Content: "leaf-green-100"
+            - **cre8-green-100** (Type: TEXT, ID: 8933:3531)
+              - Text Content: "cre8-green-100"
               - TextStyle Ref: [text_hlofjx6](../GlobalStyles/Typography.md#text-hlofjx6) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
-          - **leaf-green-100** (Type: TEXT, ID: 8933:3532)
-            - Text Content: "leaf-green-100"
+          - **cre8-green-100** (Type: TEXT, ID: 8933:3532)
+            - Text Content: "cre8-green-100"
             - TextStyle Ref: [text_hig6jfr](../GlobalStyles/Typography.md#text-hig6jfr) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
             - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -874,13 +875,13 @@ Instead, we encourage brand designers and developers to work together to take ad
             - Fills Ref: [fill_h4lavpj](../GlobalStyles/Colors.md#fill-h4lavpj) (See Color Styles)
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
-            - **accent-leaf-green-20** (Type: TEXT, ID: 8933:3545)
-              - Text Content: "accent-leaf-green-20"
+            - **accent-cre8-green-20** (Type: TEXT, ID: 8933:3545)
+              - Text Content: "accent-cre8-green-20"
               - TextStyle Ref: [text_hlofjx6](../GlobalStyles/Typography.md#text-hlofjx6) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
-          - **accent-leaf-green-20** (Type: TEXT, ID: 8933:3546)
-            - Text Content: "accent-leaf-green-20"
+          - **accent-cre8-green-20** (Type: TEXT, ID: 8933:3546)
+            - Text Content: "accent-cre8-green-20"
             - TextStyle Ref: [text_hig6jfr](../GlobalStyles/Typography.md#text-hig6jfr) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
             - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -902,13 +903,13 @@ Instead, we encourage brand designers and developers to work together to take ad
             - Fills Ref: [fill_h4lavpj](../GlobalStyles/Colors.md#fill-h4lavpj) (See Color Styles)
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
-            - **accent-leaf-green-100** (Type: TEXT, ID: 8933:3554)
-              - Text Content: "accent-leaf-green-100"
+            - **accent-cre8-green-100** (Type: TEXT, ID: 8933:3554)
+              - Text Content: "accent-cre8-green-100"
               - TextStyle Ref: [text_hlofjx6](../GlobalStyles/Typography.md#text-hlofjx6) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
-          - **accent-leaf-green-100** (Type: TEXT, ID: 8933:3555)
-            - Text Content: "accent-leaf-green-100"
+          - **accent-cre8-green-100** (Type: TEXT, ID: 8933:3555)
+            - Text Content: "accent-cre8-green-100"
             - TextStyle Ref: [text_hig6jfr](../GlobalStyles/Typography.md#text-hig6jfr) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
             - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -993,13 +994,13 @@ Instead, we encourage brand designers and developers to work together to take ad
             - Fills Ref: [fill_h4lavpj](../GlobalStyles/Colors.md#fill-h4lavpj) (See Color Styles)
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
-            - **leaf-green-05** (Type: TEXT, ID: 8933:3661)
-              - Text Content: "leaf-green-05"
+            - **cre8-green-05** (Type: TEXT, ID: 8933:3661)
+              - Text Content: "cre8-green-05"
               - TextStyle Ref: [text_hlofjx6](../GlobalStyles/Typography.md#text-hlofjx6) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
-          - **accent-leaf-green-05** (Type: TEXT, ID: 8933:3662)
-            - Text Content: "accent-leaf-green-05"
+          - **accent-cre8-green-05** (Type: TEXT, ID: 8933:3662)
+            - Text Content: "accent-cre8-green-05"
             - TextStyle Ref: [text_hig6jfr](../GlobalStyles/Typography.md#text-hig6jfr) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
             - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -1021,13 +1022,13 @@ Instead, we encourage brand designers and developers to work together to take ad
             - Fills Ref: [fill_h4lavpj](../GlobalStyles/Colors.md#fill-h4lavpj) (See Color Styles)
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
-            - **leaf-green-10** (Type: TEXT, ID: 8933:3703)
-              - Text Content: "leaf-green-10"
+            - **cre8-green-10** (Type: TEXT, ID: 8933:3703)
+              - Text Content: "cre8-green-10"
               - TextStyle Ref: [text_hlofjx6](../GlobalStyles/Typography.md#text-hlofjx6) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
-          - **accent-leaf-green-10** (Type: TEXT, ID: 8933:3704)
-            - Text Content: "accent-leaf-green-10"
+          - **accent-cre8-green-10** (Type: TEXT, ID: 8933:3704)
+            - Text Content: "accent-cre8-green-10"
             - TextStyle Ref: [text_hig6jfr](../GlobalStyles/Typography.md#text-hig6jfr) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
             - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -1049,13 +1050,13 @@ Instead, we encourage brand designers and developers to work together to take ad
             - Fills Ref: [fill_h4lavpj](../GlobalStyles/Colors.md#fill-h4lavpj) (See Color Styles)
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
-            - **leaf-green-50** (Type: TEXT, ID: 8933:3768)
-              - Text Content: "leaf-green-50"
+            - **cre8-green-50** (Type: TEXT, ID: 8933:3768)
+              - Text Content: "cre8-green-50"
               - TextStyle Ref: [text_hlofjx6](../GlobalStyles/Typography.md#text-hlofjx6) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
-          - **accent-leaf-green-50** (Type: TEXT, ID: 8933:3769)
-            - Text Content: "accent-leaf-green-50"
+          - **accent-cre8-green-50** (Type: TEXT, ID: 8933:3769)
+            - Text Content: "accent-cre8-green-50"
             - TextStyle Ref: [text_hig6jfr](../GlobalStyles/Typography.md#text-hig6jfr) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
             - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -1077,13 +1078,13 @@ Instead, we encourage brand designers and developers to work together to take ad
             - Fills Ref: [fill_h4lavpj](../GlobalStyles/Colors.md#fill-h4lavpj) (See Color Styles)
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
-            - **leaf-green-60** (Type: TEXT, ID: 8933:3915)
-              - Text Content: "leaf-green-60"
+            - **cre8-green-60** (Type: TEXT, ID: 8933:3915)
+              - Text Content: "cre8-green-60"
               - TextStyle Ref: [text_hlofjx6](../GlobalStyles/Typography.md#text-hlofjx6) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
-          - **accent-leaf-green-60** (Type: TEXT, ID: 8933:3916)
-            - Text Content: "accent-leaf-green-60"
+          - **accent-cre8-green-60** (Type: TEXT, ID: 8933:3916)
+            - Text Content: "accent-cre8-green-60"
             - TextStyle Ref: [text_hig6jfr](../GlobalStyles/Typography.md#text-hig6jfr) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
             - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -1105,13 +1106,13 @@ Instead, we encourage brand designers and developers to work together to take ad
             - Fills Ref: [fill_h4lavpj](../GlobalStyles/Colors.md#fill-h4lavpj) (See Color Styles)
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
-            - **leaf-green-70** (Type: TEXT, ID: 8933:3779)
-              - Text Content: "leaf-green-70"
+            - **cre8-green-70** (Type: TEXT, ID: 8933:3779)
+              - Text Content: "cre8-green-70"
               - TextStyle Ref: [text_hlofjx6](../GlobalStyles/Typography.md#text-hlofjx6) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
-          - **accent-leaf-green-70** (Type: TEXT, ID: 8933:3780)
-            - Text Content: "accent-leaf-green-70"
+          - **accent-cre8-green-70** (Type: TEXT, ID: 8933:3780)
+            - Text Content: "accent-cre8-green-70"
             - TextStyle Ref: [text_hig6jfr](../GlobalStyles/Typography.md#text-hig6jfr) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
             - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -1265,13 +1266,13 @@ Instead, we encourage brand designers and developers to work together to take ad
             - Fills Ref: [fill_h4lavpj](../GlobalStyles/Colors.md#fill-h4lavpj) (See Color Styles)
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
-            - **accent-leaf-green-20** (Type: TEXT, ID: 8933:3586)
-              - Text Content: "accent-leaf-green-20"
+            - **accent-cre8-green-20** (Type: TEXT, ID: 8933:3586)
+              - Text Content: "accent-cre8-green-20"
               - TextStyle Ref: [text_hlofjx6](../GlobalStyles/Typography.md#text-hlofjx6) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
-          - **accent-leaf-green-20** (Type: TEXT, ID: 8933:3587)
-            - Text Content: "accent-leaf-green-20"
+          - **accent-cre8-green-20** (Type: TEXT, ID: 8933:3587)
+            - Text Content: "accent-cre8-green-20"
             - TextStyle Ref: [text_hig6jfr](../GlobalStyles/Typography.md#text-hig6jfr) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
             - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -1293,13 +1294,13 @@ Instead, we encourage brand designers and developers to work together to take ad
             - Fills Ref: [fill_h4lavpj](../GlobalStyles/Colors.md#fill-h4lavpj) (See Color Styles)
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
-            - **accent-leaf-green-100** (Type: TEXT, ID: 8933:3595)
-              - Text Content: "accent-leaf-green-100"
+            - **accent-cre8-green-100** (Type: TEXT, ID: 8933:3595)
+              - Text Content: "accent-cre8-green-100"
               - TextStyle Ref: [text_hlofjx6](../GlobalStyles/Typography.md#text-hlofjx6) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
-          - **accent-leaf-green-100** (Type: TEXT, ID: 8933:3596)
-            - Text Content: "accent-leaf-green-100"
+          - **accent-cre8-green-100** (Type: TEXT, ID: 8933:3596)
+            - Text Content: "accent-cre8-green-100"
             - TextStyle Ref: [text_hig6jfr](../GlobalStyles/Typography.md#text-hig6jfr) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
             - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -1384,13 +1385,13 @@ Instead, we encourage brand designers and developers to work together to take ad
             - Fills Ref: [fill_h4lavpj](../GlobalStyles/Colors.md#fill-h4lavpj) (See Color Styles)
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
-            - **accent-leaf-green-05** (Type: TEXT, ID: 8933:4030)
-              - Text Content: "accent-leaf-green-05"
+            - **accent-cre8-green-05** (Type: TEXT, ID: 8933:4030)
+              - Text Content: "accent-cre8-green-05"
               - TextStyle Ref: [text_hlofjx6](../GlobalStyles/Typography.md#text-hlofjx6) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
-          - **accent-leaf-green-05** (Type: TEXT, ID: 8933:4031)
-            - Text Content: "accent-leaf-green-05"
+          - **accent-cre8-green-05** (Type: TEXT, ID: 8933:4031)
+            - Text Content: "accent-cre8-green-05"
             - TextStyle Ref: [text_hig6jfr](../GlobalStyles/Typography.md#text-hig6jfr) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
             - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -1412,13 +1413,13 @@ Instead, we encourage brand designers and developers to work together to take ad
             - Fills Ref: [fill_h4lavpj](../GlobalStyles/Colors.md#fill-h4lavpj) (See Color Styles)
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
-            - **accent-leaf-green-10** (Type: TEXT, ID: 8933:4039)
-              - Text Content: "accent-leaf-green-10"
+            - **accent-cre8-green-10** (Type: TEXT, ID: 8933:4039)
+              - Text Content: "accent-cre8-green-10"
               - TextStyle Ref: [text_hlofjx6](../GlobalStyles/Typography.md#text-hlofjx6) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
-          - **accent-leaf-green-10** (Type: TEXT, ID: 8933:4040)
-            - Text Content: "accent-leaf-green-10"
+          - **accent-cre8-green-10** (Type: TEXT, ID: 8933:4040)
+            - Text Content: "accent-cre8-green-10"
             - TextStyle Ref: [text_hig6jfr](../GlobalStyles/Typography.md#text-hig6jfr) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
             - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -1440,13 +1441,13 @@ Instead, we encourage brand designers and developers to work together to take ad
             - Fills Ref: [fill_h4lavpj](../GlobalStyles/Colors.md#fill-h4lavpj) (See Color Styles)
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
-            - **accent-leaf-green-50** (Type: TEXT, ID: 8933:4048)
-              - Text Content: "accent-leaf-green-50"
+            - **accent-cre8-green-50** (Type: TEXT, ID: 8933:4048)
+              - Text Content: "accent-cre8-green-50"
               - TextStyle Ref: [text_hlofjx6](../GlobalStyles/Typography.md#text-hlofjx6) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
-          - **accent-leaf-green-50** (Type: TEXT, ID: 8933:4049)
-            - Text Content: "accent-leaf-green-50"
+          - **accent-cre8-green-50** (Type: TEXT, ID: 8933:4049)
+            - Text Content: "accent-cre8-green-50"
             - TextStyle Ref: [text_hig6jfr](../GlobalStyles/Typography.md#text-hig6jfr) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
             - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -1468,13 +1469,13 @@ Instead, we encourage brand designers and developers to work together to take ad
             - Fills Ref: [fill_h4lavpj](../GlobalStyles/Colors.md#fill-h4lavpj) (See Color Styles)
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
-            - **accent-leaf-green-60** (Type: TEXT, ID: 8933:4057)
-              - Text Content: "accent-leaf-green-60"
+            - **accent-cre8-green-60** (Type: TEXT, ID: 8933:4057)
+              - Text Content: "accent-cre8-green-60"
               - TextStyle Ref: [text_hlofjx6](../GlobalStyles/Typography.md#text-hlofjx6) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
-          - **accent-leaf-green-60** (Type: TEXT, ID: 8933:4058)
-            - Text Content: "accent-leaf-green-60"
+          - **accent-cre8-green-60** (Type: TEXT, ID: 8933:4058)
+            - Text Content: "accent-cre8-green-60"
             - TextStyle Ref: [text_hig6jfr](../GlobalStyles/Typography.md#text-hig6jfr) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
             - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -1496,13 +1497,13 @@ Instead, we encourage brand designers and developers to work together to take ad
             - Fills Ref: [fill_h4lavpj](../GlobalStyles/Colors.md#fill-h4lavpj) (See Color Styles)
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
-            - **accent-leaf-green-70** (Type: TEXT, ID: 8933:4066)
-              - Text Content: "accent-leaf-green-70"
+            - **accent-cre8-green-70** (Type: TEXT, ID: 8933:4066)
+              - Text Content: "accent-cre8-green-70"
               - TextStyle Ref: [text_hlofjx6](../GlobalStyles/Typography.md#text-hlofjx6) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
-          - **accent-leaf-green-70** (Type: TEXT, ID: 8933:4067)
-            - Text Content: "accent-leaf-green-70"
+          - **accent-cre8-green-70** (Type: TEXT, ID: 8933:4067)
+            - Text Content: "accent-cre8-green-70"
             - TextStyle Ref: [text_hig6jfr](../GlobalStyles/Typography.md#text-hig6jfr) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
             - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)

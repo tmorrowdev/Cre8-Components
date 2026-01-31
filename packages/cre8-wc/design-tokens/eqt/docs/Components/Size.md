@@ -12,7 +12,7 @@
     - Layout Style Ref: [layout_hjez3ou](../GlobalStyles/LayoutAndSpacing.md#layout-hjez3ou) (See Layout Styles)
     - **LOGO + STATUS** (Type: FRAME, ID: I8892:9647;245:4869)
       - Layout Style Ref: [layout_hyz6fuq](../GlobalStyles/LayoutAndSpacing.md#layout-hyz6fuq) (See Layout Styles)
-      - **leaf logo** (Type: GROUP, ID: I8892:9647;245:4870)
+      - **cre8 logo** (Type: GROUP, ID: I8892:9647;245:4870)
         - Layout Style Ref: [layout_hdznyh7](../GlobalStyles/LayoutAndSpacing.md#layout-hdznyh7) (See Layout Styles)
         - **Subtract** (Type: IMAGE-SVG, ID: I8892:9647;245:4871)
           - Fills Ref: [fill_h1bono0](../GlobalStyles/Colors.md#fill-h1bono0) (See Color Styles)

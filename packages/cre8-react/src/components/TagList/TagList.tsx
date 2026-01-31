@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent } from '@lit/react';
-import { Cre8TagList as Cre8TagListElement } from '@cre8_dev/cre8-wc/lib/components/tag-list/tag-list';
+import { Cre8TagList as Cre8TagListElement } from '@tmorrow/cre8-wc/lib/components/tag-list/tag-list';
 
 /**
  * Tag List must have children which are Tag components that are of type `checkbox` or `radio`.

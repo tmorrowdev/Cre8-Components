@@ -14,13 +14,14 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
-  padding: size(2);
+  padding: calc(8px * 2);
   gap: 1rem;
   border-color: var(--cre8-color-border-default);
   border-width: var(--cre8-border-width-default);
   border-radius: var(--cre8-border-radius-default);
   border-style: solid;
   background: var(--cre8-color-bg-default);
+
   &:hover,
   &:focus,
   &:focus-visible,
@@ -28,6 +29,7 @@
     background: var(--cre8-color-bg-default-hover);
     border-color: var(--cre8-color-border-brand);
   }
+
   &:focus,
   &:focus-visible {
     @include component.focus();
@@ -50,7 +52,7 @@
   }
 }
 
-input:checked + .cre8-c-select-tile {
+input:checked+.cre8-c-select-tile {
   border-width: 2px;
   border-color: var(--cre8-color-border-brand);
 }
@@ -64,7 +66,7 @@ input:checked + .cre8-c-select-tile {
  * 1) Organized block with flex-direction set to row so that header => footer appears
  * from left to right rather than top to bottom
  */
- .cre8-c-select-tile--horizontal {
+.cre8-c-select-tile--horizontal {
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -76,8 +78,8 @@ input:checked + .cre8-c-select-tile {
 
     .cre8-c-select-tile__custom-radio {
       position: absolute;
-      top: size(1);
-      right: size(1);
+      top: calc(8px * 1);
+      right: calc(8px * 1);
     }
   }
 }
@@ -85,18 +87,23 @@ input:checked + .cre8-c-select-tile {
 .cre8-c-select-tile--vertical-at-sm {
   @include cre8-c-select-tile--vertical-at-bp(component.$cre8-breakpoint-sm);
 }
+
 .cre8-c-select-tile--vertical-at-sm-2 {
   @include cre8-c-select-tile--vertical-at-bp(component.$cre8-breakpoint-sm);
 }
+
 .cre8-c-select-tile--vertical-at-md {
   @include cre8-c-select-tile--vertical-at-bp(component.$cre8-breakpoint-md);
 }
+
 .cre8-c-select-tile--vertical-at-lg {
   @include cre8-c-select-tile--vertical-at-bp(component.$cre8-breakpoint-lg);
 }
+
 .cre8-c-select-tile--vertical-at-xl {
   @include cre8-c-select-tile--vertical-at-bp(component.$cre8-breakpoint-xl);
 }
+
 .cre8-c-select-tile--vertical-at-xxl {
   @include cre8-c-select-tile--vertical-at-bp(component.$cre8-breakpoint-xxl);
 }
@@ -111,6 +118,7 @@ input:checked + .cre8-c-select-tile {
   padding: var(--cre8-spacing-0);
   box-shadow: none;
 }
+
 /**
  * Horizontal-bare select-tile
  * 1) Organized block with flex-direction set to row so that header => footer appears
@@ -123,15 +131,19 @@ input:checked + .cre8-c-select-tile {
   box-shadow: none;
   align-items: center;
   justify-content: center;
- }
+}
+
 /**
  * Center aligned select-tile
  * 1) Center content and text within the select-tile
  */
 .cre8-c-select-tile--align-center {
-  text-align: center; /* 1 */
-  align-items: center; /* 1 */
-  justify-content: center; /* 1 */
+  text-align: center;
+  /* 1 */
+  align-items: center;
+  /* 1 */
+  justify-content: center;
+  /* 1 */
 }
 
 /**
@@ -148,7 +160,8 @@ input:checked + .cre8-c-select-tile {
  */
 .cre8-c-select-tile__header {
   display: block;
-  flex: none; /* 1 */
+  flex: none;
+  /* 1 */
 }
 
 /**
@@ -157,7 +170,8 @@ input:checked + .cre8-c-select-tile {
  */
 .cre8-c-select-tile__body {
   display: block;
-  flex: 1 1 auto; /* 1 */
+  flex: 1 1 auto;
+  /* 1 */
 
   /**
   * Select Tile body within bare select-tile
@@ -166,6 +180,7 @@ input:checked + .cre8-c-select-tile {
   .cre8-c-select-tile--bare & {
     padding: var(--cre8-spacing-0);
   }
+
   .cre8-c-select-tile--horizontal-bare & {
     padding: var(--cre8-spacing-0);
   }
@@ -173,6 +188,7 @@ input:checked + .cre8-c-select-tile {
   .cre8-c-select-tile__body_title {
     @include cre8-typography-title-default();
   }
+
   .cre8-c-select-tile__body_body {
     @include cre8-typography-body-default();
   }
@@ -184,17 +200,20 @@ input:checked + .cre8-c-select-tile {
  */
 .cre8-c-select-tile__footer {
   display: flex;
-  flex: none; /* 1 */
+  flex: none;
+  /* 1 */
 
   .cre8-c-select-tile--bare & {
     padding: var(--cre8-spacing-0);
   }
+
   .cre8-c-select-tile--horizontal-bare & {
     padding: var(--cre8-spacing-0);
   }
 }
 
-.cre8-c-select-tile__custom-radio, .cre8-c-select-tile__custom-checkbox  {
+.cre8-c-select-tile__custom-radio,
+.cre8-c-select-tile__custom-checkbox {
 
   /**
    * Render the checkmark/radio button on the left instead of the right.
@@ -212,9 +231,10 @@ input:checked + .cre8-c-select-tile {
 
 @mixin cre8-c-select-radio-top-right($breakpoint: 0) {
   position: absolute;
-  top: size(1);
-  right: size(1);
-  @if $breakpoint != 0 {
+  top: calc(8px * 1);
+  right: calc(8px * 1);
+
+  @if $breakpoint !=0 {
     @media all and (min-width: $breakpoint) {
       position: static;
     }
@@ -227,21 +247,21 @@ input:checked + .cre8-c-select-tile {
 .cre8-c-select-tile__custom-radio {
   display: flex;
   flex: none;
-  height: size(3);
-  width: size(3);
+  height: calc(8px * 3);
+  width: calc(8px * 3);
   cursor: pointer;
   align-items: center;
   justify-content: center;
   border-radius: var(--cre8-border-radius-round);
   border-width: var(--cre8-border-width-default);
-  border-style:  var(--cre8-border-style-default);
+  border-style: var(--cre8-border-style-default);
   background-color: var(--cre8-color-bg-default);
   border-color: var(--cre8-color-border-default);
 
   /**
   * Radio field item custom radio focus visible  custom outline
   */
-  .cre8-c-select-tile__input:focus-visible + & {
+  .cre8-c-select-tile__input:focus-visible+& {
     border-color: var(--cre8-color-border-strong);
     @include focus;
 
@@ -276,9 +296,9 @@ input:checked + .cre8-c-select-tile {
  * Check radio variant
  */
 .cre8-c-select-tile__custom-radio-check {
-    .cre8-c-select-tile__icon {
-      display: flex;
-    }
+  .cre8-c-select-tile__icon {
+    display: flex;
+  }
 }
 
 /**
@@ -288,16 +308,16 @@ input:checked + .cre8-c-select-tile {
   display: none;
 
   cursor: pointer;
-  height: size(1.5);
-  width: size(1.5);
+  height: calc(8px * 1.5);
+  width: calc(8px * 1.5);
   background: var(--cre8-color-content-brand);
   border-radius: var(--cre8-border-radius-round);
 
   /** Check radio variant */
   .cre8-c-select-tile__custom-radio-check & {
     flex: none;
-    height: size(3);
-    width: size(3);
+    height: calc(8px * 3);
+    width: calc(8px * 3);
     align-items: center;
     justify-content: center;
   }
@@ -319,7 +339,7 @@ input:checked + .cre8-c-select-tile {
   /**
  * Radio field item inner circle will display if the input is checked
  */
-  input:checked ~ * .cre8-c-select-tile__custom-radio & {
+  input:checked~* .cre8-c-select-tile__custom-radio & {
     display: flex;
   }
 }
@@ -330,11 +350,11 @@ input:checked + .cre8-c-select-tile {
 /**
  * Checkbox field item custom checkbox container
  */
- .cre8-c-select-tile__custom-checkbox {
+.cre8-c-select-tile__custom-checkbox {
   display: flex;
   flex: none;
-  height: size(3);
-  width: size(3);
+  height: calc(8px * 3);
+  width: calc(8px * 3);
   cursor: pointer;
   align-items: center;
   justify-content: center;
@@ -347,7 +367,7 @@ input:checked + .cre8-c-select-tile {
   /**
   * Checkbox field item custom checkbox focus visible  custom outline
   */
-  .cre8-c-select-tile__input:focus-visible + & {
+  .cre8-c-select-tile__input:focus-visible+& {
     @include focus;
 
     .cre8-c-select-tile--error & {
@@ -376,7 +396,7 @@ input:checked + .cre8-c-select-tile {
 /**
   * Checkbox field item custom checkbox when item is checked
   */
-input:checked ~ * .cre8-c-select-tile__custom-checkbox {
+input:checked~* .cre8-c-select-tile__custom-checkbox {
   background-color: var(--cre8-color-bg-brand-strong);
 
   /**
@@ -418,7 +438,7 @@ input:checked ~ * .cre8-c-select-tile__custom-checkbox {
   /**
   * Checkbox field item icon will display in the box if the input is checked
   */
-  input:checked ~ * .cre8-c-select-tile__custom-checkbox & {
+  input:checked~* .cre8-c-select-tile__custom-checkbox & {
     display: flex;
   }
 }

@@ -10,7 +10,7 @@
     - Layout Style Ref: [layout_hjez3ou](../GlobalStyles/LayoutAndSpacing.md#layout-hjez3ou) (See Layout Styles)
     - **LOGO + STATUS** (Type: FRAME, ID: 434:15196)
       - Layout Style Ref: [layout_hyz6fuq](../GlobalStyles/LayoutAndSpacing.md#layout-hyz6fuq) (See Layout Styles)
-      - **leaf logo** (Type: GROUP, ID: 7951:8986)
+      - **cre8 logo** (Type: GROUP, ID: 7951:8986)
         - Layout Style Ref: [layout_hdznyh7](../GlobalStyles/LayoutAndSpacing.md#layout-hdznyh7) (See Layout Styles)
         - **Vector** (Type: IMAGE-SVG, ID: 7951:8987)
           - Fills Ref: [fill_h8hqhqx](../GlobalStyles/Colors.md#fill-h8hqhqx) (See Color Styles)
@@ -39,8 +39,8 @@
           - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
     - **TITLE/SUBTITLE** (Type: FRAME, ID: 434:15203)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
-      - **Leaf design system** (Type: TEXT, ID: 434:15204)
-        - Text Content: "Leaf design system"
+      - **cre8 design system** (Type: TEXT, ID: 434:15204)
+        - Text Content: "cre8 design system"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -69,10 +69,10 @@
           - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
           - Layout Style Ref: [layout_h230yft](../GlobalStyles/LayoutAndSpacing.md#layout-h230yft) (See Layout Styles)
           - **Paragraph** (Type: TEXT, ID: 444:15258)
-            - Text Content: "Color, Border Radius and Spacing variables are baked into the components that are in our Base Component Libraries. 
+            - Text Content: "Color, Border Radius and Spacing variables are baked into the components that are in our Base Component Libraries.
 
 There are only a couple key actions needed to take full advantage of this feature:
-Turn on the Leaf Design System: Variables library in your project file
+Turn on the cre8 Design System: Variables library in your project file
 Apply and switch between brands on the Page and/or Layer level when necessary"
             - TextStyle Ref: [text_h6bus57](../GlobalStyles/Typography.md#text-h6bus57) (See Typography Styles)
             - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
@@ -83,7 +83,7 @@ Apply and switch between brands on the Page and/or Layer level when necessary"
             - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
             - Layout Style Ref: [layout_hafry8h](../GlobalStyles/LayoutAndSpacing.md#layout-hafry8h) (See Layout Styles)
             - **Title** (Type: TEXT, ID: 436:15256)
-              - Text Content: "Turning on the Leaf Design System: Variables library"
+              - Text Content: "Turning on the cre8 Design System: Variables library"
               - TextStyle Ref: [text_hh6pmq0](../GlobalStyles/Typography.md#text-hh6pmq0) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_htca7n3](../GlobalStyles/LayoutAndSpacing.md#layout-htca7n3) (See Layout Styles)
@@ -91,7 +91,7 @@ Apply and switch between brands on the Page and/or Layer level when necessary"
             - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
             - Layout Style Ref: [layout_ha7pqqn](../GlobalStyles/LayoutAndSpacing.md#layout-ha7pqqn) (See Layout Styles)
             - **Paragraph** (Type: TEXT, ID: 434:15237)
-              - Text Content: "In your project file, go to Assets → Libraries (    ) and then search for Leaf Design System: Variables "
+              - Text Content: "In your project file, go to Assets → Libraries (    ) and then search for cre8 Design System: Variables "
               - TextStyle Ref: [text_h6bus57](../GlobalStyles/Typography.md#text-h6bus57) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_htca7n3](../GlobalStyles/LayoutAndSpacing.md#layout-htca7n3) (See Layout Styles)
@@ -198,7 +198,7 @@ Be sure to use the Semantic: All Brands library values and not the Global brand 
             - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
             - Layout Style Ref: [layout_ha7pqqn](../GlobalStyles/LayoutAndSpacing.md#layout-ha7pqqn) (See Layout Styles)
             - **Paragraph** (Type: TEXT, ID: 486:69)
-              - Text Content: "In the right panel under Auto layout, the Variables icon will appear on hover. Click on the icon to choose the desired variable. 
+              - Text Content: "In the right panel under Auto layout, the Variables icon will appear on hover. Click on the icon to choose the desired variable.
 
 Be sure to use the Globals: All Brands (Spacing, Shadow) library values."
               - TextStyle Ref: [text_h6bus57](../GlobalStyles/Typography.md#text-h6bus57) (See Typography Styles)
@@ -226,7 +226,7 @@ Be sure to use the Globals: All Brands (Spacing, Shadow) library values."
             - **Paragraph** (Type: TEXT, ID: 486:77)
               - Text Content: "In the right panel, the Variables icon will appear on hover. Click on the icon to choose the desired variable. Variables can be applied to Fill and Stroke sections.
 
-To update the color to use a variable value, click on the color swatch you want to change, then click on Libraries and then select Leaf Design System: Variables in the dropdown.
+To update the color to use a variable value, click on the color swatch you want to change, then click on Libraries and then select cre8 Design System: Variables in the dropdown.
 
 Be sure to use the Semantic: All Brands library values and not the Global brand libraries as global values should not be directly used."
               - TextStyle Ref: [text_h6bus57](../GlobalStyles/Typography.md#text-h6bus57) (See Typography Styles)
@@ -252,6 +252,7 @@ Apply variables to designs"
             - TextStyle Ref: [text_hx3r16l](../GlobalStyles/Typography.md#text-hx3r16l) (See Typography Styles)
             - Fills Ref: [fill_hrog9dj](../GlobalStyles/Colors.md#fill-hrog9dj) (See Color Styles)
             - Layout Style Ref: [layout_htca7n3](../GlobalStyles/LayoutAndSpacing.md#layout-htca7n3) (See Layout Styles)
+
 - **Theme Swap - Button** (Type: FRAME, ID: 704:808)
   - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
   - Layout Style Ref: [layout_hwl601x](../GlobalStyles/LayoutAndSpacing.md#layout-hwl601x) (See Layout Styles)
@@ -918,7 +919,7 @@ Converting percentage value to px and did not work
 Adding a % to the value
 Apparently this is a known issue
 However, this would be the perfect opportunity to get our line-heights match up with a 8px grid + 1.3 line-height multiplier
-https://www.thegoodlineheight.com/
+<https://www.thegoodlineheight.com/>
 
 Need to complete the following:
 Finish mapping all type styles to variables
@@ -926,6 +927,7 @@ Mapping correct values to PBM, Pharmacy, # Legacy + UC"
       - TextStyle Ref: [text_hyj5ric](../GlobalStyles/Typography.md#text-hyj5ric) (See Typography Styles)
       - Fills Ref: [fill_h3odtby](../GlobalStyles/Colors.md#fill-h3odtby) (See Color Styles)
       - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
+
 - **TRY ME!** (Type: FRAME, ID: 3234:10476)
   - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
   - Layout Style Ref: [layout_hwl601x](../GlobalStyles/LayoutAndSpacing.md#layout-hwl601x) (See Layout Styles)

@@ -11,7 +11,7 @@ const styles = css`@import '../../../design-tokens/core/scss/theming/component';
  */
  .cre8-c-pagination__text{
   @include cre8-typography-label-small();
-  padding: size(1);
+  padding: calc(8px * 1);
  }
 `;
 export default styles;

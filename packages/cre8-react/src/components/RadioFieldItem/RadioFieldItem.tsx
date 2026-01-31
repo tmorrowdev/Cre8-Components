@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent, EventName } from '@lit/react';
-import { Cre8RadioFieldItem as Cre8RadioFieldItemElement } from '@cre8_dev/cre8-wc/lib/components/radio-field-item/radio-field-item';
+import { Cre8RadioFieldItem as Cre8RadioFieldItemElement } from '@tmorrow/cre8-wc/lib/components/radio-field-item/radio-field-item';
 import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 /**

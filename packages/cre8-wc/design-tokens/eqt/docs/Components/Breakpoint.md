@@ -12,7 +12,7 @@
     - Layout Style Ref: [layout_hjez3ou](../GlobalStyles/LayoutAndSpacing.md#layout-hjez3ou) (See Layout Styles)
     - **LOGO + STATUS** (Type: FRAME, ID: I11140:248;245:4869)
       - Layout Style Ref: [layout_hyz6fuq](../GlobalStyles/LayoutAndSpacing.md#layout-hyz6fuq) (See Layout Styles)
-      - **leaf logo** (Type: GROUP, ID: I11140:248;245:4870)
+      - **cre8 logo** (Type: GROUP, ID: I11140:248;245:4870)
         - Layout Style Ref: [layout_hdznyh7](../GlobalStyles/LayoutAndSpacing.md#layout-hdznyh7) (See Layout Styles)
         - **Subtract** (Type: IMAGE-SVG, ID: I11140:248;245:4871)
           - Fills Ref: [fill_h1bono0](../GlobalStyles/Colors.md#fill-h1bono0) (See Color Styles)
@@ -39,7 +39,7 @@
     - **TITLE/SUBTITLE** (Type: FRAME, ID: I11140:248;245:4876)
       - Layout Style Ref: [layout_hvdr374](../GlobalStyles/LayoutAndSpacing.md#layout-hvdr374) (See Layout Styles)
       - **Brand Library Name** (Type: TEXT, ID: I11140:248;245:4877)
-        - Text Content: "Leaf Design System"
+        - Text Content: "cre8 Design System"
         - TextStyle Ref: [text_hfc1nus](../GlobalStyles/Typography.md#text-hfc1nus) (See Typography Styles)
         - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
         - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -68,7 +68,7 @@
         - Fills Ref: [fill_hgcx9l](../GlobalStyles/Colors.md#fill-hgcx9l) (See Color Styles)
         - Layout Style Ref: [layout_h7ea135](../GlobalStyles/LayoutAndSpacing.md#layout-h7ea135) (See Layout Styles)
         - **Paragraph** (Type: TEXT, ID: I11140:250;241:4433;239:4420)
-          - Text Content: "Every website is accessed via devices with different screen sizes and resolutions. The software has to render perfectly across each screen size. Content or images cannot be distorted, cut out, or obscured. These breakpoint tokens are global to the Leaf Design System, meaning, all brands currently share the same We find that keeping all brands on the same breakpoints allows for more stable and predictable experiences when developing applications and designing mockups."
+          - Text Content: "Every website is accessed via devices with different screen sizes and resolutions. The software has to render perfectly across each screen size. Content or images cannot be distorted, cut out, or obscured. These breakpoint tokens are global to the cre8 Design System, meaning, all brands currently share the same We find that keeping all brands on the same breakpoints allows for more stable and predictable experiences when developing applications and designing mockups."
           - TextStyle Ref: [text_h6bus57](../GlobalStyles/Typography.md#text-h6bus57) (See Typography Styles)
           - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
           - Layout Style Ref: [layout_hk7aw6o](../GlobalStyles/LayoutAndSpacing.md#layout-hk7aw6o) (See Layout Styles)
@@ -100,7 +100,7 @@
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
             - **token-name** (Type: TEXT, ID: I11140:255;940:25508)
-              - Text Content: "leaf-breakpoint-xsm"
+              - Text Content: "cre8-breakpoint-xsm"
               - TextStyle Ref: [text_hx7ysj0](../GlobalStyles/Typography.md#text-hx7ysj0) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
@@ -123,7 +123,7 @@
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
             - **token-name** (Type: TEXT, ID: I11140:256;940:25508)
-              - Text Content: "leaf-breakpoint-sm"
+              - Text Content: "cre8-breakpoint-sm"
               - TextStyle Ref: [text_hx7ysj0](../GlobalStyles/Typography.md#text-hx7ysj0) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
@@ -146,7 +146,7 @@
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
             - **token-name** (Type: TEXT, ID: I11140:257;940:25508)
-              - Text Content: "leaf-breakpoint-md"
+              - Text Content: "cre8-breakpoint-md"
               - TextStyle Ref: [text_hx7ysj0](../GlobalStyles/Typography.md#text-hx7ysj0) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
@@ -169,7 +169,7 @@
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
             - **token-name** (Type: TEXT, ID: I11140:258;940:25508)
-              - Text Content: "leaf-breakpoint-lg"
+              - Text Content: "cre8-breakpoint-lg"
               - TextStyle Ref: [text_hx7ysj0](../GlobalStyles/Typography.md#text-hx7ysj0) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
@@ -192,7 +192,7 @@
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
             - **token-name** (Type: TEXT, ID: I11140:259;940:25508)
-              - Text Content: "leaf-breakpoint-xl"
+              - Text Content: "cre8-breakpoint-xl"
               - TextStyle Ref: [text_hx7ysj0](../GlobalStyles/Typography.md#text-hx7ysj0) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)
@@ -215,7 +215,7 @@
             - Strokes Ref: [stroke_h7pm714](../GlobalStyles/Colors.md#stroke-h7pm714) (See Color Styles for Borders)
             - Layout Style Ref: [layout_haz4twa](../GlobalStyles/LayoutAndSpacing.md#layout-haz4twa) (See Layout Styles)
             - **token-name** (Type: TEXT, ID: I11140:260;940:25508)
-              - Text Content: "leaf-breakpoint-xxl"
+              - Text Content: "cre8-breakpoint-xxl"
               - TextStyle Ref: [text_hx7ysj0](../GlobalStyles/Typography.md#text-hx7ysj0) (See Typography Styles)
               - Fills Ref: [fill_hd6qu06](../GlobalStyles/Colors.md#fill-hd6qu06) (See Color Styles)
               - Layout Style Ref: [layout_hrapt2t](../GlobalStyles/LayoutAndSpacing.md#layout-hrapt2t) (See Layout Styles)

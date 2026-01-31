@@ -8,10 +8,10 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  */
 .cre8-c-band {
   background: var(--cre8-color-bg-subtle);
-  padding: size(3) 0;
+  padding: calc(8px * 3) 0;
 
   @media all and (min-width:$cre8-breakpoint-xl) {
-    padding: size(4) 0;
+    padding: calc(8px * 4) 0;
   }
 }
 

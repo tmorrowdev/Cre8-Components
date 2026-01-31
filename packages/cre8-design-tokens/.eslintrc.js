@@ -1,4 +1,4 @@
-const baseConfig = require('@esi/eslint-config');
+const baseConfig = require('@tmorrow/eslint-config');
 
 baseConfig.extends.push('plugin:json/recommended');
 

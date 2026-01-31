@@ -11,8 +11,8 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 .cre8-l-layout-container {
   width: 100%;
   max-width: var(--cre8-l-max-width);
-  padding-right: size(2);
-  padding-left: size(2);
+  padding-right: calc(8px * 2);
+  padding-left: calc(8px * 2);
   margin: 0 auto;
 }
 

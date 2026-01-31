@@ -15,7 +15,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 .cre8-c-button-group {
   display: flex;
   flex-wrap: wrap;
-  gap: size(2);
+  gap: calc(8px * 2);
 }
 
 /**

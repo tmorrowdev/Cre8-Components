@@ -7,7 +7,7 @@ const styles = css`@import 'design-tokens/core/scss/theming/component' ;
 .c-medication-form {
   display: flex;
   flex-wrap: wrap;
-  margin: size(-1.5);
+  margin: calc(8px * -1.5);
   flex-direction: column;
 
   @media all and (min-width: component.$cre8-breakpoint-md) {
@@ -21,7 +21,7 @@ const styles = css`@import 'design-tokens/core/scss/theming/component' ;
   */
 ::slotted(*) {
   width: 100%;
-  padding: size(1.5);
+  padding: calc(8px * 1.5);
 
   @media all and (min-width: component.$cre8-breakpoint-md) {
     width: 50%;
@@ -42,7 +42,7 @@ const styles = css`@import 'design-tokens/core/scss/theming/component' ;
 ::slotted(:last-child) {
   @media all and (min-width: component.$cre8-breakpoint-md) {
     position: relative;
-    top: size(6.25);
+    top: calc(8px * 6.25);
   }
 }
 `;

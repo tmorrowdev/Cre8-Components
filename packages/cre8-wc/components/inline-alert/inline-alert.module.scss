@@ -3,6 +3,7 @@
 :host {
   display: inline-flex;
 }
+
 :host([fullWidth]) {
   display: flex;
 }
@@ -15,8 +16,8 @@
   font-weight: normal;
   display: inline-flex;
   align-items: flex-start;
-  gap: size(1);
-  padding: size(2);
+  gap: calc(8px * 1);
+  padding: calc(8px * 2);
   color: var(--cre8-color-content-default);
   background-color: var(--cre8-color-bg-info);
   border-color: var(--cre8-color-border-info);
@@ -79,7 +80,7 @@
   padding: 0;
   border: none;
   background-color: transparent;
-  gap: size(1);
+  gap: calc(8px * 1);
   border-radius: none;
 }
 
@@ -103,8 +104,8 @@
 .cre8-c-inline-alert__icon {
   position: relative;
   color: var(--cre8-color-content-info-icon);
-  height: size(3);
-  width: size(3);
+  height: calc(8px * 3);
+  width: calc(8px * 3);
 
   /**
    * Inline alert icon for error variant
@@ -131,9 +132,8 @@
    * Inline alert icon for help variant
    * Inline alert icon for info variant
    */
-   .cre8-c-inline-alert--help,
-   .cre8-c-inline-alert--info
-    & {
+  .cre8-c-inline-alert--help,
+  .cre8-c-inline-alert--info & {
     color: var(--cre8-color-content-info-icon);
   }
 
@@ -156,6 +156,6 @@
    */
   .cre8-c-inline-alert--transparent & {
     top: 0;
-    padding: size(0.25);
+    padding: calc(8px * 0.25);
   }
 }

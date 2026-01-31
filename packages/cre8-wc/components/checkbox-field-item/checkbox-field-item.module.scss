@@ -17,15 +17,16 @@
   display: flex;
   position: relative;
   align-items: center;
-  margin-bottom: size(1);
-  min-height: size(3);
+  margin-bottom: calc(8px * 1);
+  min-height: calc(8px * 3);
 
   /** 
   * Checkbox field item within last cre8-checkbox-field-item wrapper in a fieldset
   * 1) Remove margin bottom on last item
   */
   :host(:last-child) & {
-    margin-bottom: 0; /* 1 */
+    margin-bottom: 0;
+    /* 1 */
   }
 }
 
@@ -38,8 +39,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: size(3);
-  min-width: size(3);
+  height: calc(8px * 3);
+  min-width: calc(8px * 3);
   margin: 0;
   z-index: 1;
 
@@ -59,8 +60,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: size(3);
-  width: size(3);
+  height: calc(8px * 3);
+  width: calc(8px * 3);
   cursor: pointer;
   align-items: center;
   justify-content: center;
@@ -73,7 +74,7 @@
   /** 
   * Checkbox field item custom checkbox focus visible  custom outline
   */
-  .cre8-c-checkbox-field-item__input:focus-visible + & {
+  .cre8-c-checkbox-field-item__input:focus-visible+& {
     @include focus;
 
     .cre8-c-checkbox-field-item--error & {
@@ -102,7 +103,7 @@
 /**
   * Checkbox field item custom checkbox when item is checked
   */
-.cre8-c-checkbox-field-item__input:checked + .cre8-c-checkbox-field-item__custom-checkbox {
+.cre8-c-checkbox-field-item__input:checked+.cre8-c-checkbox-field-item__custom-checkbox {
   background-color: var(--cre8-color-bg-brand-strong);
 
   /** 
@@ -144,7 +145,7 @@
   /**
   * Checkbox field item icon will display in the box if the input is checked
   */
-  .cre8-c-checkbox-field-item__input:checked + .cre8-c-checkbox-field-item__custom-checkbox & {
+  .cre8-c-checkbox-field-item__input:checked+.cre8-c-checkbox-field-item__custom-checkbox & {
     display: flex;
   }
 }
@@ -153,7 +154,7 @@
  * Checkbox field item input 
  */
 .cre8-c-checkbox-field-item__label {
-  margin-left: size(4);
+  margin-left: calc(8px * 4);
   @include cre8-typography-label-small;
 }
 

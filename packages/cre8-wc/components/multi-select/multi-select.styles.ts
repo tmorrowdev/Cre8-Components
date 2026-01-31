@@ -27,10 +27,10 @@ const styles = css`@import "../../design-tokens/core/scss/theming/component";
   position: relative;
   @include input-styles;
   padding: var(--cre8-spacing-8);
-  padding-inline-end: size(5.5);
+  padding-inline-end: calc(8px * 5.5);
   min-width: 240px;
   cursor: pointer;
-  min-height: size(6);
+  min-height: calc(8px * 6);
   height: fit-content;
 
   .cre8-is-disabled & {
@@ -61,7 +61,7 @@ const styles = css`@import "../../design-tokens/core/scss/theming/component";
   min-height: 30px;
   width: 100%;
   border-right: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
-  padding-right: size(5.5);
+  padding-right: calc(8px * 5.5);
 }
 
 .cre8-c-multi-select__tag-wrapper {
@@ -71,7 +71,7 @@ const styles = css`@import "../../design-tokens/core/scss/theming/component";
   display: flex;
   flex-wrap: wrap;
   height: 100%;
-  gap: size(0.5);
+  gap: calc(8px * 0.5);
 }
 
 .cre8-c-multi-select__icons-wrapper {
@@ -79,7 +79,7 @@ const styles = css`@import "../../design-tokens/core/scss/theming/component";
   justify-content: end;
   margin-right: -36px;
   margin-left: -48px;
-  gap: size(3);
+  gap: calc(8px * 3);
   min-width: 96px;
 
   button {

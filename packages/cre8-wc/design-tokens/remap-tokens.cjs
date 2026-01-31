@@ -74,20 +74,20 @@ const tokensPath = path.join(__dirname, 'starbucks.tokens.json');
 const tokens = JSON.parse(fs.readFileSync(tokensPath, 'utf8'));
 
 function remapTokenKeys(obj, parentKey) {
-  // If this is a leaf object (e.g., colors, typography), remap its keys
+  // If this is a cre8 object (e.g., colors, typography), remap its keys
   if (Object.keys(obj).length && typeof Object.values(obj)[0] === 'object' && !Array.isArray(Object.values(obj)[0])) {
-    const leafRemapped = {};
+    const cre8Remapped = {};
     for (const [k, v] of Object.entries(obj)) {
       let semantic = findSemanticName(k);
       if (!semantic) semantic = findSemanticNameByValueAndType(v);
       if (semantic) {
         // If semantic name already exists, merge or overwrite
-        leafRemapped[semantic] = v;
+        cre8Remapped[semantic] = v;
       } else {
-        leafRemapped[k] = v;
+        cre8Remapped[k] = v;
       }
     }
-    return leafRemapped;
+    return cre8Remapped;
   }
   // Otherwise, recursively remap nested objects
   const remapped = {};

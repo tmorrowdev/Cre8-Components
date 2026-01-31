@@ -1,6 +1,6 @@
 import React from 'react';
 import { createComponent, EventName } from '@lit/react';
-import { Cre8Tooltip as Cre8TooltipElement } from '@cre8_dev/cre8-wc/lib/components/tooltip/tooltip';
+import { Cre8Tooltip as Cre8TooltipElement } from '@tmorrow/cre8-wc/lib/components/tooltip/tooltip';
 import { Cre8DomEvent } from '../../util/Cre8DomEvent';
 
 

@@ -23,14 +23,14 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
    */
 .cre8-c-select-tile-list__legend {
   @include cre8-typography-label-default;
-  margin-bottom: size(1);
+  margin-bottom: calc(8px * 1);
 }
 
 .cre8-c-select-tile-list__list {
-  gap: size(3);
+  gap: calc(8px * 3);
   display: grid;  
 
-  grid-template-columns: repeat(auto-fit, var(--cre8-select-tile-list-item-width, size(26)));
+  grid-template-columns: repeat(auto-fit, var(--cre8-select-tile-list-item-width, calc(8px * 26)));
 
   .cre8-c-select-tile-list__rows & {
     grid-template-columns: unset;

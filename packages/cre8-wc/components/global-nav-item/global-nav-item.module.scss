@@ -22,14 +22,16 @@
   @include cre8-typography-body-small;
   display: flex;
   align-items: center;
-  appearance: none; /* 1 */
-  background: transparent; /* 1 */
+  appearance: none;
+  /* 1 */
+  background: transparent;
+  /* 1 */
   border: none;
   //border: 1px solid var(--cre8-color-header-menu-border-default); /* 1 */
   white-space: nowrap;
   width: 100%;
   margin: 0;
-  padding: size(1) size(2);
+  padding: calc(8px * 1) calc(8px * 2);
   color: var(--cre8-global-nav-link-color, var(--cre8-color-content-subtle));
   text-decoration: none;
   transition: all var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
@@ -51,11 +53,13 @@
 
 /**
  * Icon within primary navigation item
- * 1) TODO: Figure out how to pass down size(1.5) instead of static rem value
+ * 1) TODO: Figure out how to pass down calc(8px * 1.5) instead of static rem value
  */
 cre8-icon-legacy {
-  --cre8-icon-height: #{size(1)}; /* 1 */
-  --cre8-icon-width: #{size(1)}; /* 1 */
+  --cre8-icon-height: #{calc(8px * 1)};
+  /* 1 */
+  --cre8-icon-width: #{calc(8px * 1)};
+  /* 1 */
   margin-left: auto;
   transition: transform var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
 
@@ -64,16 +68,17 @@ cre8-icon-legacy {
   * 1) Rotate the icon to show that the dropdown is open
   */
   .cre8-c-global-nav__item.cre8-is-active & {
-    transform: rotate(-180deg); /* 1 */
+    transform: rotate(-180deg);
+    /* 1 */
   }
 
   @media all and (min-width: component.$cre8-breakpoint-lg) {
-    margin-left: size(1);
+    margin-left: calc(8px * 1);
   }
 }
 
 .cre8-c-global-nav__item-after {
-  --cre8-icon-height: #{size(1.5)};
-  --cre8-icon-width: #{size(1.5)};
-  margin-left: size(1);
+  --cre8-icon-height: #{calc(8px * 1.5)};
+  --cre8-icon-width: #{calc(8px * 1.5)};
+  margin-left: calc(8px * 1);
 }
