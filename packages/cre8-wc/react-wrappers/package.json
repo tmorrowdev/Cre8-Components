@@ -1,6 +1,6 @@
 {
   "name": "@tmorrow/cre8-react",
-  "version": "1.0.20",
+  "version": "1.0.22",
   "description": "React wrappers for cre8 web components",
   "license": "BSD-3-Clause",
   "main": "lib/index.js",
