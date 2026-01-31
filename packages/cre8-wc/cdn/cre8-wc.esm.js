@@ -14079,8 +14079,7 @@ const ya = class ya extends $ {
           backgroundColor: "#1F2937",
           titleFont: {
             family: "Inter, system-ui, sans-serif",
-            size: 13,
-            weight: "600"
+            size: 13
           },
           bodyFont: {
             family: "Inter, system-ui, sans-serif",
@@ -14174,10 +14173,7 @@ const ya = class ya extends $ {
         value: c,
         label: l
       };
-      this.dispatch({
-        eventName: "cre8-chart-click",
-        detailObj: d
-      });
+      this.dispatch({ eventName: "cre8-chart-click", detailObj: d });
     }
   }
   /**
@@ -14195,10 +14191,7 @@ const ya = class ya extends $ {
         value: l,
         label: d
       };
-      this.dispatch({
-        eventName: "cre8-chart-hover",
-        detailObj: h
-      });
+      this.dispatch({ eventName: "cre8-chart-hover", detailObj: h });
     }
   }
   /**
