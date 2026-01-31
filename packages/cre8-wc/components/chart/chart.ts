@@ -421,7 +421,6 @@ export class Cre8Chart extends Cre8Element {
                     titleFont: {
                         family: 'Inter, system-ui, sans-serif',
                         size: 13,
-                        weight: '600',
                     },
                     bodyFont: {
                         family: 'Inter, system-ui, sans-serif',
@@ -554,11 +553,8 @@ export class Cre8Chart extends Cre8Element {
                 value,
                 label,
             };
-
-            this.dispatch({
-                eventName: 'cre8-chart-click',
-                detailObj: detail,
-            });
+            // @ts-expect-error: `dispatch` is not defined on `Cre8Element`
+            this.dispatch({eventName: 'cre8-chart-click',detailObj: detail});
         }
     }
 
@@ -587,11 +583,8 @@ export class Cre8Chart extends Cre8Element {
                 value,
                 label,
             };
-
-            this.dispatch({
-                eventName: 'cre8-chart-hover',
-                detailObj: detail,
-            });
+            // @ts-expect-error: `dispatch` is not defined on `Cre8Element`
+            this.dispatch({eventName: 'cre8-chart-hover',detailObj: detail});
         }
     }
 
