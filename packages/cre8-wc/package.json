@@ -57,11 +57,7 @@
     "./cdn/cre8-wc.esm.js": "./lib/cdn.esm.js",
     "./components/cre8-element.js": "./lib/components/cre8-element.js",
     "./components/cre8-form-element.js": "./lib/components/cre8-form-element.js",
-    "./components/**/*.js": {
-      "import": "./components/**/*.js",
-      "types": "./components/**/*.d.ts",
-      "default": "./components/**/*.js"
-    },
+    "./lib/components/*/": "./lib/components/*/",
     "./icons/*": {
       "import": "./icons/*",
       "types": "./icons/*",
