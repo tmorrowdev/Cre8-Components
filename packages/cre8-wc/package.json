@@ -7,7 +7,7 @@
     "start": "pnpm run build:custom-elements.json && pnpm run storybook",
     "build": "rm -rf lib && vite build && tsc",
     "build:cdn": "rm -rf cdn && vite build --config vite.config.cdn.ts",
-    "build:all": "pnpm run build && pnpm run build:cdn",
+    "build:all": "pnpm run build:cdn && pnpm run build",
     "build:watch": "vite build --watch",
     "build:custom-elements.json": "npx @custom-elements-manifest/analyzer analyze --litelement --globs \"components/*/*.ts\" --outdir .storybook",
     "test": "jest --verbose",
@@ -51,23 +51,16 @@
       "types": "./lib/index.d.ts"
     },
     "./cdn": {
-      "import": "./cdn/cre8-wc.esm.js",
-      "default": "./cdn/cre8-wc.min.js"
+      "import": "./lib/cdn.esm.js",
+      "default": "./lib/cdn.min.js"
     },
-    "./cdn/esm": "./cdn/cre8-wc.esm.js",
-    "./cdn/iife": "./cdn/cre8-wc.min.js",
-    "./lib/index.js": {
-      "import": "./lib/index.js",
-      "types": "./lib/index.d.ts"
-    },
-    "./lib/components/*": {
-      "import": "./lib/components/*",
-      "types": "./lib/components/*"
-    },
-    "./components/**/*": {
-      "import": "./components/*.js",
-      "types": "./components/*.d.ts",
-      "default": "./components/*.js"
+    "./cdn/cre8-wc.esm.js": "./lib/cdn.esm.js",
+    "./components/cre8-element.js": "./lib/components/cre8-element.js",
+    "./components/cre8-form-element.js": "./lib/components/cre8-form-element.js",
+    "./components/**/*.js": {
+      "import": "./components/**/*.js",
+      "types": "./components/**/*.d.ts",
+      "default": "./components/**/*.js"
     },
     "./icons/*": {
       "import": "./icons/*",
@@ -82,6 +75,7 @@
   },
   "dependencies": {
     "@a11y/focus-trap": "^1.0.5",
+    "@lit/react": "^1.0.8",
     "@tmorrow/cre8-design-tokens": "^1.0.16",
     "agentrpc": "^0.0.16",
     "chart.js": "^4.5.1",
