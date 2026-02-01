@@ -1,0 +1,104 @@
+/**
+ * T.MORROW Brand Tokens - Combined Entry Point
+ *
+ * This file provides the base T.Morrow brand identity with two theme variants:
+ *
+ * NEON THEME (data-theme="tmorrow-neon")
+ * - Primary: Lime/Chartreuse (#C5E500)
+ * - Secondary: Magenta (#E91E8C)
+ * - Use for: Creative/bold contexts, portfolio highlights, CTAs
+ *
+ * FROST THEME (data-theme="tmorrow-frost")
+ * - Primary: Cyan (#00D4E0)
+ * - Secondary: Ice White (#FFFFFF)
+ * - Use for: Professional/clean contexts, services, contact
+ *
+ * Usage:
+ * <html data-theme="tmorrow-neon">  or  <html data-theme="tmorrow-frost">
+ * <section data-theme="tmorrow-frost">  (for section-level theme switching)
+ */
+
+/* Import both theme variants */
+@import url('./tokens_tmorrow-neon.css');
+@import url('./tokens_tmorrow-frost.css');
+
+/* ========================================
+   Shared Brand Constants
+   ======================================== */
+
+:root {
+  /* T.MORROW Brand Identity */
+  --tmorrow-brand-name: 'T.MORROW';
+
+  /* Shared Dark Background (same across both themes) */
+  --tmorrow-bg-base: #0F0F1A;
+  --tmorrow-bg-surface: #1A1A2E;
+  --tmorrow-bg-elevated: #232338;
+
+  /* Diagonal Line Pattern - Signature Brand Element */
+  --tmorrow-pattern-angle: 135deg;
+  --tmorrow-pattern-spacing: 8px;
+  --tmorrow-pattern-width: 2px;
+
+  /* Typography Scale */
+  --tmorrow-font-display: 'Manrope', 'Inter', -apple-system, sans-serif;
+  --tmorrow-font-body: 'DM Sans', 'Inter', -apple-system, sans-serif;
+  --tmorrow-font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+
+  /* Motion */
+  --tmorrow-transition-fast: 150ms ease;
+  --tmorrow-transition-default: 250ms ease;
+  --tmorrow-transition-slow: 400ms ease;
+
+  /* Z-Index Scale */
+  --tmorrow-z-base: 0;
+  --tmorrow-z-elevated: 10;
+  --tmorrow-z-overlay: 100;
+  --tmorrow-z-modal: 1000;
+}
+
+/* ========================================
+   Pattern Utilities (for diagonal lines)
+   ======================================== */
+
+/* Neon diagonal lines pattern */
+.tmorrow-pattern-neon {
+  background-image: repeating-linear-gradient(
+    var(--tmorrow-pattern-angle),
+    transparent,
+    transparent var(--tmorrow-pattern-spacing),
+    var(--tmorrow-color-magenta-100) var(--tmorrow-pattern-spacing),
+    var(--tmorrow-color-magenta-100) calc(var(--tmorrow-pattern-spacing) + var(--tmorrow-pattern-width))
+  );
+}
+
+/* Frost diagonal lines pattern */
+.tmorrow-pattern-frost {
+  background-image: repeating-linear-gradient(
+    var(--tmorrow-pattern-angle),
+    transparent,
+    transparent var(--tmorrow-pattern-spacing),
+    var(--tmorrow-color-cyan-100) var(--tmorrow-pattern-spacing),
+    var(--tmorrow-color-cyan-100) calc(var(--tmorrow-pattern-spacing) + var(--tmorrow-pattern-width))
+  );
+}
+
+/* ========================================
+   Component Overrides for T.MORROW brand
+   ======================================== */
+
+/* Heading glow effect on brand color */
+[data-theme^="tmorrow"] cre8-heading[brandColor] {
+  text-shadow: 0 0 30px currentColor;
+}
+
+/* Button glow on hover */
+[data-theme^="tmorrow"] cre8-button:hover {
+  box-shadow: var(--cre8-shadow-button);
+}
+
+/* Card glass effect */
+[data-theme^="tmorrow"] cre8-card {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}

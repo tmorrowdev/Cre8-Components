@@ -1,0 +1,222 @@
+/**
+ * T.MORROW Brand Tokens - FROST Theme Variant
+ * Based on Logo Variant 2: Cyan/Turquoise + White
+ * Dark mode native with cool, icy accent colors
+ */
+
+:root,
+[data-theme="tmorrow-frost"] {
+  /* ========================================
+     Core Brand Colors - Frost Palette
+     ======================================== */
+
+  /* Primary Accent: Cyan/Turquoise */
+  --tmorrow-color-cyan-100: #00D4E0;
+  --tmorrow-color-cyan-80: #33DDE6;
+  --tmorrow-color-cyan-60: #66E5EC;
+  --tmorrow-color-cyan-40: #99EEF3;
+  --tmorrow-color-cyan-120: #00A9B3;
+  --tmorrow-color-cyan-140: #007F86;
+
+  /* Secondary Accent: Ice White */
+  --tmorrow-color-ice-100: #FFFFFF;
+  --tmorrow-color-ice-90: #F0F4F8;
+  --tmorrow-color-ice-80: #E1E8ED;
+  --tmorrow-color-ice-70: #C8D4DC;
+  --tmorrow-color-ice-60: #A8B8C4;
+
+  /* Tertiary Accent: Electric Blue (for links/interactions) */
+  --tmorrow-color-electric-100: #3B82F6;
+  --tmorrow-color-electric-80: #60A5FA;
+  --tmorrow-color-electric-120: #2563EB;
+
+  /* Neutral Dark Scale */
+  --tmorrow-color-dark-100: #1A1A2E;
+  --tmorrow-color-dark-90: #232338;
+  --tmorrow-color-dark-80: #2D2D42;
+  --tmorrow-color-dark-70: #37374C;
+  --tmorrow-color-dark-60: #414156;
+  --tmorrow-color-dark-surface: #0F0F1A;
+
+  /* Text Colors */
+  --tmorrow-color-text-primary: #FFFFFF;
+  --tmorrow-color-text-secondary: #B8C4CE;
+  --tmorrow-color-text-tertiary: #7A8A96;
+  --tmorrow-color-text-disabled: #505868;
+
+  /* ========================================
+     Mapped to cre8 Design Tokens
+     ======================================== */
+
+  /* Backgrounds */
+  --cre8-color-bg-default: var(--tmorrow-color-dark-100);
+  --cre8-color-bg-default-hover: var(--tmorrow-color-dark-90);
+  --cre8-color-bg-default-active: var(--tmorrow-color-dark-80);
+  --cre8-color-bg-subtle: var(--tmorrow-color-dark-90);
+  --cre8-color-bg-moderate: var(--tmorrow-color-dark-70);
+  --cre8-color-bg-strong: var(--tmorrow-color-dark-60);
+  --cre8-color-bg-disabled: var(--tmorrow-color-dark-80);
+  --cre8-color-bg-brand: var(--tmorrow-color-dark-100);
+  --cre8-color-bg-brand-hover: var(--tmorrow-color-dark-90);
+  --cre8-color-bg-brand-active: var(--tmorrow-color-dark-80);
+  --cre8-color-bg-brand-strong: var(--tmorrow-color-cyan-100);
+  --cre8-color-bg-brand-strong-hover: var(--tmorrow-color-cyan-120);
+  --cre8-color-bg-brand-strong-active: var(--tmorrow-color-cyan-140);
+  --cre8-color-bg-brand-xstrong: var(--tmorrow-color-ice-100);
+  --cre8-color-bg-brand-xstrong-hover: var(--tmorrow-color-ice-90);
+  --cre8-color-bg-brand-xstrong-active: var(--tmorrow-color-ice-80);
+  --cre8-color-bg-success: rgba(0, 212, 224, 0.15);
+  --cre8-color-bg-success-strong: var(--tmorrow-color-cyan-100);
+  --cre8-color-bg-error: rgba(239, 68, 68, 0.15);
+  --cre8-color-bg-error-strong: #EF4444;
+  --cre8-color-bg-warning: rgba(251, 191, 36, 0.15);
+  --cre8-color-bg-warning-strong: #FBBF24;
+  --cre8-color-bg-info: rgba(59, 130, 246, 0.15);
+  --cre8-color-bg-info-strong: var(--tmorrow-color-electric-100);
+  --cre8-color-bg-attention: rgba(0, 212, 224, 0.1);
+  --cre8-color-bg-attention-strong: var(--tmorrow-color-cyan-100);
+  --cre8-color-bg-opacity-transparent: rgba(26, 26, 46, 0);
+  --cre8-color-bg-opacity-default: rgba(26, 26, 46, 0.85);
+
+  /* Content/Text */
+  --cre8-color-content-default: var(--tmorrow-color-text-primary);
+  --cre8-color-content-subtle: var(--tmorrow-color-text-secondary);
+  --cre8-color-content-disabled: var(--tmorrow-color-text-disabled);
+  --cre8-color-content-knockout: var(--tmorrow-color-dark-100);
+  --cre8-color-content-brand: var(--tmorrow-color-cyan-100);
+  --cre8-color-content-brand-strong: var(--tmorrow-color-cyan-80);
+  --cre8-color-content-brand-knockout: var(--tmorrow-color-dark-100);
+  --cre8-color-content-success: var(--tmorrow-color-cyan-100);
+  --cre8-color-content-success-icon: var(--tmorrow-color-cyan-100);
+  --cre8-color-content-error: #EF4444;
+  --cre8-color-content-error-icon: #EF4444;
+  --cre8-color-content-warning-icon: #FBBF24;
+  --cre8-color-content-info-icon: var(--tmorrow-color-electric-100);
+  --cre8-color-content-attention-icon: var(--tmorrow-color-cyan-100);
+  --cre8-color-content-link: var(--tmorrow-color-cyan-100);
+  --cre8-color-content-inverse-link: var(--tmorrow-color-electric-80);
+  --cre8-color-content-link-hover: var(--tmorrow-color-cyan-80);
+  --cre8-color-content-inverse-link-hover: var(--tmorrow-color-electric-100);
+  --cre8-color-content-link-active: var(--tmorrow-color-cyan-120);
+  --cre8-color-content-inverse-link-active: var(--tmorrow-color-electric-120);
+  --cre8-color-content-link-visited: var(--tmorrow-color-electric-80);
+  --cre8-color-content-link-disabled: var(--tmorrow-color-text-disabled);
+
+  /* Borders */
+  --cre8-color-border-default: var(--tmorrow-color-dark-60);
+  --cre8-color-border-strong: var(--tmorrow-color-text-tertiary);
+  --cre8-color-border-knockout: var(--tmorrow-color-text-primary);
+  --cre8-color-border-disabled: var(--tmorrow-color-dark-70);
+  --cre8-color-border-brand: var(--tmorrow-color-cyan-100);
+  --cre8-color-border-brand-subtle: var(--tmorrow-color-cyan-40);
+  --cre8-color-border-brand-strong: var(--tmorrow-color-cyan-100);
+  --cre8-color-border-success: var(--tmorrow-color-cyan-100);
+  --cre8-color-border-error: #EF4444;
+  --cre8-color-border-warning: #FBBF24;
+  --cre8-color-border-info: var(--tmorrow-color-electric-100);
+  --cre8-color-border-attention: var(--tmorrow-color-cyan-100);
+  --cre8-color-border-transparent: rgba(26, 26, 46, 0);
+  --cre8-color-border-active-outline: var(--tmorrow-color-cyan-100);
+  --cre8-color-border-inverse-active-outline: var(--tmorrow-color-ice-100);
+
+  /* Primary Button */
+  --cre8-color-button-primary-bg: var(--tmorrow-color-cyan-100);
+  --cre8-color-button-primary-bg-hover: var(--tmorrow-color-cyan-120);
+  --cre8-color-button-primary-bg-active: var(--tmorrow-color-cyan-140);
+  --cre8-color-button-primary-bg-disabled: var(--tmorrow-color-dark-70);
+  --cre8-color-button-primary-content: var(--tmorrow-color-dark-100);
+  --cre8-color-button-primary-content-hover: var(--tmorrow-color-dark-100);
+  --cre8-color-button-primary-content-active: var(--tmorrow-color-dark-100);
+  --cre8-color-button-primary-content-disabled: var(--tmorrow-color-text-disabled);
+  --cre8-color-button-primary-border: var(--tmorrow-color-cyan-100);
+  --cre8-color-button-primary-border-hover: var(--tmorrow-color-cyan-120);
+  --cre8-color-button-primary-border-active: var(--tmorrow-color-cyan-140);
+  --cre8-color-button-primary-border-disabled: var(--tmorrow-color-dark-70);
+  --cre8-color-button-primary-outline: var(--tmorrow-color-cyan-80);
+
+  /* Inverse Primary Button (White variant) */
+  --cre8-color-button-primary-inverse-bg: var(--tmorrow-color-ice-100);
+  --cre8-color-button-primary-inverse-bg-hover: var(--tmorrow-color-ice-90);
+  --cre8-color-button-primary-inverse-bg-active: var(--tmorrow-color-ice-80);
+  --cre8-color-button-primary-inverse-content: var(--tmorrow-color-dark-100);
+  --cre8-color-button-primary-inverse-content-hover: var(--tmorrow-color-dark-100);
+  --cre8-color-button-primary-inverse-content-active: var(--tmorrow-color-dark-100);
+  --cre8-color-button-primary-inverse-border: var(--tmorrow-color-ice-100);
+  --cre8-color-button-primary-inverse-outline: var(--tmorrow-color-ice-80);
+
+  /* Secondary Button */
+  --cre8-color-button-secondary-bg: transparent;
+  --cre8-color-button-secondary-bg-hover: rgba(0, 212, 224, 0.1);
+  --cre8-color-button-secondary-bg-active: rgba(0, 212, 224, 0.2);
+  --cre8-color-button-secondary-bg-disabled: transparent;
+  --cre8-color-button-secondary-content: var(--tmorrow-color-cyan-100);
+  --cre8-color-button-secondary-content-hover: var(--tmorrow-color-cyan-80);
+  --cre8-color-button-secondary-content-active: var(--tmorrow-color-cyan-120);
+  --cre8-color-button-secondary-content-disabled: var(--tmorrow-color-text-disabled);
+  --cre8-color-button-secondary-border: var(--tmorrow-color-cyan-100);
+  --cre8-color-button-secondary-border-hover: var(--tmorrow-color-cyan-80);
+  --cre8-color-button-secondary-border-active: var(--tmorrow-color-cyan-120);
+  --cre8-color-button-secondary-border-disabled: var(--tmorrow-color-dark-70);
+  --cre8-color-button-secondary-outline: var(--tmorrow-color-cyan-80);
+
+  /* Secondary Neutral Button (White outline) */
+  --cre8-color-button-secondary-neutral-bg: transparent;
+  --cre8-color-button-secondary-neutral-bg-hover: rgba(255, 255, 255, 0.05);
+  --cre8-color-button-secondary-neutral-bg-active: rgba(255, 255, 255, 0.1);
+  --cre8-color-button-secondary-neutral-content: var(--tmorrow-color-text-primary);
+  --cre8-color-button-secondary-neutral-content-hover: var(--tmorrow-color-text-primary);
+  --cre8-color-button-secondary-neutral-content-active: var(--tmorrow-color-text-primary);
+  --cre8-color-button-secondary-neutral-border: var(--tmorrow-color-text-primary);
+  --cre8-color-button-secondary-neutral-border-hover: var(--tmorrow-color-text-primary);
+  --cre8-color-button-secondary-neutral-border-active: var(--tmorrow-color-text-primary);
+
+  /* Tertiary Button */
+  --cre8-color-button-tertiary-bg: transparent;
+  --cre8-color-button-tertiary-bg-hover: transparent;
+  --cre8-color-button-tertiary-bg-active: transparent;
+  --cre8-color-button-tertiary-content: var(--tmorrow-color-cyan-100);
+  --cre8-color-button-tertiary-content-hover: var(--tmorrow-color-cyan-80);
+  --cre8-color-button-tertiary-content-active: var(--tmorrow-color-cyan-120);
+  --cre8-color-button-tertiary-border: transparent;
+  --cre8-color-button-tertiary-border-hover: var(--tmorrow-color-cyan-100);
+  --cre8-color-button-tertiary-border-active: var(--tmorrow-color-cyan-120);
+
+  /* Header */
+  --cre8-color-header-bg-default: var(--tmorrow-color-dark-surface);
+  --cre8-color-header-inverse-bg-default: var(--tmorrow-color-cyan-100);
+  --cre8-color-header-menu-bg-default: var(--tmorrow-color-dark-90);
+  --cre8-color-header-menu-bg-hover: var(--tmorrow-color-dark-80);
+  --cre8-color-header-menu-bg-active: var(--tmorrow-color-dark-70);
+  --cre8-color-header-menu-content-default: var(--tmorrow-color-text-primary);
+  --cre8-color-header-menu-content-hover: var(--tmorrow-color-cyan-100);
+  --cre8-color-header-menu-content-active: var(--tmorrow-color-cyan-80);
+  --cre8-color-header-menu-border-default: transparent;
+  --cre8-color-header-menu-border-hover: var(--tmorrow-color-cyan-100);
+  --cre8-color-header-menu-border-active: var(--tmorrow-color-cyan-100);
+
+  /* Footer */
+  --cre8-color-footer-bg-default: var(--tmorrow-color-dark-surface);
+  --cre8-color-footer-bg-secondary: var(--tmorrow-color-dark-90);
+  --cre8-color-footer-content-secondary: var(--tmorrow-color-text-secondary);
+  --cre8-color-footer-link-default: var(--tmorrow-color-cyan-100);
+  --cre8-color-footer-link-hover: var(--tmorrow-color-cyan-80);
+
+  /* Shadows - Frost glow effects */
+  --cre8-shadow-default: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --cre8-shadow-small: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --cre8-shadow-large: 0 16px 48px rgba(0, 0, 0, 0.5);
+  --cre8-shadow-glow-primary: 0 0 20px rgba(0, 212, 224, 0.3);
+  --cre8-shadow-glow-secondary: 0 0 20px rgba(255, 255, 255, 0.2);
+  --cre8-shadow-button: 0 0 12px rgba(0, 212, 224, 0.2);
+
+  /* Border Radius - Sharp, geometric */
+  --cre8-border-radius-small: 2px;
+  --cre8-border-radius-default: 4px;
+  --cre8-border-radius-large: 8px;
+  --cre8-border-radius-button: 4px;
+  --cre8-border-radius-field: 4px;
+  --cre8-border-radius-container: 8px;
+
+  /* Typography */
+  --cre8-font-families-inter: 'Manrope', 'Inter', -apple-system, sans-serif;
+}
