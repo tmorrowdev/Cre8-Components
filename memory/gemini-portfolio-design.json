@@ -1,0 +1,561 @@
+{
+  "meta": {
+    "title": "Sentient - Motion-First AI Portfolio",
+    "description": "An immersive, motion-driven portfolio experience demonstrating AI capabilities through interface behavior rather than static content.",
+    "framework": "html",
+    "style": "Futuristic / Motion-First / Glassmorphism"
+  },
+  "layout": {
+    "type": "stack",
+    "areas": [
+      "cursor-layer",
+      "hero",
+      "capabilities",
+      "process",
+      "demo",
+      "footer"
+    ],
+    "responsive": {
+      "mobile": {
+        "type": "stack",
+        "columns": 1
+      },
+      "tablet": {
+        "type": "stack",
+        "columns": 1
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "CustomCursor",
+      "type": "overlay",
+      "area": "cursor-layer",
+      "props": {
+        "id": "cursor-follower"
+      },
+      "children": [],
+      "styling": {
+        "className": "cursor-glow",
+        "customCSS": {
+          "position": "fixed",
+          "top": "0",
+          "left": "0",
+          "width": "400px",
+          "height": "400px",
+          "background": "radial-gradient(circle, rgba(0, 212, 224, 0.15) 0%, rgba(0,0,0,0) 70%)",
+          "transform": "translate(-50%, -50%)",
+          "pointerEvents": "none",
+          "zIndex": "9999",
+          "mixBlendMode": "screen",
+          "transition": "transform 0.1s ease-out"
+        }
+      },
+      "state": {
+        "position": "Tracks mouse X/Y coordinates"
+      },
+      "events": {
+        "window.onmousemove": "Update transform translate(x,y)"
+      }
+    },
+    {
+      "name": "HeroSection",
+      "type": "hero",
+      "area": "hero",
+      "props": {
+        "id": "hero-section"
+      },
+      "children": [
+        {
+          "name": "NeuralCanvas",
+          "type": "canvas",
+          "props": {
+            "id": "neural-network-bg"
+          },
+          "styling": {
+            "className": "absolute inset-0 z-0",
+            "customCSS": {
+              "opacity": "0.6"
+            }
+          }
+        },
+        {
+          "name": "HeroContent",
+          "type": "container",
+          "styling": {
+            "className": "relative z-10 flex flex-col items-center justify-center h-screen text-center px-4"
+          },
+          "children": [
+            {
+              "name": "TypewriterHeading",
+              "type": "h1",
+              "props": {
+                "text": "I don't just build interfaces. I engineer intelligence."
+              },
+              "styling": {
+                "className": "text-5xl md:text-7xl font-bold tracking-tight mb-6",
+                "customCSS": {
+                  "fontFamily": "'Manrope', sans-serif",
+                  "background": "linear-gradient(135deg, #FFFFFF 0%, #00D4E0 100%)",
+                  "webkitBackgroundClip": "text",
+                  "webkitTextFillColor": "transparent"
+                }
+              }
+            },
+            {
+              "name": "ScrollIndicator",
+              "type": "div",
+              "styling": {
+                "className": "absolute bottom-10 animate-bounce",
+                "customCSS": {
+                  "color": "#00D4E0",
+                  "opacity": "0.7"
+                }
+              },
+              "children": "\u2193 Initiate Sequence"
+            }
+          ]
+        }
+      ],
+      "styling": {
+        "className": "relative w-full h-screen overflow-hidden bg-navy-950",
+        "customCSS": {
+          "backgroundColor": "#050A14"
+        }
+      }
+    },
+    {
+      "name": "CapabilitiesSection",
+      "type": "section",
+      "area": "capabilities",
+      "props": {
+        "id": "capabilities"
+      },
+      "styling": {
+        "className": "py-24 px-6 md:px-12 bg-navy-950 relative",
+        "customCSS": {
+          "backgroundColor": "#050A14"
+        }
+      },
+      "children": [
+        {
+          "name": "SectionTitle",
+          "type": "h2",
+          "children": "Core Modules",
+          "styling": {
+            "className": "text-3xl font-bold mb-16 text-center text-white font-manrope",
+            "customCSS": {
+              "letterSpacing": "0.1em",
+              "textTransform": "uppercase"
+            }
+          }
+        },
+        {
+          "name": "CardGrid",
+          "type": "grid",
+          "styling": {
+            "className": "grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto"
+          },
+          "children": [
+            {
+              "name": "GenerativeCard",
+              "type": "card",
+              "props": {
+                "title": "Generative UI",
+                "icon": "\u2728"
+              },
+              "styling": {
+                "className": "glass-card p-8 rounded border border-white/10 hover:border-cyan-400 transition-all duration-500 group",
+                "customCSS": {
+                  "background": "rgba(255, 255, 255, 0.03)",
+                  "backdropFilter": "blur(12px)",
+                  "borderRadius": "4px"
+                }
+              },
+              "children": [
+                {
+                  "name": "CardVisual",
+                  "type": "div",
+                  "styling": {
+                    "className": "h-32 mb-6 bg-gradient-to-br from-cyan-900/20 to-purple-900/20 rounded relative overflow-hidden"
+                  },
+                  "children": "<!-- Animated SVG shapes morphing inside -->"
+                },
+                {
+                  "name": "CardTitle",
+                  "type": "h3",
+                  "styling": {
+                    "className": "text-xl font-bold text-white mb-2 font-manrope group-hover:text-cyan-400 transition-colors"
+                  },
+                  "children": "Generative Systems"
+                },
+                {
+                  "name": "CardText",
+                  "type": "p",
+                  "styling": {
+                    "className": "text-gray-400 font-dm-sans text-sm leading-relaxed"
+                  },
+                  "children": "Interfaces that design themselves based on user intent and context."
+                }
+              ]
+            },
+            {
+              "name": "AgenticCard",
+              "type": "card",
+              "props": {
+                "title": "Autonomous Agents"
+              },
+              "styling": {
+                "className": "glass-card p-8 rounded border border-white/10 hover:border-cyan-400 transition-all duration-500 group delay-100",
+                "customCSS": {
+                  "background": "rgba(255, 255, 255, 0.03)",
+                  "backdropFilter": "blur(12px)",
+                  "borderRadius": "4px"
+                }
+              },
+              "children": [
+                {
+                  "name": "CodeWindow",
+                  "type": "div",
+                  "styling": {
+                    "className": "h-32 mb-6 bg-black/40 rounded p-2 font-mono text-xs text-green-400 overflow-hidden"
+                  },
+                  "children": "> Initializing agent...\n> Analyzing context...\n> Optimizing workflow...\n> DONE."
+                },
+                {
+                  "name": "CardTitle",
+                  "type": "h3",
+                  "styling": {
+                    "className": "text-xl font-bold text-white mb-2 font-manrope group-hover:text-cyan-400 transition-colors"
+                  },
+                  "children": "Autonomous Agents"
+                },
+                {
+                  "name": "CardText",
+                  "type": "p",
+                  "styling": {
+                    "className": "text-gray-400 font-dm-sans text-sm leading-relaxed"
+                  },
+                  "children": "Self-correcting workflows that execute complex tasks without supervision."
+                }
+              ]
+            },
+            {
+              "name": "DataCard",
+              "type": "card",
+              "props": {
+                "title": "Neural Architecture"
+              },
+              "styling": {
+                "className": "glass-card p-8 rounded border border-white/10 hover:border-cyan-400 transition-all duration-500 group delay-200",
+                "customCSS": {
+                  "background": "rgba(255, 255, 255, 0.03)",
+                  "backdropFilter": "blur(12px)",
+                  "borderRadius": "4px"
+                }
+              },
+              "children": [
+                {
+                  "name": "NetworkVisual",
+                  "type": "div",
+                  "styling": {
+                    "className": "h-32 mb-6 relative"
+                  },
+                  "children": "<!-- Nodes connecting animation -->"
+                },
+                {
+                  "name": "CardTitle",
+                  "type": "h3",
+                  "styling": {
+                    "className": "text-xl font-bold text-white mb-2 font-manrope group-hover:text-cyan-400 transition-colors"
+                  },
+                  "children": "Neural Architecture"
+                },
+                {
+                  "name": "CardText",
+                  "type": "p",
+                  "styling": {
+                    "className": "text-gray-400 font-dm-sans text-sm leading-relaxed"
+                  },
+                  "children": "Deep learning models integrated directly into the browser experience."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ProcessSection",
+      "type": "section",
+      "area": "process",
+      "styling": {
+        "className": "py-32 overflow-hidden relative"
+      },
+      "children": [
+        {
+          "name": "ProcessFlowDiagram",
+          "type": "div",
+          "styling": {
+            "className": "flex flex-col md:flex-row items-center justify-center gap-4 max-w-6xl mx-auto"
+          },
+          "children": [
+            {
+              "name": "InputNode",
+              "type": "div",
+              "styling": {
+                "className": "w-48 h-48 rounded-full border border-gray-700 flex items-center justify-center text-gray-500"
+              },
+              "children": "RAW DATA"
+            },
+            {
+              "name": "ConnectorLine",
+              "type": "div",
+              "styling": {
+                "className": "h-24 w-1 md:h-1 md:w-24 bg-gradient-to-r from-gray-800 to-cyan-500 animate-pulse"
+              }
+            },
+            {
+              "name": "ProcessingNode",
+              "type": "div",
+              "styling": {
+                "className": "w-64 h-64 rounded-full border-2 border-cyan-400 shadow-[0_0_30px_rgba(0,212,224,0.3)] flex items-center justify-center relative overflow-hidden"
+              },
+              "children": [
+                {
+                  "name": "SpinningCore",
+                  "type": "div",
+                  "styling": {
+                    "className": "absolute inset-0 border-t-2 border-white rounded-full animate-spin"
+                  }
+                },
+                "INTELLIGENCE"
+              ]
+            },
+            {
+              "name": "ConnectorLine2",
+              "type": "div",
+              "styling": {
+                "className": "h-24 w-1 md:h-1 md:w-24 bg-gradient-to-r from-cyan-500 to-purple-600 animate-pulse delay-75"
+              }
+            },
+            {
+              "name": "OutputNode",
+              "type": "div",
+              "styling": {
+                "className": "w-48 h-48 rounded-full border border-purple-500/50 flex items-center justify-center text-white"
+              },
+              "children": "SOLUTION"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DemoSection",
+      "type": "interactive",
+      "area": "demo",
+      "styling": {
+        "className": "py-24 px-4 flex justify-center"
+      },
+      "children": [
+        {
+          "name": "TerminalContainer",
+          "type": "div",
+          "styling": {
+            "className": "w-full max-w-2xl bg-black/80 border border-gray-800 rounded-lg p-6 shadow-2xl font-mono text-sm",
+            "customCSS": {
+              "backdropFilter": "blur(20px)"
+            }
+          },
+          "children": [
+            {
+              "name": "TerminalHeader",
+              "type": "div",
+              "styling": {
+                "className": "flex gap-2 mb-4"
+              },
+              "children": [
+                {
+                  "name": "DotRed",
+                  "type": "span",
+                  "styling": {
+                    "className": "w-3 h-3 rounded-full bg-red-500"
+                  }
+                },
+                {
+                  "name": "DotYellow",
+                  "type": "span",
+                  "styling": {
+                    "className": "w-3 h-3 rounded-full bg-yellow-500"
+                  }
+                },
+                {
+                  "name": "DotGreen",
+                  "type": "span",
+                  "styling": {
+                    "className": "w-3 h-3 rounded-full bg-green-500"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "TerminalOutput",
+              "type": "div",
+              "props": {
+                "id": "terminal-log"
+              },
+              "styling": {
+                "className": "text-gray-400 mb-2 h-32 overflow-y-auto"
+              },
+              "children": "System ready.\nWaiting for user input...\n"
+            },
+            {
+              "name": "InputLine",
+              "type": "div",
+              "styling": {
+                "className": "flex items-center text-cyan-400"
+              },
+              "children": [
+                "visitor@ai-portfolio:~$ ",
+                {
+                  "name": "LiveInput",
+                  "type": "input",
+                  "props": {
+                    "type": "text",
+                    "placeholder": "Type 'hello' or 'status'..."
+                  },
+                  "styling": {
+                    "className": "bg-transparent border-none outline-none text-white ml-2 flex-1 caret-cyan-400",
+                    "customCSS": {
+                      "fontFamily": "monospace"
+                    }
+                  },
+                  "events": {
+                    "onKeyDown": "Handle Enter key to append response to log"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MinimalFooter",
+      "type": "footer",
+      "area": "footer",
+      "styling": {
+        "className": "py-12 border-t border-white/5 text-center"
+      },
+      "children": [
+        {
+          "name": "Logo",
+          "type": "div",
+          "styling": {
+            "className": "text-2xl font-bold text-white mb-4 font-manrope tracking-widest"
+          },
+          "children": "SENTIENT"
+        },
+        {
+          "name": "ContactCTA",
+          "type": "a",
+          "props": {
+            "href": "mailto:hello@sentient.ai"
+          },
+          "styling": {
+            "className": "inline-block px-8 py-3 bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 rounded hover:bg-cyan-400 hover:text-black transition-all duration-300 font-bold",
+            "customCSS": {
+              "borderRadius": "4px"
+            }
+          },
+          "children": "INITIATE COLLABORATION"
+        }
+      ]
+    }
+  ],
+  "colorScheme": {
+    "primary": "#00D4E0",
+    "secondary": "#7C3AED",
+    "accent": "#F472B6",
+    "background": "#050A14",
+    "surface": "#0F172A",
+    "text": "#F8FAFC",
+    "textMuted": "#94A3B8",
+    "border": "#1E293B",
+    "success": "#10B981",
+    "warning": "#F59E0B",
+    "error": "#EF4444"
+  },
+  "typography": {
+    "fontFamily": "'DM Sans', sans-serif",
+    "headingFont": "'Manrope', sans-serif",
+    "scale": {
+      "xs": "0.75rem",
+      "sm": "0.875rem",
+      "base": "1rem",
+      "lg": "1.125rem",
+      "xl": "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem"
+    }
+  },
+  "spacing": {
+    "unit": 4,
+    "scale": [
+      4,
+      8,
+      12,
+      16,
+      24,
+      32,
+      48,
+      64,
+      96,
+      128
+    ]
+  },
+  "interactions": [
+    {
+      "trigger": "scroll",
+      "target": "GenerativeCard",
+      "action": "fade-in-up",
+      "animation": "transform: translateY(0); opacity: 1; transition-delay: staggered;"
+    },
+    {
+      "trigger": "mousemove",
+      "target": "CustomCursor",
+      "action": "follow",
+      "animation": "Direct DOM manipulation of top/left properties"
+    },
+    {
+      "trigger": "load",
+      "target": "TypewriterHeading",
+      "action": "type-text",
+      "animation": "Sequential character reveal"
+    },
+    {
+      "trigger": "hover",
+      "target": "GenerativeCard",
+      "action": "glow-effect",
+      "animation": "box-shadow: 0 0 20px rgba(0, 212, 224, 0.4)"
+    }
+  ],
+  "accessibility": {
+    "ariaLabels": {
+      "CustomCursor": "hidden",
+      "NeuralCanvas": "Decorative background animation",
+      "GenerativeCard": "Feature card for generative UI"
+    },
+    "keyboardNav": "All interactive elements (inputs, links) must have visible focus states (outline: 2px solid #00D4E0).",
+    "focusManagement": "The custom cursor should not interfere with native focus outlines. Ensure tab order follows visual flow."
+  },
+  "implementation_notes": "Use Three.js or a lightweight WebGL library for the Hero particle system. Use GSAP for the timeline-based scroll animations (ScrollTrigger). The 'glassmorphism' effect relies on backdrop-filter, so ensure a fallback background color is provided for browsers that don't support it. The typewriter effect should support HTML tags to allow coloring specific words.",
+  "_generated": {
+    "model": "gemini-3-pro-preview",
+    "framework": "html",
+    "style": "modern",
+    "thinking_level": "high",
+    "prompt": "Design a MOTION-FIRST portfolio landing page that serves as a live demonstration of AI/agentic capability. \n\nKEY CONCEPT: The homepage itself IS the portfolio piece - no 'about me' content, no traditional bio. The visitor EXPERIENCES AI capability through the interface.\n\nVISUAL DIRECTION:\n- Dark mode native (deep navy/black backgrounds)\n- Primary accent: Cyan #00D4E0 (like frost/ice)\n- Secondary: Electric gradients (cyan to blue to purple)\n- Typography: Manrope for headings (geometric, bold), DM Sans for body\n- Glassmorphism cards with backdrop blur\n- Sharp geometric borders (4px radius)\n\nMOTION REQUIREMENTS (this is the star of the show):\n1. HERO: Particles or flowing lines that react to cursor movement - representing neural networks/data flow\n2. TEXT ANIMATIONS: Words/letters that assemble, dissolve, morph - showing generative capability\n3. CODE ANIMATION: Live code typing effect showing real code being 'written' in multiple languages\n4. 3D ELEMENTS: Subtle parallax depth on scroll, floating geometric shapes\n5. CURSOR EFFECTS: Custom cursor with trailing particles or glow\n6. SCROLL ANIMATIONS: Elements reveal with cinematic timing, staggered fades\n7. HOVER STATES: Cards lift, glow intensifies, content shifts\n\nSECTIONS:\n1. HERO (fullscreen): Abstract visualization + single provocative statement that types out, NO navigation initially\n2. CAPABILITIES SHOWCASE: Animated cards that 'generate' their own content on scroll\n3. PROCESS VISUALIZATION: Animated diagram showing AI workflow (input \u2192 thinking \u2192 output)\n4. LIVE DEMO TEASER: Interactive element visitors can play with\n5. MINIMAL FOOTER: Just logo and one CTA\n\nThe overall feel should be: witnessing intelligence in motion - not reading about it.\n\nMake every interaction feel alive and intentional. This should feel like visiting the future."
+  }
+}
