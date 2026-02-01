@@ -2,7 +2,6 @@ import { html } from 'lit';
 import { spread } from '../../directives/spread';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { sanitizeInput } from '../../utilities/story-helpers';
-import { withActions } from 'storybook/internal/preview-api';
 import '../link/link';
 import './select';
 
@@ -55,7 +54,6 @@ export default {
     <cre8-select ${spread(args)} .items=${args.items}>
       ${unsafeHTML(sanitizeInput(fieldNoteSlot, 'cre8-link'))}
     </cre8-select>`,
-  decorators: [withActions],
   argTypes: {
     change: { table: { disable: true } },
     selectOptions: { table: { disable: true } },

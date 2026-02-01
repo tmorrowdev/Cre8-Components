@@ -2,7 +2,6 @@ import { html } from 'lit';
 import { spread } from '../../directives/spread';
 import './multi-select';
 import '../remove-tag/remove-tag';
-import { withActions } from 'storybook/internal/preview-api';
 
 const baseItems = ['Bagel', 'Boat', 'Bungus'];
 
@@ -26,7 +25,6 @@ const meta = {
       },
     },
   },
-  decorators: [withActions],
   argTypes: {},
   args: {
     id: 'selectId',

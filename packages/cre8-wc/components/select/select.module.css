@@ -1,5 +1,3 @@
-import { css } from 'lit';
-const styles = css`
 /**
  * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/
  */
@@ -370,7 +368,4 @@ span.ripple {
 .cre8-c-select__field-note-success,
 .cre8-c-select__field-note-error {
   flex-basis: 100%;
-}
-  /* sourceMappingURL=select.module.css.map */
-`;
-export default styles;
+}/*# sourceMappingURL=select.module.css.map */

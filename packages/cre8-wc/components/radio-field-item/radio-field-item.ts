@@ -110,12 +110,6 @@ export class Cre8RadioFieldItem extends Cre8FormElement {
         label?: string;
 
     /**
-     * The name attribute is used to assign a value to the name attribute of the input element in the DOM.
-     */
-    @property()
-        name?: string;
-
-    /**
      * Required attribute
      *
      * @attr {boolean}
@@ -146,7 +140,7 @@ export class Cre8RadioFieldItem extends Cre8FormElement {
      * Reset the radio field
      */
     public resetField() {
-        this.internals.setFormValue(null);
+        this._internals.setFormValue(null);
     }
 
     /**
@@ -210,7 +204,7 @@ export class Cre8RadioFieldItem extends Cre8FormElement {
         if (radioInput) {
             radioInput.setAttribute('tabindex', '0');
         }
-        return this.checked ? this.internals.setFormValue(this.value || 'on') : this.internals.setFormValue(null);
+        return this.checked ? this._internals.setFormValue(this.value || 'on') : this._internals.setFormValue(null);
     }
 
     /**

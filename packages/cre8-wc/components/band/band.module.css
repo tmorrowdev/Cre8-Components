@@ -1,5 +1,4 @@
-import { css } from 'lit';
-const styles = css`/**
+/**
  * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/
  */
 *,
@@ -220,35 +219,31 @@ span.ripple {
 /**
  * Visually hidden from display
  */
-/*------------------------------------*\
- #BUTTON-GROUP
-\*------------------------------------*/
-:host {
-  display: inline-flex;
-}
-
 /**
- * 1) Button Group
+ * 1) A container with a background that can house various recipes of Components within
  */
-.cre8-c-button-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+.cre8-c-band {
+  background: var(--cre8-color-bg-subtle);
+  padding: 24px 0;
 }
-
-/**
-  * Button group for Modals
-  */
-.cre8-c-button-group--responsive-full-width {
-  flex-direction: column;
-  --cre8-button-width: 100%;
-}
-@media all and (min-width: 768px) {
-  .cre8-c-button-group--responsive-full-width {
-    flex-direction: row;
-    --cre8-button-width: auto;
+@media all and (min-width: 1200px) {
+  .cre8-c-band {
+    padding: 32px 0;
   }
 }
-  /* sourceMappingURL=button-group.module.css.map */
-`;
-export default styles;
+
+/**
+ * Branded variant
+ */
+.cre8-c-band--branded {
+  color: var(--cre8-color-content-knockout);
+  background: var(--cre8-theme-color-utility-information);
+}
+
+/**
+ * Full height
+ * 1) Height set to 100% to fill a container like a sidebar
+ */
+.cre8-c-band--full-height {
+  height: 100%;
+}/*# sourceMappingURL=band.module.css.map */

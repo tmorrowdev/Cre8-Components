@@ -2,7 +2,6 @@ import { html } from 'lit';
 import { spread } from '../../directives/spread';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { sanitizeInput } from '../../utilities/story-helpers';
-import { withActions } from 'storybook/internal/preview-api';
 import '../icon/icon';
 import './tooltip';
 import svgInfoFilled from '../../icons/System/Filled/Info.svg?raw';
@@ -19,7 +18,7 @@ export default {
   },
 
   render: ({ linkText, linkURL, default: slot, trigger, dynamicPosition, ...args }) => {
-    if(linkURL !== '/?path=/story/cre8-components-tooltip--position-dynamic') {
+    if (linkURL !== '/?path=/story/cre8-components-tooltip--position-dynamic') {
       return html`
       <div style="display:flex; flex-direction: row; padding:70px; align-items:center;">
         <a id="whadayacallit-default-link" href="${linkURL}">${linkText}</a>
@@ -56,7 +55,6 @@ export default {
       `;
     }
   },
-  decorators: [withActions],
   args: {
     ariaDescribes: 'whadayacallit-default-link',
   },
@@ -70,10 +68,10 @@ export default {
       },
     },
     isActive: {
-      table: { disable: true},
+      table: { disable: true },
     },
     isActiveDynamic: {
-      table: { disable: true},
+      table: { disable: true },
     },
     isDynamic: {
       control: 'boolean',
@@ -154,7 +152,7 @@ export const PositionLeft = {
     linkText: 'An undercover cop',
     linkURL: '/?path=/story/cre8-components-tooltip--position-left',
     default: 'A policeman in bed',
-    svg: svgInfoFilled,  
+    svg: svgInfoFilled,
   },
 };
 

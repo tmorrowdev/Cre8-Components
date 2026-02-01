@@ -1,5 +1,7 @@
-import { css } from 'lit';
-const styles = css`/**
+import { css } from 'lit'
+
+export const styles = css`
+/**
  * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/
  */
 *,
@@ -220,35 +222,10 @@ span.ripple {
 /**
  * Visually hidden from display
  */
-/*------------------------------------*\
- #BUTTON-GROUP
-\*------------------------------------*/
 :host {
-  display: inline-flex;
+  border: 1px dashed #69b3e7;
+  border-radius: 5px;
+  color: #2084ca;
 }
-
-/**
- * 1) Button Group
- */
-.cre8-c-button-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-/**
-  * Button group for Modals
-  */
-.cre8-c-button-group--responsive-full-width {
-  flex-direction: column;
-  --cre8-button-width: 100%;
-}
-@media all and (min-width: 768px) {
-  .cre8-c-button-group--responsive-full-width {
-    flex-direction: row;
-    --cre8-button-width: auto;
-  }
-}
-  /* sourceMappingURL=button-group.module.css.map */
+  /* sourceMappingURL=example-inline.css.map */
 `;
-export default styles;

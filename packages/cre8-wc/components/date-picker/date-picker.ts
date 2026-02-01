@@ -40,13 +40,13 @@ export class Cre8DatePicker extends Cre8Field {
       this.value = (e.target as HTMLInputElement).value;
 
     /* 2 */
-      this.internals.setFormValue(this.value);
+      this._internals.setFormValue(this.value);
   }
 
   private handleCalendarSelect(e: CustomEvent) {
       this.value = e.detail.date;
 
-      this.internals.setFormValue(this.value);
+      this._internals.setFormValue(this.value);
       this.showCalendar = false;
   }
 

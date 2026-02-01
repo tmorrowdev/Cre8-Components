@@ -1,5 +1,4 @@
-import { css } from 'lit';
-const styles = css`/**
+/**
  * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/
  */
 *,
@@ -221,34 +220,95 @@ span.ripple {
  * Visually hidden from display
  */
 /*------------------------------------*\
- #BUTTON-GROUP
+ #TABS
 \*------------------------------------*/
 :host {
-  display: inline-flex;
+  display: block;
 }
 
 /**
- * 1) Button Group
+ * Tabs header
  */
-.cre8-c-button-group {
+.cre8-c-tabs__header {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  flex-direction: column;
+  align-items: baseline;
+  overflow: hidden;
+  /**
+   * Tabs inner where the beginning of the tabs list isn't fully in the viewport
+   */
+  /**
+   * Tabs inner where the end of the tabs list isn't fully in the viewport
+   */
+}
+.cre8-c-tabs:not(.cre8-is-start) .cre8-c-tabs__header {
+  /**
+   * Left overflow gradient for the tabs list
+   */
+}
+.cre8-c-tabs:not(.cre8-is-start) .cre8-c-tabs__header::before {
+  content: "";
+  display: block;
+  position: absolute;
+  pointer-events: none;
+  background: linear-gradient(var(--rtlGradientToRight, 90deg), var(--cre8-color-bg-default), rgba(255, 255, 255, 0.001) 30%);
+  height: 100%;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  width: 48px;
+  z-index: 1;
+}
+.cre8-c-tabs:not(.cre8-is-end) .cre8-c-tabs__header {
+  /**
+   * Right overflow gradient for the tabs list
+   */
+}
+.cre8-c-tabs:not(.cre8-is-end) .cre8-c-tabs__header::after {
+  content: "";
+  display: block !important;
+  position: absolute;
+  pointer-events: none;
+  background: linear-gradient(var(--rtlGradientToRight, 90deg), rgba(255, 255, 255, 0.001) 30%, var(--cre8-color-bg-default));
+  height: 100%;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  width: 48px;
+  z-index: 1;
 }
 
 /**
-  * Button group for Modals
-  */
-.cre8-c-button-group--responsive-full-width {
-  flex-direction: column;
-  --cre8-button-width: 100%;
+ * Tabs list
+ * 1) The div that contains the cre8-tab's
+ */
+.cre8-c-tabs__list {
+  display: flex;
+  overflow: auto;
+  width: 100%;
+  margin: 0;
+  position: relative;
+  padding: var(--cre8-border-width-focus);
+  /**
+   * Visually hides the scrollbar
+   */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-@media all and (min-width: 768px) {
-  .cre8-c-button-group--responsive-full-width {
-    flex-direction: row;
-    --cre8-button-width: auto;
-  }
+.cre8-c-tabs__list::-webkit-scrollbar {
+  display: none;
 }
-  /* sourceMappingURL=button-group.module.css.map */
-`;
-export default styles;
+
+/**
+ * Tabs body
+ * 1) The div that contains the tab panel content
+ */
+.cre8-c-tabs__body {
+  padding-block-start: 16px;
+  /**
+   * Full Width Variant - border default bar across tabs
+   */
+}
+.cre8-c-tabs--full-width .cre8-c-tabs__body {
+  border-top: var(--cre8-border-width-tab-selected) var(--cre8-border-style-default) var(--cre8-color-border-default);
+  margin-top: calc(var(--cre8-border-width-tab-selected) * -2);
+}/*# sourceMappingURL=tabs.module.css.map */

@@ -47,7 +47,7 @@ export class SelectTileRadioController implements ReactiveController {
     }
 
     hostConnected(): void {
-        this.host.internals.role = 'radio';
+        this.host._internals.role = 'radio';
         // If we don't also do this, we can't use css selectors to find ourselves
         this.host.setAttribute('role', 'radio');
         this.host.setAttribute('tabindex', '0');
@@ -57,7 +57,7 @@ export class SelectTileRadioController implements ReactiveController {
     }
 
     hostDisconnected(): void {
-        this.host.internals.role = undefined;
+        this.host._internals.role = undefined;
         this.host.removeAttribute('role');
         this.host.removeAttribute('tabindex');
 

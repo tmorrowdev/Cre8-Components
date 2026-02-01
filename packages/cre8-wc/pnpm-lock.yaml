@@ -11,6 +11,9 @@ importers:
       '@a11y/focus-trap':
         specifier: ^1.0.5
         version: 1.0.5
+      '@lit/context':
+        specifier: ^1.1.6
+        version: 1.1.6
       '@lit/react':
         specifier: ^1.0.8
         version: 1.0.8(@types/react@19.2.2)
@@ -1331,6 +1334,9 @@ packages:
 
   '@lit-labs/ssr-dom-shim@1.4.0':
     resolution: {integrity: sha512-ficsEARKnmmW5njugNYKipTm4SFnbik7CXtoencDZzmzo/dQ+2Q0bgkzJuoJP20Aj0F+izzJjOqsnkd6F/o1bw==}
+
+  '@lit/context@1.1.6':
+    resolution: {integrity: sha512-M26qDE6UkQbZA2mQ3RjJ3Gzd8TxP+/0obMgE5HfkfLhEEyYE3Bui4A5XHiGPjy0MUGAyxB3QgVuw2ciS0kHn6A==}
 
   '@lit/localize-tools@0.8.1':
     resolution: {integrity: sha512-bWjKXdcTDW0v3w/errna+bzJ2eDfpuz+V10sswF5oXd6C0mHw20sRU+wrXOoj1avVcI7g8cWVQHUJHkQs9UxAQ==}
@@ -7154,6 +7160,10 @@ snapshots:
       '@lit-labs/analyzer': 0.14.0
 
   '@lit-labs/ssr-dom-shim@1.4.0': {}
+
+  '@lit/context@1.1.6':
+    dependencies:
+      '@lit/reactive-element': 2.1.1
 
   '@lit/localize-tools@0.8.1':
     dependencies:

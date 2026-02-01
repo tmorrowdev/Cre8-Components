@@ -19,7 +19,7 @@ export class SelectTileCheckboxController implements ReactiveController {
     }
 
     hostConnected(): void {
-        this.host.internals.role = 'checkbox';
+        this.host._internals.role = 'checkbox';
         this.host.setAttribute('tabindex', '0');
 
         this.host.addEventListener('click', this._clickHandler);
@@ -27,7 +27,7 @@ export class SelectTileCheckboxController implements ReactiveController {
     }
 
     hostDisconnected(): void {
-        this.host.internals.role = undefined;
+        this.host._internals.role = undefined;
         this.host.removeAttribute('tabindex');
 
         this.host.removeEventListener('click', this._clickHandler);
