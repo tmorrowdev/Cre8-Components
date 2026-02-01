@@ -1,11 +1,11 @@
 import svgCaretUp from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Up.svg?raw';
-import { html, nothing,  } from 'lit';
+import { html, nothing, } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
-import { property, query, queryAll } from 'lit/decorators.js';
+import { property, queryAll } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
-import { Cre8FormElement } from '../cre8-form-element';
 import '../field-note/field-note';
 import styles from './select.styles.js';
+import Cre8FormElement from '../cre8-form-element.js';
 
 export interface Cre8SelectOption {
   label: string;
@@ -47,9 +47,9 @@ export interface Cre8SelectOptionGroup {
  */
 
 export class Cre8Select extends Cre8FormElement {
-    readonly type = 'select';
 
-    static styles = [styles];
+  readonly type = 'select';
+  static styles = [styles];
 
   /**
    * A mix of Cre8SelectOption and Cre8SelectOptionGroup definitions:
@@ -61,104 +61,97 @@ export class Cre8Select extends Cre8FormElement {
    *  - options: Array of multiple Cre8SelectOption items - `Cre8SelectOption[]`
    */
   @property({ type: Array })
-      items: Array<Cre8SelectOption|Cre8SelectOptionGroup> = [];
+  items: Array<Cre8SelectOption | Cre8SelectOptionGroup> = [];
 
   /**
    * The required label that appears above the select
    * @attr {string}
    */
   @property()
-      label: string = 'Label';
+  label: string = 'Label';
+
 
   /**
-   * The name property on the select
-   * @attr {string}
-   */
+  * The unique id of the select
+  * @attr {string}
+  */
   @property()
-      name?: string;
-
-/**
-* The unique id of the select
-* @attr {string}
-*/
-  @property()
-      fieldId?: string;
+  fieldId?: string;
 
   /**
    * Optional field note text can be added to provide additional field guidance.
    * @attr {string}
    */
   @property()
-      fieldNote?: string;
+  fieldNote?: string;
 
   /**
    * Used to connect the field note in text field to the text menu for accessibility
    * @attr {string}
    */
   @property()
-      ariaDescribedBy?: string;
+  ariaDescribedBy?: string;
 
   /**
    * Additional aria-describedby connection to id for additional success and error notes to be accessible
    * @attr {string}
    */
   @property()
-      validationAriaDescribedBy?: string;
+  validationAriaDescribedBy?: string;
 
   /**
    * The required attribute on the select
    * @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })
-      required?: boolean;
+  required: boolean = false;
 
   /**
    * The disabled attribute on the select
    * @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })
-      disabled?: boolean;
+  disabled: boolean;
 
   /**
    * Changes the component's treatment to represent an error state
    * @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })
-      isError?: boolean;
+  isError?: boolean;
 
   /**
    * The error field note that appears below the default field note
    * @attr {string}
    */
   @property()
-      errorNote?: string;
+  errorNote?: string;
 
   /**
    * Changes the component's treatment to represent a success state
    * @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })
-      isSuccess?: boolean;
+  isSuccess?: boolean;
 
   /**
    * The success field note that appears below the default field note
    * @attr {string}
    */
   @property()
-      successNote?: string;
+  successNote?: string;
 
   /**
    * Select input querySelector
    */
-  @query('select')
-      field!: HTMLSelectElement;
+
 
 
   /**
    * Get all select option elements
    */
   @queryAll('option')
-  private _selectOptions: HTMLOptionElement[];
+  _selectOptions: HTMLOptionsCollection;
 
 
   /**
@@ -170,13 +163,13 @@ export class Cre8Select extends Cre8FormElement {
    * Initialize aria attributes
    */
   private _initializeAria() {
-      this.fieldId = this.fieldId || nanoid();
-      if (this.fieldNote || this.slotNotEmpty('fieldNote')) {
-          this.ariaDescribedBy = this.ariaDescribedBy || nanoid();
-      }
-      if (this.successNote || this.errorNote) {
-          this.validationAriaDescribedBy = this.validationAriaDescribedBy || nanoid();
-      }
+    this.fieldId = this.fieldId || nanoid();
+    if (this.fieldNote || this.slotNotEmpty('fieldNote')) {
+      this.ariaDescribedBy = this.ariaDescribedBy || nanoid();
+    }
+    if (this.successNote || this.errorNote) {
+      this.validationAriaDescribedBy = this.validationAriaDescribedBy || nanoid();
+    }
   }
 
   /**
@@ -188,15 +181,23 @@ export class Cre8Select extends Cre8FormElement {
    * 3) Otherwise, render only the `ariaDescribedBy` property (field note only)
    */
   private _fieldNoteAria() {
-      if (this.validationAriaDescribedBy && this.ariaDescribedBy) {
-          return `${this.ariaDescribedBy} ${this.validationAriaDescribedBy}`; /* 1 */
-      }
-      if (this.validationAriaDescribedBy && (!this.ariaDescribedBy)) {
-          return this.validationAriaDescribedBy; /* 2 */
-      }
-      return this.ariaDescribedBy; /* 3 */
+    if (this.validationAriaDescribedBy && this.ariaDescribedBy) {
+      return `${this.ariaDescribedBy} ${this.validationAriaDescribedBy}`; /* 1 */
+    }
+    if (this.validationAriaDescribedBy && (!this.ariaDescribedBy)) {
+      return this.validationAriaDescribedBy; /* 2 */
+    }
+    return this.ariaDescribedBy; /* 3 */
   }
 
+  connectedCallback(): void {
+    super.connectedCallback();
+    this.field.setAttribute('name', this.name ?? '')
+  }
+
+  disconnectedCallback(): void {
+    super.disconnectedCallback();
+  }
   /**
    * First updatedLifecycle
    * 1) Get the option in the items array with selected set to true. Set that as the selected item
@@ -204,28 +205,28 @@ export class Cre8Select extends Cre8FormElement {
    * select the first item value like the native select.
    */
   firstUpdated() {
-      super.firstUpdated();
-      this._selectOptions.forEach((item) => { /* 1 */
-          if (item.selected === true) {
-              this.selectedItem = item.value; /* 1 */
-          }
-      });
-      this.defaultValue = this.selectedItem ? this.selectedItem : this._selectOptions[0].value; /* 2 */
-      this._setFormData();
-      this._initializeAria();
-      return this.updateField();
+    super.firstUpdated();
+    [...this._selectOptions].forEach((item: { selected: boolean; value: string; }) => { /* 1 */
+      if (item.selected === true) {
+        this.selectedItem = item.value; /* 1 */
+      }
+    });
+    this.defaultValue = this.selectedItem ? this.selectedItem : (this._selectOptions[0].value ?? 'Select An Option'); /* 2 */
+    this._setFormData();
+    this._initializeAria();
+    this.updateField();
   }
 
-    /**
-   * Set form data
-   * 1) Set the element internals to the selected item value if it exists,
-   *    otherwise the default selected item is the first one
-   */
+  /**
+ * Set form data
+ * 1) Set the element internals to the selected item value if it exists,
+ *    otherwise the default selected item is the first one
+ */
   private _setFormData() {
-      if (this.selectedItem) {
-          return this.internals.setFormValue(this.selectedItem);
-      }
-      return this.internals.setFormValue(this.defaultValue.toString());
+    if (this.selectedItem) {
+      return this._internals?.setFormValue(this.selectedItem);
+    }
+    return this._internals?.setFormValue(this.defaultValue.toString());
   }
 
   /**
@@ -235,38 +236,38 @@ export class Cre8Select extends Cre8FormElement {
    */
   private _handleOnChange(e: Event) {
     /* 1 */
-      const target = e.target as HTMLSelectElement;
-      this.value = target.options[target.selectedIndex].value;
-      this.internals.setFormValue(this.value);
+    const target = e.target as HTMLSelectElement;
+    this.value = target.options[target.selectedIndex].value;
+    this._internals.setFormValue(this.value);
 
 
     /* 2 */
-      const customEvent = new CustomEvent('change', {
-          detail: {
-              name: this.name,
-              value: this.value,
-          },
-          bubbles: true,
-          composed: true,
-      });
-      this.dispatchEvent(customEvent);
+    const customEvent = new CustomEvent('change', {
+      detail: {
+        name: this.name,
+        value: this.value,
+      },
+      bubbles: true,
+      composed: true,
+    });
+    this.dispatchEvent(customEvent);
   }
 
   /**
    * Render the select options
    */
   private _renderSelectOptions() {
-      return this.items.map((item: Cre8SelectOption|Cre8SelectOptionGroup) => {
-          if ('options' in item) {
-              const selectedGroup = item.options.map((option: Cre8SelectOption) => html`
+    return this.items.map((item: Cre8SelectOption | Cre8SelectOptionGroup) => {
+      if ('options' in item) {
+        const selectedGroup = item.options.map((option: Cre8SelectOption) => html`
                   <option value="${option.value}">${option.label}</option>
               `);
-              return html`<optgroup label="${item.optGroupLabel}">
+        return html`<optgroup label="${item.optGroupLabel}">
           ${selectedGroup}
         </optgroup>`;
-          }
-          return html`<option value="${item.value}">${item.label}</option>`;
-      });
+      }
+      return html`<option value="${item.value}">${item.label}</option>`;
+    });
   }
 
   /**
@@ -275,9 +276,9 @@ export class Cre8Select extends Cre8FormElement {
    * 2. If there is a errorNote, then return the field note with the error message and state.
    */
   private _renderSuccessErrorFieldNote() {
-      if (this.successNote) {
+    if (this.successNote) {
       /* 1 */
-          return html`
+      return html`
         <cre8-field-note
           ?isSuccess=${this.isSuccess}
           id=${this.validationAriaDescribedBy}
@@ -286,10 +287,10 @@ export class Cre8Select extends Cre8FormElement {
         >
           ${this.successNote}
         </cre8-field-note>`;
-      }
-      if (this.errorNote) {
+    }
+    if (this.errorNote) {
       /* 2 */
-          return html`
+      return html`
         <cre8-field-note
           ?isError=${this.isError}
           id=${this.validationAriaDescribedBy}
@@ -298,24 +299,24 @@ export class Cre8Select extends Cre8FormElement {
         >
           ${this.errorNote}
         </cre8-field-note>`;
-      }
-      return null;
+    }
+    return null;
   }
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-select', {
-          'cre8-is-error': this.isError,
-          'cre8-is-success': this.isSuccess,
-      });
+    const componentClassNames = this.componentClassNames('cre8-c-select', {
+      'cre8-is-error': this.isError,
+      'cre8-is-success': this.isSuccess,
+    });
 
-      return html`
+    return html`
       <div class="${componentClassNames}">
         <label class="cre8-c-select__label" for="${this.fieldId}">${this.label}</label>
         <div class="cre8-c-select__body">
           <select
             class="cre8-c-select__input"
             id=${this.fieldId}
-            name=${this.name}
+            name=${ifDefined(this.name)}
             ?required=${this.required}
             ?disabled=${this.disabled}
             aria-describedby="${ifDefined(this._fieldNoteAria())}"
@@ -341,7 +342,7 @@ export class Cre8Select extends Cre8FormElement {
 }
 
 if (customElements.get('cre8-select') === undefined) {
-    customElements.define('cre8-select', Cre8Select);
+  customElements.define('cre8-select', Cre8Select);
 }
 
 declare global {

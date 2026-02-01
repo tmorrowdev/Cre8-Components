@@ -2,7 +2,6 @@ import { html } from 'lit';
 import '../field-note/field-note';
 import './checkbox-field-item';
 import { spread } from '../../directives/spread';
-import { withActions } from 'storybook/internal/preview-api';
 
 export default {
   title: 'cre8 Components/Checkbox Field Item',
@@ -24,6 +23,7 @@ export default {
     label: 'Label',
     required: undefined,
     successNote: undefined,
+    name: undefined
   },
   argTypes: {
     checked: { control: 'boolean' },
@@ -34,8 +34,8 @@ export default {
     label: { control: 'text' },
     successNote: { control: 'text' },
     validationAriaDescribedBy: { control: 'text' },
+    name: { control: 'text', optional: true }
   },
-  decorators: [withActions],
 };
 
 export const Default = {};

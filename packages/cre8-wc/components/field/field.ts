@@ -275,7 +275,7 @@ export class Cre8Field extends Cre8FormElement {
       this.value = inputValue;
 
     /* 2 */
-      this.internals.setFormValue(this.value);
+      this._internals.setFormValue(this.value);
   }
 
   /**

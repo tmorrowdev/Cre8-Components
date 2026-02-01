@@ -1,5 +1,4 @@
-import { css } from 'lit';
-const styles = css`/**
+/**
  * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/
  */
 *,
@@ -248,7 +247,4 @@ span.ripple {
     flex-direction: row;
     --cre8-button-width: auto;
   }
-}
-  /* sourceMappingURL=button-group.module.css.map */
-`;
-export default styles;
+}/*# sourceMappingURL=button-group.module.css.map */

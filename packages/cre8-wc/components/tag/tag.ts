@@ -128,7 +128,7 @@ export class Cre8Tag extends Cre8FormElement {
 * Reset the radio tag field
 */
   public resetField() {
-      this.internals.setFormValue(null);
+      this._internals.setFormValue(null);
   }
 
 /**
@@ -177,9 +177,9 @@ export class Cre8Tag extends Cre8FormElement {
           tagInput.setAttribute('tabindex', '0');
       }
       if (this.isSelected) {
-          this.internals.setFormValue(this.value || 'on');
+          this._internals.setFormValue(this.value || 'on');
       } else {
-          this.internals.setFormValue(null);
+          this._internals.setFormValue(null);
       }
   }
 

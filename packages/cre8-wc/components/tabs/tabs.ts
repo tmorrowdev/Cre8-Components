@@ -1,4 +1,4 @@
-import { html,  } from 'lit';
+import { html, } from 'lit';
 import {
     property, query, queryAssignedElements, state,
 } from 'lit/decorators.js';
@@ -49,14 +49,14 @@ export class Cre8Tabs extends Cre8Element {
      * @attr
      */
     @property()
-        size?: 'sm';
+    size?: 'sm';
 
     /**
      * Displays a set of tabs with a spanning the width of the element
      * @attr {boolean}
      */
     @property({ type: Boolean, reflect: true })
-        fullWidth?: boolean;
+    fullWidth?: boolean;
 
     /**
      * Auto Increment id to sync tab and tab panel
@@ -70,7 +70,7 @@ export class Cre8Tabs extends Cre8Element {
      * @attr {number}
      */
     @property({ type: Number })
-        activeIndex?: number = 0;
+    activeIndex?: number = 0;
 
     /**
      * The active tab
@@ -78,7 +78,7 @@ export class Cre8Tabs extends Cre8Element {
      * _*This property is dynamically set_
      */
     @state()
-        activeTab?: Cre8Tab;
+    activeTab?: Cre8Tab;
 
     /**
      * If position from left is greater than 0, set isStart to false. Otherwise set isStart to true.
@@ -87,7 +87,7 @@ export class Cre8Tabs extends Cre8Element {
      * @attr {boolean}
      */
     @state()
-        isStart?: boolean = true;
+    isStart?: boolean = true;
 
     /**
      * If last child is fully in the viewport, set isEnd to true. Otherwise, set isEnd to false.
@@ -96,31 +96,31 @@ export class Cre8Tabs extends Cre8Element {
      * @attr {boolean}
      */
     @state()
-        isEnd?: boolean = false;
+    isEnd?: boolean = false;
 
     /**
      * Query all the tab items
      */
     @queryAssignedElements()
-        _Cre8TabItems: Array<Cre8Tab>;
+    _Cre8TabItems: Array<Cre8Tab>;
 
     /**
      * Query all the tab panels
      */
     @queryAssignedElements({ slot: 'panel' })
-        _Cre8TabPanels: Array<Cre8TabPanel>;
+    _Cre8TabPanels: Array<Cre8TabPanel>;
 
     /**
      * Query the tabs header element
      */
     @query('.cre8-c-tabs__header')
-        _Cre8TabsHeader: HTMLElement;
+    _Cre8TabsHeader: HTMLElement;
 
     /**
      * Query the tabs header list element
      */
     @query('.cre8-c-tabs__list')
-        _Cre8TabsHeaderList: HTMLElement;
+    _Cre8TabsHeaderList: HTMLElement;
 
     /**
      * Query the document direction value
@@ -413,7 +413,7 @@ export class Cre8Tabs extends Cre8Element {
                 this.activeTab.blur();
                 break;
             default:
-                // no default
+            // no default
         }
     }
 

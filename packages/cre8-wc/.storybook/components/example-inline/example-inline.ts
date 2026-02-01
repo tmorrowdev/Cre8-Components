@@ -1,6 +1,6 @@
-import {LitElement, html, unsafeCSS} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
-import styles from './example-inline.scss';
+import { LitElement, html, unsafeCSS } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
+import { styles } from './example-inline.styles.js';
 
 @customElement('example-inline')
 export class ExampleInline extends LitElement {

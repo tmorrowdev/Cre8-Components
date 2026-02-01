@@ -148,12 +148,6 @@ export class Cre8SelectTile extends Cre8FormElement {
         fieldId?: string;
 
     /**
-     * Name of the form control.
-     */
-    @property({ reflect: true })
-        name?: string;
-
-    /**
      * Radio item fieldnote aria describe by
      */
     @property()
@@ -171,7 +165,7 @@ export class Cre8SelectTile extends Cre8FormElement {
      * TOOD: maybe this goes on Cre8FormElement
      */
     get form() {
-        return this.internals.form;
+        return this._internals.form;
     }
 
     /**
@@ -186,7 +180,7 @@ export class Cre8SelectTile extends Cre8FormElement {
             ? new SelectTileRadioController(this)
             : new SelectTileCheckboxController(this);
         if (this.disabled) {
-            this.internals.ariaDisabled = 'true';
+            this._internals.ariaDisabled = 'true';
         }
     }
 
@@ -212,7 +206,7 @@ export class Cre8SelectTile extends Cre8FormElement {
 
         if (changedProps.has('checked')) {
             // this.field.checked = this.checked;
-            // this.field.checked ? this.internals.setFormValue(this.value || 'on') : this.internals.setFormValue(null);
+            // this.field.checked ? this._internals.setFormValue(this.value || 'on') : this._internals.setFormValue(null);
             this.setAttribute('aria-checked', this.checked ? 'true' : 'false');
         }
         if (changedProps.has('type')) {
@@ -223,9 +217,9 @@ export class Cre8SelectTile extends Cre8FormElement {
         }
         if (changedProps.has('disabled')) {
             if (this.disabled) {
-                this.internals.ariaDisabled = 'true';
+                this._internals.ariaDisabled = 'true';
             } else {
-                this.internals.ariaDisabled = 'false';
+                this._internals.ariaDisabled = 'false';
             }
         }
     }

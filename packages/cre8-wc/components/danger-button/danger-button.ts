@@ -240,14 +240,14 @@ export class Cre8DangerButton extends Cre8FormElement {
         field!: HTMLButtonElement;
 
     formSubmit() {
-        const form = this.internals.form;
+        const form = this._internals.form;
         if (form) {
             form.requestSubmit();
         }
     }
 
     formReset() {
-        const form = this.internals.form;
+        const form = this._internals.form;
         if (form) {
             form.reset();
         }

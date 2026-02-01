@@ -2,7 +2,6 @@ import { html } from 'lit';
 import { spread } from '../../directives/spread';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { sanitizeInput } from '../../utilities/story-helpers';
-import { withActions } from 'storybook/internal/preview-api';
 import '../tab-panel/tab-panel';
 import '../tab/tab';
 import './tabs';
@@ -11,7 +10,7 @@ import '../../.storybook/components/f-po/f-po';
 export default {
   title: 'cre8 Components/Tabs',
   component: 'cre8-tabs',
-  render: ({ default: slot, panel, ...args} ) => html`
+  render: ({ default: slot, panel, ...args }) => html`
     <cre8-tabs ${spread(args)}>
       ${unsafeHTML(sanitizeInput(slot, 'cre8-tab'))}
       ${unsafeHTML(sanitizeInput(panel, 'cre8-tab-panel', 'f-po'))}
@@ -22,7 +21,6 @@ export default {
       handles: ['tabChange', 'tabSelected'],
     },
   },
-  decorators: [withActions],
   argTypes: {
     activeIndex: { control: { type: 'text' } },
     size: { control: { type: 'text' } },
