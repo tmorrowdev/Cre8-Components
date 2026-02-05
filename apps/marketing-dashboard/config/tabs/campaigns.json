@@ -1,0 +1,324 @@
+{
+  "component": "div",
+  "props": {
+    "class": "tab-content"
+  },
+  "children": [
+    {
+      "component": "div",
+      "props": {
+        "class": "kpi-grid"
+      },
+      "children": [
+        {
+          "component": "div",
+          "props": { "class": "kpi-card" },
+          "children": [
+            {
+              "component": "span",
+              "props": { "class": "kpi-label" },
+              "content": "Total Ad Spend"
+            },
+            {
+              "component": "div",
+              "props": { "class": "kpi-value" },
+              "content": "$124,582"
+            },
+            {
+              "component": "div",
+              "props": { "class": "kpi-change kpi-change--up" },
+              "content": "+12.5% vs last month"
+            }
+          ]
+        },
+        {
+          "component": "div",
+          "props": { "class": "kpi-card" },
+          "children": [
+            {
+              "component": "span",
+              "props": { "class": "kpi-label" },
+              "content": "Impressions"
+            },
+            {
+              "component": "div",
+              "props": { "class": "kpi-value" },
+              "content": "8.2M"
+            },
+            {
+              "component": "div",
+              "props": { "class": "kpi-change kpi-change--up" },
+              "content": "+18.3% vs last month"
+            }
+          ]
+        },
+        {
+          "component": "div",
+          "props": { "class": "kpi-card" },
+          "children": [
+            {
+              "component": "span",
+              "props": { "class": "kpi-label" },
+              "content": "Clicks"
+            },
+            {
+              "component": "div",
+              "props": { "class": "kpi-value" },
+              "content": "245,891"
+            },
+            {
+              "component": "div",
+              "props": { "class": "kpi-change kpi-change--up" },
+              "content": "+8.7% vs last month"
+            }
+          ]
+        },
+        {
+          "component": "div",
+          "props": { "class": "kpi-card" },
+          "children": [
+            {
+              "component": "span",
+              "props": { "class": "kpi-label" },
+              "content": "Conversions"
+            },
+            {
+              "component": "div",
+              "props": { "class": "kpi-value" },
+              "content": "12,847"
+            },
+            {
+              "component": "div",
+              "props": { "class": "kpi-change kpi-change--up" },
+              "content": "+15.2% vs last month"
+            }
+          ]
+        },
+        {
+          "component": "div",
+          "props": { "class": "kpi-card" },
+          "children": [
+            {
+              "component": "span",
+              "props": { "class": "kpi-label" },
+              "content": "CTR"
+            },
+            {
+              "component": "div",
+              "props": { "class": "kpi-value" },
+              "content": "3.0%"
+            },
+            {
+              "component": "div",
+              "props": { "class": "kpi-change kpi-change--down" },
+              "content": "-0.8% vs last month"
+            }
+          ]
+        },
+        {
+          "component": "div",
+          "props": { "class": "kpi-card" },
+          "children": [
+            {
+              "component": "span",
+              "props": { "class": "kpi-label" },
+              "content": "CPA"
+            },
+            {
+              "component": "div",
+              "props": { "class": "kpi-value" },
+              "content": "$9.69"
+            },
+            {
+              "component": "div",
+              "props": { "class": "kpi-change kpi-change--down" },
+              "content": "-2.4% vs last month"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "div",
+      "props": {
+        "class": "charts-row"
+      },
+      "children": [
+        {
+          "component": "div",
+          "props": { "class": "chart-card chart-card--wide" },
+          "children": [
+            {
+              "component": "h3",
+              "props": { "class": "card-title" },
+              "content": "Campaign Performance"
+            },
+            {
+              "component": "cre8-chart",
+              "props": {
+                "type": "bar",
+                "height": 300,
+                "data": {
+                  "labels": ["Google Ads", "Facebook", "Instagram", "LinkedIn", "Twitter", "TikTok"],
+                  "datasets": [
+                    {
+                      "label": "Conversions",
+                      "data": [4250, 3180, 2450, 1520, 890, 557]
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "component": "div",
+          "props": { "class": "chart-card" },
+          "children": [
+            {
+              "component": "h3",
+              "props": { "class": "card-title" },
+              "content": "Spend by Channel"
+            },
+            {
+              "component": "cre8-chart",
+              "props": {
+                "type": "doughnut",
+                "height": 300,
+                "data": {
+                  "labels": ["Google Ads", "Facebook", "Instagram", "LinkedIn", "Twitter", "TikTok"],
+                  "datasets": [
+                    {
+                      "data": [45200, 32100, 21500, 15200, 6800, 3782]
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "div",
+      "props": { "class": "chart-card chart-card--full" },
+      "children": [
+        {
+          "component": "h3",
+          "props": { "class": "card-title" },
+          "content": "CTR Trend (Last 12 Months)"
+        },
+        {
+          "component": "cre8-chart",
+          "props": {
+            "type": "line",
+            "height": 280,
+            "data": {
+              "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+              "datasets": [
+                {
+                  "label": "CTR %",
+                  "data": [2.1, 2.3, 2.5, 2.4, 2.8, 2.9, 3.2, 3.1, 2.9, 2.8, 3.0, 3.0],
+                  "fill": true
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "component": "div",
+      "props": { "class": "table-card" },
+      "children": [
+        {
+          "component": "h3",
+          "props": { "class": "card-title" },
+          "content": "Top Campaigns"
+        },
+        {
+          "component": "table",
+          "props": { "class": "data-table" },
+          "children": [
+            {
+              "component": "thead",
+              "children": [
+                {
+                  "component": "tr",
+                  "children": [
+                    { "component": "th", "content": "Campaign" },
+                    { "component": "th", "content": "Channel" },
+                    { "component": "th", "content": "Spend" },
+                    { "component": "th", "content": "Conversions" },
+                    { "component": "th", "content": "CPA" },
+                    { "component": "th", "content": "ROAS" }
+                  ]
+                }
+              ]
+            },
+            {
+              "component": "tbody",
+              "children": [
+                {
+                  "component": "tr",
+                  "children": [
+                    { "component": "td", "content": "Summer Sale 2026" },
+                    { "component": "td", "content": "Google Ads" },
+                    { "component": "td", "content": "$18,450" },
+                    { "component": "td", "content": "2,156" },
+                    { "component": "td", "content": "$8.56" },
+                    { "component": "td", "content": "4.2x" }
+                  ]
+                },
+                {
+                  "component": "tr",
+                  "children": [
+                    { "component": "td", "content": "Brand Awareness" },
+                    { "component": "td", "content": "Facebook" },
+                    { "component": "td", "content": "$15,200" },
+                    { "component": "td", "content": "1,845" },
+                    { "component": "td", "content": "$8.24" },
+                    { "component": "td", "content": "3.8x" }
+                  ]
+                },
+                {
+                  "component": "tr",
+                  "children": [
+                    { "component": "td", "content": "Product Launch" },
+                    { "component": "td", "content": "Instagram" },
+                    { "component": "td", "content": "$12,800" },
+                    { "component": "td", "content": "1,520" },
+                    { "component": "td", "content": "$8.42" },
+                    { "component": "td", "content": "3.5x" }
+                  ]
+                },
+                {
+                  "component": "tr",
+                  "children": [
+                    { "component": "td", "content": "B2B Lead Gen" },
+                    { "component": "td", "content": "LinkedIn" },
+                    { "component": "td", "content": "$9,500" },
+                    { "component": "td", "content": "892" },
+                    { "component": "td", "content": "$10.65" },
+                    { "component": "td", "content": "5.1x" }
+                  ]
+                },
+                {
+                  "component": "tr",
+                  "children": [
+                    { "component": "td", "content": "Retargeting" },
+                    { "component": "td", "content": "Google Ads" },
+                    { "component": "td", "content": "$8,200" },
+                    { "component": "td", "content": "1,124" },
+                    { "component": "td", "content": "$7.30" },
+                    { "component": "td", "content": "6.2x" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

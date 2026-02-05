@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SENTIENT | Intelligence in Motion</title>
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <!-- Custom Cursor Glow -->
+  <div id="cursor-glow" class="cursor-glow" aria-hidden="true"></div>
+  <div id="cursor-dot" class="cursor-dot" aria-hidden="true"></div>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="hero" class="hero-section">
+    <canvas id="neural-canvas" class="neural-canvas"></canvas>
+
+    <div class="hero-content">
+      <h1 id="hero-heading" class="hero-heading">
+        <span class="line">I don't just build interfaces.</span>
+        <span class="line highlight">I engineer intelligence.</span>
+      </h1>
+
+      <div class="scroll-indicator">
+        <span class="scroll-text">Initiate Sequence</span>
+        <div class="scroll-arrow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CAPABILITIES SECTION ========== -->
+  <section id="capabilities" class="capabilities-section">
+    <div class="section-container">
+      <h2 class="section-title reveal">
+        <span class="title-accent">//</span> Core Modules
+      </h2>
+
+      <div class="card-grid">
+        <!-- Card 1: Generative Systems -->
+        <article class="capability-card reveal" data-delay="0">
+          <div class="card-visual generative-visual">
+            <div class="morphing-shapes">
+              <div class="shape shape-1"></div>
+              <div class="shape shape-2"></div>
+              <div class="shape shape-3"></div>
+            </div>
+          </div>
+          <h3 class="card-title">Generative Systems</h3>
+          <p class="card-description">Interfaces that design themselves based on user intent and context.</p>
+          <div class="card-glow"></div>
+        </article>
+
+        <!-- Card 2: Autonomous Agents -->
+        <article class="capability-card reveal" data-delay="100">
+          <div class="card-visual code-visual">
+            <div class="code-window">
+              <div class="code-line" data-delay="0"><span class="code-prompt">&gt;</span> Initializing agent...</div>
+              <div class="code-line" data-delay="400"><span class="code-prompt">&gt;</span> Analyzing context...</div>
+              <div class="code-line" data-delay="800"><span class="code-prompt">&gt;</span> Optimizing workflow...</div>
+              <div class="code-line success" data-delay="1200"><span class="code-prompt">&gt;</span> READY</div>
+            </div>
+          </div>
+          <h3 class="card-title">Autonomous Agents</h3>
+          <p class="card-description">Self-correcting workflows that execute complex tasks without supervision.</p>
+          <div class="card-glow"></div>
+        </article>
+
+        <!-- Card 3: Neural Architecture -->
+        <article class="capability-card reveal" data-delay="200">
+          <div class="card-visual network-visual">
+            <svg class="network-svg" viewBox="0 0 200 120">
+              <g class="network-nodes">
+                <!-- Input nodes -->
+                <circle cx="30" cy="30" r="6" class="node input-node"/>
+                <circle cx="30" cy="60" r="6" class="node input-node"/>
+                <circle cx="30" cy="90" r="6" class="node input-node"/>
+                <!-- Hidden nodes -->
+                <circle cx="100" cy="40" r="8" class="node hidden-node"/>
+                <circle cx="100" cy="80" r="8" class="node hidden-node"/>
+                <!-- Output node -->
+                <circle cx="170" cy="60" r="10" class="node output-node"/>
+              </g>
+              <g class="network-connections">
+                <!-- Connections will pulse -->
+                <line x1="36" y1="30" x2="92" y2="40" class="connection"/>
+                <line x1="36" y1="60" x2="92" y2="40" class="connection"/>
+                <line x1="36" y1="60" x2="92" y2="80" class="connection"/>
+                <line x1="36" y1="90" x2="92" y2="80" class="connection"/>
+                <line x1="108" y1="40" x2="160" y2="60" class="connection"/>
+                <line x1="108" y1="80" x2="160" y2="60" class="connection"/>
+              </g>
+            </svg>
+          </div>
+          <h3 class="card-title">Neural Architecture</h3>
+          <p class="card-description">Deep learning models integrated directly into the browser experience.</p>
+          <div class="card-glow"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROCESS SECTION ========== -->
+  <section id="process" class="process-section">
+    <div class="process-flow">
+      <div class="process-node input-node-circle reveal" data-delay="0">
+        <div class="node-ring"></div>
+        <span class="node-label">RAW DATA</span>
+      </div>
+
+      <div class="process-connector reveal" data-delay="200">
+        <div class="connector-line"></div>
+        <div class="data-particles">
+          <span class="particle"></span>
+          <span class="particle"></span>
+          <span class="particle"></span>
+        </div>
+      </div>
+
+      <div class="process-node core-node reveal" data-delay="400">
+        <div class="core-ring outer"></div>
+        <div class="core-ring inner"></div>
+        <div class="core-pulse"></div>
+        <span class="node-label">INTELLIGENCE</span>
+      </div>
+
+      <div class="process-connector reveal" data-delay="600">
+        <div class="connector-line gradient"></div>
+        <div class="data-particles">
+          <span class="particle"></span>
+          <span class="particle"></span>
+          <span class="particle"></span>
+        </div>
+      </div>
+
+      <div class="process-node output-node-circle reveal" data-delay="800">
+        <div class="node-ring glow"></div>
+        <span class="node-label">SOLUTION</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DEMO SECTION ========== -->
+  <section id="demo" class="demo-section">
+    <div class="terminal-container reveal">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <span class="terminal-title">sentient-ai ~ interactive</span>
+      </div>
+      <div class="terminal-body">
+        <div id="terminal-output" class="terminal-output">
+          <div class="terminal-line system">System initialized. Neural pathways active.</div>
+          <div class="terminal-line system">Awaiting user input...</div>
+        </div>
+        <div class="terminal-input-line">
+          <span class="terminal-prompt">visitor@sentient:~$</span>
+          <input type="text" id="terminal-input" class="terminal-input" placeholder="Type 'hello', 'capabilities', or 'status'..." autocomplete="off" spellcheck="false">
+          <span class="cursor-blink"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="minimal-footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="./assets/logo.svg" alt="T.MORROW Design" class="logo-svg">
+      </div>
+      <a href="#contact" class="footer-cta">
+        <span class="cta-text">INITIATE COLLABORATION</span>
+        <span class="cta-glow"></span>
+      </a>
+      <p class="footer-tagline">Intelligence in Motion</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./js/main.js"></script>
+</body>
+</html>

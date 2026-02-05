@@ -1,0 +1,202 @@
+{
+  "component": "div",
+  "props": {
+    "class": "tab-content"
+  },
+  "children": [
+    {
+      "component": "div",
+      "props": { "class": "kpi-grid kpi-grid--4" },
+      "children": [
+        {
+          "component": "div",
+          "props": { "class": "kpi-card" },
+          "children": [
+            { "component": "span", "props": { "class": "kpi-label" }, "content": "Total Followers" },
+            { "component": "div", "props": { "class": "kpi-value" }, "content": "2.4M" },
+            { "component": "div", "props": { "class": "kpi-change kpi-change--up" }, "content": "+5.8% vs last month" }
+          ]
+        },
+        {
+          "component": "div",
+          "props": { "class": "kpi-card" },
+          "children": [
+            { "component": "span", "props": { "class": "kpi-label" }, "content": "Engagement Rate" },
+            { "component": "div", "props": { "class": "kpi-value" }, "content": "4.2%" },
+            { "component": "div", "props": { "class": "kpi-change kpi-change--up" }, "content": "+0.3% vs last month" }
+          ]
+        },
+        {
+          "component": "div",
+          "props": { "class": "kpi-card" },
+          "children": [
+            { "component": "span", "props": { "class": "kpi-label" }, "content": "Total Reach" },
+            { "component": "div", "props": { "class": "kpi-value" }, "content": "12.8M" },
+            { "component": "div", "props": { "class": "kpi-change kpi-change--up" }, "content": "+22.1% vs last month" }
+          ]
+        },
+        {
+          "component": "div",
+          "props": { "class": "kpi-card" },
+          "children": [
+            { "component": "span", "props": { "class": "kpi-label" }, "content": "Posts Published" },
+            { "component": "div", "props": { "class": "kpi-value" }, "content": "156" },
+            { "component": "div", "props": { "class": "kpi-change kpi-change--up" }, "content": "+12 vs last month" }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "div",
+      "props": { "class": "charts-row" },
+      "children": [
+        {
+          "component": "div",
+          "props": { "class": "chart-card chart-card--wide" },
+          "children": [
+            { "component": "h3", "props": { "class": "card-title" }, "content": "Follower Growth" },
+            {
+              "component": "cre8-chart",
+              "props": {
+                "type": "line",
+                "height": 300,
+                "data": {
+                  "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                  "datasets": [
+                    { "label": "Instagram", "data": [850000, 875000, 910000, 945000, 982000, 1020000, 1085000, 1120000, 1165000, 1210000, 1280000, 1350000] },
+                    { "label": "Twitter/X", "data": [420000, 428000, 438000, 452000, 468000, 485000, 502000, 518000, 535000, 552000, 568000, 585000] },
+                    { "label": "LinkedIn", "data": [280000, 292000, 305000, 318000, 332000, 348000, 365000, 382000, 398000, 415000, 432000, 450000] }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "component": "div",
+          "props": { "class": "chart-card" },
+          "children": [
+            { "component": "h3", "props": { "class": "card-title" }, "content": "Followers by Platform" },
+            {
+              "component": "cre8-chart",
+              "props": {
+                "type": "pie",
+                "height": 300,
+                "data": {
+                  "labels": ["Instagram", "Twitter/X", "LinkedIn", "TikTok", "Facebook"],
+                  "datasets": [{ "data": [1350000, 585000, 450000, 320000, 195000] }]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "div",
+      "props": { "class": "charts-row charts-row--equal" },
+      "children": [
+        {
+          "component": "div",
+          "props": { "class": "chart-card" },
+          "children": [
+            { "component": "h3", "props": { "class": "card-title" }, "content": "Engagement by Platform" },
+            {
+              "component": "cre8-chart",
+              "props": {
+                "type": "bar",
+                "height": 280,
+                "data": {
+                  "labels": ["Instagram", "TikTok", "LinkedIn", "Twitter/X", "Facebook"],
+                  "datasets": [{ "label": "Engagement Rate %", "data": [5.2, 7.8, 3.4, 2.1, 1.8] }]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "component": "div",
+          "props": { "class": "chart-card" },
+          "children": [
+            { "component": "h3", "props": { "class": "card-title" }, "content": "Content Performance" },
+            {
+              "component": "cre8-chart",
+              "props": {
+                "type": "bar",
+                "height": 280,
+                "data": {
+                  "labels": ["Videos", "Carousels", "Stories", "Static Posts", "Reels"],
+                  "datasets": [{ "label": "Avg. Engagement", "data": [8420, 6250, 4800, 3200, 12500] }]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "div",
+      "props": { "class": "table-card" },
+      "children": [
+        { "component": "h3", "props": { "class": "card-title" }, "content": "Top Performing Posts" },
+        {
+          "component": "table",
+          "props": { "class": "data-table" },
+          "children": [
+            {
+              "component": "thead",
+              "children": [{
+                "component": "tr",
+                "children": [
+                  { "component": "th", "content": "Post" },
+                  { "component": "th", "content": "Platform" },
+                  { "component": "th", "content": "Type" },
+                  { "component": "th", "content": "Reach" },
+                  { "component": "th", "content": "Engagements" },
+                  { "component": "th", "content": "Eng. Rate" }
+                ]
+              }]
+            },
+            {
+              "component": "tbody",
+              "children": [
+                { "component": "tr", "children": [
+                  { "component": "td", "content": "Product Launch Reel" },
+                  { "component": "td", "content": "Instagram" },
+                  { "component": "td", "content": "Reel" },
+                  { "component": "td", "content": "2.4M" },
+                  { "component": "td", "content": "185K" },
+                  { "component": "td", "content": "7.7%" }
+                ]},
+                { "component": "tr", "children": [
+                  { "component": "td", "content": "Behind the Scenes" },
+                  { "component": "td", "content": "TikTok" },
+                  { "component": "td", "content": "Video" },
+                  { "component": "td", "content": "1.8M" },
+                  { "component": "td", "content": "156K" },
+                  { "component": "td", "content": "8.7%" }
+                ]},
+                { "component": "tr", "children": [
+                  { "component": "td", "content": "Customer Story" },
+                  { "component": "td", "content": "LinkedIn" },
+                  { "component": "td", "content": "Carousel" },
+                  { "component": "td", "content": "420K" },
+                  { "component": "td", "content": "28K" },
+                  { "component": "td", "content": "6.7%" }
+                ]},
+                { "component": "tr", "children": [
+                  { "component": "td", "content": "Tips & Tricks Thread" },
+                  { "component": "td", "content": "Twitter/X" },
+                  { "component": "td", "content": "Thread" },
+                  { "component": "td", "content": "580K" },
+                  { "component": "td", "content": "32K" },
+                  { "component": "td", "content": "5.5%" }
+                ]}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

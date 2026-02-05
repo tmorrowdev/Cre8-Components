@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="tmorrow-frost">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T.MORROW | Creative Studio for Digital Excellence</title>
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Web Fonts: Manrope (headings) + DM Sans (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Cre8 Web Components -->
+  <script type="module" src="../../packages/cre8-wc/cdn/cre8-wc.esm.js"></script>
+
+  <!-- Base Design Tokens -->
+  <link rel="stylesheet" href="../../packages/cre8-wc/tokens.css">
+  <link rel="stylesheet" href="../../packages/cre8-wc/fonts.css">
+
+  <!-- T.MORROW Frost Theme Tokens -->
+  <link rel="stylesheet" href="../../packages/cre8-wc/design-tokens/brands/tmorrow/css/tokens_brand.css">
+
+  <!-- Portfolio Styles -->
+  <link rel="stylesheet" href="./css/portfolio.css">
+</head>
+<body>
+  <!-- Loading State -->
+  <div id="loading" class="portfolio-loading">
+    <div class="portfolio-loading__spinner"></div>
+    <p>Loading...</p>
+  </div>
+
+  <!-- Portfolio Container -->
+  <div id="app"></div>
+
+  <!-- App Initialization -->
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

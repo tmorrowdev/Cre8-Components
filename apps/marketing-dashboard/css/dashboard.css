@@ -1,0 +1,619 @@
+/**
+ * Marketing Dashboard Styles
+ * Premium Dark Mode Design System
+ * Inspired by: Dark Classy Web Dashboard
+ */
+
+/* ========================================
+   CSS Variables - Premium Dark Theme
+   ======================================== */
+:root {
+  /* Typography - Dark Mode Optimized */
+  --font-heading: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'DM Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
+
+  /* Dark Layered Backgrounds */
+  --bg-page: #0A0A0B;
+  --bg-surface: #111113;
+  --bg-elevated: #1A1A1D;
+  --bg-interactive: #2A2A2E;
+
+  /* Borders */
+  --border-subtle: #1F1F23;
+  --border-default: #2A2A2E;
+
+  /* Primary Accent (Vibrant Teal-Cyan) */
+  --accent-primary: #00D4AA;
+  --accent-secondary: #00F5C8;
+  --accent-gradient: linear-gradient(135deg, #00D4AA 0%, #00F5C8 100%);
+  --accent-tint: rgba(0, 212, 170, 0.15);
+
+  /* Secondary Accent (Warm Coral) */
+  --coral: #FF6B6B;
+  --coral-gradient: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%);
+
+  /* Text Colors */
+  --text-primary: #FFFFFF;
+  --text-muted: rgba(255, 255, 255, 0.8);
+  --text-secondary: #ADADB0;
+  --text-tertiary: #8B8B90;
+  --text-disabled: #6B6B70;
+  --text-placeholder: #4A4A4E;
+
+  /* Semantic Colors */
+  --success: #22C55E;
+  --success-tint: rgba(34, 197, 94, 0.15);
+  --success-glow: rgba(34, 197, 94, 0.5);
+  --danger: #EF4444;
+  --danger-tint: rgba(239, 68, 68, 0.15);
+  --warning: #F59E0B;
+  --info: #3B82F6;
+
+  /* Shadows & Effects */
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--border-default);
+  --shadow-glow: 0 0 20px var(--accent-tint);
+  --shadow-success-glow: 0 0 12px var(--success-glow);
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 100px;
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   Loading State
+   ======================================== */
+.dashboard-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: var(--space-md);
+  color: var(--text-secondary);
+  background: var(--bg-page);
+}
+
+.dashboard-loading__spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--bg-elevated);
+  border-top-color: var(--accent-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.dashboard-loading.hidden {
+  display: none;
+}
+
+/* ========================================
+   Header
+   ======================================== */
+.dashboard-header {
+  padding: var(--space-lg) 0;
+}
+
+.dashboard-subtitle {
+  color: var(--text-tertiary);
+  font-size: 1rem;
+  margin-top: var(--space-xs);
+}
+
+cre8-header {
+  background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-page) 100%);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Style cre8-heading inside header */
+cre8-heading {
+  --cre8-heading-color: var(--text-primary);
+  font-family: var(--font-heading);
+}
+
+cre8-heading h1,
+cre8-heading h2,
+cre8-heading h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ========================================
+   Layout
+   ======================================== */
+cre8-layout {
+  background: var(--bg-page);
+  min-height: 100vh;
+}
+
+cre8-layout-section {
+  padding: var(--space-xl) 0;
+}
+
+cre8-layout-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+/* ========================================
+   Tabs
+   ======================================== */
+cre8-tabs {
+  margin-bottom: var(--space-xl);
+  --cre8-tabs-bg: transparent;
+  --cre8-tab-color: var(--text-tertiary);
+  --cre8-tab-color-active: var(--text-primary);
+  --cre8-tab-border-color: var(--accent-primary);
+}
+
+cre8-tab {
+  color: var(--text-tertiary);
+  transition: color 0.2s ease;
+}
+
+cre8-tab:hover {
+  color: var(--text-secondary);
+}
+
+cre8-tab[isactive],
+cre8-tab[isActive] {
+  color: var(--text-primary);
+}
+
+/* ========================================
+   Tab Content
+   ======================================== */
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  padding: var(--space-md) 0;
+}
+
+/* ========================================
+   KPI Grid
+   ======================================== */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-md);
+}
+
+.kpi-grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ========================================
+   KPI Cards - Premium Dark Style
+   ======================================== */
+.kpi-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle gradient overlay */
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-default), transparent);
+}
+
+.kpi-card:hover {
+  border-color: var(--border-default);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.kpi-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-disabled);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.kpi-value {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-feature-settings: 'tnum' 1;
+}
+
+.kpi-change {
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.kpi-change--up {
+  color: var(--success);
+}
+
+.kpi-change--up::before {
+  content: "↑";
+  font-weight: 700;
+}
+
+.kpi-change--down {
+  color: var(--danger);
+}
+
+.kpi-change--down::before {
+  content: "↓";
+  font-weight: 700;
+}
+
+/* ========================================
+   Charts Row
+   ======================================== */
+.charts-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-lg);
+}
+
+.charts-row--equal {
+  grid-template-columns: 1fr 1fr;
+}
+
+.charts-row--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ========================================
+   Chart & Table Cards - Glassmorphism
+   ======================================== */
+.chart-card,
+.table-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+/* Top accent line */
+.chart-card::after,
+.table-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--space-lg);
+  right: var(--space-lg);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-default), transparent);
+}
+
+.chart-card--wide {
+  /* Already handled by grid */
+}
+
+.chart-card--full {
+  width: 100%;
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--border-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ========================================
+   Charts
+   ======================================== */
+cre8-chart {
+  display: block;
+  width: 100%;
+}
+
+/* ========================================
+   Data Tables - Premium Dark
+   ======================================== */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.data-table th {
+  text-align: left;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-page);
+  font-weight: 600;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-disabled);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.data-table td {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-feature-settings: 'tnum' 1;
+}
+
+.data-table td:first-child {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.data-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.data-table tbody tr:hover {
+  background: var(--bg-elevated);
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ========================================
+   Funnel - Premium Gradient Style
+   ======================================== */
+.funnel-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: var(--space-md) 0;
+}
+
+.funnel-stage {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine effect */
+.funnel-stage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.funnel-stage:hover::before {
+  left: 100%;
+}
+
+.funnel-stage:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.funnel-stage--1 {
+  background: linear-gradient(135deg, #1E3A5F 0%, #2563EB 100%);
+  width: 100%;
+}
+
+.funnel-stage--2 {
+  background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+  width: 85%;
+  margin: 0 auto;
+}
+
+.funnel-stage--3 {
+  background: linear-gradient(135deg, #3B82F6 0%, #00D4AA 100%);
+  width: 70%;
+  margin: 0 auto;
+}
+
+.funnel-stage--4 {
+  background: linear-gradient(135deg, #00D4AA 0%, #00F5C8 100%);
+  width: 55%;
+  margin: 0 auto;
+}
+
+.funnel-stage--5 {
+  background: linear-gradient(135deg, #22C55E 0%, #4ADE80 100%);
+  width: 40%;
+  margin: 0 auto;
+  box-shadow: var(--shadow-success-glow);
+}
+
+.funnel-stage__content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.funnel-stage__label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+.funnel-stage__value {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-feature-settings: 'tnum' 1;
+}
+
+.funnel-stage__percent {
+  font-size: 0.875rem;
+  opacity: 0.75;
+  font-weight: 500;
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+@media (max-width: 1200px) {
+  .kpi-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .kpi-grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .charts-row,
+  .charts-row--3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .kpi-grid,
+  .kpi-grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .kpi-value {
+    font-size: 1.5rem;
+  }
+
+  cre8-layout-container {
+    padding: 0 var(--space-md);
+  }
+
+  .funnel-stage__content {
+    flex-direction: column;
+    gap: var(--space-xs);
+    text-align: center;
+  }
+
+  .funnel-stage--1,
+  .funnel-stage--2,
+  .funnel-stage--3,
+  .funnel-stage--4,
+  .funnel-stage--5 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .kpi-grid,
+  .kpi-grid--4 {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header {
+    padding: var(--space-md) 0;
+  }
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+.hidden {
+  display: none !important;
+}
+
+.text-success {
+  color: var(--success) !important;
+}
+
+.text-danger {
+  color: var(--danger) !important;
+}
+
+.text-muted {
+  color: var(--text-tertiary);
+}
+
+/* ========================================
+   Scrollbar Styling
+   ======================================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-page);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-interactive);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-disabled);
+}
+
+/* ========================================
+   Selection Styling
+   ======================================== */
+::selection {
+  background: var(--accent-tint);
+  color: var(--text-primary);
+}
