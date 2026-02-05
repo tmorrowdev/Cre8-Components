@@ -1,5 +1,5 @@
 import { fixture } from '@open-wc/testing-helpers';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../icon';
 import { cre8IconLegacy } from '../icon';
 

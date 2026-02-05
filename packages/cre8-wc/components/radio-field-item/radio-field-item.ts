@@ -1,21 +1,21 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property, query } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { Cre8FormElement } from '../cre8-form-element';
 import '../field-note/field-note';
-import styles from './radio-field-item.styles.js';
+import styles from './radio-field-item.module.scss';
 
-    /**
-     * A Radio Field Item adds a radio button to a Radio Field. Radio buttons let a user choose only one of several
-     * options. Do not use a single radio button, because once selected, it cannot be de-selected. If the user can only
-     * choose one, none or many options, use Checkbox instead.
-     */
+/**
+ * A Radio Field Item adds a radio button to a Radio Field. Radio buttons let a user choose only one of several
+ * options. Do not use a single radio button, because once selected, it cannot be de-selected. If the user can only
+ * choose one, none or many options, use Checkbox instead.
+ */
 
 export class Cre8RadioFieldItem extends Cre8FormElement {
     type = 'radio';
 
-    static styles = [styles];
+    static styles = [styles as unknown as CSSResult];
 
     /**
      * Identifies the element that provides a detailed, extended description for the object.
@@ -23,7 +23,7 @@ export class Cre8RadioFieldItem extends Cre8FormElement {
      * @attr{string}
      */
     @property()
-        ariaDescribedBy?: string;
+    ariaDescribedBy?: string;
 
     /**
      * A Boolean attribute which, if present, sets the radio button as selected.
@@ -31,7 +31,7 @@ export class Cre8RadioFieldItem extends Cre8FormElement {
      * @attr {boolean}
      */
     @property({ type: Boolean, reflect: true })
-        checked?: boolean;
+    checked?: boolean;
 
     /**
      * The Boolean disabled attribute, when present, makes the element not mutable, focusable, or even submitted with
@@ -40,27 +40,27 @@ export class Cre8RadioFieldItem extends Cre8FormElement {
      * @attr {boolean}
      */
     @property({ type: Boolean, reflect: true })
-        disabled?: boolean;
+    disabled?: boolean;
 
     /**
      * Get the radio field item input
      */
     @query('input')
-        field!: HTMLInputElement;
+    field!: HTMLInputElement;
 
     /**
      * The fieldId attribute is assigned to the HTML input element of the radio button and the for attribute of the
      * corresponding label.
      */
     @property()
-        fieldId?: string;
+    fieldId?: string;
 
     /**
      * A FieldNote can be placed to provide guidance. It's frequently used to in the context of form fields for extra
      * information or validation messages.
      */
     @property()
-        fieldNote?: string;
+    fieldNote?: string;
 
     /**
      * Sets the item fieldnote icon.
@@ -69,7 +69,7 @@ export class Cre8RadioFieldItem extends Cre8FormElement {
      * - **error** renders a badge with error state treatment
      */
     @property()
-        fieldNoteIconName?: string;
+    fieldNoteIconName?: string;
 
     /**
      * Radio item fieldnote knockout
@@ -77,7 +77,7 @@ export class Cre8RadioFieldItem extends Cre8FormElement {
      * @attr {boolean}
      */
     @property({ type: Boolean, reflect: true })
-        fieldNoteKnockout?: boolean;
+    fieldNoteKnockout?: boolean;
 
     /**
      * Sets the error state of the fieldnote.
@@ -85,7 +85,7 @@ export class Cre8RadioFieldItem extends Cre8FormElement {
      * @attr {boolean}
      */
     @property({ type: Boolean, reflect: true })
-        fieldNoteIsError?: boolean;
+    fieldNoteIsError?: boolean;
 
     /**
      * The isError attribute is used to indicate an error state related to the radio button.
@@ -93,7 +93,7 @@ export class Cre8RadioFieldItem extends Cre8FormElement {
      * @attr {boolean}
      */
     @property({ type: Boolean, reflect: true })
-        isError?: boolean;
+    isError?: boolean;
 
     /**
      * The isSuccess attribute is used to indicate a success state related to the radio button.
@@ -101,13 +101,13 @@ export class Cre8RadioFieldItem extends Cre8FormElement {
      * @attr {boolean}
      */
     @property({ type: Boolean, reflect: true })
-        isSuccess?: boolean;
+    isSuccess?: boolean;
 
     /**
      * The label attribute is used to assign a value to the label element corresponding to this radio button.
      */
     @property()
-        label?: string;
+    label?: string;
 
     /**
      * Required attribute
@@ -115,7 +115,7 @@ export class Cre8RadioFieldItem extends Cre8FormElement {
      * @attr {boolean}
      */
     @property({ type: Boolean, reflect: true })
-        required?: boolean;
+    required?: boolean;
 
     /**
      * Initial checked for initial checked state
@@ -159,7 +159,7 @@ export class Cre8RadioFieldItem extends Cre8FormElement {
      */
     removeChecked() {
         if (this.parentNode) {
-        /* 1 */
+            /* 1 */
             const radioFieldItems = this.parentNode.querySelectorAll('cre8-radio-field-item');
             radioFieldItems.forEach((element: Cre8RadioFieldItem) => {
                 element.checked = false;
@@ -239,7 +239,7 @@ export class Cre8RadioFieldItem extends Cre8FormElement {
      */
     handleKeyDown(e: KeyboardEvent) {
         if (e.code === 'ArrowLeft' || e.code === 'ArrowUp') {
-        /* 1 */
+            /* 1 */
             const previous = this.previousElementSibling;
             const previousElement = previous?.shadowRoot?.querySelector<HTMLInputElement>(
                 '.cre8-c-radio-field-item__input:not([disabled])'
@@ -249,7 +249,7 @@ export class Cre8RadioFieldItem extends Cre8FormElement {
                 this._updateSibling(e, previous, previousElement);
             }
         } else if (e.code === 'ArrowRight' || e.code === 'ArrowDown') {
-        /* 2 */
+            /* 2 */
             const next = this.nextElementSibling;
             const nextElement = next?.shadowRoot?.querySelector<HTMLInputElement>(
                 '.cre8-c-radio-field-item__input:not([disabled])'
@@ -263,8 +263,8 @@ export class Cre8RadioFieldItem extends Cre8FormElement {
                 element.shadowRoot.querySelector('.cre8-c-radio-field-item__input').setAttribute('tabindex', '-1');
             });
 
-        // After making tabbing away from the feildset,
-        // reset the items to be tabbable again so the user can come back to the fieldset
+            // After making tabbing away from the feildset,
+            // reset the items to be tabbable again so the user can come back to the fieldset
             setTimeout(this.resetTabIndeces, 100, radioFieldItems);
         }
     }
@@ -299,7 +299,7 @@ export class Cre8RadioFieldItem extends Cre8FormElement {
             <label class="cre8-c-radio-field-item__label" for=${this.fieldId}>${this.label}</label>
     </div>
         ${this.fieldNote
-        ? html`<cre8-field-note
+                ? html`<cre8-field-note
                 ?inverted=${this.fieldNoteKnockout}
                 id=${ifDefined(this.ariaDescribedBy)}
                 iconName=${ifDefined(this.fieldNoteIconName)}
@@ -308,7 +308,7 @@ export class Cre8RadioFieldItem extends Cre8FormElement {
             >
                 ${this.fieldNote}
             </cre8-field-note>`
-        : ''}
+                : ''}
         `;
     }
 }

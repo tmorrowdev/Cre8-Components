@@ -1,22 +1,22 @@
 import { fixture } from '@open-wc/testing-helpers';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../accordion';
 import { cre8Accordion } from '../accordion';
 
 describe('accordion', () => {
-    beforeEach(() => {
-        Object.defineProperty(document, 'dir', {
-            configurable: true,
-            value: 'ltr',
-        });
+  beforeEach(() => {
+    Object.defineProperty(document, 'dir', {
+      configurable: true,
+      value: 'ltr',
     });
+  });
 
-    afterEach(() => {
-        delete document.dir;
-    });
+  afterEach(() => {
+    delete document.dir;
+  });
 
-    test('renders correctly', async () => {
-        const el = await fixture<cre8Accordion>(html`
+  test('renders correctly', async () => {
+    const el = await fixture<cre8Accordion>(html`
           <cre8-accordion>
             <cre8-accordion heading="Accordion Heading" isActive>
               <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -25,12 +25,12 @@ describe('accordion', () => {
             </cre8-accordion>
           </cre8-accordion>
         `);
-        expect(el.shadowRoot).toBeTruthy();
-    });
+    expect(el.shadowRoot).toBeTruthy();
+  });
 
-    describe('accessibility tests', () => {
-        test('should be accessible with default values', async () => {
-            const el = await fixture<cre8Accordion>(html`
+  describe('accessibility tests', () => {
+    test('should be accessible with default values', async () => {
+      const el = await fixture<cre8Accordion>(html`
               <cre8-accordion>
                 <cre8-accordion-item heading="Accordion Heading" isActive>
                   <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -44,11 +44,11 @@ describe('accordion', () => {
                 </cre8-accordion-item>
               </cre8-accordion>
             `);
-            return expect(el).toBeAccessible();
-        });
+      return expect(el).toBeAccessible();
+    });
 
-        test('should be accessible with out active open accordion', async () => {
-            const el = await fixture<cre8Accordion>(html`
+    test('should be accessible with out active open accordion', async () => {
+      const el = await fixture<cre8Accordion>(html`
               <cre8-accordion>
                 <cre8-accordion-item heading="Accordion Heading">
                     <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -63,7 +63,7 @@ describe('accordion', () => {
                 </cre8-accordion-item>
               </cre8-accordion>
             `);
-            return expect(el).toBeAccessible();
-        });
+      return expect(el).toBeAccessible();
     });
+  });
 });

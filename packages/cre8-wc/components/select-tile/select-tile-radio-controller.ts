@@ -1,4 +1,4 @@
-import { ReactiveController } from 'lit';
+import { ReactiveController, CSSResult } from 'lit';
 import { Cre8FormElement } from '../cre8-form-element';
 import { Cre8RadioFieldItem } from '../radio-field-item/radio-field-item';
 
@@ -79,18 +79,18 @@ export class SelectTileRadioController implements ReactiveController {
      * - They both have non-empty name attributes, and the names are the same
      *
      */
-    findAllElementsInSameRadioButtonGroup({ excludeDisabled }: { excludeDisabled?: boolean} = {}) {
+    findAllElementsInSameRadioButtonGroup({ excludeDisabled }: { excludeDisabled?: boolean } = {}) {
         const name = this.host.name;
         const form = this.host.form;
         if (name && name.length > 0) {
             const document = this.host.ownerDocument;
             const matches = Array.from(
                 document.querySelectorAll(`[role="radio"][name="${name}"]`)
-            ).filter((element: HTMLElement & { form?: HTMLFormElement}) => element.form === form);
+            ).filter((element: HTMLElement & { form?: HTMLFormElement }) => element.form === form);
 
             if (excludeDisabled === true) {
                 return matches
-                    .filter((element: HTMLElement & { disabled?: boolean}) => !(
+                    .filter((element: HTMLElement & { disabled?: boolean }) => !(
                         element.disabled || element.ariaDisabled === 'true'
                     ));
             }
@@ -100,11 +100,11 @@ export class SelectTileRadioController implements ReactiveController {
         return [];
     }
 
- /**
-   * Remove checked
-   * 1) Reset the form field to not checked
-   * 2) Remove checked property from all items and set tabindex to -1
-   */
+    /**
+      * Remove checked
+      * 1) Reset the form field to not checked
+      * 2) Remove checked property from all items and set tabindex to -1
+      */
     removeChecked() {
         const radioFieldItems = this.findAllElementsInSameRadioButtonGroup();
         radioFieldItems.forEach((element: Cre8RadioFieldItem) => {
@@ -113,21 +113,21 @@ export class SelectTileRadioController implements ReactiveController {
         });
     }
 
-  /**
-   * Handle clicking on the radio button
-   * @see _checkAndFocus
-   */
+    /**
+     * Handle clicking on the radio button
+     * @see _checkAndFocus
+     */
     private _clickHandler = (e: MouseEvent | KeyboardEvent) => {
         e.preventDefault();
         this._checkAndFocus(this.host);
     };
 
-  /**
-   * Set the element to `checked`
-   * 1) Remove `checked` and set tabindex to -1 on all elements in our radio group
-   * 2) Set us to checked.
-   * 3) Set our tabindex to 0
-   */
+    /**
+     * Set the element to `checked`
+     * 1) Remove `checked` and set tabindex to -1 on all elements in our radio group
+     * 2) Set us to checked.
+     * 3) Set our tabindex to 0
+     */
     private _checkAndFocus = (target: HTMLElement & { checked?: boolean }) => {
         const wasChecked = target.checked;
         this.removeChecked(); /* 1 */
@@ -140,23 +140,23 @@ export class SelectTileRadioController implements ReactiveController {
         }
     };
 
-  /**
-   * Handle keydown
-   * 1) If left or up arrow key is struck and radio field item exists before current item,
-   *    remove checked from all items and add it to the next item
-   * 2) If right or down arrow key is struck and radio field item exists after current item,
-   *    remove checked from all items and add checked to the next item.
-   *    Focus on this item and set tabindex for when focusing out of radio field and back onto checked item.
-   * 3) If the element is in focused, then for event emission the
-   *    current focues element should be clicked to emit event.
-   * 4) If the Enter key is pressed, then check the radio if no other radio items are checked
-   */
+    /**
+     * Handle keydown
+     * 1) If left or up arrow key is struck and radio field item exists before current item,
+     *    remove checked from all items and add it to the next item
+     * 2) If right or down arrow key is struck and radio field item exists after current item,
+     *    remove checked from all items and add checked to the next item.
+     *    Focus on this item and set tabindex for when focusing out of radio field and back onto checked item.
+     * 3) If the element is in focused, then for event emission the
+     *    current focues element should be clicked to emit event.
+     * 4) If the Enter key is pressed, then check the radio if no other radio items are checked
+     */
     private _handleKeyDown = (e: KeyboardEvent) => {
-    // The arrow keys
+        // The arrow keys
         if (['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown'].includes(e.code)) {
             this._handleArrowKeys(e);
         }
-    // Enter and Space
+        // Enter and Space
         if (['Enter', ' '].includes(e.key)) {
             this._handleEnterSpace(e);
         }
@@ -165,7 +165,7 @@ export class SelectTileRadioController implements ReactiveController {
     private _handleArrowKeys = (e: KeyboardEvent) => {
         const siblings = this.findAllElementsInSameRadioButtonGroup({ excludeDisabled: true });
 
-    // If we're the only radio-like element, nothing to do
+        // If we're the only radio-like element, nothing to do
         if (siblings.length <= 1) {
             return;
         }
@@ -183,10 +183,10 @@ export class SelectTileRadioController implements ReactiveController {
         e.preventDefault();
     };
 
-  /**
-   * Handle Enter and Space
-   * @see _checkAndFocus
-   */
+    /**
+     * Handle Enter and Space
+     * @see _checkAndFocus
+     */
     private _handleEnterSpace = (e: KeyboardEvent) => {
         this._checkAndFocus(this.host);
         e.preventDefault();

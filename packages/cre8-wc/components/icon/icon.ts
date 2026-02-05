@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 /* eslint-disable dot-notation */
 /* eslint-disable max-statements */
-import { html, TemplateResult,  } from 'lit';
-import {unsafeHTML} from 'lit/directives/unsafe-html.js';
+import { html, TemplateResult, CSSResult } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { property } from 'lit/decorators.js';
 import svgAdd from '../../icons/System/Regular/Add.svg?raw';
 import svgArrowLeft from '../../icons/System/Regular/Arrow_-_Left.svg?raw';
@@ -60,7 +60,7 @@ import svgTrendUp from '../../icons/trending-up.svg?raw';
 import svgTwitter from '../../icons/twitter.svg?raw';
 
 import { Cre8Element } from '../cre8-element';
-import styles from './icon.styles.js';
+import styles from './icon.module.scss';
 import iconSprite from '../../icons/cre8-icons.svg?raw';
 
 /**
@@ -96,7 +96,7 @@ import iconSprite from '../../icons/cre8-icons.svg?raw';
  */
 
 export class Cre8Icon extends Cre8Element {
-    static styles = [styles];
+    static styles = [styles as unknown as CSSResult];
 
     /**
      * Focusable
@@ -104,7 +104,7 @@ export class Cre8Icon extends Cre8Element {
      * @required
      */
     @property({ type: Boolean, reflect: true })
-        focusable?: boolean;
+    focusable?: boolean;
 
     /**
      * Icon name (this method of passing in svgs is to be deprecated)
@@ -112,10 +112,10 @@ export class Cre8Icon extends Cre8Element {
      * @required
      */
     @property()
-        name: string;
+    name: string;
 
-        @property({reflect:true})
-        svg?:string
+    @property({ reflect: true })
+    svg?: string
     /**
      * Icon path
      * 1) This points to the file where the icon sprite lives
@@ -123,7 +123,7 @@ export class Cre8Icon extends Cre8Element {
      *
      */
     @property()
-        iconUrl?: string = iconSprite;
+    iconUrl?: string = iconSprite;
 
     /**
      * Icon Title, this string is used for the aira-label of the svg
@@ -131,7 +131,7 @@ export class Cre8Icon extends Cre8Element {
      * @required
      */
     @property()
-        iconTitle?: string;
+    iconTitle?: string;
 
     /**
      * Get the path to the icons, either by overriding it on the window
@@ -240,8 +240,8 @@ export class Cre8Icon extends Cre8Element {
                 <use href="${iconPath}#${this.name}"></use>
             </svg>
         </span>` }`;
-       }
     }
+}
 
 
 if (customElements.get('cre8-icon') === undefined) {

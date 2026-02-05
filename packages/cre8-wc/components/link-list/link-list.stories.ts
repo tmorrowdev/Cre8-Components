@@ -1,4 +1,4 @@
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import { spread } from '../../directives/spread';
 import '../link-list-item/link-list-item';
 import './link-list';

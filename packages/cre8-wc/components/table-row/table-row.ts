@@ -1,8 +1,8 @@
 import svgCaretUp from '../../icons/System/Regular/Caret_Up.svg?raw';
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './table-row.styles.js';
+import styles from './table-row.module.scss';
 import '../button/button';
 import '../table-cell/table-cell';
 
@@ -11,28 +11,28 @@ import '../table-cell/table-cell';
  */
 
 export class Cre8TableRow extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
-    toggleIsExpanded() {
-        this.isExpanded = !this.isExpanded;
-        if (this.classList.contains('cre8-is-expanded')) {
-            this.classList.remove('cre8-is-expanded');
-        } else {
-            this.classList.add('cre8-is-expanded');
-        }
+  toggleIsExpanded() {
+    this.isExpanded = !this.isExpanded;
+    if (this.classList.contains('cre8-is-expanded')) {
+      this.classList.remove('cre8-is-expanded');
+    } else {
+      this.classList.add('cre8-is-expanded');
     }
+  }
 
   /**
    * Visually show additional expandable content
    */
   @property({ type: Boolean, reflect: true })
-      isExpanded?: boolean;
+  isExpanded?: boolean;
 
   /**
    * Indicates row has additional visually hidden related content
    */
   @property({ type: Boolean, reflect: true })
-      isExpandable?: boolean;
+  isExpandable?: boolean;
 
   /**
    * Style variants
@@ -43,28 +43,28 @@ export class Cre8TableRow extends Cre8Element {
    * </cre8-text-passage>
    */
   @property()
-      variant?: 'bare';
+  variant?: 'bare';
 
   /**
    * Expanded button text
    */
   @property()
-      expandedButtonText: string = 'Collapse Table Row';
+  expandedButtonText: string = 'Collapse Table Row';
 
   /**
    * Expand button text
    */
   @property()
-      collapsedButtonText: string = 'Expand Table Row';
+  collapsedButtonText: string = 'Expand Table Row';
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-table__row', {
-          'cre8-c-table__row--expandable': this.isExpandable,
-          'cre8-c-table__row--bare': this.variant === 'bare',
-          'cre8-is-expanded': this.isExpanded,
-      });
+    const componentClassNames = this.componentClassNames('cre8-c-table__row', {
+      'cre8-c-table__row--expandable': this.isExpandable,
+      'cre8-c-table__row--bare': this.variant === 'bare',
+      'cre8-is-expanded': this.isExpanded,
+    });
 
-      return html`
+    return html`
       <tr role="row" class="${componentClassNames}">
         ${this.isExpandable
         ? html`<cre8-table-cell>
@@ -90,7 +90,7 @@ export class Cre8TableRow extends Cre8Element {
 }
 
 if (customElements.get('cre8-table-row') === undefined) {
-    customElements.define('cre8-table-row', Cre8TableRow);
+  customElements.define('cre8-table-row', Cre8TableRow);
 }
 
 declare global {

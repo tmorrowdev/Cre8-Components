@@ -1,5 +1,5 @@
 import { fixture } from '@open-wc/testing-helpers';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import { cre8Dropdown } from '../dropdown';
 import '../../dropdown-item/dropdown-item';
 import '../dropdown';

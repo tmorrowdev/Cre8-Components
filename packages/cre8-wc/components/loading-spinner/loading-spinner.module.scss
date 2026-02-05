@@ -1,19 +1,19 @@
-@import '/design-tokens/core/scss/theming/component';
+@import '../../design-tokens/core/scss/theming/component.css';
 
-/* ------------------------------------ *\
-#SPINNER
-\* ------------------------------------ */
+
 
 @keyframes loading {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
 
 @keyframes spinner-circle-animation {
+
   0%,
   25% {
     stroke-dashoffset: 280;
@@ -64,6 +64,7 @@
   --icon-color: var(--cre8-color-content-brand);
   display: flex;
   align-items: center;
+
   .cre8-c-spinner__label {
     display: inline-block;
     margin-left: var(--cre8-spacing-8);

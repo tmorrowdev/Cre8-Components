@@ -1,4 +1,4 @@
-@import '/design-tokens/core/scss/theming/component';
+@import '../../design-tokens/core/scss/theming/component.css';
 
 #SECTION
 
@@ -25,7 +25,7 @@
 .cre8-c-section__body {
   padding-top: calc(8px * 2);
 
-  @media all and (min-width: component.$cre8-breakpoint-lg) {
+  @media all and (min-width: $cre8-breakpoint-lg) {
     padding-top: calc(8px * 4);
   }
 }

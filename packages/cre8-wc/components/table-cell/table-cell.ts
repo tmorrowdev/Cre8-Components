@@ -1,21 +1,21 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './table-cell.styles.js';
+import styles from './table-cell.module.scss';
 
 /**
  * @slot - The component content
  */
 
 export class Cre8TableCell extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Colspan attribute on td
    */
   @property({ type: Number })
-      colspan?: number;
+  colspan?: number;
 
   /**
    * Style variants
@@ -26,20 +26,20 @@ export class Cre8TableCell extends Cre8Element {
    * </cre8-text-passage>
    */
   @property()
-      variant?: 'bare';
+  variant?: 'bare';
 
   /**
    * Column header text for cell to display when table is using responsive variant
    */
   @property()
-      dataHeader?: string;
+  dataHeader?: string;
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-table__cell', {
-          'cre8-c-table__cell--bare': this.variant === 'bare',
-      });
+    const componentClassNames = this.componentClassNames('cre8-c-table__cell', {
+      'cre8-c-table__cell--bare': this.variant === 'bare',
+    });
 
-      return html`
+    return html`
       <td
         data-header="${this.dataHeader}"
         role="cell"
@@ -53,7 +53,7 @@ export class Cre8TableCell extends Cre8Element {
 }
 
 if (customElements.get('cre8-table-cell') === undefined) {
-    customElements.define('cre8-table-cell', Cre8TableCell);
+  customElements.define('cre8-table-cell', Cre8TableCell);
 }
 
 declare global {

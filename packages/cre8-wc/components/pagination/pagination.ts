@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable lit/no-template-map */
 import {
-    html, HTMLTemplateResult, nothing,
+    html, HTMLTemplateResult, nothing, CSSResult
 } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { property, queryAll, state } from 'lit/decorators.js';
@@ -10,10 +10,10 @@ import svgFirstPage from '/Users/tylersmbp/Projects/cre8-web-components/packages
 import svgLastPage from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Double_Right.svg?raw';
 import svgCaretRight from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Right.svg?raw';
 import { Cre8Element } from '../cre8-element';
-import {Cre8Button} from '../button/button';
+import { Cre8Button } from '../button/button';
 import { isMobile, screenSizes } from '../../utilities/is-mobile';
 import './page-counter/page-counter';
-import styles from './pagination.styles.js';
+import styles from './pagination.module.scss';
 
 /**
  * The Pagination component is used to split up a large amount of results
@@ -67,224 +67,224 @@ import styles from './pagination.styles.js';
  */
 
 export class Cre8Pagination extends Cre8Element {
-    static styles = [styles];
+    static styles = [styles as unknown as CSSResult];
 
     static elementDefinitions = {
         'cre8-button': Cre8Button,
     };
 
-  @state()
-      _currentPage: number = 99;
+    @state()
+    _currentPage: number = 99;
 
-  /**
-   * Input the total number of elements are returned from consuming app e.g. search results
-   * @attr number
-   * @required
-   */
-  @property({ reflect: true, type: Number })
-      totalResults!: number;
-
-
-  /**
-   * how many elements will displayVariant per page, indicated by business to typically be 20
-   * @attr number
-   */
-  @property({ type: Number, reflect: true })
-  get pageSize() {
-      return this._pageSize;
-  }
-
-  set pageSize(newSize: number) {
-      const oldSize = this._pageSize;
-      this._pageSize = newSize;
-      this.requestUpdate('pageSize', oldSize);
-  }
-
-  @state()
-      _pageSize = 10;
+    /**
+     * Input the total number of elements are returned from consuming app e.g. search results
+     * @attr number
+     * @required
+     */
+    @property({ reflect: true, type: Number })
+    totalResults!: number;
 
 
-  /**
-   * Controls how many page buttons are displayVarianted on the page
-   * at once, if container size permits. recommended max = 5 pages
-   *
-   * @attr number
-   */
-  @property({ reflect: true, type: Number })
-      visiblePages?: number = 5;
+    /**
+     * how many elements will displayVariant per page, indicated by business to typically be 20
+     * @attr number
+     */
+    @property({ type: Number, reflect: true })
+    get pageSize() {
+        return this._pageSize;
+    }
 
-  /**
-   * (optional) prop that allows for a compact and icon-only variant both
-   * for mobile screen-sizes and for use in certain contexts as guided by design,
-   * the component size will show 'default' in the absence of a value on desktop and
-   * 'compact' on smaller views.
-   *
-   * @attr 'compact' | 'icon-only' | 'default'
-   * @optional
-   */
-  @property({ type: String, reflect: true })
-      display?: 'compact' | 'icon-only'| 'default';
+    set pageSize(newSize: number) {
+        const oldSize = this._pageSize;
+        this._pageSize = newSize;
+        this.requestUpdate('pageSize', oldSize);
+    }
 
-  /**
-   *
-   *@state watches the width of the window and responds to show the accessibility approved variant.
-   */
-  @state()
-      windowWidth!: number;
-
-  @queryAll('cre8-button')
-      buttons: typeof Cre8Button[];
-
-  /**
-  *
-  * @optional
-  */
-  @property({ type: Boolean, reflect: true })
-      hideLastAndFirstButtons?: boolean;
-
-  @property({ reflect: true, type: Number })
-  get currentPage() {
-      return this._currentPage;
-  }
-
-  set currentPage(newPage: number) {
-      const oldPage = this._currentPage;
-      this._currentPage = newPage;
-      this.requestUpdate('currentPage', oldPage);
-  }
-
-  connectedCallBack() {
-      super.connectedCallback();
-  }
-
-  get maxVisiblePages() {
-      const allowedVisiblePages = {
-          md: 5,
-      };
-
-    // lg and up
-
-      if (!isMobile(screenSizes.lg.toString())) {
-          return this.visiblePages;
-      }
-
-      if (!isMobile(screenSizes.md.toString())) {
-          return Math.min(allowedVisiblePages.md, this.visiblePages);
-      }
-      return 0;
-  }
+    @state()
+    _pageSize = 10;
 
 
-  private get totalPages(): number {
-      return Math.ceil(this.totalResults / this.pageSize);
-  }
+    /**
+     * Controls how many page buttons are displayVarianted on the page
+     * at once, if container size permits. recommended max = 5 pages
+     *
+     * @attr number
+     */
+    @property({ reflect: true, type: Number })
+    visiblePages?: number = 5;
 
-  private get hasNoPreviousPage() {
-      return this._currentPage <= 1;
-  }
+    /**
+     * (optional) prop that allows for a compact and icon-only variant both
+     * for mobile screen-sizes and for use in certain contexts as guided by design,
+     * the component size will show 'default' in the absence of a value on desktop and
+     * 'compact' on smaller views.
+     *
+     * @attr 'compact' | 'icon-only' | 'default'
+     * @optional
+     */
+    @property({ type: String, reflect: true })
+    display?: 'compact' | 'icon-only' | 'default';
 
-  private get hasNoNextPage() {
-      return this._currentPage >= this.totalPages;
-  }
+    /**
+     *
+     *@state watches the width of the window and responds to show the accessibility approved variant.
+     */
+    @state()
+    windowWidth!: number;
 
-  private _onHandleResize() {
-      this.requestUpdate();
-  }
+    @queryAll('cre8-button')
+    buttons: typeof Cre8Button[];
 
-  handleResize() {
-      this._onHandleResize.bind(this);
-  }
+    /**
+    *
+    * @optional
+    */
+    @property({ type: Boolean, reflect: true })
+    hideLastAndFirstButtons?: boolean;
 
-  // get range of pages to display [3, 4, 5], [2, 3, 4, 5]
-  protected get pageRange():number[] {
-      const left = Math.floor(this.maxVisiblePages / 2);
-      let startPage = this.currentPage - left;
-      startPage = Math.min(startPage, this.totalPages - this.maxVisiblePages + 1);
-      startPage = Math.max(startPage, 1);
-      const endPage = Math.min(startPage + this.maxVisiblePages - 1, this.totalPages);
-      return [...Array(this.totalPages)].map((_, index) => index + 1).slice(startPage - 1, endPage);
-  }
+    @property({ reflect: true, type: Number })
+    get currentPage() {
+        return this._currentPage;
+    }
 
-  protected async firstUpdated() {
-      await this.updateComplete;
-      if (this._pageSize !== this.pageSize) {
-          const old = this._pageSize;
-          this._pageSize = this.pageSize;
-          this.requestUpdate('pageSize', old);
-      }
-      this.windowWidth = window.innerWidth;
-      window.addEventListener('resize', () => {
-          if (this.windowWidth !== window.innerWidth) {
-              const oldWidth = this.windowWidth;
-              this.windowWidth = window.innerWidth;
-              this.handleResize();
-              this.requestUpdate('isResponsive', oldWidth);
-          }
-      });
-      if (this._currentPage !== this.currentPage) {
-          const old = this._currentPage;
-          this._currentPage = this.currentPage;
-          this.requestUpdate('currentPage', old);
-      }
-  }
+    set currentPage(newPage: number) {
+        const oldPage = this._currentPage;
+        this._currentPage = newPage;
+        this.requestUpdate('currentPage', oldPage);
+    }
 
-  disconnectedCallback() {
-      window.removeEventListener('resize', this.handleResize);
-      super.disconnectedCallback();
-  }
+    connectedCallBack() {
+        super.connectedCallback();
+    }
 
-  displayTypes(): HTMLTemplateResult {
-      return html`<cre8-page-counter
+    get maxVisiblePages() {
+        const allowedVisiblePages = {
+            md: 5,
+        };
+
+        // lg and up
+
+        if (!isMobile(screenSizes.lg.toString())) {
+            return this.visiblePages;
+        }
+
+        if (!isMobile(screenSizes.md.toString())) {
+            return Math.min(allowedVisiblePages.md, this.visiblePages);
+        }
+        return 0;
+    }
+
+
+    private get totalPages(): number {
+        return Math.ceil(this.totalResults / this.pageSize);
+    }
+
+    private get hasNoPreviousPage() {
+        return this._currentPage <= 1;
+    }
+
+    private get hasNoNextPage() {
+        return this._currentPage >= this.totalPages;
+    }
+
+    private _onHandleResize() {
+        this.requestUpdate();
+    }
+
+    handleResize() {
+        this._onHandleResize.bind(this);
+    }
+
+    // get range of pages to display [3, 4, 5], [2, 3, 4, 5]
+    protected get pageRange(): number[] {
+        const left = Math.floor(this.maxVisiblePages / 2);
+        let startPage = this.currentPage - left;
+        startPage = Math.min(startPage, this.totalPages - this.maxVisiblePages + 1);
+        startPage = Math.max(startPage, 1);
+        const endPage = Math.min(startPage + this.maxVisiblePages - 1, this.totalPages);
+        return [...Array(this.totalPages)].map((_, index) => index + 1).slice(startPage - 1, endPage);
+    }
+
+    protected async firstUpdated() {
+        await this.updateComplete;
+        if (this._pageSize !== this.pageSize) {
+            const old = this._pageSize;
+            this._pageSize = this.pageSize;
+            this.requestUpdate('pageSize', old);
+        }
+        this.windowWidth = window.innerWidth;
+        window.addEventListener('resize', () => {
+            if (this.windowWidth !== window.innerWidth) {
+                const oldWidth = this.windowWidth;
+                this.windowWidth = window.innerWidth;
+                this.handleResize();
+                this.requestUpdate('isResponsive', oldWidth);
+            }
+        });
+        if (this._currentPage !== this.currentPage) {
+            const old = this._currentPage;
+            this._currentPage = this.currentPage;
+            this.requestUpdate('currentPage', old);
+        }
+    }
+
+    disconnectedCallback() {
+        window.removeEventListener('resize', this.handleResize);
+        super.disconnectedCallback();
+    }
+
+    displayTypes(): HTMLTemplateResult {
+        return html`<cre8-page-counter
               currentPage=${this.currentPage}
               style="display:${this.display === 'compact' ? 'flex' : 'none'};"
               totalResults=${this.totalResults}
               pageSize=${this._pageSize}
               display=${this.display}>
               </cre8-page-counter>`;
-  }
+    }
 
-  private _handleKeydown = (page: number, _buttonName?: string) => (e: KeyboardEvent) => {
-      if (e.code === 'Enter') {
-          this._goToPage(page, _buttonName); /* 2 */
-      }
-  };
+    private _handleKeydown = (page: number, _buttonName?: string) => (e: KeyboardEvent) => {
+        if (e.code === 'Enter') {
+            this._goToPage(page, _buttonName); /* 2 */
+        }
+    };
 
-  private _goToPage = (page: number, _buttonName?: string) => () => {
-      const old = this._currentPage;
-      let focusButton: Cre8Button;
-      this.buttons.forEach((_: typeof Cre8Button) => {
-       const b = new Cre8Button();
-          if (b.hideText && (b.text === _buttonName)) {
-              focusButton = b;
-              (focusButton.shadowRoot!.querySelector('.cre8-c-button') as HTMLButtonElement).blur();
-          }
-          return null;
-      });
-      this._currentPage = page;
-      this.currentPage = this._currentPage;
-      this.requestUpdate('currentPage', old);
-      this.dispatchEvent(new CustomEvent(
-          'pagination.click',
-          { detail: { buttonName: _buttonName ?? this.currentPage.toString(), value: this.currentPage } }
-      ));
-  };
+    private _goToPage = (page: number, _buttonName?: string) => () => {
+        const old = this._currentPage;
+        let focusButton: Cre8Button;
+        this.buttons.forEach((_: typeof Cre8Button) => {
+            const b = new Cre8Button();
+            if (b.hideText && (b.text === _buttonName)) {
+                focusButton = b;
+                (focusButton.shadowRoot!.querySelector('.cre8-c-button') as HTMLButtonElement).blur();
+            }
+            return null;
+        });
+        this._currentPage = page;
+        this.currentPage = this._currentPage;
+        this.requestUpdate('currentPage', old);
+        this.dispatchEvent(new CustomEvent(
+            'pagination.click',
+            { detail: { buttonName: _buttonName ?? this.currentPage.toString(), value: this.currentPage } }
+        ));
+    };
 
-  public goToPage(page: number, buttonName?: string) {
-      return this._goToPage(page, buttonName).bind(this);
-  }
+    public goToPage(page: number, buttonName?: string) {
+        return this._goToPage(page, buttonName).bind(this);
+    }
 
-  public handleKeydown(page: number, buttonName?: string) {
-      return this._handleKeydown(page, buttonName);
-  }
+    public handleKeydown(page: number, buttonName?: string) {
+        return this._handleKeydown(page, buttonName);
+    }
 
-  render() {
-      const classNames = this.componentClassNames('cre8-c-pagination', {
-          'cre8-c-pagination--compact': this.display !== undefined && this.display === 'compact',
-          'cre8-c-pagination--icon-only': this.display !== undefined && this.display === 'icon-only',
-      });
+    render() {
+        const classNames = this.componentClassNames('cre8-c-pagination', {
+            'cre8-c-pagination--compact': this.display !== undefined && this.display === 'compact',
+            'cre8-c-pagination--icon-only': this.display !== undefined && this.display === 'icon-only',
+        });
 
 
-      return html`<nav
+        return html`<nav
       aria-label="pagination"
       class=${classNames}>
         <slot></slot>
@@ -336,12 +336,12 @@ export class Cre8Pagination extends Cre8Element {
 
       ${this.displayTypes()}
         ${!this.display || this.display === 'default'
-        ? html`${this.pageRange[this.pageRange.length - 1] > 1 && this.pageRange[0] !== 1
-            ? html`<cre8-button hideText iconName="ellipsis" variant="tertiary" size="sm" aria-disabled="true" inert></cre8-button>`
-            : nothing}
+                ? html`${this.pageRange[this.pageRange.length - 1] > 1 && this.pageRange[0] !== 1
+                    ? html`<cre8-button hideText iconName="ellipsis" variant="tertiary" size="sm" aria-disabled="true" inert></cre8-button>`
+                    : nothing}
             ${this.pageRange.map((page) => (page === this.currentPage
-        ? html`<cre8-button variant="tertiary" tab-index="-1" text="${page}"  class="icon-only" size="sm" id="current"></cre8-button>`
-        : html`<cre8-button
+                        ? html`<cre8-button variant="tertiary" tab-index="-1" text="${page}"  class="icon-only" size="sm" id="current"></cre8-button>`
+                        : html`<cre8-button
                       variant="tertiary"
                       size="sm"
                       text="${page}"
@@ -350,9 +350,9 @@ export class Cre8Pagination extends Cre8Element {
                       @click=${this.goToPage(page, page.toString())}
                       @keydown=${this.handleKeydown(page, page.toString())}>
                       </cre8-button>`
-    ))}
+                    ))}
             ${this.pageRange[this.pageRange.length - 1] < this.totalPages
-        ? html`<cre8-button
+                        ? html`<cre8-button
                       hideText
                       iconName="ellipsis"
                       text="ellipsis"
@@ -361,8 +361,8 @@ export class Cre8Pagination extends Cre8Element {
                       aria-disabled="true"
                       inert>
                     </cre8-button>`
-        : nothing}`
-        : nothing}
+                        : nothing}`
+                : nothing}
         <cre8-button
           variant="tertiary"
           size="sm"
@@ -386,7 +386,7 @@ export class Cre8Pagination extends Cre8Element {
         </cre8-button>
 
         ${!this.hideLastAndFirstButtons
-        ? html` <cre8-button
+                ? html` <cre8-button
               variant="tertiary"
               size="sm"
               hideText
@@ -409,10 +409,10 @@ export class Cre8Pagination extends Cre8Element {
                 </cre8-icon>
               </span>
             </cre8-button>`
-        : nothing}
+                : nothing}
 
       </nav>`;
-  }
+    }
 }
 
 if (customElements.get('cre8-pagination') === undefined) {
@@ -420,7 +420,7 @@ if (customElements.get('cre8-pagination') === undefined) {
 }
 
 declare global {
-  interface HTMLElementTagNameMap {
-    'cre8-pagination': Cre8Pagination;
-  }
+    interface HTMLElementTagNameMap {
+        'cre8-pagination': Cre8Pagination;
+    }
 }

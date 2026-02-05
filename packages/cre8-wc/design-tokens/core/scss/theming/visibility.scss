@@ -1,4 +1,4 @@
-@import 'breakpoints';
+@use 'breakpoints' as *;
 
 /**
 * #VISIBILITY UTILITIES
@@ -22,8 +22,8 @@
 }
 
 /**
- * Hide element at sm breakpoint
- */
+ * Hide element at sm breakpoint
+ */
 .cre8-u-hide-sm {
   @media all and (min-width: $cre8-bp-sm) {
     display: none !important;
@@ -31,8 +31,8 @@
 }
 
 /**
- * Hide element at sm-2 breakpoint
- */
+ * Hide element at sm-2 breakpoint
+ */
 .cre8-u-hide-sm-2 {
   @media all and (min-width: $cre8-bp-sm-2) {
     display: none !important;
@@ -40,8 +40,8 @@
 }
 
 /**
- * Hide element at md breakpoint
- */
+ * Hide element at md breakpoint
+ */
 .cre8-u-hide-md {
   @media all and (min-width:$cre8-bp-md) {
     display: none !important;
@@ -49,8 +49,8 @@
 }
 
 /**
- * Hide element at lg breakpoint
- */
+ * Hide element at lg breakpoint
+ */
 .cre8-u-hide-lg {
   @media all and (min-width:$cre8-bp-lg) {
     display: none !important;
@@ -58,8 +58,8 @@
 }
 
 /**
- * Hide element at xl breakpoint
- */
+ * Hide element at xl breakpoint
+ */
 .cre8-u-hide-xl {
   @media all and (min-width:$cre8-bp-xl) {
     display: none !important;
@@ -67,8 +67,8 @@
 }
 
 /**
- * Show element at sm breakpoint
- */
+ * Show element at sm breakpoint
+ */
 .cre8-u-show-sm {
   @media all and (max-width:$cre8-bp-sm) {
     display: none !important;
@@ -76,8 +76,8 @@
 }
 
 /**
- * Show element at sm-2 breakpoint
- */
+ * Show element at sm-2 breakpoint
+ */
 .cre8-u-show-sm-2 {
   @media all and (max-width:$cre8-bp-sm-2) {
     display: none !important;
@@ -85,8 +85,8 @@
 }
 
 /**
- * Show element at md breakpoint
- */
+ * Show element at md breakpoint
+ */
 .cre8-u-show-md {
   @media all and (max-width:$cre8-bp-md) {
     display: none !important;
@@ -94,8 +94,8 @@
 }
 
 /**
- * Show element at lg breakpoint
- */
+ * Show element at lg breakpoint
+ */
 .cre8-u-show-lg {
   @media all and (max-width:$cre8-bp-lg) {
     display: none !important;
@@ -103,8 +103,8 @@
 }
 
 /**
- * Show element at xl breakpoint
- */
+ * Show element at xl breakpoint
+ */
 .cre8-u-show-xl {
   @media all and (max-width:$cre8-bp-xl) {
     display: none !important;

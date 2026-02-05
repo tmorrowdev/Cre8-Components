@@ -1,4 +1,4 @@
-import {html} from 'lit';
+import { html, CSSResult } from 'lit';
 import '../dropdown-item/dropdown-item';
 import './dropdown';
 
@@ -6,7 +6,7 @@ export default {
   title: 'In Development/Dropdown',
   component: 'cre8-dropdown',
   parameters: {
-    status: {type: 'inProgress'},
+    status: { type: 'inProgress' },
     actions: {
       handles: ['dropdown-item-selected'],
     },
@@ -18,7 +18,7 @@ export default {
   },
 };
 
-const Template = ({ buttonText, dropdownContent, maxHeight, dropdownWithLink}) => html`
+const Template = ({ buttonText, dropdownContent, maxHeight, dropdownWithLink }) => html`
   <cre8-dropdown
     buttonText=${buttonText}
     maxHeight=${maxHeight}

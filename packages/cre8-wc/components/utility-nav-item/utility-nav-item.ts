@@ -1,30 +1,30 @@
-import { html, nothing,  } from 'lit';
+import { html, nothing, CSSResult } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './utility-nav-item.styles.js';
+import styles from './utility-nav-item.module.scss';
 
 export class Cre8UtilityNavItem extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Hide text toggle
    * 1) Visually hides the text so screenreaders can still read for accessibility when set to true.
    */
   @property({ type: Boolean, reflect: true })
-      hideText?: boolean;
+  hideText?: boolean;
 
   /**
    * URL of the utility nav item
    */
   @property()
-      href?: string;
+  href?: string;
 
   /**
    * Icon name
    */
   @property()
-      iconName?: string;
+  iconName?: string;
 
   /**
    * Icon position
@@ -36,37 +36,37 @@ export class Cre8UtilityNavItem extends Cre8Element {
    * </cre8-text-passage>
    */
   @property()
-      iconPosition?: 'before' | 'after' = undefined;
+  iconPosition?: 'before' | 'after' = undefined;
 
   /**
    * Text of the utility nav item
    */
   @property()
-      text?: string;
+  text?: string;
 
   render() {
-      const componentClassName = this.componentClassNames('cre8-c-utility-nav__item', {});
+    const componentClassName = this.componentClassNames('cre8-c-utility-nav__item', {});
 
-      if (this.href) {
-          return html`
+    if (this.href) {
+      return html`
         <li class="${componentClassName}">
           <a href="${this.href}" class="cre8-c-utility-nav__link">
             ${this.iconPosition === 'before'
-        ? html`<cre8-icon-legacy aria-hidden="true" name="${ifDefined(this.iconName)}"></cre8-icon-legacy>`
-        : nothing}
+          ? html`<cre8-icon-legacy aria-hidden="true" name="${ifDefined(this.iconName)}"></cre8-icon-legacy>`
+          : nothing}
             <span
               class="${this.hideText ? 'cre8-u-is-vishidden cre8-c-utility-nav__text' : 'cre8-c-utility-nav__text'}"
             >
               ${this.text}
             </span>
             ${this.iconPosition === 'after'
-        ? html`<cre8-icon-legacy aria-hidden="true" name="${ifDefined(this.iconName)}"></cre8-icon-legacy>`
-        : nothing}
+          ? html`<cre8-icon-legacy aria-hidden="true" name="${ifDefined(this.iconName)}"></cre8-icon-legacy>`
+          : nothing}
           </a>
         </li>
       `;
-      }
-      return html`
+    }
+    return html`
         <li class="${componentClassName}">
           <button class="cre8-c-utility-nav__link">
             ${this.iconPosition === 'before'
@@ -87,7 +87,7 @@ export class Cre8UtilityNavItem extends Cre8Element {
 }
 
 if (customElements.get('cre8-utility-nav-item') === undefined) {
-    customElements.define('cre8-utility-nav-item', Cre8UtilityNavItem);
+  customElements.define('cre8-utility-nav-item', Cre8UtilityNavItem);
 }
 
 declare global {

@@ -1,5 +1,5 @@
 import { fixture } from '@open-wc/testing-helpers';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../calendar';
 import { CalendarModal, cre8Calendar } from '../calendar';
 import '../../calendar-month-modal/calendar-month-modal';

@@ -1,11 +1,10 @@
-@import '/design-tokens/core/scss/theming/component';
+@import '../../design-tokens/core/scss/theming/component.css';
 
-/**
- * 1) Dropdown Item
- */
+
 
 .cre8-dropdown-item {
   list-style-type: none;
+
   > {
     button {
       @include cre8-typography-body-default;

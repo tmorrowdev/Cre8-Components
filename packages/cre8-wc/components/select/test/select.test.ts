@@ -1,5 +1,5 @@
 import { fixture } from '@open-wc/testing-helpers';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../select';
 import { cre8Select } from '../select';
 
@@ -7,16 +7,16 @@ describe('select', () => {
     test('renders correctly', async () => {
         const el = await fixture(html`<cre8-select
       .items=${[
-        { label: 'Red', value: 'red' },
-        { label: 'Blue', value: 'blue' },
-        {
-            label: 'Other Colors',
-            options: [
-                { label: 'Green', value: 'green' },
-                { label: 'Yellow', value: 'yellow' },
-            ],
-        },
-    ]}
+                { label: 'Red', value: 'red' },
+                { label: 'Blue', value: 'blue' },
+                {
+                    label: 'Other Colors',
+                    options: [
+                        { label: 'Green', value: 'green' },
+                        { label: 'Yellow', value: 'yellow' },
+                    ],
+                },
+            ]}
     ></cre8-select>`);
         expect(el.shadowRoot).toBeTruthy();
     });
@@ -26,16 +26,16 @@ describe('select', () => {
       <cre8-select
         label="Choose an option"
         .items=${[
-        { label: 'Red', value: 'red' },
-        { label: 'Blue', value: 'blue' },
-        {
-            label: 'Other Colors',
-            options: [
-                { label: 'Green', value: 'green' },
-                { label: 'Yellow', value: 'yellow' },
-            ],
-        },
-    ]}
+                { label: 'Red', value: 'red' },
+                { label: 'Blue', value: 'blue' },
+                {
+                    label: 'Other Colors',
+                    options: [
+                        { label: 'Green', value: 'green' },
+                        { label: 'Yellow', value: 'yellow' },
+                    ],
+                },
+            ]}
       ></cre8-select>
     `);
 
@@ -62,16 +62,16 @@ describe('select', () => {
         required
         disabled
         .items=${[
-        { label: 'Red', value: 'red' },
-        { label: 'Blue', value: 'blue' },
-        {
-            label: 'Other Colors',
-            options: [
-                { label: 'Green', value: 'green' },
-                { label: 'Yellow', value: 'yellow' },
-            ],
-        },
-    ]}
+                { label: 'Red', value: 'red' },
+                { label: 'Blue', value: 'blue' },
+                {
+                    label: 'Other Colors',
+                    options: [
+                        { label: 'Green', value: 'green' },
+                        { label: 'Yellow', value: 'yellow' },
+                    ],
+                },
+            ]}
       ></cre8-select>
     `);
 
@@ -113,16 +113,16 @@ describe('select', () => {
       <cre8-select
         label="Label"
         .items=${[
-        { label: 'Red', value: 'red' },
-        { label: 'Blue', value: 'blue' },
-        {
-            label: 'Other Colors',
-            options: [
-                { label: 'Green', value: 'green' },
-                { label: 'Yellow', value: 'yellow' },
-            ],
-        },
-    ]}
+                { label: 'Red', value: 'red' },
+                { label: 'Blue', value: 'blue' },
+                {
+                    label: 'Other Colors',
+                    options: [
+                        { label: 'Green', value: 'green' },
+                        { label: 'Yellow', value: 'yellow' },
+                    ],
+                },
+            ]}
       ></cre8-select>
     `);
 
@@ -137,16 +137,16 @@ describe('select', () => {
         label="Label"
         fieldNote="Field note"
         .items=${[
-        { label: 'Red', value: 'red' },
-        { label: 'Blue', value: 'blue' },
-        {
-            label: 'Other Colors',
-            options: [
-                { label: 'Green', value: 'green' },
-                { label: 'Yellow', value: 'yellow' },
-            ],
-        },
-    ]}
+                { label: 'Red', value: 'red' },
+                { label: 'Blue', value: 'blue' },
+                {
+                    label: 'Other Colors',
+                    options: [
+                        { label: 'Green', value: 'green' },
+                        { label: 'Yellow', value: 'yellow' },
+                    ],
+                },
+            ]}
       ></cre8-select>
     `);
 
@@ -163,16 +163,16 @@ describe('select', () => {
         isSuccess
         successNote="Success message"
         .items=${[
-        { label: 'Red', value: 'red' },
-        { label: 'Blue', value: 'blue' },
-        {
-            label: 'Other Colors',
-            options: [
-                { label: 'Green', value: 'green' },
-                { label: 'Yellow', value: 'yellow' },
-            ],
-        },
-    ]}
+                { label: 'Red', value: 'red' },
+                { label: 'Blue', value: 'blue' },
+                {
+                    label: 'Other Colors',
+                    options: [
+                        { label: 'Green', value: 'green' },
+                        { label: 'Yellow', value: 'yellow' },
+                    ],
+                },
+            ]}
       ></cre8-select>
     `);
         expect(el.isSuccess).toBeTruthy();
@@ -195,16 +195,16 @@ describe('select', () => {
         isError
         errorNote="Error message"
         .items=${[
-        { label: 'Red', value: 'red' },
-        { label: 'Blue', value: 'blue' },
-        {
-            label: 'Other Colors',
-            options: [
-                { label: 'Green', value: 'green' },
-                { label: 'Yellow', value: 'yellow' },
-            ],
-        },
-    ]}
+                { label: 'Red', value: 'red' },
+                { label: 'Blue', value: 'blue' },
+                {
+                    label: 'Other Colors',
+                    options: [
+                        { label: 'Green', value: 'green' },
+                        { label: 'Yellow', value: 'yellow' },
+                    ],
+                },
+            ]}
       ></cre8-select>
     `);
         expect(el.isError).toBeTruthy();
@@ -219,16 +219,16 @@ describe('select', () => {
         const el = await fixture<cre8Select>(html`
       <cre8-select
         .items=${[
-        { label: 'Red', value: 'red' },
-        { label: 'Blue', value: 'blue' },
-        {
-            label: 'Other Colors',
-            options: [
-                { label: 'Green', value: 'green' },
-                { label: 'Yellow', value: 'yellow' },
-            ],
-        },
-    ]}
+                { label: 'Red', value: 'red' },
+                { label: 'Blue', value: 'blue' },
+                {
+                    label: 'Other Colors',
+                    options: [
+                        { label: 'Green', value: 'green' },
+                        { label: 'Yellow', value: 'yellow' },
+                    ],
+                },
+            ]}
       ></cre8-select>
     `);
         return expect(el).toBeAccessible();
@@ -240,16 +240,16 @@ describe('select', () => {
         label="Choose a color"
         name="color"
         .items=${[
-        { label: 'Red', value: 'red' },
-        { label: 'Blue', value: 'blue' },
-        {
-            label: 'Other Colors',
-            options: [
-                { label: 'Green', value: 'green' },
-                { label: 'Yellow', value: 'yellow' },
-            ],
-        },
-    ]}
+                { label: 'Red', value: 'red' },
+                { label: 'Blue', value: 'blue' },
+                {
+                    label: 'Other Colors',
+                    options: [
+                        { label: 'Green', value: 'green' },
+                        { label: 'Yellow', value: 'yellow' },
+                    ],
+                },
+            ]}
       ></cre8-select>
     `);
         return expect(el).toBeAccessible();
@@ -259,16 +259,16 @@ describe('select', () => {
         const el = await fixture<cre8Select>(html`
       <cre8-select
         .items=${[
-        { label: 'Red', value: 'red' },
-        { label: 'Blue', value: 'blue' },
-        {
-            label: 'Other Colors',
-            options: [
-                { label: 'Green', value: 'green' },
-                { label: 'Yellow', value: 'yellow' },
-            ],
-        },
-    ]}
+                { label: 'Red', value: 'red' },
+                { label: 'Blue', value: 'blue' },
+                {
+                    label: 'Other Colors',
+                    options: [
+                        { label: 'Green', value: 'green' },
+                        { label: 'Yellow', value: 'yellow' },
+                    ],
+                },
+            ]}
       ></cre8-select>
     `);
         return expect(el).toBeAccessible();
@@ -280,16 +280,16 @@ describe('select', () => {
         label="Choose a color"
         name="color"
         .items=${[
-        { label: 'Red', value: 'red' },
-        { label: 'Blue', value: 'blue' },
-        {
-            label: 'Other Colors',
-            options: [
-                { label: 'Green', value: 'green' },
-                { label: 'Yellow', value: 'yellow' },
-            ],
-        },
-    ]}
+                { label: 'Red', value: 'red' },
+                { label: 'Blue', value: 'blue' },
+                {
+                    label: 'Other Colors',
+                    options: [
+                        { label: 'Green', value: 'green' },
+                        { label: 'Yellow', value: 'yellow' },
+                    ],
+                },
+            ]}
       ></cre8-select>
     `);
         return expect(el).toBeAccessible();
@@ -301,16 +301,16 @@ describe('select', () => {
         ariaDescribedBy="fieldnoteid"
         name="select"
         .items=${[
-        { label: 'Red', value: 'red' },
-        { label: 'Blue', value: 'blue' },
-        {
-            label: 'Other Colors',
-            options: [
-                { label: 'Green', value: 'green' },
-                { label: 'Yellow', value: 'yellow' },
-            ],
-        },
-    ]}
+                { label: 'Red', value: 'red' },
+                { label: 'Blue', value: 'blue' },
+                {
+                    label: 'Other Colors',
+                    options: [
+                        { label: 'Green', value: 'green' },
+                        { label: 'Yellow', value: 'yellow' },
+                    ],
+                },
+            ]}
       >
         <div slot="fieldNote" id="fieldnoteid">This is a field note</div>
       </cre8-select>
@@ -325,16 +325,16 @@ describe('select', () => {
         label="Choose a color"
         name="disabled"
         .items=${[
-        { label: 'Red', value: 'red' },
-        { label: 'Blue', value: 'blue' },
-        {
-            label: 'Other Colors',
-            options: [
-                { label: 'Green', value: 'green' },
-                { label: 'Yellow', value: 'yellow' },
-            ],
-        },
-    ]}
+                { label: 'Red', value: 'red' },
+                { label: 'Blue', value: 'blue' },
+                {
+                    label: 'Other Colors',
+                    options: [
+                        { label: 'Green', value: 'green' },
+                        { label: 'Yellow', value: 'yellow' },
+                    ],
+                },
+            ]}
       ></cre8-select>
     `);
         return expect(el).toBeAccessible();
@@ -346,16 +346,16 @@ describe('select', () => {
         label="Choose a color"
         name="disabled"
         .items=${[
-        { label: 'Red', value: 'red', selected: true },
-        { label: 'Blue', value: 'blue' },
-        {
-            label: 'Other Colors',
-            options: [
-                { label: 'Green', value: 'green' },
-                { label: 'Yellow', value: 'yellow' },
-            ],
-        },
-    ]}
+                { label: 'Red', value: 'red', selected: true },
+                { label: 'Blue', value: 'blue' },
+                {
+                    label: 'Other Colors',
+                    options: [
+                        { label: 'Green', value: 'green' },
+                        { label: 'Yellow', value: 'yellow' },
+                    ],
+                },
+            ]}
       ></cre8-select>
     `);
         return expect(el).toBeAccessible();
@@ -370,16 +370,16 @@ describe('select', () => {
         value="red"
         ,
         .items=${[
-        { label: 'Red', value: 'red' },
-        { label: 'Blue', value: 'blue' },
-        {
-            label: 'Other Colors',
-            options: [
-                { label: 'Green', value: 'green' },
-                { label: 'Yellow', value: 'yellow' },
-            ],
-        },
-    ]}
+                { label: 'Red', value: 'red' },
+                { label: 'Blue', value: 'blue' },
+                {
+                    label: 'Other Colors',
+                    options: [
+                        { label: 'Green', value: 'green' },
+                        { label: 'Yellow', value: 'yellow' },
+                    ],
+                },
+            ]}
       ></cre8-select>
     `);
         const options = el.shadowRoot.querySelectorAll('option');
@@ -395,16 +395,16 @@ describe('select', () => {
         isError
         errorNote="Error message"
         .items=${[
-        { label: 'Red', value: 'red', selected: false },
-        { label: 'Blue', value: 'blue' },
-        {
-            label: 'Other Colors',
-            options: [
-                { label: 'Green', value: 'green' },
-                { label: 'Yellow', value: 'yellow' },
-            ],
-        },
-    ]}
+                { label: 'Red', value: 'red', selected: false },
+                { label: 'Blue', value: 'blue' },
+                {
+                    label: 'Other Colors',
+                    options: [
+                        { label: 'Green', value: 'green' },
+                        { label: 'Yellow', value: 'yellow' },
+                    ],
+                },
+            ]}
       ></cre8-select>
     `);
         const options = el.shadowRoot.querySelectorAll('option');
@@ -418,16 +418,16 @@ describe('select', () => {
         isError
         errorNote="Error message"
         .items=${[
-        { label: 'Red', value: 'red' },
-        { label: 'Blue', value: 'blue' },
-        {
-            label: 'Other Colors',
-            options: [
-                { label: 'Green', value: 'green' },
-                { label: 'Yellow', value: 'yellow' },
-            ],
-        },
-    ]}
+                { label: 'Red', value: 'red' },
+                { label: 'Blue', value: 'blue' },
+                {
+                    label: 'Other Colors',
+                    options: [
+                        { label: 'Green', value: 'green' },
+                        { label: 'Yellow', value: 'yellow' },
+                    ],
+                },
+            ]}
       ></cre8-select>
     `);
         const options = el.shadowRoot.querySelectorAll('option');

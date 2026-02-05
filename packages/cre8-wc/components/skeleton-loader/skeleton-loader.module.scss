@@ -1,4 +1,4 @@
-@import '/design-tokens/core/scss/theming/component';
+@import '../../design-tokens/core/scss/theming/component.css';
 
 :host {
   display: block;
@@ -15,7 +15,7 @@
   aspect-ratio: 16 / 3;
   background: linear-gradient(-90deg, #f6f6f6 0%, #ebebeb 50%, #f6f6f6 100%);
   background-size: 400% 400%;
-  animation: pulse 1.25s linear infinite;  
+  animation: pulse 1.25s linear infinite;
 }
 
 /**
@@ -45,7 +45,7 @@
  */
 @keyframes pulse {
   0% {
-  background-position:  0% 0%;
+    background-position: 0% 0%;
   }
 
   100% {

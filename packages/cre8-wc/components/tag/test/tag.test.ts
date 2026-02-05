@@ -1,5 +1,5 @@
 import { fixture } from '@open-wc/testing-helpers';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../tag';
 import { cre8Tag } from '../tag';
 import { cre8TagList } from '../../tag-list/tag-list';

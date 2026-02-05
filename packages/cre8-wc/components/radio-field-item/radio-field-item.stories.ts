@@ -1,4 +1,4 @@
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../radio-field/radio-field';
 import './radio-field-item';
 import { spread } from '../../directives/spread';

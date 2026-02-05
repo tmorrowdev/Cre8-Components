@@ -1,10 +1,10 @@
 import classnames from 'classnames';
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import svgClose from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Close.svg?raw';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon';
-import styles from './remove-tag.styles.js';
+import styles from './remove-tag.module.scss';
 
 export enum Shape {
   Round = 'round',
@@ -22,13 +22,13 @@ export enum Color {
  * These tags always display a "Close" icon.
  */
 export class Cre8RemoveTag extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * The tag text
    */
   @property({ type: String })
-      text?: string;
+  text?: string;
 
   /**
    * The tag color scheme
@@ -38,7 +38,7 @@ export class Cre8RemoveTag extends Cre8Element {
    *  - **branded** should be used like Neutral, but for marketing / actionable items
    */
   @property({ type: String })
-      color: Color.Neutral | Color.Branded | Color.NeutralHybrid = Color.Neutral;
+  color: Color.Neutral | Color.Branded | Color.NeutralHybrid = Color.Neutral;
 
   /**
    * The tag shape
@@ -47,36 +47,36 @@ export class Cre8RemoveTag extends Cre8Element {
    * - **square** will give the tag a squared border
    */
   @property({ type: String })
-      shape: Shape.Round | Shape.Square = Shape.Round;
+  shape: Shape.Round | Shape.Square = Shape.Round;
 
   /**
    * Disabled state for remove tag
    */
   @property({ type: Boolean })
-      disabled?: boolean;
+  disabled?: boolean;
 
   /**
    * Dispatches an event when the tag is clicked
    */
   private _handleRemoveTagClicked() {
-      const customEvent = new CustomEvent('removeTagClicked', {
-          detail: { message: 'Remove Tag clicked.' },
-          bubbles: true,
-          composed: true,
-      });
-      this.dispatchEvent(customEvent);
+    const customEvent = new CustomEvent('removeTagClicked', {
+      detail: { message: 'Remove Tag clicked.' },
+      bubbles: true,
+      composed: true,
+    });
+    this.dispatchEvent(customEvent);
   }
 
   render() {
-      const componentClassName = classnames('cre8-c-remove-tag', {
-          'cre8-c-remove-tag--neutral': this.color === 'neutral',
-          'cre8-c-remove-tag--branded': this.color === 'branded',
-          'cre8-c-remove-tag--neutral-hybrid': this.color === 'neutral-hybrid',
-          'cre8-c-remove-tag--round': this.shape === 'round',
-          'cre8-c-remove-tag--square': this.shape === 'square',
-      });
+    const componentClassName = classnames('cre8-c-remove-tag', {
+      'cre8-c-remove-tag--neutral': this.color === 'neutral',
+      'cre8-c-remove-tag--branded': this.color === 'branded',
+      'cre8-c-remove-tag--neutral-hybrid': this.color === 'neutral-hybrid',
+      'cre8-c-remove-tag--round': this.shape === 'round',
+      'cre8-c-remove-tag--square': this.shape === 'square',
+    });
 
-      return html` <button
+    return html` <button
       class="${componentClassName}"
       @click="${this._handleRemoveTagClicked}"
       ?disabled=${this.disabled}
@@ -95,7 +95,7 @@ export class Cre8RemoveTag extends Cre8Element {
 }
 
 if (customElements.get('cre8-remove-tag') === undefined) {
-    customElements.define('cre8-remove-tag', Cre8RemoveTag);
+  customElements.define('cre8-remove-tag', Cre8RemoveTag);
 }
 
 declare global {

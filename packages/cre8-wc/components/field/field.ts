@@ -1,18 +1,18 @@
-import { html, nothing,  } from 'lit';
+import { html, nothing, CSSResult } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property, query } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { Cre8FormElement } from '../cre8-form-element';
 import '../field-note/field-note';
-import styles from './field.styles.js';
+import styles from './field.module.scss';
 
 /**
  * The Field component renders a form group with label, control, help text and validation styling. There are
  * convenience variants of Field to support HTML5 input types and static content.
  */
 export class Cre8Field extends Cre8FormElement {
-    static styles = [styles];
-    
+  static styles = [styles as unknown as CSSResult];
+
 
   /**
    * Autocomplete attribute that allows input to expect certain types of information. Note: autocomplete is supported
@@ -37,7 +37,7 @@ export class Cre8Field extends Cre8FormElement {
    * @attr {string}
    */
   @property()
-      autocomplete?: 'on' | 'off' | 'name' | 'email' | 'username' | 'new-password' | 'current-password' | 'tel' | 'url' | 'address-line1' | 'address-line2' | 'country' | 'postal-code';
+  autocomplete?: 'on' | 'off' | 'name' | 'email' | 'username' | 'new-password' | 'current-password' | 'tel' | 'url' | 'address-line1' | 'address-line2' | 'country' | 'postal-code';
 
   /**
    * Pattern attribute defines a regular expression to validate against input
@@ -45,7 +45,7 @@ export class Cre8Field extends Cre8FormElement {
    * @attr {string}
    */
   @property()
-      pattern?: string;
+  pattern?: string;
 
   /**
    * Type variants
@@ -58,7 +58,7 @@ export class Cre8Field extends Cre8FormElement {
    * @attr {string}
    */
   @property()
-      type: 'text' | 'email' | 'number' | 'url' | 'tel' | 'password' | 'date' = 'text';
+  type: 'text' | 'email' | 'number' | 'url' | 'tel' | 'password' | 'date' = 'text';
 
   /**
    * The placeholder text that appears inside the input
@@ -66,7 +66,7 @@ export class Cre8Field extends Cre8FormElement {
    * @attr {string}
    */
   @property()
-      placeholder?: string;
+  placeholder?: string;
 
   /**
    * The required label that appears above the input
@@ -74,7 +74,7 @@ export class Cre8Field extends Cre8FormElement {
    * @attr {string}
    */
   @property()
-      label: string = 'Label';
+  label: string = 'Label';
 
   /**
    * The name property on the input
@@ -90,7 +90,7 @@ export class Cre8Field extends Cre8FormElement {
    * @attr {string}
    */
   @property()
-      fieldId?: string;
+  fieldId?: string;
 
   /**
    * The text that displays below in text field input
@@ -98,7 +98,7 @@ export class Cre8Field extends Cre8FormElement {
    * @attr {string}
    */
   @property()
-      fieldNote?: string;
+  fieldNote?: string;
 
   /**
    * Controls how the voiceover will experience the new information when field note changes,
@@ -106,7 +106,7 @@ export class Cre8Field extends Cre8FormElement {
    * pause in their navigation using `polite`.
    */
   @property()
-      ariaLive: 'polite' | 'assertive' = 'polite';
+  ariaLive: 'polite' | 'assertive' = 'polite';
 
   /**
    * Used to connect the field note in text field to the text menu for accessibility
@@ -114,7 +114,7 @@ export class Cre8Field extends Cre8FormElement {
    * @attr {string}
    */
   @property()
-      ariaDescribedBy?: string;
+  ariaDescribedBy?: string;
 
   /**
    * The required attribute on the input
@@ -122,7 +122,7 @@ export class Cre8Field extends Cre8FormElement {
    * @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })
-      required?: boolean;
+  required?: boolean;
 
   /**
    * The disabled attribute on the input
@@ -130,15 +130,15 @@ export class Cre8Field extends Cre8FormElement {
    * @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })
-      disabled?: boolean;
+  disabled?: boolean;
 
   /**
-   * Changes the component's treatment to represent an error state
+   * Changes the component.scss's treatment to represent an error state
    *
    * @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })
-      isError?: boolean;
+  isError?: boolean;
 
   /**
    * Visually hidden text that always signifies that this is an error for screen reader usage
@@ -146,7 +146,7 @@ export class Cre8Field extends Cre8FormElement {
    * @attr {string}
    */
   @property()
-      errorText: string = 'Error';
+  errorText: string = 'Error';
 
   /**
    * The error field note that appears below the default field note
@@ -154,21 +154,21 @@ export class Cre8Field extends Cre8FormElement {
    * @attr {string}
    */
   @property()
-      errorNote?: string;
+  errorNote?: string;
 
-   /**
-    * The max attribute defines the maximum value that is acceptable and valid for the input containing the attribute.
-    * @attr {string | number}
-    */
+  /**
+   * The max attribute defines the maximum value that is acceptable and valid for the input containing the attribute.
+   * @attr {string | number}
+   */
   @property()
-      max?: string;
+  max?: string;
 
-    /**
-    * The min attribute defines the minimum value that is acceptable and valid for the input containing the attribute.
-    * @attr {string | number}
-    */
+  /**
+  * The min attribute defines the minimum value that is acceptable and valid for the input containing the attribute.
+  * @attr {string | number}
+  */
   @property()
-      min?: string;
+  min?: string;
 
   /**
    * The maxlength is an integer above 0 that indicates the maximum allowed characters to be entered. When using the
@@ -179,7 +179,7 @@ export class Cre8Field extends Cre8FormElement {
    * @attr {string}
    */
   @property({ type: Number })
-      maxlength?: number;
+  maxlength?: number;
 
   /**
    * Additional aria-describedby connection to id for additional success and error notes to be accessible
@@ -187,15 +187,15 @@ export class Cre8Field extends Cre8FormElement {
    * @attr {string}
    */
   @property()
-      validationAriaDescribedBy?: string;
+  validationAriaDescribedBy?: string;
 
   /**
-   * Changes the component's treatment to represent a success state
+   * Changes the component.scss's treatment to represent a success state
    *
    * @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })
-      isSuccess?: boolean;
+  isSuccess?: boolean;
 
   /**
    * Visually hidden text that always signifies that this is successful for screen reader usage
@@ -203,7 +203,7 @@ export class Cre8Field extends Cre8FormElement {
    * @attr {string}
    */
   @property()
-      successText: string = 'Success';
+  successText: string = 'Success';
 
   /**
    * Readonly attribute
@@ -211,7 +211,7 @@ export class Cre8Field extends Cre8FormElement {
    * @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })
-      readonly?: boolean;
+  readonly?: boolean;
 
   /**
    * The success field note that appears below the default field note
@@ -219,31 +219,31 @@ export class Cre8Field extends Cre8FormElement {
    * @attr {string}
    */
   @property()
-      successNote?: string;
+  successNote?: string;
 
   @query('input')
-      field!: HTMLInputElement;
+  field!: HTMLInputElement;
 
   /**
    * First update lifecycle hook
    * 1) super.firstUpdated also uses the firstUpdated from the Cre8FormElement
    */
   firstUpdated() {
-      this.initializeAria();
-      return super.firstUpdated();
+    this.initializeAria();
+    return super.firstUpdated();
   }
 
   /**
    * Initialize aria attributes
    */
   initializeAria() {
-      this.fieldId = this.fieldId || nanoid();
-      if (this.fieldNote || this.slotNotEmpty('fieldNote')) {
-          this.ariaDescribedBy = this.ariaDescribedBy || `Field_${nanoid()}`;
-      }
-      if (this.successNote || this.errorNote) {
-          this.validationAriaDescribedBy = this.validationAriaDescribedBy || `Field_validation_${nanoid()}`;
-      }
+    this.fieldId = this.fieldId || nanoid();
+    if (this.fieldNote || this.slotNotEmpty('fieldNote')) {
+      this.ariaDescribedBy = this.ariaDescribedBy || `Field_${nanoid()}`;
+    }
+    if (this.successNote || this.errorNote) {
+      this.validationAriaDescribedBy = this.validationAriaDescribedBy || `Field_validation_${nanoid()}`;
+    }
   }
 
   /**
@@ -255,13 +255,13 @@ export class Cre8Field extends Cre8FormElement {
    * 3) Otherwise, render only the `ariaDescribedBy` property (field note only)
    */
   fieldNoteAria() {
-      if (this.validationAriaDescribedBy && this.ariaDescribedBy) {
-          return `${this.ariaDescribedBy} ${this.validationAriaDescribedBy}`; /* 1 */
-      }
-      if (this.validationAriaDescribedBy && !this.ariaDescribedBy) {
-          return this.validationAriaDescribedBy; /* 2 */
-      }
-      return this.ariaDescribedBy; /* 3 */
+    if (this.validationAriaDescribedBy && this.ariaDescribedBy) {
+      return `${this.ariaDescribedBy} ${this.validationAriaDescribedBy}`; /* 1 */
+    }
+    if (this.validationAriaDescribedBy && !this.ariaDescribedBy) {
+      return this.validationAriaDescribedBy; /* 2 */
+    }
+    return this.ariaDescribedBy; /* 3 */
   }
 
   /**
@@ -271,11 +271,11 @@ export class Cre8Field extends Cre8FormElement {
    */
   private _handleOnInput(e: Event) {
     /* 1 */
-      const inputValue = (e.target as HTMLInputElement).value;
-      this.value = inputValue;
+    const inputValue = (e.target as HTMLInputElement).value;
+    this.value = inputValue;
 
     /* 2 */
-      this._internals.setFormValue(this.value);
+    this._internals.setFormValue(this.value);
   }
 
   /**
@@ -284,9 +284,9 @@ export class Cre8Field extends Cre8FormElement {
    * 2. If there is a errorNote, then return the field note with the error message and state.
    */
   renderSuccessErrorFieldNote() {
-      if (this.successNote) {
+    if (this.successNote) {
       /* 1 */
-          return html` <cre8-field-note
+      return html` <cre8-field-note
         ?isSuccess=${this.isSuccess}
         class="cre8-c-field__field-note-success"
         id=${this.validationAriaDescribedBy}
@@ -294,10 +294,10 @@ export class Cre8Field extends Cre8FormElement {
       >
         ${this.successNote}
       </cre8-field-note>`;
-      }
-      if (this.errorNote) {
+    }
+    if (this.errorNote) {
       /* 2 */
-          return html` <cre8-field-note
+      return html` <cre8-field-note
         ?isError=${this.isError}
         class="cre8-c-field__field-note-error"
         id=${this.validationAriaDescribedBy}
@@ -305,17 +305,17 @@ export class Cre8Field extends Cre8FormElement {
       >
         ${this.errorNote}
       </cre8-field-note>`;
-      }
-      return null;
+    }
+    return null;
   }
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-field', {
-          'cre8-is-error': this.isError,
-          'cre8-is-success': this.isSuccess,
-      });
+    const componentClassNames = this.componentClassNames('cre8-c-field', {
+      'cre8-is-error': this.isError,
+      'cre8-is-success': this.isSuccess,
+    });
 
-      return html`
+    return html`
       <div class="${componentClassNames}">
         <label class="cre8-c-field__label" for="${this.fieldId}">${this.label}</label>
         <div class="cre8-c-field__body">
@@ -350,7 +350,7 @@ export class Cre8Field extends Cre8FormElement {
 }
 
 if (customElements.get('cre8-field') === undefined) {
-    customElements.define('cre8-field', Cre8Field);
+  customElements.define('cre8-field', Cre8Field);
 }
 
 declare global {

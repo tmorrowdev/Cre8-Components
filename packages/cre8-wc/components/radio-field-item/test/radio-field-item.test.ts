@@ -1,5 +1,5 @@
 import { fixture } from '@open-wc/testing-helpers';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../radio-field-item';
 import { cre8RadioFieldItem } from '../radio-field-item';
 import '../../radio-field/radio-field';

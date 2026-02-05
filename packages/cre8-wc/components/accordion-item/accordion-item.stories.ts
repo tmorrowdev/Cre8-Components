@@ -1,4 +1,4 @@
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../icon/icon';
 import '../heading/heading';
 import './accordion-item';
@@ -15,26 +15,26 @@ const meta = {
   component: 'cre8-accordion-item',
   argTypes: {
     heading: {
-      control: {type: 'text'}
+      control: { type: 'text' }
     },
     iconBefore: {
-      control: {type: 'boolean'}
+      control: { type: 'boolean' }
     },
     tertiaryIcon: {
-      control: {type: 'boolean'}
+      control: { type: 'boolean' }
     },
     brandHeader: {
-      control: {type: 'boolean'}
+      control: { type: 'boolean' }
     },
     size: {
       defaultValue: 'sm',
       options: ['sm', 'lg'],
-      control: {type: 'radio'}
+      control: { type: 'radio' }
     },
     headingTagVariant: {
       defaultValue: 'h4',
       options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-      controls: {type: 'select'}
+      controls: { type: 'select' }
     }
   },
   args: {
@@ -46,7 +46,7 @@ const meta = {
     headingTagVariant: undefined
   },
 
-  render: ({...args}) =>
+  render: ({ ...args }) =>
     html`
       <cre8-accordion-item ${spread(args)} isActive>
         <span
@@ -61,37 +61,49 @@ export default meta;
 
 export const Default: Story = {};
 
-export const IconBefore: Story = {args: {
-  heading: 'Accordion Item Header',
-  iconBefore: true,
-  brandHeader: false,
-}};
+export const IconBefore: Story = {
+  args: {
+    heading: 'Accordion Item Header',
+    iconBefore: true,
+    brandHeader: false,
+  }
+};
 
-export const TertiaryIcon: Story = {args: {
-  heading: 'Accordion Item Header',
-  tertiaryIcon: true
-}};
+export const TertiaryIcon: Story = {
+  args: {
+    heading: 'Accordion Item Header',
+    tertiaryIcon: true
+  }
+};
 
-export const TertiaryIconBefore: Story = {args: {
-  heading: 'Accordion Item Header',
-  tertiaryIcon: true,
-  iconBefore: true,
-  brandHeader: false
-}};
+export const TertiaryIconBefore: Story = {
+  args: {
+    heading: 'Accordion Item Header',
+    tertiaryIcon: true,
+    iconBefore: true,
+    brandHeader: false
+  }
+};
 
-export const SizeLarge: Story = {args: {
-  heading: 'Accordion Item Header',
-  size: 'lg',
-  brandHeader: false
-}};
+export const SizeLarge: Story = {
+  args: {
+    heading: 'Accordion Item Header',
+    size: 'lg',
+    brandHeader: false
+  }
+};
 
-export const HeadingTagH2: Story = {args: {
-  heading: 'Accordion Item Header',
-  headingTagVariant: 'h2'
-}}
+export const HeadingTagH2: Story = {
+  args: {
+    heading: 'Accordion Item Header',
+    headingTagVariant: 'h2'
+  }
+}
 
-export const BrandColoredHeader: Story = {args: {
-  heading: 'Accordion Item Header',
-  size: 'sm',
-  brandHeader: true
-}};
+export const BrandColoredHeader: Story = {
+  args: {
+    heading: 'Accordion Item Header',
+    size: 'sm',
+    brandHeader: true
+  }
+};

@@ -1,10 +1,11 @@
-@import '/design-tokens/core/scss/theming/component';
+@import '../../design-tokens/core/scss/theming/component.css';
 
 
 :host {
   display: inline;
   text-align: left;
 }
+
 /**
  * DefaultHeading component styling/Heading title-large
  */
@@ -63,6 +64,7 @@
 .cre8-c-heading--title-small {
   @include cre8-typography-title-small();
 }
+
 /**
  * Heading with theme display-small preset applied
  */
@@ -127,6 +129,7 @@
  */
 .cre8-c-heading--brand-color {
   color: var(--cre8-color-content-brand-strong);
+
   &.cre8-c-heading--inverted {
     color: var(--cre8-color-content-brand-knockout);
   }

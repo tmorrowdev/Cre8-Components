@@ -1,4 +1,4 @@
-@use '../../design-tokens/core/scss/theming/component' as component;
+@import '../../design-tokens/core/scss/theming/component.css';
 
 // #BAND
 
@@ -9,7 +9,7 @@
   background: var(--cre8-color-bg-subtle);
   padding: calc(8px * 3) 0;
 
-  @media all and (min-width: component.$cre8-breakpoint-xl) {
+  @media all and (min-width: $cre8-breakpoint-xl) {
     padding: calc(8px * 4) 0;
   }
 }

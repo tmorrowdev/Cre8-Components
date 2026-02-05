@@ -1,30 +1,30 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { state } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './header.styles.js';
+import styles from './header.module.scss';
 
 /**
  * @slot - The header content
  */
 export class Cre8Header extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Is active state
    * 1) Set to true when small screen menu is open
    */
   @state()
-      isActive?: boolean;
+  isActive?: boolean;
 
   render() {
-      const componentClassName = this.componentClassNames('cre8-c-header', {
-          'cre8-is-active': this.isActive === true,
-      });
+    const componentClassName = this.componentClassNames('cre8-c-header', {
+      'cre8-is-active': this.isActive === true,
+    });
 
-      return html`
+    return html`
       <header class="${componentClassName}">
         ${this.slotNotEmpty('top')
-        && html`<div class="cre8-c-header__top">
+      && html`<div class="cre8-c-header__top">
           <cre8-layout-container>
             <div class="cre8-c-header__top-inner">
               <slot name="top"></slot>
@@ -39,7 +39,7 @@ export class Cre8Header extends Cre8Element {
           </cre8-layout-container>
         </div>
         ${this.slotNotEmpty('bottom')
-        && html`<div class="cre8-c-header__bottom">
+      && html`<div class="cre8-c-header__bottom">
           <cre8-layout-container>
             <slot name="bottom"></slot>
           </cre8-layout-container>
@@ -50,7 +50,7 @@ export class Cre8Header extends Cre8Element {
 }
 
 if (customElements.get('cre8-header') === undefined) {
-    customElements.define('cre8-header', Cre8Header);
+  customElements.define('cre8-header', Cre8Header);
 }
 
 declare global {

@@ -1,39 +1,39 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './feature.styles.js';
+import styles from './feature.module.scss';
 
 /**
  * @slot - The component content
  */
 export class Cre8Feature extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Image source
    */
   @property()
-      imgSrc?: string;
+  imgSrc?: string;
 
   /**
    * Image alt text
    */
   @property()
-      imgAlt?: string;
+  imgAlt?: string;
 
   /**
    * Inverted variant
    * 1) Used for dark backgrounds
    */
   @property({ type: Boolean, reflect: true })
-      inverted?: boolean;
+  inverted?: boolean;
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-feature', {
-          'cre8-c-feature--inverted': this.inverted === true,
-      });
+    const componentClassNames = this.componentClassNames('cre8-c-feature', {
+      'cre8-c-feature--inverted': this.inverted === true,
+    });
 
-      return html`
+    return html`
       <div class="${componentClassNames}" part="feature">
         <div class="cre8-c-feature__body" part="body">
           <slot></slot>
@@ -49,7 +49,7 @@ export class Cre8Feature extends Cre8Element {
 }
 
 if (customElements.get('cre8-feature') === undefined) {
-    customElements.define('cre8-feature', Cre8Feature);
+  customElements.define('cre8-feature', Cre8Feature);
 }
 
 declare global {

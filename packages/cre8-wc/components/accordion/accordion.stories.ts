@@ -1,4 +1,4 @@
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../icon/icon';
 import '../heading/heading';
 import './accordion';
@@ -15,12 +15,12 @@ const meta = {
   component: 'cre8-accordion',
   argTypes: {
     borderType: {
-      options: ['none','rectangle', 'rounded-bottom', 'rounded'],
-      control: {type: 'radio'}
+      options: ['none', 'rectangle', 'rounded-bottom', 'rounded'],
+      control: { type: 'radio' }
     },
     hasDivider: {
       options: [true, false],
-      control: {type: 'radio'}
+      control: { type: 'radio' }
     }
   },
 
@@ -56,42 +56,58 @@ const meta = {
 } satisfies Meta<Props>;
 export default meta;
 
-export const Default: Story = {args:{
-  borderType: 'none',
-  hasDivider: false
-}};
+export const Default: Story = {
+  args: {
+    borderType: 'none',
+    hasDivider: false
+  }
+};
 
-export const DefaultDivider: Story = {args:{
-  borderType: 'none',
-  hasDivider: true
-}};
+export const DefaultDivider: Story = {
+  args: {
+    borderType: 'none',
+    hasDivider: true
+  }
+};
 
-export const Rectangle: Story = {args:{
-  borderType: 'rectangle',
-  hasDivider: false
-}};
+export const Rectangle: Story = {
+  args: {
+    borderType: 'rectangle',
+    hasDivider: false
+  }
+};
 
-export const RectangleDivider: Story = {args:{
-  borderType: 'rectangle',
-  hasDivider: true
-}};
+export const RectangleDivider: Story = {
+  args: {
+    borderType: 'rectangle',
+    hasDivider: true
+  }
+};
 
-export const RoundedBottom: Story = {args:{
-  borderType: 'rounded-bottom',
-  hasDivider: false
-}};
+export const RoundedBottom: Story = {
+  args: {
+    borderType: 'rounded-bottom',
+    hasDivider: false
+  }
+};
 
-export const RoundedBottomDivider: Story = {args:{
-  borderType: 'rounded-bottom',
-  hasDivider: true
-}};
+export const RoundedBottomDivider: Story = {
+  args: {
+    borderType: 'rounded-bottom',
+    hasDivider: true
+  }
+};
 
-export const Rounded: Story = {args:{
-  borderType: 'rounded',
-  hasDivider: false
-}};
+export const Rounded: Story = {
+  args: {
+    borderType: 'rounded',
+    hasDivider: false
+  }
+};
 
-export const RoundedDivider: Story = {args:{
-  borderType: 'rounded',
-  hasDivider: true
-}};
+export const RoundedDivider: Story = {
+  args: {
+    borderType: 'rounded',
+    hasDivider: true
+  }
+};

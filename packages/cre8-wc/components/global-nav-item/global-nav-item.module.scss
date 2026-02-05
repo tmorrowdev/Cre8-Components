@@ -1,4 +1,4 @@
-@import '/design-tokens/core/scss/theming/component';
+@import '../../design-tokens/core/scss/theming/component.css';
 
 // #PRIMARY NAV ITEM
 
@@ -72,7 +72,7 @@ cre8-icon-legacy {
     /* 1 */
   }
 
-  @media all and (min-width: component.$cre8-breakpoint-lg) {
+  @media all and (min-width: $cre8-breakpoint-lg) {
     margin-left: calc(8px * 1);
   }
 }

@@ -1,5 +1,5 @@
 import { fixture, oneEvent } from '@open-wc/testing-helpers';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../tab';
 import '../../tabs/tabs';
 import '../../tab-panel/tab-panel';

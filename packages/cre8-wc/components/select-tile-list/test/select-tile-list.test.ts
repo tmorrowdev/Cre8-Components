@@ -1,5 +1,5 @@
 import { fixture } from '@open-wc/testing-helpers';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../select-tile-list';
 import { cre8SelectTileList } from '../select-tile-list';
 

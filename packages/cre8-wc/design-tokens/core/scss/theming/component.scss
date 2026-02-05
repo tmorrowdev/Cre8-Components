@@ -1,8 +1,8 @@
-@import '../../../../node_modules/@tmorrow/cre8-design-tokens/lib/web/mixins/typography-usage';
-@import 'reset';
-@import 'breakpoints';
-@import 'animation';
-@import 'functions';
+@use '../../../../node_modules/@tmorrow/cre8-design-tokens/lib/web/mixins/typography-usage' as *;
+@use 'reset';
+@use 'breakpoints' as *;
+@use 'animation';
+@use 'functions' as *;
+@use 'variables' as *;
 
-
-@import 'variables';
+// Forward typography mixins for downstream consumers - hide variables to avoid conflicts

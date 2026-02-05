@@ -1,4 +1,4 @@
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../field-note/field-note';
 import './checkbox-field-item';
 import { spread } from '../../directives/spread';

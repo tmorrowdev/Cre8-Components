@@ -1,10 +1,10 @@
 import classnames from 'classnames';
-import { html, nothing } from 'lit';
+import { html, nothing, CSSResult } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import '../icon/icon';
 import '../loading-spinner/loading-spinner';
 import { property, query } from 'lit/decorators.js';
-import styles from './danger-button.styles.js';
+import styles from './danger-button.module.scss';
 import { Cre8FormElement } from '../cre8-form-element';
 
 /**
@@ -73,7 +73,7 @@ import { Cre8FormElement } from '../cre8-form-element';
      */
 
 export class Cre8DangerButton extends Cre8FormElement {
-    static styles = [styles];
+    static styles = [styles as unknown as CSSResult];
 
     /**
      *
@@ -83,7 +83,7 @@ export class Cre8DangerButton extends Cre8FormElement {
      * - Should not be used as an indicator of what happens on the next page, or as a substitute for a progress meter.
      */
     @property()
-        text? = 'Button';
+    text? = 'Button';
 
     /**
      * Style variant
@@ -94,7 +94,7 @@ export class Cre8DangerButton extends Cre8FormElement {
      *   Should be used in limited amounts - consider if a link (`<a>`) would be more appropriate
      */
     @property({ type: String })
-        variant?: 'primary' | 'secondary' | 'tertiary' = 'primary';
+    variant?: 'primary' | 'secondary' | 'tertiary' = 'primary';
 
     /**
      * Disabled attribute
@@ -105,7 +105,7 @@ export class Cre8DangerButton extends Cre8FormElement {
      * take to activate the button. Real-time, field-level validation can help provide clarity.
      */
     @property({ type: Boolean, reflect: true })
-        disabled?: boolean;
+    disabled?: boolean;
 
     /**
      *
@@ -113,7 +113,7 @@ export class Cre8DangerButton extends Cre8FormElement {
      * This changes the component markup from `<button>` usage to `<a>` instead.
      */
     @property()
-        href?: string;
+    href?: string;
 
     /**
      * Target attribute for a link if providing `href` to style a link as a button
@@ -126,7 +126,7 @@ export class Cre8DangerButton extends Cre8FormElement {
      *   If there is no parent, this behaves the same way as _self.
      */
     @property()
-        target?: '_blank' | '_self' | '_parent' | '_top';
+    target?: '_blank' | '_self' | '_parent' | '_top';
 
     /**
      * Type of button.
@@ -135,32 +135,32 @@ export class Cre8DangerButton extends Cre8FormElement {
      * - **submit** button for submitting form data to a server
      */
     @property()
-        type: 'button' | 'submit' | 'reset' = 'button';
+    type: 'button' | 'submit' | 'reset' = 'button';
 
     /**
      * Rel if this is an <a> element - this swaps <button> for <a>
      */
     @property()
-        rel?: string;
+    rel?: string;
 
     /**
      * SVG raw string if including an icon within a button.
      * Must include the icon's position with `iconPostion`. This prop is used for <cre8-icon>
      */
     @property()
-        svg?: string;
+    svg?: string;
 
     /**
      * rotate is used for <cre8-icon> to set the arrow in the correct direction
      */
     @property({ type: Number })
-        iconRotateDegree?: number = 0;
+    iconRotateDegree?: number = 0;
 
     /**
      * flip is used for <cre8-icon> to set the icon in the correct direction
      */
     @property()
-        iconFlipDirection?: string;
+    iconFlipDirection?: string;
 
     /**
      * Icon position. Must include the name of the icon with `iconName`
@@ -169,7 +169,7 @@ export class Cre8DangerButton extends Cre8FormElement {
      * - **after** places the icon after the button text
      */
     @property()
-        iconPosition?: 'before' | 'after' = undefined;
+    iconPosition?: 'before' | 'after' = undefined;
 
     /**
      * Size variants add another way to increase or decrease visual priority of a button.
@@ -177,14 +177,14 @@ export class Cre8DangerButton extends Cre8FormElement {
      * - **lg** increases the button typography and overall size from the default.
      */
     @property()
-        size?: 'sm' | 'lg';
+    size?: 'sm' | 'lg';
 
     /**
      * Visually hide button text. Text is still accessible to assistive technology.
      * Use this for icon-only buttons for accessibility
      */
     @property({ type: Boolean, reflect: true })
-        hideText?: boolean;
+    hideText?: boolean;
 
     /**
      * Full width button
@@ -192,7 +192,7 @@ export class Cre8DangerButton extends Cre8FormElement {
      *
      */
     @property({ type: Boolean, reflect: true })
-        fullWidth?: boolean;
+    fullWidth?: boolean;
 
     /**
      * * Changes styling to an active state with a spinning icon.
@@ -204,7 +204,7 @@ export class Cre8DangerButton extends Cre8FormElement {
      *
      */
     @property({ type: Boolean, reflect: true })
-        loading?: boolean;
+    loading?: boolean;
 
     /**
      * * Variant of the loading button that:
@@ -214,13 +214,13 @@ export class Cre8DangerButton extends Cre8FormElement {
      *
      */
     @property({ type: Boolean, reflect: true })
-        loadingComplete?: boolean;
+    loadingComplete?: boolean;
 
     /**
      * Inverted colors Danger Button (onDark)
      */
     @property({ type: Boolean })
-        inverted?: boolean;
+    inverted?: boolean;
 
     /**
      * Controls whether your loading status update to voiceover users will occur
@@ -228,16 +228,16 @@ export class Cre8DangerButton extends Cre8FormElement {
      * pause in their navigation using `polite`.
      */
     @property()
-        ariaLive: 'polite' | 'assertive' = 'assertive';
+    ariaLive: 'polite' | 'assertive' = 'assertive';
 
     /**
      * Button aria expanded attribute
      */
     @property({ type: Boolean, reflect: true })
-        buttonAriaExpanded?: boolean;
+    buttonAriaExpanded?: boolean;
 
     @query('button')
-        field!: HTMLButtonElement;
+    field!: HTMLButtonElement;
 
     formSubmit() {
         const form = this._internals.form;
@@ -262,18 +262,18 @@ export class Cre8DangerButton extends Cre8FormElement {
               target="${ifDefined(this.target)}"
           >
             ${this.iconPosition === 'before'
-        ? html`<cre8-icon width="16" height="16" aria-hidden="true" svg="${ifDefined(this.svg)}">
+                ? html`<cre8-icon width="16" height="16" aria-hidden="true" svg="${ifDefined(this.svg)}">
         </cre8-icon>`
-        : nothing}
+                : nothing}
       <span
           class="${this.hideText ? 'cre8-u-is-vishidden cre8-c-danger-button__text' : 'cre8-c-danger-button__text'}"
       >
           ${this.text}
       </span>
       ${this.iconPosition === 'after'
-        ? html`<cre8-icon width="16" height="16" aria-hidden="true" svg="${ifDefined(this.svg)}">
+                ? html`<cre8-icon width="16" height="16" aria-hidden="true" svg="${ifDefined(this.svg)}">
         </cre8-icon> `
-        : nothing}
+                : nothing}
       </a>
         `;
     }
@@ -289,13 +289,13 @@ export class Cre8DangerButton extends Cre8FormElement {
           <span class="cre8-c-danger-button__icon" aria-live="${this.ariaLive}" role="alert">
               <span class="cre8-u-is-vishidden">${this.loadingComplete ? 'Loading Complete' : 'Loading'}</span>
               ${!this.loadingComplete
-        ? html`
+                ? html`
           <cre8-loading-spinner
               class="cre8-c-danger-button__loading-icon"
               inverted size="small"
               aria-hidden="true"
           ></cre8-loading-spinner>`
-        : nothing}
+                : nothing}
               </span>`;
     }
 
@@ -331,19 +331,19 @@ export class Cre8DangerButton extends Cre8FormElement {
             type=${this.type}
           >
             ${this.iconPosition === 'before' && this.svg
-        ? this.renderDangerButtonIconography() : nothing
-}
+                ? this.renderDangerButtonIconography() : nothing
+            }
             <span
               class="${this.hideText ? 'cre8-u-is-vishidden cre8-c-danger-button__text' : 'cre8-c-danger-button__text'}"
             >
                 ${this.text}
             </span>
             ${this.iconPosition === 'after' && this.svg
-        ? this.renderDangerButtonIconography() : nothing
-}
+                ? this.renderDangerButtonIconography() : nothing
+            }
             ${this.loading || this.loadingComplete
-        ? this.renderDangerButtonLoading() : nothing
-}
+                ? this.renderDangerButtonLoading() : nothing
+            }
           </button>`;
     }
 

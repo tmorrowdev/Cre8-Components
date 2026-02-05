@@ -4,10 +4,10 @@
 
 /* TODO: remove eslint disable on no-template-arrow */
 import {
- TemplateResult, html, nothing,
+  TemplateResult, html, nothing, CSSResult
 } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
-import styles from './calendar.styles.js';
+import styles from './calendar.module.scss';
 import { Cre8Element } from '../../cre8-element';
 
 import '../../icon/icon';
@@ -39,14 +39,14 @@ export enum CalendarModal {
 }
 
 export class Cre8Calendar extends Cre8Element {
-  static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
 
   /**
    * Query the navigation wrapper
    */
   @query('.cre8-c-calendar__navigation-wrapper')
-      _navWrapper: HTMLElement;
+  _navWrapper: HTMLElement;
 
   @property({ type: Boolean, reflect: true })
   hasShortcuts?: boolean;
@@ -380,13 +380,13 @@ export class Cre8Calendar extends Cre8Element {
           ?data-selected="${isSelected}"
           tabindex="-1"
           aria-label="${new Intl.DateTimeFormat(this.locale, {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          }).format(
-            new Date(`${Cre8Calendar.dateToString(priorMonthDay)}T00:00`)
-          )}"
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      }).format(
+        new Date(`${Cre8Calendar.dateToString(priorMonthDay)}T00:00`)
+      )}"
           @click="${() => this.emitSelectedDate(Cre8Calendar.dateToString(priorMonthDay))}"
         >
           ${new Intl.NumberFormat(this.locale).format(priorMonthDay.getDate())}
@@ -425,8 +425,8 @@ export class Cre8Calendar extends Cre8Element {
           ?data-today="${isToday}"
           ?data-selected="${isSelected}"
           tabindex="${dayOfTheMonth === this.currentDate.getDate()
-            ? '0'
-            : '-1'}"
+          ? '0'
+          : '-1'}"
           aria-label="${new Intl.DateTimeFormat(this.locale, {
             weekday: 'long',
             year: 'numeric',
@@ -460,11 +460,11 @@ export class Cre8Calendar extends Cre8Element {
     return [
       ...Array(
         6
-          - new Date(
-            this.getYear(),
-            this.getMonth(),
-            this.numberOfDaysinMonth()
-          ).getDay()
+        - new Date(
+          this.getYear(),
+          this.getMonth(),
+          this.numberOfDaysinMonth()
+        ).getDay()
       ).keys(),
     ].map((i) => {
       const lastDayThisMonth = new Date(
@@ -499,13 +499,13 @@ export class Cre8Calendar extends Cre8Element {
           ?data-selected="${isSelected}"
           tabindex="-1"
           aria-label="${new Intl.DateTimeFormat(this.locale, {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          }).format(
-            new Date(`${Cre8Calendar.dateToString(nextMonthDay)}T00:00`)
-          )}"
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      }).format(
+        new Date(`${Cre8Calendar.dateToString(nextMonthDay)}T00:00`)
+      )}"
           @click="${() => this.emitSelectedDate(Cre8Calendar.dateToString(nextMonthDay))}"
         >
           ${new Intl.NumberFormat(this.locale).format(nextMonthDay.getDate())}
@@ -532,45 +532,45 @@ export class Cre8Calendar extends Cre8Element {
         : nothing}
       ${this._activeModal === CalendarModal.None
         ? html` ${this.hasShortcuts
-              ? html`<div class="cre8-c-calendar__header-shortcuts">
+          ? html`<div class="cre8-c-calendar__header-shortcuts">
                     <cre8-button
                       text="Today"
                       variant="secondary"
                       size="sm"
                       @click="${() => this.emitSelectedDate(
-                          Cre8Calendar.dateToString(this.dateConfig.today)
-                        )}"
+            Cre8Calendar.dateToString(this.dateConfig.today)
+          )}"
                     ></cre8-button>
                     <cre8-button
                       text="Tomorrow"
                       variant="secondary"
                       size="sm"
                       @click="${() => this.emitSelectedDate(
-                          Cre8Calendar.dateToString(
-                            new Date(
-                              this.dateConfig.today.setDate(
-                                this.dateConfig.today.getDate() + 1
-                              )
-                            )
-                          )
-                        )}"
+            Cre8Calendar.dateToString(
+              new Date(
+                this.dateConfig.today.setDate(
+                  this.dateConfig.today.getDate() + 1
+                )
+              )
+            )
+          )}"
                     ></cre8-button>
                     <cre8-button
                       text="In 2 days"
                       variant="secondary"
                       size="sm"
                       @click="${() => this.emitSelectedDate(
-                          Cre8Calendar.dateToString(
-                            new Date(
-                              this.dateConfig.today.setDate(
-                                this.dateConfig.today.getDate() + 2
-                              )
-                            )
-                          )
-                        )}"
+            Cre8Calendar.dateToString(
+              new Date(
+                this.dateConfig.today.setDate(
+                  this.dateConfig.today.getDate() + 2
+                )
+              )
+            )
+          )}"
                     ></cre8-button>
                 </div>`
-              : nothing}
+          : nothing}
             <cre8-calendar-navigation
               monthName="${this.getMonthName()}"
               year="${this.getYear()}"

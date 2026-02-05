@@ -1,23 +1,23 @@
-import {html} from 'lit';
+import { html, CSSResult } from 'lit';
 import './progress-meter';
 import { spread } from '../../directives/spread';
 
 export default {
   title: 'cre8 Components/Progress Meter',
   component: 'cre8-progress-meter',
-  parameters: {status: {type: 'inProgress'}},
-  render: (args) => html `<cre8-progress-meter ${spread(args)}></cre8-progress-meter>`,
+  parameters: { status: { type: 'inProgress' } },
+  render: (args) => html`<cre8-progress-meter ${spread(args)}></cre8-progress-meter>`,
   args: {
     value: '50',
     knockout: false
   },
   argTypes: {
-    fieldId: { control: 'text'},
-    status: { control: 'text'},
-    knockout: { control: 'boolean'},
-    max: { control: 'number'},
-    value: { control: 'number'},
-    name: { control: 'text'}
+    fieldId: { control: 'text' },
+    status: { control: 'text' },
+    knockout: { control: 'boolean' },
+    max: { control: 'number' },
+    value: { control: 'number' },
+    name: { control: 'text' }
   }
 };
 

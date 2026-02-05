@@ -1,13 +1,13 @@
 import classnames from 'classnames';
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon';
 
-import styles from './badge.styles.js';
+import styles from './badge.module.scss';
 
 export enum status {
- 'error', 'warning', 'success', 'info', 'attention', undefined
+  'error', 'warning', 'success', 'info', 'attention', undefined
 }
 export enum variant {
   'light', 'white', undefined
@@ -20,13 +20,13 @@ export enum variant {
  *
  */
 export class Cre8Badge extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * The badge text
    */
   @property({ type: String })
-      text: string = undefined;
+  text: string = undefined;
 
   /**
    * Status (a color variant prop)
@@ -38,7 +38,7 @@ export class Cre8Badge extends Cre8Element {
    * - **attention** renders a badge with attention state treatment
    */
   @property({ type: String })
-      status: string;
+  status: string;
 
   /**
    * Background Style Variant
@@ -48,7 +48,7 @@ export class Cre8Badge extends Cre8Element {
    * - **white** renders a badge with a white background
    */
   @property({ type: String })
-      variant: string;
+  variant: string;
 
   /**
    * SVG as a raw string
@@ -59,20 +59,20 @@ export class Cre8Badge extends Cre8Element {
    * repo for Cre8 icons, which includes a link to the storybook as well as relavant information for new icons
    */
   @property({ type: String })
-      svg?: string;
+  svg?: string;
 
   render() {
-      const componentClassName = classnames('cre8-c-badge', {
-          'cre8-c-badge--success': this.status === 'success',
-          'cre8-c-badge--warning': this.status === 'warning',
-          'cre8-c-badge--error': this.status === 'error',
-          'cre8-c-badge--info': this.status === 'info',
-          'cre8-c-badge--attention': this.status === 'attention',
-          'cre8-c-badge--light': this.variant === 'light',
-          'cre8-c-badge--white': this.variant === 'white',
-      });
+    const componentClassName = classnames('cre8-c-badge', {
+      'cre8-c-badge--success': this.status === 'success',
+      'cre8-c-badge--warning': this.status === 'warning',
+      'cre8-c-badge--error': this.status === 'error',
+      'cre8-c-badge--info': this.status === 'info',
+      'cre8-c-badge--attention': this.status === 'attention',
+      'cre8-c-badge--light': this.variant === 'light',
+      'cre8-c-badge--white': this.variant === 'white',
+    });
 
-      return html`<div class="${componentClassName}">
+    return html`<div class="${componentClassName}">
         ${this.svg ? html` <cre8-icon 
             svg='${this.svg}' aria-hidden='true'></cre8-icon>
         </cre8-icon>` : ''} 
@@ -82,7 +82,7 @@ export class Cre8Badge extends Cre8Element {
 }
 
 if (customElements.get('cre8-badge') === undefined) {
-    customElements.define('cre8-badge', Cre8Badge);
+  customElements.define('cre8-badge', Cre8Badge);
 }
 
 declare global {

@@ -1,12 +1,12 @@
 import svgCaretUp from '../../icons/System/Regular/Caret_Up.svg?raw';
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import classnames from 'classnames';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon';
 import '../button/button';
-import styles from './accordion-item.styles.js';
+import styles from './accordion-item.module.scss';
 
 /**
  *
@@ -42,7 +42,7 @@ import styles from './accordion-item.styles.js';
  */
 
 export class Cre8AccordionItem extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    *
@@ -52,7 +52,7 @@ export class Cre8AccordionItem extends Cre8Element {
    */
 
   @property({ type: Boolean, reflect: true })
-      isActive? = false;
+  isActive? = false;
 
 
   /**
@@ -63,7 +63,7 @@ export class Cre8AccordionItem extends Cre8Element {
    *
    */
   @property({ type: String, reflect: true })
-      accordionItemId?: string;
+  accordionItemId?: string;
 
   /**
    *
@@ -74,7 +74,7 @@ export class Cre8AccordionItem extends Cre8Element {
    *
    */
   @property({ type: Boolean, reflect: true })
-      iconBefore?: boolean;
+  iconBefore?: boolean;
 
   /**
    *
@@ -85,7 +85,7 @@ export class Cre8AccordionItem extends Cre8Element {
    *
    */
   @property({ type: Boolean, reflect: true })
-      tertiaryIcon?: boolean;
+  tertiaryIcon?: boolean;
 
   /**
    *
@@ -95,7 +95,7 @@ export class Cre8AccordionItem extends Cre8Element {
    *
    */
   @property({ reflect: true })
-      size: 'sm' | 'lg' = 'sm';
+  size: 'sm' | 'lg' = 'sm';
 
   /**
    *
@@ -107,7 +107,7 @@ export class Cre8AccordionItem extends Cre8Element {
    */
 
   @property({ reflect: true })
-      headingTagVariant: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h3';
+  headingTagVariant: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h3';
 
   /**
    *
@@ -117,7 +117,7 @@ export class Cre8AccordionItem extends Cre8Element {
    *
    */
   @property({ type: String })
-      heading!: string;
+  heading!: string;
 
   /**
    *
@@ -127,7 +127,7 @@ export class Cre8AccordionItem extends Cre8Element {
    *
    */
   @property({ type: Boolean })
-      brandHeader?: boolean;
+  brandHeader?: boolean;
 
   /**
    *
@@ -162,67 +162,67 @@ export class Cre8AccordionItem extends Cre8Element {
   private _fullyOpen?: boolean;
 
   constructor() {
-      super();
-      const randomId = Math.floor(Math.random() * 900000) + 100000;
-      this._ariaControls = `cre8-accordion-item-details-${randomId}`;
-      this.accordionItemId = this.accordionItemId ?? `cre8-accordion-item-${randomId}`;
+    super();
+    const randomId = Math.floor(Math.random() * 900000) + 100000;
+    this._ariaControls = `cre8-accordion-item-details-${randomId}`;
+    this.accordionItemId = this.accordionItemId ?? `cre8-accordion-item-${randomId}`;
   }
 
   override connectedCallback() {
-      super.connectedCallback();
+    super.connectedCallback();
+    this._setContentHeight();
+    if (this.isActive) {
+      this._fullyOpen = true;
       this._setContentHeight();
-      if (this.isActive) {
-          this._fullyOpen = true;
-          this._setContentHeight();
-      }
+    }
   }
 
   private async _setContentHeight() {
-      await this.updateComplete;
+    await this.updateComplete;
 
-      if ((this.isActive && !this._fullyOpen) || (!this.isActive && this._fullyOpen)) {
-          this._height = `${this.shadowRoot?.querySelector('.cre8-c-accordion-item__body-inner')?.scrollHeight}px`;
-      } else if (this.isActive && this._fullyOpen) {
-          this._height = 'auto';
-      } else if (!this.isActive && !this._fullyOpen) {
-          this._height = '0';
-      }
+    if ((this.isActive && !this._fullyOpen) || (!this.isActive && this._fullyOpen)) {
+      this._height = `${this.shadowRoot?.querySelector('.cre8-c-accordion-item__body-inner')?.scrollHeight}px`;
+    } else if (this.isActive && this._fullyOpen) {
+      this._height = 'auto';
+    } else if (!this.isActive && !this._fullyOpen) {
+      this._height = '0';
+    }
   }
 
   private _toggleAccordionItem() {
-      this.isActive = !this.isActive;
+    this.isActive = !this.isActive;
 
-      if (this.isActive) {
-          this._setContentHeight();
-          setTimeout(() => {
-              this._fullyOpen = true;
-              this._setContentHeight();
-          }, 350);
-      } else {
-          this._setContentHeight();
-          setTimeout(() => {
-              this._fullyOpen = false;
-              this._setContentHeight();
-          }, 50);
-      }
+    if (this.isActive) {
+      this._setContentHeight();
+      setTimeout(() => {
+        this._fullyOpen = true;
+        this._setContentHeight();
+      }, 350);
+    } else {
+      this._setContentHeight();
+      setTimeout(() => {
+        this._fullyOpen = false;
+        this._setContentHeight();
+      }, 50);
+    }
   }
 
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-accordion-item', {
-          'cre8-is-active': this.isActive,
-          'cre8-c-accordion-item--icon-before': this.iconBefore,
-          'cre8-c-accordion-item--small': this.size === 'sm',
-          'cre8-c-accordion-item--large': this.size === 'lg',
-      });
+    const componentClassNames = this.componentClassNames('cre8-c-accordion-item', {
+      'cre8-is-active': this.isActive,
+      'cre8-c-accordion-item--icon-before': this.iconBefore,
+      'cre8-c-accordion-item--small': this.size === 'sm',
+      'cre8-c-accordion-item--large': this.size === 'lg',
+    });
 
-      const buttonClassNames = classnames('cre8-c-accordion-item__button', {
-          'cre8-is-active': this.isActive,
-          'cre8-u-justify-content-start': this.iconBefore,
-          'cre8-brand-color': this.brandHeader === true,
-      });
+    const buttonClassNames = classnames('cre8-c-accordion-item__button', {
+      'cre8-is-active': this.isActive,
+      'cre8-u-justify-content-start': this.iconBefore,
+      'cre8-brand-color': this.brandHeader === true,
+    });
 
-      return html` <div id=${this.accordionItemId} class="${componentClassNames}">
+    return html` <div id=${this.accordionItemId} class="${componentClassNames}">
       <cre8-heading
         type=${this.size === 'lg' ? 'title-large' : 'title-default'}
         part="heading"
@@ -244,8 +244,8 @@ export class Cre8AccordionItem extends Cre8Element {
             <div class="cre8-c-accordion-item--icon-before-heading-text">
                 <div
                   class=${this.tertiaryIcon
-        ? 'cre8-c-accordion-item__tertiary-icon cre8-c-accordion-item__icon-before'
-        : 'cre8-c-accordion-item__icon cre8-c-accordion-item__icon-before'}
+            ? 'cre8-c-accordion-item__tertiary-icon cre8-c-accordion-item__icon-before'
+            : 'cre8-c-accordion-item__icon cre8-c-accordion-item__icon-before'}
                 >
                   <cre8-icon rotate="180" svg=${svgCaretUp} aria-hidden="true"></cre8-icon>
                 </div>
@@ -257,8 +257,8 @@ export class Cre8AccordionItem extends Cre8Element {
             ${this.heading ?? html` <slot name="heading"></slot>`}
                 <div
                   class=${this.tertiaryIcon
-        ? 'cre8-c-accordion-item__tertiary-icon cre8-c-accordion-item__icon-after'
-        : 'cre8-c-accordion-item__icon cre8-c-accordion-item__icon-after'}
+            ? 'cre8-c-accordion-item__tertiary-icon cre8-c-accordion-item__icon-after'
+            : 'cre8-c-accordion-item__icon cre8-c-accordion-item__icon-after'}
                 >
                   <cre8-icon rotate="180" svg='${svgCaretUp}' aria-hidden="true"></cre8-icon>
                 </div>
@@ -281,7 +281,7 @@ export class Cre8AccordionItem extends Cre8Element {
 }
 
 if (customElements.get('cre8-accordion-item') === undefined) {
-    customElements.define('cre8-accordion-item', Cre8AccordionItem);
+  customElements.define('cre8-accordion-item', Cre8AccordionItem);
 }
 declare global {
   interface HTMLElementTagNameMap {

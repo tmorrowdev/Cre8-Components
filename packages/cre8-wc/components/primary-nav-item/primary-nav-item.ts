@@ -1,44 +1,44 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property, state } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './primary-nav-item.styles.js';
+import styles from './primary-nav-item.module.scss';
 
-    /**
-     * @slot - The label for the navigation item
-     */
+/**
+ * @slot - The label for the navigation item
+ */
 export class Cre8PrimaryNavItem extends Cre8Element {
     /**
      * Primary nav item text
      */
     @property()
-        text = 'Nav item';
+    text = 'Nav item';
 
     /**
      * Primary nav item href
      */
     @property()
-        href = '#';
+    href = '#';
 
     /**
      * Icon name
      */
     @property()
-        iconName?: string = 'caret-down';
+    iconName?: string = 'caret-down';
 
     /**
      * Append to the class name. Used for passing in utility classes
      */
     @property({ type: Boolean, reflect: true })
-        megaMenu?: boolean;
+    megaMenu?: boolean;
 
     /**
      * Append to the class name. Used for passing in utility classes
      */
     @state()
-        isActive?: boolean;
+    isActive?: boolean;
 
-    static styles = [styles];
+    static styles = [styles as unknown as CSSResult];
 
     /**
      * Initialize functions

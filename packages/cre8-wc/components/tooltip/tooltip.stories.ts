@@ -1,4 +1,4 @@
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import { spread } from '../../directives/spread';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { sanitizeInput } from '../../utilities/story-helpers';

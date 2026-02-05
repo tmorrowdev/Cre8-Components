@@ -1,9 +1,9 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import '../field-note/field-note';
-import styles from './radio-field.styles.js';
+import styles from './radio-field.module.scss';
 
 /**
  * Radio Field is the parent container for `radio-field-item`.
@@ -16,60 +16,60 @@ import styles from './radio-field.styles.js';
  */
 
 export class Cre8RadioField extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Radio Field Note
    * @attr {string}
    */
   @property()
-      fieldNote?: string;
+  fieldNote?: string;
 
   /**
    * Radio container fieldnote aria describe by
    * @attr {string}
    */
   @property()
-      ariaDescribedBy?: string;
+  ariaDescribedBy?: string;
 
   /**
    * Radio container fieldnote icon name
    * @attr {string}
    */
   @property()
-      fieldNoteIconName?: string;
+  fieldNoteIconName?: string;
 
   /**
    * Radio container fieldnote knockout
    * @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })
-      fieldNoteKnockout?: boolean;
+  fieldNoteKnockout?: boolean;
 
   /**
    * Radio container fieldnote isSuccess
    * @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })
-      isSuccess?: boolean;
+  isSuccess?: boolean;
 
   /**
    * Radio container fieldnote isError
    * @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })
-      isError?: boolean;
+  isError?: boolean;
 
   /**
    * Radio field legend label
    */
   @property()
-      label?: string;
+  label?: string;
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-radio-field', {});
+    const componentClassNames = this.componentClassNames('cre8-c-radio-field', {});
 
-      return html`
+    return html`
       <fieldset class="${componentClassNames}" aria-describedby="${ifDefined(this.ariaDescribedBy)}">
         <legend class="cre8-c-radio-field__legend">${this.label}</legend>
         <div class="cre8-c-radio-field__body">
@@ -93,7 +93,7 @@ export class Cre8RadioField extends Cre8Element {
 }
 
 if (customElements.get('cre8-radio-field') === undefined) {
-    customElements.define('cre8-radio-field', Cre8RadioField);
+  customElements.define('cre8-radio-field', Cre8RadioField);
 }
 
 declare global {

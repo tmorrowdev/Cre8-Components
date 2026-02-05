@@ -2,7 +2,7 @@
 import svgCaretLeft from '../../icons/System/Regular/Caret_Left.svg?raw';
 import svgCaretRight from '../../icons/System/Regular/Caret_Right.svg?raw';
 import svgArrowRight from '../../icons/System/Filled/Arrow_-_Right.svg?raw';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import { spread } from '../../directives/spread';
 import './danger-button';
 
@@ -11,26 +11,26 @@ const meta = {
   component: 'cre8-danger-button',
   render: (args) => html`<cre8-danger-button ${spread(args)}></cre8-danger-button>`,
   parameters: {
-    status: {type: 'inProgress'},
+    status: { type: 'inProgress' },
     actions: {
       handles: ['click', 'submit'],
     },
   },
   argTypes: {
-    ariaLive: { options: ['assertive', 'polite'], control: 'radio'},
-    buttonAriaExpanded: {control: 'boolean'},
-    disabled: {control: 'boolean'},
-    fullWidth: {control: 'boolean'},
-    hideText: {control: 'boolean'},
-    svg: {control: 'text'},
-    iconRotateDegree: {control: 'text'},
+    ariaLive: { options: ['assertive', 'polite'], control: 'radio' },
+    buttonAriaExpanded: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    fullWidth: { control: 'boolean' },
+    hideText: { control: 'boolean' },
+    svg: { control: 'text' },
+    iconRotateDegree: { control: 'text' },
     iconPosition: {
       options: ['before', 'after'],
       control: { type: 'radio' }
     },
-    inverted: {control: 'boolean'},
-    loading: {control: 'boolean'},
-    loadingComplete: {control: 'boolean'},
+    inverted: { control: 'boolean' },
+    loading: { control: 'boolean' },
+    loadingComplete: { control: 'boolean' },
     text: {
       control: 'text'
     },
@@ -105,7 +105,7 @@ export const IconBefore = {
   }
 };
 
-export const IconAfter  = {
+export const IconAfter = {
   args: {
     svg: svgCaretRight,
     iconPosition: 'after',
@@ -196,14 +196,14 @@ export const FullWidth = {
   }
 };
 
-export const Small= {
+export const Small = {
   args: {
     size: 'sm',
     text: 'Button',
   }
 };
 
-export const SmallInverted= {
+export const SmallInverted = {
   args: {
     size: 'sm',
     text: 'Button',
@@ -214,7 +214,7 @@ export const SmallInverted= {
   },
 };
 
-export const SmallIconAfter= {
+export const SmallIconAfter = {
   args: {
     svg: svgCaretRight,
     iconPosition: 'after',
@@ -241,7 +241,7 @@ export const LargePrimaryInverted = {
   },
 };
 
-export const LargeIconAfter= {
+export const LargeIconAfter = {
   args: {
     svg: svgCaretRight,
     iconPosition: 'after',
@@ -283,7 +283,7 @@ export const IconOnlyPrimaryInverted = {
 export const IconOnlySecondary = {
   args: {
     hideText: true,
-    svg:  svgArrowRight,
+    svg: svgArrowRight,
     iconPosition: 'after',
     text: 'Button With Visually Hidden Text',
     variant: 'secondary'
@@ -293,7 +293,7 @@ export const IconOnlySecondary = {
 export const IconOnlySecondaryInverted = {
   args: {
     hideText: true,
-    svg:  svgArrowRight,
+    svg: svgArrowRight,
     iconPosition: 'after',
     text: 'Button With Visually Hidden Text',
     variant: 'secondary',

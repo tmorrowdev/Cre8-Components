@@ -1,4 +1,4 @@
-@import '/design-tokens/core/scss/theming/component';
+@import '../../design-tokens/core/scss/theming/component.css';
 
 // #SELECT-TILE
 
@@ -32,7 +32,7 @@
 
   &:focus,
   &:focus-visible {
-    @include component.focus();
+    @include focus();
   }
 
   &.cre8-c-select-tile--error {
@@ -85,27 +85,27 @@ input:checked+.cre8-c-select-tile {
 }
 
 .cre8-c-select-tile--vertical-at-sm {
-  @include cre8-c-select-tile--vertical-at-bp(component.$cre8-breakpoint-sm);
+  @include cre8-c-select-tile--vertical-at-bp($cre8-breakpoint-sm);
 }
 
 .cre8-c-select-tile--vertical-at-sm-2 {
-  @include cre8-c-select-tile--vertical-at-bp(component.$cre8-breakpoint-sm);
+  @include cre8-c-select-tile--vertical-at-bp($cre8-breakpoint-sm);
 }
 
 .cre8-c-select-tile--vertical-at-md {
-  @include cre8-c-select-tile--vertical-at-bp(component.$cre8-breakpoint-md);
+  @include cre8-c-select-tile--vertical-at-bp($cre8-breakpoint-md);
 }
 
 .cre8-c-select-tile--vertical-at-lg {
-  @include cre8-c-select-tile--vertical-at-bp(component.$cre8-breakpoint-lg);
+  @include cre8-c-select-tile--vertical-at-bp($cre8-breakpoint-lg);
 }
 
 .cre8-c-select-tile--vertical-at-xl {
-  @include cre8-c-select-tile--vertical-at-bp(component.$cre8-breakpoint-xl);
+  @include cre8-c-select-tile--vertical-at-bp($cre8-breakpoint-xl);
 }
 
 .cre8-c-select-tile--vertical-at-xxl {
-  @include cre8-c-select-tile--vertical-at-bp(component.$cre8-breakpoint-xxl);
+  @include cre8-c-select-tile--vertical-at-bp($cre8-breakpoint-xxl);
 }
 
 
@@ -289,7 +289,7 @@ input:checked+.cre8-c-select-tile {
 }
 
 .cre8-c-select-tile__custom-radio-top-right {
-  @include technology.cre8-c-select-radio-top-right();
+  @include cre8-c-select-radio-top-right();
 }
 
 /**

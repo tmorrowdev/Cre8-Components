@@ -1,18 +1,18 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { Cre8Element } from '../cre8-element';
-import styles from './table-object.styles.js';
+import styles from './table-object.module.scss';
 
 /**
  * @slot - The component content
  */
 
 export class Cre8TableObject extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
-    render() {
-        const componentClassNames = this.componentClassNames('cre8-c-table-object', {});
+  render() {
+    const componentClassNames = this.componentClassNames('cre8-c-table-object', {});
 
-        return html`
+    return html`
       <div class="${componentClassNames}">
         ${this.slotNotEmpty('header') && html`
           <div class="cre8-c-table-object__header" part="header">
@@ -29,11 +29,11 @@ export class Cre8TableObject extends Cre8Element {
         `}
       </div>
     `;
-    }
+  }
 }
 
 if (customElements.get('cre8-table-object') === undefined) {
-    customElements.define('cre8-table-object', Cre8TableObject);
+  customElements.define('cre8-table-object', Cre8TableObject);
 }
 
 declare global {
