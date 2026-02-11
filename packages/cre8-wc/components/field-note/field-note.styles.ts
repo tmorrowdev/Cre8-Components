@@ -12,15 +12,15 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 .cre8-c-field-note {
   display: flex;
   align-items: flex-start;
-  gap: calc(8px * 0.5);
+  gap: size(0.5);
   color: var(--cre8-color-content-default);
-  margin-top: calc(8px * 0.5);
+  margin-top: size(0.5);
 }
 
 .cre8-field-note-icon {
-  margin-top: calc(8px * 0.5);
-  height: calc(8px * 2);
-  width: calc(8px * 2);
+  margin-top: size(0.5);
+  height: size(2);
+  width: size(2);
 }
 
 /**

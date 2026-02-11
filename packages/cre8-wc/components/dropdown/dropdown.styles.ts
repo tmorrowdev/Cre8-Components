@@ -31,12 +31,12 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 
 .cre8-c-dropdown--icon-button {
   color: var(--cre8-color-button-secondary-content);
-  margin-top: calc(8px * 1);
+  margin-top: size(1);
 }
 
 .cre8-c-dropdown--icon-link {
   color: var(--cre8-color-content-link);
-  margin-top: calc(8px * 1);
+  margin-top: size(1);
 }
 
 .cre8-c-dropdown--toggle {

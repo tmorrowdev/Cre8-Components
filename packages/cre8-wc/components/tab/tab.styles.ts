@@ -24,15 +24,15 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   padding: 0;
   align-items: center;
   justify-content: center;
-  gap: calc(8px * 1);
+  gap: size(1);
   color: var(--cre8-color-content-default);
   background-color: transparent;
   border: 0;
   border-block-end: var(--cre8-border-width-tab-selected) var(--cre8-border-style-default) var(--cre8-color-border-default);
-  padding-block-start: calc(8px * 1);
-  padding-inline-end: calc(8px * 3);
-  padding-block-end: calc(calc(8px * 1) - var(--cre8-border-width-tab-selected)); /* 1 */
-  padding-inline-start: calc(8px * 3);
+  padding-block-start: size(1);
+  padding-inline-end: size(3);
+  padding-block-end: calc(size(1) - var(--cre8-border-width-tab-selected)); /* 1 */
+  padding-inline-start: size(3);
   cursor: pointer;
   overflow: hidden;
   transition: border-color var(--cre8-anim-fade-quick) var(--cre8-anim-ease), background-color var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
@@ -63,7 +63,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   color: var(--cre8-color-content-brand-strong);
   background-color: transparent;
   border-block-end: var(--cre8-border-width-tab-selected) var(--cre8-border-style-default) var(--cre8-color-border-brand-strong);
-  padding-block-end: calc(calc(8px * 1) - var(--cre8-border-width-tab-selected)); /* 1 */
+  padding-block-end: calc(size(1) - var(--cre8-border-width-tab-selected)); /* 1 */
 }
 
 /**
@@ -71,16 +71,16 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  */
 .cre8-c-tab.cre8-c-tab--small {
   @include cre8-typography-label-small();
-  padding-block-start: calc(8px * 0.5);
-  padding-inline-end: calc(8px * 2);
-  padding-block-end: calc(calc(8px * 0.5) - var(--cre8-border-width-tab-selected)); /* 1 */
-  padding-inline-start: calc(8px * 2);
+  padding-block-start: size(0.5);
+  padding-inline-end: size(2);
+  padding-block-end: calc(size(0.5) - var(--cre8-border-width-tab-selected)); /* 1 */
+  padding-inline-start: size(2);
 
   /**
    * Tab small active state
    */
   &.cre8-is-active:not(:focus-visible) {
-    padding-block-end: calc(calc(8px * 0.5) - var(--cre8-border-width-tab-selected)); /* 1 */
+    padding-block-end: calc(size(0.5) - var(--cre8-border-width-tab-selected)); /* 1 */
   }
 }`;
 export default styles;

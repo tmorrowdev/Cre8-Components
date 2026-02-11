@@ -31,7 +31,7 @@
   white-space: nowrap;
   width: 100%;
   margin: 0;
-  padding: calc(8px * 1) calc(8px * 2);
+  padding: size(1) size(2);
   color: var(--cre8-global-nav-link-color, var(--cre8-color-content-subtle));
   text-decoration: none;
   transition: all var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
@@ -53,12 +53,12 @@
 
 /**
  * Icon within primary navigation item
- * 1) TODO: Figure out how to pass down calc(8px * 1.5) instead of static rem value
+ * 1) TODO: Figure out how to pass down size(1.5) instead of static rem value
  */
 cre8-icon-legacy {
-  --cre8-icon-height: #{calc(8px * 1)};
+  --cre8-icon-height: #{size(1)};
   /* 1 */
-  --cre8-icon-width: #{calc(8px * 1)};
+  --cre8-icon-width: #{size(1)};
   /* 1 */
   margin-left: auto;
   transition: transform var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
@@ -73,12 +73,12 @@ cre8-icon-legacy {
   }
 
   @media all and (min-width: component.$cre8-breakpoint-lg) {
-    margin-left: calc(8px * 1);
+    margin-left: size(1);
   }
 }
 
 .cre8-c-global-nav__item-after {
-  --cre8-icon-height: #{calc(8px * 1.5)};
-  --cre8-icon-width: #{calc(8px * 1.5)};
-  margin-left: calc(8px * 1);
+  --cre8-icon-height: #{size(1.5)};
+  --cre8-icon-width: #{size(1.5)};
+  margin-left: size(1);
 }

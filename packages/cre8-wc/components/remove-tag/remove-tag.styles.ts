@@ -90,7 +90,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 
 .cre8-c-remove-tag-item__icon {
     align-items: center;
-    width: calc(8px * 2);
-    height: calc(8px * 2);
+    width: size(2);
+    height: size(2);
 }`;
 export default styles;

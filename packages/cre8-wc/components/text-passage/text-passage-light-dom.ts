@@ -16,7 +16,7 @@ cre8-text-passage[size='default'] {
 
   h1 {
     @include technology.cre8-typography-display-small();
-    margin-bottom: calc(8px * 1.5);
+    margin-bottom: size(1.5);
   }
 
   /**
@@ -24,7 +24,7 @@ cre8-text-passage[size='default'] {
   */
   h2 {
     @include technology.cre8-typography-headline-default();
-    margin-bottom: calc(8px * 1.5);
+    margin-bottom: size(1.5);
   }
 
   /**
@@ -32,7 +32,7 @@ cre8-text-passage[size='default'] {
   */
   h3 {
     @include technology.cre8-typography-headline-small();
-    margin-bottom: calc(8px * 1.5);
+    margin-bottom: size(1.5);
   }
 
   /**
@@ -40,7 +40,7 @@ cre8-text-passage[size='default'] {
   */
   h4 {
     @include technology.cre8-typography-title-large();
-    margin-bottom: calc(8px * 1.5);
+    margin-bottom: size(1.5);
   }
 
   /**
@@ -48,7 +48,7 @@ cre8-text-passage[size='default'] {
   */
   h5 {
     @include technology.cre8-typography-meta-large();
-    margin-bottom: calc(8px * 1.5);
+    margin-bottom: size(1.5);
   }
 
   /**
@@ -63,7 +63,7 @@ cre8-text-passage[size='default'] {
   * Unordered list within text passage
   */
   ul {
-    margin-left: calc(8px * 2.5);
+    margin-left: size(2.5);
     padding-left: 0;
   }
 
@@ -71,7 +71,7 @@ cre8-text-passage[size='default'] {
   * Ordered list within text passage
   */
   ol {
-    margin-left: calc(8px * 2.25);
+    margin-left: size(2.25);
     padding-left: 0;
   }
 
@@ -93,7 +93,7 @@ cre8-text-passage[size='default'] {
   */
   p {
     margin-top: 0;
-    margin-bottom: calc(8px * 3);
+    margin-bottom: size(3);
   }
 
   /**
@@ -103,9 +103,9 @@ cre8-text-passage[size='default'] {
     font-style: italic;
     border-left: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-content-subtle);
     color: var(--cre8-color-content-subtle);
-    padding-left: calc(8px * 2);
+    padding-left: size(2);
     margin-left: 0;
-    margin-bottom: calc(8px * 2);
+    margin-bottom: size(2);
   }
 
   /**
@@ -135,9 +135,9 @@ cre8-text-passage[inverted] {
     color: var(--cre8-color-content-knockout);
     font-style: italic;
     border-left: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-knockout);
-    padding-left: calc(8px * 2);
+    padding-left: size(2);
     margin-left: 0;
-    margin-bottom: calc(8px * 2);
+    margin-bottom: size(2);
   }
 }
 `;

@@ -34,7 +34,7 @@
       height: 100%;
       inset-block-start: 0;
       inset-inline-start: 0;
-      width: calc(8px * 6);
+      width: size(6);
       z-index: 1;
     }
   }
@@ -56,7 +56,7 @@
       height: 100%;
       inset-block-start: 0;
       inset-inline-end: 0;
-      width: calc(8px * 6);
+      width: size(6);
       z-index: 1;
     }
   }
@@ -90,7 +90,7 @@
  * 1) The div that contains the tab panel content
  */
 .cre8-c-tabs__body {
-  padding-block-start: calc(8px * 2);
+  padding-block-start: size(2);
 
   /**
    * Full Width Variant - border default bar across tabs

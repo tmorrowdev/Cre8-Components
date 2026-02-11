@@ -12,8 +12,8 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  */
 .cre8-c-divider {
   background-color: var(--cre8-color-border-default);
-  margin-top: calc(8px * 1);
-  margin-bottom: calc(8px * 1);
+  margin-top: size(1);
+  margin-bottom: size(1);
 }
 
 .cre8-c-divider--horizontal {
@@ -26,8 +26,8 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   height: 100%;
   margin-top: 0;
   margin-bottom: 0;
-  margin-left: calc(8px * 1);
-  margin-right: calc(8px * 1);
+  margin-left: size(1);
+  margin-right: size(1);
 }
 
 /**
