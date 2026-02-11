@@ -23,7 +23,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  */
 .cre8-c-radio-field__legend {
   @include cre8-typography-label-small;
-  margin-bottom: calc(8px * 1);
+  margin-bottom: size(1);
 }
 
 /** 

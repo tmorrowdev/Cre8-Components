@@ -51,10 +51,11 @@
       "types": "./lib/index.d.ts"
     },
     "./cdn": {
-      "import": "./lib/cdn.esm.js",
-      "default": "./lib/cdn.min.js"
+      "import": "./cdn/cre8-wc.esm.js",
+      "default": "./cdn/cre8-wc.min.js"
     },
-    "./cdn/cre8-wc.esm.js": "./lib/cdn.esm.js",
+    "./cdn/cre8-wc.esm.js": "./cdn/cre8-wc.esm.js",
+    "./cdn/cre8-wc.min.js": "./cdn/cre8-wc.min.js",
     "./lib/components/*": {
       "import": "./lib/components/*",
       "types": "./lib/components/*",

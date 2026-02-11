@@ -11,11 +11,11 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   @include cre8-typography-body-default();
   background: var(--cre8-color-bg-brand-xstrong);
   color: var(--cre8-color-content-knockout);
-  padding-top: calc(8px * 5);
-  padding-bottom: calc(8px * 6);
+  padding-top: size(5);
+  padding-bottom: size(6);
 
   @media all and (min-width:$cre8-breakpoint-lg) {
-    padding-top: calc(8px * 6.875);
+    padding-top: size(6.875);
   }
 }
 `;

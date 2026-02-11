@@ -39,7 +39,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   white-space: nowrap;
   width: 100%;
   margin: 0;
-  padding: calc(8px * 2) calc(8px * 4);
+  padding: size(2) size(4);
   color: var(--cre8-primary-nav-link-color, var(--cre8-color-header-menu-content-default));
   text-decoration: none;
   transition: all var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
@@ -70,11 +70,11 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   * Medium screen primary navigation
   */
   @media all and (min-width:$cre8-breakpoint-lg) {
-    padding: calc(8px * 2) calc(8px * 1);
+    padding: size(2) size(1);
   }
 
   @media all and (min-width:$cre8-breakpoint-lg) {
-    padding: calc(8px * 2);
+    padding: size(2);
     border-bottom: none;
   }
 }
@@ -83,8 +83,8 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  * Icon within primary navigation item
  */
 cre8-icon-legacy {
-  --cre8-icon-height: #{calc(8px * 1.5)}; /* 1 */
-  --cre8-icon-width: #{calc(8px * 1.5)}; /* 1 */
+  --cre8-icon-height: #{size(1.5)}; /* 1 */
+  --cre8-icon-width: #{size(1.5)}; /* 1 */
   margin-left: auto;
   transition: transform var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
 
@@ -97,7 +97,7 @@ cre8-icon-legacy {
   }
 
   @media all and (min-width:$cre8-breakpoint-lg) {
-    margin-left: calc(8px * 1);
+    margin-left: size(1);
   }
 }
 
@@ -133,8 +133,8 @@ cre8-icon-legacy {
     display: block;
     visibility: visible; /* 1 */
     height: auto; /* 1 */
-    padding-top: calc(8px * 4);
-    padding-bottom: calc(8px * 4);
+    padding-top: size(4);
+    padding-bottom: size(4);
     background: var(--cre8-color-bg-default);
     opacity: 1; /* 1 */
     z-index: 1;
@@ -153,18 +153,18 @@ cre8-icon-legacy {
   */
   .cre8-c-primary-nav__item--megamenu & {
     max-width: 70rem; /* 1 */
-    padding-right: calc(8px * 4);
-    padding-left: calc(8px * 4);
+    padding-right: size(4);
+    padding-left: size(4);
     margin: 0 auto; /* 1 */
   }
 }
 
 .cre8-c-primary-nav__item-before {
-  margin-right: calc(8px * 1);
+  margin-right: size(1);
 }
 
 .cre8-c-primary-nav__item-after {
-  margin-left: calc(8px * 1);
+  margin-left: size(1);
 }
 `;
 export default styles;

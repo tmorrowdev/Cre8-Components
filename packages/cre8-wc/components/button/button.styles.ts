@@ -763,8 +763,8 @@ color: var(--cre8-color-button-primary-inverse-content);
 
 .cre8-c-button--sm cre8-icon {
   svg {
-    height: calc(8px * 1.75);
-    width: calc(8px * 1.75);
+    height: size(1.75);
+    width: size(1.75);
   }
 }
 
@@ -778,8 +778,8 @@ color: var(--cre8-color-button-primary-inverse-content);
 
 .cre8-c-button--lg cre8-icon {
   svg {
-    height: calc(8px * 2.25);
-    width: calc(8px * 2.25);
+    height: size(2.25);
+    width: size(2.25);
   }
 }
 
@@ -791,22 +791,22 @@ color: var(--cre8-color-button-primary-inverse-content);
  */
 
 cre8-icon-legacy + .cre8-c-button__text:not(.cre8-u-is-vishidden) {
-  margin-left: calc(8px * 1);
+  margin-left: size(1);
 }
 
 cre8-icon + .cre8-c-button__text:not(.cre8-u-is-vishidden) {
-  margin-left: calc(8px * 1);
+  margin-left: size(1);
 }
 
 /**
    * Button icon directly after button text
    */
 .cre8-c-button__text:not(.cre8-u-is-vishidden) + cre8-icon-legacy {
-  margin-left: calc(8px * 1);
+  margin-left: size(1);
 }
 
 .cre8-c-button__text:not(.cre8-u-is-vishidden) + cre8-icon {
-  margin-left: calc(8px * 1);
+  margin-left: size(1);
 }
 /**
    * Button icon only
@@ -862,7 +862,7 @@ cre8-icon-legacy.cre8-u-is-vishidden {
 }
 
 span.cre8-c-button__icon {
-  margin-left: calc(8px * 1);
+  margin-left: size(1);
   max-width: fit-content;
   min-width: 0px;
   width: auto;
@@ -877,8 +877,8 @@ cre8-icon {
   justify-content: center;
 
   svg {
-    height: calc(8px * 2);
-    width: calc(8px * 2);
+    height: size(2);
+    width: size(2);
   }
 }
 `;

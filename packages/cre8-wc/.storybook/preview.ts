@@ -16,6 +16,7 @@ import prisma from '../design-tokens/brands/prisma/tokens_prisma.module.ts';
 import starbucks from '../design-tokens/brands/starbucks/tokens_starbucks.module.ts';
 import bolt from '../design-tokens/brands/bolt/tokens_bolt.theme.ts';
 import netflix from '../design-tokens/tokens_netflix.theme.ts';
+import a2ui from '../design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.module.ts';
 
 // Prism styles (Storybook only for docs)
 import prismcss from './components/system-docs/prism.module.ts';
@@ -48,7 +49,8 @@ const themeStyles = [
   { name: 'Prisma', styles: prisma },
   { name: 'Starbucks', styles: starbucks },
   { name: 'Bolt', styles: bolt },
-  { name: 'Netflix', styles: netflix }
+  { name: 'Netflix', styles: netflix },
+  { name: 'A2UI', styles: a2ui }
 ];
 
 // Inject all theme styles with unique IDs
@@ -79,7 +81,8 @@ const preview: Preview = {
           { value: 'Prisma', title: 'Prisma' },
           { value: 'Starbucks', title: 'Starbucks' },
           { value: 'Bolt', title: 'Bolt' },
-          { value: 'Netflix', title: 'Netflix' }
+          { value: 'Netflix', title: 'Netflix' },
+          { value: 'A2UI', title: 'A2UI' }
         ],
         dynamicTitle: true,
       },

@@ -27,22 +27,22 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   visibility: hidden;
   position: absolute;
   word-wrap: break-word;
-  inset-block-start: calc(100% + #{calc(8px * 1.5)});
+  inset-block-start: calc(100% + #{size(1.5)});
   inset-block-end: auto;
   inset-inline-start: 50%;
   inset-inline-end: auto;
   transform: translateX(var(--rtlTranslateX, -50%));
   display: flex;
   flex-direction: column;
-  gap: calc(8px * 1);
+  gap: size(1);
   width: max-content;
-  max-width: calc(8px * 35);
+  max-width: size(35);
   z-index: 400;
   color: var(--cre8-color-content-knockout);
   background-color: var(--cre8-color-bg-strong);
   border: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
   border-radius: var(--cre8-border-radius-default);
-  padding: calc(8px * 1);
+  padding: size(1);
 
   /**
    * Active state for tooltip panel
@@ -58,7 +58,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
    */
   .cre8-c-tooltip--top & {
     inset-block-start: auto;
-    inset-block-end: calc(100% + #{calc(8px * 1.5)});
+    inset-block-end: calc(100% + #{size(1.5)});
     inset-inline-start: 50%;
     inset-inline-end: auto;
     transform: translateX(var(--rtlTranslateX, -50%));
@@ -71,7 +71,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
     inset-block-start: 50%;
     inset-block-end: auto;
     inset-inline-start: auto;
-    inset-inline-end: calc(100% + #{calc(8px * 1.5)});
+    inset-inline-end: calc(100% + #{size(1.5)});
     transform: translateY(-50%);
   }
 
@@ -81,7 +81,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   .cre8-c-tooltip--right & {
     inset-block-start: 50%;
     inset-block-end: auto;
-    inset-inline-start: calc(100% + #{calc(8px * 1.5)});
+    inset-inline-start: calc(100% + #{size(1.5)});
     inset-inline-end: auto;
     transform: translateY(-50%);
   }
@@ -101,14 +101,14 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 .cre8-c-tooltip__panel::before {
   content: '';
   display: block;
-  width: calc(8px * 1.5);
-  height: calc(8px * 1.5);
+  width: size(1.5);
+  height: size(1.5);
   position: absolute;
   margin: auto;
   background-color: var(--cre8-color-bg-strong);
   border-block-start: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
   border-inline-start: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
-  inset-block-start: calc((var(--cre8-border-width-default) + #{calc(8px * 0.75)}) * -1);
+  inset-block-start: calc((var(--cre8-border-width-default) + #{size(0.75)}) * -1);
   inset-inline-start: 50%;
   transform: translateX(var(--rtlTranslateX, -50%)) rotate(45deg);
 
@@ -117,7 +117,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
    */
   .cre8-c-tooltip--top & {
     inset-block-start: auto;
-    inset-block-end: calc((var(--cre8-border-width-default) + #{calc(8px * 0.75)}) * -1);
+    inset-block-end: calc((var(--cre8-border-width-default) + #{size(0.75)}) * -1);
     border-block-start: none;
     border-inline-start: none;
     border-block-end: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
@@ -131,7 +131,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
     inset-block-start: 50%;
     inset-block-end: auto;
     inset-inline-start: auto;
-    inset-inline-end: calc((var(--cre8-border-width-default) + #{calc(8px * 0.75)}) * -1);
+    inset-inline-end: calc((var(--cre8-border-width-default) + #{size(0.75)}) * -1);
     border-block-start: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
     border-inline-start: none;
     border-block-end: none;
@@ -145,7 +145,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   .cre8-c-tooltip--right & {
     inset-block-start: 50%;
     inset-block-end: auto;
-    inset-inline-start: calc((var(--cre8-border-width-default) + #{calc(8px * 0.75)}) * -1);
+    inset-inline-start: calc((var(--cre8-border-width-default) + #{size(0.75)}) * -1);
     inset-inline-end: auto;
     border-block-start: none;
     border-inline-start: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
@@ -168,7 +168,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  */
 .cre8-c-tooltip__footer {
   display: flex;
-  gap: calc(8px * 2);
+  gap: size(2);
   justify-content: flex-end;
   flex-grow: 1;
 }
@@ -187,8 +187,8 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 
 svg {
   display: flex;
-  height: calc(8px * 2);
-  width: calc(8px * 2);
+  height: size(2);
+  width: size(2);
 }
 `;
 export default styles;

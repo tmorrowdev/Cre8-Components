@@ -115,7 +115,7 @@ describe('tabs', () => {
         expect(el.isStart).toBeTruthy();
         expect(el.isEnd).toBeFalsy();
 
-        el.handleRecalc(8px * );
+        el.handleResize();
         expect(el.isStart).toBeTruthy();
         expect(el.isEnd).toBeFalsy();
 

@@ -19,8 +19,8 @@ const styles = css`
   display: flex;
   position: relative;
   align-items: center;
-  margin-bottom: calc(8px * 1);
-  min-height: calc(8px * 3);
+  margin-bottom: size(1);
+  min-height: size(3);
 
   /** 
   * Checkbox field item within last cre8-checkbox-field-item wrapper in a fieldset
@@ -40,8 +40,8 @@ const styles = css`
   position: absolute;
   top: 0;
   left: 0;
-  height: calc(8px * 3);
-  min-width: calc(8px * 3);
+  height: size(3);
+  min-width: size(3);
   margin: 0;
   z-index: 1;
 
@@ -61,8 +61,8 @@ const styles = css`
   position: absolute;
   top: 0;
   left: 0;
-  height: calc(8px * 3);
-  width: calc(8px * 3);
+  height: size(3);
+  width: size(3);
   cursor: pointer;
   align-items: center;
   justify-content: center;
@@ -155,7 +155,7 @@ const styles = css`
  * Checkbox field item input 
  */
 .cre8-c-checkbox-field-item__label {
-  margin-left: calc(8px * 4);
+  margin-left: size(4);
   @include cre8-typography-label-small;
 }
 

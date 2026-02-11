@@ -10,14 +10,14 @@
   display: flex;
   flex-direction: column;
   padding: 0;
-  margin-top: calc(8px * -2);
+  margin-top: size(-2);
   list-style: none;
 
   /**
   * Slotted link list item
   */
   ::slotted(cre8-link-list-item) {
-    margin-top: calc(8px * 2);
+    margin-top: size(2);
   }
 }
 
@@ -52,13 +52,13 @@
  * 1) Removes spacing between link list items
  */
 .cre8-c-link-list--condensed {
-  margin-top: calc(8px * -1.25);
+  margin-top: size(-1.25);
 
   /**
   * Slotted link list item within condensed link list
   */
   ::slotted(cre8-link-list-item) {
-    margin-top: calc(8px * 1.25);
+    margin-top: size(1.25);
   }
 }
 
@@ -76,14 +76,14 @@
 .cre8-c-link-list--horizontal {
   flex-direction: row;
   flex-wrap: wrap;
-  margin: calc(8px * -1) 0 0 calc(8px * -2);
+  margin: size(-1) 0 0 size(-2);
 
   /**
   * Slotted link list item within horizontal link list
   */
   ::slotted(cre8-link-list-item) {
-    margin-top: calc(8px * 1);
-    margin-left: calc(8px * 2);
+    margin-top: size(1);
+    margin-left: size(2);
   }
 }
 
@@ -95,14 +95,14 @@
   @media all and (max-width: component.$cre8-breakpoint-md) {
     flex-direction: row;
     flex-wrap: wrap;
-    margin: calc(8px * -1) 0 0 calc(8px * -2);
+    margin: size(-1) 0 0 size(-2);
 
     /**
     * Slotted link list item within responsive link list
     */
     ::slotted(cre8-link-list-item) {
-      margin-top: calc(8px * 1);
-      margin-left: calc(8px * 2);
+      margin-top: size(1);
+      margin-left: size(2);
     }
   }
 }

@@ -12,7 +12,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  min-height: calc(8px * 4.5);
+  min-height: size(4.5);
 }
 
 .cre8-c-percent-bar__button {
