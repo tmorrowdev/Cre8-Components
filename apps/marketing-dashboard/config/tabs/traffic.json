@@ -1,0 +1,198 @@
+{
+  "component": "div",
+  "props": { "class": "tab-content" },
+  "children": [
+    {
+      "component": "div",
+      "props": { "class": "kpi-grid kpi-grid--4" },
+      "children": [
+        {
+          "component": "div",
+          "props": { "class": "kpi-card" },
+          "children": [
+            { "component": "span", "props": { "class": "kpi-label" }, "content": "Total Visitors" },
+            { "component": "div", "props": { "class": "kpi-value" }, "content": "1.2M" },
+            { "component": "div", "props": { "class": "kpi-change kpi-change--up" }, "content": "+14.2% vs last month" }
+          ]
+        },
+        {
+          "component": "div",
+          "props": { "class": "kpi-card" },
+          "children": [
+            { "component": "span", "props": { "class": "kpi-label" }, "content": "Page Views" },
+            { "component": "div", "props": { "class": "kpi-value" }, "content": "4.8M" },
+            { "component": "div", "props": { "class": "kpi-change kpi-change--up" }, "content": "+18.5% vs last month" }
+          ]
+        },
+        {
+          "component": "div",
+          "props": { "class": "kpi-card" },
+          "children": [
+            { "component": "span", "props": { "class": "kpi-label" }, "content": "Bounce Rate" },
+            { "component": "div", "props": { "class": "kpi-value" }, "content": "38.2%" },
+            { "component": "div", "props": { "class": "kpi-change kpi-change--down" }, "content": "-3.1% vs last month" }
+          ]
+        },
+        {
+          "component": "div",
+          "props": { "class": "kpi-card" },
+          "children": [
+            { "component": "span", "props": { "class": "kpi-label" }, "content": "Avg. Session" },
+            { "component": "div", "props": { "class": "kpi-value" }, "content": "4:32" },
+            { "component": "div", "props": { "class": "kpi-change kpi-change--up" }, "content": "+0:28 vs last month" }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "div",
+      "props": { "class": "chart-card chart-card--full" },
+      "children": [
+        { "component": "h3", "props": { "class": "card-title" }, "content": "Daily Visitors (Last 30 Days)" },
+        {
+          "component": "cre8-chart",
+          "props": {
+            "type": "line",
+            "height": 300,
+            "data": {
+              "labels": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"],
+              "datasets": [{ "label": "Visitors", "data": [38500, 42100, 45200, 41800, 39200, 28500, 26800, 40200, 43500, 47200, 44800, 42100, 29800, 27500, 41500, 44800, 48500, 46200, 43800, 31200, 28900, 42800, 46500, 52100, 49800, 45200, 32500, 30100, 44200, 48500], "fill": true }]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "component": "div",
+      "props": { "class": "charts-row charts-row--3" },
+      "children": [
+        {
+          "component": "div",
+          "props": { "class": "chart-card" },
+          "children": [
+            { "component": "h3", "props": { "class": "card-title" }, "content": "Traffic Sources" },
+            {
+              "component": "cre8-chart",
+              "props": {
+                "type": "doughnut",
+                "height": 280,
+                "data": {
+                  "labels": ["Organic Search", "Direct", "Social", "Referral", "Email", "Paid Search"],
+                  "datasets": [{ "data": [42, 24, 15, 10, 6, 3] }]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "component": "div",
+          "props": { "class": "chart-card" },
+          "children": [
+            { "component": "h3", "props": { "class": "card-title" }, "content": "Device Breakdown" },
+            {
+              "component": "cre8-chart",
+              "props": {
+                "type": "pie",
+                "height": 280,
+                "data": {
+                  "labels": ["Mobile", "Desktop", "Tablet"],
+                  "datasets": [{ "data": [58, 36, 6] }]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "component": "div",
+          "props": { "class": "chart-card" },
+          "children": [
+            { "component": "h3", "props": { "class": "card-title" }, "content": "Browser Usage" },
+            {
+              "component": "cre8-chart",
+              "props": {
+                "type": "bar",
+                "height": 280,
+                "data": {
+                  "labels": ["Chrome", "Safari", "Firefox", "Edge", "Other"],
+                  "datasets": [{ "label": "Sessions %", "data": [52, 28, 10, 7, 3] }]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "div",
+      "props": { "class": "table-card" },
+      "children": [
+        { "component": "h3", "props": { "class": "card-title" }, "content": "Top Pages" },
+        {
+          "component": "table",
+          "props": { "class": "data-table" },
+          "children": [
+            {
+              "component": "thead",
+              "children": [{
+                "component": "tr",
+                "children": [
+                  { "component": "th", "content": "Page" },
+                  { "component": "th", "content": "Views" },
+                  { "component": "th", "content": "Unique Views" },
+                  { "component": "th", "content": "Avg. Time" },
+                  { "component": "th", "content": "Bounce Rate" },
+                  { "component": "th", "content": "Exit Rate" }
+                ]
+              }]
+            },
+            {
+              "component": "tbody",
+              "children": [
+                { "component": "tr", "children": [
+                  { "component": "td", "content": "/home" },
+                  { "component": "td", "content": "485,200" },
+                  { "component": "td", "content": "320,100" },
+                  { "component": "td", "content": "2:45" },
+                  { "component": "td", "content": "42%" },
+                  { "component": "td", "content": "28%" }
+                ]},
+                { "component": "tr", "children": [
+                  { "component": "td", "content": "/products" },
+                  { "component": "td", "content": "328,500" },
+                  { "component": "td", "content": "245,800" },
+                  { "component": "td", "content": "4:12" },
+                  { "component": "td", "content": "28%" },
+                  { "component": "td", "content": "32%" }
+                ]},
+                { "component": "tr", "children": [
+                  { "component": "td", "content": "/pricing" },
+                  { "component": "td", "content": "215,400" },
+                  { "component": "td", "content": "178,200" },
+                  { "component": "td", "content": "3:28" },
+                  { "component": "td", "content": "35%" },
+                  { "component": "td", "content": "45%" }
+                ]},
+                { "component": "tr", "children": [
+                  { "component": "td", "content": "/blog" },
+                  { "component": "td", "content": "186,200" },
+                  { "component": "td", "content": "142,500" },
+                  { "component": "td", "content": "5:45" },
+                  { "component": "td", "content": "52%" },
+                  { "component": "td", "content": "48%" }
+                ]},
+                { "component": "tr", "children": [
+                  { "component": "td", "content": "/contact" },
+                  { "component": "td", "content": "98,500" },
+                  { "component": "td", "content": "82,100" },
+                  { "component": "td", "content": "1:58" },
+                  { "component": "td", "content": "25%" },
+                  { "component": "td", "content": "62%" }
+                ]}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

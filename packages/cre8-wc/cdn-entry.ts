@@ -105,7 +105,7 @@ import { Cre8UtilityNav } from './components/utility-nav/utility-nav';
 import { Cre8UtilityNavItem } from './components/utility-nav-item/utility-nav-item';
 
 // Export version info
-export const version = '1.0.10';
+export const version = '1.0.26';
 
 // Re-export all components for programmatic access
 export {

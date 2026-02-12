@@ -1,8 +1,8 @@
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import { Cre8Dropdown, Cre8DropdownItem } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 import React from 'react';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 
 export default {
   title: 'IN DEVELOPMENT/DropdownItem',

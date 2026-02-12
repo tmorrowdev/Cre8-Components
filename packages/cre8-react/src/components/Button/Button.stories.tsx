@@ -1,9 +1,9 @@
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import { Cre8Button } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
-import { action } from '@storybook/addon-actions'
+import { action } from 'storybook/actions'
 import React from 'react';
-import svgCaretUp from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret_Up.svg';
+import svgCaretUp from '@tmorrow/cre8-wc/icons/System/Regular/Caret_Up.svg';
 import type { JSX } from 'react/jsx-runtime';
 
 export default {
@@ -58,8 +58,10 @@ export const PrimaryInverse: StoryObj<typeof Cre8Button> = {
     variant: 'primary',
     inverse: true
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -70,8 +72,10 @@ export const PrimaryInverseDisabled: StoryObj<typeof Cre8Button> = {
     variant: 'primary',
     inverse: true
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -82,8 +86,10 @@ export const PrimaryInverseLoading: StoryObj<typeof Cre8Button> = {
     variant: 'primary',
     inverse: true
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -94,8 +100,10 @@ export const PrimaryInverseSmall: StoryObj<typeof Cre8Button> = {
     inverse: true,
     size: 'sm'
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -109,8 +117,10 @@ export const PrimaryInverseIconOnly: StoryObj<typeof Cre8Button> = {
     variant: 'primary',
     inverse: true
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -121,8 +131,10 @@ export const PrimaryInverseFullWidth: StoryObj<typeof Cre8Button> = {
     variant: 'primary',
     inverse: true
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -193,8 +205,10 @@ export const SecondaryNeutralInverse: StoryObj<typeof Cre8Button> = {
     neutral: true,
     inverse: true,
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -206,8 +220,10 @@ export const SecondaryNeutralInverseDisabled: StoryObj<typeof Cre8Button> = {
     neutral: true,
     inverse: true,
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -219,8 +235,10 @@ export const SecondaryNeutralInverseloading: StoryObj<typeof Cre8Button> = {
     neutral: true,
     inverse: true,
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -230,8 +248,10 @@ export const SecondaryInverse: StoryObj<typeof Cre8Button> = {
     variant: 'secondary',
     inverse: true
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -242,8 +262,10 @@ export const SecondaryInverseDisabled: StoryObj<typeof Cre8Button> = {
     variant: 'secondary',
     inverse: true
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -254,8 +276,10 @@ export const SecondaryInverseLoading: StoryObj<typeof Cre8Button> = {
     variant: 'secondary',
     inverse: true
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -266,8 +290,10 @@ export const SecondaryInverseSmall: StoryObj<typeof Cre8Button> = {
     inverse: true,
     size: 'sm'
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -281,8 +307,10 @@ export const SecondaryInverseIconOnly: StoryObj<typeof Cre8Button> = {
     variant: 'secondary',
     inverse: true
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -293,8 +321,10 @@ export const SecondaryInverseFullWidth: StoryObj<typeof Cre8Button> = {
     variant: 'secondary',
     inverse: true
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -345,8 +375,10 @@ export const TertiaryInverse: StoryObj<typeof Cre8Button> = {
     variant: 'tertiary',
     inverse: true
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -357,8 +389,10 @@ export const TertiaryInverseNeutral: StoryObj<typeof Cre8Button> = {
     neutral: true,
     inverse: true
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -369,8 +403,10 @@ export const TertiaryInverseDisabled: StoryObj<typeof Cre8Button> = {
     variant: 'tertiary',
     inverse: true
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -381,8 +417,10 @@ export const TertiaryInverseLoading: StoryObj<typeof Cre8Button> = {
     variant: 'tertiary',
     inverse: true
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -393,8 +431,10 @@ export const TertiaryInverseSmall: StoryObj<typeof Cre8Button> = {
     inverse: true,
     size: 'sm'
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -408,8 +448,10 @@ export const TertiaryInverseIconOnly: StoryObj<typeof Cre8Button> = {
     variant: 'tertiary',
     inverse: true
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -420,8 +462,10 @@ export const TertiaryInverseFullWidth: StoryObj<typeof Cre8Button> = {
     variant: 'tertiary',
     inverse: true
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -492,8 +536,10 @@ export const IconOnlySecondaryNeutralInverse: StoryObj<typeof Cre8Button> = {
     neutral: true,
     inverse: true,
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -525,8 +571,10 @@ export const IconOnlyNeutralInverseTertiary: StoryObj<typeof Cre8Button> = {
     neutral: true,
     inverse: true
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 

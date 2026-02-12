@@ -1,5 +1,5 @@
 import React from 'react';
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import { Cre8FieldNote } from '../..';
 import { Cre8TextLink } from '../TextLink/TextLink';
 import { excludeRegexArray } from '../../../.storybook/preview';

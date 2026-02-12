@@ -1,0 +1,1534 @@
+{
+  "version": "1.0.27",
+  "library": "@tmorrow/cre8-wc",
+  "tagPrefix": "cre8",
+  "description": "A library of presentational UI web components built with Lit Element and TypeScript for consumption by web applications.",
+  "framework": "Lit 3.3.1",
+  "components": [
+    {
+      "name": "cre8-button",
+      "category": "Actions",
+      "description": "Primary interactive element for user actions. Supports primary, secondary, and tertiary variants with extensive customization options.",
+      "attributes": {
+        "text": { "type": "string", "description": "Button text label" },
+        "variant": { "type": "string", "values": ["primary", "secondary", "tertiary"], "default": "primary", "description": "Visual priority level" },
+        "size": { "type": "string", "values": ["sm", "md", "lg"], "default": "md" },
+        "disabled": { "type": "boolean", "default": false },
+        "neutral": { "type": "boolean", "default": false, "description": "Neutral style variant" },
+        "inverse": { "type": "boolean", "default": false, "description": "Inverse colors for dark backgrounds" },
+        "full-width": { "type": "boolean", "default": false },
+        "loading": { "type": "boolean", "default": false },
+        "loading-complete": { "type": "boolean", "default": false, "description": "Indicate loading completion" },
+        "hide-text": { "type": "boolean", "default": false, "description": "Visually hide text (icon-only)" },
+        "icon-position": { "type": "string", "values": ["before", "after"], "default": "before" },
+        "icon-rotate-degree": { "type": "number", "description": "Icon rotation in degrees" },
+        "icon-flip-direction": { "type": "string", "description": "Icon flip direction" },
+        "href": { "type": "string", "description": "Makes button an anchor element" },
+        "target": { "type": "string", "values": ["_blank", "_self", "_parent", "_top"] },
+        "rel": { "type": "string", "description": "Rel attribute for links" },
+        "type": { "type": "string", "values": ["button", "submit", "reset"], "default": "button" },
+        "split-button-type": { "type": "string", "values": ["text", "caret"], "description": "Split button style" },
+        "button-aria-expanded": { "type": "boolean", "description": "ARIA expanded state" },
+        "aria-live": { "type": "string", "values": ["polite", "assertive"], "description": "ARIA live region" }
+      },
+      "properties": {
+        "svg": { "type": "string", "description": "SVG icon as raw string" }
+      },
+      "slots": {
+        "before": { "description": "Content before button text" },
+        "after": { "description": "Content after button text" }
+      },
+      "events": {
+        "click": { "detail": {}, "description": "Native click event" }
+      },
+      "cssProperties": {},
+      "parts": ["button"],
+      "examples": [
+        { "description": "Primary button", "html": "<cre8-button text=\"Submit\" variant=\"primary\"></cre8-button>" },
+        { "description": "Secondary button", "html": "<cre8-button text=\"Cancel\" variant=\"secondary\"></cre8-button>" },
+        { "description": "Loading state", "html": "<cre8-button text=\"Saving...\" loading></cre8-button>" },
+        { "description": "Full width button", "html": "<cre8-button text=\"Continue\" full-width></cre8-button>" }
+      ]
+    },
+    {
+      "name": "cre8-danger-button",
+      "category": "Actions",
+      "description": "Button for destructive actions like delete or remove.",
+      "attributes": {
+        "text": { "type": "string", "description": "Button text" },
+        "disabled": { "type": "boolean", "default": false }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Button content" }
+      },
+      "events": {
+        "click": { "detail": {}, "description": "Native click event" }
+      },
+      "cssProperties": {},
+      "examples": [
+        { "description": "Delete button", "html": "<cre8-danger-button text=\"Delete\"></cre8-danger-button>" }
+      ]
+    },
+    {
+      "name": "cre8-button-group",
+      "category": "Actions",
+      "description": "Container for grouping related buttons.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Button elements" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-split-button",
+      "category": "Actions",
+      "description": "Split button with primary action and dropdown menu.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Split button content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-field",
+      "category": "Forms",
+      "description": "Text input field with label and validation support. Extends Cre8FormElement for form association.",
+      "attributes": {
+        "label": { "type": "string", "required": true },
+        "value": { "type": "string" },
+        "type": { "type": "string", "values": ["text", "email", "password", "tel", "url", "number"], "default": "text" },
+        "placeholder": { "type": "string" },
+        "disabled": { "type": "boolean", "default": false },
+        "required": { "type": "boolean", "default": false },
+        "readonly": { "type": "boolean", "default": false },
+        "is-error": { "type": "boolean", "default": false },
+        "is-success": { "type": "boolean", "default": false },
+        "name": { "type": "string", "description": "Form field name" }
+      },
+      "properties": {},
+      "slots": {
+        "prefix": { "description": "Content before input" },
+        "suffix": { "description": "Content after input" }
+      },
+      "events": {
+        "input": { "detail": { "value": "string" }, "description": "Fired on input" },
+        "change": { "detail": { "value": "string" }, "description": "Fired on change" }
+      },
+      "cssProperties": {},
+      "examples": [
+        { "description": "Email input", "html": "<cre8-field label=\"Email\" type=\"email\" placeholder=\"Enter email\"></cre8-field>" },
+        { "description": "With error", "html": "<cre8-field label=\"Password\" type=\"password\" is-error></cre8-field>" }
+      ]
+    },
+    {
+      "name": "cre8-field-note",
+      "category": "Forms",
+      "description": "Helper, error, or success text for form fields.",
+      "attributes": {
+        "icon-name": { "type": "string", "description": "Icon name to display" },
+        "is-success": { "type": "boolean", "default": false },
+        "is-error": { "type": "boolean", "default": false },
+        "knockout": { "type": "boolean", "default": false }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Note text content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-select",
+      "category": "Forms",
+      "description": "Native select dropdown with label and validation support. Extends Cre8FormElement.",
+      "attributes": {
+        "label": { "type": "string" },
+        "value": { "type": "string" },
+        "disabled": { "type": "boolean", "default": false },
+        "required": { "type": "boolean", "default": false },
+        "field-id": { "type": "string", "description": "Unique field ID" },
+        "field-note": { "type": "string", "description": "Helper text" },
+        "aria-described-by": { "type": "string" },
+        "is-error": { "type": "boolean", "default": false },
+        "error-note": { "type": "string", "description": "Error message" },
+        "is-success": { "type": "boolean", "default": false },
+        "success-note": { "type": "string", "description": "Success message" },
+        "name": { "type": "string", "description": "Form field name" }
+      },
+      "properties": {
+        "items": { "type": "Array<Cre8SelectOption | Cre8SelectOptionGroup>", "description": "Options array" }
+      },
+      "slots": {
+        "fieldNote": { "description": "Custom field note content" }
+      },
+      "events": {
+        "change": { "detail": { "name": "string", "value": "string" }, "description": "Fired when selection changes" }
+      },
+      "cssProperties": {},
+      "interfaces": {
+        "Cre8SelectOption": "{ label: string, value: string }",
+        "Cre8SelectOptionGroup": "{ optGroupLabel: string, options: Cre8SelectOption[] }"
+      },
+      "examples": [
+        { "description": "Basic select", "html": "<cre8-select label=\"Country\"></cre8-select>" }
+      ]
+    },
+    {
+      "name": "cre8-multi-select",
+      "category": "Forms",
+      "description": "Multi-select dropdown for choosing multiple options.",
+      "attributes": {
+        "label": { "type": "string" },
+        "disabled": { "type": "boolean", "default": false },
+        "placeholder": { "type": "string" }
+      },
+      "properties": {
+        "value": { "type": "string[]", "description": "Array of selected values" },
+        "options": { "type": "Array<{value: string, label: string}>", "description": "Options array" }
+      },
+      "slots": {
+        "default": { "description": "Option elements" }
+      },
+      "events": {
+        "change": { "detail": { "value": "string[]" }, "description": "Fired when selection changes" }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-checkbox-field",
+      "category": "Forms",
+      "description": "Group container for checkbox items.",
+      "attributes": {
+        "label": { "type": "string", "description": "Group legend label" },
+        "field-note": { "type": "string", "description": "Helper text" },
+        "aria-described-by": { "type": "string" },
+        "field-note-icon-name": { "type": "string" },
+        "field-note-knockout": { "type": "boolean", "default": false },
+        "field-note-is-success": { "type": "boolean", "default": false },
+        "field-note-is-error": { "type": "boolean", "default": false }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "cre8-checkbox-field-item elements" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-checkbox-field-item",
+      "category": "Forms",
+      "description": "Individual checkbox item within a CheckboxField.",
+      "attributes": {
+        "label": { "type": "string", "required": true },
+        "checked": { "type": "boolean", "default": false },
+        "disabled": { "type": "boolean", "default": false },
+        "value": { "type": "string" },
+        "indeterminate": { "type": "boolean", "default": false }
+      },
+      "properties": {},
+      "slots": {},
+      "events": {
+        "change": { "detail": { "checked": "boolean", "value": "string" }, "description": "Fired when checked state changes" }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-radio-field",
+      "category": "Forms",
+      "description": "Group container for radio button items.",
+      "attributes": {
+        "label": { "type": "string" },
+        "name": { "type": "string", "required": true, "description": "Shared name for radio group" },
+        "value": { "type": "string", "description": "Currently selected value" }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "cre8-radio-field-item elements" }
+      },
+      "events": {
+        "change": { "detail": { "value": "string" }, "description": "Fired when selection changes" }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-radio-field-item",
+      "category": "Forms",
+      "description": "Individual radio button within a RadioField.",
+      "attributes": {
+        "label": { "type": "string", "required": true },
+        "value": { "type": "string", "required": true },
+        "checked": { "type": "boolean", "default": false },
+        "disabled": { "type": "boolean", "default": false }
+      },
+      "properties": {},
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-date-picker",
+      "category": "Forms",
+      "description": "Date picker input component. Extends Cre8FormElement.",
+      "attributes": {
+        "label": { "type": "string" },
+        "value": { "type": "string", "description": "ISO date string (YYYY-MM-DD)" },
+        "disabled": { "type": "boolean", "default": false },
+        "min": { "type": "string", "description": "Minimum selectable date" },
+        "max": { "type": "string", "description": "Maximum selectable date" },
+        "placeholder": { "type": "string" }
+      },
+      "properties": {
+        "dateValue": { "type": "Date", "description": "JavaScript Date object" }
+      },
+      "slots": {},
+      "events": {
+        "change": { "detail": { "value": "string", "date": "Date" }, "description": "Fired when date changes" }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-select-tile",
+      "category": "Forms",
+      "description": "Tile-based selection option.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Tile content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-select-tile-list",
+      "category": "Forms",
+      "description": "Container for select tiles.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "cre8-select-tile elements" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-card",
+      "category": "Layout",
+      "description": "Container card for grouping related content.",
+      "attributes": {
+        "variant": { "type": "string", "values": ["bare", "horizontal", "horizontal-bare"], "description": "Card style variant" },
+        "align": { "type": "string", "values": ["center"], "description": "Content alignment" }
+      },
+      "properties": {},
+      "slots": {
+        "header": { "description": "Card header content" },
+        "body": { "description": "Card body content (default slot)" },
+        "footer": { "description": "Card footer content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "parts": ["card", "header", "body", "footer"],
+      "examples": [
+        { "description": "Basic card", "html": "<cre8-card>\n  <cre8-heading>Title</cre8-heading>\n  <p>Content</p>\n</cre8-card>" },
+        { "description": "Card with slots", "html": "<cre8-card>\n  <span slot=\"header\">Header</span>\n  Content\n  <span slot=\"footer\">Footer</span>\n</cre8-card>" }
+      ]
+    },
+    {
+      "name": "cre8-grid",
+      "category": "Layout",
+      "description": "CSS Grid layout container.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "cre8-grid-item elements" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-grid-item",
+      "category": "Layout",
+      "description": "Item within a Grid container.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Grid item content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-layout",
+      "category": "Layout",
+      "description": "Page layout wrapper with header, main, and footer areas.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Layout content (cre8-header, cre8-main, cre8-footer)" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-layout-section",
+      "category": "Layout",
+      "description": "Section within a Layout.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Section content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-layout-container",
+      "category": "Layout",
+      "description": "Content container with max-width constraints.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Container content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-section",
+      "category": "Layout",
+      "description": "Generic section container.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Section content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-linelength-container",
+      "category": "Layout",
+      "description": "Container that constrains line length for optimal readability.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Container content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-main",
+      "category": "Layout",
+      "description": "Semantic main content element.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Main content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-hero",
+      "category": "Layout",
+      "description": "Hero section for landing pages.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Hero content" },
+        "background": { "description": "Background image or video" },
+        "actions": { "description": "CTA buttons" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-band",
+      "category": "Layout",
+      "description": "Full-width content band/section.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Band content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-divider",
+      "category": "Layout",
+      "description": "Visual separator between content sections.",
+      "attributes": {},
+      "properties": {},
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-heading",
+      "category": "Typography",
+      "description": "Heading text component with semantic levels and typography presets.",
+      "attributes": {
+        "type": { "type": "string", "values": ["display-default", "display-small", "headline-large", "headline-default", "headline-small", "title-xlarge", "title-large", "title-default", "title-small", "label-large", "label-default", "label-small", "meta-large", "meta-default", "meta-small"], "description": "Typography preset" },
+        "tag-variant": { "type": "string", "values": ["h1", "h2", "h3", "h4", "h5", "h6"], "default": "h2", "description": "HTML heading level" },
+        "inverted": { "type": "boolean", "default": false, "description": "Light text for dark backgrounds" },
+        "brand-color": { "type": "boolean", "default": false, "description": "Apply brand color" }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Heading text content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "parts": ["tag"],
+      "examples": [
+        { "description": "Page title", "html": "<cre8-heading tag-variant=\"h1\" type=\"display-default\">Welcome</cre8-heading>" },
+        { "description": "Section heading", "html": "<cre8-heading tag-variant=\"h2\" type=\"headline-large\">Features</cre8-heading>" }
+      ]
+    },
+    {
+      "name": "cre8-text-passage",
+      "category": "Typography",
+      "description": "Typography wrapper for body text and paragraphs.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Text content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-text-link",
+      "category": "Typography",
+      "description": "Styled inline text link.",
+      "attributes": {
+        "href": { "type": "string", "required": true },
+        "target": { "type": "string", "values": ["_blank", "_self", "_parent", "_top"] },
+        "rel": { "type": "string", "description": "Link relationship" }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Link text" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-link",
+      "category": "Navigation",
+      "description": "Navigation link component.",
+      "attributes": {
+        "href": { "type": "string", "required": true },
+        "active": { "type": "boolean", "default": false, "description": "Active/current state" }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Link content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-global-nav",
+      "category": "Navigation",
+      "description": "Global/application navigation bar container.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Navigation items" },
+        "logo": { "description": "Logo/brand slot" },
+        "actions": { "description": "Right-side actions" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-global-nav-item",
+      "category": "Navigation",
+      "description": "Item within GlobalNav.",
+      "attributes": {
+        "href": { "type": "string" },
+        "active": { "type": "boolean", "default": false }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Item content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-primary-nav",
+      "category": "Navigation",
+      "description": "Primary navigation container.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Navigation items" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-primary-nav-item",
+      "category": "Navigation",
+      "description": "Item within PrimaryNav.",
+      "attributes": {
+        "href": { "type": "string" },
+        "active": { "type": "boolean", "default": false }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Item content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-tertiary-nav",
+      "category": "Navigation",
+      "description": "Tertiary navigation container.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Navigation items" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-tertiary-nav-item",
+      "category": "Navigation",
+      "description": "Item within TertiaryNav.",
+      "attributes": {
+        "href": { "type": "string" },
+        "active": { "type": "boolean", "default": false }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Item content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-utility-nav",
+      "category": "Navigation",
+      "description": "Utility navigation container.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Navigation items" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-utility-nav-item",
+      "category": "Navigation",
+      "description": "Item within UtilityNav.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Item content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-nav-container",
+      "category": "Navigation",
+      "description": "Navigation wrapper container.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Navigation content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-breadcrumbs",
+      "category": "Navigation",
+      "description": "Breadcrumb navigation container.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Breadcrumb items" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-breadcrumbs-item",
+      "category": "Navigation",
+      "description": "Item within Breadcrumbs.",
+      "attributes": {
+        "href": { "type": "string" },
+        "current": { "type": "boolean", "default": false, "description": "Is current page" }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Item content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-link-list",
+      "category": "Navigation",
+      "description": "List of links.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Link list items" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-link-list-item",
+      "category": "Navigation",
+      "description": "Link item within LinkList.",
+      "attributes": {
+        "href": { "type": "string" }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Link text" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-pagination",
+      "category": "Navigation",
+      "description": "Pagination controls for lists.",
+      "attributes": {
+        "total-results": { "type": "number", "required": true, "description": "Total result count" },
+        "page-size": { "type": "number", "default": 10, "description": "Items per page" },
+        "visible-pages": { "type": "number", "default": 5, "description": "Visible page buttons" },
+        "display": { "type": "string", "values": ["compact", "icon-only", "default"], "default": "default", "description": "Display variant" },
+        "hide-last-and-first-buttons": { "type": "boolean", "default": false, "description": "Hide first/last page buttons" },
+        "current-page": { "type": "number", "default": 1, "description": "Current page number" }
+      },
+      "properties": {},
+      "slots": {},
+      "events": {
+        "pagination.click": { "detail": { "buttonName": "string", "value": "number" }, "description": "Fired when page changes" }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-header",
+      "category": "Navigation",
+      "description": "Page header container.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Header content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-footer",
+      "category": "Navigation",
+      "description": "Page footer container.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Footer content" },
+        "nav": { "description": "Footer navigation" },
+        "copyright": { "description": "Copyright text" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-tabs",
+      "category": "Navigation",
+      "description": "Tab navigation container with automatic management.",
+      "attributes": {
+        "size": { "type": "string", "values": ["sm"], "description": "Small size variant" },
+        "full-width": { "type": "boolean", "default": false, "description": "Full width tabs" },
+        "active-index": { "type": "number", "default": 0, "description": "Initial active tab index" }
+      },
+      "properties": {
+        "activeTab": { "type": "HTMLElement", "description": "Current active tab element" },
+        "isStart": { "type": "boolean", "description": "Scroll position at start" },
+        "isEnd": { "type": "boolean", "description": "Scroll position at end" }
+      },
+      "slots": {
+        "default": { "description": "cre8-tab elements" },
+        "panel": { "description": "cre8-tab-panel elements" }
+      },
+      "events": {
+        "tabChange": { "detail": { "value": "any", "activeTabIndex": "number" }, "description": "Fired when tab changes" }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-tab",
+      "category": "Navigation",
+      "description": "Individual tab within Tabs.",
+      "attributes": {
+        "label": { "type": "string", "required": true },
+        "selected": { "type": "boolean", "default": false },
+        "disabled": { "type": "boolean", "default": false },
+        "tab-id": { "type": "string", "description": "Unique tab identifier" }
+      },
+      "properties": {},
+      "slots": {
+        "icon": { "description": "Tab icon" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-tab-panel",
+      "category": "Navigation",
+      "description": "Content panel for a Tab.",
+      "attributes": {
+        "tab-id": { "type": "string", "description": "Associated tab ID" }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Panel content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-accordion",
+      "category": "Disclosure",
+      "description": "Accordion container for collapsible sections.",
+      "attributes": {
+        "border-type": { "type": "string", "values": ["rectangle", "rounded-bottom", "rounded", "none"], "description": "Border style" },
+        "has-divider": { "type": "boolean", "default": false, "description": "Show internal dividers" }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "cre8-accordion-item elements" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-accordion-item",
+      "category": "Disclosure",
+      "description": "Individual collapsible item within Accordion.",
+      "attributes": {
+        "label": { "type": "string", "required": true },
+        "expanded": { "type": "boolean", "default": false },
+        "disabled": { "type": "boolean", "default": false }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Expandable content" },
+        "icon": { "description": "Custom expand/collapse icon" }
+      },
+      "events": {
+        "toggle": { "detail": { "expanded": "boolean" }, "description": "Fired when toggled" }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-dropdown",
+      "category": "Disclosure",
+      "description": "Dropdown menu container.",
+      "attributes": {
+        "open": { "type": "boolean", "default": false }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Dropdown items" },
+        "trigger": { "description": "Trigger element" }
+      },
+      "events": {
+        "open": { "detail": {}, "description": "Fired when dropdown opens" },
+        "close": { "detail": {}, "description": "Fired when dropdown closes" }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-dropdown-item",
+      "category": "Disclosure",
+      "description": "Item within Dropdown.",
+      "attributes": {
+        "disabled": { "type": "boolean", "default": false },
+        "href": { "type": "string" }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Item content" },
+        "icon": { "description": "Item icon" }
+      },
+      "events": {
+        "select": { "detail": {}, "description": "Fired when item is selected" }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-submenu",
+      "category": "Disclosure",
+      "description": "Submenu wrapper within dropdown.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Submenu items" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-submenu-item",
+      "category": "Disclosure",
+      "description": "Submenu item.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Item content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-modal",
+      "category": "Disclosure",
+      "description": "Modal dialog overlay with focus trap.",
+      "attributes": {
+        "is-active": { "type": "boolean", "default": false, "description": "Modal visibility state" },
+        "status": { "type": "string", "values": ["error", "warning", "success", "info", "help"], "description": "Status type" },
+        "utility-modal-title": { "type": "string", "description": "Utility modal heading text" },
+        "not-dismissible": { "type": "boolean", "default": false, "description": "Prevent dismissal" },
+        "close-button-text": { "type": "string", "description": "Close button label" },
+        "close-button-icon": { "type": "string", "description": "Close button icon" },
+        "aria-label": { "type": "string", "required": true, "description": "Accessibility label" }
+      },
+      "properties": {},
+      "slots": {
+        "header": { "description": "Modal header" },
+        "body": { "description": "Modal body content (default slot)" },
+        "footer": { "description": "Modal footer (actions)" }
+      },
+      "events": {
+        "close-modal": { "detail": {}, "description": "Fired when modal closes" }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-popover",
+      "category": "Disclosure",
+      "description": "Popover content container.",
+      "attributes": {
+        "open": { "type": "boolean", "default": false }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Popover content" },
+        "trigger": { "description": "Trigger element" }
+      },
+      "events": {
+        "open": { "detail": {}, "description": "Fired when popover opens" },
+        "close": { "detail": {}, "description": "Fired when popover closes" }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-tooltip",
+      "category": "Disclosure",
+      "description": "Tooltip for additional context.",
+      "attributes": {
+        "position": { "type": "string", "values": ["top", "bottom", "left", "right"], "default": "bottom", "description": "Tooltip position" },
+        "knockout": { "type": "boolean", "default": false, "description": "White background variant" },
+        "is-dynamic": { "type": "boolean", "default": false, "description": "Auto-position based on viewport" },
+        "is-active": { "type": "boolean", "default": false, "description": "Visibility state" },
+        "aria-describes": { "type": "string", "description": "Target element ID for accessibility" }
+      },
+      "properties": {
+        "svg": { "type": "string", "description": "Icon SVG as raw string" },
+        "iconRotateDegree": { "type": "number", "description": "Icon rotation" },
+        "iconFlipDirection": { "type": "string", "description": "Icon flip" }
+      },
+      "slots": {
+        "trigger": { "description": "Trigger element" },
+        "default": { "description": "Tooltip content" }
+      },
+      "events": {
+        "open": { "detail": {}, "description": "Fired when tooltip opens" },
+        "close": { "detail": {}, "description": "Fired when tooltip closes" }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-alert",
+      "category": "Feedback",
+      "description": "Alert/notification display.",
+      "attributes": {
+        "status": { "type": "string", "values": ["error", "info", "notification", "neutral", "warning", "success"], "default": "info", "description": "Alert type" },
+        "variant": { "type": "string", "values": ["standalone", "banner"], "description": "Display style" },
+        "emphasis": { "type": "string", "values": ["subtle", "strong"], "description": "Emphasis level" },
+        "icon-alert": { "type": "string", "description": "Custom icon" },
+        "icon-title": { "type": "string", "description": "Icon alt text" },
+        "header-text": { "type": "string", "description": "Header text" },
+        "cta-body": { "type": "string", "description": "Call-to-action body text" },
+        "dismissed": { "type": "boolean", "default": false, "description": "Dismissed state" },
+        "not-dismissible": { "type": "boolean", "default": false, "description": "Prevent dismissal" }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Alert body content" },
+        "cta": { "description": "Call-to-action" }
+      },
+      "events": {
+        "dismiss": { "detail": {}, "description": "Fired when dismissed" }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-inline-alert",
+      "category": "Feedback",
+      "description": "Inline alert for contextual messages.",
+      "attributes": {
+        "status": { "type": "string", "values": ["info", "success", "warning", "error"], "default": "info" }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Alert message" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-badge",
+      "category": "Feedback",
+      "description": "Status badge indicator.",
+      "attributes": {
+        "text": { "type": "string", "description": "Badge text" },
+        "status": { "type": "string", "values": ["neutral", "success", "warning", "error", "info", "attention"], "default": "neutral", "description": "Status color" },
+        "variant": { "type": "string", "values": ["light", "white"], "description": "Background style" }
+      },
+      "properties": {
+        "svg": { "type": "string", "description": "Icon SVG" }
+      },
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-loading-spinner",
+      "category": "Feedback",
+      "description": "Loading spinner indicator.",
+      "attributes": {
+        "size": { "type": "string", "values": ["sm", "md", "lg"], "default": "md" },
+        "neutral": { "type": "boolean", "default": false },
+        "inverse": { "type": "boolean", "default": false },
+        "button-variant": { "type": "boolean", "default": false }
+      },
+      "properties": {},
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-skeleton-loader",
+      "category": "Feedback",
+      "description": "Skeleton loading placeholder.",
+      "attributes": {
+        "variant": { "type": "string", "values": ["text", "circle", "rect"], "default": "text" },
+        "width": { "type": "string", "description": "Width (CSS value)" },
+        "height": { "type": "string", "description": "Height (CSS value)" },
+        "lines": { "type": "number", "default": 1, "description": "Number of text lines" }
+      },
+      "properties": {},
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-progress-meter",
+      "category": "Feedback",
+      "description": "Progress bar for completion status.",
+      "attributes": {
+        "value": { "type": "number", "description": "Current progress value" },
+        "max": { "type": "number", "default": 100, "description": "Maximum value" },
+        "label": { "type": "string", "description": "Accessible label" },
+        "show-value": { "type": "boolean", "default": false, "description": "Show value text" }
+      },
+      "properties": {},
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-progress-steps",
+      "category": "Feedback",
+      "description": "Step indicator container.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "cre8-progress-steps-item elements" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-progress-steps-item",
+      "category": "Feedback",
+      "description": "Individual progress step.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Step content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-percent-bar",
+      "category": "Feedback",
+      "description": "Percentage bar visualization.",
+      "attributes": {
+        "value": { "type": "number", "description": "Percentage value (0-100)" }
+      },
+      "properties": {},
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-table",
+      "category": "Data",
+      "description": "Data table wrapper.",
+      "attributes": {
+        "caption": { "type": "string", "description": "Table caption/title" },
+        "behavior": { "type": "string", "values": ["responsive"], "description": "Responsive stacking on small screens" },
+        "is-hoverable": { "type": "boolean", "default": false, "description": "Highlight rows on hover" },
+        "variant": { "type": "string", "values": ["striped"], "description": "Zebra striping" }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Table content (cre8-table-header, cre8-table-body)" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-table-header",
+      "category": "Data",
+      "description": "Table header section.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Header rows" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-table-header-cell",
+      "category": "Data",
+      "description": "Header cell in table.",
+      "attributes": {
+        "sortable": { "type": "boolean", "default": false },
+        "sort-direction": { "type": "string", "values": ["asc", "desc", "none"], "default": "none" },
+        "align": { "type": "string", "values": ["left", "center", "right"], "default": "left" }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Header content" }
+      },
+      "events": {
+        "sort": { "detail": { "direction": "string" }, "description": "Fired when sort is requested" }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-table-body",
+      "category": "Data",
+      "description": "Table body section.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Table rows" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-table-row",
+      "category": "Data",
+      "description": "Table row.",
+      "attributes": {
+        "selected": { "type": "boolean", "default": false }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Table cells" }
+      },
+      "events": {
+        "row-click": { "detail": {}, "description": "Fired when row is clicked" }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-table-cell",
+      "category": "Data",
+      "description": "Table cell.",
+      "attributes": {
+        "align": { "type": "string", "values": ["left", "center", "right"], "default": "left" }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Cell content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-table-object",
+      "category": "Data",
+      "description": "Object-based table abstraction for rendering tables from data.",
+      "attributes": {},
+      "properties": {},
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-list",
+      "category": "Data",
+      "description": "List container.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "List items" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-list-item",
+      "category": "Data",
+      "description": "Item within List.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Item content" },
+        "marker": { "description": "Custom marker/bullet" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-tag",
+      "category": "Data",
+      "description": "Tag/label component for categorization.",
+      "attributes": {
+        "text": { "type": "string" },
+        "variant": { "type": "string", "values": ["default", "primary", "success", "warning", "error"], "default": "default" }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Tag content (alternative to text)" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-tag-list",
+      "category": "Data",
+      "description": "Container for tags.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Tag elements" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-remove-tag",
+      "category": "Data",
+      "description": "Removable tag with close button.",
+      "attributes": {
+        "text": { "type": "string" }
+      },
+      "properties": {},
+      "slots": {
+        "default": { "description": "Tag content" }
+      },
+      "events": {
+        "remove": { "detail": {}, "description": "Fired when remove button is clicked" }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-chart",
+      "category": "Data",
+      "description": "Chart visualization component. Integrates with Chart.js.",
+      "attributes": {
+        "type": { "type": "string", "values": ["bar", "line", "pie", "donut", "area"], "default": "bar" },
+        "title": { "type": "string" }
+      },
+      "properties": {
+        "data": { "type": "ChartData", "description": "Chart data object" },
+        "options": { "type": "ChartOptions", "description": "Chart configuration options" }
+      },
+      "slots": {
+        "legend": { "description": "Custom legend" }
+      },
+      "events": {
+        "data-click": { "detail": { "dataPoint": "object" }, "description": "Fired when data point is clicked" }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-icon",
+      "category": "Media",
+      "description": "SVG icon renderer with 100+ built-in icons.",
+      "attributes": {
+        "name": { "type": "string", "description": "Icon name (legacy method)" },
+        "focusable": { "type": "boolean", "default": false, "description": "Focusable state" },
+        "icon-url": { "type": "string", "description": "Path to icon sprite" },
+        "icon-title": { "type": "string", "description": "Icon title/alt text" }
+      },
+      "properties": {
+        "svg": { "type": "string", "description": "SVG as raw string (preferred)" }
+      },
+      "slots": {
+        "default": { "description": "Custom SVG content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-logo",
+      "category": "Media",
+      "description": "Logo component.",
+      "attributes": {
+        "variant": { "type": "string", "values": ["full", "mark", "wordmark"], "default": "full" },
+        "size": { "type": "string", "values": ["sm", "md", "lg"], "default": "md" }
+      },
+      "properties": {
+        "src": { "type": "string", "description": "Custom logo image source" }
+      },
+      "slots": {
+        "default": { "description": "Custom logo content" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-feature",
+      "category": "Marketing",
+      "description": "Feature highlight component for marketing pages.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Feature description" },
+        "icon": { "description": "Feature icon" },
+        "title": { "description": "Feature title" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-page-header",
+      "category": "Marketing",
+      "description": "Page header with title and actions.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": { "description": "Subtitle or description" },
+        "title": { "description": "Page title" },
+        "actions": { "description": "Action buttons" },
+        "breadcrumbs": { "description": "Breadcrumb navigation" }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    }
+  ],
+  "baseClasses": [
+    {
+      "name": "Cre8Element",
+      "description": "Base class extending LitElement with utility methods.",
+      "methods": {
+        "componentClassNames": { "signature": "(baseClassName, additionalClassNames) => string", "description": "Helper for applying class names with variants" },
+        "slotEmpty": { "signature": "(slotName: string) => boolean", "description": "Check if a named slot has content" },
+        "slotNotEmpty": { "signature": "(slotName: string) => boolean", "description": "Inverse check for slot content" },
+        "dispatch": { "signature": "({ e, eventName, detailObj, optionsObj }) => void", "description": "Custom event dispatcher" }
+      }
+    },
+    {
+      "name": "Cre8FormElement",
+      "description": "Base class for form-associated custom elements. Extends Cre8Element.",
+      "attributes": {
+        "name": { "type": "string", "description": "Form field name" },
+        "disabled": { "type": "boolean", "description": "Disabled state" },
+        "required": { "type": "boolean", "description": "Required state" },
+        "is-error": { "type": "boolean", "description": "Error state indicator" },
+        "is-success": { "type": "boolean", "description": "Success state indicator" }
+      },
+      "properties": {
+        "value": { "type": "any", "description": "Form field value with getter/setter" }
+      },
+      "formInternals": {
+        "description": "Uses ElementInternals API (attachInternals())",
+        "lifecycleCallbacks": ["formResetCallback()", "formDisabledCallback()", "formStateRestoreCallback()"],
+        "methods": ["checkValidity()", "reportValidity()", "setCustomValidity(message)"]
+      }
+    }
+  ],
+  "patterns": [
+    {
+      "name": "Login Form",
+      "description": "Standard login form with email and password",
+      "template": "<cre8-card>\n  <cre8-heading tag-variant=\"h2\" type=\"headline-default\">Sign In</cre8-heading>\n  <cre8-field label=\"Email\" type=\"email\"></cre8-field>\n  <cre8-field label=\"Password\" type=\"password\"></cre8-field>\n  <cre8-button text=\"Sign In\" variant=\"primary\" full-width></cre8-button>\n</cre8-card>"
+    },
+    {
+      "name": "Data Table",
+      "description": "Table with header and data rows",
+      "template": "<cre8-table variant=\"striped\" is-hoverable>\n  <cre8-table-header>\n    <cre8-table-row>\n      <cre8-table-header-cell>Name</cre8-table-header-cell>\n      <cre8-table-header-cell>Status</cre8-table-header-cell>\n    </cre8-table-row>\n  </cre8-table-header>\n  <cre8-table-body>\n    <cre8-table-row>\n      <cre8-table-cell>Item 1</cre8-table-cell>\n      <cre8-table-cell><cre8-badge text=\"Active\" status=\"success\"></cre8-badge></cre8-table-cell>\n    </cre8-table-row>\n  </cre8-table-body>\n</cre8-table>"
+    },
+    {
+      "name": "Page Layout",
+      "description": "Standard page with header, main content, and footer",
+      "template": "<cre8-layout>\n  <cre8-header>\n    <cre8-global-nav>\n      <span slot=\"logo\"><cre8-logo></cre8-logo></span>\n      <cre8-global-nav-item href=\"/\">Home</cre8-global-nav-item>\n    </cre8-global-nav>\n  </cre8-header>\n  <cre8-main>\n    <cre8-layout-container>\n      <!-- Page content -->\n    </cre8-layout-container>\n  </cre8-main>\n  <cre8-footer>\n    <span slot=\"copyright\">2024 Company Name</span>\n  </cre8-footer>\n</cre8-layout>"
+    },
+    {
+      "name": "Alert Banner",
+      "description": "Dismissible alert at top of page",
+      "template": "<cre8-alert status=\"info\" variant=\"banner\">\n  Important announcement message here.\n</cre8-alert>"
+    },
+    {
+      "name": "Tabbed Content",
+      "description": "Content organized in tabs",
+      "template": "<cre8-tabs>\n  <cre8-tab label=\"Tab 1\" tab-id=\"tab1\" selected></cre8-tab>\n  <cre8-tab label=\"Tab 2\" tab-id=\"tab2\"></cre8-tab>\n  <cre8-tab-panel tab-id=\"tab1\" slot=\"panel\">Content for Tab 1</cre8-tab-panel>\n  <cre8-tab-panel tab-id=\"tab2\" slot=\"panel\">Content for Tab 2</cre8-tab-panel>\n</cre8-tabs>"
+    },
+    {
+      "name": "Modal Dialog",
+      "description": "Modal with header, body, and footer actions",
+      "template": "<cre8-modal is-active aria-label=\"Confirmation\">\n  <span slot=\"header\">Confirm Action</span>\n  <p>Are you sure you want to proceed?</p>\n  <div slot=\"footer\">\n    <cre8-button text=\"Cancel\" variant=\"secondary\"></cre8-button>\n    <cre8-button text=\"Confirm\" variant=\"primary\"></cre8-button>\n  </div>\n</cre8-modal>"
+    }
+  ],
+  "designTokens": {
+    "description": "Design tokens are provided by the @tmorrow/cre8-design-tokens package",
+    "tokenPackage": "@tmorrow/cre8-design-tokens",
+    "categories": [
+      "colors",
+      "typography",
+      "spacing",
+      "borders",
+      "shadows",
+      "breakpoints"
+    ]
+  },
+  "accessibility": {
+    "features": [
+      "ARIA attributes (aria-label, aria-describedby, aria-live, aria-expanded)",
+      "Semantic HTML elements",
+      "Focus management with @a11y/focus-trap",
+      "Keyboard navigation (Escape, Tab, Arrow keys, Enter, Space)",
+      "Screen reader support",
+      "Form validation and error messaging"
+    ]
+  },
+  "dependencies": {
+    "lit": "3.3.1",
+    "@lit/context": "^1.1.6",
+    "@lit/react": "^1.0.8",
+    "@a11y/focus-trap": "^1.0.5",
+    "chart.js": "^4.5.1",
+    "classnames": "2.5.1",
+    "nanoid": "^5.1.6",
+    "zod": "^4.1.12",
+    "@tmorrow/cre8-design-tokens": "^1.0.16"
+  }
+}

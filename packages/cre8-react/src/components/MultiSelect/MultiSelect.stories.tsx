@@ -1,8 +1,8 @@
-import type { StoryFn, StoryObj } from '@storybook/react';
+import type { StoryFn, StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { excludeRegexArray } from '../../../.storybook/preview';
 import { Cre8MultiSelect } from '../..';
-import { withActions } from '@storybook/addon-actions/decorator';
+import { withActions } from 'storybook/actions/decorator';
 
 export default {
   title: 'In Development/MultiSelect',

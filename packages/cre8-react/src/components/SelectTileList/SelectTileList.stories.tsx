@@ -1,5 +1,5 @@
-import type { StoryObj } from '@storybook/react';
-import type { Meta } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
+import type { Meta } from '@storybook/react-vite';
 import React from 'react';
 import { excludeRegexArray } from '../../../.storybook/preview';
 import { Cre8SelectTileList } from '../..';

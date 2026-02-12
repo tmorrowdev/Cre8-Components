@@ -1,6 +1,6 @@
 import React from 'react';
-import type { StoryObj } from '@storybook/react';
-import { withActions } from '@storybook/addon-actions/decorator';
+import type { StoryObj } from '@storybook/react-vite';
+import { withActions } from 'storybook/actions/decorator';
 import { Cre8Select } from '../..';
 import { Cre8Link } from '../Link/Link';
 import { excludeRegexArray } from '../../../.storybook/preview';

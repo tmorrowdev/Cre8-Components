@@ -1,9 +1,9 @@
 /* eslint-disable import/no-unresolved */
-import svgCaretLeft from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret_Left.svg';
-import svgCaretRight from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Caret_Right.svg';
-import svgArrowRight from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Arrow_-_Right.svg';
-import type { StoryObj } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import svgCaretLeft from '@tmorrow/cre8-wc/icons/System/Regular/Caret_Left.svg';
+import svgCaretRight from '@tmorrow/cre8-wc/icons/System/Regular/Caret_Right.svg';
+import svgArrowRight from '@tmorrow/cre8-wc/icons/System/Regular/Arrow_-_Right.svg';
+import type { StoryObj } from '@storybook/react-vite';
+import { action } from 'storybook/actions';
 import React from 'react';
 import { excludeRegexArray } from '../../../.storybook/preview';
 import { Cre8DangerButton } from '../..';
@@ -51,8 +51,10 @@ export const PrimaryInverted: StoryObj<typeof Cre8DangerButton> = {
     text: 'Primary',
     inverted: true,
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -62,8 +64,10 @@ export const PrimaryDisabledInverted: StoryObj<typeof Cre8DangerButton> = {
     text: 'Button',
     inverted: true,
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -104,8 +108,10 @@ export const SecondaryInverted: StoryObj<typeof Cre8DangerButton> = {
     variant: 'secondary',
     inverted: true,
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -116,8 +122,10 @@ export const SecondaryInvertedDisabled: StoryObj<typeof Cre8DangerButton> = {
     variant: 'secondary',
     inverted: true,
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -142,8 +150,10 @@ export const TertiaryInverted: StoryObj<typeof Cre8DangerButton> = {
     variant: 'tertiary',
     inverted: true,
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -154,8 +164,10 @@ export const TertiaryInvertedDisabled: StoryObj<typeof Cre8DangerButton> = {
     variant: 'tertiary',
     inverted: true,
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -179,8 +191,10 @@ export const SmallInverted: StoryObj<typeof Cre8DangerButton> = {
     text: 'Button',
     inverted: true,
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -206,8 +220,10 @@ export const LargeInverted: StoryObj<typeof Cre8DangerButton> = {
     text: 'Button',
     inverted: true,
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -239,8 +255,10 @@ export const IconOnlyPrimaryInverted: StoryObj<typeof Cre8DangerButton> = {
     variant: 'primary',
     inverted: true,
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -263,8 +281,10 @@ export const IconOnlySecondaryInverted: StoryObj<typeof Cre8DangerButton> = {
     variant: 'secondary',
     inverted: true,
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -287,8 +307,10 @@ export const IconOnlyTertiaryInverted: StoryObj<typeof Cre8DangerButton> = {
     variant: 'tertiary',
     inverted: true,
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 

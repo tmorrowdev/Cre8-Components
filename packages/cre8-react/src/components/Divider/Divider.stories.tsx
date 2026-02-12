@@ -1,5 +1,5 @@
 import React from 'react';
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import { Cre8Divider } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 

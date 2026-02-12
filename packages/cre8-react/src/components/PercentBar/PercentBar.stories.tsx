@@ -1,7 +1,7 @@
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import { excludeRegexArray } from '../../../.storybook/preview';
 import { Cre8PercentBar } from '../..';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 
 export default {
     title: 'In Development/Percent Bar',

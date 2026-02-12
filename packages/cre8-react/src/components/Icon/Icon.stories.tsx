@@ -1,9 +1,7 @@
-import type { StoryObj } from '@storybook/react';
-import { Cre8IconLegacy } from '../..';
+import type { StoryObj } from '@storybook/react-vite';
+import { Cre8Icon, Cre8IconLegacy } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
-import Cre8Icon from '@cre8_dev/cre8-icons';
 import React from 'react';
-import svgInfoFilled from '@cre8_dev/cre8-icons';
 
 
 export default {

@@ -1,6 +1,6 @@
 {
   "name": "@tmorrow/cre8-wc",
-  "version": "1.0.27",
+  "version": "1.0.26",
   "description": "cre8 Web Components is a library of presentational UI web components to be consumed by # web applications.",
   "license": "BSD-3-Clause",
   "scripts": {
@@ -16,7 +16,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "del-cli dist && storybook build -o dist",
     "plop": "plop component",
-    "extract-tokens": "node ./extract-tokens.cjs https://mcdonalds.com",
+    "extract-tokens": "node ./extract-tokens.cjs https://",
     "convert-scss-to-ts": "npx tsx ./scripts/convert-scss-to-ts.ts",
     "agentrpc": "npx tsx ./cli/agentric-server.ts",
     "generate-theme": "npx tsx ./cli/theme-generator.ts",

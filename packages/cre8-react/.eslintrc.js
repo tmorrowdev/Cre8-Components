@@ -3,7 +3,7 @@ module.exports = {
         browser: true,
         es2021: true,
     },
-    extends: ['@cre8/eslint-config'],
+    extends: ['@cre8/eslint-config', 'plugin:storybook/recommended'],
     overrides: [
         {
             files: ['**/*.tsx', '**/*.ts'],

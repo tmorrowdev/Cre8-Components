@@ -1,6 +1,6 @@
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import { excludeRegexArray } from '../../../.storybook/preview';
-import {withActions} from '@storybook/addon-actions/decorator';
+import {withActions} from 'storybook/actions/decorator';
 import { Cre8RemoveTag } from '../..';
 
 export default {

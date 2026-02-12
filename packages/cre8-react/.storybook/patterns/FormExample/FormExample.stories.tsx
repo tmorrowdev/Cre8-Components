@@ -8,7 +8,7 @@ import {
   cre8RadioField,
   cre8RadioFieldItem
 } from "../../../src";
-import { withActions } from '@storybook/addon-actions/decorator';
+import { withActions } from 'storybook/actions/decorator';
 
 export default {
   title: 'Examples/Form Example',

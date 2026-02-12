@@ -1,5 +1,5 @@
-import type { StoryObj } from '@storybook/react';
-import { withActions } from '@storybook/addon-actions/decorator';
+import type { StoryObj } from '@storybook/react-vite';
+import { withActions } from 'storybook/actions/decorator';
 import React from 'react';
 import { excludeRegexArray } from '../../../.storybook/preview';
 import { Cre8Pagination } from '../..';

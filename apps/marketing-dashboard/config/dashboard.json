@@ -1,0 +1,101 @@
+{
+  "component": "cre8-layout",
+  "children": [
+    {
+      "component": "cre8-header",
+      "children": [
+        {
+          "component": "cre8-layout-container",
+          "children": [
+            {
+              "component": "div",
+              "props": {
+                "class": "dashboard-header"
+              },
+              "children": [
+                {
+                  "component": "cre8-heading",
+                  "props": {
+                    "tagVariant": "h1",
+                    "type": "display-default",
+                    "inverted": true
+                  },
+                  "content": "Marketing Dashboard"
+                },
+                {
+                  "component": "cre8-text-passage",
+                  "props": {
+                    "class": "dashboard-subtitle"
+                  },
+                  "content": "Track your marketing performance across all channels"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "cre8-layout-section",
+      "children": [
+        {
+          "component": "cre8-layout-container",
+          "children": [
+            {
+              "component": "cre8-tabs",
+              "props": {
+                "id": "dashboard-tabs"
+              },
+              "slots": {
+                "default": [
+                  {
+                    "component": "cre8-tab",
+                    "content": "Campaigns"
+                  },
+                  {
+                    "component": "cre8-tab",
+                    "content": "Social Media"
+                  },
+                  {
+                    "component": "cre8-tab",
+                    "content": "Traffic"
+                  },
+                  {
+                    "component": "cre8-tab",
+                    "content": "Revenue"
+                  }
+                ],
+                "panel": [
+                  {
+                    "component": "cre8-tab-panel",
+                    "slots": {
+                      "default": { "$ref": "tabs/campaigns.json" }
+                    }
+                  },
+                  {
+                    "component": "cre8-tab-panel",
+                    "slots": {
+                      "default": { "$ref": "tabs/social.json" }
+                    }
+                  },
+                  {
+                    "component": "cre8-tab-panel",
+                    "slots": {
+                      "default": { "$ref": "tabs/traffic.json" }
+                    }
+                  },
+                  {
+                    "component": "cre8-tab-panel",
+                    "slots": {
+                      "default": { "$ref": "tabs/revenue.json" }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,405 @@
+{
+  "component": "cre8-layout",
+  "children": [
+    {
+      "component": "cre8-header",
+      "props": {
+        "class": "portfolio-header"
+      },
+      "children": [
+        {
+          "component": "cre8-layout-container",
+          "children": [
+            {
+              "component": "div",
+              "props": {
+                "style": {
+                  "display": "flex",
+                  "justifyContent": "space-between",
+                  "alignItems": "center",
+                  "padding": "1rem 0"
+                }
+              },
+              "children": [
+                {
+                  "component": "div",
+                  "props": { "class": "header-logo" },
+                  "html": "T<span class=\"header-logo__accent\">.</span>MORROW"
+                },
+                {
+                  "component": "nav",
+                  "props": { "class": "header-nav" },
+                  "children": [
+                    {
+                      "component": "a",
+                      "props": { "href": "#work", "class": "header-nav__link" },
+                      "content": "Work"
+                    },
+                    {
+                      "component": "a",
+                      "props": { "href": "#services", "class": "header-nav__link" },
+                      "content": "Services"
+                    },
+                    {
+                      "component": "a",
+                      "props": { "href": "#about", "class": "header-nav__link" },
+                      "content": "About"
+                    },
+                    {
+                      "component": "cre8-button",
+                      "props": {
+                        "variant": "primary",
+                        "size": "sm",
+                        "text": "Let's Talk"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "cre8-layout-section",
+      "props": { "class": "hero-section" },
+      "children": [
+        {
+          "component": "cre8-layout-container",
+          "children": [
+            {
+              "component": "div",
+              "props": { "class": "hero-content" },
+              "children": [
+                {
+                  "component": "span",
+                  "props": { "class": "hero-eyebrow" },
+                  "content": "Creative Studio"
+                },
+                {
+                  "component": "cre8-heading",
+                  "props": {
+                    "tagVariant": "h1",
+                    "type": "display-default",
+                    "class": "hero-title"
+                  },
+                  "html": "Crafting <span class=\"hero-title__highlight\">Digital Excellence</span> for Bold Brands"
+                },
+                {
+                  "component": "p",
+                  "props": { "class": "hero-description" },
+                  "content": "We design and develop distinctive digital experiences that elevate brands and captivate audiences. From concept to launch, we transform ideas into impactful realities."
+                },
+                {
+                  "component": "div",
+                  "props": { "class": "hero-cta" },
+                  "children": [
+                    {
+                      "component": "cre8-button",
+                      "props": {
+                        "variant": "primary",
+                        "size": "lg",
+                        "text": "View Our Work"
+                      }
+                    },
+                    {
+                      "component": "cre8-button",
+                      "props": {
+                        "variant": "secondary",
+                        "size": "lg",
+                        "text": "Get in Touch"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "cre8-layout-section",
+      "props": { "id": "work" },
+      "children": [
+        {
+          "component": "cre8-layout-container",
+          "children": [
+            {
+              "component": "div",
+              "props": { "class": "section-header" },
+              "children": [
+                {
+                  "component": "span",
+                  "props": { "class": "section-eyebrow" },
+                  "content": "Featured Projects"
+                },
+                {
+                  "component": "cre8-heading",
+                  "props": {
+                    "tagVariant": "h2",
+                    "type": "headline-large",
+                    "class": "section-title"
+                  },
+                  "content": "Selected Work"
+                }
+              ]
+            },
+            {
+              "component": "div",
+              "props": { "class": "work-grid" },
+              "children": [
+                {
+                  "component": "article",
+                  "props": { "class": "project-card" },
+                  "children": [
+                    {
+                      "component": "div",
+                      "props": { "class": "project-card__image" }
+                    },
+                    {
+                      "component": "div",
+                      "props": { "class": "project-card__content" },
+                      "children": [
+                        {
+                          "component": "span",
+                          "props": { "class": "project-card__category" },
+                          "content": "Web Design"
+                        },
+                        {
+                          "component": "h3",
+                          "props": { "class": "project-card__title" },
+                          "content": "Nexus Finance Platform"
+                        },
+                        {
+                          "component": "p",
+                          "props": { "class": "project-card__description" },
+                          "content": "A modern fintech dashboard with real-time analytics and intuitive UX."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "component": "article",
+                  "props": { "class": "project-card" },
+                  "children": [
+                    {
+                      "component": "div",
+                      "props": { "class": "project-card__image" }
+                    },
+                    {
+                      "component": "div",
+                      "props": { "class": "project-card__content" },
+                      "children": [
+                        {
+                          "component": "span",
+                          "props": { "class": "project-card__category" },
+                          "content": "Brand Identity"
+                        },
+                        {
+                          "component": "h3",
+                          "props": { "class": "project-card__title" },
+                          "content": "Vertex Studio Rebrand"
+                        },
+                        {
+                          "component": "p",
+                          "props": { "class": "project-card__description" },
+                          "content": "Complete visual identity system for a creative technology studio."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "component": "article",
+                  "props": { "class": "project-card" },
+                  "children": [
+                    {
+                      "component": "div",
+                      "props": { "class": "project-card__image" }
+                    },
+                    {
+                      "component": "div",
+                      "props": { "class": "project-card__content" },
+                      "children": [
+                        {
+                          "component": "span",
+                          "props": { "class": "project-card__category" },
+                          "content": "E-Commerce"
+                        },
+                        {
+                          "component": "h3",
+                          "props": { "class": "project-card__title" },
+                          "content": "Aurora Lifestyle Shop"
+                        },
+                        {
+                          "component": "p",
+                          "props": { "class": "project-card__description" },
+                          "content": "Premium e-commerce experience for a luxury lifestyle brand."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "cre8-layout-section",
+      "props": { "id": "services" },
+      "children": [
+        {
+          "component": "cre8-layout-container",
+          "children": [
+            {
+              "component": "div",
+              "props": { "class": "section-header" },
+              "children": [
+                {
+                  "component": "span",
+                  "props": { "class": "section-eyebrow" },
+                  "content": "What We Do"
+                },
+                {
+                  "component": "cre8-heading",
+                  "props": {
+                    "tagVariant": "h2",
+                    "type": "headline-large",
+                    "class": "section-title"
+                  },
+                  "content": "Our Services"
+                }
+              ]
+            },
+            {
+              "component": "div",
+              "props": { "class": "services-grid" },
+              "children": [
+                {
+                  "component": "div",
+                  "props": { "class": "service-card" },
+                  "children": [
+                    {
+                      "component": "div",
+                      "props": { "class": "service-card__icon" },
+                      "html": "<svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><path d=\"M3 9h18\"/><path d=\"M9 21V9\"/></svg>"
+                    },
+                    {
+                      "component": "h3",
+                      "props": { "class": "service-card__title" },
+                      "content": "Web Design"
+                    },
+                    {
+                      "component": "p",
+                      "props": { "class": "service-card__description" },
+                      "content": "Custom website designs that blend aesthetics with functionality. From landing pages to complex web applications."
+                    }
+                  ]
+                },
+                {
+                  "component": "div",
+                  "props": { "class": "service-card" },
+                  "children": [
+                    {
+                      "component": "div",
+                      "props": { "class": "service-card__icon" },
+                      "html": "<svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 2L2 7l10 5 10-5-10-5z\"/><path d=\"M2 17l10 5 10-5\"/><path d=\"M2 12l10 5 10-5\"/></svg>"
+                    },
+                    {
+                      "component": "h3",
+                      "props": { "class": "service-card__title" },
+                      "content": "Brand Identity"
+                    },
+                    {
+                      "component": "p",
+                      "props": { "class": "service-card__description" },
+                      "content": "Comprehensive brand systems including logos, typography, color palettes, and visual guidelines."
+                    }
+                  ]
+                },
+                {
+                  "component": "div",
+                  "props": { "class": "service-card" },
+                  "children": [
+                    {
+                      "component": "div",
+                      "props": { "class": "service-card__icon" },
+                      "html": "<svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z\"/><polyline points=\"3.27 6.96 12 12.01 20.73 6.96\"/><line x1=\"12\" y1=\"22.08\" x2=\"12\" y2=\"12\"/></svg>"
+                    },
+                    {
+                      "component": "h3",
+                      "props": { "class": "service-card__title" },
+                      "content": "Digital Strategy"
+                    },
+                    {
+                      "component": "p",
+                      "props": { "class": "service-card__description" },
+                      "content": "Data-driven strategies to maximize your digital presence and achieve measurable business goals."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "cre8-footer",
+      "children": [
+        {
+          "component": "cre8-layout-container",
+          "children": [
+            {
+              "component": "div",
+              "props": { "class": "footer-content" },
+              "children": [
+                {
+                  "component": "div",
+                  "props": { "class": "footer-logo" },
+                  "html": "T<span class=\"footer-logo__accent\">.</span>MORROW"
+                },
+                {
+                  "component": "div",
+                  "props": { "class": "footer-links" },
+                  "children": [
+                    {
+                      "component": "a",
+                      "props": { "href": "#", "class": "footer-link" },
+                      "content": "Twitter"
+                    },
+                    {
+                      "component": "a",
+                      "props": { "href": "#", "class": "footer-link" },
+                      "content": "LinkedIn"
+                    },
+                    {
+                      "component": "a",
+                      "props": { "href": "#", "class": "footer-link" },
+                      "content": "Dribbble"
+                    },
+                    {
+                      "component": "a",
+                      "props": { "href": "#", "class": "footer-link" },
+                      "content": "GitHub"
+                    }
+                  ]
+                },
+                {
+                  "component": "span",
+                  "props": { "class": "footer-copyright" },
+                  "content": "2026 T.MORROW. All rights reserved."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

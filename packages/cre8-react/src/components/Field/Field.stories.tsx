@@ -1,6 +1,6 @@
 import React from 'react';
-import type { StoryObj } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import type { StoryObj } from '@storybook/react-vite';
+import { action } from 'storybook/actions';
 import { Cre8Field } from '../..';
 import { Cre8TextLink } from '../TextLink/TextLink';
 import { excludeRegexArray } from '../../../.storybook/preview';

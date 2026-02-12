@@ -1,6 +1,6 @@
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import React from 'react';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { excludeRegexArray } from '../../../.storybook/preview';
 import { Cre8RadioFieldItem } from '../..';
 import { Cre8RadioField } from '../RadioField/RadioField';

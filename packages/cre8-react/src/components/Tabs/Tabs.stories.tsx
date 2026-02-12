@@ -1,5 +1,5 @@
-import type { StoryObj } from '@storybook/react';
-import { withActions } from '@storybook/addon-actions/decorator';
+import type { StoryObj } from '@storybook/react-vite';
+import { withActions } from 'storybook/actions/decorator';
 import { Cre8Tabs } from '../..';
 import { Cre8Tab } from '../Tab/Tab';
 import { Cre8TabPanel } from '../TabPanel/TabPanel';

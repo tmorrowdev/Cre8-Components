@@ -1,0 +1,1377 @@
+{
+  "fileName": "Cre8 - Base Web Components v.0 (unpublished - DO NOT USE)",
+  "totalComponentSets": 90,
+  "totalStandaloneComponents": 30,
+  "componentSets": [
+    {
+      "id": "331:175",
+      "name": "Site",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Site"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "331:182",
+      "name": "Settings",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Setting"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "331:191",
+      "name": "Scheduler",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Scheduler"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "331:207",
+      "name": "Menu",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Menu"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "331:215",
+      "name": "Contacts",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Contacts"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "331:222",
+      "name": "Share",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Name": ["Share"],
+        "Size": ["24", "18"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "331:230",
+      "name": "Help",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Help"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "331:303",
+      "name": "Wellness",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Wellness"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "331:310",
+      "name": "Assistant",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Assistant"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "331:367",
+      "name": "Refresh",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Refresh"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "331:383",
+      "name": "External",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["External"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "331:392",
+      "name": "Link",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Link"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "331:409",
+      "name": "Download",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Download"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "331:423",
+      "name": "Products",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Products"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "331:433",
+      "name": "Payment",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Payment"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "331:316",
+      "name": "Email",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Email"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "332:450",
+      "name": "Arrow Right",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Arrow Right"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "332:458",
+      "name": "Arrow Down",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Arrow Down"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "332:451",
+      "name": "Arrow Left",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Arrow Left"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "332:463",
+      "name": "Arrow Up",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Arrow Up"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "332:1935",
+      "name": "Close",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Close"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "3252:2236",
+      "name": "Error",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Error"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "3296:1551",
+      "name": "Success",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Success"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "3330:4764",
+      "name": "UserCircle",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "size": ["24", "56"],
+        "name": ["UserCircle"]
+      },
+      "width": 96,
+      "height": 141
+    },
+    {
+      "id": "331:323",
+      "name": "Facebook",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Facebook"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "331:328",
+      "name": "LinkedIn",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["LinkedIn"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "331:338",
+      "name": "Twitter",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Twitter"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "331:344",
+      "name": "Instagram",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Instagram"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "331:350",
+      "name": "Pinterest",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Pinterest"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "331:356",
+      "name": "TikTok",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Tiktok"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "331:440",
+      "name": "YouTube",
+      "page": "Icons",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Size": ["24", "18"],
+        "Name": ["Youtube"]
+      },
+      "width": 44,
+      "height": 72
+    },
+    {
+      "id": "3322:2044",
+      "name": "Alert Dismissible / Info",
+      "page": "Alert",
+      "description": "bold, confirmation, alert, acknowledgment, error, information",
+      "variantCount": 2,
+      "variantProperties": {
+        "Expanded": ["True", "False"]
+      },
+      "width": 944,
+      "height": 168
+    },
+    {
+      "id": "3322:2063",
+      "name": "Alert Dismissible / Success",
+      "page": "Alert",
+      "description": "bold, confirmation, alert, acknowledgment, error, information",
+      "variantCount": 2,
+      "variantProperties": {
+        "Expanded": ["True", "False"]
+      },
+      "width": 944,
+      "height": 168
+    },
+    {
+      "id": "3322:2082",
+      "name": "Alert Dismissible / Error",
+      "page": "Alert",
+      "description": "bold, confirmation, alert, acknowledgment, error, information",
+      "variantCount": 2,
+      "variantProperties": {
+        "Expanded": ["True", "False"]
+      },
+      "width": 944,
+      "height": 168
+    },
+    {
+      "id": "3322:2103",
+      "name": "Alert - Banner",
+      "page": "Alert",
+      "description": "confirmation, alert, acknowledgment, error, information",
+      "variantCount": 4,
+      "variantProperties": {
+        "Appearance": ["Success", "Warning", "Error", "Info"]
+      },
+      "width": 432,
+      "height": 725
+    },
+    {
+      "id": "3322:2227",
+      "name": "Alert Tray",
+      "page": "Alert",
+      "description": "",
+      "variantCount": 3,
+      "variantProperties": {
+        "Property 1": ["Alert Banner - Error", "Variant4", "Alert Banner - Warning"]
+      },
+      "width": 840,
+      "height": 346
+    },
+    {
+      "id": "329:4098",
+      "name": "Avatar-Variants (old version)",
+      "page": "Avatar",
+      "description": "",
+      "variantCount": 7,
+      "variantProperties": {
+        "Size": ["Large", "Medium", "Small"],
+        "Empty": ["false", "true"]
+      },
+      "width": 1025,
+      "height": 619
+    },
+    {
+      "id": "7072:8484",
+      "name": ".Avatar-Variants new",
+      "page": "Avatar",
+      "description": "",
+      "variantCount": 10,
+      "variantProperties": {
+        "Size": ["Large", "Medium", "small", "xsmall", "Small"],
+        "Empty": ["false", "true"]
+      },
+      "width": 1025,
+      "height": 619
+    },
+    {
+      "id": "1485:1482",
+      "name": "Badge",
+      "page": "Badge",
+      "description": "A tag labels UI objects for quick recognition and navigation.",
+      "variantCount": 8,
+      "variantProperties": {
+        "Emphasis": ["default", "strong"],
+        "Type": ["Success", "Error", "Warning", "Info"]
+      },
+      "width": 411,
+      "height": 131
+    },
+    {
+      "id": "331:20",
+      "name": "Buttons-Primary",
+      "page": "Button",
+      "description": "",
+      "variantCount": 4,
+      "variantProperties": {
+        "Style": ["deafult", "Hover", "Focus", "Style5"]
+      },
+      "width": 771,
+      "height": 99
+    },
+    {
+      "id": "7067:2351",
+      "name": "Buttons-Secondary",
+      "page": "Button",
+      "description": "",
+      "variantCount": 4,
+      "variantProperties": {
+        "Style": ["deafult", "hover", "Style4", "Style5"]
+      },
+      "width": 781,
+      "height": 99
+    },
+    {
+      "id": "544:2981",
+      "name": "Buttons-Secondary",
+      "page": "Button",
+      "description": "",
+      "variantCount": 4,
+      "variantProperties": {
+        "Property 1": ["Default", "Hover", "Active", "Disabled"]
+      },
+      "width": 355,
+      "height": 82
+    },
+    {
+      "id": "3191:7899",
+      "name": "checkbox formgroup",
+      "page": "Checkbox",
+      "description": "",
+      "variantCount": 5,
+      "variantProperties": {
+        "state": ["Default-Selected", "required", "disabled", "error", "focused"]
+      },
+      "width": 326,
+      "height": 240
+    },
+    {
+      "id": "3191:7662",
+      "name": "Checkbox",
+      "page": "Checkbox",
+      "description": "",
+      "variantCount": 6,
+      "variantProperties": {
+        "Property 1": ["Default", "checked", "disabled", "error", "focus", "focused-checked"]
+      },
+      "width": 326,
+      "height": 62
+    },
+    {
+      "id": "3267:628",
+      "name": "Text field",
+      "page": "Form Field",
+      "description": "A text field is an input that allows a user to write or edit text.",
+      "variantCount": 66,
+      "variantProperties": {
+        "State": ["Disabled", "Invalid", "Focus", "Default", "Validated", "Hover"],
+        "Placeholder": ["True", "False"],
+        "Element": ["After", "None", "Before"],
+        "Compact": ["False", "True"]
+      },
+      "width": 1651,
+      "height": 896
+    },
+    {
+      "id": "3296:1174",
+      "name": "Field Note Group",
+      "page": "Form Field",
+      "description": "",
+      "variantCount": 3,
+      "variantProperties": {
+        "Field Note State": ["Default", "Error", "Success"]
+      },
+      "width": 570,
+      "height": 150
+    },
+    {
+      "id": "3296:1179",
+      "name": "Text field (with label)",
+      "page": "Form Field",
+      "description": "",
+      "variantCount": 6,
+      "variantProperties": {
+        "Field style": ["Default", "Error", "Success", "Focused", "Disabled", "Default (testing w/o helper text)"]
+      },
+      "width": 570,
+      "height": 682
+    },
+    {
+      "id": "3331:872",
+      "name": "label text",
+      "page": "Label Text",
+      "description": "",
+      "variantCount": 3,
+      "variantProperties": {
+        "Label State": ["Default", "Error", "Disabled"]
+      },
+      "width": 197,
+      "height": 137
+    },
+    {
+      "id": "6961:348",
+      "name": "Link - CTA",
+      "page": "Link CTA",
+      "description": "",
+      "variantCount": 4,
+      "variantProperties": {
+        "Style": ["Default", "Hover", "Style4", "Style3"]
+      },
+      "width": 420,
+      "height": 72
+    },
+    {
+      "id": "332:528",
+      "name": "Link - CTA",
+      "page": "Link Text",
+      "description": "",
+      "variantCount": 4,
+      "variantProperties": {
+        "Style": ["Default", "Hover", "Style4", "Style3"]
+      },
+      "width": 460,
+      "height": 82
+    },
+    {
+      "id": "462:3041",
+      "name": "Link - Main",
+      "page": "Link Text",
+      "description": "",
+      "variantCount": 4,
+      "variantProperties": {
+        "Style": ["Default", "Hover", "Active", "Disabled"]
+      },
+      "width": 576,
+      "height": 82
+    },
+    {
+      "id": "332:684",
+      "name": "Popover Item",
+      "page": "Popover",
+      "description": "",
+      "variantCount": 4,
+      "variantProperties": {
+        "Style": ["Default", "Hover", "Focus", "Disabled"]
+      },
+      "width": 211,
+      "height": 158
+    },
+    {
+      "id": "3296:1442",
+      "name": "OLD - switch to new label component label field group",
+      "page": "Radio",
+      "description": "",
+      "variantCount": 3,
+      "variantProperties": {
+        "Property 1": ["Default", "Error", "Success"]
+      },
+      "width": 236,
+      "height": 152
+    },
+    {
+      "id": "3194:1498",
+      "name": "radio field group",
+      "page": "Radio",
+      "description": "",
+      "variantCount": 5,
+      "variantProperties": {
+        "Property 1": ["Active", "default", "disabled", "focus", "error"]
+      },
+      "width": 171,
+      "height": 235
+    },
+    {
+      "id": "3191:9434",
+      "name": "radio-variants",
+      "page": "Radio",
+      "description": "",
+      "variantCount": 7,
+      "variantProperties": {
+        "Property 1": ["Default", "selected", "disabled", "disabled-selected", "error", "focus", "focused-selected"]
+      },
+      "width": 325,
+      "height": 60
+    },
+    {
+      "id": "3194:837",
+      "name": "radio-base",
+      "page": "Radio",
+      "description": "",
+      "variantCount": 1,
+      "variantProperties": {
+        "Property 1": ["Default"]
+      },
+      "width": 133,
+      "height": 64
+    },
+    {
+      "id": "6963:1863",
+      "name": "checkbox formgroup",
+      "page": "Radio",
+      "description": "",
+      "variantCount": 5,
+      "variantProperties": {
+        "state": ["Default-Selected", "required", "disabled", "error", "focused"]
+      },
+      "width": 326,
+      "height": 240
+    },
+    {
+      "id": "6963:1887",
+      "name": "Checkbox",
+      "page": "Radio",
+      "description": "",
+      "variantCount": 6,
+      "variantProperties": {
+        "Property 1": ["Default", "checked", "disabled", "error", "focus", "focused-checked"]
+      },
+      "width": 272,
+      "height": 62
+    },
+    {
+      "id": "3254:3300",
+      "name": "switch variants",
+      "page": "Switch",
+      "description": "",
+      "variantCount": 8,
+      "variantProperties": {
+        "switch state": ["default", "default on", "focused", "focused on", "error", "error on", "disabled", "disabled on"]
+      },
+      "width": 210,
+      "height": 198
+    },
+    {
+      "id": "3336:7372",
+      "name": "switch variants",
+      "page": "Switch",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "switch state": ["default", "default on"]
+      },
+      "width": 484,
+      "height": 67
+    },
+    {
+      "id": "3254:3346",
+      "name": "Switch field group",
+      "page": "Switch",
+      "description": "",
+      "variantCount": 1,
+      "variantProperties": {
+        "formgroup state": ["Label Show and Hide"]
+      },
+      "width": 373,
+      "height": 76
+    },
+    {
+      "id": "3241:4144",
+      "name": "switch base",
+      "page": "Switch",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "switch": ["off", "on"]
+      },
+      "width": 306,
+      "height": 60
+    },
+    {
+      "id": "1472:11",
+      "name": "Tab / Item",
+      "page": "Tab",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "State": ["Active", "Default"]
+      },
+      "width": 315,
+      "height": 84
+    },
+    {
+      "id": "1472:20",
+      "name": "Tab / Group",
+      "page": "Tab",
+      "description": "",
+      "variantCount": 4,
+      "variantProperties": {
+        "Position": ["Tab 1", "Tab 2", "Tab 3", "Tab 4"]
+      },
+      "width": 1280,
+      "height": 330
+    },
+    {
+      "id": "3267:130",
+      "name": "Tag (blue)",
+      "page": "Tags",
+      "description": "A tag labels UI objects for quick recognition and navigation.",
+      "variantCount": 2,
+      "variantProperties": {
+        "Light": ["True", "False"]
+      },
+      "width": 64,
+      "height": 88
+    },
+    {
+      "id": "3267:135",
+      "name": "Tag (green)",
+      "page": "Tags",
+      "description": "A tag labels UI objects for quick recognition and navigation.",
+      "variantCount": 2,
+      "variantProperties": {
+        "Light": ["True", "False"]
+      },
+      "width": 64,
+      "height": 88
+    },
+    {
+      "id": "3267:140",
+      "name": "Tag (purple)",
+      "page": "Tags",
+      "description": "A tag labels UI objects for quick recognition and navigation.",
+      "variantCount": 2,
+      "variantProperties": {
+        "Light": ["True", "False"]
+      },
+      "width": 64,
+      "height": 88
+    },
+    {
+      "id": "3267:145",
+      "name": "Tag (red)",
+      "page": "Tags",
+      "description": "A tag labels UI objects for quick recognition and navigation.",
+      "variantCount": 2,
+      "variantProperties": {
+        "Light": ["True", "False"]
+      },
+      "width": 64,
+      "height": 88
+    },
+    {
+      "id": "3267:150",
+      "name": "Tag (yellow)",
+      "page": "Tags",
+      "description": "A tag labels UI objects for quick recognition and navigation.",
+      "variantCount": 2,
+      "variantProperties": {
+        "Light": ["True", "False"]
+      },
+      "width": 64,
+      "height": 88
+    },
+    {
+      "id": "3267:155",
+      "name": "Tag (teal)",
+      "page": "Tags",
+      "description": "A tag labels UI objects for quick recognition and navigation.",
+      "variantCount": 2,
+      "variantProperties": {
+        "Light": ["True", "False"]
+      },
+      "width": 64,
+      "height": 88
+    },
+    {
+      "id": "3267:160",
+      "name": "Tag (grey)",
+      "page": "Tags",
+      "description": "A tag labels UI objects for quick recognition and navigation.",
+      "variantCount": 2,
+      "variantProperties": {
+        "Light": ["True", "False"]
+      },
+      "width": 64,
+      "height": 88
+    },
+    {
+      "id": "3267:165",
+      "name": "Tag (removable link)",
+      "page": "Tags",
+      "description": "",
+      "variantCount": 42,
+      "variantProperties": {
+        "Appearance": ["Rounded", "Default"],
+        "Avatar": ["True", "False"],
+        "Icon": ["False", "True"],
+        "State": ["Default", "Remove Focus", "Remove Hover", "Remove Active", "Link Focus", "Link Hover", "Link Active"]
+      },
+      "width": 604,
+      "height": 272
+    },
+    {
+      "id": "3267:334",
+      "name": "Tag (removable)",
+      "page": "Tags",
+      "description": "",
+      "variantCount": 16,
+      "variantProperties": {
+        "Appearance": ["Rounded", "Default"],
+        "Avatar": ["False"],
+        "Icon": ["True", "False"],
+        "State": ["Default", "Hover", "Active", "focus"]
+      },
+      "width": 429,
+      "height": 272
+    },
+    {
+      "id": "3267:431",
+      "name": "Tag (link)",
+      "page": "Tags",
+      "description": "",
+      "variantCount": 18,
+      "variantProperties": {
+        "Appearance": ["Rounded", "Default"],
+        "Avatar": ["True", "False"],
+        "Icon": ["False", "True"],
+        "State": ["Default", "Hover", "Active"]
+      },
+      "width": 288,
+      "height": 272
+    },
+    {
+      "id": "330:4128",
+      "name": "Tiles",
+      "page": "Tile",
+      "description": "",
+      "variantCount": 4,
+      "variantProperties": {
+        "Style": ["Default", "Focus", "Hover", "Disabled"]
+      },
+      "width": 410,
+      "height": 424
+    },
+    {
+      "id": "7030:963",
+      "name": "iOS Home Indicator",
+      "page": "Pattern gaps (Honey)",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Property 1": ["Without Background", "With Background"]
+      },
+      "width": 415,
+      "height": 194
+    },
+    {
+      "id": "7030:1468",
+      "name": "placeholder icon",
+      "page": "Pattern gaps (Honey)",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Property 1": ["Default", "Active"]
+      },
+      "width": 116,
+      "height": 63
+    },
+    {
+      "id": "7030:1617",
+      "name": "Notification Badge",
+      "page": "Pattern gaps (Honey)",
+      "description": "",
+      "variantCount": 3,
+      "variantProperties": {
+        "Property 1": ["Large", "Medium", "Small"]
+      },
+      "width": 223,
+      "height": 56
+    },
+    {
+      "id": "7031:1226",
+      "name": "Android Home Indicator",
+      "page": "Pattern gaps (Honey)",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Property 1": ["With Background", "Without background"]
+      },
+      "width": 400,
+      "height": 200
+    },
+    {
+      "id": "7031:1346",
+      "name": "Bottom Navigation Tab",
+      "page": "Pattern gaps (Honey)",
+      "description": "",
+      "variantCount": 8,
+      "variantProperties": {
+        "Icon": ["Active", "Default"],
+        "Badge": ["Large", "Medium", "Small", "None"]
+      },
+      "width": 369,
+      "height": 211
+    },
+    {
+      "id": "7032:774",
+      "name": "Top Navigation",
+      "page": "Pattern gaps (Honey)",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Type": ["Title", "Logo name"]
+      },
+      "width": 415,
+      "height": 190
+    },
+    {
+      "id": "7032:1750",
+      "name": "bottom navigation - iOS",
+      "page": "Pattern gaps (Honey)",
+      "description": "",
+      "variantCount": 4,
+      "variantProperties": {
+        "Bottom bar": ["5", "4", "3", "2"]
+      },
+      "width": 415,
+      "height": 440
+    },
+    {
+      "id": "7038:2636",
+      "name": "Avatar with info",
+      "page": "Pattern gaps (Honey)",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Type": ["Person", "Event"]
+      },
+      "width": 383,
+      "height": 212
+    },
+    {
+      "id": "7042:13607",
+      "name": "Image",
+      "page": "Pattern gaps (Honey)",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Property 1": ["Default", "With image"]
+      },
+      "width": 382,
+      "height": 388
+    },
+    {
+      "id": "7043:13995",
+      "name": "With profile pic",
+      "page": "Pattern gaps (Honey)",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Property 1": ["With profile pic", "Without profile pic"]
+      },
+      "width": 310,
+      "height": 171
+    },
+    {
+      "id": "7045:14643",
+      "name": "Media card (3:2)",
+      "page": "Pattern gaps (Honey)",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Property 1": ["Default", "Disabled"]
+      },
+      "width": 382,
+      "height": 580
+    },
+    {
+      "id": "4910:201",
+      "name": "Avatar With Info",
+      "page": "Cards",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "type": ["Person", "Event"]
+      },
+      "width": 274,
+      "height": 215
+    },
+    {
+      "id": "4916:2353",
+      "name": "Title & Description",
+      "page": "Text Lockup",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Alignment": ["Left", "Center"]
+      },
+      "width": 375,
+      "height": 570
+    },
+    {
+      "id": "355:29181",
+      "name": ".Cell",
+      "page": "Table Creator",
+      "description": "",
+      "variantCount": 2,
+      "variantProperties": {
+        "Type": ["Default", "Header"]
+      },
+      "width": 272,
+      "height": 68
+    },
+    {
+      "id": "397:2676",
+      "name": ".Menu Item",
+      "page": "Sidebar",
+      "description": "",
+      "variantCount": 6,
+      "variantProperties": {
+        "Property 1": ["Submenu", "Menu", "Helper", "Femmecubator"],
+        "Property 2": ["Active", "Title", "Default", "Spacer", "Logo"]
+      },
+      "width": 240,
+      "height": 418
+    }
+  ],
+  "standaloneComponents": [
+    {
+      "id": "961:4647",
+      "name": "Header",
+      "page": "Demo Page",
+      "description": "",
+      "width": 1314,
+      "height": 375
+    },
+    {
+      "id": "961:4579",
+      "name": "Header",
+      "page": "Demo Page",
+      "description": "",
+      "width": 1314,
+      "height": 383
+    },
+    {
+      "id": "332:560",
+      "name": "wesparkle-logo/on-light",
+      "page": "Logo",
+      "description": "",
+      "width": 140,
+      "height": 28
+    },
+    {
+      "id": "7097:2388",
+      "name": "wesparkle-logo/on-dark",
+      "page": "Logo",
+      "description": "",
+      "width": 140,
+      "height": 28
+    },
+    {
+      "id": "6980:8495",
+      "name": "femmecubator-logo/on-dark",
+      "page": "Logo",
+      "description": "",
+      "width": 168,
+      "height": 40
+    },
+    {
+      "id": "6980:8496",
+      "name": "femmecubator-logo/on-light",
+      "page": "Logo",
+      "description": "",
+      "width": 168,
+      "height": 40
+    },
+    {
+      "id": "7067:5485",
+      "name": "Avatar-Variants/56/UserCircle",
+      "page": "Avatar",
+      "description": "",
+      "width": 150,
+      "height": 150
+    },
+    {
+      "id": "3293:1155",
+      "name": "Field Field",
+      "page": "Form Field",
+      "description": "input",
+      "width": 240,
+      "height": 34
+    },
+    {
+      "id": "3296:1173",
+      "name": "Field Note Text",
+      "page": "Form Field",
+      "description": "",
+      "width": 240,
+      "height": 18
+    },
+    {
+      "id": "3296:1175",
+      "name": "Field Note/error",
+      "page": "Form Field",
+      "description": "",
+      "width": 229,
+      "height": 26
+    },
+    {
+      "id": "332:583",
+      "name": "Popover - Menu",
+      "page": "Popover",
+      "description": "",
+      "width": 206,
+      "height": 227
+    },
+    {
+      "id": "332:982",
+      "name": "Divider",
+      "page": "Popover",
+      "description": "",
+      "width": 189,
+      "height": 8
+    },
+    {
+      "id": "332:1121",
+      "name": "Popover - Dropdown",
+      "page": "Popover",
+      "description": "",
+      "width": 227,
+      "height": 353
+    },
+    {
+      "id": "332:979",
+      "name": "Section Title",
+      "page": "Popover",
+      "description": "",
+      "width": 121,
+      "height": 44
+    },
+    {
+      "id": "3336:7440",
+      "name": "Label Show and Hide",
+      "page": "Switch",
+      "description": "",
+      "width": 215,
+      "height": 22
+    },
+    {
+      "id": "7034:1489",
+      "name": "Logo/femmecubator logo",
+      "page": "Pattern gaps (Honey)",
+      "description": "",
+      "width": 161,
+      "height": 37
+    },
+    {
+      "id": "7034:1487",
+      "name": "Logo/we sparkle logo",
+      "page": "Pattern gaps (Honey)",
+      "description": "",
+      "width": 140,
+      "height": 28
+    },
+    {
+      "id": "7040:4291",
+      "name": "Text box",
+      "page": "Pattern gaps (Honey)",
+      "description": "input",
+      "width": 342,
+      "height": 164
+    },
+    {
+      "id": "7040:13492",
+      "name": "Dropdown",
+      "page": "Pattern gaps (Honey)",
+      "description": "input",
+      "width": 342,
+      "height": 62
+    },
+    {
+      "id": "7040:13545",
+      "name": "Date and time",
+      "page": "Pattern gaps (Honey)",
+      "description": "input",
+      "width": 342,
+      "height": 62
+    },
+    {
+      "id": "7058:1524",
+      "name": "Modal - floating - center",
+      "page": "Pattern gaps (Honey)",
+      "description": "",
+      "width": 375,
+      "height": 700
+    },
+    {
+      "id": "3352:1581",
+      "name": "Account Access Form",
+      "page": "Login",
+      "description": "",
+      "width": 335,
+      "height": 464
+    },
+    {
+      "id": "4926:304",
+      "name": "List Card",
+      "page": "Cards",
+      "description": "",
+      "width": 343,
+      "height": 122
+    },
+    {
+      "id": "332:2030",
+      "name": ".Modal",
+      "page": "Modal (Not Published)",
+      "description": "",
+      "width": 447,
+      "height": 431
+    },
+    {
+      "id": "332:2032",
+      "name": ".Modal Overlay",
+      "page": "Modal (Not Published)",
+      "description": "",
+      "width": 522,
+      "height": 487
+    },
+    {
+      "id": "4914:200",
+      "name": "Empty state",
+      "page": "Femmecubator Wireframes",
+      "description": "",
+      "width": 167,
+      "height": 58
+    },
+    {
+      "id": "355:29182",
+      "name": ".Row",
+      "page": "Table Creator",
+      "description": "",
+      "width": 240,
+      "height": 36
+    },
+    {
+      "id": "355:29189",
+      "name": ".Table 1",
+      "page": "Table Creator",
+      "description": "",
+      "width": 240,
+      "height": 108
+    },
+    {
+      "id": "397:2772",
+      "name": ".Sidenav",
+      "page": "Sidebar",
+      "description": "",
+      "width": 200,
+      "height": 2333
+    },
+    {
+      "id": "7935:1109",
+      "name": ".Swatch",
+      "page": "Style Guide",
+      "description": "",
+      "width": 120,
+      "height": 195
+    }
+  ]
+}

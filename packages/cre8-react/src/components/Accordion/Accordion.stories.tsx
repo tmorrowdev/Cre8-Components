@@ -1,4 +1,4 @@
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { Cre8Accordion, Cre8AccordionItem, Cre8TextPassage } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';

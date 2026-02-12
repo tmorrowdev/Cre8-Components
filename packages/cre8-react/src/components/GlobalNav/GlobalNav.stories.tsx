@@ -1,4 +1,4 @@
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import { Cre8GlobalNav, Cre8GlobalNavItem } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 

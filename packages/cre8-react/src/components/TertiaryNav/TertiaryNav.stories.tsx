@@ -1,7 +1,7 @@
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import { Cre8TertiaryNav, Cre8TertiaryNavItem } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
-import { withActions } from '@storybook/addon-actions/decorator';
+import { withActions } from 'storybook/actions/decorator';
 import React from 'react';
 
 export default {

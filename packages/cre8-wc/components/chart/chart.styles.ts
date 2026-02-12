@@ -1,8 +1,17 @@
 import { css } from 'lit';
 
 const styles = css`
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   :host {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
     position: relative;
     width: 100%;
   }
@@ -29,9 +38,11 @@ const styles = css`
   }
 
   canvas {
-    display: block;
-    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    max-height: 100%;
     max-width: 100%;
+    width: auto !important;
   }
 
   .cre8-c-chart__loading {

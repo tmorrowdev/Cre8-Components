@@ -1,11 +1,11 @@
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { excludeRegexArray } from '../../../.storybook/preview';
 import { Cre8Badge, Cre8Link } from '../..';
-import svgCalendar from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Calendar.svg?raw';
-import svgCheck from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Check.svg?raw';
-import svgInfoFilled from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Info.svg?raw';
-import svgHelp from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Help.svg?raw';
+import svgCalendar from '@tmorrow/cre8-wc/icons/System/Regular/Calendar.svg?raw';
+import svgCheck from '@tmorrow/cre8-wc/icons/System/Regular/Check.svg?raw';
+import svgInfoFilled from '@tmorrow/cre8-wc/icons/System/Filled/Info.svg?raw';
+import svgHelp from '@tmorrow/cre8-wc/icons/System/Regular/Help.svg?raw';
 
 export default {
   title: 'Cre8 Components/Link',
@@ -114,8 +114,10 @@ export const Inverted: StoryObj<typeof Cre8Link> = {
     inverted: true,
     children: <>Hello World</>,
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 
@@ -127,8 +129,10 @@ export const InvtertedWithIcon: StoryObj<typeof Cre8Link> = {
     iconPosition: 'after',
     children: <>Hello World</>,
   },
-  parameters: {
-    backgrounds: { default: 'dark' },
+  globals: {
+    backgrounds: {
+      value: "dark"
+    }
   },
 };
 

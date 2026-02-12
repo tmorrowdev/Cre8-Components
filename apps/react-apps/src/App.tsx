@@ -1,4 +1,4 @@
-import { LandingPage } from '@cre8-react/components/LandingPage';
+import { LandingPage } from '@tmorrow/cre9-react';
 
 function App() {
   return (

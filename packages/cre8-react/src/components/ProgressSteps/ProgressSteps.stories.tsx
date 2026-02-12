@@ -1,14 +1,15 @@
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { excludeRegexArray } from '../../../.storybook/preview';
-import { Cre8ProgressSteps, Cre8ProgressStepsItem } from '../..';
-import svgCheckCircle from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Check.svg?raw';
-import svgError from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Error.svg?raw';
-import svgFilledCircleTwo from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Circle_Two.svg?raw';
-import svgFilledCircleFive from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Circle_Five.svg?raw';
-import svgRegularCircleThree from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Circle_Three.svg?raw';
-import svgRegularCircleSix from '@cre8_dev/cre8-icons/lib/icons/System/Regular/Circle_Six.svg?raw';
-import svgWarning from '@cre8_dev/cre8-icons/lib/icons/System/Filled/Warning.svg?raw';
+import { Cre8ProgressSteps } from '.';
+import { Cre8ProgressStepsItem } from '../ProgressStepsItem';
+import svgCheckCircle from '@tmorrow/cre8-wc/icons/System/Filled/Check.svg?raw';
+import svgError from '@tmorrow/cre8-wc/icons/System/Filled/Error.svg?raw';
+import svgFilledCircleTwo from '@tmorrow/cre8-wc/icons/System/Filled/Circle_Two.svg?raw';
+import svgFilledCircleFive from '@tmorrow/cre8-wc/icons/System/Filled/Circle_Five.svg?raw';
+import svgRegularCircleThree from '@tmorrow/cre8-wc/icons/System/Regular/Circle_Three.svg?raw';
+import svgRegularCircleSix from '@tmorrow/cre8-wc/icons/System/Regular/Circle_Six.svg?raw';
+import svgWarning from '@tmorrow/cre8-wc/icons/System/Filled/Warning.svg?raw';
 
 export default {
   title: 'In Development/ProgressSteps',

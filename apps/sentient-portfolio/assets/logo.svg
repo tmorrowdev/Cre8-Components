@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" fill="none">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00D4E0"/>
+      <stop offset="100%" style="stop-color:#00B4D8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- T -->
+  <path d="M0 8 L40 8 L40 16 L24 16 L24 70 L16 70 L16 16 L0 16 Z" fill="url(#logoGradient)"/>
+
+  <!-- Diamond dot -->
+  <path d="M48 40 L56 32 L64 40 L56 48 Z" fill="url(#logoGradient)"/>
+
+  <!-- M (angular) -->
+  <path d="M80 70 L80 8 L88 8 L104 40 L120 8 L128 8 L128 70 L120 70 L120 28 L104 58 L88 28 L88 70 Z" fill="url(#logoGradient)"/>
+
+  <!-- O (geometric) -->
+  <path d="M144 8 L184 8 L184 70 L144 70 Z M152 16 L152 62 L176 62 L176 16 Z" fill="url(#logoGradient)" fill-rule="evenodd"/>
+
+  <!-- R (angular with diagonal) -->
+  <path d="M200 8 L240 8 L240 36 L232 36 L240 70 L230 70 L222 36 L208 36 L208 70 L200 70 Z M208 16 L208 28 L232 28 L232 16 Z" fill="url(#logoGradient)"/>
+
+  <!-- R (second - mirrored style) -->
+  <path d="M256 8 L296 8 L296 36 L288 36 L296 70 L286 70 L278 36 L264 36 L264 70 L256 70 Z M264 16 L264 28 L288 28 L288 16 Z" fill="url(#logoGradient)"/>
+
+  <!-- O (second) -->
+  <path d="M312 8 L352 8 L352 70 L312 70 Z M320 16 L320 62 L344 62 L344 16 Z" fill="url(#logoGradient)" fill-rule="evenodd"/>
+
+  <!-- W (angular) -->
+  <path d="M368 8 L376 8 L384 50 L392 8 L400 8 L388 70 L380 70 L368 70 L356 8 L364 8 L376 50 Z" fill="url(#logoGradient)"/>
+
+  <!-- Design subtitle -->
+  <text x="400" y="95" text-anchor="end" font-family="'DM Sans', sans-serif" font-size="18" font-style="italic" fill="url(#logoGradient)" opacity="0.7">Design</text>
+</svg>

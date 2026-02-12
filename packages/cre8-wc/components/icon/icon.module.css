@@ -1,0 +1,75 @@
+@import '../../design-tokens/core/scss/theming/component.css';
+/**
+ * 1) Graphic used to supplement text or represent functionality
+ */
+:host {
+  display: flex;
+  --cre8-u-icon-display: block;
+}
+
+.cre8-c-icon-wrapper {
+  align-items: var(--cre8-u-icon-align-items);
+  justify-content: var(--cre8-u-icon-justify-content);
+  animation: var(--cre8-loading-animation, --cre8-icon-animation, none);
+  margin: var(--cre8-icon-margin, 0);
+}
+
+.cre8-c-icon {
+  height: var(--cre8-icon-height, 16px);
+  width: var(--cre8-icon-width, 16px);
+  color: var(--cre8-icon-fill, currentColor);
+}
+
+cre8-icon {
+  display: inline-flex;
+  vertical-align: middle;
+}
+@media (prefers-reduced-motion) {
+  cre8-icon[spin]:not([spin=false]) {
+    animation-duration: 6400ms !important;
+  }
+}
+cre8-icon[spin]:not([spin=false]) {
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-name: spin;
+  animation-timing-function: linear;
+}
+@media (prefers-reduced-motion) {
+  cre8-icon[pulse]:not([pulse=false]) svg * {
+    animation-duration: 3s !important;
+    animation-timing-function: linear;
+  }
+}
+cre8-icon[pulse]:not([pulse=false]) svg * {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+cre8-icon[flip=vertical] {
+  transform: scaleY(-1);
+}
+cre8-icon[flip=horizontal] {
+  transform: scaleX(-1);
+}
+cre8-icon[flip=both] {
+  transform: scaleX(-1) scaleY(-1);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=icon.module.css.map */

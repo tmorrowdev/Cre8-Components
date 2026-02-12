@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 const touch = (file) => {
   const time = new Date();
@@ -11,7 +11,7 @@ const touch = (file) => {
   }
 };
 
-module.exports = (router) => {
+export default (router) => {
   router.get('/set-theme', (req, res, next) => {
     let node_modules = path.resolve(process.cwd(), 'node_modules');
     const cacheDir = path.resolve(node_modules, '.cache/storybook-theme');

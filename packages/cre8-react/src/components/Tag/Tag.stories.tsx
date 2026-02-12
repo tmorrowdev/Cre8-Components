@@ -1,6 +1,6 @@
-import type { StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react-vite';
 import React from 'react';
-import { action } from '@storybook/addon-actions';
+import { action } from 'storybook/actions';
 import { Cre8Tag } from '../..';
 import { excludeRegexArray } from '../../../.storybook/preview';
 

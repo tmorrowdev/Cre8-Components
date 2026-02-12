@@ -1,0 +1,269 @@
+{
+  "component": "div",
+  "props": { "class": "tab-content" },
+  "children": [
+    {
+      "component": "div",
+      "props": { "class": "kpi-grid kpi-grid--4" },
+      "children": [
+        {
+          "component": "div",
+          "props": { "class": "kpi-card" },
+          "children": [
+            { "component": "span", "props": { "class": "kpi-label" }, "content": "Total Revenue" },
+            { "component": "div", "props": { "class": "kpi-value" }, "content": "$2.4M" },
+            { "component": "div", "props": { "class": "kpi-change kpi-change--up" }, "content": "+18.5% vs last month" }
+          ]
+        },
+        {
+          "component": "div",
+          "props": { "class": "kpi-card" },
+          "children": [
+            { "component": "span", "props": { "class": "kpi-label" }, "content": "Total Orders" },
+            { "component": "div", "props": { "class": "kpi-value" }, "content": "18,542" },
+            { "component": "div", "props": { "class": "kpi-change kpi-change--up" }, "content": "+12.8% vs last month" }
+          ]
+        },
+        {
+          "component": "div",
+          "props": { "class": "kpi-card" },
+          "children": [
+            { "component": "span", "props": { "class": "kpi-label" }, "content": "AOV" },
+            { "component": "div", "props": { "class": "kpi-value" }, "content": "$129.45" },
+            { "component": "div", "props": { "class": "kpi-change kpi-change--up" }, "content": "+5.1% vs last month" }
+          ]
+        },
+        {
+          "component": "div",
+          "props": { "class": "kpi-card" },
+          "children": [
+            { "component": "span", "props": { "class": "kpi-label" }, "content": "Conversion Rate" },
+            { "component": "div", "props": { "class": "kpi-value" }, "content": "3.8%" },
+            { "component": "div", "props": { "class": "kpi-change kpi-change--up" }, "content": "+0.4% vs last month" }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "div",
+      "props": { "class": "chart-card chart-card--full" },
+      "children": [
+        { "component": "h3", "props": { "class": "card-title" }, "content": "Revenue Trend (Last 12 Months)" },
+        {
+          "component": "cre8-chart",
+          "props": {
+            "type": "line",
+            "height": 300,
+            "data": {
+              "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+              "datasets": [
+                {
+                  "label": "Revenue",
+                  "data": [1450000, 1520000, 1680000, 1580000, 1720000, 1890000, 1950000, 2100000, 2050000, 2180000, 2320000, 2400000],
+                  "fill": true
+                },
+                {
+                  "label": "Target",
+                  "data": [1500000, 1550000, 1600000, 1650000, 1700000, 1800000, 1900000, 2000000, 2050000, 2100000, 2200000, 2300000],
+                  "borderDash": [5, 5]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "component": "div",
+      "props": { "class": "charts-row" },
+      "children": [
+        {
+          "component": "div",
+          "props": { "class": "chart-card chart-card--wide" },
+          "children": [
+            { "component": "h3", "props": { "class": "card-title" }, "content": "Revenue by Category" },
+            {
+              "component": "cre8-chart",
+              "props": {
+                "type": "bar",
+                "height": 280,
+                "data": {
+                  "labels": ["Electronics", "Clothing", "Home & Garden", "Sports", "Beauty", "Books"],
+                  "datasets": [{ "label": "Revenue ($K)", "data": [680, 520, 420, 380, 280, 120] }]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "component": "div",
+          "props": { "class": "chart-card" },
+          "children": [
+            { "component": "h3", "props": { "class": "card-title" }, "content": "Revenue by Channel" },
+            {
+              "component": "cre8-chart",
+              "props": {
+                "type": "doughnut",
+                "height": 280,
+                "data": {
+                  "labels": ["Website", "Mobile App", "Marketplace", "In-Store", "Phone"],
+                  "datasets": [{ "data": [45, 28, 15, 8, 4] }]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "div",
+      "props": { "class": "chart-card" },
+      "children": [
+        { "component": "h3", "props": { "class": "card-title" }, "content": "Conversion Funnel" },
+        {
+          "component": "div",
+          "props": { "class": "funnel-container" },
+          "children": [
+            {
+              "component": "div",
+              "props": { "class": "funnel-stage funnel-stage--1" },
+              "children": [{
+                "component": "div",
+                "props": { "class": "funnel-stage__content" },
+                "children": [
+                  { "component": "span", "props": { "class": "funnel-stage__label" }, "content": "Visitors" },
+                  { "component": "span", "props": { "class": "funnel-stage__value" }, "content": "1,200,000" },
+                  { "component": "span", "props": { "class": "funnel-stage__percent" }, "content": "100%" }
+                ]
+              }]
+            },
+            {
+              "component": "div",
+              "props": { "class": "funnel-stage funnel-stage--2" },
+              "children": [{
+                "component": "div",
+                "props": { "class": "funnel-stage__content" },
+                "children": [
+                  { "component": "span", "props": { "class": "funnel-stage__label" }, "content": "Product Views" },
+                  { "component": "span", "props": { "class": "funnel-stage__value" }, "content": "480,000" },
+                  { "component": "span", "props": { "class": "funnel-stage__percent" }, "content": "40%" }
+                ]
+              }]
+            },
+            {
+              "component": "div",
+              "props": { "class": "funnel-stage funnel-stage--3" },
+              "children": [{
+                "component": "div",
+                "props": { "class": "funnel-stage__content" },
+                "children": [
+                  { "component": "span", "props": { "class": "funnel-stage__label" }, "content": "Add to Cart" },
+                  { "component": "span", "props": { "class": "funnel-stage__value" }, "content": "96,000" },
+                  { "component": "span", "props": { "class": "funnel-stage__percent" }, "content": "8%" }
+                ]
+              }]
+            },
+            {
+              "component": "div",
+              "props": { "class": "funnel-stage funnel-stage--4" },
+              "children": [{
+                "component": "div",
+                "props": { "class": "funnel-stage__content" },
+                "children": [
+                  { "component": "span", "props": { "class": "funnel-stage__label" }, "content": "Checkout" },
+                  { "component": "span", "props": { "class": "funnel-stage__value" }, "content": "52,800" },
+                  { "component": "span", "props": { "class": "funnel-stage__percent" }, "content": "4.4%" }
+                ]
+              }]
+            },
+            {
+              "component": "div",
+              "props": { "class": "funnel-stage funnel-stage--5" },
+              "children": [{
+                "component": "div",
+                "props": { "class": "funnel-stage__content" },
+                "children": [
+                  { "component": "span", "props": { "class": "funnel-stage__label" }, "content": "Purchase" },
+                  { "component": "span", "props": { "class": "funnel-stage__value" }, "content": "18,542" },
+                  { "component": "span", "props": { "class": "funnel-stage__percent" }, "content": "1.5%" }
+                ]
+              }]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "div",
+      "props": { "class": "table-card" },
+      "children": [
+        { "component": "h3", "props": { "class": "card-title" }, "content": "Top Products" },
+        {
+          "component": "table",
+          "props": { "class": "data-table" },
+          "children": [
+            {
+              "component": "thead",
+              "children": [{
+                "component": "tr",
+                "children": [
+                  { "component": "th", "content": "Product" },
+                  { "component": "th", "content": "Category" },
+                  { "component": "th", "content": "Units Sold" },
+                  { "component": "th", "content": "Revenue" },
+                  { "component": "th", "content": "Margin" },
+                  { "component": "th", "content": "Growth" }
+                ]
+              }]
+            },
+            {
+              "component": "tbody",
+              "children": [
+                { "component": "tr", "children": [
+                  { "component": "td", "content": "Pro Wireless Headphones" },
+                  { "component": "td", "content": "Electronics" },
+                  { "component": "td", "content": "2,845" },
+                  { "component": "td", "content": "$425,250" },
+                  { "component": "td", "content": "42%" },
+                  { "component": "td", "props": { "class": "text-success" }, "content": "+28%" }
+                ]},
+                { "component": "tr", "children": [
+                  { "component": "td", "content": "Smart Watch Series X" },
+                  { "component": "td", "content": "Electronics" },
+                  { "component": "td", "content": "1,920" },
+                  { "component": "td", "content": "$383,040" },
+                  { "component": "td", "content": "38%" },
+                  { "component": "td", "props": { "class": "text-success" }, "content": "+15%" }
+                ]},
+                { "component": "tr", "children": [
+                  { "component": "td", "content": "Premium Yoga Mat" },
+                  { "component": "td", "content": "Sports" },
+                  { "component": "td", "content": "4,250" },
+                  { "component": "td", "content": "$212,500" },
+                  { "component": "td", "content": "55%" },
+                  { "component": "td", "props": { "class": "text-success" }, "content": "+42%" }
+                ]},
+                { "component": "tr", "children": [
+                  { "component": "td", "content": "Organic Skincare Set" },
+                  { "component": "td", "content": "Beauty" },
+                  { "component": "td", "content": "2,180" },
+                  { "component": "td", "content": "$195,820" },
+                  { "component": "td", "content": "62%" },
+                  { "component": "td", "props": { "class": "text-success" }, "content": "+35%" }
+                ]},
+                { "component": "tr", "children": [
+                  { "component": "td", "content": "Designer Backpack" },
+                  { "component": "td", "content": "Clothing" },
+                  { "component": "td", "content": "1,650" },
+                  { "component": "td", "content": "$181,500" },
+                  { "component": "td", "content": "48%" },
+                  { "component": "td", "props": { "class": "text-success" }, "content": "+22%" }
+                ]}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

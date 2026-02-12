@@ -1,5 +1,5 @@
-import type { StoryObj } from '@storybook/react';
-import { Cre8VerticalCard } from '../..';
+import type { StoryObj } from '@storybook/react-vite';
+import { Cre8VerticalCard } from '.';
 import { excludeRegexArray } from '../../../.storybook/preview';
 
 export default {
