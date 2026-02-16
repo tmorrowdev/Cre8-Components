@@ -1,4 +1,4 @@
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import { spread } from '../../directives/spread';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { sanitizeInput } from '../../utilities/story-helpers';
@@ -12,7 +12,7 @@ import '../badge/badge'
 export default {
   title: 'cre8 Components/Card',
   component: 'cre8-card',
-  render: ({header, body, footer, ...args}) => html`
+  render: ({ header, body, footer, ...args }) => html`
     <cre8-card ${spread(args)}>
       ${unsafeHTML(sanitizeInput(header, 'cre8-icon-legacy'))}
       ${unsafeHTML(sanitizeInput(body, 'cre8-text-passage', 'cre8-heading'))}
@@ -53,28 +53,28 @@ export const Horizontal = {
 export const Bare = {
   args: {
     ...Default.args,
-   variant: 'bare',
+    variant: 'bare',
   },
 };
 
 export const HorizontalBare = {
   args: {
     ...Horizontal.args,
-   variant: 'horizontal-bare',
+    variant: 'horizontal-bare',
   },
 };
 
 export const AlignCenter = {
   args: {
     ...Default.args,
-   align: 'center',
+    align: 'center',
   },
 };
 
 export const HorizontalAlignCenter = {
   args: {
     ...Horizontal.args,
-   align: 'center',
-   variant: 'horizontal'
+    align: 'center',
+    variant: 'horizontal'
   },
 };

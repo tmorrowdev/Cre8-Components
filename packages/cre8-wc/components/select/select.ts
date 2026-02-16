@@ -1,10 +1,10 @@
 import svgCaretUp from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Up.svg?raw';
-import { html, nothing, } from 'lit';
+import { html, nothing, CSSResult } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property, queryAll } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import '../field-note/field-note';
-import styles from './select.styles.js';
+import styles from './select.module.scss';
 import Cre8FormElement from '../cre8-form-element.js';
 
 export interface Cre8SelectOption {
@@ -49,7 +49,7 @@ export interface Cre8SelectOptionGroup {
 export class Cre8Select extends Cre8FormElement {
 
   readonly type = 'select';
-  static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * A mix of Cre8SelectOption and Cre8SelectOptionGroup definitions:
@@ -114,7 +114,7 @@ export class Cre8Select extends Cre8FormElement {
   disabled: boolean;
 
   /**
-   * Changes the component's treatment to represent an error state
+   * Changes the component.scss's treatment to represent an error state
    * @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })
@@ -128,7 +128,7 @@ export class Cre8Select extends Cre8FormElement {
   errorNote?: string;
 
   /**
-   * Changes the component's treatment to represent a success state
+   * Changes the component.scss's treatment to represent a success state
    * @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })

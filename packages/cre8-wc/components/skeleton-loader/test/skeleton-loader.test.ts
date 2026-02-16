@@ -1,5 +1,5 @@
 import { fixture } from '@open-wc/testing-helpers';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../skeleton-loader';
 import { cre8SkeletonLoader } from '../skeleton-loader';
 

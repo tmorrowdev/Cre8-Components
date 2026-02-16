@@ -1,4 +1,4 @@
-import { css } from 'lit';
+import { css, CSSResult } from 'lit';
 
 const styles = css`
   *,

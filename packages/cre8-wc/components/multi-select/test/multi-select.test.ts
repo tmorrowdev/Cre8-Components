@@ -1,6 +1,6 @@
 /* eslint-disable indent */
 import { fixture } from '@open-wc/testing-helpers';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../multi-select';
 import '../../remove-tag/remove-tag';
 import '../../checkbox-field-item/checkbox-field-item';

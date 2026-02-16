@@ -1,4 +1,4 @@
-import {html} from 'lit';
+import { html, CSSResult } from 'lit';
 import '../breadcrumbs-item/breadcrumbs-item';
 import '../link/link';
 import './breadcrumbs';
@@ -6,7 +6,7 @@ import './breadcrumbs';
 export default {
   title: 'cre8 Components/Breadcrumbs',
   component: 'cre8-breadcrumbs',
-  parameters: {status: {type: 'inProgress'}},
+  parameters: { status: { type: 'inProgress' } },
 };
 
 export const Default = (args) => html` <cre8-breadcrumbs>

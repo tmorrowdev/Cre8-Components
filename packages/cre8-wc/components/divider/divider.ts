@@ -1,7 +1,7 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './divider.styles.js';
+import styles from './divider.module.scss';
 
 /**
  * The divider component is a separator between sections of content or groups of items.
@@ -9,7 +9,7 @@ import styles from './divider.styles.js';
 */
 
 export class Cre8Divider extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Divider variants
@@ -17,7 +17,7 @@ export class Cre8Divider extends Cre8Element {
    * - **vertical** renders the vertical divider
   */
   @property()
-      variant: 'horizontal' | 'vertical' = 'horizontal';
+  variant: 'horizontal' | 'vertical' = 'horizontal';
 
   /**
    * Status (a color variant prop)
@@ -26,22 +26,22 @@ export class Cre8Divider extends Cre8Element {
    * - **knockout**, the divider has white color.
    */
   @property()
-      status?: string;
+  status?: string;
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-divider', {
-          'cre8-c-divider--horizontal': this.variant === 'horizontal',
-          'cre8-c-divider--vertical': this.variant === 'vertical',
-          'cre8-c-divider--brand': this.status === 'brand',
-          'cre8-c-divider--knockout': this.status === 'knockout',
-      });
+    const componentClassNames = this.componentClassNames('cre8-c-divider', {
+      'cre8-c-divider--horizontal': this.variant === 'horizontal',
+      'cre8-c-divider--vertical': this.variant === 'vertical',
+      'cre8-c-divider--brand': this.status === 'brand',
+      'cre8-c-divider--knockout': this.status === 'knockout',
+    });
 
-      return html` <div class="${componentClassNames}"><wbr></div> `;
+    return html` <div class="${componentClassNames}"><wbr></div> `;
   }
 }
 
 if (customElements.get('cre8-divider') === undefined) {
-    customElements.define('cre8-divider', Cre8Divider);
+  customElements.define('cre8-divider', Cre8Divider);
 }
 
 declare global {

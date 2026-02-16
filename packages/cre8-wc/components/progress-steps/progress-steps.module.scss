@@ -1,4 +1,4 @@
-@import '/design-tokens/core/scss/theming/component';
+@import '../../design-tokens/core/scss/theming/component.css';
 
 ::slotted(*) {
   flex: 1;
@@ -9,7 +9,7 @@
   flex-direction: row;
   margin: var(--cre8-spacing-24);
 
-  @media (max-width: component.$cre8-breakpoint-md) {
+  @media (max-width: $cre8-breakpoint-md) {
     flex-direction: column;
   }
 }

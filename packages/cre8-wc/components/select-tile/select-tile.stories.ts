@@ -1,4 +1,4 @@
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import { withActions } from 'storybook/internal/preview-api';
 import '../../.storybook/components/f-po/f-po';
 import '../../.storybook/components/example-inline/example-inline';
@@ -28,12 +28,12 @@ export default {
   },
   decorators: [withActions],
   argTypes: {
-    type: { control: 'select', options: ['radio', 'checkbox']},
-    variant: { options: [undefined, 'bare', 'horizontal', 'horizontal-bare' ]},
-    variantBreakToVertical: { options: ['sm', 'sm-2', 'md', 'lg', 'xl', 'xxl', 'none']},
-    checkPosition: { options: [ 'none', 'left', 'top-right', 'right']},
-    radioVariant: { options: [ 'dot', 'check' ]},
-    align: { options: [ undefined, 'center' ]},
+    type: { control: 'select', options: ['radio', 'checkbox'] },
+    variant: { options: [undefined, 'bare', 'horizontal', 'horizontal-bare'] },
+    variantBreakToVertical: { options: ['sm', 'sm-2', 'md', 'lg', 'xl', 'xxl', 'none'] },
+    checkPosition: { options: ['none', 'left', 'top-right', 'right'] },
+    radioVariant: { options: ['dot', 'check'] },
+    align: { options: [undefined, 'center'] },
     isError: { control: 'boolean' },
     isSuccess: { control: 'boolean' },
     required: { control: 'boolean' },

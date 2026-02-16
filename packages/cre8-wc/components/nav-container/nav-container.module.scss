@@ -1,4 +1,4 @@
-@import '/design-tokens/core/scss/theming/component';
+@import '../../design-tokens/core/scss/theming/component.css';
 
 /**
  * 1) Wrapper around contents that get placed into a toggleable
@@ -13,7 +13,7 @@
   background: var(--cre8-nav-container-background, var(--cre8-color-header-submenu-bg-default));
   overflow: auto;
 
-  @media all and (min-width: component.$cre8-breakpoint-lg) {
+  @media all and (min-width: $cre8-breakpoint-lg) {
     position: static;
     width: auto;
     height: auto;
@@ -29,7 +29,7 @@
   flex-direction: column;
   justify-content: space-between;
 
-  @media all and (min-width: component.$cre8-breakpoint-lg) {
+  @media all and (min-width: $cre8-breakpoint-lg) {
     flex-direction: row;
   }
 }

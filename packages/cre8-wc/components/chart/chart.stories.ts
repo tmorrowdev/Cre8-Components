@@ -1,4 +1,4 @@
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import './chart';
 import type { Cre8ChartType, Cre8ChartData } from './chart';
 

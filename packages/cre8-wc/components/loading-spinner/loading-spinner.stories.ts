@@ -1,4 +1,4 @@
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import './loading-spinner';
 import type { Meta, StoryObj } from '@storybook/web-Components';
 import type { cre8LoadingSpinner } from './loading-spinner';
@@ -13,7 +13,7 @@ const meta = {
   component: 'cre8-loading-spinner',
   argTypes: {
     buttonVariant: {
-      options: ['primary','secondary','tertiary'],
+      options: ['primary', 'secondary', 'tertiary'],
       control: {
         type: 'radio',
       }

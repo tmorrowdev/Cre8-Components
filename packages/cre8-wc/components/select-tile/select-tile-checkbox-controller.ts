@@ -1,4 +1,4 @@
-import { ReactiveController } from 'lit';
+import { ReactiveController, CSSResult } from 'lit';
 import { Cre8FormElement } from '../cre8-form-element';
 
 type FormElement = Cre8FormElement & { form: HTMLFormElement, name?: string, checked?: boolean };
@@ -34,39 +34,39 @@ export class SelectTileCheckboxController implements ReactiveController {
         this.host.removeEventListener('keydown', this._handleKeyDown);
     }
 
-  /**
-   * Handle clicking on the radio button
-   * @see _checkAndFocus
-   */
+    /**
+     * Handle clicking on the radio button
+     * @see _checkAndFocus
+     */
     private _clickHandler = (e: MouseEvent | KeyboardEvent) => {
         this._checkAndFocus();
         e.preventDefault();
     };
 
-  /**
-   * Set the element to `checked`
-   * 2) Set us to checked.
-   */
+    /**
+     * Set the element to `checked`
+     * 2) Set us to checked.
+     */
     private _checkAndFocus = () => {
         this.host.checked = !this.host.checked;
         this.host.dispatchEvent(new Event('input', { bubbles: true, composed: true }));
         this.host.dispatchEvent(new Event('change', { bubbles: true }));
     };
 
-  /**
-   * Handle keydown
-   */
+    /**
+     * Handle keydown
+     */
     private _handleKeyDown = (e: KeyboardEvent) => {
-    // Enter and Space
+        // Enter and Space
         if (['Enter', ' '].includes(e.key)) {
             this._handleEnterSpace(e);
         }
     };
 
-  /**
-   * Handle Enter and Space
-   * @see _checkAndFocus
-   */
+    /**
+     * Handle Enter and Space
+     * @see _checkAndFocus
+     */
     private _handleEnterSpace = (e: KeyboardEvent) => {
         this._checkAndFocus();
         e.preventDefault();

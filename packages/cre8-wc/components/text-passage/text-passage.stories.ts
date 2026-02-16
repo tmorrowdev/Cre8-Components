@@ -1,21 +1,21 @@
-import {Meta, StoryObj} from '@storybook/web-Components';
-import {html} from 'lit';
-import {spread} from '../../directives/spread';
+import { Meta, StoryObj } from '@storybook/web-Components';
+import { html, CSSResult } from 'lit';
+import { spread } from '../../directives/spread';
 import './text-passage';
 import '../heading/heading';
-import {overArgs} from 'lodash';
+import { overArgs } from 'lodash';
 
 const meta: Meta = {
   title: 'cre8 Components/Text Passage',
   component: 'cre8-text-passage',
-  parameters: {status: {type: 'inProgress'}},
+  parameters: { status: { type: 'inProgress' } },
   argTypes: {
     size: {
       options: ['default', 'small', 'large'],
-      control: {type: 'select'},
+      control: { type: 'select' },
     },
     inverted: {
-      control: {type: 'boolean'},
+      control: { type: 'boolean' },
 
     },
   },

@@ -1,4 +1,4 @@
-@import '/design-tokens/core/scss/theming/component';
+@import '../../design-tokens/core/scss/theming/component.css';
 
 /*------------------------------------*\
  #MODAL
@@ -57,14 +57,14 @@
   /**
    * Modal Window for mobile user screen widths
    */
-  @media all and (max-width: component.$cre8-breakpoint-md) {
+  @media all and (max-width: $cre8-breakpoint-md) {
     position: inherit;
     height: 100%;
     width: 100%;
   }
 
   &:focus-visible {
-    @include component.focus();
+    @include focus();
   }
 }
 
@@ -149,7 +149,7 @@
   /**
    * Modal Window Body for mobile user screen widths
    */
-  @media all and (max-width: component.$cre8-breakpoint-md) {
+  @media all and (max-width: $cre8-breakpoint-md) {
     height: 100%;
     max-height: max-content;
   }

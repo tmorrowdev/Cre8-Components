@@ -1,4 +1,4 @@
-@import '/design-tokens/core/scss/theming/component';
+@import '../../design-tokens/core/scss/theming/component.css';
 
 // #PRIMARY NAV
 
@@ -15,7 +15,8 @@
  */
 .cre8-c-primary-nav__list {
   display: flex;
-  flex-direction: column; /* 1 */
+  flex-direction: column;
+  /* 1 */
   margin: 0;
   padding: 0;
   list-style: none;
@@ -25,10 +26,12 @@
   * 1) Always keep items side by side
   */
   .cre8-c-primary-nav--side-by-side & {
-    flex-direction: row; /* 1 */
+    flex-direction: row;
+    /* 1 */
   }
 
-  @media all and (min-width: component.$cre8-breakpoint-lg) {
-    flex-direction: row; /* 1 */
+  @media all and (min-width: $cre8-breakpoint-lg) {
+    flex-direction: row;
+    /* 1 */
   }
 }

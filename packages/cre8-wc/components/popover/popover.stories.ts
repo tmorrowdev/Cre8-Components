@@ -1,5 +1,5 @@
-import {html} from 'lit';
-import {spread} from '../../directives/spread';
+import { html, CSSResult } from 'lit';
+import { spread } from '../../directives/spread';
 import { withActions } from 'storybook/internal/preview-api';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import '../../.storybook/components/f-po/f-po';
@@ -10,7 +10,7 @@ import { sanitizeInput } from '../../utilities/story-helpers';
 export default {
   title: 'cre8 Components/Popover',
   component: 'cre8-popover',
-  render: ({heading, header, body, footer, ...args}) => html`
+  render: ({ heading, header, body, footer, ...args }) => html`
   <cre8-popover ${spread(args)}>
     ${unsafeHTML(sanitizeInput(heading, 'f-po'))}
     ${unsafeHTML(sanitizeInput(header, 'cre8-button', 'f-po'))}
@@ -18,7 +18,7 @@ export default {
     ${unsafeHTML(sanitizeInput(footer, 'cre8-button', 'f-po'))}
   </cre8-popover>`,
   parameters: {
-    status: {type: 'inProgress'},
+    status: { type: 'inProgress' },
     layout: 'centered',
     actions: {
       handles: ['open', 'close'],
@@ -31,17 +31,17 @@ export default {
     header: '<cre8-button slot="trigger" text="Open Popover" variant="primary"></cre8-button>',
   },
   argTypes: {
-    isActive: {control: 'boolean'},
-    isActiveDynamic: {control: 'boolean'},
-    isDynamic: {control: 'boolean'},
-    isVisibleOnScroll: {control: 'boolean'},
-    position: {control: 'text'},
-    handleOnClickOutside: { table: { disable: true }},
-    removeActive: { table: { disable: true }},
-    removeActiveOnScroll: { table: { disable: true }},
-    isRTL: { table: { disable: true }},
-    close: { table: { disable: true }},
-    open: { table: { disable: true }}
+    isActive: { control: 'boolean' },
+    isActiveDynamic: { control: 'boolean' },
+    isDynamic: { control: 'boolean' },
+    isVisibleOnScroll: { control: 'boolean' },
+    position: { control: 'text' },
+    handleOnClickOutside: { table: { disable: true } },
+    removeActive: { table: { disable: true } },
+    removeActiveOnScroll: { table: { disable: true } },
+    isRTL: { table: { disable: true } },
+    close: { table: { disable: true } },
+    open: { table: { disable: true } }
   }
 };
 
@@ -53,7 +53,7 @@ export const Default = {
 
 export const DefaultNoButton = {}
 
-export const  PositionLeftContainsSmallPrimaryButton = {
+export const PositionLeftContainsSmallPrimaryButton = {
   args: {
     footer: '<cre8-button slot="footer" variant="primary" text="Button" size="sm" style="margin-left: auto"></cre8-button>',
     position: 'left'
@@ -67,7 +67,7 @@ export const PositionLeftContainsSmallSecondaryButton = {
   },
 };
 
-export const  PositionLeftContainsSmallTertiaryButton = {
+export const PositionLeftContainsSmallTertiaryButton = {
   args: {
     position: 'left'
   }

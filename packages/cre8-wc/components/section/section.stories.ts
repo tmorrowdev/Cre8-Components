@@ -1,7 +1,7 @@
-import {html} from 'lit';
+import { html, CSSResult } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-Components';
 import '../../.storybook/components/f-po/f-po';
-import {spread} from '../../directives/spread';
+import { spread } from '../../directives/spread';
 import '../heading/heading';
 import '../button/button';
 import '../text-passage/text-passage';
@@ -26,15 +26,15 @@ const meta = {
     controls: {
       hideNoControlsWarning: true,
     },
-},
-  argTypes:{
-    headline:{
-      control:{
+  },
+  argTypes: {
+    headline: {
+      control: {
         type: 'text'
       }
     },
     contents: {
-      control:{
+      control: {
         type: 'text'
       }
     }
@@ -61,7 +61,7 @@ const meta = {
   </cre8-text-passage>`,
 
   },
-  render: ({headline, contents}) =>{
+  render: ({ headline, contents }) => {
     return html`
     <cre8-section headline="${headline}">
     ${unsafeHTML(sanitizeInput(contents, 'cre8-text-passage', 'cre8-heading', 'cre8-button'))}
@@ -72,8 +72,8 @@ const meta = {
 export default meta;
 
 export const Default: Story = {};
-export const CustomHeading: Story ={
-  args:{
+export const CustomHeading: Story = {
+  args: {
     headline: undefined,
     contents: `<div style="display:flex; justify-content: space-between;" slot="header">
     <cre8-heading tagVariant="h2" slot="header"> Section Heading </cre8-heading>

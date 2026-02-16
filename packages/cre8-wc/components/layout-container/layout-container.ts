@@ -1,27 +1,27 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './layout-container.styles.js';
+import styles from './layout-container.module.scss';
 
 /**
  * @slot - The contents of the layout container
  */
 export class Cre8LayoutContainer extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Full height variant
    * 1) Sets the height to 100%
    */
   @property({ type: Boolean, reflect: true })
-      fullHeight?: boolean;
+  fullHeight?: boolean;
 
   render() {
-      const componentClassName = this.componentClassNames('cre8-l-layout-container', {
-          'cre8-l-layout-container--full-height': this.fullHeight === true,
-      });
+    const componentClassName = this.componentClassNames('cre8-l-layout-container', {
+      'cre8-l-layout-container--full-height': this.fullHeight === true,
+    });
 
-      return html`
+    return html`
       <div class="${componentClassName}">
         <slot></slot>
       </div>
@@ -30,7 +30,7 @@ export class Cre8LayoutContainer extends Cre8Element {
 }
 
 if (customElements.get('cre8-layout-container') === undefined) {
-    customElements.define('cre8-layout-container', Cre8LayoutContainer);
+  customElements.define('cre8-layout-container', Cre8LayoutContainer);
 }
 
 declare global {

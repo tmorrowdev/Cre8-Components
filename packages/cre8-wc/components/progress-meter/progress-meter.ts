@@ -1,13 +1,13 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { Cre8Element } from '../cre8-element';
-import styles from './progress-meter.styles.js';
+import styles from './progress-meter.module.scss';
 
 
 export enum status {
   'error', 'warning', 'success', undefined
- }
+}
 
 /**
  * A progress meter provides feedback that the system is working and gives
@@ -15,7 +15,7 @@ export enum status {
  * This indicator should be used when the system response time is longer and determinable.
  */
 export class Cre8ProgressMeter extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Progress Status
@@ -27,21 +27,21 @@ export class Cre8ProgressMeter extends Cre8Element {
    * @attr {status}
    */
   @property()
-      status?: 'error' | 'warning' | 'success';
+  status?: 'error' | 'warning' | 'success';
 
   /*
    * Determines if the progress meter is displayed on a dark background (uses knockout colors for contrast)
    * @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })
-      knockout?: boolean;
+  knockout?: boolean;
 
   /*
    * The max number for the progress bar (defaulted to 100 to match percentages)
    * @attr {number}
    */
   @property()
-      max: number = 100;
+  max: number = 100;
 
   /*
    * The the percentage of the bar that is filled in (defaulted to match percentages)
@@ -49,43 +49,43 @@ export class Cre8ProgressMeter extends Cre8Element {
    * @attr {number}
    */
   @property()
-      value: number;
+  value: number;
 
   /**
    * Progress Meter FieldId
    * @attr {string}
    */
   @property()
-      fieldId?: string;
+  fieldId?: string;
 
   /**
    * Progress Meter name
    * @attr {string}
    */
   @property()
-      name?: string;
+  name?: string;
 
   /**
    * Progress Meter label
    * @attr {string}
    */
   @property()
-      label: string;
+  label: string;
 
   connectedCallback() {
-      super.connectedCallback();
-      this.fieldId = this.fieldId || nanoid();
+    super.connectedCallback();
+    this.fieldId = this.fieldId || nanoid();
   }
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-progress-meter', {
-          'cre8-c-progress-meter--error': this.status === 'error',
-          'cre8-c-progress-meter--warning': this.status === 'warning',
-          'cre8-c-progress-meter--success': this.status === 'success',
-          'cre8-c-progress-meter--knockout': this.knockout,
-      });
+    const componentClassNames = this.componentClassNames('cre8-c-progress-meter', {
+      'cre8-c-progress-meter--error': this.status === 'error',
+      'cre8-c-progress-meter--warning': this.status === 'warning',
+      'cre8-c-progress-meter--success': this.status === 'success',
+      'cre8-c-progress-meter--knockout': this.knockout,
+    });
 
-      return html`<div class="${componentClassNames}">
+    return html`<div class="${componentClassNames}">
       <label class="cre8-c-progress-meter__label" for="${this.fieldId}">${this.label}</label>
       <span class="cre8-c-progress-meter__sr-only">${Math.round((this.value / this.max) * 100)}%</span>
       <progress
@@ -103,7 +103,7 @@ export class Cre8ProgressMeter extends Cre8Element {
 }
 
 if (customElements.get('cre8-progress-meter') === undefined) {
-    customElements.define('cre8-progress-meter', Cre8ProgressMeter);
+  customElements.define('cre8-progress-meter', Cre8ProgressMeter);
 }
 
 declare global {

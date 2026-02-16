@@ -1,8 +1,8 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { Cre8Element } from '../cre8-element';
-import styles from './tag-list.styles.js';
+import styles from './tag-list.module.scss';
 
 /**
  * Tag List must have children which are Tag components that are of type `checkbox` or `radio`.
@@ -10,33 +10,33 @@ import styles from './tag-list.styles.js';
  * Tag List has a label that should be used to describe the purpose of the list.
  */
 export class Cre8TagList extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Tag list legend label
    */
   @property()
-      label?: string;
+  label?: string;
 
   /**
    * The unique id of the select
    * @attr {string}
    */
   @property()
-      fieldId?: string;
+  fieldId?: string;
 
   firstUpdated() {
-      this._initializeAria();
+    this._initializeAria();
   }
 
   private _initializeAria() {
-      this.fieldId = this.fieldId || nanoid();
+    this.fieldId = this.fieldId || nanoid();
   }
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-tag-list', { });
+    const componentClassNames = this.componentClassNames('cre8-c-tag-list', {});
 
-      return html`
+    return html`
       <fieldset class="${componentClassNames}">
         <legend class="cre8-c-tag-list__legend">${this.label}</legend>
         <div class="cre8-c-tag-list__list" role="list">   
@@ -48,7 +48,7 @@ export class Cre8TagList extends Cre8Element {
 }
 
 if (customElements.get('cre8-tag-list') === undefined) {
-    customElements.define('cre8-tag-list', Cre8TagList);
+  customElements.define('cre8-tag-list', Cre8TagList);
 }
 
 declare global {

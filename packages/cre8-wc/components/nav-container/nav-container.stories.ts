@@ -1,4 +1,4 @@
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../../.storybook/components/f-po/f-po';
 import { spread } from '../../directives/spread';
 import './nav-container';

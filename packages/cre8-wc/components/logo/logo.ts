@@ -1,24 +1,24 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './logo.styles.js';
+import styles from './logo.module.scss';
 
 /**
  * @slot - The logo element
  */
 export class Cre8Logo extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Logo link
    */
   @property()
-      href?: string;
+  href?: string;
 
   render() {
-      const componentClassName = this.componentClassNames('cre8-c-logo', {});
+    const componentClassName = this.componentClassNames('cre8-c-logo', {});
 
-      return html`
+    return html`
       <a href="${this.href}" class="${componentClassName}">
        
       </a>
@@ -27,7 +27,7 @@ export class Cre8Logo extends Cre8Element {
 }
 
 if (customElements.get('cre8-logo') === undefined) {
-    customElements.define('cre8-logo', Cre8Logo);
+  customElements.define('cre8-logo', Cre8Logo);
 }
 
 declare global {

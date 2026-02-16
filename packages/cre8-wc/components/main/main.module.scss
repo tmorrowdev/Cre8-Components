@@ -1,4 +1,4 @@
-@import '/design-tokens/core/scss/theming/component';
+@import '../../design-tokens/core/scss/theming/component.css';
 
 // #MAIN
 
@@ -10,7 +10,8 @@
 :host {
   display: flex;
   flex-direction: column;
-  flex: 1 0 auto; /* 2 */
+  flex: 1 0 auto;
+  /* 2 */
 }
 
 /**

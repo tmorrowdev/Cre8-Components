@@ -1,29 +1,29 @@
 /* eslint-disable import/prefer-default-export */
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../../cre8-element';
-import styles from './page-counter.styles.js';
+import styles from './page-counter.module.scss';
 
 /**
  * @slot - The component content
  */
 export class Cre8PageCounter extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   @property({ type: Boolean, reflect: true })
-      rangeVariant?: boolean;
+  rangeVariant?: boolean;
 
   @property()
-      currentPage: number = 1;
+  currentPage: number = 1;
 
   @property()
-      totalResults: number;
+  totalResults: number;
 
   @property()
-      pageSize: number;
+  pageSize: number;
 
   @property()
-      display?: 'compact' | 'icon-only' | 'default' = 'default';
+  display?: 'compact' | 'icon-only' | 'default' = 'default';
 
   // Properties below are for future 'range' variant for table pagination
 
@@ -41,19 +41,19 @@ export class Cre8PageCounter extends Cre8Element {
   // }
 
   private get _totalPages(): number {
-      return Math.ceil(this.totalResults / this.pageSize);
+    return Math.ceil(this.totalResults / this.pageSize);
   }
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-page-counter', { });
+    const componentClassNames = this.componentClassNames('cre8-c-page-counter', {});
 
-      return html`
+    return html`
       <div class='${componentClassNames}'>
         <span class="cre8-c-pagination__text" aria-live="polite">
           ${!this.display || this.display === 'default'
         ? html`${this.currentPage}`
         : html`${this.currentPage} of ${this._totalPages}`
-}
+      }
         </span>
       </div>
     `;
@@ -61,7 +61,7 @@ export class Cre8PageCounter extends Cre8Element {
 }
 
 if (customElements.get('cre8-page-counter') === undefined) {
-    customElements.define('cre8-page-counter', Cre8PageCounter);
+  customElements.define('cre8-page-counter', Cre8PageCounter);
 }
 
 declare global { interface HTMLElementTagNameMap { 'cre8-page-counter': Cre8PageCounter; } }

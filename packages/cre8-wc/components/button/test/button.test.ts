@@ -1,5 +1,5 @@
 import { fixture, oneEvent } from '@open-wc/testing-helpers';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../button';
 import userEvent from '@testing-library/user-event';
 import { cre8LoadingSpinner } from '../../loading-spinner/loading-spinner';
@@ -29,12 +29,12 @@ describe('button', () => {
     });
 
     test('has the correct class names with secondary variant neutral and inverse props', async () => {
-            const el = await fixture<cre8Button>(html`<cre8-button text="Button" variant="secondary" neutral inverse></cre8-button>`);
-            const button = el.shadowRoot!.querySelector('button'); // Test for the class change
-            expect(button.classList.contains(`cre8-c-button--secondary`)).toBeTruthy();
-            expect(button.classList.contains(`cre8-c-button--neutral`)).toBeTruthy();
-            expect(button.classList.contains(`cre8-c-button--inverse`)).toBeTruthy();
-        
+        const el = await fixture<cre8Button>(html`<cre8-button text="Button" variant="secondary" neutral inverse></cre8-button>`);
+        const button = el.shadowRoot!.querySelector('button'); // Test for the class change
+        expect(button.classList.contains(`cre8-c-button--secondary`)).toBeTruthy();
+        expect(button.classList.contains(`cre8-c-button--neutral`)).toBeTruthy();
+        expect(button.classList.contains(`cre8-c-button--inverse`)).toBeTruthy();
+
     });
 
     test('has the correct class names with secondary variant disabled, neutral and inverse props', async () => {
@@ -43,27 +43,27 @@ describe('button', () => {
         expect(button.classList.contains(`cre8-c-button--secondary`)).toBeTruthy();
         expect(button.classList.contains(`cre8-c-button--neutral`)).toBeTruthy();
         expect(button.classList.contains(`cre8-c-button--inverse`)).toBeTruthy();
-});
+    });
 
-test('has the correct class names with secondary variant loading, neutral and inverse props', async () => {
-    const el = await fixture<cre8Button>(html`<cre8-button text="Button" variant="secondary" loading neutral inverse></cre8-button>`);
-    const button = el.shadowRoot!.querySelector('button'); // Test for the class change
-    expect(button.classList.contains(`cre8-c-button--secondary`)).toBeTruthy();
-    expect(button.classList.contains(`cre8-c-button--neutral`)).toBeTruthy();
-    expect(button.classList.contains(`cre8-c-button--inverse`)).toBeTruthy();
-    expect(button.classList.contains(`cre8-c-button--loading`)).toBeTruthy();
-});
+    test('has the correct class names with secondary variant loading, neutral and inverse props', async () => {
+        const el = await fixture<cre8Button>(html`<cre8-button text="Button" variant="secondary" loading neutral inverse></cre8-button>`);
+        const button = el.shadowRoot!.querySelector('button'); // Test for the class change
+        expect(button.classList.contains(`cre8-c-button--secondary`)).toBeTruthy();
+        expect(button.classList.contains(`cre8-c-button--neutral`)).toBeTruthy();
+        expect(button.classList.contains(`cre8-c-button--inverse`)).toBeTruthy();
+        expect(button.classList.contains(`cre8-c-button--loading`)).toBeTruthy();
+    });
 
-test('works with loading state secondary variant with neutral and inverse props', async () => {
-    const el = await fixture(html`<cre8-button variant="secondary" neutral inverse ?loading=${true}></cre8-button>`);
-    const cre8Icon = el.shadowRoot.querySelector<cre8LoadingSpinner>('cre8-loading-spinner');
-    const button = el.shadowRoot!.querySelector('button'); // Test for the class change
-    expect(cre8Icon.classList.contains('cre8-c-button__loading-icon')).toBeTruthy();
-    expect(button.classList.contains(`cre8-c-button--secondary`)).toBeTruthy();
-    expect(button.classList.contains(`cre8-c-button--neutral`)).toBeTruthy();
-    expect(button.classList.contains(`cre8-c-button--inverse`)).toBeTruthy();
-    expect(button.classList.contains(`cre8-c-button--loading`)).toBeTruthy();
-});
+    test('works with loading state secondary variant with neutral and inverse props', async () => {
+        const el = await fixture(html`<cre8-button variant="secondary" neutral inverse ?loading=${true}></cre8-button>`);
+        const cre8Icon = el.shadowRoot.querySelector<cre8LoadingSpinner>('cre8-loading-spinner');
+        const button = el.shadowRoot!.querySelector('button'); // Test for the class change
+        expect(cre8Icon.classList.contains('cre8-c-button__loading-icon')).toBeTruthy();
+        expect(button.classList.contains(`cre8-c-button--secondary`)).toBeTruthy();
+        expect(button.classList.contains(`cre8-c-button--neutral`)).toBeTruthy();
+        expect(button.classList.contains(`cre8-c-button--inverse`)).toBeTruthy();
+        expect(button.classList.contains(`cre8-c-button--loading`)).toBeTruthy();
+    });
 
     test('works with an href', async () => {
         const el = await fixture(html`<cre8-button href="https://www.cfpb.gov"></cre8-button>`);

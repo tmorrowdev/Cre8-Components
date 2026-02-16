@@ -119,7 +119,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "./design-tokens/core/scss/theming/head.module.css";`,
+        additionalData: `@import "./design-tokens/core/scss/theming/head.css";`,
         includePaths: [
           path.resolve(__dirname, 'node_modules/@tmorrow/cre8-design-tokens'),
           path.resolve(__dirname, 'node_modules')

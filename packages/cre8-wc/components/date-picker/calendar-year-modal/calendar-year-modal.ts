@@ -2,15 +2,15 @@
 /* eslint-disable indent */
 
 /* TODO: remove eslint disable on no-template-arrow */
-import { TemplateResult, html,  } from 'lit';
+import { TemplateResult, html, CSSResult } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { Cre8Element } from '../../cre8-element';
-import styles from './calendar-year-modal.styles.js';
+import styles from './calendar-year-modal.module.scss';
 import '../../button/button';
 import '../../icon/icon';
 
 export class Cre8CalendarYearModal extends Cre8Element {
-  static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
 
   @state() yearNumbers: Array<number>;

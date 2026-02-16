@@ -1,12 +1,12 @@
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import { spread } from '../../directives/spread';
-import {withActions} from 'storybook/internal/preview-api';
+import { withActions } from 'storybook/internal/preview-api';
 import './remove-tag';
 
 const meta = {
   title: 'In Development/Remove Tag',
   component: 'cre8-remove-tag',
-  parameters: { 
+  parameters: {
     status: { type: 'inProgress' },
     actions: {
       handles: ['click'],

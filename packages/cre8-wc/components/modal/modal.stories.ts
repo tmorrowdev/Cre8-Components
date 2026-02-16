@@ -1,4 +1,4 @@
-import {html} from 'lit';
+import { html, CSSResult } from 'lit';
 import '../button/button';
 import '../heading/heading';
 import '../text-passage/text-passage';
@@ -9,7 +9,7 @@ export default {
   title: 'cre8 Components/Modal',
   component: 'cre8-modal',
   parameters: {
-    status: {type: 'inProgress'},
+    status: { type: 'inProgress' },
     actions: {
       handles: ['close-modal'],
     },

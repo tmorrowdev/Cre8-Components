@@ -1,7 +1,7 @@
-import { css } from 'lit';
-const styles = css`@import '../../design-tokens/core/scss/theming/component';
-@import '../../design-tokens/core/scss/theming/component';
-@import "design-tokens/core/scss/utilities/visibility";
+import { css, CSSResult } from 'lit';
+const styles = css`@use '../../design-tokens/core/scss/theming/component';
+@use '../../design-tokens/core/scss/theming/component';
+@use "design-tokens/core/scss/utilities/visibility";
 
 :host {
   display: block;

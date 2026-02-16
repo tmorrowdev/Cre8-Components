@@ -1,10 +1,10 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { Cre8Element } from '../cre8-element';
 import '../field-note/field-note';
-import styles from './checkbox-field.styles.js';
+import styles from './checkbox-field.module.scss';
 
 /**
  * Checkbox Field is the parent container for `checkbox-field-item`.
@@ -16,64 +16,64 @@ import styles from './checkbox-field.styles.js';
  * @slot - The component content, which should be a set of `checkbox-field-item`s
  */
 export class Cre8CheckboxField extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Checkbox container legend label
    */
   @property()
-      label?: string;
+  label?: string;
 
   /**
    * Checkbox container fieldnote
    */
   @property()
-      fieldNote?: string;
+  fieldNote?: string;
 
   /**
    * Checkbox container fieldnote aria describe by
    */
   @property()
-      ariaDescribedBy?: string;
+  ariaDescribedBy?: string;
 
   /**
    * Checkbox container fieldnote icon name
    */
   @property()
-      fieldNoteIconName?: string;
+  fieldNoteIconName?: string;
 
   /**
    * Checkbox container fieldnote knockout
    * @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })
-      fieldNoteKnockout?: boolean;
+  fieldNoteKnockout?: boolean;
 
   /**
    * Checkbox container fieldnote isSuccess
    * @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })
-      fieldNoteIsSuccess?: boolean;
+  fieldNoteIsSuccess?: boolean;
 
   /**
    * Checkbox container fieldnote isError
    * @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })
-      fieldNoteIsError?: boolean;
+  fieldNoteIsError?: boolean;
 
   connectedCallback() {
-      super.connectedCallback();
-      if (this.fieldNote) {
-          this.ariaDescribedBy = this.ariaDescribedBy || nanoid();
-      }
+    super.connectedCallback();
+    if (this.fieldNote) {
+      this.ariaDescribedBy = this.ariaDescribedBy || nanoid();
+    }
   }
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-checkbox-field', {});
+    const componentClassNames = this.componentClassNames('cre8-c-checkbox-field', {});
 
-      return html`
+    return html`
       <fieldset class="${componentClassNames}" aria-describedby="${ifDefined(this.ariaDescribedBy)}">
       <legend class="cre8-c-checkbox-field__legend">${this.label}</legend>
         <div class="cre8-c-checkbox-field__body">
@@ -97,7 +97,7 @@ export class Cre8CheckboxField extends Cre8Element {
 }
 
 if (customElements.get('cre8-checkbox-field') === undefined) {
-    customElements.define('cre8-checkbox-field', Cre8CheckboxField);
+  customElements.define('cre8-checkbox-field', Cre8CheckboxField);
 }
 
 declare global {

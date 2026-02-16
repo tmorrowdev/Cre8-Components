@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import { spread } from '../../directives/spread';
 import './logo';
 

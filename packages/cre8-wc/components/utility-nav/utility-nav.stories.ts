@@ -1,4 +1,4 @@
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import { spread } from '../../directives/spread';
 import '../utility-nav-item/utility-nav-item';
 import './utility-nav';

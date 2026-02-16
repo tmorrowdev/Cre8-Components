@@ -3,10 +3,10 @@ import svgCheckCircle from '/Users/tylersmbp/Projects/cre8-web-components/packag
 import svgInfoFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Info.svg?raw';
 import svgErrorFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Error.svg?raw';
 import svgHelpFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Help.svg?raw';
-import { html, nothing,  } from 'lit';
+import { html, nothing, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './inline-alert.styles.js';
+import styles from './inline-alert.module.scss';
 import '../icon/icon';
 
 /**
@@ -18,27 +18,27 @@ import '../icon/icon';
  * @slot - The component content
  */
 export class Cre8InlineAlert extends Cre8Element {
-    static styles = [styles];
+    static styles = [styles as unknown as CSSResult];
 
     /**
      *  DEPRECATED: Icon name used for the icon before to the field note
      * @deprecated
     */
     @property()
-        iconName?: string;
+    iconName?: string;
 
     /**
      * Full width Inline Alert
      * @attr {boolean}
      */
     @property({ type: Boolean, reflect: true })
-        fullWidth?: boolean;
+    fullWidth?: boolean;
 
     /**
      * Icon title used for the icon alt text
      */
     @property()
-        iconTitle?: string;
+    iconTitle?: string;
 
     /**
      * Variant
@@ -46,7 +46,7 @@ export class Cre8InlineAlert extends Cre8Element {
      * - **transparent** renders an alert message with no padded container, border, or background color
      */
     @property()
-        variant: 'transparent' | 'subtle' = 'subtle';
+    variant: 'transparent' | 'subtle' = 'subtle';
 
     /**
      * Status
@@ -58,7 +58,7 @@ export class Cre8InlineAlert extends Cre8Element {
      * - **neutral** renders an inline alert with a nuetral state
      */
     @property({ type: String })
-        status?: 'error' | 'warning' | 'success' | 'attention' | 'neutral' | 'help' | 'info' = 'info';
+    status?: 'error' | 'warning' | 'success' | 'attention' | 'neutral' | 'help' | 'info' = 'info';
 
     /*
     * Maps modal icons and modal status variants to what the alt text of the related icon should be see:
@@ -130,9 +130,9 @@ export class Cre8InlineAlert extends Cre8Element {
         return html`
         <div class="${componentClassNames}">
             ${this.iconName || this.status
-        ? html` ${this.mapStatusToIconInlineAlert(this.status)}`
-        : ''
-}
+                ? html` ${this.mapStatusToIconInlineAlert(this.status)}`
+                : ''
+            }
             <div class="cre8-c-inline-alert__body">
                 <slot></slot>
             </div>

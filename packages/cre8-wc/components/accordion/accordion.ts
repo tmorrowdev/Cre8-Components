@@ -1,7 +1,7 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './accordion.styles.js';
+import styles from './accordion.module.scss';
 
 /**
  * The component is a vertically stacked list of headers that reveal or hide sections of related content on a page.
@@ -15,7 +15,7 @@ import styles from './accordion.styles.js';
  */
 
 export class Cre8Accordion extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
 
   /**
@@ -26,7 +26,7 @@ export class Cre8Accordion extends Cre8Element {
    *
    */
   @property()
-      borderType?: 'rectangle' | 'rounded-bottom' | 'rounded' | 'none';
+  borderType?: 'rectangle' | 'rounded-bottom' | 'rounded' | 'none';
 
   /**
    *
@@ -36,22 +36,22 @@ export class Cre8Accordion extends Cre8Element {
    *
    */
   @property({ type: Boolean, reflect: true })
-      hasDivider? = false;
+  hasDivider? = false;
 
   connectedCallback(): void {
-      super.connectedCallback();
+    super.connectedCallback();
   }
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-accordion', {
-          'cre8-c-inner-divider': this.hasDivider === true,
-          'cre8-c-accordion--border-none': this.borderType === undefined || this.borderType === 'none',
-          'cre8-c-accordion--border-rectangle': this.borderType === 'rectangle',
-          'cre8-c-accordion--border-rounded-bottom': this.borderType === 'rounded-bottom',
-          'cre8-c-accordion--border-rounded': this.borderType === 'rounded',
-      });
+    const componentClassNames = this.componentClassNames('cre8-c-accordion', {
+      'cre8-c-inner-divider': this.hasDivider === true,
+      'cre8-c-accordion--border-none': this.borderType === undefined || this.borderType === 'none',
+      'cre8-c-accordion--border-rectangle': this.borderType === 'rectangle',
+      'cre8-c-accordion--border-rounded-bottom': this.borderType === 'rounded-bottom',
+      'cre8-c-accordion--border-rounded': this.borderType === 'rounded',
+    });
 
-      return html`
+    return html`
       <div class="${componentClassNames}">
         <slot> </slot>
       </div>
@@ -60,7 +60,7 @@ export class Cre8Accordion extends Cre8Element {
 }
 
 if (customElements.get('cre8-accordion') === undefined) {
-    customElements.define('cre8-accordion', Cre8Accordion);
+  customElements.define('cre8-accordion', Cre8Accordion);
 }
 declare global {
   interface HTMLElementTagNameMap {

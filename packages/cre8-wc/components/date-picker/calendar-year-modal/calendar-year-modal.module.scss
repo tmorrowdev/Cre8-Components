@@ -1,4 +1,4 @@
-@import "design-tokens/core/scss/theming/component";
+@use "../../../design-tokens/core/scss/theming/component" as *;
 
 .cre8-c-calendar-year-modal {
   display: flex;

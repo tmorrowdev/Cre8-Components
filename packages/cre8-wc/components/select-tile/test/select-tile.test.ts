@@ -1,5 +1,5 @@
 import { fixture } from '@open-wc/testing-helpers';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../select-tile';
 import { cre8SelectTile } from '../select-tile';
 import { cre8SelectTileList } from '../../select-tile-list/select-tile-list';
@@ -185,13 +185,13 @@ describe('select-tile', () => {
 
         expect(el.checked).toBeFalsy();
 
-    // clicking checks it
+        // clicking checks it
         el.dispatchEvent(new Event('click'));
         await el.updateComplete;
 
         expect(el.checked).toBeTruthy();
 
-    // clicking again keeps it checked
+        // clicking again keeps it checked
         el.dispatchEvent(new Event('click'));
         await el.updateComplete;
 
@@ -203,13 +203,13 @@ describe('select-tile', () => {
 
         expect(el.checked).toBeFalsy();
 
-    // Enter checks it
+        // Enter checks it
         el.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }));
         await el.updateComplete;
 
         expect(el.checked).toBeTruthy();
 
-    // Enter again keeps it checked
+        // Enter again keeps it checked
         el.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }));
         await el.updateComplete;
 
@@ -221,13 +221,13 @@ describe('select-tile', () => {
 
         expect(el.checked).toBeFalsy();
 
-    // Space checks it
+        // Space checks it
         el.dispatchEvent(new KeyboardEvent('keydown', { key: ' ' }));
         await el.updateComplete;
 
         expect(el.checked).toBeTruthy();
 
-    // Space again keeps it checked
+        // Space again keeps it checked
         el.dispatchEvent(new KeyboardEvent('keydown', { key: ' ' }));
         await el.updateComplete;
 
@@ -258,7 +258,7 @@ describe('select-tile', () => {
         expect(st1.checked).toBeFalsy();
         expect(st2.checked).toBeFalsy();
 
-    // clicking checks them both
+        // clicking checks them both
         st1.dispatchEvent(new Event('click'));
         st2.dispatchEvent(new Event('click'));
         await st1.updateComplete;
@@ -267,7 +267,7 @@ describe('select-tile', () => {
         expect(st1.checked).toBeTruthy();
         expect(st2.checked).toBeTruthy();
 
-    // clicking again keeps them checked
+        // clicking again keeps them checked
         st1.dispatchEvent(new Event('click'));
         st2.dispatchEvent(new Event('click'));
         await st1.updateComplete;
@@ -283,13 +283,13 @@ describe('select-tile', () => {
 
         expect(el.checked).toBeFalsy();
 
-    // clicking checks it
+        // clicking checks it
         el.dispatchEvent(new Event('click'));
         await el.updateComplete;
 
         expect(el.checked).toBeTruthy();
 
-    // clicking again unchecked it
+        // clicking again unchecked it
         el.dispatchEvent(new Event('click'));
         await el.updateComplete;
 
@@ -301,13 +301,13 @@ describe('select-tile', () => {
 
         expect(el.checked).toBeFalsy();
 
-    // Enter checks it
+        // Enter checks it
         el.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }));
         await el.updateComplete;
 
         expect(el.checked).toBeTruthy();
 
-    // Enter again unchecks it
+        // Enter again unchecks it
         el.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }));
         await el.updateComplete;
 
@@ -319,13 +319,13 @@ describe('select-tile', () => {
 
         expect(el.checked).toBeFalsy();
 
-    // Space checks it
+        // Space checks it
         el.dispatchEvent(new KeyboardEvent('keydown', { key: ' ' }));
         await el.updateComplete;
 
         expect(el.checked).toBeTruthy();
 
-    // Space again unchckes it
+        // Space again unchckes it
         el.dispatchEvent(new KeyboardEvent('keydown', { key: ' ' }));
         await el.updateComplete;
 

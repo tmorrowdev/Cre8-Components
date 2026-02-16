@@ -1,5 +1,5 @@
-import {html} from 'lit';
-import {spread} from '../../directives/spread';
+import { html, CSSResult } from 'lit';
+import { spread } from '../../directives/spread';
 import './dropdown-item';
 import '../dropdown/dropdown';
 
@@ -7,7 +7,7 @@ export default {
   title: 'In Development/Dropdown Item',
   component: 'cre8-dropdown-item',
   parameters: {
-    status: {type: 'inProgress'},
+    status: { type: 'inProgress' },
     actions: {
       handles: ['dropdown-item-selected'],
     },
@@ -19,7 +19,7 @@ export default {
   },
 };
 
-const Template = ({ buttonText, dropdownContent, maxHeight, dropdownWithLink}) => html`
+const Template = ({ buttonText, dropdownContent, maxHeight, dropdownWithLink }) => html`
   <cre8-dropdown
     buttonText=${buttonText}
     maxHeight=${maxHeight}

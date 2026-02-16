@@ -1,5 +1,5 @@
-import {html} from 'lit';
-import {spread} from '../../directives/spread';
+import { html, CSSResult } from 'lit';
+import { spread } from '../../directives/spread';
 import { withActions } from 'storybook/internal/preview-api';
 import './tertiary-nav';
 import '../tertiary-nav-item/tertiary-nav-item';

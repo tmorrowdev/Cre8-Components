@@ -1,5 +1,5 @@
-@import 'breakpoints';
-@import 'typography-usage';
+@use '../../../../node_modules/@tmorrow/cre8-design-tokens/lib/web/mixins/typography-usage' as *;
+@use 'breakpoints' as *;
 
 body {
   @include cre8-typography-body-default();

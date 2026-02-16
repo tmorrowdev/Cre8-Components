@@ -1,5 +1,5 @@
-import {html} from 'lit';
-import {spread} from '../../directives/spread';
+import { html, CSSResult } from 'lit';
+import { spread } from '../../directives/spread';
 import './button-group';
 
 export default {

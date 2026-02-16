@@ -1,32 +1,32 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './tertiary-nav.styles.js';
+import styles from './tertiary-nav.module.scss';
 
 /**
  * @slot - The component content
  */
 export class Cre8TertiaryNav extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Allows the tertiary nav to take up the full width of it parent container
    */
   @property({ type: Boolean, reflect: true })
-      fullWidth?: boolean;
+  fullWidth?: boolean;
 
   /**
    * aria-label attribute to designate at name for the nav. Can be override by user
    */
   @property()
-      navAriaLabel: string = 'tertiary';
+  navAriaLabel: string = 'tertiary';
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-tertiary-nav', {
-          'cre8-c-tertiary-nav--full-width': this.fullWidth,
-      });
+    const componentClassNames = this.componentClassNames('cre8-c-tertiary-nav', {
+      'cre8-c-tertiary-nav--full-width': this.fullWidth,
+    });
 
-      return html`
+    return html`
       <nav aria-label="${this.navAriaLabel}" role="navigation" class="${componentClassNames}">
         <ul role="list" class="cre8-c-tertiary-nav__list">
           <slot></slot>
@@ -37,7 +37,7 @@ export class Cre8TertiaryNav extends Cre8Element {
 }
 
 if (customElements.get('cre8-tertiary-nav') === undefined) {
-    customElements.define('cre8-tertiary-nav', Cre8TertiaryNav);
+  customElements.define('cre8-tertiary-nav', Cre8TertiaryNav);
 }
 
 declare global { interface HTMLElementTagNameMap { 'cre8-tertiary-nav': Cre8TertiaryNav; } }

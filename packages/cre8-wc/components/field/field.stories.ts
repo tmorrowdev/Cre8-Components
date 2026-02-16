@@ -1,5 +1,5 @@
-import {html} from 'lit';
-import {spread} from '../../directives/spread';
+import { html, CSSResult } from 'lit';
+import { spread } from '../../directives/spread';
 import './field';
 
 export default {
@@ -7,7 +7,7 @@ export default {
   component: 'cre8-field',
   render: (args: any) => html`<cre8-field ${spread(args)}></cre8-field>`,
   parameters: {
-    status: {type: 'inProgress'},
+    status: { type: 'inProgress' },
     actions: {
       handles: ['input', 'change', 'blur'],
     },

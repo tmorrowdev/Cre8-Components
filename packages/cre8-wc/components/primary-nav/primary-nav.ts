@@ -1,20 +1,20 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './primary-nav.styles.js';
+import styles from './primary-nav.module.scss';
 
 /**
  * @slot - The primary navigation items
  */
 export class Cre8PrimaryNav extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Inverted variant
    * 1) Used for dark backgrounds
    */
   @property({ type: Boolean, reflect: true })
-      inverted?: boolean;
+  inverted?: boolean;
 
   /**
    * Behavior variant
@@ -25,21 +25,21 @@ export class Cre8PrimaryNav extends Cre8Element {
    * </cre8-text-passage>
    */
   @property()
-      behavior?: 'side-by-side';
+  behavior?: 'side-by-side';
 
   /**
    * aria-label attribute to designate at name for the nav. Can be override by user
    */
   @property()
-      navAriaLabel: string = 'main';
+  navAriaLabel: string = 'main';
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-primary-nav', {
-          'cre8-c-primary-nav--side-by-side': this.behavior === 'side-by-side',
-          'cre8-c-primary-nav--inverted': this.inverted === true,
-      });
+    const componentClassNames = this.componentClassNames('cre8-c-primary-nav', {
+      'cre8-c-primary-nav--side-by-side': this.behavior === 'side-by-side',
+      'cre8-c-primary-nav--inverted': this.inverted === true,
+    });
 
-      return html`
+    return html`
       <nav aria-label="${this.navAriaLabel}" class="${componentClassNames}">
         <ul class="cre8-c-primary-nav__list">
           <slot></slot>
@@ -50,7 +50,7 @@ export class Cre8PrimaryNav extends Cre8Element {
 }
 
 if (customElements.get('cre8-primary-nav') === undefined) {
-    customElements.define('cre8-primary-nav', Cre8PrimaryNav);
+  customElements.define('cre8-primary-nav', Cre8PrimaryNav);
 }
 
 declare global {

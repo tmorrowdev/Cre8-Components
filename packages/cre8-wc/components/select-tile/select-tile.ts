@@ -1,6 +1,6 @@
 import svgCheck from '../../icons/System/Regular/Check.svg?raw';
 import {
-    LitElement, PropertyValues, html,
+    LitElement, PropertyValues, html, CSSResult
 } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
@@ -9,43 +9,43 @@ import { nanoid } from 'nanoid';
 import { Cre8FormElement } from '../cre8-form-element';
 import '../icon/icon';
 
-import styles from './select-tile.styles.js';
+import styles from './select-tile.module.scss';
 import { SelectTileRadioController } from './select-tile-radio-controller';
 import { SelectTileCheckboxController } from './select-tile-checkbox-controller';
 
-    /**
-     * The Select Tile component is a short block of content inside a visual
-     * container that can be used in place of checkboxes, radio buttons, and
-     * links.  It allows you to add more descriptive and visually appealing
-     * content for these actions while letting you compare different choices
-     * either side-by-side or on top of each other.
-     *
-     * Typically you could use the "header" slot for an icon, and the "title"
-     * and "body" slots for a content title and body text below it.
-     *
-     * The css parts are shown here wrapped in ::part() because otherwise Storybook
-     * won't render them and the slots if they have the same name.
-     * See https://developer.mozilla.org/en-US/docs/Web/CSS/::part
-     *
-     * @fires change
-     * @fires input
-     * @slot "" - The default slot goes into the center, main part of the Select Tile.
-     *         Consider using title and body instead.
-     * @slot "header" - The top or left part of the Select Tile
-     * @slot footer - The bottom or right part of the Select Tile
-     * @slot title - The title part of the Select Tile, use with body slot and
-     *               instead of the default slot for appropriate typography.
-     * @slot "body" - The "body" part of the Select Tile, which appears under
-     *                the title slot and receives apporpriate typography.
-     *
-     * @csspart ::part(select-tile) - The main wrapping element
-     * @csspart ::part(header) - The header element wrapping the left or top element
-     * @csspart ::part(footer) - The footer element wrapping the right element
-     * @csspart ::part(body) - The main body of the select-tile, wrapper around the default slot
-     * @csspart ::part(body-title) - The element that wraps the "title" slot
-     * @csspart ::part(body-body) - The element that wraps the "body" slot
-     *
-    */
+/**
+ * The Select Tile component is a short block of content inside a visual
+ * container that can be used in place of checkboxes, radio buttons, and
+ * links.  It allows you to add more descriptive and visually appealing
+ * content for these actions while letting you compare different choices
+ * either side-by-side or on top of each other.
+ *
+ * Typically you could use the "header" slot for an icon, and the "title"
+ * and "body" slots for a content title and body text below it.
+ *
+ * The css parts are shown here wrapped in ::part() because otherwise Storybook
+ * won't render them and the slots if they have the same name.
+ * See https://developer.mozilla.org/en-US/docs/Web/CSS/::part
+ *
+ * @fires change
+ * @fires input
+ * @slot "" - The default slot goes into the center, main part of the Select Tile.
+ *         Consider using title and body instead.
+ * @slot "header" - The top or left part of the Select Tile
+ * @slot footer - The bottom or right part of the Select Tile
+ * @slot title - The title part of the Select Tile, use with body slot and
+ *               instead of the default slot for appropriate typography.
+ * @slot "body" - The "body" part of the Select Tile, which appears under
+ *                the title slot and receives apporpriate typography.
+ *
+ * @csspart ::part(select-tile) - The main wrapping element
+ * @csspart ::part(header) - The header element wrapping the left or top element
+ * @csspart ::part(footer) - The footer element wrapping the right element
+ * @csspart ::part(body) - The main body of the select-tile, wrapper around the default slot
+ * @csspart ::part(body-title) - The element that wraps the "title" slot
+ * @csspart ::part(body-body) - The element that wraps the "body" slot
+ *
+*/
 export class Cre8SelectTile extends Cre8FormElement {
     static shadowRootOptions = { ...LitElement.shadowRootOptions, delegatesFocus: true };
 
@@ -55,15 +55,15 @@ export class Cre8SelectTile extends Cre8FormElement {
      * Should this Select Tile behave as a radio button or a checkbox?
      */
     @property({ reflect: true })
-        type: 'radio' | 'checkbox' = 'radio';
+    type: 'radio' | 'checkbox' = 'radio';
 
     /**
      * Get the radio field item input
      */
     @query('input')
-        field!: HTMLInputElement;
+    field!: HTMLInputElement;
 
-    static styles = [styles];
+    static styles = [styles as unknown as CSSResult];
 
     /**
      * Style variants
@@ -73,27 +73,27 @@ export class Cre8SelectTile extends Cre8FormElement {
      *   oriented in a row rather than a column without a border and without padding around the content
      */
     @property({ reflect: true })
-        variant?: 'bare' | 'horizontal' | 'horizontal-bare';
+    variant?: 'bare' | 'horizontal' | 'horizontal-bare';
 
     /**
      * Which breakpoint, if any, to switch to verticial.
      * Only useful for horizontal variants. Defaults to 'sm'.
      */
     @property({ reflect: true })
-        variantBreakToVertical: 'sm' | 'sm-2' | 'md' | 'lg' | 'xl' | 'xxl' | 'none' = 'sm';
+    variantBreakToVertical: 'sm' | 'sm-2' | 'md' | 'lg' | 'xl' | 'xxl' | 'none' = 'sm';
 
     /**
      * Where does the checkmark or radio button go?
      * It disappears on 'none'. Only top-right is supported for vertical variants.
      */
     @property({ reflect: true })
-        checkPosition: 'left' | 'right' | 'top-right' | 'none' = 'right';
+    checkPosition: 'left' | 'right' | 'top-right' | 'none' = 'right';
 
     /**
      * In radio mode, whether to use the circle with the dot, or the rounded check.
      */
     @property({ reflect: true })
-        radioVariant: 'dot' | 'check' = 'dot';
+    radioVariant: 'dot' | 'check' = 'dot';
 
     /**
      * Align variants
@@ -104,25 +104,25 @@ export class Cre8SelectTile extends Cre8FormElement {
      * </cre8-text-passage>
      */
     @property({ reflect: true })
-        align?: 'center';
+    align?: 'center';
 
     /**
      * Error State
      */
     @property({ type: Boolean, reflect: true })
-        isError?: boolean;
+    isError?: boolean;
 
     /**
      * Disabled State
      */
     @property({ type: Boolean, reflect: true })
-        disabled?: boolean;
+    disabled?: boolean;
 
     /**
      * Required attribute
      */
     @property({ type: Boolean, reflect: true })
-        required?: boolean;
+    required?: boolean;
 
     /**
      * Checked State.
@@ -130,7 +130,7 @@ export class Cre8SelectTile extends Cre8FormElement {
      * as sets the initial value for the `checked` property.
      */
     @property({ type: Boolean, reflect: true })
-        checked?: boolean;
+    checked?: boolean;
 
     /**
      * The default checked state when the element first renders or is reset.
@@ -139,13 +139,13 @@ export class Cre8SelectTile extends Cre8FormElement {
      * named `defaultChecked`. This is the same as a regular radio button.
      */
     @property({ attribute: 'checked', type: Boolean, reflect: true })
-        defaultChecked: boolean;
+    defaultChecked: boolean;
 
     /**
      * Select Tile FieldId
      */
     @property()
-        fieldId?: string;
+    fieldId?: string;
 
     /**
      * Radio item fieldnote aria describe by
@@ -157,7 +157,7 @@ export class Cre8SelectTile extends Cre8FormElement {
      * Radio item fieldnote isSuccess
      */
     @property({ type: Boolean, reflect: true })
-        isSuccess?: boolean;
+    isSuccess?: boolean;
 
     /**
      * The form associated with this field

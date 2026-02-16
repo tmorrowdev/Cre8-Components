@@ -4,12 +4,12 @@
 /* eslint-disable indent */
 
 import { ifDefined } from 'lit-html/directives/if-defined.js';
-import { html, nothing,  } from 'lit';
+import { html, nothing, CSSResult } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import svgCaretDown from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Down.svg?raw';
 import svgClear from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Clear_X.svg?raw';
-import styles from './multi-select.styles.js';
+import styles from './multi-select.module.scss';
 import { Cre8Element } from '../cre8-element';
 import '../remove-tag/remove-tag';
 import '../field-note/field-note';
@@ -28,8 +28,8 @@ import Cre8CheckboxFieldItem from '../checkbox-field-item/checkbox-field-item';
  * current list after the change is given in the detail.
  */
 export class Cre8MultiSelect extends Cre8Element {
-  static styles = [styles];
-  
+  static styles = [styles as unknown as CSSResult];
+
 
   /**
    * The list of string items the user can choose in the dropdown
@@ -106,7 +106,7 @@ export class Cre8MultiSelect extends Cre8Element {
   disabled?: boolean;
 
   /**
-   * Changes the component's treatment to represent an error state
+   * Changes the component.scss's treatment to represent an error state
    * @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })
@@ -120,7 +120,7 @@ export class Cre8MultiSelect extends Cre8Element {
   errorNote?: string;
 
   /**
-   * Changes the component's treatment to represent a success state
+   * Changes the component.scss's treatment to represent a success state
    * @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })
@@ -440,7 +440,7 @@ export class Cre8MultiSelect extends Cre8Element {
           </div>
         </div>
         ${this.dropdownOpen
-          ? html`
+        ? html`
             <fieldset class="cre8-c-multi-select__dropdown" aria-describedby="${this.fieldId}">
               <ul
                 aria-label="available items"
@@ -449,7 +449,7 @@ export class Cre8MultiSelect extends Cre8Element {
                 ${this._renderDropdownItems()}
               </ul>
             </fieldset>`
-          : nothing}
+        : nothing}
       </div>
       ${this.fieldNote || this.slotNotEmpty('fieldNote')
         ? html`<cre8-field-note

@@ -1,4 +1,5 @@
-@import './breakpoints';
+@use './breakpoints' as *;
+
 /**
 * # SPACING UTILITY CLASSES
 */

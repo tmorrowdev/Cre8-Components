@@ -1,39 +1,39 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './link-list-item.styles.js';
+import styles from './link-list-item.module.scss';
 
 /**
  * @slot - The default slot to put badges or other Components
  */
 export class Cre8LinkListItem extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * The link text
    */
   @property()
-      text?: string;
+  text?: string;
 
   /**
    * Active link
    */
   @property({ type: Boolean, reflect: true })
-      isActive?: boolean;
+  isActive?: boolean;
 
   /**
    * The link URL
    */
   @property()
-      href?: string;
+  href?: string;
 
   render() {
-      const componentClassName = this.componentClassNames('cre8-c-link-list__item', {
-          'cre8-is-active': this.isActive === true,
-      });
+    const componentClassName = this.componentClassNames('cre8-c-link-list__item', {
+      'cre8-is-active': this.isActive === true,
+    });
 
-      return html`
+    return html`
       <li class="${componentClassName}">
         <a class="cre8-c-link-list__link" href="${ifDefined(this.href)}">
           ${this.slotNotEmpty('itemBefore') && html`
@@ -52,7 +52,7 @@ export class Cre8LinkListItem extends Cre8Element {
 }
 
 if (customElements.get('cre8-link-list-item') === undefined) {
-    customElements.define('cre8-link-list-item', Cre8LinkListItem);
+  customElements.define('cre8-link-list-item', Cre8LinkListItem);
 }
 
 declare global {

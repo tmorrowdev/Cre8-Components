@@ -1,29 +1,29 @@
 import svgCaretRight from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Right.svg?raw';
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon';
-import styles from './breadcrumbs-item.styles.js';
+import styles from './breadcrumbs-item.module.scss';
 
 /**
  * @slot - The component content, the expected slotted content is a Cre8 Link or a String for the "terminal node"
  */
 export class Cre8BreadcrumbsItem extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
-    // Set the role before rendering for better accessibility
-    // Because we're settting this role, we don't wrap the slot in an <li>
-    connectedCallback() {
-        this.setAttribute('role', 'listitem');
-        super.connectedCallback();
-    }
+  // Set the role before rendering for better accessibility
+  // Because we're settting this role, we don't wrap the slot in an <li>
+  connectedCallback() {
+    this.setAttribute('role', 'listitem');
+    super.connectedCallback();
+  }
 
-    render() {
-        const componentClassNames = this.componentClassNames(
-            'cre8-c-breadcrumbs--item',
-            {}
-        );
+  render() {
+    const componentClassNames = this.componentClassNames(
+      'cre8-c-breadcrumbs--item',
+      {}
+    );
 
-        return html`
+    return html`
       <div class="${componentClassNames}">
         <slot></slot>
         <cre8-icon
@@ -36,11 +36,11 @@ export class Cre8BreadcrumbsItem extends Cre8Element {
         </cre8-icon>
       </div>
     `;
-    }
+  }
 }
 
 if (customElements.get('cre8-breadcrumbs-item') === undefined) {
-    customElements.define('cre8-breadcrumbs-item', Cre8BreadcrumbsItem);
+  customElements.define('cre8-breadcrumbs-item', Cre8BreadcrumbsItem);
 }
 
 declare global {

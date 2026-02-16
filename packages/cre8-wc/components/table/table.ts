@@ -1,21 +1,21 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './table.styles.js';
+import styles from './table.module.scss';
 
 /**
  * @slot - The component content
  */
 
 export class Cre8Table extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Specifies the caption/title of the table, visible to all users.
    * Increases accessibility of table.
    */
   @property()
-      caption?: string;
+  caption?: string;
 
   /**
    * Behavior variants
@@ -26,14 +26,14 @@ export class Cre8Table extends Cre8Element {
    * </cre8-text-passage>
    */
   @property()
-      behavior?: 'responsive';
+  behavior?: 'responsive';
 
   /**
    * Hoverable rows variant
    * 1) Allows the table rows to be styled on hover
    */
   @property({ type: Boolean, reflect: true })
-      isHoverable?: boolean;
+  isHoverable?: boolean;
 
   /**
    * Style variants
@@ -44,16 +44,16 @@ export class Cre8Table extends Cre8Element {
    * </cre8-text-passage>
    */
   @property()
-      variant?: 'striped';
+  variant?: 'striped';
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-table', {
-          'cre8-c-table--hoverable': this.isHoverable,
-          'cre8-c-table--striped': this.variant === 'striped',
-          'cre8-c-table--responsive': this.behavior === 'responsive',
-      });
+    const componentClassNames = this.componentClassNames('cre8-c-table', {
+      'cre8-c-table--hoverable': this.isHoverable,
+      'cre8-c-table--striped': this.variant === 'striped',
+      'cre8-c-table--responsive': this.behavior === 'responsive',
+    });
 
-      return html`
+    return html`
       <table role="table" class="${componentClassNames}">
         ${this.caption
         ? html`<caption class="cre8-c-table__caption">
@@ -67,7 +67,7 @@ export class Cre8Table extends Cre8Element {
 }
 
 if (customElements.get('cre8-table') === undefined) {
-    customElements.define('cre8-table', Cre8Table);
+  customElements.define('cre8-table', Cre8Table);
 }
 
 declare global {

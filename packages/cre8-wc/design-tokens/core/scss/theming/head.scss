@@ -1,7 +1,7 @@
-@import './colors';
-@import './visibility';
-@import './spacing';
-@import './display';
-@import './body';
-@import './media';
-@import './functions';
+@forward './colors';
+@forward './visibility';
+@forward './spacing';
+@forward './display';
+@forward './body';
+@forward './media';
+@forward './functions';

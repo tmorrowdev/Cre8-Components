@@ -29,10 +29,8 @@ document.head.appendChild(prismStyleElement);
 import customElements from './custom-elements.json';
 setCustomElementsManifest(customElements);
 
-import headStyles from '../design-tokens/core/scss/theming/head.module.ts';
 
 const headStyleElement = document.createElement('style') as HTMLStyleElement;
-headStyleElement.innerHTML = headStyles as unknown as string;
 document.head.appendChild(headStyleElement);
 const excludeArray = ['shadowRootOptions', 'formAssociated', 'field'];
 
@@ -88,7 +86,7 @@ const preview: Preview = {
   decorators: [
     (story, context) => {
       const selectedTheme = context.globals.theme;
-      
+
       // Enable/disable theme stylesheets
       themeStyles.forEach(theme => {
         const styleElement = document.getElementById(`theme-${theme.name.toLowerCase().replace(/\s+/g, '-')}`) as HTMLStyleElement;
@@ -96,67 +94,67 @@ const preview: Preview = {
           styleElement.disabled = theme.name !== selectedTheme;
         }
       });
-      
+
       return story();
     }
   ],
   parameters: {
-    layout: 'padded', 
-  html: {
-    root: '#root-inner',
-    prettier: {
-      tabWidth: 4,
-      useTabs: true,
+    layout: 'padded',
+    html: {
+      root: '#root-inner',
+      prettier: {
+        tabWidth: 4,
+        useTabs: true,
+      },
+      removeComments: true,
     },
-    removeComments: true,
-  },
-  backgrounds: {
-    default: 'light',
-    values: [
-      {
-        name: 'light',
-        value: '#fff',
-      },
-      {
-        name: 'dark',
-        value: '#000',
-      },
-    ],
-  },
-  status: {
-    statuses: {
-      notStarted: {
-        background: '#FF0000',
-        color: '#ffffff',
-        description: 'This component has not been started from a development standpoint.',
-      },
-      inProgress: {
-        background: '#EC942C',
-        color: '#ffffff',
-        description: 'This component is running through slight adjustments and testing. Proceed with caution',
-      },
-      tested: {
-        background: '#2da44e',
-        color: '#ffffff',
-        description: 'This component is stable and released',
+    backgrounds: {
+      default: 'light',
+      values: [
+        {
+          name: 'light',
+          value: '#fff',
+        },
+        {
+          name: 'dark',
+          value: '#000',
+        },
+      ],
+    },
+    status: {
+      statuses: {
+        notStarted: {
+          background: '#FF0000',
+          color: '#ffffff',
+          description: 'This component has not been started from a development standpoint.',
+        },
+        inProgress: {
+          background: '#EC942C',
+          color: '#ffffff',
+          description: 'This component is running through slight adjustments and testing. Proceed with caution',
+        },
+        tested: {
+          background: '#2da44e',
+          color: '#ffffff',
+          description: 'This component is stable and released',
+        },
       },
     },
-  },
-  actions: {argTypesRegex: '^on[A-Z].*'},
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/,
+      },
+      expanded: true,
+      exclude: excludeArray,
+      sort: 'requiredFirst',
     },
-    expanded: true,
-    exclude: excludeArray,
-    sort: 'requiredFirst',
-  },
-  options: {
-    storySort: {
-      order: ['Documentation', 'cre8 Components', ' Patterns'],
+    options: {
+      storySort: {
+        order: ['Documentation', 'cre8 Components', ' Patterns'],
+      },
     },
-  },
   },
 };
 

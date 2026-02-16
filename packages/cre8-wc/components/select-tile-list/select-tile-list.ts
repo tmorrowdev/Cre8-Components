@@ -1,10 +1,10 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { Cre8Element } from '../cre8-element';
 import '../field-note/field-note';
-import styles from './select-tile-list.styles.js';
+import styles from './select-tile-list.module.scss';
 
 /**
  * Select Tile List is a container design to hold multiple Select Tile Components.
@@ -13,69 +13,69 @@ import styles from './select-tile-list.styles.js';
  * @cssprop "--cre8-select-tile-list-item-width" - Width of each child. Not used for horizontal.
  */
 export class Cre8SelectTileList extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Whether to show the tiles side by side (columns) or stacked vertically (rows).
    */
   @property({ reflect: true })
-      variant: 'columns' | 'rows' = 'columns';
+  variant: 'columns' | 'rows' = 'columns';
 
   /**
    * Select Tile container label
    */
   @property({ reflect: true })
-      label?: string;
+  label?: string;
 
   /**
    * Select Tile container fieldnote
    */
   @property({ reflect: true })
-      fieldNote?: string;
+  fieldNote?: string;
 
   /**
    * Select Tile container fieldnote aria describe by
    */
   @property()
-      ariaDescribedBy?: string;
+  ariaDescribedBy?: string;
 
   /**
    * Select Tile container fieldnote icon name
    */
   @property({ reflect: true })
-      fieldNoteIconName?: string;
+  fieldNoteIconName?: string;
 
   /**
    * Select Tile container fieldnote knockout
    */
   @property({ type: Boolean, reflect: true })
-      fieldNoteKnockout?: boolean;
+  fieldNoteKnockout?: boolean;
 
   /**
    * Select Tile container fieldnote isSuccess
    */
   @property({ type: Boolean, reflect: true })
-      fieldNoteIsSuccess?: boolean;
+  fieldNoteIsSuccess?: boolean;
 
   /**
    * Select Tile container fieldnote isError
    */
   @property({ type: Boolean, reflect: true })
-      fieldNoteIsError?: boolean;
+  fieldNoteIsError?: boolean;
 
   connectedCallback() {
-      super.connectedCallback();
-      if (this.fieldNote) {
-          this.ariaDescribedBy = this.ariaDescribedBy || nanoid();
-      }
+    super.connectedCallback();
+    if (this.fieldNote) {
+      this.ariaDescribedBy = this.ariaDescribedBy || nanoid();
+    }
   }
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-select-tile-list', {
-          'cre8-c-select-tile-list__rows': this.variant === 'rows',
-      });
+    const componentClassNames = this.componentClassNames('cre8-c-select-tile-list', {
+      'cre8-c-select-tile-list__rows': this.variant === 'rows',
+    });
 
-      return html`
+    return html`
       <fieldset class="${componentClassNames}">
         <legend
           class="cre8-c-select-tile-list__legend"
@@ -104,7 +104,7 @@ export class Cre8SelectTileList extends Cre8Element {
 }
 
 if (customElements.get('cre8-select-tile-list') === undefined) {
-    customElements.define('cre8-select-tile-list', Cre8SelectTileList);
+  customElements.define('cre8-select-tile-list', Cre8SelectTileList);
 }
 
 declare global {

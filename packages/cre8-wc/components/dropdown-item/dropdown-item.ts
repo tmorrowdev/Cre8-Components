@@ -1,7 +1,7 @@
-import { html,  } from 'lit';
+import { CSSResult, html } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './dropdown-item.styles.js';
+import styles from './dropdown-item.module.scss';
 
 /**
  * The Dropdown item component is designed to be used with Dropdown component, each item represents a
@@ -9,26 +9,26 @@ import styles from './dropdown-item.styles.js';
  * to links, initiate commands when clicked.
  */
 export class Cre8DropdownItem extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   @property({ type: String })
-      ariaLabel = '';
+  ariaLabel = '';
 
   private _handleClick(e: MouseEvent) {
-      this.dispatchEvent(new Event('dropdown-item-selected', e));
+    this.dispatchEvent(new Event('dropdown-item-selected', e));
   }
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-dropdown-item', {});
-      const linkAriaLabel = this.ariaLabel || `Link to ${this.textContent}` || 'Drop down Item';
-      return html`<li class="${componentClassNames}" role="listitem">
+    const componentClassNames = this.componentClassNames('cre8-dropdown-item', {});
+    const linkAriaLabel = this.ariaLabel || `Link to ${this.textContent}` || 'Drop down Item';
+    return html`<li class="${componentClassNames}" role="listitem">
         <button aria-label="${linkAriaLabel}" @click=${this._handleClick}><slot></slot></button>
       </li>`;
   }
 }
 
 if (customElements.get('cre8-dropdown-item') === undefined) {
-    customElements.define('cre8-dropdown-item', Cre8DropdownItem);
+  customElements.define('cre8-dropdown-item', Cre8DropdownItem);
 }
 
 declare global {
