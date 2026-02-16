@@ -1,11 +1,11 @@
-import { html, nothing, } from 'lit';
+import { html, nothing, CSSResult } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property, query } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import '../icon/icon';
 import '../field-note/field-note';
 import svgCheck from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Check.svg?raw';
-import styles from './checkbox-field-item.styles.js';
+import styles from './checkbox-field-item.module.scss';
 import { Cre8FormElement } from '../cre8-form-element';
 
 /**
@@ -33,7 +33,7 @@ import { Cre8FormElement } from '../cre8-form-element';
 export class Cre8CheckboxFieldItem extends Cre8FormElement {
     readonly type = 'checkbox';
 
-    static styles = [styles];
+    static styles = [styles as unknown as CSSResult];
 
     /**
      * The checkbox label
@@ -42,7 +42,7 @@ export class Cre8CheckboxFieldItem extends Cre8FormElement {
     label?: string;
 
     /**
-     * Changes the component's treatment to represent an error state
+     * Changes the component.scss's treatment to represent an error state
      * @attr {boolean}
      */
     @property({ type: Boolean, reflect: true })
@@ -62,7 +62,7 @@ export class Cre8CheckboxFieldItem extends Cre8FormElement {
     errorNote?: string;
 
     /**
-     * Changes the component's treatment to represent a success state
+     * Changes the component.scss's treatment to represent a success state
      * @attr {boolean}
      */
     @property({ type: Boolean, reflect: true })

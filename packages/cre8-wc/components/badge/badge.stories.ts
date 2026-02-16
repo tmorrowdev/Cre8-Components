@@ -1,4 +1,4 @@
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import { spread } from '../../directives/spread';
 import './badge.styles';
 // ts-expect-error: svg import 
@@ -14,8 +14,8 @@ const meta = {
       control: 'text'
     },
     status: {
-        options: ['neutral', 'error', 'warning', 'success', 'info', 'attention'],
-        control: { type: 'select' }
+      options: ['neutral', 'error', 'warning', 'success', 'info', 'attention'],
+      control: { type: 'select' }
     },
     variant: {
       options: ['default', 'light', 'white'],

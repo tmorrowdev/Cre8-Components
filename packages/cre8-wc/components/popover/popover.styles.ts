@@ -1,5 +1,5 @@
-import { css } from 'lit';
-const styles = css`@import '../../design-tokens/core/scss/theming/component';
+import { css, CSSResult } from 'lit';
+const styles = css`@use '../../design-tokens/core/scss/theming/component';
 /*------------------------------------*\
  #POPOVER
 \*------------------------------------*/

@@ -1,13 +1,13 @@
 import { fixture } from '@open-wc/testing-helpers';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../loading-spinner';
 import { cre8LoadingSpinner } from '../loading-spinner';
 
 describe('loading-spinner', () => {
-    test('renders correctly', async () => {
-        const el = await fixture(html`<cre8-loading-spinner></cre8-loading-spinner>`);
-        expect(el.shadowRoot).toBeTruthy();
-    });
+  test('renders correctly', async () => {
+    const el = await fixture(html`<cre8-loading-spinner></cre8-loading-spinner>`);
+    expect(el.shadowRoot).toBeTruthy();
+  });
 
   test('has a label if one is given', async () => {
     const el = await fixture<cre8LoadingSpinner>(html`<cre8-loading-spinner label="Loading..."></cre8-loading-spinner>`);
@@ -15,7 +15,7 @@ describe('loading-spinner', () => {
     expect(label).toBeDefined();
   });
 
-  test.each(['primary','secondary','tertiary'])('uses the correct buttonVariant if %s provided', async (buttonVariant) => {
+  test.each(['primary', 'secondary', 'tertiary'])('uses the correct buttonVariant if %s provided', async (buttonVariant) => {
     const el = await fixture<cre8LoadingSpinner>(html`<cre8-loading-spinner buttonVariant=${buttonVariant}></cre8-loading-spinner>`)
     const desiredNode = el.shadowRoot.querySelector(`.cre8-c-spinner--${buttonVariant}`);
 
@@ -34,8 +34,8 @@ describe('loading-spinner', () => {
 });
 
 describe('accessibility tests', () => {
-    test('verify accessibility for loading spinner', async () => {
-        const el = await fixture<cre8LoadingSpinner>(html`<cre8-loading-spinner label="Loading..."></cre8-loading-spinner>`);
-        return expect(el).toBeAccessible();
-    });
+  test('verify accessibility for loading spinner', async () => {
+    const el = await fixture<cre8LoadingSpinner>(html`<cre8-loading-spinner label="Loading..."></cre8-loading-spinner>`);
+    return expect(el).toBeAccessible();
+  });
 });

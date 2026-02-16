@@ -1,10 +1,10 @@
 import svgCheckCircle from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Check.svg?raw';
 import svgErrorFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Error.svg?raw';
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon';
-import styles from './field-note.styles.js';
+import styles from './field-note.module.scss';
 
 /**
  * Field Note gives direction on how to fill out a form field and to alert users of form errors and successes.
@@ -13,57 +13,57 @@ import styles from './field-note.styles.js';
  */
 
 export class Cre8FieldNote extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
-   * Changes the component's treatment to represent an error
+   * Changes the component.scss's treatment to represent an error
    *  @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })
-      isError?: boolean;
+  isError?: boolean;
 
   /**
-   * Changes the component's treatment to represent a success
+   * Changes the component.scss's treatment to represent a success
    *  @attr {boolean}
    */
   @property({ type: Boolean, reflect: true })
-      isSuccess?: boolean;
+  isSuccess?: boolean;
 
   /**
    *  DEPRECATED: Icon name used for the icon before to the field note
    * @deprecated
    */
   @property()
-      iconName?: string;
+  iconName?: string;
 
   /**
    * Check if there are success or error states and set "aria-live=polite"
    */
   fieldNoteAriaLive(): 'polite' | 'off' | 'assertive' {
-      if (this.isError || this.isSuccess) {
-          return 'polite';
-      }
-      return null;
+    if (this.isError || this.isSuccess) {
+      return 'polite';
+    }
+    return null;
   }
 
   render() {
-      const componentClassName = this.componentClassNames('cre8-c-field-note', {
-          'cre8-is-error': this.isError,
-          'cre8-is-success': this.isSuccess,
-      });
+    const componentClassName = this.componentClassNames('cre8-c-field-note', {
+      'cre8-is-error': this.isError,
+      'cre8-is-success': this.isSuccess,
+    });
 
-      return html`
+    return html`
         <div
           aria-live="${this.fieldNoteAriaLive() ?? 'off'}"
           class="${componentClassName}">
         ${this.isError === true
         ? html`<cre8-icon class="cre8-field-note-icon" svg='${svgErrorFilled}' aria-hidden="true" ></cre8-icon>`
         : ''
-}
+      }
             ${this.isSuccess === true
         ? html`<cre8-icon class="cre8-field-note-icon" svg='${svgCheckCircle}' aria-hidden="true"></cre8-icon>`
         : ''
-}
+      }
           <div><slot></slot></div>
         </div>
     `;
@@ -71,7 +71,7 @@ export class Cre8FieldNote extends Cre8Element {
 }
 
 if (customElements.get('cre8-field-note') === undefined) {
-    customElements.define('cre8-field-note', Cre8FieldNote);
+  customElements.define('cre8-field-note', Cre8FieldNote);
 }
 
 declare global {

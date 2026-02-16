@@ -1,4 +1,4 @@
-@import 'design-tokens/core/scss/theming/component';
+@use 'design-tokens/core/scss/theming/component' as *;
 
 :root {
   --cre8-l-max-width: 82.5rem;

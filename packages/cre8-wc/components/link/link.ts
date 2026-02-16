@@ -1,11 +1,9 @@
 import svgArrowLeft from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Arrow_-_Left.svg?raw';
-import {
-    html, nothing,
-} from 'lit';
+import { html, nothing, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './link.styles.js';
+import styles from './link.module.scss';
 
 /**
  * Link Component are strictly used in the case where the component will take
@@ -23,19 +21,19 @@ import styles from './link.styles.js';
 */
 
 export class Cre8Link extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Href attribute of the anchor tag
    */
   @property()
-      href: string;
+  href: string;
 
   /**
    * Rel attribute of the anchor tag
    */
   @property()
-      rel?: string;
+  rel?: string;
 
   /**
    * Target attribute for a link (i.e. set to _blank to open in new tab)
@@ -48,14 +46,14 @@ export class Cre8Link extends Cre8Element {
    *   If there is no parent, this behaves the same way as _self.
    */
   @property()
-      target?: '_blank' | '_self' | '_parent' | '_top';
+  target?: '_blank' | '_self' | '_parent' | '_top';
 
   /**
    * DEPRECATED: Icon name, use svg instead
    * @deprecated
    */
   @property()
-      iconName?: string;
+  iconName?: string;
 
   /**
    * svg as a raw string
@@ -63,19 +61,19 @@ export class Cre8Link extends Cre8Element {
    * - Pass in a raw svg as a String for using <cre8-icon>
    */
   @property()
-      svg?: string;
+  svg?: string;
 
   /**
    * iconRotateDegree is used for <cre8-icon> to set the arrow in the correct direction
    */
   @property({ type: Number })
-      iconRotateDegree?: number = 0;
+  iconRotateDegree?: number = 0;
 
   /**
    * iconFlipDirection is used for <cre8-icon> to set the icon in the correct direction
    */
   @property()
-      iconFlipDirection?: string;
+  iconFlipDirection?: string;
 
   /**
    * Icon position
@@ -83,25 +81,25 @@ export class Cre8Link extends Cre8Element {
    * - **after** places the icon after the button text
    */
   @property()
-      iconPosition?: 'before' | 'after' = undefined;
+  iconPosition?: 'before' | 'after' = undefined;
 
   /**
    * Call To Action Icon
    */
   @property()
-      ctaIcon = 'arrow-forward';
+  ctaIcon = 'arrow-forward';
 
   /**
    * Call To Action Link
    */
   @property({ type: Boolean })
-      ctaLink?: boolean;
+  ctaLink?: boolean;
 
   /**
    * Link with no underline
    */
   @property({ type: Boolean })
-      noUnderline?: boolean;
+  noUnderline?: boolean;
 
   /**
    * Size variant (default is medium)
@@ -109,17 +107,17 @@ export class Cre8Link extends Cre8Element {
    * - **lg** increases the link typography size and overall size
    */
   @property()
-      size?: 'sm' | 'lg';
+  size?: 'sm' | 'lg';
 
   /**
    * Inverted colors Link (onDark)
    */
   @property({ type: Boolean })
-      inverted?: boolean;
+  inverted?: boolean;
 
   private generateIcon() {
-      if (this.iconName) {
-          return html`
+    if (this.iconName) {
+      return html`
           <div class="cre8-c-link__icon-wrapper">
             <cre8-icon-legacy
               class="cre8-c-link__icon ${this.iconPosition}"
@@ -127,10 +125,10 @@ export class Cre8Link extends Cre8Element {
               name="${ifDefined(this.iconName)}">
             </cre8-icon-legacy>
           </div>`;
-      }
+    }
 
-      if (this.svg) {
-          return html`
+    if (this.svg) {
+      return html`
           <div class="cre8-c-link__icon-wrapper">
             <cre8-icon
               class="cre8-c-link__icon ${this.iconPosition}"
@@ -138,18 +136,18 @@ export class Cre8Link extends Cre8Element {
               svg='${this.svg}' rotate="${Number(this.iconRotateDegree)}" flip="${this.iconFlipDirection}">
             </cre8-icon>
           </div>`;
-      } return nothing;
+    } return nothing;
   }
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-link', {
-          'cre8-c-link--inverted': this.inverted,
-          'cre8-c-link--sm': this.size === 'sm',
-          'cre8-c-link--lg': this.size === 'lg',
-          'cre8-c-link__no-underline': this.noUnderline,
-      });
+    const componentClassNames = this.componentClassNames('cre8-c-link', {
+      'cre8-c-link--inverted': this.inverted,
+      'cre8-c-link--sm': this.size === 'sm',
+      'cre8-c-link--lg': this.size === 'lg',
+      'cre8-c-link__no-underline': this.noUnderline,
+    });
 
-      return html`
+    return html`
       <a
         class="${componentClassNames}"
         href="${ifDefined(this.href)}"
@@ -182,7 +180,7 @@ export class Cre8Link extends Cre8Element {
 }
 
 if (customElements.get('cre8-link') === undefined) {
-    customElements.define('cre8-link', Cre8Link);
+  customElements.define('cre8-link', Cre8Link);
 }
 
 declare global {

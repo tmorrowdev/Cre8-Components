@@ -1,4 +1,4 @@
-@import '/design-tokens/core/scss/theming/component';
+@import '../../design-tokens/core/scss/theming/component.css';
 
 // #HERO
 
@@ -9,7 +9,7 @@
   position: relative;
   margin-bottom: calc(8px * 4);
 
-  @media all and (min-width: component.$cre8-breakpoint-md) {
+  @media all and (min-width: $cre8-breakpoint-md) {
     height: 40vh;
   }
 }
@@ -21,7 +21,7 @@
   width: 100%;
   height: 100%;
 
-  @media all and (min-width: component.$cre8-breakpoint-md) {
+  @media all and (min-width: $cre8-breakpoint-md) {
     position: absolute;
     top: 0;
     left: 0;
@@ -38,7 +38,7 @@
   flex-direction: column;
   padding-top: calc(8px * 2);
 
-  @media all and (min-width: component.$cre8-breakpoint-md) {
+  @media all and (min-width: $cre8-breakpoint-md) {
     position: absolute;
     align-items: flex-start;
     justify-content: flex-end;
@@ -53,7 +53,7 @@
    * 1) Place body content in the top left part of the image on medium/large screens
    */
   .cre8-c-hero--top-left & {
-    @media all and (min-width: component.$cre8-breakpoint-md) {
+    @media all and (min-width: $cre8-breakpoint-md) {
       justify-content: flex-start;
       align-items: flex-start;
     }
@@ -64,7 +64,7 @@
    * 1) Place body content along left part of the image and vertically centered on medium/large screens
    */
   .cre8-c-hero--left & {
-    @media all and (min-width: component.$cre8-breakpoint-md) {
+    @media all and (min-width: $cre8-breakpoint-md) {
       justify-content: center;
     }
   }
@@ -74,7 +74,7 @@
    * 1) Place body content in the top center part of the image on medium/large screens
    */
   .cre8-c-hero--top-center & {
-    @media all and (min-width: component.$cre8-breakpoint-md) {
+    @media all and (min-width: $cre8-breakpoint-md) {
       justify-content: flex-start;
       align-items: center;
     }
@@ -85,7 +85,7 @@
    * 1) Place body content horizontally and vertically centered overlaying the image on medium/large screens
    */
   .cre8-c-hero--center & {
-    @media all and (min-width: component.$cre8-breakpoint-md) {
+    @media all and (min-width: $cre8-breakpoint-md) {
       justify-content: center;
       align-items: center;
     }
@@ -96,14 +96,14 @@
    * 1) Place body content in the bottom center part of the image on medium/large screens
    */
   .cre8-c-hero--bottom-center & {
-    @media all and (min-width: component.$cre8-breakpoint-md) {
+    @media all and (min-width: $cre8-breakpoint-md) {
       justify-content: flex-end;
       align-items: center;
     }
   }
 
   .cre8-c-hero--top-right & {
-    @media all and (min-width: component.$cre8-breakpoint-md) {
+    @media all and (min-width: $cre8-breakpoint-md) {
       justify-content: flex-start;
       align-items: flex-end;
     }
@@ -114,7 +114,7 @@
    * 1) Place body content along right part of the image and vertically centered on medium/large screens
    */
   .cre8-c-hero--right & {
-    @media all and (min-width: component.$cre8-breakpoint-md) {
+    @media all and (min-width: $cre8-breakpoint-md) {
       justify-content: center;
       align-items: flex-end;
     }
@@ -125,7 +125,7 @@
    * 1) Place body content in the bottom right part of the image on medium/large screens
    */
   .cre8-c-hero--bottom-right & {
-    @media all and (min-width: component.$cre8-breakpoint-md) {
+    @media all and (min-width: $cre8-breakpoint-md) {
       justify-content: flex-end;
       align-items: flex-end;
     }

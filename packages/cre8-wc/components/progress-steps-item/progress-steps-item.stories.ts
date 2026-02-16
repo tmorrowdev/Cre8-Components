@@ -1,5 +1,5 @@
-import {html} from 'lit';
-import {spread} from '../../directives/spread';
+import { html, CSSResult } from 'lit';
+import { spread } from '../../directives/spread';
 import './progress-steps-item';
 import svgCheckCircle from '../../icons/System/Filled/Check.svg?raw';
 import svgError from '../../icons/System/Filled/Error.svg?raw';

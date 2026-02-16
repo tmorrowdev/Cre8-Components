@@ -1,4 +1,4 @@
-@import '/design-tokens/core/scss/theming/component';
+@import '../../design-tokens/core/scss/theming/component.css';
 
 :host {
   display: inline-flex;
@@ -72,7 +72,7 @@
       text-decoration: none;
 
       &:focus {
-        @include component.focus();
+        @include focus();
       }
     }
 
@@ -86,7 +86,7 @@
     }
 
     &:focus-visible {
-      @include component.focus();
+      @include focus();
     }
 
     &.cre8-c-danger-button--loading {

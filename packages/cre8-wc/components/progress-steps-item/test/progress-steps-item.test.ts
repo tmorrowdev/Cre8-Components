@@ -1,5 +1,5 @@
 import { fixture } from '@open-wc/testing-helpers';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../progress-steps-item';
 import { cre8ProgressStepsItem } from '../progress-steps-item';
 

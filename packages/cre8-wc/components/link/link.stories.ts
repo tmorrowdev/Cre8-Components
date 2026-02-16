@@ -1,4 +1,4 @@
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import { spread } from '../../directives/spread';
 import '../badge/badge';
 import './link';
@@ -16,19 +16,19 @@ const meta: Meta = {
       type: 'figma',
       url: 'https://www.figma.com/file/L8rVyIvYfWAtNpgm2qps73/Cre8-Base-Web-Library?node-id=19966%3A5158',
     },
-    status: {type: 'inProgress'},
+    status: { type: 'inProgress' },
   },
   argTypes: {
-    href: {value: '#'},
-    noUnderline: {control: 'boolean'},
-    ctaLink: {control: 'boolean'},
-    inverted: {control: 'boolean'},
-    iconName: {control: 'text'}, //iconName will be deprecated, use svg
-    svg: {control: 'text'},
-    iconRotateDegree: {control: 'text'},
-    iconFlipDirection: {control: 'text'},
-    iconPosition: {options: ['before', 'after'], control: {type: 'radio'}},
-    size: {options: ['sm', 'lg'], control: {type: 'radio'}},
+    href: { value: '#' },
+    noUnderline: { control: 'boolean' },
+    ctaLink: { control: 'boolean' },
+    inverted: { control: 'boolean' },
+    iconName: { control: 'text' }, //iconName will be deprecated, use svg
+    svg: { control: 'text' },
+    iconRotateDegree: { control: 'text' },
+    iconFlipDirection: { control: 'text' },
+    iconPosition: { options: ['before', 'after'], control: { type: 'radio' } },
+    size: { options: ['sm', 'lg'], control: { type: 'radio' } },
   },
   render: (args) => html`<cre8-link ${spread(args)}>Hello World</cre8-link>`,
 };
@@ -78,7 +78,7 @@ export const CallToActionLinkInverted: Story = {
     href: '#',
     ctaLink: 'true',
     inverted: 'true'
-,   noUnderline: 'true',
+    , noUnderline: 'true',
   },
   parameters: {
     backgrounds: { default: 'dark' },

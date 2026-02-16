@@ -1,32 +1,32 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './main.styles.js';
+import styles from './main.module.scss';
 
 /**
  * @slot - The main content
  */
 export class Cre8Main extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Full height variant
    * 1) Sets the height to 100%
    */
   @property({ type: Boolean, reflect: true })
-      fullHeight?: boolean;
+  fullHeight?: boolean;
 
   render() {
-      const componentClassName = this.componentClassNames('cre8-c-main', {
-          'cre8-c-main--full-height': this.fullHeight === true,
-      });
+    const componentClassName = this.componentClassNames('cre8-c-main', {
+      'cre8-c-main--full-height': this.fullHeight === true,
+    });
 
-      return html`<main class=${componentClassName}><slot></slot></main>`;
+    return html`<main class=${componentClassName}><slot></slot></main>`;
   }
 }
 
 if (customElements.get('cre8-main') === undefined) {
-    customElements.define('cre8-main', Cre8Main);
+  customElements.define('cre8-main', Cre8Main);
 }
 
 declare global {

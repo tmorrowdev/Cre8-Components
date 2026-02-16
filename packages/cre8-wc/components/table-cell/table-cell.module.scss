@@ -1,5 +1,4 @@
-
-@import '/design-tokens/core/scss/theming/component';
+@import '../../design-tokens/core/scss/theming/component.css';
 
 /*------------------------------------*\
 #TABLE CELL
@@ -25,12 +24,12 @@
         display: block;
         content: var(--cre8-table-cell-before-content, none);
 
-        @media all and (min-width: component.$cre8-breakpoint-md) {
+        @media all and (min-width: $cre8-breakpoint-md) {
             content: none;
         }
     }
 
-    @media all and (min-width: component.$cre8-breakpoint-md) {
+    @media all and (min-width: $cre8-breakpoint-md) {
         display: table-cell;
     }
 }

@@ -1,33 +1,33 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './utility-nav.styles.js';
+import styles from './utility-nav.module.scss';
 
 /**
  * @slot - The utility nav items
  */
 export class Cre8UtilityNav extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Inverted variant
    * 1) Used for dark backgrounds
    */
   @property({ type: Boolean, reflect: true })
-      inverted?: boolean;
+  inverted?: boolean;
 
-    /**
-   * aria-label attribute to designate at name for the nav. Can be override by user
-   */
+  /**
+ * aria-label attribute to designate at name for the nav. Can be override by user
+ */
   @property()
-      navAriaLabel: string = 'utility';
+  navAriaLabel: string = 'utility';
 
   render() {
-      const componentClassName = this.componentClassNames('cre8-c-utility-nav', {
-          'cre8-c-utility-nav--inverted': this.inverted === true,
-      });
+    const componentClassName = this.componentClassNames('cre8-c-utility-nav', {
+      'cre8-c-utility-nav--inverted': this.inverted === true,
+    });
 
-      return html`
+    return html`
       <nav aria-label="${this.navAriaLabel}" class="${componentClassName}">
         <ul class="cre8-c-utility-nav__list">
           <slot></slot>
@@ -38,7 +38,7 @@ export class Cre8UtilityNav extends Cre8Element {
 }
 
 if (customElements.get('cre8-utility-nav') === undefined) {
-    customElements.define('cre8-utility-nav', Cre8UtilityNav);
+  customElements.define('cre8-utility-nav', Cre8UtilityNav);
 }
 
 declare global {

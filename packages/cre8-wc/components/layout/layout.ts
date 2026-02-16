@@ -1,13 +1,13 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './layout.styles.js';
+import styles from './layout.module.scss';
 
 /**
  * @slot - The layout content
  */
 export class Cre8Layout extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    *  Style variants
@@ -19,14 +19,14 @@ export class Cre8Layout extends Cre8Element {
    * </cre8-text-passage>
    */
   @property()
-      variant?: 'left-sidebar';
+  variant?: 'left-sidebar';
 
   render() {
-      const componentClassName = this.componentClassNames('cre8-c-layout', {
-          'cre8-c-layout--left-sidebar': this.variant === 'left-sidebar',
-      });
+    const componentClassName = this.componentClassNames('cre8-c-layout', {
+      'cre8-c-layout--left-sidebar': this.variant === 'left-sidebar',
+    });
 
-      return html`
+    return html`
       <div class="${componentClassName}">
         <slot></slot>
       </div>
@@ -35,7 +35,7 @@ export class Cre8Layout extends Cre8Element {
 }
 
 if (customElements.get('cre8-layout') === undefined) {
-    customElements.define('cre8-layout', Cre8Layout);
+  customElements.define('cre8-layout', Cre8Layout);
 }
 
 declare global {

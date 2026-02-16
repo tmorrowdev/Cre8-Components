@@ -1,13 +1,13 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './layout-section.styles.js';
+import styles from './layout-section.module.scss';
 
 /**
  * @slot - The content of the layout section
  */
 export class Cre8LayoutSection extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Behavioral variants
@@ -15,21 +15,21 @@ export class Cre8LayoutSection extends Cre8Element {
    *   section reaches the bottom of the layout or the next layout section.
    */
   @property()
-      behavior?: 'sticky';
+  behavior?: 'sticky';
 
   /**
    * Top style
    * 1) Used to create dynamic sticky containers that can be adjusted based on the content
    */
   @property()
-      top?: string = '1rem';
+  top?: string = '1rem';
 
   render() {
-      const componentClassName = this.componentClassNames('cre8-c-layout-section', {
-          'cre8-c-layout-section--sticky': this.behavior === 'sticky',
-      });
+    const componentClassName = this.componentClassNames('cre8-c-layout-section', {
+      'cre8-c-layout-section--sticky': this.behavior === 'sticky',
+    });
 
-      return html`
+    return html`
       <div class="${componentClassName}" style=${`top: ${this.top}`}>
         <slot></slot>
       </div>
@@ -38,7 +38,7 @@ export class Cre8LayoutSection extends Cre8Element {
 }
 
 if (customElements.get('cre8-layout-section') === undefined) {
-    customElements.define('cre8-layout-section', Cre8LayoutSection);
+  customElements.define('cre8-layout-section', Cre8LayoutSection);
 }
 
 declare global {

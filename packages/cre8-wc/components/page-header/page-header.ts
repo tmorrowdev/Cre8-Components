@@ -1,24 +1,24 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './page-header.styles.js';
+import styles from './page-header.module.scss';
 
 /**
  * @slot - The page header content
  */
 export class Cre8PageHeader extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Page header title
    */
   @property({ type: String })
-      heading: string = 'Page header title';
+  heading: string = 'Page header title';
 
   render() {
-      const componentClassName = this.componentClassNames('cre8-c-page-header', {});
+    const componentClassName = this.componentClassNames('cre8-c-page-header', {});
 
-      return html`
+    return html`
       <div class="${componentClassName}">
         <h1 class="cre8-c-page-header__title">
           ${this.heading}
@@ -36,7 +36,7 @@ export class Cre8PageHeader extends Cre8Element {
 }
 
 if (customElements.get('cre8-page-header') === undefined) {
-    customElements.define('cre8-page-header', Cre8PageHeader);
+  customElements.define('cre8-page-header', Cre8PageHeader);
 }
 
 declare global {

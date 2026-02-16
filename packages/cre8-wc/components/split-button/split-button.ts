@@ -1,20 +1,20 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import '../button/button';
-import styles from './split-button.styles.js';
+import styles from './split-button.module.scss';
 
 /**
  * @slot - The component content , this will consist of the dropdown when the user clicks the caret
  */
 export class Cre8SplitButton extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   @state()
-      dropdownOpen = false;
+  dropdownOpen = false;
 
   @property({ type: Boolean, reflect: true })
-      disabled?: boolean;
+  disabled?: boolean;
 
   /**
    * Size variant
@@ -26,18 +26,18 @@ export class Cre8SplitButton extends Cre8Element {
    * </cre8-text-passage>
    */
   @property()
-      size?: 'sm' | 'lg';
+  size?: 'sm' | 'lg';
 
   /**
    * Display text on the button
    */
   @property()
-      buttonText: string;
+  buttonText: string;
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-split-button', {});
+    const componentClassNames = this.componentClassNames('cre8-c-split-button', {});
 
-      return html`
+    return html`
       <div class="${componentClassNames}">
         <div class="cre8-c-split-button__button-container">
           <cre8-button
@@ -68,17 +68,17 @@ export class Cre8SplitButton extends Cre8Element {
   }
 
   private _textClick(e: MouseEvent) {
-      this.dispatchEvent(new Event('text-click', e));
+    this.dispatchEvent(new Event('text-click', e));
   }
 
   private _dropdownClick(e: MouseEvent) {
-      this.dropdownOpen = !this.dropdownOpen;
-      this.dispatchEvent(new Event('dropdown-click', e));
+    this.dropdownOpen = !this.dropdownOpen;
+    this.dispatchEvent(new Event('dropdown-click', e));
   }
 }
 
 if (customElements.get('cre8-split-button') === undefined) {
-    customElements.define('cre8-split-button', Cre8SplitButton);
+  customElements.define('cre8-split-button', Cre8SplitButton);
 }
 
 declare global {

@@ -3,7 +3,7 @@
 // Typography applications are Tier 2 values that map
 // typography presets to high-level UI applications.
 
-@import '../layouts/breakpoints.scss';
+@use '../layouts/breakpoints' as *;
 @mixin cre8-typography-display-large() {
                         font-family: var(--cre8-typography-display-large-mobile-font-family); 
                         font-size: var(--cre8-typography-display-large-mobile-font-size);

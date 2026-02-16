@@ -1,27 +1,27 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './heading.styles.js';
+import styles from './heading.module.scss';
 
-    /**
-     *  HTML headings are titles or subtitles that you want to display on a webpage. The H1 is the most important and H6
-     *  is the least important in the content hierarchy.
-     *
-     * # How to Use
-     * 1. The cre8-heading tag wraps around one of the six native HTML "h" tags, depending on your chosen variation.
-     * 2. There are two main use cases for using this component:
-     *    text passage headings and Components with a title (i.e. modal, card or alert)
-     * 3. There will be instances when the design requires the heading text to have the brand color applied
-     *    in which case you should set the [brandColor](?path=/story/cre8-components-heading--brand-color)
-     *    attribute to true on the cre8-heading tag.
-     * 4. For dark backgrounds, add the [inverted](?path=/story/cre8-components-heading--inverted)
-     *    attribute to the tag for white text.
-     *
-     *
-     * @slot - The heading text content
-     */
+/**
+ *  HTML headings are titles or subtitles that you want to display on a webpage. The H1 is the most important and H6
+ *  is the least important in the content hierarchy.
+ *
+ * # How to Use
+ * 1. The cre8-heading tag wraps around one of the six native HTML "h" tags, depending on your chosen variation.
+ * 2. There are two main use cases for using this component:
+ *    text passage headings and Components with a title (i.e. modal, card or alert)
+ * 3. There will be instances when the design requires the heading text to have the brand color applied
+ *    in which case you should set the [brandColor](?path=/story/cre8-components-heading--brand-color)
+ *    attribute to true on the cre8-heading tag.
+ * 4. For dark backgrounds, add the [inverted](?path=/story/cre8-components-heading--inverted)
+ *    attribute to the tag for white text.
+ *
+ *
+ * @slot - The heading text content
+ */
 export class Cre8Heading extends Cre8Element {
-    static styles = [styles];
+    static styles = [styles as unknown as CSSResult];
 
     /**
      * Heading type
@@ -46,7 +46,7 @@ export class Cre8Heading extends Cre8Element {
      * </cre8-text-passage>
      */
     @property()
-        type?:
+    type?:
         | 'display-default'
         | 'display-small'
         | 'headline-large'
@@ -80,7 +80,7 @@ export class Cre8Heading extends Cre8Element {
      * @attr{string}
      */
     @property()
-        tagVariant: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h5';
+    tagVariant: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h5';
 
     /**
      * Invert the color of the font from dark to light. An inverted `heading` should be used on a dark background.
@@ -88,7 +88,7 @@ export class Cre8Heading extends Cre8Element {
      * @attr{boolean}
      */
     @property({ type: Boolean, reflect: true })
-        inverted?: boolean;
+    inverted?: boolean;
 
     /**
      * Apply the brand color to the heading text.
@@ -96,7 +96,7 @@ export class Cre8Heading extends Cre8Element {
      * @attr{boolean}
      */
     @property({ type: Boolean, reflect: true })
-        brandColor?: boolean;
+    brandColor?: boolean;
 
     render() {
         const tagVariantClassNames = !this.type

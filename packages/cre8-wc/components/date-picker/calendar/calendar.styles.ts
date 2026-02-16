@@ -1,5 +1,5 @@
-import { css } from 'lit';
-const styles = css`@import '../../design-tokens/core/scss/theming/component';
+import { css, CSSResult } from 'lit';
+const styles = css`@use '../../design-tokens/core/scss/theming/component';
 
 .cre8-c-calendar {
   min-width: 340px; // this is the width of a calendar with the longest character month (September)

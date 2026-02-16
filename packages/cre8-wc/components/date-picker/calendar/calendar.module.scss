@@ -1,4 +1,4 @@
-@import "design-tokens/core/scss/theming/component";
+@use "../../../design-tokens/core/scss/theming/component" as *;
 
 .cre8-c-calendar {
   min-width: 340px; // this is the width of a calendar with the longest character month (September)

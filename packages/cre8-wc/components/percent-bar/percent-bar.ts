@@ -1,12 +1,12 @@
 /* eslint-disable indent */
-import { html, nothing,  } from 'lit';
+import { html, nothing, CSSResult } from 'lit';
 import svgCaretUp from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Up.svg?raw';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import '../button/button';
 import '../text-passage/text-passage';
 import '../progress-meter/progress-meter';
-import styles from './percent-bar.styles.js';
+import styles from './percent-bar.module.scss';
 
 /**
  * The percent bar visually indicates a user's current progress and has a few features: a basic display bar with
@@ -14,7 +14,7 @@ import styles from './percent-bar.styles.js';
  * allows a user save their progress before exiting.
  */
 export class Cre8PercentBar extends Cre8Element {
-  static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
 
   /*
@@ -55,7 +55,7 @@ export class Cre8PercentBar extends Cre8Element {
           <div class="cre8-c-percent-bar__controls">
               <div lass="cre8-c-percent-bar__left-controls">
                 ${this.isFirstStep()
-                  ? html` <cre8-button
+        ? html` <cre8-button
                       ?hideText=${true}
                       svg="${svgCaretUp}"
                       iconRotateDegree="-90"
@@ -64,7 +64,7 @@ export class Cre8PercentBar extends Cre8Element {
                       @click="${this._handleClick}"
                     >
                     </cre8-button>`
-                  : nothing}
+        : nothing}
               </div>
               <div class="cre8-c-percent-bar__right-controls">
                 <cre8-text-passage

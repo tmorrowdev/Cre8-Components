@@ -1,5 +1,5 @@
 import { fixture } from '@open-wc/testing-helpers';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../tertiary-nav-item';
 import { cre8TertiaryNavItem } from '../tertiary-nav-item';
 import '../../tertiary-nav/tertiary-nav';

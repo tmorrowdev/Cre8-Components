@@ -1,13 +1,13 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './link-list.styles.js';
+import styles from './link-list.module.scss';
 
 /**
  * @slot - The link list items
  */
 export class Cre8LinkList extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Behavioral variant
@@ -15,28 +15,28 @@ export class Cre8LinkList extends Cre8Element {
    * - **horizontal** renders a horizontal wrapping link list on all screens
    */
   @property()
-      behavior?: 'responsive' | 'horizontal';
+  behavior?: 'responsive' | 'horizontal';
 
   /**
    * Inverted variant
    * 1. Used for dark backgrounds
    */
   @property({ type: Boolean, reflect: true })
-      inverted?: boolean;
+  inverted?: boolean;
 
   /**
    * Size variants
    * - **sm** renders a link list with a smaller typography
    */
   @property()
-      size?: 'sm';
+  size?: 'sm';
 
   /**
    * Spacing between link list items
    * - **condensed** renders a link list with a more compact display
    */
   @property()
-      spacing?: 'condensed';
+  spacing?: 'condensed';
 
   /**
    * Style variants
@@ -44,20 +44,20 @@ export class Cre8LinkList extends Cre8Element {
    * - **display** renders a link list with a display treatment (e.g. article title)
    */
   @property()
-      variant?: 'secondary' | 'display';
+  variant?: 'secondary' | 'display';
 
   render() {
-      const componentClassName = this.componentClassNames('cre8-c-link-list', {
-          'cre8-c-link-list--secondary': this.variant === 'secondary',
-          'cre8-c-link-list--display': this.variant === 'display',
-          'cre8-c-link-list--inverted': this.inverted === true,
-          'cre8-c-link-list--responsive': this.behavior === 'responsive',
-          'cre8-c-link-list--horizontal': this.behavior === 'horizontal',
-          'cre8-c-link-list--condensed': this.spacing === 'condensed',
-          'cre8-c-link-list--sm': this.size === 'sm',
-      });
+    const componentClassName = this.componentClassNames('cre8-c-link-list', {
+      'cre8-c-link-list--secondary': this.variant === 'secondary',
+      'cre8-c-link-list--display': this.variant === 'display',
+      'cre8-c-link-list--inverted': this.inverted === true,
+      'cre8-c-link-list--responsive': this.behavior === 'responsive',
+      'cre8-c-link-list--horizontal': this.behavior === 'horizontal',
+      'cre8-c-link-list--condensed': this.spacing === 'condensed',
+      'cre8-c-link-list--sm': this.size === 'sm',
+    });
 
-      return html`
+    return html`
       <ul class="${componentClassName}">
         <slot></slot>
       </ul>
@@ -66,7 +66,7 @@ export class Cre8LinkList extends Cre8Element {
 }
 
 if (customElements.get('cre8-link-list') === undefined) {
-    customElements.define('cre8-link-list', Cre8LinkList);
+  customElements.define('cre8-link-list', Cre8LinkList);
 }
 
 declare global {

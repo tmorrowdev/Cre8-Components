@@ -1,14 +1,14 @@
-import { html, PropertyValues } from 'lit';
+import { html, PropertyValues, CSSResult } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './tab.styles.js';
+import styles from './tab.module.scss';
 
 /**
  * @slot - The component content
  */
 
 export class Cre8Tab extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Tab sizes
@@ -18,7 +18,7 @@ export class Cre8Tab extends Cre8Element {
    * _*This property is dynamically set_
    */
   @property()
-      size?: 'sm';
+  size?: 'sm';
 
   /**
    * If is true, tab has active state and cooresponding tab panel is visible.
@@ -26,7 +26,7 @@ export class Cre8Tab extends Cre8Element {
    * _*This property is dynamically set_
    */
   @property({ type: Boolean, reflect: true })
-      isActive?: boolean;
+  isActive?: boolean;
 
   /**
    * Used to align the tab with the tab panel
@@ -34,7 +34,7 @@ export class Cre8Tab extends Cre8Element {
    * _*This property is dynamically set_
    */
   @property({ type: Number })
-      index?: number;
+  index?: number;
 
   /**
    * Used to connect tab trigger and tab panel for accessibility
@@ -42,13 +42,13 @@ export class Cre8Tab extends Cre8Element {
    * _*This property is dynamically set_
    */
   @property()
-      ariaLabelledBy?: string;
+  ariaLabelledBy?: string;
 
   /**
    * Query the tab element
    */
   @query('.cre8-c-tab')
-      _Cre8Tab: HTMLButtonElement;
+  _Cre8Tab: HTMLButtonElement;
 
   /**
    * Updated
@@ -58,14 +58,14 @@ export class Cre8Tab extends Cre8Element {
    */
   override updated(changedProperties: PropertyValues) {
     /* 2 */
-      if (changedProperties.has('ariaLabelledBy')) {
-          this._Cre8Tab.setAttribute('id', this.ariaLabelledBy);
-      }
+    if (changedProperties.has('ariaLabelledBy')) {
+      this._Cre8Tab.setAttribute('id', this.ariaLabelledBy);
+    }
     /* 3 */
-      if (changedProperties.has('isActive')) {
-          this._Cre8Tab.setAttribute('tabindex', this.isActive ? '0' : '-1');
-          this._Cre8Tab.setAttribute('aria-selected', `${this.isActive}`);
-      }
+    if (changedProperties.has('isActive')) {
+      this._Cre8Tab.setAttribute('tabindex', this.isActive ? '0' : '-1');
+      this._Cre8Tab.setAttribute('aria-selected', `${this.isActive}`);
+    }
   }
 
   /**
@@ -74,23 +74,23 @@ export class Cre8Tab extends Cre8Element {
    */
 
   private _handleTabSelected() {
-      const customEvent = new CustomEvent('tabSelected', {
-          detail: {
-              index: this.index,
-          },
-          bubbles: true,
-          composed: true,
-      });
-      this.dispatchEvent(customEvent);
+    const customEvent = new CustomEvent('tabSelected', {
+      detail: {
+        index: this.index,
+      },
+      bubbles: true,
+      composed: true,
+    });
+    this.dispatchEvent(customEvent);
   }
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-tab', {
-          'cre8-is-active': this.isActive,
-          'cre8-c-tab--small': this.size === 'sm',
-      });
+    const componentClassNames = this.componentClassNames('cre8-c-tab', {
+      'cre8-is-active': this.isActive,
+      'cre8-c-tab--small': this.size === 'sm',
+    });
 
-      return html`
+    return html`
       <button
         role="tab"
         tabindex="-1"
@@ -106,7 +106,7 @@ export class Cre8Tab extends Cre8Element {
 }
 
 if (customElements.get('cre8-tab') === undefined) {
-    customElements.define('cre8-tab', Cre8Tab);
+  customElements.define('cre8-tab', Cre8Tab);
 }
 
 declare global {

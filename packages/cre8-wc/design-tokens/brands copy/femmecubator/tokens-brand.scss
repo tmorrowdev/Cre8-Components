@@ -2,7 +2,7 @@
   femmecubator tokens
  */
 
-@import './base.scss';
-@import './color.scss';
-@import './border.scss';
-@import './spacing.scss';
+@use 'base';
+@use 'color';
+@use 'border';
+@use 'spacing';

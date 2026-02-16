@@ -1,25 +1,25 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './hero.styles.js';
+import styles from './hero.module.scss';
 
 /**
  * @slot - The component content
  */
 export class Cre8Hero extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Image source
    */
   @property()
-      imgSrc?: string;
+  imgSrc?: string;
 
   /**
    * Image alt text
    */
   @property()
-      imgAlt?: string;
+  imgAlt?: string;
 
   /**
    * Position variant. Bottom left is the default position
@@ -37,21 +37,21 @@ export class Cre8Hero extends Cre8Element {
    * </cre8-text-passage>
    */
   @property()
-      align?: 'top-left' | 'left' | 'top-center' | 'center' | 'bottom-center' | 'top-right' | 'right' | 'bottom-right';
+  align?: 'top-left' | 'left' | 'top-center' | 'center' | 'bottom-center' | 'top-right' | 'right' | 'bottom-right';
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-hero', {
-          'cre8-c-hero--top-left': this.align === 'top-left',
-          'cre8-c-hero--left': this.align === 'left',
-          'cre8-c-hero--top-center': this.align === 'top-center',
-          'cre8-c-hero--center': this.align === 'center',
-          'cre8-c-hero--bottom-center': this.align === 'bottom-center',
-          'cre8-c-hero--top-right': this.align === 'top-right',
-          'cre8-c-hero--right': this.align === 'right',
-          'cre8-c-hero--bottom-right': this.align === 'bottom-right',
-      });
+    const componentClassNames = this.componentClassNames('cre8-c-hero', {
+      'cre8-c-hero--top-left': this.align === 'top-left',
+      'cre8-c-hero--left': this.align === 'left',
+      'cre8-c-hero--top-center': this.align === 'top-center',
+      'cre8-c-hero--center': this.align === 'center',
+      'cre8-c-hero--bottom-center': this.align === 'bottom-center',
+      'cre8-c-hero--top-right': this.align === 'top-right',
+      'cre8-c-hero--right': this.align === 'right',
+      'cre8-c-hero--bottom-right': this.align === 'bottom-right',
+    });
 
-      return html`
+    return html`
       <div class="${componentClassNames}">
         <cre8-layout-container>
           <img class="cre8-c-hero__image" src="${this.imgSrc}" alt="${this.imgAlt}" />
@@ -65,7 +65,7 @@ export class Cre8Hero extends Cre8Element {
 }
 
 if (customElements.get('cre8-hero') === undefined) {
-    customElements.define('cre8-hero', Cre8Hero);
+  customElements.define('cre8-hero', Cre8Hero);
 }
 
 declare global {

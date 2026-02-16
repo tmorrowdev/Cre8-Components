@@ -1,55 +1,55 @@
 /* eslint-disable lit/no-template-arrow */
 /* TODO: remove eslint disable on no-template-arrow */
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../../cre8-element';
-import styles from './calendar-navigation.styles.js';
+import styles from './calendar-navigation.module.scss';
 import '../../button/button';
 import '../../icon/icon';
 
 export class Cre8CalendarNavigation extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   @property({ type: String, reflect: true })
-      monthName: string;
+  monthName: string;
 
   @property({ type: String, reflect: true })
-      year: number;
+  year: number;
 
   private activateModal(modal: string): void {
-      const event = new CustomEvent('activateModal', {
-          detail: {
-              modal,
-          },
-      });
-      this.dispatchEvent(event);
+    const event = new CustomEvent('activateModal', {
+      detail: {
+        modal,
+      },
+    });
+    this.dispatchEvent(event);
   }
 
   private changeMonth(addend: number): void {
-      const event = new CustomEvent('changeMonth', {
-          detail: {
-              addend,
-          },
-      });
-      this.dispatchEvent(event);
+    const event = new CustomEvent('changeMonth', {
+      detail: {
+        addend,
+      },
+    });
+    this.dispatchEvent(event);
   }
 
   private changeYear(addend: number): void {
-      const event = new CustomEvent('changeYear', {
-          detail: {
-              addend,
-          },
-      });
-      this.dispatchEvent(event);
+    const event = new CustomEvent('changeYear', {
+      detail: {
+        addend,
+      },
+    });
+    this.dispatchEvent(event);
   }
 
   render() {
-      const componentClassNames = this.componentClassNames(
-          'cre8-c-calendar-navigation',
-          {}
-      );
+    const componentClassNames = this.componentClassNames(
+      'cre8-c-calendar-navigation',
+      {}
+    );
 
-      return html`
+    return html`
       <div class="${componentClassNames}">
         <cre8-button
           variant="tertiary"
@@ -108,7 +108,7 @@ export class Cre8CalendarNavigation extends Cre8Element {
 }
 
 if (customElements.get('cre8-calendar-navigation') === undefined) {
-    customElements.define('cre8-calendar-navigation', Cre8CalendarNavigation);
+  customElements.define('cre8-calendar-navigation', Cre8CalendarNavigation);
 }
 
 declare global {

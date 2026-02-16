@@ -1,4 +1,4 @@
-import { html, } from 'lit';
+import { html, CSSResult } from 'lit';
 import {
     property, query, queryAssignedElements, state,
 } from 'lit/decorators.js';
@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid';
 import { Cre8Element } from '../cre8-element';
 import { Cre8TabPanel } from '../tab-panel/tab-panel';
 import { Cre8Tab } from '../tab/tab';
-import styles from './tabs.styles.js';
+import styles from './tabs.module.scss';
 
 let tabId = 1;
 
@@ -39,7 +39,7 @@ let tabId = 1;
  */
 
 export class Cre8Tabs extends Cre8Element {
-    static styles = [styles];
+    static styles = [styles as unknown as CSSResult];
 
     /**
      * Tab sizes

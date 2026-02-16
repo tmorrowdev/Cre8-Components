@@ -1,8 +1,8 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import lightDomStyles from './text-passage-light-dom.styles.js';
-import styles from './text-passage.styles.js';
+import lightDomStyles from './text-passage-light-dom.module.scss';
+import styles from './text-passage.module.scss';
 
 /**
  * The text-passage component acts a general wrapper element
@@ -21,14 +21,14 @@ import styles from './text-passage.styles.js';
  * @slot - The component content
  */
 export class Cre8TextPassage extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Inverted variant
    * 1) Used for dark backgrounds
    */
   @property({ type: Boolean, reflect: true })
-      inverted?: boolean;
+  inverted?: boolean;
 
   /**
    * Size variant
@@ -37,32 +37,32 @@ export class Cre8TextPassage extends Cre8Element {
    * - **large** renders larger typography than the default variant
    */
   @property()
-      size?: 'small' | 'default' | 'large' = 'default';
+  size?: 'small' | 'default' | 'large' = 'default';
 
   /**
    * Add the light dom styles when this component is connected to a page
    */
   connectedCallback() {
-      super.connectedCallback();
+    super.connectedCallback();
 
-      const lightDomExists = document.head.querySelector('#cre8-text-passage-styles');
-      if (!lightDomExists) {
-          const lightDomStyle = document.createElement('style');
-          lightDomStyle.id = 'cre8-text-passage-styles';
-          lightDomStyle.innerHTML = lightDomStyles.cssText;
-          document.head.appendChild(lightDomStyle);
-      }
+    const lightDomExists = document.head.querySelector('#cre8-text-passage-styles');
+    if (!lightDomExists) {
+      const lightDomStyle = document.createElement('style');
+      lightDomStyle.id = 'cre8-text-passage-styles';
+      lightDomStyle.innerHTML = lightDomStyles.cssText;
+      document.head.appendChild(lightDomStyle);
+    }
   }
 
   render() {
-      const componentClassName = this.componentClassNames('cre8-c-text-passage', {
-          'cre8-c-text-passage--default': this.size === 'default' || undefined,
-          'cre8-c-text-passage--inverted': this.inverted,
-          'cre8-c-text-passage--small': this.size === 'small',
-          'cre8-c-text-passage--large': this.size === 'large',
-      });
+    const componentClassName = this.componentClassNames('cre8-c-text-passage', {
+      'cre8-c-text-passage--default': this.size === 'default' || undefined,
+      'cre8-c-text-passage--inverted': this.inverted,
+      'cre8-c-text-passage--small': this.size === 'small',
+      'cre8-c-text-passage--large': this.size === 'large',
+    });
 
-      return html`
+    return html`
       <div class="${componentClassName}">
         <slot></slot>
       </div>
@@ -71,7 +71,7 @@ export class Cre8TextPassage extends Cre8Element {
 }
 
 if (customElements.get('cre8-text-passage') === undefined) {
-    customElements.define('cre8-text-passage', Cre8TextPassage);
+  customElements.define('cre8-text-passage', Cre8TextPassage);
 }
 
 declare global {

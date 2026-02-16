@@ -1,7 +1,7 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './section.styles.js';
+import styles from './section.module.scss';
 /**
  * The section component acts as a block level HTML element that takes a 'headline' property
  * that renders the section's heading which wraps around any HTML template
@@ -21,19 +21,19 @@ import styles from './section.styles.js';
  */
 
 export class Cre8Section extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * The Headline will be rendered as the Section Headline with the correct brand styling applied
    */
 
   @property()
-      headline?: string;
+  headline?: string;
 
   render() {
-      const componentClassName = this.componentClassNames('cre8-c-section', {});
+    const componentClassName = this.componentClassNames('cre8-c-section', {});
 
-      return html`
+    return html`
       <section class="${componentClassName}">
         ${this.headline
         ? html`<header class="cre8-c-section__header">
@@ -52,7 +52,7 @@ export class Cre8Section extends Cre8Element {
 }
 
 if (customElements.get('cre8-section') === undefined) {
-    customElements.define('cre8-section', Cre8Section);
+  customElements.define('cre8-section', Cre8Section);
 }
 
 declare global {

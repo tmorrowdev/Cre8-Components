@@ -1,13 +1,13 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './grid.styles.js';
+import styles from './grid.module.scss';
 
 /**
  * @slot - The grid items
  */
 export class Cre8Grid extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Style variant
@@ -27,7 +27,7 @@ export class Cre8Grid extends Cre8Element {
    *   transforms to a 4-across pattern on medium/large screens
    */
   @property()
-      variant?: 'side-by-side' | '2up' | '3up' | '1-3up' | '4up' | '1-4up' | '1-2-4up' | '2-4-6up';
+  variant?: 'side-by-side' | '2up' | '3up' | '1-3up' | '4up' | '1-4up' | '1-2-4up' | '2-4-6up';
 
   /**
    * Style variant
@@ -36,7 +36,7 @@ export class Cre8Grid extends Cre8Element {
    * - **lg** yields a grid whose grid items are spaced with a gap larger than the default
    */
   @property()
-      gap?: 'none' | 'sm' | 'lg';
+  gap?: 'none' | 'sm' | 'lg';
 
   /**
    * Break variant
@@ -47,26 +47,26 @@ export class Cre8Grid extends Cre8Element {
    * - **lg** yields a grid whose grid items are spaced with a gap larger than the default
    */
   @property()
-      break?: 'faster' | 'slower';
+  break?: 'faster' | 'slower';
 
   render() {
-      const componentClassName = this.componentClassNames('cre8-c-grid', {
-          'cre8-c-grid--side-by-side': this.variant === 'side-by-side',
-          'cre8-c-grid--2up': this.variant === '2up',
-          'cre8-c-grid--3up': this.variant === '3up',
-          'cre8-c-grid--1-3up': this.variant === '1-3up',
-          'cre8-c-grid--4up': this.variant === '4up',
-          'cre8-c-grid--1-4up': this.variant === '1-4up',
-          'cre8-c-grid--1-2-4up': this.variant === '1-2-4up',
-          'cre8-c-grid--2-4-6up': this.variant === '2-4-6up',
-          'cre8-c-grid--gap-none': this.gap === 'none',
-          'cre8-c-grid--gap-sm': this.gap === 'sm',
-          'cre8-c-grid--gap-lg': this.gap === 'lg',
-          'cre8-c-grid--break-faster': this.break === 'faster',
-          'cre8-c-grid--break-slower': this.break === 'slower',
-      });
+    const componentClassName = this.componentClassNames('cre8-c-grid', {
+      'cre8-c-grid--side-by-side': this.variant === 'side-by-side',
+      'cre8-c-grid--2up': this.variant === '2up',
+      'cre8-c-grid--3up': this.variant === '3up',
+      'cre8-c-grid--1-3up': this.variant === '1-3up',
+      'cre8-c-grid--4up': this.variant === '4up',
+      'cre8-c-grid--1-4up': this.variant === '1-4up',
+      'cre8-c-grid--1-2-4up': this.variant === '1-2-4up',
+      'cre8-c-grid--2-4-6up': this.variant === '2-4-6up',
+      'cre8-c-grid--gap-none': this.gap === 'none',
+      'cre8-c-grid--gap-sm': this.gap === 'sm',
+      'cre8-c-grid--gap-lg': this.gap === 'lg',
+      'cre8-c-grid--break-faster': this.break === 'faster',
+      'cre8-c-grid--break-slower': this.break === 'slower',
+    });
 
-      return html`
+    return html`
       <div class="${componentClassName}">
         <slot></slot>
       </div>
@@ -75,7 +75,7 @@ export class Cre8Grid extends Cre8Element {
 }
 
 if (customElements.get('cre8-grid') === undefined) {
-    customElements.define('cre8-grid', Cre8Grid);
+  customElements.define('cre8-grid', Cre8Grid);
 }
 
 declare global {

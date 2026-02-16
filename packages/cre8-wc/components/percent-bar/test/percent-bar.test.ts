@@ -1,5 +1,5 @@
 import { fixture } from '@open-wc/testing-helpers';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../percent-bar';
 import '../../button/button';
 import { cre8PercentBar } from '../percent-bar';
@@ -15,7 +15,7 @@ describe('percent-bar', () => {
         await el.updateComplete;
 
         const emitSpy = jest.spyOn(el, 'dispatchEvent');
-        const emittedItem = new Event('leftActionButtonClick', { });
+        const emittedItem = new Event('leftActionButtonClick', {});
 
         const actionButton = el.shadowRoot!.querySelector('cre8-button');
         actionButton.dispatchEvent(new MouseEvent('click'));

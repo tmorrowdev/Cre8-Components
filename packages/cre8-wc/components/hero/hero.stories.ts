@@ -1,4 +1,4 @@
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../heading/heading';
 import '../text-passage/text-passage';
 import './hero';

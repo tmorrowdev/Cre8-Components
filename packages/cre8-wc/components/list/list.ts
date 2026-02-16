@@ -1,13 +1,13 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './list.styles.js';
+import styles from './list.module.scss';
 
 /**
  * @slot - The list items
  */
 export class Cre8List extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Style variants
@@ -18,7 +18,7 @@ export class Cre8List extends Cre8Element {
    * </cre8-text-passage>
    */
   @property()
-      variant?: 'bare';
+  variant?: 'bare';
 
   /**
    * Spacing variants
@@ -30,16 +30,16 @@ export class Cre8List extends Cre8Element {
    * </cre8-text-passage>
    */
   @property()
-      spacing?: 'padded' | 'condensed';
+  spacing?: 'padded' | 'condensed';
 
   render() {
-      const componentClassName = this.componentClassNames('cre8-c-list', {
-          'cre8-c-list--bare': this.variant === 'bare',
-          'cre8-c-list--padded': this.spacing === 'padded',
-          'cre8-c-list--condensed': this.spacing === 'condensed',
-      });
+    const componentClassName = this.componentClassNames('cre8-c-list', {
+      'cre8-c-list--bare': this.variant === 'bare',
+      'cre8-c-list--padded': this.spacing === 'padded',
+      'cre8-c-list--condensed': this.spacing === 'condensed',
+    });
 
-      return html`
+    return html`
       <ul class="${componentClassName}">
         <slot></slot>
       </ul>
@@ -48,7 +48,7 @@ export class Cre8List extends Cre8Element {
 }
 
 if (customElements.get('cre8-list') === undefined) {
-    customElements.define('cre8-list', Cre8List);
+  customElements.define('cre8-list', Cre8List);
 }
 
 declare global {

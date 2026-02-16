@@ -1,20 +1,20 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './text-link.styles.js';
+import styles from './text-link.module.scss';
 
 /**
  * @slot - The component content
  */
 export class Cre8TextLink extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * The link URL
    */
   @property()
-      href?: string;
+  href?: string;
 
   /**
    * Style variant
@@ -26,7 +26,7 @@ export class Cre8TextLink extends Cre8Element {
    * </cre8-text-passage>
    */
   @property()
-      variant?: 'display' | 'secondary';
+  variant?: 'display' | 'secondary';
 
   /**
    * Size variant
@@ -37,28 +37,28 @@ export class Cre8TextLink extends Cre8Element {
    * </cre8-text-passage>
    */
   @property()
-      size?: 'sm';
+  size?: 'sm';
 
   /**
    * Inverted variant
    * 1) Used for dark backgrounds
    */
   @property({ type: Boolean, reflect: true })
-      inverted?: boolean;
+  inverted?: boolean;
 
   render() {
-      const componentClassName = this.componentClassNames('cre8-c-text-link', {
-          'cre8-c-text-link--inverted': this.inverted === true,
-          'cre8-c-text-link--display': this.variant === 'display',
-          'cre8-c-text-link--secondary': this.variant === 'secondary',
-          'cre8-c-text-link--sm': this.size === 'sm',
-      });
+    const componentClassName = this.componentClassNames('cre8-c-text-link', {
+      'cre8-c-text-link--inverted': this.inverted === true,
+      'cre8-c-text-link--display': this.variant === 'display',
+      'cre8-c-text-link--secondary': this.variant === 'secondary',
+      'cre8-c-text-link--sm': this.size === 'sm',
+    });
 
-      return html`
+    return html`
       <a href="${ifDefined(this.href)}" class="${componentClassName}">
         <slot></slot>
         ${this.slotNotEmpty('linkAfter')
-        && html`<div class="cre8-c-text-link__after">
+      && html`<div class="cre8-c-text-link__after">
           <slot name="linkAfter"></slot>
         </div>`}
       </a>
@@ -67,7 +67,7 @@ export class Cre8TextLink extends Cre8Element {
 }
 
 if (customElements.get('cre8-text-link') === undefined) {
-    customElements.define('cre8-text-link', Cre8TextLink);
+  customElements.define('cre8-text-link', Cre8TextLink);
 }
 
 declare global {

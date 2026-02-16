@@ -1,4 +1,4 @@
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import { spread } from '../../directives/spread';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { sanitizeInput } from '../../utilities/story-helpers';
@@ -7,13 +7,13 @@ import '../text-link/text-link';
 
 const meta = {
   title: 'cre8 Components/Field Note',
-  render: ({slot, ...args}) => html`<cre8-field-note ${spread(args)}>${unsafeHTML(sanitizeInput(slot, 'cre8-text-link'))}</cre8-field-note>`,
+  render: ({ slot, ...args }) => html`<cre8-field-note ${spread(args)}>${unsafeHTML(sanitizeInput(slot, 'cre8-text-link'))}</cre8-field-note>`,
   component: 'cre8-field-note',
   parameters: { status: { type: 'inProgress' } },
   argTypes: {
-    iconName: {control: 'text'}, // iconName will be deprecated
-    isError: {control: 'boolean'},
-    isSuccess: {control: 'boolean'},
+    iconName: { control: 'text' }, // iconName will be deprecated
+    isError: { control: 'boolean' },
+    isSuccess: { control: 'boolean' },
   }
 };
 

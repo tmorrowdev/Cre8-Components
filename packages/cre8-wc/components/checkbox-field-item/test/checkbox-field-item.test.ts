@@ -1,5 +1,5 @@
 import { fixture } from '@open-wc/testing-helpers';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../checkbox-field-item';
 import { cre8CheckboxFieldItem } from '../checkbox-field-item';
 
@@ -68,9 +68,9 @@ describe('checkbox-field-item', () => {
     });
 
     test('disabled attribute is implemented correctly: is not added to the DOM when false', async () => {
-      const el = await fixture<cre8CheckboxFieldItem>(html`<cre8-checkbox-field-item ?disabled="${false}"></cre8-checkbox-field-item>`);
-      const checkboxFieldItem: cre8CheckboxFieldItem = el.shadowRoot!.querySelector('.cre8-c-checkbox-field-item'); // Test for the class change
-      expect(checkboxFieldItem.disabled).toBeUndefined();
+        const el = await fixture<cre8CheckboxFieldItem>(html`<cre8-checkbox-field-item ?disabled="${false}"></cre8-checkbox-field-item>`);
+        const checkboxFieldItem: cre8CheckboxFieldItem = el.shadowRoot!.querySelector('.cre8-c-checkbox-field-item'); // Test for the class change
+        expect(checkboxFieldItem.disabled).toBeUndefined();
     });
 
     test('form reset', async () => {

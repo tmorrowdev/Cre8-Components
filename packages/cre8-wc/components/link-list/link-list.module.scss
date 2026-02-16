@@ -1,4 +1,4 @@
-@import '/design-tokens/core/scss/theming/component';
+@import '../../design-tokens/core/scss/theming/component.css';
 
 /**
  * A list of hyperlinks
@@ -92,7 +92,7 @@
  * 1) Displays as a horizontal list on small screens and moves to a vertical
  */
 .cre8-c-link-list--responsive {
-  @media all and (max-width: component.$cre8-breakpoint-md) {
+  @media all and (max-width: $cre8-breakpoint-md) {
     flex-direction: row;
     flex-wrap: wrap;
     margin: calc(8px * -1) 0 0 calc(8px * -2);

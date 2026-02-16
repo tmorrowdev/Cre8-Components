@@ -1,4 +1,4 @@
-import { html, PropertyValues } from 'lit';
+import { html, PropertyValues, CSSResult } from 'lit';
 import { property, state, query } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import {
@@ -12,7 +12,7 @@ import {
     ActiveElement,
     TooltipItem,
 } from 'chart.js';
-import styles from './chart.styles.js';
+import styles from './chart.module.scss';
 
 // Register all Chart.js components
 Chart.register(...registerables);
@@ -97,7 +97,7 @@ export interface Cre8ChartEventDetail {
  * @fires cre8-chart-ready - Fired when the chart is initialized
  */
 export class Cre8Chart extends Cre8Element {
-    static styles = [styles];
+    static styles = [styles as unknown as CSSResult];
 
     /**
      * The type of chart to render.
@@ -267,10 +267,10 @@ export class Cre8Chart extends Cre8Element {
         // Update existing chart if data or options changed
         if (
             (changedProperties.has('data') ||
-             changedProperties.has('options') ||
-             changedProperties.has('showLegend') ||
-             changedProperties.has('legendPosition') ||
-             changedProperties.has('colors')) &&
+                changedProperties.has('options') ||
+                changedProperties.has('showLegend') ||
+                changedProperties.has('legendPosition') ||
+                changedProperties.has('colors')) &&
             this._chartInstance
         ) {
             this._updateChart();
@@ -554,7 +554,7 @@ export class Cre8Chart extends Cre8Element {
                 label,
             };
             // @ts-expect-error: `dispatch` is not defined on `Cre8Element`
-            this.dispatch({eventName: 'cre8-chart-click',detailObj: detail});
+            this.dispatch({ eventName: 'cre8-chart-click', detailObj: detail });
         }
     }
 
@@ -584,7 +584,7 @@ export class Cre8Chart extends Cre8Element {
                 label,
             };
             // @ts-expect-error: `dispatch` is not defined on `Cre8Element`
-            this.dispatch({eventName: 'cre8-chart-hover',detailObj: detail});
+            this.dispatch({ eventName: 'cre8-chart-hover', detailObj: detail });
         }
     }
 
@@ -631,19 +631,19 @@ export class Cre8Chart extends Cre8Element {
         return html`
             <div class="${componentClassName}" style="${containerStyle}">
                 ${this.loading
-                    ? html`
+                ? html`
                         <div class="cre8-c-chart__loading">
                             <div class="cre8-c-chart__spinner"></div>
                             <span class="cre8-c-chart__loading-text">Loading chart...</span>
                         </div>
                     `
-                    : html`
+                : html`
                         <canvas
                             role="img"
                             aria-label="${this.ariaLabel}"
                         ></canvas>
                     `
-                }
+            }
             </div>
         `;
     }

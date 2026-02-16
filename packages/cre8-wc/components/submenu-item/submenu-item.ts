@@ -1,33 +1,33 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './submenu-item.styles.js';
+import styles from './submenu-item.module.scss';
 
 /**
  * @slot - The component content
  */
 export class Cre8SubmenuItem extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * The link URL
    */
   @property()
-      href?: string;
+  href?: string;
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-submenu-item', {});
+    const componentClassNames = this.componentClassNames('cre8-c-submenu-item', {});
 
-      if (this.href) {
-          return html`
+    if (this.href) {
+      return html`
         <li role="listitem" class="${componentClassNames}">
           <a href=${this.href} class="cre8-c-submenu-item__link">
             <slot></slot>
           </a>
         </li>
       `;
-      }
-      return html`<li role="listitem" class="${componentClassNames}">
+    }
+    return html`<li role="listitem" class="${componentClassNames}">
         <button class="cre8-c-submenu-item__link">
           <slot></slot>
         </button>
@@ -36,7 +36,7 @@ export class Cre8SubmenuItem extends Cre8Element {
 }
 
 if (customElements.get('cre8-submenu-item') === undefined) {
-    customElements.define('cre8-submenu-item', Cre8SubmenuItem);
+  customElements.define('cre8-submenu-item', Cre8SubmenuItem);
 }
 
 declare global {

@@ -1,12 +1,12 @@
-import {html} from 'lit';
-import {spread} from '../../directives/spread';
-import './heading';
+import { html, CSSResult } from 'lit';
+import { spread } from '../../directives/spread';
+import './heading.js';
 
 export default {
   title: 'cre8 Components/Heading',
   component: 'cre8-heading',
-  parameters: {status: {type: 'inProgress'}},
-  render: (args) => html`<cre8-heading ${spread(args)}>Heading</cre8-heading>`,
+  parameters: { status: { type: 'inProgress' } },
+  render: ([...args]) => html`<cre8-heading ${spread(args)}>Heading</cre8-heading>`,
   argTypes: {
     type: {
       options: [
@@ -26,17 +26,17 @@ export default {
         'meta-default',
         'meta-small',
       ],
-      control: {type: 'radio'},
+      control: { type: 'radio' },
     },
     tagVariant: {
       options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
-      control: {type: 'radio'},
+      control: { type: 'radio' },
     },
     brandColor: {
-      control: {type: 'boolean'},
+      control: { type: 'boolean' },
     },
     inverted: {
-      control: {type: 'boolean'},
+      control: { type: 'boolean' },
     },
   },
 };
@@ -176,13 +176,13 @@ export const BrandColor = {
 };
 
 export const Inverted = {
-  render: (args) => html`<div style="padding: 20px; background: #000;">
+  render: ([...args]) => html`<div style="padding: 20px; background: #000;">
     <cre8-heading ${spread(args)} ?inverted=${true}>Heading style for dark backgrounds</cre8-heading>
   </div>`,
 };
 
 export const InvertedBrandColor = {
-  render: (args) => html`<div style="padding: 20px; background: #000;">
+  render: ([...args]) => html`<div style="padding: 20px; background: #000;">
     <cre8-heading ${spread(args)}  ?brandColor=${true} ?inverted=${true}>Heading with brand color for dark backgrounds</cre8-heading>
   </div>`,
 };

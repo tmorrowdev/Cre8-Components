@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/web-components';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import { spread } from '../../directives/spread';
 import './button';
 import svgCaretUp from '../../icons/System/Regular/Caret_Up.svg?raw';

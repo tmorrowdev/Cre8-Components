@@ -1,4 +1,4 @@
-@import '/design-tokens/core/scss/theming/component';
+@import '../../design-tokens/core/scss/theming/component.css';
 
 // #FEATURE
 
@@ -14,7 +14,7 @@
   color: var(--cre8-feature-text-color, var(--cre8-theme-color-core-text, var(--cre8-color-neutral-black)));
   border-radius: var(--cre8-feature-border-radius, var(--cre8-border-radius-default, 0));
 
-  @media all and (min-width: component.$cre8-breakpoint-md) {
+  @media all and (min-width: $cre8-breakpoint-md) {
     flex-direction: row;
   }
 }
@@ -34,7 +34,7 @@
 .cre8-c-feature__body {
   margin-bottom: calc(8px * 4);
 
-  @media all and (min-width: component.$cre8-breakpoint-md) {
+  @media all and (min-width: $cre8-breakpoint-md) {
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -49,7 +49,7 @@
 .cre8-c-feature__media {
   width: 100%;
 
-  @media all and (min-width: component.$cre8-breakpoint-md) {
+  @media all and (min-width: $cre8-breakpoint-md) {
     width: 45%;
   }
 }

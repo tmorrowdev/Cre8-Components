@@ -1,7 +1,7 @@
-import { html, nothing,  } from 'lit';
+import { html, nothing, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './loading-spinner.styles.js';
+import styles from './loading-spinner.module.scss';
 
 /**
  * A loading spinner notifies the user that their request is being processed while the front end is retrieving data
@@ -44,7 +44,7 @@ import styles from './loading-spinner.styles.js';
  *
  */
 export class Cre8LoadingSpinner extends Cre8Element {
-    static styles = (styles);
+  static styles = (styles);
 
   /**
    * Mode of the spinner, defaults to indeterminate.
@@ -53,38 +53,38 @@ export class Cre8LoadingSpinner extends Cre8Element {
    * destroyed.
    */
   @property({ type: Boolean, reflect: true })
-      determinate?: boolean;
+  determinate?: boolean;
 
   /**
    * Inverse property used for dark backgrounds.
    */
   @property({ type: Boolean, reflect: true })
-      inverse?: boolean;
+  inverse?: boolean;
 
   /**
    * Neutral property used for secondary neutral loading button.
    */
   @property({ type: Boolean, reflect: true })
-      neutral?: boolean;
+  neutral?: boolean;
 
   /**
    * Property that specifies which button variant is using the loading spinner
    */
   @property()
-      buttonVariant? : 'primary' | 'secondary' | 'tertiary';
+  buttonVariant?: 'primary' | 'secondary' | 'tertiary';
 
   /**
    * Label to show along with progress indicator.
    * This is required to meet accessibility requirements for this component.
    */
   @property()
-      label?: string;
+  label?: string;
 
   /**
    * Progress to display, between 0 and 100. Requires determinate property to be set to true.
    * */
   @property({ reflect: true, type: Number })
-      progress = 0;
+  progress = 0;
 
   /**
    * Size of the progress indicator and position of the label, if a label has been defined using the label property.
@@ -92,56 +92,56 @@ export class Cre8LoadingSpinner extends Cre8Element {
    * - **small** renders a small progress indicator at 24px in width/height with the label to the right.
    */
   @property()
-      size?: 'large' | 'small' = 'large';
+  size?: 'large' | 'small' = 'large';
 
   private labelId: string;
 
   constructor() {
-      super();
-      const randomId = Math.floor(Math.random() * 900000) + 100000;
-      this.labelId = `cre8-spinner-${randomId}`;
+    super();
+    const randomId = Math.floor(Math.random() * 900000) + 100000;
+    this.labelId = `cre8-spinner-${randomId}`;
   }
 
   private renderDeterminateSpinner() {
-      const progress = Math.max(Math.min(100, this.progress === 0 ? (this.progress = 1) : this.progress), 0);
-      const dashOffset = 2 * 3.1415926 * 45 - (progress / 100) * (2 * 3.1415926 * 45);
+    const progress = Math.max(Math.min(100, this.progress === 0 ? (this.progress = 1) : this.progress), 0);
+    const dashOffset = 2 * 3.1415926 * 45 - (progress / 100) * (2 * 3.1415926 * 45);
 
-      return html` ${this.size === 'small'
-          ? html`
+    return html` ${this.size === 'small'
+      ? html`
           <svg class="cre8-c-spinner__icon cre8-c-spinner__icon-small" aria-hidden="true" viewBox="0 0 100 100">
             <circle cx="50%" cy="50%" r="43" stroke-dashoffset="${dashOffset}"></circle>
           </svg>
         `
-          : html` <svg class="cre8-c-spinner__icon" aria-hidden="true" viewBox="0 0 100 100">
+      : html` <svg class="cre8-c-spinner__icon" aria-hidden="true" viewBox="0 0 100 100">
           <circle cx="50%" cy="50%" r="45" stroke-dashoffset="${dashOffset}"></circle>
         </svg>`}`;
   }
 
   private renderInDeterminateSpinner() {
-      return html` ${this.size === 'small'
-          ? html`
+    return html` ${this.size === 'small'
+      ? html`
           <svg class="cre8-c-spinner__icon cre8-c-spinner__icon-small" aria-hidden="true" viewBox="0 0 100 100">
             <circle cx="50%" cy="50%" r="43"></circle>
           </svg>
         `
-          : html` <svg class="cre8-c-spinner__icon" aria-hidden="true" viewBox="0 0 100 100">
+      : html` <svg class="cre8-c-spinner__icon" aria-hidden="true" viewBox="0 0 100 100">
           <circle cx="50%" cy="50%" r="45"></circle>
         </svg>`}`;
   }
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-spinner', {
-          'cre8-c-spinner--large': this.size === 'large',
-          'cre8-c-spinner--small': this.size === 'small',
-          'cre8-c-spinner--inverse': this.inverse,
-          'cre8-c-spinner--neutral': this.neutral,
-          'cre8-c-spinner--primary': this.buttonVariant === 'primary',
-          'cre8-c-spinner--secondary': this.buttonVariant === 'secondary',
-          'cre8-c-spinner--tertiary': this.buttonVariant === 'tertiary',
-          'cre8-c-spinner--determinate': this.determinate,
-          'cre8-c-spinner--indeterminate': !this.determinate,
-      });
-      return html`
+    const componentClassNames = this.componentClassNames('cre8-c-spinner', {
+      'cre8-c-spinner--large': this.size === 'large',
+      'cre8-c-spinner--small': this.size === 'small',
+      'cre8-c-spinner--inverse': this.inverse,
+      'cre8-c-spinner--neutral': this.neutral,
+      'cre8-c-spinner--primary': this.buttonVariant === 'primary',
+      'cre8-c-spinner--secondary': this.buttonVariant === 'secondary',
+      'cre8-c-spinner--tertiary': this.buttonVariant === 'tertiary',
+      'cre8-c-spinner--determinate': this.determinate,
+      'cre8-c-spinner--indeterminate': !this.determinate,
+    });
+    return html`
       <div
         class="${componentClassNames}"
         role="progressbar"
@@ -164,7 +164,7 @@ export class Cre8LoadingSpinner extends Cre8Element {
   }
 }
 if (customElements.get('cre8-loading-spinner') === undefined) {
-    customElements.define('cre8-loading-spinner', Cre8LoadingSpinner);
+  customElements.define('cre8-loading-spinner', Cre8LoadingSpinner);
 }
 
 declare global {

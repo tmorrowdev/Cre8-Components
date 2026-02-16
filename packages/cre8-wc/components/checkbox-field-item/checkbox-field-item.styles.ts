@@ -1,7 +1,7 @@
-import { css } from 'lit';
+import { css, CSSResult } from 'lit';
 const styles = css`
-@import '../../design-tokens/core/scss/theming/component.scss';
-@import '../../design-tokens/core/scss/theming/visibility.scss';
+@use '../../design-tokens/core/scss/theming/component';
+@use '../../design-tokens/core/scss/theming/visibility.scss';
 
 /*------------------------------------*\
  #CHECKBOX-FIELD-ITEM

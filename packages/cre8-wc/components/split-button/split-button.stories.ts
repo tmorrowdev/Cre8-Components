@@ -1,4 +1,4 @@
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../dropdown-item/dropdown-item';
 import '../dropdown/dropdown';
 import './split-button';

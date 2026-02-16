@@ -1,4 +1,4 @@
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import { spread } from '../../directives/spread';
 import './tag';
 
@@ -12,8 +12,8 @@ const meta = {
       control: 'text'
     },
     type: {
-        options: ['checkbox', 'radio'],
-        control: { type: 'radio' }
+      options: ['checkbox', 'radio'],
+      control: { type: 'radio' }
     },
     variant: {
       options: ['neutral', 'branded', 'neutral-hybrid'],
@@ -151,7 +151,7 @@ export const BrandedSelectedCheckbox = {
     text: 'Branded Selected',
     isSelected: true,
     type: 'checkbox',
-    variant: 'branded', 
+    variant: 'branded',
   },
 };
 

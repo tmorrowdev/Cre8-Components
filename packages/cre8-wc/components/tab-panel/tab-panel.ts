@@ -1,40 +1,40 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './tab-panel.styles.js';
+import styles from './tab-panel.module.scss';
 
 /**
  * @slot - The component content
  */
 
 export class Cre8TabPanel extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * This will remove focus on panel element
    */
   @property({ type: Boolean, reflect: true })
-      skipFocusOnPanel?: boolean;
+  skipFocusOnPanel?: boolean;
 
   /**
    * Indicates if the panel is active
    * <br/><br/> _*This property is dynamically set_
    */
   @property({ type: Boolean, reflect: true })
-      isActive?: boolean;
+  isActive?: boolean;
 
   /**
    * Used to align the tab panel with the tab
    * <br/><br/> _*This property is dynamically set_
    */
   @property({ type: Number })
-      index?: number;
+  index?: number;
 
   /**
    * Query the tab panel element
    */
   @query('.cre8-c-tab-panel')
-      _Cre8TabPanel: HTMLElement;
+  _Cre8TabPanel: HTMLElement;
 
   /**
    * First updated
@@ -42,17 +42,17 @@ export class Cre8TabPanel extends Cre8Element {
    */
   firstUpdated() {
     /* 1 */
-      if (!this.skipFocusOnPanel) {
-          this._Cre8TabPanel.setAttribute('tabindex', '0');
-      }
+    if (!this.skipFocusOnPanel) {
+      this._Cre8TabPanel.setAttribute('tabindex', '0');
+    }
   }
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-tab-panel', {
-          'cre8-is-active': this.isActive,
-      });
+    const componentClassNames = this.componentClassNames('cre8-c-tab-panel', {
+      'cre8-is-active': this.isActive,
+    });
 
-      return html`
+    return html`
       <div role="tabpanel" class="${componentClassNames}">
         <slot></slot>
       </div>
@@ -61,7 +61,7 @@ export class Cre8TabPanel extends Cre8Element {
 }
 
 if (customElements.get('cre8-tab-panel') === undefined) {
-    customElements.define('cre8-tab-panel', Cre8TabPanel);
+  customElements.define('cre8-tab-panel', Cre8TabPanel);
 }
 
 declare global {

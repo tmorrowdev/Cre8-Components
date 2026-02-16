@@ -1,13 +1,13 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './band.styles.js';
+import styles from './band.module.scss';
 
 /**
  * @slot - The band content
  */
 export class Cre8Band extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
   /**
    * Gradient variant
@@ -18,22 +18,22 @@ export class Cre8Band extends Cre8Element {
    * </cre8-text-passage>
    */
   @property()
-      variant?: 'branded';
+  variant?: 'branded';
 
   /**
    * Full height variant
    * 1) Sets the height to 100%
    */
   @property({ type: Boolean, reflect: true })
-      fullHeight?: boolean;
+  fullHeight?: boolean;
 
   render() {
-      const componentClassName = this.componentClassNames('cre8-c-band', {
-          'cre8-c-band--branded': this.variant === 'branded',
-          'cre8-c-band--full-height': this.fullHeight === true,
-      });
+    const componentClassName = this.componentClassNames('cre8-c-band', {
+      'cre8-c-band--branded': this.variant === 'branded',
+      'cre8-c-band--full-height': this.fullHeight === true,
+    });
 
-      return html`
+    return html`
       <div class="${componentClassName}">
         <slot></slot>
       </div>
@@ -42,7 +42,7 @@ export class Cre8Band extends Cre8Element {
 }
 
 if (customElements.get('cre8-band') === undefined) {
-    customElements.define('cre8-band', Cre8Band);
+  customElements.define('cre8-band', Cre8Band);
 }
 
 declare global {

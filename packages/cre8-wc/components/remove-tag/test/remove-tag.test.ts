@@ -1,5 +1,5 @@
 import { fixture, oneEvent } from '@open-wc/testing-helpers';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../remove-tag';
 import { Shape, Color } from '../remove-tag';
 import { cre8RemoveTag } from '../remove-tag';

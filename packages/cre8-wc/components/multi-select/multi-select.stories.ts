@@ -3,17 +3,17 @@ import { spread } from '../../directives/spread';
 import './multi-select';
 import '../remove-tag/remove-tag';
 
-const baseItems = ['Bagel', 'Boat', 'Bungus'];
+const baseItems = [{ label: 'Bagel', value: 'bagel', preselected: true }, { label: 'Boat', value: 'boat' }, { label: 'Bungus', value: 'bungus' }];
 
 const meta = {
   title: 'In Development/MultiSelect',
   component: 'cre8-multi-select',
-  render: (args) =>
-    html`<cre8-multi-select
+  render: ([...args]) => {
+    return html`<cre8-multi-select
       ${spread(args)}
-      .items=${args.items}
-      .preselectedItems=${args.preselectedItems}
-    ></cre8-multi-select>`,
+      .items=${Array.isArray(baseItems) ? baseItems : undefined}
+      .preselectedItems=${baseItems.filter((item) => item.preselected)}
+    ></cre8-multi-select>`},
   parameters: {
     status: { type: 'inProgress' },
     actions: {
@@ -28,7 +28,7 @@ const meta = {
   argTypes: {},
   args: {
     id: 'selectId',
-    items: ['Bagel', 'Burger', 'Boat', 'Beefstick', 'Bacon'],
+    items: baseItems,
     label: 'Choose your favorite food:',
   },
 };
@@ -36,7 +36,7 @@ export default meta;
 
 export const Default = { args: {} };
 
-export const Wrapping = (args) => html`
+export const Wrapping = ([...args]) => html`
   <div style="width: 320px;">
     <cre8-multi-select
       ${spread(args)}

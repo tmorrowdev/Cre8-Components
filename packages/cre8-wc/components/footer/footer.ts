@@ -1,6 +1,6 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { Cre8Element } from '../cre8-element';
-import styles from './footer.styles.js';
+import styles from './footer.module.scss';
 
 /**
  * @slot - The footer content
@@ -8,15 +8,15 @@ import styles from './footer.styles.js';
  * @slot bottom - The bottom content (below the default slot)
  */
 export class Cre8Footer extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles as unknown as CSSResult];
 
-    render() {
-        const componentClassName = this.componentClassNames('cre8-c-footer', {});
+  render() {
+    const componentClassName = this.componentClassNames('cre8-c-footer', {});
 
-        return html`
+    return html`
       <footer class="${componentClassName}" role="contentinfo">
         ${this.slotNotEmpty('top')
-        && html`<div class="cre8-c-footer__top">
+      && html`<div class="cre8-c-footer__top">
           <cre8-layout-container>
             <slot name="top"></slot>
           </cre8-layout-container>
@@ -27,18 +27,18 @@ export class Cre8Footer extends Cre8Element {
           </cre8-layout-container>
         </div>
         ${this.slotNotEmpty('bottom')
-        && html`<div class="cre8-c-footer__bottom">
+      && html`<div class="cre8-c-footer__bottom">
           <cre8-layout-container>
             <slot name="bottom"></slot>
           </cre8-layout-container>
         </div>`}
       </footer>
     `;
-    }
+  }
 }
 
 if (customElements.get('cre8-footer') === undefined) {
-    customElements.define('cre8-footer', Cre8Footer);
+  customElements.define('cre8-footer', Cre8Footer);
 }
 
 declare global {

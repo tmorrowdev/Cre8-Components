@@ -1,5 +1,5 @@
 import { fixture } from '@open-wc/testing-helpers';
-import { html } from 'lit';
+import { html, CSSResult } from 'lit';
 import '../text-passage';
 import { cre8TextPassage } from '../text-passage';
 
@@ -7,19 +7,19 @@ import { cre8TextPassage } from '../text-passage';
 // @ts-ignore
 
 describe('text-passage', () => {
-    beforeEach(() => {
-        Object.defineProperty(document, 'dir', {
-            configurable: true,
-            value: 'ltr',
-        });
+  beforeEach(() => {
+    Object.defineProperty(document, 'dir', {
+      configurable: true,
+      value: 'ltr',
     });
+  });
 
-    afterEach(() => {
-        delete document.dir;
-    });
+  afterEach(() => {
+    delete document.dir;
+  });
 
-    test('renders correctly', async () => {
-        const el = await fixture(html`
+  test('renders correctly', async () => {
+    const el = await fixture(html`
       <cre8-text-passage>
         <h1>Page Display Text</h1>
         <p>
@@ -61,14 +61,14 @@ describe('text-passage', () => {
         <h5>Default Large Meta Text</h5>
       </cre8-text-passage>
     `);
-        expect(el.shadowRoot).toBeTruthy();
-    });
+    expect(el.shadowRoot).toBeTruthy();
+  });
 
-    test('has the correct class names with size', async () => {
-        const sizes = ['small', 'large'];
+  test('has the correct class names with size', async () => {
+    const sizes = ['small', 'large'];
 
-        for (const size of sizes) {
-            const el = await fixture<cre8TextPassage>(html`
+    for (const size of sizes) {
+      const el = await fixture<cre8TextPassage>(html`
         <cre8-text-passage size="${size}">
           <h1>Page Display Text</h1>
           <p>
@@ -110,14 +110,14 @@ describe('text-passage', () => {
           <h5>Default Large Meta Text</h5>
         </cre8-text-passage>
       `);
-            await el.updateComplete;
-            const textPassage = el.shadowRoot!.querySelector('.cre8-c-text-passage');
-            expect(textPassage?.classList.contains(`cre8-c-text-passage--${size}`)).toBeTruthy();
-        }
-    });
+      await el.updateComplete;
+      const textPassage = el.shadowRoot!.querySelector('.cre8-c-text-passage');
+      expect(textPassage?.classList.contains(`cre8-c-text-passage--${size}`)).toBeTruthy();
+    }
+  });
 
-    test('has the correct class name with inverted', async () => {
-        const el = await fixture<cre8TextPassage>(html`
+  test('has the correct class name with inverted', async () => {
+    const el = await fixture<cre8TextPassage>(html`
       <cre8-text-passage inverted="true">
         <h1>Page Display Text</h1>
         <p>
@@ -159,14 +159,14 @@ describe('text-passage', () => {
         <h5>Default Large Meta Text</h5>
       </cre8-text-passage>
     `);
-        await el.updateComplete;
-        const textPassage = el.shadowRoot!.querySelector('.cre8-c-text-passage');
-        expect(textPassage?.classList.contains('cre8-c-text-passage--inverted')).toBeTruthy();
-    });
+    await el.updateComplete;
+    const textPassage = el.shadowRoot!.querySelector('.cre8-c-text-passage');
+    expect(textPassage?.classList.contains('cre8-c-text-passage--inverted')).toBeTruthy();
+  });
 
-    describe('accessibility tests', () => {
-        test('checking component is accessible', async () => {
-            const el = await fixture(html`
+  describe('accessibility tests', () => {
+    test('checking component is accessible', async () => {
+      const el = await fixture(html`
         <cre8-text-passage>
           <h1>Page Display Text</h1>
           <p>
@@ -174,11 +174,11 @@ describe('text-passage', () => {
           </p>
         </cre8-text-passage>
       `);
-            return expect(el).toBeAccessible();
-        });
+      return expect(el).toBeAccessible();
+    });
 
-        test('checking inverted component is accessible', async () => {
-            const el = await fixture(html`
+    test('checking inverted component is accessible', async () => {
+      const el = await fixture(html`
         <cre8-text-passage inverted="true">
           <h1>Page Display Text</h1>
           <p>
@@ -186,7 +186,7 @@ describe('text-passage', () => {
           </p>
         </cre8-text-passage>
       `);
-            return expect(el).toBeAccessible();
-        });
+      return expect(el).toBeAccessible();
     });
+  });
 });

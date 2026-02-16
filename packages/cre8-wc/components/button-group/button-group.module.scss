@@ -1,4 +1,4 @@
-@use '../../design-tokens/core/scss/theming/component' as component;
+@import '../../design-tokens/core/scss/theming/component.css';
 
 /*------------------------------------*\
  #BUTTON-GROUP
@@ -24,7 +24,7 @@
   flex-direction: column;
   --cre8-button-width: 100%;
 
-  @media all and (min-width: component.$cre8-breakpoint-md) {
+  @media all and (min-width: $cre8-breakpoint-md) {
     flex-direction: row;
     --cre8-button-width: auto;
   }

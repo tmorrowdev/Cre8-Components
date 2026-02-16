@@ -1,7 +1,7 @@
-import { html,  } from 'lit';
+import { html, CSSResult } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './skeleton-loader.styles.js';
+import styles from './skeleton-loader.module.scss';
 
 /**
  * Skeleton Loader allows for the ability to create placeholder UI loading states.
@@ -25,49 +25,49 @@ import styles from './skeleton-loader.styles.js';
  */
 
 export class Cre8SkeletonLoader extends Cre8Element {
-    static styles = [styles];
+    static styles = [styles as unknown as CSSResult];
 
-/**
- * Style variant
- * - **rectangle** renders a featureless rectangle as a placeholder for loading elements
- * - **square** renders a featureless square as a placeholder for loading elements
- * - **circle** renders a featureless circle as a placeholder for loading elements
- * @type {"rectangle" | "square" | "circle"}
- * @attr {string}
- */
-@property()
+    /**
+     * Style variant
+     * - **rectangle** renders a featureless rectangle as a placeholder for loading elements
+     * - **square** renders a featureless square as a placeholder for loading elements
+     * - **circle** renders a featureless circle as a placeholder for loading elements
+     * @type {"rectangle" | "square" | "circle"}
+     * @attr {string}
+     */
+    @property()
     variant?: 'rectangle' | 'square' | 'circle' = 'rectangle';
 
-/**
- * Height inline style
- * 1. Used to set a height on the skeleton if specific size is needed
- * @attr {string}
- */
-@property()
+    /**
+     * Height inline style
+     * 1. Used to set a height on the skeleton if specific size is needed
+     * @attr {string}
+     */
+    @property()
     height?: string;
 
-/**
- * Width inline style
- * 1. Used to set a width on the skeleton if specific size is needed
- * @attr {string}
- */
-@property()
+    /**
+     * Width inline style
+     * 1. Used to set a width on the skeleton if specific size is needed
+     * @attr {string}
+     */
+    @property()
     width?: string;
 
-render() {
-    const componentClassNames = this.componentClassNames('cre8-c-skeleton-loader', {
-        'cre8-c-skeleton-loader--rectangle': this.variant === 'rectangle',
-        'cre8-c-skeleton-loader--square': this.variant === 'square',
-        'cre8-c-skeleton-loader--circle': this.variant === 'circle',
-    });
+    render() {
+        const componentClassNames = this.componentClassNames('cre8-c-skeleton-loader', {
+            'cre8-c-skeleton-loader--rectangle': this.variant === 'rectangle',
+            'cre8-c-skeleton-loader--square': this.variant === 'square',
+            'cre8-c-skeleton-loader--circle': this.variant === 'circle',
+        });
 
-    return html`
+        return html`
     <div
         class="${componentClassNames}"
         style="height: ${this.height ?? 'auto'}; width: ${this.width ?? 'auto'}"
     ></div>
     `;
-}
+    }
 }
 
 if (customElements.get('cre8-skeleton-loader') === undefined) {

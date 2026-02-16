@@ -1,4 +1,4 @@
-import { html, nothing } from 'lit';
+import { html, nothing, CSSResult } from 'lit';
 import './pagination';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { cre8Pagination } from './pagination';
@@ -11,12 +11,12 @@ interface Props extends Pick<cre8Pagination, 'currentPage' | 'totalResults' | 'p
   totalResults: number;
   pageSize: number;
   visiblePages: number;
-  display: 'compact' | 'icon-only'| 'default',
+  display: 'compact' | 'icon-only' | 'default',
   hideFirstAndLastButtons: boolean
 }
 type Story = StoryObj<Props>;
 
-const meta: Meta= {
+const meta: Meta = {
   title: 'cre8 Components/Pagination',
   component: 'cre8-pagination',
   args: {
@@ -28,7 +28,7 @@ const meta: Meta= {
   },
   argTypes: {
     display: {
-      options: ['compact', 'icon-only','range', 'default'],
+      options: ['compact', 'icon-only', 'range', 'default'],
       defaultValue: 'default',
       control: { type: 'select' }
     },
@@ -39,7 +39,7 @@ const meta: Meta= {
   parameters: {
     status: { type: 'inProgress' },
     actions: {
-      handles: ['pagination.click','button.handleOnBlur', 'pagination.keydown'],
+      handles: ['pagination.click', 'button.handleOnBlur', 'pagination.keydown'],
     },
     decorators: [withActions],
   },
