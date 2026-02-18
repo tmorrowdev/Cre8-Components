@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 const { execSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
 const VersionBumper = require('./version-bump.cjs');
 
 /**
@@ -126,7 +128,7 @@ class ReleaseManager {
    */
   commitVersionBump(version) {
     console.log('📝 Committing version bump...');
-    this.exec('git add package.json');
+    this.exec('git add package.json react-wrappers/package.json');
     this.exec(`git commit -m "chore: bump version to ${version}"`);
     console.log('✅ Version bump committed\n');
   }
@@ -284,12 +286,28 @@ class ReleaseManager {
 
       // Publish (if requested)
       if (publish) {
-        console.log('📦 Publishing package...');
+        console.log('📦 Publishing @tmorrow/cre8-wc...');
         try {
-          this.exec('npm publish');
-          console.log('✅ Package published successfully\n');
+          this.exec('npm publish --access public');
+          console.log('✅ @tmorrow/cre8-wc published successfully\n');
         } catch (error) {
-          console.log('❌ Failed to publish package\n');
+          console.log('❌ Failed to publish @tmorrow/cre8-wc\n');
+          throw error;
+        }
+
+        // Sync version and publish react wrappers
+        console.log('📦 Publishing @tmorrow/cre8-react...');
+        try {
+          const reactPkgPath = path.join(__dirname, '..', 'react-wrappers', 'package.json');
+          const reactPkg = JSON.parse(fs.readFileSync(reactPkgPath, 'utf8'));
+          reactPkg.version = newVersion;
+          reactPkg.dependencies['@tmorrow/cre8-wc'] = `^${newVersion}`;
+          fs.writeFileSync(reactPkgPath, JSON.stringify(reactPkg, null, 2) + '\n');
+
+          this.exec('cd react-wrappers && npm publish --access public');
+          console.log('✅ @tmorrow/cre8-react published successfully\n');
+        } catch (error) {
+          console.log('❌ Failed to publish @tmorrow/cre8-react\n');
           throw error;
         }
       }

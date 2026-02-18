@@ -10,24 +10,23 @@ export interface Cre8MultiSelectProps {
   /** The required label that appears above the multiselect */
   label?: string;
   /** The unique id of the select */
-  fieldId?: string;
+  fieldId?: string | undefined;
   /** Optional field note text can be added to provide additional field guidance. */
-  fieldNote?: string;
+  fieldNote?: string | undefined;
   /** Used to connect the field note in text field to the text menu for accessibility */
-  ariaDescribedBy?: string;
+  ariaDescribedBy?: string | undefined;
   /** Additional aria-describedby connection to id for additional success and error notes to be accessible */
-  validationAriaDescribedBy?: string;
+  validationAriaDescribedBy?: string | undefined;
   /** The disabled attribute on the select */
-  disabled?: boolean;
+  disabled?: boolean | undefined;
   /** Changes the component's treatment to represent an error state */
-  isError?: boolean;
+  isError?: boolean | undefined;
   /** The error field note that appears below the default field note */
-  errorNote?: string;
+  errorNote?: string | undefined;
   /** Changes the component's treatment to represent a success state */
-  isSuccess?: boolean;
+  isSuccess?: boolean | undefined;
   /** The success field note that appears below the default field note */
-  successNote?: string;
-  onSelectedItemsChange?: (event: CustomEvent) => void;
+  successNote?: string | undefined;
 }
 
 /**
@@ -37,9 +36,7 @@ export const Cre8MultiSelect = createComponent({
   react: React,
   tagName: 'cre8-multi-select',
   elementClass: Cre8MultiSelectElement,
-  events: {
-    onSelectedItemsChange: 'selectedItemsChange'
-  }
+
 });
 
 export default Cre8MultiSelect;

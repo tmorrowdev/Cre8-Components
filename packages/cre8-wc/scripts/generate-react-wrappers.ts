@@ -28,8 +28,56 @@ interface Tag {
 }
 
 interface CustomElementsManifest {
-  version: string;
-  tags: Tag[];
+  version?: string;
+  schemaVersion?: string;
+  tags?: Tag[];
+  modules?: CemModule[];
+}
+
+interface CemModule {
+  kind: string;
+  path: string;
+  declarations?: CemDeclaration[];
+}
+
+interface CemDeclaration {
+  kind: string;
+  name: string;
+  tagName?: string;
+  customElement?: boolean;
+  description?: string;
+  attributes?: Attribute[];
+  events?: Event[];
+  slots?: Slot[];
+}
+
+/**
+ * Convert CEM v1 (modules/declarations) to the Tag[] format used by the generator.
+ */
+function cemToTags(manifest: CustomElementsManifest): Tag[] {
+  if (manifest.tags) return manifest.tags;
+  if (!manifest.modules) return [];
+
+  const tags: Tag[] = [];
+  for (const mod of manifest.modules) {
+    if (!mod.declarations) continue;
+    for (const decl of mod.declarations) {
+      if (decl.kind === 'class' && decl.tagName && decl.customElement) {
+        tags.push({
+          name: decl.tagName,
+          path: './' + mod.path,
+          description: decl.description,
+          attributes: decl.attributes?.map(a => ({
+            ...a,
+            type: typeof a.type === 'object' && a.type !== null ? (a.type as any).text : a.type,
+          })),
+          events: decl.events,
+          slots: decl.slots,
+        });
+      }
+    }
+  }
+  return tags;
 }
 
 function toPascalCase(str: string): string {
@@ -227,10 +275,13 @@ async function main() {
     fs.mkdirSync(componentsDir, { recursive: true });
   }
 
+  // Convert manifest to tags format
+  const tags = cemToTags(manifest);
+
   // Generate wrapper for each tag
   const generatedComponents: string[] = [];
 
-  for (const tag of manifest.tags) {
+  for (const tag of tags) {
     if (!tag.name.startsWith('cre8-')) continue;
 
     const componentName = toPascalCase(tag.name);
@@ -260,7 +311,7 @@ async function main() {
   }
 
   // Generate main index file
-  const indexContent = generateIndexFile(manifest.tags);
+  const indexContent = generateIndexFile(tags);
   fs.writeFileSync(path.join(outputDir, 'index.ts'), indexContent);
 
   console.log(`\nGenerated ${generatedComponents.length} React wrappers in ${outputDir}`);

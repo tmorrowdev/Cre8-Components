@@ -11,7 +11,6 @@ export interface Cre8RemoveTagProps {
   shape?: any;
   /** Disabled state for remove tag */
   disabled?: boolean | undefined;
-  onRemoveTagClicked?: (event: CustomEvent) => void;
 }
 
 /**
@@ -21,9 +20,7 @@ export const Cre8RemoveTag = createComponent({
   react: React,
   tagName: 'cre8-remove-tag',
   elementClass: Cre8RemoveTagElement,
-  events: {
-    onRemoveTagClicked: 'removeTagClicked'
-  }
+
 });
 
 export default Cre8RemoveTag;

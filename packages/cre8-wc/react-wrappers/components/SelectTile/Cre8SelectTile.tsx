@@ -3,34 +3,32 @@ import { Cre8SelectTile as Cre8SelectTileElement } from '@tmorrow/cre8-wc/lib/co
 import React from 'react';
 
 export interface Cre8SelectTileProps {
+  /** Should this Select Tile behave as a radio button or a checkbox? */
+  type?: any;
   /** Style variants - **bare** renders a select-tile without a border and without padding around the content - **horizontal** renders a select-tile with header, body, footer oriented in a row rather than a column - **horizontal-bare** renders a select-tile with header, body, footer   oriented in a row rather than a column without a border and without padding around the content */
-  variant?: "bare" | "horizontal" | "horizontal-bare" | undefined;
+  variant?: any;
   /** Which breakpoint, if any, to switch to verticial. Only useful for horizontal variants. Defaults to 'sm'. */
-  variantBreakToVertical?: "sm" | "lg" | "none" | "md" | "sm-2" | "xl" | "xxl";
+  variantBreakToVertical?: any;
   /** Where does the checkmark or radio button go? It disappears on 'none'. Only top-right is supported for vertical variants. */
-  checkPosition?: "none" | "left" | "top-right" | "right";
+  checkPosition?: any;
   /** In radio mode, whether to use the circle with the dot, or the rounded check. */
-  radioVariant?: "dot" | "check";
+  radioVariant?: any;
   /** Align variants <cre8-text-passage size="sm"> <ul> <li>**center** renders a select-tile that has center aligned content/text</li> </ul> </cre8-text-passage> */
-  align?: "center" | undefined;
+  align?: any;
   /** Error State */
   isError?: boolean | undefined;
   /** Disabled State */
   disabled?: boolean | undefined;
   /** Required attribute */
   required?: boolean | undefined;
-  /** Checked State. Note: the `checked` attribute sets the `defaultChecked` property, as well as sets the initial value for the `checked` property. */
-  checked?: boolean | undefined;
+  /** The default checked state when the element first renders or is reset.  Note: the attribute is named `checked` and the property is named `defaultChecked`. This is the same as a regular radio button. */
+  checked?: boolean;
   /** Select Tile FieldId */
   fieldId?: string | undefined;
-  /** Name of the form control. */
-  name?: string | undefined;
+  /** Radio item fieldnote aria describe by */
+  ariaDescribedBy?: string | undefined;
   /** Radio item fieldnote isSuccess */
   isSuccess?: boolean | undefined;
-  /** Should this Select Tile behave as a radio button or a checkbox? */
-  type?: "checkbox" | "radio";
-  /** The value of the form field. */
-  value?: string;
   children?: React.ReactNode;
   onChange?: (event: CustomEvent) => void;
   onInput?: (event: CustomEvent) => void;

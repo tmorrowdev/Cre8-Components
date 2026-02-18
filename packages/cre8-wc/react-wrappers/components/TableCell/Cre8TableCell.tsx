@@ -6,7 +6,7 @@ export interface Cre8TableCellProps {
   /** Colspan attribute on td */
   colspan?: number | undefined;
   /** Style variants <cre8-text-passage size="sm"> <ul> <li>**bare** renders a table cell without a border</li> </ul> </cre8-text-passage> */
-  variant?: "bare" | undefined;
+  variant?: any;
   /** Column header text for cell to display when table is using responsive variant */
   dataHeader?: string | undefined;
   children?: React.ReactNode;
