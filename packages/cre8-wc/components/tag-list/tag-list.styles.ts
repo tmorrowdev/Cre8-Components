@@ -1,34 +1,3 @@
 import { css } from 'lit';
-const styles = css`@import '../../design-tokens/core/scss/theming/component';
-
-/** 
- * 1) Fieldset used for tags
- */
-.cre8-c-tag-list {
-  border: none;
-  padding: 0;
-  margin: 0;
-  gap: var(--cre8-spacing-16);
-}
-
-.cre8-c-tag-list__legend {
-  margin-bottom: var(--cre8-spacing-16);
-}
-
-/**
- * Slotted tag items
- */
-::slotted(cre8-tag) {
-  margin-bottom: var(--cre8-spacing-16);
-  margin-right: var(--cre8-spacing-8);
-}
-
-.cre8-c-tag-list__list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-}
-`;
+const styles = css`*,::slotted(*),*:before,*:after{box-sizing:border-box}:root{--size-base-unit: 0.5rem}[dir=rtl]{--rtlTranslateX: 50%;--rtlGradientToRight: 270deg;--rtlRotate45Inverse: -45deg}:host{--cre8-z-index-1: 1;--cre8-z-index-50: 50;--cre8-z-index-100: 100;--cre8-z-index-200: 200;--cre8-z-index-1030: 1030;--cre8-anim-fade-quick: 0.35s;--cre8-anim-ease: ease}@keyframes fadeIn{100%{opacity:1}}@keyframes slideIn{100%{transform:translateX(0)}}@keyframes slideInFwd{100%{width:272px;height:272px}}@keyframes slideOutRight{100%{width:272px;height:272px}}@keyframes slideUp{100%{transform:translateY(0)}}@media(width >= 481px){@keyframes slideInFwd{100%{width:417px;height:417px}}@keyframes slideOutRight{100%{width:417px;height:417px}}}@media(width >= 48rem){@keyframes slideInFwd{100%{width:330px;height:330px}}@keyframes slideOutRight{100%{width:330px;height:330px;transform:translateX(calc(100vw - 45px))}}}@media(width >= 60rem){@keyframes slideInFwd{100%{width:460px;height:460px}}@keyframes slideOutRight{100%{width:460px;height:460px;transform:translateX(calc(100vw - 45px))}}}@media(width >= 75rem){@keyframes slideInFwd{100%{width:592px;height:591px}}@keyframes slideOutRight{100%{width:592px;height:591px;transform:translateX(calc(100vw - 45px))}}}@media(width >= 87.5rem){@keyframes slideOutRight{100%{width:592px;height:591px;transform:translateX(calc(100vw - 120px))}}}@media(width >= 2200px){@keyframes slideOutRight{100%{width:592px;height:591px;transform:translateX(calc(100vw - 592px))}}}span.ripple{position:absolute;border-radius:50%;transform:scale(0);animation:ripple 600ms linear;background-color:var(--ripple-bg-color)}@keyframes ripple{to{transform:scale(4);opacity:1}}:root{--size-base-unit: 0.5rem}[dir=rtl]{--rtlTranslateX: 50%;--rtlGradientToRight: 270deg;--rtlRotate45Inverse: -45deg}.cre8-c-tag-list{border:none;padding:0;margin:0;gap:var(--cre8-spacing-16)}.cre8-c-tag-list__legend{margin-bottom:var(--cre8-spacing-16)}::slotted(cre8-tag){margin-bottom:var(--cre8-spacing-16);margin-right:var(--cre8-spacing-8)}.cre8-c-tag-list__list{list-style-type:none;margin:0;padding:0;display:flex;flex-wrap:wrap}`;
 export default styles;

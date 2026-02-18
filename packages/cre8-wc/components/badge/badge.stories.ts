@@ -1,6 +1,6 @@
 import { html } from 'lit';
 import { spread } from '../../directives/spread';
-import './badge.styles';
+import './badge';
 // ts-expect-error: svg import 
 import svgFeedback from '../../icons/System/Regular/Feedback.svg?raw';
 

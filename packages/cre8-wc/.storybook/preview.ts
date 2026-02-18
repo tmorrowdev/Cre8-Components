@@ -8,7 +8,7 @@ import './css/styleguide-only.css';
 import * as cre8Legacy from '../design-tokens/brands/cre8-legacy/css/tokens_cre8-legacy.module.ts';
 import legacy from '../design-tokens/brands/legacy/css/tokens_legacy.module.ts';
 import cre8 from '../design-tokens/brands/cre8/css/tokens_cre8.module.ts';
-import blue from '../design-tokens/brands/legacy/css/tokens_legacy.module.ts';
+import blue from '../design-tokens/brands/blue/css/tokens_blue.module.ts';
 import marketing from '../design-tokens/brands/marketing/css/tokens_marketing.module.ts';
 import minimalist from '../design-tokens/brands/minimalist/css/tokens_minimalist.module.ts';
 import femmecubator from '../design-tokens/brands/femmecubator/css/tokens_femmecubator2.module.ts';
@@ -73,10 +73,10 @@ const preview: Preview = {
         items: [
           { value: 'Cre8 Default', title: 'Cre8 Default' },
           { value: 'Cre8 Legacy', title: 'Cre8 Legacy' },
-          { value: 'Consumer', title: 'Consumer' },
+          { value: 'Legacy', title: 'Legacy' },
           { value: 'Blue', title: 'Blue' },
           { value: 'Marketing', title: 'Marketing' },
-          { value: 'Black', title: 'Black' },
+          { value: 'Minimalist', title: 'Minimalist' },
           { value: 'Femmecubator', title: 'Femmecubator' },
           { value: 'Prisma', title: 'Prisma' },
           { value: 'Starbucks', title: 'Starbucks' },
@@ -90,7 +90,7 @@ const preview: Preview = {
   },
   decorators: [
     (story, context) => {
-      const selectedTheme = context.globals.theme;
+      const selectedTheme = context.globals.theme || 'Cre8 Default';
       
       // Enable/disable theme stylesheets
       themeStyles.forEach(theme => {
