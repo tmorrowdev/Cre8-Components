@@ -1,38 +1,3 @@
 import { css } from 'lit';
-const styles = css`@import '../../design-tokens/core/scss/theming/component';
-
-/**
- * 1) Headline of a page with an h1 heading and optional description
- */
-.cre8-c-page-header {
-  margin-bottom: size(4);
-}
-
-/**
- * Page header title
- */
-.cre8-c-page-header__title {
-  display: inline;
-  margin: 0;
-  @include cre8-typography-display-default();
-}
-
-/**
- * Page header title after
- * 1) Container placed after page header title if something like a badge needs to be placed there
- */
-.cre8-c-page-header__title-after {
-  display: inline-block;
-  position: relative;
-  bottom: size(1.25);
-  margin-left: size(2);
-}
-
-/**
- * Page header description
- */
-.cre8-c-page-header__description {
-  @include cre8-typography-body-default;
-}
-`;
+const styles = css`*,::slotted(*),*:before,*:after{box-sizing:border-box}:root{--size-base-unit: 0.5rem}[dir=rtl]{--rtlTranslateX: 50%;--rtlGradientToRight: 270deg;--rtlRotate45Inverse: -45deg}:host{--cre8-z-index-1: 1;--cre8-z-index-50: 50;--cre8-z-index-100: 100;--cre8-z-index-200: 200;--cre8-z-index-1030: 1030;--cre8-anim-fade-quick: 0.35s;--cre8-anim-ease: ease}@keyframes fadeIn{100%{opacity:1}}@keyframes slideIn{100%{transform:translateX(0)}}@keyframes slideInFwd{100%{width:272px;height:272px}}@keyframes slideOutRight{100%{width:272px;height:272px}}@keyframes slideUp{100%{transform:translateY(0)}}@media(width >= 481px){@keyframes slideInFwd{100%{width:417px;height:417px}}@keyframes slideOutRight{100%{width:417px;height:417px}}}@media(width >= 48rem){@keyframes slideInFwd{100%{width:330px;height:330px}}@keyframes slideOutRight{100%{width:330px;height:330px;transform:translateX(calc(100vw - 45px))}}}@media(width >= 60rem){@keyframes slideInFwd{100%{width:460px;height:460px}}@keyframes slideOutRight{100%{width:460px;height:460px;transform:translateX(calc(100vw - 45px))}}}@media(width >= 75rem){@keyframes slideInFwd{100%{width:592px;height:591px}}@keyframes slideOutRight{100%{width:592px;height:591px;transform:translateX(calc(100vw - 45px))}}}@media(width >= 87.5rem){@keyframes slideOutRight{100%{width:592px;height:591px;transform:translateX(calc(100vw - 120px))}}}@media(width >= 2200px){@keyframes slideOutRight{100%{width:592px;height:591px;transform:translateX(calc(100vw - 592px))}}}span.ripple{position:absolute;border-radius:50%;transform:scale(0);animation:ripple 600ms linear;background-color:var(--ripple-bg-color)}@keyframes ripple{to{transform:scale(4);opacity:1}}:root{--size-base-unit: 0.5rem}[dir=rtl]{--rtlTranslateX: 50%;--rtlGradientToRight: 270deg;--rtlRotate45Inverse: -45deg}.cre8-c-page-header{margin-bottom:2rem}.cre8-c-page-header__title{display:inline;margin:0;font-family:var(--cre8-typography-display-default-mobile-font-family);font-size:var(--cre8-typography-display-default-mobile-font-size);font-weight:var(--cre8-typography-display-default-mobile-font-weight);line-height:var(--cre8-typography-display-default-mobile-line-height);text-decoration:var(--cre8-typography-display-default-mobile-text-decoration);text-transform:var(--cre8-typography-display-default-mobile-text-transform)}@media all and (min-width: 768px){.cre8-c-page-header__title{font-family:var(--cre8-typography-display-default-font-family);font-size:var(--cre8-typography-display-default-font-size);font-weight:var(--cre8-typography-display-default-font-weight);line-height:var(--cre8-typography-display-default-line-height);text-decoration:var(--cre8-typography-display-default-text-decoration);text-transform:var(--cre8-typography-display-default-text-transform)}}.cre8-c-page-header__title-after{display:inline-block;position:relative;bottom:0.625rem;margin-left:1rem}.cre8-c-page-header__description{font-family:var(--cre8-typography-body-default-font-family);font-size:var(--cre8-typography-body-default-font-size);font-weight:var(--cre8-typography-body-default-font-weight);line-height:var(--cre8-typography-body-default-line-height);text-decoration:var(--cre8-typography-body-default-text-decoration);text-transform:var(--cre8-typography-body-default-text-transform)}`;
 export default styles;
