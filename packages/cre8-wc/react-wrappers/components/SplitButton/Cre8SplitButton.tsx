@@ -5,7 +5,7 @@ import React from 'react';
 export interface Cre8SplitButtonProps {
   disabled?: boolean | undefined;
   /** Size variant <cre8-text-passage size="sm"> <ul> <li>**sm** shrinks the button typography and overall size</li> <li>**lg** increases the button typography size and overall size</li> </ul> </cre8-text-passage> */
-  size?: "sm" | "lg" | undefined;
+  size?: any;
   /** Display text on the button */
   buttonText?: string;
   children?: React.ReactNode;

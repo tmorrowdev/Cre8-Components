@@ -4,9 +4,9 @@ import React from 'react';
 
 export interface Cre8FieldNoteProps {
   /** Changes the component's treatment to represent an error */
-  isError?: boolean;
+  isError?: boolean | undefined;
   /** Changes the component's treatment to represent a success */
-  isSuccess?: boolean;
+  isSuccess?: boolean | undefined;
   /** DEPRECATED: Icon name used for the icon before to the field note */
   iconName?: string | undefined;
   children?: React.ReactNode;

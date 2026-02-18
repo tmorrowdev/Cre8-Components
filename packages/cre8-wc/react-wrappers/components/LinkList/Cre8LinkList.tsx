@@ -4,15 +4,15 @@ import React from 'react';
 
 export interface Cre8LinkListProps {
   /** Behavioral variant - **responsive** renders a horizontal wrapping link list that converts to a stacked link list on large screens - **horizontal** renders a horizontal wrapping link list on all screens */
-  behavior?: "horizontal" | "responsive" | undefined;
+  behavior?: any;
   /** Inverted variant 1. Used for dark backgrounds */
   inverted?: boolean | undefined;
   /** Size variants - **sm** renders a link list with a smaller typography */
-  size?: "sm" | undefined;
+  size?: any;
   /** Spacing between link list items - **condensed** renders a link list with a more compact display */
-  spacing?: "condensed" | undefined;
+  spacing?: any;
   /** Style variants - **secondary** renders a link list with a more subtle visual treatment - **display** renders a link list with a display treatment (e.g. article title) */
-  variant?: "secondary" | "display" | undefined;
+  variant?: any;
   children?: React.ReactNode;
 }
 

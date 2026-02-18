@@ -4,20 +4,16 @@ import React from 'react';
 
 export interface Cre8TagProps {
   text?: string;
+  /** Type of tag **checkbox** renders a checkbox tag **radio** renders a radio tag */
+  type?: any;
   /** Color variant **neutral** renders the default, unselected tag **branded** renders a selected tag **neutral-hybrid** renders a tag when mouse is hovering tag */
-  variant?: "neutral" | "branded" | "neutral-hybrid";
+  variant?: any;
   /** shape of the tag, supports square and round, and default not mentioned its a square */
-  shape?: "square" | "round";
-  /** Disabled attribute renders a greyed out tag that the user cannot interact with */
+  shape?: any;
   isDisabled?: boolean | undefined;
-  /** Selected attribute renders a selected tag */
   isSelected?: boolean | undefined;
   /** The fieldId attribute is assigned to the HTML input element of the radio button and the for attribute of the corresponding label. */
   fieldId?: string | undefined;
-  /** Type of tag **checkbox** renders a checkbox tag **radio** renders a radio tag */
-  type?: "checkbox" | "radio";
-  /** The value of the form field. */
-  value?: string;
   onChange?: (event: CustomEvent) => void;
 }
 

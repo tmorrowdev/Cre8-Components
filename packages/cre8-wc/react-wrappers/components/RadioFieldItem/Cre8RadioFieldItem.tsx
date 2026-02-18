@@ -4,33 +4,29 @@ import React from 'react';
 
 export interface Cre8RadioFieldItemProps {
   /** Identifies the element that provides a detailed, extended description for the object. */
-  ariaDescribedBy?: string;
+  ariaDescribedBy?: string | undefined;
   /** A Boolean attribute which, if present, sets the radio button as selected. */
-  checked?: boolean;
+  checked?: boolean | undefined;
   /** The Boolean disabled attribute, when present, makes the element not mutable, focusable, or even submitted with the form. The user can neither edit nor focus on the control, nor its form control descendants. */
-  disabled?: boolean;
+  disabled?: boolean | undefined;
+  /** Radio item fieldnote knockout */
+  fieldNoteKnockout?: boolean | undefined;
+  /** Sets the error state of the fieldnote. */
+  fieldNoteIsError?: boolean | undefined;
+  /** The isError attribute is used to indicate an error state related to the radio button. */
+  isError?: boolean | undefined;
+  /** The isSuccess attribute is used to indicate a success state related to the radio button. */
+  isSuccess?: boolean | undefined;
+  /** Required attribute */
+  required?: boolean | undefined;
   /** The fieldId attribute is assigned to the HTML input element of the radio button and the for attribute of the corresponding label. */
   fieldId?: string | undefined;
   /** A FieldNote can be placed to provide guidance. It's frequently used to in the context of form fields for extra information or validation messages. */
   fieldNote?: string | undefined;
   /** Sets the item fieldnote icon.  - **check** renders a badge with success state treatment - **error** renders a badge with error state treatment */
   fieldNoteIconName?: string | undefined;
-  /** Radio item fieldnote knockout */
-  fieldNoteKnockout?: boolean;
-  /** Sets the error state of the fieldnote. */
-  fieldNoteIsError?: boolean;
-  /** The isError attribute is used to indicate an error state related to the radio button. */
-  isError?: boolean;
-  /** The isSuccess attribute is used to indicate a success state related to the radio button. */
-  isSuccess?: boolean;
   /** The label attribute is used to assign a value to the label element corresponding to this radio button. */
   label?: string | undefined;
-  /** The name attribute is used to assign a value to the name attribute of the input element in the DOM. */
-  name?: string | undefined;
-  /** Required attribute */
-  required?: boolean;
-  /** The value of the form field. */
-  value?: string;
 }
 
 /**

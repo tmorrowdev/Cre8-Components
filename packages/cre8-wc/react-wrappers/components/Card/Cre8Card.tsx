@@ -4,9 +4,9 @@ import React from 'react';
 
 export interface Cre8CardProps {
   /** Style variants - **bare** renders a card without a border and without padding around the content - **horizontal** renders a card with header, body, footer oriented in a row rather than a column - **horizontal-bare** renders a card with header, body, footer oriented in a row rather than a column   without a border and without padding around the content */
-  variant?: "bare" | "horizontal" | "horizontal-bare" | undefined;
+  variant?: any;
   /** Alignment variant - **center** renders a card that has center aligned content/text */
-  align?: "center" | undefined;
+  align?: any;
   children?: React.ReactNode;
 }
 

@@ -3,11 +3,8 @@ import { Cre8PercentBar as Cre8PercentBarElement } from '@tmorrow/cre8-wc/lib/co
 import React from 'react';
 
 export interface Cre8PercentBarProps {
-  /** The current step the user is on. */
   value?: number;
-  /** The total number of steps in the multistep process. */
   max?: number;
-  /** The action-left icon-only tertiary button in the percent bar controls can be disabled. */
   disableActionLeft?: boolean | undefined;
   onLeftActionButtonClick?: (event: CustomEvent) => void;
 }

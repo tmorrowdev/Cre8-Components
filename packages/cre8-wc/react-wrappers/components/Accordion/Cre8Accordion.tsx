@@ -4,9 +4,9 @@ import React from 'react';
 
 export interface Cre8AccordionProps {
   /** borderType */
-  borderType?: "rectangle" | "rounded-bottom" | "rounded" | "none" | undefined;
+  borderType?: any;
   /** When it is true, the inner dividers are displayed; if it is false, the inner dividers are not displayed */
-  hasDivider?: boolean | undefined;
+  hasDivider?: boolean;
 }
 
 /**

@@ -6,7 +6,7 @@ export interface Cre8GlobalNavProps {
   /** Inverted variant 1) Used for dark backgrounds */
   inverted?: boolean | undefined;
   /** Behavior variant <cre8-text-passage size="sm"> <ul> <li>**side-by-side** keeps the primary nav item always in a horizontal pattern</li> </ul> </cre8-text-passage> */
-  behavior?: "side-by-side" | undefined;
+  behavior?: any;
   /** aria-label attribute to designate at name for the nav. Can be override by user */
   navAriaLabel?: string;
   children?: React.ReactNode;
