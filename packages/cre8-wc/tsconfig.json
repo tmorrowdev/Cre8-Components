@@ -13,10 +13,10 @@
       "resize-observer-browser",
       "jest",
       "node"
-       ],
+    ],
     "declaration": true,
     "declarationMap": true,
-    "emitDeclarationOnly": true,
+    "emitDeclarationOnly": false,
     "sourceMap": true,
     "inlineSources": true,
     "outDir": "lib/",
