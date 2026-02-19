@@ -42,8 +42,7 @@
   "files": [
     "dist",
     "lib",
-    "cdn",
-    ".yalc"
+    "cdn"
   ],
   "exports": {
     ".": {
@@ -62,14 +61,14 @@
       "default": "./lib/components/*"
     },
     "./icons/*": {
-      "import": "./icons/*",
-      "types": "./icons/*",
-      "default": "./icons/*"
+      "import": "./lib/icons/*",
+      "types": "./lib/icons/*",
+      "default": "./lib/icons/*"
     },
     "./design-tokens/*": {
-      "import": "./design-tokens/*",
-      "types": "./design-tokens/*",
-      "default": "./design-tokens/*"
+      "import": "./lib/design-tokens/*",
+      "types": "./lib/design-tokens/*",
+      "default": "./lib/design-tokens/*"
     },
     "./global.d.ts": "./global.d.ts",
     "./package.json": "./package.json"
