@@ -156,7 +156,7 @@ export default defineConfig({
         }
 
         // Copy design tokens
-        const tokenFiles = glob.sync('design-tokens/**/*.scss', { nodir: false });
+        const tokenFiles = glob.sync(['design-tokens/**/*.scss', 'design-tokens/**/*.css'], { nodir: false });
         tokenFiles.forEach(file => {
           const content = fs.readFileSync(file);
           this.emitFile({
