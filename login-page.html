@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign In</title>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@latest/cdn/cre8-wc.esm.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@latest/lib/design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@1.1.6/cdn/cre8-wc.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@1.1.6/lib/design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.css"/>
 </head>
 <body>
 <cre8-layout>
@@ -21,7 +24,7 @@
             <cre8-field label="Email Address" type="email" name="email" required autocomplete="email" placeholder="you@example.com"></cre8-field>
             <cre8-field label="Password" type="password" name="password" required autocomplete="current-password"></cre8-field>
             <div style="display: flex; justify-content: flex-end;">
-              <button style="background: none; border: none; color: var(--cre8-color-brand-primary); cursor: pointer; font-size: 14px; padding: 0; text-decoration: underline;" onclick="document.querySelector('#forgot-password-modal').isActive = true" type="button">Forgot your password?</button>
+              <button style="background: none; border: none; color: var(--cre8-color-brand-primary); cursor: pointer; font-family: inherit; font-size: 14px; padding: 0; text-decoration: underline;" onclick="document.querySelector('#forgot-password-modal').isActive = true" type="button">Forgot your password?</button>
             </div>
           </div>
           <div style="display: flex; flex-direction: column; gap: 12px; width: 100%;" slot="footer">
