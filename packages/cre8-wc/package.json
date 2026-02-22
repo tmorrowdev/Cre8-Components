@@ -5,7 +5,8 @@
   "license": "BSD-3-Clause",
   "scripts": {
     "start": "pnpm run build:custom-elements.json && pnpm run storybook",
-    "build": "rm -rf lib && vite build && tsc && cp .storybook/custom-elements.json custom-elements.json && npx tsx scripts/generate-react-wrappers.ts && cd react-wrappers && npx tsc",
+    "build": "rm -rf lib && vite build && tsc && cp .storybook/custom-elements.json custom-elements.json && npx tsx scripts/generate-react-wrappers.ts && cd react-wrappers && npx tsc && cd .. && pnpm run build:mcp-manifest",
+    "build:mcp-manifest": "npx web-component-analyzer analyze \"components/*/*.ts\" --format json --outFile /tmp/wca-raw.json && npx tsx scripts/generate-mcp-manifest.ts",
     "build:cdn": "rm -rf cdn && vite build --config vite.config.cdn.ts",
     "build:all": "pnpm run build:cdn && pnpm run build",
     "build:watch": "vite build --watch",
@@ -42,7 +43,8 @@
   "files": [
     "dist",
     "lib",
-    "cdn"
+    "cdn",
+    "mcp-manifest.json"
   ],
   "exports": {
     ".": {
@@ -71,6 +73,7 @@
       "default": "./lib/design-tokens/*"
     },
     "./global.d.ts": "./global.d.ts",
+    "./mcp-manifest.json": "./mcp-manifest.json",
     "./package.json": "./package.json"
   },
   "repository": {

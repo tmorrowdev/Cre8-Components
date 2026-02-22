@@ -1,6 +1,3 @@
-import { css } from 'lit';
-const styles = css`
-@charset "UTF-8";
 /**
  * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/
  */
@@ -223,17 +220,38 @@ span.ripple {
  * Visually hidden from display
  */
 :host {
-  display: inline-flex;
+  display: block;
 }
 
-:host([fullWidth]) {
-  display: flex;
-}
-
-/**
- * Inline alert
+/** 
+ * Field Label 
  */
-.cre8-c-inline-alert {
+.cre8-c-field__label {
+  font-family: var(--cre8-typography-label-small-font-family);
+  font-size: var(--cre8-typography-label-small-font-size);
+  font-weight: var(--cre8-typography-label-small-font-weight);
+  line-height: var(--cre8-typography-label-small-line-height);
+  -webkit-text-decoration: var(--cre8-typography-label-small-text-decoration);
+          text-decoration: var(--cre8-typography-label-small-text-decoration);
+  text-transform: var(--cre8-typography-label-small-text-transform);
+  display: block;
+  margin-bottom: 0.5rem;
+  margin-left: var(--cre8-input-label-margin-left, 0px);
+}
+
+/** 
+ * Field Body
+ * 1) The div that contains the input and icons 
+ */
+.cre8-c-field__body {
+  position: relative;
+}
+
+/** 
+ * Field Input 
+ * 1) The html5 input element
+ */
+.cre8-c-field__input {
   font-family: var(--cre8-typography-body-default-font-family);
   font-size: var(--cre8-typography-body-default-font-size);
   font-weight: var(--cre8-typography-body-default-font-weight);
@@ -241,154 +259,100 @@ span.ripple {
   -webkit-text-decoration: var(--cre8-typography-body-default-text-decoration);
           text-decoration: var(--cre8-typography-body-default-text-decoration);
   text-transform: var(--cre8-typography-body-default-text-transform);
-  font-weight: normal;
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-  padding: 1rem;
-  color: var(--cre8-color-content-default);
-  background-color: var(--cre8-color-bg-info);
-  border-color: var(--cre8-color-border-info);
-  border-width: var(--cre8-border-width-default);
-  border-style: var(--cre8-border-style-default);
-  border-radius: var(--cre8-border-radius-container);
-}
-
-/**
- * Full-width inline alert
- */
-.cre8-c-inline-alert--full-width {
+  outline: var(--cre8-border-width-focus) solid transparent;
+  outline-offset: 0.125rem;
+  --size-base-unit: .5rem;
+  -webkit-appearance: none;
   width: 100%;
+  border-width: var(--cre8-border-width-default);
+  border-style: solid;
+  border-color: var(--cre8-color-border-strong);
+  border-radius: var(--cre8-border-radius-default);
+  padding: var(--cre8-input-padding, 0.75rem 0.5rem);
+  color: var(--cre8-color-content-default);
+  background-color: var(--cre8-color-bg-default);
+  transition: outline-color var(--cre8-anim-fade-quick) var(--cre8-anim-ease), border-color var(--cre8-anim-fade-quick) var(--cre8-anim-ease), background-color var(--cre8-anim-fade-quick) var(--cre8-anim-ease), color var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
+  /**
+   * Hover, focus, active, and focus-visible styles for default input elements
+   */
 }
-
-/**
- * Inline alert with error variant
- */
-.cre8-c-inline-alert--error {
-  background-color: var(--cre8-color-bg-error);
+.cre8-c-field__input:hover:not(:disabled), .cre8-c-field__input:focus:not(:disabled), .cre8-c-field__input:active:not(:disabled), .cre8-c-field__input:focus-visible {
+  outline: var(--cre8-border-width-focus) solid var(--cre8-color-border-active-outline);
+  outline-offset: 0.125rem;
+  /**
+   * Error state
+   */
+}
+.cre8-is-error .cre8-c-field__input:hover:not(:disabled), .cre8-is-error .cre8-c-field__input:focus:not(:disabled), .cre8-is-error .cre8-c-field__input:active:not(:disabled), .cre8-is-error .cre8-c-field__input:focus-visible {
+  outline-color: var(--cre8-color-border-error);
+}
+.cre8-c-field__input:hover:not(:disabled), .cre8-c-field__input:focus:not(:disabled), .cre8-c-field__input:active:not(:disabled), .cre8-c-field__input:focus-visible {
+  /**
+   * Success state
+   */
+}
+.cre8-is-success .cre8-c-field__input:hover:not(:disabled), .cre8-is-success .cre8-c-field__input:focus:not(:disabled), .cre8-is-success .cre8-c-field__input:active:not(:disabled), .cre8-is-success .cre8-c-field__input:focus-visible {
+  outline-color: var(--cre8-color-border-success);
+}
+.cre8-c-field__input {
+  /**
+   * Disabled styles for default input elements
+   */
+}
+.cre8-c-field__input:disabled {
+  background-color: var(--cre8-color-bg-disabled);
+  border-color: var(--cre8-color-border-disabled);
+  color: var(--cre8-color-content-disabled);
+  cursor: not-allowed;
+  /**
+   * Disabled text colors
+   */
+}
+.cre8-c-field__input:disabled::-moz-placeholder {
+  color: var(--cre8-color-content-disabled);
+}
+.cre8-c-field__input:disabled::placeholder {
+  color: var(--cre8-color-content-disabled);
+}
+.cre8-c-field__input {
+  /**
+   * Placeholder styles for default input elements
+   */
+}
+.cre8-c-field__input::-moz-placeholder {
+  color: var(--cre8-color-content-subtle);
+}
+.cre8-c-field__input::placeholder {
+  color: var(--cre8-color-content-subtle);
+}
+.cre8-c-field__input {
+  /**
+   * Error state for default input elements
+   */
+}
+.cre8-is-error .cre8-c-field__input {
   border-color: var(--cre8-color-border-error);
 }
-
-/**
- * Inline alert with warning variant
- */
-.cre8-c-inline-alert--warning {
-  background-color: var(--cre8-color-bg-warning);
-  border-color: var(--cre8-color-border-warning);
+.cre8-c-field__input {
+  /**
+   * Success state for default input elements
+   */
 }
-
-/**
- * Inline alert with success variant
- */
-.cre8-c-inline-alert--success {
-  background-color: var(--cre8-color-bg-success);
+.cre8-is-success .cre8-c-field__input {
   border-color: var(--cre8-color-border-success);
 }
-
-/**
- * Inline alert with attention variant
- */
-.cre8-c-inline-alert--attention {
-  background-color: var(--cre8-color-bg-attention);
-  border-color: var(--cre8-color-border-attention);
-}
-
-/**
- * Inline alert with neutral variant
- */
-.cre8-c-inline-alert--neutral {
-  background-color: var(--cre8-color-bg-subtle);
-  border-color: var(--cre8-color-border-strong);
-}
-
-/**
- * Inline alert with variant - transparent
- */
-.cre8-c-inline-alert--transparent {
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  gap: 0.5rem;
-  border-radius: none;
-}
-
-/**
- * Inline alert with variant - transparent and error
- */
-.cre8-c-inline-alert--transparent.cre8-c-inline-alert--error {
-  color: var(--cre8-color-content-error);
-}
-
-/**
- * Inline alert with variant - transparent and success
- */
-.cre8-c-inline-alert--transparent.cre8-c-inline-alert--success {
-  color: var(--cre8-color-content-success);
-}
-
-/**
- * Inline alert icon
- */
-.cre8-c-inline-alert__icon {
-  position: relative;
-  color: var(--cre8-color-content-info-icon);
-  height: 1.5rem;
-  width: 1.5rem;
+.cre8-c-field__input {
   /**
-   * Inline alert icon for error variant
+   * Readonly input styles
    */
 }
-.cre8-c-inline-alert--error .cre8-c-inline-alert__icon {
-  color: var(--cre8-color-content-error-icon);
+.cre8-c-field__input:-moz-read-only {
+  background-color: var(--cre8-color-bg-disabled);
+  border-color: var(--cre8-color-border-disabled);
+  cursor: default;
 }
-.cre8-c-inline-alert__icon {
-  /**
-   * Inline alert icon for warning variant
-   */
-}
-.cre8-c-inline-alert--warning .cre8-c-inline-alert__icon {
-  color: var(--cre8-color-content-warning-icon);
-}
-.cre8-c-inline-alert__icon {
-  /**
-   * Inline alert icon for success variant
-   */
-}
-.cre8-c-inline-alert--success .cre8-c-inline-alert__icon {
-  color: var(--cre8-color-content-success-icon);
-}
-.cre8-c-inline-alert__icon {
-  /**
-   * Inline alert icon for help variant
-   * Inline alert icon for info variant
-   */
-}
-.cre8-c-inline-alert__icon .cre8-c-inline-alert--help, .cre8-c-inline-alert--info .cre8-c-inline-alert__icon {
-  color: var(--cre8-color-content-info-icon);
-}
-.cre8-c-inline-alert__icon {
-  /**
-   * Inline alert icon for attention variant
-   */
-}
-.cre8-c-inline-alert--attention .cre8-c-inline-alert__icon {
-  color: var(--cre8-color-content-attention-icon);
-}
-.cre8-c-inline-alert__icon {
-  /**
-   * Inline alert icon for neutral variant
-   */
-}
-.cre8-c-inline-alert--neutral .cre8-c-inline-alert__icon {
-  color: var(--cre8-color-content-default);
-}
-.cre8-c-inline-alert__icon {
-  /**
-   * Inline alert icon
-   */
-}
-.cre8-c-inline-alert--transparent .cre8-c-inline-alert__icon {
-  top: 0;
-  padding: 0.125rem;
-}/*# sourceMappingURL=inline-alert.module.css.map */`;
-export default styles;
+.cre8-c-field__input:read-only {
+  background-color: var(--cre8-color-bg-disabled);
+  border-color: var(--cre8-color-border-disabled);
+  cursor: default;
+}/*# sourceMappingURL=field.module.css.map */

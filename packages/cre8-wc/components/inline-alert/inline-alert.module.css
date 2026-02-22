@@ -1,5 +1,3 @@
-import { css } from 'lit';
-const styles = css`
 @charset "UTF-8";
 /**
  * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/
@@ -390,5 +388,4 @@ span.ripple {
 .cre8-c-inline-alert--transparent .cre8-c-inline-alert__icon {
   top: 0;
   padding: 0.125rem;
-}/*# sourceMappingURL=inline-alert.module.css.map */`;
-export default styles;
+}/*# sourceMappingURL=inline-alert.module.css.map */

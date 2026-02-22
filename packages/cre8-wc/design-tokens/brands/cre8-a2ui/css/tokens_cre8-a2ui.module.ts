@@ -31,9 +31,15 @@ const a2ui = `
 	font-display: fallback;
 }
 
+/**
+ * cre8-a2ui: all tokens
+ */
+
 :root {
   --cre8-desktop-menu-padding-vertical-padding: 1rem;
   --cre8-desktop-menu-padding-horizontal-padding: 0.5rem;
+  --cre8-input-padding: .75rem 1rem;
+  --cre8-input-label-margin-left: 1rem;
   --cre8-color-header-bg-default: #ffffff;
   --cre8-color-header-inverse-bg-default: #3B82F6;
   --cre8-color-header-menu-bg-default: #ffffff;
@@ -520,9 +526,7 @@ const a2ui = `
   --cre8-breakpoint-lg: 960px;
   --cre8-breakpoint-xl: 1200px;
   --cre8-breakpoint-xxl: 1400px;
-}
-
-:root{--cre8-typography-body-xlarge-font-family: var(--cre8-font-families-inter);
+--cre8-typography-body-xlarge-font-family: var(--cre8-font-families-inter);
       --cre8-typography-body-xlarge-font-size: var(--cre8-font-size-5);
       --cre8-typography-body-xlarge-font-weight: var(--cre8-font-weights-inter-0);
       --cre8-typography-body-xlarge-line-height: var(--cre8-line-heights-7);

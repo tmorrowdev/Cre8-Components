@@ -5,6 +5,8 @@
 :root {
   --cre8-desktop-menu-padding-vertical-padding: 1rem;
   --cre8-desktop-menu-padding-horizontal-padding: 0.5rem;
+  --cre8-input-padding: 1.5rem 2rem;
+  --cre8-input-label-margin-left: 1rem;
   --cre8-color-header-bg-default: #ffffff;
   --cre8-color-header-inverse-bg-default: #3B82F6;
   --cre8-color-header-menu-bg-default: #ffffff;
