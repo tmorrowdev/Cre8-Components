@@ -4,122 +4,402 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cre8 Dashboard Demo</title>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@1.2.1/cdn/cre8-wc.esm.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@1.2.1/lib/design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.css"/>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@1.2.2/cdn/cre8-wc.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@1.2.2/lib/design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.css"/>
+  <style>
+    :root {
+      --dash-primary: #3B82F6;
+      --dash-success: #10B981;
+      --dash-warning: #F59E0B;
+      --dash-error: #EF4444;
+      --dash-bg: #F1F5F9;
+      --dash-surface: #FFFFFF;
+      --dash-text: #1E293B;
+      --dash-text-muted: #94A3B8;
+      --dash-border: #E2E8F0;
+    }
+    body {
+      margin: 0;
+      background: var(--dash-bg);
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      color: var(--dash-text);
+    }
+
+    /* Dashboard grid layout */
+    .dash-container { max-width: 1320px; margin: 0 auto; padding: 1.5rem; }
+    .dash-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+    .dash-header h1 { font-size: 1.5rem; font-weight: 700; margin: 0; }
+    .dash-header p { font-size: 0.8125rem; color: var(--dash-text-muted); margin: 0.25rem 0 0; }
+
+    /* KPI stat cards row */
+    .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+    @media (max-width: 900px) { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px) { .stat-grid { grid-template-columns: 1fr; } }
+
+    .stat-card {
+      background: var(--dash-surface);
+      border: 1px solid var(--dash-border);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      transition: transform 0.15s, box-shadow 0.15s;
+      cursor: default;
+    }
+    .stat-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    .stat-card__label { font-size: 0.75rem; font-weight: 600; color: var(--dash-text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin: 0; }
+    .stat-card__row { display: flex; align-items: flex-end; justify-content: space-between; margin-top: 0.5rem; }
+    .stat-card__value { font-size: 1.75rem; font-weight: 800; line-height: 1; margin: 0; }
+    .stat-card__trend { display: inline-flex; align-items: center; gap: 0.2rem; font-size: 0.75rem; font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 999px; margin-top: 0.5rem; }
+    .stat-card__trend--up { background: #ECFDF5; color: #059669; }
+    .stat-card__trend--down-good { background: #ECFDF5; color: #059669; }
+    .stat-card__trend--down-bad { background: #FEF2F2; color: #DC2626; }
+    .stat-card__trend--up-bad { background: #FEF2F2; color: #DC2626; }
+    .stat-card__sparkline { flex-shrink: 0; }
+
+    /* Two-column chart row */
+    .chart-row { display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+    @media (max-width: 900px) { .chart-row { grid-template-columns: 1fr; } }
+
+    .panel {
+      background: var(--dash-surface);
+      border: 1px solid var(--dash-border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+    }
+    .panel__header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+    .panel__title { font-size: 0.9375rem; font-weight: 700; margin: 0; }
+    .panel__subtitle { font-size: 0.75rem; color: var(--dash-text-muted); }
+
+    /* Donut chart */
+    .donut-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
+    .donut-center__value { font-size: 1.75rem; font-weight: 800; display: block; }
+    .donut-center__label { font-size: 0.6875rem; color: var(--dash-text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .legend-row { display: flex; align-items: center; justify-content: space-between; padding: 0.375rem 0; font-size: 0.8125rem; }
+    .legend-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .legend-label { display: flex; align-items: center; gap: 0.5rem; color: #475569; }
+    .legend-value { font-weight: 600; }
+
+    /* Data table + workload row */
+    .table-row { display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+    @media (max-width: 900px) { .table-row { grid-template-columns: 1fr; } }
+
+    .data-table { width: 100%; border-collapse: collapse; font-size: 0.8125rem; }
+    .data-table thead { background: #F8FAFC; }
+    .data-table th { padding: 0.75rem 1rem; text-align: left; font-weight: 600; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--dash-text-muted); border-bottom: 1px solid var(--dash-border); }
+    .data-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #F1F5F9; }
+    .data-table tr:hover td { background: #F8FAFC; }
+    .data-table__name { font-weight: 600; color: var(--dash-text); }
+    .status-pill { padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.6875rem; font-weight: 600; }
+    .status-pill--paid { background: #ECFDF5; color: #059669; }
+    .status-pill--pending { background: #FFFBEB; color: #D97706; }
+    .status-pill--failed { background: #FEF2F2; color: #DC2626; }
+    .status-pill--overdue { background: #FEF2F2; color: #DC2626; }
+
+    /* Workload bars */
+    .workload-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.625rem 0; }
+    .workload-avatar { width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.6875rem; font-weight: 700; flex-shrink: 0; }
+    .workload-info { flex: 1; min-width: 0; }
+    .workload-meta { display: flex; justify-content: space-between; font-size: 0.75rem; margin-bottom: 0.25rem; }
+    .workload-name { font-weight: 600; }
+    .workload-pct { color: var(--dash-text-muted); }
+    .workload-bar { height: 6px; background: #F1F5F9; border-radius: 999px; overflow: hidden; }
+    .workload-fill { height: 100%; border-radius: 999px; transition: width 0.6s ease; }
+
+    /* Activity timeline */
+    .timeline { position: relative; padding-left: 1.25rem; }
+    .timeline::before { content: ''; position: absolute; left: 5px; top: 0.5rem; bottom: 0.5rem; width: 2px; background: var(--dash-border); }
+    .timeline-item { position: relative; padding-bottom: 1.25rem; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-dot { position: absolute; left: -1.25rem; top: 0.25rem; width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--dash-surface); box-shadow: 0 0 0 1px var(--dash-border); }
+    .timeline-text { font-size: 0.8125rem; font-weight: 600; margin: 0; }
+    .timeline-meta { font-size: 0.6875rem; color: var(--dash-text-muted); margin: 0.125rem 0 0; }
+  </style>
 </head>
 <body>
-<cre8-layout-container>
-  <cre8-header>
-    <cre8-primary-nav>
-      <cre8-primary-nav-item href="#">Dashboard</cre8-primary-nav-item>
-      <cre8-primary-nav-item href="#">Projects</cre8-primary-nav-item>
-      <cre8-primary-nav-item href="#">Team</cre8-primary-nav-item>
-      <cre8-primary-nav-item href="#">Settings</cre8-primary-nav-item>
-    </cre8-primary-nav>
-  </cre8-header>
-  <cre8-main>
-    <cre8-section headline="Dashboard Overview">
-      <cre8-grid>
-        <cre8-grid-item size-sm="6" size-md="3">
-          <cre8-card>
-            <cre8-heading heading-tag-variant="h3" slot="header">Active Users</cre8-heading>
-            <cre8-text-passage slot="body">
-              <p>1,247 users online</p>
-            </cre8-text-passage>
-            <cre8-badge status="success" slot="footer">+12% this week</cre8-badge>
-          </cre8-card>
-        </cre8-grid-item>
-        <cre8-grid-item size-sm="6" size-md="3">
-          <cre8-card>
-            <cre8-heading heading-tag-variant="h3" slot="header">Revenue</cre8-heading>
-            <cre8-text-passage slot="body">
-              <p>$48,352.00</p>
-            </cre8-text-passage>
-            <cre8-badge status="success" slot="footer">+8.2% from last month</cre8-badge>
-          </cre8-card>
-        </cre8-grid-item>
-        <cre8-grid-item size-sm="6" size-md="3">
-          <cre8-card>
-            <cre8-heading heading-tag-variant="h3" slot="header">Open Tasks</cre8-heading>
-            <cre8-text-passage slot="body">
-              <p>34 pending</p>
-            </cre8-text-passage>
-            <cre8-badge status="warning" slot="footer">5 overdue</cre8-badge>
-          </cre8-card>
-        </cre8-grid-item>
-        <cre8-grid-item size-sm="6" size-md="3">
-          <cre8-card>
-            <cre8-heading heading-tag-variant="h3" slot="header">Issues</cre8-heading>
-            <cre8-text-passage slot="body">
-              <p>3 critical</p>
-            </cre8-text-passage>
-            <cre8-badge status="error" slot="footer">Needs attention</cre8-badge>
-          </cre8-card>
-        </cre8-grid-item>
-      </cre8-grid>
-    </cre8-section>
-    <cre8-section headline="Recent Activity">
-      <cre8-table>
-        <cre8-table-header>
-          <cre8-table-row>
-            <cre8-table-header-cell>Project</cre8-table-header-cell>
-            <cre8-table-header-cell>Status</cre8-table-header-cell>
-            <cre8-table-header-cell>Assignee</cre8-table-header-cell>
-            <cre8-table-header-cell>Due Date</cre8-table-header-cell>
-          </cre8-table-row>
-        </cre8-table-header>
-        <cre8-table-body>
-          <cre8-table-row>
-            <cre8-table-cell>Website Redesign</cre8-table-cell>
-            <cre8-table-cell>
-              <cre8-badge status="success">On Track</cre8-badge>
-            </cre8-table-cell>
-            <cre8-table-cell>Alice Johnson</cre8-table-cell>
-            <cre8-table-cell>Mar 15, 2026</cre8-table-cell>
-          </cre8-table-row>
-          <cre8-table-row>
-            <cre8-table-cell>API Integration</cre8-table-cell>
-            <cre8-table-cell>
-              <cre8-badge status="warning">At Risk</cre8-badge>
-            </cre8-table-cell>
-            <cre8-table-cell>Bob Smith</cre8-table-cell>
-            <cre8-table-cell>Feb 28, 2026</cre8-table-cell>
-          </cre8-table-row>
-          <cre8-table-row>
-            <cre8-table-cell>Mobile App v2</cre8-table-cell>
-            <cre8-table-cell>
-              <cre8-badge status="error">Blocked</cre8-badge>
-            </cre8-table-cell>
-            <cre8-table-cell>Carol Davis</cre8-table-cell>
-            <cre8-table-cell>Mar 01, 2026</cre8-table-cell>
-          </cre8-table-row>
-          <cre8-table-row>
-            <cre8-table-cell>Data Migration</cre8-table-cell>
-            <cre8-table-cell>
-              <cre8-badge status="success">Complete</cre8-badge>
-            </cre8-table-cell>
-            <cre8-table-cell>Dan Wilson</cre8-table-cell>
-            <cre8-table-cell>Feb 20, 2026</cre8-table-cell>
-          </cre8-table-row>
-        </cre8-table-body>
-      </cre8-table>
-    </cre8-section>
-    <cre8-section headline="Quick Actions">
-      <cre8-button-group>
-        <cre8-button text="New Project"></cre8-button>
-        <cre8-button text="Add Team Member" hierarchy="secondary"></cre8-button>
-        <cre8-button text="Generate Report" hierarchy="tertiary"></cre8-button>
-      </cre8-button-group>
-    </cre8-section>
-  </cre8-main>
-  <cre8-footer>
-    <cre8-text-passage>
-      <p>&copy; 2026 Cre8 Dashboard. All rights reserved.</p>
-    </cre8-text-passage>
-  </cre8-footer>
-</cre8-layout-container>
+
+<cre8-header>
+  <cre8-primary-nav>
+    <cre8-primary-nav-item text="Dashboard" href="#" is-active></cre8-primary-nav-item>
+    <cre8-primary-nav-item text="Projects" href="#"></cre8-primary-nav-item>
+    <cre8-primary-nav-item text="Team" href="#"></cre8-primary-nav-item>
+    <cre8-primary-nav-item text="Settings" href="#"></cre8-primary-nav-item>
+  </cre8-primary-nav>
+</cre8-header>
+
+<div class="dash-container">
+
+  <!-- Header -->
+  <div class="dash-header">
+    <div>
+      <h1>Overview</h1>
+      <p>Welcome back, Administrator. Here is today's report.</p>
+    </div>
+    <cre8-button-group>
+      <cre8-button text="Export Report" variant="secondary" size="sm"></cre8-button>
+      <cre8-button text="+ New Campaign" size="sm"></cre8-button>
+    </cre8-button-group>
+  </div>
+
+  <!-- KPI Stat Cards -->
+  <div class="stat-grid">
+    <div class="stat-card">
+      <p class="stat-card__label">Total Revenue</p>
+      <div class="stat-card__row">
+        <p class="stat-card__value">$128,430</p>
+        <svg class="stat-card__sparkline" width="80" height="32" viewBox="0 0 80 32"><polyline points="0,28 13,22 26,26 40,16 53,18 66,8 80,4" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="0,28 13,22 26,26 40,16 53,18 66,8 80,4 80,32 0,32" fill="url(#sparkGreen)" stroke="none"/><defs><linearGradient id="sparkGreen" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#10B981" stop-opacity="0.2"/><stop offset="100%" stop-color="#10B981" stop-opacity="0"/></linearGradient></defs></svg>
+      </div>
+      <span class="stat-card__trend stat-card__trend--up">&#9650; +12.5%</span>
+    </div>
+    <div class="stat-card">
+      <p class="stat-card__label">Active Users</p>
+      <div class="stat-card__row">
+        <p class="stat-card__value">24,592</p>
+        <svg class="stat-card__sparkline" width="80" height="32" viewBox="0 0 80 32"><polyline points="0,24 13,22 26,18 40,20 53,14 66,10 80,6" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="0,24 13,22 26,18 40,20 53,14 66,10 80,6 80,32 0,32" fill="url(#sparkBlue)" stroke="none"/><defs><linearGradient id="sparkBlue" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3B82F6" stop-opacity="0.2"/><stop offset="100%" stop-color="#3B82F6" stop-opacity="0"/></linearGradient></defs></svg>
+      </div>
+      <span class="stat-card__trend stat-card__trend--up">&#9650; +5.2%</span>
+    </div>
+    <div class="stat-card">
+      <p class="stat-card__label">Bounce Rate</p>
+      <div class="stat-card__row">
+        <p class="stat-card__value">42.3%</p>
+        <svg class="stat-card__sparkline" width="80" height="32" viewBox="0 0 80 32"><polyline points="0,8 13,14 26,10 40,18 53,14 66,22 80,26" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="0,8 13,14 26,10 40,18 53,14 66,22 80,26 80,32 0,32" fill="url(#sparkGreen2)" stroke="none"/><defs><linearGradient id="sparkGreen2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#10B981" stop-opacity="0.15"/><stop offset="100%" stop-color="#10B981" stop-opacity="0"/></linearGradient></defs></svg>
+      </div>
+      <span class="stat-card__trend stat-card__trend--down-good">&#9660; -2.1%</span>
+    </div>
+    <div class="stat-card">
+      <p class="stat-card__label">Server Load</p>
+      <div class="stat-card__row">
+        <p class="stat-card__value">89%</p>
+        <svg class="stat-card__sparkline" width="80" height="32" viewBox="0 0 80 32"><polyline points="0,26 13,22 26,16 40,8 53,12 66,6 80,4" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="0,26 13,22 26,16 40,8 53,12 66,6 80,4 80,32 0,32" fill="url(#sparkRed)" stroke="none"/><defs><linearGradient id="sparkRed" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#EF4444" stop-opacity="0.15"/><stop offset="100%" stop-color="#EF4444" stop-opacity="0"/></linearGradient></defs></svg>
+      </div>
+      <span class="stat-card__trend stat-card__trend--up-bad">&#9650; +15%</span>
+    </div>
+  </div>
+
+  <!-- Revenue Chart + Project Status Donut -->
+  <div class="chart-row">
+    <div class="panel">
+      <div class="panel__header">
+        <div>
+          <h3 class="panel__title">Revenue Analytics</h3>
+          <span class="panel__subtitle">Last 7 days</span>
+        </div>
+      </div>
+      <cre8-chart
+        id="revenueChart"
+        type="line"
+        height="260"
+        show-legend="false"
+        aria-label="Revenue trend over the last 7 days"
+      ></cre8-chart>
+    </div>
+    <div class="panel">
+      <h3 class="panel__title" style="margin-bottom: 1rem;">Project Status</h3>
+      <div style="position: relative; display: flex; justify-content: center; margin-bottom: 1rem;">
+        <cre8-chart
+          id="donutChart"
+          type="doughnut"
+          height="200"
+          show-legend="false"
+          aria-label="Project status distribution"
+        ></cre8-chart>
+      </div>
+      <div>
+        <div class="legend-row"><span class="legend-label"><span class="legend-dot" style="background:#3B82F6"></span>On Track</span><span class="legend-value">45%</span></div>
+        <div class="legend-row"><span class="legend-label"><span class="legend-dot" style="background:#F59E0B"></span>At Risk</span><span class="legend-value">25%</span></div>
+        <div class="legend-row"><span class="legend-label"><span class="legend-dot" style="background:#EF4444"></span>Blocked</span><span class="legend-value">15%</span></div>
+        <div class="legend-row"><span class="legend-label"><span class="legend-dot" style="background:#10B981"></span>Complete</span><span class="legend-value">15%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Data Table + Team Workload -->
+  <div class="table-row">
+    <div class="panel" style="padding: 0; overflow: hidden;">
+      <div style="padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--dash-border);">
+        <h3 class="panel__title">Recent Projects</h3>
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Project</th>
+            <th>Status</th>
+            <th>Assignee</th>
+            <th>Due Date</th>
+            <th>Budget</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="data-table__name">Website Redesign</td>
+            <td><span class="status-pill status-pill--paid">On Track</span></td>
+            <td>Alice Johnson</td>
+            <td>Mar 15, 2026</td>
+            <td>$24,000</td>
+          </tr>
+          <tr>
+            <td class="data-table__name">API Integration</td>
+            <td><span class="status-pill status-pill--pending">At Risk</span></td>
+            <td>Bob Smith</td>
+            <td>Feb 28, 2026</td>
+            <td>$18,500</td>
+          </tr>
+          <tr>
+            <td class="data-table__name">Mobile App v2</td>
+            <td><span class="status-pill status-pill--failed">Blocked</span></td>
+            <td>Carol Davis</td>
+            <td>Mar 01, 2026</td>
+            <td>$42,000</td>
+          </tr>
+          <tr>
+            <td class="data-table__name">Data Migration</td>
+            <td><span class="status-pill status-pill--paid">Complete</span></td>
+            <td>Dan Wilson</td>
+            <td>Feb 20, 2026</td>
+            <td>$12,800</td>
+          </tr>
+          <tr>
+            <td class="data-table__name">ML Pipeline</td>
+            <td><span class="status-pill status-pill--overdue">Overdue</span></td>
+            <td>Eve Martinez</td>
+            <td>Feb 10, 2026</td>
+            <td>$36,200</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="panel">
+      <h3 class="panel__title" style="margin-bottom: 1rem;">Team Workload</h3>
+      <div class="workload-item">
+        <div class="workload-avatar" style="background:#DBEAFE; color:#2563EB;">AJ</div>
+        <div class="workload-info">
+          <div class="workload-meta"><span class="workload-name">Alice Johnson</span><span class="workload-pct">85%</span></div>
+          <div class="workload-bar"><div class="workload-fill" style="width:85%; background:#3B82F6;"></div></div>
+        </div>
+      </div>
+      <div class="workload-item">
+        <div class="workload-avatar" style="background:#D1FAE5; color:#059669;">BS</div>
+        <div class="workload-info">
+          <div class="workload-meta"><span class="workload-name">Bob Smith</span><span class="workload-pct">62%</span></div>
+          <div class="workload-bar"><div class="workload-fill" style="width:62%; background:#10B981;"></div></div>
+        </div>
+      </div>
+      <div class="workload-item">
+        <div class="workload-avatar" style="background:#FEF3C7; color:#D97706;">CD</div>
+        <div class="workload-info">
+          <div class="workload-meta"><span class="workload-name">Carol Davis</span><span class="workload-pct">93%</span></div>
+          <div class="workload-bar"><div class="workload-fill" style="width:93%; background:#F59E0B;"></div></div>
+        </div>
+      </div>
+      <div class="workload-item">
+        <div class="workload-avatar" style="background:#EDE9FE; color:#7C3AED;">DW</div>
+        <div class="workload-info">
+          <div class="workload-meta"><span class="workload-name">Dan Wilson</span><span class="workload-pct">41%</span></div>
+          <div class="workload-bar"><div class="workload-fill" style="width:41%; background:#8B5CF6;"></div></div>
+        </div>
+      </div>
+      <div class="workload-item">
+        <div class="workload-avatar" style="background:#FEE2E2; color:#DC2626;">EM</div>
+        <div class="workload-info">
+          <div class="workload-meta"><span class="workload-name">Eve Martinez</span><span class="workload-pct">78%</span></div>
+          <div class="workload-bar"><div class="workload-fill" style="width:78%; background:#EF4444;"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Activity Timeline -->
+  <div class="panel" style="margin-bottom: 1.5rem;">
+    <h3 class="panel__title" style="margin-bottom: 1rem;">Recent Activity</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="timeline-dot" style="background:#3B82F6;"></span>
+        <p class="timeline-text">New project 'Alpha' created</p>
+        <p class="timeline-meta">2 hours ago by Sarah Connor</p>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-dot" style="background:#10B981;"></span>
+        <p class="timeline-text">Invoice #402 marked as paid ($3,400)</p>
+        <p class="timeline-meta">5 hours ago by System</p>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-dot" style="background:#F59E0B;"></span>
+        <p class="timeline-text">API Integration flagged as at risk</p>
+        <p class="timeline-meta">Yesterday at 4:30 PM by Bob Smith</p>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-dot" style="background:#8B5CF6;"></span>
+        <p class="timeline-text">Server maintenance completed</p>
+        <p class="timeline-meta">Yesterday at 11:00 PM by DevOps</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<cre8-footer>
+  <cre8-text-passage>
+    <p>&copy; 2026 Cre8 Dashboard. All rights reserved.</p>
+  </cre8-text-passage>
+</cre8-footer>
+
+<script type="module">
+  // Wait for components to register
+  await customElements.whenDefined('cre8-chart');
+
+  // Revenue line chart
+  const revenueChart = document.getElementById('revenueChart');
+  revenueChart.data = {
+    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    datasets: [{
+      label: 'Revenue',
+      data: [12400, 18200, 14800, 22100, 19600, 26800, 24500],
+      borderColor: '#3B82F6',
+      backgroundColor: 'rgba(59, 130, 246, 0.08)',
+      borderWidth: 2.5,
+      fill: true,
+      tension: 0.4,
+      pointBackgroundColor: '#3B82F6',
+      pointBorderColor: '#fff',
+      pointBorderWidth: 2,
+      pointRadius: 4,
+      pointHoverRadius: 6
+    }]
+  };
+  revenueChart.options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { mode: 'index', intersect: false, backgroundColor: '#1E293B', titleFont: { size: 12 }, bodyFont: { size: 12 }, padding: 10, cornerRadius: 8, callbacks: { label: (ctx) => '$ ' + ctx.parsed.y.toLocaleString() } } },
+    scales: {
+      x: { grid: { display: false }, ticks: { color: '#94A3B8', font: { size: 11 } } },
+      y: { grid: { color: '#F1F5F9' }, ticks: { color: '#94A3B8', font: { size: 11 }, callback: (v) => '$' + (v/1000) + 'k' }, border: { display: false } }
+    },
+    interaction: { mode: 'nearest', axis: 'x', intersect: false }
+  };
+
+  // Project status donut
+  const donutChart = document.getElementById('donutChart');
+  donutChart.data = {
+    labels: ['On Track', 'At Risk', 'Blocked', 'Complete'],
+    datasets: [{
+      data: [45, 25, 15, 15],
+      backgroundColor: ['#3B82F6', '#F59E0B', '#EF4444', '#10B981'],
+      borderWidth: 0,
+      hoverOffset: 6
+    }]
+  };
+  donutChart.options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    cutout: '72%',
+    plugins: {
+      legend: { display: false },
+      tooltip: { backgroundColor: '#1E293B', cornerRadius: 8, padding: 10, bodyFont: { size: 12 }, callbacks: { label: (ctx) => ctx.label + ': ' + ctx.parsed + '%' } }
+    }
+  };
+</script>
+
 </body>
 </html>
