@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cre8 Analytics Dashboard</title>
+  <script type="module" src="./cdn/cre8-wc.esm.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dash-bg: #f4f6f9;
+      --dash-surface: #ffffff;
+      --dash-border: #e2e6ed;
+      --dash-text: #1a1f36;
+      --dash-text-muted: #6b7394;
+      --dash-accent: #4f46e5;
+      --dash-accent-light: #eef2ff;
+      --dash-success: #16a34a;
+      --dash-warning: #d97706;
+      --dash-error: #dc2626;
+      --dash-radius: 12px;
+      --dash-shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+      --dash-shadow-lg: 0 4px 12px rgba(0,0,0,.1);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--dash-bg);
+      color: var(--dash-text);
+      min-height: 100vh;
+    }
+
+    .dash-shell {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+    }
+
+    /* ── Sidebar ── */
+    .dash-sidebar {
+      background: var(--dash-text);
+      color: #fff;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .dash-sidebar__logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .dash-sidebar__logo span {
+      background: var(--dash-accent);
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      display: grid; place-items: center;
+      font-size: .85rem;
+    }
+    .dash-sidebar nav { display: flex; flex-direction: column; gap: .25rem; }
+    .dash-sidebar nav a {
+      color: rgba(255,255,255,.65);
+      text-decoration: none;
+      padding: .65rem .85rem;
+      border-radius: 8px;
+      font-size: .9rem;
+      transition: all .15s;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+    .dash-sidebar nav a:hover { background: rgba(255,255,255,.08); color: #fff; }
+    .dash-sidebar nav a.active { background: var(--dash-accent); color: #fff; }
+    .dash-sidebar__section {
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,.35);
+      padding: .5rem .85rem 0;
+    }
+    .dash-sidebar__bottom { margin-top: auto; }
+    .dash-sidebar__bottom .user-card {
+      display: flex; align-items: center; gap: .75rem;
+      padding: .75rem; border-radius: 8px;
+      background: rgba(255,255,255,.06);
+    }
+    .user-card__avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--dash-accent); display: grid; place-items: center;
+      font-weight: 600; font-size: .8rem;
+    }
+    .user-card__info { font-size: .85rem; }
+    .user-card__info small { color: rgba(255,255,255,.45); font-size: .75rem; }
+
+    /* ── Main area ── */
+    .dash-main { padding: 1.75rem 2rem; overflow-y: auto; }
+
+    /* ── Top bar ── */
+    .dash-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .dash-topbar h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: -.5px; }
+    .dash-topbar__actions { display: flex; gap: .75rem; align-items: center; }
+
+    /* ── KPI row ── */
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .kpi-card {
+      background: var(--dash-surface);
+      border-radius: var(--dash-radius);
+      padding: 1.25rem 1.5rem;
+      box-shadow: var(--dash-shadow);
+      border: 1px solid var(--dash-border);
+    }
+    .kpi-card__label {
+      font-size: .78rem;
+      color: var(--dash-text-muted);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      margin-bottom: .35rem;
+    }
+    .kpi-card__value {
+      font-size: 1.85rem;
+      font-weight: 700;
+      letter-spacing: -.5px;
+      line-height: 1.2;
+    }
+    .kpi-card__trend {
+      font-size: .8rem;
+      margin-top: .35rem;
+      display: flex;
+      align-items: center;
+      gap: .3rem;
+    }
+    .kpi-card__trend.up { color: var(--dash-success); }
+    .kpi-card__trend.down { color: var(--dash-error); }
+
+    /* ── Chart panels ── */
+    .chart-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .panel {
+      background: var(--dash-surface);
+      border-radius: var(--dash-radius);
+      box-shadow: var(--dash-shadow);
+      border: 1px solid var(--dash-border);
+      overflow: hidden;
+    }
+    .panel__header {
+      padding: 1rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--dash-border);
+    }
+    .panel__title { font-size: .95rem; font-weight: 600; }
+    .panel__body { padding: 1rem 1.25rem; }
+    .panel__body--flush { padding: 0; }
+
+    /* ── Table section ── */
+    .table-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── Tag filters ── */
+    .filter-bar {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .filter-bar__label {
+      font-size: .8rem;
+      color: var(--dash-text-muted);
+      font-weight: 500;
+      margin-right: .25rem;
+    }
+
+    /* ── Activity feed ── */
+    .activity-item {
+      display: flex;
+      gap: .75rem;
+      padding: .75rem 0;
+      border-bottom: 1px solid var(--dash-border);
+      align-items: flex-start;
+    }
+    .activity-item:last-child { border-bottom: none; }
+    .activity-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+    .activity-dot.blue { background: var(--dash-accent); }
+    .activity-dot.green { background: var(--dash-success); }
+    .activity-dot.orange { background: var(--dash-warning); }
+    .activity-dot.red { background: var(--dash-error); }
+    .activity-text { font-size: .85rem; line-height: 1.5; }
+    .activity-text strong { font-weight: 600; }
+    .activity-time { font-size: .75rem; color: var(--dash-text-muted); }
+
+    /* Table overrides */
+    cre8-table { --cre8-table-border-color: var(--dash-border); }
+    cre8-badge { font-size: .8rem; }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .kpi-row { grid-template-columns: repeat(2, 1fr); }
+      .chart-row, .table-section { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .dash-shell { grid-template-columns: 1fr; }
+      .dash-sidebar { display: none; }
+      .kpi-row { grid-template-columns: 1fr; }
+    }
+
+    /* Transitions */
+    .fade-in { animation: fadeIn .4s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  </style>
+</head>
+<body>
+
+<div class="dash-shell">
+  <!-- ═══════ Sidebar ═══════ -->
+  <aside class="dash-sidebar">
+    <div class="dash-sidebar__logo">
+      <span>C8</span> Cre8 Analytics
+    </div>
+
+    <nav>
+      <div class="dash-sidebar__section">Main</div>
+      <a href="#" class="active">&#9632; Dashboard</a>
+      <a href="#">&#9670; Orders</a>
+      <a href="#">&#9679; Customers</a>
+      <a href="#">&#9650; Products</a>
+
+      <div class="dash-sidebar__section" style="margin-top:.75rem;">Reports</div>
+      <a href="#">&#9644; Revenue</a>
+      <a href="#">&#9644; Conversions</a>
+      <a href="#">&#9644; Traffic</a>
+    </nav>
+
+    <div class="dash-sidebar__bottom">
+      <div class="user-card">
+        <div class="user-card__avatar">TM</div>
+        <div class="user-card__info">
+          Tyler Morrow<br />
+          <small>Admin</small>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ═══════ Main content ═══════ -->
+  <main class="dash-main">
+
+    <!-- Top bar -->
+    <div class="dash-topbar">
+      <h1>Dashboard</h1>
+      <div class="dash-topbar__actions">
+        <cre8-select
+          id="date-range"
+          label="Time Period"
+          field-id="dateRange"
+        ></cre8-select>
+        <cre8-button id="export-btn" text="Export Report" variant="secondary" size="sm"></cre8-button>
+        <cre8-button id="add-btn" text="+ New Order" variant="primary" size="sm"></cre8-button>
+      </div>
+    </div>
+
+    <!-- Alert banner -->
+    <div style="margin-bottom:1rem;">
+      <cre8-alert
+        id="welcome-alert"
+        status="info"
+        emphasis="subtle"
+        header-text="Live data sync active"
+      >
+        Dashboard metrics are updating in real time. Last synced 2 minutes ago.
+      </cre8-alert>
+    </div>
+
+    <!-- KPI cards -->
+    <div class="kpi-row fade-in">
+      <div class="kpi-card">
+        <div class="kpi-card__label">Total Revenue</div>
+        <div class="kpi-card__value" id="kpi-revenue">$148,392</div>
+        <div class="kpi-card__trend up">&#9650; 12.5% vs last month</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-card__label">Orders</div>
+        <div class="kpi-card__value" id="kpi-orders">1,284</div>
+        <div class="kpi-card__trend up">&#9650; 8.2% vs last month</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-card__label">Conversion Rate</div>
+        <div class="kpi-card__value" id="kpi-conversion">3.24%</div>
+        <div class="kpi-card__trend down">&#9660; 0.4% vs last month</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-card__label">Active Customers</div>
+        <div class="kpi-card__value" id="kpi-customers">8,491</div>
+        <div class="kpi-card__trend up">&#9650; 22.1% vs last month</div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <cre8-tabs id="main-tabs" active-index="0">
+      <cre8-tab>Overview</cre8-tab>
+      <cre8-tab>Sales Breakdown</cre8-tab>
+      <cre8-tab>Team Performance</cre8-tab>
+
+      <!-- ── Tab 1: Overview ── -->
+      <cre8-tab-panel slot="panel">
+        <div style="padding-top:1rem;">
+
+          <!-- Chart row -->
+          <div class="chart-row fade-in">
+            <div class="panel">
+              <div class="panel__header">
+                <span class="panel__title">Revenue Trend</span>
+                <cre8-dropdown id="chart-type-dropdown" button-text="Line Chart">
+                  <cre8-dropdown-item id="btn-line">Line Chart</cre8-dropdown-item>
+                  <cre8-dropdown-item id="btn-bar">Bar Chart</cre8-dropdown-item>
+                </cre8-dropdown>
+              </div>
+              <div class="panel__body">
+                <cre8-chart id="revenue-chart" type="line" height="280" show-legend legend-position="top"></cre8-chart>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel__header">
+                <span class="panel__title">Revenue by Channel</span>
+              </div>
+              <div class="panel__body">
+                <cre8-chart id="channel-chart" type="doughnut" height="280" show-legend legend-position="bottom"></cre8-chart>
+              </div>
+            </div>
+          </div>
+
+          <!-- Table + Activity -->
+          <div class="table-section fade-in">
+            <div class="panel">
+              <div class="panel__header">
+                <span class="panel__title">Recent Orders</span>
+                <cre8-button text="View All" variant="tertiary" size="sm"></cre8-button>
+              </div>
+              <div class="panel__body--flush">
+                <cre8-table is-hoverable caption="Recent Orders">
+                  <thead><tr>
+                    <th>Order</th><th>Customer</th><th>Amount</th><th>Status</th>
+                  </tr></thead>
+                  <tbody>
+                    <tr>
+                      <td>#4821</td><td>Sarah Chen</td><td>$2,340</td>
+                      <td><cre8-badge text="Completed" status="success"></cre8-badge></td>
+                    </tr>
+                    <tr>
+                      <td>#4820</td><td>Marcus Johnson</td><td>$1,125</td>
+                      <td><cre8-badge text="Processing" status="info"></cre8-badge></td>
+                    </tr>
+                    <tr>
+                      <td>#4819</td><td>Aisha Patel</td><td>$3,890</td>
+                      <td><cre8-badge text="Completed" status="success"></cre8-badge></td>
+                    </tr>
+                    <tr>
+                      <td>#4818</td><td>James Wright</td><td>$567</td>
+                      <td><cre8-badge text="Pending" status="warning"></cre8-badge></td>
+                    </tr>
+                    <tr>
+                      <td>#4817</td><td>Li Wei</td><td>$4,200</td>
+                      <td><cre8-badge text="Completed" status="success"></cre8-badge></td>
+                    </tr>
+                    <tr>
+                      <td>#4816</td><td>Emma Thompson</td><td>$890</td>
+                      <td><cre8-badge text="Refunded" status="error"></cre8-badge></td>
+                    </tr>
+                  </tbody>
+                </cre8-table>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel__header">
+                <span class="panel__title">Activity Feed</span>
+              </div>
+              <div class="panel__body">
+                <div class="activity-item">
+                  <div class="activity-dot green"></div>
+                  <div>
+                    <div class="activity-text"><strong>Sarah Chen</strong> completed order #4821</div>
+                    <div class="activity-time">2 minutes ago</div>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-dot blue"></div>
+                  <div>
+                    <div class="activity-text"><strong>Marcus Johnson</strong> placed a new order</div>
+                    <div class="activity-time">15 minutes ago</div>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-dot orange"></div>
+                  <div>
+                    <div class="activity-text"><strong>System</strong> flagged low inventory on 3 items</div>
+                    <div class="activity-time">1 hour ago</div>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-dot green"></div>
+                  <div>
+                    <div class="activity-text"><strong>Aisha Patel</strong> completed order #4819</div>
+                    <div class="activity-time">2 hours ago</div>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-dot red"></div>
+                  <div>
+                    <div class="activity-text"><strong>Emma Thompson</strong> requested refund on #4816</div>
+                    <div class="activity-time">3 hours ago</div>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-dot blue"></div>
+                  <div>
+                    <div class="activity-text"><strong>Product team</strong> launched 2 new SKUs</div>
+                    <div class="activity-time">5 hours ago</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </cre8-tab-panel>
+
+      <!-- ── Tab 2: Sales Breakdown ── -->
+      <cre8-tab-panel slot="panel">
+        <div style="padding-top:1rem;">
+
+          <!-- Filter bar -->
+          <div class="filter-bar">
+            <span class="filter-bar__label">Filter by category:</span>
+            <cre8-tag id="tag-all" text="All" type="radio" variant="branded" is-selected></cre8-tag>
+            <cre8-tag id="tag-electronics" text="Electronics" type="radio" variant="branded"></cre8-tag>
+            <cre8-tag id="tag-apparel" text="Apparel" type="radio" variant="branded"></cre8-tag>
+            <cre8-tag id="tag-home" text="Home & Garden" type="radio" variant="branded"></cre8-tag>
+            <cre8-tag id="tag-sports" text="Sports" type="radio" variant="branded"></cre8-tag>
+          </div>
+
+          <div class="chart-row fade-in">
+            <div class="panel">
+              <div class="panel__header">
+                <span class="panel__title">Sales by Category</span>
+              </div>
+              <div class="panel__body">
+                <cre8-chart id="sales-bar-chart" type="bar" height="320" show-legend legend-position="top"></cre8-chart>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel__header">
+                <span class="panel__title">Category Mix</span>
+              </div>
+              <div class="panel__body">
+                <cre8-chart id="sales-pie-chart" type="pie" height="320" show-legend legend-position="bottom"></cre8-chart>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sales table -->
+          <div class="panel fade-in">
+            <div class="panel__header">
+              <span class="panel__title">Top Products</span>
+            </div>
+            <div class="panel__body--flush">
+              <cre8-table id="products-table" is-hoverable variant="striped" caption="Top Products by Revenue">
+                <thead><tr>
+                  <th>Product</th><th>Category</th><th>Units Sold</th><th>Revenue</th><th>Trend</th>
+                </tr></thead>
+                <tbody id="products-tbody"></tbody>
+              </cre8-table>
+            </div>
+          </div>
+        </div>
+      </cre8-tab-panel>
+
+      <!-- ── Tab 3: Team Performance ── -->
+      <cre8-tab-panel slot="panel">
+        <div style="padding-top:1rem;">
+          <cre8-grid variant="3up" gap="lg">
+            <cre8-grid-item>
+              <cre8-card>
+                <div slot="header" style="padding:1.25rem;">
+                  <div style="display:flex;align-items:center;gap:.75rem;">
+                    <div style="width:48px;height:48px;border-radius:50%;background:#4f46e5;display:grid;place-items:center;color:#fff;font-weight:600;">JD</div>
+                    <div>
+                      <cre8-heading type="title-small" tag-variant="h3">Jessica Davis</cre8-heading>
+                      <cre8-text-passage size="small">Sales Lead</cre8-text-passage>
+                    </div>
+                  </div>
+                </div>
+                <div style="padding:0 1.25rem 1rem;">
+                  <div style="display:flex;justify-content:space-between;margin-bottom:.75rem;">
+                    <span style="font-size:.85rem;color:var(--dash-text-muted);">Quota Progress</span>
+                    <span style="font-size:.85rem;font-weight:600;">87%</span>
+                  </div>
+                  <cre8-percent-bar value="87" max="100"></cre8-percent-bar>
+                  <div style="display:flex;gap:.5rem;margin-top:1rem;">
+                    <cre8-badge text="142 deals" status="success"></cre8-badge>
+                    <cre8-badge text="$284k rev" status="info"></cre8-badge>
+                  </div>
+                </div>
+                <div slot="footer" style="padding:.75rem 1.25rem;border-top:1px solid var(--dash-border);">
+                  <cre8-button text="View Profile" variant="tertiary" size="sm" full-width></cre8-button>
+                </div>
+              </cre8-card>
+            </cre8-grid-item>
+
+            <cre8-grid-item>
+              <cre8-card>
+                <div slot="header" style="padding:1.25rem;">
+                  <div style="display:flex;align-items:center;gap:.75rem;">
+                    <div style="width:48px;height:48px;border-radius:50%;background:#0891b2;display:grid;place-items:center;color:#fff;font-weight:600;">RK</div>
+                    <div>
+                      <cre8-heading type="title-small" tag-variant="h3">Raj Kumar</cre8-heading>
+                      <cre8-text-passage size="small">Account Executive</cre8-text-passage>
+                    </div>
+                  </div>
+                </div>
+                <div style="padding:0 1.25rem 1rem;">
+                  <div style="display:flex;justify-content:space-between;margin-bottom:.75rem;">
+                    <span style="font-size:.85rem;color:var(--dash-text-muted);">Quota Progress</span>
+                    <span style="font-size:.85rem;font-weight:600;">112%</span>
+                  </div>
+                  <cre8-percent-bar value="100" max="100"></cre8-percent-bar>
+                  <div style="display:flex;gap:.5rem;margin-top:1rem;">
+                    <cre8-badge text="198 deals" status="success"></cre8-badge>
+                    <cre8-badge text="$356k rev" status="info"></cre8-badge>
+                  </div>
+                </div>
+                <div slot="footer" style="padding:.75rem 1.25rem;border-top:1px solid var(--dash-border);">
+                  <cre8-button text="View Profile" variant="tertiary" size="sm" full-width></cre8-button>
+                </div>
+              </cre8-card>
+            </cre8-grid-item>
+
+            <cre8-grid-item>
+              <cre8-card>
+                <div slot="header" style="padding:1.25rem;">
+                  <div style="display:flex;align-items:center;gap:.75rem;">
+                    <div style="width:48px;height:48px;border-radius:50%;background:#c026d3;display:grid;place-items:center;color:#fff;font-weight:600;">AM</div>
+                    <div>
+                      <cre8-heading type="title-small" tag-variant="h3">Ava Martinez</cre8-heading>
+                      <cre8-text-passage size="small">Sales Rep</cre8-text-passage>
+                    </div>
+                  </div>
+                </div>
+                <div style="padding:0 1.25rem 1rem;">
+                  <div style="display:flex;justify-content:space-between;margin-bottom:.75rem;">
+                    <span style="font-size:.85rem;color:var(--dash-text-muted);">Quota Progress</span>
+                    <span style="font-size:.85rem;font-weight:600;">64%</span>
+                  </div>
+                  <cre8-percent-bar value="64" max="100"></cre8-percent-bar>
+                  <div style="display:flex;gap:.5rem;margin-top:1rem;">
+                    <cre8-badge text="89 deals" status="warning"></cre8-badge>
+                    <cre8-badge text="$128k rev" status="info"></cre8-badge>
+                  </div>
+                </div>
+                <div slot="footer" style="padding:.75rem 1.25rem;border-top:1px solid var(--dash-border);">
+                  <cre8-button text="View Profile" variant="tertiary" size="sm" full-width></cre8-button>
+                </div>
+              </cre8-card>
+            </cre8-grid-item>
+          </cre8-grid>
+
+          <!-- Team chart -->
+          <div class="chart-row fade-in" style="margin-top:1.5rem;">
+            <div class="panel">
+              <div class="panel__header">
+                <span class="panel__title">Monthly Deals Closed</span>
+              </div>
+              <div class="panel__body">
+                <cre8-chart id="team-chart" type="bar" height="280" show-legend legend-position="top"></cre8-chart>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="panel__header">
+                <span class="panel__title">Win Rate by Rep</span>
+              </div>
+              <div class="panel__body">
+                <cre8-chart id="winrate-chart" type="radar" height="280" show-legend legend-position="bottom"></cre8-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+      </cre8-tab-panel>
+    </cre8-tabs>
+
+    <!-- Modal for export -->
+    <cre8-modal id="export-modal" aria-label="Export Report">
+      <div slot="header" style="padding:1.25rem;">
+        <cre8-heading type="title-large" tag-variant="h2">Export Report</cre8-heading>
+      </div>
+      <div style="padding:0 1.25rem;">
+        <cre8-text-passage>Choose the format and date range for your export.</cre8-text-passage>
+        <div style="margin-top:1rem;">
+          <cre8-select id="export-format" label="Format" field-id="exportFormat"></cre8-select>
+        </div>
+        <div style="margin-top:.75rem;">
+          <cre8-inline-alert status="info" variant="subtle">
+            Exports include all visible data from the current dashboard view.
+          </cre8-inline-alert>
+        </div>
+      </div>
+      <div slot="footer" style="padding:1.25rem;display:flex;gap:.75rem;justify-content:flex-end;">
+        <cre8-button id="cancel-export" text="Cancel" variant="secondary"></cre8-button>
+        <cre8-button id="confirm-export" text="Download" variant="primary"></cre8-button>
+      </div>
+    </cre8-modal>
+
+    <!-- Success modal -->
+    <cre8-modal id="success-modal" status="success" utility-modal-title="Export Complete" aria-label="Export success">
+      <div style="padding:0 1.25rem;">
+        <cre8-text-passage>Your report has been generated and is downloading now.</cre8-text-passage>
+      </div>
+    </cre8-modal>
+
+  </main>
+</div>
+
+<script type="module">
+  // ═══════════════════════════════════════════
+  // Data & State
+  // ═══════════════════════════════════════════
+
+  const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  const revenueData = {
+    labels: MONTHS,
+    datasets: [
+      {
+        label: 'This Year',
+        data: [42000, 48000, 45000, 51000, 53000, 49000, 58000, 62000, 59000, 67000, 71000, 76000],
+        borderColor: '#4f46e5',
+        backgroundColor: 'rgba(79, 70, 229, 0.08)',
+        fill: true,
+        tension: 0.35,
+        pointRadius: 3,
+      },
+      {
+        label: 'Last Year',
+        data: [38000, 41000, 39000, 44000, 46000, 43000, 49000, 52000, 50000, 54000, 58000, 61000],
+        borderColor: '#a5b4fc',
+        backgroundColor: 'transparent',
+        borderDash: [5, 5],
+        tension: 0.35,
+        pointRadius: 2,
+      }
+    ]
+  };
+
+  const channelData = {
+    labels: ['Direct', 'Organic Search', 'Paid Ads', 'Social Media', 'Referrals'],
+    datasets: [{
+      data: [35, 25, 20, 12, 8],
+      backgroundColor: ['#4f46e5', '#0891b2', '#d946ef', '#f59e0b', '#10b981'],
+      borderWidth: 0,
+      hoverOffset: 8,
+    }]
+  };
+
+  const allProducts = [
+    { name: 'MacBook Pro 16"', cat: 'Electronics', units: 342, rev: '$684,000', trend: 'up' },
+    { name: 'AirPods Pro', cat: 'Electronics', units: 1203, rev: '$300,750', trend: 'up' },
+    { name: 'Running Jacket', cat: 'Apparel', units: 891, rev: '$89,100', trend: 'up' },
+    { name: 'Standing Desk', cat: 'Home & Garden', units: 234, rev: '$140,400', trend: 'down' },
+    { name: 'Yoga Mat Premium', cat: 'Sports', units: 1567, rev: '$78,350', trend: 'up' },
+    { name: 'Wireless Keyboard', cat: 'Electronics', units: 678, rev: '$67,800', trend: 'down' },
+    { name: 'Winter Parka', cat: 'Apparel', units: 445, rev: '$133,500', trend: 'up' },
+    { name: 'Plant Grow Light', cat: 'Home & Garden', units: 890, rev: '$44,500', trend: 'up' },
+    { name: 'Dumbbell Set', cat: 'Sports', units: 334, rev: '$50,100', trend: 'down' },
+    { name: 'Linen Shirt', cat: 'Apparel', units: 1102, rev: '$66,120', trend: 'up' },
+  ];
+
+  const categoryColors = {
+    'Electronics': '#4f46e5',
+    'Apparel': '#0891b2',
+    'Home & Garden': '#10b981',
+    'Sports': '#f59e0b'
+  };
+
+  // ═══════════════════════════════════════════
+  // Wait for components to register
+  // ═══════════════════════════════════════════
+
+  function whenDefined(...tags) {
+    return Promise.all(tags.map(t => customElements.whenDefined(t)));
+  }
+
+  whenDefined(
+    'cre8-chart', 'cre8-select', 'cre8-tabs', 'cre8-tag',
+    'cre8-modal', 'cre8-button', 'cre8-dropdown-item', 'cre8-dropdown'
+  ).then(() => {
+    initSelects();
+    initCharts();
+    initProducts('All');
+    initInteractions();
+  });
+
+  // ═══════════════════════════════════════════
+  // Selects
+  // ═══════════════════════════════════════════
+
+  function initSelects() {
+    const dateRange = document.getElementById('date-range');
+    dateRange.items = [
+      { label: 'Last 7 days', value: '7d' },
+      { label: 'Last 30 days', value: '30d' },
+      { label: 'Last 90 days', value: '90d' },
+      { label: 'This Year', value: 'year' },
+    ];
+
+    const exportFormat = document.getElementById('export-format');
+    exportFormat.items = [
+      { label: 'CSV', value: 'csv' },
+      { label: 'Excel (.xlsx)', value: 'xlsx' },
+      { label: 'PDF Report', value: 'pdf' },
+      { label: 'JSON', value: 'json' },
+    ];
+  }
+
+  // ═══════════════════════════════════════════
+  // Charts
+  // ═══════════════════════════════════════════
+
+  function initCharts() {
+    // Revenue trend
+    const revenueChart = document.getElementById('revenue-chart');
+    revenueChart.data = revenueData;
+    revenueChart.options = {
+      scales: {
+        y: {
+          ticks: { callback: v => '$' + (v / 1000) + 'k' },
+          grid: { color: 'rgba(0,0,0,.05)' }
+        },
+        x: { grid: { display: false } }
+      },
+      interaction: { intersect: false, mode: 'index' },
+      plugins: {
+        tooltip: {
+          callbacks: { label: ctx => ctx.dataset.label + ': $' + ctx.parsed.y.toLocaleString() }
+        }
+      }
+    };
+
+    // Channel doughnut
+    const channelChart = document.getElementById('channel-chart');
+    channelChart.data = channelData;
+    channelChart.options = {
+      cutout: '65%',
+      plugins: {
+        tooltip: {
+          callbacks: { label: ctx => ctx.label + ': ' + ctx.parsed + '%' }
+        }
+      }
+    };
+
+    // Sales bar chart
+    initSalesCharts('All');
+
+    // Team charts
+    initTeamCharts();
+  }
+
+  function initSalesCharts(category) {
+    const categories = ['Electronics', 'Apparel', 'Home & Garden', 'Sports'];
+    const q1 = [120, 85, 60, 45];
+    const q2 = [135, 92, 72, 52];
+    const q3 = [148, 78, 68, 61];
+    const q4 = [162, 105, 81, 58];
+
+    let labels = categories;
+    let datasets = [
+      { label: 'Q1', data: q1, backgroundColor: '#c7d2fe' },
+      { label: 'Q2', data: q2, backgroundColor: '#818cf8' },
+      { label: 'Q3', data: q3, backgroundColor: '#6366f1' },
+      { label: 'Q4', data: q4, backgroundColor: '#4338ca' },
+    ];
+
+    if (category !== 'All') {
+      const idx = categories.indexOf(category);
+      if (idx >= 0) {
+        labels = ['Q1', 'Q2', 'Q3', 'Q4'];
+        datasets = [{
+          label: category,
+          data: [q1[idx], q2[idx], q3[idx], q4[idx]],
+          backgroundColor: categoryColors[category],
+        }];
+      }
+    }
+
+    const salesBar = document.getElementById('sales-bar-chart');
+    salesBar.data = { labels, datasets };
+    salesBar.options = {
+      scales: {
+        y: {
+          ticks: { callback: v => '$' + v + 'k' },
+          grid: { color: 'rgba(0,0,0,.05)' },
+        },
+        x: { grid: { display: false } }
+      },
+    };
+
+    // Pie
+    const totals = categories.map((_, i) => q1[i] + q2[i] + q3[i] + q4[i]);
+    const salesPie = document.getElementById('sales-pie-chart');
+    salesPie.data = {
+      labels: categories,
+      datasets: [{
+        data: totals,
+        backgroundColor: categories.map(c => categoryColors[c]),
+        borderWidth: 0,
+        hoverOffset: 8,
+      }]
+    };
+    salesPie.options = {
+      plugins: {
+        tooltip: {
+          callbacks: { label: ctx => ctx.label + ': $' + ctx.parsed + 'k' }
+        }
+      }
+    };
+  }
+
+  function initTeamCharts() {
+    const teamChart = document.getElementById('team-chart');
+    teamChart.data = {
+      labels: MONTHS.slice(0, 6),
+      datasets: [
+        { label: 'Jessica', data: [22, 25, 20, 28, 24, 23], backgroundColor: '#4f46e5' },
+        { label: 'Raj', data: [30, 28, 35, 32, 38, 35], backgroundColor: '#0891b2' },
+        { label: 'Ava', data: [14, 16, 12, 18, 15, 14], backgroundColor: '#c026d3' },
+      ]
+    };
+    teamChart.options = {
+      scales: {
+        y: { grid: { color: 'rgba(0,0,0,.05)' } },
+        x: { grid: { display: false } }
+      }
+    };
+
+    const winrateChart = document.getElementById('winrate-chart');
+    winrateChart.data = {
+      labels: ['Prospecting', 'Discovery', 'Proposal', 'Negotiation', 'Closing'],
+      datasets: [
+        { label: 'Jessica', data: [85, 78, 72, 68, 65], borderColor: '#4f46e5', backgroundColor: 'rgba(79,70,229,.1)' },
+        { label: 'Raj', data: [90, 85, 80, 75, 72], borderColor: '#0891b2', backgroundColor: 'rgba(8,145,178,.1)' },
+        { label: 'Ava', data: [70, 65, 60, 55, 48], borderColor: '#c026d3', backgroundColor: 'rgba(192,38,211,.1)' },
+      ]
+    };
+    winrateChart.options = {
+      scales: {
+        r: {
+          beginAtZero: true,
+          max: 100,
+          ticks: { display: false },
+          grid: { color: 'rgba(0,0,0,.06)' }
+        }
+      }
+    };
+  }
+
+  // ═══════════════════════════════════════════
+  // Products Table
+  // ═══════════════════════════════════════════
+
+  function initProducts(category) {
+    const tbody = document.getElementById('products-tbody');
+    const filtered = category === 'All'
+      ? allProducts
+      : allProducts.filter(p => p.cat === category);
+
+    tbody.innerHTML = filtered.map(p => `
+      <tr>
+        <td>${p.name}</td>
+        <td><cre8-badge text="${p.cat}" status="${
+          p.cat === 'Electronics' ? 'info' :
+          p.cat === 'Apparel' ? 'neutral' :
+          p.cat === 'Home & Garden' ? 'success' : 'warning'
+        }"></cre8-badge></td>
+        <td>${p.units.toLocaleString()}</td>
+        <td>${p.rev}</td>
+        <td style="color:${p.trend === 'up' ? 'var(--dash-success)' : 'var(--dash-error)'}">
+          ${p.trend === 'up' ? '&#9650;' : '&#9660;'}
+        </td>
+      </tr>
+    `).join('');
+  }
+
+  // ═══════════════════════════════════════════
+  // Interactions
+  // ═══════════════════════════════════════════
+
+  function initInteractions() {
+    // Chart type toggle
+    document.getElementById('btn-line').addEventListener('dropdown-item-selected', () => {
+      const chart = document.getElementById('revenue-chart');
+      chart.type = 'line';
+      chart.data = { ...chart.data };
+      document.querySelector('#chart-type-dropdown').setAttribute('button-text', 'Line Chart');
+    });
+    document.getElementById('btn-bar').addEventListener('dropdown-item-selected', () => {
+      const chart = document.getElementById('revenue-chart');
+      chart.type = 'bar';
+      chart.data = { ...chart.data };
+      document.querySelector('#chart-type-dropdown').setAttribute('button-text', 'Bar Chart');
+    });
+
+    // Category tag filters
+    const tags = ['tag-all', 'tag-electronics', 'tag-apparel', 'tag-home', 'tag-sports'];
+    const catMap = { 'tag-all': 'All', 'tag-electronics': 'Electronics', 'tag-apparel': 'Apparel', 'tag-home': 'Home & Garden', 'tag-sports': 'Sports' };
+    tags.forEach(id => {
+      document.getElementById(id).addEventListener('click', () => {
+        tags.forEach(t => {
+          document.getElementById(t).isSelected = (t === id);
+        });
+        const cat = catMap[id];
+        initProducts(cat);
+        initSalesCharts(cat);
+      });
+    });
+
+    // Export modal
+    document.getElementById('export-btn').addEventListener('click', () => {
+      document.getElementById('export-modal').isActive = true;
+    });
+    document.getElementById('cancel-export').addEventListener('click', () => {
+      document.getElementById('export-modal').isActive = false;
+    });
+    document.getElementById('confirm-export').addEventListener('click', () => {
+      document.getElementById('export-modal').isActive = false;
+      setTimeout(() => {
+        document.getElementById('success-modal').isActive = true;
+        setTimeout(() => {
+          document.getElementById('success-modal').isActive = false;
+        }, 2500);
+      }, 300);
+    });
+
+    // Chart click events
+    document.getElementById('revenue-chart').addEventListener('cre8-chart-click', e => {
+      console.log('Chart clicked:', e.detail);
+    });
+
+    // KPI live update simulation
+    setInterval(() => {
+      const rev = document.getElementById('kpi-revenue');
+      const base = 148392;
+      const jitter = Math.floor(Math.random() * 800) - 400;
+      rev.textContent = '$' + (base + jitter).toLocaleString();
+    }, 3000);
+  }
+</script>
+
+</body>
+</html>
