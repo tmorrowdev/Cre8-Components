@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@latest/cdn/cre8-wc.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@latest/lib/design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.css"/>
+</head>
+<body>
+<cre8-layout>
+  <cre8-main>
+    <cre8-layout-container>
+      <div style="max-width: 440px; margin: 80px auto; padding: 0 16px;">
+        <cre8-card>
+          <cre8-heading heading-tag-variant="h1" slot="header">Sign In</cre8-heading>
+          <div style="display: flex; flex-direction: column; gap: 16px;" slot="body">
+            <cre8-text-passage>
+              <p>Enter your credentials to access your account.</p>
+            </cre8-text-passage>
+            <cre8-field label="Email Address" type="email" name="email" required autocomplete="email" placeholder="you@example.com"></cre8-field>
+            <cre8-field label="Password" type="password" name="password" required autocomplete="current-password"></cre8-field>
+            <div style="display: flex; justify-content: flex-end;">
+              <button style="background: none; border: none; color: var(--cre8-color-brand-primary); cursor: pointer; font-size: 14px; padding: 0; text-decoration: underline;" onclick="document.querySelector('#forgot-password-modal').isActive = true" type="button">Forgot your password?</button>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px; width: 100%;" slot="footer">
+            <cre8-button text="Sign In" type="submit" full-width></cre8-button>
+            <cre8-text-passage size="sm">
+              <p style="text-align: center;">Don't have an account? <a href="#" style="color: var(--cre8-color-brand-primary);">Create one</a></p>
+            </cre8-text-passage>
+          </div>
+        </cre8-card>
+      </div>
+    </cre8-layout-container>
+  </cre8-main>
+  <cre8-modal aria-label="Forgot your password" id="forgot-password-modal">
+    <cre8-heading heading-tag-variant="h2" slot="header">Reset Your Password</cre8-heading>
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+      <cre8-text-passage>
+        <p>Enter the email address associated with your account and we'll send you a link to reset your password.</p>
+      </cre8-text-passage>
+      <cre8-field label="Email Address" type="email" name="reset-email" required placeholder="you@example.com"></cre8-field>
+    </div>
+    <cre8-button-group slot="footer">
+      <cre8-button text="Send Reset Link"></cre8-button>
+      <cre8-button text="Cancel" variant="tertiary" onclick="document.querySelector('#forgot-password-modal').isActive = false"></cre8-button>
+    </cre8-button-group>
+  </cre8-modal>
+</cre8-layout>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cre8 Dashboard Demo</title>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@latest/cdn/cre8-wc.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@latest/lib/design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.css"/>
+</head>
+<body>
+<cre8-layout>
+  <cre8-header>
+    <cre8-primary-nav>
+      <cre8-primary-nav-item href="#">Dashboard</cre8-primary-nav-item>
+      <cre8-primary-nav-item href="#">Projects</cre8-primary-nav-item>
+      <cre8-primary-nav-item href="#">Team</cre8-primary-nav-item>
+      <cre8-primary-nav-item href="#">Settings</cre8-primary-nav-item>
+    </cre8-primary-nav>
+  </cre8-header>
+  <cre8-main>
+    <cre8-section headline="Dashboard Overview">
+      <cre8-grid>
+        <cre8-grid-item size-sm="6" size-md="3">
+          <cre8-card>
+            <cre8-heading heading-tag-variant="h3" slot="header">Active Users</cre8-heading>
+            <cre8-text-passage slot="body">
+              <p>1,247 users online</p>
+            </cre8-text-passage>
+            <cre8-badge status="success" slot="footer">+12% this week</cre8-badge>
+          </cre8-card>
+        </cre8-grid-item>
+        <cre8-grid-item size-sm="6" size-md="3">
+          <cre8-card>
+            <cre8-heading heading-tag-variant="h3" slot="header">Revenue</cre8-heading>
+            <cre8-text-passage slot="body">
+              <p>$48,352.00</p>
+            </cre8-text-passage>
+            <cre8-badge status="success" slot="footer">+8.2% from last month</cre8-badge>
+          </cre8-card>
+        </cre8-grid-item>
+        <cre8-grid-item size-sm="6" size-md="3">
+          <cre8-card>
+            <cre8-heading heading-tag-variant="h3" slot="header">Open Tasks</cre8-heading>
+            <cre8-text-passage slot="body">
+              <p>34 pending</p>
+            </cre8-text-passage>
+            <cre8-badge status="warning" slot="footer">5 overdue</cre8-badge>
+          </cre8-card>
+        </cre8-grid-item>
+        <cre8-grid-item size-sm="6" size-md="3">
+          <cre8-card>
+            <cre8-heading heading-tag-variant="h3" slot="header">Issues</cre8-heading>
+            <cre8-text-passage slot="body">
+              <p>3 critical</p>
+            </cre8-text-passage>
+            <cre8-badge status="error" slot="footer">Needs attention</cre8-badge>
+          </cre8-card>
+        </cre8-grid-item>
+      </cre8-grid>
+    </cre8-section>
+    <cre8-section headline="Recent Activity">
+      <cre8-table>
+        <cre8-table-header>
+          <cre8-table-row>
+            <cre8-table-header-cell>Project</cre8-table-header-cell>
+            <cre8-table-header-cell>Status</cre8-table-header-cell>
+            <cre8-table-header-cell>Assignee</cre8-table-header-cell>
+            <cre8-table-header-cell>Due Date</cre8-table-header-cell>
+          </cre8-table-row>
+        </cre8-table-header>
+        <cre8-table-body>
+          <cre8-table-row>
+            <cre8-table-cell>Website Redesign</cre8-table-cell>
+            <cre8-table-cell>
+              <cre8-badge status="success">On Track</cre8-badge>
+            </cre8-table-cell>
+            <cre8-table-cell>Alice Johnson</cre8-table-cell>
+            <cre8-table-cell>Mar 15, 2026</cre8-table-cell>
+          </cre8-table-row>
+          <cre8-table-row>
+            <cre8-table-cell>API Integration</cre8-table-cell>
+            <cre8-table-cell>
+              <cre8-badge status="warning">At Risk</cre8-badge>
+            </cre8-table-cell>
+            <cre8-table-cell>Bob Smith</cre8-table-cell>
+            <cre8-table-cell>Feb 28, 2026</cre8-table-cell>
+          </cre8-table-row>
+          <cre8-table-row>
+            <cre8-table-cell>Mobile App v2</cre8-table-cell>
+            <cre8-table-cell>
+              <cre8-badge status="error">Blocked</cre8-badge>
+            </cre8-table-cell>
+            <cre8-table-cell>Carol Davis</cre8-table-cell>
+            <cre8-table-cell>Mar 01, 2026</cre8-table-cell>
+          </cre8-table-row>
+          <cre8-table-row>
+            <cre8-table-cell>Data Migration</cre8-table-cell>
+            <cre8-table-cell>
+              <cre8-badge status="success">Complete</cre8-badge>
+            </cre8-table-cell>
+            <cre8-table-cell>Dan Wilson</cre8-table-cell>
+            <cre8-table-cell>Feb 20, 2026</cre8-table-cell>
+          </cre8-table-row>
+        </cre8-table-body>
+      </cre8-table>
+    </cre8-section>
+    <cre8-section headline="Quick Actions">
+      <cre8-button-group>
+        <cre8-button text="New Project"></cre8-button>
+        <cre8-button text="Add Team Member" hierarchy="secondary"></cre8-button>
+        <cre8-button text="Generate Report" hierarchy="tertiary"></cre8-button>
+      </cre8-button-group>
+    </cre8-section>
+  </cre8-main>
+  <cre8-footer>
+    <cre8-text-passage>
+      <p>&copy; 2026 Cre8 Dashboard. All rights reserved.</p>
+    </cre8-text-passage>
+  </cre8-footer>
+</cre8-layout>
+</body>
+</html>

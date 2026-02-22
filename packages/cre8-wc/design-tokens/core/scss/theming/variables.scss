@@ -30,6 +30,7 @@
   @include cre8-typography-label-small();
   display: block;
   margin-bottom: size(1);
+  margin-left: var(--cre8-input-label-margin-left, 0px);
 }
 
 // Inverted form label styles
@@ -232,13 +233,14 @@
 @mixin input-styles() {
   @include cre8-typography-body-default();
   @include focusTransparent();
+  --size-base-unit: .5rem;
   -webkit-appearance: none;
   width: 100%;
   border-width: var(--cre8-border-width-default);
   border-style: solid;
   border-color: var(--cre8-color-border-strong);
   border-radius: var(--cre8-border-radius-default);
-  padding: size(1.5) size(1);
+  padding: var(--cre8-input-padding, size(1.5) size(1));
   color: var(--cre8-color-content-default);
   background-color: var(--cre8-color-bg-default);
   transition: outline-color var(--cre8-anim-fade-quick) var(--cre8-anim-ease), border-color var(--cre8-anim-fade-quick) var(--cre8-anim-ease), background-color var(--cre8-anim-fade-quick) var(--cre8-anim-ease), color var(--cre8-anim-fade-quick) var(--cre8-anim-ease);

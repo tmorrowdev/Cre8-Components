@@ -1,0 +1,59 @@
+{
+  "name": "@tmorrow/cre8-mcp",
+  "version": "0.5.0",
+  "description": "MCP server providing component intelligence for Cre8 design system (@tmorrow/cre8-wc and @tmorrow/cre8-react)",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "cre8-mcp": "./dist/index.js",
+    "cre8-mcp-api": "./dist/server.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "npx tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "start:api": "node dist/server.js",
+    "dev:api": "npx tsx watch src/server.ts"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "cre8",
+    "design-system",
+    "web-components",
+    "react",
+    "ai",
+    "claude",
+    "anthropic",
+    "component-library"
+  ],
+  "author": "Tyler Morrow",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tmorrowdev/Cre8-Components.git",
+    "directory": "packages/cre8-mcp"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.9",
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "hono": "^4.11.4",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.6.3"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./server": "./dist/server.js"
+  }
+}
