@@ -25,6 +25,9 @@ You are generating a complete, browser-ready HTML page using the cre8 web compon
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{PAGE_TITLE}}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
   <script type="module" src="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@latest/cdn/cre8-wc.esm.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@latest/lib/design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.css"/>
 </head>

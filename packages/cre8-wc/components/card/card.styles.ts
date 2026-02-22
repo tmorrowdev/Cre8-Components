@@ -336,5 +336,5 @@ span.ripple {
 }
 .cre8-c-card--horizontal-bare .cre8-c-card__footer {
   padding: 0;
-}/*# sourceMappingURL=card.module.css.map */`;
-export default styles;
+}`;
+export { styles };

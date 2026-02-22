@@ -1,7 +1,7 @@
-import { html,  } from 'lit';
+import { html, } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
-import styles from './card.styles.js';
+import { styles } from './card.styles.js';
 
 /** The card component acts a general container element sectioned off by slots: `header`, `body`, `footer`.
 *
@@ -24,7 +24,7 @@ import styles from './card.styles.js';
 * @slot footer - (Optional) Content in the card's footer
 */
 export class Cre8Card extends Cre8Element {
-    static styles = [styles];
+  static styles = [styles];
 
   /**
    * Style variants
@@ -34,39 +34,39 @@ export class Cre8Card extends Cre8Element {
    *   without a border and without padding around the content
    */
   @property()
-      variant?: 'bare' | 'horizontal' | 'horizontal-bare';
+  variant?: 'bare' | 'horizontal' | 'horizontal-bare';
 
   /**
    * Alignment variant
    * - **center** renders a card that has center aligned content/text
    */
   @property()
-      align?: 'center';
+  align?: 'center';
 
   render() {
-      const componentClassNames = this.componentClassNames('cre8-c-card', {
-          'cre8-c-card--bare': this.variant === 'bare',
-          'cre8-c-card--horizontal': this.variant === 'horizontal',
-          'cre8-c-card--horizontal-bare': this.variant === 'horizontal-bare',
-          'cre8-c-card--align-center': this.align === 'center',
-      });
+    const componentClassNames = this.componentClassNames('cre8-c-card', {
+      'cre8-c-card--bare': this.variant === 'bare',
+      'cre8-c-card--horizontal': this.variant === 'horizontal',
+      'cre8-c-card--horizontal-bare': this.variant === 'horizontal-bare',
+      'cre8-c-card--align-center': this.align === 'center',
+    });
 
-      return html`
+    return html`
       <div class="${componentClassNames}" part="card">
         ${this.slotNotEmpty('header')
-          && html`<div class="cre8-c-card__header" part="header"><slot name="header"></slot></div>`}
+      && html`<div class="cre8-c-card__header" part="header"><slot name="header"></slot></div>`}
         <div class="cre8-c-card__body" part="body">
           <slot></slot>
         </div>
         ${this.slotNotEmpty('footer')
-          && html`<div class="cre8-c-card__footer" part="footer"><slot name="footer"></slot></div>`}
+      && html`<div class="cre8-c-card__footer" part="footer"><slot name="footer"></slot></div>`}
       </div>
     `;
   }
 }
 
 if (customElements.get('cre8-card') === undefined) {
-    customElements.define('cre8-card', Cre8Card);
+  customElements.define('cre8-card', Cre8Card);
 }
 
 declare global {
