@@ -197,13 +197,6 @@ interface McpComponent {
 
 // ─── Transform Helpers ──────────────────────────────────────────────
 
-/**
- * Convert camelCase to kebab-case for HTML attribute names.
- * e.g. "fullWidth" → "full-width", "iconPosition" → "icon-position"
- */
-function toKebabCase(str: string): string {
-  return str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
-}
 
 /**
  * Parse a WCA type string into a base type and optional values array.
@@ -319,9 +312,7 @@ function transformTag(tag: WcaTag): McpComponent {
   const properties: Record<string, { type: string; values?: string[]; default?: string | boolean | number; description?: string }> = {};
 
   // Build a set of property names that WCA links to attributes
-  const propAttrMap = new Map(
-    (tag.properties || []).filter(p => p.attribute).map(p => [p.attribute!, p.name])
-  );
+
 
   for (const attr of tag.attributes || []) {
     const { type, values } = parseType(attr.type);
