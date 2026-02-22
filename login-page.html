@@ -7,8 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@1.1.6/cdn/cre8-wc.esm.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@1.1.6/lib/design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.css"/>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@1.1.7/cdn/cre8-wc.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@1.1.7/lib/design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.css"/>
 </head>
 <body>
 <cre8-layout>
@@ -17,7 +17,7 @@
       <div style="max-width: 440px; margin: 80px auto; padding: 0 16px;">
         <cre8-card>
           <cre8-heading heading-tag-variant="h1" slot="header">Sign In</cre8-heading>
-          <div style="display: flex; flex-direction: column; gap: 16px;" slot="body">
+          <div style="display: flex; flex-direction: column; gap: 16px;" >
             <cre8-text-passage>
               <p>Enter your credentials to access your account.</p>
             </cre8-text-passage>
@@ -30,7 +30,7 @@
           <div style="display: flex; flex-direction: column; gap: 12px; width: 100%;" slot="footer">
             <cre8-button text="Sign In" type="submit" full-width></cre8-button>
             <cre8-text-passage size="sm">
-              <p style="text-align: center;">Don't have an account? <a href="#" style="color: var(--cre8-color-brand-primary);">Create one</a></p>
+              <p style="text-align: center;">Don't have an account? <cre8-button text="Create one" variant="tertiary" ></cre8-button></p>
             </cre8-text-passage>
           </div>
         </cre8-card>
@@ -51,5 +51,10 @@
     </cre8-button-group>
   </cre8-modal>
 </cre8-layout>
+<script>
+  document.querySelector('cre8-button[text="Create one"]').addEventListener('click', () => {
+    document.querySelector('#forgot-password-modal').isActive = true;
+  });
+</script> 
 </body>
 </html>
