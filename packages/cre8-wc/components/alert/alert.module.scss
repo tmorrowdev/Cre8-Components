@@ -1,4 +1,4 @@
-@import "design-tokens/core/scss/theming/component";
+@import "../../design-tokens/core/scss/theming/component";
 
 dialog {
   border: none;
@@ -9,7 +9,7 @@ dialog {
   padding: var(--cre8-spacing-16);
   border-width: var(--cre8-border-width-default);
   border-style: var(--cre8-border-style-default);
-  border-radius: var(--cre8-border-radius-default);
+  border-radius: var(--cre8-border-radius-container) !important;
 
   .cre8-c-alert__container {
     display: flex;

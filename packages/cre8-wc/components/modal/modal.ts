@@ -5,11 +5,11 @@ import svgWarningFilled from '../../icons/System/Filled/Warning.svg?raw';
 import svgCheckCircle from '../../icons/System/Filled/Check.svg?raw';
 import svgInfoFilled from '../../icons/System/Filled/Info.svg?raw';
 import svgHelp from '../../icons/System/Regular/Help.svg?raw';
+import svgClose from '../../icons/System/Regular/Close.svg?raw';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon.js';
 import '@a11y/focus-trap';
 import styles from './modal.styles.js';
-import '../../icons/System/Regular/Close.svg?raw';
 
 /**
  * Modal component should be used in all modal situations.
@@ -198,9 +198,7 @@ export class Cre8Modal extends Cre8Element {
                 ? html`<cre8-button
                 class="cre8-c-modal__close-button"
                 variant="tertiary"
-                text="${this.closeButtonText}"
-                ?hideText=${true}
-                iconName="close"
+                svg=${svgClose}
                 iconPosition="after"
                 ?inverted=${!this.status}
                 @click=${this.handleCloseModal}

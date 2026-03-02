@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Cre8 Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@latest/cdn/cre8-wc.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@latest/lib/design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.css"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #f8f9fb;
+      color: #1a1a2e;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      padding: 80px 24px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 50%, rgba(99, 102, 241, 0.12) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 30%, rgba(14, 165, 233, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-title {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #fff;
+      margin: 0 0 12px;
+      position: relative;
+    }
+    .hero-title span {
+      background: linear-gradient(135deg, #818cf8, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin: 0 0 32px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+    }
+    .hero-search {
+      max-width: 480px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .hero-search input {
+      width: 100%;
+      padding: 14px 20px 14px 48px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      color: #fff;
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .hero-search input::placeholder { color: rgba(255,255,255,0.4); }
+    .hero-search input:focus {
+      border-color: rgba(129, 140, 248, 0.5);
+      background: rgba(255,255,255,0.12);
+    }
+    .hero-search svg {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255,255,255,0.4);
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Layout */
+    .page-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Category tabs */
+    .categories {
+      display: flex;
+      gap: 8px;
+      padding: 32px 0 8px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .cat-chip {
+      padding: 8px 20px;
+      border-radius: 100px;
+      border: 1px solid #e2e8f0;
+      background: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #64748b;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .cat-chip:hover { border-color: #6366f1; color: #6366f1; }
+    .cat-chip.active {
+      background: #6366f1;
+      border-color: #6366f1;
+      color: #fff;
+    }
+
+    /* Featured post */
+    .featured-section {
+      padding: 32px 0 16px;
+    }
+    .featured-card {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04);
+      transition: box-shadow 0.3s;
+    }
+    .featured-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 16px 40px rgba(0,0,0,0.06);
+    }
+    .featured-img {
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      object-fit: cover;
+      display: block;
+      background: linear-gradient(135deg, #6366f1, #0ea5e9);
+      position: relative;
+    }
+    .featured-img-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 40%, #0ea5e9 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .featured-img-placeholder svg {
+      width: 120px;
+      height: 120px;
+      color: rgba(255,255,255,0.25);
+    }
+    .featured-img-placeholder::after {
+      content: 'FEATURED';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 6px 14px;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(8px);
+      border-radius: 6px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #fff;
+    }
+    .featured-content {
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .featured-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .featured-content h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin: 0 0 14px;
+      line-height: 1.3;
+      color: #1a1a2e;
+    }
+    .featured-content p {
+      font-size: 0.95rem;
+      color: #64748b;
+      line-height: 1.7;
+      margin: 0 0 24px;
+    }
+    .featured-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: auto;
+    }
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .author-info .name { font-weight: 600; font-size: 0.9rem; color: #1a1a2e; }
+    .author-info .date { font-size: 0.8rem; color: #94a3b8; }
+
+    /* Section headers */
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 0 20px;
+    }
+    .section-header h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0;
+      color: #1a1a2e;
+    }
+
+    /* Post grid */
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      padding-bottom: 24px;
+    }
+    .post-card {
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.03);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .post-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08), 0 16px 40px rgba(0,0,0,0.04);
+    }
+    .post-thumb {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .post-thumb svg {
+      width: 48px;
+      height: 48px;
+      color: rgba(255,255,255,0.35);
+    }
+    .post-body {
+      padding: 22px 22px 20px;
+    }
+    .post-body .post-cat {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+    }
+    .post-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin: 0 0 10px;
+      color: #1a1a2e;
+    }
+    .post-body p {
+      font-size: 0.85rem;
+      color: #64748b;
+      line-height: 1.65;
+      margin: 0 0 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .post-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .post-footer .author-mini {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .post-footer .avatar {
+      width: 28px;
+      height: 28px;
+      font-size: 0.65rem;
+    }
+    .post-footer .author-mini span { font-size: 0.8rem; font-weight: 600; color: #475569; }
+    .post-footer .read-time { font-size: 0.75rem; color: #94a3b8; }
+
+    /* Sidebar */
+    .content-with-sidebar {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 32px;
+      padding: 0 0 48px;
+    }
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .sidebar-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .sidebar-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0 0 16px;
+      color: #1a1a2e;
+    }
+
+    /* Newsletter */
+    .newsletter-card {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+      color: #fff;
+    }
+    .newsletter-card h3 { color: #fff; }
+    .newsletter-card p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.8);
+      margin: 0 0 16px;
+      line-height: 1.6;
+    }
+    .newsletter-card input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      font-size: 0.9rem;
+      font-family: inherit;
+      margin-bottom: 10px;
+      outline: none;
+    }
+    .newsletter-card input::placeholder { color: rgba(255,255,255,0.5); }
+    .newsletter-card input:focus { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.18); }
+
+    /* Trending item */
+    .trending-item {
+      display: flex;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .trending-item:last-child { border-bottom: none; }
+    .trending-num {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #e2e8f0;
+      line-height: 1;
+      min-width: 28px;
+    }
+    .trending-info h4 {
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin: 0 0 4px;
+      color: #1a1a2e;
+      line-height: 1.4;
+    }
+    .trending-info span {
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+
+    /* Tags */
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag {
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: #f1f5f9;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+      font-family: inherit;
+    }
+    .tag:hover { background: #6366f1; color: #fff; }
+
+    /* Pagination section */
+    .pagination-section {
+      display: flex;
+      justify-content: center;
+      padding: 16px 0 48px;
+    }
+
+    /* Color palettes for post cards */
+    .grad-1 { background: linear-gradient(135deg, #6366f1, #a78bfa); }
+    .grad-2 { background: linear-gradient(135deg, #0ea5e9, #38bdf8); }
+    .grad-3 { background: linear-gradient(135deg, #f97316, #fb923c); }
+    .grad-4 { background: linear-gradient(135deg, #10b981, #34d399); }
+    .grad-5 { background: linear-gradient(135deg, #ec4899, #f472b6); }
+    .grad-6 { background: linear-gradient(135deg, #8b5cf6, #c084fc); }
+    .color-indigo { color: #6366f1; }
+    .color-sky { color: #0ea5e9; }
+    .color-orange { color: #f97316; }
+    .color-emerald { color: #10b981; }
+    .color-pink { color: #ec4899; }
+    .color-purple { color: #8b5cf6; }
+    .bg-indigo { background: #6366f1; }
+    .bg-sky { background: #0ea5e9; }
+    .bg-orange { background: #f97316; }
+    .bg-emerald { background: #10b981; }
+    .bg-pink { background: #ec4899; }
+    .bg-purple { background: #8b5cf6; }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .content-with-sidebar { grid-template-columns: 1fr; }
+      .featured-card { grid-template-columns: 1fr; }
+      .featured-img-placeholder { min-height: 240px; }
+      .posts-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .hero-title { font-size: 2rem; }
+      .posts-grid { grid-template-columns: 1fr; }
+      .categories { padding: 24px 0 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <cre8-header>
+    <cre8-primary-nav>
+      <cre8-primary-nav-item text="Home" href="#"></cre8-primary-nav-item>
+      <cre8-primary-nav-item text="Blog" href="#" is-active></cre8-primary-nav-item>
+      <cre8-primary-nav-item text="Categories" href="#"></cre8-primary-nav-item>
+      <cre8-primary-nav-item text="Authors" href="#"></cre8-primary-nav-item>
+      <cre8-primary-nav-item text="About" href="#"></cre8-primary-nav-item>
+    </cre8-primary-nav>
+  </cre8-header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1 class="hero-title">The <span>Cre8</span> Blog</h1>
+    <p class="hero-subtitle">Insights on design systems, web components, and building better digital experiences.</p>
+    <div class="hero-search">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/>
+      </svg>
+      <input type="text" placeholder="Search articles...">
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <div class="page-container">
+    <div class="categories">
+      <button class="cat-chip active">All Posts</button>
+      <button class="cat-chip">Design Systems</button>
+      <button class="cat-chip">Web Components</button>
+      <button class="cat-chip">Accessibility</button>
+      <button class="cat-chip">Performance</button>
+      <button class="cat-chip">CSS</button>
+      <button class="cat-chip">TypeScript</button>
+      <button class="cat-chip">Tutorials</button>
+    </div>
+  </div>
+
+  <!-- Featured Post -->
+  <div class="page-container">
+    <section class="featured-section">
+      <div class="featured-card">
+        <div class="featured-img-placeholder">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"/>
+          </svg>
+        </div>
+        <div class="featured-content">
+          <div class="featured-meta">
+            <cre8-badge text="Design Systems" status="info" variant="light"></cre8-badge>
+            <span style="font-size: 0.8rem; color: #94a3b8;">12 min read</span>
+          </div>
+          <h2>Building Scalable Design Systems with Web Components</h2>
+          <p>Learn how modern design systems leverage Web Components to create framework-agnostic, reusable UI primitives that work everywhere. We explore patterns for tokens, theming, and component architecture that scale across teams.</p>
+          <div class="featured-author">
+            <div class="avatar bg-indigo">SM</div>
+            <div class="author-info">
+              <div class="name">Sarah Mitchell</div>
+              <div class="date">Feb 20, 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main content + sidebar -->
+  <div class="page-container">
+    <div class="section-header">
+      <h2>Latest Articles</h2>
+      <cre8-button text="View All" variant="tertiary" size="sm"></cre8-button>
+    </div>
+
+    <div class="content-with-sidebar">
+      <!-- Posts grid -->
+      <div>
+        <div class="posts-grid">
+
+          <!-- Post 1 -->
+          <article class="post-card">
+            <div class="post-thumb grad-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/></svg>
+            </div>
+            <div class="post-body">
+              <span class="post-cat color-sky">Web Components</span>
+              <h3>Shadow DOM Deep Dive: Encapsulation Patterns That Work</h3>
+              <p>Understanding Shadow DOM boundaries, slotted content, and CSS custom properties for building truly encapsulated components.</p>
+              <div class="post-footer">
+                <div class="author-mini">
+                  <div class="avatar bg-sky">JD</div>
+                  <span>James Dalton</span>
+                </div>
+                <span class="read-time">8 min</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Post 2 -->
+          <article class="post-card">
+            <div class="post-thumb grad-3">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128Zm0 0a15.998 15.998 0 0 0 3.388-1.62m-5.043-.025a15.994 15.994 0 0 1 1.622-3.395m3.42 3.42a15.995 15.995 0 0 0 4.764-4.648l3.876-5.814a1.151 1.151 0 0 0-1.597-1.597L14.146 6.32a15.996 15.996 0 0 0-4.649 4.763m3.42 3.42a6.776 6.776 0 0 0-3.42-3.42"/></svg>
+            </div>
+            <div class="post-body">
+              <span class="post-cat color-orange">CSS</span>
+              <h3>Design Tokens: From Figma Variables to CSS Custom Properties</h3>
+              <p>A practical guide to automating design token pipelines using Style Dictionary, Figma variables, and CSS custom properties for multi-brand theming.</p>
+              <div class="post-footer">
+                <div class="author-mini">
+                  <div class="avatar bg-orange">AL</div>
+                  <span>Amy Lee</span>
+                </div>
+                <span class="read-time">10 min</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Post 3 -->
+          <article class="post-card">
+            <div class="post-thumb grad-4">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z"/></svg>
+            </div>
+            <div class="post-body">
+              <span class="post-cat color-emerald">Performance</span>
+              <h3>Lazy Loading Web Components: Strategies for Faster Pages</h3>
+              <p>Reduce initial bundle size by 60% with smart lazy loading, code splitting, and conditional component registration techniques.</p>
+              <div class="post-footer">
+                <div class="author-mini">
+                  <div class="avatar bg-emerald">RK</div>
+                  <span>Raj Kumar</span>
+                </div>
+                <span class="read-time">7 min</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Post 4 -->
+          <article class="post-card">
+            <div class="post-thumb grad-5">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/></svg>
+            </div>
+            <div class="post-body">
+              <span class="post-cat color-pink">Accessibility</span>
+              <h3>ARIA Patterns for Custom Form Controls in Web Components</h3>
+              <p>Build accessible custom selects, date pickers, and comboboxes. Covers ARIA roles, keyboard navigation, and screen reader testing strategies.</p>
+              <div class="post-footer">
+                <div class="author-mini">
+                  <div class="avatar bg-pink">MP</div>
+                  <span>Maya Patel</span>
+                </div>
+                <span class="read-time">14 min</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Post 5 -->
+          <article class="post-card">
+            <div class="post-thumb grad-6">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"/></svg>
+            </div>
+            <div class="post-body">
+              <span class="post-cat color-purple">TypeScript</span>
+              <h3>Type-Safe Web Components with Lit and TypeScript Decorators</h3>
+              <p>Leverage TypeScript decorators for reactive properties, custom events, and strongly-typed component APIs in your Lit-based design system.</p>
+              <div class="post-footer">
+                <div class="author-mini">
+                  <div class="avatar bg-purple">CW</div>
+                  <span>Chris Wong</span>
+                </div>
+                <span class="read-time">11 min</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Post 6 -->
+          <article class="post-card">
+            <div class="post-thumb grad-1">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"/></svg>
+            </div>
+            <div class="post-body">
+              <span class="post-cat color-indigo">Tutorials</span>
+              <h3>Build a Multi-Brand Component Library from Scratch</h3>
+              <p>Step-by-step tutorial on creating a themeable component library that supports multiple brands with shared architecture and separate tokens.</p>
+              <div class="post-footer">
+                <div class="author-mini">
+                  <div class="avatar bg-indigo">SM</div>
+                  <span>Sarah Mitchell</span>
+                </div>
+                <span class="read-time">18 min</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination-section">
+          <cre8-pagination totalresults="48" pagesize="6" currentpage="1" visiblepages="5"></cre8-pagination>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <!-- Newsletter -->
+        <div class="sidebar-card newsletter-card">
+          <h3>Stay Updated</h3>
+          <p>Get the latest articles on design systems and web components delivered to your inbox weekly.</p>
+          <input type="email" placeholder="your@email.com">
+          <cre8-button text="Subscribe" variant="secondary" inverse style="width: 100%;"></cre8-button>
+        </div>
+
+        <!-- Trending -->
+        <div class="sidebar-card">
+          <h3>Trending This Week</h3>
+          <div class="trending-item">
+            <span class="trending-num">01</span>
+            <div class="trending-info">
+              <h4>Why We Migrated from React to Web Components</h4>
+              <span>Sarah Mitchell &middot; 15.2k views</span>
+            </div>
+          </div>
+          <div class="trending-item">
+            <span class="trending-num">02</span>
+            <div class="trending-info">
+              <h4>The Future of CSS: What's Coming in 2026</h4>
+              <span>Amy Lee &middot; 12.8k views</span>
+            </div>
+          </div>
+          <div class="trending-item">
+            <span class="trending-num">03</span>
+            <div class="trending-info">
+              <h4>Micro-Frontends with Web Components</h4>
+              <span>Chris Wong &middot; 9.4k views</span>
+            </div>
+          </div>
+          <div class="trending-item">
+            <span class="trending-num">04</span>
+            <div class="trending-info">
+              <h4>Testing Web Components: A Complete Guide</h4>
+              <span>Raj Kumar &middot; 8.1k views</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="sidebar-card">
+          <h3>Popular Tags</h3>
+          <div class="tag-cloud">
+            <button class="tag">Lit</button>
+            <button class="tag">Shadow DOM</button>
+            <button class="tag">CSS Variables</button>
+            <button class="tag">Design Tokens</button>
+            <button class="tag">Storybook</button>
+            <button class="tag">a11y</button>
+            <button class="tag">Vite</button>
+            <button class="tag">TypeScript</button>
+            <button class="tag">SSR</button>
+            <button class="tag">Theming</button>
+            <button class="tag">Forms</button>
+            <button class="tag">Testing</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <cre8-footer>
+    <div slot="top">
+      <cre8-grid variant="1-4up" gap="sm">
+        <cre8-grid-item>
+          <cre8-text-passage>
+            <p style="font-weight: 700; margin-bottom: 12px;">The Cre8 Blog</p>
+            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.6;">Insights and tutorials on building modern, accessible design systems with web components.</p>
+          </cre8-text-passage>
+        </cre8-grid-item>
+        <cre8-grid-item>
+          <cre8-text-passage>
+            <p style="font-weight: 700; margin-bottom: 12px;">Categories</p>
+            <p style="font-size: 0.85rem;"><cre8-link href="#" inverted>Design Systems</cre8-link></p>
+            <p style="font-size: 0.85rem;"><cre8-link href="#" inverted>Web Components</cre8-link></p>
+            <p style="font-size: 0.85rem;"><cre8-link href="#" inverted>Accessibility</cre8-link></p>
+          </cre8-text-passage>
+        </cre8-grid-item>
+        <cre8-grid-item>
+          <cre8-text-passage>
+            <p style="font-weight: 700; margin-bottom: 12px;">Resources</p>
+            <p style="font-size: 0.85rem;"><cre8-link href="#" inverted>Documentation</cre8-link></p>
+            <p style="font-size: 0.85rem;"><cre8-link href="#" inverted>Storybook</cre8-link></p>
+            <p style="font-size: 0.85rem;"><cre8-link href="#" inverted>GitHub</cre8-link></p>
+          </cre8-text-passage>
+        </cre8-grid-item>
+        <cre8-grid-item>
+          <cre8-text-passage>
+            <p style="font-weight: 700; margin-bottom: 12px;">Connect</p>
+            <p style="font-size: 0.85rem;"><cre8-link href="#" inverted>Twitter / X</cre8-link></p>
+            <p style="font-size: 0.85rem;"><cre8-link href="#" inverted>Discord</cre8-link></p>
+            <p style="font-size: 0.85rem;"><cre8-link href="#" inverted>RSS Feed</cre8-link></p>
+          </cre8-text-passage>
+        </cre8-grid-item>
+      </cre8-grid>
+    </div>
+    <cre8-text-passage>
+      <p style="text-align: center; font-size: 0.85rem;">&copy; 2026 The Cre8 Blog. All rights reserved.</p>
+    </cre8-text-passage>
+  </cre8-footer>
+
+</body>
+</html>

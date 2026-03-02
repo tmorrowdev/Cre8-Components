@@ -4,6 +4,11 @@ import { createContext } from '@lit/context';
  * Extended ElementInternals interface with form lifecycle callbacks
  */
 export interface Cre8ElementInternals extends ElementInternals {
+    placeholder: any;
+    min: any;
+    max: any;
+    autocomplete: any;
+    readonly: any;
     formResetCallback?: () => void;
     ariaRole?: string;
 }
