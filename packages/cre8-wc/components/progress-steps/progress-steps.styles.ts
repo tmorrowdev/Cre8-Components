@@ -582,6 +582,10 @@ span.ripple {
 /**
  * Visually hidden from display
  */
+:host {
+  display: flex;
+}
+
 ::slotted(*) {
   flex: 1;
 }

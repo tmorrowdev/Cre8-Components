@@ -4,7 +4,7 @@
 /* eslint-disable indent */
 
 import { ifDefined } from 'lit-html/directives/if-defined.js';
-import { html, nothing,  } from 'lit';
+import { html, nothing, } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import svgCaretDown from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Down.svg?raw';
@@ -29,7 +29,7 @@ import Cre8CheckboxFieldItem from '../checkbox-field-item/checkbox-field-item';
  */
 export class Cre8MultiSelect extends Cre8Element {
   static styles = [styles];
-  
+
 
   /**
    * The list of string items the user can choose in the dropdown
@@ -425,14 +425,14 @@ export class Cre8MultiSelect extends Cre8Element {
             >
             </cre8-button>
             <cre8-button
-              ?hideText=${true}
-              svg="${svgCaretDown}"
+              hideText
+              svg=${svgCaretDown}
               variant="tertiary"
               ?disabled="${this.disabled}"
               class="cre8-c-multi-select__down_icon"
               @click="${this.dropdownArrowClick}"
               @keydown="${this._handleButtonToListKeydown}"
-              text="Open Dropdown"
+              aria-label="Open Dropdown"
               aria-expanded="${this.dropdownOpen}"
               aria-labelledby="${this.fieldId}"
             >
@@ -440,7 +440,7 @@ export class Cre8MultiSelect extends Cre8Element {
           </div>
         </div>
         ${this.dropdownOpen
-          ? html`
+        ? html`
             <fieldset class="cre8-c-multi-select__dropdown" aria-describedby="${this.fieldId}">
               <ul
                 aria-label="available items"
@@ -449,7 +449,7 @@ export class Cre8MultiSelect extends Cre8Element {
                 ${this._renderDropdownItems()}
               </ul>
             </fieldset>`
-          : nothing}
+        : nothing}
       </div>
       ${this.fieldNote || this.slotNotEmpty('fieldNote')
         ? html`<cre8-field-note

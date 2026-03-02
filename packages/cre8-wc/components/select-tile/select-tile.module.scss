@@ -6,6 +6,16 @@
   display: inline-flex;
 }
 
+.cre8-c-select-tile-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-color: var(--cre8-color-border-default);
+  border-width: var(--cre8-border-width-default);
+  border-radius: var(--cre8-border-radius-container);
+  border-style: solid;
+}
+
 .cre8-c-select-tile {
   position: relative;
   overflow: hidden;
@@ -16,10 +26,7 @@
   width: 100%;
   padding: size(2);
   gap: 1rem;
-  border-color: var(--cre8-color-border-default);
-  border-width: var(--cre8-border-width-default);
-  border-radius: var(--cre8-border-radius-default);
-  border-style: solid;
+
   background: var(--cre8-color-bg-default);
 
   &:hover,
