@@ -1,6 +1,7 @@
 .DS_Store
 dist
 lib
+cdn
 node_modules
 /.vscode
 

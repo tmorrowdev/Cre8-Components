@@ -5,6 +5,8 @@ import React from 'react';
 export interface Cre8DatePickerProps {
   /** Quick Shortcuts Variant */
   hasShortcuts?: boolean | undefined;
+  /** The required label that appears above the input */
+  label?: string;
   /** Autocomplete attribute that allows input to expect certain types of information. Note: autocomplete is supported by most browsers, but the suggested 'completions' are also sourced from those browsers. Values come from past user stored data from past interactions in that browser, such as:   1. From past values entered by the user, but they may also come from pre-configured values. For  instance, a browser might let the user save their name, address, phone number, and email addresses for  autocomplete purposes.   2. Perhaps the browser offers the ability to save encrypted credit card information, for autocompletion  following a an authentication procedure.  See: [MDN web docs_](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete)   NOTE:: In order to provide autocompletion, user-agents might require input, select, textarea  elements to:   1. Have a {{name}} and/or {{id}} attribute  2. Be descendants of a form element  3. The form to have a [submit button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit) */
   autocomplete?: any;
   /** Pattern attribute defines a regular expression to validate against input */
@@ -13,8 +15,6 @@ export interface Cre8DatePickerProps {
   type?: any;
   /** The placeholder text that appears inside the input */
   placeholder?: string | undefined;
-  /** The required label that appears above the input */
-  label?: string;
   /** The unique id of the field <br/><br/> _*This property is dynamically set_ */
   fieldId?: string | undefined;
   /** The text that displays below in text field input */
