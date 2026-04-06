@@ -16,7 +16,7 @@ export interface Cre8ButtonProps {
   /** * Variant of the loading button that:   * Removes loading spinner   * Informs the SR user that the loading status is now complete, with visually hidden text in the live area */
   loadingComplete?: boolean | undefined;
   /** The button text. Should be as short and simple as possible, ideally a maximum of 3 words. - Use Title Case for readability. - Should not include punctuation (exception: "Loading..."). - Should not be used as an indicator of what happens on the next page, or as a substitute for a progress meter. */
-  text?: string;
+  text?: string | undefined;
   /** Style variant - **primary** renders the button used for primary actions. Presents highest visual priority.   When grouped with other buttons, only one primary is allowed - **secondary** renders a secondary button. Presents a lower visual priority - **tertiary** renders a tertiary button. Presents the lowest visual priority.   Should be used in limited amounts - consider if a link (`<a>`) would be more appropriate */
   variant?: any;
   /** Provide this property if you intend to use button styles for an anchor tag (`<a>`). This changes the component markup from `<button>` usage to `<a>` instead. */
