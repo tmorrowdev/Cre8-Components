@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Store Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1" integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f0f2f5;
+            color: #1a1a2e;
+            line-height: 1.5;
+        }
+        .dashboard {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+        header h1 span { color: #6c63ff; }
+        .subtitle { font-size: 14px; color: #666; font-weight: 400; }
+        .filters {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .filters label { font-size: 13px; font-weight: 600; color: #555; }
+        .filters select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            background: #fff;
+            cursor: pointer;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .filters select:focus { border-color: #6c63ff; }
+
+        .kpis {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .kpi-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .kpi-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+        .kpi-label { font-size: 13px; color: #888; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .kpi-value { font-size: 32px; font-weight: 700; margin: 8px 0 4px; }
+        .kpi-change { font-size: 13px; font-weight: 600; }
+        .kpi-change.up { color: #22c55e; }
+        .kpi-change.down { color: #ef4444; }
+        .kpi-icon { font-size: 24px; float: right; }
+
+        .charts {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .chart-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .chart-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #333;
+        }
+        .chart-container { position: relative; width: 100%; }
+
+        .charts-row2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .details {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .details h3 { font-size: 16px; font-weight: 600; margin-bottom: 16px; color: #333; }
+        .table-wrapper { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        thead th {
+            text-align: left;
+            padding: 12px 16px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+            font-weight: 600;
+            color: #555;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+        }
+        thead th:hover { color: #6c63ff; }
+        thead th .sort-arrow { margin-left: 4px; font-size: 11px; color: #aaa; }
+        thead th.sorted .sort-arrow { color: #6c63ff; }
+        tbody td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        tbody tr:hover { background: #f8f9ff; }
+        .stock-badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .stock-high { background: #dcfce7; color: #16a34a; }
+        .stock-medium { background: #fef3c7; color: #d97706; }
+        .stock-low { background: #fee2e2; color: #dc2626; }
+
+        .sample-note {
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 900px) {
+            .charts, .charts-row2 { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .dashboard { padding: 12px; }
+            header h1 { font-size: 22px; }
+            .kpi-value { font-size: 24px; }
+        }
+        @media print {
+            body { background: #fff; }
+            .kpi-card, .chart-card, .details { box-shadow: none; border: 1px solid #ddd; }
+        }
+    </style>
+</head>
+<body>
+<div class="dashboard">
+    <header>
+        <div>
+            <h1>&#128062; Pet Store <span>Dashboard</span></h1>
+            <div class="subtitle">Inventory &amp; Sales Overview &mdash; Sample Data</div>
+        </div>
+        <div class="filters">
+            <div>
+                <label for="monthFilter">Month</label><br>
+                <select id="monthFilter"><option value="all">All Months</option></select>
+            </div>
+            <div>
+                <label for="categoryFilter">Category</label><br>
+                <select id="categoryFilter"><option value="all">All Categories</option></select>
+            </div>
+        </div>
+    </header>
+
+    <section class="kpis">
+        <div class="kpi-card"><div class="kpi-icon">&#128176;</div><div class="kpi-label">Total Revenue</div><div class="kpi-value" id="kpiRevenue">--</div><div class="kpi-change up" id="kpiRevenueChange">--</div></div>
+        <div class="kpi-card"><div class="kpi-icon">&#128722;</div><div class="kpi-label">Total Orders</div><div class="kpi-value" id="kpiOrders">--</div><div class="kpi-change up" id="kpiOrdersChange">--</div></div>
+        <div class="kpi-card"><div class="kpi-icon">&#128200;</div><div class="kpi-label">Avg Order Value</div><div class="kpi-value" id="kpiAOV">--</div><div class="kpi-change up" id="kpiAOVChange">--</div></div>
+        <div class="kpi-card"><div class="kpi-icon">&#128230;</div><div class="kpi-label">Inventory Value</div><div class="kpi-value" id="kpiInventory">--</div><div class="kpi-change" id="kpiInventoryChange">&nbsp;</div></div>
+    </section>
+
+    <section class="charts">
+        <div class="chart-card">
+            <h3>Monthly Revenue Trend</h3>
+            <div class="chart-container"><canvas id="revenueChart"></canvas></div>
+        </div>
+        <div class="chart-card">
+            <h3>Sales by Category</h3>
+            <div class="chart-container"><canvas id="categoryChart"></canvas></div>
+        </div>
+    </section>
+
+    <section class="charts-row2">
+        <div class="chart-card">
+            <h3>Top 10 Products by Revenue</h3>
+            <div class="chart-container"><canvas id="topProductsChart"></canvas></div>
+        </div>
+        <div class="chart-card">
+            <h3>Inventory Levels by Category</h3>
+            <div class="chart-container"><canvas id="inventoryChart"></canvas></div>
+        </div>
+    </section>
+
+    <section class="details">
+        <h3>Product Inventory Detail</h3>
+        <div class="table-wrapper">
+            <table id="productTable">
+                <thead>
+                    <tr>
+                        <th data-col="name">Product <span class="sort-arrow">&#9650;&#9660;</span></th>
+                        <th data-col="category">Category <span class="sort-arrow">&#9650;&#9660;</span></th>
+                        <th data-col="price">Price <span class="sort-arrow">&#9650;&#9660;</span></th>
+                        <th data-col="stock">Stock <span class="sort-arrow">&#9650;&#9660;</span></th>
+                        <th data-col="unitsSold">Units Sold <span class="sort-arrow">&#9650;&#9660;</span></th>
+                        <th data-col="revenue">Revenue <span class="sort-arrow">&#9650;&#9660;</span></th>
+                        <th data-col="status">Status</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </section>
+
+    <div class="sample-note">Dashboard uses sample data for demonstration purposes.</div>
+</div>
+
+<script>
+// ── Sample Data ──
+const CATEGORIES = ['Dog Food', 'Cat Food', 'Toys', 'Grooming', 'Aquarium', 'Bird Supplies', 'Treats', 'Accessories'];
+const COLORS = ['#6c63ff','#ff6b6b','#feca57','#48dbfb','#ff9ff3','#54a0ff','#5f27cd','#01a3a4'];
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+const PRODUCTS = [
+    { name: 'Premium Dog Kibble 15lb', category: 'Dog Food', price: 42.99, stock: 145, unitsSold: 312 },
+    { name: 'Grain-Free Dog Food 10lb', category: 'Dog Food', price: 38.49, stock: 98, unitsSold: 245 },
+    { name: 'Puppy Formula 5lb', category: 'Dog Food', price: 24.99, stock: 67, unitsSold: 189 },
+    { name: 'Indoor Cat Food 8lb', category: 'Cat Food', price: 29.99, stock: 112, unitsSold: 278 },
+    { name: 'Senior Cat Food 6lb', category: 'Cat Food', price: 31.49, stock: 54, unitsSold: 156 },
+    { name: 'Kitten Formula 4lb', category: 'Cat Food', price: 19.99, stock: 88, unitsSold: 201 },
+    { name: 'Squeaky Ball Set (3pk)', category: 'Toys', price: 12.99, stock: 234, unitsSold: 456 },
+    { name: 'Catnip Mouse Trio', category: 'Toys', price: 8.99, stock: 312, unitsSold: 523 },
+    { name: 'Rope Tug Toy', category: 'Toys', price: 9.49, stock: 187, unitsSold: 334 },
+    { name: 'Interactive Puzzle Feeder', category: 'Toys', price: 22.99, stock: 76, unitsSold: 198 },
+    { name: 'Dog Shampoo 16oz', category: 'Grooming', price: 14.99, stock: 156, unitsSold: 287 },
+    { name: 'Deshedding Brush', category: 'Grooming', price: 18.99, stock: 93, unitsSold: 215 },
+    { name: 'Nail Clipper Pro', category: 'Grooming', price: 11.99, stock: 128, unitsSold: 178 },
+    { name: 'Tropical Fish Flakes 4oz', category: 'Aquarium', price: 7.99, stock: 203, unitsSold: 345 },
+    { name: '10 Gallon Tank Kit', category: 'Aquarium', price: 89.99, stock: 23, unitsSold: 67 },
+    { name: 'LED Aquarium Light', category: 'Aquarium', price: 34.99, stock: 45, unitsSold: 112 },
+    { name: 'Parakeet Seed Mix 3lb', category: 'Bird Supplies', price: 12.49, stock: 167, unitsSold: 234 },
+    { name: 'Bird Cage - Medium', category: 'Bird Supplies', price: 64.99, stock: 18, unitsSold: 42 },
+    { name: 'Cuttlebone 2-Pack', category: 'Bird Supplies', price: 5.99, stock: 245, unitsSold: 312 },
+    { name: 'Beef Jerky Treats 12oz', category: 'Treats', price: 16.99, stock: 178, unitsSold: 389 },
+    { name: 'Dental Chews 30pk', category: 'Treats', price: 21.49, stock: 134, unitsSold: 298 },
+    { name: 'Salmon Cat Treats 6oz', category: 'Treats', price: 9.99, stock: 210, unitsSold: 412 },
+    { name: 'Training Treats Variety', category: 'Treats', price: 13.99, stock: 156, unitsSold: 267 },
+    { name: 'Adjustable Dog Collar', category: 'Accessories', price: 15.99, stock: 198, unitsSold: 356 },
+    { name: 'Retractable Leash 16ft', category: 'Accessories', price: 24.99, stock: 87, unitsSold: 213 },
+    { name: 'Pet Carrier - Medium', category: 'Accessories', price: 44.99, stock: 34, unitsSold: 89 },
+    { name: 'Heated Pet Bed', category: 'Accessories', price: 54.99, stock: 42, unitsSold: 134 },
+    { name: 'Automatic Water Fountain', category: 'Accessories', price: 32.99, stock: 65, unitsSold: 178 },
+];
+
+// Generate monthly sales data with seasonality
+function generateMonthlySales() {
+    const sales = [];
+    const seasonality = [0.85, 0.8, 0.9, 0.95, 1.0, 0.9, 0.85, 0.88, 1.0, 1.05, 1.15, 1.3];
+    for (let m = 0; m < 12; m++) {
+        PRODUCTS.forEach(p => {
+            const base = p.unitsSold / 12;
+            const units = Math.round(base * seasonality[m] * (0.8 + Math.random() * 0.4));
+            sales.push({ month: m, product: p.name, category: p.category, price: p.price, units, revenue: +(units * p.price).toFixed(2) });
+        });
+    }
+    return sales;
+}
+
+const SALES = generateMonthlySales();
+
+// ── State ──
+let filteredSales = [...SALES];
+let sortCol = 'revenue';
+let sortAsc = false;
+
+// ── Charts ──
+let revenueChart, categoryChart, topProductsChart, inventoryChart;
+
+function initCharts() {
+    const ctx1 = document.getElementById('revenueChart').getContext('2d');
+    revenueChart = new Chart(ctx1, {
+        type: 'bar',
+        data: { labels: MONTHS, datasets: [
+            { label: 'Revenue', data: [], backgroundColor: '#6c63ff99', borderColor: '#6c63ff', borderWidth: 2, borderRadius: 6 },
+            { label: 'Trend', data: [], type: 'line', borderColor: '#ff6b6b', borderWidth: 2, pointRadius: 3, tension: 0.3, fill: false }
+        ]},
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'top' },
+                tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': $' + ctx.raw.toLocaleString() }}
+            },
+            scales: { y: { beginAtZero: true, ticks: { callback: v => '$' + (v/1000).toFixed(0) + 'k' }}}
+        }
+    });
+
+    const ctx2 = document.getElementById('categoryChart').getContext('2d');
+    categoryChart = new Chart(ctx2, {
+        type: 'doughnut',
+        data: { labels: CATEGORIES, datasets: [{ data: [], backgroundColor: COLORS, borderWidth: 2, borderColor: '#fff' }]},
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'bottom', labels: { boxWidth: 12, padding: 12 }},
+                tooltip: { callbacks: { label: ctx => ctx.label + ': $' + ctx.raw.toLocaleString() }}
+            }
+        }
+    });
+
+    const ctx3 = document.getElementById('topProductsChart').getContext('2d');
+    topProductsChart = new Chart(ctx3, {
+        type: 'bar',
+        data: { labels: [], datasets: [{ data: [], backgroundColor: COLORS.map(c => c + '99'), borderColor: COLORS, borderWidth: 1, borderRadius: 4 }]},
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: { callbacks: { label: ctx => '$' + ctx.raw.toLocaleString() }}
+            },
+            scales: { x: { ticks: { callback: v => '$' + (v/1000).toFixed(0) + 'k' }}}
+        }
+    });
+
+    const ctx4 = document.getElementById('inventoryChart').getContext('2d');
+    inventoryChart = new Chart(ctx4, {
+        type: 'bar',
+        data: { labels: [], datasets: [
+            { label: 'In Stock', data: [], backgroundColor: '#22c55e99', borderColor: '#22c55e', borderWidth: 1, borderRadius: 4 },
+            { label: 'Units Sold', data: [], backgroundColor: '#6c63ff99', borderColor: '#6c63ff', borderWidth: 1, borderRadius: 4 }
+        ]},
+        options: {
+            responsive: true,
+            plugins: { legend: { position: 'top' }},
+            scales: { x: { stacked: false }, y: { beginAtZero: true }}
+        }
+    });
+}
+
+// ── Filters ──
+function populateFilters() {
+    const mf = document.getElementById('monthFilter');
+    MONTHS.forEach((m, i) => { const o = document.createElement('option'); o.value = i; o.textContent = m; mf.appendChild(o); });
+
+    const cf = document.getElementById('categoryFilter');
+    CATEGORIES.forEach(c => { const o = document.createElement('option'); o.value = c; o.textContent = c; cf.appendChild(o); });
+
+    mf.addEventListener('change', applyFilters);
+    cf.addEventListener('change', applyFilters);
+}
+
+function applyFilters() {
+    const month = document.getElementById('monthFilter').value;
+    const cat = document.getElementById('categoryFilter').value;
+    filteredSales = SALES.filter(s => {
+        if (month !== 'all' && s.month !== +month) return false;
+        if (cat !== 'all' && s.category !== cat) return false;
+        return true;
+    });
+    updateAll();
+}
+
+// ── Update Functions ──
+function fmt(n) { return '$' + n.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 }); }
+
+function updateKPIs() {
+    const totalRev = filteredSales.reduce((s, r) => s + r.revenue, 0);
+    const totalUnits = filteredSales.reduce((s, r) => s + r.units, 0);
+    const aov = totalUnits > 0 ? totalRev / totalUnits : 0;
+    const catFilter = document.getElementById('categoryFilter').value;
+    const invValue = PRODUCTS.reduce((s, p) => {
+        if (catFilter !== 'all' && p.category !== catFilter) return s;
+        return s + p.stock * p.price;
+    }, 0);
+
+    document.getElementById('kpiRevenue').textContent = fmt(totalRev);
+    document.getElementById('kpiOrders').textContent = totalUnits.toLocaleString();
+    document.getElementById('kpiAOV').textContent = fmt(aov);
+    document.getElementById('kpiInventory').textContent = fmt(invValue);
+
+    document.getElementById('kpiRevenueChange').textContent = '+12.4% vs last year';
+    document.getElementById('kpiOrdersChange').textContent = '+8.2% vs last year';
+    document.getElementById('kpiAOVChange').textContent = '+3.1% vs last year';
+    document.getElementById('kpiAOVChange').className = 'kpi-change up';
+}
+
+function updateCharts() {
+    // Revenue by month
+    const monthlyRev = MONTHS.map((_, i) => filteredSales.filter(s => s.month === i).reduce((sum, s) => sum + s.revenue, 0));
+    revenueChart.data.datasets[0].data = monthlyRev;
+    revenueChart.data.datasets[1].data = monthlyRev;
+    revenueChart.update();
+
+    // Category breakdown
+    const catRev = CATEGORIES.map(c => filteredSales.filter(s => s.category === c).reduce((sum, s) => sum + s.revenue, 0));
+    categoryChart.data.datasets[0].data = catRev;
+    categoryChart.update();
+
+    // Top 10 products
+    const prodMap = {};
+    filteredSales.forEach(s => { prodMap[s.product] = (prodMap[s.product] || 0) + s.revenue; });
+    const top10 = Object.entries(prodMap).sort((a, b) => b[1] - a[1]).slice(0, 10);
+    topProductsChart.data.labels = top10.map(([n]) => n.length > 25 ? n.slice(0, 25) + '...' : n);
+    topProductsChart.data.datasets[0].data = top10.map(([, v]) => Math.round(v));
+    topProductsChart.update();
+
+    // Inventory by category
+    const catFilter = document.getElementById('categoryFilter').value;
+    const cats = catFilter === 'all' ? CATEGORIES : [catFilter];
+    const stockByCat = cats.map(c => PRODUCTS.filter(p => p.category === c).reduce((s, p) => s + p.stock, 0));
+    const soldByCat = cats.map(c => filteredSales.filter(s => s.category === c).reduce((s, r) => s + r.units, 0));
+    inventoryChart.data.labels = cats;
+    inventoryChart.data.datasets[0].data = stockByCat;
+    inventoryChart.data.datasets[1].data = soldByCat;
+    inventoryChart.update();
+}
+
+function updateTable() {
+    const prodData = {};
+    filteredSales.forEach(s => {
+        if (!prodData[s.product]) prodData[s.product] = { name: s.product, category: s.category, price: s.price, stock: 0, unitsSold: 0, revenue: 0 };
+        prodData[s.product].unitsSold += s.units;
+        prodData[s.product].revenue += s.revenue;
+    });
+    Object.values(prodData).forEach(p => { const orig = PRODUCTS.find(o => o.name === p.name); if (orig) p.stock = orig.stock; });
+
+    let rows = Object.values(prodData);
+    rows.sort((a, b) => sortAsc ? (a[sortCol] > b[sortCol] ? 1 : -1) : (a[sortCol] < b[sortCol] ? 1 : -1));
+
+    const tbody = document.querySelector('#productTable tbody');
+    tbody.innerHTML = rows.map(r => {
+        const status = r.stock > 100 ? 'high' : r.stock > 40 ? 'medium' : 'low';
+        const label = r.stock > 100 ? 'In Stock' : r.stock > 40 ? 'Medium' : 'Low Stock';
+        return '<tr>' +
+            '<td>' + r.name + '</td>' +
+            '<td>' + r.category + '</td>' +
+            '<td>' + fmt(r.price) + '</td>' +
+            '<td>' + r.stock + '</td>' +
+            '<td>' + r.unitsSold.toLocaleString() + '</td>' +
+            '<td>' + fmt(r.revenue) + '</td>' +
+            '<td><span class="stock-badge stock-' + status + '">' + label + '</span></td>' +
+        '</tr>';
+    }).join('');
+
+    document.querySelectorAll('#productTable th').forEach(th => {
+        th.classList.toggle('sorted', th.dataset.col === sortCol);
+    });
+}
+
+function updateAll() {
+    updateKPIs();
+    updateCharts();
+    updateTable();
+}
+
+// ── Table Sorting ──
+document.querySelectorAll('#productTable th[data-col]').forEach(th => {
+    th.addEventListener('click', () => {
+        const col = th.dataset.col;
+        if (sortCol === col) { sortAsc = !sortAsc; } else { sortCol = col; sortAsc = col === 'name' || col === 'category'; }
+        updateTable();
+    });
+});
+
+// ── Init ──
+populateFilters();
+initCharts();
+updateAll();
+</script>
+</body>
+</html>
