@@ -1,5 +1,6 @@
 import { html, unsafeCSS } from 'lit';
 import { Cre8Element } from '../cre8-element';
+import '../progress-steps-item/progress-steps-item.js';
 import styles from './progress-steps.styles.js';
 
 /**
@@ -41,6 +42,10 @@ if (customElements.get('cre8-progress-steps') === undefined) {
   customElements.define('cre8-progress-steps', Cre8ProgressSteps);
 }
 
-declare global { interface HTMLElementTagNameMap { 'cre8-progress-steps': Cre8ProgressSteps; } }
+declare global {
+  interface HTMLElementTagNameMap {
+    'cre8-progress-steps': Cre8ProgressSteps;
+  }
+}
 
 export default Cre8ProgressSteps;

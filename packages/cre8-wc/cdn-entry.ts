@@ -95,6 +95,8 @@ import { Cre8Popover } from './components/popover/popover';
 import { Cre8PrimaryNav } from './components/primary-nav/primary-nav';
 import { Cre8PrimaryNavItem } from './components/primary-nav-item/primary-nav-item';
 import { Cre8ProgressMeter } from './components/progress-meter/progress-meter';
+import { Cre8ProgressSteps } from './components/progress-steps/progress-steps';
+import { Cre8ProgressStepsItem } from './components/progress-steps-item/progress-steps-item';
 import { Cre8RadioField } from './components/radio-field/radio-field';
 import { Cre8RadioFieldItem } from './components/radio-field-item/radio-field-item';
 import { Cre8RemoveTag } from './components/remove-tag/remove-tag';
@@ -151,6 +153,8 @@ export {
   Cre8DropdownItem,
   Cre8Feature,
   Cre8Field,
+  Cre8ProgressSteps,
+  Cre8ProgressStepsItem,
   Cre8FieldNote,
   Cre8Footer,
   Cre8GlobalNav,
