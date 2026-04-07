@@ -6,9 +6,10 @@
   "scripts": {
     "start": "pnpm run build:custom-elements.json && pnpm run storybook",
     "compile-styles": "npx tsx scripts/convert-scss-to-ts.ts",
-    "build": "rm -rf lib && pnpm run compile-styles && pnpm build:cdn && vite build && tsc && cp .storybook/custom-elements.json custom-elements.json && npx tsx scripts/generate-react-wrappers.ts && cd react-wrappers && npx tsc && cd .. && pnpm run build:mcp-manifest",
+    "build": "rm -rf lib && pnpm run compile-styles && pnpm build:cdn && vite build && tsc && cp .storybook/custom-elements.json custom-elements.json && pnpm run build:react && pnpm run build:mcp-manifest",
     "build:mcp-manifest": "npx web-component-analyzer analyze \"components/*/*.ts\" --format json --outFile /tmp/wca-raw.json && npx tsx scripts/generate-mcp-manifest.ts",
     "build:cdn": "rm -rf cdn && vite build --config vite.config.cdn.ts",
+    "build:react": "rm -rf react-wrappers && npx tsx scripts/generate-react-wrappers.ts && cd react-wrappers && npx tsc",
     "build:all": "pnpm run build:cdn && pnpm run build",
     "build:watch": "vite build --watch",
     "build:custom-elements.json": "npx @custom-elements-manifest/analyzer analyze --litelement --globs \"components/*/*.ts\" --outdir .storybook",
