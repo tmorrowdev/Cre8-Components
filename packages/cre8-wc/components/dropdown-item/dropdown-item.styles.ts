@@ -1,34 +1,3 @@
 import { css } from 'lit';
-const styles = css`@import '../../design-tokens/core/scss/theming/component';
-
-/**
- * 1) Dropdown Item
- */
-
-.cre8-dropdown-item {
-  list-style-type: none;
-  > {
-    button {
-      @include cre8-typography-body-default;
-      background-color: var(--cre8-color-bg-default);
-      border: var(--cre8-border-width-none);
-      border-radius: var(--cre8-border-radius-default);
-      color: var(--cre8-color-content-default);
-      width: 100%;
-      cursor: pointer;
-      margin: var(--cre8-spacing-0);
-      padding: var(--cre8-spacing-8) var(--cre8-spacing-8);
-      text-align: left;
-
-      &:active,
-      &:hover,
-      &:focus {
-        background-color: var(--cre8-color-bg-brand-hover);
-        color: var(--cre8-color-content-default);
-        outline: var(--cre8-border-width-none);
-      }
-    }
-  }
-}
-`;
+const styles = css`*,::slotted(*),*:before,*:after{box-sizing:border-box}:root{--size-base-unit: 0.5rem}[dir=rtl]{--rtlTranslateX: 50%;--rtlGradientToRight: 270deg;--rtlRotate45Inverse: -45deg}:host{--cre8-z-index-1: 1;--cre8-z-index-50: 50;--cre8-z-index-100: 100;--cre8-z-index-200: 200;--cre8-z-index-1030: 1030;--cre8-anim-fade-quick: 0.35s;--cre8-anim-ease: ease}@keyframes fadeIn{100%{opacity:1}}@keyframes slideIn{100%{transform:translateX(0)}}@keyframes slideInFwd{100%{width:272px;height:272px}}@keyframes slideOutRight{100%{width:272px;height:272px}}@keyframes slideUp{100%{transform:translateY(0)}}@media(width >= 481px){@keyframes slideInFwd{100%{width:417px;height:417px}}@keyframes slideOutRight{100%{width:417px;height:417px}}}@media(width >= 48rem){@keyframes slideInFwd{100%{width:330px;height:330px}}@keyframes slideOutRight{100%{width:330px;height:330px;transform:translateX(calc(100vw - 45px))}}}@media(width >= 60rem){@keyframes slideInFwd{100%{width:460px;height:460px}}@keyframes slideOutRight{100%{width:460px;height:460px;transform:translateX(calc(100vw - 45px))}}}@media(width >= 75rem){@keyframes slideInFwd{100%{width:592px;height:591px}}@keyframes slideOutRight{100%{width:592px;height:591px;transform:translateX(calc(100vw - 45px))}}}@media(width >= 87.5rem){@keyframes slideOutRight{100%{width:592px;height:591px;transform:translateX(calc(100vw - 120px))}}}@media(width >= 2200px){@keyframes slideOutRight{100%{width:592px;height:591px;transform:translateX(calc(100vw - 592px))}}}span.ripple{position:absolute;border-radius:50%;transform:scale(0);animation:ripple 600ms linear;background-color:var(--ripple-bg-color)}@keyframes ripple{to{transform:scale(4);opacity:1}}:root{--size-base-unit: 0.5rem}[dir=rtl]{--rtlTranslateX: 50%;--rtlGradientToRight: 270deg;--rtlRotate45Inverse: -45deg}.cre8-dropdown-item{list-style-type:none}.cre8-dropdown-item>button{font-family:var(--cre8-typography-body-default-font-family);font-size:var(--cre8-typography-body-default-font-size);font-weight:var(--cre8-typography-body-default-font-weight);line-height:var(--cre8-typography-body-default-line-height);text-decoration:var(--cre8-typography-body-default-text-decoration);text-transform:var(--cre8-typography-body-default-text-transform);background-color:var(--cre8-color-bg-default);border:var(--cre8-border-width-none);border-radius:var(--cre8-border-radius-default);color:var(--cre8-color-content-default);width:100%;cursor:pointer;margin:var(--cre8-spacing-0);padding:var(--cre8-spacing-8) var(--cre8-spacing-8);text-align:left}.cre8-dropdown-item>button:active,.cre8-dropdown-item>button:hover,.cre8-dropdown-item>button:focus{background-color:var(--cre8-color-bg-brand-hover);color:var(--cre8-color-content-default);outline:var(--cre8-border-width-none)}`;
 export default styles;
