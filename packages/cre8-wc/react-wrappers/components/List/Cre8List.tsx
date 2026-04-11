@@ -4,9 +4,9 @@ import React from 'react';
 
 export interface Cre8ListProps {
   /** Style variants <cre8-text-passage size="sm"> <ul> <li>**bare** removes any lines from in between list items</li> </ul> </cre8-text-passage> */
-  variant?: "bare" | undefined;
+  variant?: any;
   /** Spacing variants <cre8-text-passage size="sm"> <ul> <li>**padded** applies more padding in between list items compared to the default</li> <li>**condensed** reduces padding in between list items compared to the default</li> </ul> </cre8-text-passage> */
-  spacing?: "condensed" | "padded" | undefined;
+  spacing?: any;
   children?: React.ReactNode;
 }
 

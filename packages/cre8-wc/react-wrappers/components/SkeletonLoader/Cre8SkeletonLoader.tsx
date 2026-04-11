@@ -6,9 +6,9 @@ export interface Cre8SkeletonLoaderProps {
   /** Style variant - **rectangle** renders a featureless rectangle as a placeholder for loading elements - **square** renders a featureless square as a placeholder for loading elements - **circle** renders a featureless circle as a placeholder for loading elements */
   variant?: "rectangle" | "square" | "circle";
   /** Height inline style 1. Used to set a height on the skeleton if specific size is needed */
-  height?: string;
+  height?: string | undefined;
   /** Width inline style 1. Used to set a width on the skeleton if specific size is needed */
-  width?: string;
+  width?: string | undefined;
 }
 
 /**

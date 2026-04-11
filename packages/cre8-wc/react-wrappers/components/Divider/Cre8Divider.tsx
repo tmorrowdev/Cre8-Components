@@ -4,7 +4,7 @@ import React from 'react';
 
 export interface Cre8DividerProps {
   /** Divider variants - By default, the component renders the horizontal divider - **vertical** renders the vertical divider */
-  variant?: "horizontal" | "vertical";
+  variant?: any;
   /** Status (a color variant prop) - By default, the divider has gray color. - **brand**, the divider has blue color. - **knockout**, the divider has white color. */
   status?: string | undefined;
 }

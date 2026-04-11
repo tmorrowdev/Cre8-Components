@@ -6,11 +6,11 @@ export interface Cre8TableProps {
   /** Specifies the caption/title of the table, visible to all users. Increases accessibility of table. */
   caption?: string | undefined;
   /** Behavior variants <cre8-text-passage size="sm"> <ul> <li>**responsive** stacks column headers with respective table cells on small screens</li> </ul> </cre8-text-passage> */
-  behavior?: "responsive" | undefined;
+  behavior?: any;
   /** Hoverable rows variant 1) Allows the table rows to be styled on hover */
   isHoverable?: boolean | undefined;
   /** Style variants <cre8-text-passage size="sm"> <ul> <li>**striped** add zebra-striping to table rows within the `<tbody>`</li> </ul> </cre8-text-passage> */
-  variant?: "striped" | undefined;
+  variant?: any;
   children?: React.ReactNode;
 }
 

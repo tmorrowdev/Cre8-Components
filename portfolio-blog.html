@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T. Morrow - Design & Development Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@latest/cdn/cre8-wc.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@latest/lib/design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.css"/>
+  <style>
+    :root {
+      --color-primary: #1A202C;
+      --color-accent: #7C5CFC;
+      --color-accent-light: #EDE9FE;
+      --color-accent-hover: #6344E0;
+      --color-bg: #FAFAFA;
+      --color-surface: #FFFFFF;
+      --color-text: #2D3748;
+      --color-text-muted: #718096;
+      --color-border: #E8E8EC;
+      --color-footer-bg: #1A202C;
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ───── HEADER ───── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .site-header .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo-link { display: flex; align-items: center; }
+    .logo-link img {
+      height: 36px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--color-primary);
+    }
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--color-accent);
+      border-radius: 1px;
+    }
+
+    /* ───── HERO / FEATURED POST ───── */
+    .hero {
+      max-width: 1200px;
+      margin: 3rem auto 0;
+      padding: 0 2rem;
+    }
+    .featured-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--color-surface);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+      transition: box-shadow 0.3s;
+    }
+    .featured-card:hover {
+      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    }
+    .featured-content {
+      padding: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .featured-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .featured-label cre8-badge {
+      --cre8-badge-background-color: var(--color-accent-light);
+      --cre8-badge-text-color: var(--color-accent);
+    }
+    .featured-content h1 {
+      font-family: var(--font-heading);
+      font-size: 2.75rem;
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--color-primary);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+    .featured-content .excerpt {
+      font-size: 1.125rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .featured-content .meta {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+    .featured-image {
+      position: relative;
+      overflow: hidden;
+      min-height: 420px;
+      background: linear-gradient(135deg, #2D3748 0%, #4A5568 40%, var(--color-accent) 100%);
+    }
+    .featured-image .deco-lines {
+      position: absolute;
+      inset: 0;
+      opacity: 0.15;
+      background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(255,255,255,0.3) 30px, rgba(255,255,255,0.3) 31px),
+        repeating-linear-gradient(-45deg, transparent, transparent 30px, rgba(255,255,255,0.3) 30px, rgba(255,255,255,0.3) 31px);
+    }
+    .featured-image .deco-circle {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .featured-image .deco-triangle {
+      position: absolute;
+      width: 0; height: 0;
+      border-left: 60px solid transparent;
+      border-right: 60px solid transparent;
+      border-bottom: 100px solid rgba(255,255,255,0.1);
+      bottom: 40px;
+      right: 60px;
+    }
+
+    /* ───── MAIN LAYOUT ───── */
+    .main-layout {
+      max-width: 1200px;
+      margin: 4rem auto 0;
+      padding: 0 2rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 3rem;
+    }
+
+    /* ───── SECTION HEADER ───── */
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--color-primary);
+      padding-bottom: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+    .section-header h2 {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+    .section-header a {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      transition: color 0.2s;
+    }
+    .section-header a:hover { color: var(--color-accent-hover); }
+
+    /* ───── BLOG GRID ───── */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .post-card {
+      background: var(--color-surface);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+    .post-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+    .post-card:hover .post-title { color: var(--color-accent); }
+    .post-card-image {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+    .post-card-image .gradient-bg {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+    .post-card:hover .gradient-bg { transform: scale(1.05); }
+    .post-card-body {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .post-meta {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-muted);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .post-meta .dot { opacity: 0.4; }
+    .post-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+      transition: color 0.2s;
+    }
+    .post-excerpt {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .post-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    /* ───── SIDEBAR ───── */
+    .sidebar { display: flex; flex-direction: column; gap: 2rem; }
+    .widget {
+      background: var(--color-surface);
+      border-radius: 12px;
+      padding: 1.75rem;
+      border: 1px solid var(--color-border);
+    }
+    .widget-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-text-muted);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .author-info {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+    .author-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: white;
+    }
+    .author-name {
+      font-weight: 700;
+      color: var(--color-primary);
+      font-size: 0.95rem;
+    }
+    .author-role {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+    .author-bio {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .widget-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition: color 0.2s;
+    }
+    .widget-link:hover { color: var(--color-accent-hover); }
+
+    .tags-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .tags-list cre8-tag {
+      cursor: pointer;
+    }
+
+    /* Newsletter widget */
+    .newsletter-input-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .newsletter-input {
+      flex: 1;
+      padding: 0.625rem 0.875rem;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-family: var(--font-body);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .newsletter-input:focus { border-color: var(--color-accent); }
+    .newsletter-desc {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    /* ───── FOOTER ───── */
+    .site-footer {
+      background: var(--color-footer-bg);
+      color: rgba(255,255,255,0.6);
+      padding: 3rem 0;
+    }
+    .site-footer .inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-logo img {
+      height: 28px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: 0.6;
+    }
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .footer-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.5);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.9); }
+    .footer-copy {
+      font-size: 0.8rem;
+    }
+
+    /* ───── RESPONSIVE ───── */
+    @media (max-width: 900px) {
+      .featured-card { grid-template-columns: 1fr; }
+      .featured-image { min-height: 240px; }
+      .featured-content { padding: 2rem; }
+      .featured-content h1 { font-size: 2rem; }
+      .main-layout {
+        grid-template-columns: 1fr;
+      }
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .site-header .inner { padding: 0 1rem; }
+      .nav-links { gap: 1.25rem; }
+      .nav-links a { font-size: 0.8rem; }
+      .hero { padding: 0 1rem; margin-top: 2rem; }
+      .main-layout { padding: 0 1rem 3rem; margin-top: 2.5rem; gap: 2rem; }
+      .site-footer .inner { flex-direction: column; gap: 1.5rem; text-align: center; }
+      .footer-links { gap: 1.25rem; }
+    }
+
+    /* ───── ART DECO DECORATIVE ACCENTS ───── */
+    .deco-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 3rem 0 0;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 2rem;
+    }
+    .deco-divider::before,
+    .deco-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--color-border);
+    }
+    .deco-divider .diamond {
+      width: 8px;
+      height: 8px;
+      background: var(--color-accent);
+      transform: rotate(45deg);
+    }
+
+    /* Card image gradient backgrounds */
+    .grad-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    .grad-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+    .grad-3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+    .grad-4 { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+  </style>
+</head>
+<body>
+
+  <!-- ════════ HEADER ════════ -->
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="logo-link">
+        <svg viewBox="0 0 520 80" style="height: 36px; width: auto;" aria-label="T. Morrow">
+          <style>
+            .logo-text { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 200; font-size: 60px; letter-spacing: 8px; fill: #333; }
+          </style>
+          <!-- Border frame like the original logo -->
+          <rect x="1" y="1" width="518" height="78" fill="none" stroke="#333" stroke-width="2"/>
+          <line x1="0" y1="12" x2="12" y2="0" stroke="#333" stroke-width="2"/>
+          <text x="260" y="52" text-anchor="middle" class="logo-text">T. MORROW</text>
+          <!-- Small triangle accent -->
+          <polygon points="480,20 495,50 465,50" fill="none" stroke="#333" stroke-width="1.5"/>
+        </svg>
+      </a>
+      <nav class="nav-links">
+        <a href="#" class="active">Blog</a>
+        <a href="#">About</a>
+        <a href="#">Work</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ════════ HERO / FEATURED POST ════════ -->
+  <section class="hero">
+    <div class="featured-card">
+      <div class="featured-content">
+        <div class="featured-label">
+          <cre8-badge text="Featured" status="informational"></cre8-badge>
+        </div>
+        <div class="meta">Design &bull; Feb 18, 2026 &bull; 8 min read</div>
+        <h1>The Geometric Web: Returning to Art Deco Roots in UI</h1>
+        <p class="excerpt">Exploring how modern CSS Grid and minimal aesthetics are reviving the structured elegance of the 1920s design movement for today's interfaces.</p>
+        <div>
+          <cre8-button text="Read Article" variant="secondary" size="lg"></cre8-button>
+        </div>
+      </div>
+      <div class="featured-image">
+        <div class="deco-lines"></div>
+        <div class="deco-circle"></div>
+        <div class="deco-triangle"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ DECORATIVE DIVIDER ════════ -->
+  <div class="deco-divider">
+    <span class="diamond"></span>
+  </div>
+
+  <!-- ════════ MAIN CONTENT + SIDEBAR ════════ -->
+  <div class="main-layout">
+
+    <!-- Blog Feed -->
+    <main>
+      <div class="section-header">
+        <h2>Latest Writings</h2>
+        <a href="#">View Archive &rarr;</a>
+      </div>
+
+      <div class="blog-grid">
+
+        <!-- Post 1 -->
+        <article class="post-card">
+          <div class="post-card-image">
+            <div class="gradient-bg grad-1"></div>
+          </div>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span>Dev</span><span class="dot">&bull;</span><span>Feb 12, 2026</span>
+            </div>
+            <h3 class="post-title">Building Accessible Web Components</h3>
+            <p class="post-excerpt">Why semantic HTML is only the starting point for truly inclusive design patterns in component libraries.</p>
+            <div class="post-tags">
+              <cre8-tag text="Accessibility"></cre8-tag>
+              <cre8-tag text="Web Components"></cre8-tag>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="post-card">
+          <div class="post-card-image">
+            <div class="gradient-bg grad-2"></div>
+          </div>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span>Design</span><span class="dot">&bull;</span><span>Jan 28, 2026</span>
+            </div>
+            <h3 class="post-title">The Psychology of Whitespace</h3>
+            <p class="post-excerpt">How negative space directs user attention and reduces cognitive load in complex interfaces.</p>
+            <div class="post-tags">
+              <cre8-tag text="UX Research"></cre8-tag>
+              <cre8-tag text="Typography"></cre8-tag>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="post-card">
+          <div class="post-card-image">
+            <div class="gradient-bg grad-3"></div>
+          </div>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span>Career</span><span class="dot">&bull;</span><span>Jan 15, 2026</span>
+            </div>
+            <h3 class="post-title">From Junior to Senior: A Roadmap</h3>
+            <p class="post-excerpt">Key soft skills and technical milestones to focus on during your first 5 years in frontend engineering.</p>
+            <div class="post-tags">
+              <cre8-tag text="Career"></cre8-tag>
+              <cre8-tag text="Growth"></cre8-tag>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 4 -->
+        <article class="post-card">
+          <div class="post-card-image">
+            <div class="gradient-bg grad-4"></div>
+          </div>
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span>Design</span><span class="dot">&bull;</span><span>Dec 30, 2025</span>
+            </div>
+            <h3 class="post-title">Glassmorphism: Trend or Staple?</h3>
+            <p class="post-excerpt">Analyzing the longevity of frosted glass effects and whether they belong in production design systems.</p>
+            <div class="post-tags">
+              <cre8-tag text="CSS"></cre8-tag>
+              <cre8-tag text="Design Systems"></cre8-tag>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+      <!-- About Widget -->
+      <div class="widget">
+        <div class="widget-title">About the Author</div>
+        <div class="author-info">
+          <div class="author-avatar">TM</div>
+          <div>
+            <div class="author-name">T. Morrow</div>
+            <div class="author-role">Designer & Developer</div>
+          </div>
+        </div>
+        <cre8-text-passage size="small">
+          <p class="author-bio">I'm a digital craftsman blending code and aesthetics. I build design systems and write about the intersection of art and technology.</p>
+        </cre8-text-passage>
+        <a href="#" class="widget-link">More about me &rarr;</a>
+      </div>
+
+      <!-- Topics Widget -->
+      <div class="widget">
+        <div class="widget-title">Topics</div>
+        <div class="tags-list">
+          <cre8-tag text="Design Systems"></cre8-tag>
+          <cre8-tag text="CSS"></cre8-tag>
+          <cre8-tag text="React"></cre8-tag>
+          <cre8-tag text="Typography"></cre8-tag>
+          <cre8-tag text="UX Research"></cre8-tag>
+          <cre8-tag text="Accessibility"></cre8-tag>
+          <cre8-tag text="Web Components"></cre8-tag>
+          <cre8-tag text="Career"></cre8-tag>
+        </div>
+      </div>
+
+      <!-- Newsletter Widget -->
+      <div class="widget" style="background: linear-gradient(135deg, var(--color-accent-light) 0%, #f0e6ff 100%); border-color: transparent;">
+        <div class="widget-title" style="border-color: rgba(124,92,252,0.15);">Newsletter</div>
+        <p class="newsletter-desc">Get notified when I publish new articles on design, development, and creative technology.</p>
+        <div class="newsletter-input-row">
+          <input type="email" class="newsletter-input" placeholder="your@email.com">
+          <cre8-button text="Join" variant="primary" size="sm"></cre8-button>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- ════════ FOOTER ════════ -->
+  <footer class="site-footer">
+    <div class="inner">
+      <div class="footer-logo">
+        <svg viewBox="0 0 520 80" style="height: 24px; width: auto;" aria-label="T. Morrow">
+          <style>
+            .logo-text-footer { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 200; font-size: 60px; letter-spacing: 8px; fill: rgba(255,255,255,0.4); }
+          </style>
+          <rect x="1" y="1" width="518" height="78" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+          <text x="260" y="52" text-anchor="middle" class="logo-text-footer">T. MORROW</text>
+        </svg>
+      </div>
+      <div class="footer-links">
+        <a href="#">Twitter</a>
+        <a href="#">GitHub</a>
+        <a href="#">Dribbble</a>
+        <a href="#">LinkedIn</a>
+      </div>
+      <div class="footer-copy">&copy; 2026 T. Morrow. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>

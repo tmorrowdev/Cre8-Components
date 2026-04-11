@@ -4,17 +4,17 @@ import React from 'react';
 
 export interface Cre8RadioFieldProps {
   /** Radio Field Note */
-  fieldNote?: string;
+  fieldNote?: string | undefined;
   /** Radio container fieldnote aria describe by */
-  ariaDescribedBy?: string;
+  ariaDescribedBy?: string | undefined;
   /** Radio container fieldnote icon name */
-  fieldNoteIconName?: string;
+  fieldNoteIconName?: string | undefined;
   /** Radio container fieldnote knockout */
-  fieldNoteKnockout?: boolean;
+  fieldNoteKnockout?: boolean | undefined;
   /** Radio container fieldnote isSuccess */
-  isSuccess?: boolean;
+  isSuccess?: boolean | undefined;
   /** Radio container fieldnote isError */
-  isError?: boolean;
+  isError?: boolean | undefined;
   /** Radio field legend label */
   label?: string | undefined;
   children?: React.ReactNode;

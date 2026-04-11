@@ -8,7 +8,7 @@ import './css/styleguide-only.css';
 import * as cre8Legacy from '../design-tokens/brands/cre8-legacy/css/tokens_cre8-legacy.module.ts';
 import legacy from '../design-tokens/brands/legacy/css/tokens_legacy.module.ts';
 import cre8 from '../design-tokens/brands/cre8/css/tokens_cre8.module.ts';
-import blue from '../design-tokens/brands/legacy/css/tokens_legacy.module.ts';
+import blue from '../design-tokens/brands/blue/css/tokens_blue.module.ts';
 import marketing from '../design-tokens/brands/marketing/css/tokens_marketing.module.ts';
 import minimalist from '../design-tokens/brands/minimalist/css/tokens_minimalist.module.ts';
 import femmecubator from '../design-tokens/brands/femmecubator/css/tokens_femmecubator2.module.ts';
@@ -16,6 +16,8 @@ import prisma from '../design-tokens/brands/prisma/tokens_prisma.module.ts';
 import starbucks from '../design-tokens/brands/starbucks/tokens_starbucks.module.ts';
 import bolt from '../design-tokens/brands/bolt/tokens_bolt.theme.ts';
 import netflix from '../design-tokens/tokens_netflix.theme.ts';
+import a2ui from '../design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.module.ts';
+import notion from '../design-tokens/brands/notion/tokens_notion.module.ts';
 
 // Prism styles (Storybook only for docs)
 import prismcss from './components/system-docs/prism.module.ts';
@@ -48,7 +50,9 @@ const themeStyles = [
   { name: 'Prisma', styles: prisma },
   { name: 'Starbucks', styles: starbucks },
   { name: 'Bolt', styles: bolt },
-  { name: 'Netflix', styles: netflix }
+  { name: 'Netflix', styles: netflix },
+  { name: 'A2UI', styles: a2ui },
+  { name: 'Notion', styles: notion }
 ];
 
 // Inject all theme styles with unique IDs
@@ -71,15 +75,17 @@ const preview: Preview = {
         items: [
           { value: 'Cre8 Default', title: 'Cre8 Default' },
           { value: 'Cre8 Legacy', title: 'Cre8 Legacy' },
-          { value: 'Consumer', title: 'Consumer' },
+          { value: 'Legacy', title: 'Legacy' },
           { value: 'Blue', title: 'Blue' },
           { value: 'Marketing', title: 'Marketing' },
-          { value: 'Black', title: 'Black' },
+          { value: 'Minimalist', title: 'Minimalist' },
           { value: 'Femmecubator', title: 'Femmecubator' },
           { value: 'Prisma', title: 'Prisma' },
           { value: 'Starbucks', title: 'Starbucks' },
           { value: 'Bolt', title: 'Bolt' },
-          { value: 'Netflix', title: 'Netflix' }
+          { value: 'Netflix', title: 'Netflix' },
+          { value: 'A2UI', title: 'A2UI' },
+          { value: 'Notion', title: 'Notion' }
         ],
         dynamicTitle: true,
       },
@@ -87,8 +93,8 @@ const preview: Preview = {
   },
   decorators: [
     (story, context) => {
-      const selectedTheme = context.globals.theme;
-      
+      const selectedTheme = context.globals.theme || 'Cre8 Default';
+
       // Enable/disable theme stylesheets
       themeStyles.forEach(theme => {
         const styleElement = document.getElementById(`theme-${theme.name.toLowerCase().replace(/\s+/g, '-')}`) as HTMLStyleElement;
@@ -96,67 +102,67 @@ const preview: Preview = {
           styleElement.disabled = theme.name !== selectedTheme;
         }
       });
-      
+
       return story();
     }
   ],
   parameters: {
-    layout: 'padded', 
-  html: {
-    root: '#root-inner',
-    prettier: {
-      tabWidth: 4,
-      useTabs: true,
+    layout: 'padded',
+    html: {
+      root: '#root-inner',
+      prettier: {
+        tabWidth: 4,
+        useTabs: true,
+      },
+      removeComments: true,
     },
-    removeComments: true,
-  },
-  backgrounds: {
-    default: 'light',
-    values: [
-      {
-        name: 'light',
-        value: '#fff',
-      },
-      {
-        name: 'dark',
-        value: '#000',
-      },
-    ],
-  },
-  status: {
-    statuses: {
-      notStarted: {
-        background: '#FF0000',
-        color: '#ffffff',
-        description: 'This component has not been started from a development standpoint.',
-      },
-      inProgress: {
-        background: '#EC942C',
-        color: '#ffffff',
-        description: 'This component is running through slight adjustments and testing. Proceed with caution',
-      },
-      tested: {
-        background: '#2da44e',
-        color: '#ffffff',
-        description: 'This component is stable and released',
+    backgrounds: {
+      default: 'light',
+      values: [
+        {
+          name: 'light',
+          value: '#fff',
+        },
+        {
+          name: 'dark',
+          value: '#000',
+        },
+      ],
+    },
+    status: {
+      statuses: {
+        notStarted: {
+          background: '#FF0000',
+          color: '#ffffff',
+          description: 'This component has not been started from a development standpoint.',
+        },
+        inProgress: {
+          background: '#EC942C',
+          color: '#ffffff',
+          description: 'This component is running through slight adjustments and testing. Proceed with caution',
+        },
+        tested: {
+          background: '#2da44e',
+          color: '#ffffff',
+          description: 'This component is stable and released',
+        },
       },
     },
-  },
-  actions: {argTypesRegex: '^on[A-Z].*'},
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/,
+      },
+      expanded: true,
+      exclude: excludeArray,
+      sort: 'requiredFirst',
     },
-    expanded: true,
-    exclude: excludeArray,
-    sort: 'requiredFirst',
-  },
-  options: {
-    storySort: {
-      order: ['Documentation', 'cre8 Components', ' Patterns'],
+    options: {
+      storySort: {
+        order: ['Documentation', 'cre8 Components', ' Patterns'],
+      },
     },
-  },
   },
 };
 

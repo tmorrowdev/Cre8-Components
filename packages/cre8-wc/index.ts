@@ -1,4 +1,4 @@
-export { type Cre8Element} from './components/cre8-element.js';
+export { type Cre8Element } from './components/cre8-element.js';
 export { type Cre8FormElement } from './components/cre8-form-element.js';
 export { Cre8Accordion } from './components/accordion/accordion.js';
 export { Cre8AccordionItem } from './components/accordion-item/accordion-item.js';
@@ -83,3 +83,5 @@ export { Cre8RemoveTag } from './components/remove-tag/remove-tag.js';
 export { Cre8DangerButton } from './components/danger-button/danger-button.js';
 export { Cre8PercentBar } from './components/percent-bar/percent-bar.js';
 export { Cre8Chart } from './components/chart/chart.js';
+export { Cre8ProgressSteps } from './components/progress-steps/progress-steps.js';
+export { Cre8ProgressStepsItem } from './components/progress-steps-item/progress-steps-item.js';

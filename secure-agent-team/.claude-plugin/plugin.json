@@ -1,0 +1,6 @@
+{
+  "name": "secure-agent-team",
+  "version": "1.0.0",
+  "description": "Specialized agent team for implementing production-safe agentic backend services with defense-in-depth security",
+  "agents": "agents"
+}

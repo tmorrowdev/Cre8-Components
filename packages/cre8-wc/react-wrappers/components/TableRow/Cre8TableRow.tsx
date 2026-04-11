@@ -8,7 +8,7 @@ export interface Cre8TableRowProps {
   /** Indicates row has additional visually hidden related content */
   isExpandable?: boolean | undefined;
   /** Style variants <cre8-text-passage size="sm"> <ul> <li>**bare** renders a table row without a border</li> </ul> </cre8-text-passage> */
-  variant?: "bare" | undefined;
+  variant?: any;
   /** Expanded button text */
   expandedButtonText?: string;
   /** Expand button text */

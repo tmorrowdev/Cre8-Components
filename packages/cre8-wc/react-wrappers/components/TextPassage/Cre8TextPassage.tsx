@@ -6,7 +6,7 @@ export interface Cre8TextPassageProps {
   /** Inverted variant 1) Used for dark backgrounds */
   inverted?: boolean | undefined;
   /** Size variant - **small** renders smaller typography than the default variant - **default** renders default typography variant - **large** renders larger typography than the default variant */
-  size?: "large" | "small" | "default" | undefined;
+  size?: any;
   children?: React.ReactNode;
 }
 

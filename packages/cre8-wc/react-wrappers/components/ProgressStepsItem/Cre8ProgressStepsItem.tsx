@@ -7,7 +7,7 @@ export interface Cre8ProgressStepsItemProps {
   message?: string;
   /** The name of the step. */
   name?: string;
-  /** The state of the step: 'complete', 'current', 'error',' incomplete', 'warning'; */
+  /** The state of the step: 'incomplete', 'current', 'complete', 'error', 'warning'; */
   state?: string;
   /** An SVG string to use as the step icon. */
   svg?: string;

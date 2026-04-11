@@ -4,7 +4,7 @@ import React from 'react';
 
 export interface Cre8ButtonGroupProps {
   /** Responsive Button Group (for modals) */
-  orientation?: "responsive-full-width" | undefined;
+  orientation?: any;
   children?: React.ReactNode;
 }
 

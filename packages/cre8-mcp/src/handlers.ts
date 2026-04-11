@@ -1,0 +1,438 @@
+/**
+ * Cre8 MCP Tool Handlers
+ *
+ * Functions that implement the Cre8 Design System MCP tools.
+ * Supports both Web Components (default) and React formats.
+ */
+
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+import { createRequire } from 'module';
+
+// Format type
+export type ComponentFormat = 'web' | 'react';
+
+// Common types
+interface Pattern {
+  name: string;
+  description: string;
+  template: string;
+}
+
+// Generic catalog interface for shared operations
+interface BaseCatalog {
+  version: string;
+  library: string;
+  components: Array<{ name: string; category: string; description: string }>;
+  patterns: Pattern[];
+}
+
+// Cache for catalogs
+const catalogs: Record<ComponentFormat, BaseCatalog | null> = {
+  web: null,
+  react: null,
+};
+
+function getCatalogPath(format: ComponentFormat): string {
+  const filename = format === 'react' ? 'react-manifest.json' : 'mcp-manifest.json';
+
+  // Try workspace resolution (works when @tmorrow/cre8-wc is a sibling package)
+  try {
+    const require = createRequire(import.meta.url);
+    return require.resolve(`@tmorrow/cre8-wc/${filename}`);
+  } catch {
+    // Fallback to relative path (monorepo development)
+    try {
+      const __filename = fileURLToPath(import.meta.url);
+      const __dirname = dirname(__filename);
+      return join(__dirname, '..', '..', 'cre8-wc', filename);
+    } catch {
+      return join(process.cwd(), 'packages', 'cre8-wc', filename);
+    }
+  }
+}
+
+function loadCatalog(format: ComponentFormat = 'web'): BaseCatalog {
+  if (catalogs[format]) return catalogs[format]!;
+
+  const catalogPath = getCatalogPath(format);
+  catalogs[format] = JSON.parse(readFileSync(catalogPath, 'utf-8'));
+
+  return catalogs[format]!;
+}
+
+// Tool Input Types
+export interface ListComponentsInput {
+  category?: string;
+  format?: ComponentFormat;
+}
+
+export interface GetComponentInput {
+  name: string;
+  format?: ComponentFormat;
+}
+
+export interface GetPatternsInput {
+  name?: string;
+  format?: ComponentFormat;
+}
+
+export interface SearchComponentsInput {
+  query: string;
+  format?: ComponentFormat;
+}
+
+export interface GenerateCodeInput {
+  schema: ComponentNode | ComponentNode[];
+  format?: ComponentFormat;
+  indent?: number;
+}
+
+interface ComponentNode {
+  component: string;
+  props?: Record<string, unknown>;
+  children?: string | ComponentNode | ComponentNode[];
+  slots?: Record<string, string | ComponentNode | ComponentNode[]>;
+  content?: string;
+}
+
+/**
+ * list_components - Lists all available Cre8 components
+ */
+export function handleListComponents(input: ListComponentsInput): string {
+  const format = input.format || 'web';
+  const cat = loadCatalog(format);
+  let components = cat.components;
+
+  if (input.category) {
+    components = components.filter(
+      (c) => c.category.toLowerCase() === input.category!.toLowerCase()
+    );
+  }
+
+  // Group by category
+  const grouped: Record<string, Array<{ name: string; description: string }>> = {};
+  for (const comp of components) {
+    if (!grouped[comp.category]) {
+      grouped[comp.category] = [];
+    }
+    grouped[comp.category].push({
+      name: comp.name,
+      description: comp.description,
+    });
+  }
+
+  const result = {
+    format,
+    library: cat.library,
+    version: cat.version,
+    categories: Object.entries(grouped).map(([category, comps]) => ({
+      category,
+      components: comps,
+    })),
+    totalComponents: components.length,
+  };
+
+  return JSON.stringify(result, null, 2);
+}
+
+/**
+ * get_component - Gets detailed info for a specific component
+ */
+export function handleGetComponent(input: GetComponentInput): string {
+  const format = input.format || 'web';
+  const cat = loadCatalog(format);
+
+  // Normalize search name (handle both cre8-button and Cre8Button formats)
+  const searchName = input.name.toLowerCase()
+    .replace(/^cre8-?/, '')  // Remove cre8- or cre8 prefix
+    .replace(/-/g, '');       // Remove hyphens for comparison
+
+  const component = cat.components.find((c) => {
+    const compName = c.name.toLowerCase()
+      .replace(/^cre8-?/, '')
+      .replace(/-/g, '');
+    return compName === searchName || c.name.toLowerCase() === input.name.toLowerCase();
+  });
+
+  if (!component) {
+    return JSON.stringify({
+      error: `Component "${input.name}" not found`,
+      suggestion: 'Use list_components to see available components',
+    });
+  }
+
+  // Return format-specific details
+  if (format === 'react') {
+    const reactComp = component as { name: string; category: string; description: string; props?: Record<string, unknown>; examples?: Array<{ description: string; jsx: string }> };
+    return JSON.stringify({
+      format,
+      name: reactComp.name,
+      category: reactComp.category,
+      description: reactComp.description,
+      import: `import { ${reactComp.name} } from '@tmorrow/cre8-react';`,
+      props: reactComp.props || {},
+      examples: reactComp.examples || [],
+    }, null, 2);
+  }
+
+  // Web component format
+  const webComp = component as {
+    name: string;
+    category: string;
+    description: string;
+    attributes?: Record<string, unknown>;
+    properties?: Record<string, unknown>;
+    slots?: Record<string, unknown>;
+    events?: Record<string, unknown>;
+    cssProperties?: Record<string, unknown>;
+    examples?: Array<{ description: string; html: string }>;
+  };
+
+  return JSON.stringify({
+    format,
+    name: webComp.name,
+    tagName: webComp.name,
+    category: webComp.category,
+    description: webComp.description,
+    import: `import '@tmorrow/cre8-wc/lib/components/${webComp.name.replace('cre8-', '')}/${webComp.name.replace('cre8-', '')}.js';`,
+    attributes: webComp.attributes || {},
+    properties: webComp.properties || {},
+    slots: webComp.slots || {},
+    events: webComp.events || {},
+    cssProperties: webComp.cssProperties || {},
+    examples: webComp.examples || [],
+  }, null, 2);
+}
+
+/**
+ * get_patterns - Gets layout patterns and templates
+ */
+export function handleGetPatterns(input: GetPatternsInput): string {
+  const format = input.format || 'web';
+  const cat = loadCatalog(format);
+
+  if (input.name) {
+    const pattern = cat.patterns.find(
+      (p) => p.name.toLowerCase() === input.name!.toLowerCase()
+    );
+
+    if (!pattern) {
+      return JSON.stringify({
+        error: `Pattern "${input.name}" not found`,
+        available: cat.patterns.map((p) => p.name),
+      });
+    }
+
+    return JSON.stringify({ format, ...pattern }, null, 2);
+  }
+
+  return JSON.stringify({
+    format,
+    patterns: cat.patterns.map((p) => ({
+      name: p.name,
+      description: p.description,
+    })),
+  }, null, 2);
+}
+
+/**
+ * search_components - Search components by name or description
+ */
+export function handleSearchComponents(input: SearchComponentsInput): string {
+  const format = input.format || 'web';
+  const cat = loadCatalog(format);
+  const query = input.query.toLowerCase();
+
+  const matches = cat.components.filter(
+    (c) =>
+      c.name.toLowerCase().includes(query) ||
+      c.description.toLowerCase().includes(query) ||
+      c.category.toLowerCase().includes(query)
+  );
+
+  if (matches.length === 0) {
+    return JSON.stringify({
+      format,
+      message: `No components found matching "${input.query}"`,
+      suggestion: 'Try a broader search term or use list_components',
+    });
+  }
+
+  return JSON.stringify({
+    format,
+    query: input.query,
+    results: matches.map((c) => ({
+      name: c.name,
+      category: c.category,
+      description: c.description,
+    })),
+    count: matches.length,
+  }, null, 2);
+}
+
+/**
+ * generate_code - Generates React or Web Component code from a JSON schema
+ */
+export function handleGenerateCode(input: GenerateCodeInput): string {
+  const format = input.format || 'web';
+  const baseIndent = input.indent || 0;
+
+  function generateNode(node: ComponentNode | string, indentLevel: number): string {
+    const indent = '  '.repeat(indentLevel);
+
+    // Handle string content
+    if (typeof node === 'string') {
+      return `${indent}${node}`;
+    }
+
+    // Get component name in correct format
+    let tagName = node.component;
+
+    // Check if this is a plain HTML element (not a cre8 component)
+    const htmlTags = new Set([
+      'a', 'abbr', 'article', 'aside', 'b', 'blockquote', 'br', 'button',
+      'caption', 'cite', 'code', 'col', 'colgroup', 'dd', 'details', 'div',
+      'dl', 'dt', 'em', 'fieldset', 'figcaption', 'figure', 'form', 'h1',
+      'h2', 'h3', 'h4', 'h5', 'h6', 'header', 'hr', 'i', 'iframe', 'img',
+      'input', 'label', 'legend', 'li', 'main', 'mark', 'nav', 'ol', 'option',
+      'p', 'pre', 'section', 'select', 'small', 'span', 'strong', 'sub',
+      'summary', 'sup', 'table', 'tbody', 'td', 'textarea', 'tfoot', 'th',
+      'thead', 'time', 'tr', 'u', 'ul', 'video',
+    ]);
+    const isHtmlElement = htmlTags.has(tagName.toLowerCase());
+
+    // Only normalize cre8 component names, leave HTML tags as-is
+    if (!isHtmlElement) {
+      if (format === 'react') {
+        // Ensure React format: Cre8Button
+        if (!tagName.startsWith('Cre8')) {
+          tagName = tagName.startsWith('cre8-')
+            ? 'Cre8' + tagName.slice(5).split('-').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join('')
+            : 'Cre8' + tagName.charAt(0).toUpperCase() + tagName.slice(1);
+        }
+      } else {
+        // Ensure Web Component format: cre8-button
+        if (!tagName.startsWith('cre8-')) {
+          tagName = tagName.startsWith('Cre8')
+            ? 'cre8-' + tagName.slice(4).replace(/([A-Z])/g, '-$1').toLowerCase().slice(1)
+            : 'cre8-' + tagName.toLowerCase();
+        }
+      }
+    }
+
+    // Build props/attributes string
+    let propsStr = '';
+    if (node.props) {
+      const propEntries = Object.entries(node.props);
+      for (const [key, value] of propEntries) {
+        let propName = key;
+
+        // Convert prop names for web components (camelCase -> kebab-case)
+        if (format === 'web' && /[A-Z]/.test(key)) {
+          propName = key.replace(/([A-Z])/g, '-$1').toLowerCase();
+        }
+
+        // Format the value
+        if (typeof value === 'boolean') {
+          if (value) {
+            propsStr += ` ${propName}`;
+          }
+        } else if (typeof value === 'string') {
+          propsStr += ` ${propName}="${value}"`;
+        } else if (typeof value === 'number') {
+          propsStr += format === 'react' ? ` ${propName}={${value}}` : ` ${propName}="${value}"`;
+        } else if (typeof value === 'object') {
+          propsStr += format === 'react' ? ` ${propName}={${JSON.stringify(value)}}` : ` ${propName}='${JSON.stringify(value)}'`;
+        }
+      }
+    }
+
+    // Check for children/content
+    const hasChildren = node.children || node.content || node.slots;
+
+    if (!hasChildren) {
+      // Self-closing tag
+      return format === 'react'
+        ? `${indent}<${tagName}${propsStr} />`
+        : `${indent}<${tagName}${propsStr}></${tagName}>`;
+    }
+
+    // Build children
+    const childLines: string[] = [];
+
+    // Handle content
+    if (node.content) {
+      childLines.push(`${'  '.repeat(indentLevel + 1)}${node.content}`);
+    }
+
+    // Handle children
+    if (node.children) {
+      const children = Array.isArray(node.children) ? node.children : [node.children];
+      for (const child of children) {
+        childLines.push(generateNode(child, indentLevel + 1));
+      }
+    }
+
+    // Handle slots
+    if (node.slots) {
+      for (const [slotName, slotContent] of Object.entries(node.slots)) {
+        const slotChildren = Array.isArray(slotContent) ? slotContent : [slotContent];
+        for (const child of slotChildren) {
+          if (typeof child === 'string') {
+            if (format === 'react') {
+              childLines.push(`${'  '.repeat(indentLevel + 1)}{/* slot: ${slotName} */}`);
+              childLines.push(`${'  '.repeat(indentLevel + 1)}${child}`);
+            } else if (slotName === 'default') {
+              childLines.push(`${'  '.repeat(indentLevel + 1)}${child}`);
+            } else {
+              childLines.push(`${'  '.repeat(indentLevel + 1)}<span slot="${slotName}">${child}</span>`);
+            }
+          } else {
+            const childCode = generateNode(child, indentLevel + 1);
+            if (format === 'web' && slotName !== 'default') {
+              // Add slot attribute for web components
+              const slotAttr = ` slot="${slotName}"`;
+              const firstTagEnd = childCode.indexOf('>');
+              if (firstTagEnd > 0) {
+                childLines.push(childCode.slice(0, firstTagEnd) + slotAttr + childCode.slice(firstTagEnd));
+              } else {
+                childLines.push(childCode);
+              }
+            } else {
+              childLines.push(childCode);
+            }
+          }
+        }
+      }
+    }
+
+    // Combine
+    const openTag = `${indent}<${tagName}${propsStr}>`;
+    const closeTag = `${indent}</${tagName}>`;
+
+    if (childLines.length === 1 && !childLines[0].includes('\n') && childLines[0].trim().length < 40) {
+      // Single short child - inline
+      return `${indent}<${tagName}${propsStr}>${childLines[0].trim()}</${tagName}>`;
+    }
+
+    return `${openTag}\n${childLines.join('\n')}\n${closeTag}`;
+  }
+
+  // Handle array of nodes
+  if (Array.isArray(input.schema)) {
+    const lines = input.schema.map(node => generateNode(node, baseIndent));
+    return JSON.stringify({
+      format,
+      code: lines.join('\n'),
+    }, null, 2);
+  }
+
+  // Single node
+  const code = generateNode(input.schema, baseIndent);
+  return JSON.stringify({
+    format,
+    code,
+  }, null, 2);
+}

@@ -1,5 +1,366 @@
 import { css } from 'lit';
-const styles = css`
+const styles = css`.cre8-u-content-knockout-brand {
+  color: var(----cre8-color-content-knockout-brand);
+}
+
+.cre8-u-is-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.cre8-u-is-vishidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+@media all and (min-width: 23.4375rem) {
+  .cre8-u-hide-sm {
+    display: none !important;
+  }
+}
+@media all and (min-width: 35rem) {
+  .cre8-u-hide-sm-2 {
+    display: none !important;
+  }
+}
+@media all and (min-width: 48rem) {
+  .cre8-u-hide-md {
+    display: none !important;
+  }
+}
+@media all and (min-width: 60rem) {
+  .cre8-u-hide-lg {
+    display: none !important;
+  }
+}
+@media all and (min-width: 75rem) {
+  .cre8-u-hide-xl {
+    display: none !important;
+  }
+}
+@media all and (max-width: 23.4375rem) {
+  .cre8-u-show-sm {
+    display: none !important;
+  }
+}
+@media all and (max-width: 35rem) {
+  .cre8-u-show-sm-2 {
+    display: none !important;
+  }
+}
+@media all and (max-width: 48rem) {
+  .cre8-u-show-md {
+    display: none !important;
+  }
+}
+@media all and (max-width: 60rem) {
+  .cre8-u-show-lg {
+    display: none !important;
+  }
+}
+@media all and (max-width: 75rem) {
+  .cre8-u-show-xl {
+    display: none !important;
+  }
+}
+.cre8-u-margin-none {
+  margin: 0 !important;
+}
+
+.cre8-u-margin-sm {
+  margin: size(1) !important;
+}
+
+.cre8-u-margin-md {
+  margin: size(2) !important;
+}
+
+.cre8-u-margin-lg {
+  margin: size(3) !important;
+}
+
+.cre8-u-margin-xl {
+  margin: size(4) !important;
+}
+
+.cre8-u-margin-xxl {
+  margin: size(8) !important;
+}
+
+.cre8-u-margin-top-none {
+  margin-top: 0 !important;
+}
+
+.cre8-u-margin-top-sm {
+  margin-top: size(1) !important;
+}
+
+.cre8-u-margin-top-md {
+  margin-top: size(2) !important;
+}
+
+.cre8-u-margin-top-lg {
+  margin-top: size(3) !important;
+}
+
+.cre8-u-margin-top-xl {
+  margin-top: size(4) !important;
+}
+
+.cre8-u-margin-top-xxl {
+  margin-top: size(8) !important;
+}
+
+.cre8-u-margin-right-none {
+  margin-right: 0 !important;
+}
+
+.cre8-u-margin-right-sm {
+  margin-right: size(1) !important;
+}
+
+.cre8-u-margin-right-md {
+  margin-right: size(2) !important;
+}
+
+.cre8-u-margin-right-lg {
+  margin-right: size(3) !important;
+}
+
+.cre8-u-margin-right-xl {
+  margin-right: size(4) !important;
+}
+
+.cre8-u-margin-right-xxl {
+  margin-right: size(8) !important;
+}
+
+.cre8-u-margin-bottom-none {
+  margin-bottom: 0 !important;
+}
+
+.cre8-u-margin-bottom-sm {
+  margin-bottom: size(1) !important;
+}
+
+.cre8-u-margin-bottom-md {
+  margin-bottom: size(2) !important;
+}
+
+.cre8-u-margin-bottom-lg {
+  margin-bottom: size(3) !important;
+}
+
+.cre8-u-margin-bottom-xl {
+  margin-bottom: size(4) !important;
+}
+
+.cre8-u-margin-bottom-xxl {
+  margin-bottom: size(8) !important;
+}
+
+.cre8-u-margin-bottom-xl-xxl {
+  margin-bottom: size(4) !important;
+}
+
+@media all and (min-width: 768px) {
+  .cre8-u-margin-bottom-xl-xxl {
+    margin-bottom: size(8) !important;
+  }
+}
+.cre8-u-margin-left-none {
+  margin-left: 0 !important;
+}
+
+.cre8-u-margin-left-sm {
+  margin-left: size(1) !important;
+}
+
+.cre8-u-margin-left-md {
+  margin-left: size(2) !important;
+}
+
+.cre8-u-margin-left-lg {
+  margin-left: size(3) !important;
+}
+
+.cre8-u-margin-left-xl {
+  margin-left: size(4) !important;
+}
+
+.cre8-u-margin-left-xxl {
+  margin-left: size(8) !important;
+}
+
+.cre8-u-padding-none {
+  padding: 0 !important;
+}
+
+.cre8-u-padding-sm {
+  padding: size(1) !important;
+}
+
+.cre8-u-padding-md {
+  padding: size(2) !important;
+}
+
+.cre8-u-padding-lg {
+  padding: size(3) !important;
+}
+
+.cre8-u-padding-xl {
+  padding: size(4) !important;
+}
+
+.cre8-u-padding-xxl {
+  padding: size(8) !important;
+}
+
+.cre8-u-padding-top-none {
+  padding-top: 0 !important;
+}
+
+.cre8-u-padding-top-sm {
+  padding-top: size(1) !important;
+}
+
+.cre8-u-padding-top-md {
+  padding-top: size(2) !important;
+}
+
+.cre8-u-padding-top-lg {
+  padding-top: size(3) !important;
+}
+
+.cre8-u-padding-top-xl {
+  padding-top: size(4) !important;
+}
+
+.cre8-u-padding-top-xxl {
+  padding-top: size(8) !important;
+}
+
+.cre8-u-padding-right-none {
+  padding-right: 0 !important;
+}
+
+.cre8-u-padding-right-sm {
+  padding-right: size(1) !important;
+}
+
+.cre8-u-padding-right-md {
+  padding-right: size(2) !important;
+}
+
+.cre8-u-padding-right-lg {
+  padding-right: size(3) !important;
+}
+
+.cre8-u-padding-right-xl {
+  padding-right: size(4) !important;
+}
+
+.cre8-u-padding-right-xxl {
+  padding-right: size(8) !important;
+}
+
+.cre8-u-padding-bottom-none {
+  padding-bottom: 0 !important;
+}
+
+.cre8-u-padding-bottom-sm {
+  padding-bottom: size(1) !important;
+}
+
+.cre8-u-padding-bottom-md {
+  padding-bottom: size(2) !important;
+}
+
+.cre8-u-padding-bottom-lg {
+  padding-bottom: size(3) !important;
+}
+
+.cre8-u-padding-bottom-xl {
+  padding-bottom: size(4) !important;
+}
+
+.cre8-u-padding-bottom-xxl {
+  padding-bottom: size(8) !important;
+}
+
+.cre8-u-padding-left-none {
+  padding-left: 0 !important;
+}
+
+.cre8-u-padding-left-sm {
+  padding-left: size(1) !important;
+}
+
+.cre8-u-padding-left-md {
+  padding-left: size(2) !important;
+}
+
+.cre8-u-padding-left-lg {
+  padding-left: size(3) !important;
+}
+
+.cre8-u-padding-left-xl {
+  padding-left: size(4) !important;
+}
+
+.cre8-u-padding-left-xxl {
+  padding-left: size(8) !important;
+}
+
+.cre8-u-display-flex {
+  display: flex !important;
+}
+
+.cre8-u-display-block {
+  display: block !important;
+}
+
+body {
+  font-family: var(--cre8-typography-body-default-font-family);
+  font-size: var(--cre8-typography-body-default-font-size);
+  font-weight: var(--cre8-typography-body-default-font-weight);
+  line-height: var(--cre8-typography-body-default-line-height);
+  -webkit-text-decoration: var(--cre8-typography-body-default-text-decoration);
+  text-decoration: var(--cre8-typography-body-default-text-decoration);
+  text-transform: var(--cre8-typography-body-default-text-transform);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  color: var(--cre8-color-content-default);
+  background: var(--background-default);
+}
+
+@media all and (min-width: 60rem) {
+  .page-container {
+    background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0);
+  }
+}
+.band__inner {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+@media all and (min-width: 60rem) {
+  .band__inner {
+    margin-right: 0;
+  }
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /**
  * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/
  */
@@ -221,9 +582,9 @@ span.ripple {
 /**
  * Visually hidden from display
  */
-/*------------------------------------*\
+/*------------------------------------*\\
  #SELECT
-\*------------------------------------*/
+\\*------------------------------------*/
 :host {
   display: inline-flex;
   flex-wrap: wrap;
@@ -237,11 +598,11 @@ span.ripple {
   font-size: var(--cre8-typography-label-small-font-size);
   font-weight: var(--cre8-typography-label-small-font-weight);
   line-height: var(--cre8-typography-label-small-line-height);
-  -webkit-text-decoration: var(--cre8-typography-label-small-text-decoration);
-          text-decoration: var(--cre8-typography-label-small-text-decoration);
+  text-decoration: var(--cre8-typography-label-small-text-decoration);
   text-transform: var(--cre8-typography-label-small-text-transform);
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
+  margin-left: var(--cre8-input-label-margin-left, 0px);
 }
 
 /**
@@ -261,54 +622,47 @@ span.ripple {
   font-size: var(--cre8-typography-body-default-font-size);
   font-weight: var(--cre8-typography-body-default-font-weight);
   line-height: var(--cre8-typography-body-default-line-height);
-  -webkit-text-decoration: var(--cre8-typography-body-default-text-decoration);
-          text-decoration: var(--cre8-typography-body-default-text-decoration);
+  text-decoration: var(--cre8-typography-body-default-text-decoration);
   text-transform: var(--cre8-typography-body-default-text-transform);
   outline: var(--cre8-border-width-focus) solid transparent;
-  outline-offset: 2px;
+  outline-offset: 0.125rem;
+  --size-base-unit: .5rem;
   -webkit-appearance: none;
   width: 100%;
   border-width: var(--cre8-border-width-default);
   border-style: solid;
   border-color: var(--cre8-color-border-strong);
   border-radius: var(--cre8-border-radius-default);
-  padding: 12px 8px;
+  padding: var(--cre8-input-padding, 0.75rem 0.5rem);
   color: var(--cre8-color-content-default);
   background-color: var(--cre8-color-bg-default);
   transition: outline-color var(--cre8-anim-fade-quick) var(--cre8-anim-ease), border-color var(--cre8-anim-fade-quick) var(--cre8-anim-ease), background-color var(--cre8-anim-fade-quick) var(--cre8-anim-ease), color var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
   /**
    * Hover, focus, active, and focus-visible styles for default input elements
    */
-  /**
-   * Disabled styles for default input elements
-   */
-  /**
-   * Placeholder styles for default input elements
-   */
-  /**
-   * Error state for default input elements
-   */
-  /**
-   * Success state for default input elements
-   */
-  padding-inline-end: 44px;
-  cursor: pointer;
 }
 .cre8-c-select__input:hover:not(:disabled), .cre8-c-select__input:focus:not(:disabled), .cre8-c-select__input:active:not(:disabled), .cre8-c-select__input:focus-visible {
   outline: var(--cre8-border-width-focus) solid var(--cre8-color-border-active-outline);
-  outline-offset: 2px;
+  outline-offset: 0.125rem;
   /**
    * Error state
-   */
-  /**
-   * Success state
    */
 }
 .cre8-is-error .cre8-c-select__input:hover:not(:disabled), .cre8-is-error .cre8-c-select__input:focus:not(:disabled), .cre8-is-error .cre8-c-select__input:active:not(:disabled), .cre8-is-error .cre8-c-select__input:focus-visible {
   outline-color: var(--cre8-color-border-error);
 }
+.cre8-c-select__input:hover:not(:disabled), .cre8-c-select__input:focus:not(:disabled), .cre8-c-select__input:active:not(:disabled), .cre8-c-select__input:focus-visible {
+  /**
+   * Success state
+   */
+}
 .cre8-is-success .cre8-c-select__input:hover:not(:disabled), .cre8-is-success .cre8-c-select__input:focus:not(:disabled), .cre8-is-success .cre8-c-select__input:active:not(:disabled), .cre8-is-success .cre8-c-select__input:focus-visible {
   outline-color: var(--cre8-color-border-success);
+}
+.cre8-c-select__input {
+  /**
+   * Disabled styles for default input elements
+   */
 }
 .cre8-c-select__input:disabled {
   background-color: var(--cre8-color-bg-disabled);
@@ -319,23 +673,36 @@ span.ripple {
    * Disabled text colors
    */
 }
-.cre8-c-select__input:disabled::-moz-placeholder {
-  color: var(--cre8-color-content-disabled);
-}
 .cre8-c-select__input:disabled::placeholder {
   color: var(--cre8-color-content-disabled);
 }
-.cre8-c-select__input::-moz-placeholder {
-  color: var(--cre8-color-content-subtle);
+.cre8-c-select__input {
+  /**
+   * Placeholder styles for default input elements
+   */
 }
 .cre8-c-select__input::placeholder {
   color: var(--cre8-color-content-subtle);
 }
+.cre8-c-select__input {
+  /**
+   * Error state for default input elements
+   */
+}
 .cre8-is-error .cre8-c-select__input {
   border-color: var(--cre8-color-border-error);
 }
+.cre8-c-select__input {
+  /**
+   * Success state for default input elements
+   */
+}
 .cre8-is-success .cre8-c-select__input {
   border-color: var(--cre8-color-border-success);
+}
+.cre8-c-select__input {
+  padding-inline-end: 2.75rem;
+  cursor: pointer;
 }
 
 /**
@@ -346,11 +713,11 @@ span.ripple {
   position: absolute;
   inset-block-start: 50%;
   transform: translateY(-50%);
-  inset-inline-end: 8px;
+  inset-inline-end: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 8px;
+  gap: 0.5rem;
   pointer-events: none;
 }
 
@@ -358,9 +725,9 @@ span.ripple {
  * Select Arrow Icon
  */
 .cre8-c-select__icon-arrow {
-  margin-right: 6px;
-  width: 12px;
-  height: 12px;
+  margin-right: 0.375rem;
+  width: 0.75rem;
+  height: 0.75rem;
 }
 
 /**
@@ -370,7 +737,5 @@ span.ripple {
 .cre8-c-select__field-note-success,
 .cre8-c-select__field-note-error {
   flex-basis: 100%;
-}
-  /* sourceMappingURL=select.module.css.map */
-`;
+}`;
 export default styles;

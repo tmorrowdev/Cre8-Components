@@ -5,18 +5,15 @@ import React from 'react';
 export interface Cre8ProgressMeterProps {
   /** Progress Status - **Default** renders a meter with default status fill - **Error** renders a meter with an error status fill - **Warning** renders a meter with a warning status - **Success** renders a meter with a success status fill */
   status?: any;
-  /** Determines if the progress meter is displayed on a dark background (uses knockout colors for contrast) */
-  knockout?: boolean;
-  /** The max number for the progress bar (defaulted to 100 to match percentages) */
-  max?: number;
-  /** The the percentage of the bar that is filled in (defaulted to match percentages) I.E a value of 50 with a 100 max would result in half the meter being filled */
-  value?: number;
   /** Progress Meter FieldId */
-  fieldId?: string;
+  fieldId?: string | undefined;
   /** Progress Meter name */
-  name?: string;
+  name?: string | undefined;
   /** Progress Meter label */
   label?: string;
+  knockout?: boolean | undefined;
+  max?: number;
+  value?: number;
 }
 
 /**

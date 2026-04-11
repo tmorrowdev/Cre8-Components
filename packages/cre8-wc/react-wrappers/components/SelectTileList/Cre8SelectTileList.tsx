@@ -4,7 +4,7 @@ import React from 'react';
 
 export interface Cre8SelectTileListProps {
   /** Whether to show the tiles side by side (columns) or stacked vertically (rows). */
-  variant?: "columns" | "rows";
+  variant?: any;
   /** Select Tile container label */
   label?: string | undefined;
   /** Select Tile container fieldnote */

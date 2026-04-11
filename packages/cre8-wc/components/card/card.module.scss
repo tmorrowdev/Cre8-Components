@@ -17,12 +17,12 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
-  padding: calc(8px * 3);
-  gap: calc(8px * 2);
+  padding: size(3);
+  gap: size(2);
   border-color: var(--cre8-color-border-default);
   border-style: var(--cre8-border-style-default);
   border-width: var(--cre8-border-width-default);
-  border-radius: var(--cre8-border-radius-default);
+  border-radius: var(--cre8-border-radius-container);
   background: var(--cre8-color-bg-default);
 }
 

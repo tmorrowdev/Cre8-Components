@@ -4,7 +4,7 @@ import React from 'react';
 
 export interface Cre8TabProps {
   /** Tab sizes - **default** displays the tab text with cre8-typography-label-default - **sm** displays the tab text with cre8-typography-label-small and decrease padding  _*This property is dynamically set_ */
-  size?: "sm" | undefined;
+  size?: any;
   /** If is true, tab has active state and cooresponding tab panel is visible.  _*This property is dynamically set_ */
   isActive?: boolean | undefined;
   /** Used to align the tab with the tab panel  _*This property is dynamically set_ */
@@ -12,7 +12,6 @@ export interface Cre8TabProps {
   /** Used to connect tab trigger and tab panel for accessibility  _*This property is dynamically set_ */
   ariaLabelledBy?: string | undefined;
   children?: React.ReactNode;
-  onTabSelected?: (event: CustomEvent) => void;
 }
 
 /**
@@ -22,9 +21,7 @@ export const Cre8Tab = createComponent({
   react: React,
   tagName: 'cre8-tab',
   elementClass: Cre8TabElement,
-  events: {
-    onTabSelected: 'tabSelected'
-  }
+
 });
 
 export default Cre8Tab;

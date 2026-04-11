@@ -5,6 +5,10 @@
  * (which auto-registers them as custom elements) and re-exports them for
  * programmatic access.
  *
+ * It also re-exports Lit primitives (html, css, LitElement, etc.) so that
+ * consumers can write their own Lit components using the same Lit instance
+ * bundled here, avoiding duplicate Lit copies and reactive-element errors.
+ *
  * Usage via script tag (IIFE):
  *   <script src="https://cdn.example.com/cre8-wc.min.js"></script>
  *   <cre8-button>Click me</cre8-button>
@@ -15,9 +19,27 @@
  *
  * Usage via ES module:
  *   <script type="module">
- *     import { Cre8Button } from 'https://cdn.example.com/cre8-wc.esm.js';
+ *     import { Cre8Button, html, css, LitElement } from 'https://cdn.example.com/cre8-wc.esm.js';
  *   </script>
  */
+
+// Re-export Lit primitives so consumers use the same bundled Lit instance
+export { LitElement, html, css, svg, nothing, noChange, ReactiveElement } from 'lit';
+export { classMap } from 'lit/directives/class-map.js';
+export { styleMap } from 'lit/directives/style-map.js';
+export { ifDefined } from 'lit/directives/if-defined.js';
+export { repeat } from 'lit/directives/repeat.js';
+export { unsafeHTML } from 'lit/directives/unsafe-html.js';
+export { until } from 'lit/directives/until.js';
+export { live } from 'lit/directives/live.js';
+export { ref, createRef } from 'lit/directives/ref.js';
+export { guard } from 'lit/directives/guard.js';
+export { cache } from 'lit/directives/cache.js';
+export { property, state, customElement, query, queryAll } from 'lit/decorators.js';
+
+// Re-export base classes for extending
+export { Cre8Element } from './components/cre8-element';
+export { Cre8FormElement } from './components/cre8-form-element';
 
 // Import all components (this registers them as custom elements)
 import { Cre8Accordion } from './components/accordion/accordion';
@@ -73,6 +95,8 @@ import { Cre8Popover } from './components/popover/popover';
 import { Cre8PrimaryNav } from './components/primary-nav/primary-nav';
 import { Cre8PrimaryNavItem } from './components/primary-nav-item/primary-nav-item';
 import { Cre8ProgressMeter } from './components/progress-meter/progress-meter';
+import { Cre8ProgressSteps } from './components/progress-steps/progress-steps';
+import { Cre8ProgressStepsItem } from './components/progress-steps-item/progress-steps-item';
 import { Cre8RadioField } from './components/radio-field/radio-field';
 import { Cre8RadioFieldItem } from './components/radio-field-item/radio-field-item';
 import { Cre8RemoveTag } from './components/remove-tag/remove-tag';
@@ -129,6 +153,8 @@ export {
   Cre8DropdownItem,
   Cre8Feature,
   Cre8Field,
+  Cre8ProgressSteps,
+  Cre8ProgressStepsItem,
   Cre8FieldNote,
   Cre8Footer,
   Cre8GlobalNav,

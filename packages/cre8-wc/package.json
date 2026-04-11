@@ -1,12 +1,15 @@
 {
   "name": "@tmorrow/cre8-wc",
-  "version": "1.0.26",
+  "version": "1.2.3",
   "description": "cre8 Web Components is a library of presentational UI web components to be consumed by # web applications.",
   "license": "BSD-3-Clause",
   "scripts": {
     "start": "pnpm run build:custom-elements.json && pnpm run storybook",
-    "build": "rm -rf lib && vite build && tsc",
+    "compile-styles": "npx tsx scripts/convert-scss-to-ts.ts",
+    "build": "rm -rf lib && pnpm run compile-styles && pnpm build:cdn && vite build && tsc && cp .storybook/custom-elements.json custom-elements.json && pnpm run build:react && pnpm run build:mcp-manifest",
+    "build:mcp-manifest": "npx web-component-analyzer analyze \"components/*/*.ts\" --format json --outFile /tmp/wca-raw.json && npx tsx scripts/generate-mcp-manifest.ts",
     "build:cdn": "rm -rf cdn && vite build --config vite.config.cdn.ts",
+    "build:react": "rm -rf react-wrappers && npx tsx scripts/generate-react-wrappers.ts && cd react-wrappers && npx tsc",
     "build:all": "pnpm run build:cdn && pnpm run build",
     "build:watch": "vite build --watch",
     "build:custom-elements.json": "npx @custom-elements-manifest/analyzer analyze --litelement --globs \"components/*/*.ts\" --outdir .storybook",
@@ -26,7 +29,7 @@
     "plop:recipe": "plop recipe",
     "lint": "eslint-config --ext .ts,.html . --ignore-path ../../.eslintignore",
     "format": "eslint-config --ext .ts,.html . --fix --ignore-path ../../.eslintignore",
-    "release:publish": "node scripts/release.cjs --skip-lint --skip-tests",
+    "release:publish": "node scripts/release.cjs --skip-lint --skip-tests --publish",
     "version:bump": "node scripts/version-bump.cjs"
   },
   "type": "module",
@@ -43,7 +46,7 @@
     "dist",
     "lib",
     "cdn",
-    ".yalc"
+    "mcp-manifest.json"
   ],
   "exports": {
     ".": {
@@ -51,21 +54,28 @@
       "types": "./lib/index.d.ts"
     },
     "./cdn": {
-      "import": "./lib/cdn.esm.js",
-      "default": "./lib/cdn.min.js"
+      "import": "./cdn/cre8-wc.esm.js",
+      "default": "./cdn/cre8-wc.min.js"
     },
-    "./cdn/cre8-wc.esm.js": "./lib/cdn.esm.js",
+    "./cdn/cre8-wc.esm.js": "./cdn/cre8-wc.esm.js",
+    "./cdn/cre8-wc.min.js": "./cdn/cre8-wc.min.js",
     "./lib/components/*": {
       "import": "./lib/components/*",
       "types": "./lib/components/*",
       "default": "./lib/components/*"
     },
     "./icons/*": {
-      "import": "./icons/*",
-      "types": "./icons/*",
-      "default": "./icons/*"
+      "import": "./lib/icons/*",
+      "types": "./lib/icons/*",
+      "default": "./lib/icons/*"
+    },
+    "./design-tokens/*": {
+      "import": "./lib/design-tokens/*",
+      "types": "./lib/design-tokens/*",
+      "default": "./lib/design-tokens/*"
     },
     "./global.d.ts": "./global.d.ts",
+    "./mcp-manifest.json": "./mcp-manifest.json",
     "./package.json": "./package.json"
   },
   "repository": {
@@ -143,6 +153,7 @@
     "ts-jest": "^29.4.5",
     "ts-lit-plugin": "^2.0.2",
     "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "vite": "^7.2.2"
   },

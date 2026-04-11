@@ -4,7 +4,7 @@ import React from 'react';
 
 export interface Cre8BandProps {
   /** Gradient variant <cre8-text-passage size="sm"> <ul> <li>**1** renders the band with the set gradient background</li> </ul> </cre8-text-passage> */
-  variant?: "branded" | undefined;
+  variant?: any;
   /** Full height variant 1) Sets the height to 100% */
   fullHeight?: boolean | undefined;
   children?: React.ReactNode;

@@ -6,7 +6,7 @@ export interface Cre8PopoverProps {
   /** The heading text that appears at the top of the popover panel. Should only be 2-3 lines max. */
   heading?: string | undefined;
   /** Positions the popover panel absolutely to the trigger - **default** positions the popover panel below the trigger - **top** positions the popover panel below the trigger - **left** positions the popover panel below the trigger - **right** positions the popover panel below the trigger */
-  position?: string | undefined;
+  position?: any;
   /** Set to prevent the popover panel from hiding on scroll */
   isVisibleOnScroll?: boolean | undefined;
   /** The dynamic state for the popover - If true, the popover panel placement is determined by its position in the viewport - If false, the popover panel placement will be placed according to the position value */

@@ -6,15 +6,14 @@ export interface Cre8TabsProps {
   /** Tab sizes - **default** displays the cre8-tab text with cre8-typography-label-default - **sm** displays the cre8-tab text with cre8-typography-label-small */
   size?: "sm";
   /** Displays a set of tabs with a spanning the width of the element */
-  fullWidth?: boolean;
+  fullWidth?: boolean | undefined;
   /** Sets the initial active tab (e.g. 0 sets the first tab, 1 sets the second tab, etc.) */
-  activeIndex?: number;
+  activeIndex?: number | undefined;
   /** If position from left is greater than 0, set isStart to false. Otherwise set isStart to true.  _*This property is dynamically set_ */
-  isStart?: boolean;
+  isStart?: boolean | undefined;
   /** If last child is fully in the viewport, set isEnd to true. Otherwise, set isEnd to false.  _*This property is dynamically set_ */
-  isEnd?: boolean;
+  isEnd?: boolean | undefined;
   children?: React.ReactNode;
-  onTabChange?: (event: CustomEvent) => void;
 }
 
 /**
@@ -24,9 +23,7 @@ export const Cre8Tabs = createComponent({
   react: React,
   tagName: 'cre8-tabs',
   elementClass: Cre8TabsElement,
-  events: {
-    onTabChange: 'tabChange'
-  }
+
 });
 
 export default Cre8Tabs;
