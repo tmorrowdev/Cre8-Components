@@ -20,7 +20,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 */
 .cre8-c-utility-nav__list {
   display: flex;
-  margin: calc(8px * -2) 0 0 calc(8px * -2);
+  margin: size(-2) 0 0 size(-2);
   padding: 0;
   list-style: none;
 
@@ -28,8 +28,8 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   * Slotted utility nav item
   */
   ::slotted(cre8-utility-nav-item) {
-    margin-left: calc(8px * 2);
-    margin-top: calc(8px * 2);
+    margin-left: size(2);
+    margin-top: size(2);
   }
 }
 `;

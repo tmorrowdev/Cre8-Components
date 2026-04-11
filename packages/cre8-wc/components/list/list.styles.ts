@@ -10,7 +10,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   list-style: none;
   padding: 0;
   margin: 0;
-  margin-bottom: calc(8px * 2);
+  margin-bottom: size(2);
 }
 
 /**
@@ -19,8 +19,8 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  */
 ::slotted(cre8-list-item) {
   display: block;
-  padding-top: calc(8px * 2);
-  padding-bottom: calc(8px * 2);
+  padding-top: size(2);
+  padding-bottom: size(2);
   border-bottom: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-subtle);
 
   /**
@@ -36,8 +36,8 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   * 1) Reduce padding between items compared to the default
   */
   .cre8-c-list--condensed & {
-    padding-top: calc(8px * 1);
-    padding-bottom: calc(8px * 1);
+    padding-top: size(1);
+    padding-bottom: size(1);
   }
 
   /**
@@ -45,8 +45,8 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   * 1) Increase padding between items compared to the default
   */
   .cre8-c-list--padded & {
-    padding-top: calc(8px * 4);
-    padding-bottom: calc(8px * 4);
+    padding-top: size(4);
+    padding-bottom: size(4);
   }
 }
 `;

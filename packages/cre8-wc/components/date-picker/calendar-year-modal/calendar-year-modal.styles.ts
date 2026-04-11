@@ -5,7 +5,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: calc(8px * 1);
+  padding: size(1);
 }
 
 /* grid */

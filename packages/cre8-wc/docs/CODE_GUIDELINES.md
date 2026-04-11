@@ -277,11 +277,11 @@ There may also be instances where a component needs flexibility with a custom pr
 
 ```css
 .cre8-c-card {
-  padding: var(--cre8-card-padding, calc(8px * 2));
+  padding: var(--cre8-card-padding, size(2));
 }
 ```
 
-By default this card has 16px (`calc(8px * 2)`) of padding around it, but if a downstream team needed to remove all padding, they could set `--cre8-card-padding: 0;` in their code and that would get passed into the card. Basically this padding property says, "If `--cre8-card-padding` exists, use that. Otherwise fall back to 16px (`calc(8px * 2)`). This cascade should only be added after careful consideration.
+By default this card has 16px (`size(2)`) of padding around it, but if a downstream team needed to remove all padding, they could set `--cre8-card-padding: 0;` in their code and that would get passed into the card. Basically this padding property says, "If `--cre8-card-padding` exists, use that. Otherwise fall back to 16px (`size(2)`). This cascade should only be added after careful consideration.
 
 Lastly, CSS Custom Properties can help allow parents of composable components to set a variant without needing to declare a `variant` property on every child element. A good example is with `link-list`:
 

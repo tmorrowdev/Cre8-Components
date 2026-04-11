@@ -29,7 +29,7 @@
  */
 .cre8-c-select__input {
   @include input-styles;
-  padding-inline-end: calc(8px * 5.5);
+  padding-inline-end: size(5.5);
   cursor: pointer;
 }
 
@@ -41,11 +41,11 @@
   position: absolute;
   inset-block-start: 50%;
   transform: translateY(-50%);
-  inset-inline-end: calc(8px * 1);
+  inset-inline-end: size(1);
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: calc(8px * 1);
+  gap: size(1);
   pointer-events: none;
 }
 
@@ -53,9 +53,9 @@
  * Select Arrow Icon
  */
 .cre8-c-select__icon-arrow {
-  margin-right: calc(8px * 0.75);
-  width: calc(8px * 1.5);
-  height: calc(8px * 1.5);
+  margin-right: size(0.75);
+  width: size(1.5);
+  height: size(1.5);
 }
 
 /**

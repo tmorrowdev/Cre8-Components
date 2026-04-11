@@ -49,7 +49,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
   flex-shrink: 0;
   position: fixed;
   background: var(--cre8-color-bg-default);
-  width: calc(8px * 68);
+  width: size(68);
   max-width: 100%;
   border-radius: var(--cre8-border-radius-container);
   overflow: hidden;
@@ -74,7 +74,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  */
 .cre8-c-modal__header {
   display: flex;
-  padding: calc(8px * 4) calc(8px * 6) calc(8px * 2);
+  padding: size(4) size(6) size(2);
   align-items: center;
   /**
    * Modal Header with Error state
@@ -124,12 +124,12 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 .cre8-c-modal__header-inner {
   display: flex;
   align-items: center;
-  gap: calc(8px * 2);
+  gap: size(2);
 
   cre8-icon {
     .cre8-modal-icon {
-      height: calc(8px * 4);
-      width: calc(8px * 4);
+      height: size(4);
+      width: size(4);
     }
   }
 }
@@ -140,7 +140,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 .cre8-c-modal__body {
   max-height: 240px; // Prevent modal from getting too big based on content
   overflow: auto; // Force scrolling based on long amounts of content
-  padding: 0 calc(8px * 6);
+  padding: 0 size(6);
 
   /**
    * Modal Window Body for mobile user screen widths
@@ -155,7 +155,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  * Modal Window Footer
  */
 .cre8-c-modal__footer {
- padding: calc(8px * 3) calc(8px * 6) calc(100vh - 95dvh); // Ensure footer slot isn't cut off on certain devices
+ padding: size(3) size(6) calc(100vh - 95dvh); // Ensure footer slot isn't cut off on certain devices
 }
 
 /**

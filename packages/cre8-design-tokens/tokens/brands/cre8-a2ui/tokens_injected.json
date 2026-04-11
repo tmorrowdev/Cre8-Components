@@ -1,0 +1,48 @@
+{
+  "asset": {
+    "font": {
+      "Plus Jakarta Sans": {
+        "400": {
+          "normal": {
+            "value": "PlusJakartaSans-Regular",
+            "formats": [
+              "woff2",
+              "woff"
+            ],
+            "type": "fontFiles"
+          }
+        },
+        "500": {
+          "medium": {
+            "value": "PlusJakartaSans-Medium",
+            "formats": [
+              "woff2",
+              "woff"
+            ],
+            "type": "fontFiles"
+          }
+        },
+        "600": {
+          "medium": {
+            "value": "PlusJakartaSans-SemiBold",
+            "formats": [
+              "woff2",
+              "woff"
+            ],
+            "type": "fontFiles"
+          }
+        },
+        "700": {
+          "normal": {
+            "value": "PlusJakartaSans-Bold",
+            "formats": [
+              "woff2",
+              "woff"
+            ],
+            "type": "fontFiles"
+          }
+        }
+      }
+    }
+  }
+}

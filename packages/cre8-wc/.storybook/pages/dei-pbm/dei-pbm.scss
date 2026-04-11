@@ -17,8 +17,8 @@ li {
 
 /** @todo replace this with a proper component */
 .dei-feature {
-  padding-top: calc(8px * 4);
-  padding-bottom: calc(8px * 4);
+  padding-top: size(4);
+  padding-bottom: size(4);
   background: var(--cre8-color-bg-brand-xstrong);
   color: var(--cre8-color-content-knockout);
   overflow: hidden;
@@ -51,30 +51,30 @@ li {
 
 /* These sections are basically here because utilities were broken */
 .dei-feature-section {
-  margin-bottom: calc(8px * 12);
+  margin-bottom: size(12);
 }
 
 .we-stand-together-section {
-  margin-bottom: calc(8px * 8);
+  margin-bottom: size(8);
 }
 
 .hear-from-our-leaders-section {
-  margin-bottom: calc(8px * 8);
+  margin-bottom: size(8);
 }
 
 .how-were-making-it-happen-section {
-  margin-bottom: calc(8px * 8);
+  margin-bottom: size(8);
 }
 
 .offer-ongoing-support-feature::part(image) {
   border-radius: 0.625rem;
-  margin-bottom: calc(8px * 8);
+  margin-bottom: size(8);
 }
 
 .logos-section {
-  margin-bottom: calc(8px * 8);
+  margin-bottom: size(8);
 }
 
 .related-content-section {
-  margin-bottom: calc(8px * 8);
+  margin-bottom: size(8);
 }
