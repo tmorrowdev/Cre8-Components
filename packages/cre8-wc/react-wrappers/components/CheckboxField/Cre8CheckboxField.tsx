@@ -3,6 +3,12 @@ import { Cre8CheckboxField as Cre8CheckboxFieldElement } from '@tmorrow/cre8-wc/
 import React from 'react';
 
 export interface Cre8CheckboxFieldProps {
+  /** Checkbox container fieldnote knockout */
+  fieldNoteKnockout?: boolean | undefined;
+  /** Checkbox container fieldnote isSuccess */
+  fieldNoteIsSuccess?: boolean | undefined;
+  /** Checkbox container fieldnote isError */
+  fieldNoteIsError?: boolean | undefined;
   /** Checkbox container legend label */
   label?: string | undefined;
   /** Checkbox container fieldnote */
@@ -11,12 +17,6 @@ export interface Cre8CheckboxFieldProps {
   ariaDescribedBy?: string | undefined;
   /** Checkbox container fieldnote icon name */
   fieldNoteIconName?: string | undefined;
-  /** Checkbox container fieldnote knockout */
-  fieldNoteKnockout?: boolean;
-  /** Checkbox container fieldnote isSuccess */
-  fieldNoteIsSuccess?: boolean;
-  /** Checkbox container fieldnote isError */
-  fieldNoteIsError?: boolean;
   children?: React.ReactNode;
 }
 

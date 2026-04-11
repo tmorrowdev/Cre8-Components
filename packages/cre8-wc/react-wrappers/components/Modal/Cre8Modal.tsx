@@ -6,7 +6,7 @@ export interface Cre8ModalProps {
   /** Is Active attribute */
   isActive?: boolean | undefined;
   /** Status Types <cre8-text-passage size="sm"> <ul> <li>**default (no value)** renders a default modal</li> <li>**error** renders an error modal</li> <li>**warning** renders a warning modal</li> <li>**success** renders a success modal</li> <li>**info** renders an info modal</li> <li>**help** renders an help modal</li> </ul> </cre8-text-passage> */
-  status?: "error" | "info" | "warning" | "success" | "help" | undefined;
+  status?: any;
   /** Utility Modal Heading (String) */
   utilityModalTitle?: string;
   /** Not dismissible modal */

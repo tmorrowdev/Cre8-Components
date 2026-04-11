@@ -9,12 +9,12 @@ const styles = css`@import 'design-tokens/core/scss/theming/component' ;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: calc(8px * 5);
+  padding: size(5);
   border: var(--cre8-theme-border-width) dashed var(--cre8-color-border-default);
 }
 
 .c-request-prescription__footer {
-  margin-top: calc(8px * 2);
+  margin-top: size(2);
 }
 `;
 export default styles;

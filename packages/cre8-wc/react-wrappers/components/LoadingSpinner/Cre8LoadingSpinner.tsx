@@ -10,13 +10,13 @@ export interface Cre8LoadingSpinnerProps {
   /** Neutral property used for secondary neutral loading button. */
   neutral?: boolean | undefined;
   /** Property that specifies which button variant is using the loading spinner */
-  buttonVariant?: "primary" | "secondary" | "tertiary" | undefined;
+  buttonVariant?: any;
   /** Label to show along with progress indicator. This is required to meet accessibility requirements for this component. */
   label?: string | undefined;
   /** Progress to display, between 0 and 100. Requires determinate property to be set to true. */
   progress?: number;
   /** Size of the progress indicator and position of the label, if a label has been defined using the label property. - **large** renders a large progress indicator at 72px in width/height with the label below. - **small** renders a small progress indicator at 24px in width/height with the label to the right. */
-  size?: "large" | "small" | undefined;
+  size?: any;
 }
 
 /**

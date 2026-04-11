@@ -1,4 +1,4 @@
-import { html,  } from 'lit';
+import { html, } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import styles from './progress-steps-item.styles.js';
@@ -23,28 +23,28 @@ export class Cre8ProgressStepsItem extends Cre8Element {
      * @type {string}
      */
     @property()
-        message?: string;
+    message?: string;
 
     /**
      * The name of the step.
      * @type {string}
      */
     @property()
-        name: string;
+    name: string;
 
     /**
      * The state of the step: 'complete', 'current', 'error',' incomplete', 'warning';
      * @type {string}
      */
     @property()
-        state: 'complete' | 'current' | 'error' | 'incomplete' | 'warning';
+    state: 'complete' | 'current' | 'error' | 'incomplete' | 'warning';
 
     /**
      * An SVG string to use as the step icon.
      * @type {string}
      */
     @property()
-        svg: string;
+    svg: string;
 
     render() {
         const componentClassNames = this.componentClassNames('cre8-c-progress-steps-item', {

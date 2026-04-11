@@ -3,10 +3,10 @@ import { Cre8TagList as Cre8TagListElement } from '@tmorrow/cre8-wc/lib/componen
 import React from 'react';
 
 export interface Cre8TagListProps {
+  /** The unique id of the select */
+  fieldId?: string | undefined;
   /** Tag list legend label */
   label?: string | undefined;
-  /** The unique id of the select */
-  fieldId?: string;
 }
 
 /**

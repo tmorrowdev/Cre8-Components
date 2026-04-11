@@ -1,0 +1,3858 @@
+{
+  "version": "1.2.3",
+  "library": "@tmorrow/cre8-wc",
+  "tagPrefix": "cre8",
+  "description": "cre8 Web Components is a library of presentational UI web components to be consumed by # web applications.",
+  "framework": "Lit 3.3.1",
+  "components": [
+    {
+      "name": "cre8-button",
+      "category": "Actions",
+      "description": "The size and state of buttons on the screen serve as visual cues for the user\nabout what they can do and what they should do next.\nThey indicate the availability and priority of the action on the page.\n\n- Buttons are a single call-to-action where a single click performs that action\n- Use buttons when you are performing an action which is almost always on the same page\n- Use a link instead of a button when you're navigating to another place\n\n## How to Use\n\nButtons are distinguished by three key properties:\n\n- **Visual Priority**: Style and size: Primary, Secondary, or Tertiary styles;\n  each with large and small variations\n- **State**: Interaction state: hover/click (press), focus, disabled,\n  and submitting/loading (only for large buttons)\n- **Brand**: Styles determined by the site or component theme\n\n### Usage Guidelines\n\nPrimary, Secondary and Tertiary styles emphasize or de-emphasize an action. They also define\nbackground, font style, and border colors. Large and small sizing assists with visual priority by defining button\nheights, left and right internal padding, and font-size.\n\n#### System Feedback\nEach button has a default and hover/click (press) state that give the user feedback\nthat they have successfully interacted with a button.\nButton presses should always be combined with other types of timely system feedback.\nExamples of system feedback may be a page refresh, exposing additional controls or content,\ndialogs, alerts and notifications.\nIf there is perceived a delay in system response, generally due to technical constraints,\nprovide a progress or loading indicator.\n\n#### Button Text\n\n- Button text should be as short and simple as possible, ideally a maximum of 3 words.\n- Use Title Case for readability.\n- They should not include punctuation (exception: \"Loading...\").\n- They should not be used as an indicator of what happens on the next page, or as a substitute\nfor a progress meter.\n\n#### Button With Icon\n\nFor button with icon:\n- **iconRotateDegree** & **iconFlipDirection** props are optional.\n- They are used to set up the correct direction for icons, for example,\narrows, caret up or caret down.\n\n#### Button Styling\n\n- DO use only the styles of the brand you are working on.\n- DO NOT combine styles, even if the page is co-branded.\n\n#### Button Sizes\n- DO always pair like sizes together and maintain the hierarchy of Primary and Secondary/Tertiary.\n- DO NOT mix sizes of buttons when they are used together as a group.\n\n#### Input Pairing\n\nPrimary and Secondary buttons may be paired with input fields.\nOnly one Primary button may appear on each screen.\nUse the Secondary button when there are multiple in-context buttons\nand/or when there is an emphasized page level button.\nWhen used in a form context, the button's `type` needs to be `submit` to pass along form data.\n\n- DO use only large buttons with input fields.\n- DO NOT use small buttons with input fields.",
+      "attributes": {
+        "text": {
+          "type": "string",
+          "description": "The button text. Should be as short and simple as possible, ideally a maximum of 3 words.\n- Use Title Case for readability.\n- Should not include punctuation (exception: \"Loading...\").\n- Should not be used as an indicator of what happens on the next page, or as a substitute for a progress meter."
+        },
+        "variant": {
+          "type": "string",
+          "values": [
+            "primary",
+            "secondary",
+            "tertiary"
+          ],
+          "default": "primary",
+          "description": "Style variant\n- **primary** renders the button used for primary actions. Presents highest visual priority.\n  When grouped with other buttons, only one primary is allowed\n- **secondary** renders a secondary button. Presents a lower visual priority\n- **tertiary** renders a tertiary button. Presents the lowest visual priority.\n  Should be used in limited amounts - consider if a link (`<a>`) would be more appropriate"
+        },
+        "neutral": {
+          "type": "boolean",
+          "description": "This property is for a neutral button propery mainly used for the secondary or tertiary button variant."
+        },
+        "inverse": {
+          "type": "boolean",
+          "description": "Inverse attribute"
+        },
+        "href": {
+          "type": "string",
+          "description": "\nProvide this property if you intend to use button styles for an anchor tag (`<a>`).\nThis changes the component markup from `<button>` usage to `<a>` instead."
+        },
+        "target": {
+          "type": "string",
+          "values": [
+            "_blank",
+            "_self",
+            "_parent",
+            "_top"
+          ],
+          "description": "Target attribute for a link if providing `href` to style a link as a button\n- **_blank** yields a link that opens in a new tab\n- **_self** yields a link that loads the URL into the same browsing context as the current one.\n  This is the default behavior\n- **_parent** yields a link that loads the URL into the parent browsing context of the current one.\n  If there is no parent, this behaves the same way as _self\n- **_top** yields a link that loads the URL into the top-level browsing context.\n  If there is no parent, this behaves the same way as _self."
+        },
+        "rel": {
+          "type": "string",
+          "description": "Rel if this is an <a> element - this swaps <button> for <a>"
+        },
+        "svg": {
+          "type": "string",
+          "description": "svg as a raw string\n- For button with icon, the icon is defined by this prop.\n- Pass in a raw svg as a String for using <cre8-icon>\n- Must include the icon's position with `iconPostion`."
+        },
+        "size": {
+          "type": "string",
+          "values": [
+            "sm",
+            "lg",
+            "md"
+          ],
+          "default": "md",
+          "description": "Size variants add another way to increase or decrease visual priority of a button.\n- **sm** Shrinks the button typography and overall size from the default. Use when vertical space is constrained.\n- **md** This is the default value for the size.\n- **lg** Increases the button typography and overall size from the default."
+        },
+        "loading": {
+          "type": "boolean",
+          "description": "* Changes styling to an active state with a spinning icon.\n* Adds accessibility treatment by:\n  * announcing via voiceover when the loading success/error state via a aria-live region\n  * setting `aria-disabled`\n* Disables click events / form submitting while allowing focus (for accessibility)"
+        },
+        "type": {
+          "type": "string",
+          "values": [
+            "button",
+            "submit",
+            "reset"
+          ],
+          "default": "button",
+          "description": "Type of button.\n- **button** (default) button has no default behavior and does nothing unless provided some sort\nof client-side trigger\n- **submit** button for submitting form data to a server"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the form field"
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "Disabled attribute"
+        },
+        "required": {
+          "type": "boolean",
+          "description": "Whether the field is required"
+        },
+        "value": {
+          "type": "string",
+          "description": "The value of the form field."
+        }
+      },
+      "properties": {
+        "iconName": {
+          "type": "string",
+          "description": "Deprecated: iconName, use svg instead\nIcon name if including an icon within a button.\nMust include the icon's position with `iconPostion`. This prop is used for <cre8-icon-legacy>"
+        },
+        "iconRotateDegree": {
+          "type": "number",
+          "default": 0,
+          "description": "iconRotateDegree is used for <cre8-icon> to set the arrow in the correct direction"
+        },
+        "iconFlipDirection": {
+          "type": "string",
+          "description": "iconFlipDirection is used for <cre8-icon> to set the icon in the correct direction"
+        },
+        "iconPosition": {
+          "type": "string",
+          "values": [
+            "before",
+            "after"
+          ],
+          "default": "undefined",
+          "description": "Icon position. Must include the name of the icon with `iconName`\n\n- **before** places the icon before the button text\n- **after** places the icon after the button text"
+        },
+        "hideText": {
+          "type": "boolean",
+          "description": "Visually hide button text. Text is still accessible to assistive technology.\nUse this for icon-only buttons for accessibility"
+        },
+        "fullWidth": {
+          "type": "boolean",
+          "description": "Full width button"
+        },
+        "loadingComplete": {
+          "type": "boolean",
+          "description": "* Variant of the loading button that:\n  * Removes loading spinner\n  * Informs the SR user that the loading status is now complete, with visually hidden text in the live area"
+        },
+        "ariaLive": {
+          "type": "string",
+          "values": [
+            "polite",
+            "assertive"
+          ],
+          "default": "assertive",
+          "description": "Controls whether your loading status update to voiceover users will occur\nimmediately (used for more urgently needed updates) using `assertive` or at the next convenient\npause in their navigation using `polite`."
+        },
+        "splitButtonType": {
+          "type": "string",
+          "values": [
+            "text",
+            "caret"
+          ],
+          "description": "These two subvariants of the split button style the two seperate buttons to style as a singular button"
+        },
+        "buttonAriaExpanded": {
+          "type": "boolean",
+          "description": "Button aria expanded attribute"
+        },
+        "isError": {
+          "type": "boolean",
+          "description": "Whether the field is in an error state"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "description": "Whether the field is in a success state"
+        }
+      },
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": [
+        {
+          "description": "Primary button",
+          "html": "<cre8-button variant=\"primary\" text=\"Button\"></cre8-button>"
+        }
+      ]
+    },
+    {
+      "name": "cre8-button-group",
+      "category": "Actions",
+      "description": "Button Group component.",
+      "attributes": {
+        "orientation": {
+          "type": "\"responsive-full-width\"",
+          "description": "Responsive Button Group (for modals)"
+        }
+      },
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-danger-button",
+      "category": "Actions",
+      "description": "The size and state of buttons on the screen serve as visual cues for the user\nabout what they can do and what they should do next.\nThey indicate the availability and priority of the action on the page.\n\n- Buttons are a single call-to-action where a single click performs that action\n- Use Danger Buttons when you are performing an action that is potentially dangerous,\nsuch as permanently deleting information\n- Use a link instead of a button when you're navigating to another place\n\n## How to Use\n\nDanger Buttons are distinguished by three key properties:\n\n- **Visual Priority**: Style and size: Primary, Secondary, or Tertiary styles;\n  each with large and small variations\n- **State**: Interaction state: hover/click (press), focus, disabled,\n  and submitting/loading (only for large buttons)\n- **Brand**: Styles determined by the site or component theme\n\n### Usage Guidelines\n\nPrimary, Secondary and Tertiary styles emphasize or de-emphasize an action. They also define\nbackground, font style, and border colors. Large and small sizing assists with visual priority by defining button\nheights, left and right internal padding, and font-size.\n\n#### System Feedback\nEach button has a default and hover/click (press) state that give the user feedback\nthat they have successfully interacted with a button.\nButton presses should always be combined with other types of timely system feedback.\nExamples of system feedback may be a page refresh, exposing additional controls or content,\ndialogs, alerts and notifications.\nIf there is perceived a delay in system response, generally due to technical constraints,\nprovide a progress or loading indicator.\n\n#### Button Text\n\n- Button text should be as short and simple as possible, ideally a maximum of 3 words.\n- Use Title Case for readability.\n- They should not include punctuation (exception: \"Loading...\").\n- They should not be used as an indicator of what happens on the next page, or as a substitute\nfor a progress meter.\n\n#### Button Styling\n\n- DO use only the styles of the brand you are working on.\n- DO NOT combine styles, even if the page is co-branded.\n\n#### Button Sizes\n- DO always pair like sizes together and maintain the hierarchy of Primary and Secondary/Tertiary.\n- DO NOT mix sizes of buttons when they are used together as a group.\n\n#### Input Pairing\n\nPrimary and Secondary buttons may be paired with input fields.\nOnly one Primary button may appear on each screen.\nUse the Secondary button when there are multiple in-context buttons\nand/or when there is an emphasized page level button.\nWhen used in a form context, the button's `type` needs to be `submit` to pass along form data.\n\n- DO use only large buttons with input fields.\n- DO NOT use small buttons with input fields.",
+      "attributes": {
+        "text": {
+          "type": "string",
+          "default": "Button",
+          "description": "\nThe button text. Should be as short and simple as possible, ideally a maximum of 3 words.\n- Use Title Case for readability.\n- Should not include punctuation (exception: \"Loading...\").\n- Should not be used as an indicator of what happens on the next page, or as a substitute for a progress meter."
+        },
+        "variant": {
+          "type": "string",
+          "values": [
+            "primary",
+            "secondary",
+            "tertiary"
+          ],
+          "default": "primary",
+          "description": "Style variant\n- **primary** renders the button used for primary actions. Presents highest visual priority.\n  When grouped with other buttons, only one primary is allowed\n- **secondary** renders a secondary button. Presents a lower visual priority\n- **tertiary** renders a tertiary button. Presents the lowest visual priority.\n  Should be used in limited amounts - consider if a link (`<a>`) would be more appropriate"
+        },
+        "href": {
+          "type": "string",
+          "description": "\nProvide this property if you intend to use button styles for an anchor tag (`<a>`).\nThis changes the component markup from `<button>` usage to `<a>` instead."
+        },
+        "target": {
+          "type": "string",
+          "values": [
+            "_blank",
+            "_self",
+            "_parent",
+            "_top"
+          ],
+          "description": "Target attribute for a link if providing `href` to style a link as a button\n- **_blank** yields a link that opens in a new tab\n- **_self** yields a link that loads the URL into the same browsing context as the current one.\n  This is the default behavior\n- **_parent** yields a link that loads the URL into the parent browsing context of the current one.\n  If there is no parent, this behaves the same way as _self\n- **_top** yields a link that loads the URL into the top-level browsing context.\n  If there is no parent, this behaves the same way as _self."
+        },
+        "rel": {
+          "type": "string",
+          "description": "Rel if this is an <a> element - this swaps <button> for <a>"
+        },
+        "svg": {
+          "type": "string",
+          "description": "SVG raw string if including an icon within a button.\nMust include the icon's position with `iconPostion`. This prop is used for <cre8-icon>"
+        },
+        "size": {
+          "type": "string",
+          "values": [
+            "sm",
+            "lg"
+          ],
+          "description": "Size variants add another way to increase or decrease visual priority of a button.\n- **sm** shrinks the button typography and overall size from the default. Use when vertical space is constrained.\n- **lg** increases the button typography and overall size from the default."
+        },
+        "loading": {
+          "type": "boolean",
+          "description": "* Changes styling to an active state with a spinning icon.\n* Adds accessibility treatment by:\n  * announcing via voiceover when the loading success/error state via a aria-live region\n  * setting `aria-disabled`\n* Disables click events / form submitting while allowing focus (for accessibility)"
+        },
+        "inverted": {
+          "type": "boolean",
+          "description": "Inverted colors Danger Button (onDark)"
+        },
+        "type": {
+          "type": "string",
+          "values": [
+            "button",
+            "submit",
+            "reset"
+          ],
+          "default": "button",
+          "description": "Type of button.\n- **button** (default) button has no default behavior and does nothing unless provided some sort\nof client-side trigger\n- **submit** button for submitting form data to a server"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the form field"
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "Disabled attribute"
+        },
+        "required": {
+          "type": "boolean",
+          "description": "Whether the field is required"
+        },
+        "value": {
+          "type": "string",
+          "description": "The value of the form field."
+        }
+      },
+      "properties": {
+        "iconRotateDegree": {
+          "type": "number",
+          "default": 0,
+          "description": "rotate is used for <cre8-icon> to set the arrow in the correct direction"
+        },
+        "iconFlipDirection": {
+          "type": "string",
+          "description": "flip is used for <cre8-icon> to set the icon in the correct direction"
+        },
+        "iconPosition": {
+          "type": "string",
+          "values": [
+            "before",
+            "after"
+          ],
+          "default": "undefined",
+          "description": "Icon position. Must include the name of the icon with `iconName`\n\n- **before** places the icon before the button text\n- **after** places the icon after the button text"
+        },
+        "hideText": {
+          "type": "boolean",
+          "description": "Visually hide button text. Text is still accessible to assistive technology.\nUse this for icon-only buttons for accessibility"
+        },
+        "fullWidth": {
+          "type": "boolean",
+          "description": "Full width button"
+        },
+        "loadingComplete": {
+          "type": "boolean",
+          "description": "* Variant of the loading button that:\n  * Removes loading spinner\n  * Informs the SR user that the loading status is now complete, with visually hidden text in the live area"
+        },
+        "ariaLive": {
+          "type": "string",
+          "values": [
+            "polite",
+            "assertive"
+          ],
+          "default": "assertive",
+          "description": "Controls whether your loading status update to voiceover users will occur\nimmediately (used for more urgently needed updates) using `assertive` or at the next convenient\npause in their navigation using `polite`."
+        },
+        "buttonAriaExpanded": {
+          "type": "boolean",
+          "description": "Button aria expanded attribute"
+        },
+        "isError": {
+          "type": "boolean",
+          "description": "Whether the field is in an error state"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "description": "Whether the field is in a success state"
+        }
+      },
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": [
+        {
+          "description": "Primary danger-button",
+          "html": "<cre8-danger-button variant=\"primary\" text=\"Danger Button\"></cre8-danger-button>"
+        }
+      ]
+    },
+    {
+      "name": "cre8-split-button",
+      "category": "Actions",
+      "description": "Split Button component.",
+      "attributes": {
+        "disabled": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "string",
+          "values": [
+            "sm",
+            "lg"
+          ],
+          "description": "Size variant\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**sm** shrinks the button typography and overall size</li>\n<li>**lg** increases the button typography size and overall size</li>\n</ul>\n</cre8-text-passage>"
+        }
+      },
+      "properties": {
+        "buttonText": {
+          "type": "string",
+          "description": "Display text on the button"
+        },
+        "dropdownOpen": {
+          "type": "boolean"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The component content , this will consist of the dropdown when the user clicks the caret"
+        }
+      },
+      "events": {
+        "text-click": {
+          "detail": {}
+        },
+        "dropdown-click": {
+          "detail": {}
+        }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-chart",
+      "category": "Data",
+      "description": "A flexible chart component built on Chart.js that supports multiple chart types\nincluding line, bar, pie, doughnut, radar, polar area, bubble, and scatter charts.\n\n## Features\n- Supports all major Chart.js chart types\n- Reactive updates when data or options change\n- Customizable colors that integrate with cre8 design tokens\n- Responsive sizing\n- Loading state indicator\n- Event callbacks for click and hover interactions\n- Accessible with ARIA labels\n\n## Usage\n\n```html\n<cre8-chart\n  type=\"bar\"\n  .data=${{ labels: ['A', 'B', 'C'], datasets: [{ label: 'Sales', data: [10, 20, 30] }] }}\n  .options=${{ responsive: true }}\n></cre8-chart>\n```",
+      "attributes": {
+        "type": {
+          "type": "Cre8ChartType",
+          "default": "bar",
+          "description": "The type of chart to render."
+        },
+        "width": {
+          "type": "number",
+          "description": "Width of the chart container in pixels.\nIf not set, the chart will be responsive."
+        },
+        "height": {
+          "type": "number",
+          "default": 400,
+          "description": "Height of the chart container in pixels.\nIf not set, defaults to 400px."
+        },
+        "maintain-aspect-ratio": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether the chart should maintain aspect ratio when resizing."
+        },
+        "responsive": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether the chart should be responsive to container size."
+        },
+        "loading": {
+          "type": "boolean",
+          "default": false,
+          "description": "Display a loading indicator instead of the chart."
+        },
+        "aria-label": {
+          "type": "string",
+          "default": "Chart",
+          "description": "Accessible label for the chart."
+        },
+        "show-legend": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to show the legend."
+        },
+        "legend-position": {
+          "type": "string",
+          "values": [
+            "top",
+            "bottom",
+            "left",
+            "right"
+          ],
+          "default": "top",
+          "description": "Position of the legend."
+        },
+        "enable-animation": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to animate chart updates."
+        },
+        "animation-duration": {
+          "type": "number",
+          "default": 750,
+          "description": "Animation duration in milliseconds."
+        }
+      },
+      "properties": {
+        "data": {
+          "type": "Cre8ChartData",
+          "description": "The chart data including labels and datasets.\nThis should be an object with `labels` array and `datasets` array."
+        },
+        "options": {
+          "type": "_DeepPartialObject<CoreChartOptions<keyof ChartTypeRegistry> & ElementChartOptions<keyof ChartTypeRegistry> & PluginChartOptions<...> & DatasetChartOptions<...> & ScaleChartOptions<...>>",
+          "description": "Chart.js configuration options.\nSee Chart.js documentation for all available options."
+        },
+        "colors": {
+          "type": "string[]",
+          "description": "Default colors for datasets (uses cre8 design token colors)."
+        }
+      },
+      "slots": {},
+      "events": {
+        "cre8-chart-click": {
+          "detail": {},
+          "description": "Fired when a chart element is clicked"
+        },
+        "cre8-chart-hover": {
+          "detail": {},
+          "description": "Fired when hovering over chart elements"
+        },
+        "cre8-chart-ready": {
+          "detail": {},
+          "description": "Fired when the chart is initialized"
+        }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-list",
+      "category": "Data",
+      "description": "List component.",
+      "attributes": {
+        "variant": {
+          "type": "\"bare\"",
+          "description": "Style variants\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**bare** removes any lines from in between list items</li>\n</ul>\n</cre8-text-passage>"
+        },
+        "spacing": {
+          "type": "string",
+          "values": [
+            "condensed",
+            "padded"
+          ],
+          "description": "Spacing variants\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**padded** applies more padding in between list items compared to the default</li>\n<li>**condensed** reduces padding in between list items compared to the default</li>\n</ul>\n</cre8-text-passage>"
+        }
+      },
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The list items"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-list-item",
+      "category": "Data",
+      "description": "List Item component.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The content of the list item"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-remove-tag",
+      "category": "Data",
+      "description": "Clicking a Remove Tag causes it to disappear from the page or field (in the case of Multi-Select).\nThese tags always display a \"Close\" icon.",
+      "attributes": {
+        "text": {
+          "type": "string",
+          "description": "The tag text"
+        },
+        "color": {
+          "type": "Color",
+          "default": "neutral",
+          "description": "The tag color scheme\n\n - **neutral** should be used when doing non-link actions such as filters or multi-select, within forms, etc.\n - **neutral-hybrid** should be used for when tags are doing an action like a button or a link\n - **branded** should be used like Neutral, but for marketing / actionable items"
+        },
+        "shape": {
+          "type": "Shape",
+          "default": "round",
+          "description": "The tag shape\n\n- **round** will give the tag a rounded border\n- **square** will give the tag a squared border"
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "Disabled state for remove tag"
+        }
+      },
+      "properties": {},
+      "slots": {},
+      "events": {
+        "removeTagClicked": {
+          "detail": {}
+        }
+      },
+      "cssProperties": {},
+      "examples": [
+        {
+          "description": "Basic remove-tag",
+          "html": "<cre8-remove-tag text=\"Remove Tag\"></cre8-remove-tag>"
+        }
+      ]
+    },
+    {
+      "name": "cre8-table",
+      "category": "Data",
+      "description": "Table component.",
+      "attributes": {
+        "caption": {
+          "type": "string",
+          "description": "Specifies the caption/title of the table, visible to all users.\nIncreases accessibility of table."
+        },
+        "behavior": {
+          "type": "\"responsive\"",
+          "description": "Behavior variants\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**responsive** stacks column headers with respective table cells on small screens</li>\n</ul>\n</cre8-text-passage>"
+        },
+        "variant": {
+          "type": "\"striped\"",
+          "description": "Style variants\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**striped** add zebra-striping to table rows within the `<tbody>`</li>\n</ul>\n</cre8-text-passage>"
+        }
+      },
+      "properties": {
+        "isHoverable": {
+          "type": "boolean",
+          "description": "Hoverable rows variant\n1) Allows the table rows to be styled on hover"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-table-body",
+      "category": "Data",
+      "description": "Table Body component.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-table-cell",
+      "category": "Data",
+      "description": "Table Cell component.",
+      "attributes": {
+        "colspan": {
+          "type": "number",
+          "description": "Colspan attribute on td"
+        },
+        "variant": {
+          "type": "\"bare\"",
+          "description": "Style variants\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**bare** renders a table cell without a border</li>\n</ul>\n</cre8-text-passage>"
+        }
+      },
+      "properties": {
+        "dataHeader": {
+          "type": "string",
+          "description": "Column header text for cell to display when table is using responsive variant"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-table-header",
+      "category": "Data",
+      "description": "Table Header component.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-table-header-cell",
+      "category": "Data",
+      "description": "Table Header Cell component.",
+      "attributes": {
+        "colspan": {
+          "type": "number",
+          "description": "Colspan attribute on th"
+        },
+        "width": {
+          "type": "string",
+          "description": "Adds inline width style to th\nSets width of entire column"
+        }
+      },
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-table-object",
+      "category": "Data",
+      "description": "Table Object component.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-table-row",
+      "category": "Data",
+      "description": "Table Row component.",
+      "attributes": {
+        "variant": {
+          "type": "\"bare\"",
+          "description": "Style variants\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**bare** renders a table row without a border</li>\n</ul>\n</cre8-text-passage>"
+        }
+      },
+      "properties": {
+        "isExpanded": {
+          "type": "boolean",
+          "description": "Visually show additional expandable content"
+        },
+        "isExpandable": {
+          "type": "boolean",
+          "description": "Indicates row has additional visually hidden related content"
+        },
+        "expandedButtonText": {
+          "type": "string",
+          "default": "Collapse Table Row",
+          "description": "Expanded button text"
+        },
+        "collapsedButtonText": {
+          "type": "string",
+          "default": "Expand Table Row",
+          "description": "Expand button text"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-tag",
+      "category": "Data",
+      "description": "The tag component allows you to make selections, filter content, or trigger actions. While buttons are\nexpected to appear consistently and with familiar calls to actions, tags should appear dynamically\nas a group of multiple interactions elements. It is a flexible\ncomponent that comes in the following types:\n - **radio**  Clicking a Radio Button causes it to change color. These tags only allow\none option to be chosen and can be used in place of radio button when they need to be listed\nhorizontally\n\n - **checkbox** It allows for selecting options, It can be toggled on and off.",
+      "attributes": {
+        "text": {
+          "type": "string"
+        },
+        "variant": {
+          "type": "string",
+          "values": [
+            "neutral",
+            "branded",
+            "neutral-hybrid"
+          ],
+          "default": "neutral",
+          "description": "Color variant\n**neutral** renders the default, unselected tag\n**branded** renders a selected tag\n**neutral-hybrid** renders a tag when mouse is hovering tag"
+        },
+        "shape": {
+          "type": "string",
+          "values": [
+            "square",
+            "round"
+          ],
+          "default": "square",
+          "description": "shape of the tag, supports square and round, and default not mentioned its a square"
+        },
+        "type": {
+          "type": "string",
+          "values": [
+            "checkbox",
+            "radio"
+          ],
+          "description": "Type of tag\n**checkbox** renders a checkbox tag\n**radio** renders a radio tag"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the form field"
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "Whether the field is disabled"
+        },
+        "required": {
+          "type": "boolean",
+          "description": "Whether the field is required"
+        },
+        "value": {
+          "type": "string",
+          "description": "The value of the form field."
+        }
+      },
+      "properties": {
+        "isDisabled": {
+          "type": "boolean",
+          "description": "Disabled attribute\nrenders a greyed out tag that the user cannot interact with"
+        },
+        "isSelected": {
+          "type": "boolean",
+          "description": "Selected attribute\nrenders a selected tag"
+        },
+        "fieldId": {
+          "type": "string",
+          "description": "The fieldId attribute is assigned to the HTML input element of the radio button and the for attribute of the\ncorresponding label."
+        },
+        "isError": {
+          "type": "boolean",
+          "description": "Whether the field is in an error state"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "description": "Whether the field is in a success state"
+        }
+      },
+      "slots": {},
+      "events": {
+        "change": {
+          "detail": {}
+        }
+      },
+      "cssProperties": {},
+      "examples": [
+        {
+          "description": "Neutral tag",
+          "html": "<cre8-tag variant=\"neutral\" text=\"Tag\"></cre8-tag>"
+        }
+      ]
+    },
+    {
+      "name": "cre8-tag-list",
+      "category": "Data",
+      "description": "Tag List must have children which are Tag components that are of type `checkbox` or `radio`.\nThe Tags must use the `neutral` variant and the `round` shape when they are inside a Tag List.\nTag List has a label that should be used to describe the purpose of the list.",
+      "attributes": {
+        "label": {
+          "type": "string",
+          "description": "Tag list legend label"
+        }
+      },
+      "properties": {
+        "fieldId": {
+          "type": "string",
+          "description": "The unique id of the select"
+        }
+      },
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-accordion",
+      "category": "Disclosure",
+      "description": "The component is a vertically stacked list of headers that reveal or hide sections of related content on a page.\nThe header title gives the user a high level overview of the content allowing the user to decide\nwhich sections to expand for the information.\n\nAccordion contains Accordion Items as children. This component is the wrapper for grouping related accordion items.\n\nUsers can select different border types: default (no border), rectangle, rounded bottom, and rounded.",
+      "attributes": {},
+      "properties": {
+        "borderType": {
+          "type": "string",
+          "values": [
+            "rectangle",
+            "rounded-bottom",
+            "rounded",
+            "none"
+          ],
+          "description": "borderType"
+        },
+        "hasDivider": {
+          "type": "boolean",
+          "default": false,
+          "description": "\nWhen it is true, the inner dividers are displayed;\nif it is false, the inner dividers are not displayed"
+        }
+      },
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-accordion-item",
+      "category": "Disclosure",
+      "description": "\nThe accordion item component delivers large amounts of content in a small space\nthrough progressive disclosure. That is, the user gets key details about the\nunderlying content and can choose to expand that content within the constraints\nof the accordion item. Accordion Items work especially well on mobile interfaces or\nwhenever vertical space is at a premium.\n\n## HOW TO USE\nAvoid “nested” accordion items—that is, collapsible content within collapsible content.\nThis type of pattern goes against UX best practices.\n\nThe Cre8 accordion item header allows for two sizes:\n'sm' [cre8-typography-title-default] or 'lg' [cre8-typography-title-large]\n\nA chevron is used to indicate the “expand/collapse” action, though the entire\nheader area is clickable for the same action.\n\n**NOTE**: The header of the accordion item uses h tags so be sure to choose the headingTagVariant that\nfits into the hierarchy of your html page layout. THIS WILL NOT CHANGE THE APPEARANCE OF THE HEADER.",
+      "attributes": {
+        "size": {
+          "type": "string",
+          "values": [
+            "sm",
+            "lg"
+          ],
+          "default": "sm",
+          "description": "\nUsers can choose between two header sizes:  'sm' [title-default] or 'lg' [title-large]."
+        },
+        "heading": {
+          "type": "string",
+          "description": "\nControls the text content of the Accordion Item heading."
+        }
+      },
+      "properties": {
+        "isActive": {
+          "type": "boolean",
+          "default": false,
+          "description": "\nWhen true, the Accordion Item is opens, when false it closes;"
+        },
+        "iconBefore": {
+          "type": "boolean",
+          "description": "\nControls the positioning of the dropdown icon in relation to the text, true puts the icon before the text\nand false/undefined default the icon to the opposite side of the accordion item"
+        },
+        "tertiaryIcon": {
+          "type": "boolean",
+          "description": "\nControls the appearance  of dropdown icon as being an icon-only button. true renders the tertiary variant and\nfalse/undefined renders the default secondary appearance."
+        },
+        "headingTagVariant": {
+          "type": "string",
+          "values": [
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5",
+            "h6"
+          ],
+          "default": "h3",
+          "description": "\nPurely meant to help the user structure the HTML page hierarchy. Does not change the\nheader size. Defaults to 'h3'"
+        },
+        "brandHeader": {
+          "type": "boolean",
+          "description": "\nControls whether the header takes on the theme's 'brand-strong' color"
+        },
+        "accordionItemId": {
+          "type": "string",
+          "description": "\nOptional custom id for the accordion item, if one is not set, a random id is generated for you."
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The body of the accordion item will be any valid html\ninserted between the cre8-accordion-item opening and closing tags."
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-dropdown",
+      "category": "Disclosure",
+      "description": "The Dropdown menu itself is a container that can host multiple interactive items, commonly formatted as a list",
+      "attributes": {},
+      "properties": {
+        "buttonText": {
+          "type": "string",
+          "description": "Dropdown header"
+        },
+        "maxHeight": {
+          "type": "string",
+          "description": "Enables scrolling once content reached to specified height, the height should mention in px units, ex: 100px"
+        },
+        "dropdownWithLink": {
+          "type": "boolean",
+          "default": false,
+          "description": "button text represents as a link"
+        },
+        "open": {
+          "type": "boolean"
+        },
+        "dropdownContent": {
+          "type": "HTMLElement"
+        }
+      },
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-dropdown-item",
+      "category": "Disclosure",
+      "description": "The Dropdown item component is designed to be used with Dropdown component, each item represents a\nselectable option or action within the dropdown menu. It can be configured to trigger actions, navigate\nto links, initiate commands when clicked.",
+      "attributes": {},
+      "properties": {
+        "ariaLabel": {
+          "type": "string"
+        }
+      },
+      "slots": {},
+      "events": {
+        "dropdown-item-selected": {
+          "detail": {}
+        }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-modal",
+      "category": "Disclosure",
+      "description": "Modal component should be used in all modal situations.\nIt is natuarally composable and can even have a custom header and remove the close button.\n(note: adding `slot=\"header\"` will insert the given element into the header section of the modal,\nsame for `slot=\"footer\"` and no given slot name will inset it into the body)\n\nIf it is desired to create a utility modal. Cre8Modal requires a status value (see props table below,\nand a UtilityModalTitle since all utility modals have a cre8-heading)",
+      "attributes": {
+        "status": {
+          "type": "string",
+          "values": [
+            "error",
+            "info",
+            "warning",
+            "success",
+            "help"
+          ],
+          "description": "Status Types\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**default (no value)** renders a default modal</li>\n<li>**error** renders an error modal</li>\n<li>**warning** renders a warning modal</li>\n<li>**success** renders a success modal</li>\n<li>**info** renders an info modal</li>\n<li>**help** renders an help modal</li>\n</ul>\n</cre8-text-passage>"
+        }
+      },
+      "properties": {
+        "isActive": {
+          "type": "boolean",
+          "description": "Is Active attribute"
+        },
+        "utilityModalTitle": {
+          "type": "string",
+          "description": "Utility Modal Heading (String)"
+        },
+        "notDismissible": {
+          "type": "boolean",
+          "description": "Not dismissible modal"
+        },
+        "closeButtonText": {
+          "type": "string",
+          "default": "close",
+          "description": "Close Button Text"
+        },
+        "closeButtonIcon": {
+          "type": "string",
+          "default": "close",
+          "description": "Close Button Icon"
+        },
+        "ariaLabel": {
+          "type": "string",
+          "description": "Modal Aria Label - This is required for accessibility and provides context of the entire modal!"
+        },
+        "mapStatusToIconModal": {
+          "type": "(status: string) => TemplateResult<1> | null",
+          "description": "Maps modal icons and modal status variants to what the alt text of the related icon should be\nsee: (https://digital.#.com/patterns-and-Components/informational-display/alerts-and-notifications#query=alerts)\nthis provides the recommendated alt text of different statuses"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-popover",
+      "category": "Disclosure",
+      "description": "The Popover is for progressive disclosure of relevant content often hidden behind a help or info icon.\nIts content should be no longer than 3-4 lines in addition to a line of heading text and an optional button.",
+      "attributes": {
+        "heading": {
+          "type": "string",
+          "description": "The heading text that appears at the top of the popover panel. Should only be 2-3 lines max."
+        },
+        "position": {
+          "type": "string",
+          "description": "Positions the popover panel absolutely to the trigger\n- **default** positions the popover panel below the trigger\n- **top** positions the popover panel below the trigger\n- **left** positions the popover panel below the trigger\n- **right** positions the popover panel below the trigger"
+        }
+      },
+      "properties": {
+        "isVisibleOnScroll": {
+          "type": "boolean",
+          "description": "Set to prevent the popover panel from hiding on scroll"
+        },
+        "isDynamic": {
+          "type": "boolean",
+          "description": "The dynamic state for the popover\n- If true, the popover panel placement is determined by its position in the viewport\n- If false, the popover panel placement will be placed according to the position value"
+        },
+        "isActiveDynamic": {
+          "type": "boolean",
+          "description": "The dynamic active state\n_This property is dynamically set_"
+        },
+        "isActive": {
+          "type": "boolean",
+          "description": "The active state for the popover\n- If true, the popover panel is visible\n- If false, the popover panel is hidden\n\n_This property is dynamically set_"
+        },
+        "isRTL": {
+          "type": "boolean",
+          "description": "Query the document direction value\n<br/><br/> _*This property is dynamically set_"
+        },
+        "handleOnClickOutside": {
+          "type": "(e: MouseEvent) => void",
+          "description": "Handle click outside the component\n1. Close the show/hide popover panel on click outside\n2. If the popover panel is already closed then we don't care about outside clicks and we can bail early\n3. By the time a user clicks on the page the shadowRoot will almost certainly be\ndefined, but TypeScript isn't that trusting and sees this.shadowRoot as possibly\nundefined. To work around that we'll check that we have a shadowRoot (and a\nrendered .host) element here to appease the TypeScript compiler. This should never\nactually be shown or run for a human end user.\n4. Check to see if we clicked inside the active panel\n5. If the panel is active and we've clicked outside of the panel then it should be closed."
+        },
+        "removeActiveOnScroll": {
+          "type": "() => void",
+          "description": "Remove Active State on Scroll\n1. If a scroll event is fired and visibileOnScroll is not true, remove the active state\n2. If the popover height is less than the window height, then allow the active to remove on scroll"
+        },
+        "removeActive": {
+          "type": "() => void",
+          "description": "Remove Active State\n1. If a specific event is fired, remove the active state."
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {
+        "open": {
+          "detail": {}
+        },
+        "close": {
+          "detail": {}
+        }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-submenu",
+      "category": "Disclosure",
+      "description": "Submenu component.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-submenu-item",
+      "category": "Disclosure",
+      "description": "Submenu Item component.",
+      "attributes": {
+        "href": {
+          "type": "string",
+          "description": "The link URL"
+        }
+      },
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-tooltip",
+      "category": "Disclosure",
+      "description": "The purpose of tooltips is to provide a tip or hint about what a tool, icon, link, or other interaction does.\nIf you need to present a call to action with perhaps a button for the user to click, then use\n[Popover](/docs/cre8-components-popover--docs) instead.\n\n##Tooltip Styles\nThere are 4 alignment options for Tooltips: Top, Bottom, Right, and Left. Default placement is Bottom, below the\nelement it is describing. Top or Bottom alignment are the the preferred placement, particularly on screens that\nhave a more narrow viewport. Tooltips utilize Global styles and are not affected by brand themes.\n\n**With icon**\n- **iconRotateDegree** & **iconFlipDirection** props are optional.\n- They are used to set up the correct dirrection for icons, for example,\narrows, caret up or caret down.\n\n##Usability Considerations\nWith the exception of icons - which should always have alt text at a minimum - the UI should never rely on\nTooltips for clarity, especially because they are not always discovered by the user. If the user cannot\nintuitively understand the interface without Tooltips, the interface should be redesigned.\n\n##How to use\n- Use Tooltips to clarify the UI element the user is interacting with, not to add additional content on the page.\nAlso, do not simply restate content on the page, for example, the title of the field.\n- Tooltips should be short and to the point. Example: \"Click X to do X\" or \"Icon Description.\" If a succinct\ndescription is not possible, the interaction element should be redesigned.\n- In a mouse-driven UI, Tooltips are triggered on hover (mouseover) and dismissed (disappear)\nwhen the user mouses away from the element. In touch UIs, a Tooltip is triggered by tapping\nand holding an item. The Tooltip is displayed as long as the user continues to hold the element.\nTap and hold is a more advanced user behavior, and further reason for not relying on Tooltips.\nA novice user may never discover tap and hold for Tooltips.",
+      "attributes": {
+        "position": {
+          "type": "string",
+          "values": [
+            "default",
+            "top",
+            "left",
+            "right"
+          ],
+          "description": "Positions the tooltip panel absolutely to the icon. Position overrides `isDynamic`."
+        },
+        "knockout": {
+          "type": "boolean",
+          "description": "The knockout variant for the tooltip"
+        },
+        "svg": {
+          "type": "string",
+          "description": "svg as a raw string\n- The icon is defined by this prop.\n- Pass in a raw svg as a String for using <cre8-icon>"
+        }
+      },
+      "properties": {
+        "isDynamic": {
+          "type": "boolean",
+          "description": "The dynamic state for the tooltip. Position overrides isDynamic."
+        },
+        "isActiveDynamic": {
+          "type": "boolean",
+          "description": "The dynamic active state"
+        },
+        "isActive": {
+          "type": "boolean",
+          "description": "The active state for the tooltip"
+        },
+        "ariaDescribes": {
+          "type": "string",
+          "description": "Accepts the ID string of the item the tooltip is referencing"
+        },
+        "iconRotateDegree": {
+          "type": "number",
+          "default": 0,
+          "description": "iconRotateDegree is used for <cre8-icon> to set the arrow in the correct direction"
+        },
+        "iconFlipDirection": {
+          "type": "string",
+          "description": "iconFlipDirection is used for <cre8-icon> to set the icon in the correct direction"
+        },
+        "isRTL": {
+          "type": "boolean",
+          "description": "Query the document direction value\n<br/><br/> _*This property is dynamically set_"
+        },
+        "removeActive": {
+          "type": "() => void",
+          "description": "Remove Active State\n1. If a specific event is fired, remove the active state."
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "Default, unnamed slot container for Tooltip text"
+        },
+        "trigger": {
+          "description": "Named slot container for Tooltip element to trigger showing/hiding the Tooltip text"
+        }
+      },
+      "events": {
+        "open": {
+          "detail": {}
+        },
+        "close": {
+          "detail": {}
+        }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-alert",
+      "category": "Feedback",
+      "description": "The general purpose of an alert or notification is to draw the user’s attention\nand provide the user with timely, relevant information.\n\n## Alert Styles:\n- There are 6 statuses for 6 types of alerts: 'error', 'info', 'notification', 'neutral', 'warning', 'success'.\nEach alert will have different icon to be displayed in the alert.\n- Users can select two types of alert variants: 'standalone', or 'banner'.\n- User can also choose the alert should be emphasized or not. There are two options: subtle or strong.\n- User can add button or link in the alert.\nIf users choose to emphasize the alert (**strong**), user needs to used **\"inverted\"** prop in button or link.\n- User can choose whether the alert can be dismissed or not",
+      "attributes": {
+        "status": {
+          "type": "string",
+          "values": [
+            "error",
+            "info",
+            "notification",
+            "neutral",
+            "warning",
+            "success"
+          ],
+          "default": "info",
+          "description": "The alert type."
+        },
+        "variant": {
+          "type": "string",
+          "values": [
+            "standalone",
+            "banner"
+          ],
+          "default": "standalone",
+          "description": "The alert variant."
+        },
+        "emphasis": {
+          "type": "string",
+          "values": [
+            "subtle",
+            "strong"
+          ],
+          "default": "subtle"
+        },
+        "dismissed": {
+          "type": "boolean",
+          "description": "Dismissed property\n1) State that changes to true and is removed when the banner is dismissed"
+        }
+      },
+      "properties": {
+        "iconAlert": {
+          "type": "string",
+          "default": "undefined"
+        },
+        "iconTitle": {
+          "type": "string",
+          "description": "Icon title used for the icon alt text"
+        },
+        "headerText": {
+          "type": "string",
+          "default": "undefined"
+        },
+        "ctaBody": {
+          "type": "string",
+          "default": "undefined"
+        },
+        "notDismissible": {
+          "type": "boolean",
+          "description": "Dismissable property\n1) Adds the ability to close when toggled to true"
+        }
+      },
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": [
+        {
+          "description": "Standalone alert",
+          "html": "<cre8-alert variant=\"standalone\"></cre8-alert>"
+        }
+      ]
+    },
+    {
+      "name": "cre8-badge",
+      "category": "Feedback",
+      "description": "Status badges are used most often in tables or fat rows in a list.\nThese Components serve a contextual purpose and don't provide any functionality.\nBadges should be organized inside a dedicated table row communicating status such as pending, approved or rejected.",
+      "attributes": {
+        "text": {
+          "type": "string",
+          "default": "undefined",
+          "description": "The badge text"
+        },
+        "status": {
+          "type": "string",
+          "description": "Status (a color variant prop)\n- **neutral** (default) renders a badge with a neutral state treatment\n- **success** renders a badge with success state treatment\n- **warning** renders a badge with warning state treatment\n- **error** renders a badge with error state treatment\n- **info** renders a badge with information state treatment\n- **attention** renders a badge with attention state treatment"
+        },
+        "variant": {
+          "type": "string",
+          "description": "Background Style Variant\n\n- **dark|undefined** (default) renders a badge with a dark background\n- **light** renders a badge with a light background\n- **white** renders a badge with a white background"
+        },
+        "svg": {
+          "type": "string",
+          "description": "SVG as a raw string\n- For badges with icons, the icon is defined by this prop\n- Pass in a raw svg as a String. We use raw string loader for this but any method of getting raw svgs will do\n- Import example:`import svgFeedback from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Feedback.svg?raw';`\n- [cre8-icons Github repo](https://git.express-scripts.com/ExpressScripts/cre8-icons) This is the Github\nrepo for Cre8 icons, which includes a link to the storybook as well as relavant information for new icons"
+        }
+      },
+      "properties": {},
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-inline-alert",
+      "category": "Feedback",
+      "description": "In cases when it is necessary to alert the user but a less strong message that cannot be dismissed is desired,\nuse an in-line contextual alert message as the least \"severe\" message type.\nThese can be displayed anywhere on the page, but should never cover content.\nInline alerts do not include a title or close capability and are considered minimally intrusive user messaging.",
+      "attributes": {
+        "variant": {
+          "type": "string",
+          "values": [
+            "subtle",
+            "transparent"
+          ],
+          "default": "subtle",
+          "description": "Variant\n- **subtle** (default) renders an alert message in a padded container with a with a border and background color\n- **transparent** renders an alert message with no padded container, border, or background color"
+        },
+        "status": {
+          "type": "string",
+          "values": [
+            "error",
+            "info",
+            "neutral",
+            "warning",
+            "success",
+            "attention",
+            "help"
+          ],
+          "default": "info",
+          "description": "Status\n- **default** renders an inline alert with the brand colors\n- **error** renders an inline alert with an error state\n- **warning** renders an inline alert with a warning state\n- **success** renders an inline alert with a success state\n- **attention** renders an inline alert with an attention state\n- **neutral** renders an inline alert with a nuetral state"
+        }
+      },
+      "properties": {
+        "iconName": {
+          "type": "string",
+          "description": "DEPRECATED: Icon name used for the icon before to the field note"
+        },
+        "fullWidth": {
+          "type": "boolean",
+          "description": "Full width Inline Alert"
+        },
+        "iconTitle": {
+          "type": "string",
+          "description": "Icon title used for the icon alt text"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": [
+        {
+          "description": "Subtle inline-alert",
+          "html": "<cre8-inline-alert variant=\"subtle\"></cre8-inline-alert>"
+        }
+      ]
+    },
+    {
+      "name": "cre8-loading-spinner",
+      "category": "Feedback",
+      "description": "A loading spinner notifies the user that their request is being processed while the front end is retrieving data\nor performing slow computations.\n\nProviding visibility of a system's status is one of the most important rules of UI design. When the user has to\nguess or assume that the system is responding to their input, they may send a command such as submit multiple\ntimes, while also being anxious that the application is frozen or not working.\n\nWhile it is most ideal to improve system performance such that there is no perceptible delay, in some cases this\nis not possible. In these cases, the immediate response should be a progress indicator to give a visual indication\nthat their command was received and that the application is working.\n\nThe length of time for the system response is a good general guideline for which progress indicator to use.\n\n## Determinable vs indeterminate progress\n\nA progress meter provides feedback that the system is working and gives the user an indication of how much time\nthey will wait. This indicator should be used when the system response time is longer and determinable. See\nProgressMeter component for further examples and accessibility considerations.\n\n## How to Use\n\nThe loading-spinner component can be used to indicate loading state on the component level all the way up to the\npage level. There are two loading styles: determinate (loading progress represents percentage of total load time)\nand indeterminate (a spinning animation that persists while loading continues)\n\n1. Choose determinate or indeterminate. UX best practices leans more towards recommending the indeterminate\nprogress indicator if load time is unknown, while determinate is less user friendly unless the label indicates\nthe percentage loaded as well.\n2. Choose a size and use it according to context, guidance should be given by your design or content team.\n3. A common label to use is `Loading…`, guidance should be given by your design content team.\n4. If you choose to use the determinate loader then you must also control the progress attribute's value which\ncontrols the percentage of the circle that shows (values 0-100 accepted);\n5. For dark backgrounds, add the `inverse` attribute to the `<cre8-loading-spinner>` tag.\n6. For accessibility reasons, always include a label input unless explicitly informed to do otherwise by design or\naccessibility teams.\n7. The lg variant is usually suitable for containers or block level loading placeholders while the sm size is\nmeant for more inline loading states.",
+      "attributes": {
+        "determinate": {
+          "type": "boolean",
+          "description": "Mode of the spinner, defaults to indeterminate.\nIf true, renders a standard progress indicator, fills via the progress property from 0% to 100%.\nIf false or undefined, renders indeterminate spinner which animates in a spinning motion until component is\ndestroyed."
+        },
+        "inverse": {
+          "type": "boolean",
+          "description": "Inverse property used for dark backgrounds."
+        },
+        "neutral": {
+          "type": "boolean",
+          "description": "Neutral property used for secondary neutral loading button."
+        },
+        "label": {
+          "type": "string",
+          "description": "Label to show along with progress indicator.\nThis is required to meet accessibility requirements for this component."
+        },
+        "progress": {
+          "type": "number",
+          "default": 0,
+          "description": "Progress to display, between 0 and 100. Requires determinate property to be set to true."
+        },
+        "size": {
+          "type": "string",
+          "values": [
+            "large",
+            "small"
+          ],
+          "default": "large",
+          "description": "Size of the progress indicator and position of the label, if a label has been defined using the label property.\n- **large** renders a large progress indicator at 72px in width/height with the label below.\n- **small** renders a small progress indicator at 24px in width/height with the label to the right."
+        }
+      },
+      "properties": {
+        "buttonVariant": {
+          "type": "string",
+          "values": [
+            "primary",
+            "secondary",
+            "tertiary"
+          ],
+          "description": "Property that specifies which button variant is using the loading spinner"
+        }
+      },
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-percent-bar",
+      "category": "Feedback",
+      "description": "The percent bar visually indicates a user's current progress and has a few features: a basic display bar with\na percentage, an actionable icon that allows a user to revisit a prior step and an actionable link that\nallows a user save their progress before exiting.",
+      "attributes": {
+        "value": {
+          "type": "number",
+          "description": "The current step the user is on."
+        },
+        "max": {
+          "type": "number",
+          "description": "The total number of steps in the multistep process."
+        }
+      },
+      "properties": {
+        "disableActionLeft": {
+          "type": "boolean",
+          "description": "The action-left icon-only tertiary button in the percent bar controls can be disabled."
+        }
+      },
+      "slots": {},
+      "events": {
+        "leftActionButtonClick": {
+          "detail": {}
+        }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-progress-meter",
+      "category": "Feedback",
+      "description": "A progress meter provides feedback that the system is working and gives\nthe user an indication of how much time they will wait.\nThis indicator should be used when the system response time is longer and determinable.",
+      "attributes": {
+        "status": {
+          "type": "status",
+          "description": "Progress Status\n- **Default** renders a meter with default status fill\n- **Error** renders a meter with an error status fill\n- **Warning** renders a meter with a warning status\n- **Success** renders a meter with a success status fill"
+        },
+        "knockout": {
+          "type": "boolean",
+          "description": "Determines if the progress meter is displayed on a dark background (uses knockout colors for contrast)"
+        },
+        "max": {
+          "type": "number",
+          "default": 100,
+          "description": "The max number for the progress bar (defaulted to 100 to match percentages)"
+        },
+        "value": {
+          "type": "number",
+          "description": "The the percentage of the bar that is filled in (defaulted to match percentages)\nI.E a value of 50 with a 100 max would result in half the meter being filled"
+        },
+        "name": {
+          "type": "string",
+          "description": "Progress Meter name"
+        },
+        "label": {
+          "type": "string",
+          "description": "Progress Meter label"
+        }
+      },
+      "properties": {
+        "fieldId": {
+          "type": "string",
+          "description": "Progress Meter FieldId"
+        }
+      },
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-progress-steps-item",
+      "category": "Feedback",
+      "description": "The Progress Steps Item component is used to display a single step in a multi-step process.\nIt should be used as a child component of `cre8-progress-steps`.\nThese Components serve a contextual purpose and don't provide any functionality.",
+      "attributes": {
+        "message": {
+          "type": "string",
+          "description": "Optional message to display under the step name."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the step."
+        },
+        "state": {
+          "type": "string",
+          "description": "The state of the step: 'complete', 'current', 'error',' incomplete', 'warning';"
+        },
+        "svg": {
+          "type": "string",
+          "description": "An SVG string to use as the step icon."
+        }
+      },
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-skeleton-loader",
+      "category": "Feedback",
+      "description": "Skeleton Loader allows for the ability to create placeholder UI loading states.\nDevelopers are encouraged to pass into the Skeleton Loader their own parameters\nto create simple (or complex) loading screens.\n\n## How to Use\nSkeleton states are simplified versions of components used on an initial page load\nto indicate that the information on the page has not fully loaded yet.\nThey only appear for only a few seconds, disappearing once components and content populate the page.\nThese loaders use motion to convey that the page is not stuck and that data is still being loaded.\nThis can help to reduce user uncertainty. Skeleton objects should generally be visualized\nby simple primitives which mimic the original content in a recognizable way.\nIt is recommended to use a more elaborate form if that is needed to make the component recognizable.\n\nNever represent toast notifications, overflow menus, dropdown items, modals, and loaders with skeleton states.\nElements inside a modal may have a skeleton state, but the modal itself should not.\n\n**IMPORTANT!** This is not a loading element and will provide no value to a screen reader user,\nthis is a decorative element only!",
+      "attributes": {
+        "variant": {
+          "type": "string",
+          "values": [
+            "rectangle",
+            "square",
+            "circle"
+          ],
+          "default": "rectangle",
+          "description": "Style variant\n- **rectangle** renders a featureless rectangle as a placeholder for loading elements\n- **square** renders a featureless square as a placeholder for loading elements\n- **circle** renders a featureless circle as a placeholder for loading elements"
+        },
+        "height": {
+          "type": "string",
+          "description": "Height inline style\n1. Used to set a height on the skeleton if specific size is needed"
+        },
+        "width": {
+          "type": "string",
+          "description": "Width inline style\n1. Used to set a width on the skeleton if specific size is needed"
+        }
+      },
+      "properties": {},
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": [
+        {
+          "description": "Rectangle skeleton-loader",
+          "html": "<cre8-skeleton-loader variant=\"rectangle\"></cre8-skeleton-loader>"
+        }
+      ]
+    },
+    {
+      "name": "cre8-checkbox-field",
+      "category": "Forms",
+      "description": "Checkbox Field is the parent container for `checkbox-field-item`.\nIt is required to allow for grouping numerous checkboxes that need additional context (in the form of `<legend>`).\nIt also provides accessibility roles, aria attributes and field note messaging on the group.\n\nSee `checkbox-field-item` for more guidance on its usage.",
+      "attributes": {
+        "label": {
+          "type": "string",
+          "description": "Checkbox container legend label"
+        }
+      },
+      "properties": {
+        "fieldNote": {
+          "type": "string",
+          "description": "Checkbox container fieldnote"
+        },
+        "ariaDescribedBy": {
+          "type": "string",
+          "description": "Checkbox container fieldnote aria describe by"
+        },
+        "fieldNoteIconName": {
+          "type": "string",
+          "description": "Checkbox container fieldnote icon name"
+        },
+        "fieldNoteKnockout": {
+          "type": "boolean",
+          "description": "Checkbox container fieldnote knockout"
+        },
+        "fieldNoteIsSuccess": {
+          "type": "boolean",
+          "description": "Checkbox container fieldnote isSuccess"
+        },
+        "fieldNoteIsError": {
+          "type": "boolean",
+          "description": "Checkbox container fieldnote isError"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The component content, which should be a set of `checkbox-field-item`s"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-checkbox-field-item",
+      "category": "Forms",
+      "description": "Checkbox Field Item is the combination of a checkbox input, label and field note.\nCheckboxes can turn an option on or off.\n\nCheckboxes should be used when the user is allowed to select one, none or multiple options\nOR to \"opt-in\" (ex. I would like to receive the newsletter by email)\nor as a required acknowledgement(ex. I've read the Terms and Conditions).\nIf the user can only chose one option from many, use `radio-field-item`.\n\n## How to Use\n\n- A checkbox is independent of all other checkboxes in the list,\n  so checking one box should not uncheck the others in the group.\n- Place checkbox options one on top of another vertically. Do not display them in a row horizontally.\n- Avoid disabled and read-only states as much as possible.\n\n## Universal Form Field Rules\n- Unless indicated with the \"(Optional)\" label, all fields are assumed required.\n  Minimize the number of optional fields to keep forms as short as possible.\n- Always include a label written in sentence case.\n- Avoid using the read-only and disabled states as much as possible.",
+      "attributes": {
+        "label": {
+          "type": "string",
+          "description": "The checkbox label"
+        },
+        "checked": {
+          "type": "boolean",
+          "description": "Checked State"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the form field"
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "Disabled State"
+        },
+        "required": {
+          "type": "boolean",
+          "description": "Required property"
+        },
+        "value": {
+          "type": "string",
+          "description": "The value of the form field."
+        }
+      },
+      "properties": {
+        "errorText": {
+          "type": "string",
+          "default": "Error",
+          "description": "Visually hidden text that always signifies that this is an error for screen reader usage"
+        },
+        "errorNote": {
+          "type": "string",
+          "description": "The error field note that appears below the default field note"
+        },
+        "successText": {
+          "type": "string",
+          "default": "Success",
+          "description": "Visually hidden text that always signifies that this is successful for screen reader usage"
+        },
+        "successNote": {
+          "type": "string",
+          "description": "The success field note that appears below the default field note"
+        },
+        "fieldId": {
+          "type": "string",
+          "description": "Checkbox FieldId"
+        },
+        "fieldNote": {
+          "type": "string",
+          "description": "Checkbox FieldNote"
+        },
+        "ariaDescribedBy": {
+          "type": "string",
+          "description": "Checkbox fieldnote ariaDescribeBy"
+        },
+        "validationAriaDescribedBy": {
+          "type": "string",
+          "description": "Additional aria-describedby connection to id for additional success and error notes to be accessible"
+        },
+        "fieldNoteIconName": {
+          "type": "string",
+          "description": "Checkbox fieldnote icon name"
+        },
+        "isError": {
+          "type": "boolean",
+          "description": "Changes the component's treatment to represent an error state"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "description": "Changes the component's treatment to represent a success state"
+        },
+        "type": {
+          "type": "\"checkbox\"",
+          "description": "The type of form control (text, checkbox, radio, etc.)"
+        }
+      },
+      "slots": {},
+      "events": {
+        "change": {
+          "detail": {}
+        }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-date-picker",
+      "category": "Forms",
+      "description": "The Date Picker component renders a form group with label, control, help text and validation styling much\nlike the Field component but exclusively for type=date.\nCre8DatePicker inherits the Cre8Field component.",
+      "attributes": {
+        "autocomplete": {
+          "type": "string",
+          "description": "Autocomplete attribute that allows input to expect certain types of information. Note: autocomplete is supported\nby most browsers, but the suggested 'completions' are also sourced from those browsers. Values come\nfrom past user stored data from past interactions in that browser, such as:\n\n 1. From past values entered by the user, but they may also come from pre-configured values. For\n instance, a browser might let the user save their name, address, phone number, and email addresses for\n autocomplete purposes.\n\n 2. Perhaps the browser offers the ability to save encrypted credit card information, for autocompletion\n following a an authentication procedure.\n See: [MDN web docs_](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete)\n\n NOTE:: In order to provide autocompletion, user-agents might require input, select, textarea\n elements to:\n\n 1. Have a {{name}} and/or {{id}} attribute\n 2. Be descendants of a form element\n 3. The form to have a [submit button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit)"
+        },
+        "pattern": {
+          "type": "string",
+          "description": "Pattern attribute defines a regular expression to validate against input"
+        },
+        "placeholder": {
+          "type": "string",
+          "description": "The placeholder text that appears inside the input"
+        },
+        "label": {
+          "type": "string",
+          "default": "Label",
+          "description": "The required label that appears above the input"
+        },
+        "max": {
+          "type": "string | number",
+          "description": "The max attribute defines the maximum value that is acceptable and valid for the input containing the attribute."
+        },
+        "min": {
+          "type": "string | number",
+          "description": "The min attribute defines the minimum value that is acceptable and valid for the input containing the attribute."
+        },
+        "maxlength": {
+          "type": "string",
+          "description": "The maxlength is an integer above 0 that indicates the maximum allowed characters to be entered. When using the\nmaxlength prop, you must also use the \"required\" prop to provide Constraint Validation on the input field.\nThis allows users to know why the input they attempted didn't render in the input field. see\n[MDN maxlength](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/maxlength#constraint_validation)"
+        },
+        "readonly": {
+          "type": "boolean",
+          "description": "Readonly attribute"
+        },
+        "type": {
+          "type": "string",
+          "default": "date",
+          "description": "Type variants\n- **text** renders a standard text input\n- **email** renders a text input for an email format\n- **number** renders an input for number values only\n- **url** renders an input for urls only\n- **tel** renders an input for telephone number values only"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the form field"
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "The disabled attribute on the input"
+        },
+        "required": {
+          "type": "boolean",
+          "description": "The required attribute on the input"
+        },
+        "value": {
+          "type": "string",
+          "description": "The value of the form field."
+        }
+      },
+      "properties": {
+        "hasShortcuts": {
+          "type": "boolean",
+          "description": "Quick Shortcuts Variant"
+        },
+        "fieldId": {
+          "type": "string",
+          "description": "The unique id of the field\n<br/><br/> _*This property is dynamically set_"
+        },
+        "fieldNote": {
+          "type": "string",
+          "description": "The text that displays below in text field input"
+        },
+        "ariaLive": {
+          "type": "string",
+          "values": [
+            "polite",
+            "assertive"
+          ],
+          "default": "polite",
+          "description": "Controls how the voiceover will experience the new information when field note changes,\nimmediately (used for more urgently needed updates) using `assertive` or at the next convenient\npause in their navigation using `polite`."
+        },
+        "ariaDescribedBy": {
+          "type": "string",
+          "description": "Used to connect the field note in text field to the text menu for accessibility"
+        },
+        "errorText": {
+          "type": "string",
+          "default": "Error",
+          "description": "Visually hidden text that always signifies that this is an error for screen reader usage"
+        },
+        "errorNote": {
+          "type": "string",
+          "description": "The error field note that appears below the default field note"
+        },
+        "validationAriaDescribedBy": {
+          "type": "string",
+          "description": "Additional aria-describedby connection to id for additional success and error notes to be accessible"
+        },
+        "successText": {
+          "type": "string",
+          "default": "Success",
+          "description": "Visually hidden text that always signifies that this is successful for screen reader usage"
+        },
+        "successNote": {
+          "type": "string",
+          "description": "The success field note that appears below the default field note"
+        },
+        "isError": {
+          "type": "boolean",
+          "description": "Changes the component's treatment to represent an error state"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "description": "Changes the component's treatment to represent a success state"
+        },
+        "showCalendar": {
+          "type": "boolean"
+        }
+      },
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-field",
+      "category": "Forms",
+      "description": "The Field component renders a form group with label, control, help text and validation styling. There are\nconvenience variants of Field to support HTML5 input types and static content.",
+      "attributes": {
+        "autocomplete": {
+          "type": "string",
+          "description": "Autocomplete attribute that allows input to expect certain types of information. Note: autocomplete is supported\nby most browsers, but the suggested 'completions' are also sourced from those browsers. Values come\nfrom past user stored data from past interactions in that browser, such as:\n\n 1. From past values entered by the user, but they may also come from pre-configured values. For\n instance, a browser might let the user save their name, address, phone number, and email addresses for\n autocomplete purposes.\n\n 2. Perhaps the browser offers the ability to save encrypted credit card information, for autocompletion\n following a an authentication procedure.\n See: [MDN web docs_](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete)\n\n NOTE:: In order to provide autocompletion, user-agents might require input, select, textarea\n elements to:\n\n 1. Have a {{name}} and/or {{id}} attribute\n 2. Be descendants of a form element\n 3. The form to have a [submit button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit)"
+        },
+        "pattern": {
+          "type": "string",
+          "description": "Pattern attribute defines a regular expression to validate against input"
+        },
+        "placeholder": {
+          "type": "string",
+          "description": "The placeholder text that appears inside the input"
+        },
+        "label": {
+          "type": "string",
+          "default": "Label",
+          "description": "The required label that appears above the input"
+        },
+        "max": {
+          "type": "string | number",
+          "description": "The max attribute defines the maximum value that is acceptable and valid for the input containing the attribute."
+        },
+        "min": {
+          "type": "string | number",
+          "description": "The min attribute defines the minimum value that is acceptable and valid for the input containing the attribute."
+        },
+        "maxlength": {
+          "type": "string",
+          "description": "The maxlength is an integer above 0 that indicates the maximum allowed characters to be entered. When using the\nmaxlength prop, you must also use the \"required\" prop to provide Constraint Validation on the input field.\nThis allows users to know why the input they attempted didn't render in the input field. see\n[MDN maxlength](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/maxlength#constraint_validation)"
+        },
+        "readonly": {
+          "type": "boolean",
+          "description": "Readonly attribute"
+        },
+        "type": {
+          "type": "string",
+          "default": "text",
+          "description": "Type variants\n- **text** renders a standard text input\n- **email** renders a text input for an email format\n- **number** renders an input for number values only\n- **url** renders an input for urls only\n- **tel** renders an input for telephone number values only"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the form field"
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "The disabled attribute on the input"
+        },
+        "required": {
+          "type": "boolean",
+          "description": "The required attribute on the input"
+        },
+        "value": {
+          "type": "string",
+          "description": "The value of the form field."
+        }
+      },
+      "properties": {
+        "fieldId": {
+          "type": "string",
+          "description": "The unique id of the field\n<br/><br/> _*This property is dynamically set_"
+        },
+        "fieldNote": {
+          "type": "string",
+          "description": "The text that displays below in text field input"
+        },
+        "ariaLive": {
+          "type": "string",
+          "values": [
+            "polite",
+            "assertive"
+          ],
+          "default": "polite",
+          "description": "Controls how the voiceover will experience the new information when field note changes,\nimmediately (used for more urgently needed updates) using `assertive` or at the next convenient\npause in their navigation using `polite`."
+        },
+        "ariaDescribedBy": {
+          "type": "string",
+          "description": "Used to connect the field note in text field to the text menu for accessibility"
+        },
+        "errorText": {
+          "type": "string",
+          "default": "Error",
+          "description": "Visually hidden text that always signifies that this is an error for screen reader usage"
+        },
+        "errorNote": {
+          "type": "string",
+          "description": "The error field note that appears below the default field note"
+        },
+        "validationAriaDescribedBy": {
+          "type": "string",
+          "description": "Additional aria-describedby connection to id for additional success and error notes to be accessible"
+        },
+        "successText": {
+          "type": "string",
+          "default": "Success",
+          "description": "Visually hidden text that always signifies that this is successful for screen reader usage"
+        },
+        "successNote": {
+          "type": "string",
+          "description": "The success field note that appears below the default field note"
+        },
+        "isError": {
+          "type": "boolean",
+          "description": "Changes the component's treatment to represent an error state"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "description": "Changes the component's treatment to represent a success state"
+        }
+      },
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-field-note",
+      "category": "Forms",
+      "description": "Field Note gives direction on how to fill out a form field and to alert users of form errors and successes.\nIt’s used below an input field and never on its own.",
+      "attributes": {},
+      "properties": {
+        "isError": {
+          "type": "boolean",
+          "description": "Changes the component's treatment to represent an error"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "description": "Changes the component's treatment to represent a success"
+        },
+        "iconName": {
+          "type": "string",
+          "description": "DEPRECATED: Icon name used for the icon before to the field note"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The note content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-multi-select",
+      "category": "Forms",
+      "description": "Multiselect is used when multiple options can be chosen from a static dropdown\nThis component has a list of items in the dropdown that can be added as \"selected tags\"\nThe checkbox will always reflect the selected nature of the item and is not removed\nfrom the dropdown when clicked, the tags will be added and removed based on their state.\n\nEvent `selectedItemsChange` emits whenever a tag is added or remove from the list and the\ncurrent list after the change is given in the detail.",
+      "attributes": {
+        "items": {
+          "type": "string[]",
+          "default": "[]",
+          "description": "The list of string items the user can choose in the dropdown\n\nNote: For passing props containing arrays and complex types, you should pass the props using a\nperiod in from of the prop like so: `.items=\"[]\"`\n(this is only needed for Web Components and not the React version)"
+        },
+        "label": {
+          "type": "string",
+          "description": "The required label that appears above the multiselect"
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "The disabled attribute on the select"
+        }
+      },
+      "properties": {
+        "preselectedItems": {
+          "type": "string[]",
+          "description": "The list of string items that are initially in the selected list of tags\nNote: This list MUST be a subset of the array of items to function.\ni.e. if items=['cat', 'dog', 'bird'], preselectedItems=['cat'] is valid\nwhile preselectedItems=['cat', 'goat'] is not and will break the component.\n\nNote: For passing props containing arrays and complex types, you should pass the props using a\nperiod in from of the prop like so: `.items=\"[]\"`\n(this is only needed for Web Components and not the React version)"
+        },
+        "fieldId": {
+          "type": "string",
+          "description": "The unique id of the select"
+        },
+        "fieldNote": {
+          "type": "string",
+          "description": "Optional field note text can be added to provide additional field guidance."
+        },
+        "ariaDescribedBy": {
+          "type": "string",
+          "description": "Used to connect the field note in text field to the text menu for accessibility"
+        },
+        "validationAriaDescribedBy": {
+          "type": "string",
+          "description": "Additional aria-describedby connection to id for additional success and error notes to be accessible"
+        },
+        "isError": {
+          "type": "boolean",
+          "description": "Changes the component's treatment to represent an error state"
+        },
+        "errorNote": {
+          "type": "string",
+          "description": "The error field note that appears below the default field note"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "description": "Changes the component's treatment to represent a success state"
+        },
+        "successNote": {
+          "type": "string",
+          "description": "The success field note that appears below the default field note"
+        },
+        "selectedTagItems": {
+          "type": "string[]"
+        },
+        "dropdownOpen": {
+          "type": "boolean"
+        }
+      },
+      "slots": {},
+      "events": {
+        "selectedItemsChange": {
+          "detail": {}
+        }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-radio-field",
+      "category": "Forms",
+      "description": "Radio Field is the parent container for `radio-field-item`.\nIt is required to allow for grouping numerous radio fields that need additional context (in the form of `<legend>`).\nIt also provides accessibility roles, aria attributes and field note messaging on the group.\n\nSee [radio-field-item](?path=/story/cre8-components-radio-field-item--default) for more guidance on its usage.",
+      "attributes": {
+        "label": {
+          "type": "string",
+          "description": "Radio field legend label"
+        }
+      },
+      "properties": {
+        "fieldNote": {
+          "type": "string",
+          "description": "Radio Field Note"
+        },
+        "ariaDescribedBy": {
+          "type": "string",
+          "description": "Radio container fieldnote aria describe by"
+        },
+        "fieldNoteIconName": {
+          "type": "string",
+          "description": "Radio container fieldnote icon name"
+        },
+        "fieldNoteKnockout": {
+          "type": "boolean",
+          "description": "Radio container fieldnote knockout"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "description": "Radio container fieldnote isSuccess"
+        },
+        "isError": {
+          "type": "boolean",
+          "description": "Radio container fieldnote isError"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The component content, which should be a set of `radio-field-item`s"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-radio-field-item",
+      "category": "Forms",
+      "description": "A Radio Field Item adds a radio button to a Radio Field. Radio buttons let a user choose only one of several\noptions. Do not use a single radio button, because once selected, it cannot be de-selected. If the user can only\nchoose one, none or many options, use Checkbox instead.",
+      "attributes": {
+        "checked": {
+          "type": "boolean",
+          "description": "A Boolean attribute which, if present, sets the radio button as selected."
+        },
+        "label": {
+          "type": "string",
+          "description": "The label attribute is used to assign a value to the label element corresponding to this radio button."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the form field"
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "The Boolean disabled attribute, when present, makes the element not mutable, focusable, or even submitted with\nthe form. The user can neither edit nor focus on the control, nor its form control descendants."
+        },
+        "required": {
+          "type": "boolean",
+          "description": "Required attribute"
+        },
+        "value": {
+          "type": "string",
+          "description": "The value of the form field."
+        }
+      },
+      "properties": {
+        "ariaDescribedBy": {
+          "type": "string",
+          "description": "Identifies the element that provides a detailed, extended description for the object."
+        },
+        "fieldId": {
+          "type": "string",
+          "description": "The fieldId attribute is assigned to the HTML input element of the radio button and the for attribute of the\ncorresponding label."
+        },
+        "fieldNote": {
+          "type": "string",
+          "description": "A FieldNote can be placed to provide guidance. It's frequently used to in the context of form fields for extra\ninformation or validation messages."
+        },
+        "fieldNoteIconName": {
+          "type": "string",
+          "description": "Sets the item fieldnote icon.\n\n- **check** renders a badge with success state treatment\n- **error** renders a badge with error state treatment"
+        },
+        "fieldNoteKnockout": {
+          "type": "boolean",
+          "description": "Radio item fieldnote knockout"
+        },
+        "fieldNoteIsError": {
+          "type": "boolean",
+          "description": "Sets the error state of the fieldnote."
+        },
+        "isError": {
+          "type": "boolean",
+          "description": "The isError attribute is used to indicate an error state related to the radio button."
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "description": "The isSuccess attribute is used to indicate a success state related to the radio button."
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of form control (text, checkbox, radio, etc.)"
+        }
+      },
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-select",
+      "category": "Forms",
+      "description": "The Select control is designed and built to be used for selecting between choices in a form.\nIt is not a Dropdown control which is generally used for displaying lists of choices\nthat act as links or actions, like filter options.\n\nConsider the use of a Select control carefully.\nWhen you have less than 5 options for the user to choose from,\nRadio or Checkbox inputs may be a better choice to display all of the options at once.\nUsers have to slow down to scan a list with more than 15 options,\nso using an option group to give the options hierarchy may help users find their choice faster.\nAlternately, a text input field might be a more appropriate control to use when there are too many options,\nespecially when used with typeahead/auto-complete.\n\n## How to use\n1. The collapsed default state always shows a default placeholder value or a selected value.\n2. Sort list items in a logical order, such as grouping highly related options together,\n   placing most common options first, using alphabetical or numeric orders or dates in chronological order.\n3. A list that includes 6+ items should show a scrollbar.\n4. Users should be able to use a keystroke to quickly jump\n   to selecting an option that begins with the entered letter.\n5. Utilize appropriate native controls for when a user is on a mobile device rather than our custom Select.\n6. Adhere to our common form field conventions and always include a Label,\n   provide short and clear error messages in context, avoid using the Read-only\n   and Disabled states as much as possible, and utilize the info/formatting tip\n   or helpful link rather than placeholder text.",
+      "attributes": {
+        "items": {
+          "type": "(Cre8SelectOption | Cre8SelectOptionGroup)[]",
+          "default": "[]",
+          "description": "A mix of Cre8SelectOption and Cre8SelectOptionGroup definitions:\n- Cre8SelectOption\n  - label: option label text - `string`\n  - value: option value - `number | string`\n- Cre8SelectOptionGroup\n - optGroupLabel: optgroup label text - `string`\n - options: Array of multiple Cre8SelectOption items - `Cre8SelectOption[]`"
+        },
+        "label": {
+          "type": "string",
+          "default": "Label",
+          "description": "The required label that appears above the select"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the form field"
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "The disabled attribute on the select"
+        },
+        "required": {
+          "type": "boolean",
+          "default": false,
+          "description": "The required attribute on the select"
+        },
+        "value": {
+          "type": "string",
+          "description": "The value of the form field."
+        }
+      },
+      "properties": {
+        "fieldId": {
+          "type": "string",
+          "description": "The unique id of the select"
+        },
+        "fieldNote": {
+          "type": "string",
+          "description": "Optional field note text can be added to provide additional field guidance."
+        },
+        "ariaDescribedBy": {
+          "type": "string",
+          "description": "Used to connect the field note in text field to the text menu for accessibility"
+        },
+        "validationAriaDescribedBy": {
+          "type": "string",
+          "description": "Additional aria-describedby connection to id for additional success and error notes to be accessible"
+        },
+        "errorNote": {
+          "type": "string",
+          "description": "The error field note that appears below the default field note"
+        },
+        "successNote": {
+          "type": "string",
+          "description": "The success field note that appears below the default field note"
+        },
+        "isError": {
+          "type": "boolean",
+          "description": "Changes the component's treatment to represent an error state"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "description": "Changes the component's treatment to represent a success state"
+        },
+        "type": {
+          "type": "\"select\"",
+          "description": "The type of form control (text, checkbox, radio, etc.)"
+        }
+      },
+      "slots": {
+        "fieldNote": {
+          "description": "Container for optional field note content"
+        }
+      },
+      "events": {
+        "change": {
+          "detail": {}
+        }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-select-tile",
+      "category": "Forms",
+      "description": "The Select Tile component is a short block of content inside a visual\ncontainer that can be used in place of checkboxes, radio buttons, and\nlinks.  It allows you to add more descriptive and visually appealing\ncontent for these actions while letting you compare different choices\neither side-by-side or on top of each other.\n\nTypically you could use the \"header\" slot for an icon, and the \"title\"\nand \"body\" slots for a content title and body text below it.\n\nThe css parts are shown here wrapped in ::part() because otherwise Storybook\nwon't render them and the slots if they have the same name.\nSee https://developer.mozilla.org/en-US/docs/Web/CSS/::part",
+      "attributes": {
+        "variant": {
+          "type": "string",
+          "values": [
+            "bare",
+            "horizontal",
+            "horizontal-bare"
+          ],
+          "description": "Style variants\n- **bare** renders a select-tile without a border and without padding around the content\n- **horizontal** renders a select-tile with header, body, footer oriented in a row rather than a column\n- **horizontal-bare** renders a select-tile with header, body, footer\n  oriented in a row rather than a column without a border and without padding around the content"
+        },
+        "align": {
+          "type": "\"center\"",
+          "description": "Align variants\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**center** renders a select-tile that has center aligned content/text</li>\n</ul>\n</cre8-text-passage>"
+        },
+        "checked": {
+          "type": "boolean",
+          "description": "Checked State.\nNote: the `checked` attribute sets the `defaultChecked` property, as well\nas sets the initial value for the `checked` property."
+        },
+        "type": {
+          "type": "string",
+          "values": [
+            "checkbox",
+            "radio"
+          ],
+          "default": "radio",
+          "description": "Should this Select Tile behave as a radio button or a checkbox?"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the form field"
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "Disabled State"
+        },
+        "required": {
+          "type": "boolean",
+          "description": "Required attribute"
+        },
+        "value": {
+          "type": "string",
+          "description": "The value of the form field."
+        }
+      },
+      "properties": {
+        "variantBreakToVertical": {
+          "type": "string",
+          "values": [
+            "sm",
+            "lg",
+            "none",
+            "md",
+            "sm-2",
+            "xl",
+            "xxl"
+          ],
+          "default": "sm",
+          "description": "Which breakpoint, if any, to switch to verticial.\nOnly useful for horizontal variants. Defaults to 'sm'."
+        },
+        "checkPosition": {
+          "type": "string",
+          "values": [
+            "none",
+            "left",
+            "right",
+            "top-right"
+          ],
+          "default": "right",
+          "description": "Where does the checkmark or radio button go?\nIt disappears on 'none'. Only top-right is supported for vertical variants."
+        },
+        "radioVariant": {
+          "type": "string",
+          "values": [
+            "dot",
+            "check"
+          ],
+          "default": "dot",
+          "description": "In radio mode, whether to use the circle with the dot, or the rounded check."
+        },
+        "fieldId": {
+          "type": "string",
+          "description": "Select Tile FieldId"
+        },
+        "isError": {
+          "type": "boolean",
+          "description": "Error State"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "description": "Radio item fieldnote isSuccess"
+        },
+        "shadowRootOptions": {
+          "type": "{ delegatesFocus: boolean; mode: ShadowRootMode; slotAssignment?: SlotAssignmentMode; }"
+        },
+        "defaultChecked": {
+          "type": "boolean",
+          "description": "The default checked state when the element first renders or is reset.\n\nNote: the attribute is named `checked` and the property is\nnamed `defaultChecked`. This is the same as a regular radio button."
+        }
+      },
+      "slots": {
+        "\"\"": {
+          "description": "The default slot goes into the center, main part of the Select Tile.\n  Consider using title and body instead."
+        },
+        "header": {
+          "description": "The top or left part of the Select Tile"
+        },
+        "footer": {
+          "description": "The bottom or right part of the Select Tile"
+        },
+        "title": {
+          "description": "The title part of the Select Tile, use with body slot and\n        instead of the default slot for appropriate typography."
+        },
+        "body": {
+          "description": "The \"body\" part of the Select Tile, which appears under\n         the title slot and receives apporpriate typography."
+        }
+      },
+      "events": {
+        "change": {
+          "detail": {}
+        },
+        "input": {
+          "detail": {}
+        }
+      },
+      "cssProperties": {},
+      "examples": [
+        {
+          "description": "Bare select-tile",
+          "html": "<cre8-select-tile variant=\"bare\"></cre8-select-tile>"
+        }
+      ]
+    },
+    {
+      "name": "cre8-select-tile-list",
+      "category": "Forms",
+      "description": "Select Tile List is a container design to hold multiple Select Tile Components.",
+      "attributes": {
+        "variant": {
+          "type": "string",
+          "values": [
+            "columns",
+            "rows"
+          ],
+          "default": "columns",
+          "description": "Whether to show the tiles side by side (columns) or stacked vertically (rows)."
+        },
+        "label": {
+          "type": "string",
+          "description": "Select Tile container label"
+        }
+      },
+      "properties": {
+        "fieldNote": {
+          "type": "string",
+          "description": "Select Tile container fieldnote"
+        },
+        "ariaDescribedBy": {
+          "type": "string",
+          "description": "Select Tile container fieldnote aria describe by"
+        },
+        "fieldNoteIconName": {
+          "type": "string",
+          "description": "Select Tile container fieldnote icon name"
+        },
+        "fieldNoteKnockout": {
+          "type": "boolean",
+          "description": "Select Tile container fieldnote knockout"
+        },
+        "fieldNoteIsSuccess": {
+          "type": "boolean",
+          "description": "Select Tile container fieldnote isSuccess"
+        },
+        "fieldNoteIsError": {
+          "type": "boolean",
+          "description": "Select Tile container fieldnote isError"
+        }
+      },
+      "slots": {
+        "\"\"": {
+          "description": "The default slot norminally contains multiple `<select-tile />` Components."
+        }
+      },
+      "events": {},
+      "cssProperties": {
+        "--cre8-select-tile-list-item-width": {
+          "description": "Width of each child. Not used for horizontal."
+        }
+      },
+      "examples": [
+        {
+          "description": "Columns select-tile-list",
+          "html": "<cre8-select-tile-list variant=\"columns\"></cre8-select-tile-list>"
+        }
+      ]
+    },
+    {
+      "name": "cre8-band",
+      "category": "Layout",
+      "description": "Band component.",
+      "attributes": {
+        "variant": {
+          "type": "\"branded\"",
+          "description": "Gradient variant\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**1** renders the band with the set gradient background</li>\n</ul>\n</cre8-text-passage>"
+        }
+      },
+      "properties": {
+        "fullHeight": {
+          "type": "boolean",
+          "description": "Full height variant\n1) Sets the height to 100%"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The band content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-card",
+      "category": "Layout",
+      "description": "The card component acts a general container element sectioned off by slots: `header`, `body`, `footer`.\n\n# How to Use\n1. Wrap the card component tags around any html template code which has been properly imported into the file.\n2. Decide the layout that best fits the designs assigned to your work.\nGenerally, we recommend visual elements appear in the `header` (optional slot),\nwhile `body` remains reserved for custom html content that gives further context and meaning to the `header`.\n3. The card defaults to a column and includes a `horizontal` directional variant.\nIf you have a card where the layout of the content is more aligned horizontally,\nusing the `horizontal` variant will ease the construction of your component\n4. Finally, we typically recommend reserving the footer for any interactive elements\nsuch as buttons for navigating to further information.\n\n\nNOTE: Adjusting props not mentioned above may result in unpredictable states",
+      "attributes": {
+        "variant": {
+          "type": "string",
+          "values": [
+            "bare",
+            "horizontal",
+            "horizontal-bare"
+          ],
+          "description": "Style variants\n- **bare** renders a card without a border and without padding around the content\n- **horizontal** renders a card with header, body, footer oriented in a row rather than a column\n- **horizontal-bare** renders a card with header, body, footer oriented in a row rather than a column\n  without a border and without padding around the content"
+        },
+        "align": {
+          "type": "\"center\"",
+          "description": "Alignment variant\n- **center** renders a card that has center aligned content/text"
+        }
+      },
+      "properties": {},
+      "slots": {
+        "body": {
+          "description": "The card's body content"
+        },
+        "header": {
+          "description": "(Optional) Content in the card's header"
+        },
+        "footer": {
+          "description": "(Optional) Content in the card's footer"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": [
+        {
+          "description": "Bare card",
+          "html": "<cre8-card variant=\"bare\"></cre8-card>"
+        }
+      ]
+    },
+    {
+      "name": "cre8-divider",
+      "category": "Layout",
+      "description": "The divider component is a separator between sections of content or groups of items.\nIt often contains a horizontal or vertical line.",
+      "attributes": {
+        "variant": {
+          "type": "string",
+          "values": [
+            "horizontal",
+            "vertical"
+          ],
+          "default": "horizontal",
+          "description": "Divider variants\n- By default, the component renders the horizontal divider\n- **vertical** renders the vertical divider"
+        },
+        "status": {
+          "type": "string",
+          "description": "Status (a color variant prop)\n- By default, the divider has gray color.\n- **brand**, the divider has blue color.\n- **knockout**, the divider has white color."
+        }
+      },
+      "properties": {},
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": [
+        {
+          "description": "Horizontal divider",
+          "html": "<cre8-divider variant=\"horizontal\"></cre8-divider>"
+        }
+      ]
+    },
+    {
+      "name": "cre8-grid",
+      "category": "Layout",
+      "description": "Grid component.",
+      "attributes": {
+        "variant": {
+          "type": "string",
+          "values": [
+            "side-by-side",
+            "2up",
+            "3up",
+            "1-3up",
+            "4up",
+            "1-4up",
+            "1-2-4up",
+            "2-4-6up"
+          ],
+          "description": "Style variant\n- **side-by-side** yields a grid whose grid items display side-by-side (2 per row) on all screen sizes\n- **2up** yields a grid whose grid items are stacked on small screens\n  but display side-by-side when enough screen real estate is available to do so\n- **3up** yields a grid whose grid items are stacked on small screens,\n  transforms to a 2-across pattern and then transforms again to a 3-across pattern\n- **1-3up** yields a grid whose grid items are stacked on small screens\n  and transforms to a 3-across pattern on larger screens\n- **4up** yields a grid whose grid items are stacked on small screens,\n  transforms to a 2-across pattern, transforms again to a 3-across pattern,\n  and ultimately transforms to a 4-across pattern\n- **1-2-4up** yields a grid whose grid items are stacked on small screens,\n  transforms to a 2-across pattern, and ultimately transforms to a 4-across pattern\n- **1-4up** yields a grid whose grid items are stacked on small screens,\n  transforms to a 4-across pattern on medium/large screens"
+        },
+        "gap": {
+          "type": "string",
+          "values": [
+            "sm",
+            "lg",
+            "none"
+          ],
+          "description": "Style variant\n- **none** yields a grid whose grid items are spaced without any gutter in between\n- **sm** yields a grid whose grid items are spaced with a gap smaller than the default\n- **lg** yields a grid whose grid items are spaced with a gap larger than the default"
+        },
+        "break": {
+          "type": "string",
+          "values": [
+            "faster",
+            "slower"
+          ],
+          "description": "Break variant\n- **faster** breaks the grid at a smaller width than the default.\n  Example: 2up grid breaks to 2 per row at smaller width than default\n- **slower** breaks the grid at a larger width than the default.\n  Example: 2up grid breaks to 2 per row at larger width than default\n- **lg** yields a grid whose grid items are spaced with a gap larger than the default"
+        }
+      },
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The grid items"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": [
+        {
+          "description": "Side By Side grid",
+          "html": "<cre8-grid variant=\"side-by-side\"></cre8-grid>"
+        }
+      ]
+    },
+    {
+      "name": "cre8-grid-item",
+      "category": "Layout",
+      "description": "Grid Item component.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The content of the grid item"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-hero",
+      "category": "Layout",
+      "description": "Hero component.",
+      "attributes": {
+        "align": {
+          "type": "string",
+          "values": [
+            "center",
+            "left",
+            "right",
+            "top-left",
+            "top-center",
+            "bottom-center",
+            "top-right",
+            "bottom-right"
+          ],
+          "description": "Position variant. Bottom left is the default position\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**top-left** renders content in the top left corner of the image</li>\n<li>**left** renders content in the left, center part of the image</li>\n<li>**top-center** renders content in the top, center part of the image</li>\n<li>**center** renders content center of the image</li>\n<li>**bottom-center** renders content bottom center of the image</li>\n<li>**top-right** renders content top-right of the image</li>\n<li>**right** renders content right of the image</li>\n<li>**bottom-right** renders content bottom, right part of the image</li>\n</ul>\n</cre8-text-passage>"
+        }
+      },
+      "properties": {
+        "imgSrc": {
+          "type": "string",
+          "description": "Image source"
+        },
+        "imgAlt": {
+          "type": "string",
+          "description": "Image alt text"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-layout",
+      "category": "Layout",
+      "description": "Layout component.",
+      "attributes": {
+        "variant": {
+          "type": "\"left-sidebar\"",
+          "description": "Style variants\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>Default is a right sidebar</li>\n<li>**left-sidebar** formats the first `layout-section` component as a left sidebar</li>\n</ul>\n</cre8-text-passage>"
+        }
+      },
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The layout content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-layout-container",
+      "category": "Layout",
+      "description": "Layout Container component.",
+      "attributes": {},
+      "properties": {
+        "fullHeight": {
+          "type": "boolean",
+          "description": "Full height variant\n1) Sets the height to 100%"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The contents of the layout container"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-layout-section",
+      "category": "Layout",
+      "description": "Layout Section component.",
+      "attributes": {
+        "behavior": {
+          "type": "\"sticky\"",
+          "description": "Behavioral variants\n- **sticky** allows the layout section to stick to the screen until the\n  section reaches the bottom of the layout or the next layout section."
+        },
+        "top": {
+          "type": "string",
+          "default": "1rem",
+          "description": "Top style\n1) Used to create dynamic sticky containers that can be adjusted based on the content"
+        }
+      },
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The content of the layout section"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-linelength-container",
+      "category": "Layout",
+      "description": "Linelength Container component.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-main",
+      "category": "Layout",
+      "description": "Main component.",
+      "attributes": {},
+      "properties": {
+        "fullHeight": {
+          "type": "boolean",
+          "description": "Full height variant\n1) Sets the height to 100%"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The main content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-section",
+      "category": "Layout",
+      "description": "The section component acts as a block level HTML element that takes a 'headline' property\nthat renders the section's heading which wraps around any HTML template\nthat is found under this heading in the page layout.\n\n# How to Use\n1. Use the headline attribute to create the section header, or if you need a more custom header\n   there is a slot=\"header\" that you can target for inserting a custom template.\n2. For the main body contents, any html template can be placed inside the cre8-section component\n   and will automatically render below the header.\n\nNote: for a section with a dark background please control this with the internal Components' inverted attributes.",
+      "attributes": {
+        "headline": {
+          "type": "string",
+          "description": "The Headline will be rendered as the Section Headline with the correct brand styling applied"
+        }
+      },
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The content of the section should go here.\nIt could be a cre8-text-passage, a cre8-card or any other block level html."
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-feature",
+      "category": "Marketing",
+      "description": "Feature component.",
+      "attributes": {
+        "inverted": {
+          "type": "boolean",
+          "description": "Inverted variant\n1) Used for dark backgrounds"
+        }
+      },
+      "properties": {
+        "imgSrc": {
+          "type": "string",
+          "description": "Image source"
+        },
+        "imgAlt": {
+          "type": "string",
+          "description": "Image alt text"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-page-header",
+      "category": "Marketing",
+      "description": "Page Header component.",
+      "attributes": {
+        "heading": {
+          "type": "string",
+          "default": "Page header title",
+          "description": "Page header title"
+        }
+      },
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The page header content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-icon",
+      "category": "Media",
+      "description": "\n<svg> is a web component, which can be used with any frontend framework and use any svg.\nIt takes raw svgs as props and renders them.\n\n**'svg-legacy'** will be **deprecated** in Web Components v0.5.0\n\n- [List of new figma icons](https:/www.figma.com/file/j1a0rBkoH65XiGKfq7ppWa/Iconography?type=design&node-id=2037-5773&mode=design&t=6ZzC6KH3Gkxf3fj5-4)\n- The new `svg` from the svg package: https:/static-dev.esi-memberweb-dev.aws.evernorthcloud.com/svgs/.\n\n##Usability Considerations\n- If the icon is decorative: set `aria-hidden` to true.\n- If the icon is interactive (not decorative): set `aria-hidden` to false and add the `aria-label`\n- If the icon is key to functionality from a screen reader perspective, it is required to add `aria-label`\nwhich will describe the icon.\nFor example, if the icon is a close button, setting `aria-label=\"Close\"`will give\nthe SVG an aria-label to make it sufficiently accessible.\n\n[More information on Accessibility with svgs](https:/static-dev.esi-memberweb-dev.aws.evernorthcloud.com/svgs/?path=/story/getting-started-accessibility--page)\n\n##How to use\nCre8 Web Components (cre8-wc) includes the `cre8_dev/svgs` package.\nIf you need to install a newer version than what's included, please see\nthe [installation instructions for svgs](https:/git.express-scripts.com/ExpressScripts/svgs#installation).\n- Import the component (this is the icon container): `import '@cre8_dev/svgs';`\n- Import an svg as a string: `import svgInfo from 'cre8_dev/svgs/lib/icons/System/Regular/Info.svg?raw';`\n\nYour import paths may be different depending on your project's build configuration.\nPlease see [Importing Icons](https:/static-dev.esi-memberweb-dev.aws.evernorthcloud.com/svgs/?path=/story/icon-sets-importing-icons--page)\nof the `cre8_dev/svgs` documentation for more information.",
+      "attributes": {
+        "focusable": {
+          "type": "boolean",
+          "description": "Focusable"
+        },
+        "name": {
+          "type": "string",
+          "description": "Icon name (this method of passing in svgs is to be deprecated)"
+        },
+        "svg": {
+          "type": "string"
+        }
+      },
+      "properties": {
+        "iconUrl": {
+          "type": "string",
+          "default": "iconSprite",
+          "description": "Icon path\n1) This points to the file where the icon sprite lives\n2) This method of pathing will soon be depricated"
+        },
+        "iconTitle": {
+          "type": "string",
+          "description": "Icon Title, this string is used for the aira-label of the svg"
+        }
+      },
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-logo",
+      "category": "Media",
+      "description": "Logo component.",
+      "attributes": {
+        "href": {
+          "type": "string",
+          "description": "Logo link"
+        }
+      },
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The logo element"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-breadcrumbs",
+      "category": "Navigation",
+      "description": "The breadcrumbs component is a secondary navigation pattern that helps a user understand where the user is located.\nThe breadcrumbs component shows the users their current location relative to the information architecture\nIt enables the users to quickly move up to a parent level or previous location.\n\n## How to Use\n\n- Import 'Breadcrumbs' component.\n- Add the pages in the path of the breadcrumbs using `cre8-breadcrumbs-item`.\nAll the pages in the breadcrumbs component should be interactive.\n- All the page should link to their respective pages (except the current page) using `cre8-link`.\n- The current page is included in the breadcrumbs trail.\n- The current page is always the last text listed and is not an interactive link.",
+      "attributes": {},
+      "properties": {
+        "navAriaLabel": {
+          "type": "string",
+          "default": "breadcrumbs",
+          "description": "aria-label attribute to designate at name for the nav. Can be override by user"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-breadcrumbs-item",
+      "category": "Navigation",
+      "description": "Breadcrumbs Item component.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The component content, the expected slotted content is a Cre8 Link or a String for the \"terminal node\""
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-footer",
+      "category": "Navigation",
+      "description": "Footer component.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The footer content"
+        },
+        "top": {
+          "description": "The top content (above the default slot)"
+        },
+        "bottom": {
+          "description": "The bottom content (below the default slot)"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-global-nav",
+      "category": "Navigation",
+      "description": "Global Nav component.",
+      "attributes": {
+        "inverted": {
+          "type": "boolean",
+          "description": "Inverted variant\n1) Used for dark backgrounds"
+        },
+        "behavior": {
+          "type": "\"side-by-side\"",
+          "description": "Behavior variant\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**side-by-side** keeps the primary nav item always in a horizontal pattern</li>\n</ul>\n</cre8-text-passage>"
+        }
+      },
+      "properties": {
+        "navAriaLabel": {
+          "type": "string",
+          "default": "global",
+          "description": "aria-label attribute to designate at name for the nav. Can be override by user"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The primary navigation items"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-global-nav-item",
+      "category": "Navigation",
+      "description": "Global Nav Item component.",
+      "attributes": {
+        "text": {
+          "type": "string",
+          "default": "Nav item",
+          "description": "Primary nav item text"
+        },
+        "href": {
+          "type": "string",
+          "default": "#",
+          "description": "Primary nav item href"
+        }
+      },
+      "properties": {
+        "iconName": {
+          "type": "string",
+          "default": "keyboard-arrow-down",
+          "description": "Icon name"
+        },
+        "megaMenu": {
+          "type": "boolean",
+          "description": "Append to the class name. Used for passing in utility classes"
+        },
+        "isActive": {
+          "type": "boolean",
+          "description": "Append to the class name. Used for passing in utility classes"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The label for the navigation item"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": [
+        {
+          "description": "Basic global-nav-item",
+          "html": "<cre8-global-nav-item text=\"Global Nav Item\"></cre8-global-nav-item>"
+        }
+      ]
+    },
+    {
+      "name": "cre8-header",
+      "category": "Navigation",
+      "description": "Header component.",
+      "attributes": {},
+      "properties": {
+        "isActive": {
+          "type": "boolean",
+          "description": "Is active state\n1) Set to true when small screen menu is open"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The header content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-link",
+      "category": "Navigation",
+      "description": "Link Component are strictly used in the case where the component will take\nthe user away from the current page to a new url.\nIn this vein, this component should ONLY be used in situations an anchor tag would be used (an href is required)\nThis goes for the variations as well such as the Call To Action Link\n\n**Note**\n\nFor link with icon:\n- **iconRotateDegree** & **iconFlipDirection** props are optional.\n- They are used to set up the correct direction for icons, for example,\narrows, caret up or caret down.",
+      "attributes": {
+        "href": {
+          "type": "string",
+          "description": "Href attribute of the anchor tag"
+        },
+        "rel": {
+          "type": "string",
+          "description": "Rel attribute of the anchor tag"
+        },
+        "target": {
+          "type": "string",
+          "values": [
+            "_blank",
+            "_self",
+            "_parent",
+            "_top"
+          ],
+          "description": "Target attribute for a link (i.e. set to _blank to open in new tab)\n- **_blank** yields a link that opens in a new tab\n- **_self** yields a link that loads the URL into the same browsing context as the current one.\n  This is the default behavior\n- **_parent** yields a link that loads the URL into the parent browsing context of the current one.\n  If there is no parent, this behaves the same way as _self\n- **_top** yields a link that loads the URL into the top-level browsing context.\n  If there is no parent, this behaves the same way as _self."
+        },
+        "svg": {
+          "type": "string",
+          "description": "svg as a raw string\n- For links with icon, the icon is defined by this prop.\n- Pass in a raw svg as a String for using <cre8-icon>"
+        },
+        "size": {
+          "type": "string",
+          "values": [
+            "sm",
+            "lg"
+          ],
+          "description": "Size variant (default is medium)\n- **sm** shrinks the link typography and overall size\n- **lg** increases the link typography size and overall size"
+        },
+        "inverted": {
+          "type": "boolean",
+          "description": "Inverted colors Link (onDark)"
+        }
+      },
+      "properties": {
+        "iconName": {
+          "type": "string",
+          "description": "DEPRECATED: Icon name, use svg instead"
+        },
+        "iconRotateDegree": {
+          "type": "number",
+          "default": 0,
+          "description": "iconRotateDegree is used for <cre8-icon> to set the arrow in the correct direction"
+        },
+        "iconFlipDirection": {
+          "type": "string",
+          "description": "iconFlipDirection is used for <cre8-icon> to set the icon in the correct direction"
+        },
+        "iconPosition": {
+          "type": "string",
+          "values": [
+            "before",
+            "after"
+          ],
+          "default": "undefined",
+          "description": "Icon position\n- **before** places the icon before the button text\n- **after** places the icon after the button text"
+        },
+        "ctaIcon": {
+          "type": "string",
+          "default": "arrow-forward",
+          "description": "Call To Action Icon"
+        },
+        "ctaLink": {
+          "type": "boolean",
+          "description": "Call To Action Link"
+        },
+        "noUnderline": {
+          "type": "boolean",
+          "description": "Link with no underline"
+        }
+      },
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-link-list",
+      "category": "Navigation",
+      "description": "Link List component.",
+      "attributes": {
+        "behavior": {
+          "type": "string",
+          "values": [
+            "horizontal",
+            "responsive"
+          ],
+          "description": "Behavioral variant\n- **responsive** renders a horizontal wrapping link list that converts to a stacked link list on large screens\n- **horizontal** renders a horizontal wrapping link list on all screens"
+        },
+        "inverted": {
+          "type": "boolean",
+          "description": "Inverted variant\n1. Used for dark backgrounds"
+        },
+        "size": {
+          "type": "\"sm\"",
+          "description": "Size variants\n- **sm** renders a link list with a smaller typography"
+        },
+        "spacing": {
+          "type": "\"condensed\"",
+          "description": "Spacing between link list items\n- **condensed** renders a link list with a more compact display"
+        },
+        "variant": {
+          "type": "string",
+          "values": [
+            "secondary",
+            "display"
+          ],
+          "description": "Style variants\n- **secondary** renders a link list with a more subtle visual treatment\n- **display** renders a link list with a display treatment (e.g. article title)"
+        }
+      },
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The link list items"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": [
+        {
+          "description": "Secondary link-list",
+          "html": "<cre8-link-list variant=\"secondary\"></cre8-link-list>"
+        }
+      ]
+    },
+    {
+      "name": "cre8-link-list-item",
+      "category": "Navigation",
+      "description": "Link List Item component.",
+      "attributes": {
+        "text": {
+          "type": "string",
+          "description": "The link text"
+        },
+        "href": {
+          "type": "string",
+          "description": "The link URL"
+        }
+      },
+      "properties": {
+        "isActive": {
+          "type": "boolean",
+          "description": "Active link"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The default slot to put badges or other Components"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": [
+        {
+          "description": "Basic link-list-item",
+          "html": "<cre8-link-list-item text=\"Link List Item\"></cre8-link-list-item>"
+        }
+      ]
+    },
+    {
+      "name": "cre8-nav-container",
+      "category": "Navigation",
+      "description": "Nav Container component.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The navigation container content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-pagination",
+      "category": "Navigation",
+      "description": "The Pagination component is used to split up a large amount of results\n by showing only a certain amount on each page. You can cycle through\n the pages using Page Numbers, Next and Previous Buttons, or optional\n First Page and Last Page Buttons. This component is also used by Table\n to cycle through rows of results. Pagination has 3 display options:\n\n**default**:  Can contain up to seven Page Numbers (ellipses included)\n at a time flanked by Next and Previous Buttons. When there are more than\n seven pages, numbers start getting replaced by ellipses. Use this option\n when you have a lot of horizontal space in a layout. It should not be used\n for mobile web layouts since its buttons are smaller than the minimum touch target of 44px.\n The component has built in responsivity to mobile page size so you dont have tohandle this\n seperately\n\n\n**compact** : Best used as a summary of where you are among pages or table rows flanked by\nPrevious and Next Buttons. Use this option when you have limited horizontal space but still\nneed to show where users are among results. Great for mobile layouts.\n\n\n**icon-only** : Use this option in very tight spaces when it’s not required to show users\nwhere they are among results. Great for mobile layouts.\n\n\n## HOW TO USE\n\nSelect an option from the “display” dropdown depending on layout width\nSelect where your current page is from the “Page” dropdown\nTo show less pages when using Full Numbers, use the \"visiblePages” toggles\nTo hide the First Page and Last Page Buttons, turn on the “hideFirstLastButton” toggle\nTo change the states of page numbers or buttons, interact with the buttond to invoke each “State”\nWhen using Compact Numbers, you can choose between “compact” and “icon-only” formats\n\n\n## ACCESSIBILITY NOTE\n\nTo best orient people using screen readers, push focus to the top of\nthe list of results after any of the pagination buttons have been triggered,\n**except for the currently selected one**. Focus target could be a visual results heading,\nor the top heading of the results container of the page selected\nvia a programmatic selector, e.g. < section id=“results” aria-label=\"results-section\" > or\n< div role= “group” aria-label=“results” >.",
+      "attributes": {
+        "display": {
+          "type": "string",
+          "values": [
+            "compact",
+            "icon-only",
+            "default"
+          ],
+          "description": "(optional) prop that allows for a compact and icon-only variant both\nfor mobile screen-sizes and for use in certain contexts as guided by design,\nthe component size will show 'default' in the absence of a value on desktop and\n'compact' on smaller views."
+        }
+      },
+      "properties": {
+        "totalResults": {
+          "type": "number",
+          "description": "Input the total number of elements are returned from consuming app e.g. search results"
+        },
+        "pageSize": {
+          "type": "number",
+          "description": "how many elements will displayVariant per page, indicated by business to typically be 20"
+        },
+        "visiblePages": {
+          "type": "number",
+          "default": 5,
+          "description": "Controls how many page buttons are displayVarianted on the page\nat once, if container size permits. recommended max = 5 pages"
+        },
+        "hideLastAndFirstButtons": {
+          "type": "boolean"
+        },
+        "currentPage": {
+          "type": "number"
+        },
+        "elementDefinitions": {
+          "type": "{ 'cre8-button': typeof Cre8Button; }"
+        },
+        "windowWidth": {
+          "type": "number"
+        },
+        "buttons": {
+          "type": "(typeof Cre8Button)[]"
+        },
+        "maxVisiblePages": {
+          "type": "number"
+        }
+      },
+      "slots": {},
+      "events": {
+        "pagination.click": {
+          "detail": {}
+        }
+      },
+      "cssProperties": {
+        "--pagination-display": {
+          "description": "controls the display css property"
+        },
+        "--pagination-justify-content": {
+          "description": "controls horizontal alignment of pagination"
+        },
+        "--pagination-align-items": {
+          "description": "controls vertical alignment of pagination"
+        }
+      },
+      "examples": []
+    },
+    {
+      "name": "cre8-primary-nav",
+      "category": "Navigation",
+      "description": "Primary Nav component.",
+      "attributes": {
+        "inverted": {
+          "type": "boolean",
+          "description": "Inverted variant\n1) Used for dark backgrounds"
+        },
+        "behavior": {
+          "type": "\"side-by-side\"",
+          "description": "Behavior variant\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**side-by-side** keeps the primary nav item always in a horizontal pattern</li>\n</ul>\n</cre8-text-passage>"
+        }
+      },
+      "properties": {
+        "navAriaLabel": {
+          "type": "string",
+          "default": "main",
+          "description": "aria-label attribute to designate at name for the nav. Can be override by user"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The primary navigation items"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-primary-nav-item",
+      "category": "Navigation",
+      "description": "Primary Nav Item component.",
+      "attributes": {
+        "text": {
+          "type": "string",
+          "default": "Nav item",
+          "description": "Primary nav item text"
+        },
+        "href": {
+          "type": "string",
+          "default": "#",
+          "description": "Primary nav item href"
+        }
+      },
+      "properties": {
+        "iconName": {
+          "type": "string",
+          "default": "caret-down",
+          "description": "Icon name"
+        },
+        "megaMenu": {
+          "type": "boolean",
+          "description": "Append to the class name. Used for passing in utility classes"
+        },
+        "isActive": {
+          "type": "boolean",
+          "description": "Append to the class name. Used for passing in utility classes"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The label for the navigation item"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": [
+        {
+          "description": "Basic primary-nav-item",
+          "html": "<cre8-primary-nav-item text=\"Primary Nav Item\"></cre8-primary-nav-item>"
+        }
+      ]
+    },
+    {
+      "name": "cre8-tab",
+      "category": "Navigation",
+      "description": "Tab component.",
+      "attributes": {
+        "size": {
+          "type": "\"sm\"",
+          "description": "Tab sizes\n- **default** displays the tab text with cre8-typography-label-default\n- **sm** displays the tab text with cre8-typography-label-small and decrease padding\n\n_*This property is dynamically set_"
+        },
+        "index": {
+          "type": "number",
+          "description": "Used to align the tab with the tab panel\n\n_*This property is dynamically set_"
+        }
+      },
+      "properties": {
+        "isActive": {
+          "type": "boolean",
+          "description": "If is true, tab has active state and cooresponding tab panel is visible.\n\n_*This property is dynamically set_"
+        },
+        "ariaLabelledBy": {
+          "type": "string",
+          "description": "Used to connect tab trigger and tab panel for accessibility\n\n_*This property is dynamically set_"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {
+        "tabSelected": {
+          "detail": {}
+        }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-tab-panel",
+      "category": "Navigation",
+      "description": "Tab Panel component.",
+      "attributes": {
+        "index": {
+          "type": "number",
+          "description": "Used to align the tab panel with the tab\n<br/><br/> _*This property is dynamically set_"
+        }
+      },
+      "properties": {
+        "skipFocusOnPanel": {
+          "type": "boolean",
+          "description": "This will remove focus on panel element"
+        },
+        "isActive": {
+          "type": "boolean",
+          "description": "Indicates if the panel is active\n<br/><br/> _*This property is dynamically set_"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-tabs",
+      "category": "Navigation",
+      "description": "Tabs are used to quickly navigate back and forth between views.\nThe Tab design and interaction varies depending on the requirements for your organization and project.\nStandardizing on the best individual controls will improve usability and reduce development and QA time.\n\nCreate a standard set of Tab controls:\nPrimary Tabs (for system navigation), Secondary Tabs (for sub navigation within a screen).\n\n## Usability Guidelines\n- The selected Tab should be visually differentiated from the other Tabs.\n  The deselected Tabs should still look enabled.\n  Dimming the other Tabs decreases the legibility of items that are actually active and clickable.\n- There must be a minimum of 2 Tabs.\n- Showing status in a Tab is non-standard (such as 0%, 10%).\n- Tab labels and content should be parallel, with the exception of a Summary or Overview Tab\n  which can be a rollup of content across other Tabs.\n- Keep the font size of the Tabs the same.\n  If the Tabs are a fixed width and one of the labels is too long,\n  don't resize the text to fit and consider wrapping text to a second line.\n- If possible, don't truncate text because it makes it harder to understand what's in the Tab.\n- Try not to use more than six Tabs to keep the UI uncluttered.\n- Do not stack Tabs on top of each other, and do not nest Tabs within Tabs.\n  Find alternate ways of navigating page hierarchy.",
+      "attributes": {
+        "size": {
+          "type": "\"sm\"",
+          "description": "Tab sizes\n- **default** displays the cre8-tab text with cre8-typography-label-default\n- **sm** displays the cre8-tab text with cre8-typography-label-small"
+        }
+      },
+      "properties": {
+        "fullWidth": {
+          "type": "boolean",
+          "description": "Displays a set of tabs with a spanning the width of the element"
+        },
+        "activeIndex": {
+          "type": "number",
+          "default": 0,
+          "description": "Sets the initial active tab (e.g. 0 sets the first tab, 1 sets the second tab, etc.)"
+        },
+        "isStart": {
+          "type": "boolean",
+          "default": true,
+          "description": "If position from left is greater than 0, set isStart to false. Otherwise set isStart to true.\n\n_*This property is dynamically set_"
+        },
+        "isEnd": {
+          "type": "boolean",
+          "default": false,
+          "description": "If last child is fully in the viewport, set isEnd to true. Otherwise, set isEnd to false.\n\n_*This property is dynamically set_"
+        },
+        "activeTab": {
+          "type": "Cre8Tab",
+          "description": "The active tab\n\n_*This property is dynamically set_"
+        },
+        "isRTL": {
+          "type": "boolean",
+          "description": "Query the document direction value\n\n_*This property is dynamically set_"
+        },
+        "handleScroll": {
+          "type": "string"
+        },
+        "handleResize": {
+          "type": "string"
+        },
+        "setIsStart": {
+          "type": "string"
+        },
+        "setIsEnd": {
+          "type": "string"
+        },
+        "emitEvent": {
+          "type": "string"
+        },
+        "tabId": {
+          "type": "string",
+          "description": "Auto Increment id to sync tab and tab panel\n\n_*This property is dynamically set_"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "Default, unnamed slot container for each `cre8-tab` button"
+        },
+        "panel": {
+          "description": "Container for each `cre8-tab-panel` content item"
+        }
+      },
+      "events": {
+        "tabChange": {
+          "detail": {}
+        }
+      },
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-tertiary-nav",
+      "category": "Navigation",
+      "description": "Tertiary Nav component.",
+      "attributes": {},
+      "properties": {
+        "fullWidth": {
+          "type": "boolean",
+          "description": "Allows the tertiary nav to take up the full width of it parent container"
+        },
+        "navAriaLabel": {
+          "type": "string",
+          "default": "tertiary",
+          "description": "aria-label attribute to designate at name for the nav. Can be override by user"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-tertiary-nav-item",
+      "category": "Navigation",
+      "description": "Tertiary Nav Item component.",
+      "attributes": {
+        "href": {
+          "type": "string",
+          "description": "The href value of the tertiary nav link"
+        }
+      },
+      "properties": {
+        "isCurrent": {
+          "type": "boolean",
+          "description": "The current state of the tertiary nav link"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-utility-nav",
+      "category": "Navigation",
+      "description": "Utility Nav component.",
+      "attributes": {
+        "inverted": {
+          "type": "boolean",
+          "description": "Inverted variant\n1) Used for dark backgrounds"
+        }
+      },
+      "properties": {
+        "navAriaLabel": {
+          "type": "string",
+          "default": "utility",
+          "description": "aria-label attribute to designate at name for the nav. Can be override by user"
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The utility nav items"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-utility-nav-item",
+      "category": "Navigation",
+      "description": "Utility Nav Item component.",
+      "attributes": {
+        "href": {
+          "type": "string",
+          "description": "URL of the utility nav item"
+        },
+        "text": {
+          "type": "string",
+          "description": "Text of the utility nav item"
+        }
+      },
+      "properties": {
+        "hideText": {
+          "type": "boolean",
+          "description": "Hide text toggle\n1) Visually hides the text so screenreaders can still read for accessibility when set to true."
+        },
+        "iconName": {
+          "type": "string",
+          "description": "Icon name"
+        },
+        "iconPosition": {
+          "type": "string",
+          "values": [
+            "before",
+            "after"
+          ],
+          "default": "undefined",
+          "description": "Icon position\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**before** places the icon before the text</li>\n<li>**after** places the icon after the text</li>\n</ul>\n</cre8-text-passage>"
+        }
+      },
+      "slots": {},
+      "events": {},
+      "cssProperties": {},
+      "examples": [
+        {
+          "description": "Basic utility-nav-item",
+          "html": "<cre8-utility-nav-item text=\"Utility Nav Item\"></cre8-utility-nav-item>"
+        }
+      ]
+    },
+    {
+      "name": "cre8-progress-steps",
+      "category": "Other",
+      "description": "The Progress Steps component is used to display where a user is in a multistep process.\nIt clearly indicates the total number of steps, which steps are complete and incomplete,\nand which step you’re currently on. They help users estimate how long a task will take and can be\nused to track status on orders.\n\nThe Progress Steps component should be used as a parent component for `cre8-progress-steps-item` components.\nThese Components serve a contextual purpose and don't provide any functionality.\n\n# How to Use\n\nProgress Steps is used when there is ample horizontal space and two to six steps. It displays each step by name\nand number to help users understand exactly where they are in a process. It is the preferred option for desktop.\nProgress Steps should change to Compact Steps on mobile web to conserve space.\n\nProgress Steps can also be used to track order status. It provides a quick visual of how an order is progressing\nwith options to alert users of any problems along the way. When used for order status, Progress Steps should\nchange to Vertical Steps on mobile web to conserve space while allowing alerts and messages to remain visible.",
+      "attributes": {},
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The Progress Steps Item components that represent the steps in the multistep process."
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-heading",
+      "category": "Typography",
+      "description": "HTML headings are titles or subtitles that you want to display on a webpage. The H1 is the most important and H6\nis the least important in the content hierarchy.\n\n# How to Use\n1. The cre8-heading tag wraps around one of the six native HTML \"h\" tags, depending on your chosen variation.\n2. There are two main use cases for using this component:\n  text passage headings and Components with a title (i.e. modal, card or alert)\n3. There will be instances when the design requires the heading text to have the brand color applied\n  in which case you should set the [brandColor](?path=/story/cre8-components-heading--brand-color)\n  attribute to true on the cre8-heading tag.\n4. For dark backgrounds, add the [inverted](?path=/story/cre8-components-heading--inverted)\n  attribute to the tag for white text.",
+      "attributes": {
+        "type": {
+          "type": "\"display-default\" | \"display-small\" | \"headline-large\" | \"headline-default\" | \"headline-small\" | \"title-xlarge\" | \"title-large\" | \"title-default\" | \"title-small\" | \"label-large\" | ... 5 more ...",
+          "description": "Heading type\n<cre8-text-passage size=\"small\">\n<ul>\n<li>**display-default** renders a heading with the heading display-default preset treatment</li>\n<li>**display-small** renders a heading with the heading display-small preset treatment</li>\n<li>**headline-large** renders a heading with the heading headline-large preset treatment</li>\n<li>**headline-default** renders a heading with the heading headline-default preset treatment</li>\n<li>**headline-small** renders a heading with the heading headline-small preset treatment</li>\n<li>**title-xlarge** renders a heading with the heading title-xlarge preset treatment</li>\n<li>**title-large** renders a heading with the heading title-large preset treatment</li>\n<li>**title-default** renders a heading with the heading title-default preset treatment</li>\n<li>**title-small** renders a heading with the heading title-small preset treatment</li>\n<li>**label-large** renders a heading with the label-large preset treatment</li>\n<li>**label** renders a heading with the label preset treatment</li>\n<li>**label-small** renders a heading with the label-small preset treatment</li>\n<li>**meta-large** renders a heading with the meta-large preset treatment</li>\n<li>**meta-default** renders a heading with the meta-default preset treatment</li>\n<li>**meta-small** renders a heading with the meta-small preset treatment</li>\n</ul>\n</cre8-text-passage>"
+        },
+        "inverted": {
+          "type": "boolean",
+          "description": "Invert the color of the font from dark to light. An inverted `heading` should be used on a dark background."
+        }
+      },
+      "properties": {
+        "tagVariant": {
+          "type": "string",
+          "default": "h5",
+          "description": "Dynamic tag name for the component\n1) This is needed to use proper semantic heading treatments depending on where the banner lives on the page\n<cre8-text-passage size=\"small\">\n<ul>\n<li>**h1** renders an `h1` tag</li>\n<li>**h2** renders an `h2` tag. This is the default</li>\n<li>**h3** renders an `h3` tag</li>\n<li>**h4** renders an `h4` tag</li>\n<li>**h5** renders an `h5` tag</li>\n<li>**h6** renders an `h6` tag</li>\n</ul>\n</cre8-text-passage>"
+        },
+        "brandColor": {
+          "type": "boolean",
+          "description": "Apply the brand color to the heading text."
+        }
+      },
+      "slots": {
+        "default": {
+          "description": "The heading text content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    },
+    {
+      "name": "cre8-text-link",
+      "category": "Typography",
+      "description": "Text Link component.",
+      "attributes": {
+        "href": {
+          "type": "string",
+          "description": "The link URL"
+        },
+        "variant": {
+          "type": "string",
+          "values": [
+            "secondary",
+            "display"
+          ],
+          "description": "Style variant\n<cre8-text-passage size=\"sm\">\n<ul>\n<li> **display** applies display treatment to the text link (e.g. article title link)</li>\n<li> **secondary** applies secondary treatment to the text link (e.g. non-prominent links)</li>\n</ul>\n</cre8-text-passage>"
+        },
+        "size": {
+          "type": "\"sm\"",
+          "description": "Size variant\n<cre8-text-passage size=\"sm\">\n<ul>\n<li> **sm** renders a smaller typography preset than the default</li>\n</ul>\n</cre8-text-passage>"
+        },
+        "inverted": {
+          "type": "boolean",
+          "description": "Inverted variant\n1) Used for dark backgrounds"
+        }
+      },
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": [
+        {
+          "description": "Secondary text-link",
+          "html": "<cre8-text-link variant=\"secondary\"></cre8-text-link>"
+        }
+      ]
+    },
+    {
+      "name": "cre8-text-passage",
+      "category": "Typography",
+      "description": "The text-passage component acts a general wrapper element\nfor any text content that needs to be used in your project.\n\n# How to Use\n1. Code your text passage using any of the native html text elements (p, ol, ul, blockquote, cite, etc.)\n   or other Cre8 Components like cre8-heading and wrap them with the cre8-text-passage tags.\n2. Choose between three sizes for your text content or apply inline styling if you need additional styling.\n3. For dark backgrounds, add the 'inverted' attribute to the <cre8-text-passage> tag.\n3. Your text-passage will render with brand-approved styling!\n\n\nNOTE: It is recommended that you use the cre8-heading component for any heading elements in your HTML template",
+      "attributes": {
+        "inverted": {
+          "type": "boolean",
+          "description": "Inverted variant\n1) Used for dark backgrounds"
+        },
+        "size": {
+          "type": "string",
+          "values": [
+            "large",
+            "small",
+            "default"
+          ],
+          "default": "default",
+          "description": "Size variant\n- **small** renders smaller typography than the default variant\n- **default** renders default typography variant\n- **large** renders larger typography than the default variant"
+        }
+      },
+      "properties": {},
+      "slots": {
+        "default": {
+          "description": "The component content"
+        }
+      },
+      "events": {},
+      "cssProperties": {},
+      "examples": []
+    }
+  ],
+  "baseClasses": [
+    {
+      "name": "Cre8Element",
+      "description": "Base class extending LitElement with utility methods.",
+      "methods": {
+        "componentClassNames": {
+          "signature": "(baseClassName, additionalClassNames) => string",
+          "description": "Helper for applying class names with variants"
+        },
+        "slotEmpty": {
+          "signature": "(slotName: string) => boolean",
+          "description": "Check if a named slot has content"
+        },
+        "slotNotEmpty": {
+          "signature": "(slotName: string) => boolean",
+          "description": "Inverse check for slot content"
+        },
+        "dispatch": {
+          "signature": "({ e, eventName, detailObj, optionsObj }) => void",
+          "description": "Custom event dispatcher"
+        }
+      }
+    },
+    {
+      "name": "Cre8FormElement",
+      "description": "Base class for form-associated custom elements. Extends Cre8Element.",
+      "attributes": {
+        "name": {
+          "type": "string",
+          "description": "Form field name"
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "Disabled state"
+        },
+        "required": {
+          "type": "boolean",
+          "description": "Required state"
+        },
+        "is-error": {
+          "type": "boolean",
+          "description": "Error state indicator"
+        },
+        "is-success": {
+          "type": "boolean",
+          "description": "Success state indicator"
+        }
+      },
+      "properties": {
+        "value": {
+          "type": "any",
+          "description": "Form field value with getter/setter"
+        }
+      },
+      "formInternals": {
+        "description": "Uses ElementInternals API (attachInternals())",
+        "lifecycleCallbacks": [
+          "formResetCallback()",
+          "formDisabledCallback()",
+          "formStateRestoreCallback()"
+        ],
+        "methods": [
+          "checkValidity()",
+          "reportValidity()",
+          "setCustomValidity(message)"
+        ]
+      }
+    }
+  ],
+  "patterns": [
+    {
+      "name": "Login Form",
+      "description": "Standard login form with email and password",
+      "template": "<cre8-card>\n  <cre8-heading tag-variant=\"h2\" type=\"headline-default\">Sign In</cre8-heading>\n  <cre8-field label=\"Email\" type=\"email\"></cre8-field>\n  <cre8-field label=\"Password\" type=\"password\"></cre8-field>\n  <cre8-button text=\"Sign In\" variant=\"primary\" full-width></cre8-button>\n</cre8-card>"
+    },
+    {
+      "name": "Data Table",
+      "description": "Table with header and data rows",
+      "template": "<cre8-table variant=\"striped\" is-hoverable>\n  <cre8-table-header>\n    <cre8-table-row>\n      <cre8-table-header-cell>Name</cre8-table-header-cell>\n      <cre8-table-header-cell>Status</cre8-table-header-cell>\n    </cre8-table-row>\n  </cre8-table-header>\n  <cre8-table-body>\n    <cre8-table-row>\n      <cre8-table-cell>Item 1</cre8-table-cell>\n      <cre8-table-cell><cre8-badge text=\"Active\" status=\"success\"></cre8-badge></cre8-table-cell>\n    </cre8-table-row>\n  </cre8-table-body>\n</cre8-table>"
+    },
+    {
+      "name": "Page Layout",
+      "description": "Standard page with header, main content, and footer",
+      "template": "<cre8-layout>\n  <cre8-header>\n    <cre8-global-nav>\n      <span slot=\"logo\"><cre8-logo></cre8-logo></span>\n      <cre8-global-nav-item href=\"/\">Home</cre8-global-nav-item>\n    </cre8-global-nav>\n  </cre8-header>\n  <cre8-main>\n    <cre8-layout-container>\n      <!-- Page content -->\n    </cre8-layout-container>\n  </cre8-main>\n  <cre8-footer>\n    <span slot=\"copyright\">2024 Company Name</span>\n  </cre8-footer>\n</cre8-layout>"
+    },
+    {
+      "name": "Alert Banner",
+      "description": "Dismissible alert at top of page",
+      "template": "<cre8-alert status=\"info\" variant=\"banner\">\n  Important announcement message here.\n</cre8-alert>"
+    },
+    {
+      "name": "Tabbed Content",
+      "description": "Content organized in tabs",
+      "template": "<cre8-tabs>\n  <cre8-tab label=\"Tab 1\" tab-id=\"tab1\" selected></cre8-tab>\n  <cre8-tab label=\"Tab 2\" tab-id=\"tab2\"></cre8-tab>\n  <cre8-tab-panel tab-id=\"tab1\" slot=\"panel\">Content for Tab 1</cre8-tab-panel>\n  <cre8-tab-panel tab-id=\"tab2\" slot=\"panel\">Content for Tab 2</cre8-tab-panel>\n</cre8-tabs>"
+    },
+    {
+      "name": "Modal Dialog",
+      "description": "Modal with header, body, and footer actions",
+      "template": "<cre8-modal is-active aria-label=\"Confirmation\">\n  <span slot=\"header\">Confirm Action</span>\n  <p>Are you sure you want to proceed?</p>\n  <div slot=\"footer\">\n    <cre8-button text=\"Cancel\" variant=\"secondary\"></cre8-button>\n    <cre8-button text=\"Confirm\" variant=\"primary\"></cre8-button>\n  </div>\n</cre8-modal>"
+    }
+  ],
+  "designTokens": {
+    "description": "Design tokens are provided by the @tmorrow/cre8-design-tokens package",
+    "tokenPackage": "@tmorrow/cre8-design-tokens",
+    "categories": [
+      "colors",
+      "typography",
+      "spacing",
+      "borders",
+      "shadows",
+      "breakpoints"
+    ]
+  },
+  "accessibility": {
+    "features": [
+      "ARIA attributes (aria-label, aria-describedby, aria-live, aria-expanded)",
+      "Semantic HTML elements",
+      "Focus management with @a11y/focus-trap",
+      "Keyboard navigation (Escape, Tab, Arrow keys, Enter, Space)",
+      "Screen reader support",
+      "Form validation and error messaging"
+    ]
+  },
+  "dependencies": {
+    "lit": "3.3.1",
+    "@lit/context": "^1.1.6",
+    "@lit/react": "^1.0.8",
+    "@a11y/focus-trap": "^1.0.5",
+    "chart.js": "^4.5.1",
+    "classnames": "2.5.1",
+    "nanoid": "^5.1.6",
+    "zod": "^4.1.12",
+    "@tmorrow/cre8-design-tokens": "^1.0.16"
+  }
+}

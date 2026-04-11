@@ -10,7 +10,7 @@ export interface Cre8UtilityNavItemProps {
   /** Icon name */
   iconName?: string | undefined;
   /** Icon position <cre8-text-passage size="sm"> <ul> <li>**before** places the icon before the text</li> <li>**after** places the icon after the text</li> </ul> </cre8-text-passage> */
-  iconPosition?: "before" | "after" | undefined;
+  iconPosition?: any;
   /** Text of the utility nav item */
   text?: string | undefined;
 }

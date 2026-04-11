@@ -4,10 +4,10 @@ import React from 'react';
 
 export interface Cre8AlertProps {
   /** The alert type. */
-  status?: "error" | "info" | "notification" | "neutral" | "warning" | "success" | undefined;
+  status?: any;
   /** The alert variant. */
-  variant?: "standalone" | "banner";
-  emphasis?: "subtle" | "strong";
+  variant?: any;
+  emphasis?: any;
   iconAlert?: string;
   /** Icon title used for the icon alt text */
   iconTitle?: string | undefined;

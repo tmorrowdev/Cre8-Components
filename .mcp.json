@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "cre8-mcp": {
+      "command": "node",
+      "args": ["packages/cre8-mcp/dist/index.js"],
+      "env": {}
+    }
+  }
+}

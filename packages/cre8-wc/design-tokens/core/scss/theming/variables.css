@@ -1,1 +1,39 @@
-:root{--size-base-unit: 0.5rem}[dir=rtl]{--rtlTranslateX: 50%;--rtlGradientToRight: 270deg;--rtlRotate45Inverse: -45deg}
+:root {
+  --size-base-unit: 0.5rem;
+}
+
+/**
+ * RTL support for values logical properties can't automatically adjust for
+ * 1) Percentage based horizontal translate values need to be flipped
+ * 2) Background gradients using "to-right" or "to-left" need to be switched to using deg values.
+ * 3) Inverse items that have 45degs
+ */
+[dir=rtl] {
+  --rtlTranslateX: 50%;
+  /* 1 */
+  --rtlGradientToRight: 270deg;
+  /* 2 */
+  --rtlRotate45Inverse: -45deg;
+  /* 3 */
+}
+
+/**
+ * Visible focus outline for elements on a light background
+ */
+/**
+ * Visible focus outline for elements with an error status
+ */
+/**
+ * Visible focus outline for elements on a dark background
+ */
+/**
+* Focus state for themes that need a dashed outline for focus
+* state
+**/
+/**
+ * Invisible focus outline for elements that need a more visible
+ * focus state for high-contrast mode
+ */
+/**
+ * Visually hidden from display
+ *//*# sourceMappingURL=variables.css.map */

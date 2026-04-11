@@ -6,9 +6,9 @@ export interface Cre8TextLinkProps {
   /** The link URL */
   href?: string | undefined;
   /** Style variant <cre8-text-passage size="sm"> <ul> <li> **display** applies display treatment to the text link (e.g. article title link)</li> <li> **secondary** applies secondary treatment to the text link (e.g. non-prominent links)</li> </ul> </cre8-text-passage> */
-  variant?: "secondary" | "display" | undefined;
+  variant?: any;
   /** Size variant <cre8-text-passage size="sm"> <ul> <li> **sm** renders a smaller typography preset than the default</li> </ul> </cre8-text-passage> */
-  size?: "sm" | undefined;
+  size?: any;
   /** Inverted variant 1) Used for dark backgrounds */
   inverted?: boolean | undefined;
   children?: React.ReactNode;

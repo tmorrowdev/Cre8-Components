@@ -4,7 +4,7 @@ import svgInfoFilled from '/Users/tylersmbp/Projects/cre8-web-components/package
 import svgErrorFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Error.svg?raw';
 import svgLightbulbFilled from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Lightbulb.svg?raw';
 import svgClose from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Close.svg?raw';
-import { html, nothing,  } from 'lit';
+import { html, nothing, } from 'lit';
 import { property } from 'lit/decorators.js';
 import '../button/button';
 import '../link/link';
@@ -33,153 +33,153 @@ import styles from './alert.styles.js';
 export class Cre8Alert extends Cre8Element {
     static styles = [styles];
 
-  /** The alert type. */
-  @property({ reflect: true })
-      status?:
-      | 'error'
-      | 'info'
-      | 'notification'
-      | 'neutral'
-      | 'warning'
-      | 'success' = 'info';
+    /** The alert type. */
+    @property({ reflect: true })
+    status?:
+        | 'error'
+        | 'info'
+        | 'notification'
+        | 'neutral'
+        | 'warning'
+        | 'success' = 'info';
 
-  /** The alert variant. */
-  @property({ reflect: true })
-      variant: 'standalone' | 'banner' = 'standalone';
+    /** The alert variant. */
+    @property({ reflect: true })
+    variant: 'standalone' | 'banner' = 'standalone';
 
-  @property({ reflect: true })
-      emphasis: 'subtle' | 'strong' = 'subtle';
+    @property({ reflect: true })
+    emphasis: 'subtle' | 'strong' = 'subtle';
 
 
-  @property({ type: String })
-      iconAlert: string = undefined;
+    @property({ type: String })
+    iconAlert: string = undefined;
 
-  /**
-   * Icon title used for the icon alt text
-   */
-  @property()
-      iconTitle?: string;
+    /**
+     * Icon title used for the icon alt text
+     */
+    @property()
+    iconTitle?: string;
 
-  @property({ type: String })
-      headerText: string = undefined;
+    @property({ type: String })
+    headerText: string = undefined;
 
-  @property({ type: String })
-      ctaBody: string = undefined;
+    @property({ type: String })
+    ctaBody: string = undefined;
 
-  /**
-   * Dismissed property
-   * 1) State that changes to true and is removed when the banner is dismissed
-   */
-  @property({ type: Boolean, reflect: true })
-      dismissed?: boolean;
+    /**
+     * Dismissed property
+     * 1) State that changes to true and is removed when the banner is dismissed
+     */
+    @property({ type: Boolean, reflect: true })
+    dismissed?: boolean;
 
-  /**
-   * Dismissable property
-   * 1) Adds the ability to close when toggled to true
-   */
-  @property({ type: Boolean, reflect: true })
-      notDismissible?: boolean;
+    /**
+     * Dismissable property
+     * 1) Adds the ability to close when toggled to true
+     */
+    @property({ type: Boolean, reflect: true })
+    notDismissible?: boolean;
 
-  /**
-   * On banner dismiss
-   * 1) Function that toggles dismissed to true and removes the banner from the UI
-   */
-  onDismiss() {
-      this.dismissed = true; /* 1 */
-  }
+    /**
+     * On banner dismiss
+     * 1) Function that toggles dismissed to true and removes the banner from the UI
+     */
+    onDismiss() {
+        this.dismissed = true; /* 1 */
+    }
 
-  private checkEmphasisAlert = () => {
-      if (this.emphasis === 'subtle') {
-          return false;
-      } return true;
-  };
+    private checkEmphasisAlert = () => {
+        if (this.emphasis === 'subtle') {
+            return false;
+        } return true;
+    };
 
-  private mapStatusToIconAlert = (status: string) => {
-      switch (status) {
-          case 'error':
-              return html`<cre8-icon
+    private mapStatusToIconAlert = (status: string) => {
+        switch (status) {
+            case 'error':
+                return html`<cre8-icon
               svg="${svgErrorFilled}"
               aria-label="${this.iconTitle}"
               aria-hidden="true"
               class="cre8-c-alert__icon"
               ></cre8-icon>`;
-          case 'success':
-              return html`<cre8-icon
+            case 'success':
+                return html`<cre8-icon
               svg="${svgCheckCircle}"
               aria-label="${this.iconTitle}"
               aria-hidden="true"
               class="cre8-c-alert__icon"
               ></cre8-icon>`;
-          case 'warning':
-              return html`<cre8-icon
+            case 'warning':
+                return html`<cre8-icon
               svg="${svgWarningFilled}"
               aria-label="${this.iconTitle}"
               aria-hidden="true"
               class="cre8-c-alert__icon"
               ></cre8-icon>`;
-          case 'notification':
-              return html`<cre8-icon
+            case 'notification':
+                return html`<cre8-icon
               svg="${svgLightbulbFilled}"
               aria-label="${this.iconTitle}"
               aria-hidden="true"
               class="cre8-c-alert__icon"
               ></cre8-icon>`;
-          case 'info':
-              return html`<cre8-icon
+            case 'info':
+                return html`<cre8-icon
               svg="${svgInfoFilled}"
               aria-label="${this.iconTitle}"
               aria-hidden="true"
               class="cre8-c-alert__icon"
               ></cre8-icon>`;
-          case 'neutral':
-              return html`<cre8-icon
+            case 'neutral':
+                return html`<cre8-icon
               svg="${svgInfoFilled}"
               aria-label="${this.iconTitle}"
               aria-hidden="true"
               class="cre8-c-alert__icon"
               ></cre8-icon>`;
-          default:
-              return nothing;
-      }
-  };
+            default:
+                return nothing;
+        }
+    };
 
-  render() {
-      const componentClassNames = this.componentClassNames('cre8-c-alert', {
-          'cre8-c-alert--error': this.status === 'error',
-          'cre8-c-alert--info': this.status === 'info',
-          'cre8-c-alert--notification': this.status === 'notification',
-          'cre8-c-alert--neutral': this.status === 'neutral',
-          'cre8-c-alert--success': this.status === 'success',
-          'cre8-c-alert--warning': this.status === 'warning',
-          'cre8-c-alert--standalone': this.variant === 'standalone',
-          'cre8-c-alert--banner': this.variant === 'banner',
-          'cre8-c-alert--emphasis-subtle': this.emphasis === 'subtle',
-          'cre8-c-alert--notdismissible': this.notDismissible,
-      });
+    render() {
+        const componentClassNames = this.componentClassNames('cre8-c-alert', {
+            'cre8-c-alert--error': this.status === 'error',
+            'cre8-c-alert--info': this.status === 'info',
+            'cre8-c-alert--notification': this.status === 'notification',
+            'cre8-c-alert--neutral': this.status === 'neutral',
+            'cre8-c-alert--success': this.status === 'success',
+            'cre8-c-alert--warning': this.status === 'warning',
+            'cre8-c-alert--standalone': this.variant === 'standalone',
+            'cre8-c-alert--banner': this.variant === 'banner',
+            'cre8-c-alert--emphasis-subtle': this.emphasis === 'subtle',
+            'cre8-c-alert--notdismissible': this.notDismissible,
+        });
 
-      return this.dismissed
-          ? null
-          : html`
+        return this.dismissed
+            ? null
+            : html`
           <dialog open>
             <div class="${componentClassNames}">
               <div class="cre8-c-alert__container">
                 ${this.status
-        ? html` ${this.mapStatusToIconAlert(this.status)}`
-        : ''}
+                    ? html` ${this.mapStatusToIconAlert(this.status)}`
+                    : ''}
                 <div class="cre8-c-alert__message-container">
                   <div class="cre8-c-alert__heading-container">
                     ${this.headerText
-        ? html`${this.headerText}`
-        : ''}
+                    ? html`${this.headerText}`
+                    : ''}
                     ${this.notDismissible
-        ? ''
-        : html`<cre8-button
+                    ? ''
+                    : html`<cre8-button
                      class="cre8-c-alert__close-btn"
-                     svg='${svgClose}'
+                     svg=${svgClose}
                      iconRotateDegree="90"
                      iconPosition="after"
                      variant="tertiary"
-                     text="close"
+                     aria-label="close"
                      ?hideText=${true}
                      @click=${this.onDismiss}
                      ?inverted=${this.checkEmphasisAlert()}
@@ -196,7 +196,7 @@ export class Cre8Alert extends Cre8Element {
             </div>
           </dialog>
         `;
-  }
+    }
 }
 
 if (customElements.get('cre8-alert') === undefined) {
@@ -204,9 +204,9 @@ if (customElements.get('cre8-alert') === undefined) {
 }
 
 declare global {
-  interface HTMLElementTagNameMap {
-    'cre8-alert': Cre8Alert;
-  }
+    interface HTMLElementTagNameMap {
+        'cre8-alert': Cre8Alert;
+    }
 }
 
 export default Cre8Alert;

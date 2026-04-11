@@ -140,7 +140,9 @@ Inside the render is where the actual HTML code will be located. A structure whe
   A very important note in this section is how important composability will be for atomic web components. In order to design web components like Legos, we need to make sure they are composable! We accomplish this with slots, and prioritize this in almost all cases, including over making these components "safe" for developers utilizing our component library. Naming slots like `name="header"` (with the parent referring to this with `slot="header"` on the given element) is a good way of handling multiple slots for a given component so you can style a header slot correctly and place it where you want.
 
   Example:
+
     ```
+
 <div class="cre8-c-radio-field__body">
       <ul class="cre8-c-radio-field__list" role="list">
         <slot></slot>
@@ -162,7 +164,7 @@ Here are some guidelines for css file structure, for a more in-depth description
 
 - In a similar way to the properties in the component file, having clear comments describing the purpose of each css class is very important! And yes this includes selectors like `:hover` as well.
 - Avoid nesting when possible, making the css as flat as possible will be crucial to avoid undesired priority errors where css attributes will have specificities that are often hard to predict.
-- Instead of hard coding pixel values for width/height/padding... etc, we use a convention of `calc(8px * x)` where, `calc(8px * 1)` is is equivalent to 8 pixels. Try to stick to whole numbers or at least denominations of 4 when possible. (Note: Border width should have tokens)
+- Instead of hard coding pixel values for width/height/padding... etc, we use a convention of `size(x)` where, `size(1)` is is equivalent to 8 pixels. Try to stick to whole numbers or at least denominations of 4 when possible. (Note: Border width should have tokens)
 - For most all other values in the CSS, we want to use CSS variables defined in our [Design Tokens Repo](https://git.express-scripts.com/ExpressScripts/cre8-design-tokens). If you are ever hardcoding color for example, there is a token for that. Most of your file should look like `color: var(--cre8-color-content-knockout);` except for CSS properties like `display`,`flex-direction`, `position`, visibility and afor mentioned pixel length cases.
 
 Example:
@@ -173,8 +175,8 @@ Example:
  */
 .cre8-c-radio-field-item__inner-circle {
   cursor: pointer;
-  height: calc(8px * 1.5);
-  width: calc(8px * 1.5);
+  height: size(1.5);
+  width: size(1.5);
   background: var(--cre8-color-content-brand);
   border-radius: var(--cre8-border-radius-round);
 

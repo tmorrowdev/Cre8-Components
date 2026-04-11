@@ -4,7 +4,7 @@ import React from 'react';
 
 export interface Cre8LayoutProps {
   /** Style variants <cre8-text-passage size="sm"> <ul> <li>Default is a right sidebar</li> <li>**left-sidebar** formats the first `layout-section` component as a left sidebar</li> </ul> </cre8-text-passage> */
-  variant?: "left-sidebar" | undefined;
+  variant?: any;
   children?: React.ReactNode;
 }
 

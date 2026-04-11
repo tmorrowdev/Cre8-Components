@@ -32,13 +32,13 @@
  * 2) Take up the remaining space on medr screens
  */
 .cre8-c-feature__body {
-  margin-bottom: calc(8px * 4);
+  margin-bottom: size(4);
 
   @media all and (min-width: component.$cre8-breakpoint-md) {
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding-right: calc(8px * 4);
+    padding-right: size(4);
     margin-bottom: 0;
   }
 }

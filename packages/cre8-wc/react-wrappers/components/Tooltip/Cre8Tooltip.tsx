@@ -6,15 +6,16 @@ export interface Cre8TooltipProps {
   /** Positions the tooltip panel absolutely to the icon. Position overrides `isDynamic`. */
   position?: "default"|"top"|"left"|"right";
   /** The knockout variant for the tooltip */
-  knockout?: boolean;
+  knockout?: boolean | undefined;
   /** The dynamic state for the tooltip. Position overrides isDynamic. */
-  isDynamic?: boolean;
+  isDynamic?: boolean | undefined;
   /** The dynamic active state */
-  isActiveDynamic?: boolean;
+  isActiveDynamic?: boolean | undefined;
   /** The active state for the tooltip */
-  isActive?: boolean;
+  isActive?: boolean | undefined;
   /** Accepts the ID string of the item the tooltip is referencing */
-  ariaDescribes?: string;
+  ariaDescribes?: string | undefined;
+  _uniqueId?: string | undefined;
   /** svg as a raw string - The icon is defined by this prop. - Pass in a raw svg as a String for using <cre8-icon> */
   svg?: string | undefined;
   /** iconRotateDegree is used for <cre8-icon> to set the arrow in the correct direction */

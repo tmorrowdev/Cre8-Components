@@ -18,7 +18,7 @@ require('./actions/brandAction.js')(StyleDictionary);
 const self = {};
 
 // Brands that will have files built
-self.getBrands = () => ['marketing', 'legacy', 'femmecubator', 'minimalist', 'blue', 'blue-v1', 'cre8'];
+self.getBrands = () => ['marketing', 'legacy', 'femmecubator', 'minimalist', 'blue', 'blue-v1', 'cre8', 'cre8-a2ui'];
 
 self.isTokenTypeNotTypographyAndFontFiles = (type) => (type !== ('typography') && (type !== ('fontFiles')));
 self.brands = self.getBrands();
