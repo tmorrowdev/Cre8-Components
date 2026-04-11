@@ -431,7 +431,7 @@ function main() {
 
   // Build dependencies from package.json
   const dependencies: Record<string, string> = {};
-  const depKeys = ['lit', '@lit/context', '@lit/react', '@a11y/focus-trap', 'chart.js', 'classnames', 'nanoid', 'zod', '@tmorrow/cre8-design-tokens'];
+  const depKeys = ['lit', '@lit/context', '@lit/react', '@a11y/focus-trap', 'chart.js', 'classnames', 'nanoid', 'zod'];
   for (const key of depKeys) {
     if (pkgJson.dependencies?.[key]) {
       dependencies[key] = pkgJson.dependencies[key];

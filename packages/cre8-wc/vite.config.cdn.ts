@@ -62,7 +62,6 @@ export default defineConfig({
       scss: {
         additionalData: `@import "./design-tokens/core/scss/theming/head.module.css";`,
         includePaths: [
-          resolve(__dirname, 'node_modules/@tmorrow/cre8-design-tokens'),
           resolve(__dirname, 'node_modules')
         ]
       }

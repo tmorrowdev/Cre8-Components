@@ -83,8 +83,8 @@
     }
   ],
   "designTokens": {
-    "description": "Design tokens are provided by the @tmorrow/cre8-design-tokens package",
-    "tokenPackage": "@tmorrow/cre8-design-tokens",
+    "description": "Design tokens are bundled inline within @tmorrow/cre8-wc under design-tokens/",
+    "tokenPackage": "@tmorrow/cre8-wc",
     "categories": [
       "colors",
       "typography",
