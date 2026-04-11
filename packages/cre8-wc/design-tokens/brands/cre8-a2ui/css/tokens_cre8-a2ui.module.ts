@@ -3,8 +3,7 @@ const a2ui = `
 	font-family: 'Plus Jakarta Sans';
 	font-style: normal;
 	font-weight: 400;
-	src: url('../assets/fonts/PlusJakartaSans-Regular.woff2') format('woff2'),
-			 url('../assets/fonts/PlusJakartaSans-Regular.woff') format('woff');
+	src: url('/assets/fonts/PlusJakartaSans-Regular.woff2') format('woff2');
 	font-display: fallback;
 }
 
@@ -12,8 +11,7 @@ const a2ui = `
 	font-family: 'Plus Jakarta Sans';
 	font-style: medium;
 	font-weight: 500;
-	src: url('../assets/fonts/PlusJakartaSans-Medium.woff2') format('woff2'),
-			 url('../assets/fonts/PlusJakartaSans-Medium.woff') format('woff');
+	src: url('/assets/fonts/PlusJakartaSans-Medium.woff2') format('woff2');
 	font-display: fallback;
 }
 
@@ -21,8 +19,7 @@ const a2ui = `
 	font-family: 'Plus Jakarta Sans';
 	font-style: medium;
 	font-weight: 600;
-	src: url('../assets/fonts/PlusJakartaSans-SemiBold.woff2') format('woff2'),
-			 url('../assets/fonts/PlusJakartaSans-SemiBold.woff') format('woff');
+	src: url('/assets/fonts/PlusJakartaSans-SemiBold.woff2') format('woff2');
 	font-display: fallback;
 }
 
@@ -30,8 +27,7 @@ const a2ui = `
 	font-family: 'Plus Jakarta Sans';
 	font-style: normal;
 	font-weight: 700;
-	src: url('../assets/fonts/PlusJakartaSans-Bold.woff2') format('woff2'),
-			 url('../assets/fonts/PlusJakartaSans-Bold.woff') format('woff');
+	src: url('/assets/fonts/PlusJakartaSans-Bold.woff2') format('woff2');
 	font-display: fallback;
 }
 

@@ -1,4 +1,4 @@
 
 @function size($value) {
-  @return #{$value}rem;
+  @return #{$value * 0.5}rem;
 }
