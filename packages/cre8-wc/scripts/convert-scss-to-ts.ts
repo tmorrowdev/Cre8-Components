@@ -23,15 +23,11 @@ let fatalErrors = 0;
  * 1. Convert @use to @import (avoid @use ordering issues with head.css prepend)
  * 2. De-namespace `component.$var` → `$var` and `@include component.mixin()` → `@include mixin()`
  * 3. Remove `@import ... as X` (invalid @import syntax, convert to plain @import)
- * 4. Remap old package name @cre8_dev → @tmorrow
  */
 function preprocessScss(source: string): string {
   const lines = source.split('\n');
 
   return lines.map((line) => {
-    // Remap old package name
-    line = line.replace(/@cre8_dev\/cre8-design-tokens/g, '@tmorrow/cre8-design-tokens');
-
     // Convert @use '...' as X → @import '...'
     line = line.replace(/^(\s*)@use\s+(['"])(.+?)\2\s+as\s+\w+\s*;/, '$1@import $2$3$2;');
 
@@ -68,7 +64,6 @@ for (const relPath of scssFiles) {
       loadPaths: [
         fileDir,
         packageRoot,
-        path.join(packageRoot, 'node_modules/@tmorrow/cre8-design-tokens'),
         path.join(packageRoot, 'node_modules'),
       ],
       importers: [

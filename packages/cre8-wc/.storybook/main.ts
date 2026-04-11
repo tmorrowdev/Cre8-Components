@@ -40,7 +40,6 @@ const config: StorybookConfig = {
               return `@import "../design-tokens/core/scss/theming/head.scss";\n${content}`;
             },
             includePaths: [
-              path.resolve(__dirname, '../node_modules/@tmorrow/cre8-design-tokens'),
               path.resolve(__dirname, '../node_modules')
             ]
           }

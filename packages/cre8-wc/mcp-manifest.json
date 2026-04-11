@@ -3823,8 +3823,8 @@
     }
   ],
   "designTokens": {
-    "description": "Design tokens are provided by the @tmorrow/cre8-design-tokens package",
-    "tokenPackage": "@tmorrow/cre8-design-tokens",
+    "description": "Design tokens are bundled inline within @tmorrow/cre8-wc under design-tokens/",
+    "tokenPackage": "@tmorrow/cre8-wc",
     "categories": [
       "colors",
       "typography",
@@ -3852,7 +3852,6 @@
     "chart.js": "^4.5.1",
     "classnames": "2.5.1",
     "nanoid": "^5.1.6",
-    "zod": "^4.1.12",
-    "@tmorrow/cre8-design-tokens": "^1.0.16"
+    "zod": "^4.1.12"
   }
 }

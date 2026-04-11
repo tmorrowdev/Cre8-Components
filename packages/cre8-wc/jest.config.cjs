@@ -10,6 +10,7 @@ const esModules = [
   'storybook-mock-date-decorator',
   '@a11y',
   '@jest-axe',
+  'element-internals-polyfill',
 ].join('|');
 
 module.exports = {
@@ -33,12 +34,12 @@ module.exports = {
         tsconfig: '<rootDir>/tsconfig.jest.json',
       },
     ],
-    '^.+\\.mjs$': ['babel-jest', {presets: ['@nrwl/react/babel']}],
+    '^.+\\.mjs$': ['babel-jest', {presets: ['@babel/preset-env']}],
   },
   moduleNameMapper: {
     '.+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)(\\?inline)?(\\?raw)?$': 'identity-obj-proxy',
   },
-  transformIgnorePatterns: [`/node_modules/(?!${esModules})`,],
+  transformIgnorePatterns: [`node_modules/(?!.pnpm|${esModules})`],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'mjs', 'json'],
   setupFilesAfterEnv: ['@testing-library/jest-dom', 'jest-canvas-mock', 'element-internals-polyfill', require.resolve('./toBeAccessible.ts'), require.resolve('./matchMedia.js')],
 };

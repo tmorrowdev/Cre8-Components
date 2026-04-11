@@ -5,8 +5,6 @@
  * Supports both Web Components (default) and React formats.
  */
 import { readFileSync } from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
 import { createRequire } from 'module';
 // Cache for catalogs
 const catalogs = {
@@ -15,22 +13,8 @@ const catalogs = {
 };
 function getCatalogPath(format) {
     const filename = format === 'react' ? 'react-manifest.json' : 'mcp-manifest.json';
-    // Try workspace resolution (works when @tmorrow/cre8-wc is a sibling package)
-    try {
-        const require = createRequire(import.meta.url);
-        return require.resolve(`@tmorrow/cre8-wc/${filename}`);
-    }
-    catch {
-        // Fallback to relative path (monorepo development)
-        try {
-            const __filename = fileURLToPath(import.meta.url);
-            const __dirname = dirname(__filename);
-            return join(__dirname, '..', '..', 'cre8-wc', filename);
-        }
-        catch {
-            return join(process.cwd(), 'packages', 'cre8-wc', filename);
-        }
-    }
+    const require = createRequire(import.meta.url);
+    return require.resolve(`@tmorrow/cre8-wc/${filename}`);
 }
 function loadCatalog(format = 'web') {
     if (catalogs[format])
