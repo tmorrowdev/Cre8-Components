@@ -10,12 +10,12 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
 .cre8-c-layout {
   display: grid;
   flex: 1;
-  gap: calc(8px * 2);
+  gap: size(2);
   grid-template-columns: minmax(0, 1fr);
 
   @media all and (min-width:$cre8-breakpoint-lg) {
-    gap: calc(8px * 4);
-    grid-template-columns: minmax(0, 1fr) calc(var(--cre8-sidebar-width, 40%) - (calc(8px * 1))); /* 2 */
+    gap: size(4);
+    grid-template-columns: minmax(0, 1fr) calc(var(--cre8-sidebar-width, 40%) - (size(1))); /* 2 */
   }
 }
 
@@ -29,7 +29,7 @@ const styles = css`@import '../../design-tokens/core/scss/theming/component';
  */
 .cre8-c-layout--left-sidebar {
   @media all and (min-width:$cre8-breakpoint-lg) {
-    grid-template-columns: calc(var(--cre8-sidebar-width, 40%) - (calc(8px * 1))) minmax(0, 1fr); /* 2 */
+    grid-template-columns: calc(var(--cre8-sidebar-width, 40%) - (size(1))) minmax(0, 1fr); /* 2 */
   }
 }
 `;

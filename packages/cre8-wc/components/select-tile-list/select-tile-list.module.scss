@@ -22,14 +22,14 @@
    */
 .cre8-c-select-tile-list__legend {
   @include cre8-typography-label-default;
-  margin-bottom: calc(8px * 1);
+  margin-bottom: size(1);
 }
 
 .cre8-c-select-tile-list__list {
-  gap: calc(8px * 3);
+  gap: size(3);
   display: grid;
 
-  grid-template-columns: repeat(auto-fit, var(--cre8-select-tile-list-item-width, calc(8px * 26)));
+  grid-template-columns: repeat(auto-fit, var(--cre8-select-tile-list-item-width, size(26)));
 
   .cre8-c-select-tile-list__rows & {
     grid-template-columns: unset;

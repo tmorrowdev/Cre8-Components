@@ -4,7 +4,7 @@
  * 1) Headline of a page with an h1 heading and optional description
  */
 .cre8-c-page-header {
-  margin-bottom: calc(8px * 4);
+  margin-bottom: size(4);
 }
 
 /**
@@ -23,8 +23,8 @@
 .cre8-c-page-header__title-after {
   display: inline-block;
   position: relative;
-  bottom: calc(8px * 1.25);
-  margin-left: calc(8px * 2);
+  bottom: size(1.25);
+  margin-left: size(2);
 }
 
 /**
