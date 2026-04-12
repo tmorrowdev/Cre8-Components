@@ -4,7 +4,7 @@ import React from 'react';
 import { excludeRegexArray } from '../../.storybook/preview';
 import { Cre8SelectTileList } from '../../index';
 import { Cre8SelectTile } from '../../index';
-import { Cre8IconLegacy } from '../../index';
+import { Cre8Icon } from '../../index';
 
 const iconStyle = { '--Cre8-icon-width': '56px', '--Cre8-icon-height': '56px', } as React.CSSProperties;
 
@@ -23,25 +23,25 @@ const meta: Meta = {
   render: ({ tileArgs, ...args}) => (
   <Cre8SelectTileList {...args}>
       <Cre8SelectTile name="t1" align="center" value="1" {...tileArgs}>
-        <Cre8IconLegacy slot="header" name="find-drug" style={iconStyle} />
+        <Cre8Icon slot="header" name="find-drug" style={iconStyle} />
         <span slot="title">Heading text</span>
         <span slot="body">Nunc amet vitae sit interdum non morbi fames ac sed</span>
       </Cre8SelectTile>
 
       <Cre8SelectTile isSuccess name="t1" align="center" value="2" {...tileArgs}>
-        <Cre8IconLegacy slot="header" name="find-drug" style={iconStyle} />
+        <Cre8Icon slot="header" name="find-drug" style={iconStyle} />
         <span slot="title">Heading text</span>
         <span slot="body">Nunc amet vitae sit interdum non morbi fames ac sed</span>
       </Cre8SelectTile>
 
       <Cre8SelectTile isError name="t1" align="center" value="3" {...tileArgs}>
-        <Cre8IconLegacy slot="header" name="find-drug" style={iconStyle} />
+        <Cre8Icon slot="header" name="find-drug" style={iconStyle} />
         <span slot="title">Heading text</span>
         <span slot="body">Nunc amet vitae sit interdum non morbi fames ac sed</span>
       </Cre8SelectTile>
 
       <Cre8SelectTile disabled name="t1" align="center" value="4" {...tileArgs}>
-        <Cre8IconLegacy slot="header" name="find-drug" style={iconStyle} />
+        <Cre8Icon slot="header" name="find-drug" style={iconStyle} />
         <span slot="title">Heading text</span>
         <span slot="body">Nunc amet vitae sit interdum non morbi fames ac sed</span>
       </Cre8SelectTile>

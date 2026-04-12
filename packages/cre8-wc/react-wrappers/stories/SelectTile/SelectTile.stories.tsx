@@ -2,7 +2,7 @@ import type { StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { excludeRegexArray } from '../../.storybook/preview';
 import { Cre8SelectTile } from '../../index';
-import { Cre8IconLegacy } from '../../';
+import { Cre8Icon } from '../../';
 
 const iconStyle = { '--Cre8-icon-width': '56px', '--Cre8-icon-height': '56px', } as React.CSSProperties;
 
@@ -17,7 +17,7 @@ export default {
   },
   render: (args) => (
     <Cre8SelectTile {...args}>
-      <Cre8IconLegacy slot="header" name="find-drug" style={iconStyle} />
+      <Cre8Icon slot="header" name="find-drug" style={iconStyle} />
       <span slot="title">Heading text one</span>
       <span slot="body">Nunc amet vitae sit interdum non morbi fames ac sed</span>
     </Cre8SelectTile>

@@ -2,7 +2,7 @@ import React from 'react';
 import type { StoryObj } from '@storybook/react-vite';
 import { withActions } from 'storybook/actions/decorator';
 import { Cre8Select } from '../../index';
-import { Cre8Link } from '../Link/Link';
+import { Cre8Link } from '../../index';
 import { excludeRegexArray } from '../../.storybook/preview';
 
 const baseItems = [
