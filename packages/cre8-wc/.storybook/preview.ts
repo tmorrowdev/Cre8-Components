@@ -15,7 +15,6 @@ import femmecubator from '../design-tokens/brands/femmecubator/css/tokens_femmec
 import prisma from '../design-tokens/brands/prisma/tokens_prisma.module.ts';
 import starbucks from '../design-tokens/brands/starbucks/tokens_starbucks.module.ts';
 import bolt from '../design-tokens/brands/bolt/tokens_bolt.theme.ts';
-import netflix from '../design-tokens/tokens_netflix.theme.ts';
 import a2ui from '../design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.module.ts';
 import notion from '../design-tokens/brands/notion/tokens_notion.module.ts';
 
@@ -50,7 +49,6 @@ const themeStyles = [
   { name: 'Prisma', styles: prisma },
   { name: 'Starbucks', styles: starbucks },
   { name: 'Bolt', styles: bolt },
-  { name: 'Netflix', styles: netflix },
   { name: 'A2UI', styles: a2ui },
   { name: 'Notion', styles: notion }
 ];
@@ -83,7 +81,6 @@ const preview: Preview = {
           { value: 'Prisma', title: 'Prisma' },
           { value: 'Starbucks', title: 'Starbucks' },
           { value: 'Bolt', title: 'Bolt' },
-          { value: 'Netflix', title: 'Netflix' },
           { value: 'A2UI', title: 'A2UI' },
           { value: 'Notion', title: 'Notion' }
         ],
