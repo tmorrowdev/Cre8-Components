@@ -314,6 +314,78 @@ async function main() {
   const indexContent = generateIndexFile(tags);
   fs.writeFileSync(path.join(outputDir, 'index.ts'), indexContent);
 
+  // Read parent package version for syncing
+  const parentPkg = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf-8'));
+  const version = parentPkg.version;
+
+  // Generate package.json
+  const packageJson = {
+    name: '@tmorrow/cre8-react',
+    version,
+    description: 'React wrappers for cre8 Web Components (@tmorrow/cre8-wc)',
+    license: parentPkg.license || 'MIT',
+    type: 'module',
+    main: 'dist/index.js',
+    types: 'dist/index.d.ts',
+    module: 'dist/index.js',
+    exports: {
+      '.': {
+        import: './dist/index.js',
+        types: './dist/index.d.ts',
+      },
+      './components/*': {
+        import: './dist/components/*',
+        types: './dist/components/*',
+      },
+    },
+    files: ['dist'],
+    repository: {
+      type: 'git',
+      url: 'https://github.com/tmorrowdev/Cre8-Components.git',
+      directory: 'packages/cre8-wc/react-wrappers',
+    },
+    keywords: ['react', 'web-components', 'lit', 'cre8', 'design-system'],
+    peerDependencies: {
+      react: '>=18',
+      'react-dom': '>=18',
+    },
+    dependencies: {
+      '@lit/react': parentPkg.dependencies?.['@lit/react'] || '^1.0.8',
+      '@tmorrow/cre8-wc': `^${version}`,
+    },
+  };
+  fs.writeFileSync(
+    path.join(outputDir, 'package.json'),
+    JSON.stringify(packageJson, null, 2) + '\n'
+  );
+
+  // Generate tsconfig.json
+  const tsconfig = {
+    compilerOptions: {
+      target: 'ES2021',
+      module: 'ESNext',
+      moduleResolution: 'bundler',
+      declaration: true,
+      declarationMap: true,
+      outDir: 'dist',
+      rootDir: '.',
+      strict: true,
+      esModuleInterop: true,
+      skipLibCheck: true,
+      jsx: 'react-jsx',
+      paths: {
+        '@tmorrow/cre8-wc': ['../lib'],
+        '@tmorrow/cre8-wc/*': ['../*'],
+      },
+    },
+    include: ['index.ts', 'components/**/*.tsx'],
+    exclude: ['dist', 'node_modules'],
+  };
+  fs.writeFileSync(
+    path.join(outputDir, 'tsconfig.json'),
+    JSON.stringify(tsconfig, null, 2) + '\n'
+  );
+
   console.log(`\nGenerated ${generatedComponents.length} React wrappers in ${outputDir}`);
 }
 
