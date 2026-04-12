@@ -4,6 +4,10 @@
       "command": "node",
       "args": ["packages/cre8-mcp/dist/index.js"],
       "env": {}
+    },
+    "storybook-react": {
+      "type": "http",
+      "url": "http://localhost:9009/mcp"
     }
   }
 }
