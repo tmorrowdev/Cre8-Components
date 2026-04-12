@@ -127,6 +127,9 @@ export default defineConfig({
     }
   },
   resolve: {
+    alias: {
+      '@tmorrow/cre8-wc/icons': path.resolve(__dirname, 'icons'),
+    },
     extensions: ['.js', '.cjs', '.ts', '.jsx', '.tsx', '.scss', '.css', '.otf', '.ttf', '.yml']
   },
   esbuild: {
@@ -136,6 +139,39 @@ export default defineConfig({
     exclude: [],
   },
   plugins: [
+    // Inline ?raw SVG imports as string constants in lib mode.
+    // Vite lib/Rollup does not auto-inline ?raw queries the way app mode does.
+    // We use a transform hook to rewrite import statements directly in source:
+    //   import svgFoo from '@tmorrow/cre8-wc/icons/Foo.svg?raw'
+    //   → const svgFoo = '<svg>...</svg>'
+    {
+      name: 'inline-svg-raw',
+      enforce: 'pre',
+      transform(code: string, id: string) {
+        if (!/\.[tj]sx?$/.test(id) || !code.includes('.svg?raw')) return null;
+        const svgImportRe = /import\s+(\w+)\s+from\s+['"]([^'"]+\.svg\?raw)['"]/g;
+        let changed = false;
+        const result = code.replace(svgImportRe, (_match, varName: string, importPath: string) => {
+          const svgRelPath = importPath.replace('?raw', '');
+          let svgFile: string;
+          if (path.isAbsolute(svgRelPath)) {
+            svgFile = svgRelPath;
+          } else if (svgRelPath.startsWith('@tmorrow/cre8-wc/icons/')) {
+            svgFile = path.resolve(__dirname, 'icons', svgRelPath.replace('@tmorrow/cre8-wc/icons/', ''));
+          } else {
+            svgFile = path.resolve(path.dirname(id.split('?')[0]), svgRelPath);
+          }
+          try {
+            const content = fs.readFileSync(svgFile, 'utf-8');
+            changed = true;
+            return `const ${varName} = ${JSON.stringify(content)}`;
+          } catch {
+            return _match;
+          }
+        });
+        return changed ? { code: result, map: null } : null;
+      }
+    },
     // Custom plugin to copy assets
     {
       name: 'copy-assets',

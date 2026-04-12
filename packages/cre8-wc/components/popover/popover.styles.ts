@@ -626,7 +626,7 @@ span.ripple {
   /* 1 */
   background-color: var(--cre8-color-bg-default);
   border: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
-  border-radius: var(--cre8-border-radius-default);
+  border-radius: var(--cre8-border-radius-container);
   box-shadow: var(--cre8-shadow-default);
   padding: 1rem;
   /**

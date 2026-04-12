@@ -802,7 +802,7 @@ cre8-icon {
   text-transform: var(--cre8-typography-body-default-text-transform);
   background-color: var(--cre8-color-bg-default);
   border: var(--cre8-border-width-focus) var(--cre8-border-style-default) var(--cre8-color-border-transparent);
-  border-radius: var(--cre8-border-radius-default);
+  border-radius: var(--cre8-border-radius-none);
   color: var(--cre8-color-content-default);
   width: 100%;
   cursor: pointer;

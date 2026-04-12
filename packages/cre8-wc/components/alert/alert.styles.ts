@@ -650,7 +650,7 @@ dialog {
 }
 
 .cre8-c-alert--standalone {
-  border-radius: var(--cre8-border-radius-default);
+  border-radius: var(--cre8-border-radius-container);
   width: 22.5rem;
 }
 .cre8-c-alert--standalone .cre8-c-alert__container {

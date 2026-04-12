@@ -592,7 +592,7 @@ span.ripple {
   flex-direction: column;
   align-items: stretch;
   color: var(--cre8-feature-text-color, var(--cre8-theme-color-core-text, var(--cre8-color-neutral-black)));
-  border-radius: var(--cre8-feature-border-radius, var(--cre8-border-radius-default, 0));
+  border-radius: var(--cre8-feature-border-radius, var(--cre8-border-radius-container, 0));
 }
 @media all and (min-width: 768px) {
   .cre8-c-feature {

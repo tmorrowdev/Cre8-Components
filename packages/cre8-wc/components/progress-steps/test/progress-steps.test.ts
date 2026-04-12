@@ -3,9 +3,9 @@ import { html } from 'lit';
 import '../progress-steps';
 import { cre8ProgressSteps } from '../progress-steps';
 import '../../progress-steps-item/progress-steps-item';
-import svgCheckCircle from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Check.svg?raw';
-import svgFilledCircleTwo from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Circle_Two.svg?raw';
-import svgRegularCircleThree from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Circle_Three.svg?raw';
+import svgCheckCircle from '@tmorrow/cre8-wc/icons/System/Filled/Check.svg?raw';
+import svgFilledCircleTwo from '@tmorrow/cre8-wc/icons/System/Filled/Circle_Two.svg?raw';
+import svgRegularCircleThree from '@tmorrow/cre8-wc/icons/System/Regular/Circle_Three.svg?raw';
 
 describe('cre8ProgressSteps', () => {
   it('container should render', async () => {

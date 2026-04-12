@@ -585,7 +585,7 @@ span.ripple {
 .cre8-c-calendar {
   min-width: 340px;
   border: var(--cre8-color-border-strong);
-  border-radius: var(--cre8-border-radius-default);
+  border-radius: var(--cre8-border-radius-container);
   border-width: var(--cre8-border-width-default);
   border-style: var(--cre8-border-style-default);
   margin-top: 0.25rem;
