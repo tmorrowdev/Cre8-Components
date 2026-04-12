@@ -13,9 +13,7 @@ const config: StorybookConfig = {
     './patterns/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   staticDirs: ['./static'],
-  addons: [
-    '@storybook/addon-a11y',
-  ],
+  addons: ['@storybook/addon-a11y', '@storybook/addon-mcp'],
   async viteFinal(config) {
     const { mergeConfig } = await import('vite');
 
