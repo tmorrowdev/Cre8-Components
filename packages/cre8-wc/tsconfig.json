@@ -52,6 +52,6 @@
     "components/**/*.test.ts",
     "dist",
     "lib",
-    "cre8-react"
+    "react-wrappers"
   ]
 }
