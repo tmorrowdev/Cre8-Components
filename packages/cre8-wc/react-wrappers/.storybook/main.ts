@@ -43,10 +43,9 @@ const config: StorybookConfig = {
       },
       resolve: {
         alias: [
-          // Stories import from '../..' which resolves to react-wrappers/ -
-          // point to source index.ts instead of dist/index.js
-          { find: /^\/dist\/index\.js$/, replacement: path.resolve(__dirname, '../index.ts') },
-          { find: '@tmorrow/cre8-wc/lib', replacement: path.resolve(__dirname, '../../lib') },
+          // Point @tmorrow/cre8-wc/lib/components to source .ts files
+          // so Vite resolves SVG imports correctly via the source tree
+          { find: /^@tmorrow\/cre8-wc\/lib\/components\/(.*)$/, replacement: path.resolve(__dirname, '../../components/$1') },
           { find: '@tmorrow/cre8-wc/icons', replacement: path.resolve(__dirname, '../../icons') },
           { find: '@tmorrow/cre8-wc', replacement: path.resolve(__dirname, '../..') },
         ],
