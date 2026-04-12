@@ -24,6 +24,7 @@
     "plop:recipe": "plop recipe",
     "lint": "eslint-config --ext .ts,.html . --ignore-path ../../.eslintignore",
     "format": "eslint-config --ext .ts,.html . --fix --ignore-path ../../.eslintignore",
+    "publish:react": "cd react-wrappers && npm publish --access public",
     "release:publish": "node scripts/release.cjs --skip-lint --skip-tests --publish",
     "version:bump": "node scripts/version-bump.cjs"
   },

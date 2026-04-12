@@ -7,6 +7,7 @@
     "build:wc": "pnpm --filter @tmorrow/cre8-wc build",
     "build:mcp": "pnpm --filter @tmorrow/cre8-mcp build",
     "build": "pnpm build:wc && pnpm build:mcp",
+    "publish:react": "pnpm --filter @tmorrow/cre8-wc publish:react",
     "storybook": "pnpm --filter @tmorrow/cre8-wc storybook",
     "test": "pnpm --filter @tmorrow/cre8-wc test"
   },
