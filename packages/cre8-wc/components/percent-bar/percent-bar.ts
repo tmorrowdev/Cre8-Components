@@ -1,6 +1,6 @@
 /* eslint-disable indent */
 import { html, nothing,  } from 'lit';
-import svgCaretUp from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Up.svg?raw';
+import svgCaretUp from '@tmorrow/cre8-wc/icons/System/Regular/Caret_Up.svg?raw';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import '../button/button';

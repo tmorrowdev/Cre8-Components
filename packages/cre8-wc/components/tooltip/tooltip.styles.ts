@@ -627,7 +627,7 @@ span.ripple {
   color: var(--cre8-color-content-knockout);
   background-color: var(--cre8-color-bg-strong);
   border: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
-  border-radius: var(--cre8-border-radius-default);
+  border-radius: var(--cre8-border-radius-container);
   padding: 0.5rem;
   /**
    * Active state for tooltip panel

@@ -1,4 +1,4 @@
-import svgCaretRight from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Caret_Right.svg?raw';
+import svgCaretRight from '@tmorrow/cre8-wc/icons/System/Regular/Caret_Right.svg?raw';
 import { html,  } from 'lit';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon';

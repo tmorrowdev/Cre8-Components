@@ -597,7 +597,7 @@ span.ripple {
   text-transform: var(--cre8-typography-body-default-text-transform);
   background-color: var(--cre8-color-bg-default);
   border: var(--cre8-border-width-none);
-  border-radius: var(--cre8-border-radius-default);
+  border-radius: var(--cre8-border-radius-none);
   color: var(--cre8-color-content-default);
   width: 100%;
   cursor: pointer;

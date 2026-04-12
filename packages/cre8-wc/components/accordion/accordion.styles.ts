@@ -615,12 +615,12 @@ span.ripple {
 
 .cre8-c-accordion--border-rounded-bottom {
   border: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-default);
-  border-radius: 0 0 var(--cre8-border-radius-default) var(--cre8-border-radius-default);
+  border-radius: 0 0 var(--cre8-border-radius-container) var(--cre8-border-radius-container);
 }
 
 .cre8-c-accordion--border-rounded {
   border: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-default);
-  border-radius: var(--cre8-border-radius-default);
+  border-radius: var(--cre8-border-radius-container);
 }
 
 .cre8-c-accordiong-group--list {

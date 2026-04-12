@@ -1,4 +1,4 @@
-import svgArrowLeft from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Filled/Arrow_-_Left.svg?raw';
+import svgArrowLeft from '@tmorrow/cre8-wc/icons/System/Filled/Arrow_-_Left.svg?raw';
 import {
     html, nothing,
 } from 'lit';
