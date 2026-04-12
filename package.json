@@ -9,6 +9,7 @@
     "build": "pnpm build:wc && pnpm build:mcp",
     "publish:react": "pnpm --filter @tmorrow/cre8-wc publish:react",
     "storybook": "pnpm --filter @tmorrow/cre8-wc storybook",
+    "storybook:react": "pnpm --filter @tmorrow/cre8-wc storybook:react",
     "test": "pnpm --filter @tmorrow/cre8-wc test"
   },
   "engines": {
