@@ -3,7 +3,7 @@ import React from 'react';
 import { action } from 'storybook/actions';
 import { excludeRegexArray } from '../../.storybook/preview';
 import { Cre8RadioFieldItem } from '../../index';
-import { Cre8RadioField } from '../RadioField/RadioField';
+import { Cre8RadioField } from '../../index';
 
 export default {
     title: 'Cre8 Components/Radio-Field Item',

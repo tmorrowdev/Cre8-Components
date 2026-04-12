@@ -2,7 +2,7 @@ import type { StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { excludeRegexArray } from '../../.storybook/preview';
 import { Cre8Heading, Cre8Modal } from '../../index';
-import { Fpo } from '../../../.storybook/components/Fpo/Fpo';
+import { Fpo } from '../../.storybook/components/Fpo/Fpo';
 import { action } from 'storybook/actions';
 
 export default {

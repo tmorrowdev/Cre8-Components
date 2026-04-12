@@ -1,6 +1,6 @@
 import type { StoryObj } from '@storybook/react-vite';
 import React from 'react';
-import { excludeRegexArray } from '../../../.storybook/preview.js';
+import { excludeRegexArray } from '../../.storybook/preview';
 import { Cre8Alert, Cre8Button, Cre8Link } from '../../index';
 
 export default {

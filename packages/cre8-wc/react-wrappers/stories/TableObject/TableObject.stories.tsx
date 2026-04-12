@@ -2,7 +2,7 @@ import type { StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { excludeRegexArray } from '../../.storybook/preview';
 import { Cre8Table, Cre8TableBody, Cre8TableCell, Cre8TableHeader, Cre8TableHeaderCell, Cre8TableObject, Cre8TableRow } from '../../index';
-import { Fpo as ForPositionOnly } from '../../../.storybook/components/Fpo/Fpo';
+import { Fpo as ForPositionOnly } from '../../.storybook/components/Fpo/Fpo';
 
 
 export default {

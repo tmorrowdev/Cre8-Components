@@ -1,9 +1,9 @@
 import type { StoryObj } from '@storybook/react-vite';
 import { withActions } from 'storybook/actions/decorator';
 import { Cre8Tabs } from '../../index';
-import { Cre8Tab } from '../Tab/Tab';
-import { Cre8TabPanel } from '../TabPanel/TabPanel';
-import { Fpo } from '../../../.storybook/components/Fpo/Fpo';
+import { Cre8Tab } from '../../index';
+import { Cre8TabPanel } from '../../index';
+import { Fpo } from '../../.storybook/components/Fpo/Fpo';
 import { excludeRegexArray } from '../../.storybook/preview';
 import React from 'react';
 

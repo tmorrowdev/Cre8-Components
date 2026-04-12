@@ -4,7 +4,7 @@ import React from 'react';
 import { excludeRegexArray } from '../../.storybook/preview';
 import { Cre8Popover } from '../../index';
 import { Cre8Button } from '../../index';
-import { Fpo } from '../../../.storybook/components/Fpo/Fpo';
+import { Fpo } from '../../.storybook/components/Fpo/Fpo';
 import { Props } from 'next/script';
 
 export default {

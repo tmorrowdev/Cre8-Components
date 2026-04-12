@@ -1,8 +1,7 @@
 import React from 'react';
 import type { StoryObj } from '@storybook/react-vite';
 import { action } from 'storybook/actions';
-import { Cre8DatePicker } from '../../index';
-import { Cre8TextLink } from '../TextLink/TextLink';
+import { Cre8DatePicker, Cre8TextLink } from '../../index';
 import { excludeRegexArray } from '../../.storybook/preview';
 
 export default {

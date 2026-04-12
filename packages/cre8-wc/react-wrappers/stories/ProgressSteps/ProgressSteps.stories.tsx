@@ -1,8 +1,7 @@
 import type { StoryObj } from '@storybook/react-vite';
 import React from 'react';
 import { excludeRegexArray } from '../../.storybook/preview';
-import { Cre8ProgressSteps } from '.';
-import { Cre8ProgressStepsItem } from '../ProgressStepsItem';
+import { Cre8ProgressSteps, Cre8ProgressStepsItem } from '../../index';
 import svgCheckCircle from '@tmorrow/cre8-wc/icons/System/Filled/Check.svg?raw';
 import svgError from '@tmorrow/cre8-wc/icons/System/Filled/Error.svg?raw';
 import svgFilledCircleTwo from '@tmorrow/cre8-wc/icons/System/Filled/Circle_Two.svg?raw';
