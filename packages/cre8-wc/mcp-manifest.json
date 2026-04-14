@@ -1,5 +1,5 @@
 {
-  "version": "1.2.3",
+  "version": "1.2.5",
   "library": "@tmorrow/cre8-wc",
   "tagPrefix": "cre8",
   "description": "cre8 Web Components is a library of presentational UI web components to be consumed by # web applications.",
@@ -1307,7 +1307,7 @@
         },
         "svg": {
           "type": "string",
-          "description": "SVG as a raw string\n- For badges with icons, the icon is defined by this prop\n- Pass in a raw svg as a String. We use raw string loader for this but any method of getting raw svgs will do\n- Import example:`import svgFeedback from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Feedback.svg?raw';`\n- [cre8-icons Github repo](https://github.com/tmorrowdev/cre8-icons) This is the Github\nrepo for Cre8 icons, which includes a link to the storybook as well as relavant information for new icons"
+          "description": "SVG as a raw string\n- For badges with icons, the icon is defined by this prop\n- Pass in a raw svg as a String. We use raw string loader for this but any method of getting raw svgs will do\n- Import example:`import svgFeedback from '@tmorrow/cre8-wc/icons/System/Regular/Feedback.svg?raw';`\n- [cre8-icons Github repo](https://github.com/tmorrowdev/cre8-icons) This is the Github\nrepo for Cre8 icons, which includes a link to the storybook as well as relavant information for new icons"
         }
       },
       "properties": {},
