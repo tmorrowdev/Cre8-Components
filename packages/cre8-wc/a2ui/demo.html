@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>cre8-wc A2UI renderer demo</title>
+    <link
+      rel="stylesheet"
+      href="../design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.css"
+    />
+    <style>
+      html,
+      body {
+        margin: 0;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        height: 100vh;
+      }
+      body {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 1fr;
+      }
+      header {
+        padding: 12px 20px;
+        border-bottom: 1px solid #e1e4e8;
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+      }
+      header h1 {
+        font-size: 16px;
+        margin: 0;
+      }
+      header .status {
+        font-size: 12px;
+        color: #6a737d;
+      }
+      main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        overflow: hidden;
+      }
+      .panel {
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid #e1e4e8;
+        overflow: hidden;
+      }
+      .panel:last-child {
+        border-right: none;
+      }
+      .panel h2 {
+        margin: 0;
+        padding: 10px 16px;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #586069;
+        background: #f6f8fa;
+        border-bottom: 1px solid #e1e4e8;
+      }
+      .panel-body {
+        flex: 1;
+        padding: 16px;
+        overflow: auto;
+      }
+      textarea {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #d1d5da;
+        border-radius: 4px;
+        padding: 10px;
+        font-family: ui-monospace, 'SF Mono', monospace;
+        font-size: 12px;
+        line-height: 1.5;
+        resize: none;
+        box-sizing: border-box;
+      }
+      button {
+        padding: 6px 14px;
+        font-size: 13px;
+        border: 1px solid #d1d5da;
+        background: #fafbfc;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #f3f4f6;
+      }
+      .toolbar {
+        padding: 8px 16px;
+        display: flex;
+        gap: 8px;
+        border-bottom: 1px solid #e1e4e8;
+      }
+      .error {
+        color: #d73a49;
+        font-size: 12px;
+        padding: 8px 16px;
+        background: #ffeef0;
+        border-bottom: 1px solid #f97583;
+        white-space: pre-wrap;
+        font-family: ui-monospace, monospace;
+        display: none;
+      }
+      .error.visible {
+        display: block;
+      }
+      #event-log {
+        font-family: ui-monospace, monospace;
+        font-size: 12px;
+        line-height: 1.5;
+      }
+      .event-entry {
+        padding: 6px 0;
+        border-bottom: 1px dashed #e1e4e8;
+      }
+      .event-entry .evt-name {
+        color: #0366d6;
+        font-weight: 600;
+      }
+      .event-entry .evt-handler {
+        color: #22863a;
+      }
+      .event-entry .evt-path {
+        color: #6a737d;
+      }
+      .event-entry .evt-detail {
+        color: #24292e;
+      }
+      #output {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>cre8-wc A2UI renderer demo</h1>
+      <span class="status" id="status">loading…</span>
+    </header>
+    <main>
+      <section class="panel">
+        <h2>Spec (JSON)</h2>
+        <div class="toolbar">
+          <button id="render-btn">Render →</button>
+          <button id="reset-btn">Reset</button>
+        </div>
+        <div class="error" id="error"></div>
+        <div class="panel-body">
+          <textarea id="spec" spellcheck="false"></textarea>
+        </div>
+      </section>
+      <section class="panel">
+        <h2>Rendered output</h2>
+        <div class="panel-body" id="output"></div>
+      </section>
+      <section class="panel">
+        <h2>Events (onEvent callback)</h2>
+        <div class="panel-body" id="event-log">
+          <em style="color: #6a737d; font-size: 12px">
+            Interact with the rendered components to emit events.
+          </em>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="../cdn/cre8-wc.esm.js"></script>
+
+    <script type="module">
+      import { registerCatalog, render } from './index.js';
+
+      const DEFAULT_SPEC = {
+        component: 'cre8-card',
+        slots: {
+          header: [
+            {
+              component: 'cre8-heading',
+              props: { type: 'headline-default', tagVariant: 'h2' },
+              children: ['Card heading'],
+            },
+          ],
+          default: [
+            {
+              component: 'cre8-alert',
+              props: { status: 'info', headerText: 'Heads up', ctaBody: 'Review your settings before saving.' },
+            },
+            {
+              component: 'cre8-button-group',
+              children: [
+                {
+                  component: 'cre8-button',
+                  props: { text: 'Save', variant: 'primary' },
+                  events: { click: 'save' },
+                },
+                {
+                  component: 'cre8-button',
+                  props: { text: 'Cancel', variant: 'tertiary' },
+                  events: { click: 'cancel' },
+                },
+              ],
+            },
+          ],
+        },
+      };
+
+      const $status = document.getElementById('status');
+      const $spec = document.getElementById('spec');
+      const $output = document.getElementById('output');
+      const $log = document.getElementById('event-log');
+      const $error = document.getElementById('error');
+      const $renderBtn = document.getElementById('render-btn');
+      const $resetBtn = document.getElementById('reset-btn');
+
+      $spec.value = JSON.stringify(DEFAULT_SPEC, null, 2);
+
+      let catalog;
+      try {
+        const schema = await fetch('./catalog.json').then((r) => r.json());
+        catalog = registerCatalog(schema);
+        $status.textContent = `catalog "${catalog.id}" · ${catalog.components.size} components`;
+      } catch (e) {
+        $status.textContent = 'failed to load catalog';
+        showError(e.message);
+        throw e;
+      }
+
+      function showError(msg) {
+        $error.textContent = msg;
+        $error.classList.add('visible');
+      }
+      function clearError() {
+        $error.textContent = '';
+        $error.classList.remove('visible');
+      }
+
+      function logEvent(e) {
+        const placeholder = $log.querySelector('em');
+        if (placeholder) placeholder.remove();
+        const entry = document.createElement('div');
+        entry.className = 'event-entry';
+        entry.innerHTML = `
+          <div><span class="evt-name">${escape(e.event)}</span> → <span class="evt-handler">${escape(e.handler)}</span></div>
+          <div class="evt-path">${escape(e.path)} <em>(${escape(e.component)})</em></div>
+          ${e.detail ? `<div class="evt-detail">detail: ${escape(JSON.stringify(e.detail))}</div>` : ''}
+        `;
+        $log.prepend(entry);
+      }
+
+      function escape(s) {
+        return String(s).replace(
+          /[&<>"']/g,
+          (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]
+        );
+      }
+
+      function doRender() {
+        clearError();
+        let spec;
+        try {
+          spec = JSON.parse($spec.value);
+        } catch (e) {
+          showError('JSON parse error: ' + e.message);
+          return;
+        }
+        try {
+          render(spec, catalog, { root: $output, onEvent: logEvent });
+        } catch (e) {
+          showError(e.message);
+        }
+      }
+
+      $renderBtn.addEventListener('click', doRender);
+      $resetBtn.addEventListener('click', () => {
+        $spec.value = JSON.stringify(DEFAULT_SPEC, null, 2);
+        doRender();
+      });
+
+      doRender();
+    </script>
+  </body>
+</html>

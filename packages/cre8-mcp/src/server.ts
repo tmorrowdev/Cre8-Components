@@ -13,6 +13,8 @@ import {
   handleListComponents,
   handleGetComponent,
   handleGenerateCode,
+  handleGetA2uiCatalog,
+  handleValidateA2uiSpec,
 } from './handlers.js';
 import type { GetPatternsInput, SearchComponentsInput, GenerateCodeInput, ComponentFormat } from './handlers.js';
 
@@ -50,6 +52,11 @@ app.get('/', (c) => c.json({
       pattern: 'GET /react/patterns/:name',
       search: 'GET /react/search?q=query',
       generate: 'POST /react/generate',
+    },
+    a2ui: {
+      catalog: 'GET /a2ui/catalog?view=metadata|component|full&component=cre8-button',
+      component: 'GET /a2ui/catalog/:name',
+      validate: 'POST /a2ui/validate  body: { spec: ComponentSpec }',
     },
   },
 }));
@@ -152,6 +159,45 @@ app.post('/react/generate', async (c) => {
     const result = handleGenerateCode(input);
     return c.json(JSON.parse(result));
   } catch (err) {
+    return c.json({ error: 'Invalid JSON body' }, 400);
+  }
+});
+
+// ==========================================
+// A2UI catalog
+// ==========================================
+
+app.get('/a2ui/catalog', (c) => {
+  const view = c.req.query('view') as 'metadata' | 'component' | 'full' | undefined;
+  const component = c.req.query('component');
+  try {
+    const result = handleGetA2uiCatalog({ view, component });
+    return c.json(JSON.parse(result));
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : 'Unknown error';
+    return c.json({ error: msg }, 400);
+  }
+});
+
+app.get('/a2ui/catalog/:name', (c) => {
+  try {
+    const result = handleGetA2uiCatalog({ view: 'component', component: c.req.param('name') });
+    return c.json(JSON.parse(result));
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : 'Unknown error';
+    return c.json({ error: msg }, 404);
+  }
+});
+
+app.post('/a2ui/validate', async (c) => {
+  try {
+    const body = await c.req.json<{ spec?: unknown }>();
+    if (body?.spec === undefined) {
+      return c.json({ error: 'Missing required field "spec"' }, 400);
+    }
+    const result = handleValidateA2uiSpec({ spec: body.spec });
+    return c.json(JSON.parse(result));
+  } catch {
     return c.json({ error: 'Invalid JSON body' }, 400);
   }
 });

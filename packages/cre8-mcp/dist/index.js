@@ -8,8 +8,8 @@
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { CallToolRequestSchema, ListToolsRequestSchema, } from '@modelcontextprotocol/sdk/types.js';
-import { tools, ListComponentsSchema, GetComponentSchema, GetPatternsSchema, SearchComponentsSchema, GenerateCodeSchema } from './tools.js';
-import { handleListComponents, handleGetComponent, handleGetPatterns, handleSearchComponents, handleGenerateCode, } from './handlers.js';
+import { tools, ListComponentsSchema, GetComponentSchema, GetPatternsSchema, SearchComponentsSchema, GenerateCodeSchema, GetA2uiCatalogSchema, ValidateA2uiSpecSchema, } from './tools.js';
+import { handleListComponents, handleGetComponent, handleGetPatterns, handleSearchComponents, handleGenerateCode, handleGetA2uiCatalog, handleValidateA2uiSpec, } from './handlers.js';
 // Create server instance
 const server = new Server({
     name: 'cre8-mcp',
@@ -52,6 +52,16 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             case 'generate_code': {
                 const input = GenerateCodeSchema.parse(args);
                 result = handleGenerateCode(input);
+                break;
+            }
+            case 'get_a2ui_catalog': {
+                const input = GetA2uiCatalogSchema.parse(args);
+                result = handleGetA2uiCatalog(input);
+                break;
+            }
+            case 'validate_a2ui_spec': {
+                const input = ValidateA2uiSpecSchema.parse(args);
+                result = handleValidateA2uiSpec({ spec: input.spec });
                 break;
             }
             default:

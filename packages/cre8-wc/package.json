@@ -1,6 +1,6 @@
 {
   "name": "@tmorrow/cre8-wc",
-  "version": "1.2.5",
+  "version": "2.0.4",
   "description": "cre8 Web Components is a library of presentational UI web components to be consumed by # web applications.",
   "license": "BSD-3-Clause",
   "scripts": {
@@ -10,6 +10,10 @@
     "build:mcp-manifest": "npx web-component-analyzer analyze \"components/*/*.ts\" --format json --outFile /tmp/wca-raw.json && npx tsx scripts/generate-mcp-manifest.ts",
     "build:cdn": "rm -rf cdn && vite build --config vite.config.cdn.ts",
     "build:react": "rm -rf react-wrappers/components react-wrappers/dist react-wrappers/index.ts && npx tsx scripts/generate-react-wrappers.ts && cd react-wrappers && npx tsc",
+    "build:a2ui": "pnpm run build:a2ui:catalog && pnpm run build:a2ui:compile",
+    "build:a2ui:catalog": "node a2ui/generate-catalog.mjs",
+    "build:a2ui:compile": "tsc --module esnext --moduleResolution bundler --target es2022 --lib es2022,dom,dom.iterable --strict --skipLibCheck --declaration --outDir a2ui a2ui/types.ts a2ui/registry.ts a2ui/renderer.ts a2ui/index.ts",
+    "a2ui:demo": "python3 -m http.server 8765",
     "storybook:react": "pnpm run build:react && cd react-wrappers && npx storybook dev -p 9009",
     "build-storybook:react": "pnpm run build:react && cd react-wrappers && npx storybook build -o dist-storybook",
     "build:all": "pnpm run build:cdn && pnpm run build",
@@ -44,6 +48,7 @@
     "dist",
     "lib",
     "cdn",
+    "a2ui",
     "mcp-manifest.json"
   ],
   "exports": {
@@ -74,6 +79,15 @@
     },
     "./global.d.ts": "./global.d.ts",
     "./mcp-manifest.json": "./mcp-manifest.json",
+    "./a2ui": {
+      "import": "./a2ui/index.js",
+      "types": "./a2ui/index.d.ts"
+    },
+    "./a2ui/catalog.json": "./a2ui/catalog.json",
+    "./a2ui/*": {
+      "import": "./a2ui/*",
+      "types": "./a2ui/*"
+    },
     "./package.json": "./package.json"
   },
   "repository": {

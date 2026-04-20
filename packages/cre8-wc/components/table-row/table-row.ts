@@ -1,4 +1,4 @@
-import svgCaretUp from '@tmorrow/cre8-wc/icons/System/Regular/Caret_Up.svg?raw';
+import svgCaretUp from '@tmorrow/cre8-wc/icons/Caret_Up.svg?raw';
 import { html,  } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';

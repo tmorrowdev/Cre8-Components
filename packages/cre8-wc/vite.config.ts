@@ -128,7 +128,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@tmorrow/cre8-wc/icons': path.resolve(__dirname, 'icons'),
+      '@tmorrow/cre8-wc': path.resolve(__dirname),
     },
     extensions: ['.js', '.cjs', '.ts', '.jsx', '.tsx', '.scss', '.css', '.otf', '.ttf', '.yml']
   },
@@ -191,7 +191,7 @@ export default defineConfig({
         }
 
         // Copy design tokens
-        const tokenFiles = glob.sync(['design-tokens/**/*.scss', 'design-tokens/**/*.css'], { nodir: false });
+        const tokenFiles = glob.sync(['design-tokens/**/*.scss', 'design-tokens/**/*.css', 'design-tokens/**/*.woff', 'design-tokens/**/*.woff2', 'design-tokens/**/*.ttf', 'design-tokens/**/*.otf', 'design-tokens/**/*.eot'], { nodir: false });
         tokenFiles.forEach(file => {
           const content = fs.readFileSync(file);
           this.emitFile({

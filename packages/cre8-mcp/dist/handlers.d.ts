@@ -53,4 +53,13 @@ export declare function handleSearchComponents(input: SearchComponentsInput): st
  * generate_code - Generates React or Web Component code from a JSON schema
  */
 export declare function handleGenerateCode(input: GenerateCodeInput): string;
+export interface GetA2uiCatalogInput {
+    view?: 'metadata' | 'component' | 'full';
+    component?: string;
+}
+export declare function handleGetA2uiCatalog(input: GetA2uiCatalogInput): string;
+export interface ValidateA2uiSpecInput {
+    spec: unknown;
+}
+export declare function handleValidateA2uiSpec(input: ValidateA2uiSpecInput): string;
 export {};
