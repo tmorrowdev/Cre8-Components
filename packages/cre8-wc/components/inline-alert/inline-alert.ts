@@ -1,8 +1,8 @@
-import svgWarningFilled from '@tmorrow/cre8-wc/icons/System/Filled/Warning.svg?raw';
-import svgCheckCircle from '@tmorrow/cre8-wc/icons/System/Filled/Check.svg?raw';
-import svgInfoFilled from '@tmorrow/cre8-wc/icons/System/Filled/Info.svg?raw';
-import svgErrorFilled from '@tmorrow/cre8-wc/icons/System/Filled/Error.svg?raw';
-import svgHelpFilled from '@tmorrow/cre8-wc/icons/System/Filled/Help.svg?raw';
+import svgWarningFilled from '@tmorrow/cre8-wc/icons/Warning.svg?raw';
+import svgCheckCircle from '@tmorrow/cre8-wc/icons/Check_Filled.svg?raw';
+import svgInfoFilled from '@tmorrow/cre8-wc/icons/Info.svg?raw';
+import svgErrorFilled from '@tmorrow/cre8-wc/icons/Error_Filled.svg?raw';
+import svgHelpFilled from '@tmorrow/cre8-wc/icons/Help_Filled.svg?raw';
 import { html, nothing,  } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';

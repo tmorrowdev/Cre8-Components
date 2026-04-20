@@ -111,6 +111,53 @@ export const tools = [
       required: ['schema'],
     },
   },
+  {
+    name: 'get_a2ui_catalog',
+    description:
+      'Returns the cre8-wc A2UI catalog (JSON Schema 2020-12). The catalog lists every ' +
+      'component with typed props, enum constraints, slot shape, and events. Use ' +
+      'view="metadata" for a lightweight summary, "component" for a single component def, ' +
+      'or "full" for the entire schema.',
+    inputSchema: {
+      type: 'object' as const,
+      properties: {
+        view: {
+          type: 'string',
+          enum: ['metadata', 'component', 'full'],
+          description:
+            '"metadata" (default) = catalog id, version, component names/categories. ' +
+            '"component" = a single component definition (requires `component`). ' +
+            '"full" = the entire catalog JSON Schema (large).',
+        },
+        component: {
+          type: 'string',
+          description:
+            'Component tag name when view="component" (e.g., "cre8-button"). ' +
+            'The "cre8-" prefix is optional.',
+        },
+      },
+    },
+  },
+  {
+    name: 'validate_a2ui_spec',
+    description:
+      'Validates an A2UI ComponentSpec tree against the cre8-wc catalog. Checks component ' +
+      'allowlist, prop names, enum/const/type constraints, slot names, and event binding ' +
+      'shape. Returns either { ok: true } or { ok: false, error } with a path-qualified ' +
+      'message like "$.slots.body[0].props.variant: value \'bogus\' not in enum [\'primary\', ...]".',
+    inputSchema: {
+      type: 'object' as const,
+      properties: {
+        spec: {
+          type: 'object',
+          description:
+            'ComponentSpec: { component: string, props?: object, children?: (spec|string)[], ' +
+            'slots?: Record<string, (spec|string)[]>, events?: Record<string, {handler: string}> }',
+        },
+      },
+      required: ['spec'],
+    },
+  },
 ];
 
 // Zod schemas for input validation
@@ -148,4 +195,13 @@ export const GenerateCodeSchema = z.object({
   schema: z.union([ComponentNodeSchema, z.array(ComponentNodeSchema)]),
   format: z.enum(['react', 'web']).optional(),
   indent: z.number().optional(),
+});
+
+export const GetA2uiCatalogSchema = z.object({
+  view: z.enum(['metadata', 'component', 'full']).optional(),
+  component: z.string().optional(),
+});
+
+export const ValidateA2uiSpecSchema = z.object({
+  spec: z.unknown(),
 });

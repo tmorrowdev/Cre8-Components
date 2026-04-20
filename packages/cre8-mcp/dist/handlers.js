@@ -6,6 +6,7 @@
  */
 import { readFileSync } from 'fs';
 import { createRequire } from 'module';
+import { registerCatalog, validateSpec, } from '@tmorrow/cre8-wc/a2ui/index.js';
 // Cache for catalogs
 const catalogs = {
     web: null,
@@ -313,4 +314,66 @@ export function handleGenerateCode(input) {
         format,
         code,
     }, null, 2);
+}
+// ─── A2UI catalog tools ──────────────────────────────────────────────
+let registeredCatalogCache = null;
+function loadA2uiCatalog() {
+    if (registeredCatalogCache)
+        return registeredCatalogCache;
+    const require = createRequire(import.meta.url);
+    const catalogPath = require.resolve('@tmorrow/cre8-wc/a2ui/catalog.json');
+    const schema = JSON.parse(readFileSync(catalogPath, 'utf-8'));
+    registeredCatalogCache = registerCatalog(schema);
+    return registeredCatalogCache;
+}
+function normalizeComponentName(name) {
+    return name.startsWith('cre8-') ? name : `cre8-${name}`;
+}
+export function handleGetA2uiCatalog(input) {
+    const catalog = loadA2uiCatalog();
+    const view = input.view ?? 'metadata';
+    if (view === 'full') {
+        return JSON.stringify(catalog.schema, null, 2);
+    }
+    if (view === 'component') {
+        if (!input.component) {
+            throw new Error('view="component" requires a `component` argument');
+        }
+        const tag = normalizeComponentName(input.component);
+        const def = catalog.components.get(tag);
+        if (!def) {
+            const available = Array.from(catalog.components.keys()).sort().join(', ');
+            throw new Error(`Component "${tag}" not found in A2UI catalog. Available: ${available}`);
+        }
+        return JSON.stringify({ component: tag, definition: def }, null, 2);
+    }
+    // metadata (default)
+    const meta = catalog.schema['x-a2ui'] ?? {};
+    const components = Array.from(catalog.components.entries()).map(([tag, def]) => ({
+        name: tag,
+        category: def['x-category'] ?? 'Other',
+        description: (def.description ?? '').split('\n')[0].slice(0, 160),
+        slotNames: def.properties?.slots?.properties
+            ? Object.keys(def.properties.slots.properties)
+            : def.properties?.children
+                ? ['children']
+                : [],
+    }));
+    return JSON.stringify({
+        catalogId: catalog.id,
+        ...meta,
+        totalComponents: components.length,
+        components,
+    }, null, 2);
+}
+export function handleValidateA2uiSpec(input) {
+    const catalog = loadA2uiCatalog();
+    try {
+        validateSpec(input.spec, catalog);
+        return JSON.stringify({ ok: true }, null, 2);
+    }
+    catch (e) {
+        const message = e instanceof Error ? e.message : String(e);
+        return JSON.stringify({ ok: false, error: message }, null, 2);
+    }
 }

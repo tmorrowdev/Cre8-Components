@@ -1,9 +1,9 @@
-import svgWarningFilled from '@tmorrow/cre8-wc/icons/System/Filled/Warning.svg?raw';
-import svgCheckCircle from '@tmorrow/cre8-wc/icons/System/Filled/Check.svg?raw';
-import svgInfoFilled from '@tmorrow/cre8-wc/icons/System/Filled/Info.svg?raw';
-import svgErrorFilled from '@tmorrow/cre8-wc/icons/System/Filled/Error.svg?raw';
-import svgLightbulbFilled from '@tmorrow/cre8-wc/icons/System/Filled/Lightbulb.svg?raw';
-import svgClose from '@tmorrow/cre8-wc/icons/System/Regular/Close.svg?raw';
+import svgWarningFilled from '@tmorrow/cre8-wc/icons/Warning.svg?raw';
+import svgCheckCircle from '@tmorrow/cre8-wc/icons/Check_Filled.svg?raw';
+import svgInfoFilled from '@tmorrow/cre8-wc/icons/Info.svg?raw';
+import svgErrorFilled from '@tmorrow/cre8-wc/icons/Error_Filled.svg?raw';
+import svgLightbulbFilled from '@tmorrow/cre8-wc/icons/Lightbulb_Filled.svg?raw';
+import svgClose from '@tmorrow/cre8-wc/icons/Close.svg?raw';
 import { html, nothing, } from 'lit';
 import { property } from 'lit/decorators.js';
 import '../button/button';

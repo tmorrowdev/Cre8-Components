@@ -1,6 +1,6 @@
 import { html, nothing,  } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
-import svgCaretDown from '@tmorrow/cre8-wc/icons/System/Filled/Caret_Down.svg?raw';
+import svgCaretDown from '@tmorrow/cre8-wc/icons/Caret_Down_Filled.svg?raw';
 import { Cre8Element } from '../cre8-element';
 import styles from './dropdown.styles.js';
 

@@ -5,11 +5,11 @@ import {
 } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { property, queryAll, state } from 'lit/decorators.js';
-import svgCaretLeft from '@tmorrow/cre8-wc/icons/System/Regular/Caret_Left.svg?raw';
-import svgFirstPage from '@tmorrow/cre8-wc/icons/System/Regular/Caret_Double_Left.svg?raw';
-import svgLastPage from '@tmorrow/cre8-wc/icons/System/Regular/Caret_Double_Right.svg?raw';
-import svgCaretRight from '@tmorrow/cre8-wc/icons/System/Regular/Caret_Right.svg?raw';
-import svgEllipsis from '@tmorrow/cre8-wc/icons/System/Regular/Ellipsis.svg?raw';
+import svgCaretLeft from '@tmorrow/cre8-wc/icons/Caret_Left.svg?raw';
+import svgFirstPage from '@tmorrow/cre8-wc/icons/Caret_Double_Left.svg?raw';
+import svgLastPage from '@tmorrow/cre8-wc/icons/Caret_Double_Right.svg?raw';
+import svgCaretRight from '@tmorrow/cre8-wc/icons/Caret_Right.svg?raw';
+import svgEllipsis from '@tmorrow/cre8-wc/icons/Ellipsis.svg?raw';
 import { Cre8Element } from '../cre8-element';
 import { Cre8Button } from '../button/button';
 import { isMobile, screenSizes } from '../../utilities/is-mobile';

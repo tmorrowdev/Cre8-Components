@@ -13,13 +13,24 @@ import {
   ListToolsRequestSchema,
 } from '@modelcontextprotocol/sdk/types.js';
 
-import { tools, ListComponentsSchema, GetComponentSchema, GetPatternsSchema, SearchComponentsSchema, GenerateCodeSchema } from './tools.js';
+import {
+  tools,
+  ListComponentsSchema,
+  GetComponentSchema,
+  GetPatternsSchema,
+  SearchComponentsSchema,
+  GenerateCodeSchema,
+  GetA2uiCatalogSchema,
+  ValidateA2uiSpecSchema,
+} from './tools.js';
 import {
   handleListComponents,
   handleGetComponent,
   handleGetPatterns,
   handleSearchComponents,
   handleGenerateCode,
+  handleGetA2uiCatalog,
+  handleValidateA2uiSpec,
 } from './handlers.js';
 
 // Create server instance
@@ -71,6 +82,16 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       case 'generate_code': {
         const input = GenerateCodeSchema.parse(args);
         result = handleGenerateCode(input as Parameters<typeof handleGenerateCode>[0]);
+        break;
+      }
+      case 'get_a2ui_catalog': {
+        const input = GetA2uiCatalogSchema.parse(args);
+        result = handleGetA2uiCatalog(input);
+        break;
+      }
+      case 'validate_a2ui_spec': {
+        const input = ValidateA2uiSpecSchema.parse(args);
+        result = handleValidateA2uiSpec({ spec: input.spec });
         break;
       }
       default:

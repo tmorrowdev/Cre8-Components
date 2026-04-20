@@ -296,7 +296,7 @@ input:checked+.cre8-c-select-tile {
 }
 
 .cre8-c-select-tile__custom-radio-top-right {
-  @include technology.cre8-c-select-radio-top-right();
+  @include cre8-c-select-radio-top-right();
 }
 
 /**

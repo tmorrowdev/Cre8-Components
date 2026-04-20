@@ -1,11 +1,11 @@
 import { PropertyValues, html, } from 'lit';
 import { property, query } from 'lit/decorators.js';
-import svgError from '@tmorrow/cre8-wc/icons/System/Regular/Error.svg?raw';
-import svgWarningFilled from '@tmorrow/cre8-wc/icons/System/Filled/Warning.svg?raw';
-import svgCheckCircle from '@tmorrow/cre8-wc/icons/System/Filled/Check.svg?raw';
-import svgInfoFilled from '@tmorrow/cre8-wc/icons/System/Filled/Info.svg?raw';
-import svgHelp from '@tmorrow/cre8-wc/icons/System/Regular/Help.svg?raw';
-import svgClose from '@tmorrow/cre8-wc/icons/System/Regular/Close.svg?raw';
+import svgError from '@tmorrow/cre8-wc/icons/Error.svg?raw';
+import svgWarningFilled from '@tmorrow/cre8-wc/icons/Warning.svg?raw';
+import svgCheckCircle from '@tmorrow/cre8-wc/icons/Check_Filled.svg?raw';
+import svgInfoFilled from '@tmorrow/cre8-wc/icons/Info.svg?raw';
+import svgHelp from '@tmorrow/cre8-wc/icons/Help.svg?raw';
+import svgClose from '@tmorrow/cre8-wc/icons/Close.svg?raw';
 import { Cre8Element } from '../cre8-element';
 import '../icon/icon.js';
 import '@a11y/focus-trap';

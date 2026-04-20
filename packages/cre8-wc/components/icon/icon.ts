@@ -1,48 +1,47 @@
 /* eslint-disable max-len */
 /* eslint-disable dot-notation */
 /* eslint-disable max-statements */
-import { html, TemplateResult,  } from 'lit';
-import {unsafeHTML} from 'lit/directives/unsafe-html.js';
+import { html, TemplateResult, } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { property } from 'lit/decorators.js';
-import svgAdd from '@tmorrow/cre8-wc/icons/System/Regular/Add.svg?raw';
-import svgArrowLeft from '@tmorrow/cre8-wc/icons/System/Regular/Arrow_-_Left.svg?raw';
-import svgChat from '@tmorrow/cre8-wc/icons/System/Filled/Chat_Default.svg?raw';
-import svgCalendar from '@tmorrow/cre8-wc/icons/System/Regular/Calendar.svg?raw';
-import svgCaretDown from '@tmorrow/cre8-wc/icons/System/Filled/Caret_Down.svg?raw';
-import svgCheckCircle from '@tmorrow/cre8-wc/icons/System/Filled/Check.svg?raw';
-import svgCheck from '@tmorrow/cre8-wc/icons/System/Regular/Check.svg?raw';
-import svgClose from '@tmorrow/cre8-wc/icons/System/Regular/Close.svg?raw';
-import svgDownload from '@tmorrow/cre8-wc/icons/System/Filled/Download.svg?raw';
-import svgEdit from '@tmorrow/cre8-wc/icons/System/Regular/Edit.svg?raw';
-import svgEllipsis from '@tmorrow/cre8-wc/icons/System/Filled/Ellipsis.svg?raw';
-import svgMessageFilled from '@tmorrow/cre8-wc/icons/System/Filled/Message_Unread.svg?raw';
-import svgMessage from '@tmorrow/cre8-wc/icons/System/Regular/Message_Unread.svg?raw';
-import svgError from '@tmorrow/cre8-wc/icons/System/Regular/Error.svg?raw';
-import svgExternal from '@tmorrow/cre8-wc/icons/System/Regular/External_Link.svg?raw';
-import svgMedication from '@tmorrow/cre8-wc/icons/System/Regular/Medication.svg?raw';
-import svgGlobe from '@tmorrow/cre8-wc/icons/System/Regular/Globe.svg?raw';
-import svgHandHeart from '@tmorrow/cre8-wc/icons/System/Regular/Wellness.svg?raw';
-import svgHelp from '@tmorrow/cre8-wc/icons/System/Regular/Help.svg?raw';
-import svgInfoFilled from '@tmorrow/cre8-wc/icons/System/Filled/Info.svg?raw';
-import svgCaretUp from '@tmorrow/cre8-wc/icons/System/Regular/Caret_Up.svg?raw';
-import svgLightbulb from '@tmorrow/cre8-wc/icons/System/Regular/Lightbulb.svg?raw';
-import svgLocation from '@tmorrow/cre8-wc/icons/System/Filled/Location.svg?raw';
-import svgMenu from '@tmorrow/cre8-wc/icons/System/Regular/Menu.svg?raw';
-import svgMinus from '@tmorrow/cre8-wc/icons/System/Regular/Minus.svg?raw';
-import svgAccountFilled from '@tmorrow/cre8-wc/icons/System/Filled/Account.svg?raw';
-import svgNotification from '@tmorrow/cre8-wc/icons/System/Regular/Notification.svg?raw';
-import svgRefill from '@tmorrow/cre8-wc/icons/Marketing/Duotone/Refill.svg?raw';
-import svgAccount from '@tmorrow/cre8-wc/icons/System/Regular/Account.svg?raw';
-import svgPlayFilled from '@tmorrow/cre8-wc/icons/System/Filled/Play_Arrow.svg?raw';
-import svgPlayCircle from '@tmorrow/cre8-wc/icons/System/Regular/Play_Circle.svg?raw';
-import svgSpinner from '@tmorrow/cre8-wc/icons/System/Regular/Spinner/75.svg?raw';
-import svgUndo from '@tmorrow/cre8-wc/icons/System/Regular/Undo.svg?raw';
-import svgSearch from '@tmorrow/cre8-wc/icons/System/Regular/Search.svg?raw';
-import svgCart from '@tmorrow/cre8-wc/icons/System/Regular/Cart.svg?raw';
-import svgRectangle from '@tmorrow/cre8-wc/icons/System/Filled/Shape/Rectangle.svg?raw';
-import svgVaccine from '@tmorrow/cre8-wc/icons/Marketing/Duotone/Vaccinations.svg?raw';
-import svgWarningFilled from '@tmorrow/cre8-wc/icons/System/Filled/Warning.svg?raw';
-import svgCaretDoubleRight from '@tmorrow/cre8-wc/icons/System/Regular/Caret_Double_Right.svg?raw';
+import svgAdd from '@tmorrow/cre8-wc/icons/Add.svg?raw';
+import svgArrowLeft from '@tmorrow/cre8-wc/icons/Arrow_-_Left.svg?raw';
+import svgChat from '@tmorrow/cre8-wc/icons/Chat_Default.svg?raw';
+import svgCalendar from '@tmorrow/cre8-wc/icons/Calendar.svg?raw';
+import svgCaretDown from '@tmorrow/cre8-wc/icons/Caret_Down_Filled.svg?raw';
+import svgCheckCircle from '@tmorrow/cre8-wc/icons/Check_Filled.svg?raw';
+import svgCheck from '@tmorrow/cre8-wc/icons/Check.svg?raw';
+import svgClose from '@tmorrow/cre8-wc/icons/Close.svg?raw';
+import svgDownload from '@tmorrow/cre8-wc/icons/Download.svg?raw';
+import svgEdit from '@tmorrow/cre8-wc/icons/Edit.svg?raw';
+import svgEllipsis from '@tmorrow/cre8-wc/icons/Ellipsis_Filled.svg?raw';
+import svgMessageFilled from '@tmorrow/cre8-wc/icons/Message_Unread_Filled.svg?raw';
+import svgMessage from '@tmorrow/cre8-wc/icons/Message_Unread.svg?raw';
+import svgError from '@tmorrow/cre8-wc/icons/Error.svg?raw';
+import svgExternal from '@tmorrow/cre8-wc/icons/External_Link.svg?raw';
+import svgMedication from '@tmorrow/cre8-wc/icons/Medication.svg?raw';
+import svgGlobe from '@tmorrow/cre8-wc/icons/Globe.svg?raw';
+import svgHelp from '@tmorrow/cre8-wc/icons/Help.svg?raw';
+import svgInfoFilled from '@tmorrow/cre8-wc/icons/Info.svg?raw';
+import svgCaretUp from '@tmorrow/cre8-wc/icons/Caret_Up.svg?raw';
+import svgLightbulb from '@tmorrow/cre8-wc/icons/Lightbulb.svg?raw';
+import svgLocation from '@tmorrow/cre8-wc/icons/Location.svg?raw';
+import svgMenu from '@tmorrow/cre8-wc/icons/Menu.svg?raw';
+import svgMinus from '@tmorrow/cre8-wc/icons/Minus.svg?raw';
+import svgAccountFilled from '@tmorrow/cre8-wc/icons/Account_Filled.svg?raw';
+import svgNotification from '@tmorrow/cre8-wc/icons/Notification.svg?raw';
+import svgRefill from '@tmorrow/cre8-wc/icons/Refill.svg?raw';
+import svgAccount from '@tmorrow/cre8-wc/icons/Account.svg?raw';
+import svgPlayFilled from '@tmorrow/cre8-wc/icons/Play_Arrow.svg?raw';
+import svgPlayCircle from '@tmorrow/cre8-wc/icons/Play_Circle.svg?raw';
+import svgSpinner from '@tmorrow/cre8-wc/icons/Spinner_75.svg?raw';
+import svgUndo from '@tmorrow/cre8-wc/icons/Undo.svg?raw';
+import svgSearch from '@tmorrow/cre8-wc/icons/Search.svg?raw';
+import svgCart from '@tmorrow/cre8-wc/icons/Cart.svg?raw';
+import svgRectangle from '@tmorrow/cre8-wc/icons/Rectangle.svg?raw';
+import svgVaccine from '@tmorrow/cre8-wc/icons/Vaccinations.svg?raw';
+import svgWarningFilled from '@tmorrow/cre8-wc/icons/Warning.svg?raw';
+import svgCaretDoubleRight from '@tmorrow/cre8-wc/icons/Caret_Double_Right.svg?raw';
 import svgErrorAlt from '@tmorrow/cre8-wc/icons/error-alt.svg?raw';
 import svgEsi from '@tmorrow/cre8-wc/icons/express-scripts.svg?raw';
 import svgInsta from '@tmorrow/cre8-wc/icons/instagram.svg?raw';
@@ -65,12 +64,13 @@ import iconSprite from '@tmorrow/cre8-wc/icons/cre8-icons.svg?raw';
 
 /**
  *
+ * 
  * <svg> is a web component, which can be used with any frontend framework and use any svg.
  * It takes raw svgs as props and renders them.
  *
  * **'svg-legacy'** will be **deprecated** in Web Components v0.5.0
  *
- * - [List of new figma icons](https:/www.figma.com/file/j1a0rBkoH65XiGKfq7ppWa/Iconography?type=design&node-id=2037-5773&mode=design&t=6ZzC6KH3Gkxf3fj5-4)
+ * - [List of new figma @tmorrow/cre8-wc/icons](https:/www.figma.com/file/j1a0rBkoH65XiGKfq7ppWa/Iconography?type=design&node-id=2037-5773&mode=design&t=6ZzC6KH3Gkxf3fj5-4)
  * - The new `svg` from the svg package: https:/static-dev.esi-memberweb-dev.aws.evernorthcloud.com/svgs/.
  *
  * ##Usability Considerations
@@ -88,10 +88,10 @@ import iconSprite from '@tmorrow/cre8-wc/icons/cre8-icons.svg?raw';
  * If you need to install a newer version than what's included, please see
  * the [installation instructions for svgs](https:/git.express-scripts.com/ExpressScripts/svgs#installation).
  * - Import the component (this is the icon container): `import '@cre8_dev/svgs';`
- * - Import an svg as a string: `import svgInfo from 'cre8_dev/svgs/lib/icons/System/Regular/Info.svg?raw';`
+ * - Import an svg as a string: `import svgInfo from '@tmorrow/cre8-wc/icons/Info.svg?raw';`
  *
  * Your import paths may be different depending on your project's build configuration.
- * Please see [Importing Icons](https:/static-dev.esi-memberweb-dev.aws.evernorthcloud.com/svgs/?path=/story/icon-sets-importing-icons--page)
+ * Please see [Importing Icons](https:/static-dev.esi-memberweb-dev.aws.evernorthcloud.com/svgs/?path=/story/icon-sets-importing-@tmorrow/cre8-wc/icons--page)
  * of the `cre8_dev/svgs` documentation for more information.
  */
 
@@ -104,7 +104,7 @@ export class Cre8Icon extends Cre8Element {
      * @required
      */
     @property({ type: Boolean, reflect: true })
-        focusable?: boolean;
+    focusable?: boolean;
 
     /**
      * Icon name (this method of passing in svgs is to be deprecated)
@@ -112,10 +112,10 @@ export class Cre8Icon extends Cre8Element {
      * @required
      */
     @property()
-        name: string;
+    name: string;
 
-        @property({reflect:true})
-        svg?:string
+    @property({ reflect: true })
+    svg?: string
     /**
      * Icon path
      * 1) This points to the file where the icon sprite lives
@@ -123,7 +123,7 @@ export class Cre8Icon extends Cre8Element {
      *
      */
     @property()
-        iconUrl?: string = iconSprite;
+    iconUrl?: string = iconSprite;
 
     /**
      * Icon Title, this string is used for the aira-label of the svg
@@ -131,10 +131,10 @@ export class Cre8Icon extends Cre8Element {
      * @required
      */
     @property()
-        iconTitle?: string;
+    iconTitle?: string;
 
     /**
-     * Get the path to the icons, either by overriding it on the window
+     * Get the path to the @tmorrow/cre8-wc/icons, either by overriding it on the window
      * or by using the bundled icon path
      */
     getIconPath() {
@@ -144,7 +144,7 @@ export class Cre8Icon extends Cre8Element {
 
         const script = document.querySelector<HTMLScriptElement>('script[src$="icon"]');
         if (script) {
-            return `${script.src.replace(/^(.+)\/.*$/, '$1')}/svgs/svgs.svg?raw`;
+            return `${script.src.replace(/^(.+)\/.*$/, '$1')}/svgs/svgs.svg`;
         }
 
         return this.iconUrl;
@@ -181,7 +181,6 @@ export class Cre8Icon extends Cre8Element {
         iconMap['external-file'] = html`<svg src='${svgExternal}' container-class="${componentClassName}" class="cre8-c-icon" aria-label="${this.iconTitle}" aria-hidden="${!this.iconTitle}"></svg>`;
         iconMap['find-drug'] = html`<svg src='${svgMedication}' container-class="${componentClassName}" class="cre8-c-icon" aria-label="${this.iconTitle}" aria-hidden="${!this.iconTitle}"></svg>`;
         iconMap['globe'] = html`<svg src='${svgGlobe}' container-class="${componentClassName}" class="cre8-c-icon" aria-label="${this.iconTitle}" aria-hidden="${!this.iconTitle}"></svg>`;
-        iconMap['hand-heart'] = html`<svg src='${svgHandHeart}' container-class="${componentClassName}" class="cre8-c-icon" aria-label="${this.iconTitle}" aria-hidden="${!this.iconTitle}"></svg>`;
         iconMap['help'] = html`<svg src='${svgHelp}' container-class="${componentClassName}" class="cre8-c-icon" aria-label="${this.iconTitle}" aria-hidden="${!this.iconTitle}"></svg>`;
         iconMap['info'] = html`<svg src='${svgInfoFilled}' container-class="${componentClassName}" class="cre8-c-icon" aria-label="${this.iconTitle}" aria-hidden="${!this.iconTitle}"></svg>`;
         iconMap['instagram'] = html`<svg src='${svgInsta}' container-class="${componentClassName}" class="cre8-c-icon" aria-label="${this.iconTitle}" aria-hidden="${!this.iconTitle}"></svg>`;
@@ -240,8 +239,8 @@ export class Cre8Icon extends Cre8Element {
                 <use href="${iconPath}#${this.name}"></use>
             </svg>
         </span>` }`;
-       }
     }
+}
 
 
 if (customElements.get('cre8-icon') === undefined) {

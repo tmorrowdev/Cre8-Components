@@ -20,6 +20,9 @@ export declare const tools: ({
             name?: undefined;
             query?: undefined;
             schema?: undefined;
+            view?: undefined;
+            component?: undefined;
+            spec?: undefined;
         };
         required?: undefined;
     };
@@ -41,6 +44,9 @@ export declare const tools: ({
             category?: undefined;
             query?: undefined;
             schema?: undefined;
+            view?: undefined;
+            component?: undefined;
+            spec?: undefined;
         };
         required: string[];
     };
@@ -62,6 +68,9 @@ export declare const tools: ({
             category?: undefined;
             query?: undefined;
             schema?: undefined;
+            view?: undefined;
+            component?: undefined;
+            spec?: undefined;
         };
         required?: undefined;
     };
@@ -83,6 +92,9 @@ export declare const tools: ({
             category?: undefined;
             name?: undefined;
             schema?: undefined;
+            view?: undefined;
+            component?: undefined;
+            spec?: undefined;
         };
         required: string[];
     };
@@ -104,6 +116,53 @@ export declare const tools: ({
             category?: undefined;
             name?: undefined;
             query?: undefined;
+            view?: undefined;
+            component?: undefined;
+            spec?: undefined;
+        };
+        required: string[];
+    };
+} | {
+    name: string;
+    description: string;
+    inputSchema: {
+        type: "object";
+        properties: {
+            view: {
+                type: string;
+                enum: string[];
+                description: string;
+            };
+            component: {
+                type: string;
+                description: string;
+            };
+            category?: undefined;
+            format?: undefined;
+            name?: undefined;
+            query?: undefined;
+            schema?: undefined;
+            spec?: undefined;
+        };
+        required?: undefined;
+    };
+} | {
+    name: string;
+    description: string;
+    inputSchema: {
+        type: "object";
+        properties: {
+            spec: {
+                type: string;
+                description: string;
+            };
+            category?: undefined;
+            format?: undefined;
+            name?: undefined;
+            query?: undefined;
+            schema?: undefined;
+            view?: undefined;
+            component?: undefined;
         };
         required: string[];
     };
@@ -160,4 +219,21 @@ export declare const GenerateCodeSchema: z.ZodObject<{
     schema?: unknown;
     format?: "web" | "react" | undefined;
     indent?: number | undefined;
+}>;
+export declare const GetA2uiCatalogSchema: z.ZodObject<{
+    view: z.ZodOptional<z.ZodEnum<["metadata", "component", "full"]>>;
+    component: z.ZodOptional<z.ZodString>;
+}, "strip", z.ZodTypeAny, {
+    component?: string | undefined;
+    view?: "component" | "metadata" | "full" | undefined;
+}, {
+    component?: string | undefined;
+    view?: "component" | "metadata" | "full" | undefined;
+}>;
+export declare const ValidateA2uiSpecSchema: z.ZodObject<{
+    spec: z.ZodUnknown;
+}, "strip", z.ZodTypeAny, {
+    spec?: unknown;
+}, {
+    spec?: unknown;
 }>;

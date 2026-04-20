@@ -69,7 +69,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@tmorrow/cre8-wc/icons': resolve(__dirname, 'icons'),
+      '@tmorrow/cre8-wc': resolve(__dirname),
     },
     extensions: ['.js', '.cjs', '.ts', '.jsx', '.tsx', '.scss', '.css', '.otf', '.ttf', '.yml']
   },
