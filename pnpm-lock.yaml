@@ -16,6 +16,9 @@ importers:
       '@modelcontextprotocol/sdk':
         specifier: ^1.0.0
         version: 1.29.0(zod@3.25.76)
+      '@tmorrow/cre8-react':
+        specifier: 2.0.4
+        version: 2.0.4(@types/react@19.2.14)(react-dom@19.2.5)(react@19.2.5)
       '@tmorrow/cre8-wc':
         specifier: workspace:*
         version: link:../cre8-wc
@@ -3893,6 +3896,36 @@ packages:
       esm-env: 1.2.2
       tmcp: 1.19.3(typescript@5.9.3)
     dev: true
+
+  /@tmorrow/cre8-react@2.0.4(@types/react@19.2.14)(react-dom@19.2.5)(react@19.2.5):
+    resolution: {integrity: sha512-ioRw+EH9BDIHX8WfX+/G95LYlscrsQWvEyTFKrZ8Ts/68bMxGIbw2Pb82+GAiN5sF7xFXyce6EwEpEMwGvdQug==}
+    peerDependencies:
+      react: '>=18'
+      react-dom: '>=18'
+    dependencies:
+      '@lit/react': 1.0.8(@types/react@19.2.14)
+      '@tmorrow/cre8-wc': 2.0.4(@types/react@19.2.14)
+      react: 19.2.5
+      react-dom: 19.2.5(react@19.2.5)
+    transitivePeerDependencies:
+      - '@types/react'
+    dev: false
+
+  /@tmorrow/cre8-wc@2.0.4(@types/react@19.2.14):
+    resolution: {integrity: sha512-vb/pHSR6Xw3Ywa2g/qzXs0jW8raAKzrP6RJkSAi+fQY2Z+bsklW95Skk4n/8OTH5eOpJgp7eM5glwFGwazb41A==}
+    dependencies:
+      '@a11y/focus-trap': 1.0.5
+      '@lit/context': 1.1.6
+      '@lit/react': 1.0.8(@types/react@19.2.14)
+      chart.js: 4.5.1
+      classnames: 2.5.1
+      lit: 3.3.1
+      lit-html: 3.3.2
+      nanoid: 5.1.7
+      zod: 4.3.6
+    transitivePeerDependencies:
+      - '@types/react'
+    dev: false
 
   /@tsconfig/node10@1.0.12:
     resolution: {integrity: sha512-UCYBaeFvM11aU2y3YPZ//O5Rhj+xKyzy7mvcIoAjASbigy8mHMryP5cK7dgjlz2hWxh1g5pLw084E0a/wlUSFQ==}
@@ -9322,7 +9355,6 @@ packages:
     dependencies:
       react: 19.2.5
       scheduler: 0.27.0
-    dev: true
 
   /react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
@@ -9340,7 +9372,6 @@ packages:
   /react@19.2.5:
     resolution: {integrity: sha512-llUJLzz1zTUBrskt2pwZgLq59AemifIftw4aB7JxOqf1HY2FDaGDxgwpAPVzHU1kdWabH7FauP4i1oEeer2WCA==}
     engines: {node: '>=0.10.0'}
-    dev: true
 
   /readable-stream@3.6.2:
     resolution: {integrity: sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==}
@@ -9718,7 +9749,6 @@ packages:
 
   /scheduler@0.27.0:
     resolution: {integrity: sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q==}
-    dev: true
 
   /schema-utils@4.3.3:
     resolution: {integrity: sha512-eflK8wEtyOE6+hsaRVPxvUKYCpRgzLqDTb8krvAsRIwOGlHoSgYLgBXoubGgLd2fT41/OUYdb48v4k4WWHQurA==}
