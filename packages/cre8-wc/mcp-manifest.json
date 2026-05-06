@@ -3988,6 +3988,112 @@
       }
     }
   },
+  "componentCatalog": {
+    "description": "133 Pencil design components grouped by family. Each family corresponds to one or more cre8-wc web component tags. Use Family/Variant to pick the right design reference; use the tag from the components array to generate HTML.",
+    "namingConvention": "Family/Variant or Family/Type/State. Two segments when only state matters, three when both type and state matter (e.g. Button/Primary/Hover).",
+    "groups": [
+      {
+        "name": "Actions",
+        "families": [
+          { "family": "Button",      "variants": ["Primary","Primary/Hover","Primary/Active","Primary/Disabled","Secondary","Secondary/Hover","Secondary/Active","Secondary/Disabled","Tertiary","Tertiary/Hover","Tertiary/Active","Tertiary/Disabled","Danger","Danger/Hover","Danger/Active","Danger/Disabled"], "tag": "cre8-button" },
+          { "family": "ButtonGroup", "variants": ["Default"], "tag": "cre8-button-group" },
+          { "family": "SplitButton", "variants": ["Default"], "tag": "cre8-split-button" }
+        ]
+      },
+      {
+        "name": "Forms",
+        "families": [
+          { "family": "Field",       "variants": ["Default","Focus","Error","Success","Disabled"],      "tag": "cre8-field" },
+          { "family": "Select",      "variants": ["Default","Focus"],                                    "tag": "cre8-select" },
+          { "family": "Checkbox",    "variants": ["Unchecked","Checked","Indeterminate","Disabled"],     "tag": "cre8-checkbox" },
+          { "family": "Radio",       "variants": ["Unchecked","Checked","Disabled"],                     "tag": "cre8-radio-field" },
+          { "family": "SelectTile",  "variants": ["Unselected","Selected","Disabled"],                   "tag": "cre8-select-tile" },
+          { "family": "DatePicker",  "variants": ["Default"],                                            "tag": "cre8-date-picker" },
+          { "family": "MultiSelect", "variants": ["Default"],                                            "tag": "cre8-multi-select" }
+        ]
+      },
+      {
+        "name": "Navigation",
+        "families": [
+          { "family": "Header",          "variants": ["Default","Inverse"],                               "tag": "cre8-header" },
+          { "family": "Footer",          "variants": ["Default"],                                          "tag": "cre8-footer" },
+          { "family": "PrimaryNavItem",  "variants": ["Default","Hover","Active","Selected"],              "tag": "cre8-primary-nav-item" },
+          { "family": "Tabs",            "variants": ["Default"],                                          "tag": "cre8-tabs" },
+          { "family": "Tab",             "variants": ["Unselected","Selected"],                            "tag": "cre8-tab" },
+          { "family": "SubmenuItem",     "variants": ["Default","Hover","Active"],                         "tag": "cre8-submenu-item" },
+          { "family": "Submenu",         "variants": ["Default"],                                          "tag": "cre8-submenu" },
+          { "family": "UtilityNavItem",  "variants": ["Default","Hover"],                                  "tag": "cre8-utility-nav-item" },
+          { "family": "UtilityNav",      "variants": ["Default"],                                          "tag": "cre8-utility-nav" },
+          { "family": "GlobalNavItem",   "variants": ["Default","Hover","Active"],                         "tag": "cre8-global-nav-item" },
+          { "family": "GlobalNav",       "variants": ["Default"],                                          "tag": "cre8-global-nav" },
+          { "family": "TertiaryNavItem", "variants": ["Default","Hover","Active"],                         "tag": "cre8-tertiary-nav-item" },
+          { "family": "TertiaryNav",     "variants": ["Default"],                                          "tag": "cre8-tertiary-nav" },
+          { "family": "NavContainer",    "variants": ["Default"],                                          "tag": "cre8-nav-container" },
+          { "family": "Breadcrumbs",     "variants": ["Default"],                                          "tag": "cre8-breadcrumbs" },
+          { "family": "Pagination",      "variants": ["Default"],                                          "tag": "cre8-pagination" },
+          { "family": "LinkListItem",    "variants": ["Default"],                                          "tag": "cre8-link-list-item" },
+          { "family": "LinkList",        "variants": ["Default"],                                          "tag": "cre8-link-list" }
+        ]
+      },
+      {
+        "name": "Data",
+        "families": [
+          { "family": "Table",           "variants": ["Default"],                                          "tag": "cre8-table" },
+          { "family": "TableHeader",     "variants": ["Default"],                                          "tag": "cre8-table-header" },
+          { "family": "TableHeaderCell", "variants": ["Default","Sortable"],                               "tag": "cre8-table-header-cell" },
+          { "family": "TableCell",       "variants": ["Default"],                                          "tag": "cre8-table-cell" },
+          { "family": "TableRow",        "variants": ["Default","Hover"],                                  "tag": "cre8-table-row" },
+          { "family": "AccordionItem",   "variants": ["Collapsed","Expanded"],                             "tag": "cre8-accordion-item" },
+          { "family": "DropdownItem",    "variants": ["Default","Hover","Selected"],                       "tag": "cre8-dropdown-item" },
+          { "family": "Dropdown",        "variants": ["Default"],                                          "tag": "cre8-dropdown" }
+        ]
+      },
+      {
+        "name": "Feedback",
+        "families": [
+          { "family": "Alert",             "variants": ["Info","Success","Warning","Error"],                "tag": "cre8-alert" },
+          { "family": "Badge",             "variants": ["Default","Success","Error","Warning","Info"],      "tag": "cre8-badge" },
+          { "family": "Tooltip",           "variants": ["Default"],                                         "tag": "cre8-tooltip" },
+          { "family": "Popover",           "variants": ["Default"],                                         "tag": "cre8-popover" },
+          { "family": "Modal",             "variants": ["Default"],                                         "tag": "cre8-modal" },
+          { "family": "Spinner",           "variants": ["Small","Medium","Large"],                          "tag": "cre8-spinner" },
+          { "family": "ProgressMeter",     "variants": ["Default"],                                         "tag": "cre8-progress-meter" },
+          { "family": "PercentBar",        "variants": ["Default"],                                         "tag": "cre8-percent-bar" },
+          { "family": "ProgressStepsItem", "variants": ["Pending","Active","Complete"],                     "tag": "cre8-progress-steps-item" }
+        ]
+      },
+      {
+        "name": "Layout",
+        "families": [
+          { "family": "Hero",         "variants": ["Default"],                     "tag": "cre8-hero" },
+          { "family": "Band",         "variants": ["Default","Subtle","Strong"],    "tag": "cre8-band" },
+          { "family": "Grid",         "variants": ["2Col","3Col"],                  "tag": "cre8-grid" },
+          { "family": "Card",         "variants": ["Default"],                      "tag": "cre8-card" },
+          { "family": "VerticalCard", "variants": ["Default"],                      "tag": "cre8-vertical-card" },
+          { "family": "Feature",      "variants": ["Default"],                      "tag": "cre8-feature" }
+        ]
+      },
+      {
+        "name": "Typography",
+        "families": [
+          { "family": "Heading",     "variants": ["H1","H2","H3","H4","H5","H6"],                          "tag": "cre8-heading" },
+          { "family": "TextPassage", "variants": ["Default"],                                               "tag": "cre8-text-passage" },
+          { "family": "TextLink",    "variants": ["Default","Hover","Active","Visited","Disabled"],          "tag": "cre8-text-link" },
+          { "family": "Tag",         "variants": ["Default"],                                               "tag": "cre8-tag" },
+          { "family": "RemoveTag",   "variants": ["Default"],                                               "tag": "cre8-remove-tag" },
+          { "family": "TagList",     "variants": ["Default"],                                               "tag": "cre8-tag-list" }
+        ]
+      },
+      {
+        "name": "Utilities",
+        "families": [
+          { "family": "Icon",           "variants": ["Small","Default","Large","XL"], "tag": "cre8-icon" },
+          { "family": "Divider",        "variants": ["Horizontal","Vertical"],         "tag": "cre8-divider" },
+          { "family": "SkeletonLoader", "variants": ["Text","Image","Card"],           "tag": "cre8-skeleton-loader" }
+        ]
+      }
+    ]
+  },
   "accessibility": {
     "features": [
       "ARIA attributes (aria-label, aria-describedby, aria-live, aria-expanded)",
