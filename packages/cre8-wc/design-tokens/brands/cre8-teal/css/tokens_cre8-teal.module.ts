@@ -1,2 +1,91 @@
-import tokensCss from './tokens_cre8-teal.css?inline';
-export default tokensCss;
+import {css} from 'lit';
+
+const cre8Teal = css`
+:root {
+  /* ─── Background & Surface ─────────────────────────────────── */
+  --cre8-background-default:    #FFFFFF;
+  --cre8-background-subtle:     #F5F5F5;
+  --cre8-background-strong:     #EAEAEA;
+  --cre8-background-inverse:    #1A1A1A;
+  --cre8-surface-default:       #FFFFFF;
+  --cre8-surface-elevated:      #FFFFFF;
+
+  /* ─── Content (text) ───────────────────────────────────────── */
+  --cre8-content-default:       #1A1A1A;
+  --cre8-content-muted:         #949494;
+  --cre8-content-inverse:       #FFFFFF;
+  --cre8-content-link:          #1963E1;
+
+  /* ─── Borders ──────────────────────────────────────────────── */
+  --cre8-border-subtle:         #EAEAEA;
+  --cre8-border-default:        #D5D5D5;
+  --cre8-border-strong:         #6C6C6C;
+  --cre8-border-inverse:        #ABABAB;
+
+  /* ─── Accent / Brand ───────────────────────────────────────── */
+  --cre8-accent-primary:        #0EA5A8;
+  --cre8-accent-primary-hover:  #0B8588;
+  --cre8-accent-primary-active: #086E70;
+  --cre8-accent-primary-subtle: rgba(14, 165, 168, 0.10);
+  --cre8-accent-secondary:      #1A1A1A;
+  --cre8-focus-ring:            #0EA5A8;
+
+  /* ─── Status ───────────────────────────────────────────────── */
+  --cre8-status-info:           #1963E1;
+  --cre8-status-success:        #1E9E5A;
+  --cre8-status-warning:        #E08A1F;
+  --cre8-status-error:          #D02525;
+  --cre8-status-error-dark:     #AA1313;
+  --cre8-status-error-darkest:  #7A0000;
+  --cre8-overlay:               rgba(0, 0, 0, 0.20);
+
+  /* ─── Spacing ──────────────────────────────────────────────── */
+  --cre8-spacing-2xs:  2px;
+  --cre8-spacing-xs:   4px;
+  --cre8-spacing-sm:   8px;
+  --cre8-spacing-md:   12px;
+  --cre8-spacing-lg:   16px;
+  --cre8-spacing-xl:   24px;
+  --cre8-spacing-2xl:  32px;
+  --cre8-spacing-3xl:  48px;
+  --cre8-spacing-4xl:  64px;
+  --cre8-spacing-5xl:  96px;
+
+  /* ─── Radius ───────────────────────────────────────────────── */
+  --cre8-radius-none:  0px;
+  --cre8-radius-sm:    4px;
+  --cre8-radius-md:    8px;
+  --cre8-radius-lg:    12px;
+  --cre8-radius-xl:    16px;
+  --cre8-radius-2xl:   24px;
+  --cre8-radius-full:  9999px;
+
+  /* ─── Typography — Font Size ───────────────────────────────── */
+  --cre8-font-size-xs:   12px;
+  --cre8-font-size-sm:   14px;
+  --cre8-font-size-md:   16px;
+  --cre8-font-size-lg:   18px;
+  --cre8-font-size-xl:   20px;
+  --cre8-font-size-2xl:  24px;
+  --cre8-font-size-3xl:  32px;
+  --cre8-font-size-4xl:  40px;
+  --cre8-font-size-5xl:  56px;
+  --cre8-font-size-6xl:  72px;
+
+  /* ─── Typography — Font Weight ─────────────────────────────── */
+  --cre8-font-weight-regular:   400;
+  --cre8-font-weight-medium:    500;
+  --cre8-font-weight-semibold:  600;
+  --cre8-font-weight-bold:      700;
+
+  /* ─── Typography — Font Family ─────────────────────────────── */
+  --cre8-font-family-sans: 'Inter', system-ui, sans-serif;
+  --cre8-font-family-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  /* ─── Typography — Line Height ─────────────────────────────── */
+  --cre8-line-height-tight:  1.2;
+  --cre8-line-height-normal: 1.5;
+}
+`;
+
+export default cre8Teal;
