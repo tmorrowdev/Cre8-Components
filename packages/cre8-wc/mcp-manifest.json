@@ -4005,7 +4005,7 @@
         "families": [
           { "family": "Field",       "variants": ["Default","Focus","Error","Success","Disabled"],      "tag": "cre8-field" },
           { "family": "Select",      "variants": ["Default","Focus"],                                    "tag": "cre8-select" },
-          { "family": "Checkbox",    "variants": ["Unchecked","Checked","Indeterminate","Disabled"],     "tag": "cre8-checkbox" },
+          { "family": "Checkbox",    "variants": ["Unchecked","Checked","Indeterminate","Disabled"],     "tag": "cre8-checkbox-field" },
           { "family": "Radio",       "variants": ["Unchecked","Checked","Disabled"],                     "tag": "cre8-radio-field" },
           { "family": "SelectTile",  "variants": ["Unselected","Selected","Disabled"],                   "tag": "cre8-select-tile" },
           { "family": "DatePicker",  "variants": ["Default"],                                            "tag": "cre8-date-picker" },
@@ -4056,7 +4056,7 @@
           { "family": "Tooltip",           "variants": ["Default"],                                         "tag": "cre8-tooltip" },
           { "family": "Popover",           "variants": ["Default"],                                         "tag": "cre8-popover" },
           { "family": "Modal",             "variants": ["Default"],                                         "tag": "cre8-modal" },
-          { "family": "Spinner",           "variants": ["Small","Medium","Large"],                          "tag": "cre8-spinner" },
+          { "family": "Spinner",           "variants": ["Small","Medium","Large"],                          "tag": "cre8-loading-spinner" },
           { "family": "ProgressMeter",     "variants": ["Default"],                                         "tag": "cre8-progress-meter" },
           { "family": "PercentBar",        "variants": ["Default"],                                         "tag": "cre8-percent-bar" },
           { "family": "ProgressStepsItem", "variants": ["Pending","Active","Complete"],                     "tag": "cre8-progress-steps-item" }
@@ -4069,7 +4069,7 @@
           { "family": "Band",         "variants": ["Default","Subtle","Strong"],    "tag": "cre8-band" },
           { "family": "Grid",         "variants": ["2Col","3Col"],                  "tag": "cre8-grid" },
           { "family": "Card",         "variants": ["Default"],                      "tag": "cre8-card" },
-          { "family": "VerticalCard", "variants": ["Default"],                      "tag": "cre8-vertical-card" },
+          { "family": "VerticalCard", "variants": ["Default"],                      "tag": "cre8-card" },
           { "family": "Feature",      "variants": ["Default"],                      "tag": "cre8-feature" }
         ]
       },
