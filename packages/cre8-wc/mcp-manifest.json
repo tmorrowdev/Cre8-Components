@@ -178,9 +178,18 @@
         "orientation": {
           "type": "\"responsive-full-width\"",
           "description": "Responsive Button Group (for modals)"
+        },
+        "gap": {
+          "type": "\"sm\"",
+          "description": "Gap between buttons\n- **sm** reduces gap to 8px (useful in compact contexts)"
         }
       },
-      "properties": {},
+      "properties": {
+        "fullWidth": {
+          "type": "boolean",
+          "description": "Stretch button group to fill its container width"
+        }
+      },
       "slots": {
         "default": {
           "description": "The component content"
@@ -2477,6 +2486,7 @@
           "type": "string",
           "values": [
             "bare",
+            "compact",
             "horizontal",
             "horizontal-bare"
           ],
@@ -2633,6 +2643,9 @@
         "imgAlt": {
           "type": "string",
           "description": "Image alt text"
+        },
+        "hasOverlay": {
+          "type": "boolean"
         }
       },
       "slots": {
@@ -2782,6 +2795,10 @@
         "imgAlt": {
           "type": "string",
           "description": "Image alt text"
+        },
+        "aspectRatio": {
+          "type": "string",
+          "description": "CSS aspect-ratio for the image (e.g. \"4/3\", \"16/9\", \"1\"). Defaults to natural image ratio."
         }
       },
       "slots": {
@@ -3823,16 +3840,153 @@
     }
   ],
   "designTokens": {
-    "description": "Design tokens are bundled inline within @tmorrow/cre8-wc under design-tokens/",
+    "description": "Semantic token layer consumed by Pencil designs and agent-generated code. Reference tokens as CSS custom properties: var(--cre8-<token-name>). Two skins available; load the skin CSS before using components.",
     "tokenPackage": "@tmorrow/cre8-wc",
-    "categories": [
-      "colors",
-      "typography",
-      "spacing",
-      "borders",
-      "shadows",
-      "breakpoints"
-    ]
+    "skinCssPath": "design-tokens/brands/{skin}/css/tokens_{skin}.css",
+    "availableSkins": ["cre8-teal", "claude-terracotta"],
+    "rules": [
+      "Always reference colors via a token, never a hex literal.",
+      "Use spacing-* tokens for gap and padding values.",
+      "Use radius-* tokens for border-radius (cornerRadius in Pencil).",
+      "Pick the variant that matches the semantic intent, not visual approximation.",
+      "Switch skins by loading a different skin CSS file — no component changes needed."
+    ],
+    "skins": {
+      "cre8-teal": {
+        "description": "Default cre8 skin. Teal accent on neutral white base.",
+        "tokens": {
+          "background-default":    { "cssVar": "--cre8-background-default",    "value": "#FFFFFF",                        "category": "background" },
+          "background-subtle":     { "cssVar": "--cre8-background-subtle",     "value": "#F5F5F5",                        "category": "background" },
+          "background-strong":     { "cssVar": "--cre8-background-strong",     "value": "#EAEAEA",                        "category": "background" },
+          "background-inverse":    { "cssVar": "--cre8-background-inverse",    "value": "#1A1A1A",                        "category": "background" },
+          "surface-default":       { "cssVar": "--cre8-surface-default",       "value": "#FFFFFF",                        "category": "surface"     },
+          "surface-elevated":      { "cssVar": "--cre8-surface-elevated",      "value": "#FFFFFF",                        "category": "surface"     },
+          "content-default":       { "cssVar": "--cre8-content-default",       "value": "#1A1A1A",                        "category": "content"     },
+          "content-muted":         { "cssVar": "--cre8-content-muted",         "value": "#949494",                        "category": "content"     },
+          "content-inverse":       { "cssVar": "--cre8-content-inverse",       "value": "#FFFFFF",                        "category": "content"     },
+          "content-link":          { "cssVar": "--cre8-content-link",          "value": "#1963E1",                        "category": "content"     },
+          "border-subtle":         { "cssVar": "--cre8-border-subtle",         "value": "#EAEAEA",                        "category": "border"      },
+          "border-default":        { "cssVar": "--cre8-border-default",        "value": "#D5D5D5",                        "category": "border"      },
+          "border-strong":         { "cssVar": "--cre8-border-strong",         "value": "#6C6C6C",                        "category": "border"      },
+          "border-inverse":        { "cssVar": "--cre8-border-inverse",        "value": "#ABABAB",                        "category": "border"      },
+          "accent-primary":        { "cssVar": "--cre8-accent-primary",        "value": "#0EA5A8",                        "category": "accent"      },
+          "accent-primary-hover":  { "cssVar": "--cre8-accent-primary-hover",  "value": "#0B8588",                        "category": "accent"      },
+          "accent-primary-active": { "cssVar": "--cre8-accent-primary-active", "value": "#086E70",                        "category": "accent"      },
+          "accent-primary-subtle": { "cssVar": "--cre8-accent-primary-subtle", "value": "rgba(14,165,168,0.10)",          "category": "accent"      },
+          "accent-secondary":      { "cssVar": "--cre8-accent-secondary",      "value": "#1A1A1A",                        "category": "accent"      },
+          "focus-ring":            { "cssVar": "--cre8-focus-ring",            "value": "#0EA5A8",                        "category": "accent"      },
+          "status-info":           { "cssVar": "--cre8-status-info",           "value": "#1963E1",                        "category": "status"      },
+          "status-success":        { "cssVar": "--cre8-status-success",        "value": "#1E9E5A",                        "category": "status"      },
+          "status-warning":        { "cssVar": "--cre8-status-warning",        "value": "#E08A1F",                        "category": "status"      },
+          "status-error":          { "cssVar": "--cre8-status-error",          "value": "#D02525",                        "category": "status"      },
+          "status-error-dark":     { "cssVar": "--cre8-status-error-dark",     "value": "#AA1313",                        "category": "status"      },
+          "status-error-darkest":  { "cssVar": "--cre8-status-error-darkest",  "value": "#7A0000",                        "category": "status"      },
+          "overlay":               { "cssVar": "--cre8-overlay",               "value": "rgba(0,0,0,0.20)",               "category": "status"      },
+          "spacing-2xs":           { "cssVar": "--cre8-spacing-2xs",           "value": "2px",                            "category": "spacing"     },
+          "spacing-xs":            { "cssVar": "--cre8-spacing-xs",            "value": "4px",                            "category": "spacing"     },
+          "spacing-sm":            { "cssVar": "--cre8-spacing-sm",            "value": "8px",                            "category": "spacing"     },
+          "spacing-md":            { "cssVar": "--cre8-spacing-md",            "value": "12px",                           "category": "spacing"     },
+          "spacing-lg":            { "cssVar": "--cre8-spacing-lg",            "value": "16px",                           "category": "spacing"     },
+          "spacing-xl":            { "cssVar": "--cre8-spacing-xl",            "value": "24px",                           "category": "spacing"     },
+          "spacing-2xl":           { "cssVar": "--cre8-spacing-2xl",           "value": "32px",                           "category": "spacing"     },
+          "spacing-3xl":           { "cssVar": "--cre8-spacing-3xl",           "value": "48px",                           "category": "spacing"     },
+          "spacing-4xl":           { "cssVar": "--cre8-spacing-4xl",           "value": "64px",                           "category": "spacing"     },
+          "spacing-5xl":           { "cssVar": "--cre8-spacing-5xl",           "value": "96px",                           "category": "spacing"     },
+          "radius-none":           { "cssVar": "--cre8-radius-none",           "value": "0px",                            "category": "radius"      },
+          "radius-sm":             { "cssVar": "--cre8-radius-sm",             "value": "4px",                            "category": "radius"      },
+          "radius-md":             { "cssVar": "--cre8-radius-md",             "value": "8px",                            "category": "radius"      },
+          "radius-lg":             { "cssVar": "--cre8-radius-lg",             "value": "12px",                           "category": "radius"      },
+          "radius-xl":             { "cssVar": "--cre8-radius-xl",             "value": "16px",                           "category": "radius"      },
+          "radius-2xl":            { "cssVar": "--cre8-radius-2xl",            "value": "24px",                           "category": "radius"      },
+          "radius-full":           { "cssVar": "--cre8-radius-full",           "value": "9999px",                         "category": "radius"      },
+          "font-size-xs":          { "cssVar": "--cre8-font-size-xs",          "value": "12px",                           "category": "typography"  },
+          "font-size-sm":          { "cssVar": "--cre8-font-size-sm",          "value": "14px",                           "category": "typography"  },
+          "font-size-md":          { "cssVar": "--cre8-font-size-md",          "value": "16px",                           "category": "typography"  },
+          "font-size-lg":          { "cssVar": "--cre8-font-size-lg",          "value": "18px",                           "category": "typography"  },
+          "font-size-xl":          { "cssVar": "--cre8-font-size-xl",          "value": "20px",                           "category": "typography"  },
+          "font-size-2xl":         { "cssVar": "--cre8-font-size-2xl",         "value": "24px",                           "category": "typography"  },
+          "font-size-3xl":         { "cssVar": "--cre8-font-size-3xl",         "value": "32px",                           "category": "typography"  },
+          "font-size-4xl":         { "cssVar": "--cre8-font-size-4xl",         "value": "40px",                           "category": "typography"  },
+          "font-size-5xl":         { "cssVar": "--cre8-font-size-5xl",         "value": "56px",                           "category": "typography"  },
+          "font-size-6xl":         { "cssVar": "--cre8-font-size-6xl",         "value": "72px",                           "category": "typography"  },
+          "font-weight-regular":   { "cssVar": "--cre8-font-weight-regular",   "value": "400",                            "category": "typography"  },
+          "font-weight-medium":    { "cssVar": "--cre8-font-weight-medium",    "value": "500",                            "category": "typography"  },
+          "font-weight-semibold":  { "cssVar": "--cre8-font-weight-semibold",  "value": "600",                            "category": "typography"  },
+          "font-weight-bold":      { "cssVar": "--cre8-font-weight-bold",      "value": "700",                            "category": "typography"  },
+          "font-family-sans":      { "cssVar": "--cre8-font-family-sans",      "value": "Inter, system-ui, sans-serif",   "category": "typography"  },
+          "font-family-mono":      { "cssVar": "--cre8-font-family-mono",      "value": "JetBrains Mono, Courier New, monospace", "category": "typography" },
+          "line-height-tight":     { "cssVar": "--cre8-line-height-tight",     "value": "1.2",                            "category": "typography"  },
+          "line-height-normal":    { "cssVar": "--cre8-line-height-normal",    "value": "1.5",                            "category": "typography"  }
+        }
+      },
+      "claude-terracotta": {
+        "description": "Claude-branded skin. Warm terracotta accent on warm white base. Same token names as cre8-teal — only accent and surface values differ.",
+        "tokens": {
+          "background-default":    { "cssVar": "--cre8-background-default",    "value": "#FFFFFF",                        "category": "background" },
+          "background-subtle":     { "cssVar": "--cre8-background-subtle",     "value": "#FBF6F3",                        "category": "background" },
+          "background-strong":     { "cssVar": "--cre8-background-strong",     "value": "#F2E8E2",                        "category": "background" },
+          "background-inverse":    { "cssVar": "--cre8-background-inverse",    "value": "#1A1208",                        "category": "background" },
+          "surface-default":       { "cssVar": "--cre8-surface-default",       "value": "#FFFFFF",                        "category": "surface"     },
+          "surface-elevated":      { "cssVar": "--cre8-surface-elevated",      "value": "#FFFAF8",                        "category": "surface"     },
+          "content-default":       { "cssVar": "--cre8-content-default",       "value": "#1A1208",                        "category": "content"     },
+          "content-muted":         { "cssVar": "--cre8-content-muted",         "value": "#8A7A72",                        "category": "content"     },
+          "content-inverse":       { "cssVar": "--cre8-content-inverse",       "value": "#FFFFFF",                        "category": "content"     },
+          "content-link":          { "cssVar": "--cre8-content-link",          "value": "#9E3A15",                        "category": "content"     },
+          "border-subtle":         { "cssVar": "--cre8-border-subtle",         "value": "#F0E2D9",                        "category": "border"      },
+          "border-default":        { "cssVar": "--cre8-border-default",        "value": "#D9C4B8",                        "category": "border"      },
+          "border-strong":         { "cssVar": "--cre8-border-strong",         "value": "#7A5D52",                        "category": "border"      },
+          "border-inverse":        { "cssVar": "--cre8-border-inverse",        "value": "#B09080",                        "category": "border"      },
+          "accent-primary":        { "cssVar": "--cre8-accent-primary",        "value": "#C85F2F",                        "category": "accent"      },
+          "accent-primary-hover":  { "cssVar": "--cre8-accent-primary-hover",  "value": "#A84D24",                        "category": "accent"      },
+          "accent-primary-active": { "cssVar": "--cre8-accent-primary-active", "value": "#8C3F1C",                        "category": "accent"      },
+          "accent-primary-subtle": { "cssVar": "--cre8-accent-primary-subtle", "value": "rgba(200,95,47,0.10)",           "category": "accent"      },
+          "accent-secondary":      { "cssVar": "--cre8-accent-secondary",      "value": "#1A1208",                        "category": "accent"      },
+          "focus-ring":            { "cssVar": "--cre8-focus-ring",            "value": "#C85F2F",                        "category": "accent"      },
+          "status-info":           { "cssVar": "--cre8-status-info",           "value": "#1963E1",                        "category": "status"      },
+          "status-success":        { "cssVar": "--cre8-status-success",        "value": "#1E9E5A",                        "category": "status"      },
+          "status-warning":        { "cssVar": "--cre8-status-warning",        "value": "#E08A1F",                        "category": "status"      },
+          "status-error":          { "cssVar": "--cre8-status-error",          "value": "#D02525",                        "category": "status"      },
+          "status-error-dark":     { "cssVar": "--cre8-status-error-dark",     "value": "#AA1313",                        "category": "status"      },
+          "status-error-darkest":  { "cssVar": "--cre8-status-error-darkest",  "value": "#7A0000",                        "category": "status"      },
+          "overlay":               { "cssVar": "--cre8-overlay",               "value": "rgba(0,0,0,0.20)",               "category": "status"      },
+          "spacing-2xs":           { "cssVar": "--cre8-spacing-2xs",           "value": "2px",                            "category": "spacing"     },
+          "spacing-xs":            { "cssVar": "--cre8-spacing-xs",            "value": "4px",                            "category": "spacing"     },
+          "spacing-sm":            { "cssVar": "--cre8-spacing-sm",            "value": "8px",                            "category": "spacing"     },
+          "spacing-md":            { "cssVar": "--cre8-spacing-md",            "value": "12px",                           "category": "spacing"     },
+          "spacing-lg":            { "cssVar": "--cre8-spacing-lg",            "value": "16px",                           "category": "spacing"     },
+          "spacing-xl":            { "cssVar": "--cre8-spacing-xl",            "value": "24px",                           "category": "spacing"     },
+          "spacing-2xl":           { "cssVar": "--cre8-spacing-2xl",           "value": "32px",                           "category": "spacing"     },
+          "spacing-3xl":           { "cssVar": "--cre8-spacing-3xl",           "value": "48px",                           "category": "spacing"     },
+          "spacing-4xl":           { "cssVar": "--cre8-spacing-4xl",           "value": "64px",                           "category": "spacing"     },
+          "spacing-5xl":           { "cssVar": "--cre8-spacing-5xl",           "value": "96px",                           "category": "spacing"     },
+          "radius-none":           { "cssVar": "--cre8-radius-none",           "value": "0px",                            "category": "radius"      },
+          "radius-sm":             { "cssVar": "--cre8-radius-sm",             "value": "4px",                            "category": "radius"      },
+          "radius-md":             { "cssVar": "--cre8-radius-md",             "value": "8px",                            "category": "radius"      },
+          "radius-lg":             { "cssVar": "--cre8-radius-lg",             "value": "12px",                           "category": "radius"      },
+          "radius-xl":             { "cssVar": "--cre8-radius-xl",             "value": "16px",                           "category": "radius"      },
+          "radius-2xl":            { "cssVar": "--cre8-radius-2xl",            "value": "24px",                           "category": "radius"      },
+          "radius-full":           { "cssVar": "--cre8-radius-full",           "value": "9999px",                         "category": "radius"      },
+          "font-size-xs":          { "cssVar": "--cre8-font-size-xs",          "value": "12px",                           "category": "typography"  },
+          "font-size-sm":          { "cssVar": "--cre8-font-size-sm",          "value": "14px",                           "category": "typography"  },
+          "font-size-md":          { "cssVar": "--cre8-font-size-md",          "value": "16px",                           "category": "typography"  },
+          "font-size-lg":          { "cssVar": "--cre8-font-size-lg",          "value": "18px",                           "category": "typography"  },
+          "font-size-xl":          { "cssVar": "--cre8-font-size-xl",          "value": "20px",                           "category": "typography"  },
+          "font-size-2xl":         { "cssVar": "--cre8-font-size-2xl",         "value": "24px",                           "category": "typography"  },
+          "font-size-3xl":         { "cssVar": "--cre8-font-size-3xl",         "value": "32px",                           "category": "typography"  },
+          "font-size-4xl":         { "cssVar": "--cre8-font-size-4xl",         "value": "40px",                           "category": "typography"  },
+          "font-size-5xl":         { "cssVar": "--cre8-font-size-5xl",         "value": "56px",                           "category": "typography"  },
+          "font-size-6xl":         { "cssVar": "--cre8-font-size-6xl",         "value": "72px",                           "category": "typography"  },
+          "font-weight-regular":   { "cssVar": "--cre8-font-weight-regular",   "value": "400",                            "category": "typography"  },
+          "font-weight-medium":    { "cssVar": "--cre8-font-weight-medium",    "value": "500",                            "category": "typography"  },
+          "font-weight-semibold":  { "cssVar": "--cre8-font-weight-semibold",  "value": "600",                            "category": "typography"  },
+          "font-weight-bold":      { "cssVar": "--cre8-font-weight-bold",      "value": "700",                            "category": "typography"  },
+          "font-family-sans":      { "cssVar": "--cre8-font-family-sans",      "value": "Inter, system-ui, sans-serif",   "category": "typography"  },
+          "font-family-mono":      { "cssVar": "--cre8-font-family-mono",      "value": "JetBrains Mono, Courier New, monospace", "category": "typography" },
+          "line-height-tight":     { "cssVar": "--cre8-line-height-tight",     "value": "1.2",                            "category": "typography"  },
+          "line-height-normal":    { "cssVar": "--cre8-line-height-normal",    "value": "1.5",                            "category": "typography"  }
+        }
+      }
+    }
   },
   "accessibility": {
     "features": [
