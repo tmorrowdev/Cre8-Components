@@ -1,0 +1,85 @@
+:root {
+  /* ─── Background & Surface ─────────────────────────────────── */
+  --cre8-background-default:    #FFFFFF;
+  --cre8-background-subtle:     #FBF6F3;
+  --cre8-background-strong:     #F2E8E2;
+  --cre8-background-inverse:    #1A1208;
+  --cre8-surface-default:       #FFFFFF;
+  --cre8-surface-elevated:      #FFFAF8;
+
+  /* ─── Content (text) ───────────────────────────────────────── */
+  --cre8-content-default:       #1A1208;
+  --cre8-content-muted:         #8A7A72;
+  --cre8-content-inverse:       #FFFFFF;
+  --cre8-content-link:          #9E3A15;
+
+  /* ─── Borders ──────────────────────────────────────────────── */
+  --cre8-border-subtle:         #F0E2D9;
+  --cre8-border-default:        #D9C4B8;
+  --cre8-border-strong:         #7A5D52;
+  --cre8-border-inverse:        #B09080;
+
+  /* ─── Accent / Brand ───────────────────────────────────────── */
+  --cre8-accent-primary:        #C85F2F;
+  --cre8-accent-primary-hover:  #A84D24;
+  --cre8-accent-primary-active: #8C3F1C;
+  --cre8-accent-primary-subtle: rgba(200, 95, 47, 0.10);
+  --cre8-accent-secondary:      #1A1208;
+  --cre8-focus-ring:            #C85F2F;
+
+  /* ─── Status (brand-neutral, same as cre8-teal) ────────────── */
+  --cre8-status-info:           #1963E1;
+  --cre8-status-success:        #1E9E5A;
+  --cre8-status-warning:        #E08A1F;
+  --cre8-status-error:          #D02525;
+  --cre8-status-error-dark:     #AA1313;
+  --cre8-status-error-darkest:  #7A0000;
+  --cre8-overlay:               rgba(0, 0, 0, 0.20);
+
+  /* ─── Spacing (same across all skins) ─────────────────────── */
+  --cre8-spacing-2xs:  2px;
+  --cre8-spacing-xs:   4px;
+  --cre8-spacing-sm:   8px;
+  --cre8-spacing-md:   12px;
+  --cre8-spacing-lg:   16px;
+  --cre8-spacing-xl:   24px;
+  --cre8-spacing-2xl:  32px;
+  --cre8-spacing-3xl:  48px;
+  --cre8-spacing-4xl:  64px;
+  --cre8-spacing-5xl:  96px;
+
+  /* ─── Radius ───────────────────────────────────────────────── */
+  --cre8-radius-none:  0px;
+  --cre8-radius-sm:    4px;
+  --cre8-radius-md:    8px;
+  --cre8-radius-lg:    12px;
+  --cre8-radius-xl:    16px;
+  --cre8-radius-2xl:   24px;
+  --cre8-radius-full:  9999px;
+
+  /* ─── Typography — Font Size ───────────────────────────────── */
+  --cre8-font-size-xs:   12px;
+  --cre8-font-size-sm:   14px;
+  --cre8-font-size-md:   16px;
+  --cre8-font-size-lg:   18px;
+  --cre8-font-size-xl:   20px;
+  --cre8-font-size-2xl:  24px;
+  --cre8-font-size-3xl:  32px;
+  --cre8-font-size-4xl:  40px;
+  --cre8-font-size-5xl:  56px;
+  --cre8-font-size-6xl:  72px;
+
+  /* ─── Typography — Font Weight ─────────────────────────────── */
+  --cre8-font-weight-regular:   400;
+  --cre8-font-weight-medium:    500;
+  --cre8-font-weight-semibold:  600;
+  --cre8-font-weight-bold:      700;
+
+  /* ─── Typography — Font Family ─────────────────────────────── */
+  --cre8-font-family-sans: 'Inter', system-ui, sans-serif;
+  --cre8-font-family-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  /* ─── Typography — Line Height ─────────────────────────────── */
+  --cre8-line-height-tight:  1.2;
+  --cre8-line-height-normal: 1.5;
+}
