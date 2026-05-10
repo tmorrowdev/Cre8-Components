@@ -212,44 +212,9 @@ def _scaffold_nextjs_app(out_dir: Path, page_tsx: str, migration_sql: str, env_v
         '};\n'
     )
 
-    (utils_dir / "middleware.ts").write_text(
-        'import { createServerClient } from "@supabase/ssr";\n'
-        'import { type NextRequest, NextResponse } from "next/server";\n\n'
-        'export const updateSession = async (request: NextRequest) => {\n'
-        '  let response = NextResponse.next({ request });\n'
-        '  const supabase = createServerClient(\n'
-        '    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n'
-        '    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n'
-        '    {\n'
-        '      cookies: {\n'
-        '        getAll: () => request.cookies.getAll(),\n'
-        '        setAll: (cookiesToSet) => {\n'
-        '          cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value));\n'
-        '          response = NextResponse.next({ request });\n'
-        '          cookiesToSet.forEach(({ name, value, options }) =>\n'
-        '            response.cookies.set(name, value, options)\n'
-        '          );\n'
-        '        },\n'
-        '      },\n'
-        '    },\n'
-        '  );\n'
-        '  await supabase.auth.getUser();\n'
-        '  return response;\n'
-        '};\n'
-    )
 
-    (out_dir / "middleware.ts").write_text(
-        'import { type NextRequest } from "next/server";\n'
-        'import { updateSession } from "@/utils/supabase/middleware";\n\n'
-        'export async function middleware(request: NextRequest) {\n'
-        '  return await updateSession(request);\n'
-        '}\n\n'
-        'export const config = {\n'
-        '  matcher: [\n'
-        '    "/((?!_next/static|_next/image|favicon.ico|.*\\\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)"\n'
-        '  ],\n'
-        '};\n'
-    )
+    # No middleware — generated apps are client-side only; middleware would
+    # crash if NEXT_PUBLIC_SUPABASE_URL is not yet configured.
 
     (out_dir / ".gitignore").write_text(
         ".next/\nnode_modules/\n.env.local\n.env\n"
