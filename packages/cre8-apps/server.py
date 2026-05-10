@@ -64,7 +64,7 @@ class StackSession:
     history: list[dict] = field(default_factory=list)
 
 _sessions: dict[str, StackSession] = {}
-_next_port = 3001
+_next_port = 4000  # start above cre8-mcp (3001) and cre8-studio (3000-3003)
 
 def _alloc_port() -> int:
     global _next_port
