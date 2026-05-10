@@ -61,7 +61,7 @@ jobs:
             }
           prompt: |
             You are an automated bug-fix agent for the cre8-web-components monorepo.
-            Repo: https://github.com/tmorrowdev/cre8-web-components
+            Repo: https://github.com/tmorrowdev/Cre8-Components
 
             This is a Lit 3 web component library:
             - packages/cre8-wc/ — main package (@tmorrow/cre8-wc)
@@ -81,11 +81,11 @@ jobs:
             Before working on this issue, check for unresolved Copilot review comments on
             open PRs previously created by this routine:
 
-            1. gh pr list --repo tmorrowdev/cre8-web-components --label "automated-fix" \
+            1. gh pr list --repo tmorrowdev/Cre8-Components --label "automated-fix" \
                  --state open --json number,title,headRefName
             2. For each open PR:
-               - gh api repos/tmorrowdev/cre8-web-components/pulls/{N}/reviews
-               - gh api repos/tmorrowdev/cre8-web-components/pulls/{N}/comments
+               - gh api repos/tmorrowdev/Cre8-Components/pulls/{N}/reviews
+               - gh api repos/tmorrowdev/Cre8-Components/pulls/{N}/comments
             3. If Copilot left actionable comments (suggestions, change requests):
                - git checkout {branch}
                - Apply the fixes
@@ -97,18 +97,18 @@ jobs:
             ## Phase 2 — Reproduce
 
             1. Confirm no existing PR already targets this issue:
-               gh pr list --repo tmorrowdev/cre8-web-components \
+               gh pr list --repo tmorrowdev/Cre8-Components \
                  --search "#${{ github.event.issue.number }} in:title"
                If one exists, output "PR already open for this issue." and stop.
 
-            2. git checkout main && git pull origin main
+            2. git checkout a2ui && git pull origin a2ui
             3. git checkout -b fix/issue-${{ github.event.issue.number }}-{short-slug}
             4. Locate the relevant component in packages/cre8-wc/components/
             5. Write or run a test that demonstrates the failing behavior:
                cd packages/cre8-wc && pnpm test -- --testPathPattern={component}
             6. If you cannot reproduce the bug, comment on the issue and stop:
                gh issue comment ${{ github.event.issue.number }} \
-                 --repo tmorrowdev/cre8-web-components \
+                 --repo tmorrowdev/Cre8-Components \
                  --body "Unable to reproduce: {explanation}"
 
             ## Phase 3 — Fix
@@ -127,7 +127,7 @@ jobs:
             Closes #${{ github.event.issue.number }}"
             2. git push -u origin {branch}
             3. gh pr create \
-                 --repo tmorrowdev/cre8-web-components \
+                 --repo tmorrowdev/Cre8-Components \
                  --title "fix({component}): {concise description}" \
                  --label "automated-fix" \
                  --body "## Summary
@@ -147,7 +147,7 @@ jobs:
 
             ## Hard rules
 
-            - Never commit to main or master.
+            - Never commit directly to a2ui, main, or master.
             - Never force-push.
             - Never skip tests.
             - One issue per PR, minimal scope.
