@@ -1,0 +1,341 @@
+{
+  "component": "cre8-layout-section",
+  "children": [
+    {
+      "component": "cre8-band",
+      "props": { "variant": "branded" },
+      "children": [
+        {
+          "component": "cre8-hero",
+          "props": { "align": "center" },
+          "children": [
+            {
+              "component": "cre8-heading",
+              "props": { "type": "display-default", "tagVariant": "h1" },
+              "children": ["Taylor Rivera"]
+            },
+            {
+              "component": "cre8-heading",
+              "props": { "type": "title-large", "tagVariant": "h2" },
+              "children": ["Product designer building agent-driven UIs"]
+            },
+            {
+              "component": "cre8-text-passage",
+              "props": { "size": "large" },
+              "children": [
+                "I design and ship interfaces where AI agents compose the UI itself. Based in Brooklyn, shipping from a laptop and a lot of coffee."
+              ]
+            },
+            {
+              "component": "cre8-button-group",
+              "children": [
+                {
+                  "component": "cre8-button",
+                  "props": {
+                    "text": "View work",
+                    "variant": "primary",
+                    "href": "#work"
+                  },
+                  "events": { "click": "scroll-to-work" }
+                },
+                {
+                  "component": "cre8-button",
+                  "props": {
+                    "text": "Get in touch",
+                    "variant": "tertiary",
+                    "href": "mailto:hi@taylorrivera.dev"
+                  },
+                  "events": { "click": "open-email" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "component": "cre8-layout-section",
+      "children": [
+        {
+          "component": "cre8-heading",
+          "props": { "type": "headline-large", "tagVariant": "h2" },
+          "children": ["About"]
+        },
+        {
+          "component": "cre8-text-passage",
+          "children": [
+            "Ten years designing and building across the stack: Lit web components, Next.js, Supabase, and whatever Anthropic ships next. I like making the AI do the boring parts so I can focus on what a thing should feel like."
+          ]
+        }
+      ]
+    },
+
+    {
+      "component": "cre8-layout-section",
+      "children": [
+        {
+          "component": "cre8-heading",
+          "props": { "type": "headline-large", "tagVariant": "h2" },
+          "children": ["Featured work"]
+        },
+        {
+          "component": "cre8-grid",
+          "props": { "variant": "3up", "gap": "lg" },
+          "children": [
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-card",
+                  "slots": {
+                    "header": [
+                      {
+                        "component": "cre8-heading",
+                        "props": { "type": "title-default", "tagVariant": "h3" },
+                        "children": ["A2UI Renderer for cre8-wc"]
+                      }
+                    ],
+                    "default": [
+                      {
+                        "component": "cre8-text-passage",
+                        "props": { "size": "small" },
+                        "children": [
+                          "Zero-dep runtime that validates and renders AI-emitted component trees against a JSON Schema catalog generated from the design system's manifest."
+                        ]
+                      },
+                      {
+                        "component": "cre8-button",
+                        "props": {
+                          "text": "Read case study",
+                          "variant": "secondary",
+                          "href": "/work/a2ui"
+                        },
+                        "events": { "click": "open-project:a2ui" }
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-card",
+                  "slots": {
+                    "header": [
+                      {
+                        "component": "cre8-heading",
+                        "props": { "type": "title-default", "tagVariant": "h3" },
+                        "children": ["Cre8 MCP Server"]
+                      }
+                    ],
+                    "default": [
+                      {
+                        "component": "cre8-text-passage",
+                        "props": { "size": "small" },
+                        "children": [
+                          "An MCP server that exposes the cre8-wc catalog and an A2UI spec validator to any AI agent. Ships as @tmorrow/cre8-mcp."
+                        ]
+                      },
+                      {
+                        "component": "cre8-button",
+                        "props": {
+                          "text": "View on GitHub",
+                          "variant": "secondary",
+                          "href": "https://github.com/tmorrowdev/Cre8-Components",
+                          "target": "_blank"
+                        },
+                        "events": { "click": "open-project:cre8-mcp" }
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-card",
+                  "slots": {
+                    "header": [
+                      {
+                        "component": "cre8-heading",
+                        "props": { "type": "title-default", "tagVariant": "h3" },
+                        "children": ["cre8-wc design system"]
+                      }
+                    ],
+                    "default": [
+                      {
+                        "component": "cre8-text-passage",
+                        "props": { "size": "small" },
+                        "children": [
+                          "85 Lit web components with auto-registration, React wrappers, and a CDN bundle. Used by internal tooling at a Fortune-500 healthcare company."
+                        ]
+                      },
+                      {
+                        "component": "cre8-button",
+                        "props": {
+                          "text": "Browse components",
+                          "variant": "secondary",
+                          "href": "/work/cre8-wc"
+                        },
+                        "events": { "click": "open-project:cre8-wc" }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "component": "cre8-layout-section",
+      "children": [
+        {
+          "component": "cre8-heading",
+          "props": { "type": "headline-large", "tagVariant": "h2" },
+          "children": ["Toolbox"]
+        },
+        {
+          "component": "cre8-grid",
+          "props": { "variant": "4up", "gap": "sm" },
+          "children": [
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-tag",
+                  "props": { "text": "TypeScript", "variant": "branded", "shape": "round" }
+                }
+              ]
+            },
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-tag",
+                  "props": { "text": "Lit", "variant": "branded", "shape": "round" }
+                }
+              ]
+            },
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-tag",
+                  "props": { "text": "Next.js", "variant": "branded", "shape": "round" }
+                }
+              ]
+            },
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-tag",
+                  "props": { "text": "Supabase", "variant": "branded", "shape": "round" }
+                }
+              ]
+            },
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-tag",
+                  "props": { "text": "Figma", "variant": "neutral", "shape": "round" }
+                }
+              ]
+            },
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-tag",
+                  "props": { "text": "Anthropic SDK", "variant": "neutral", "shape": "round" }
+                }
+              ]
+            },
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-tag",
+                  "props": { "text": "Vercel", "variant": "neutral", "shape": "round" }
+                }
+              ]
+            },
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-tag",
+                  "props": { "text": "Tailwind", "variant": "neutral", "shape": "round" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "component": "cre8-divider"
+    },
+
+    {
+      "component": "cre8-layout-section",
+      "children": [
+        {
+          "component": "cre8-heading",
+          "props": { "type": "headline-default", "tagVariant": "h2" },
+          "children": ["Let's build something"]
+        },
+        {
+          "component": "cre8-text-passage",
+          "children": [
+            "Open to freelance work, collaborations, and talking to anyone shipping agent-UI systems."
+          ]
+        },
+        {
+          "component": "cre8-button-group",
+          "children": [
+            {
+              "component": "cre8-button",
+              "props": {
+                "text": "Email",
+                "variant": "primary",
+                "href": "mailto:hi@taylorrivera.dev"
+              },
+              "events": { "click": "open-email" }
+            },
+            {
+              "component": "cre8-button",
+              "props": {
+                "text": "GitHub",
+                "variant": "tertiary",
+                "href": "https://github.com/tmorrowdev",
+                "target": "_blank"
+              },
+              "events": { "click": "open-github" }
+            },
+            {
+              "component": "cre8-button",
+              "props": {
+                "text": "LinkedIn",
+                "variant": "tertiary",
+                "href": "https://linkedin.com/in/taylorrivera",
+                "target": "_blank"
+              },
+              "events": { "click": "open-linkedin" }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

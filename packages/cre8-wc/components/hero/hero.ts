@@ -39,6 +39,9 @@ export class Cre8Hero extends Cre8Element {
   @property()
       align?: 'top-left' | 'left' | 'top-center' | 'center' | 'bottom-center' | 'top-right' | 'right' | 'bottom-right';
 
+  @property({ type: Boolean })
+      hasOverlay?: boolean;
+
   render() {
       const componentClassNames = this.componentClassNames('cre8-c-hero', {
           'cre8-c-hero--top-left': this.align === 'top-left',
@@ -49,6 +52,7 @@ export class Cre8Hero extends Cre8Element {
           'cre8-c-hero--top-right': this.align === 'top-right',
           'cre8-c-hero--right': this.align === 'right',
           'cre8-c-hero--bottom-right': this.align === 'bottom-right',
+          'cre8-c-hero--has-overlay': !!this.hasOverlay,
       });
 
       return html`

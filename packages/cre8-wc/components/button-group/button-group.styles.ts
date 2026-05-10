@@ -598,6 +598,15 @@ span.ripple {
   gap: 1rem;
 }
 
+:host([fullWidth]) {
+  display: flex;
+}
+.cre8-c-button-group--full-width {
+  width: 100%;
+}
+.cre8-c-button-group--gap-sm {
+  gap: 0.5rem;
+}
 /**
   * Button group for Modals
   */

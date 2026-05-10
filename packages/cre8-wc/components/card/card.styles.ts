@@ -607,6 +607,13 @@ span.ripple {
 }
 
 /**
+ * Compact card - reduced padding for narrow layouts
+ */
+.cre8-c-card--compact {
+  padding: 1rem;
+  gap: 0.5rem;
+}
+/**
  * Horizontal card
  * 1) Organized block with flex-direction set to row so that header => footer appears
  * from left to right rather than top to bottom

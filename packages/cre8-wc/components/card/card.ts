@@ -34,7 +34,7 @@ export class Cre8Card extends Cre8Element {
    *   without a border and without padding around the content
    */
   @property()
-  variant?: 'bare' | 'horizontal' | 'horizontal-bare';
+  variant?: 'bare' | 'compact' | 'horizontal' | 'horizontal-bare';
 
   /**
    * Alignment variant
@@ -46,6 +46,7 @@ export class Cre8Card extends Cre8Element {
   render() {
     const componentClassNames = this.componentClassNames('cre8-c-card', {
       'cre8-c-card--bare': this.variant === 'bare',
+      'cre8-c-card--compact': this.variant === 'compact',
       'cre8-c-card--horizontal': this.variant === 'horizontal',
       'cre8-c-card--horizontal-bare': this.variant === 'horizontal-bare',
       'cre8-c-card--align-center': this.align === 'center',

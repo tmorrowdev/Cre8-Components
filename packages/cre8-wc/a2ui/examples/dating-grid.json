@@ -1,0 +1,456 @@
+{
+  "component": "cre8-layout-section",
+  "children": [
+    {
+      "component": "cre8-band",
+      "props": { "variant": "branded" },
+      "children": [
+        {
+          "component": "cre8-hero",
+          "props": { "align": "left" },
+          "children": [
+            {
+              "component": "cre8-heading",
+              "props": { "type": "headline-large", "tagVariant": "h1" },
+              "children": ["Nearby"]
+            },
+            {
+              "component": "cre8-text-passage",
+              "children": [
+                "6 people within 10 miles, sorted by distance."
+              ]
+            },
+            {
+              "component": "cre8-button-group",
+              "children": [
+                {
+                  "component": "cre8-button",
+                  "props": { "text": "Filters", "variant": "secondary" },
+                  "events": { "click": "open-filters" }
+                },
+                {
+                  "component": "cre8-button",
+                  "props": { "text": "Change location", "variant": "tertiary" },
+                  "events": { "click": "change-location" }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "component": "cre8-layout-section",
+      "children": [
+        {
+          "component": "cre8-grid",
+          "props": { "variant": "3up", "gap": "lg" },
+          "children": [
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-card",
+                  "slots": {
+                    "header": [
+                      {
+                        "component": "cre8-feature",
+                        "props": {
+                          "imgSrc": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400",
+                          "imgAlt": "Avery, 29"
+                        }
+                      }
+                    ],
+                    "default": [
+                      {
+                        "component": "cre8-heading",
+                        "props": { "type": "title-default", "tagVariant": "h3" },
+                        "children": ["Avery, 29"]
+                      },
+                      {
+                        "component": "cre8-badge",
+                        "props": { "text": "0.4 mi away", "status": "success" }
+                      },
+                      {
+                        "component": "cre8-text-passage",
+                        "props": { "size": "small" },
+                        "children": [
+                          "Architect who'd rather be surfing. Tacos are a personality."
+                        ]
+                      },
+                      {
+                        "component": "cre8-tag",
+                        "props": { "text": "Surfing", "variant": "branded", "shape": "round" }
+                      },
+                      {
+                        "component": "cre8-tag",
+                        "props": { "text": "Dogs", "variant": "branded", "shape": "round" }
+                      },
+                      {
+                        "component": "cre8-tag",
+                        "props": { "text": "Coffee", "variant": "branded", "shape": "round" }
+                      }
+                    ],
+                    "footer": [
+                      {
+                        "component": "cre8-button-group",
+                        "children": [
+                          {
+                            "component": "cre8-button",
+                            "props": { "text": "Pass", "variant": "tertiary" },
+                            "events": { "click": "pass:avery-29" }
+                          },
+                          {
+                            "component": "cre8-button",
+                            "props": { "text": "Like", "variant": "primary" },
+                            "events": { "click": "like:avery-29" }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-card",
+                  "slots": {
+                    "header": [
+                      {
+                        "component": "cre8-feature",
+                        "props": {
+                          "imgSrc": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400",
+                          "imgAlt": "Jordan, 31"
+                        }
+                      }
+                    ],
+                    "default": [
+                      {
+                        "component": "cre8-heading",
+                        "props": { "type": "title-default", "tagVariant": "h3" },
+                        "children": ["Jordan, 31"]
+                      },
+                      {
+                        "component": "cre8-badge",
+                        "props": { "text": "1.2 mi away", "status": "success" }
+                      },
+                      {
+                        "component": "cre8-text-passage",
+                        "props": { "size": "small" },
+                        "children": [
+                          "Software engineer, runs 10Ks slowly, makes sourdough that works about 60% of the time."
+                        ]
+                      },
+                      {
+                        "component": "cre8-tag",
+                        "props": { "text": "Running", "variant": "branded", "shape": "round" }
+                      },
+                      {
+                        "component": "cre8-tag",
+                        "props": { "text": "Cooking", "variant": "branded", "shape": "round" }
+                      },
+                      {
+                        "component": "cre8-tag",
+                        "props": { "text": "Coding", "variant": "neutral", "shape": "round" }
+                      }
+                    ],
+                    "footer": [
+                      {
+                        "component": "cre8-button-group",
+                        "children": [
+                          {
+                            "component": "cre8-button",
+                            "props": { "text": "Pass", "variant": "tertiary" },
+                            "events": { "click": "pass:jordan-31" }
+                          },
+                          {
+                            "component": "cre8-button",
+                            "props": { "text": "Like", "variant": "primary" },
+                            "events": { "click": "like:jordan-31" }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-card",
+                  "slots": {
+                    "header": [
+                      {
+                        "component": "cre8-feature",
+                        "props": {
+                          "imgSrc": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
+                          "imgAlt": "Sam, 27"
+                        }
+                      }
+                    ],
+                    "default": [
+                      {
+                        "component": "cre8-heading",
+                        "props": { "type": "title-default", "tagVariant": "h3" },
+                        "children": ["Sam, 27"]
+                      },
+                      {
+                        "component": "cre8-badge",
+                        "props": { "text": "2.1 mi away", "status": "success" }
+                      },
+                      {
+                        "component": "cre8-text-passage",
+                        "props": { "size": "small" },
+                        "children": [
+                          "Ceramicist, gallery-hopper, reformed Twitter user. Looking for someone to lose a Saturday with."
+                        ]
+                      },
+                      {
+                        "component": "cre8-tag",
+                        "props": { "text": "Art", "variant": "branded", "shape": "round" }
+                      },
+                      {
+                        "component": "cre8-tag",
+                        "props": { "text": "Pottery", "variant": "branded", "shape": "round" }
+                      },
+                      {
+                        "component": "cre8-tag",
+                        "props": { "text": "Galleries", "variant": "neutral", "shape": "round" }
+                      }
+                    ],
+                    "footer": [
+                      {
+                        "component": "cre8-button-group",
+                        "children": [
+                          {
+                            "component": "cre8-button",
+                            "props": { "text": "Pass", "variant": "tertiary" },
+                            "events": { "click": "pass:sam-27" }
+                          },
+                          {
+                            "component": "cre8-button",
+                            "props": { "text": "Like", "variant": "primary" },
+                            "events": { "click": "like:sam-27" }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-card",
+                  "slots": {
+                    "header": [
+                      {
+                        "component": "cre8-feature",
+                        "props": {
+                          "imgSrc": "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=400",
+                          "imgAlt": "Riley, 33"
+                        }
+                      }
+                    ],
+                    "default": [
+                      {
+                        "component": "cre8-heading",
+                        "props": { "type": "title-default", "tagVariant": "h3" },
+                        "children": ["Riley, 33"]
+                      },
+                      {
+                        "component": "cre8-badge",
+                        "props": { "text": "3.7 mi away", "status": "warning" }
+                      },
+                      {
+                        "component": "cre8-text-passage",
+                        "props": { "size": "small" },
+                        "children": [
+                          "Teacher, part-time DJ, full-time dog parent. Will out-trivia you on 90s movies."
+                        ]
+                      },
+                      {
+                        "component": "cre8-tag",
+                        "props": { "text": "Music", "variant": "branded", "shape": "round" }
+                      },
+                      {
+                        "component": "cre8-tag",
+                        "props": { "text": "Dogs", "variant": "branded", "shape": "round" }
+                      },
+                      {
+                        "component": "cre8-tag",
+                        "props": { "text": "Movies", "variant": "neutral", "shape": "round" }
+                      }
+                    ],
+                    "footer": [
+                      {
+                        "component": "cre8-button-group",
+                        "children": [
+                          {
+                            "component": "cre8-button",
+                            "props": { "text": "Pass", "variant": "tertiary" },
+                            "events": { "click": "pass:riley-33" }
+                          },
+                          {
+                            "component": "cre8-button",
+                            "props": { "text": "Like", "variant": "primary" },
+                            "events": { "click": "like:riley-33" }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-card",
+                  "slots": {
+                    "header": [
+                      {
+                        "component": "cre8-feature",
+                        "props": {
+                          "imgSrc": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400",
+                          "imgAlt": "Casey, 30"
+                        }
+                      }
+                    ],
+                    "default": [
+                      {
+                        "component": "cre8-heading",
+                        "props": { "type": "title-default", "tagVariant": "h3" },
+                        "children": ["Casey, 30"]
+                      },
+                      {
+                        "component": "cre8-badge",
+                        "props": { "text": "5.3 mi away", "status": "warning" }
+                      },
+                      {
+                        "component": "cre8-text-passage",
+                        "props": { "size": "small" },
+                        "children": [
+                          "Climber, slow-reader, loud-laugher. On a mission to find the best negroni in the city."
+                        ]
+                      },
+                      {
+                        "component": "cre8-tag",
+                        "props": { "text": "Climbing", "variant": "branded", "shape": "round" }
+                      },
+                      {
+                        "component": "cre8-tag",
+                        "props": { "text": "Books", "variant": "branded", "shape": "round" }
+                      },
+                      {
+                        "component": "cre8-tag",
+                        "props": { "text": "Cocktails", "variant": "neutral", "shape": "round" }
+                      }
+                    ],
+                    "footer": [
+                      {
+                        "component": "cre8-button-group",
+                        "children": [
+                          {
+                            "component": "cre8-button",
+                            "props": { "text": "Pass", "variant": "tertiary" },
+                            "events": { "click": "pass:casey-30" }
+                          },
+                          {
+                            "component": "cre8-button",
+                            "props": { "text": "Like", "variant": "primary" },
+                            "events": { "click": "like:casey-30" }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-card",
+                  "slots": {
+                    "header": [
+                      {
+                        "component": "cre8-feature",
+                        "props": {
+                          "imgSrc": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400",
+                          "imgAlt": "Morgan, 28"
+                        }
+                      }
+                    ],
+                    "default": [
+                      {
+                        "component": "cre8-heading",
+                        "props": { "type": "title-default", "tagVariant": "h3" },
+                        "children": ["Morgan, 28"]
+                      },
+                      {
+                        "component": "cre8-badge",
+                        "props": { "text": "8.9 mi away", "status": "error" }
+                      },
+                      {
+                        "component": "cre8-text-passage",
+                        "props": { "size": "small" },
+                        "children": [
+                          "Nonprofit fundraiser, bad at pickleball but committed. Let's go on a long walk and tell each other everything."
+                        ]
+                      },
+                      {
+                        "component": "cre8-tag",
+                        "props": { "text": "Walking", "variant": "branded", "shape": "round" }
+                      },
+                      {
+                        "component": "cre8-tag",
+                        "props": { "text": "Pickleball", "variant": "neutral", "shape": "round" }
+                      },
+                      {
+                        "component": "cre8-tag",
+                        "props": { "text": "Volunteering", "variant": "neutral", "shape": "round" }
+                      }
+                    ],
+                    "footer": [
+                      {
+                        "component": "cre8-button-group",
+                        "children": [
+                          {
+                            "component": "cre8-button",
+                            "props": { "text": "Pass", "variant": "tertiary" },
+                            "events": { "click": "pass:morgan-28" }
+                          },
+                          {
+                            "component": "cre8-button",
+                            "props": { "text": "Like", "variant": "primary" },
+                            "events": { "click": "like:morgan-28" }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -35,6 +35,9 @@
     "url": "https://github.com/tmorrowdev/Cre8-Components.git",
     "directory": "packages/cre8-mcp"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=18"
   },

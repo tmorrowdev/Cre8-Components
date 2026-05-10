@@ -719,5 +719,17 @@ span.ripple {
     justify-content: flex-end;
     align-items: flex-end;
   }
+}
+.cre8-c-hero--has-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+.cre8-c-hero--has-overlay .cre8-c-hero__body {
+  z-index: 2;
+  --cre8-color-content-default: #ffffff;
+  --cre8-color-content-subtle: rgba(255, 255, 255, 0.85);
 }`;
 export default styles;

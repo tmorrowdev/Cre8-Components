@@ -1,12 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://cre8.dev/a2ui/catalogs/cre8-wc/2.0.3",
+  "$id": "https://cre8.dev/a2ui/catalogs/cre8-wc/2.0.4",
   "title": "cre8-wc A2UI Catalog",
   "description": "cre8 Web Components is a library of presentational UI web components to be consumed by # web applications.",
   "x-a2ui": {
     "catalogId": "cre8-wc",
     "library": "@tmorrow/cre8-wc",
-    "libraryVersion": "2.0.3",
+    "libraryVersion": "2.0.4",
     "tagPrefix": "cre8",
     "framework": "Lit 3.3.1"
   },
@@ -499,6 +499,17 @@
                 "type": "string",
                 "const": "responsive-full-width",
                 "x-kind": "attribute"
+              },
+              "gap": {
+                "description": "Gap between buttons\n- **sm** reduces gap to 8px (useful in compact contexts)",
+                "type": "string",
+                "const": "sm",
+                "x-kind": "attribute"
+              },
+              "fullWidth": {
+                "description": "Stretch button group to fill its container width",
+                "type": "boolean",
+                "x-kind": "property"
               }
             }
           },
@@ -846,23 +857,21 @@
                 "x-kind": "attribute"
               },
               "data": {
+                "type": "object",
                 "description": "The chart data including labels and datasets.\nThis should be an object with `labels` array and `datasets` array.",
-                "type": "string",
-                "x-tsType": "Cre8ChartData",
                 "x-kind": "property"
               },
               "options": {
+                "type": "object",
                 "description": "Chart.js configuration options.\nSee Chart.js documentation for all available options.",
-                "type": "string",
-                "x-tsType": "_DeepPartialObject<CoreChartOptions<keyof ChartTypeRegistry> & ElementChartOptions<keyof ChartTypeRegistry> & PluginChartOptions<...> & DatasetChartOptions<...> & ScaleChartOptions<...>>",
                 "x-kind": "property"
               },
               "colors": {
-                "description": "Default colors for datasets (uses cre8 design token colors).",
                 "type": "array",
                 "items": {
                   "type": "string"
                 },
+                "description": "Default colors for datasets (uses cre8 design token colors).",
                 "x-kind": "property"
               }
             }
@@ -3763,6 +3772,7 @@
                 "type": "string",
                 "enum": [
                   "bare",
+                  "compact",
                   "horizontal",
                   "horizontal-bare"
                 ],
@@ -3980,6 +3990,10 @@
               "imgAlt": {
                 "description": "Image alt text",
                 "type": "string",
+                "x-kind": "property"
+              },
+              "hasOverlay": {
+                "type": "boolean",
                 "x-kind": "property"
               }
             }
@@ -4229,6 +4243,11 @@
               },
               "imgAlt": {
                 "description": "Image alt text",
+                "type": "string",
+                "x-kind": "property"
+              },
+              "aspectRatio": {
+                "description": "CSS aspect-ratio for the image (e.g. \"4/3\", \"16/9\", \"1\"). Defaults to natural image ratio.",
                 "type": "string",
                 "x-kind": "property"
               }
