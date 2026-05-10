@@ -35,110 +35,124 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Run Claude Code auto-fix
+      - name: Run Gemini auto-fix
+        uses: google-github-actions/run-gemini-cli@v0
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           ISSUE_TITLE: ${{ github.event.issue.title }}
           ISSUE_BODY: ${{ github.event.issue.body }}
-        run: |
-          npx --yes @anthropic-ai/claude-code@latest \
-            --print \
-            --allowedTools "Bash,Read,Write,Edit,Glob,Grep" \
-            --max-turns 40 \
-            "$(cat <<'PROMPT' You are an automated bug-fix and feature building agent for the cre8-web-components monorepo.
+        with:
+          gemini_api_key: ${{ secrets.GEMINI_API_KEY }}
+          settings: |-
+            {
+              "model": { "maxSessionTurns": 40 },
+              "tools": {
+                "core": [
+                  "run_shell_command(git)",
+                  "run_shell_command(gh)",
+                  "run_shell_command(pnpm)",
+                  "run_shell_command(bash)",
+                  "run_shell_command(cat)",
+                  "run_shell_command(find)",
+                  "run_shell_command(grep)",
+                  "run_shell_command(ls)",
+                  "run_shell_command(echo)"
+                ]
+              }
+            }
+          prompt: |
+            You are an automated bug-fix agent for the cre8-web-components monorepo.
             Repo: https://github.com/tmorrowdev/cre8-web-components
 
             This is a Lit 3 web component library:
             - packages/cre8-wc/ — main package (@tmorrow/cre8-wc)
             - packages/cre8-wc/components/ — individual components
-            - Test: cd packages/cre8-wc && pnpm test
+            - Test:  cd packages/cre8-wc && pnpm test
             - Build: cd packages/cre8-wc && pnpm build
-            
-            Issue #${ISSUE_NUMBER} was just opened: "${ISSUE_TITLE}"
-            
+
+            Issue #${{ github.event.issue.number }} was just opened: "${{ github.event.issue.title }}"
+
             Full issue body:
             ---
-            ${ISSUE_BODY}
+            ${{ github.event.issue.body }}
             ---
 
-                ## Phase 1 — Resolve Copilot comments on existing fix PRs
-                
-                Before working on this issue, check for unresolved Copilot review comments on
-                open PRs previously created by this routine:
-                
-                1. gh pr list --repo tmorrowdev/cre8-web-components --label "automated-fix" \
-                     --state open --json number,title,headRefName
-                2. For each open PR:
-                   - gh api repos/tmorrowdev/cre8-web-components/pulls/{N}/reviews
-                   - gh api repos/tmorrowdev/cre8-web-components/pulls/{N}/comments
-                3. If Copilot left actionable comments (suggestions, change requests):
-                   - git checkout {branch}
-                   - Apply the fixes
-                   - cd packages/cre8-wc && pnpm test — all tests must pass
-                   - git commit -m "fix: address Copilot review feedback"
-                   - git push
-                   - Reply to each resolved comment: "Fixed in latest commit."
-                
-                ## Phase 2 — Reproduce
-                
-                1. Confirm no existing PR already targets issue #${ISSUE_NUMBER}:
-                   gh pr list --repo tmorrowdev/cre8-web-components \
-                     --search "#${ISSUE_NUMBER} in:title"
-                   If a PR already exists, output "PR already open for this issue." and stop.
-                
-                2. git checkout main && git pull origin main
-                3. git checkout -b fix/issue-${ISSUE_NUMBER}-{short-slug}
-                4. Locate the relevant component in packages/cre8-wc/components/
-                5. Write or run a test that demonstrates the failing behavior:
-                   cd packages/cre8-wc && pnpm test -- --testPathPattern={component}
-                6. If you cannot reproduce the bug, comment on the issue with your analysis
-                   and stop — do NOT open a PR:
-                   gh issue comment ${ISSUE_NUMBER} --repo tmorrowdev/cre8-web-components \
-                     --body "Unable to reproduce: {explanation}"
-                
-                ## Phase 3 — Fix
-                
-                1. Identify the root cause from the failing test.
-                2. Edit the minimal set of files to fix it — no unrelated refactoring.
-                3. cd packages/cre8-wc && pnpm test
-                4. All tests MUST pass before proceeding. Iterate until they do.
-                
-                ## Phase 4 — Open a PR
-                
-                1. Stage only the changed files:
-                   git add {only changed files}
-                   git commit -m "fix({component}): {concise description}
-                
-                Closes #${ISSUE_NUMBER}"
-                2. git push -u origin {branch}
-                3. gh pr create \
-                     --repo tmorrowdev/cre8-web-components \
-                     --title "fix({component}): {concise description}" \
-                     --label "automated-fix" \
-                     --body "## Summary
-                Fixes #${ISSUE_NUMBER}
-                
-                {1-3 sentences: root cause and what the fix does}
-                
-                ## Changes
-                - {file}: {what changed}
-                
-                ## Test Plan
-                - [ ] All existing tests pass
-                - [ ] Issue behavior is resolved
-                
-                🤖 Automated fix by Claude Code"
-                4. Output the PR URL.
-                
-                ## Hard rules
-                
-                - Never commit to main or master.
-                - Never force-push.
-                - Never skip tests (--no-verify).
-                - One issue per PR, minimal scope.
-                - If unsure about a fix, comment on the issue with your analysis and stop.
-                - Do not open a PR if any tests are failing.
-                PROMPT
-                )"
+            ## Phase 1 — Resolve Copilot comments on existing fix PRs
+
+            Before working on this issue, check for unresolved Copilot review comments on
+            open PRs previously created by this routine:
+
+            1. gh pr list --repo tmorrowdev/cre8-web-components --label "automated-fix" \
+                 --state open --json number,title,headRefName
+            2. For each open PR:
+               - gh api repos/tmorrowdev/cre8-web-components/pulls/{N}/reviews
+               - gh api repos/tmorrowdev/cre8-web-components/pulls/{N}/comments
+            3. If Copilot left actionable comments (suggestions, change requests):
+               - git checkout {branch}
+               - Apply the fixes
+               - cd packages/cre8-wc && pnpm test — all tests must pass
+               - git commit -m "fix: address Copilot review feedback"
+               - git push
+               - Reply to each resolved comment thread: "Fixed in latest commit."
+
+            ## Phase 2 — Reproduce
+
+            1. Confirm no existing PR already targets this issue:
+               gh pr list --repo tmorrowdev/cre8-web-components \
+                 --search "#${{ github.event.issue.number }} in:title"
+               If one exists, output "PR already open for this issue." and stop.
+
+            2. git checkout main && git pull origin main
+            3. git checkout -b fix/issue-${{ github.event.issue.number }}-{short-slug}
+            4. Locate the relevant component in packages/cre8-wc/components/
+            5. Write or run a test that demonstrates the failing behavior:
+               cd packages/cre8-wc && pnpm test -- --testPathPattern={component}
+            6. If you cannot reproduce the bug, comment on the issue and stop:
+               gh issue comment ${{ github.event.issue.number }} \
+                 --repo tmorrowdev/cre8-web-components \
+                 --body "Unable to reproduce: {explanation}"
+
+            ## Phase 3 — Fix
+
+            1. Identify the root cause from the failing test.
+            2. Edit the minimal set of files to fix it — no unrelated refactoring.
+            3. cd packages/cre8-wc && pnpm test
+            4. All tests MUST pass before proceeding. Iterate until they do.
+
+            ## Phase 4 — Open a PR
+
+            1. Stage only the changed files and commit:
+               git add {only changed files}
+               git commit -m "fix({component}): {concise description}
+
+            Closes #${{ github.event.issue.number }}"
+            2. git push -u origin {branch}
+            3. gh pr create \
+                 --repo tmorrowdev/cre8-web-components \
+                 --title "fix({component}): {concise description}" \
+                 --label "automated-fix" \
+                 --body "## Summary
+            Fixes #${{ github.event.issue.number }}
+
+            {1-3 sentences: root cause and what the fix does}
+
+            ## Changes
+            - {file}: {what changed}
+
+            ## Test Plan
+            - [ ] All existing tests pass
+            - [ ] Issue behavior is resolved
+
+            🤖 Automated fix by Gemini"
+            4. Output the PR URL.
+
+            ## Hard rules
+
+            - Never commit to main or master.
+            - Never force-push.
+            - Never skip tests.
+            - One issue per PR, minimal scope.
+            - If unsure about a fix, comment on the issue and stop — do NOT open a PR.
+            - Do not open a PR if any tests are failing.
