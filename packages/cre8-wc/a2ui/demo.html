@@ -40,7 +40,7 @@
       }
       main {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         overflow: hidden;
       }
       .panel {
@@ -110,28 +110,6 @@
       .error.visible {
         display: block;
       }
-      #event-log {
-        font-family: ui-monospace, monospace;
-        font-size: 12px;
-        line-height: 1.5;
-      }
-      .event-entry {
-        padding: 6px 0;
-        border-bottom: 1px dashed #e1e4e8;
-      }
-      .event-entry .evt-name {
-        color: #0366d6;
-        font-weight: 600;
-      }
-      .event-entry .evt-handler {
-        color: #22863a;
-      }
-      .event-entry .evt-path {
-        color: #6a737d;
-      }
-      .event-entry .evt-detail {
-        color: #24292e;
-      }
       #output {
         display: flex;
         flex-direction: column;
@@ -157,16 +135,8 @@
         </div>
       </section>
       <section class="panel">
-        <h2>Rendered output</h2>
+        <h2>Canvas</h2>
         <div class="panel-body" id="output"></div>
-      </section>
-      <section class="panel">
-        <h2>Events (onEvent callback)</h2>
-        <div class="panel-body" id="event-log">
-          <em style="color: #6a737d; font-size: 12px">
-            Interact with the rendered components to emit events.
-          </em>
-        </div>
       </section>
     </main>
 
@@ -212,7 +182,6 @@
       const $status = document.getElementById('status');
       const $spec = document.getElementById('spec');
       const $output = document.getElementById('output');
-      const $log = document.getElementById('event-log');
       const $error = document.getElementById('error');
       const $renderBtn = document.getElementById('render-btn');
       const $resetBtn = document.getElementById('reset-btn');
@@ -240,22 +209,9 @@
       }
 
       function logEvent(e) {
-        const placeholder = $log.querySelector('em');
-        if (placeholder) placeholder.remove();
-        const entry = document.createElement('div');
-        entry.className = 'event-entry';
-        entry.innerHTML = `
-          <div><span class="evt-name">${escape(e.event)}</span> → <span class="evt-handler">${escape(e.handler)}</span></div>
-          <div class="evt-path">${escape(e.path)} <em>(${escape(e.component)})</em></div>
-          ${e.detail ? `<div class="evt-detail">detail: ${escape(JSON.stringify(e.detail))}</div>` : ''}
-        `;
-        $log.prepend(entry);
-      }
-
-      function escape(s) {
-        return String(s).replace(
-          /[&<>"']/g,
-          (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]
+        console.log(
+          `[a2ui] ${e.event} → ${e.handler}  @ ${e.path}  (${e.component})`,
+          e.detail ?? ''
         );
       }
 

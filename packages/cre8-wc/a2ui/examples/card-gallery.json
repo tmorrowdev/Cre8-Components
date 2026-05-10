@@ -1,0 +1,786 @@
+{
+  "component": "cre8-layout-section",
+  "children": [
+    {
+      "component": "cre8-band",
+      "props": {
+        "variant": "branded"
+      },
+      "children": [
+        {
+          "component": "cre8-hero",
+          "props": {
+            "align": "center",
+            "imgSrc": "https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?w=1600",
+            "imgAlt": "Curated product collection",
+            "hasOverlay": true
+          },
+          "children": [
+            {
+              "component": "cre8-heading",
+              "props": {
+                "type": "headline-large",
+                "tagVariant": "h1"
+              },
+              "children": [
+                "Explore Our Collection"
+              ]
+            },
+            {
+              "component": "cre8-text-passage",
+              "props": {
+                "size": "large"
+              },
+              "children": [
+                "Handpicked items across every category — find exactly what you're looking for."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "cre8-layout-section",
+      "children": [
+        {
+          "component": "cre8-grid",
+          "props": {
+            "variant": "3up",
+            "gap": "lg"
+          },
+          "children": [
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-card",
+                  "slots": {
+                    "header": [
+                      {
+                        "component": "cre8-feature",
+                        "props": {
+                          "imgSrc": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400",
+                          "imgAlt": "Minimalist Watch",
+                          "aspectRatio": "4/3"
+                        }
+                      }
+                    ],
+                    "default": [
+                      {
+                        "component": "cre8-badge",
+                        "props": {
+                          "text": "Accessories",
+                          "status": "info"
+                        }
+                      },
+                      {
+                        "component": "cre8-heading",
+                        "props": {
+                          "type": "title-default",
+                          "tagVariant": "h3"
+                        },
+                        "children": [
+                          "Minimalist Watch"
+                        ]
+                      },
+                      {
+                        "component": "cre8-text-passage",
+                        "props": {
+                          "size": "small"
+                        },
+                        "children": [
+                          "Clean design, Swiss movement, leather strap. Timeless in every sense."
+                        ]
+                      }
+                    ],
+                    "footer": [
+                      {
+                        "component": "cre8-button-group",
+                        "children": [
+                          {
+                            "component": "cre8-button",
+                            "props": {
+                              "text": "$249",
+                              "variant": "secondary",
+                              "size": "sm"
+                            }
+                          },
+                          {
+                            "component": "cre8-button",
+                            "props": {
+                              "text": "Add",
+                              "variant": "primary",
+                              "size": "sm"
+                            },
+                            "events": {
+                              "click": "add-to-cart:minimalist-watch"
+                            }
+                          }
+                        ],
+                        "props": {
+                          "fullWidth": true,
+                          "gap": "sm"
+                        }
+                      }
+                    ]
+                  },
+                  "props": {
+                    "variant": "compact"
+                  }
+                }
+              ]
+            },
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-card",
+                  "slots": {
+                    "header": [
+                      {
+                        "component": "cre8-feature",
+                        "props": {
+                          "imgSrc": "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=400",
+                          "imgAlt": "Wireless Earbuds",
+                          "aspectRatio": "4/3"
+                        }
+                      }
+                    ],
+                    "default": [
+                      {
+                        "component": "cre8-badge",
+                        "props": {
+                          "text": "Audio",
+                          "status": "info"
+                        }
+                      },
+                      {
+                        "component": "cre8-heading",
+                        "props": {
+                          "type": "title-default",
+                          "tagVariant": "h3"
+                        },
+                        "children": [
+                          "Wireless Earbuds"
+                        ]
+                      },
+                      {
+                        "component": "cre8-text-passage",
+                        "props": {
+                          "size": "small"
+                        },
+                        "children": [
+                          "Active noise cancellation, 30-hour battery, IPX5 water resistant."
+                        ]
+                      }
+                    ],
+                    "footer": [
+                      {
+                        "component": "cre8-button-group",
+                        "children": [
+                          {
+                            "component": "cre8-button",
+                            "props": {
+                              "text": "$129",
+                              "variant": "secondary",
+                              "size": "sm"
+                            }
+                          },
+                          {
+                            "component": "cre8-button",
+                            "props": {
+                              "text": "Add",
+                              "variant": "primary",
+                              "size": "sm"
+                            },
+                            "events": {
+                              "click": "add-to-cart:wireless-earbuds"
+                            }
+                          }
+                        ],
+                        "props": {
+                          "fullWidth": true,
+                          "gap": "sm"
+                        }
+                      }
+                    ]
+                  },
+                  "props": {
+                    "variant": "compact"
+                  }
+                }
+              ]
+            },
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-card",
+                  "slots": {
+                    "header": [
+                      {
+                        "component": "cre8-feature",
+                        "props": {
+                          "imgSrc": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=400",
+                          "imgAlt": "Running Shoes",
+                          "aspectRatio": "4/3"
+                        }
+                      }
+                    ],
+                    "default": [
+                      {
+                        "component": "cre8-badge",
+                        "props": {
+                          "text": "Footwear",
+                          "status": "success"
+                        }
+                      },
+                      {
+                        "component": "cre8-heading",
+                        "props": {
+                          "type": "title-default",
+                          "tagVariant": "h3"
+                        },
+                        "children": [
+                          "Trail Runner Pro"
+                        ]
+                      },
+                      {
+                        "component": "cre8-text-passage",
+                        "props": {
+                          "size": "small"
+                        },
+                        "children": [
+                          "Lightweight, responsive, built for any terrain. Available in 6 colorways."
+                        ]
+                      }
+                    ],
+                    "footer": [
+                      {
+                        "component": "cre8-button-group",
+                        "children": [
+                          {
+                            "component": "cre8-button",
+                            "props": {
+                              "text": "$165",
+                              "variant": "secondary",
+                              "size": "sm"
+                            }
+                          },
+                          {
+                            "component": "cre8-button",
+                            "props": {
+                              "text": "Add",
+                              "variant": "primary",
+                              "size": "sm"
+                            },
+                            "events": {
+                              "click": "add-to-cart:trail-runner-pro"
+                            }
+                          }
+                        ],
+                        "props": {
+                          "fullWidth": true,
+                          "gap": "sm"
+                        }
+                      }
+                    ]
+                  },
+                  "props": {
+                    "variant": "compact"
+                  }
+                }
+              ]
+            },
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-card",
+                  "slots": {
+                    "header": [
+                      {
+                        "component": "cre8-feature",
+                        "props": {
+                          "imgSrc": "https://images.unsplash.com/photo-1547949003-9792a18a2601?w=400",
+                          "imgAlt": "Ceramic Mug Set",
+                          "aspectRatio": "4/3"
+                        }
+                      }
+                    ],
+                    "default": [
+                      {
+                        "component": "cre8-badge",
+                        "props": {
+                          "text": "Kitchen",
+                          "status": "info"
+                        }
+                      },
+                      {
+                        "component": "cre8-heading",
+                        "props": {
+                          "type": "title-default",
+                          "tagVariant": "h3"
+                        },
+                        "children": [
+                          "Ceramic Mug Set"
+                        ]
+                      },
+                      {
+                        "component": "cre8-text-passage",
+                        "props": {
+                          "size": "small"
+                        },
+                        "children": [
+                          "Hand-thrown stoneware, set of 4. Dishwasher and microwave safe."
+                        ]
+                      }
+                    ],
+                    "footer": [
+                      {
+                        "component": "cre8-button-group",
+                        "children": [
+                          {
+                            "component": "cre8-button",
+                            "props": {
+                              "text": "$68",
+                              "variant": "secondary",
+                              "size": "sm"
+                            }
+                          },
+                          {
+                            "component": "cre8-button",
+                            "props": {
+                              "text": "Add",
+                              "variant": "primary",
+                              "size": "sm"
+                            },
+                            "events": {
+                              "click": "add-to-cart:ceramic-mug-set"
+                            }
+                          }
+                        ],
+                        "props": {
+                          "fullWidth": true,
+                          "gap": "sm"
+                        }
+                      }
+                    ]
+                  },
+                  "props": {
+                    "variant": "compact"
+                  }
+                }
+              ]
+            },
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-card",
+                  "slots": {
+                    "header": [
+                      {
+                        "component": "cre8-feature",
+                        "props": {
+                          "imgSrc": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=400",
+                          "imgAlt": "Canvas Backpack",
+                          "aspectRatio": "4/3"
+                        }
+                      }
+                    ],
+                    "default": [
+                      {
+                        "component": "cre8-badge",
+                        "props": {
+                          "text": "Bags",
+                          "status": "info"
+                        }
+                      },
+                      {
+                        "component": "cre8-heading",
+                        "props": {
+                          "type": "title-default",
+                          "tagVariant": "h3"
+                        },
+                        "children": [
+                          "Canvas Backpack"
+                        ]
+                      },
+                      {
+                        "component": "cre8-text-passage",
+                        "props": {
+                          "size": "small"
+                        },
+                        "children": [
+                          "Waxed canvas, 28L capacity, fits 16\" laptop. Built to last decades."
+                        ]
+                      }
+                    ],
+                    "footer": [
+                      {
+                        "component": "cre8-button-group",
+                        "children": [
+                          {
+                            "component": "cre8-button",
+                            "props": {
+                              "text": "$195",
+                              "variant": "secondary",
+                              "size": "sm"
+                            }
+                          },
+                          {
+                            "component": "cre8-button",
+                            "props": {
+                              "text": "Add",
+                              "variant": "primary",
+                              "size": "sm"
+                            },
+                            "events": {
+                              "click": "add-to-cart:canvas-backpack"
+                            }
+                          }
+                        ],
+                        "props": {
+                          "fullWidth": true,
+                          "gap": "sm"
+                        }
+                      }
+                    ]
+                  },
+                  "props": {
+                    "variant": "compact"
+                  }
+                }
+              ]
+            },
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-card",
+                  "slots": {
+                    "header": [
+                      {
+                        "component": "cre8-feature",
+                        "props": {
+                          "imgSrc": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400",
+                          "imgAlt": "Bluetooth Speaker",
+                          "aspectRatio": "4/3"
+                        }
+                      }
+                    ],
+                    "default": [
+                      {
+                        "component": "cre8-badge",
+                        "props": {
+                          "text": "Audio",
+                          "status": "info"
+                        }
+                      },
+                      {
+                        "component": "cre8-heading",
+                        "props": {
+                          "type": "title-default",
+                          "tagVariant": "h3"
+                        },
+                        "children": [
+                          "Portable Speaker"
+                        ]
+                      },
+                      {
+                        "component": "cre8-text-passage",
+                        "props": {
+                          "size": "small"
+                        },
+                        "children": [
+                          "360° sound, 20-hour battery, floats in water. The only speaker you need outdoors."
+                        ]
+                      }
+                    ],
+                    "footer": [
+                      {
+                        "component": "cre8-button-group",
+                        "children": [
+                          {
+                            "component": "cre8-button",
+                            "props": {
+                              "text": "$99",
+                              "variant": "secondary",
+                              "size": "sm"
+                            }
+                          },
+                          {
+                            "component": "cre8-button",
+                            "props": {
+                              "text": "Add",
+                              "variant": "primary",
+                              "size": "sm"
+                            },
+                            "events": {
+                              "click": "add-to-cart:portable-speaker"
+                            }
+                          }
+                        ],
+                        "props": {
+                          "fullWidth": true,
+                          "gap": "sm"
+                        }
+                      }
+                    ]
+                  },
+                  "props": {
+                    "variant": "compact"
+                  }
+                }
+              ]
+            },
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-card",
+                  "slots": {
+                    "header": [
+                      {
+                        "component": "cre8-feature",
+                        "props": {
+                          "imgSrc": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=400",
+                          "imgAlt": "Instant Camera",
+                          "aspectRatio": "4/3"
+                        }
+                      }
+                    ],
+                    "default": [
+                      {
+                        "component": "cre8-badge",
+                        "props": {
+                          "text": "Photography",
+                          "status": "attention"
+                        }
+                      },
+                      {
+                        "component": "cre8-heading",
+                        "props": {
+                          "type": "title-default",
+                          "tagVariant": "h3"
+                        },
+                        "children": [
+                          "Instant Camera"
+                        ]
+                      },
+                      {
+                        "component": "cre8-text-passage",
+                        "props": {
+                          "size": "small"
+                        },
+                        "children": [
+                          "Prints in 60 seconds. Built-in flash, selfie mirror, double exposure mode."
+                        ]
+                      }
+                    ],
+                    "footer": [
+                      {
+                        "component": "cre8-button-group",
+                        "children": [
+                          {
+                            "component": "cre8-button",
+                            "props": {
+                              "text": "$89",
+                              "variant": "secondary",
+                              "size": "sm"
+                            }
+                          },
+                          {
+                            "component": "cre8-button",
+                            "props": {
+                              "text": "Add",
+                              "variant": "primary",
+                              "size": "sm"
+                            },
+                            "events": {
+                              "click": "add-to-cart:instant-camera"
+                            }
+                          }
+                        ],
+                        "props": {
+                          "fullWidth": true,
+                          "gap": "sm"
+                        }
+                      }
+                    ]
+                  },
+                  "props": {
+                    "variant": "compact"
+                  }
+                }
+              ]
+            },
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-card",
+                  "slots": {
+                    "header": [
+                      {
+                        "component": "cre8-feature",
+                        "props": {
+                          "imgSrc": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400",
+                          "imgAlt": "Over-ear Headphones",
+                          "aspectRatio": "4/3"
+                        }
+                      }
+                    ],
+                    "default": [
+                      {
+                        "component": "cre8-badge",
+                        "props": {
+                          "text": "Audio",
+                          "status": "info"
+                        }
+                      },
+                      {
+                        "component": "cre8-heading",
+                        "props": {
+                          "type": "title-default",
+                          "tagVariant": "h3"
+                        },
+                        "children": [
+                          "Studio Headphones"
+                        ]
+                      },
+                      {
+                        "component": "cre8-text-passage",
+                        "props": {
+                          "size": "small"
+                        },
+                        "children": [
+                          "40mm drivers, foldable, USB-C charging. Reference-grade sound for anywhere."
+                        ]
+                      }
+                    ],
+                    "footer": [
+                      {
+                        "component": "cre8-button-group",
+                        "children": [
+                          {
+                            "component": "cre8-button",
+                            "props": {
+                              "text": "$179",
+                              "variant": "secondary",
+                              "size": "sm"
+                            }
+                          },
+                          {
+                            "component": "cre8-button",
+                            "props": {
+                              "text": "Add",
+                              "variant": "primary",
+                              "size": "sm"
+                            },
+                            "events": {
+                              "click": "add-to-cart:studio-headphones"
+                            }
+                          }
+                        ],
+                        "props": {
+                          "fullWidth": true,
+                          "gap": "sm"
+                        }
+                      }
+                    ]
+                  },
+                  "props": {
+                    "variant": "compact"
+                  }
+                }
+              ]
+            },
+            {
+              "component": "cre8-grid-item",
+              "children": [
+                {
+                  "component": "cre8-card",
+                  "slots": {
+                    "header": [
+                      {
+                        "component": "cre8-feature",
+                        "props": {
+                          "imgSrc": "https://images.unsplash.com/photo-1464983953574-0892a716854b?w=400",
+                          "imgAlt": "Leather Wallet",
+                          "aspectRatio": "4/3"
+                        }
+                      }
+                    ],
+                    "default": [
+                      {
+                        "component": "cre8-badge",
+                        "props": {
+                          "text": "Accessories",
+                          "status": "success"
+                        }
+                      },
+                      {
+                        "component": "cre8-heading",
+                        "props": {
+                          "type": "title-default",
+                          "tagVariant": "h3"
+                        },
+                        "children": [
+                          "Slim Leather Wallet"
+                        ]
+                      },
+                      {
+                        "component": "cre8-text-passage",
+                        "props": {
+                          "size": "small"
+                        },
+                        "children": [
+                          "Full-grain leather, RFID blocking, holds 8 cards. Gets better with age."
+                        ]
+                      }
+                    ],
+                    "footer": [
+                      {
+                        "component": "cre8-button-group",
+                        "children": [
+                          {
+                            "component": "cre8-button",
+                            "props": {
+                              "text": "$55",
+                              "variant": "secondary",
+                              "size": "sm"
+                            }
+                          },
+                          {
+                            "component": "cre8-button",
+                            "props": {
+                              "text": "Add",
+                              "variant": "primary",
+                              "size": "sm"
+                            },
+                            "events": {
+                              "click": "add-to-cart:slim-leather-wallet"
+                            }
+                          }
+                        ],
+                        "props": {
+                          "fullWidth": true,
+                          "gap": "sm"
+                        }
+                      }
+                    ]
+                  },
+                  "props": {
+                    "variant": "compact"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

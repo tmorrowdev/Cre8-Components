@@ -46,6 +46,9 @@ const TS_TYPE_RESOLVERS = {
 };
 
 const PROP_OVERRIDES = {
+  'cre8-chart.data': { type: 'object', description: 'Chart.js data object with labels and datasets arrays.' },
+  'cre8-chart.options': { type: 'object', description: 'Chart.js options object.' },
+  'cre8-chart.colors': { type: 'array', items: { type: 'string' }, description: 'Dataset colors.' },
   'cre8-heading.type': {
     type: 'string',
     enum: [

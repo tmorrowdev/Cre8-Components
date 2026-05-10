@@ -17,6 +17,17 @@
   gap: size(2);
 }
 
+:host([fullWidth]) {
+  display: flex;
+}
+.cre8-c-button-group--full-width {
+  width: 100%;
+}
+
+.cre8-c-button-group--gap-sm {
+  gap: size(1);
+}
+
 /**
   * Button group for Modals
   */

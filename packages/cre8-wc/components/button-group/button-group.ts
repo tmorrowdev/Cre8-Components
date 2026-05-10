@@ -16,9 +16,24 @@ export class Cre8ButtonGroup extends Cre8Element {
   @property()
       orientation?: 'responsive-full-width';
 
+  /**
+   * Stretch button group to fill its container width
+   */
+  @property({ type: Boolean, reflect: true })
+      fullWidth?: boolean;
+
+  /**
+   * Gap between buttons
+   * - **sm** reduces gap to 8px (useful in compact contexts)
+   */
+  @property()
+      gap?: 'sm';
+
   render() {
       const componentClassNames = this.componentClassNames('cre8-c-button-group', {
           'cre8-c-button-group--responsive-full-width': this.orientation === 'responsive-full-width',
+          'cre8-c-button-group--full-width': !!this.fullWidth,
+          'cre8-c-button-group--gap-sm': this.gap === 'sm',
       });
 
       return html`
