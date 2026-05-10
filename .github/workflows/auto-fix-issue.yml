@@ -33,6 +33,16 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+      - name: Write Gemini settings
+        run: |
+          mkdir -p .gemini
+          cat > .gemini/settings.json << 'EOF'
+          {
+            "model": { "maxSessionTurns": 500 },
+            "tools": { "core": ["run_shell_command"] }
+          }
+          EOF
+
       - name: Run Gemini auto-fix
         uses: google-github-actions/run-gemini-cli@v0
         env:
@@ -46,10 +56,8 @@ jobs:
           gemini_api_key: ${{ secrets.GEMINI_API_KEY }}
           settings: |-
             {
-              "model": { "maxSessionTurns": 100 },
-              "tools": {
-                "core": ["run_shell_command"]
-              }
+              "model": { "maxSessionTurns": 500 },
+              "tools": { "core": ["run_shell_command"] }
             }
           prompt: |
             You are an automated bug-fix agent for the cre8-web-components monorepo.
