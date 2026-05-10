@@ -80,9 +80,10 @@ def _new_session() -> StackSession:
     _sessions[sid] = session
     return session
 
-def _launch_dev_server(session: StackSession) -> None:
-    """Start npm run dev for the session's scaffolded app (non-blocking)."""
-    # Make sure we don't try to run if npm is missing
+def _install_and_launch(session: StackSession) -> None:
+    """Run npm install then start npm run dev non-blocking (called in a thread)."""
+    subprocess.run(["npm", "install"], cwd=session.out_dir, check=True,
+                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     session.app_process = subprocess.Popen(
         ["npm", "run", "dev", "--", "--port", str(session.port)],
         cwd=session.out_dir,
@@ -242,7 +243,7 @@ async def _stream_stack_first(prompt: str, session: StackSession) -> AsyncIterat
                 supabase_types = _extract_block(session.db_provision, "SUPABASE_TYPES") if session.db_provision else ""
                 yield sse("code_ready", {"page_tsx": session.page_tsx})
 
-                # Scaffold and launch
+                # Scaffold files, then npm install + npm run dev (all in thread to not block event loop)
                 await asyncio.to_thread(
                     _scaffold_nextjs_app,
                     session.out_dir,
@@ -251,8 +252,8 @@ async def _stream_stack_first(prompt: str, session: StackSession) -> AsyncIterat
                     env_vars,
                     supabase_types,
                 )
-                _launch_dev_server(session)
-                # Give dev server 4s to start
+                await asyncio.to_thread(_install_and_launch, session)
+                # Give dev server 4s to boot
                 await asyncio.sleep(4)
                 yield sse("app_ready", {
                     "session_id": session.session_id,
