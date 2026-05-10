@@ -81,6 +81,7 @@ def _write_output(state: dict) -> None:
 
     if page_tsx:
         _scaffold_nextjs_app(out_dir, page_tsx, migration_sql, env_vars, supabase_types)
+        _launch_app(out_dir)
     else:
         if migration_sql:
             (out_dir / "migration.sql").write_text(migration_sql)
@@ -263,7 +264,6 @@ def _scaffold_nextjs_app(out_dir: Path, page_tsx: str, migration_sql: str, env_v
         print("[output] migration.sql written")
 
     print(f"\n[output] Next.js app scaffolded at {out_dir}/")
-    _launch_app(out_dir)
 
 
 def _launch_app(out_dir: Path) -> None:
