@@ -21,8 +21,8 @@ export default function StackBuilder() {
   const appendAssistantText = useCallback((delta: string) => {
     setMessages((prev) => {
       const last = prev[prev.length - 1];
-      if (last?.role === "assistant") {
-        return [...prev.slice(0, -1), { role: "assistant", text: last.text + delta }];
+      if (last?.role === "assistant" && !last.type) {
+        return [...prev.slice(0, -1), { ...last, text: last.text + delta }];
       }
       return [...prev, { role: "assistant", text: delta }];
     });
