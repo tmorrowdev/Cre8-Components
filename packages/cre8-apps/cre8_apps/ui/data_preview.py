@@ -15,7 +15,13 @@ def _load_shell() -> str:
 
 
 def _escape_text(s: str) -> str:
-    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    return (
+        s.replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
+        .replace("'", "&#x27;")
+    )
 
 
 def detect_chartable(records: list[dict]) -> bool:
@@ -54,7 +60,7 @@ def chart_preview_html(
     string_keys = [k for k in keys if not isinstance(records[0][k], (int, float))]
 
     resolved_x = x_key or (string_keys[0] if string_keys else keys[0])
-    resolved_y = y_keys or numeric_keys or keys[1:]
+    resolved_y = y_keys if y_keys is not None else (numeric_keys or keys[1:])
     resolved_type = chart_type or detect_chart_type(records)
 
     labels = [str(r.get(resolved_x, "")) for r in records]
