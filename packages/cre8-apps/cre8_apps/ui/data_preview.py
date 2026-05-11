@@ -71,7 +71,7 @@ def chart_preview_html(
         {"label": col, "data": [r.get(col, 0) for r in records]}
         for col in resolved_y
     ]
-    chart_data = json.dumps({"labels": labels, "datasets": datasets})
+    chart_data = json.dumps({"labels": labels, "datasets": datasets}).replace("</", "<\\/")
 
     body = (
         f'<cre8-chart id="c" type="{resolved_type}" title="{_escape_text(title)}"></cre8-chart>\n'
