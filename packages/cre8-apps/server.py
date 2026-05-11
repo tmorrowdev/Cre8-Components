@@ -35,6 +35,7 @@ from cre8_apps.agents.orchestrator import decide_steps
 from cre8_apps.agents.ui_designer import build_ui_designer
 from cre8_apps.agents.db_provisioner import build_db_provisioner
 from cre8_apps.agents.code_generator import build_code_generator
+from cre8_apps.agents.data_explorer import extract_json_records, build_chart_preview_event
 
 # Import helpers from main.py
 import sys
@@ -203,6 +204,11 @@ async def _stream_stack_first(prompt: str, session: StackSession) -> AsyncIterat
     message = genai_types.Content(
         role="user", parts=[genai_types.Part(text=prompt)]
     )
+    # Detect JSON data in prompt and emit chart preview before agent pipeline
+    _records = extract_json_records(prompt)
+    _preview = build_chart_preview_event(_records)
+    if _preview:
+        yield sse("ui_preview", _preview)
     current_agent = ""
 
     try:
@@ -309,6 +315,11 @@ async def _stream_stack_update(prompt: str, session: StackSession) -> AsyncItera
         return f"event: {event}\ndata: {json.dumps(data)}\n\n"
 
     try:
+        # Detect JSON data in prompt and emit chart preview
+        _records = extract_json_records(prompt)
+        _preview = build_chart_preview_event(_records)
+        if _preview:
+            yield sse("ui_preview", _preview)
         # Parse current tables from migration SQL (simple heuristic)
         import re as _re
         tables = _re.findall(r"CREATE TABLE(?:\s+IF NOT EXISTS)?\s+(\w+)", session.migration_sql)
