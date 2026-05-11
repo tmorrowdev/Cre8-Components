@@ -84,7 +84,7 @@ export default function StackBuilder() {
               appendAssistantText(String(data.delta ?? ""));
               break;
             case "ui_preview":
-              appendChartPreview(String(data.html ?? ""));
+              if (data.html) appendChartPreview(String(data.html));
               break;
             case "app_ready":
               setSessionId(String(data.session_id));
@@ -126,7 +126,7 @@ export default function StackBuilder() {
               <span className="stack-message-role">{m.role === "user" ? "You" : "AI"}</span>
               {m.type === "ui_preview" ? (
                 <iframe
-                  srcDoc={m.html}
+                  srcDoc={m.html ?? ""}
                   style={{ width: "100%", height: 320, border: "none", borderRadius: 8 }}
                   sandbox="allow-scripts"
                   title="Data preview"
