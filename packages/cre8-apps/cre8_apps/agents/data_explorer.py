@@ -35,5 +35,12 @@ def build_chart_preview_event(records: list[dict]) -> dict | None:
     """Return a ui_preview SSE event dict, or None if records aren't chartable."""
     if not records or not detect_chartable(records):
         return None
-    html = chart_preview_html(records, title="Data Preview")
+    keys = list(records[0].keys())
+    numeric_keys = [
+        k for k in keys
+        if isinstance(records[0].get(k), (int, float)) and not isinstance(records[0].get(k), bool)
+    ]
+    # Limit to first numeric column so datasets with different scales render cleanly
+    y_keys = numeric_keys[:1] if numeric_keys else None
+    html = chart_preview_html(records, title="Data Preview", y_keys=y_keys)
     return {"type": "ui_preview", "html": html}
