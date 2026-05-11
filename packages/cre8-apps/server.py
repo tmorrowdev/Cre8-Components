@@ -145,6 +145,12 @@ async def _stream_pipeline(prompt: str) -> AsyncIterator[str]:
         role="user", parts=[genai_types.Part(text=prompt)]
     )
 
+    # Detect JSON data in prompt and emit chart preview before agent pipeline
+    _records = extract_json_records(prompt)
+    _preview = build_chart_preview_event(_records)
+    if _preview:
+        yield sse("ui_preview", _preview)
+
     current_agent = ""
 
     try:
