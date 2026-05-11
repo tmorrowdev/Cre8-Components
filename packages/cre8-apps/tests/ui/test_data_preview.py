@@ -47,3 +47,28 @@ def test_chart_preview_html_sets_js_property():
 
 def test_chart_preview_html_empty_returns_empty():
     assert chart_preview_html([], title="T") == ""
+
+
+def test_chart_preview_html_title_escaping():
+    """XSS regression: title with special chars must be HTML-escaped in output."""
+    import re
+    records = [{"x": "a", "y": 1}]
+    html = chart_preview_html(records, title='Sal"es & <Profits>')
+    # The title attribute value must not contain raw double-quote
+    m = re.search(r'<cre8-chart[^>]*\btitle="([^"]*)"', html)
+    assert m is not None, "cre8-chart title attribute not found"
+    assert '"' not in m.group(1)
+    assert "&quot;" in html
+    assert "&lt;" in html
+    assert "&amp;" in html
+
+
+def test_chart_preview_html_explicit_empty_y_keys():
+    """y_keys=[] must be honored (no auto-fallback to numeric columns)."""
+    records = [{"month": "Jan", "revenue": 100, "cost": 80}]
+    html = chart_preview_html(records, y_keys=[])
+    import json, re
+    m = re.search(r"var data\s*=\s*(\{.*?\});", html, re.DOTALL)
+    assert m is not None
+    data = json.loads(m.group(1))
+    assert data["datasets"] == []

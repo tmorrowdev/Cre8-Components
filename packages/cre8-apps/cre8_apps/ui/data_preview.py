@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 _SHELL_PATH = Path(__file__).parent / "assets" / "page-shell.html"
+_VALID_CHART_TYPES = {"bar", "line", "area", "pie", "donut"}
 _SHELL: str | None = None
 
 
@@ -62,6 +63,8 @@ def chart_preview_html(
     resolved_x = x_key or (string_keys[0] if string_keys else keys[0])
     resolved_y = y_keys if y_keys is not None else (numeric_keys or keys[1:])
     resolved_type = chart_type or detect_chart_type(records)
+    if resolved_type not in _VALID_CHART_TYPES:
+        raise ValueError(f"chart_type must be one of {_VALID_CHART_TYPES!r}, got {resolved_type!r}")
 
     labels = [str(r.get(resolved_x, "")) for r in records]
     datasets = [
