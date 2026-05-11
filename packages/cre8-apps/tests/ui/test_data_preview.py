@@ -1,7 +1,3 @@
-import sys
-from pathlib import Path
-sys.path.insert(0, str(Path(__file__).parents[2]))
-
 from cre8_apps.ui.data_preview import (
     detect_chart_type,
     detect_chartable,

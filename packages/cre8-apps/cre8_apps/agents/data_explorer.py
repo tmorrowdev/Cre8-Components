@@ -1,19 +1,33 @@
 import json
-import re
 from cre8_apps.ui.data_preview import chart_preview_html, detect_chartable
-
-_JSON_ARRAY_RE = re.compile(r'\[(\s*\{.*?\}\s*,?\s*)+\]', re.DOTALL)
 
 
 def extract_json_records(text: str) -> list[dict]:
     """Return the first JSON array of objects found in text, or []."""
-    for m in _JSON_ARRAY_RE.finditer(text):
-        try:
-            parsed = json.loads(m.group(0))
-            if isinstance(parsed, list) and parsed and isinstance(parsed[0], dict):
-                return parsed
-        except json.JSONDecodeError:
-            continue
+    i = 0
+    while i < len(text):
+        start = text.find('[', i)
+        if start == -1:
+            break
+        depth = 0
+        j = start
+        for j, ch in enumerate(text[start:], start):
+            if ch == '[':
+                depth += 1
+            elif ch == ']':
+                depth -= 1
+                if depth == 0:
+                    candidate = text[start:j + 1]
+                    try:
+                        parsed = json.loads(candidate)
+                        if isinstance(parsed, list) and parsed and isinstance(parsed[0], dict):
+                            return parsed
+                    except json.JSONDecodeError:
+                        pass
+                    i = j + 1
+                    break
+        else:
+            break
     return []
 
 

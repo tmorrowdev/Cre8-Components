@@ -26,10 +26,17 @@ def _escape_text(s: str) -> str:
 
 
 def detect_chartable(records: list[dict]) -> bool:
+    """Return True if records contain at least one consistently-numeric column."""
     if not records:
         return False
-    sample = records[0]
-    return any(isinstance(v, (int, float)) for v in sample.values())
+    keys = list(records[0].keys())
+    for key in keys:
+        values = [r.get(key) for r in records]
+        # Column is numeric if: all non-None values are int/float, and at least one is non-None
+        non_none = [v for v in values if v is not None]
+        if non_none and all(isinstance(v, (int, float)) for v in non_none):
+            return True
+    return False
 
 
 def detect_chart_type(records: list[dict]) -> str:

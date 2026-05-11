@@ -1,7 +1,3 @@
-import sys
-from pathlib import Path
-sys.path.insert(0, str(Path(__file__).parents[2]))
-
 from cre8_apps.agents.data_explorer import extract_json_records, build_chart_preview_event
 
 
@@ -55,3 +51,18 @@ def test_build_returns_ui_preview_dict_for_chartable_records():
     assert result is not None
     assert result["type"] == "ui_preview"
     assert "cre8-chart" in result["html"]
+
+
+def test_extract_json_records_malformed_json():
+    """Regex-matching but invalid JSON returns []."""
+    text = "here: [{invalid json}]"
+    assert extract_json_records(text) == []
+
+
+def test_build_chart_preview_event_heterogeneous_records():
+    """Heterogeneous records (None in numeric column) must not produce a chart if no consistent numeric column."""
+    # All rows have None in the only numeric-ish column — not chartable
+    records = [{"name": "Alice", "score": 99}, {"name": "Bob", "score": None}, {"name": "Carol", "score": "N/A"}]
+    # score column: has a non-numeric string value — should not be chartable
+    result = build_chart_preview_event(records)
+    assert result is None
