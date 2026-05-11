@@ -72,3 +72,14 @@ def test_chart_preview_html_explicit_empty_y_keys():
     assert m is not None
     data = json.loads(m.group(1))
     assert data["datasets"] == []
+
+
+def test_chart_preview_html_script_injection():
+    """</script> in record values must not break out of the script block."""
+    records = [{"x": "</script><script>alert(1)</script>", "y": 1}]
+    html = chart_preview_html(records)
+    # The raw closing tag must not appear inside any script block
+    import re
+    script_blocks = re.findall(r"<script[^>]*>(.*?)</script>", html, re.DOTALL)
+    for block in script_blocks:
+        assert "</script>" not in block
