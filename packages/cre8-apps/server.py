@@ -213,6 +213,7 @@ async def _stream_stack_first(prompt: str, session: StackSession) -> AsyncIterat
     # Detect JSON data in prompt and emit chart preview before agent pipeline
     _records = extract_json_records(prompt)
     _preview = build_chart_preview_event(_records)
+    print(f"[data-explorer] records={len(_records)} preview={'yes' if _preview else 'no'}", flush=True)
     if _preview:
         yield sse("ui_preview", _preview)
     current_agent = ""
@@ -324,6 +325,7 @@ async def _stream_stack_update(prompt: str, session: StackSession) -> AsyncItera
         # Detect JSON data in prompt and emit chart preview
         _records = extract_json_records(prompt)
         _preview = build_chart_preview_event(_records)
+        print(f"[data-explorer] records={len(_records)} preview={'yes' if _preview else 'no'}", flush=True)
         if _preview:
             yield sse("ui_preview", _preview)
         # Parse current tables from migration SQL (simple heuristic)
