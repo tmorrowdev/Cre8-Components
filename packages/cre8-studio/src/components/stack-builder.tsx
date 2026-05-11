@@ -5,7 +5,7 @@ import { useCallback, useRef, useState } from "react";
 const BUILDER_URL = process.env.NEXT_PUBLIC_CRE8_APPS_URL ?? "http://localhost:8001";
 
 type Phase = "idle" | "running" | "live" | "updating" | "error";
-type Message = { role: "user" | "assistant"; text: string };
+type Message = { role: "user" | "assistant"; text: string; type?: "ui_preview"; html?: string };
 
 export default function StackBuilder() {
   const [input, setInput] = useState("");
@@ -26,6 +26,10 @@ export default function StackBuilder() {
       }
       return [...prev, { role: "assistant", text: delta }];
     });
+  }, []);
+
+  const appendChartPreview = useCallback((html: string) => {
+    setMessages((prev) => [...prev, { role: "assistant", text: "", type: "ui_preview", html }]);
   }, []);
 
   const send = useCallback(async () => {
@@ -79,6 +83,9 @@ export default function StackBuilder() {
             case "text":
               appendAssistantText(String(data.delta ?? ""));
               break;
+            case "ui_preview":
+              appendChartPreview(String(data.html ?? ""));
+              break;
             case "app_ready":
               setSessionId(String(data.session_id));
               setAppUrl(String(data.url));
@@ -105,7 +112,7 @@ export default function StackBuilder() {
         setPhase("error");
       }
     }
-  }, [input, phase, sessionId, messages, appendAssistantText]);
+  }, [input, phase, sessionId, messages, appendAssistantText, appendChartPreview]);
 
   const busy = phase === "running" || phase === "updating";
 
@@ -117,7 +124,16 @@ export default function StackBuilder() {
           {messages.map((m, i) => (
             <div key={i} className={`stack-message stack-message--${m.role}`}>
               <span className="stack-message-role">{m.role === "user" ? "You" : "AI"}</span>
-              <p className="stack-message-text">{m.text}</p>
+              {m.type === "ui_preview" ? (
+                <iframe
+                  srcDoc={m.html}
+                  style={{ width: "100%", height: 320, border: "none", borderRadius: 8 }}
+                  sandbox="allow-scripts"
+                  title="Data preview"
+                />
+              ) : (
+                <p className="stack-message-text">{m.text}</p>
+              )}
             </div>
           ))}
           {phase === "error" && (
