@@ -84,6 +84,7 @@
       "types": "./a2ui/index.d.ts"
     },
     "./a2ui/catalog.json": "./a2ui/catalog.json",
+    "./a2ui/catalog-kg.json": "./a2ui/catalog-kg.json",
     "./a2ui/*": {
       "import": "./a2ui/*",
       "types": "./a2ui/*"

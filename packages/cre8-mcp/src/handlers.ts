@@ -14,6 +14,62 @@ import {
   type RegisteredCatalog,
 } from '@tmorrow/cre8-wc/a2ui/index.js';
 
+// ─── Knowledge Graph types & loader ─────────────────────────────────────────
+
+interface KGProp {
+  type: string;
+  enum: string[] | null;
+  default: unknown;
+  description: string;
+  'x-kind': string;
+}
+
+interface KGNode {
+  id: string;
+  type: 'component' | 'category' | 'enum_prop' | 'slot';
+  category?: string;
+  description?: string;
+  name?: string;
+  component?: string;
+  props?: Record<string, KGProp>;
+  accepts_children?: boolean;
+  enum?: string[];
+}
+
+interface KGEdge {
+  from: string;
+  to: string;
+  rel: 'BELONGS_TO' | 'HAS_ENUM_PROP' | 'HAS_SLOT';
+}
+
+interface _KGCache {
+  components: Map<string, KGNode>;
+  nodesById: Map<string, KGNode>;
+  edgesFrom: Map<string, KGEdge[]>;
+}
+
+let _kgCache: _KGCache | null = null;
+
+function loadKG(): _KGCache {
+  if (_kgCache) return _kgCache;
+  const req = createRequire(import.meta.url);
+  const kgPath = req.resolve('@tmorrow/cre8-wc/a2ui/catalog-kg.json');
+  const kg: { nodes: KGNode[]; edges: KGEdge[] } = JSON.parse(readFileSync(kgPath, 'utf-8'));
+
+  const nodesById = new Map(kg.nodes.map((n) => [n.id, n]));
+  const components = new Map(
+    kg.nodes.filter((n) => n.type === 'component').map((n) => [n.id, n]),
+  );
+  const edgesFrom = new Map<string, KGEdge[]>();
+  for (const edge of kg.edges) {
+    if (!edgesFrom.has(edge.from)) edgesFrom.set(edge.from, []);
+    edgesFrom.get(edge.from)!.push(edge);
+  }
+
+  _kgCache = { components, nodesById, edgesFrom };
+  return _kgCache;
+}
+
 // Format type
 export type ComponentFormat = 'web' | 'react';
 
@@ -89,111 +145,80 @@ interface ComponentNode {
 }
 
 /**
- * list_components - Lists all available Cre8 components
+ * list_components - Lists all available Cre8 components (KG-backed)
  */
 export function handleListComponents(input: ListComponentsInput): string {
-  const format = input.format || 'web';
-  const cat = loadCatalog(format);
-  let components = cat.components;
+  const { components } = loadKG();
+  let comps = Array.from(components.values());
 
   if (input.category) {
-    components = components.filter(
-      (c) => c.category.toLowerCase() === input.category!.toLowerCase()
+    comps = comps.filter(
+      (c) => (c.category ?? '').toLowerCase() === input.category!.toLowerCase(),
     );
   }
 
-  // Group by category
   const grouped: Record<string, Array<{ name: string; description: string }>> = {};
-  for (const comp of components) {
-    if (!grouped[comp.category]) {
-      grouped[comp.category] = [];
-    }
-    grouped[comp.category].push({
-      name: comp.name,
-      description: comp.description,
+  for (const comp of comps) {
+    const cat = comp.category ?? 'Other';
+    if (!grouped[cat]) grouped[cat] = [];
+    grouped[cat].push({
+      name: comp.id,
+      description: (comp.description ?? '').slice(0, 160),
     });
   }
 
-  const result = {
-    format,
-    library: cat.library,
-    version: cat.version,
-    categories: Object.entries(grouped).map(([category, comps]) => ({
-      category,
-      components: comps,
-    })),
-    totalComponents: components.length,
-  };
-
-  return JSON.stringify(result, null, 2);
+  return JSON.stringify({
+    format: input.format ?? 'web',
+    library: '@tmorrow/cre8-wc',
+    categories: Object.entries(grouped).map(([category, items]) => ({ category, components: items })),
+    totalComponents: comps.length,
+  }, null, 2);
 }
 
 /**
- * get_component - Gets detailed info for a specific component
+ * get_component - Gets detailed info for a specific component (KG-backed)
  */
 export function handleGetComponent(input: GetComponentInput): string {
-  const format = input.format || 'web';
-  const cat = loadCatalog(format);
+  const { components, edgesFrom, nodesById } = loadKG();
 
-  // Normalize search name (handle both cre8-button and Cre8Button formats)
-  const searchName = input.name.toLowerCase()
-    .replace(/^cre8-?/, '')  // Remove cre8- or cre8 prefix
-    .replace(/-/g, '');       // Remove hyphens for comparison
+  const searchName = input.name.toLowerCase().replace(/^cre8-?/, '').replace(/-/g, '');
 
-  const component = cat.components.find((c) => {
-    const compName = c.name.toLowerCase()
-      .replace(/^cre8-?/, '')
-      .replace(/-/g, '');
-    return compName === searchName || c.name.toLowerCase() === input.name.toLowerCase();
-  });
+  let comp =
+    components.get(input.name.toLowerCase()) ??
+    components.get(`cre8-${input.name.toLowerCase()}`);
 
-  if (!component) {
+  if (!comp) {
+    comp = Array.from(components.values()).find((c) => {
+      const cn = c.id.toLowerCase().replace(/^cre8-/, '').replace(/-/g, '');
+      return cn === searchName;
+    });
+  }
+
+  if (!comp) {
     return JSON.stringify({
       error: `Component "${input.name}" not found`,
       suggestion: 'Use list_components to see available components',
     });
   }
 
-  // Return format-specific details
-  if (format === 'react') {
-    const reactComp = component as { name: string; category: string; description: string; props?: Record<string, unknown>; examples?: Array<{ description: string; jsx: string }> };
-    return JSON.stringify({
-      format,
-      name: reactComp.name,
-      category: reactComp.category,
-      description: reactComp.description,
-      import: `import { ${reactComp.name} } from '@tmorrow/cre8-react';`,
-      props: reactComp.props || {},
-      examples: reactComp.examples || [],
-    }, null, 2);
-  }
+  const edges = edgesFrom.get(comp.id) ?? [];
+  const slots = edges
+    .filter((e) => e.rel === 'HAS_SLOT')
+    .map((e) => nodesById.get(e.to))
+    .filter(Boolean)
+    .map((s) => ({ name: (s as KGNode).name!, description: (s as KGNode).description ?? '' }));
 
-  // Web component format
-  const webComp = component as {
-    name: string;
-    category: string;
-    description: string;
-    attributes?: Record<string, unknown>;
-    properties?: Record<string, unknown>;
-    slots?: Record<string, unknown>;
-    events?: Record<string, unknown>;
-    cssProperties?: Record<string, unknown>;
-    examples?: Array<{ description: string; html: string }>;
-  };
-
+  const shortName = comp.id.replace('cre8-', '');
   return JSON.stringify({
-    format,
-    name: webComp.name,
-    tagName: webComp.name,
-    category: webComp.category,
-    description: webComp.description,
-    import: `import '@tmorrow/cre8-wc/lib/components/${webComp.name.replace('cre8-', '')}/${webComp.name.replace('cre8-', '')}.js';`,
-    attributes: webComp.attributes || {},
-    properties: webComp.properties || {},
-    slots: webComp.slots || {},
-    events: webComp.events || {},
-    cssProperties: webComp.cssProperties || {},
-    examples: webComp.examples || [],
+    format: input.format ?? 'web',
+    name: comp.id,
+    tagName: comp.id,
+    category: comp.category ?? 'Other',
+    description: comp.description ?? '',
+    import: `import '@tmorrow/cre8-wc/lib/components/${shortName}/${shortName}.js';`,
+    props: comp.props ?? {},
+    slots,
+    accepts_children: comp.accepts_children ?? false,
   }, null, 2);
 }
 
@@ -229,35 +254,34 @@ export function handleGetPatterns(input: GetPatternsInput): string {
 }
 
 /**
- * search_components - Search components by name or description
+ * search_components - Search components by name, description, or category (KG-backed)
  */
 export function handleSearchComponents(input: SearchComponentsInput): string {
-  const format = input.format || 'web';
-  const cat = loadCatalog(format);
+  const { components } = loadKG();
   const query = input.query.toLowerCase();
 
-  const matches = cat.components.filter(
+  const matches = Array.from(components.values()).filter(
     (c) =>
-      c.name.toLowerCase().includes(query) ||
-      c.description.toLowerCase().includes(query) ||
-      c.category.toLowerCase().includes(query)
+      c.id.toLowerCase().includes(query) ||
+      (c.description ?? '').toLowerCase().includes(query) ||
+      (c.category ?? '').toLowerCase().includes(query),
   );
 
   if (matches.length === 0) {
     return JSON.stringify({
-      format,
+      format: input.format ?? 'web',
       message: `No components found matching "${input.query}"`,
       suggestion: 'Try a broader search term or use list_components',
     });
   }
 
   return JSON.stringify({
-    format,
+    format: input.format ?? 'web',
     query: input.query,
     results: matches.map((c) => ({
-      name: c.name,
-      category: c.category,
-      description: c.description,
+      name: c.id,
+      category: c.category ?? 'Other',
+      description: (c.description ?? '').slice(0, 160),
     })),
     count: matches.length,
   }, null, 2);

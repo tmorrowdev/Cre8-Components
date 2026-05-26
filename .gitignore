@@ -21,6 +21,7 @@ node_modules
 /.history/
 
 .env
+proxy.env
 # react-wrappers: ignore generated files, track stories and storybook config
 packages/cre8-wc/react-wrappers/components/
 packages/cre8-wc/react-wrappers/dist/

@@ -26,8 +26,19 @@ app.use('*', cors({
   allowMethods: ['GET', 'POST', 'OPTIONS'],
 }));
 
-// Health check
+// Health check (unauthenticated for Docker healthcheck)
 app.get('/health', (c) => c.json({ status: 'ok', service: 'cre8-mcp' }));
+
+// Bearer token gate — set CRE8_MCP_TOKEN to enable; skip for /health
+const CRE8_MCP_TOKEN = process.env.CRE8_MCP_TOKEN;
+app.use('*', async (c, next) => {
+  if (!CRE8_MCP_TOKEN) return next();
+  const auth = c.req.header('authorization') ?? '';
+  if (!auth.startsWith('Bearer ') || auth.slice(7) !== CRE8_MCP_TOKEN) {
+    return c.json({ error: 'Unauthorized' }, 401);
+  }
+  return next();
+});
 
 // Info endpoint
 app.get('/', (c) => c.json({

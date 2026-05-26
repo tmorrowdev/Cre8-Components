@@ -34,11 +34,11 @@ interface ComponentNode {
     content?: string;
 }
 /**
- * list_components - Lists all available Cre8 components
+ * list_components - Lists all available Cre8 components (KG-backed)
  */
 export declare function handleListComponents(input: ListComponentsInput): string;
 /**
- * get_component - Gets detailed info for a specific component
+ * get_component - Gets detailed info for a specific component (KG-backed)
  */
 export declare function handleGetComponent(input: GetComponentInput): string;
 /**
@@ -46,7 +46,7 @@ export declare function handleGetComponent(input: GetComponentInput): string;
  */
 export declare function handleGetPatterns(input: GetPatternsInput): string;
 /**
- * search_components - Search components by name or description
+ * search_components - Search components by name, description, or category (KG-backed)
  */
 export declare function handleSearchComponents(input: SearchComponentsInput): string;
 /**

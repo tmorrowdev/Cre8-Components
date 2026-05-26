@@ -1,0 +1,6139 @@
+{
+  "meta": {
+    "generated_from": "catalog.json",
+    "catalog_id": "cre8-wc",
+    "library": "@tmorrow/cre8-wc",
+    "library_version": "2.0.4",
+    "total_nodes": 172,
+    "total_edges": 161
+  },
+  "nodes": [
+    {
+      "id": "cat:Actions",
+      "type": "category",
+      "label": "Actions"
+    },
+    {
+      "id": "cat:Data",
+      "type": "category",
+      "label": "Data"
+    },
+    {
+      "id": "cat:Disclosure",
+      "type": "category",
+      "label": "Disclosure"
+    },
+    {
+      "id": "cat:Feedback",
+      "type": "category",
+      "label": "Feedback"
+    },
+    {
+      "id": "cat:Forms",
+      "type": "category",
+      "label": "Forms"
+    },
+    {
+      "id": "cat:Layout",
+      "type": "category",
+      "label": "Layout"
+    },
+    {
+      "id": "cat:Marketing",
+      "type": "category",
+      "label": "Marketing"
+    },
+    {
+      "id": "cat:Media",
+      "type": "category",
+      "label": "Media"
+    },
+    {
+      "id": "cat:Navigation",
+      "type": "category",
+      "label": "Navigation"
+    },
+    {
+      "id": "cat:Other",
+      "type": "category",
+      "label": "Other"
+    },
+    {
+      "id": "cat:Typography",
+      "type": "category",
+      "label": "Typography"
+    },
+    {
+      "id": "cre8-button",
+      "type": "component",
+      "category": "Actions",
+      "description": "The size and state of buttons on the screen serve as visual cues for the user about what they can do and what they shoul\u2026",
+      "props": {
+        "text": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The button text. Should be as short and simple as possible, ideally a maximum of\u2026",
+          "x-kind": "attribute"
+        },
+        "variant": {
+          "type": "string",
+          "enum": [
+            "primary",
+            "secondary",
+            "tertiary"
+          ],
+          "default": "primary",
+          "description": "Style variant - **primary** renders the button used for primary actions. Present\u2026",
+          "x-kind": "attribute"
+        },
+        "neutral": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "This property is for a neutral button propery mainly used for the secondary or t\u2026",
+          "x-kind": "attribute"
+        },
+        "inverse": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Inverse attribute",
+          "x-kind": "attribute"
+        },
+        "href": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Provide this property if you intend to use button styles for an anchor tag (`<a>\u2026",
+          "x-kind": "attribute"
+        },
+        "target": {
+          "type": "string",
+          "enum": [
+            "_blank",
+            "_self",
+            "_parent",
+            "_top"
+          ],
+          "default": null,
+          "description": "Target attribute for a link if providing `href` to style a link as a button - **\u2026",
+          "x-kind": "attribute"
+        },
+        "rel": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Rel if this is an <a> element - this swaps <button> for <a>",
+          "x-kind": "attribute"
+        },
+        "svg": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "svg as a raw string - For button with icon, the icon is defined by this prop. - \u2026",
+          "x-kind": "attribute"
+        },
+        "size": {
+          "type": "string",
+          "enum": [
+            "sm",
+            "lg",
+            "md"
+          ],
+          "default": "md",
+          "description": "Size variants add another way to increase or decrease visual priority of a butto\u2026",
+          "x-kind": "attribute"
+        },
+        "loading": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "* Changes styling to an active state with a spinning icon. * Adds accessibility \u2026",
+          "x-kind": "attribute"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "button",
+            "submit",
+            "reset"
+          ],
+          "default": "button",
+          "description": "Type of button. - **button** (default) button has no default behavior and does n\u2026",
+          "x-kind": "attribute"
+        },
+        "name": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The name of the form field",
+          "x-kind": "attribute"
+        },
+        "disabled": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Disabled attribute",
+          "x-kind": "attribute"
+        },
+        "required": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Whether the field is required",
+          "x-kind": "attribute"
+        },
+        "value": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The value of the form field.",
+          "x-kind": "attribute"
+        },
+        "iconName": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Deprecated: iconName, use svg instead Icon name if including an icon within a bu\u2026",
+          "x-kind": "property"
+        },
+        "iconRotateDegree": {
+          "type": "number",
+          "enum": null,
+          "default": 0,
+          "description": "iconRotateDegree is used for <cre8-icon> to set the arrow in the correct directi\u2026",
+          "x-kind": "property"
+        },
+        "iconFlipDirection": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "iconFlipDirection is used for <cre8-icon> to set the icon in the correct directi\u2026",
+          "x-kind": "property"
+        },
+        "iconPosition": {
+          "type": "string",
+          "enum": [
+            "before",
+            "after"
+          ],
+          "default": "undefined",
+          "description": "Icon position. Must include the name of the icon with `iconName` - **before** pl\u2026",
+          "x-kind": "property"
+        },
+        "hideText": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Visually hide button text. Text is still accessible to assistive technology. Use\u2026",
+          "x-kind": "property"
+        },
+        "fullWidth": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Full width button",
+          "x-kind": "property"
+        },
+        "loadingComplete": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "* Variant of the loading button that: * Removes loading spinner * Informs the SR\u2026",
+          "x-kind": "property"
+        },
+        "ariaLive": {
+          "type": "string",
+          "enum": [
+            "polite",
+            "assertive"
+          ],
+          "default": "assertive",
+          "description": "Controls whether your loading status update to voiceover users will occur immedi\u2026",
+          "x-kind": "property"
+        },
+        "splitButtonType": {
+          "type": "string",
+          "enum": [
+            "text",
+            "caret"
+          ],
+          "default": null,
+          "description": "These two subvariants of the split button style the two seperate buttons to styl\u2026",
+          "x-kind": "property"
+        },
+        "buttonAriaExpanded": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Button aria expanded attribute",
+          "x-kind": "property"
+        },
+        "isError": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Whether the field is in an error state",
+          "x-kind": "property"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Whether the field is in a success state",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "prop:cre8-button:variant",
+      "type": "enum_prop",
+      "name": "variant",
+      "component": "cre8-button",
+      "enum": [
+        "primary",
+        "secondary",
+        "tertiary"
+      ],
+      "description": "Style variant - **primary** renders the button used for primary actions. Present\u2026"
+    },
+    {
+      "id": "prop:cre8-button:target",
+      "type": "enum_prop",
+      "name": "target",
+      "component": "cre8-button",
+      "enum": [
+        "_blank",
+        "_self",
+        "_parent",
+        "_top"
+      ],
+      "description": "Target attribute for a link if providing `href` to style a link as a button - **\u2026"
+    },
+    {
+      "id": "prop:cre8-button:size",
+      "type": "enum_prop",
+      "name": "size",
+      "component": "cre8-button",
+      "enum": [
+        "sm",
+        "lg",
+        "md"
+      ],
+      "description": "Size variants add another way to increase or decrease visual priority of a butto\u2026"
+    },
+    {
+      "id": "prop:cre8-button:type",
+      "type": "enum_prop",
+      "name": "type",
+      "component": "cre8-button",
+      "enum": [
+        "button",
+        "submit",
+        "reset"
+      ],
+      "description": "Type of button. - **button** (default) button has no default behavior and does n\u2026"
+    },
+    {
+      "id": "prop:cre8-button:iconPosition",
+      "type": "enum_prop",
+      "name": "iconPosition",
+      "component": "cre8-button",
+      "enum": [
+        "before",
+        "after"
+      ],
+      "description": "Icon position. Must include the name of the icon with `iconName` - **before** pl\u2026"
+    },
+    {
+      "id": "prop:cre8-button:ariaLive",
+      "type": "enum_prop",
+      "name": "ariaLive",
+      "component": "cre8-button",
+      "enum": [
+        "polite",
+        "assertive"
+      ],
+      "description": "Controls whether your loading status update to voiceover users will occur immedi\u2026"
+    },
+    {
+      "id": "prop:cre8-button:splitButtonType",
+      "type": "enum_prop",
+      "name": "splitButtonType",
+      "component": "cre8-button",
+      "enum": [
+        "text",
+        "caret"
+      ],
+      "description": "These two subvariants of the split button style the two seperate buttons to styl\u2026"
+    },
+    {
+      "id": "cre8-button-group",
+      "type": "component",
+      "category": "Actions",
+      "description": "Button Group component.",
+      "props": {
+        "orientation": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Responsive Button Group (for modals)",
+          "x-kind": "attribute"
+        },
+        "gap": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Gap between buttons - **sm** reduces gap to 8px (useful in compact contexts)",
+          "x-kind": "attribute"
+        },
+        "fullWidth": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Stretch button group to fill its container width",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-danger-button",
+      "type": "component",
+      "category": "Actions",
+      "description": "The size and state of buttons on the screen serve as visual cues for the user about what they can do and what they shoul\u2026",
+      "props": {
+        "text": {
+          "type": "string",
+          "enum": null,
+          "default": "Button",
+          "description": "The button text. Should be as short and simple as possible, ideally a maximum of\u2026",
+          "x-kind": "attribute"
+        },
+        "variant": {
+          "type": "string",
+          "enum": [
+            "primary",
+            "secondary",
+            "tertiary"
+          ],
+          "default": "primary",
+          "description": "Style variant - **primary** renders the button used for primary actions. Present\u2026",
+          "x-kind": "attribute"
+        },
+        "href": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Provide this property if you intend to use button styles for an anchor tag (`<a>\u2026",
+          "x-kind": "attribute"
+        },
+        "target": {
+          "type": "string",
+          "enum": [
+            "_blank",
+            "_self",
+            "_parent",
+            "_top"
+          ],
+          "default": null,
+          "description": "Target attribute for a link if providing `href` to style a link as a button - **\u2026",
+          "x-kind": "attribute"
+        },
+        "rel": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Rel if this is an <a> element - this swaps <button> for <a>",
+          "x-kind": "attribute"
+        },
+        "svg": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "SVG raw string if including an icon within a button. Must include the icon's pos\u2026",
+          "x-kind": "attribute"
+        },
+        "size": {
+          "type": "string",
+          "enum": [
+            "sm",
+            "lg"
+          ],
+          "default": null,
+          "description": "Size variants add another way to increase or decrease visual priority of a butto\u2026",
+          "x-kind": "attribute"
+        },
+        "loading": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "* Changes styling to an active state with a spinning icon. * Adds accessibility \u2026",
+          "x-kind": "attribute"
+        },
+        "inverted": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Inverted colors Danger Button (onDark)",
+          "x-kind": "attribute"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "button",
+            "submit",
+            "reset"
+          ],
+          "default": "button",
+          "description": "Type of button. - **button** (default) button has no default behavior and does n\u2026",
+          "x-kind": "attribute"
+        },
+        "name": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The name of the form field",
+          "x-kind": "attribute"
+        },
+        "disabled": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Disabled attribute",
+          "x-kind": "attribute"
+        },
+        "required": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Whether the field is required",
+          "x-kind": "attribute"
+        },
+        "value": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The value of the form field.",
+          "x-kind": "attribute"
+        },
+        "iconRotateDegree": {
+          "type": "number",
+          "enum": null,
+          "default": 0,
+          "description": "rotate is used for <cre8-icon> to set the arrow in the correct direction",
+          "x-kind": "property"
+        },
+        "iconFlipDirection": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "flip is used for <cre8-icon> to set the icon in the correct direction",
+          "x-kind": "property"
+        },
+        "iconPosition": {
+          "type": "string",
+          "enum": [
+            "before",
+            "after"
+          ],
+          "default": "undefined",
+          "description": "Icon position. Must include the name of the icon with `iconName` - **before** pl\u2026",
+          "x-kind": "property"
+        },
+        "hideText": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Visually hide button text. Text is still accessible to assistive technology. Use\u2026",
+          "x-kind": "property"
+        },
+        "fullWidth": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Full width button",
+          "x-kind": "property"
+        },
+        "loadingComplete": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "* Variant of the loading button that: * Removes loading spinner * Informs the SR\u2026",
+          "x-kind": "property"
+        },
+        "ariaLive": {
+          "type": "string",
+          "enum": [
+            "polite",
+            "assertive"
+          ],
+          "default": "assertive",
+          "description": "Controls whether your loading status update to voiceover users will occur immedi\u2026",
+          "x-kind": "property"
+        },
+        "buttonAriaExpanded": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Button aria expanded attribute",
+          "x-kind": "property"
+        },
+        "isError": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Whether the field is in an error state",
+          "x-kind": "property"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Whether the field is in a success state",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "prop:cre8-danger-button:variant",
+      "type": "enum_prop",
+      "name": "variant",
+      "component": "cre8-danger-button",
+      "enum": [
+        "primary",
+        "secondary",
+        "tertiary"
+      ],
+      "description": "Style variant - **primary** renders the button used for primary actions. Present\u2026"
+    },
+    {
+      "id": "prop:cre8-danger-button:target",
+      "type": "enum_prop",
+      "name": "target",
+      "component": "cre8-danger-button",
+      "enum": [
+        "_blank",
+        "_self",
+        "_parent",
+        "_top"
+      ],
+      "description": "Target attribute for a link if providing `href` to style a link as a button - **\u2026"
+    },
+    {
+      "id": "prop:cre8-danger-button:size",
+      "type": "enum_prop",
+      "name": "size",
+      "component": "cre8-danger-button",
+      "enum": [
+        "sm",
+        "lg"
+      ],
+      "description": "Size variants add another way to increase or decrease visual priority of a butto\u2026"
+    },
+    {
+      "id": "prop:cre8-danger-button:type",
+      "type": "enum_prop",
+      "name": "type",
+      "component": "cre8-danger-button",
+      "enum": [
+        "button",
+        "submit",
+        "reset"
+      ],
+      "description": "Type of button. - **button** (default) button has no default behavior and does n\u2026"
+    },
+    {
+      "id": "prop:cre8-danger-button:iconPosition",
+      "type": "enum_prop",
+      "name": "iconPosition",
+      "component": "cre8-danger-button",
+      "enum": [
+        "before",
+        "after"
+      ],
+      "description": "Icon position. Must include the name of the icon with `iconName` - **before** pl\u2026"
+    },
+    {
+      "id": "prop:cre8-danger-button:ariaLive",
+      "type": "enum_prop",
+      "name": "ariaLive",
+      "component": "cre8-danger-button",
+      "enum": [
+        "polite",
+        "assertive"
+      ],
+      "description": "Controls whether your loading status update to voiceover users will occur immedi\u2026"
+    },
+    {
+      "id": "cre8-split-button",
+      "type": "component",
+      "category": "Actions",
+      "description": "Split Button component.",
+      "props": {
+        "disabled": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "attribute"
+        },
+        "size": {
+          "type": "string",
+          "enum": [
+            "sm",
+            "lg"
+          ],
+          "default": null,
+          "description": "Size variant <cre8-text-passage size=\"sm\"> <ul> <li>**sm** shrinks the button ty\u2026",
+          "x-kind": "attribute"
+        },
+        "buttonText": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Display text on the button",
+          "x-kind": "property"
+        },
+        "dropdownOpen": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "prop:cre8-split-button:size",
+      "type": "enum_prop",
+      "name": "size",
+      "component": "cre8-split-button",
+      "enum": [
+        "sm",
+        "lg"
+      ],
+      "description": "Size variant <cre8-text-passage size=\"sm\"> <ul> <li>**sm** shrinks the button ty\u2026"
+    },
+    {
+      "id": "cre8-chart",
+      "type": "component",
+      "category": "Data",
+      "description": "A flexible chart component built on Chart.js that supports multiple chart types including line, bar, pie, doughnut, rada\u2026",
+      "props": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "line",
+            "bar",
+            "pie",
+            "doughnut",
+            "radar",
+            "polarArea",
+            "bubble",
+            "scatter"
+          ],
+          "default": "bar",
+          "description": "The type of chart to render.",
+          "x-kind": "attribute"
+        },
+        "width": {
+          "type": "number",
+          "enum": null,
+          "default": null,
+          "description": "Width of the chart container in pixels. If not set, the chart will be responsive\u2026",
+          "x-kind": "attribute"
+        },
+        "height": {
+          "type": "number",
+          "enum": null,
+          "default": 400,
+          "description": "Height of the chart container in pixels. If not set, defaults to 400px.",
+          "x-kind": "attribute"
+        },
+        "maintain-aspect-ratio": {
+          "type": "boolean",
+          "enum": null,
+          "default": true,
+          "description": "Whether the chart should maintain aspect ratio when resizing.",
+          "x-kind": "attribute"
+        },
+        "responsive": {
+          "type": "boolean",
+          "enum": null,
+          "default": true,
+          "description": "Whether the chart should be responsive to container size.",
+          "x-kind": "attribute"
+        },
+        "loading": {
+          "type": "boolean",
+          "enum": null,
+          "default": false,
+          "description": "Display a loading indicator instead of the chart.",
+          "x-kind": "attribute"
+        },
+        "aria-label": {
+          "type": "string",
+          "enum": null,
+          "default": "Chart",
+          "description": "Accessible label for the chart.",
+          "x-kind": "attribute"
+        },
+        "show-legend": {
+          "type": "boolean",
+          "enum": null,
+          "default": true,
+          "description": "Whether to show the legend.",
+          "x-kind": "attribute"
+        },
+        "legend-position": {
+          "type": "string",
+          "enum": [
+            "top",
+            "bottom",
+            "left",
+            "right"
+          ],
+          "default": "top",
+          "description": "Position of the legend.",
+          "x-kind": "attribute"
+        },
+        "enable-animation": {
+          "type": "boolean",
+          "enum": null,
+          "default": true,
+          "description": "Whether to animate chart updates.",
+          "x-kind": "attribute"
+        },
+        "animation-duration": {
+          "type": "number",
+          "enum": null,
+          "default": 750,
+          "description": "Animation duration in milliseconds.",
+          "x-kind": "attribute"
+        },
+        "data": {
+          "type": "object",
+          "enum": null,
+          "default": null,
+          "description": "The chart data including labels and datasets. This should be an object with `lab\u2026",
+          "x-kind": "property"
+        },
+        "options": {
+          "type": "object",
+          "enum": null,
+          "default": null,
+          "description": "Chart.js configuration options. See Chart.js documentation for all available opt\u2026",
+          "x-kind": "property"
+        },
+        "colors": {
+          "type": "array",
+          "enum": null,
+          "default": null,
+          "description": "Default colors for datasets (uses cre8 design token colors).",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "prop:cre8-chart:type",
+      "type": "enum_prop",
+      "name": "type",
+      "component": "cre8-chart",
+      "enum": [
+        "line",
+        "bar",
+        "pie",
+        "doughnut",
+        "radar",
+        "polarArea",
+        "bubble",
+        "scatter"
+      ],
+      "description": "The type of chart to render."
+    },
+    {
+      "id": "prop:cre8-chart:legend-position",
+      "type": "enum_prop",
+      "name": "legend-position",
+      "component": "cre8-chart",
+      "enum": [
+        "top",
+        "bottom",
+        "left",
+        "right"
+      ],
+      "description": "Position of the legend."
+    },
+    {
+      "id": "cre8-list",
+      "type": "component",
+      "category": "Data",
+      "description": "List component.",
+      "props": {
+        "variant": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Style variants <cre8-text-passage size=\"sm\"> <ul> <li>**bare** removes any lines\u2026",
+          "x-kind": "attribute"
+        },
+        "spacing": {
+          "type": "string",
+          "enum": [
+            "condensed",
+            "padded"
+          ],
+          "default": null,
+          "description": "Spacing variants <cre8-text-passage size=\"sm\"> <ul> <li>**padded** applies more \u2026",
+          "x-kind": "attribute"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "prop:cre8-list:spacing",
+      "type": "enum_prop",
+      "name": "spacing",
+      "component": "cre8-list",
+      "enum": [
+        "condensed",
+        "padded"
+      ],
+      "description": "Spacing variants <cre8-text-passage size=\"sm\"> <ul> <li>**padded** applies more \u2026"
+    },
+    {
+      "id": "cre8-list-item",
+      "type": "component",
+      "category": "Data",
+      "description": "List Item component.",
+      "props": {},
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-remove-tag",
+      "type": "component",
+      "category": "Data",
+      "description": "Clicking a Remove Tag causes it to disappear from the page or field (in the case of Multi-Select). These tags always dis\u2026",
+      "props": {
+        "text": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The tag text",
+          "x-kind": "attribute"
+        },
+        "color": {
+          "type": "string",
+          "enum": [
+            "neutral",
+            "branded",
+            "neutral-hybrid"
+          ],
+          "default": "neutral",
+          "description": "The tag color scheme - **neutral** should be used when doing non-link actions su\u2026",
+          "x-kind": "attribute"
+        },
+        "shape": {
+          "type": "string",
+          "enum": [
+            "round",
+            "square"
+          ],
+          "default": "round",
+          "description": "The tag shape - **round** will give the tag a rounded border - **square** will g\u2026",
+          "x-kind": "attribute"
+        },
+        "disabled": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Disabled state for remove tag",
+          "x-kind": "attribute"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "prop:cre8-remove-tag:color",
+      "type": "enum_prop",
+      "name": "color",
+      "component": "cre8-remove-tag",
+      "enum": [
+        "neutral",
+        "branded",
+        "neutral-hybrid"
+      ],
+      "description": "The tag color scheme - **neutral** should be used when doing non-link actions su\u2026"
+    },
+    {
+      "id": "prop:cre8-remove-tag:shape",
+      "type": "enum_prop",
+      "name": "shape",
+      "component": "cre8-remove-tag",
+      "enum": [
+        "round",
+        "square"
+      ],
+      "description": "The tag shape - **round** will give the tag a rounded border - **square** will g\u2026"
+    },
+    {
+      "id": "cre8-table",
+      "type": "component",
+      "category": "Data",
+      "description": "Table component.",
+      "props": {
+        "caption": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Specifies the caption/title of the table, visible to all users. Increases access\u2026",
+          "x-kind": "attribute"
+        },
+        "behavior": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Behavior variants <cre8-text-passage size=\"sm\"> <ul> <li>**responsive** stacks c\u2026",
+          "x-kind": "attribute"
+        },
+        "variant": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Style variants <cre8-text-passage size=\"sm\"> <ul> <li>**striped** add zebra-stri\u2026",
+          "x-kind": "attribute"
+        },
+        "isHoverable": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Hoverable rows variant 1) Allows the table rows to be styled on hover",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-table-body",
+      "type": "component",
+      "category": "Data",
+      "description": "Table Body component.",
+      "props": {},
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-table-cell",
+      "type": "component",
+      "category": "Data",
+      "description": "Table Cell component.",
+      "props": {
+        "colspan": {
+          "type": "number",
+          "enum": null,
+          "default": null,
+          "description": "Colspan attribute on td",
+          "x-kind": "attribute"
+        },
+        "variant": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Style variants <cre8-text-passage size=\"sm\"> <ul> <li>**bare** renders a table c\u2026",
+          "x-kind": "attribute"
+        },
+        "dataHeader": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Column header text for cell to display when table is using responsive variant",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-table-header",
+      "type": "component",
+      "category": "Data",
+      "description": "Table Header component.",
+      "props": {},
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-table-header-cell",
+      "type": "component",
+      "category": "Data",
+      "description": "Table Header Cell component.",
+      "props": {
+        "colspan": {
+          "type": "number",
+          "enum": null,
+          "default": null,
+          "description": "Colspan attribute on th",
+          "x-kind": "attribute"
+        },
+        "width": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Adds inline width style to th Sets width of entire column",
+          "x-kind": "attribute"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-table-object",
+      "type": "component",
+      "category": "Data",
+      "description": "Table Object component.",
+      "props": {},
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-table-row",
+      "type": "component",
+      "category": "Data",
+      "description": "Table Row component.",
+      "props": {
+        "variant": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Style variants <cre8-text-passage size=\"sm\"> <ul> <li>**bare** renders a table r\u2026",
+          "x-kind": "attribute"
+        },
+        "isExpanded": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Visually show additional expandable content",
+          "x-kind": "property"
+        },
+        "isExpandable": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Indicates row has additional visually hidden related content",
+          "x-kind": "property"
+        },
+        "expandedButtonText": {
+          "type": "string",
+          "enum": null,
+          "default": "Collapse Table Row",
+          "description": "Expanded button text",
+          "x-kind": "property"
+        },
+        "collapsedButtonText": {
+          "type": "string",
+          "enum": null,
+          "default": "Expand Table Row",
+          "description": "Expand button text",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-tag",
+      "type": "component",
+      "category": "Data",
+      "description": "The tag component allows you to make selections, filter content, or trigger actions. While buttons are expected to appea\u2026",
+      "props": {
+        "text": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "attribute"
+        },
+        "variant": {
+          "type": "string",
+          "enum": [
+            "neutral",
+            "branded",
+            "neutral-hybrid"
+          ],
+          "default": "neutral",
+          "description": "Color variant **neutral** renders the default, unselected tag **branded** render\u2026",
+          "x-kind": "attribute"
+        },
+        "shape": {
+          "type": "string",
+          "enum": [
+            "square",
+            "round"
+          ],
+          "default": "square",
+          "description": "shape of the tag, supports square and round, and default not mentioned its a squ\u2026",
+          "x-kind": "attribute"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "checkbox",
+            "radio"
+          ],
+          "default": null,
+          "description": "Type of tag **checkbox** renders a checkbox tag **radio** renders a radio tag",
+          "x-kind": "attribute"
+        },
+        "name": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The name of the form field",
+          "x-kind": "attribute"
+        },
+        "disabled": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Whether the field is disabled",
+          "x-kind": "attribute"
+        },
+        "required": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Whether the field is required",
+          "x-kind": "attribute"
+        },
+        "value": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The value of the form field.",
+          "x-kind": "attribute"
+        },
+        "isDisabled": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Disabled attribute renders a greyed out tag that the user cannot interact with",
+          "x-kind": "property"
+        },
+        "isSelected": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Selected attribute renders a selected tag",
+          "x-kind": "property"
+        },
+        "fieldId": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The fieldId attribute is assigned to the HTML input element of the radio button \u2026",
+          "x-kind": "property"
+        },
+        "isError": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Whether the field is in an error state",
+          "x-kind": "property"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Whether the field is in a success state",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "prop:cre8-tag:variant",
+      "type": "enum_prop",
+      "name": "variant",
+      "component": "cre8-tag",
+      "enum": [
+        "neutral",
+        "branded",
+        "neutral-hybrid"
+      ],
+      "description": "Color variant **neutral** renders the default, unselected tag **branded** render\u2026"
+    },
+    {
+      "id": "prop:cre8-tag:shape",
+      "type": "enum_prop",
+      "name": "shape",
+      "component": "cre8-tag",
+      "enum": [
+        "square",
+        "round"
+      ],
+      "description": "shape of the tag, supports square and round, and default not mentioned its a squ\u2026"
+    },
+    {
+      "id": "prop:cre8-tag:type",
+      "type": "enum_prop",
+      "name": "type",
+      "component": "cre8-tag",
+      "enum": [
+        "checkbox",
+        "radio"
+      ],
+      "description": "Type of tag **checkbox** renders a checkbox tag **radio** renders a radio tag"
+    },
+    {
+      "id": "cre8-tag-list",
+      "type": "component",
+      "category": "Data",
+      "description": "Tag List must have children which are Tag components that are of type `checkbox` or `radio`. The Tags must use the `neut\u2026",
+      "props": {
+        "label": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Tag list legend label",
+          "x-kind": "attribute"
+        },
+        "fieldId": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The unique id of the select",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "cre8-accordion",
+      "type": "component",
+      "category": "Disclosure",
+      "description": "The component is a vertically stacked list of headers that reveal or hide sections of related content on a page. The hea\u2026",
+      "props": {
+        "borderType": {
+          "type": "string",
+          "enum": [
+            "rectangle",
+            "rounded-bottom",
+            "rounded",
+            "none"
+          ],
+          "default": null,
+          "description": "borderType",
+          "x-kind": "property"
+        },
+        "hasDivider": {
+          "type": "boolean",
+          "enum": null,
+          "default": false,
+          "description": "When it is true, the inner dividers are displayed; if it is false, the inner div\u2026",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "prop:cre8-accordion:borderType",
+      "type": "enum_prop",
+      "name": "borderType",
+      "component": "cre8-accordion",
+      "enum": [
+        "rectangle",
+        "rounded-bottom",
+        "rounded",
+        "none"
+      ],
+      "description": "borderType"
+    },
+    {
+      "id": "cre8-accordion-item",
+      "type": "component",
+      "category": "Disclosure",
+      "description": "The accordion item component delivers large amounts of content in a small space through progressive disclosure. That is,\u2026",
+      "props": {
+        "size": {
+          "type": "string",
+          "enum": [
+            "sm",
+            "lg"
+          ],
+          "default": "sm",
+          "description": "Users can choose between two header sizes: 'sm' [title-default] or 'lg' [title-l\u2026",
+          "x-kind": "attribute"
+        },
+        "heading": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Controls the text content of the Accordion Item heading.",
+          "x-kind": "attribute"
+        },
+        "isActive": {
+          "type": "boolean",
+          "enum": null,
+          "default": false,
+          "description": "When true, the Accordion Item is opens, when false it closes;",
+          "x-kind": "property"
+        },
+        "iconBefore": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Controls the positioning of the dropdown icon in relation to the text, true puts\u2026",
+          "x-kind": "property"
+        },
+        "tertiaryIcon": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Controls the appearance of dropdown icon as being an icon-only button. true rend\u2026",
+          "x-kind": "property"
+        },
+        "headingTagVariant": {
+          "type": "string",
+          "enum": [
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5",
+            "h6"
+          ],
+          "default": "h3",
+          "description": "Purely meant to help the user structure the HTML page hierarchy. Does not change\u2026",
+          "x-kind": "property"
+        },
+        "brandHeader": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Controls whether the header takes on the theme's 'brand-strong' color",
+          "x-kind": "property"
+        },
+        "accordionItemId": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Optional custom id for the accordion item, if one is not set, a random id is gen\u2026",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "prop:cre8-accordion-item:size",
+      "type": "enum_prop",
+      "name": "size",
+      "component": "cre8-accordion-item",
+      "enum": [
+        "sm",
+        "lg"
+      ],
+      "description": "Users can choose between two header sizes: 'sm' [title-default] or 'lg' [title-l\u2026"
+    },
+    {
+      "id": "prop:cre8-accordion-item:headingTagVariant",
+      "type": "enum_prop",
+      "name": "headingTagVariant",
+      "component": "cre8-accordion-item",
+      "enum": [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6"
+      ],
+      "description": "Purely meant to help the user structure the HTML page hierarchy. Does not change\u2026"
+    },
+    {
+      "id": "cre8-dropdown",
+      "type": "component",
+      "category": "Disclosure",
+      "description": "The Dropdown menu itself is a container that can host multiple interactive items, commonly formatted as a list",
+      "props": {
+        "buttonText": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Dropdown header",
+          "x-kind": "property"
+        },
+        "maxHeight": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Enables scrolling once content reached to specified height, the height should me\u2026",
+          "x-kind": "property"
+        },
+        "dropdownWithLink": {
+          "type": "boolean",
+          "enum": null,
+          "default": false,
+          "description": "button text represents as a link",
+          "x-kind": "property"
+        },
+        "open": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "property"
+        },
+        "dropdownContent": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "cre8-dropdown-item",
+      "type": "component",
+      "category": "Disclosure",
+      "description": "The Dropdown item component is designed to be used with Dropdown component, each item represents a selectable option or \u2026",
+      "props": {
+        "ariaLabel": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "cre8-modal",
+      "type": "component",
+      "category": "Disclosure",
+      "description": "Modal component should be used in all modal situations. It is natuarally composable and can even have a custom header an\u2026",
+      "props": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "error",
+            "info",
+            "warning",
+            "success",
+            "help"
+          ],
+          "default": null,
+          "description": "Status Types <cre8-text-passage size=\"sm\"> <ul> <li>**default (no value)** rende\u2026",
+          "x-kind": "attribute"
+        },
+        "isActive": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Is Active attribute",
+          "x-kind": "property"
+        },
+        "utilityModalTitle": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Utility Modal Heading (String)",
+          "x-kind": "property"
+        },
+        "notDismissible": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Not dismissible modal",
+          "x-kind": "property"
+        },
+        "closeButtonText": {
+          "type": "string",
+          "enum": null,
+          "default": "close",
+          "description": "Close Button Text",
+          "x-kind": "property"
+        },
+        "closeButtonIcon": {
+          "type": "string",
+          "enum": null,
+          "default": "close",
+          "description": "Close Button Icon",
+          "x-kind": "property"
+        },
+        "ariaLabel": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Modal Aria Label - This is required for accessibility and provides context of th\u2026",
+          "x-kind": "property"
+        },
+        "mapStatusToIconModal": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Maps modal icons and modal status variants to what the alt text of the related i\u2026",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "prop:cre8-modal:status",
+      "type": "enum_prop",
+      "name": "status",
+      "component": "cre8-modal",
+      "enum": [
+        "error",
+        "info",
+        "warning",
+        "success",
+        "help"
+      ],
+      "description": "Status Types <cre8-text-passage size=\"sm\"> <ul> <li>**default (no value)** rende\u2026"
+    },
+    {
+      "id": "cre8-popover",
+      "type": "component",
+      "category": "Disclosure",
+      "description": "The Popover is for progressive disclosure of relevant content often hidden behind a help or info icon. Its content shoul\u2026",
+      "props": {
+        "heading": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The heading text that appears at the top of the popover panel. Should only be 2-\u2026",
+          "x-kind": "attribute"
+        },
+        "position": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Positions the popover panel absolutely to the trigger - **default** positions th\u2026",
+          "x-kind": "attribute"
+        },
+        "isVisibleOnScroll": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Set to prevent the popover panel from hiding on scroll",
+          "x-kind": "property"
+        },
+        "isDynamic": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "The dynamic state for the popover - If true, the popover panel placement is dete\u2026",
+          "x-kind": "property"
+        },
+        "isActiveDynamic": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "The dynamic active state _This property is dynamically set_",
+          "x-kind": "property"
+        },
+        "isActive": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "The active state for the popover - If true, the popover panel is visible - If fa\u2026",
+          "x-kind": "property"
+        },
+        "isRTL": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Query the document direction value <br/><br/> _*This property is dynamically set\u2026",
+          "x-kind": "property"
+        },
+        "handleOnClickOutside": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Handle click outside the component 1. Close the show/hide popover panel on click\u2026",
+          "x-kind": "property"
+        },
+        "removeActiveOnScroll": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Remove Active State on Scroll 1. If a scroll event is fired and visibileOnScroll\u2026",
+          "x-kind": "property"
+        },
+        "removeActive": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Remove Active State 1. If a specific event is fired, remove the active state.",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-submenu",
+      "type": "component",
+      "category": "Disclosure",
+      "description": "Submenu component.",
+      "props": {},
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-submenu-item",
+      "type": "component",
+      "category": "Disclosure",
+      "description": "Submenu Item component.",
+      "props": {
+        "href": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The link URL",
+          "x-kind": "attribute"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-tooltip",
+      "type": "component",
+      "category": "Disclosure",
+      "description": "The purpose of tooltips is to provide a tip or hint about what a tool, icon, link, or other interaction does. If you nee\u2026",
+      "props": {
+        "position": {
+          "type": "string",
+          "enum": [
+            "default",
+            "top",
+            "left",
+            "right"
+          ],
+          "default": null,
+          "description": "Positions the tooltip panel absolutely to the icon. Position overrides `isDynami\u2026",
+          "x-kind": "attribute"
+        },
+        "knockout": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "The knockout variant for the tooltip",
+          "x-kind": "attribute"
+        },
+        "svg": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "svg as a raw string - The icon is defined by this prop. - Pass in a raw svg as a\u2026",
+          "x-kind": "attribute"
+        },
+        "isDynamic": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "The dynamic state for the tooltip. Position overrides isDynamic.",
+          "x-kind": "property"
+        },
+        "isActiveDynamic": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "The dynamic active state",
+          "x-kind": "property"
+        },
+        "isActive": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "The active state for the tooltip",
+          "x-kind": "property"
+        },
+        "ariaDescribes": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Accepts the ID string of the item the tooltip is referencing",
+          "x-kind": "property"
+        },
+        "iconRotateDegree": {
+          "type": "number",
+          "enum": null,
+          "default": 0,
+          "description": "iconRotateDegree is used for <cre8-icon> to set the arrow in the correct directi\u2026",
+          "x-kind": "property"
+        },
+        "iconFlipDirection": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "iconFlipDirection is used for <cre8-icon> to set the icon in the correct directi\u2026",
+          "x-kind": "property"
+        },
+        "isRTL": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Query the document direction value <br/><br/> _*This property is dynamically set\u2026",
+          "x-kind": "property"
+        },
+        "removeActive": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Remove Active State 1. If a specific event is fired, remove the active state.",
+          "x-kind": "property"
+        }
+      },
+      "slots": [
+        "default",
+        "trigger"
+      ],
+      "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-tooltip:default",
+      "type": "slot",
+      "name": "default",
+      "component": "cre8-tooltip",
+      "description": "Default, unnamed slot container for Tooltip text"
+    },
+    {
+      "id": "slot:cre8-tooltip:trigger",
+      "type": "slot",
+      "name": "trigger",
+      "component": "cre8-tooltip",
+      "description": "Named slot container for Tooltip element to trigger showing/hiding the Tooltip t\u2026"
+    },
+    {
+      "id": "prop:cre8-tooltip:position",
+      "type": "enum_prop",
+      "name": "position",
+      "component": "cre8-tooltip",
+      "enum": [
+        "default",
+        "top",
+        "left",
+        "right"
+      ],
+      "description": "Positions the tooltip panel absolutely to the icon. Position overrides `isDynami\u2026"
+    },
+    {
+      "id": "cre8-alert",
+      "type": "component",
+      "category": "Feedback",
+      "description": "The general purpose of an alert or notification is to draw the user\u2019s attention and provide the user with timely, releva\u2026",
+      "props": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "error",
+            "info",
+            "notification",
+            "neutral",
+            "warning",
+            "success"
+          ],
+          "default": "info",
+          "description": "The alert type.",
+          "x-kind": "attribute"
+        },
+        "variant": {
+          "type": "string",
+          "enum": [
+            "standalone",
+            "banner"
+          ],
+          "default": "standalone",
+          "description": "The alert variant.",
+          "x-kind": "attribute"
+        },
+        "emphasis": {
+          "type": "string",
+          "enum": [
+            "subtle",
+            "strong"
+          ],
+          "default": "subtle",
+          "description": "",
+          "x-kind": "attribute"
+        },
+        "dismissed": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Dismissed property 1) State that changes to true and is removed when the banner \u2026",
+          "x-kind": "attribute"
+        },
+        "iconAlert": {
+          "type": "string",
+          "enum": null,
+          "default": "undefined",
+          "description": "",
+          "x-kind": "property"
+        },
+        "iconTitle": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Icon title used for the icon alt text",
+          "x-kind": "property"
+        },
+        "headerText": {
+          "type": "string",
+          "enum": null,
+          "default": "undefined",
+          "description": "",
+          "x-kind": "property"
+        },
+        "ctaBody": {
+          "type": "string",
+          "enum": null,
+          "default": "undefined",
+          "description": "",
+          "x-kind": "property"
+        },
+        "notDismissible": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Dismissable property 1) Adds the ability to close when toggled to true",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "prop:cre8-alert:status",
+      "type": "enum_prop",
+      "name": "status",
+      "component": "cre8-alert",
+      "enum": [
+        "error",
+        "info",
+        "notification",
+        "neutral",
+        "warning",
+        "success"
+      ],
+      "description": "The alert type."
+    },
+    {
+      "id": "prop:cre8-alert:variant",
+      "type": "enum_prop",
+      "name": "variant",
+      "component": "cre8-alert",
+      "enum": [
+        "standalone",
+        "banner"
+      ],
+      "description": "The alert variant."
+    },
+    {
+      "id": "prop:cre8-alert:emphasis",
+      "type": "enum_prop",
+      "name": "emphasis",
+      "component": "cre8-alert",
+      "enum": [
+        "subtle",
+        "strong"
+      ],
+      "description": ""
+    },
+    {
+      "id": "cre8-badge",
+      "type": "component",
+      "category": "Feedback",
+      "description": "Status badges are used most often in tables or fat rows in a list. These Components serve a contextual purpose and don't\u2026",
+      "props": {
+        "text": {
+          "type": "string",
+          "enum": null,
+          "default": "undefined",
+          "description": "The badge text",
+          "x-kind": "attribute"
+        },
+        "status": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Status (a color variant prop) - **neutral** (default) renders a badge with a neu\u2026",
+          "x-kind": "attribute"
+        },
+        "variant": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Background Style Variant - **dark|undefined** (default) renders a badge with a d\u2026",
+          "x-kind": "attribute"
+        },
+        "svg": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "SVG as a raw string - For badges with icons, the icon is defined by this prop - \u2026",
+          "x-kind": "attribute"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "cre8-inline-alert",
+      "type": "component",
+      "category": "Feedback",
+      "description": "In cases when it is necessary to alert the user but a less strong message that cannot be dismissed is desired, use an in\u2026",
+      "props": {
+        "variant": {
+          "type": "string",
+          "enum": [
+            "subtle",
+            "transparent"
+          ],
+          "default": "subtle",
+          "description": "Variant - **subtle** (default) renders an alert message in a padded container wi\u2026",
+          "x-kind": "attribute"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "error",
+            "info",
+            "neutral",
+            "warning",
+            "success",
+            "attention",
+            "help"
+          ],
+          "default": "info",
+          "description": "Status - **default** renders an inline alert with the brand colors - **error** r\u2026",
+          "x-kind": "attribute"
+        },
+        "iconName": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "DEPRECATED: Icon name used for the icon before to the field note",
+          "x-kind": "property"
+        },
+        "fullWidth": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Full width Inline Alert",
+          "x-kind": "property"
+        },
+        "iconTitle": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Icon title used for the icon alt text",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "prop:cre8-inline-alert:variant",
+      "type": "enum_prop",
+      "name": "variant",
+      "component": "cre8-inline-alert",
+      "enum": [
+        "subtle",
+        "transparent"
+      ],
+      "description": "Variant - **subtle** (default) renders an alert message in a padded container wi\u2026"
+    },
+    {
+      "id": "prop:cre8-inline-alert:status",
+      "type": "enum_prop",
+      "name": "status",
+      "component": "cre8-inline-alert",
+      "enum": [
+        "error",
+        "info",
+        "neutral",
+        "warning",
+        "success",
+        "attention",
+        "help"
+      ],
+      "description": "Status - **default** renders an inline alert with the brand colors - **error** r\u2026"
+    },
+    {
+      "id": "cre8-loading-spinner",
+      "type": "component",
+      "category": "Feedback",
+      "description": "A loading spinner notifies the user that their request is being processed while the front end is retrieving data or perf\u2026",
+      "props": {
+        "determinate": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Mode of the spinner, defaults to indeterminate. If true, renders a standard prog\u2026",
+          "x-kind": "attribute"
+        },
+        "inverse": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Inverse property used for dark backgrounds.",
+          "x-kind": "attribute"
+        },
+        "neutral": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Neutral property used for secondary neutral loading button.",
+          "x-kind": "attribute"
+        },
+        "label": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Label to show along with progress indicator. This is required to meet accessibil\u2026",
+          "x-kind": "attribute"
+        },
+        "progress": {
+          "type": "number",
+          "enum": null,
+          "default": 0,
+          "description": "Progress to display, between 0 and 100. Requires determinate property to be set \u2026",
+          "x-kind": "attribute"
+        },
+        "size": {
+          "type": "string",
+          "enum": [
+            "large",
+            "small"
+          ],
+          "default": "large",
+          "description": "Size of the progress indicator and position of the label, if a label has been de\u2026",
+          "x-kind": "attribute"
+        },
+        "buttonVariant": {
+          "type": "string",
+          "enum": [
+            "primary",
+            "secondary",
+            "tertiary"
+          ],
+          "default": null,
+          "description": "Property that specifies which button variant is using the loading spinner",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "prop:cre8-loading-spinner:size",
+      "type": "enum_prop",
+      "name": "size",
+      "component": "cre8-loading-spinner",
+      "enum": [
+        "large",
+        "small"
+      ],
+      "description": "Size of the progress indicator and position of the label, if a label has been de\u2026"
+    },
+    {
+      "id": "prop:cre8-loading-spinner:buttonVariant",
+      "type": "enum_prop",
+      "name": "buttonVariant",
+      "component": "cre8-loading-spinner",
+      "enum": [
+        "primary",
+        "secondary",
+        "tertiary"
+      ],
+      "description": "Property that specifies which button variant is using the loading spinner"
+    },
+    {
+      "id": "cre8-percent-bar",
+      "type": "component",
+      "category": "Feedback",
+      "description": "The percent bar visually indicates a user's current progress and has a few features: a basic display bar with a percenta\u2026",
+      "props": {
+        "value": {
+          "type": "number",
+          "enum": null,
+          "default": null,
+          "description": "The current step the user is on.",
+          "x-kind": "attribute"
+        },
+        "max": {
+          "type": "number",
+          "enum": null,
+          "default": null,
+          "description": "The total number of steps in the multistep process.",
+          "x-kind": "attribute"
+        },
+        "disableActionLeft": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "The action-left icon-only tertiary button in the percent bar controls can be dis\u2026",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "cre8-progress-meter",
+      "type": "component",
+      "category": "Feedback",
+      "description": "A progress meter provides feedback that the system is working and gives the user an indication of how much time they wil\u2026",
+      "props": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "error",
+            "warning",
+            "success"
+          ],
+          "default": null,
+          "description": "Progress Status - **Default** renders a meter with default status fill - **Error\u2026",
+          "x-kind": "attribute"
+        },
+        "knockout": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Determines if the progress meter is displayed on a dark background (uses knockou\u2026",
+          "x-kind": "attribute"
+        },
+        "max": {
+          "type": "number",
+          "enum": null,
+          "default": 100,
+          "description": "The max number for the progress bar (defaulted to 100 to match percentages)",
+          "x-kind": "attribute"
+        },
+        "value": {
+          "type": "number",
+          "enum": null,
+          "default": null,
+          "description": "The the percentage of the bar that is filled in (defaulted to match percentages)\u2026",
+          "x-kind": "attribute"
+        },
+        "name": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Progress Meter name",
+          "x-kind": "attribute"
+        },
+        "label": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Progress Meter label",
+          "x-kind": "attribute"
+        },
+        "fieldId": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Progress Meter FieldId",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "prop:cre8-progress-meter:status",
+      "type": "enum_prop",
+      "name": "status",
+      "component": "cre8-progress-meter",
+      "enum": [
+        "error",
+        "warning",
+        "success"
+      ],
+      "description": "Progress Status - **Default** renders a meter with default status fill - **Error\u2026"
+    },
+    {
+      "id": "cre8-progress-steps-item",
+      "type": "component",
+      "category": "Feedback",
+      "description": "The Progress Steps Item component is used to display a single step in a multi-step process. It should be used as a child\u2026",
+      "props": {
+        "message": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Optional message to display under the step name.",
+          "x-kind": "attribute"
+        },
+        "name": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The name of the step.",
+          "x-kind": "attribute"
+        },
+        "state": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The state of the step: 'complete', 'current', 'error',' incomplete', 'warning';",
+          "x-kind": "attribute"
+        },
+        "svg": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "An SVG string to use as the step icon.",
+          "x-kind": "attribute"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-skeleton-loader",
+      "type": "component",
+      "category": "Feedback",
+      "description": "Skeleton Loader allows for the ability to create placeholder UI loading states. Developers are encouraged to pass into t\u2026",
+      "props": {
+        "variant": {
+          "type": "string",
+          "enum": [
+            "rectangle",
+            "square",
+            "circle"
+          ],
+          "default": "rectangle",
+          "description": "Style variant - **rectangle** renders a featureless rectangle as a placeholder f\u2026",
+          "x-kind": "attribute"
+        },
+        "height": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Height inline style 1. Used to set a height on the skeleton if specific size is \u2026",
+          "x-kind": "attribute"
+        },
+        "width": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Width inline style 1. Used to set a width on the skeleton if specific size is ne\u2026",
+          "x-kind": "attribute"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "prop:cre8-skeleton-loader:variant",
+      "type": "enum_prop",
+      "name": "variant",
+      "component": "cre8-skeleton-loader",
+      "enum": [
+        "rectangle",
+        "square",
+        "circle"
+      ],
+      "description": "Style variant - **rectangle** renders a featureless rectangle as a placeholder f\u2026"
+    },
+    {
+      "id": "cre8-checkbox-field",
+      "type": "component",
+      "category": "Forms",
+      "description": "Checkbox Field is the parent container for `checkbox-field-item`. It is required to allow for grouping numerous checkbox\u2026",
+      "props": {
+        "label": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Checkbox container legend label",
+          "x-kind": "attribute"
+        },
+        "fieldNote": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Checkbox container fieldnote",
+          "x-kind": "property"
+        },
+        "ariaDescribedBy": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Checkbox container fieldnote aria describe by",
+          "x-kind": "property"
+        },
+        "fieldNoteIconName": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Checkbox container fieldnote icon name",
+          "x-kind": "property"
+        },
+        "fieldNoteKnockout": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Checkbox container fieldnote knockout",
+          "x-kind": "property"
+        },
+        "fieldNoteIsSuccess": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Checkbox container fieldnote isSuccess",
+          "x-kind": "property"
+        },
+        "fieldNoteIsError": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Checkbox container fieldnote isError",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-checkbox-field-item",
+      "type": "component",
+      "category": "Forms",
+      "description": "Checkbox Field Item is the combination of a checkbox input, label and field note. Checkboxes can turn an option on or of\u2026",
+      "props": {
+        "label": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The checkbox label",
+          "x-kind": "attribute"
+        },
+        "checked": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Checked State",
+          "x-kind": "attribute"
+        },
+        "name": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The name of the form field",
+          "x-kind": "attribute"
+        },
+        "disabled": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Disabled State",
+          "x-kind": "attribute"
+        },
+        "required": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Required property",
+          "x-kind": "attribute"
+        },
+        "value": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The value of the form field.",
+          "x-kind": "attribute"
+        },
+        "errorText": {
+          "type": "string",
+          "enum": null,
+          "default": "Error",
+          "description": "Visually hidden text that always signifies that this is an error for screen read\u2026",
+          "x-kind": "property"
+        },
+        "errorNote": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The error field note that appears below the default field note",
+          "x-kind": "property"
+        },
+        "successText": {
+          "type": "string",
+          "enum": null,
+          "default": "Success",
+          "description": "Visually hidden text that always signifies that this is successful for screen re\u2026",
+          "x-kind": "property"
+        },
+        "successNote": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The success field note that appears below the default field note",
+          "x-kind": "property"
+        },
+        "fieldId": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Checkbox FieldId",
+          "x-kind": "property"
+        },
+        "fieldNote": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Checkbox FieldNote",
+          "x-kind": "property"
+        },
+        "ariaDescribedBy": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Checkbox fieldnote ariaDescribeBy",
+          "x-kind": "property"
+        },
+        "validationAriaDescribedBy": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Additional aria-describedby connection to id for additional success and error no\u2026",
+          "x-kind": "property"
+        },
+        "fieldNoteIconName": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Checkbox fieldnote icon name",
+          "x-kind": "property"
+        },
+        "isError": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Changes the component's treatment to represent an error state",
+          "x-kind": "property"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Changes the component's treatment to represent a success state",
+          "x-kind": "property"
+        },
+        "type": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The type of form control (text, checkbox, radio, etc.)",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "cre8-date-picker",
+      "type": "component",
+      "category": "Forms",
+      "description": "The Date Picker component renders a form group with label, control, help text and validation styling much like the Field\u2026",
+      "props": {
+        "autocomplete": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Autocomplete attribute that allows input to expect certain types of information.\u2026",
+          "x-kind": "attribute"
+        },
+        "pattern": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Pattern attribute defines a regular expression to validate against input",
+          "x-kind": "attribute"
+        },
+        "placeholder": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The placeholder text that appears inside the input",
+          "x-kind": "attribute"
+        },
+        "label": {
+          "type": "string",
+          "enum": null,
+          "default": "Label",
+          "description": "The required label that appears above the input",
+          "x-kind": "attribute"
+        },
+        "max": {
+          "type": [
+            "string",
+            "number"
+          ],
+          "enum": null,
+          "default": null,
+          "description": "The max attribute defines the maximum value that is acceptable and valid for the\u2026",
+          "x-kind": "attribute"
+        },
+        "min": {
+          "type": [
+            "string",
+            "number"
+          ],
+          "enum": null,
+          "default": null,
+          "description": "The min attribute defines the minimum value that is acceptable and valid for the\u2026",
+          "x-kind": "attribute"
+        },
+        "maxlength": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The maxlength is an integer above 0 that indicates the maximum allowed character\u2026",
+          "x-kind": "attribute"
+        },
+        "readonly": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Readonly attribute",
+          "x-kind": "attribute"
+        },
+        "type": {
+          "type": "string",
+          "enum": null,
+          "default": "date",
+          "description": "Type variants - **text** renders a standard text input - **email** renders a tex\u2026",
+          "x-kind": "attribute"
+        },
+        "name": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The name of the form field",
+          "x-kind": "attribute"
+        },
+        "disabled": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "The disabled attribute on the input",
+          "x-kind": "attribute"
+        },
+        "required": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "The required attribute on the input",
+          "x-kind": "attribute"
+        },
+        "value": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The value of the form field.",
+          "x-kind": "attribute"
+        },
+        "hasShortcuts": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Quick Shortcuts Variant",
+          "x-kind": "property"
+        },
+        "fieldId": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The unique id of the field <br/><br/> _*This property is dynamically set_",
+          "x-kind": "property"
+        },
+        "fieldNote": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The text that displays below in text field input",
+          "x-kind": "property"
+        },
+        "ariaLive": {
+          "type": "string",
+          "enum": [
+            "polite",
+            "assertive"
+          ],
+          "default": "polite",
+          "description": "Controls how the voiceover will experience the new information when field note c\u2026",
+          "x-kind": "property"
+        },
+        "ariaDescribedBy": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Used to connect the field note in text field to the text menu for accessibility",
+          "x-kind": "property"
+        },
+        "errorText": {
+          "type": "string",
+          "enum": null,
+          "default": "Error",
+          "description": "Visually hidden text that always signifies that this is an error for screen read\u2026",
+          "x-kind": "property"
+        },
+        "errorNote": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The error field note that appears below the default field note",
+          "x-kind": "property"
+        },
+        "validationAriaDescribedBy": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Additional aria-describedby connection to id for additional success and error no\u2026",
+          "x-kind": "property"
+        },
+        "successText": {
+          "type": "string",
+          "enum": null,
+          "default": "Success",
+          "description": "Visually hidden text that always signifies that this is successful for screen re\u2026",
+          "x-kind": "property"
+        },
+        "successNote": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The success field note that appears below the default field note",
+          "x-kind": "property"
+        },
+        "isError": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Changes the component's treatment to represent an error state",
+          "x-kind": "property"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Changes the component's treatment to represent a success state",
+          "x-kind": "property"
+        },
+        "showCalendar": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "prop:cre8-date-picker:ariaLive",
+      "type": "enum_prop",
+      "name": "ariaLive",
+      "component": "cre8-date-picker",
+      "enum": [
+        "polite",
+        "assertive"
+      ],
+      "description": "Controls how the voiceover will experience the new information when field note c\u2026"
+    },
+    {
+      "id": "cre8-field",
+      "type": "component",
+      "category": "Forms",
+      "description": "The Field component renders a form group with label, control, help text and validation styling. There are convenience va\u2026",
+      "props": {
+        "autocomplete": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Autocomplete attribute that allows input to expect certain types of information.\u2026",
+          "x-kind": "attribute"
+        },
+        "pattern": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Pattern attribute defines a regular expression to validate against input",
+          "x-kind": "attribute"
+        },
+        "placeholder": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The placeholder text that appears inside the input",
+          "x-kind": "attribute"
+        },
+        "label": {
+          "type": "string",
+          "enum": null,
+          "default": "Label",
+          "description": "The required label that appears above the input",
+          "x-kind": "attribute"
+        },
+        "max": {
+          "type": [
+            "string",
+            "number"
+          ],
+          "enum": null,
+          "default": null,
+          "description": "The max attribute defines the maximum value that is acceptable and valid for the\u2026",
+          "x-kind": "attribute"
+        },
+        "min": {
+          "type": [
+            "string",
+            "number"
+          ],
+          "enum": null,
+          "default": null,
+          "description": "The min attribute defines the minimum value that is acceptable and valid for the\u2026",
+          "x-kind": "attribute"
+        },
+        "maxlength": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The maxlength is an integer above 0 that indicates the maximum allowed character\u2026",
+          "x-kind": "attribute"
+        },
+        "readonly": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Readonly attribute",
+          "x-kind": "attribute"
+        },
+        "type": {
+          "type": "string",
+          "enum": null,
+          "default": "text",
+          "description": "Type variants - **text** renders a standard text input - **email** renders a tex\u2026",
+          "x-kind": "attribute"
+        },
+        "name": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The name of the form field",
+          "x-kind": "attribute"
+        },
+        "disabled": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "The disabled attribute on the input",
+          "x-kind": "attribute"
+        },
+        "required": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "The required attribute on the input",
+          "x-kind": "attribute"
+        },
+        "value": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The value of the form field.",
+          "x-kind": "attribute"
+        },
+        "fieldId": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The unique id of the field <br/><br/> _*This property is dynamically set_",
+          "x-kind": "property"
+        },
+        "fieldNote": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The text that displays below in text field input",
+          "x-kind": "property"
+        },
+        "ariaLive": {
+          "type": "string",
+          "enum": [
+            "polite",
+            "assertive"
+          ],
+          "default": "polite",
+          "description": "Controls how the voiceover will experience the new information when field note c\u2026",
+          "x-kind": "property"
+        },
+        "ariaDescribedBy": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Used to connect the field note in text field to the text menu for accessibility",
+          "x-kind": "property"
+        },
+        "errorText": {
+          "type": "string",
+          "enum": null,
+          "default": "Error",
+          "description": "Visually hidden text that always signifies that this is an error for screen read\u2026",
+          "x-kind": "property"
+        },
+        "errorNote": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The error field note that appears below the default field note",
+          "x-kind": "property"
+        },
+        "validationAriaDescribedBy": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Additional aria-describedby connection to id for additional success and error no\u2026",
+          "x-kind": "property"
+        },
+        "successText": {
+          "type": "string",
+          "enum": null,
+          "default": "Success",
+          "description": "Visually hidden text that always signifies that this is successful for screen re\u2026",
+          "x-kind": "property"
+        },
+        "successNote": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The success field note that appears below the default field note",
+          "x-kind": "property"
+        },
+        "isError": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Changes the component's treatment to represent an error state",
+          "x-kind": "property"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Changes the component's treatment to represent a success state",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "prop:cre8-field:ariaLive",
+      "type": "enum_prop",
+      "name": "ariaLive",
+      "component": "cre8-field",
+      "enum": [
+        "polite",
+        "assertive"
+      ],
+      "description": "Controls how the voiceover will experience the new information when field note c\u2026"
+    },
+    {
+      "id": "cre8-field-note",
+      "type": "component",
+      "category": "Forms",
+      "description": "Field Note gives direction on how to fill out a form field and to alert users of form errors and successes. It\u2019s used be\u2026",
+      "props": {
+        "isError": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Changes the component's treatment to represent an error",
+          "x-kind": "property"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Changes the component's treatment to represent a success",
+          "x-kind": "property"
+        },
+        "iconName": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "DEPRECATED: Icon name used for the icon before to the field note",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-multi-select",
+      "type": "component",
+      "category": "Forms",
+      "description": "Multiselect is used when multiple options can be chosen from a static dropdown This component has a list of items in the\u2026",
+      "props": {
+        "items": {
+          "type": "array",
+          "enum": null,
+          "default": "[]",
+          "description": "The list of string items the user can choose in the dropdown Note: For passing p\u2026",
+          "x-kind": "attribute"
+        },
+        "label": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The required label that appears above the multiselect",
+          "x-kind": "attribute"
+        },
+        "disabled": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "The disabled attribute on the select",
+          "x-kind": "attribute"
+        },
+        "preselectedItems": {
+          "type": "array",
+          "enum": null,
+          "default": null,
+          "description": "The list of string items that are initially in the selected list of tags Note: T\u2026",
+          "x-kind": "property"
+        },
+        "fieldId": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The unique id of the select",
+          "x-kind": "property"
+        },
+        "fieldNote": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Optional field note text can be added to provide additional field guidance.",
+          "x-kind": "property"
+        },
+        "ariaDescribedBy": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Used to connect the field note in text field to the text menu for accessibility",
+          "x-kind": "property"
+        },
+        "validationAriaDescribedBy": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Additional aria-describedby connection to id for additional success and error no\u2026",
+          "x-kind": "property"
+        },
+        "isError": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Changes the component's treatment to represent an error state",
+          "x-kind": "property"
+        },
+        "errorNote": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The error field note that appears below the default field note",
+          "x-kind": "property"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Changes the component's treatment to represent a success state",
+          "x-kind": "property"
+        },
+        "successNote": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The success field note that appears below the default field note",
+          "x-kind": "property"
+        },
+        "selectedTagItems": {
+          "type": "array",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "property"
+        },
+        "dropdownOpen": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "cre8-radio-field",
+      "type": "component",
+      "category": "Forms",
+      "description": "Radio Field is the parent container for `radio-field-item`. It is required to allow for grouping numerous radio fields t\u2026",
+      "props": {
+        "label": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Radio field legend label",
+          "x-kind": "attribute"
+        },
+        "fieldNote": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Radio Field Note",
+          "x-kind": "property"
+        },
+        "ariaDescribedBy": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Radio container fieldnote aria describe by",
+          "x-kind": "property"
+        },
+        "fieldNoteIconName": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Radio container fieldnote icon name",
+          "x-kind": "property"
+        },
+        "fieldNoteKnockout": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Radio container fieldnote knockout",
+          "x-kind": "property"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Radio container fieldnote isSuccess",
+          "x-kind": "property"
+        },
+        "isError": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Radio container fieldnote isError",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-radio-field-item",
+      "type": "component",
+      "category": "Forms",
+      "description": "A Radio Field Item adds a radio button to a Radio Field. Radio buttons let a user choose only one of several options. Do\u2026",
+      "props": {
+        "checked": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "A Boolean attribute which, if present, sets the radio button as selected.",
+          "x-kind": "attribute"
+        },
+        "label": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The label attribute is used to assign a value to the label element corresponding\u2026",
+          "x-kind": "attribute"
+        },
+        "name": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The name of the form field",
+          "x-kind": "attribute"
+        },
+        "disabled": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "The Boolean disabled attribute, when present, makes the element not mutable, foc\u2026",
+          "x-kind": "attribute"
+        },
+        "required": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Required attribute",
+          "x-kind": "attribute"
+        },
+        "value": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The value of the form field.",
+          "x-kind": "attribute"
+        },
+        "ariaDescribedBy": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Identifies the element that provides a detailed, extended description for the ob\u2026",
+          "x-kind": "property"
+        },
+        "fieldId": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The fieldId attribute is assigned to the HTML input element of the radio button \u2026",
+          "x-kind": "property"
+        },
+        "fieldNote": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "A FieldNote can be placed to provide guidance. It's frequently used to in the co\u2026",
+          "x-kind": "property"
+        },
+        "fieldNoteIconName": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Sets the item fieldnote icon. - **check** renders a badge with success state tre\u2026",
+          "x-kind": "property"
+        },
+        "fieldNoteKnockout": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Radio item fieldnote knockout",
+          "x-kind": "property"
+        },
+        "fieldNoteIsError": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Sets the error state of the fieldnote.",
+          "x-kind": "property"
+        },
+        "isError": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "The isError attribute is used to indicate an error state related to the radio bu\u2026",
+          "x-kind": "property"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "The isSuccess attribute is used to indicate a success state related to the radio\u2026",
+          "x-kind": "property"
+        },
+        "type": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The type of form control (text, checkbox, radio, etc.)",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "cre8-select",
+      "type": "component",
+      "category": "Forms",
+      "description": "The Select control is designed and built to be used for selecting between choices in a form. It is not a Dropdown contro\u2026",
+      "props": {
+        "items": {
+          "type": "array",
+          "enum": null,
+          "default": "[]",
+          "description": "A mix of Cre8SelectOption and Cre8SelectOptionGroup definitions: - Cre8SelectOpt\u2026",
+          "x-kind": "attribute"
+        },
+        "label": {
+          "type": "string",
+          "enum": null,
+          "default": "Label",
+          "description": "The required label that appears above the select",
+          "x-kind": "attribute"
+        },
+        "name": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The name of the form field",
+          "x-kind": "attribute"
+        },
+        "disabled": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "The disabled attribute on the select",
+          "x-kind": "attribute"
+        },
+        "required": {
+          "type": "boolean",
+          "enum": null,
+          "default": false,
+          "description": "The required attribute on the select",
+          "x-kind": "attribute"
+        },
+        "value": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The value of the form field.",
+          "x-kind": "attribute"
+        },
+        "fieldId": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The unique id of the select",
+          "x-kind": "property"
+        },
+        "fieldNote": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Optional field note text can be added to provide additional field guidance.",
+          "x-kind": "property"
+        },
+        "ariaDescribedBy": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Used to connect the field note in text field to the text menu for accessibility",
+          "x-kind": "property"
+        },
+        "validationAriaDescribedBy": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Additional aria-describedby connection to id for additional success and error no\u2026",
+          "x-kind": "property"
+        },
+        "errorNote": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The error field note that appears below the default field note",
+          "x-kind": "property"
+        },
+        "successNote": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The success field note that appears below the default field note",
+          "x-kind": "property"
+        },
+        "isError": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Changes the component's treatment to represent an error state",
+          "x-kind": "property"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Changes the component's treatment to represent a success state",
+          "x-kind": "property"
+        },
+        "type": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The type of form control (text, checkbox, radio, etc.)",
+          "x-kind": "property"
+        }
+      },
+      "slots": [
+        "fieldNote"
+      ],
+      "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-select:fieldNote",
+      "type": "slot",
+      "name": "fieldNote",
+      "component": "cre8-select",
+      "description": "Container for optional field note content"
+    },
+    {
+      "id": "cre8-select-tile",
+      "type": "component",
+      "category": "Forms",
+      "description": "The Select Tile component is a short block of content inside a visual container that can be used in place of checkboxes,\u2026",
+      "props": {
+        "variant": {
+          "type": "string",
+          "enum": [
+            "bare",
+            "horizontal",
+            "horizontal-bare"
+          ],
+          "default": null,
+          "description": "Style variants - **bare** renders a select-tile without a border and without pad\u2026",
+          "x-kind": "attribute"
+        },
+        "align": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Align variants <cre8-text-passage size=\"sm\"> <ul> <li>**center** renders a selec\u2026",
+          "x-kind": "attribute"
+        },
+        "checked": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Checked State. Note: the `checked` attribute sets the `defaultChecked` property,\u2026",
+          "x-kind": "attribute"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "checkbox",
+            "radio"
+          ],
+          "default": "radio",
+          "description": "Should this Select Tile behave as a radio button or a checkbox?",
+          "x-kind": "attribute"
+        },
+        "name": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The name of the form field",
+          "x-kind": "attribute"
+        },
+        "disabled": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Disabled State",
+          "x-kind": "attribute"
+        },
+        "required": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Required attribute",
+          "x-kind": "attribute"
+        },
+        "value": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The value of the form field.",
+          "x-kind": "attribute"
+        },
+        "variantBreakToVertical": {
+          "type": "string",
+          "enum": [
+            "sm",
+            "lg",
+            "none",
+            "md",
+            "sm-2",
+            "xl",
+            "xxl"
+          ],
+          "default": "sm",
+          "description": "Which breakpoint, if any, to switch to verticial. Only useful for horizontal var\u2026",
+          "x-kind": "property"
+        },
+        "checkPosition": {
+          "type": "string",
+          "enum": [
+            "none",
+            "left",
+            "right",
+            "top-right"
+          ],
+          "default": "right",
+          "description": "Where does the checkmark or radio button go? It disappears on 'none'. Only top-r\u2026",
+          "x-kind": "property"
+        },
+        "radioVariant": {
+          "type": "string",
+          "enum": [
+            "dot",
+            "check"
+          ],
+          "default": "dot",
+          "description": "In radio mode, whether to use the circle with the dot, or the rounded check.",
+          "x-kind": "property"
+        },
+        "fieldId": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Select Tile FieldId",
+          "x-kind": "property"
+        },
+        "isError": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Error State",
+          "x-kind": "property"
+        },
+        "isSuccess": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Radio item fieldnote isSuccess",
+          "x-kind": "property"
+        },
+        "shadowRootOptions": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "property"
+        },
+        "defaultChecked": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "The default checked state when the element first renders or is reset. Note: the \u2026",
+          "x-kind": "property"
+        }
+      },
+      "slots": [
+        "default",
+        "header",
+        "footer",
+        "title",
+        "body"
+      ],
+      "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-select-tile:default",
+      "type": "slot",
+      "name": "default",
+      "component": "cre8-select-tile",
+      "description": "The default slot goes into the center, main part of the Select Tile. Consider us\u2026"
+    },
+    {
+      "id": "slot:cre8-select-tile:header",
+      "type": "slot",
+      "name": "header",
+      "component": "cre8-select-tile",
+      "description": "The top or left part of the Select Tile"
+    },
+    {
+      "id": "slot:cre8-select-tile:footer",
+      "type": "slot",
+      "name": "footer",
+      "component": "cre8-select-tile",
+      "description": "The bottom or right part of the Select Tile"
+    },
+    {
+      "id": "slot:cre8-select-tile:title",
+      "type": "slot",
+      "name": "title",
+      "component": "cre8-select-tile",
+      "description": "The title part of the Select Tile, use with body slot and instead of the default\u2026"
+    },
+    {
+      "id": "slot:cre8-select-tile:body",
+      "type": "slot",
+      "name": "body",
+      "component": "cre8-select-tile",
+      "description": "The \"body\" part of the Select Tile, which appears under the title slot and recei\u2026"
+    },
+    {
+      "id": "prop:cre8-select-tile:variant",
+      "type": "enum_prop",
+      "name": "variant",
+      "component": "cre8-select-tile",
+      "enum": [
+        "bare",
+        "horizontal",
+        "horizontal-bare"
+      ],
+      "description": "Style variants - **bare** renders a select-tile without a border and without pad\u2026"
+    },
+    {
+      "id": "prop:cre8-select-tile:type",
+      "type": "enum_prop",
+      "name": "type",
+      "component": "cre8-select-tile",
+      "enum": [
+        "checkbox",
+        "radio"
+      ],
+      "description": "Should this Select Tile behave as a radio button or a checkbox?"
+    },
+    {
+      "id": "prop:cre8-select-tile:variantBreakToVertical",
+      "type": "enum_prop",
+      "name": "variantBreakToVertical",
+      "component": "cre8-select-tile",
+      "enum": [
+        "sm",
+        "lg",
+        "none",
+        "md",
+        "sm-2",
+        "xl",
+        "xxl"
+      ],
+      "description": "Which breakpoint, if any, to switch to verticial. Only useful for horizontal var\u2026"
+    },
+    {
+      "id": "prop:cre8-select-tile:checkPosition",
+      "type": "enum_prop",
+      "name": "checkPosition",
+      "component": "cre8-select-tile",
+      "enum": [
+        "none",
+        "left",
+        "right",
+        "top-right"
+      ],
+      "description": "Where does the checkmark or radio button go? It disappears on 'none'. Only top-r\u2026"
+    },
+    {
+      "id": "prop:cre8-select-tile:radioVariant",
+      "type": "enum_prop",
+      "name": "radioVariant",
+      "component": "cre8-select-tile",
+      "enum": [
+        "dot",
+        "check"
+      ],
+      "description": "In radio mode, whether to use the circle with the dot, or the rounded check."
+    },
+    {
+      "id": "cre8-select-tile-list",
+      "type": "component",
+      "category": "Forms",
+      "description": "Select Tile List is a container design to hold multiple Select Tile Components.",
+      "props": {
+        "variant": {
+          "type": "string",
+          "enum": [
+            "columns",
+            "rows"
+          ],
+          "default": "columns",
+          "description": "Whether to show the tiles side by side (columns) or stacked vertically (rows).",
+          "x-kind": "attribute"
+        },
+        "label": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Select Tile container label",
+          "x-kind": "attribute"
+        },
+        "fieldNote": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Select Tile container fieldnote",
+          "x-kind": "property"
+        },
+        "ariaDescribedBy": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Select Tile container fieldnote aria describe by",
+          "x-kind": "property"
+        },
+        "fieldNoteIconName": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Select Tile container fieldnote icon name",
+          "x-kind": "property"
+        },
+        "fieldNoteKnockout": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Select Tile container fieldnote knockout",
+          "x-kind": "property"
+        },
+        "fieldNoteIsSuccess": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Select Tile container fieldnote isSuccess",
+          "x-kind": "property"
+        },
+        "fieldNoteIsError": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Select Tile container fieldnote isError",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "prop:cre8-select-tile-list:variant",
+      "type": "enum_prop",
+      "name": "variant",
+      "component": "cre8-select-tile-list",
+      "enum": [
+        "columns",
+        "rows"
+      ],
+      "description": "Whether to show the tiles side by side (columns) or stacked vertically (rows)."
+    },
+    {
+      "id": "cre8-band",
+      "type": "component",
+      "category": "Layout",
+      "description": "Band component.",
+      "props": {
+        "variant": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Gradient variant <cre8-text-passage size=\"sm\"> <ul> <li>**1** renders the band w\u2026",
+          "x-kind": "attribute"
+        },
+        "fullHeight": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Full height variant 1) Sets the height to 100%",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-card",
+      "type": "component",
+      "category": "Layout",
+      "description": "The card component acts a general container element sectioned off by slots: `header`, `body`, `footer`. # How to Use 1. \u2026",
+      "props": {
+        "variant": {
+          "type": "string",
+          "enum": [
+            "bare",
+            "compact",
+            "horizontal",
+            "horizontal-bare"
+          ],
+          "default": null,
+          "description": "Style variants - **bare** renders a card without a border and without padding ar\u2026",
+          "x-kind": "attribute"
+        },
+        "align": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Alignment variant - **center** renders a card that has center aligned content/te\u2026",
+          "x-kind": "attribute"
+        }
+      },
+      "slots": [
+        "default",
+        "header",
+        "footer"
+      ],
+      "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-card:default",
+      "type": "slot",
+      "name": "default",
+      "component": "cre8-card",
+      "description": "The card's body content"
+    },
+    {
+      "id": "slot:cre8-card:header",
+      "type": "slot",
+      "name": "header",
+      "component": "cre8-card",
+      "description": "(Optional) Content in the card's header"
+    },
+    {
+      "id": "slot:cre8-card:footer",
+      "type": "slot",
+      "name": "footer",
+      "component": "cre8-card",
+      "description": "(Optional) Content in the card's footer"
+    },
+    {
+      "id": "prop:cre8-card:variant",
+      "type": "enum_prop",
+      "name": "variant",
+      "component": "cre8-card",
+      "enum": [
+        "bare",
+        "compact",
+        "horizontal",
+        "horizontal-bare"
+      ],
+      "description": "Style variants - **bare** renders a card without a border and without padding ar\u2026"
+    },
+    {
+      "id": "cre8-divider",
+      "type": "component",
+      "category": "Layout",
+      "description": "The divider component is a separator between sections of content or groups of items. It often contains a horizontal or v\u2026",
+      "props": {
+        "variant": {
+          "type": "string",
+          "enum": [
+            "horizontal",
+            "vertical"
+          ],
+          "default": "horizontal",
+          "description": "Divider variants - By default, the component renders the horizontal divider - **\u2026",
+          "x-kind": "attribute"
+        },
+        "status": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Status (a color variant prop) - By default, the divider has gray color. - **bran\u2026",
+          "x-kind": "attribute"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "prop:cre8-divider:variant",
+      "type": "enum_prop",
+      "name": "variant",
+      "component": "cre8-divider",
+      "enum": [
+        "horizontal",
+        "vertical"
+      ],
+      "description": "Divider variants - By default, the component renders the horizontal divider - **\u2026"
+    },
+    {
+      "id": "cre8-grid",
+      "type": "component",
+      "category": "Layout",
+      "description": "Grid component.",
+      "props": {
+        "variant": {
+          "type": "string",
+          "enum": [
+            "side-by-side",
+            "2up",
+            "3up",
+            "1-3up",
+            "4up",
+            "1-4up",
+            "1-2-4up",
+            "2-4-6up"
+          ],
+          "default": null,
+          "description": "Style variant - **side-by-side** yields a grid whose grid items display side-by-\u2026",
+          "x-kind": "attribute"
+        },
+        "gap": {
+          "type": "string",
+          "enum": [
+            "sm",
+            "lg",
+            "none"
+          ],
+          "default": null,
+          "description": "Style variant - **none** yields a grid whose grid items are spaced without any g\u2026",
+          "x-kind": "attribute"
+        },
+        "break": {
+          "type": "string",
+          "enum": [
+            "faster",
+            "slower"
+          ],
+          "default": null,
+          "description": "Break variant - **faster** breaks the grid at a smaller width than the default. \u2026",
+          "x-kind": "attribute"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "prop:cre8-grid:variant",
+      "type": "enum_prop",
+      "name": "variant",
+      "component": "cre8-grid",
+      "enum": [
+        "side-by-side",
+        "2up",
+        "3up",
+        "1-3up",
+        "4up",
+        "1-4up",
+        "1-2-4up",
+        "2-4-6up"
+      ],
+      "description": "Style variant - **side-by-side** yields a grid whose grid items display side-by-\u2026"
+    },
+    {
+      "id": "prop:cre8-grid:gap",
+      "type": "enum_prop",
+      "name": "gap",
+      "component": "cre8-grid",
+      "enum": [
+        "sm",
+        "lg",
+        "none"
+      ],
+      "description": "Style variant - **none** yields a grid whose grid items are spaced without any g\u2026"
+    },
+    {
+      "id": "prop:cre8-grid:break",
+      "type": "enum_prop",
+      "name": "break",
+      "component": "cre8-grid",
+      "enum": [
+        "faster",
+        "slower"
+      ],
+      "description": "Break variant - **faster** breaks the grid at a smaller width than the default. \u2026"
+    },
+    {
+      "id": "cre8-grid-item",
+      "type": "component",
+      "category": "Layout",
+      "description": "Grid Item component.",
+      "props": {},
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-hero",
+      "type": "component",
+      "category": "Layout",
+      "description": "Hero component.",
+      "props": {
+        "align": {
+          "type": "string",
+          "enum": [
+            "center",
+            "left",
+            "right",
+            "top-left",
+            "top-center",
+            "bottom-center",
+            "top-right",
+            "bottom-right"
+          ],
+          "default": null,
+          "description": "Position variant. Bottom left is the default position <cre8-text-passage size=\"s\u2026",
+          "x-kind": "attribute"
+        },
+        "imgSrc": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Image source",
+          "x-kind": "property"
+        },
+        "imgAlt": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Image alt text",
+          "x-kind": "property"
+        },
+        "hasOverlay": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "prop:cre8-hero:align",
+      "type": "enum_prop",
+      "name": "align",
+      "component": "cre8-hero",
+      "enum": [
+        "center",
+        "left",
+        "right",
+        "top-left",
+        "top-center",
+        "bottom-center",
+        "top-right",
+        "bottom-right"
+      ],
+      "description": "Position variant. Bottom left is the default position <cre8-text-passage size=\"s\u2026"
+    },
+    {
+      "id": "cre8-layout",
+      "type": "component",
+      "category": "Layout",
+      "description": "Layout component.",
+      "props": {
+        "variant": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Style variants <cre8-text-passage size=\"sm\"> <ul> <li>Default is a right sidebar\u2026",
+          "x-kind": "attribute"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-layout-container",
+      "type": "component",
+      "category": "Layout",
+      "description": "Layout Container component.",
+      "props": {
+        "fullHeight": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Full height variant 1) Sets the height to 100%",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-layout-section",
+      "type": "component",
+      "category": "Layout",
+      "description": "Layout Section component.",
+      "props": {
+        "behavior": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Behavioral variants - **sticky** allows the layout section to stick to the scree\u2026",
+          "x-kind": "attribute"
+        },
+        "top": {
+          "type": "string",
+          "enum": null,
+          "default": "1rem",
+          "description": "Top style 1) Used to create dynamic sticky containers that can be adjusted based\u2026",
+          "x-kind": "attribute"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-linelength-container",
+      "type": "component",
+      "category": "Layout",
+      "description": "Linelength Container component.",
+      "props": {},
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-main",
+      "type": "component",
+      "category": "Layout",
+      "description": "Main component.",
+      "props": {
+        "fullHeight": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Full height variant 1) Sets the height to 100%",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-section",
+      "type": "component",
+      "category": "Layout",
+      "description": "The section component acts as a block level HTML element that takes a 'headline' property that renders the section's hea\u2026",
+      "props": {
+        "headline": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The Headline will be rendered as the Section Headline with the correct brand sty\u2026",
+          "x-kind": "attribute"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-feature",
+      "type": "component",
+      "category": "Marketing",
+      "description": "Feature component.",
+      "props": {
+        "inverted": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Inverted variant 1) Used for dark backgrounds",
+          "x-kind": "attribute"
+        },
+        "imgSrc": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Image source",
+          "x-kind": "property"
+        },
+        "imgAlt": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Image alt text",
+          "x-kind": "property"
+        },
+        "aspectRatio": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "CSS aspect-ratio for the image (e.g. \"4/3\", \"16/9\", \"1\"). Defaults to natural im\u2026",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-page-header",
+      "type": "component",
+      "category": "Marketing",
+      "description": "Page Header component.",
+      "props": {
+        "heading": {
+          "type": "string",
+          "enum": null,
+          "default": "Page header title",
+          "description": "Page header title",
+          "x-kind": "attribute"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-icon",
+      "type": "component",
+      "category": "Media",
+      "description": "<svg> is a web component, which can be used with any frontend framework and use any svg. It takes raw svgs as props and \u2026",
+      "props": {
+        "focusable": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Focusable",
+          "x-kind": "attribute"
+        },
+        "name": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Icon name (this method of passing in svgs is to be deprecated)",
+          "x-kind": "attribute"
+        },
+        "svg": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "attribute"
+        },
+        "iconUrl": {
+          "type": "string",
+          "enum": null,
+          "default": "iconSprite",
+          "description": "Icon path 1) This points to the file where the icon sprite lives 2) This method \u2026",
+          "x-kind": "property"
+        },
+        "iconTitle": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Icon Title, this string is used for the aira-label of the svg",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "cre8-logo",
+      "type": "component",
+      "category": "Media",
+      "description": "Logo component.",
+      "props": {
+        "href": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Logo link",
+          "x-kind": "attribute"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-breadcrumbs",
+      "type": "component",
+      "category": "Navigation",
+      "description": "The breadcrumbs component is a secondary navigation pattern that helps a user understand where the user is located. The \u2026",
+      "props": {
+        "navAriaLabel": {
+          "type": "string",
+          "enum": null,
+          "default": "breadcrumbs",
+          "description": "aria-label attribute to designate at name for the nav. Can be override by user",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-breadcrumbs-item",
+      "type": "component",
+      "category": "Navigation",
+      "description": "Breadcrumbs Item component.",
+      "props": {},
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-footer",
+      "type": "component",
+      "category": "Navigation",
+      "description": "Footer component.",
+      "props": {},
+      "slots": [
+        "default",
+        "top",
+        "bottom"
+      ],
+      "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-footer:default",
+      "type": "slot",
+      "name": "default",
+      "component": "cre8-footer",
+      "description": "The footer content"
+    },
+    {
+      "id": "slot:cre8-footer:top",
+      "type": "slot",
+      "name": "top",
+      "component": "cre8-footer",
+      "description": "The top content (above the default slot)"
+    },
+    {
+      "id": "slot:cre8-footer:bottom",
+      "type": "slot",
+      "name": "bottom",
+      "component": "cre8-footer",
+      "description": "The bottom content (below the default slot)"
+    },
+    {
+      "id": "cre8-global-nav",
+      "type": "component",
+      "category": "Navigation",
+      "description": "Global Nav component.",
+      "props": {
+        "inverted": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Inverted variant 1) Used for dark backgrounds",
+          "x-kind": "attribute"
+        },
+        "behavior": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Behavior variant <cre8-text-passage size=\"sm\"> <ul> <li>**side-by-side** keeps t\u2026",
+          "x-kind": "attribute"
+        },
+        "navAriaLabel": {
+          "type": "string",
+          "enum": null,
+          "default": "global",
+          "description": "aria-label attribute to designate at name for the nav. Can be override by user",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-global-nav-item",
+      "type": "component",
+      "category": "Navigation",
+      "description": "Global Nav Item component.",
+      "props": {
+        "text": {
+          "type": "string",
+          "enum": null,
+          "default": "Nav item",
+          "description": "Primary nav item text",
+          "x-kind": "attribute"
+        },
+        "href": {
+          "type": "string",
+          "enum": null,
+          "default": "#",
+          "description": "Primary nav item href",
+          "x-kind": "attribute"
+        },
+        "iconName": {
+          "type": "string",
+          "enum": null,
+          "default": "keyboard-arrow-down",
+          "description": "Icon name",
+          "x-kind": "property"
+        },
+        "megaMenu": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Append to the class name. Used for passing in utility classes",
+          "x-kind": "property"
+        },
+        "isActive": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Append to the class name. Used for passing in utility classes",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-header",
+      "type": "component",
+      "category": "Navigation",
+      "description": "Header component.",
+      "props": {
+        "isActive": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Is active state 1) Set to true when small screen menu is open",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-link",
+      "type": "component",
+      "category": "Navigation",
+      "description": "Link Component are strictly used in the case where the component will take the user away from the current page to a new \u2026",
+      "props": {
+        "href": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Href attribute of the anchor tag",
+          "x-kind": "attribute"
+        },
+        "rel": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Rel attribute of the anchor tag",
+          "x-kind": "attribute"
+        },
+        "target": {
+          "type": "string",
+          "enum": [
+            "_blank",
+            "_self",
+            "_parent",
+            "_top"
+          ],
+          "default": null,
+          "description": "Target attribute for a link (i.e. set to _blank to open in new tab) - **_blank**\u2026",
+          "x-kind": "attribute"
+        },
+        "svg": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "svg as a raw string - For links with icon, the icon is defined by this prop. - P\u2026",
+          "x-kind": "attribute"
+        },
+        "size": {
+          "type": "string",
+          "enum": [
+            "sm",
+            "lg"
+          ],
+          "default": null,
+          "description": "Size variant (default is medium) - **sm** shrinks the link typography and overal\u2026",
+          "x-kind": "attribute"
+        },
+        "inverted": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Inverted colors Link (onDark)",
+          "x-kind": "attribute"
+        },
+        "iconName": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "DEPRECATED: Icon name, use svg instead",
+          "x-kind": "property"
+        },
+        "iconRotateDegree": {
+          "type": "number",
+          "enum": null,
+          "default": 0,
+          "description": "iconRotateDegree is used for <cre8-icon> to set the arrow in the correct directi\u2026",
+          "x-kind": "property"
+        },
+        "iconFlipDirection": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "iconFlipDirection is used for <cre8-icon> to set the icon in the correct directi\u2026",
+          "x-kind": "property"
+        },
+        "iconPosition": {
+          "type": "string",
+          "enum": [
+            "before",
+            "after"
+          ],
+          "default": "undefined",
+          "description": "Icon position - **before** places the icon before the button text - **after** pl\u2026",
+          "x-kind": "property"
+        },
+        "ctaIcon": {
+          "type": "string",
+          "enum": null,
+          "default": "arrow-forward",
+          "description": "Call To Action Icon",
+          "x-kind": "property"
+        },
+        "ctaLink": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Call To Action Link",
+          "x-kind": "property"
+        },
+        "noUnderline": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Link with no underline",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "prop:cre8-link:target",
+      "type": "enum_prop",
+      "name": "target",
+      "component": "cre8-link",
+      "enum": [
+        "_blank",
+        "_self",
+        "_parent",
+        "_top"
+      ],
+      "description": "Target attribute for a link (i.e. set to _blank to open in new tab) - **_blank**\u2026"
+    },
+    {
+      "id": "prop:cre8-link:size",
+      "type": "enum_prop",
+      "name": "size",
+      "component": "cre8-link",
+      "enum": [
+        "sm",
+        "lg"
+      ],
+      "description": "Size variant (default is medium) - **sm** shrinks the link typography and overal\u2026"
+    },
+    {
+      "id": "prop:cre8-link:iconPosition",
+      "type": "enum_prop",
+      "name": "iconPosition",
+      "component": "cre8-link",
+      "enum": [
+        "before",
+        "after"
+      ],
+      "description": "Icon position - **before** places the icon before the button text - **after** pl\u2026"
+    },
+    {
+      "id": "cre8-link-list",
+      "type": "component",
+      "category": "Navigation",
+      "description": "Link List component.",
+      "props": {
+        "behavior": {
+          "type": "string",
+          "enum": [
+            "horizontal",
+            "responsive"
+          ],
+          "default": null,
+          "description": "Behavioral variant - **responsive** renders a horizontal wrapping link list that\u2026",
+          "x-kind": "attribute"
+        },
+        "inverted": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Inverted variant 1. Used for dark backgrounds",
+          "x-kind": "attribute"
+        },
+        "size": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Size variants - **sm** renders a link list with a smaller typography",
+          "x-kind": "attribute"
+        },
+        "spacing": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Spacing between link list items - **condensed** renders a link list with a more \u2026",
+          "x-kind": "attribute"
+        },
+        "variant": {
+          "type": "string",
+          "enum": [
+            "secondary",
+            "display"
+          ],
+          "default": null,
+          "description": "Style variants - **secondary** renders a link list with a more subtle visual tre\u2026",
+          "x-kind": "attribute"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "prop:cre8-link-list:behavior",
+      "type": "enum_prop",
+      "name": "behavior",
+      "component": "cre8-link-list",
+      "enum": [
+        "horizontal",
+        "responsive"
+      ],
+      "description": "Behavioral variant - **responsive** renders a horizontal wrapping link list that\u2026"
+    },
+    {
+      "id": "prop:cre8-link-list:variant",
+      "type": "enum_prop",
+      "name": "variant",
+      "component": "cre8-link-list",
+      "enum": [
+        "secondary",
+        "display"
+      ],
+      "description": "Style variants - **secondary** renders a link list with a more subtle visual tre\u2026"
+    },
+    {
+      "id": "cre8-link-list-item",
+      "type": "component",
+      "category": "Navigation",
+      "description": "Link List Item component.",
+      "props": {
+        "text": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The link text",
+          "x-kind": "attribute"
+        },
+        "href": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The link URL",
+          "x-kind": "attribute"
+        },
+        "isActive": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Active link",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-nav-container",
+      "type": "component",
+      "category": "Navigation",
+      "description": "Nav Container component.",
+      "props": {},
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-pagination",
+      "type": "component",
+      "category": "Navigation",
+      "description": "The Pagination component is used to split up a large amount of results by showing only a certain amount on each page. Yo\u2026",
+      "props": {
+        "display": {
+          "type": "string",
+          "enum": [
+            "compact",
+            "icon-only",
+            "default"
+          ],
+          "default": null,
+          "description": "(optional) prop that allows for a compact and icon-only variant both for mobile \u2026",
+          "x-kind": "attribute"
+        },
+        "totalResults": {
+          "type": "number",
+          "enum": null,
+          "default": null,
+          "description": "Input the total number of elements are returned from consuming app e.g. search r\u2026",
+          "x-kind": "property"
+        },
+        "pageSize": {
+          "type": "number",
+          "enum": null,
+          "default": null,
+          "description": "how many elements will displayVariant per page, indicated by business to typical\u2026",
+          "x-kind": "property"
+        },
+        "visiblePages": {
+          "type": "number",
+          "enum": null,
+          "default": 5,
+          "description": "Controls how many page buttons are displayVarianted on the page at once, if cont\u2026",
+          "x-kind": "property"
+        },
+        "hideLastAndFirstButtons": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "property"
+        },
+        "currentPage": {
+          "type": "number",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "property"
+        },
+        "elementDefinitions": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "property"
+        },
+        "windowWidth": {
+          "type": "number",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "property"
+        },
+        "buttons": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "property"
+        },
+        "maxVisiblePages": {
+          "type": "number",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "prop:cre8-pagination:display",
+      "type": "enum_prop",
+      "name": "display",
+      "component": "cre8-pagination",
+      "enum": [
+        "compact",
+        "icon-only",
+        "default"
+      ],
+      "description": "(optional) prop that allows for a compact and icon-only variant both for mobile \u2026"
+    },
+    {
+      "id": "cre8-primary-nav",
+      "type": "component",
+      "category": "Navigation",
+      "description": "Primary Nav component.",
+      "props": {
+        "inverted": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Inverted variant 1) Used for dark backgrounds",
+          "x-kind": "attribute"
+        },
+        "behavior": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Behavior variant <cre8-text-passage size=\"sm\"> <ul> <li>**side-by-side** keeps t\u2026",
+          "x-kind": "attribute"
+        },
+        "navAriaLabel": {
+          "type": "string",
+          "enum": null,
+          "default": "main",
+          "description": "aria-label attribute to designate at name for the nav. Can be override by user",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-primary-nav-item",
+      "type": "component",
+      "category": "Navigation",
+      "description": "Primary Nav Item component.",
+      "props": {
+        "text": {
+          "type": "string",
+          "enum": null,
+          "default": "Nav item",
+          "description": "Primary nav item text",
+          "x-kind": "attribute"
+        },
+        "href": {
+          "type": "string",
+          "enum": null,
+          "default": "#",
+          "description": "Primary nav item href",
+          "x-kind": "attribute"
+        },
+        "iconName": {
+          "type": "string",
+          "enum": null,
+          "default": "caret-down",
+          "description": "Icon name",
+          "x-kind": "property"
+        },
+        "megaMenu": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Append to the class name. Used for passing in utility classes",
+          "x-kind": "property"
+        },
+        "isActive": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Append to the class name. Used for passing in utility classes",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-tab",
+      "type": "component",
+      "category": "Navigation",
+      "description": "Tab component.",
+      "props": {
+        "size": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Tab sizes - **default** displays the tab text with cre8-typography-label-default\u2026",
+          "x-kind": "attribute"
+        },
+        "index": {
+          "type": "number",
+          "enum": null,
+          "default": null,
+          "description": "Used to align the tab with the tab panel _*This property is dynamically set_",
+          "x-kind": "attribute"
+        },
+        "isActive": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "If is true, tab has active state and cooresponding tab panel is visible. _*This \u2026",
+          "x-kind": "property"
+        },
+        "ariaLabelledBy": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Used to connect tab trigger and tab panel for accessibility _*This property is d\u2026",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-tab-panel",
+      "type": "component",
+      "category": "Navigation",
+      "description": "Tab Panel component.",
+      "props": {
+        "index": {
+          "type": "number",
+          "enum": null,
+          "default": null,
+          "description": "Used to align the tab panel with the tab <br/><br/> _*This property is dynamical\u2026",
+          "x-kind": "attribute"
+        },
+        "skipFocusOnPanel": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "This will remove focus on panel element",
+          "x-kind": "property"
+        },
+        "isActive": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Indicates if the panel is active <br/><br/> _*This property is dynamically set_",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-tabs",
+      "type": "component",
+      "category": "Navigation",
+      "description": "Tabs are used to quickly navigate back and forth between views. The Tab design and interaction varies depending on the r\u2026",
+      "props": {
+        "size": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Tab sizes - **default** displays the cre8-tab text with cre8-typography-label-de\u2026",
+          "x-kind": "attribute"
+        },
+        "fullWidth": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Displays a set of tabs with a spanning the width of the element",
+          "x-kind": "property"
+        },
+        "activeIndex": {
+          "type": "number",
+          "enum": null,
+          "default": 0,
+          "description": "Sets the initial active tab (e.g. 0 sets the first tab, 1 sets the second tab, e\u2026",
+          "x-kind": "property"
+        },
+        "isStart": {
+          "type": "boolean",
+          "enum": null,
+          "default": true,
+          "description": "If position from left is greater than 0, set isStart to false. Otherwise set isS\u2026",
+          "x-kind": "property"
+        },
+        "isEnd": {
+          "type": "boolean",
+          "enum": null,
+          "default": false,
+          "description": "If last child is fully in the viewport, set isEnd to true. Otherwise, set isEnd \u2026",
+          "x-kind": "property"
+        },
+        "activeTab": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The active tab _*This property is dynamically set_",
+          "x-kind": "property"
+        },
+        "isRTL": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Query the document direction value _*This property is dynamically set_",
+          "x-kind": "property"
+        },
+        "handleScroll": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "property"
+        },
+        "handleResize": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "property"
+        },
+        "setIsStart": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "property"
+        },
+        "setIsEnd": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "property"
+        },
+        "emitEvent": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "",
+          "x-kind": "property"
+        },
+        "tabId": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Auto Increment id to sync tab and tab panel _*This property is dynamically set_",
+          "x-kind": "property"
+        }
+      },
+      "slots": [
+        "default",
+        "panel"
+      ],
+      "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-tabs:default",
+      "type": "slot",
+      "name": "default",
+      "component": "cre8-tabs",
+      "description": "Default, unnamed slot container for each `cre8-tab` button"
+    },
+    {
+      "id": "slot:cre8-tabs:panel",
+      "type": "slot",
+      "name": "panel",
+      "component": "cre8-tabs",
+      "description": "Container for each `cre8-tab-panel` content item"
+    },
+    {
+      "id": "cre8-tertiary-nav",
+      "type": "component",
+      "category": "Navigation",
+      "description": "Tertiary Nav component.",
+      "props": {
+        "fullWidth": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Allows the tertiary nav to take up the full width of it parent container",
+          "x-kind": "property"
+        },
+        "navAriaLabel": {
+          "type": "string",
+          "enum": null,
+          "default": "tertiary",
+          "description": "aria-label attribute to designate at name for the nav. Can be override by user",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-tertiary-nav-item",
+      "type": "component",
+      "category": "Navigation",
+      "description": "Tertiary Nav Item component.",
+      "props": {
+        "href": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The href value of the tertiary nav link",
+          "x-kind": "attribute"
+        },
+        "isCurrent": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "The current state of the tertiary nav link",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-utility-nav",
+      "type": "component",
+      "category": "Navigation",
+      "description": "Utility Nav component.",
+      "props": {
+        "inverted": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Inverted variant 1) Used for dark backgrounds",
+          "x-kind": "attribute"
+        },
+        "navAriaLabel": {
+          "type": "string",
+          "enum": null,
+          "default": "utility",
+          "description": "aria-label attribute to designate at name for the nav. Can be override by user",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-utility-nav-item",
+      "type": "component",
+      "category": "Navigation",
+      "description": "Utility Nav Item component.",
+      "props": {
+        "href": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "URL of the utility nav item",
+          "x-kind": "attribute"
+        },
+        "text": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Text of the utility nav item",
+          "x-kind": "attribute"
+        },
+        "hideText": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Hide text toggle 1) Visually hides the text so screenreaders can still read for \u2026",
+          "x-kind": "property"
+        },
+        "iconName": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Icon name",
+          "x-kind": "property"
+        },
+        "iconPosition": {
+          "type": "string",
+          "enum": [
+            "before",
+            "after"
+          ],
+          "default": "undefined",
+          "description": "Icon position <cre8-text-passage size=\"sm\"> <ul> <li>**before** places the icon \u2026",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": false
+    },
+    {
+      "id": "prop:cre8-utility-nav-item:iconPosition",
+      "type": "enum_prop",
+      "name": "iconPosition",
+      "component": "cre8-utility-nav-item",
+      "enum": [
+        "before",
+        "after"
+      ],
+      "description": "Icon position <cre8-text-passage size=\"sm\"> <ul> <li>**before** places the icon \u2026"
+    },
+    {
+      "id": "cre8-progress-steps",
+      "type": "component",
+      "category": "Other",
+      "description": "The Progress Steps component is used to display where a user is in a multistep process. It clearly indicates the total n\u2026",
+      "props": {},
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "cre8-heading",
+      "type": "component",
+      "category": "Typography",
+      "description": "HTML headings are titles or subtitles that you want to display on a webpage. The H1 is the most important and H6 is the \u2026",
+      "props": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "display-default",
+            "display-small",
+            "headline-large",
+            "headline-default",
+            "headline-small",
+            "title-xlarge",
+            "title-large",
+            "title-default",
+            "title-small",
+            "label-large",
+            "label",
+            "label-small",
+            "meta-large",
+            "meta-default",
+            "meta-small"
+          ],
+          "default": null,
+          "description": "Heading type <cre8-text-passage size=\"small\"> <ul> <li>**display-default** rende\u2026",
+          "x-kind": "attribute"
+        },
+        "inverted": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Invert the color of the font from dark to light. An inverted `heading` should be\u2026",
+          "x-kind": "attribute"
+        },
+        "tagVariant": {
+          "type": "string",
+          "enum": null,
+          "default": "h5",
+          "description": "Dynamic tag name for the component 1) This is needed to use proper semantic head\u2026",
+          "x-kind": "property"
+        },
+        "brandColor": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Apply the brand color to the heading text.",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "prop:cre8-heading:type",
+      "type": "enum_prop",
+      "name": "type",
+      "component": "cre8-heading",
+      "enum": [
+        "display-default",
+        "display-small",
+        "headline-large",
+        "headline-default",
+        "headline-small",
+        "title-xlarge",
+        "title-large",
+        "title-default",
+        "title-small",
+        "label-large",
+        "label",
+        "label-small",
+        "meta-large",
+        "meta-default",
+        "meta-small"
+      ],
+      "description": "Heading type <cre8-text-passage size=\"small\"> <ul> <li>**display-default** rende\u2026"
+    },
+    {
+      "id": "cre8-text-link",
+      "type": "component",
+      "category": "Typography",
+      "description": "Text Link component.",
+      "props": {
+        "href": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The link URL",
+          "x-kind": "attribute"
+        },
+        "variant": {
+          "type": "string",
+          "enum": [
+            "secondary",
+            "display"
+          ],
+          "default": null,
+          "description": "Style variant <cre8-text-passage size=\"sm\"> <ul> <li> **display** applies displa\u2026",
+          "x-kind": "attribute"
+        },
+        "size": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Size variant <cre8-text-passage size=\"sm\"> <ul> <li> **sm** renders a smaller ty\u2026",
+          "x-kind": "attribute"
+        },
+        "inverted": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Inverted variant 1) Used for dark backgrounds",
+          "x-kind": "attribute"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "prop:cre8-text-link:variant",
+      "type": "enum_prop",
+      "name": "variant",
+      "component": "cre8-text-link",
+      "enum": [
+        "secondary",
+        "display"
+      ],
+      "description": "Style variant <cre8-text-passage size=\"sm\"> <ul> <li> **display** applies displa\u2026"
+    },
+    {
+      "id": "cre8-text-passage",
+      "type": "component",
+      "category": "Typography",
+      "description": "The text-passage component acts a general wrapper element for any text content that needs to be used in your project. # \u2026",
+      "props": {
+        "inverted": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Inverted variant 1) Used for dark backgrounds",
+          "x-kind": "attribute"
+        },
+        "size": {
+          "type": "string",
+          "enum": [
+            "large",
+            "small",
+            "default"
+          ],
+          "default": "default",
+          "description": "Size variant - **small** renders smaller typography than the default variant - *\u2026",
+          "x-kind": "attribute"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
+      "id": "prop:cre8-text-passage:size",
+      "type": "enum_prop",
+      "name": "size",
+      "component": "cre8-text-passage",
+      "enum": [
+        "large",
+        "small",
+        "default"
+      ],
+      "description": "Size variant - **small** renders smaller typography than the default variant - *\u2026"
+    }
+  ],
+  "edges": [
+    {
+      "from": "cre8-button",
+      "to": "cat:Actions",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-button",
+      "to": "prop:cre8-button:variant",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-button",
+      "to": "prop:cre8-button:target",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-button",
+      "to": "prop:cre8-button:size",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-button",
+      "to": "prop:cre8-button:type",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-button",
+      "to": "prop:cre8-button:iconPosition",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-button",
+      "to": "prop:cre8-button:ariaLive",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-button",
+      "to": "prop:cre8-button:splitButtonType",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-button-group",
+      "to": "cat:Actions",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-danger-button",
+      "to": "cat:Actions",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-danger-button",
+      "to": "prop:cre8-danger-button:variant",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-danger-button",
+      "to": "prop:cre8-danger-button:target",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-danger-button",
+      "to": "prop:cre8-danger-button:size",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-danger-button",
+      "to": "prop:cre8-danger-button:type",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-danger-button",
+      "to": "prop:cre8-danger-button:iconPosition",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-danger-button",
+      "to": "prop:cre8-danger-button:ariaLive",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-split-button",
+      "to": "cat:Actions",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-split-button",
+      "to": "prop:cre8-split-button:size",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-chart",
+      "to": "cat:Data",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-chart",
+      "to": "prop:cre8-chart:type",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-chart",
+      "to": "prop:cre8-chart:legend-position",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-list",
+      "to": "cat:Data",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-list",
+      "to": "prop:cre8-list:spacing",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-list-item",
+      "to": "cat:Data",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-remove-tag",
+      "to": "cat:Data",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-remove-tag",
+      "to": "prop:cre8-remove-tag:color",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-remove-tag",
+      "to": "prop:cre8-remove-tag:shape",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-table",
+      "to": "cat:Data",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-table-body",
+      "to": "cat:Data",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-table-cell",
+      "to": "cat:Data",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-table-header",
+      "to": "cat:Data",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-table-header-cell",
+      "to": "cat:Data",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-table-object",
+      "to": "cat:Data",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-table-row",
+      "to": "cat:Data",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-tag",
+      "to": "cat:Data",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-tag",
+      "to": "prop:cre8-tag:variant",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-tag",
+      "to": "prop:cre8-tag:shape",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-tag",
+      "to": "prop:cre8-tag:type",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-tag-list",
+      "to": "cat:Data",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-accordion",
+      "to": "cat:Disclosure",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-accordion",
+      "to": "prop:cre8-accordion:borderType",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-accordion-item",
+      "to": "cat:Disclosure",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-accordion-item",
+      "to": "prop:cre8-accordion-item:size",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-accordion-item",
+      "to": "prop:cre8-accordion-item:headingTagVariant",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-dropdown",
+      "to": "cat:Disclosure",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-dropdown-item",
+      "to": "cat:Disclosure",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-modal",
+      "to": "cat:Disclosure",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-modal",
+      "to": "prop:cre8-modal:status",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-popover",
+      "to": "cat:Disclosure",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-submenu",
+      "to": "cat:Disclosure",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-submenu-item",
+      "to": "cat:Disclosure",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-tooltip",
+      "to": "cat:Disclosure",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-tooltip",
+      "to": "slot:cre8-tooltip:default",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-tooltip",
+      "to": "slot:cre8-tooltip:trigger",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-tooltip",
+      "to": "prop:cre8-tooltip:position",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-alert",
+      "to": "cat:Feedback",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-alert",
+      "to": "prop:cre8-alert:status",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-alert",
+      "to": "prop:cre8-alert:variant",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-alert",
+      "to": "prop:cre8-alert:emphasis",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-badge",
+      "to": "cat:Feedback",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-inline-alert",
+      "to": "cat:Feedback",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-inline-alert",
+      "to": "prop:cre8-inline-alert:variant",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-inline-alert",
+      "to": "prop:cre8-inline-alert:status",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-loading-spinner",
+      "to": "cat:Feedback",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-loading-spinner",
+      "to": "prop:cre8-loading-spinner:size",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-loading-spinner",
+      "to": "prop:cre8-loading-spinner:buttonVariant",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-percent-bar",
+      "to": "cat:Feedback",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-progress-meter",
+      "to": "cat:Feedback",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-progress-meter",
+      "to": "prop:cre8-progress-meter:status",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-progress-steps-item",
+      "to": "cat:Feedback",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-skeleton-loader",
+      "to": "cat:Feedback",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-skeleton-loader",
+      "to": "prop:cre8-skeleton-loader:variant",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-checkbox-field",
+      "to": "cat:Forms",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-checkbox-field-item",
+      "to": "cat:Forms",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-date-picker",
+      "to": "cat:Forms",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-date-picker",
+      "to": "prop:cre8-date-picker:ariaLive",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-field",
+      "to": "cat:Forms",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-field",
+      "to": "prop:cre8-field:ariaLive",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-field-note",
+      "to": "cat:Forms",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-multi-select",
+      "to": "cat:Forms",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-radio-field",
+      "to": "cat:Forms",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-radio-field-item",
+      "to": "cat:Forms",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-select",
+      "to": "cat:Forms",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-select",
+      "to": "slot:cre8-select:fieldNote",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-select-tile",
+      "to": "cat:Forms",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-select-tile",
+      "to": "slot:cre8-select-tile:default",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-select-tile",
+      "to": "slot:cre8-select-tile:header",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-select-tile",
+      "to": "slot:cre8-select-tile:footer",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-select-tile",
+      "to": "slot:cre8-select-tile:title",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-select-tile",
+      "to": "slot:cre8-select-tile:body",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-select-tile",
+      "to": "prop:cre8-select-tile:variant",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-select-tile",
+      "to": "prop:cre8-select-tile:type",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-select-tile",
+      "to": "prop:cre8-select-tile:variantBreakToVertical",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-select-tile",
+      "to": "prop:cre8-select-tile:checkPosition",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-select-tile",
+      "to": "prop:cre8-select-tile:radioVariant",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-select-tile-list",
+      "to": "cat:Forms",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-select-tile-list",
+      "to": "prop:cre8-select-tile-list:variant",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-band",
+      "to": "cat:Layout",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-card",
+      "to": "cat:Layout",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-card",
+      "to": "slot:cre8-card:default",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-card",
+      "to": "slot:cre8-card:header",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-card",
+      "to": "slot:cre8-card:footer",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-card",
+      "to": "prop:cre8-card:variant",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-divider",
+      "to": "cat:Layout",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-divider",
+      "to": "prop:cre8-divider:variant",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-grid",
+      "to": "cat:Layout",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-grid",
+      "to": "prop:cre8-grid:variant",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-grid",
+      "to": "prop:cre8-grid:gap",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-grid",
+      "to": "prop:cre8-grid:break",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-grid-item",
+      "to": "cat:Layout",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-hero",
+      "to": "cat:Layout",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-hero",
+      "to": "prop:cre8-hero:align",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-layout",
+      "to": "cat:Layout",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-layout-container",
+      "to": "cat:Layout",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-layout-section",
+      "to": "cat:Layout",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-linelength-container",
+      "to": "cat:Layout",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-main",
+      "to": "cat:Layout",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-section",
+      "to": "cat:Layout",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-feature",
+      "to": "cat:Marketing",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-page-header",
+      "to": "cat:Marketing",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-icon",
+      "to": "cat:Media",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-logo",
+      "to": "cat:Media",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-breadcrumbs",
+      "to": "cat:Navigation",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-breadcrumbs-item",
+      "to": "cat:Navigation",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-footer",
+      "to": "cat:Navigation",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-footer",
+      "to": "slot:cre8-footer:default",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-footer",
+      "to": "slot:cre8-footer:top",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-footer",
+      "to": "slot:cre8-footer:bottom",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-global-nav",
+      "to": "cat:Navigation",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-global-nav-item",
+      "to": "cat:Navigation",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-header",
+      "to": "cat:Navigation",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-link",
+      "to": "cat:Navigation",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-link",
+      "to": "prop:cre8-link:target",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-link",
+      "to": "prop:cre8-link:size",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-link",
+      "to": "prop:cre8-link:iconPosition",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-link-list",
+      "to": "cat:Navigation",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-link-list",
+      "to": "prop:cre8-link-list:behavior",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-link-list",
+      "to": "prop:cre8-link-list:variant",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-link-list-item",
+      "to": "cat:Navigation",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-nav-container",
+      "to": "cat:Navigation",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-pagination",
+      "to": "cat:Navigation",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-pagination",
+      "to": "prop:cre8-pagination:display",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-primary-nav",
+      "to": "cat:Navigation",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-primary-nav-item",
+      "to": "cat:Navigation",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-tab",
+      "to": "cat:Navigation",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-tab-panel",
+      "to": "cat:Navigation",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-tabs",
+      "to": "cat:Navigation",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-tabs",
+      "to": "slot:cre8-tabs:default",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-tabs",
+      "to": "slot:cre8-tabs:panel",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-tertiary-nav",
+      "to": "cat:Navigation",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-tertiary-nav-item",
+      "to": "cat:Navigation",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-utility-nav",
+      "to": "cat:Navigation",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-utility-nav-item",
+      "to": "cat:Navigation",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-utility-nav-item",
+      "to": "prop:cre8-utility-nav-item:iconPosition",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-progress-steps",
+      "to": "cat:Other",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-heading",
+      "to": "cat:Typography",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-heading",
+      "to": "prop:cre8-heading:type",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-text-link",
+      "to": "cat:Typography",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-text-link",
+      "to": "prop:cre8-text-link:variant",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-text-passage",
+      "to": "cat:Typography",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-text-passage",
+      "to": "prop:cre8-text-passage:size",
+      "rel": "HAS_ENUM_PROP"
+    }
+  ]
+}

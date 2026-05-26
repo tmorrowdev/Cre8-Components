@@ -7,6 +7,24 @@
 import { readFileSync } from 'fs';
 import { createRequire } from 'module';
 import { registerCatalog, validateSpec, } from '@tmorrow/cre8-wc/a2ui/index.js';
+let _kgCache = null;
+function loadKG() {
+    if (_kgCache)
+        return _kgCache;
+    const req = createRequire(import.meta.url);
+    const kgPath = req.resolve('@tmorrow/cre8-wc/a2ui/catalog-kg.json');
+    const kg = JSON.parse(readFileSync(kgPath, 'utf-8'));
+    const nodesById = new Map(kg.nodes.map((n) => [n.id, n]));
+    const components = new Map(kg.nodes.filter((n) => n.type === 'component').map((n) => [n.id, n]));
+    const edgesFrom = new Map();
+    for (const edge of kg.edges) {
+        if (!edgesFrom.has(edge.from))
+            edgesFrom.set(edge.from, []);
+        edgesFrom.get(edge.from).push(edge);
+    }
+    _kgCache = { components, nodesById, edgesFrom };
+    return _kgCache;
+}
 // Cache for catalogs
 const catalogs = {
     web: null,
@@ -25,88 +43,68 @@ function loadCatalog(format = 'web') {
     return catalogs[format];
 }
 /**
- * list_components - Lists all available Cre8 components
+ * list_components - Lists all available Cre8 components (KG-backed)
  */
 export function handleListComponents(input) {
-    const format = input.format || 'web';
-    const cat = loadCatalog(format);
-    let components = cat.components;
+    const { components } = loadKG();
+    let comps = Array.from(components.values());
     if (input.category) {
-        components = components.filter((c) => c.category.toLowerCase() === input.category.toLowerCase());
+        comps = comps.filter((c) => (c.category ?? '').toLowerCase() === input.category.toLowerCase());
     }
-    // Group by category
     const grouped = {};
-    for (const comp of components) {
-        if (!grouped[comp.category]) {
-            grouped[comp.category] = [];
-        }
-        grouped[comp.category].push({
-            name: comp.name,
-            description: comp.description,
+    for (const comp of comps) {
+        const cat = comp.category ?? 'Other';
+        if (!grouped[cat])
+            grouped[cat] = [];
+        grouped[cat].push({
+            name: comp.id,
+            description: (comp.description ?? '').slice(0, 160),
         });
     }
-    const result = {
-        format,
-        library: cat.library,
-        version: cat.version,
-        categories: Object.entries(grouped).map(([category, comps]) => ({
-            category,
-            components: comps,
-        })),
-        totalComponents: components.length,
-    };
-    return JSON.stringify(result, null, 2);
+    return JSON.stringify({
+        format: input.format ?? 'web',
+        library: '@tmorrow/cre8-wc',
+        categories: Object.entries(grouped).map(([category, items]) => ({ category, components: items })),
+        totalComponents: comps.length,
+    }, null, 2);
 }
 /**
- * get_component - Gets detailed info for a specific component
+ * get_component - Gets detailed info for a specific component (KG-backed)
  */
 export function handleGetComponent(input) {
-    const format = input.format || 'web';
-    const cat = loadCatalog(format);
-    // Normalize search name (handle both cre8-button and Cre8Button formats)
-    const searchName = input.name.toLowerCase()
-        .replace(/^cre8-?/, '') // Remove cre8- or cre8 prefix
-        .replace(/-/g, ''); // Remove hyphens for comparison
-    const component = cat.components.find((c) => {
-        const compName = c.name.toLowerCase()
-            .replace(/^cre8-?/, '')
-            .replace(/-/g, '');
-        return compName === searchName || c.name.toLowerCase() === input.name.toLowerCase();
-    });
-    if (!component) {
+    const { components, edgesFrom, nodesById } = loadKG();
+    const searchName = input.name.toLowerCase().replace(/^cre8-?/, '').replace(/-/g, '');
+    let comp = components.get(input.name.toLowerCase()) ??
+        components.get(`cre8-${input.name.toLowerCase()}`);
+    if (!comp) {
+        comp = Array.from(components.values()).find((c) => {
+            const cn = c.id.toLowerCase().replace(/^cre8-/, '').replace(/-/g, '');
+            return cn === searchName;
+        });
+    }
+    if (!comp) {
         return JSON.stringify({
             error: `Component "${input.name}" not found`,
             suggestion: 'Use list_components to see available components',
         });
     }
-    // Return format-specific details
-    if (format === 'react') {
-        const reactComp = component;
-        return JSON.stringify({
-            format,
-            name: reactComp.name,
-            category: reactComp.category,
-            description: reactComp.description,
-            import: `import { ${reactComp.name} } from '@tmorrow/cre8-react';`,
-            props: reactComp.props || {},
-            examples: reactComp.examples || [],
-        }, null, 2);
-    }
-    // Web component format
-    const webComp = component;
+    const edges = edgesFrom.get(comp.id) ?? [];
+    const slots = edges
+        .filter((e) => e.rel === 'HAS_SLOT')
+        .map((e) => nodesById.get(e.to))
+        .filter(Boolean)
+        .map((s) => ({ name: s.name, description: s.description ?? '' }));
+    const shortName = comp.id.replace('cre8-', '');
     return JSON.stringify({
-        format,
-        name: webComp.name,
-        tagName: webComp.name,
-        category: webComp.category,
-        description: webComp.description,
-        import: `import '@tmorrow/cre8-wc/lib/components/${webComp.name.replace('cre8-', '')}/${webComp.name.replace('cre8-', '')}.js';`,
-        attributes: webComp.attributes || {},
-        properties: webComp.properties || {},
-        slots: webComp.slots || {},
-        events: webComp.events || {},
-        cssProperties: webComp.cssProperties || {},
-        examples: webComp.examples || [],
+        format: input.format ?? 'web',
+        name: comp.id,
+        tagName: comp.id,
+        category: comp.category ?? 'Other',
+        description: comp.description ?? '',
+        import: `import '@tmorrow/cre8-wc/lib/components/${shortName}/${shortName}.js';`,
+        props: comp.props ?? {},
+        slots,
+        accepts_children: comp.accepts_children ?? false,
     }, null, 2);
 }
 /**
@@ -134,29 +132,28 @@ export function handleGetPatterns(input) {
     }, null, 2);
 }
 /**
- * search_components - Search components by name or description
+ * search_components - Search components by name, description, or category (KG-backed)
  */
 export function handleSearchComponents(input) {
-    const format = input.format || 'web';
-    const cat = loadCatalog(format);
+    const { components } = loadKG();
     const query = input.query.toLowerCase();
-    const matches = cat.components.filter((c) => c.name.toLowerCase().includes(query) ||
-        c.description.toLowerCase().includes(query) ||
-        c.category.toLowerCase().includes(query));
+    const matches = Array.from(components.values()).filter((c) => c.id.toLowerCase().includes(query) ||
+        (c.description ?? '').toLowerCase().includes(query) ||
+        (c.category ?? '').toLowerCase().includes(query));
     if (matches.length === 0) {
         return JSON.stringify({
-            format,
+            format: input.format ?? 'web',
             message: `No components found matching "${input.query}"`,
             suggestion: 'Try a broader search term or use list_components',
         });
     }
     return JSON.stringify({
-        format,
+        format: input.format ?? 'web',
         query: input.query,
         results: matches.map((c) => ({
-            name: c.name,
-            category: c.category,
-            description: c.description,
+            name: c.id,
+            category: c.category ?? 'Other',
+            description: (c.description ?? '').slice(0, 160),
         })),
         count: matches.length,
     }, null, 2);
