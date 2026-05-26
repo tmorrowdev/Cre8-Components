@@ -530,4 +530,123 @@ body > div:first-child {
   text-align: center;
   padding: 32px;
 }
+/* ── Data Agent ──────────────────────────────────────────────────────────── */
+.da-canvas-panel {
+  overflow-y: auto;
+  padding: 20px;
+  background: var(--cre8-color-bg-subtle);
+  display: flex;
+  flex-direction: column;
+}
+
+.da-canvas-panel-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.da-canvas-panel-caption {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.65;
+}
+
+.da-canvas-inline {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.da-canvas-caption {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.da-composer-toolbar {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.da-data-toggle {
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--cre8-color-border-subtle);
+  background: transparent;
+  color: var(--cre8-color-text-secondary);
+  cursor: pointer;
+}
+
+.da-data-toggle--active,
+.da-data-toggle:hover {
+  background: var(--cre8-color-bg-subtle);
+}
+
+.da-data-toggle--loaded {
+  border-color: var(--cre8-color-action-primary);
+  color: var(--cre8-color-action-primary);
+}
+
+.da-data-panel {
+  border: 1px solid var(--cre8-color-border-subtle);
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 8px;
+  background: var(--cre8-color-bg-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.da-data-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+.da-data-panel-header .da-data-clear {
+  margin-left: auto;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--cre8-color-border-subtle);
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.da-data-textarea {
+  width: 100%;
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  resize: vertical;
+  border: 1px solid var(--cre8-color-border-subtle);
+  border-radius: 6px;
+  padding: 6px 8px;
+  background: var(--cre8-color-bg);
+  box-sizing: border-box;
+}
+
+.da-data-error {
+  margin: 0;
+  font-size: 11px;
+  color: var(--cre8-color-feedback-error);
+}
+
+.da-data-badge {
+  margin: 0;
+  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 8px;
+  background: var(--cre8-color-action-primary);
+  color: #fff;
+  display: inline-block;
+}
 /* ─────────────────────────────────────────────────────────────────────────── */
