@@ -49,3 +49,10 @@ def test_build_agent_prompt_ui_event_detail_is_untrusted():
     )
     assert "<ui_event>" in out
     assert "</ui_event>" in out
+
+
+def test_system_prompt_documents_event_handlers():
+    from cre8_data_agent.system_prompt import SYSTEM_PROMPT
+    assert "local:sort" in SYSTEM_PROMPT
+    assert "agent:" in SYSTEM_PROMPT
+    assert "events" in SYSTEM_PROMPT
