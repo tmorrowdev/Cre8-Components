@@ -1,8 +1,15 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { ComponentSpec } from "@tmorrow/cre8-wc/a2ui";
+import type { ComponentSpec, EmittedEvent } from "@tmorrow/cre8-wc/a2ui";
 import { A2uiCanvas } from "./a2ui-canvas";
+import {
+  classifyHandler,
+  buildUiEvent,
+  sortRows,
+  type SortDir,
+  type UiEventPayload,
+} from "@/lib/ui-events";
 
 const DATA_AGENT_URL =
   process.env.NEXT_PUBLIC_DATA_AGENT_URL ?? "http://localhost:8002";
@@ -54,7 +61,9 @@ export default function DataAgent() {
   const [dataText, setDataText] = useState("");
   const [dataError, setDataError] = useState("");
   const [showDataPanel, setShowDataPanel] = useState(false);
+  const [sessionData, setSessionData] = useState<Record<string, unknown>[] | null>(null);
   const threadRef = useRef<HTMLDivElement>(null);
+  const sortDirRef = useRef<Record<string, SortDir>>({});
 
   useEffect(() => {
     const el = threadRef.current;
@@ -71,7 +80,11 @@ export default function DataAgent() {
     });
   }, []);
 
-  const sendMessage = useCallback(async (text: string, data: Record<string, unknown>[] | null) => {
+  const sendMessage = useCallback(async (
+    text: string,
+    data: Record<string, unknown>[] | null,
+    uiEvent?: UiEventPayload,
+  ) => {
     const userTurn: Turn = { role: "user", text, dataRows: data?.length };
     const assistantTurn: Turn = { role: "assistant", blocks: [] };
     setTurns((prev) => [...prev, userTurn, assistantTurn]);
@@ -85,7 +98,7 @@ export default function DataAgent() {
       const res = await fetch(`${DATA_AGENT_URL}/api/chat`, {
         method: "POST",
         headers,
-        body: JSON.stringify({ prompt: text, data: data ?? undefined }),
+        body: JSON.stringify({ prompt: text, data: data ?? undefined, ui_event: uiEvent }),
       });
       if (!res.ok || !res.body) throw new Error(`HTTP ${res.status}`);
 
@@ -168,6 +181,73 @@ export default function DataAgent() {
     }
   }, [pushBlock]);
 
+  // Best-effort local sort: reorders a rendered cre8-chart's data by its first
+  // dataset, toggling direction per element. Returns false when the spec shape
+  // is not something we can reorder safely (caller then escalates to the agent).
+  const applyLocalSort = useCallback((evt: EmittedEvent): boolean => {
+    const spec = latestSpec;
+    if (!spec || spec.component !== "cre8-chart") return false;
+
+    const props = (spec.props ?? {}) as Record<string, unknown>;
+    const data = props.data as
+      | { labels?: unknown[]; datasets?: Array<Record<string, unknown>> }
+      | undefined;
+    const labels = data?.labels;
+    const datasets = data?.datasets;
+    if (!Array.isArray(labels) || !Array.isArray(datasets) || datasets.length === 0) return false;
+    const first = datasets[0]?.data;
+    if (!Array.isArray(first)) return false;
+
+    const dir: SortDir = sortDirRef.current[evt.path] === "asc" ? "desc" : "asc";
+    sortDirRef.current[evt.path] = dir;
+
+    // Sort an index permutation by the first dataset's value, then reorder all
+    // labels and datasets by that permutation so series stay aligned.
+    const indexed = labels.map((_, i) => ({ i, value: (first as unknown[])[i] }));
+    const order = sortRows(indexed as Record<string, unknown>[], "value", dir).map(
+      (r) => r.i as number,
+    );
+
+    const newData = {
+      ...data,
+      labels: order.map((i) => (labels as unknown[])[i]),
+      datasets: datasets.map((d) => ({
+        ...d,
+        data: Array.isArray(d.data) ? order.map((i) => (d.data as unknown[])[i]) : d.data,
+      })),
+    };
+    const newSpec: ComponentSpec = { ...spec, props: { ...props, data: newData } };
+
+    setLatestSpec(newSpec);
+    setTurns((prev) => {
+      for (let i = prev.length - 1; i >= 0; i--) {
+        const turn = prev[i];
+        if (turn.role !== "assistant") continue;
+        const bi = turn.blocks.map((b) => b.kind).lastIndexOf("ui");
+        if (bi === -1) continue;
+        const blocks = turn.blocks.slice();
+        const old = blocks[bi] as UiBlock;
+        blocks[bi] = { ...old, spec: newSpec };
+        const copy = prev.slice();
+        copy[i] = { role: "assistant", blocks };
+        return copy;
+      }
+      return prev;
+    });
+    return true;
+  }, [latestSpec]);
+
+  const handleCanvasEvent = useCallback((evt: EmittedEvent) => {
+    const cls = classifyHandler(evt.handler);
+    if (cls.kind === "local" && cls.action === "sort") {
+      if (applyLocalSort(evt)) return;
+      // Could not sort locally — fall through to the agent.
+    }
+    const payload = buildUiEvent(evt);
+    const label = `(${payload.intent} on ${payload.component})`;
+    void sendMessage(label, sessionData, payload);
+  }, [applyLocalSort, sendMessage, sessionData]);
+
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const v = input.trim();
@@ -183,6 +263,7 @@ export default function DataAgent() {
       parsedData = result.rows!;
     }
 
+    if (parsedData) setSessionData(parsedData);
     setInput("");
     void sendMessage(v, parsedData);
   };
@@ -236,7 +317,7 @@ export default function DataAgent() {
                         {block.caption && (
                           <p className="da-canvas-caption">{block.caption}</p>
                         )}
-                        <A2uiCanvas spec={block.spec} onEvent={() => {}} />
+                        <A2uiCanvas spec={block.spec} onEvent={handleCanvasEvent} />
                       </div>
                     );
                   }
@@ -326,7 +407,7 @@ export default function DataAgent() {
         {latestSpec ? (
           <div className="da-canvas-panel-inner">
             {latestCaption && <p className="da-canvas-panel-caption">{latestCaption}</p>}
-            <A2uiCanvas spec={latestSpec} onEvent={() => {}} />
+            <A2uiCanvas spec={latestSpec} onEvent={handleCanvasEvent} />
           </div>
         ) : (
           <div className="stack-preview-placeholder">
