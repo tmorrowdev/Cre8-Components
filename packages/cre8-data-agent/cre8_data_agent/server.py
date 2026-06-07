@@ -27,6 +27,7 @@ logger = logging.getLogger(__name__)
 
 MAX_DATA_ROWS = 100
 MAX_PROMPT_CHARS = 4_000
+MAX_UI_EVENT_CHARS = 4_000
 
 ALLOWED_ORIGINS = [o.strip() for o in os.getenv("CORS_ORIGINS", "http://localhost:3000").split(",")]
 API_TOKEN = os.getenv("API_TOKEN", "")
@@ -51,8 +52,9 @@ SSE_HEADERS = {
 
 
 class ChatRequest(BaseModel):
-    prompt: str
+    prompt: str = ""
     data: list[dict] | None = None
+    ui_event: dict | None = None
 
     @field_validator("prompt")
     @classmethod
@@ -81,12 +83,29 @@ def sse(event: str, data: dict) -> str:
     return f"event: {event}\ndata: {json.dumps(data)}\n\n"
 
 
-async def _stream_chat(prompt: str, data: list[dict] | None):
-    full_prompt = prompt
-    if data:
-        full_prompt += (
-            f"\n\n<untrusted_data>\n{json.dumps(data)}\n</untrusted_data>"
+def build_agent_prompt(
+    prompt: str, data: list[dict] | None, ui_event: dict | None
+) -> str:
+    parts: list[str] = []
+    if prompt:
+        parts.append(prompt)
+    if ui_event:
+        intent = str(ui_event.get("intent", "interaction"))
+        component = str(ui_event.get("component", "unknown"))
+        detail_json = json.dumps(ui_event.get("detail"))[:MAX_UI_EVENT_CHARS]
+        parts.append(
+            "The user interacted with a rendered UI element. "
+            f"Intent: {intent}. Component: {component}. "
+            "Respond by rendering updated UI or a concise answer.\n"
+            f"<ui_event>\n{detail_json}\n</ui_event>"
         )
+    if data:
+        parts.append(f"<untrusted_data>\n{json.dumps(data)}\n</untrusted_data>")
+    return "\n\n".join(parts)
+
+
+async def _stream_chat(prompt: str, data: list[dict] | None, ui_event: dict | None = None):
+    full_prompt = build_agent_prompt(prompt, data, ui_event)
 
     options = get_options()
     try:
@@ -126,8 +145,10 @@ async def _stream_chat(prompt: str, data: list[dict] | None):
 @limiter.limit("10/minute")
 async def chat(request: Request, req: ChatRequest) -> StreamingResponse:
     _check_auth(request)
+    if not req.prompt and not req.ui_event:
+        raise HTTPException(status_code=422, detail="prompt or ui_event required")
     return StreamingResponse(
-        _stream_chat(req.prompt, req.data),
+        _stream_chat(req.prompt, req.data, req.ui_event),
         media_type="text/event-stream",
         headers=SSE_HEADERS,
     )
