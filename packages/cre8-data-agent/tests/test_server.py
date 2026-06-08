@@ -56,3 +56,19 @@ def test_system_prompt_documents_event_handlers():
     assert "local:sort" in SYSTEM_PROMPT
     assert "agent:" in SYSTEM_PROMPT
     assert "events" in SYSTEM_PROMPT
+
+
+def test_explore_request_model():
+    from cre8_data_agent.server import ExploreRequest
+    req = ExploreRequest(dataset="ecommerce", action="overview")
+    assert req.dataset == "ecommerce"
+    assert req.action == "overview"
+    assert req.context is None
+
+
+def test_explore_request_rejects_unknown_dataset():
+    import pytest
+    from pydantic import ValidationError
+    from cre8_data_agent.server import ExploreRequest
+    with pytest.raises(ValidationError):
+        ExploreRequest(dataset="nope", action="overview")

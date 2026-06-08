@@ -22,6 +22,8 @@ from claude_agent_sdk import (
     SystemMessage,
 )
 from .agent import get_options
+from .data_access import list_datasets as _list_datasets
+from .explore import build_explore_prompt, build_report_prompt
 
 logger = logging.getLogger(__name__)
 
@@ -68,6 +70,24 @@ class ChatRequest(BaseModel):
     def data_row_limit(cls, v: list[dict] | None) -> list[dict] | None:
         if v and len(v) > MAX_DATA_ROWS:
             raise ValueError(f"data exceeds {MAX_DATA_ROWS} rows")
+        return v
+
+
+def _known_datasets() -> set[str]:
+    return {d["id"] for d in _list_datasets()["datasets"]}
+
+
+class ExploreRequest(BaseModel):
+    dataset: str
+    action: str
+    detail: dict | None = None
+    context: dict | None = None
+
+    @field_validator("dataset")
+    @classmethod
+    def dataset_known(cls, v: str) -> str:
+        if v not in _known_datasets():
+            raise ValueError(f"unknown dataset: {v}")
         return v
 
 
@@ -141,6 +161,25 @@ async def _stream_chat(prompt: str, data: list[dict] | None, ui_event: dict | No
         yield sse("error", {"message": "An internal error occurred."})
 
 
+async def _stream_explore(prompt: str, mode: str = "explore"):
+    options = get_options(mode=mode)
+    try:
+        async for message in query(prompt=prompt, options=options):
+            if isinstance(message, SystemMessage) and getattr(message, "subtype", None) == "init":
+                yield sse("agent_start", {"agent": "ExploreAgent"})
+            elif isinstance(message, AssistantMessage):
+                for block in message.content:
+                    if isinstance(block, ToolUseBlock) and block.name == "mcp__data-tools__render_ui":
+                        spec_input = block.input or {}
+                        yield sse("ui_ready", {"spec": spec_input.get("spec"), "caption": spec_input.get("caption", "")})
+            elif isinstance(message, ResultMessage):
+                yield sse("done", {"stop_reason": message.stop_reason, "is_error": message.is_error,
+                                   "cost_usd": getattr(message, "total_cost_usd", None)})
+    except Exception:
+        logger.exception("Explore stream error")
+        yield sse("error", {"message": "An internal error occurred."})
+
+
 @app.post("/api/chat")
 @limiter.limit("10/minute")
 async def chat(request: Request, req: ChatRequest) -> StreamingResponse:
@@ -152,6 +191,23 @@ async def chat(request: Request, req: ChatRequest) -> StreamingResponse:
         media_type="text/event-stream",
         headers=SSE_HEADERS,
     )
+
+
+@app.post("/api/explore")
+@limiter.limit("30/minute")
+async def explore(request: Request, req: ExploreRequest) -> StreamingResponse:
+    _check_auth(request)
+    prompt = build_explore_prompt(req.dataset, req.action, req.detail, req.context)
+    return StreamingResponse(_stream_explore(prompt, "explore"), media_type="text/event-stream", headers=SSE_HEADERS)
+
+
+@app.post("/api/report")
+@limiter.limit("10/minute")
+async def report(request: Request, req: ExploreRequest) -> StreamingResponse:
+    _check_auth(request)
+    flagged = (req.context or {}).get("flagged", []) if req.context else []
+    prompt = build_report_prompt(req.dataset, flagged)
+    return StreamingResponse(_stream_explore(prompt, "explore"), media_type="text/event-stream", headers=SSE_HEADERS)
 
 
 @app.get("/health")
