@@ -57,3 +57,19 @@ def test_get_explore_options_uses_dataset_tools():
     tools = opts.allowed_tools
     assert "mcp__data-tools__query_dataset" in tools
     assert "mcp__data-tools__list_datasets" in tools
+
+
+def test_report_system_prompt_allows_multisection():
+    from cre8_data_agent.explore_prompt import REPORT_SYSTEM_PROMPT as P
+    # Report mode must NOT carry the "exactly one visualization" exploration constraint.
+    assert "EXACTLY ONE focused visualization" not in P
+    assert "render_ui" in P
+    assert "report" in P.lower()
+
+
+def test_get_report_options_distinct_from_explore():
+    from cre8_data_agent.agent import get_options
+    r = get_options(mode="report")
+    e = get_options(mode="explore")
+    assert r.system_prompt != e.system_prompt
+    assert "mcp__data-tools__query_dataset" in r.allowed_tools
