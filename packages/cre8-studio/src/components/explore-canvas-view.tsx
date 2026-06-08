@@ -69,6 +69,16 @@ export default function ExploreCanvasView({ dataset }: { dataset: string }) {
   const sortDirRef = useRef<Record<string, SortDir>>({});
   const didInit = useRef(false);
 
+  // Mirror the latest panels/path into refs so event handlers (whose onEvent
+  // is captured in a ref by ExploreIframe and not re-subscribed) read fresh
+  // state for dedupe decisions and request context.
+  const panelsRef = useRef(panels);
+  const pathRef = useRef(path);
+  useEffect(() => {
+    panelsRef.current = panels;
+    pathRef.current = path;
+  });
+
   // Mark a panel ready (or error) by id.
   const resolvePanel = useCallback(
     (id: string, spec: ComponentSpec, caption: string) => {
@@ -174,40 +184,48 @@ export default function ExploreCanvasView({ dataset }: { dataset: string }) {
       const intent = cls.kind === "agent" ? cls.intent : evt.handler;
       const detail = evt.detail;
 
-      // Dedupe via the tested reducer: if the panel already exists, addPanel
-      // returns the same array reference and we skip the fetch.
-      const id = nextId();
-      let added = false;
-      setPanels((prev) => {
-        const next = addPanel(prev, {
-          id,
-          title: intent,
-          spec: {} as ComponentSpec,
-          status: "loading",
-          flagged: false,
-          action: intent,
-          detail,
-        });
-        added = next !== prev;
-        return next;
+      // Dedupe via the tested reducer against the freshest panels (panelsRef):
+      // if the panel already exists, addPanel returns the same array reference
+      // and we skip both the id allocation and the fetch.
+      const prevPanels = panelsRef.current;
+      const probe = addPanel(prevPanels, {
+        id: "__probe__",
+        title: intent,
+        spec: {} as ComponentSpec,
+        status: "loading",
+        flagged: false,
+        action: intent,
+        detail,
       });
+      if (probe === prevPanels) return; // dedupe hit — skip fetch (no id burned)
 
-      if (!added) return;
-
-      setPath((prev) => [...prev, `${intent}:${JSON.stringify(detail)}`]);
+      const id = nextId();
+      const newPanel: Panel = {
+        id,
+        title: intent,
+        spec: {} as ComponentSpec,
+        status: "loading",
+        flagged: false,
+        action: intent,
+        detail,
+      };
+      const newPath = [...pathRef.current, `${intent}:${JSON.stringify(detail)}`];
+      setPanels((prev) => addPanel(prev, newPanel));
+      setPath(newPath);
       setLoading(true);
-      // buildExploreRequest reads the current panels/path closure; that's fine
-      // for context (flagged + path) — the new loading panel is unflagged.
+      // Build the request from the FRESH arrays: panelsRef.current is the
+      // pre-append set (what's already on canvas, with current flags), and
+      // newPath includes this new entry.
       streamSpec(
         `${DATA_AGENT_URL}/api/explore`,
-        buildExploreRequest(dataset, intent, detail, panels, path),
+        buildExploreRequest(dataset, intent, detail, prevPanels, newPath),
         authHeaders(),
         (spec, caption) => resolvePanel(id, spec, caption),
       )
         .catch(() => errorPanel(id))
         .finally(() => setLoading(false));
     },
-    [applyLocalSort, dataset, nextId, panels, path, resolvePanel, errorPanel],
+    [applyLocalSort, dataset, nextId, resolvePanel, errorPanel],
   );
 
   const removePanel = useCallback((id: string) => {
@@ -249,6 +267,7 @@ export default function ExploreCanvasView({ dataset }: { dataset: string }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ spec: reportSpec, dataset }),
       });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const blob = await res.blob();
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
@@ -258,6 +277,8 @@ export default function ExploreCanvasView({ dataset }: { dataset: string }) {
       a.click();
       a.remove();
       URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error("Report download failed", err);
     } finally {
       setDownloading(false);
     }
