@@ -80,7 +80,7 @@ def _known_datasets() -> set[str]:
 class ExploreRequest(BaseModel):
     dataset: str
     action: str
-    detail: dict | None = None
+    detail: object | None = None
     context: dict | None = None
 
     @field_validator("dataset")
