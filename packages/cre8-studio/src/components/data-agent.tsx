@@ -10,6 +10,7 @@ import {
   type SortDir,
   type UiEventPayload,
 } from "@/lib/ui-events";
+import { parseSseFrame } from "@/lib/sse";
 
 const DATA_AGENT_URL =
   process.env.NEXT_PUBLIC_DATA_AGENT_URL ?? "http://localhost:8002";
@@ -28,16 +29,6 @@ type AssistantBlock = TextBlock | UiBlock | ErrorBlock;
 type Turn =
   | { role: "user"; text: string; dataRows?: number }
   | { role: "assistant"; blocks: AssistantBlock[] };
-
-function parseSseFrame(frame: string): { event: string; data: string } {
-  let event = "message";
-  let data = "";
-  for (const line of frame.split("\n")) {
-    if (line.startsWith("event: ")) event = line.slice(7).trim();
-    else if (line.startsWith("data: ")) data += line.slice(6);
-  }
-  return { event, data };
-}
 
 function tryParseData(raw: string): { rows: Record<string, unknown>[]; error?: never } | { error: string; rows?: never } {
   try {

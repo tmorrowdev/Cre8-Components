@@ -10,6 +10,7 @@ export default function Home() {
         <Link href="/build" className="header-nav-link">App Builder →</Link>
         <Link href="/stack" className="header-nav-link">Stack →</Link>
         <Link href="/data" className="header-nav-link">Data Agent →</Link>
+        <Link href="/explore" className="header-nav-link">Explore →</Link>
       </header>
       <Chat />
     </main>
