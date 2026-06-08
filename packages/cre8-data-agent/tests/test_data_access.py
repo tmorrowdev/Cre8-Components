@@ -49,3 +49,26 @@ def test_query_order_by_desc_and_limit():
 def test_query_empty_result_is_empty_list():
     rows = query_dataset("ecommerce", select=["category"], where={"category": "Nonexistent"})
     assert rows == []
+
+
+def test_order_by_column_not_in_select_still_sorts():
+    rows = query_dataset(
+        "ecommerce", select=["category"],
+        order_by=("revenue", "desc"), limit=3,
+    )
+    # We can't see revenue (projected away), but ordering must have happened on the
+    # underlying rows. Verify against an unprojected top-3 by revenue.
+    full = query_dataset("ecommerce", order_by=("revenue", "desc"), limit=3)
+    assert [r["category"] for r in rows] == [r["category"] for r in full]
+
+
+def test_avg_aggregate():
+    rows = query_dataset("ecommerce", group_by=["category"], aggregate={"revenue": "avg"})
+    assert all("revenue" in r for r in rows)
+    assert all(isinstance(r["revenue"], (int, float)) for r in rows)
+
+
+def test_count_aggregate_counts_group_members():
+    rows = query_dataset("ecommerce", group_by=["category"], aggregate={"units": "count"})
+    total = sum(r["units"] for r in rows)
+    assert total == 40  # row_count
