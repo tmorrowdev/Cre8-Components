@@ -5,6 +5,8 @@ import statistics
 import httpx
 from claude_agent_sdk import tool, create_sdk_mcp_server
 
+from .data_access import list_datasets as _list_datasets, query_dataset as _query_dataset, UnknownDataset
+
 CRE8_MCP_URL = os.getenv("CRE8_MCP_URL", "http://localhost:3001")
 
 _MAX_SAMPLE_VALUE_LEN = 200
@@ -177,9 +179,62 @@ async def summarize_stats(args: dict) -> dict:
     return {"content": [{"type": "text", "text": json.dumps(result)}]}
 
 
+@tool(
+    "list_datasets",
+    "List the available bundled datasets with their columns and descriptions.",
+    {"type": "object", "properties": {}},
+)
+async def list_datasets_tool(args: dict) -> dict:
+    return {"content": [{"type": "text", "text": json.dumps(_list_datasets())}]}
+
+
+@tool(
+    "query_dataset",
+    "Query a bundled dataset: filter (where), group_by + aggregate (sum/avg/count/min/max), "
+    "order_by, and limit. Returns compact records for charting.",
+    {
+        "type": "object",
+        "properties": {
+            "dataset": {"type": "string"},
+            "select": {"type": "array", "items": {"type": "string"}},
+            "where": {"type": "object"},
+            "group_by": {"type": "array", "items": {"type": "string"}},
+            "aggregate": {"type": "object", "description": "column -> sum|avg|count|min|max"},
+            "order_by": {"type": "array", "items": {"type": "string"}, "description": "[column, asc|desc]"},
+            "limit": {"type": "integer"},
+        },
+        "required": ["dataset"],
+    },
+)
+async def query_dataset_tool(args: dict) -> dict:
+    try:
+        ob = args.get("order_by")
+        order = (ob[0], ob[1]) if isinstance(ob, list) and len(ob) == 2 else None
+        rows = _query_dataset(
+            args["dataset"],
+            select=args.get("select"),
+            where=args.get("where"),
+            group_by=args.get("group_by"),
+            aggregate=args.get("aggregate"),
+            order_by=order,
+            limit=args.get("limit"),
+        )
+        return {"content": [{"type": "text", "text": json.dumps(rows)}]}
+    except UnknownDataset as e:
+        return {"content": [{"type": "text", "text": json.dumps({"error": f"Unknown dataset: {e}"})}]}
+
+
 def build_sdk_server():
     return create_sdk_mcp_server(
         name="cre8-data-tools",
         version="1.0.0",
-        tools=[render_ui, search_components, get_component, describe_data, summarize_stats],
+        tools=[
+            render_ui,
+            search_components,
+            get_component,
+            describe_data,
+            summarize_stats,
+            list_datasets_tool,
+            query_dataset_tool,
+        ],
     )
