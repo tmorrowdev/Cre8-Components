@@ -207,7 +207,7 @@ async def report(request: Request, req: ExploreRequest) -> StreamingResponse:
     _check_auth(request)
     flagged = (req.context or {}).get("flagged", []) if req.context else []
     prompt = build_report_prompt(req.dataset, flagged)
-    return StreamingResponse(_stream_explore(prompt, "explore"), media_type="text/event-stream", headers=SSE_HEADERS)
+    return StreamingResponse(_stream_explore(prompt, "report"), media_type="text/event-stream", headers=SSE_HEADERS)
 
 
 @app.get("/health")

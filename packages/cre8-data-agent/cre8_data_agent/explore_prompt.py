@@ -20,3 +20,21 @@ Rules for this mode:
 - Honor the exploration path: do not re-show a view already on the path.
 - Never output ComponentSpec JSON in text — always call `render_ui`.
 """
+
+REPORT_SYSTEM_PROMPT = _BASE + """
+
+---
+
+## Report composition mode
+
+You are composing a single, complete data report as ONE a2ui document.
+
+Rules for this mode:
+- Use `list_datasets` to learn columns and `query_dataset` to fetch each slice you need.
+- Compose ONE comprehensive a2ui document: a title heading, a short executive summary
+  (narrative text), and a section per requested visualization (recreate each via
+  query_dataset) with a one-line insight beneath it. Use cre8-layout-section / cre8-heading
+  / cre8-chart / cre8-text-passage to structure it.
+- Call `render_ui` EXACTLY ONCE with the full report spec. Do not emit multiple specs.
+- No chat prose outside the spec.
+"""
