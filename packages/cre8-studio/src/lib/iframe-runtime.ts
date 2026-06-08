@@ -7,6 +7,28 @@ interface SrcDocOpts {
 
 const BRIDGE = `
   let catalog;
+  // Event detail from components (e.g. Chart.js) can hold functions, DOM nodes,
+  // and circular refs that structured-clone (postMessage) cannot serialize.
+  // Reduce it to a plain JSON-safe value before sending it to the parent.
+  function safeDetail(value) {
+    const seen = new WeakSet();
+    function clean(v) {
+      if (v === null) return null;
+      const t = typeof v;
+      if (t === "function" || t === "undefined" || t === "symbol") return undefined;
+      if (t !== "object") return v;
+      if (seen.has(v)) return undefined;
+      seen.add(v);
+      if (typeof Node !== "undefined" && v instanceof Node) return undefined;
+      if (Array.isArray(v)) return v.map(clean).filter((x) => x !== undefined);
+      const out = {};
+      for (const k in v) {
+        try { const c = clean(v[k]); if (c !== undefined) out[k] = c; } catch (_) {}
+      }
+      return out;
+    }
+    try { return clean(value); } catch (_) { return undefined; }
+  }
   function boot(render, registerCatalog, CATALOG) {
     catalog = registerCatalog(CATALOG);
     addEventListener("message", (e) => {
@@ -14,7 +36,7 @@ const BRIDGE = `
       render(e.data.spec, catalog, {
         root: document.getElementById("root"),
         onEvent: (evt) => parent.postMessage(
-          { type: "a2ui-event", handler: evt.handler, component: evt.component, detail: evt.detail }, "*"),
+          { type: "a2ui-event", handler: evt.handler, component: evt.component, detail: safeDetail(evt.detail) }, "*"),
       });
       requestAnimationFrame(() =>
         parent.postMessage({ type: "resize", height: document.body.scrollHeight }, "*"));

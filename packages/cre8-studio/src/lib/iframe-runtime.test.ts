@@ -17,6 +17,12 @@ describe("specToIframeSrcDoc", () => {
     expect(html).toContain("a2ui-event");
     expect(html).toContain('type: "ready"');
   });
+  it("sanitizes event detail before postMessage (structured-clone safety)", () => {
+    // Chart.js event detail holds functions/DOM/circular refs that would throw
+    // DataCloneError if posted raw. The bridge must reduce it to JSON-safe data.
+    expect(html).toContain("safeDetail");
+    expect(html).toContain("detail: safeDetail(evt.detail)");
+  });
   it("does NOT inline a spec (spec arrives via postMessage)", () => {
     expect(html).not.toContain("cre8-chart");
   });
