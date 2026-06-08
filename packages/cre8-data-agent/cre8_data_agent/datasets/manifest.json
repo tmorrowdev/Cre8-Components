@@ -1,0 +1,14 @@
+{
+  "datasets": [
+    {
+      "id": "ecommerce",
+      "title": "E-commerce Orders 2025",
+      "description": "Order-level sales across categories and regions for 2025.",
+      "row_count": 40,
+      "columns": {
+        "date": "string", "category": "string", "region": "string",
+        "revenue": "number", "units": "number"
+      }
+    }
+  ]
+}

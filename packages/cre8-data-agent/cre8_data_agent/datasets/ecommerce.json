@@ -1,0 +1,282 @@
+[
+  {
+    "date": "2025-01-08",
+    "category": "Electronics",
+    "region": "North",
+    "revenue": 1200.0,
+    "units": 13
+  },
+  {
+    "date": "2025-01-22",
+    "category": "Apparel",
+    "region": "West",
+    "revenue": 498.75,
+    "units": 6
+  },
+  {
+    "date": "2025-02-05",
+    "category": "Home",
+    "region": "East",
+    "revenue": 797.5,
+    "units": 10
+  },
+  {
+    "date": "2025-02-19",
+    "category": "Toys",
+    "region": "South",
+    "revenue": 446.25,
+    "units": 7
+  },
+  {
+    "date": "2025-03-04",
+    "category": "Electronics",
+    "region": "North",
+    "revenue": 1395.0,
+    "units": 17
+  },
+  {
+    "date": "2025-03-18",
+    "category": "Apparel",
+    "region": "West",
+    "revenue": 693.75,
+    "units": 10
+  },
+  {
+    "date": "2025-04-02",
+    "category": "Home",
+    "region": "East",
+    "revenue": 992.5,
+    "units": 14
+  },
+  {
+    "date": "2025-04-16",
+    "category": "Toys",
+    "region": "South",
+    "revenue": 562.5,
+    "units": 11
+  },
+  {
+    "date": "2025-05-07",
+    "category": "Electronics",
+    "region": "North",
+    "revenue": 1511.25,
+    "units": 21
+  },
+  {
+    "date": "2025-05-21",
+    "category": "Apparel",
+    "region": "West",
+    "revenue": 810.0,
+    "units": 5
+  },
+  {
+    "date": "2025-06-04",
+    "category": "Home",
+    "region": "East",
+    "revenue": 1108.75,
+    "units": 9
+  },
+  {
+    "date": "2025-06-18",
+    "category": "Toys",
+    "region": "South",
+    "revenue": 757.5,
+    "units": 6
+  },
+  {
+    "date": "2025-07-09",
+    "category": "Electronics",
+    "region": "North",
+    "revenue": 1706.25,
+    "units": 16
+  },
+  {
+    "date": "2025-07-23",
+    "category": "Apparel",
+    "region": "West",
+    "revenue": 1005.0,
+    "units": 9
+  },
+  {
+    "date": "2025-08-06",
+    "category": "Home",
+    "region": "East",
+    "revenue": 1225.0,
+    "units": 13
+  },
+  {
+    "date": "2025-08-20",
+    "category": "Toys",
+    "region": "South",
+    "revenue": 873.75,
+    "units": 10
+  },
+  {
+    "date": "2025-09-03",
+    "category": "Electronics",
+    "region": "North",
+    "revenue": 1822.5,
+    "units": 20
+  },
+  {
+    "date": "2025-09-17",
+    "category": "Apparel",
+    "region": "West",
+    "revenue": 1121.25,
+    "units": 13
+  },
+  {
+    "date": "2025-10-08",
+    "category": "Home",
+    "region": "East",
+    "revenue": 1420.0,
+    "units": 8
+  },
+  {
+    "date": "2025-10-22",
+    "category": "Toys",
+    "region": "South",
+    "revenue": 1068.75,
+    "units": 5
+  },
+  {
+    "date": "2025-11-05",
+    "category": "Electronics",
+    "region": "North",
+    "revenue": 2017.5,
+    "units": 15
+  },
+  {
+    "date": "2025-11-19",
+    "category": "Apparel",
+    "region": "West",
+    "revenue": 1237.5,
+    "units": 8
+  },
+  {
+    "date": "2025-12-03",
+    "category": "Home",
+    "region": "East",
+    "revenue": 1536.25,
+    "units": 12
+  },
+  {
+    "date": "2025-12-17",
+    "category": "Toys",
+    "region": "South",
+    "revenue": 1185.0,
+    "units": 9
+  },
+  {
+    "date": "2025-01-08",
+    "category": "Electronics",
+    "region": "North",
+    "revenue": 1233.75,
+    "units": 19
+  },
+  {
+    "date": "2025-01-22",
+    "category": "Apparel",
+    "region": "West",
+    "revenue": 532.5,
+    "units": 12
+  },
+  {
+    "date": "2025-02-05",
+    "category": "Home",
+    "region": "East",
+    "revenue": 831.25,
+    "units": 16
+  },
+  {
+    "date": "2025-02-19",
+    "category": "Toys",
+    "region": "South",
+    "revenue": 480.0,
+    "units": 4
+  },
+  {
+    "date": "2025-03-04",
+    "category": "Electronics",
+    "region": "North",
+    "revenue": 1350.0,
+    "units": 14
+  },
+  {
+    "date": "2025-03-18",
+    "category": "Apparel",
+    "region": "West",
+    "revenue": 648.75,
+    "units": 7
+  },
+  {
+    "date": "2025-04-02",
+    "category": "Home",
+    "region": "East",
+    "revenue": 947.5,
+    "units": 11
+  },
+  {
+    "date": "2025-04-16",
+    "category": "Toys",
+    "region": "South",
+    "revenue": 596.25,
+    "units": 8
+  },
+  {
+    "date": "2025-05-07",
+    "category": "Electronics",
+    "region": "North",
+    "revenue": 1545.0,
+    "units": 18
+  },
+  {
+    "date": "2025-05-21",
+    "category": "Apparel",
+    "region": "West",
+    "revenue": 843.75,
+    "units": 11
+  },
+  {
+    "date": "2025-06-04",
+    "category": "Home",
+    "region": "East",
+    "revenue": 1142.5,
+    "units": 15
+  },
+  {
+    "date": "2025-06-18",
+    "category": "Toys",
+    "region": "South",
+    "revenue": 712.5,
+    "units": 12
+  },
+  {
+    "date": "2025-07-09",
+    "category": "Electronics",
+    "region": "North",
+    "revenue": 1661.25,
+    "units": 13
+  },
+  {
+    "date": "2025-07-23",
+    "category": "Apparel",
+    "region": "West",
+    "revenue": 960.0,
+    "units": 6
+  },
+  {
+    "date": "2025-08-06",
+    "category": "Home",
+    "region": "East",
+    "revenue": 1258.75,
+    "units": 10
+  },
+  {
+    "date": "2025-08-20",
+    "category": "Toys",
+    "region": "South",
+    "revenue": 907.5,
+    "units": 7
+  }
+]
