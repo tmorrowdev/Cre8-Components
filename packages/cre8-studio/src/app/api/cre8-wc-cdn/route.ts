@@ -10,6 +10,7 @@ export async function GET() {
   return new Response(file, {
     headers: {
       "Content-Type": "application/javascript",
+      "Access-Control-Allow-Origin": "*",
       "Cache-Control": "public, max-age=60",
     },
   });

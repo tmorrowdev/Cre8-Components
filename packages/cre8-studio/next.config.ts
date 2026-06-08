@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const config: NextConfig = {
   transpilePackages: ["@tmorrow/cre8-wc"],
+  serverExternalPackages: ["esbuild"],
   turbopack: {
     rules: {
       "*.svg?raw": { loaders: ["raw-loader"], as: "*.js" },
