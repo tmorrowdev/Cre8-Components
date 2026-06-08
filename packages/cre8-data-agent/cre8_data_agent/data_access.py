@@ -60,12 +60,13 @@ def query_dataset(
                     rec[col] = min(vals) if vals else None
             out.append(rec)
         rows = out
-    elif select:
-        rows = [{k: r.get(k) for k in select} for r in rows]
 
     if order_by:
         col, direction = order_by
         rows.sort(key=lambda r: (r.get(col) is None, r.get(col)), reverse=(direction == "desc"))
+
+    if not group_by and select:
+        rows = [{k: r.get(k) for k in select} for r in rows]
 
     if limit is not None:
         rows = rows[:limit]
