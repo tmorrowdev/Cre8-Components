@@ -1,18 +1,13 @@
-import { readFile } from "fs/promises";
-import path from "path";
+import { buildTokensCss } from "@/lib/server/tokens";
 
 export const dynamic = "force-dynamic";
 
 export async function GET() {
-  const file = await readFile(
-    path.resolve(
-      process.cwd(),
-      "../cre8-wc/design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.css",
-    ),
-  );
-  return new Response(file, {
+  const css = await buildTokensCss();
+  return new Response(css, {
     headers: {
       "Content-Type": "text/css",
+      "Access-Control-Allow-Origin": "*",
       "Cache-Control": "public, max-age=60",
     },
   });

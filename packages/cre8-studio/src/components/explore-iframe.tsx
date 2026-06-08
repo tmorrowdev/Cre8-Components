@@ -76,6 +76,7 @@ export function ExploreIframe({
       srcDoc={specToIframeSrcDoc({
         runtimeUrl: "/api/a2ui-runtime",
         cdnUrl: "/api/cre8-wc-cdn",
+        tokensUrl: "/api/cre8-wc-tokens",
       })}
       style={{ width: "100%", height, border: "none" }}
     />

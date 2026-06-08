@@ -2,6 +2,7 @@ import { readFile } from "fs/promises";
 import path from "path";
 import { assembleReportHtml } from "@/lib/iframe-runtime";
 import { buildRuntimeText } from "@/lib/server/runtime";
+import { buildTokensCss } from "@/lib/server/tokens";
 
 export const dynamic = "force-dynamic";
 
@@ -10,7 +11,8 @@ export async function POST(req: Request) {
   if (!spec) return new Response("spec required", { status: 400 });
   const cdnText = await readFile(path.resolve(process.cwd(), "../cre8-wc/cdn/cre8-wc.esm.js"), "utf8");
   const runtimeText = await buildRuntimeText({ exposeGlobals: true });
-  const html = assembleReportHtml(spec, { inline: true, cdnText, runtimeText });
+  const tokensText = await buildTokensCss();
+  const html = assembleReportHtml(spec, { inline: true, cdnText, runtimeText, tokensText });
   const today = new Date().toISOString().slice(0, 10);
   return new Response(html, {
     headers: {
