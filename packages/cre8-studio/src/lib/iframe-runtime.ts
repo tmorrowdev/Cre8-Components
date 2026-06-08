@@ -3,6 +3,7 @@ import type { ComponentSpec } from "@tmorrow/cre8-wc/a2ui";
 interface SrcDocOpts {
   runtimeUrl: string;
   cdnUrl: string;
+  tokensUrl: string;
 }
 
 const BRIDGE = `
@@ -45,8 +46,12 @@ const BRIDGE = `
   }
 `;
 
-export function specToIframeSrcDoc({ runtimeUrl, cdnUrl }: SrcDocOpts): string {
+export function specToIframeSrcDoc({ runtimeUrl, cdnUrl, tokensUrl }: SrcDocOpts): string {
+  // The design tokens stylesheet must load at :root so cre8 components' shadow
+  // styles resolve their var(--cre8-*) custom properties — otherwise everything
+  // but canvas-based charts renders unstyled.
   return `<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="${tokensUrl}">
 <style>body{margin:0;font-family:system-ui}#root{padding:12px}</style></head>
 <body><div id="root"></div>
 <script type="module">
@@ -61,14 +66,17 @@ interface ReportOpts {
   inline: boolean;
   runtimeUrl?: string;
   cdnUrl?: string;
+  tokensUrl?: string;
   cdnText?: string;
   runtimeText?: string;
+  tokensText?: string;
 }
 
 export function assembleReportHtml(spec: ComponentSpec, opts: ReportOpts): string {
   const specJson = JSON.stringify(spec);
   if (opts.inline) {
     return `<!doctype html><html><head><meta charset="utf-8">
+<style>${opts.tokensText ?? ""}</style>
 <style>body{margin:0;font-family:system-ui}#root{padding:24px;max-width:960px;margin:auto}</style></head>
 <body><div id="root"></div>
 <script type="module">
@@ -81,6 +89,7 @@ render(${specJson}, c, { root: document.getElementById("root") });
 </script></body></html>`;
   }
   return `<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="${opts.tokensUrl}">
 <style>body{margin:0;font-family:system-ui}#root{padding:24px;max-width:960px;margin:auto}</style></head>
 <body><div id="root"></div>
 <script type="module">
