@@ -41,3 +41,19 @@ def test_report_prompt_lists_each_flagged():
 def test_report_prompt_empty_flagged_still_valid():
     out = build_report_prompt("ecommerce", [])
     assert "ecommerce" in out
+
+
+def test_explore_system_prompt_rules():
+    from cre8_data_agent.explore_prompt import EXPLORE_SYSTEM_PROMPT as P
+    assert "query_dataset" in P
+    assert "render_ui" in P
+    assert "agent:drilldown" in P
+    assert "one" in P.lower()  # one visualization per call
+
+
+def test_get_explore_options_uses_dataset_tools():
+    from cre8_data_agent.agent import get_options
+    opts = get_options(mode="explore")
+    tools = opts.allowed_tools
+    assert "mcp__data-tools__query_dataset" in tools
+    assert "mcp__data-tools__list_datasets" in tools
