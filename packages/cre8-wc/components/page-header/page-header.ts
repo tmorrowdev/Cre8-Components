@@ -5,7 +5,7 @@ import styles from './page-header.styles.js';
 
 /**
  * @slot - The page header content
- * @slot titCre8ter - Content rendered after the heading text, inside the title element
+ * @slot titleAfter - Content rendered after the heading text, inside the title element
  */
 export class Cre8PageHeader extends Cre8Element {
     static styles = [styles];
@@ -23,9 +23,9 @@ export class Cre8PageHeader extends Cre8Element {
       <div class="${componentClassName}">
         <h1 class="cre8-c-page-header__title">
           ${this.heading}
-          ${this.slotNotEmpty('titCre8ter') && html`
+          ${this.slotNotEmpty('titleAfter') && html`
           <div class="cre8-c-page-header__title-after">
-            <slot name="titCre8ter"></slot>
+            <slot name="titleAfter"></slot>
           </div>`}
         </h1>
         <div class="cre8-c-page-header__description">
