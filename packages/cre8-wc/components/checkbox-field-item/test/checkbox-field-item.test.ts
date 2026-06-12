@@ -98,4 +98,25 @@ describe('checkbox-field-item', () => {
             return expect(el).toBeAccessible();
         });
     });
+
+    describe('border radius theming', () => {
+        test('custom checkbox uses a checkbox-specific radius token with small fallback', async () => {
+            const styles = (await import('../checkbox-field-item.styles')).default;
+            // Brands with large generic radii (e.g. a2ui small=12px) turn a 24px
+            // checkbox into a circle unless they can override per-component
+            expect(styles.cssText).toContain(
+                'var(--cre8-border-radius-checkbox, var(--cre8-border-radius-small))'
+            );
+        });
+
+        test('a2ui brand pins the checkbox radius to 4px', () => {
+            const fs = require('fs');
+            const path = require('path');
+            const brandCss = fs.readFileSync(
+                path.resolve(__dirname, '../../../design-tokens/brands/cre8-a2ui/css/tokens_brand.css'),
+                'utf8'
+            );
+            expect(brandCss).toContain('--cre8-border-radius-checkbox: 4px;');
+        });
+    });
 });
