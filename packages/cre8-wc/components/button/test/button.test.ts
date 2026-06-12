@@ -11,6 +11,18 @@ describe('button', () => {
         expect(el.shadowRoot).toBeTruthy();
     });
 
+    test('styles are compiled CSS with a working cre8-u-is-vishidden rule', async () => {
+        const styles = (await import('../button.styles')).default;
+        const cssText = styles.cssText;
+        // Raw SCSS in the stylesheet is silently dropped by the CSS parser,
+        // which breaks visually-hidden text (and any other mixin-based rule)
+        expect(cssText).not.toContain('@include');
+        expect(cssText).not.toContain('@import');
+        const vishiddenRule = cssText.match(/\.cre8-u-is-vishidden\s*{[^}]*}/);
+        expect(vishiddenRule).toBeTruthy();
+        expect(vishiddenRule![0]).toContain('position: absolute !important');
+    });
+
     test('has the correct default text', async () => {
         const el = await fixture(html`<cre8-button text="Foo"></cre8-button>`);
         const button = el.shadowRoot.querySelector('button');
