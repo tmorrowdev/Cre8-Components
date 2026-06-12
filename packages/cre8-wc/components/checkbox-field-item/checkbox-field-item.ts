@@ -29,6 +29,10 @@ import { Cre8FormElement } from '../cre8-form-element';
  *   Minimize the number of optional fields to keep forms as short as possible.
  * - Always include a label written in sentence case.
  * - Avoid using the read-only and disabled states as much as possible.
+ *
+ * @slot fieldNote - Container for optional field note content
+ *
+ * @fires change - Fires when the checkbox is toggled. `event.detail` is `{ name, value }`.
  */
 export class Cre8CheckboxFieldItem extends Cre8FormElement {
     readonly type = 'checkbox';

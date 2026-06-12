@@ -7,15 +7,22 @@ import styles from './dropdown-item.styles.js';
  * The Dropdown item component is designed to be used with Dropdown component, each item represents a
  * selectable option or action within the dropdown menu. It can be configured to trigger actions, navigate
  * to links, initiate commands when clicked.
+ *
+ * @slot - The label content for the dropdown item.
+ *
+ * @fires dropdown-item-selected - Fires when the item is clicked. `event.detail.originalEvent` holds the source `MouseEvent`.
  */
 export class Cre8DropdownItem extends Cre8Element {
     static styles = [styles];
 
+  /**
+   * The accessible label for the item. Falls back to the item's text content when unset.
+   */
   @property({ type: String })
       ariaLabel = '';
 
   private _handleClick(e: MouseEvent) {
-      this.dispatchEvent(new Event('dropdown-item-selected', e));
+      this.dispatch({ e, eventName: 'dropdown-item-selected' });
   }
 
   render() {

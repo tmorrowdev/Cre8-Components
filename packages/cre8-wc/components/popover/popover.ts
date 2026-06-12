@@ -9,6 +9,12 @@ import { Cre8Button } from '../button/button';
  * The Popover is for progressive disclosure of relevant content often hidden behind a help or info icon.
  * Its content should be no longer than 3-4 lines in addition to a line of heading text and an optional button.
  * @slot - The component content
+ * @slot trigger - The element that toggles the popover open and closed
+ * @slot header - Custom header content for the popover panel
+ * @slot footer - Custom footer content for the popover panel
+ *
+ * @fires open - Fires when the popover opens. `event.detail.isActive` is `true`.
+ * @fires close - Fires when the popover closes. `event.detail.isActive` is `false`.
  */
 
 export class Cre8Popover extends Cre8Element {

@@ -5,6 +5,8 @@ import styles from './header.styles.js';
 
 /**
  * @slot - The header content
+ * @slot top - Content rendered above the main header row
+ * @slot bottom - Content rendered below the main header row
  */
 export class Cre8Header extends Cre8Element {
     static styles = [styles];

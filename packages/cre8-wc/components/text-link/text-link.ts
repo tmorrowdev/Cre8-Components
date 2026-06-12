@@ -6,6 +6,7 @@ import styles from './text-link.styles.js';
 
 /**
  * @slot - The component content
+ * @slot linkAfter - Content rendered after the link text, such as an icon
  */
 export class Cre8TextLink extends Cre8Element {
     static styles = [styles];

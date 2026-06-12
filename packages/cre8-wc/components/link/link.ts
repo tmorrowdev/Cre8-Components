@@ -20,6 +20,8 @@ import styles from './link.styles.js';
  * - They are used to set up the correct direction for icons, for example,
  * arrows, caret up or caret down.
  *
+ * @slot - The link text content
+ * @slot badge - Container for an optional badge displayed alongside the link
 */
 
 export class Cre8Link extends Cre8Element {

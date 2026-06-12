@@ -6,6 +6,8 @@ import styles from './link-list-item.styles.js';
 
 /**
  * @slot - The default slot to put badges or other Components
+ * @slot itemBefore - Content rendered before the link text, such as an icon
+ * @slot itemAfter - Content rendered after the link text, such as an icon
  */
 export class Cre8LinkListItem extends Cre8Element {
     static styles = [styles];

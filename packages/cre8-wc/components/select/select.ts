@@ -44,6 +44,8 @@ export interface Cre8SelectOptionGroup {
  *    or helpful link rather than placeholder text.
  *
  * @slot fieldNote - Container for optional field note content
+ *
+ * @fires change - Fires when the selected option changes. `event.detail` is `{ name, value }`.
  */
 
 export class Cre8Select extends Cre8FormElement {

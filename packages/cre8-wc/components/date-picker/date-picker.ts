@@ -11,6 +11,8 @@ import { Cre8Field } from '../field/field';
  * The Date Picker component renders a form group with label, control, help text and validation styling much
  * like the Field component but exclusively for type=date.
  * Cre8DatePicker inherits the Cre8Field component.
+ *
+ * @slot fieldNote - Container for optional field note content
  */
 export class Cre8DatePicker extends Cre8Field {
   field!: HTMLInputElement;
@@ -35,6 +37,9 @@ export class Cre8DatePicker extends Cre8Field {
   @property({ type: Boolean, reflect: true })
   hasShortcuts?: boolean;
 
+  /**
+   * The label text for the date picker field.
+   */
   @property()
   label: string;
 

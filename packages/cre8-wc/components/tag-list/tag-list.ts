@@ -8,6 +8,8 @@ import styles from './tag-list.styles.js';
  * Tag List must have children which are Tag components that are of type `checkbox` or `radio`.
  * The Tags must use the `neutral` variant and the `round` shape when they are inside a Tag List.
  * Tag List has a label that should be used to describe the purpose of the list.
+ *
+ * @slot - The `cre8-tag` children of the list
  */
 export class Cre8TagList extends Cre8Element {
     static styles = [styles];

@@ -13,6 +13,9 @@ export class Cre8SplitButton extends Cre8Element {
   @state()
       dropdownOpen = false;
 
+  /**
+   * Disables both the main button and the dropdown toggle.
+   */
   @property({ type: Boolean, reflect: true })
       disabled?: boolean;
 

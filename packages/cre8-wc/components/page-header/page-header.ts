@@ -5,6 +5,7 @@ import styles from './page-header.styles.js';
 
 /**
  * @slot - The page header content
+ * @slot titCre8ter - Content rendered after the heading text, inside the title element
  */
 export class Cre8PageHeader extends Cre8Element {
     static styles = [styles];

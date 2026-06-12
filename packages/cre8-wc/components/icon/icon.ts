@@ -114,6 +114,9 @@ export class Cre8Icon extends Cre8Element {
     @property()
     name: string;
 
+    /**
+     * Raw SVG markup to render. Preferred over `name`/sprite-path icons.
+     */
     @property({ reflect: true })
     svg?: string
     /**

@@ -20,6 +20,10 @@ import styles from './modal.styles.js';
  * If it is desired to create a utility modal. Cre8Modal requires a status value (see props table below,
  * and a UtilityModalTitle since all utility modals have a cre8-heading)
  * @slot - The component content
+ * @slot header - Custom header content for the modal
+ * @slot footer - Custom footer content for the modal
+ *
+ * @fires close-modal - Fires when the modal is dismissed via the close button, overlay click, or Escape key.
  */
 export class Cre8Modal extends Cre8Element {
     static styles = [styles];

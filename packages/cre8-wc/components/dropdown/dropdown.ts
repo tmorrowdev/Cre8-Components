@@ -6,6 +6,8 @@ import styles from './dropdown.styles.js';
 
 /**
  * The Dropdown menu itself is a container that can host multiple interactive items, commonly formatted as a list
+ *
+ * @slot - The `cre8-dropdown-item` children of the menu
  */
 
 export class Cre8Dropdown extends Cre8Element {

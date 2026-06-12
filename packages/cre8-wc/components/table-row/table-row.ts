@@ -8,6 +8,7 @@ import '../table-cell/table-cell';
 
 /**
  * @slot - The component content
+ * @slot expandableContent - Content revealed when the row is expanded
  */
 
 export class Cre8TableRow extends Cre8Element {

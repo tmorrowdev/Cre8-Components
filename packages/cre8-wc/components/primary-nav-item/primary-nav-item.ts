@@ -6,6 +6,8 @@ import styles from './primary-nav-item.styles.js';
 
     /**
      * @slot - The label for the navigation item
+     * @slot itemBefore - Content rendered before the item label, such as an icon
+     * @slot itemAfter - Content rendered after the item label, such as an icon
      */
 export class Cre8PrimaryNavItem extends Cre8Element {
     /**

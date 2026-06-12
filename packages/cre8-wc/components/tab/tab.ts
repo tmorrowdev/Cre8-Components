@@ -5,6 +5,8 @@ import styles from './tab.styles.js';
 
 /**
  * @slot - The component content
+ *
+ * @fires tabSelected - Fires when the tab is clicked. `event.detail.index` is the tab's index.
  */
 
 export class Cre8Tab extends Cre8Element {
