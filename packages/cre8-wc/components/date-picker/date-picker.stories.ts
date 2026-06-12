@@ -1,6 +1,6 @@
 import { html } from "lit";
 import { spread } from "../../directives/spread";
-import { withActions } from "storybook/internal/preview-api";
+import { withActions } from "storybook/actions/decorator";
 import "./date-picker";
 
 export default {

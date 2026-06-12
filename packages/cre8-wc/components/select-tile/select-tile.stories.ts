@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { withActions } from 'storybook/internal/preview-api';
+import { withActions } from 'storybook/actions/decorator';
 import '../../.storybook/components/f-po/f-po';
 import '../../.storybook/components/example-inline/example-inline';
 import { spread } from '../../directives/spread';
