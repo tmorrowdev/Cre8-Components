@@ -39,6 +39,9 @@ export class Cre8Hero extends Cre8Element {
   @property()
       align?: 'top-left' | 'left' | 'top-center' | 'center' | 'bottom-center' | 'top-right' | 'right' | 'bottom-right';
 
+  /**
+   * Renders a dark overlay between the background image and the content for legibility.
+   */
   @property({ type: Boolean })
       hasOverlay?: boolean;
 

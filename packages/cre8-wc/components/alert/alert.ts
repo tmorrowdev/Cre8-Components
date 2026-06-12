@@ -28,6 +28,8 @@ import styles from './alert.styles.js';
  * If users choose to emphasize the alert (**strong**), user needs to used **"inverted"** prop in button or link.
  * - User can choose whether the alert can be dismissed or not
  *
+ * @slot - The alert body content
+ * @slot cta - Container for a call-to-action button or link
  */
 
 export class Cre8Alert extends Cre8Element {
@@ -47,10 +49,11 @@ export class Cre8Alert extends Cre8Element {
     @property({ reflect: true })
     variant: 'standalone' | 'banner' = 'standalone';
 
+    /** The alert emphasis. `strong` uses a filled background; pair contained buttons/links with their `inverted` prop. */
     @property({ reflect: true })
     emphasis: 'subtle' | 'strong' = 'subtle';
 
-
+    /** Overrides the default status icon. Accepts a cre8 icon name. */
     @property({ type: String })
     iconAlert: string = undefined;
 
@@ -60,9 +63,11 @@ export class Cre8Alert extends Cre8Element {
     @property()
     iconTitle?: string;
 
+    /** The alert heading text. */
     @property({ type: String })
     headerText: string = undefined;
 
+    /** Text content for the call-to-action area. Superseded by the `cta` slot when provided. */
     @property({ type: String })
     ctaBody: string = undefined;
 

@@ -31,6 +31,7 @@ import styles from './accordion-item.styles.js';
  *
  * @slot The body of the accordion item will be any valid html
  * inserted between the cre8-accordion-item opening and closing tags.
+ * @slot heading - Custom heading content, used when the `heading` property is not set.
  *
  *
  * @csspart ::part('header') - The container around the interactive header.

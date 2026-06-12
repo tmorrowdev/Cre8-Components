@@ -20,6 +20,8 @@ export enum Color {
 /**
  * Clicking a Remove Tag causes it to disappear from the page or field (in the case of Multi-Select).
  * These tags always display a "Close" icon.
+ *
+ * @fires removeTagClicked - Fires when the remove tag is clicked.
  */
 export class Cre8RemoveTag extends Cre8Element {
     static styles = [styles];

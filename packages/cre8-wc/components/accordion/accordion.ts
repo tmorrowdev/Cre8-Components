@@ -12,6 +12,7 @@ import styles from './accordion.styles.js';
  *
  * Users can select different border types: default (no border), rectangle, rounded bottom, and rounded.
  *
+ * @slot - The `cre8-accordion-item` children to group
  */
 
 export class Cre8Accordion extends Cre8Element {

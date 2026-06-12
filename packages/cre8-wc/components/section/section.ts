@@ -18,6 +18,7 @@ import styles from './section.styles.js';
  *
  * @slot The content of the section should go here.
  * It could be a cre8-text-passage, a cre8-card or any other block level html.
+ * @slot header - Custom header content, rendered in place of the `headline` property
  */
 
 export class Cre8Section extends Cre8Element {

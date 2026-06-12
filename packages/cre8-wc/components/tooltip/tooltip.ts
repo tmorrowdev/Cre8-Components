@@ -38,6 +38,9 @@ import styles from './tooltip.styles.js';
  *
  * @slot default - Default, unnamed slot container for Tooltip text
  * @slot trigger - Named slot container for Tooltip element to trigger showing/hiding the Tooltip text
+ *
+ * @fires open - Fires when the tooltip is shown. `event.detail.isActive` is `true`.
+ * @fires close - Fires when the tooltip is hidden. `event.detail.isActive` is `false`.
  */
 
 export class Cre8Tooltip extends Cre8Element {
@@ -99,6 +102,9 @@ export class Cre8Tooltip extends Cre8Element {
   @property({ type: String })
       ariaDescribes?: string;
 
+  /**
+   * Internal unique id used to associate the trigger with the tooltip text. Generated automatically.
+   */
   @property({ type: String })
       _uniqueId?: string;
 

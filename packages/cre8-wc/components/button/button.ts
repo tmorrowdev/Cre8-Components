@@ -75,6 +75,8 @@ import styles from './button.styles.js';
  * - DO use only large buttons with input fields.
  * - DO NOT use small buttons with input fields.
  *
+ * @slot before - Content rendered before the button text, such as an icon
+ * @slot after - Content rendered after the button text, such as an icon
  */
 
 export class Cre8Button extends Cre8FormElement {

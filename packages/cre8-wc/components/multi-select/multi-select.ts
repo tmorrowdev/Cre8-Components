@@ -26,6 +26,10 @@ import Cre8CheckboxFieldItem from '../checkbox-field-item/checkbox-field-item';
  *
  * Event `selectedItemsChange` emits whenever a tag is added or remove from the list and the
  * current list after the change is given in the detail.
+ *
+ * @slot fieldNote - Container for optional field note content
+ *
+ * @fires selectedItemsChange - Fires when a tag is added or removed. `event.detail.selectedItems` is the current selection.
  */
 export class Cre8MultiSelect extends Cre8Element {
   static styles = [styles];

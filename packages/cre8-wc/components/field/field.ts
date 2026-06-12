@@ -9,6 +9,8 @@ import styles from './field.styles.js';
 /**
  * The Field component renders a form group with label, control, help text and validation styling. There are
  * convenience variants of Field to support HTML5 input types and static content.
+ *
+ * @slot fieldNote - Container for optional field note content
  */
 export class Cre8Field extends Cre8FormElement {
     static styles = [styles];

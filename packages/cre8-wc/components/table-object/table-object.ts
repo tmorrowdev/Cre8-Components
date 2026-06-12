@@ -4,6 +4,8 @@ import styles from './table-object.styles.js';
 
 /**
  * @slot - The component content
+ * @slot header - Content rendered in the table object header
+ * @slot footer - Content rendered in the table object footer
  */
 
 export class Cre8TableObject extends Cre8Element {

@@ -17,11 +17,16 @@ import styles from './tag.styles.js';
  * horizontally
  *
  *  - **checkbox** It allows for selecting options, It can be toggled on and off.
+ *
+ * @fires change - Fires when the tag is clicked while enabled. `event.detail` is `{ isSelected, type }`.
  */
 
 export class Cre8Tag extends Cre8FormElement {
     static styles = [styles];
 
+  /**
+   * The text label displayed inside the tag.
+   */
   @property()
       text: string;
 

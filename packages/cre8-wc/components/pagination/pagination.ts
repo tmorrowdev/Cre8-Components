@@ -65,6 +65,10 @@ import styles from './pagination.styles.js';
  * @cssproperty "--pagination-display" - controls the display css property
  * @cssproperty "--pagination-justify-content" - controls horizontal alignment of pagination
  * @cssproperty "--pagination-align-items" - controls vertical alignment of pagination
+ *
+ * @slot - Optional content rendered alongside the pagination controls
+ *
+ * @fires pagination.click - Fires when the page changes. `event.detail` is `{ buttonName, value }` where `value` is the new current page.
  */
 
 export class Cre8Pagination extends Cre8Element {
@@ -143,6 +147,9 @@ export class Cre8Pagination extends Cre8Element {
     @property({ type: Boolean, reflect: true })
     hideLastAndFirstButtons?: boolean;
 
+    /**
+     * The currently active page (1-based). Setting it programmatically navigates the pagination.
+     */
     @property({ reflect: true, type: Number })
     get currentPage() {
         return this._currentPage;
