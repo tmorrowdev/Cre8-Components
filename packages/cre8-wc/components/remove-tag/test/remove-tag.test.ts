@@ -2,11 +2,11 @@ import { fixture, oneEvent } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../remove-tag';
 import { Shape, Color } from '../remove-tag';
-import { cre8RemoveTag } from '../remove-tag';
+import { Cre8RemoveTag } from '../remove-tag';
 
 describe('remove-tag', () => {
     test('renders correctly', async () => {
-        const el = await fixture<cre8RemoveTag>(html`<cre8-remove-tag text="Default"></cre8-remove-tag>`);
+        const el = await fixture<Cre8RemoveTag>(html`<cre8-remove-tag text="Default"></cre8-remove-tag>`);
         expect(el.shadowRoot).toBeTruthy();
     });
 
@@ -14,7 +14,7 @@ describe('remove-tag', () => {
         const colors = [Color.Neutral, Color.Branded, Color.NeutralHybrid];
 
         for (const color of colors) {
-            const el = await fixture<cre8RemoveTag>(html`<cre8-remove-tag color="${color}"></cre8-remove-tag>`);
+            const el = await fixture<Cre8RemoveTag>(html`<cre8-remove-tag color="${color}"></cre8-remove-tag>`);
             const removeTag = el.shadowRoot!.querySelector('.cre8-c-remove-tag'); // Test for the class change
             expect(removeTag.classList.contains(`cre8-c-remove-tag--${color}`)).toBeTruthy();
         }
@@ -24,7 +24,7 @@ describe('remove-tag', () => {
         const shapes = [Shape.Round, Shape.Square];
 
         for (const shape of shapes) {
-            const el = await fixture<cre8RemoveTag>(html`<cre8-remove-tag shape="${shape}"></cre8-remove-tag>`);
+            const el = await fixture<Cre8RemoveTag>(html`<cre8-remove-tag shape="${shape}"></cre8-remove-tag>`);
             const removeTag = el.shadowRoot!.querySelector('.cre8-c-remove-tag'); // Test for the class change
             expect(removeTag.classList.contains(`cre8-c-remove-tag--${shape}`)).toBeTruthy();
         }
@@ -40,7 +40,7 @@ describe('remove-tag', () => {
 
     describe('accessibility -  Remove Tag', () => {
         test('tests accessibility for default remove tag', async () => {
-            const el = await fixture<cre8RemoveTag>(html`<cre8-remove-tag text="Default"></cre8-remove-tag>`);
+            const el = await fixture<Cre8RemoveTag>(html`<cre8-remove-tag text="Default"></cre8-remove-tag>`);
             return expect(el).toBeAccessible();
         });
     });

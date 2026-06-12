@@ -436,9 +436,8 @@ export class Cre8MultiSelect extends Cre8Element {
               class="cre8-c-multi-select__down_icon"
               @click="${this.dropdownArrowClick}"
               @keydown="${this._handleButtonToListKeydown}"
-              aria-label="Open Dropdown"
+              text="Open Dropdown"
               aria-expanded="${this.dropdownOpen}"
-              aria-labelledby="${this.fieldId}"
             >
             </cre8-button>
           </div>

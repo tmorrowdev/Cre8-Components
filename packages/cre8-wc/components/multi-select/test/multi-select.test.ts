@@ -4,12 +4,12 @@ import { html } from 'lit';
 import '../multi-select';
 import '../../remove-tag/remove-tag';
 import '../../checkbox-field-item/checkbox-field-item';
-import { cre8MultiSelect } from '../multi-select';
+import { Cre8MultiSelect } from '../multi-select';
 
 describe('remove-tag', () => {
   test('renders correctly', async () => {
     const items = ['Bagel', 'Burger', 'Boat', 'Beefstick', 'Bacon'];
-    const el = await fixture<cre8MultiSelect>(
+    const el = await fixture<Cre8MultiSelect>(
       html`<cre8-multi-select .items="${items}"></cre8-multi-select>`
     );
     expect(el.shadowRoot).toBeTruthy();
@@ -17,7 +17,7 @@ describe('remove-tag', () => {
 
   test('renders error field note correctly', async () => {
     const items = ['Bagel', 'Burger', 'Boat', 'Beefstick', 'Bacon'];
-    const el = await fixture<cre8MultiSelect>(
+    const el = await fixture<Cre8MultiSelect>(
       html`<cre8-multi-select .items="${items}" errorNote="Error!!" ?isError="${true}"></cre8-multi-select>`
     );
     expect(el.shadowRoot).toBeTruthy();
@@ -26,7 +26,7 @@ describe('remove-tag', () => {
   test('renders preselected multiselect correctly', async () => {
     const items = ['Bagel', 'Burger', 'Boat', 'Beefstick', 'Bacon'];
     const preselectedItems = ['Bagel', 'Burger', 'Boat'];
-    const el = await fixture<cre8MultiSelect>(
+    const el = await fixture<Cre8MultiSelect>(
       html`<cre8-multi-select
         .items="${items}"
         .preselectedItems="${preselectedItems}"
@@ -39,7 +39,7 @@ describe('remove-tag', () => {
 
   test('click opens drowdown', async () => {
     const items = ['Bagel', 'Burger', 'Boat', 'Beefstick', 'Bacon'];
-    const el = await fixture<cre8MultiSelect>(
+    const el = await fixture<Cre8MultiSelect>(
       html`<cre8-multi-select .items="${items}"></cre8-multi-select>`
     );
 
@@ -54,7 +54,7 @@ describe('remove-tag', () => {
 
   test('dispatched event and adds tag when dropdown click', async () => {
     const items = ['Bagel', 'Burger', 'Boat', 'Beefstick', 'Bacon'];
-    const el = await fixture<cre8MultiSelect>(
+    const el = await fixture<Cre8MultiSelect>(
       html`<cre8-multi-select .items="${items}"></cre8-multi-select>`
     );
     await el.updateComplete;
@@ -82,7 +82,7 @@ describe('remove-tag', () => {
 
   test('dispatched event and removed tag when remove tag clicked', async () => {
     const items = ['Bagel', 'Burger', 'Boat', 'Beefstick', 'Bacon'];
-    const el = await fixture<cre8MultiSelect>(
+    const el = await fixture<Cre8MultiSelect>(
       html`<cre8-multi-select .items="${items}"></cre8-multi-select>`
     );
     await el.updateComplete;
@@ -117,7 +117,7 @@ describe('remove-tag', () => {
   describe('accessibility -  Remove Tag', () => {
     test('tests accessibility for default remove tag', async () => {
       const items = ['Bagel', 'Burger', 'Boat', 'Beefstick', 'Bacon'];
-      const el = await fixture<cre8MultiSelect>(
+      const el = await fixture<Cre8MultiSelect>(
         html`<cre8-multi-select items="${items}"></cre8-multi-select>`
       );
       return expect(el).toBeAccessible();

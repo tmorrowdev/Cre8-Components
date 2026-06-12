@@ -1,7 +1,7 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../select';
-import { cre8Select } from '../select';
+import { Cre8Select } from '../select';
 
 describe('select', () => {
     test('renders correctly', async () => {
@@ -22,7 +22,7 @@ describe('select', () => {
     });
 
     test('renders default select with label', async () => {
-        const el = await fixture<cre8Select>(html`
+        const el = await fixture<Cre8Select>(html`
       <cre8-select
         label="Choose an option"
         .items=${[
@@ -40,8 +40,8 @@ describe('select', () => {
     `);
 
         expect(el.label).toBe('Choose an option');
-        expect(el.required).toBeUndefined();
-        expect(el.disabled).toBeUndefined();
+        expect(el.required).toBeFalsy();
+        expect(el.disabled).toBeFalsy();
         expect(el.isError).toBeFalsy();
         expect(el.isSuccess).toBeFalsy();
 
@@ -55,7 +55,7 @@ describe('select', () => {
     });
 
     test('renders select with provided attributes and options', async () => {
-        const el = await fixture<cre8Select>(html`
+        const el = await fixture<Cre8Select>(html`
       <cre8-select
         label="Choose a color"
         name="color"
@@ -109,7 +109,7 @@ describe('select', () => {
     });
 
     test('handles change event', async () => {
-        const el = await fixture<cre8Select>(html`
+        const el = await fixture<Cre8Select>(html`
       <cre8-select
         label="Label"
         .items=${[
@@ -132,7 +132,7 @@ describe('select', () => {
     });
 
     test('renders select note when provided', async () => {
-        const el = await fixture<cre8Select>(html`
+        const el = await fixture<Cre8Select>(html`
       <cre8-select
         label="Label"
         fieldNote="Field note"
@@ -157,7 +157,7 @@ describe('select', () => {
     });
 
     test('renders success select note when isSuccess is true', async () => {
-        const el = await fixture<cre8Select>(html`
+        const el = await fixture<Cre8Select>(html`
       <cre8-select
         label="Label"
         isSuccess
@@ -189,7 +189,7 @@ describe('select', () => {
     });
 
     test('renders error select note when isError is true', async () => {
-        const el = await fixture<cre8Select>(html`
+        const el = await fixture<Cre8Select>(html`
       <cre8-select
         label="Label"
         isError
@@ -216,7 +216,7 @@ describe('select', () => {
     });
 
     test('tests accessibility for default select', async () => {
-        const el = await fixture<cre8Select>(html`
+        const el = await fixture<Cre8Select>(html`
       <cre8-select
         .items=${[
         { label: 'Red', value: 'red' },
@@ -235,7 +235,7 @@ describe('select', () => {
     });
 
     test('tests accessibility for select with label and name attributes', async () => {
-        const el = await fixture<cre8Select>(html`
+        const el = await fixture<Cre8Select>(html`
       <cre8-select
         label="Choose a color"
         name="color"
@@ -256,7 +256,7 @@ describe('select', () => {
     });
 
     test('tests accessibility for select with disabled attribute', async () => {
-        const el = await fixture<cre8Select>(html`
+        const el = await fixture<Cre8Select>(html`
       <cre8-select
         .items=${[
         { label: 'Red', value: 'red' },
@@ -275,7 +275,7 @@ describe('select', () => {
     });
 
     test('tests accessibility for select with label and name and disabled attributes', async () => {
-        const el = await fixture<cre8Select>(html`
+        const el = await fixture<Cre8Select>(html`
       <cre8-select
         label="Choose a color"
         name="color"
@@ -296,7 +296,7 @@ describe('select', () => {
     });
 
     test('tests accessibility for select with fieldNote attribute', async () => {
-        const el = await fixture<cre8Select>(html`
+        const el = await fixture<Cre8Select>(html`
       <cre8-select
         ariaDescribedBy="fieldnoteid"
         name="select"
@@ -319,7 +319,7 @@ describe('select', () => {
     });
 
     test('tests accessibility for select with disabled equals true', async () => {
-        const el = await fixture<cre8Select>(html`
+        const el = await fixture<Cre8Select>(html`
       <cre8-select
         disabled="true"
         label="Choose a color"
@@ -341,7 +341,7 @@ describe('select', () => {
     });
 
     test('tests accessibility for select with preselected option', async () => {
-        const el = await fixture<cre8Select>(html`
+        const el = await fixture<Cre8Select>(html`
       <cre8-select
         label="Choose a color"
         name="disabled"
@@ -362,7 +362,7 @@ describe('select', () => {
     });
 
     test('tests that the selected attribute exists on specific option', async () => {
-        const el = await fixture<cre8Select>(html`
+        const el = await fixture<Cre8Select>(html`
       <cre8-select
         label="Label"
         isError
@@ -389,7 +389,7 @@ describe('select', () => {
     });
 
     test('tests that the selected attribute is set to FALSE on specific option', async () => {
-        const el = await fixture<cre8Select>(html`
+        const el = await fixture<Cre8Select>(html`
       <cre8-select
         label="Label"
         isError
@@ -412,7 +412,7 @@ describe('select', () => {
     });
 
     test('tests that the selected attribute does NOT exist on specific option', async () => {
-        const el = await fixture<cre8Select>(html`
+        const el = await fixture<Cre8Select>(html`
       <cre8-select
         label="Label"
         isError

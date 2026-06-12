@@ -326,6 +326,7 @@ export class Cre8Field extends Cre8FormElement {
             autocomplete=${ifDefined(this.autocomplete)}
             type="${this.type}"
             id="${this.fieldId}"
+            name="${ifDefined(this.name)}"
             max=${(this.type === 'date') && ifDefined(this.max).toString()}
             min=${(this.type === 'date') && ifDefined(this.max).toString()}
             maxlength=${ifDefined(this.maxlength)}

@@ -1,9 +1,9 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../popover';
-import { cre8Popover } from '../popover';
+import { Cre8Popover } from '../popover';
 import '../../button/button';
-import { cre8Button } from '../../button/button';
+import { Cre8Button } from '../../button/button';
 
 describe('popover', () => {
     beforeEach(() => {
@@ -28,7 +28,7 @@ describe('popover', () => {
     });
 
     test('has a heading property', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover heading="Foo">
         <button slot="trigger">Popover Trigger</button>
         <div>Popover Content</div>
@@ -44,7 +44,7 @@ describe('popover', () => {
         const positions = ['top', 'left', 'right'];
 
         for (const position of positions) {
-            const el = await fixture<cre8Popover>(html`
+            const el = await fixture<Cre8Popover>(html`
         <cre8-popover position="${position}">
           <button slot="trigger">Popover Trigger</button>
           <div>Popover Content</div>
@@ -57,7 +57,7 @@ describe('popover', () => {
     });
 
     test('sets the isVisibleOnScroll property', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover isVisibleOnScroll>
         <button slot="trigger">Popover Trigger</button>
         <div>Popover Content</div>
@@ -68,7 +68,7 @@ describe('popover', () => {
     });
 
     test('has the correct class names with dynamic', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover isDynamic>
         <cre8-button slot="trigger" text="Popover Trigger"></cre8-button>
         <div>Popover Content</div>
@@ -80,7 +80,7 @@ describe('popover', () => {
     });
 
     test('has the correct class names with dynamic active', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover isActiveDynamic>
         <button slot="trigger">Popover Trigger</button>
         <div>Popover Content</div>
@@ -92,7 +92,7 @@ describe('popover', () => {
     });
 
     test('has the correct class names with active', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover isActive>
         <button slot="trigger">Popover Trigger</button>
         <div>Popover Content</div>
@@ -104,7 +104,7 @@ describe('popover', () => {
     });
 
     test('renders the popover panel when isActive is true', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover isActive>
         <button slot="trigger">Popover Trigger</button>
         <div>Popover Content</div>
@@ -117,31 +117,31 @@ describe('popover', () => {
     });
 
     test('sets the aria-expanded attribute on the trigger when isActive is true', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover isActive>
         <cre8-button slot="trigger">Popover Trigger</cre8-button>
         <div>Popover Content</div>
       </cre8-popover>
     `);
         await el.updateComplete;
-        const trigger = el.querySelector<cre8Button>('[slot="trigger"]');
+        const trigger = el.querySelector<Cre8Button>('[slot="trigger"]');
         expect(trigger.buttonAriaExpanded).toBeTruthy();
     });
 
     test('sets the aria-expanded attribute on the trigger when isActive is false', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover>
         <cre8-button slot="trigger">Popover Trigger</cre8-button>
         <div>Popover Content</div>
       </cre8-popover>
     `);
         await el.updateComplete;
-        const trigger = el.querySelector<cre8Button>('[slot="trigger"]');
+        const trigger = el.querySelector<Cre8Button>('[slot="trigger"]');
         expect(trigger.buttonAriaExpanded).toBeFalsy();
     });
 
     test('should remove active on scroll', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover>
         <button slot="trigger">Popover Trigger</button>
         <div>Popover Content</div>
@@ -152,9 +152,9 @@ describe('popover', () => {
         el.isActive = true;
         el.isVisibleOnScroll = false;
 
-    // Create a dummy element to mock _cre8PopoverPanel
+    // Create a dummy element to mock _Cre8PopoverPanel
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_cre8PopoverPanel', 'get').mockReturnValue(dummyPanel);
+        jest.spyOn(el, '_Cre8PopoverPanel', 'get').mockReturnValue(dummyPanel);
 
     // Mock the bounding client rect of the popover panel
         jest.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
@@ -167,7 +167,7 @@ describe('popover', () => {
     });
 
     test('should remove active', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover isActive>
         <button slot="trigger">Popover Trigger</button>
         <div>Popover Content</div>
@@ -179,7 +179,7 @@ describe('popover', () => {
     });
 
     test('should set position to "right" if popover panel breaks out the left side of the window', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover>
         <button slot="trigger">Popover Trigger</button>
         <div>Popover Content</div>
@@ -197,9 +197,9 @@ describe('popover', () => {
             width: bodyWidth,
         } as DOMRect);
 
-    // Create a dummy element to mock _cre8PopoverPanel
+    // Create a dummy element to mock _Cre8PopoverPanel
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_cre8PopoverPanel', 'get').mockReturnValue(dummyPanel);
+        jest.spyOn(el, '_Cre8PopoverPanel', 'get').mockReturnValue(dummyPanel);
 
     // Mock the bounding client rect of the popover panel
         jest.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
@@ -221,7 +221,7 @@ describe('popover', () => {
     });
 
     test('should set position to "left" if popover panel breaks out the right side of the window', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover>
         <button slot="trigger">Popover Trigger</button>
         <div>Popover Content</div>
@@ -239,9 +239,9 @@ describe('popover', () => {
             width: bodyWidth,
         } as DOMRect);
 
-    // Create a dummy element to mock _cre8PopoverPanel
+    // Create a dummy element to mock _Cre8PopoverPanel
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_cre8PopoverPanel', 'get').mockReturnValue(dummyPanel);
+        jest.spyOn(el, '_Cre8PopoverPanel', 'get').mockReturnValue(dummyPanel);
 
     // Mock the bounding client rect of the popover panel
         jest.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
@@ -263,7 +263,7 @@ describe('popover', () => {
     });
 
     test('should set position to "top" if popover panel breaks out the bottom side of the window', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover>
         <button slot="trigger">Popover Trigger</button>
         <div>Popover Content</div>
@@ -285,9 +285,9 @@ describe('popover', () => {
     // Mock the window's innerHeight
         Object.defineProperty(window, 'innerHeight', { value: windowHeight });
 
-    // Create a dummy element to mock _cre8PopoverPanel
+    // Create a dummy element to mock _Cre8PopoverPanel
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_cre8PopoverPanel', 'get').mockReturnValue(dummyPanel);
+        jest.spyOn(el, '_Cre8PopoverPanel', 'get').mockReturnValue(dummyPanel);
 
     // Mock the element clientHeight
         Object.defineProperty(el, 'clientHeight', { value: 200 });
@@ -305,7 +305,7 @@ describe('popover', () => {
     });
 
     test('should set position to "bottom" if popover panel breaks out the top side of the window', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover>
         <button slot="trigger">Popover Trigger</button>
         <div>Popover Content</div>
@@ -321,9 +321,9 @@ describe('popover', () => {
     // Mock the window's innerHeight
         Object.defineProperty(window, 'innerHeight', { value: windowHeight });
 
-    // Create a dummy element to mock _cre8PopoverPanel
+    // Create a dummy element to mock _Cre8PopoverPanel
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_cre8PopoverPanel', 'get').mockReturnValue(dummyPanel);
+        jest.spyOn(el, '_Cre8PopoverPanel', 'get').mockReturnValue(dummyPanel);
 
     // Mock the bounding client rect of the popover panel
         jest.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
@@ -337,7 +337,7 @@ describe('popover', () => {
     });
 
     test('should close the popover when clicked outside and the panel is active', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover>
         <button slot="trigger">Popover Trigger</button>
         <div>Popover Content</div>
@@ -356,7 +356,7 @@ describe('popover', () => {
     });
 
     test('should not close the popover when clicked outside and the panel is not active', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover>
         <button slot="trigger">Popover Trigger</button>
         <div>Popover Content</div>
@@ -375,7 +375,7 @@ describe('popover', () => {
     });
 
     test('should throw an error when shadowRoot host is not defined', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover>
         <button slot="trigger">Popover Trigger</button>
         <div>Popover Content</div>
@@ -390,7 +390,7 @@ describe('popover', () => {
     });
 
     test('handles condition when shadowRoot.host is present', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover>
         <button slot="trigger">Popover Trigger</button>
         <div>Popover Content</div>
@@ -402,7 +402,7 @@ describe('popover', () => {
     });
 
     test('toggle the active state', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover>
         <button slot="trigger">Popover Trigger</button>
         <div>Popover Content</div>
@@ -418,7 +418,7 @@ describe('popover', () => {
     });
 
     test('closes the popover panel when Escape key is pressed and isActive is true', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover>
         <button slot="trigger">Popover Trigger</button>
         <div>Popover Content</div>
@@ -437,7 +437,7 @@ describe('popover', () => {
     });
 
     test('should set isActiveDynamic to true when either isActive and isDynamic is true', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover>
         <button slot="trigger">Popover Trigger</button>
         <div>Popover Content</div>
@@ -461,7 +461,7 @@ describe('popover', () => {
     });
 
     test('has a slotted header and footer', async () => {
-        const el = await fixture<cre8Popover>(html`
+        const el = await fixture<Cre8Popover>(html`
       <cre8-popover>
         <button slot="trigger">Popover Trigger</button>
         <div slot="header">Header</div>
@@ -481,7 +481,7 @@ describe('popover', () => {
 
     describe('accessibility -  Popover', () => {
         test('tests accessibility for default popover with slotted content', async () => {
-            const el = await fixture<cre8Popover>(html`
+            const el = await fixture<Cre8Popover>(html`
       <cre8-popover>
         <button slot="trigger">Popover Trigger</button>
         <div slot="header">Header</div>
@@ -493,7 +493,7 @@ describe('popover', () => {
         });
 
         test('tests accessibility for default popover with content action button', async () => {
-            const el = await fixture<cre8Popover>(html`
+            const el = await fixture<Cre8Popover>(html`
       <cre8-popover>
         <button slot="trigger">Popover Trigger</button>
         <div slot="header">Header</div>

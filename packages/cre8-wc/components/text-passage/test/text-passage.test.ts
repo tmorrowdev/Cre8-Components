@@ -1,7 +1,7 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../text-passage';
-import { cre8TextPassage } from '../text-passage';
+import { Cre8TextPassage } from '../text-passage';
 
 // Mock Element.attachInternals method
 // @ts-ignore
@@ -68,7 +68,7 @@ describe('text-passage', () => {
         const sizes = ['small', 'large'];
 
         for (const size of sizes) {
-            const el = await fixture<cre8TextPassage>(html`
+            const el = await fixture<Cre8TextPassage>(html`
         <cre8-text-passage size="${size}">
           <h1>Page Display Text</h1>
           <p>
@@ -117,7 +117,7 @@ describe('text-passage', () => {
     });
 
     test('has the correct class name with inverted', async () => {
-        const el = await fixture<cre8TextPassage>(html`
+        const el = await fixture<Cre8TextPassage>(html`
       <cre8-text-passage inverted="true">
         <h1>Page Display Text</h1>
         <p>

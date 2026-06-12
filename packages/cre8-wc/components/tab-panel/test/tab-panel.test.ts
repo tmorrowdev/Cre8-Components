@@ -1,16 +1,16 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../tab-panel';
-import { cre8TabPanel } from '../tab-panel';
+import { Cre8TabPanel } from '../tab-panel';
 
 describe('tab-panel', () => {
     test('renders correctly', async () => {
-        const el = await fixture<cre8TabPanel>(html`<cre8-tab-panel></cre8-tab-panel>`);
+        const el = await fixture<Cre8TabPanel>(html`<cre8-tab-panel></cre8-tab-panel>`);
         expect(el.shadowRoot).toBeTruthy();
     });
 
     test('renders tab panel with default properties', async () => {
-        const el = await fixture<cre8TabPanel>(html`
+        const el = await fixture<Cre8TabPanel>(html`
             <cre8-tab-panel></cre8-tab-panel>
     `);
 
@@ -20,7 +20,7 @@ describe('tab-panel', () => {
     });
 
     test('renders tab panel with custom properties', async () => {
-        const el = await fixture<cre8TabPanel>(html`
+        const el = await fixture<Cre8TabPanel>(html`
             <cre8-tab-panel slot="panel" isActive></cre8-tab-panel>
     `);
 
@@ -30,7 +30,7 @@ describe('tab-panel', () => {
     });
 
     test('sets tabindex to 0 when skipFocusOnPanel is false', async () => {
-        const el = await fixture<cre8TabPanel>(html`
+        const el = await fixture<Cre8TabPanel>(html`
             <cre8-tab-panel></cre8-tab-panel>
     `);
 
@@ -39,7 +39,7 @@ describe('tab-panel', () => {
     });
 
     test('does not set tabindex when skipFocusOnPanel is true', async () => {
-        const el = await fixture<cre8TabPanel>(html`
+        const el = await fixture<Cre8TabPanel>(html`
             <cre8-tab-panel skipFocusOnPanel></cre8-tab-panel>
     `);
 

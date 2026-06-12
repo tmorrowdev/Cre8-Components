@@ -116,6 +116,7 @@
     "@lit-labs/cli": "^0.6.6",
     "@mdx-js/react": "^3.1.1",
     "@mdx-js/rollup": "^3.1.1",
+    "@open-wc/testing-helpers": "^3.0.1",
     "@skypack/package-check": "^0.2.2",
     "@storybook/addon-a11y": "10.0.6",
     "@storybook/addon-docs": "10.0.6",

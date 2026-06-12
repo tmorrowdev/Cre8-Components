@@ -89,7 +89,7 @@ export class Cre8RemoveTag extends Cre8Element {
           width="16"
           height="16"
           svg="${svgClose}"
-          aria-label="remove"
+          aria-hidden="true"
         ></cre8-icon>
       </div>
     </button>`;

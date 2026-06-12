@@ -1,18 +1,18 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../select-tile';
-import { cre8SelectTile } from '../select-tile';
-import { cre8SelectTileList } from '../../select-tile-list/select-tile-list';
+import { Cre8SelectTile } from '../select-tile';
+import { Cre8SelectTileList } from '../../select-tile-list/select-tile-list';
 
 
 describe('select-tile', () => {
     test('renders correctly', async () => {
-        const el = await fixture<cre8SelectTile>(html`<cre8-select-tile></cre8-select-tile>`);
+        const el = await fixture<Cre8SelectTile>(html`<cre8-select-tile></cre8-select-tile>`);
         expect(el.shadowRoot).toBeTruthy();
     });
 
     test('renders footer and header', async () => {
-        const el = await fixture<cre8SelectTile>(html`<cre8-select-tile>
+        const el = await fixture<Cre8SelectTile>(html`<cre8-select-tile>
       <h2 slot="header">Header</h2>
       <p>Body</p>
       <span slot="title">Title</span>
@@ -31,46 +31,46 @@ describe('select-tile', () => {
         const variants = ['bare', 'horizontal', 'horizontal-bare'];
 
         for (const variant of variants) {
-            const el = await fixture<cre8SelectTile>(html`<cre8-select-tile variant="${variant}"></cre8-select-tile>`);
+            const el = await fixture<Cre8SelectTile>(html`<cre8-select-tile variant="${variant}"></cre8-select-tile>`);
             const card = el.shadowRoot!.querySelector('.cre8-c-select-tile'); // Test for the class change
             expect(card.classList.contains(`cre8-c-select-tile--${variant}`)).toBeTruthy();
         }
     });
 
     test('has the correct class names with center alignment', async () => {
-        const el = await fixture<cre8SelectTile>(html`<cre8-select-tile align="center"></cre8-select-tile>`);
+        const el = await fixture<Cre8SelectTile>(html`<cre8-select-tile align="center"></cre8-select-tile>`);
         const card = el.shadowRoot!.querySelector('.cre8-c-select-tile'); // Test for the class change
         expect(card.classList.contains('cre8-c-select-tile--align-center')).toBeTruthy();
     });
 
     test('has the correct class names with error', async () => {
-        const el = await fixture<cre8SelectTile>(html`<cre8-select-tile ?isError="${true}"></cre8-select-tile>`);
+        const el = await fixture<Cre8SelectTile>(html`<cre8-select-tile ?isError="${true}"></cre8-select-tile>`);
         const radioFieldItem = el.shadowRoot!.querySelector('.cre8-c-select-tile'); // Test for the class change
         expect(radioFieldItem.classList.contains('cre8-c-select-tile--error')).toBeTruthy();
     });
 
     test('has the correct class names with success', async () => {
-        const el = await fixture<cre8SelectTile>(html`<cre8-select-tile ?isSuccess="${true}"></cre8-select-tile>`);
+        const el = await fixture<Cre8SelectTile>(html`<cre8-select-tile ?isSuccess="${true}"></cre8-select-tile>`);
         const radioFieldItem = el.shadowRoot!.querySelector('.cre8-c-select-tile'); // Test for the class change
         expect(radioFieldItem.classList.contains('cre8-c-select-tile--success')).toBeTruthy();
     });
 
     test('has the correct class names with disabled', async () => {
-        const el = await fixture<cre8SelectTile>(html`<cre8-select-tile ?disabled="${true}"></cre8-select-tile>`);
+        const el = await fixture<Cre8SelectTile>(html`<cre8-select-tile ?disabled="${true}"></cre8-select-tile>`);
         const radioFieldItem = el.shadowRoot!.querySelector('.cre8-c-select-tile'); // Test for the class change
         expect(radioFieldItem.classList.contains('cre8-c-select-tile--disabled')).toBeTruthy();
     });
 
     test('has the correct aria with disabled', async () => {
-        const el = await fixture<cre8SelectTile>(html`<cre8-select-tile ?disabled="${true}"></cre8-select-tile>`);
-        expect(el.internals.ariaDisabled).toBe('true');
+        const el = await fixture<Cre8SelectTile>(html`<cre8-select-tile ?disabled="${true}"></cre8-select-tile>`);
+        expect(el._internals.ariaDisabled).toBe('true');
         el.disabled = false;
         await el.updateComplete;
-        expect(el.internals.ariaDisabled).toBe('false');
+        expect(el._internals.ariaDisabled).toBe('false');
     });
 
     test('should handle keydown ArrowDown', async () => {
-        const el = await fixture<cre8SelectTileList>(html`<cre8-select-tile-list label="Legend">
+        const el = await fixture<Cre8SelectTileList>(html`<cre8-select-tile-list label="Legend">
       <cre8-select-tile name="foo" value="1">1</cre8-select-tile>
       <cre8-select-tile name="foo" value="2">2</cre8-select-tile>
       <cre8-select-tile name="foo" value="3">3</cre8-select-tile>
@@ -80,8 +80,8 @@ describe('select-tile', () => {
         const mockKeydownEvent = new KeyboardEvent('keydown', { code: 'ArrowDown' });
         jest.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
 
-        const topItem: cre8SelectTile = el.querySelector<cre8SelectTile>('[value="1"]');
-        const middleItem: cre8SelectTile = el.querySelector<cre8SelectTile>('[value="2"]');
+        const topItem: Cre8SelectTile = el.querySelector<Cre8SelectTile>('[value="1"]');
+        const middleItem: Cre8SelectTile = el.querySelector<Cre8SelectTile>('[value="2"]');
 
         topItem.dispatchEvent(mockKeydownEvent);
         expect(topItem.checked).toBeFalsy();
@@ -89,7 +89,7 @@ describe('select-tile', () => {
     });
 
     test('should handle keydown ArrowUp', async () => {
-        const el = await fixture<cre8SelectTileList>(html`<cre8-select-tile-list label="Legend">
+        const el = await fixture<Cre8SelectTileList>(html`<cre8-select-tile-list label="Legend">
       <cre8-select-tile name="foo" value="1">1</cre8-select-tile>
       <cre8-select-tile name="foo" value="2">2</cre8-select-tile>
       <cre8-select-tile name="foo" value="3">3</cre8-select-tile>
@@ -99,8 +99,8 @@ describe('select-tile', () => {
         const mockKeydownEvent = new KeyboardEvent('keydown', { code: 'ArrowUp' });
         jest.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
 
-        const topItem: cre8SelectTile = el.querySelector<cre8SelectTile>('[value="1"]');
-        const middleItem: cre8SelectTile = el.querySelector<cre8SelectTile>('[value="2"]');
+        const topItem: Cre8SelectTile = el.querySelector<Cre8SelectTile>('[value="1"]');
+        const middleItem: Cre8SelectTile = el.querySelector<Cre8SelectTile>('[value="2"]');
 
         middleItem.dispatchEvent(mockKeydownEvent);
 
@@ -110,7 +110,7 @@ describe('select-tile', () => {
 
 
     test('should handle keydown ArrowDown pressed multiple times', async () => {
-        const el = await fixture<cre8SelectTileList>(html`<cre8-select-tile-list label="Legend">
+        const el = await fixture<Cre8SelectTileList>(html`<cre8-select-tile-list label="Legend">
       <cre8-select-tile name="foo" value="1">1</cre8-select-tile>
       <cre8-select-tile name="foo" value="2">2</cre8-select-tile>
       <cre8-select-tile name="foo" value="3">3</cre8-select-tile>
@@ -120,9 +120,9 @@ describe('select-tile', () => {
         const mockKeydownEvent = new KeyboardEvent('keydown', { code: 'ArrowDown' });
         jest.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
 
-        const topItem: cre8SelectTile = el.querySelector<cre8SelectTile>('[value="1"]');
-        const middleItem: cre8SelectTile = el.querySelector<cre8SelectTile>('[value="2"]');
-        const bottomItem: cre8SelectTile = el.querySelector<cre8SelectTile>('[value="3"]');
+        const topItem: Cre8SelectTile = el.querySelector<Cre8SelectTile>('[value="1"]');
+        const middleItem: Cre8SelectTile = el.querySelector<Cre8SelectTile>('[value="2"]');
+        const bottomItem: Cre8SelectTile = el.querySelector<Cre8SelectTile>('[value="3"]');
 
 
         topItem.focus();
@@ -139,7 +139,7 @@ describe('select-tile', () => {
     });
 
     test('should handle keydown ArrowUp pressed multiple times', async () => {
-        const el = await fixture<cre8SelectTileList>(html`<cre8-select-tile-list label="Legend">
+        const el = await fixture<Cre8SelectTileList>(html`<cre8-select-tile-list label="Legend">
       <cre8-select-tile name="foo" value="1">1</cre8-select-tile>
       <cre8-select-tile name="foo" value="2">2</cre8-select-tile>
       <cre8-select-tile name="foo" value="3">3</cre8-select-tile>
@@ -149,9 +149,9 @@ describe('select-tile', () => {
         const mockKeydownEvent = new KeyboardEvent('keydown', { code: 'ArrowUp' });
         jest.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
 
-        const topItem: cre8SelectTile = el.querySelector<cre8SelectTile>('[value="1"]');
-        const middleItem: cre8SelectTile = el.querySelector<cre8SelectTile>('[value="2"]');
-        const bottomItem: cre8SelectTile = el.querySelector<cre8SelectTile>('[value="3"]');
+        const topItem: Cre8SelectTile = el.querySelector<Cre8SelectTile>('[value="1"]');
+        const middleItem: Cre8SelectTile = el.querySelector<Cre8SelectTile>('[value="2"]');
+        const bottomItem: Cre8SelectTile = el.querySelector<Cre8SelectTile>('[value="3"]');
 
 
         topItem.focus();
@@ -253,7 +253,7 @@ describe('select-tile', () => {
 
     test('clicking nameless radio Select Tile does not uncheck anything', async () => {
         const div = await fixture<HTMLFormElement>(html`<div><cre8-select-tile ></cre8-select-tile><cre8-select-tile ></cre8-select-tile></div>`);
-        const [st1, st2] = Array.from(div.querySelectorAll<cre8SelectTile>('cre8-select-tile'));
+        const [st1, st2] = Array.from(div.querySelectorAll<Cre8SelectTile>('cre8-select-tile'));
 
         expect(st1.checked).toBeFalsy();
         expect(st2.checked).toBeFalsy();

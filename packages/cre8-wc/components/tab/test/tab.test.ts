@@ -3,16 +3,16 @@ import { html } from 'lit';
 import '../tab';
 import '../../tabs/tabs';
 import '../../tab-panel/tab-panel';
-import { cre8Tab } from '../tab';
+import { Cre8Tab } from '../tab';
 
 describe('tab', () => {
   test('renders correctly', async () => {
-    const el = await fixture<cre8Tab>(html`<cre8-tab></cre8-tab>`);
+    const el = await fixture<Cre8Tab>(html`<cre8-tab></cre8-tab>`);
     expect(el.shadowRoot).toBeTruthy();
   });
 
   test('renders tab with default properties', async () => {
-    const el = await fixture<cre8Tab>(html`
+    const el = await fixture<Cre8Tab>(html`
       <cre8-tab></cre8-tab>
     `);
 
@@ -26,7 +26,7 @@ describe('tab', () => {
   });
 
   test('renders tab with custom properties', async () => {
-    const el = await fixture<cre8Tab>(html`
+    const el = await fixture<Cre8Tab>(html`
       <cre8-tab
         size="sm"
         isActive
@@ -49,7 +49,7 @@ describe('tab', () => {
   });
 
   test('sets tab ID with ariaLabelledBy value', async () => {
-    const el = await fixture<cre8Tab>(html`
+    const el = await fixture<Cre8Tab>(html`
       <cre8-tab ariaLabelledBy="label-id"></cre8-tab>
     `);
 
@@ -58,7 +58,7 @@ describe('tab', () => {
   });
 
   test('dispatches tabSelected event on click', async () => {
-    const el = await fixture<cre8Tab>(html`
+    const el = await fixture<Cre8Tab>(html`
       <cre8-tab></cre8-tab>
     `);
 
@@ -70,7 +70,7 @@ describe('tab', () => {
 
   describe('accessibility tests', () => {
     test('checking component is accessible', async () => {
-      const el = await fixture<cre8Tab>(html`
+      const el = await fixture<Cre8Tab>(html`
       <cre8-tabs>
         <cre8-tab>Tab 1</cre8-tab>
         <cre8-tab-panel slot="panel">Tab content 1</cre8-tab-panel>
@@ -84,7 +84,7 @@ describe('tab', () => {
     });
 
     test('checking active tab is accessible', async () => {
-      const el = await fixture<cre8Tab>(html`
+      const el = await fixture<Cre8Tab>(html`
       <cre8-tabs>
         <cre8-tab isActive>Tab 1</cre8-tab>
         <cre8-tab-panel slot="panel">Tab content 1</cre8-tab-panel>
@@ -98,7 +98,7 @@ describe('tab', () => {
     });
 
     test('checking active panel is accessible', async () => {
-      const el = await fixture<cre8Tab>(html`
+      const el = await fixture<Cre8Tab>(html`
       <cre8-tabs>
         <cre8-tab isActive>Tab 1</cre8-tab>
         <cre8-tab-panel slot="panel" isActive>Tab content 1</cre8-tab-panel>
@@ -112,7 +112,7 @@ describe('tab', () => {
     });
 
     test('checking Tabs active index is accessible', async () => {
-      const el = await fixture<cre8Tab>(html`
+      const el = await fixture<Cre8Tab>(html`
       <cre8-tabs activeindex="1">
         <cre8-tab>Tab 1</cre8-tab>
         <cre8-tab-panel slot="panel">Tab content 1</cre8-tab-panel>
@@ -126,7 +126,7 @@ describe('tab', () => {
     });
 
     test('checking Tabs overflow is accessible', async () => {
-      const el = await fixture<cre8Tab>(html`
+      const el = await fixture<Cre8Tab>(html`
       <cre8-tabs activeindex="1">
         <cre8-tab isActive>Tab 1</cre8-tab>
         <cre8-tab>Tab 2</cre8-tab>

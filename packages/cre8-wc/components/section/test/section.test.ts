@@ -1,7 +1,7 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../section';
-import { cre8Section } from '../section';
+import { Cre8Section } from '../section';
 
 // Mock Element.attachInternals method
 // @ts-ignore
@@ -28,7 +28,7 @@ describe('section', () => {
     });
 
     test('renders a heading when headline is input', async () => {
-        const el = await fixture<cre8Section>(html`
+        const el = await fixture<Cre8Section>(html`
       <cre8-section headline="Section Heading">
         <p>Section content</p>
       </cre8-section>

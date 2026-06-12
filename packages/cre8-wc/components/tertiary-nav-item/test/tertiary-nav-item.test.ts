@@ -1,12 +1,12 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../tertiary-nav-item';
-import { cre8TertiaryNavItem } from '../tertiary-nav-item';
+import { Cre8TertiaryNavItem } from '../tertiary-nav-item';
 import '../../tertiary-nav/tertiary-nav';
 
 describe('tertiary-nav-item', () => {
     test('renders correctly', async () => {
-        const el = await fixture<cre8TertiaryNavItem>(html`<cre8-tertiary-nav-item></cre8-tertiary-nav-item>`);
+        const el = await fixture<Cre8TertiaryNavItem>(html`<cre8-tertiary-nav-item></cre8-tertiary-nav-item>`);
         expect(el.shadowRoot).toBeTruthy();
     });
 
@@ -14,7 +14,7 @@ describe('tertiary-nav-item', () => {
         const content = 'Item 1';
         const href = '/page';
 
-        const el = await fixture<cre8TertiaryNavItem>(html`
+        const el = await fixture<Cre8TertiaryNavItem>(html`
       <cre8-tertiary-nav-item href=${href}>${content}</cre8-tertiary-nav-item>
     `);
 
@@ -30,7 +30,7 @@ describe('tertiary-nav-item', () => {
     });
 
     test('works with isCurrent', async () => {
-        const el = await fixture<cre8TertiaryNavItem>(html`<cre8-tertiary-nav-item isCurrent></cre8-tertiary-nav-item>`);
+        const el = await fixture<Cre8TertiaryNavItem>(html`<cre8-tertiary-nav-item isCurrent></cre8-tertiary-nav-item>`);
         const tertiaryNavItem = el.shadowRoot.querySelector('.cre8-c-tertiary-nav-item');
         const link = el.shadowRoot.querySelector('a');
         expect(tertiaryNavItem.classList.contains('cre8-is-current')).toBeTruthy;
@@ -38,13 +38,13 @@ describe('tertiary-nav-item', () => {
     });
 
     test('works with a href', async () => {
-        const el = await fixture<cre8TertiaryNavItem>(html`<cre8-tertiary-nav-item href="#"></cre8-tertiary-nav-item>`);
+        const el = await fixture<Cre8TertiaryNavItem>(html`<cre8-tertiary-nav-item href="#"></cre8-tertiary-nav-item>`);
         const tertiaryNavItemLink = el.shadowRoot.querySelector('a');
         expect(tertiaryNavItemLink.getAttribute('href')).toBeTruthy();
     });
 
     test('adds isCurrent class when clicked and removes it from other items', async () => {
-        const el = await fixture<cre8TertiaryNavItem>(html`
+        const el = await fixture<Cre8TertiaryNavItem>(html`
     <cre8-tertiary-nav>
       <cre8-tertiary-nav-item><button></button></cre8-tertiary-nav-item>
       <cre8-tertiary-nav-item><button></button></cre8-tertiary-nav-item>
@@ -57,8 +57,8 @@ describe('tertiary-nav-item', () => {
         elItem1Button.click();
         expect(elItem1.isCurrent).toBeTruthy();
 
-        const elItem2 = el.querySelector<cre8TertiaryNavItem>('cre8-tertiary-nav-item:nth-child(2)');
-        const elItem2Button = el.querySelector<cre8TertiaryNavItem>('cre8-tertiary-nav-item:nth-child(2)').querySelector('button');
+        const elItem2 = el.querySelector<Cre8TertiaryNavItem>('cre8-tertiary-nav-item:nth-child(2)');
+        const elItem2Button = el.querySelector<Cre8TertiaryNavItem>('cre8-tertiary-nav-item:nth-child(2)').querySelector('button');
         elItem2Button.click();
         expect(elItem2.isCurrent).toBeTruthy();
         expect(elItem1.isCurrent).toBeFalsy();

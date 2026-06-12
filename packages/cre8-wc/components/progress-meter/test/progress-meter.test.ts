@@ -1,7 +1,7 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../progress-meter';
-import { cre8ProgressMeter } from '../progress-meter';
+import { Cre8ProgressMeter } from '../progress-meter';
 
 describe('progress-meter', () => {
     test('renders correctly', async () => {
@@ -21,7 +21,7 @@ describe('progress-meter', () => {
         const statuses = ['error', 'warning', 'success'];
 
         for (const status of statuses) {
-            const el = await fixture<cre8ProgressMeter>(
+            const el = await fixture<Cre8ProgressMeter>(
                 html`<cre8-progress-meter status="${status}" value="100"></cre8-progress-meter>`
             );
             const progressMeter = el.shadowRoot!.querySelector('.cre8-c-progress-meter'); // Test for the class change
@@ -31,7 +31,7 @@ describe('progress-meter', () => {
 
     describe('accessibility - Progress Meter', () => {
         test('tests accessibility for default Progress Meter', async () => {
-            const el = await fixture<cre8ProgressMeter>(html`<cre8-progress-meter value="100"></cre8-progress-meter>`);
+            const el = await fixture<Cre8ProgressMeter>(html`<cre8-progress-meter value="100"></cre8-progress-meter>`);
             return expect(el).toBeAccessible();
         });
     });

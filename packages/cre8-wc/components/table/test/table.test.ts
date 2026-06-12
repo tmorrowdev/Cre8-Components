@@ -1,7 +1,7 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../table';
-import { cre8Table } from '../table';
+import { Cre8Table } from '../table';
 
 describe('table', () => {
     test('renders correctly', async () => {
@@ -10,7 +10,7 @@ describe('table', () => {
     });
 
     test('has the correct caption text', async () => {
-        const el = await fixture<cre8Table>(html`<cre8-table caption="Custom caption test"></cre8-table>`);
+        const el = await fixture<Cre8Table>(html`<cre8-table caption="Custom caption test"></cre8-table>`);
         const caption = el.shadowRoot.querySelector('.cre8-c-table__caption') as HTMLElement;
         expect(caption.textContent.trim()).toBe('Custom caption test');
     });
@@ -20,7 +20,7 @@ describe('table', () => {
             const behaviors = ['responsive'];
 
             for (const behavior of behaviors) {
-                const el = await fixture<cre8Table>(
+                const el = await fixture<Cre8Table>(
                     html`<cre8-table behavior="${behavior}"></cre8-table>`
                 );
                 const table = el.shadowRoot!.querySelector('.cre8-c-table');
@@ -29,7 +29,7 @@ describe('table', () => {
         });
 
         test('isHoverable', async () => {
-            const el = await fixture<cre8Table>(html`<cre8-table isHoverable></cre8-table>`);
+            const el = await fixture<Cre8Table>(html`<cre8-table isHoverable></cre8-table>`);
             const table = el.shadowRoot.querySelector('.cre8-c-table');
             expect(table.classList.contains('cre8-c-table--hoverable')).toBeTruthy();
         });

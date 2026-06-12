@@ -2,9 +2,9 @@ import svgInfoFilled from '@tmorrow/cre8-wc/icons/System/Filled/Info.svg?raw';
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../tooltip';
-import { cre8Tooltip } from '../tooltip';
+import { Cre8Tooltip } from '../tooltip';
 import '../../icon/icon';
-import { cre8Section } from '../../section/section';
+import { Cre8Section } from '../../section/section';
 import '../../section/section';
 
 const mock_id = 'myid';
@@ -49,7 +49,7 @@ describe('tooltip', () => {
         const positions = ['top', 'left', 'right'];
 
         for (const position of positions) {
-            const el = await fixture<cre8Tooltip>(html`
+            const el = await fixture<Cre8Tooltip>(html`
         <cre8-tooltip position="${position}">
           <cre8-icon-legacy slot="trigger" name="info" iconTitle="info"></cre8-icon-legacy>
           Lorem ipsum dolor sit amet, sed do eiusmod tempor
@@ -65,7 +65,7 @@ describe('tooltip', () => {
       const positions = ['top', 'left', 'right'];
 
       for (const position of positions) {
-        const el = await fixture<cre8Tooltip>(html`
+        const el = await fixture<Cre8Tooltip>(html`
         <cre8-tooltip position="${position}" svg="${svgInfoFilled}">
           Lorem ipsum dolor sit amet, sed do eiusmod tempor
         </cre8-tooltip>
@@ -77,7 +77,7 @@ describe('tooltip', () => {
     });
 
     test('should remove active', async () => {
-        const el = await fixture<cre8Tooltip>(html`
+        const el = await fixture<Cre8Tooltip>(html`
       <cre8-tooltip isActive>
         <cre8-icon-legacy slot="trigger" name="info" iconTitle="info"></cre8-icon-legacy>
         Lorem ipsum dolor sit amet, sed do eiusmod tempor
@@ -89,7 +89,7 @@ describe('tooltip', () => {
     });
 
     test('should set position to "right" if tooltip panel breaks out the left side of the window', async () => {
-        const el = await fixture<cre8Tooltip>(html`
+        const el = await fixture<Cre8Tooltip>(html`
       <cre8-tooltip>
         <cre8-icon-legacy slot="trigger" name="info" iconTitle="info"></cre8-icon-legacy>
         Lorem ipsum dolor sit amet, sed do eiusmod tempor
@@ -108,9 +108,9 @@ describe('tooltip', () => {
             width: bodyWidth,
         } as DOMRect);
 
-    // Create a dummy element to mock _cre8TooltipPanel
+    // Create a dummy element to mock _Cre8TooltipPanel
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_cre8TooltipPanel', 'get').mockReturnValue(dummyPanel);
+        jest.spyOn(el, '_Cre8TooltipPanel', 'get').mockReturnValue(dummyPanel);
 
     // Mock the bounding client rect of the tooltip panel
         jest.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
@@ -132,7 +132,7 @@ describe('tooltip', () => {
     });
 
     test('should set position to "left" if tooltip panel breaks out the right side of the window', async () => {
-        const el = await fixture<cre8Tooltip>(html`
+        const el = await fixture<Cre8Tooltip>(html`
       <cre8-tooltip>
         <cre8-icon-legacy slot="trigger" name="info" iconTitle="info"></cre8-icon-legacy>
         Lorem ipsum dolor sit amet, sed do eiusmod tempor
@@ -150,9 +150,9 @@ describe('tooltip', () => {
             width: bodyWidth,
         } as DOMRect);
 
-    // Create a dummy element to mock _cre8TooltipPanel
+    // Create a dummy element to mock _Cre8TooltipPanel
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_cre8TooltipPanel', 'get').mockReturnValue(dummyPanel);
+        jest.spyOn(el, '_Cre8TooltipPanel', 'get').mockReturnValue(dummyPanel);
 
     // Mock the bounding client rect of the tooltip panel
         jest.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
@@ -174,7 +174,7 @@ describe('tooltip', () => {
     });
 
     test('should set position to "top" if tooltip panel breaks out the bottom side of the window', async () => {
-        const el = await fixture<cre8Tooltip>(html`
+        const el = await fixture<Cre8Tooltip>(html`
       <cre8-tooltip>
         <cre8-icon-legacy slot="trigger" name="info" iconTitle="info"></cre8-icon-legacy>
         Lorem ipsum dolor sit amet, sed do eiusmod tempor
@@ -196,9 +196,9 @@ describe('tooltip', () => {
     // Mock the window's innerHeight
         Object.defineProperty(window, 'innerHeight', { value: windowHeight });
 
-    // Create a dummy element to mock _cre8TooltipPanel
+    // Create a dummy element to mock _Cre8TooltipPanel
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_cre8TooltipPanel', 'get').mockReturnValue(dummyPanel);
+        jest.spyOn(el, '_Cre8TooltipPanel', 'get').mockReturnValue(dummyPanel);
 
     // Mock the element clientHeight
         Object.defineProperty(el, 'clientHeight', { value: 200 });
@@ -217,7 +217,7 @@ describe('tooltip', () => {
     });
 
     test('should set position to "bottom" if tooltip panel breaks out the top side of the window', async () => {
-        const el = await fixture<cre8Tooltip>(html`
+        const el = await fixture<Cre8Tooltip>(html`
       <cre8-tooltip>
         <cre8-icon-legacy slot="trigger" name="info" iconTitle="info"></cre8-icon-legacy>
         Lorem ipsum dolor sit amet, sed do eiusmod tempor
@@ -233,9 +233,9 @@ describe('tooltip', () => {
     // Mock the window's innerHeight
         Object.defineProperty(window, 'innerHeight', { value: windowHeight });
 
-    // Create a dummy element to mock _cre8TooltipPanel
+    // Create a dummy element to mock _Cre8TooltipPanel
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_cre8TooltipPanel', 'get').mockReturnValue(dummyPanel);
+        jest.spyOn(el, '_Cre8TooltipPanel', 'get').mockReturnValue(dummyPanel);
 
     // Mock the bounding client rect of the tooltip panel
         jest.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
@@ -249,7 +249,7 @@ describe('tooltip', () => {
     });
 
     test('toggle the active state', async () => {
-        const el = await fixture<cre8Tooltip>(html`
+        const el = await fixture<Cre8Tooltip>(html`
       <cre8-tooltip>
         <cre8-icon-legacy slot="trigger" name="info" iconTitle="info"></cre8-icon-legacy>
         Lorem ipsum dolor sit amet, sed do eiusmod tempor
@@ -264,7 +264,7 @@ describe('tooltip', () => {
     });
 
     test('closes the tooltip panel when Escape or Tab key is pressed and isActive is true', async () => {
-        const el = await fixture<cre8Tooltip>(html`
+        const el = await fixture<Cre8Tooltip>(html`
       <cre8-tooltip>
         <cre8-icon-legacy slot="trigger" name="info" iconTitle="info"></cre8-icon-legacy>
         Lorem ipsum dolor sit amet, sed do eiusmod tempor
@@ -288,7 +288,7 @@ describe('tooltip', () => {
     });
 
     test('should set isActiveDynamic to true when either isActive and isDynamic is true', async () => {
-        const el = await fixture<cre8Tooltip>(html`
+        const el = await fixture<Cre8Tooltip>(html`
       <cre8-tooltip>
         <cre8-icon-legacy slot="trigger" name="info" iconTitle="info"></cre8-icon-legacy>
         Lorem ipsum dolor sit amet, sed do eiusmod tempor
@@ -312,7 +312,7 @@ describe('tooltip', () => {
 
 
     test('should set auto-generated ids in aria-describedBy attributes for a11y', async () => {
-        const el = await fixture<cre8Section>(
+        const el = await fixture<Cre8Section>(
             html`
         <cre8-section>
           <input type="text" id="field" />
@@ -329,7 +329,7 @@ describe('tooltip', () => {
     });
 
     test('should create a hidden tip element with an auto-generated id', async () => {
-        const el = await fixture<cre8Section>(
+        const el = await fixture<Cre8Section>(
             html`
         <cre8-section>
           <input type="text" id="field" />
@@ -348,7 +348,7 @@ describe('tooltip', () => {
     test('should chain ids in aria-describedBy attributes for a11y', async () => {
         mock_nanoid.mockReturnValueOnce(`${mock_id}_1`);
         mock_nanoid.mockReturnValueOnce(`${mock_id}_2`);
-        const el = await fixture<cre8Section>(
+        const el = await fixture<Cre8Section>(
             html`
         <cre8-section>
         <div>

@@ -2,8 +2,8 @@ import { fixture, oneEvent } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../button';
 import userEvent from '@testing-library/user-event';
-import { cre8LoadingSpinner } from '../../loading-spinner/loading-spinner';
-import { cre8Button } from '../button';
+import { Cre8LoadingSpinner } from '../../loading-spinner/loading-spinner';
+import { Cre8Button } from '../button';
 
 describe('button', () => {
     test('renders correctly', async () => {
@@ -22,14 +22,14 @@ describe('button', () => {
         const variants = ['primary', 'secondary', 'tertiary'];
 
         for (const variant of variants) {
-            const el = await fixture<cre8Button>(html`<cre8-button variant="${variant}"></cre8-button>`);
+            const el = await fixture<Cre8Button>(html`<cre8-button variant="${variant}"></cre8-button>`);
             const button = el.shadowRoot!.querySelector('button'); // Test for the class change
             expect(button.classList.contains(`cre8-c-button--${variant}`)).toBeTruthy();
         }
     });
 
     test('has the correct class names with secondary variant neutral and inverse props', async () => {
-            const el = await fixture<cre8Button>(html`<cre8-button text="Button" variant="secondary" neutral inverse></cre8-button>`);
+            const el = await fixture<Cre8Button>(html`<cre8-button text="Button" variant="secondary" neutral inverse></cre8-button>`);
             const button = el.shadowRoot!.querySelector('button'); // Test for the class change
             expect(button.classList.contains(`cre8-c-button--secondary`)).toBeTruthy();
             expect(button.classList.contains(`cre8-c-button--neutral`)).toBeTruthy();
@@ -38,7 +38,7 @@ describe('button', () => {
     });
 
     test('has the correct class names with secondary variant disabled, neutral and inverse props', async () => {
-        const el = await fixture<cre8Button>(html`<cre8-button text="Button" variant="secondary" disabled neutral inverse></cre8-button>`);
+        const el = await fixture<Cre8Button>(html`<cre8-button text="Button" variant="secondary" disabled neutral inverse></cre8-button>`);
         const button = el.shadowRoot!.querySelector('button'); // Test for the class change
         expect(button.classList.contains(`cre8-c-button--secondary`)).toBeTruthy();
         expect(button.classList.contains(`cre8-c-button--neutral`)).toBeTruthy();
@@ -46,7 +46,7 @@ describe('button', () => {
 });
 
 test('has the correct class names with secondary variant loading, neutral and inverse props', async () => {
-    const el = await fixture<cre8Button>(html`<cre8-button text="Button" variant="secondary" loading neutral inverse></cre8-button>`);
+    const el = await fixture<Cre8Button>(html`<cre8-button text="Button" variant="secondary" loading neutral inverse></cre8-button>`);
     const button = el.shadowRoot!.querySelector('button'); // Test for the class change
     expect(button.classList.contains(`cre8-c-button--secondary`)).toBeTruthy();
     expect(button.classList.contains(`cre8-c-button--neutral`)).toBeTruthy();
@@ -56,9 +56,9 @@ test('has the correct class names with secondary variant loading, neutral and in
 
 test('works with loading state secondary variant with neutral and inverse props', async () => {
     const el = await fixture(html`<cre8-button variant="secondary" neutral inverse ?loading=${true}></cre8-button>`);
-    const cre8Icon = el.shadowRoot.querySelector<cre8LoadingSpinner>('cre8-loading-spinner');
+    const Cre8Icon = el.shadowRoot.querySelector<Cre8LoadingSpinner>('cre8-loading-spinner');
     const button = el.shadowRoot!.querySelector('button'); // Test for the class change
-    expect(cre8Icon.classList.contains('cre8-c-button__loading-icon')).toBeTruthy();
+    expect(Cre8Icon.classList.contains('cre8-c-button__loading-icon')).toBeTruthy();
     expect(button.classList.contains(`cre8-c-button--secondary`)).toBeTruthy();
     expect(button.classList.contains(`cre8-c-button--neutral`)).toBeTruthy();
     expect(button.classList.contains(`cre8-c-button--inverse`)).toBeTruthy();
@@ -72,11 +72,11 @@ test('works with loading state secondary variant with neutral and inverse props'
     });
 
     test('works with an href and an iconPosition before', async () => {
-        const el = await fixture(html`<cre8-button href="https://www.cfpb.gov" iconPosition="before" iconName="keyboard-arrow-right"></cre8-button>`);
+        const el = await fixture(html`<cre8-button href="https://www.cfpb.gov" text="Go to CFPB" iconPosition="before" iconName="keyboard-arrow-right"></cre8-button>`);
         const button = el.shadowRoot.querySelector('a');
         const buttonText = el.shadowRoot.querySelector<HTMLSpanElement>('.cre8-c-button__text');
         const previousElement = buttonText.previousElementSibling as HTMLElement;
-        expect(previousElement.tagName === 'cre8-ICON-LEGACY').toBeTruthy();
+        expect(previousElement.tagName === 'CRE8-ICON-LEGACY').toBeTruthy();
         expect(button).toBeTruthy();
     });
 
@@ -85,22 +85,22 @@ test('works with loading state secondary variant with neutral and inverse props'
         const button = el.shadowRoot.querySelector('a');
         const buttonText = el.shadowRoot.querySelector<HTMLSpanElement>('.cre8-c-button__text');
         const previousElement = buttonText.previousElementSibling as HTMLElement;
-        expect(previousElement.tagName === 'cre8-ICON').toBeTruthy();
+        expect(previousElement.tagName === 'CRE8-ICON').toBeTruthy();
         expect(button).toBeTruthy();
     });
 
     test('works with loading state', async () => {
         const el = await fixture(html`<cre8-button ?loading=${true}></cre8-button>`);
-        const cre8Icon = el.shadowRoot.querySelector<cre8LoadingSpinner>('cre8-loading-spinner');
-        expect(cre8Icon.classList.contains('cre8-c-button__loading-icon')).toBeTruthy();
+        const Cre8Icon = el.shadowRoot.querySelector<Cre8LoadingSpinner>('cre8-loading-spinner');
+        expect(Cre8Icon.classList.contains('cre8-c-button__loading-icon')).toBeTruthy();
     });
 
     test('works with an href and an iconPosition after', async () => {
-        const el = await fixture(html`<cre8-button href="https://www.cfpb.gov" iconPosition="after" iconName="keyboard-arrow-right"></cre8-button>`);
+        const el = await fixture(html`<cre8-button href="https://www.cfpb.gov" text="Go to CFPB" iconPosition="after" iconName="keyboard-arrow-right"></cre8-button>`);
         const button = el.shadowRoot.querySelector('a');
         const buttonText = el.shadowRoot.querySelector<HTMLSpanElement>('.cre8-c-button__text');
         const nextElement = buttonText.nextElementSibling as HTMLElement;
-        expect(nextElement.tagName === 'cre8-ICON-LEGACY').toBeTruthy();
+        expect(nextElement.tagName === 'CRE8-ICON-LEGACY').toBeTruthy();
         expect(button).toBeTruthy();
     });
 
@@ -109,12 +109,12 @@ test('works with loading state secondary variant with neutral and inverse props'
         const button = el.shadowRoot.querySelector('a');
         const buttonText = el.shadowRoot.querySelector<HTMLSpanElement>('.cre8-c-button__text');
         const nextElement = buttonText.nextElementSibling as HTMLElement;
-        expect(nextElement.tagName === 'cre8-ICON').toBeTruthy();
+        expect(nextElement.tagName === 'CRE8-ICON').toBeTruthy();
         expect(button).toBeTruthy();
     });
 
     test('works with an href and hide text', async () => {
-        const el = await fixture(html`<cre8-button href="https://www.cfpb.gov" hideText="true"></cre8-button>`);
+        const el = await fixture(html`<cre8-button href="https://www.cfpb.gov" text="Go to CFPB" hideText="true"></cre8-button>`);
         const button = el.shadowRoot.querySelector('a');
         const buttonContent = el.shadowRoot.querySelector('.cre8-c-button__text');
         expect(buttonContent.classList.contains('cre8-u-is-vishidden')).toBeTruthy();
@@ -170,7 +170,7 @@ test('works with loading state secondary variant with neutral and inverse props'
         HTMLFormElement.prototype.requestSubmit = mockSubmit;
         const el = (await fixture(html`<form id="form-example"><cre8-button type="submit"></cre8-button></form>`)) as HTMLFormElement;
         const button = el.querySelector('cre8-button').shadowRoot.querySelector('button');
-        userEvent.click(button);
+        await userEvent.click(button);
         expect(mockSubmit.mock.calls).toHaveLength(1);
     });
 
@@ -179,7 +179,7 @@ test('works with loading state secondary variant with neutral and inverse props'
         HTMLFormElement.prototype.requestSubmit = mockSubmit;
         const el = (await fixture(html`<form id="form-example"><cre8-button type="submit" ?loading=${true}></cre8-button></form>`)) as HTMLFormElement;
         const button = el.querySelector('cre8-button').shadowRoot.querySelector('button');
-        userEvent.click(button);
+        await userEvent.click(button);
         expect(mockSubmit.mock.calls).toHaveLength(0);
     });
 
@@ -188,38 +188,38 @@ test('works with loading state secondary variant with neutral and inverse props'
         HTMLFormElement.prototype.reset = mockReset;
         const el = (await fixture(html`<form id="form-example"><cre8-button type="reset"></cre8-button></form>`)) as HTMLFormElement;
         const button = el.querySelector('cre8-button').shadowRoot.querySelector('button');
-        userEvent.click(button);
+        await userEvent.click(button);
         expect(mockReset.mock.calls).toHaveLength(1);
     });
 
     describe('accessibility -  Button', () => {
         test('tests accessibility for default button', async () => {
-            const el = await fixture<cre8Button>(html`<cre8-button text="Foo"></cre8-button>`);
+            const el = await fixture<Cre8Button>(html`<cre8-button text="Foo"></cre8-button>`);
             return expect(el).toBeAccessible();
         });
 
         test('tests accessibility for disabled button', async () => {
-            const el = await fixture<cre8Button>(html`<cre8-button text="Foo" disabled="true"></cre8-button>`);
+            const el = await fixture<Cre8Button>(html`<cre8-button text="Foo" disabled="true"></cre8-button>`);
             return expect(el).toBeAccessible();
         });
 
         test('tests accessibility for "anchor tag" button with Icon', async () => {
-            const el = await fixture<cre8Button>(
-                html`<cre8-button href="https://www.cfpb.gov" iconPosition="before" iconName="keyboard-arrow-right"></cre8-button>`
+            const el = await fixture<Cre8Button>(
+                html`<cre8-button href="https://www.cfpb.gov" text="Go to CFPB" iconPosition="before" iconName="keyboard-arrow-right"></cre8-button>`
             );
             return expect(el).toBeAccessible();
         });
 
         test('tests accessibility for "anchor tag" button with Icon (cre8-icon)', async () => {
-            const el = await fixture<cre8Button>(
-                html`<cre8-button href="https://www.cfpb.gov" iconPosition="before" svg='svgCaretUp' iconRotateDegree="-90"></cre8-button>`
+            const el = await fixture<Cre8Button>(
+                html`<cre8-button href="https://www.cfpb.gov" iconPosition="before" svg='svgCaretUp' iconRotateDegree="-90" text="Go to CFPB"></cre8-button>`
             );
             return expect(el).toBeAccessible();
         });
 
         test('tests accessibility for "anchor tag" button with hideText', async () => {
-            const el = await fixture<cre8Button>(
-                html`<cre8-button href="https://www.cfpb.gov" hideText="true"></cre8-button>`
+            const el = await fixture<Cre8Button>(
+                html`<cre8-button href="https://www.cfpb.gov" text="Go to CFPB" hideText="true"></cre8-button>`
             );
             return expect(el).toBeAccessible();
         });

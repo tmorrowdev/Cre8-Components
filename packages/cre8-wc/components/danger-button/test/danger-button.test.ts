@@ -1,11 +1,11 @@
-import svgCaretLeft from '@tmorrow/cre8-wc/icons/System/Regular/Caret_Left.svg?raw?raw';
-import svgCaretRight from '@tmorrow/cre8-wc/icons/System/Regular/Caret_Right.svg?raw?raw';
+import svgCaretLeft from '@tmorrow/cre8-wc/icons/System/Regular/Caret_Left.svg?raw';
+import svgCaretRight from '@tmorrow/cre8-wc/icons/System/Regular/Caret_Right.svg?raw';
 import { fixture, oneEvent } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../danger-button';
 import userEvent from '@testing-library/user-event';
-import cre8LoadingSpinner  from '../../loading-spinner/loading-spinner';
-import  cre8DangerButton  from '../danger-button';
+import Cre8LoadingSpinner  from '../../loading-spinner/loading-spinner';
+import  Cre8DangerButton  from '../danger-button';
 
 describe('danger-button', () => {
     test('renders correctly', async () => {
@@ -24,7 +24,7 @@ describe('danger-button', () => {
         const variants = ['primary', 'secondary', 'tertiary'];
 
         for (const variant of variants) {
-            const el = await fixture<cre8DangerButton>(html`<cre8-danger-button variant="${variant}"></cre8-danger-button>`);
+            const el = await fixture<Cre8DangerButton>(html`<cre8-danger-button variant="${variant}"></cre8-danger-button>`);
             const button = el.shadowRoot!.querySelector('button'); // Test for the class change
             expect(button.classList.contains(`cre8-c-danger-button--${variant}`)).toBeTruthy();
         }
@@ -41,14 +41,14 @@ describe('danger-button', () => {
         const button = el.shadowRoot.querySelector('a');
         const buttonText = el.shadowRoot.querySelector<HTMLSpanElement>('.cre8-c-danger-button__text');
         const previousElement = buttonText.previousElementSibling as HTMLElement;
-        expect(previousElement.tagName === 'cre8-ICON').toBeTruthy();
+        expect(previousElement.tagName === 'CRE8-ICON').toBeTruthy();
         expect(button).toBeTruthy();
     });
 
     test('works with loading state', async () => {
         const el = await fixture(html`<cre8-danger-button ?loading=${true}></cre8-danger-button>`);
-        const cre8Icon = el.shadowRoot.querySelector<cre8LoadingSpinner>('cre8-loading-spinner');
-        expect(cre8Icon.classList.contains('cre8-c-danger-button__loading-icon')).toBeTruthy();
+        const Cre8Icon = el.shadowRoot.querySelector<Cre8LoadingSpinner>('cre8-loading-spinner');
+        expect(Cre8Icon.classList.contains('cre8-c-danger-button__loading-icon')).toBeTruthy();
     });
 
     test('works with an href and an iconPosition after', async () => {
@@ -56,7 +56,7 @@ describe('danger-button', () => {
         const button = el.shadowRoot.querySelector('a');
         const buttonText = el.shadowRoot.querySelector<HTMLSpanElement>('.cre8-c-danger-button__text');
         const nextElement = buttonText.nextElementSibling as HTMLElement;
-        expect(nextElement.tagName === 'cre8-ICON').toBeTruthy();
+        expect(nextElement.tagName === 'CRE8-ICON').toBeTruthy();
         expect(button).toBeTruthy();
     });
 
@@ -105,7 +105,7 @@ describe('danger-button', () => {
         HTMLFormElement.prototype.requestSubmit = mockSubmit;
         const el = (await fixture(html`<form id="form-example"><cre8-danger-button type="submit"></cre8-danger-button></form>`)) as HTMLFormElement;
         const button = el.querySelector('cre8-danger-button').shadowRoot.querySelector('button');
-        userEvent.click(button);
+        await userEvent.click(button);
         expect(mockSubmit.mock.calls).toHaveLength(1);
     });
 
@@ -114,7 +114,7 @@ describe('danger-button', () => {
         HTMLFormElement.prototype.requestSubmit = mockSubmit;
         const el = (await fixture(html`<form id="form-example"><cre8-danger-button type="submit" ?loading=${true}></cre8-danger-button></form>`)) as HTMLFormElement;
         const button = el.querySelector('cre8-danger-button').shadowRoot.querySelector('button');
-        userEvent.click(button);
+        await userEvent.click(button);
         expect(mockSubmit.mock.calls).toHaveLength(0);
     });
 
@@ -123,30 +123,30 @@ describe('danger-button', () => {
         HTMLFormElement.prototype.reset = mockReset;
         const el = (await fixture(html`<form id="form-example"><cre8-danger-button type="reset"></cre8-danger-button></form>`)) as HTMLFormElement;
         const button = el.querySelector('cre8-danger-button').shadowRoot.querySelector('button');
-        userEvent.click(button);
+        await userEvent.click(button);
         expect(mockReset.mock.calls).toHaveLength(1);
     });
 
     describe('accessibility - Danger Button', () => {
         test('tests accessibility for default button', async () => {
-            const el = await fixture<cre8DangerButton>(html`<cre8-danger-button text="Foo"></cre8-danger-button>`);
+            const el = await fixture<Cre8DangerButton>(html`<cre8-danger-button text="Foo"></cre8-danger-button>`);
             return expect(el).toBeAccessible();
         });
 
         test('tests accessibility for disabled button', async () => {
-            const el = await fixture<cre8DangerButton>(html`<cre8-danger-button text="Foo" disabled="true"></cre8-danger-button>`);
+            const el = await fixture<Cre8DangerButton>(html`<cre8-danger-button text="Foo" disabled="true"></cre8-danger-button>`);
             return expect(el).toBeAccessible();
         });
 
         test('tests accessibility for "anchor tag" button with Icon', async () => {
-            const el = await fixture<cre8DangerButton>(
+            const el = await fixture<Cre8DangerButton>(
                 html`<cre8-danger-button href="https://www.cfpb.gov" iconPosition="before" svg=${svgCaretRight}></cre8-danger-button>`
             );
             return expect(el).toBeAccessible();
         });
 
         test('tests accessibility for "anchor tag" button with hideText', async () => {
-            const el = await fixture<cre8DangerButton>(
+            const el = await fixture<Cre8DangerButton>(
                 html`<cre8-danger-button href="https://www.cfpb.gov" hideText="true"></cre8-danger-button>`
             );
             return expect(el).toBeAccessible();

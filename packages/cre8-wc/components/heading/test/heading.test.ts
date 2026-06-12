@@ -1,7 +1,7 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../heading';
-import { cre8Heading } from '../heading';
+import { Cre8Heading } from '../heading';
 
 // Mock Element.attachInternals method
 // @ts-ignore
@@ -43,7 +43,7 @@ describe('heading', () => {
         ];
 
         for (const type of types) {
-            const el = await fixture<cre8Heading>(html` <cre8-heading type=${type}> Heading </cre8-heading>`);
+            const el = await fixture<Cre8Heading>(html` <cre8-heading type=${type}> Heading </cre8-heading>`);
             await el.updateComplete;
             const heading = el.shadowRoot!.querySelector('.cre8-c-heading');
             expect(heading?.classList.contains(`cre8-c-heading--${type}`)).toBeTruthy();
@@ -51,19 +51,19 @@ describe('heading', () => {
     });
     test('has the correct tag with all tagVariants', async () => {
         const tag = 'h2';
-        const el = await fixture<cre8Heading>(html` <cre8-heading tagVariant=${tag}> Heading </cre8-heading>`);
+        const el = await fixture<Cre8Heading>(html` <cre8-heading tagVariant=${tag}> Heading </cre8-heading>`);
         await el.updateComplete;
         expect(el.shadowRoot.querySelector('h2')).toBeDefined();
     });
 
     test('has the correct class name with inverted', async () => {
-        const el = await fixture<cre8Heading>(html` <cre8-heading inverted> Heading </cre8-heading> `);
+        const el = await fixture<Cre8Heading>(html` <cre8-heading inverted> Heading </cre8-heading> `);
         await el.updateComplete;
         const heading = el.shadowRoot!.querySelector('.cre8-c-heading');
         expect(heading?.classList.contains('cre8-c-heading--inverted')).toBeTruthy();
     });
     test('has the correct class name with brand color applied', async () => {
-        const el = await fixture<cre8Heading>(html` <cre8-heading brandColor> Heading </cre8-heading> `);
+        const el = await fixture<Cre8Heading>(html` <cre8-heading brandColor> Heading </cre8-heading> `);
         await el.updateComplete;
         const heading = el.shadowRoot!.querySelector('.cre8-c-heading');
         expect(heading?.classList.contains('cre8-c-heading--brand-color')).toBeTruthy();
@@ -75,17 +75,17 @@ describe('heading', () => {
         });
         test('should accessible with tag', async () => {
             const tag = 'h1';
-            const el = await fixture<cre8Heading>(html` <cre8-heading tagVariant=${tag}> Heading </cre8-heading>`);
+            const el = await fixture<Cre8Heading>(html` <cre8-heading tagVariant=${tag}> Heading </cre8-heading>`);
             await el.updateComplete;
             return expect(el).toBeAccessible();
         });
         test('should accessible when class name with inverted', async () => {
-            const el = await fixture<cre8Heading>(html` <cre8-heading inverted> Heading </cre8-heading> `);
+            const el = await fixture<Cre8Heading>(html` <cre8-heading inverted> Heading </cre8-heading> `);
             await el.updateComplete;
             return expect(el).toBeAccessible();
         });
         test('should accessible when the correct class name with brand color applied', async () => {
-            const el = await fixture<cre8Heading>(html` <cre8-heading brandColor> Heading </cre8-heading> `);
+            const el = await fixture<Cre8Heading>(html` <cre8-heading brandColor> Heading </cre8-heading> `);
             await el.updateComplete;
             return expect(el).toBeAccessible();
         });

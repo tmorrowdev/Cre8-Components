@@ -1,11 +1,11 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../checkbox-field';
-import { cre8CheckboxField } from '../checkbox-field';
+import { Cre8CheckboxField } from '../checkbox-field';
 
 describe('checkbox-field', () => {
     test('renders correctly', async () => {
-        const el = await fixture<cre8CheckboxField>(html`<cre8-checkbox-field></cre8-checkbox-field>`);
+        const el = await fixture<Cre8CheckboxField>(html`<cre8-checkbox-field></cre8-checkbox-field>`);
         expect(el.shadowRoot).toBeTruthy();
     });
 
@@ -43,11 +43,11 @@ describe('checkbox-field', () => {
     });
     describe('accessibility tests', () => {
         test('should accessible with default values', async () => {
-            const el = await fixture<cre8CheckboxField>(html`<cre8-checkbox-field></cre8-checkbox-field>`);
+            const el = await fixture<Cre8CheckboxField>(html`<cre8-checkbox-field></cre8-checkbox-field>`);
             return expect(el).toBeAccessible();
         });
         test('should accessible with checkbox field item', async () => {
-            const el = await fixture<cre8CheckboxField>(
+            const el = await fixture<Cre8CheckboxField>(
                 html`<cre8-checkbox-field label="Legend">
           <cre8-checkbox-field-item label="Default"></cre8-checkbox-field-item>
           <cre8-checkbox-field-item label="Error" iserror=""></cre8-checkbox-field-item>

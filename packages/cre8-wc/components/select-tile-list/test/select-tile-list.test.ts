@@ -1,16 +1,16 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../select-tile-list';
-import { cre8SelectTileList } from '../select-tile-list';
+import { Cre8SelectTileList } from '../select-tile-list';
 
 describe('select-tile-list', () => {
     test('renders correctly', async () => {
-        const el = await fixture<cre8SelectTileList>(html`<cre8-select-tile-list></cre8-select-tile-list>`);
+        const el = await fixture<Cre8SelectTileList>(html`<cre8-select-tile-list></cre8-select-tile-list>`);
         expect(el.shadowRoot).toBeTruthy();
     });
 
     test('rows variant', async () => {
-        const el = await fixture<cre8SelectTileList>(html`<cre8-select-tile-list variant="rows"></cre8-select-tile-list>`);
+        const el = await fixture<Cre8SelectTileList>(html`<cre8-select-tile-list variant="rows"></cre8-select-tile-list>`);
         expect(el.shadowRoot).toBeTruthy();
         expect(el.shadowRoot.querySelector('.cre8-c-select-tile-list__rows')).toBeTruthy();
     });

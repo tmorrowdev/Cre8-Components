@@ -25,10 +25,17 @@ export class Cre8DropdownItem extends Cre8Element {
       this.dispatch({ e, eventName: 'dropdown-item-selected' });
   }
 
+  connectedCallback() {
+      super.connectedCallback();
+      if (!this.hasAttribute('role')) {
+          this.setAttribute('role', 'listitem');
+      }
+  }
+
   render() {
       const componentClassNames = this.componentClassNames('cre8-dropdown-item', {});
       const linkAriaLabel = this.ariaLabel || `Link to ${this.textContent}` || 'Drop down Item';
-      return html`<li class="${componentClassNames}" role="listitem">
+      return html`<li class="${componentClassNames}" role="none">
         <button aria-label="${linkAriaLabel}" @click=${this._handleClick}><slot></slot></button>
       </li>`;
   }

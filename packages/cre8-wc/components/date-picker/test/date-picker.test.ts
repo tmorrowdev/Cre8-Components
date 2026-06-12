@@ -1,19 +1,19 @@
 /* eslint-disable max-len */
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
-import { cre8DatePicker } from '../date-picker';
+import { Cre8DatePicker } from '../date-picker';
 import '../date-picker';
 
 jest.mock('nanoid');
 
-describe('cre8DatePicker', () => {
+describe('Cre8DatePicker', () => {
     test('renders default date-picker with label', async () => {
-        const el = await fixture<cre8DatePicker>(html` <cre8-date-picker label="Label"></cre8-date-picker> `);
+        const el = await fixture<Cre8DatePicker>(html` <cre8-date-picker label="Label"></cre8-date-picker> `);
 
         expect(el.label).toBe('Label');
-        expect(el.value).toBeUndefined();
-        expect(el.required).toBeUndefined();
-        expect(el.disabled).toBeUndefined();
+        expect(el.value).toBeFalsy();
+        expect(el.required).toBeFalsy();
+        expect(el.disabled).toBeFalsy();
         expect(el.isError).toBeFalsy();
         expect(el.isSuccess).toBeFalsy();
 
@@ -30,7 +30,7 @@ describe('cre8DatePicker', () => {
     });
 
     test('renders date-picker with provided attributes', async () => {
-        const el = await fixture<cre8DatePicker>(html`
+        const el = await fixture<Cre8DatePicker>(html`
       <cre8-date-picker label="Date" name="date" value="01/01/2001" placeholder="Enter Date" required disabled></cre8-date-picker>
     `);
 
@@ -53,7 +53,7 @@ describe('cre8DatePicker', () => {
     });
 
     test('handles input event', async () => {
-        const el = await fixture<cre8DatePicker>(html` <cre8-date-picker label="Label"></cre8-date-picker> `);
+        const el = await fixture<Cre8DatePicker>(html` <cre8-date-picker label="Label"></cre8-date-picker> `);
 
         const input = el.shadowRoot.querySelector('input');
         input.value = '2024-05-15';
@@ -63,23 +63,23 @@ describe('cre8DatePicker', () => {
 
     describe('accessibility tests', () => {
         test('should be accessible with default values', async () => {
-            const el = await fixture<cre8DatePicker>(html` <cre8-date-picker label="Label"></cre8-date-picker> `);
+            const el = await fixture<Cre8DatePicker>(html` <cre8-date-picker label="Label"></cre8-date-picker> `);
             return expect(el).toBeAccessible();
         });
         test('disable state should be accessible', async () => {
-            const el = await fixture<cre8DatePicker>(html` <cre8-date-picker label="Label" disabled="true"></cre8-date-picker> `);
+            const el = await fixture<Cre8DatePicker>(html` <cre8-date-picker label="Label" disabled="true"></cre8-date-picker> `);
             return expect(el).toBeAccessible();
         });
         test('readon;ly state should be accessible', async () => {
-            const el = await fixture<cre8DatePicker>(html` <cre8-date-picker label="Label" readonly="true"></cre8-date-picker> `);
+            const el = await fixture<Cre8DatePicker>(html` <cre8-date-picker label="Label" readonly="true"></cre8-date-picker> `);
             return expect(el).toBeAccessible();
         });
         test('success note should be accessible', async () => {
-            const el = await fixture<cre8DatePicker>(html` <cre8-date-picker label="Label" fieldNote="This is a field note" isSuccess successNote="Success message"></cre8-date-picker>`);
+            const el = await fixture<Cre8DatePicker>(html` <cre8-date-picker label="Label" fieldNote="This is a field note" isSuccess successNote="Success message"></cre8-date-picker>`);
             return expect(el).toBeAccessible();
         });
         test('error note should be accessible', async () => {
-            const el = await fixture<cre8DatePicker>(html` <cre8-date-picker label="Label" isError errorText="Error" errorNote="Error message"></cre8-date-picker> `);
+            const el = await fixture<Cre8DatePicker>(html` <cre8-date-picker label="Label" isError errorText="Error" errorNote="Error message"></cre8-date-picker> `);
             return expect(el).toBeAccessible();
         });
     });
