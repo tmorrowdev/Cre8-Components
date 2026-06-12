@@ -754,7 +754,7 @@ span.ripple {
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  border-radius: var(--cre8-border-radius-small);
+  border-radius: var(--cre8-border-radius-checkbox, var(--cre8-border-radius-small));
   border-width: var(--cre8-border-width-default);
   border-style: var(--cre8-border-style-default);
   background-color: var(--cre8-color-bg-default);
