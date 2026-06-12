@@ -1,7 +1,7 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../tertiary-nav';
-import { cre8TertiaryNavItem } from '../../tertiary-nav-item/tertiary-nav-item';
+import { Cre8TertiaryNavItem } from '../../tertiary-nav-item/tertiary-nav-item';
 
 describe('tertiary-nav', () => {
     test('renders correctly', async () => {
@@ -18,7 +18,7 @@ describe('tertiary-nav', () => {
     test('has the correct items', async () => {
         const el = await fixture(html`<cre8-tertiary-nav><cre8-tertiary-nav-item>Foo</cre8-tertiary-nav-item></cre8-tertiary-nav>`);
         const tertiaryNavSlot = el.shadowRoot.querySelector('slot');
-        const tertiaryNavItems = tertiaryNavSlot.assignedElements({ flatten: false }) as cre8TertiaryNavItem[];
+        const tertiaryNavItems = tertiaryNavSlot.assignedElements({ flatten: false }) as Cre8TertiaryNavItem[];
         expect(tertiaryNavItems[0].tagName === 'cre8-TERTIARY-NAV-ITEM').toBeTruthy;
     });
 });

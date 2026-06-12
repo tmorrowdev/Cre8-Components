@@ -72,7 +72,7 @@ export class Cre8DatePicker extends Cre8Field {
   }
 
   private toggleCalendar() {
-    if (!this.disabled && !this._internals.readonly) {
+    if (!this.disabled && !this.readonly) {
       this.showCalendar = !this.showCalendar;
     }
   }
@@ -82,7 +82,7 @@ export class Cre8DatePicker extends Cre8Field {
       'cre8-is-error': this.isError,
       'cre8-is-success': this.isSuccess,
       'cre8-c-date-picker--disabled': this.disabled,
-      'cre8-c-date-picker--read-only': this._internals.readonly,
+      'cre8-c-date-picker--read-only': this.readonly,
     });
 
     this.type = 'date';
@@ -95,24 +95,24 @@ export class Cre8DatePicker extends Cre8Field {
         <div class="cre8-c-date-picker__body">
           <input
             class="cre8-c-date-picker__input"
-            autocomplete=${ifDefined(this._internals.autocomplete)}
+            autocomplete=${ifDefined(this.autocomplete)}
             type="${this.type}"
-            id="${this.id}"
+            id="${this.fieldId}"
             name="${ifDefined(this.name)}"
-            max=${ifDefined(this._internals.max)}
-            min=${ifDefined(this._internals.min)}
-            value="${ifDefined(this.value)}"
-            ?readonly=${this._internals.readonly}
+            max=${ifDefined(this.max)}
+            min=${ifDefined(this.min)}
+            .value="${this.value ?? ''}"
+            ?readonly=${this.readonly}
             ?required=${this.required}
             ?disabled="${this.disabled}"
-            placeholder="${ifDefined(this._internals.placeholder)}"
+            placeholder="${ifDefined(this.placeholder)}"
             @input=${this.handleDateOnInput}
             @click=${this.toggleCalendar}
           />
           <cre8-button
             class="cre8-c-date-picker__calendar-icon-button"
             aria-expanded="${this.showCalendar}"
-            aria-label="Show Calendar"
+            text="Show Calendar"
             ?disabled="${this.disabled || this.readonly}"
             ?hideText=${true}
             iconName="calendar-datepicker"

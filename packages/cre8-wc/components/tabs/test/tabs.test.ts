@@ -2,9 +2,9 @@ import { fixture } from '@open-wc/testing-helpers';
 import userEvent from '@testing-library/user-event';
 import { html } from 'lit';
 import '../tabs';
-import { cre8Tabs } from '../tabs';
-import { cre8TabPanel } from '../../tab-panel/tab-panel';
-import { cre8Tab } from '../../tab/tab';
+import { Cre8Tabs } from '../tabs';
+import { Cre8TabPanel } from '../../tab-panel/tab-panel';
+import { Cre8Tab } from '../../tab/tab';
 
 jest.mock('nanoid');
 
@@ -21,7 +21,7 @@ describe('tabs', () => {
     });
 
     test('renders tabs with default properties', async () => {
-        const el = await fixture<cre8Tabs>(html`
+        const el = await fixture<Cre8Tabs>(html`
       <cre8-tabs>
         <cre8-tab isActive>Tab 1</cre8-tab>
         <cre8-tab-panel slot="panel">Tab content 1</cre8-tab-panel>
@@ -50,7 +50,7 @@ describe('tabs', () => {
     });
 
     test('renders tabs with custom properties', async () => {
-        const el = await fixture<cre8Tabs>(html`
+        const el = await fixture<Cre8Tabs>(html`
       <cre8-tabs
         size="sm"
         activeIndex="1"
@@ -79,7 +79,7 @@ describe('tabs', () => {
     });
 
     test('sets active tab on firstUpdated', async () => {
-        const el = await fixture<cre8Tabs>(html`
+        const el = await fixture<Cre8Tabs>(html`
       <cre8-tabs activeIndex="1">
         <cre8-tab>Tab 1</cre8-tab>
         <cre8-tab-panel slot="panel">Tab content 1</cre8-tab-panel>
@@ -93,14 +93,14 @@ describe('tabs', () => {
 
         expect(el.activeTab).toBeDefined();
         expect(el.activeTab.index).toBe(1);
-        const activeTab = el.shadowRoot.querySelector<cre8Tab>('cre8-tab.cre8-is-active');
+        const activeTab = el.shadowRoot.querySelector<Cre8Tab>('cre8-tab.cre8-is-active');
         expect(activeTab).toBeDefined();
-        const activeTabPanel = el.shadowRoot.querySelector<cre8TabPanel>('cre8-tab-panel.cre8-is-active');
+        const activeTabPanel = el.shadowRoot.querySelector<Cre8TabPanel>('cre8-tab-panel.cre8-is-active');
         expect(activeTabPanel).toBeDefined();
     });
 
     test('updates isStart state on handleResize and handleScroll', async () => {
-        const el = await fixture<cre8Tabs>(html`
+        const el = await fixture<Cre8Tabs>(html`
       <cre8-tabs>
         <cre8-tab isActive>Tab 1</cre8-tab>
         <cre8-tab-panel slot="panel">Tab content 1</cre8-tab-panel>
@@ -125,7 +125,7 @@ describe('tabs', () => {
     });
 
     test('updates isStart state when scrollLeft is greater than zero', async () => {
-        const el = await fixture<cre8Tabs>(html`
+        const el = await fixture<Cre8Tabs>(html`
       <cre8-tabs>
         <cre8-tab isActive>Tab 1</cre8-tab>
         <cre8-tab-panel slot="panel">Tab content 1</cre8-tab-panel>
@@ -137,9 +137,9 @@ describe('tabs', () => {
     `);
         await el.updateComplete;
 
-    // Create a dummy element to mock _cre8TabsHeaderList
+    // Create a dummy element to mock _Cre8TabsHeaderList
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_cre8TabsHeaderList', 'get').mockReturnValue(dummyPanel);
+        jest.spyOn(el, '_Cre8TabsHeaderList', 'get').mockReturnValue(dummyPanel);
         Object.defineProperty(dummyPanel, 'scrollLeft', { value: 10 });
 
         Object.defineProperty(document, 'dir', {
@@ -160,7 +160,7 @@ describe('tabs', () => {
     });
 
     test('updates isStart state when scrollLeft is zero', async () => {
-        const el = await fixture<cre8Tabs>(html`
+        const el = await fixture<Cre8Tabs>(html`
       <cre8-tabs>
         <cre8-tab isActive>Tab 1</cre8-tab>
         <cre8-tab-panel slot="panel">Tab content 1</cre8-tab-panel>
@@ -172,9 +172,9 @@ describe('tabs', () => {
     `);
         await el.updateComplete;
 
-    // Create a dummy element to mock _cre8TabsHeaderList
+    // Create a dummy element to mock _Cre8TabsHeaderList
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_cre8TabsHeaderList', 'get').mockReturnValue(dummyPanel);
+        jest.spyOn(el, '_Cre8TabsHeaderList', 'get').mockReturnValue(dummyPanel);
         Object.defineProperty(dummyPanel, 'scrollLeft', { value: 0 });
 
         Object.defineProperty(document, 'dir', {
@@ -195,7 +195,7 @@ describe('tabs', () => {
     });
 
     test('handles keydown events', async () => {
-        const el = await fixture<cre8Tabs>(html`
+        const el = await fixture<Cre8Tabs>(html`
       <cre8-tabs>
         <cre8-tab tabindex="0">Tab 1</cre8-tab>
         <cre8-tab-panel slot="panel">Tab content 1</cre8-tab-panel>
@@ -206,44 +206,44 @@ describe('tabs', () => {
       </cre8-tabs>
     `);
         await el.updateComplete;
-        const firstTab = el.querySelectorAll<cre8Tab>('cre8-tab')[0];
-        const secondTab = el.querySelectorAll<cre8Tab>('cre8-tab')[1];
-        const thridTab = el.querySelectorAll<cre8Tab>('cre8-tab')[2];
+        const firstTab = el.querySelectorAll<Cre8Tab>('cre8-tab')[0];
+        const secondTab = el.querySelectorAll<Cre8Tab>('cre8-tab')[1];
+        const thridTab = el.querySelectorAll<Cre8Tab>('cre8-tab')[2];
 
         jest.spyOn(document, 'activeElement', 'get').mockReturnValue(firstTab);
 
-        userEvent.type(firstTab, '{arrowright}');
+        await userEvent.type(firstTab, '{arrowright}');
         firstTab.focus();
         firstTab.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowRight', bubbles: true }));
         await el.updateComplete;
         expect(el.activeTab).toEqual(secondTab);
 
-        userEvent.type(firstTab, '{arrowleft}');
+        await userEvent.type(firstTab, '{arrowleft}');
         firstTab.focus();
         firstTab.dispatchEvent(new KeyboardEvent('keydown', { code: 'ArrowLeft', bubbles: true }));
         await el.updateComplete;
         expect(el.activeTab).toEqual(thridTab);
 
-        userEvent.type(firstTab, '{home}');
+        await userEvent.type(firstTab, '{home}');
         firstTab.focus();
         firstTab.dispatchEvent(new KeyboardEvent('keydown', { code: 'Home', bubbles: true }));
         await el.updateComplete;
         expect(el.activeTab).toEqual(firstTab);
 
-        userEvent.type(firstTab, '{end}');
+        await userEvent.type(firstTab, '{end}');
         firstTab.focus();
         firstTab.dispatchEvent(new KeyboardEvent('keydown', { code: 'End', bubbles: true }));
         await el.updateComplete;
         expect(el.activeTab).toEqual(thridTab);
 
-        userEvent.type(firstTab, '{esc}');
+        await userEvent.type(firstTab, '{esc}');
         firstTab.focus();
         firstTab.dispatchEvent(new KeyboardEvent('keydown', { code: 'Escape', bubbles: true }));
         await el.updateComplete;
     });
 
     test('handles keydown events when false', async () => {
-        const el = await fixture<cre8Tabs>(html`
+        const el = await fixture<Cre8Tabs>(html`
       <cre8-tabs>
         <cre8-tab tabindex="0">Tab 1</cre8-tab>
         <cre8-tab-panel slot="panel">Tab content 1</cre8-tab-panel>
@@ -254,18 +254,18 @@ describe('tabs', () => {
       </cre8-tabs>
     `);
         await el.updateComplete;
-        const firstTab = el.querySelectorAll<cre8Tab>('cre8-tab')[0];
+        const firstTab = el.querySelectorAll<Cre8Tab>('cre8-tab')[0];
         jest.spyOn(document, 'activeElement', 'get').mockReturnValue(firstTab);
 
-        const tabPanel = el.querySelectorAll<cre8TabPanel>('cre8-tab-panel')[0];
+        const tabPanel = el.querySelectorAll<Cre8TabPanel>('cre8-tab-panel')[0];
         jest.spyOn(document, 'activeElement', 'get').mockReturnValue(tabPanel);
-        userEvent.type(firstTab, '{esc}');
+        await userEvent.type(firstTab, '{esc}');
         firstTab.dispatchEvent(new KeyboardEvent('keydown', { code: 'Escape', bubbles: true }));
         await el.updateComplete;
     });
 
     test('handles click events', async () => {
-        const el = await fixture<cre8Tabs>(html`
+        const el = await fixture<Cre8Tabs>(html`
       <cre8-tabs>
         <cre8-tab tabindex="0">Tab 1</cre8-tab>
         <cre8-tab-panel slot="panel">Tab content 1</cre8-tab-panel>
@@ -276,9 +276,9 @@ describe('tabs', () => {
       </cre8-tabs>
     `);
         await el.updateComplete;
-        const firstTab = el.querySelectorAll<cre8Tab>('cre8-tab')[0];
-        const secondTab = el.querySelectorAll<cre8Tab>('cre8-tab')[1];
-        const thridTab = el.querySelectorAll<cre8Tab>('cre8-tab')[2];
+        const firstTab = el.querySelectorAll<Cre8Tab>('cre8-tab')[0];
+        const secondTab = el.querySelectorAll<Cre8Tab>('cre8-tab')[1];
+        const thridTab = el.querySelectorAll<Cre8Tab>('cre8-tab')[2];
 
         firstTab.click();
         await el.updateComplete;
@@ -294,7 +294,7 @@ describe('tabs', () => {
     });
 
     test('sets selected to previous tab', async () => {
-        const el = await fixture<cre8Tabs>(html`
+        const el = await fixture<Cre8Tabs>(html`
       <cre8-tabs>
         <cre8-tab>Tab 1</cre8-tab>
         <cre8-tab-panel slot="panel">Tab content 1</cre8-tab-panel>
@@ -305,9 +305,9 @@ describe('tabs', () => {
       </cre8-tabs>
     `);
         await el.updateComplete;
-        const firstTab = el.querySelectorAll<cre8Tab>('cre8-tab')[0];
-        const secondTab = el.querySelectorAll<cre8Tab>('cre8-tab')[1];
-        const thridTab = el.querySelectorAll<cre8Tab>('cre8-tab')[2];
+        const firstTab = el.querySelectorAll<Cre8Tab>('cre8-tab')[0];
+        const secondTab = el.querySelectorAll<Cre8Tab>('cre8-tab')[1];
+        const thridTab = el.querySelectorAll<Cre8Tab>('cre8-tab')[2];
 
         el.activeTab = firstTab;
         el.activeIndex = 0;
@@ -323,7 +323,7 @@ describe('tabs', () => {
     });
 
     test('sets selected to next tab', async () => {
-        const el = await fixture<cre8Tabs>(html`
+        const el = await fixture<Cre8Tabs>(html`
       <cre8-tabs>
         <cre8-tab>Tab 1</cre8-tab>
         <cre8-tab-panel slot="panel">Tab content 1</cre8-tab-panel>
@@ -334,9 +334,9 @@ describe('tabs', () => {
       </cre8-tabs>
     `);
         await el.updateComplete;
-        const firstTab = el.querySelectorAll<cre8Tab>('cre8-tab')[0];
-        const secondTab = el.querySelectorAll<cre8Tab>('cre8-tab')[1];
-        const thridTab = el.querySelectorAll<cre8Tab>('cre8-tab')[2];
+        const firstTab = el.querySelectorAll<Cre8Tab>('cre8-tab')[0];
+        const secondTab = el.querySelectorAll<Cre8Tab>('cre8-tab')[1];
+        const thridTab = el.querySelectorAll<Cre8Tab>('cre8-tab')[2];
 
         el.activeTab = firstTab;
         el.activeIndex = 0;
@@ -352,7 +352,7 @@ describe('tabs', () => {
     });
 
     test('should set isEnd to true when isInViewport returns true', async () => {
-        const el = await fixture<cre8Tabs>(html`
+        const el = await fixture<Cre8Tabs>(html`
       <cre8-tabs>
         <cre8-tab>Tab 1</cre8-tab>
         <cre8-tab-panel slot="panel">Tab content 1</cre8-tab-panel>

@@ -1,11 +1,11 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../button-group';
-import { cre8ButtonGroup } from '../button-group';
+import { Cre8ButtonGroup } from '../button-group';
 
 describe('button-group', () => {
     test('renders correctly', async () => {
-        const el = await fixture<cre8ButtonGroup>(html`<cre8-button-group>
+        const el = await fixture<Cre8ButtonGroup>(html`<cre8-button-group>
       <cre8-button variant="primary" text="Button"></cre8-button>
       <cre8-button variant="tertiary" text="Button"></cre8-button>
     </cre8-button-group>`);
@@ -13,7 +13,7 @@ describe('button-group', () => {
     });
 
     test('has the correct orientation class name', async () => {
-        const el = await fixture<cre8ButtonGroup>(html`<cre8-button-group orientation="responsive-full-width">
+        const el = await fixture<Cre8ButtonGroup>(html`<cre8-button-group orientation="responsive-full-width">
       <cre8-button variant="primary" text="Button"></cre8-button>
       <cre8-button variant="tertiary" text="Button"></cre8-button>
     </cre8-button-group>`);

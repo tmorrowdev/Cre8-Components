@@ -1,7 +1,7 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../accordion';
-import { cre8Accordion } from '../accordion';
+import { Cre8Accordion } from '../accordion';
 
 describe('accordion', () => {
     beforeEach(() => {
@@ -16,7 +16,7 @@ describe('accordion', () => {
     });
 
     test('renders correctly', async () => {
-        const el = await fixture<cre8Accordion>(html`
+        const el = await fixture<Cre8Accordion>(html`
           <cre8-accordion>
             <cre8-accordion heading="Accordion Heading" isActive>
               <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -30,7 +30,7 @@ describe('accordion', () => {
 
     describe('accessibility tests', () => {
         test('should be accessible with default values', async () => {
-            const el = await fixture<cre8Accordion>(html`
+            const el = await fixture<Cre8Accordion>(html`
               <cre8-accordion>
                 <cre8-accordion-item heading="Accordion Heading" isActive>
                   <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -48,7 +48,7 @@ describe('accordion', () => {
         });
 
         test('should be accessible with out active open accordion', async () => {
-            const el = await fixture<cre8Accordion>(html`
+            const el = await fixture<Cre8Accordion>(html`
               <cre8-accordion>
                 <cre8-accordion-item heading="Accordion Heading">
                     <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

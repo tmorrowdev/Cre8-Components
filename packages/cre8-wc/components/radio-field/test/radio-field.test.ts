@@ -1,11 +1,11 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../radio-field';
-import { cre8RadioField } from '../radio-field';
+import { Cre8RadioField } from '../radio-field';
 
 describe('radio-field', () => {
     test('renders correctly', async () => {
-        const el = await fixture<cre8RadioField>(html`<cre8-radio-field></cre8-radio-field>`);
+        const el = await fixture<Cre8RadioField>(html`<cre8-radio-field></cre8-radio-field>`);
         expect(el.shadowRoot).toBeTruthy();
     });
 
@@ -31,7 +31,7 @@ describe('radio-field', () => {
 
     describe('accessibility -  Radio Field', () => {
         test('tests accessibility for default radio field', async () => {
-            const el = await fixture<cre8RadioField>(html`<cre8-radio-field>
+            const el = await fixture<Cre8RadioField>(html`<cre8-radio-field>
       <cre8-radio-field-item label="Default"></cre8-radio-field-item>
       <cre8-radio-field-item label="Error" ?isError=${true}></cre8-radio-field-item>
     </eaf-radio-field>`);
@@ -39,7 +39,7 @@ describe('radio-field', () => {
         });
 
         test('tests accessibility for default radio field with field note', async () => {
-            const el = await fixture<cre8RadioField>(html` <cre8-radio-field
+            const el = await fixture<Cre8RadioField>(html` <cre8-radio-field
         fieldNote="Note"
         iconNane="check"
         ariaDescribedBy="Note"

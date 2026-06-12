@@ -1,11 +1,11 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../table-header-cell';
-import { cre8TableHeaderCell } from '../table-header-cell';
+import { Cre8TableHeaderCell } from '../table-header-cell';
 
 describe('table-header-cell', () => {
     test('renders correctly', async () => {
-        const el = await fixture<cre8TableHeaderCell>(html`<cre8-table-header-cell></cre8-table-header-cell>`);
+        const el = await fixture<Cre8TableHeaderCell>(html`<cre8-table-header-cell></cre8-table-header-cell>`);
         const tableHeaderCell = el.shadowRoot.querySelector('.cre8-c-table__header-cell');
 
         expect(el.shadowRoot).toBeTruthy();
@@ -13,7 +13,7 @@ describe('table-header-cell', () => {
     });
 
     test('has the correct property values', async () => {
-        const el = await fixture<cre8TableHeaderCell>(
+        const el = await fixture<Cre8TableHeaderCell>(
             html`<cre8-table-header-cell colspan="4" width="300px">Header</cre8-table-header-cell>`
         );
         const tableHeaderCell = el.shadowRoot!.querySelector('.cre8-c-table__header-cell');

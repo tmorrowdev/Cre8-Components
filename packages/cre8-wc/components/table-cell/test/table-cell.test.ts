@@ -1,11 +1,11 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../table-cell';
-import { cre8TableCell } from '../table-cell';
+import { Cre8TableCell } from '../table-cell';
 
 describe('table-cell', () => {
     test('renders correctly', async () => {
-        const el = await fixture<cre8TableCell>(html`<cre8-table-cell></cre8-table-cell>`);
+        const el = await fixture<Cre8TableCell>(html`<cre8-table-cell></cre8-table-cell>`);
         const tableCell = el.shadowRoot.querySelector('.cre8-c-table__cell');
 
         expect(el.shadowRoot).toBeTruthy();
@@ -16,7 +16,7 @@ describe('table-cell', () => {
         const variants = ['bare'];
 
         for (const variant of variants) {
-            const el = await fixture<cre8TableCell>(
+            const el = await fixture<Cre8TableCell>(
                 html`<cre8-table-cell variant="${variant}"></cre8-table-cell>`
             );
             const tableCell = el.shadowRoot!.querySelector('.cre8-c-table__cell');

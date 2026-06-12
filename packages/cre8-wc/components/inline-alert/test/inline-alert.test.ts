@@ -1,7 +1,7 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../inline-alert';
-import { cre8InlineAlert } from '../inline-alert';
+import { Cre8InlineAlert } from '../inline-alert';
 
 describe('inline-alert', () => {
     test('renders correctly', async () => {
@@ -13,7 +13,7 @@ describe('inline-alert', () => {
         const statuses = ['error', 'warning', 'success', 'attention', 'neutral'];
 
         for (const status of statuses) {
-            const el = await fixture<cre8InlineAlert>(
+            const el = await fixture<Cre8InlineAlert>(
                 html`<cre8-inline-alert status="${status}"></cre8-inline-alert>`
             );
             const inlineAlert = el.shadowRoot!.querySelector('.cre8-c-inline-alert'); // Test for the class change
@@ -25,7 +25,7 @@ describe('inline-alert', () => {
         const variants = ['transparent'];
 
         for (const variant of variants) {
-            const el = await fixture<cre8InlineAlert>(
+            const el = await fixture<Cre8InlineAlert>(
                 html`<cre8-inline-alert variant="${variant}"></cre8-inline-alert>`
             );
             const inlineAlert = el.shadowRoot!.querySelector('.cre8-c-inline-alert'); // Test for the class change

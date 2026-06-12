@@ -142,6 +142,9 @@ importers:
       '@mdx-js/rollup':
         specifier: ^3.1.1
         version: 3.1.1(rollup@4.60.1)
+      '@open-wc/testing-helpers':
+        specifier: ^3.0.1
+        version: 3.0.1
       '@skypack/package-check':
         specifier: ^0.2.2
         version: 0.2.2
@@ -3530,6 +3533,25 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.1
+    dev: true
+
+  /@open-wc/dedupe-mixin@2.0.1:
+    resolution: {integrity: sha512-+R4VxvceUxHAUJXJQipkkoV9fy10vNo+OnUnGKZnVmcwxMl460KLzytnUM4S35SI073R0yZQp9ra0MbPUwVcEA==}
+    dev: true
+
+  /@open-wc/scoped-elements@3.0.10:
+    resolution: {integrity: sha512-esE95vxq6Y7w9/8H/oPvqN9QVR+ys3F9J2/ITyuTWnlSYaJueQmcS5CR5OybJMjjm9R5pmSoOe6Vau/O7J6d2g==}
+    dependencies:
+      '@open-wc/dedupe-mixin': 2.0.1
+      lit: 3.3.1
+    dev: true
+
+  /@open-wc/testing-helpers@3.0.1:
+    resolution: {integrity: sha512-hyNysSatbgT2FNxHJsS3rGKcLEo6+HwDFu1UQL6jcSQUabp/tj3PyX7UnXL3H5YGv0lJArdYLSnvjLnjn3O2fw==}
+    dependencies:
+      '@open-wc/scoped-elements': 3.0.10
+      lit: 3.3.1
+      lit-html: 3.3.2
     dev: true
 
   /@oxc-resolver/binding-android-arm-eabi@11.19.1:

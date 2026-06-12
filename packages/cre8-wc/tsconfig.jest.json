@@ -3,9 +3,9 @@
     "compilerOptions": {
       "outDir": "dist/out-tsc",
       "module": "commonjs",
-      "types": ["jest", "node", "@openwc/testing"],
+      "types": ["jest", "node"],
       "allowJs": true,
-      "lib": ["es2021", "dom"]
+      "lib": ["es2021", "dom", "dom.iterable"]
     },
     "include": [
       "jest.config.js",

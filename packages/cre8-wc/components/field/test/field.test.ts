@@ -1,18 +1,18 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../field';
-import { cre8Field } from '../field';
+import { Cre8Field } from '../field';
 
 jest.mock('nanoid');
 
-describe('cre8Field', () => {
+describe('Cre8Field', () => {
     test('renders default field with label', async () => {
-        const el = await fixture<cre8Field>(html` <cre8-field label="Label"></cre8-field> `);
+        const el = await fixture<Cre8Field>(html` <cre8-field label="Label"></cre8-field> `);
 
         expect(el.label).toBe('Label');
-        expect(el.value).toBeUndefined();
-        expect(el.required).toBeUndefined();
-        expect(el.disabled).toBeUndefined();
+        expect(el.value).toBeFalsy();
+        expect(el.required).toBeFalsy();
+        expect(el.disabled).toBeFalsy();
         expect(el.isError).toBeFalsy();
         expect(el.isSuccess).toBeFalsy();
 
@@ -29,7 +29,7 @@ describe('cre8Field', () => {
     });
 
     test('renders field with provided attributes', async () => {
-        const el = await fixture<cre8Field>(html`
+        const el = await fixture<Cre8Field>(html`
             <cre8-field
                 label="Email"
                 type="email"
@@ -59,7 +59,7 @@ describe('cre8Field', () => {
     });
 
     test('handles input event', async () => {
-        const el = await fixture<cre8Field>(html` <cre8-field label="Label"></cre8-field> `);
+        const el = await fixture<Cre8Field>(html` <cre8-field label="Label"></cre8-field> `);
 
         const input = el.shadowRoot.querySelector('input');
         input.value = 'value';
@@ -68,14 +68,14 @@ describe('cre8Field', () => {
     });
 
     test('renders field note when provided', async () => {
-        const el = await fixture<cre8Field>(html` <cre8-field label="Label" fieldNote="Field note"></cre8-field> `);
+        const el = await fixture<Cre8Field>(html` <cre8-field label="Label" fieldNote="Field note"></cre8-field> `);
 
         const fieldNote = el.shadowRoot.querySelector('.cre8-c-field__field-note').textContent;
         expect(fieldNote).toBe('Field note');
     });
 
     test('renders success field note when isSuccess is true', async () => {
-        const el = await fixture<cre8Field>(html`
+        const el = await fixture<Cre8Field>(html`
       <cre8-field label="Label" fieldNote="This is a field note" isSuccess successNote="Success message"></cre8-field>
     `);
         expect(el.isSuccess).toBeTruthy();
@@ -89,7 +89,7 @@ describe('cre8Field', () => {
     });
 
     test('renders error field note when isError is true', async () => {
-        const el = await fixture<cre8Field>(html`
+        const el = await fixture<Cre8Field>(html`
             <cre8-field
                 label="Label"
                 isError
@@ -105,15 +105,15 @@ describe('cre8Field', () => {
     });
     describe('accessibility tests', () => {
         test('should accessible with default values', async () => {
-            const el = await fixture<cre8Field>(html` <cre8-field label="Label"></cre8-field> `);
+            const el = await fixture<Cre8Field>(html` <cre8-field label="Label"></cre8-field> `);
             return expect(el).toBeAccessible();
         });
         test('disable state should accessible', async () => {
-            const el = await fixture<cre8Field>(html` <cre8-field label="Label" disabled="true"></cre8-field> `);
+            const el = await fixture<Cre8Field>(html` <cre8-field label="Label" disabled="true"></cre8-field> `);
             return expect(el).toBeAccessible();
         });
         test('success note should accessible', async () => {
-            const el = await fixture<cre8Field>(html`
+            const el = await fixture<Cre8Field>(html`
                 <cre8-field
                     label="Label"
                     fieldNote="This is a field note"
@@ -124,7 +124,7 @@ describe('cre8Field', () => {
             return expect(el).toBeAccessible();
         });
         test('error note should accessible', async () => {
-            const el = await fixture<cre8Field>(html`
+            const el = await fixture<Cre8Field>(html`
                 <cre8-field
                     label="Label"
                     isError

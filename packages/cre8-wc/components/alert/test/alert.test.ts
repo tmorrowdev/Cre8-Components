@@ -1,7 +1,7 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../alert';
-import { cre8Alert } from '../alert';
+import { Cre8Alert } from '../alert';
 
 
 describe('alert', () => {
@@ -14,7 +14,7 @@ describe('alert', () => {
         const statuses = ['error', 'info', 'notification', 'neutral', 'warning', 'success'];
 
         for (const status of statuses) {
-            const el = await fixture<cre8Alert>(html`<cre8-alert status="${status}"></cre8-alert>`);
+            const el = await fixture<Cre8Alert>(html`<cre8-alert status="${status}"></cre8-alert>`);
             const alert = el.shadowRoot!.querySelector('.cre8-c-alert');
             expect(alert.classList.contains(`cre8-c-alert--${status}`)).toBeTruthy();
         }
@@ -24,7 +24,7 @@ describe('alert', () => {
         const variants = ['standalone', 'banner'];
 
         for (const variant of variants) {
-            const el = await fixture<cre8Alert>(html`<cre8-alert variant="${variant}"></cre8-alert>`);
+            const el = await fixture<Cre8Alert>(html`<cre8-alert variant="${variant}"></cre8-alert>`);
             const alert = el.shadowRoot!.querySelector('.cre8-c-alert'); // Test for the class change
             expect(alert.classList.contains(`cre8-c-alert--${variant}`)).toBeTruthy();
         }

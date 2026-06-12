@@ -1,19 +1,19 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../calendar';
-import { CalendarModal, cre8Calendar } from '../calendar';
+import { CalendarModal, Cre8Calendar } from '../calendar';
 import '../../calendar-month-modal/calendar-month-modal';
 import '../../calendar-year-modal/calendar-year-modal';
 import '../../calendar-navigation/calendar-navigation';
 
 describe('calendar', () => {
     test('renders correctly', async () => {
-        const el = await fixture<cre8Calendar>(html`<cre8-calendar fieldDate="2024-05-21"></cre8-calendar>`);
+        const el = await fixture<Cre8Calendar>(html`<cre8-calendar fieldDate="2024-05-21"></cre8-calendar>`);
         expect(el.shadowRoot).toBeTruthy();
     });
 
     test('calendar update for input field change', async () => {
-        const el = await fixture<cre8Calendar>(html` <cre8-calendar fieldDate="2024-01-01"></cre8-calendar>`);
+        const el = await fixture<Cre8Calendar>(html` <cre8-calendar fieldDate="2024-01-01"></cre8-calendar>`);
         await el.updateComplete;
         el.fieldDate = '2024-06-06';
         await el.updateComplete;
@@ -22,7 +22,7 @@ describe('calendar', () => {
     });
 
     test('calendar click emits date value', async () => {
-        const el = await fixture<cre8Calendar>(html` <cre8-calendar fieldDate="2024-01-01"></cre8-calendar>`);
+        const el = await fixture<Cre8Calendar>(html` <cre8-calendar fieldDate="2024-01-01"></cre8-calendar>`);
         await el.updateComplete;
 
         const emitSpy = jest.spyOn(el, 'dispatchEvent');
@@ -35,7 +35,7 @@ describe('calendar', () => {
     });
 
     test('calendar month change', async () => {
-        const el = await fixture<cre8Calendar>(html` <cre8-calendar fieldDate="2024-01-01"></cre8-calendar>`);
+        const el = await fixture<Cre8Calendar>(html` <cre8-calendar fieldDate="2024-01-01"></cre8-calendar>`);
         await el.updateComplete;
 
         const nextMonthButton = el.shadowRoot!.querySelector('cre8-calendar-navigation')
@@ -47,7 +47,7 @@ describe('calendar', () => {
     });
 
     test('calendar year change', async () => {
-        const el = await fixture<cre8Calendar>(html` <cre8-calendar fieldDate="2024-01-01"></cre8-calendar>`);
+        const el = await fixture<Cre8Calendar>(html` <cre8-calendar fieldDate="2024-01-01"></cre8-calendar>`);
         await el.updateComplete;
 
         const previousYearButton = el.shadowRoot!.querySelector('cre8-calendar-navigation')
@@ -59,7 +59,7 @@ describe('calendar', () => {
     });
 
     test('calendar month modal click', async () => {
-        const el = await fixture<cre8Calendar>(html` <cre8-calendar fieldDate="2024-01-01"></cre8-calendar>`);
+        const el = await fixture<Cre8Calendar>(html` <cre8-calendar fieldDate="2024-01-01"></cre8-calendar>`);
         el.activeModal = CalendarModal.Month;
         await el.updateComplete;
 
@@ -72,7 +72,7 @@ describe('calendar', () => {
     });
 
     test('calendar year modal click', async () => {
-        const el = await fixture<cre8Calendar>(html` <cre8-calendar fieldDate="2024-01-01"></cre8-calendar>`);
+        const el = await fixture<Cre8Calendar>(html` <cre8-calendar fieldDate="2024-01-01"></cre8-calendar>`);
         el.activeModal = CalendarModal.Year;
         await el.updateComplete;
 
@@ -86,7 +86,7 @@ describe('calendar', () => {
 
     describe('accessibility -  Calendar', () => {
         test('tests accessibility for date picker calendar', async () => {
-            const el = await fixture<cre8Calendar>(html`<cre8-calendar fieldDate="2024-05-21"></cre8-calendar>`);
+            const el = await fixture<Cre8Calendar>(html`<cre8-calendar fieldDate="2024-05-21"></cre8-calendar>`);
             return expect(el).toBeAccessible();
         });
     });

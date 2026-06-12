@@ -1,7 +1,7 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../accordion-item';
-import { cre8AccordionItem } from '../accordion-item';
+import { Cre8AccordionItem } from '../accordion-item';
 
 
 describe('accordion-item', () => {
@@ -17,7 +17,7 @@ describe('accordion-item', () => {
     });
 
     test('renders correctly', async () => {
-        const el = await fixture<cre8AccordionItem>(html`
+        const el = await fixture<Cre8AccordionItem>(html`
     <cre8-accordion-item heading="Accordion Item Heading"  isActive>
     <span
       >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -31,7 +31,7 @@ describe('accordion-item', () => {
     });
     test('has the correct classname as the small size', async () => {
         const smallSize = 'sm';
-        const el = await fixture<cre8AccordionItem>(html`
+        const el = await fixture<Cre8AccordionItem>(html`
         <cre8-accordion-item size="${smallSize}" heading="Accordion Item Heading" isActive>
         <span
           >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -45,7 +45,7 @@ describe('accordion-item', () => {
     });
     test('has the correct classname as the large size', async () => {
         const largeSize = 'lg';
-        const el = await fixture<cre8AccordionItem>(html`
+        const el = await fixture<Cre8AccordionItem>(html`
         <cre8-accordion-item size="${largeSize}" heading="Accordion Item Heading" isActive>
         <span
           >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -59,7 +59,7 @@ describe('accordion-item', () => {
     });
     test('has the correct icon placement if iconPosition equals before', async () => {
         const iconPosition = 'before';
-        const el = await fixture<cre8AccordionItem>(html`
+        const el = await fixture<Cre8AccordionItem>(html`
         <cre8-accordion-item iconPosition="${iconPosition}" heading="Accordion Item Heading" isActive>
         <span
           >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -73,7 +73,7 @@ describe('accordion-item', () => {
     });
     test('has the correct icon placement if iconPosition equals after', async () => {
         const iconPosition = 'after';
-        const el = await fixture<cre8AccordionItem>(html`
+        const el = await fixture<Cre8AccordionItem>(html`
         <cre8-accordion-item iconPosition="${iconPosition}" heading="Accordion Item Heading" isActive>
         <span
           >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -87,7 +87,7 @@ describe('accordion-item', () => {
         expect(icon).toBeDefined();
     });
     test('has the tertiary icon placement if tertiaryIcon equals true', async () => {
-        const el = await fixture<cre8AccordionItem>(html`
+        const el = await fixture<Cre8AccordionItem>(html`
         <cre8-accordion-item heading="Accordion Item Heading" tertiaryIcon isActive>
         <span
           >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -102,7 +102,7 @@ describe('accordion-item', () => {
     });
     describe('accessibility tests', () => {
         test('should be accessible with default props', async () => {
-            const el = await fixture<cre8AccordionItem>(html`
+            const el = await fixture<Cre8AccordionItem>(html`
         <cre8-accordion-item heading="Accordion Item Heading"  isActive>
           <span>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,  et dolore pariatur.
@@ -111,7 +111,7 @@ describe('accordion-item', () => {
             return expect(el).toBeAccessible();
         });
         test('should accessible with tertiaryIcon', async () => {
-            const el = await fixture<cre8AccordionItem>(html`
+            const el = await fixture<Cre8AccordionItem>(html`
             <cre8-accordion-item heading="Accordion Item Heading" tertiaryIcon>
           <span>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,  et dolore pariatur.
@@ -121,7 +121,7 @@ describe('accordion-item', () => {
         });
         test('aria-expanded is accessible with size icon', async () => {
             const largeSize = 'lg';
-            const el = await fixture<cre8AccordionItem>(html`
+            const el = await fixture<Cre8AccordionItem>(html`
         <cre8-accordion-item size="${largeSize}" heading="Accordion Item Heading" isActive>
           <span>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,  et dolore pariatur.

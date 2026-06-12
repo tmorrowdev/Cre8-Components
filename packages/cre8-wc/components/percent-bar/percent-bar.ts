@@ -57,6 +57,7 @@ export class Cre8PercentBar extends Cre8Element {
                 ${this.isFirstStep()
                   ? html` <cre8-button
                       ?hideText=${true}
+                      text="Previous step"
                       svg="${svgCaretUp}"
                       iconRotateDegree="-90"
                       variant="tertiary"

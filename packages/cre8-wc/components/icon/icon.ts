@@ -3,6 +3,7 @@
 /* eslint-disable max-statements */
 import { html, TemplateResult, } from 'lit';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 import { property } from 'lit/decorators.js';
 import svgAdd from '@tmorrow/cre8-wc/icons/Add.svg?raw';
 import svgArrowLeft from '@tmorrow/cre8-wc/icons/Arrow_-_Left.svg?raw';
@@ -235,10 +236,11 @@ export class Cre8Icon extends Cre8Element {
             return html``;
         }
 
+        const wrapperRole = this.iconTitle ? 'img' : undefined;
         return html`
-            ${this.svg ? html`<span class="${componentClassName}" aria-label="${this.iconTitle}" aria-hidden="${!this.iconTitle}">${unsafeHTML(this.svg)}</span>` : html`
-        <span class="${componentClassName}" aria-label="${this.iconTitle}" aria-hidden="${!this.iconTitle}">
-            <svg class="cre8-c-icon" xmlns="http://www.w3.org/2000/svg" focusable="${this.focusable ? 'true' : 'false'}" role="img">
+            ${this.svg ? html`<span class="${componentClassName}" role="${ifDefined(wrapperRole)}" aria-label="${this.iconTitle}" aria-hidden="${!this.iconTitle}">${unsafeHTML(this.svg)}</span>` : html`
+        <span class="${componentClassName}" role="${ifDefined(wrapperRole)}" aria-label="${this.iconTitle}" aria-hidden="${!this.iconTitle}">
+            <svg class="cre8-c-icon" xmlns="http://www.w3.org/2000/svg" focusable="${this.focusable ? 'true' : 'false'}" aria-hidden="true">
                 <use href="${iconPath}#${this.name}"></use>
             </svg>
         </span>` }`;

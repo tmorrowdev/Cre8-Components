@@ -37,7 +37,9 @@ module.exports = {
     '^.+\\.mjs$': ['babel-jest', {presets: ['@babel/preset-env']}],
   },
   moduleNameMapper: {
-    '.+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)(\\?inline)?(\\?raw)?$': 'identity-obj-proxy',
+    '.+\\.svg(\\?inline)?(\\?raw)?$': '<rootDir>/__mocks__/svgRawMock.js',
+    '.+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)(\\?inline)?(\\?raw)?$': 'identity-obj-proxy',
+    '^(\\.{1,2}/.*)\\.js$': '$1',
   },
   transformIgnorePatterns: [`node_modules/(?!.pnpm|${esModules})`],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'mjs', 'json'],

@@ -1,11 +1,11 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../skeleton-loader';
-import { cre8SkeletonLoader } from '../skeleton-loader';
+import { Cre8SkeletonLoader } from '../skeleton-loader';
 
 describe('skeleton-loader', () => {
     test('renders correctly', async () => {
-        const el = await fixture<cre8SkeletonLoader>(html`<cre8-skeleton-loader></cre8-skeleton-loader>`);
+        const el = await fixture<Cre8SkeletonLoader>(html`<cre8-skeleton-loader></cre8-skeleton-loader>`);
         expect(el.shadowRoot).toBeTruthy();
     });
 
@@ -13,7 +13,7 @@ describe('skeleton-loader', () => {
         const variants = ['rectangle', 'square', 'circle'];
 
         for (const variant of variants) {
-            const el = await fixture<cre8SkeletonLoader>(
+            const el = await fixture<Cre8SkeletonLoader>(
                 html`<cre8-skeleton-loader variant="${variant}"></cre8-skeleton-loader>`
             );
             const skeletonLoader = el.shadowRoot.querySelector('.cre8-c-skeleton-loader');
@@ -23,7 +23,7 @@ describe('skeleton-loader', () => {
 
     describe('accessibility -  Skeleton Loader', () => {
         test('tests accessibility for default skeleton loader', async () => {
-            const el = await fixture<cre8SkeletonLoader>(html`<cre8-skeleton-loader></cre8-skeleton-loader>`);
+            const el = await fixture<Cre8SkeletonLoader>(html`<cre8-skeleton-loader></cre8-skeleton-loader>`);
             return expect(el).toBeAccessible();
         });
     });

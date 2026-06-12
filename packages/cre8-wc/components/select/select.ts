@@ -194,7 +194,7 @@ export class Cre8Select extends Cre8FormElement {
 
   connectedCallback(): void {
     super.connectedCallback();
-    this.field.setAttribute('name', this.name ?? '')
+    this.field?.setAttribute('name', this.name ?? '')
   }
 
   disconnectedCallback(): void {
@@ -208,6 +208,8 @@ export class Cre8Select extends Cre8FormElement {
    */
   firstUpdated() {
     super.firstUpdated();
+    this.field = this.renderRoot.querySelector('select');
+    this.field?.setAttribute('name', this.name ?? '');
     [...this._selectOptions].forEach((item: { selected: boolean; value: string; }) => { /* 1 */
       if (item.selected === true) {
         this.selectedItem = item.value; /* 1 */

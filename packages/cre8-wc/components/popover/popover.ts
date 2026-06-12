@@ -153,7 +153,7 @@ export class Cre8Popover extends Cre8Element {
   addAria() {
     /* 1 */
       let popoverTrigger;
-      if (this._Cre8PopoverTrigger[0].tagName === 'cre8-BUTTON') {
+      if (this._Cre8PopoverTrigger[0].tagName === 'CRE8-BUTTON') {
           popoverTrigger = this._Cre8PopoverTrigger[0] as Cre8Button;
           popoverTrigger.buttonAriaExpanded = this.isActive ? this.isActive : false;
       } else {

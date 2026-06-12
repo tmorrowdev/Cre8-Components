@@ -1,11 +1,11 @@
 import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../modal';
-import { cre8Modal } from '../modal';
+import { Cre8Modal } from '../modal';
 
 describe('modal', () => {
     test('renders correctly', async () => {
-        const el = await fixture<cre8Modal>(html` <cre8-modal ariaLabel="Label">
+        const el = await fixture<Cre8Modal>(html` <cre8-modal ariaLabel="Label">
       <cre8-heading type="title-large" slot="header">Help Modal</cre8-heading>
       <cre8-text-passage>Lorem ipsum </cre8-text-passage>
       <cre8-button-group slot="footer" orientation="responsive-full-width">
@@ -20,14 +20,14 @@ describe('modal', () => {
         const statuses = ['error', 'warning', 'success', 'info', 'help'];
 
         for (const status of statuses) {
-            const el = await fixture<cre8Modal>(html`<cre8-modal status="${status}"></cre8-modal>`);
+            const el = await fixture<Cre8Modal>(html`<cre8-modal status="${status}"></cre8-modal>`);
             const modal = el.shadowRoot!.querySelector('.cre8-c-modal'); // Test for the class change
             expect(modal.classList.contains(`cre8-c-modal--${status}`)).toBeTruthy();
         }
     });
 
     test('should handle click outside', async () => {
-        const el = await fixture<cre8Modal>(html`<cre8-modal ariaLabel="Label">
+        const el = await fixture<Cre8Modal>(html`<cre8-modal ariaLabel="Label">
       <cre8-heading type="title-large" slot="header">Help Modal</cre8-heading>
       <cre8-text-passage>Lorem ipsum </cre8-text-passage>
       <cre8-button-group slot="footer" orientation="responsive-full-width">
@@ -51,7 +51,7 @@ describe('modal', () => {
     });
 
     test('should handle keydown Escape', async () => {
-        const el = await fixture<cre8Modal>(html`<cre8-modal></cre8-modal>`);
+        const el = await fixture<Cre8Modal>(html`<cre8-modal></cre8-modal>`);
         await el.updateComplete;
         el.isActive = true;
 
@@ -65,7 +65,7 @@ describe('modal', () => {
     });
 
     test('modal update', async () => {
-        const el = await fixture<cre8Modal>(html` <cre8-modal></cre8-modal>`);
+        const el = await fixture<Cre8Modal>(html` <cre8-modal></cre8-modal>`);
         const updateSpy = jest.spyOn(el, 'updated');
 
         el.isActive = false;
@@ -79,7 +79,7 @@ describe('modal', () => {
     });
 
     test('modal disconnect', async () => {
-        const el = await fixture<cre8Modal>(html`<cre8-modal></cre8-modal>`);
+        const el = await fixture<Cre8Modal>(html`<cre8-modal></cre8-modal>`);
         el.isActive = true;
         const dispatchSpy = jest.spyOn(el, 'dispatch');
 
