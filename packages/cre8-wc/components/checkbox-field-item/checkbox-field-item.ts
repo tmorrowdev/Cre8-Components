@@ -32,6 +32,8 @@ import { Cre8FormElement } from '../cre8-form-element';
  *
  * @slot fieldNote - Container for optional field note content
  *
+ * @cssproperty "--cre8-border-radius-checkbox" - border radius of the checkbox box; falls back to --cre8-border-radius-small
+ *
  * @fires change - Fires when the checkbox is toggled. `event.detail` is `{ name, value }`.
  */
 export class Cre8CheckboxFieldItem extends Cre8FormElement {

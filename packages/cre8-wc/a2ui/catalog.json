@@ -473,9 +473,34 @@
                 "x-kind": "property"
               }
             }
+          },
+          "slots": {
+            "type": "object",
+            "description": "Named slot content. Each key is a slot name; value is an array of component instances rendered into that slot.",
+            "additionalProperties": false,
+            "properties": {
+              "before": {
+                "type": "array",
+                "description": "Content rendered before the button text, such as an icon",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "after": {
+                "type": "array",
+                "description": "Content rendered after the button text, such as an icon",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              }
+            }
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-slot-descriptions": {
+          "before": "Content rendered before the button text, such as an icon",
+          "after": "Content rendered after the button text, such as an icon"
+        }
       },
       "cre8-button-group": {
         "type": "object",
@@ -717,6 +742,7 @@
             "additionalProperties": false,
             "properties": {
               "disabled": {
+                "description": "Disables both the main button and the dropdown toggle.",
                 "type": "boolean",
                 "x-kind": "attribute"
               },
@@ -1229,15 +1255,41 @@
             "additionalProperties": false,
             "properties": {}
           },
-          "children": {
-            "type": "array",
-            "description": "The component content",
-            "items": {
-              "$ref": "#/$defs/Component"
+          "slots": {
+            "type": "object",
+            "description": "Named slot content. Each key is a slot name; value is an array of component instances rendered into that slot.",
+            "additionalProperties": false,
+            "properties": {
+              "default": {
+                "type": "array",
+                "description": "The component content",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "header": {
+                "type": "array",
+                "description": "Content rendered in the table object header",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "footer": {
+                "type": "array",
+                "description": "Content rendered in the table object footer",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              }
             }
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-slot-descriptions": {
+          "default": "The component content",
+          "header": "Content rendered in the table object header",
+          "footer": "Content rendered in the table object footer"
+        }
       },
       "cre8-table-row": {
         "type": "object",
@@ -1286,15 +1338,33 @@
               }
             }
           },
-          "children": {
-            "type": "array",
-            "description": "The component content",
-            "items": {
-              "$ref": "#/$defs/Component"
+          "slots": {
+            "type": "object",
+            "description": "Named slot content. Each key is a slot name; value is an array of component instances rendered into that slot.",
+            "additionalProperties": false,
+            "properties": {
+              "default": {
+                "type": "array",
+                "description": "The component content",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "expandableContent": {
+                "type": "array",
+                "description": "Content revealed when the row is expanded",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              }
             }
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-slot-descriptions": {
+          "default": "The component content",
+          "expandableContent": "Content revealed when the row is expanded"
+        }
       },
       "cre8-tag": {
         "type": "object",
@@ -1314,6 +1384,7 @@
             "additionalProperties": false,
             "properties": {
               "text": {
+                "description": "The text label displayed inside the tag.",
                 "type": "string",
                 "x-kind": "attribute"
               },
@@ -1430,6 +1501,13 @@
                 "x-kind": "property"
               }
             }
+          },
+          "children": {
+            "type": "array",
+            "description": "The `cre8-tag` children of the list",
+            "items": {
+              "$ref": "#/$defs/Component"
+            }
           }
         },
         "additionalProperties": false
@@ -1468,6 +1546,13 @@
                 "type": "boolean",
                 "x-kind": "property"
               }
+            }
+          },
+          "children": {
+            "type": "array",
+            "description": "The `cre8-accordion-item` children to group",
+            "items": {
+              "$ref": "#/$defs/Component"
             }
           }
         },
@@ -1547,15 +1632,33 @@
               }
             }
           },
-          "children": {
-            "type": "array",
-            "description": "The body of the accordion item will be any valid html\ninserted between the cre8-accordion-item opening and closing tags.",
-            "items": {
-              "$ref": "#/$defs/Component"
+          "slots": {
+            "type": "object",
+            "description": "Named slot content. Each key is a slot name; value is an array of component instances rendered into that slot.",
+            "additionalProperties": false,
+            "properties": {
+              "default": {
+                "type": "array",
+                "description": "The body of the accordion item will be any valid html\ninserted between the cre8-accordion-item opening and closing tags.",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "heading": {
+                "type": "array",
+                "description": "Custom heading content, used when the `heading` property is not set.",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              }
             }
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-slot-descriptions": {
+          "default": "The body of the accordion item will be any valid html\ninserted between the cre8-accordion-item opening and closing tags.",
+          "heading": "Custom heading content, used when the `heading` property is not set."
+        }
       },
       "cre8-dropdown": {
         "type": "object",
@@ -1600,6 +1703,13 @@
                 "x-kind": "property"
               }
             }
+          },
+          "children": {
+            "type": "array",
+            "description": "The `cre8-dropdown-item` children of the menu",
+            "items": {
+              "$ref": "#/$defs/Component"
+            }
           }
         },
         "additionalProperties": false
@@ -1622,9 +1732,17 @@
             "additionalProperties": false,
             "properties": {
               "ariaLabel": {
+                "description": "The accessible label for the item. Falls back to the item's text content when unset.",
                 "type": "string",
                 "x-kind": "property"
               }
+            }
+          },
+          "children": {
+            "type": "array",
+            "description": "The label content for the dropdown item.",
+            "items": {
+              "$ref": "#/$defs/Component"
             }
           }
         },
@@ -1704,15 +1822,46 @@
               }
             }
           },
-          "children": {
-            "type": "array",
-            "description": "The component content",
-            "items": {
-              "$ref": "#/$defs/Component"
+          "slots": {
+            "type": "object",
+            "description": "Named slot content. Each key is a slot name; value is an array of component instances rendered into that slot.",
+            "additionalProperties": false,
+            "properties": {
+              "default": {
+                "type": "array",
+                "description": "The component content",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "header": {
+                "type": "array",
+                "description": "Custom header content for the modal",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "footer": {
+                "type": "array",
+                "description": "Custom footer content for the modal",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              }
             }
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-slot-descriptions": {
+          "default": "The component content",
+          "header": "Custom header content for the modal",
+          "footer": "Custom footer content for the modal"
+        },
+        "x-events": {
+          "close-modal": {
+            "detail": {}
+          }
+        }
       },
       "cre8-popover": {
         "type": "object",
@@ -1786,15 +1935,49 @@
               }
             }
           },
-          "children": {
-            "type": "array",
-            "description": "The component content",
-            "items": {
-              "$ref": "#/$defs/Component"
+          "slots": {
+            "type": "object",
+            "description": "Named slot content. Each key is a slot name; value is an array of component instances rendered into that slot.",
+            "additionalProperties": false,
+            "properties": {
+              "default": {
+                "type": "array",
+                "description": "The component content",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "trigger": {
+                "type": "array",
+                "description": "The element that toggles the popover open and closed",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "header": {
+                "type": "array",
+                "description": "Custom header content for the popover panel",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "footer": {
+                "type": "array",
+                "description": "Custom footer content for the popover panel",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              }
             }
           }
         },
         "additionalProperties": false,
+        "x-slot-descriptions": {
+          "default": "The component content",
+          "trigger": "The element that toggles the popover open and closed",
+          "header": "Custom header content for the popover panel",
+          "footer": "Custom footer content for the popover panel"
+        },
         "x-events": {
           "open": {
             "detail": {}
@@ -2026,6 +2209,7 @@
                 "x-kind": "attribute"
               },
               "emphasis": {
+                "description": "The alert emphasis. `strong` uses a filled background; pair contained buttons/links with their `inverted` prop.",
                 "default": "subtle",
                 "type": "string",
                 "enum": [
@@ -2040,6 +2224,7 @@
                 "x-kind": "attribute"
               },
               "iconAlert": {
+                "description": "Overrides the default status icon. Accepts a cre8 icon name.",
                 "default": "undefined",
                 "type": "string",
                 "x-kind": "property"
@@ -2050,11 +2235,13 @@
                 "x-kind": "property"
               },
               "headerText": {
+                "description": "The alert heading text.",
                 "default": "undefined",
                 "type": "string",
                 "x-kind": "property"
               },
               "ctaBody": {
+                "description": "Text content for the call-to-action area. Superseded by the `cta` slot when provided.",
                 "default": "undefined",
                 "type": "string",
                 "x-kind": "property"
@@ -2065,9 +2252,34 @@
                 "x-kind": "property"
               }
             }
+          },
+          "slots": {
+            "type": "object",
+            "description": "Named slot content. Each key is a slot name; value is an array of component instances rendered into that slot.",
+            "additionalProperties": false,
+            "properties": {
+              "default": {
+                "type": "array",
+                "description": "The alert body content",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "cta": {
+                "type": "array",
+                "description": "Container for a call-to-action button or link",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              }
+            }
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-slot-descriptions": {
+          "default": "The alert body content",
+          "cta": "Container for a call-to-action button or link"
+        }
       },
       "cre8-badge": {
         "type": "object",
@@ -2621,9 +2833,26 @@
                 "x-kind": "property"
               }
             }
+          },
+          "slots": {
+            "type": "object",
+            "description": "Named slot content. Each key is a slot name; value is an array of component instances rendered into that slot.",
+            "additionalProperties": false,
+            "properties": {
+              "fieldNote": {
+                "type": "array",
+                "description": "Container for optional field note content",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              }
+            }
           }
         },
         "additionalProperties": false,
+        "x-slot-descriptions": {
+          "fieldNote": "Container for optional field note content"
+        },
         "x-events": {
           "change": {
             "detail": {}
@@ -2663,7 +2892,7 @@
                 "x-kind": "attribute"
               },
               "label": {
-                "description": "The required label that appears above the input",
+                "description": "The label text for the date picker field.",
                 "default": "Label",
                 "type": "string",
                 "x-kind": "attribute"
@@ -2792,9 +3021,26 @@
                 "x-kind": "property"
               }
             }
+          },
+          "slots": {
+            "type": "object",
+            "description": "Named slot content. Each key is a slot name; value is an array of component instances rendered into that slot.",
+            "additionalProperties": false,
+            "properties": {
+              "fieldNote": {
+                "type": "array",
+                "description": "Container for optional field note content",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              }
+            }
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-slot-descriptions": {
+          "fieldNote": "Container for optional field note content"
+        }
       },
       "cre8-field": {
         "type": "object",
@@ -2949,9 +3195,26 @@
                 "x-kind": "property"
               }
             }
+          },
+          "slots": {
+            "type": "object",
+            "description": "Named slot content. Each key is a slot name; value is an array of component instances rendered into that slot.",
+            "additionalProperties": false,
+            "properties": {
+              "fieldNote": {
+                "type": "array",
+                "description": "Container for optional field note content",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              }
+            }
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-slot-descriptions": {
+          "fieldNote": "Container for optional field note content"
+        }
       },
       "cre8-field-note": {
         "type": "object",
@@ -3093,9 +3356,26 @@
                 "x-kind": "property"
               }
             }
+          },
+          "slots": {
+            "type": "object",
+            "description": "Named slot content. Each key is a slot name; value is an array of component instances rendered into that slot.",
+            "additionalProperties": false,
+            "properties": {
+              "fieldNote": {
+                "type": "array",
+                "description": "Container for optional field note content",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              }
+            }
           }
         },
         "additionalProperties": false,
+        "x-slot-descriptions": {
+          "fieldNote": "Container for optional field note content"
+        },
         "x-events": {
           "selectedItemsChange": {
             "detail": {}
@@ -3993,6 +4273,7 @@
                 "x-kind": "property"
               },
               "hasOverlay": {
+                "description": "Renders a dark overlay between the background image and the content for legibility.",
                 "type": "boolean",
                 "x-kind": "property"
               }
@@ -4204,15 +4485,33 @@
               }
             }
           },
-          "children": {
-            "type": "array",
-            "description": "The content of the section should go here.\nIt could be a cre8-text-passage, a cre8-card or any other block level html.",
-            "items": {
-              "$ref": "#/$defs/Component"
+          "slots": {
+            "type": "object",
+            "description": "Named slot content. Each key is a slot name; value is an array of component instances rendered into that slot.",
+            "additionalProperties": false,
+            "properties": {
+              "default": {
+                "type": "array",
+                "description": "The content of the section should go here.\nIt could be a cre8-text-passage, a cre8-card or any other block level html.",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "header": {
+                "type": "array",
+                "description": "Custom header content, rendered in place of the `headline` property",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              }
             }
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-slot-descriptions": {
+          "default": "The content of the section should go here.\nIt could be a cre8-text-passage, a cre8-card or any other block level html.",
+          "header": "Custom header content, rendered in place of the `headline` property"
+        }
       },
       "cre8-feature": {
         "type": "object",
@@ -4288,15 +4587,33 @@
               }
             }
           },
-          "children": {
-            "type": "array",
-            "description": "The page header content",
-            "items": {
-              "$ref": "#/$defs/Component"
+          "slots": {
+            "type": "object",
+            "description": "Named slot content. Each key is a slot name; value is an array of component instances rendered into that slot.",
+            "additionalProperties": false,
+            "properties": {
+              "default": {
+                "type": "array",
+                "description": "The page header content",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "titleAfter": {
+                "type": "array",
+                "description": "Content rendered after the heading text, inside the title element",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              }
             }
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-slot-descriptions": {
+          "default": "The page header content",
+          "titleAfter": "Content rendered after the heading text, inside the title element"
+        }
       },
       "cre8-icon": {
         "type": "object",
@@ -4326,6 +4643,7 @@
                 "x-kind": "attribute"
               },
               "svg": {
+                "description": "Raw SVG markup to render. Preferred over `name`/sprite-path icons.",
                 "type": "string",
                 "x-kind": "attribute"
               },
@@ -4589,15 +4907,41 @@
               }
             }
           },
-          "children": {
-            "type": "array",
-            "description": "The label for the navigation item",
-            "items": {
-              "$ref": "#/$defs/Component"
+          "slots": {
+            "type": "object",
+            "description": "Named slot content. Each key is a slot name; value is an array of component instances rendered into that slot.",
+            "additionalProperties": false,
+            "properties": {
+              "default": {
+                "type": "array",
+                "description": "The label for the navigation item",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "itemBefore": {
+                "type": "array",
+                "description": "Content rendered before the item label, such as an icon",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "itemAfter": {
+                "type": "array",
+                "description": "Content rendered after the item label, such as an icon",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              }
             }
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-slot-descriptions": {
+          "default": "The label for the navigation item",
+          "itemBefore": "Content rendered before the item label, such as an icon",
+          "itemAfter": "Content rendered after the item label, such as an icon"
+        }
       },
       "cre8-header": {
         "type": "object",
@@ -4623,15 +4967,41 @@
               }
             }
           },
-          "children": {
-            "type": "array",
-            "description": "The header content",
-            "items": {
-              "$ref": "#/$defs/Component"
+          "slots": {
+            "type": "object",
+            "description": "Named slot content. Each key is a slot name; value is an array of component instances rendered into that slot.",
+            "additionalProperties": false,
+            "properties": {
+              "default": {
+                "type": "array",
+                "description": "The header content",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "top": {
+                "type": "array",
+                "description": "Content rendered above the main header row",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "bottom": {
+                "type": "array",
+                "description": "Content rendered below the main header row",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              }
             }
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-slot-descriptions": {
+          "default": "The header content",
+          "top": "Content rendered above the main header row",
+          "bottom": "Content rendered below the main header row"
+        }
       },
       "cre8-link": {
         "type": "object",
@@ -4733,9 +5103,34 @@
                 "x-kind": "property"
               }
             }
+          },
+          "slots": {
+            "type": "object",
+            "description": "Named slot content. Each key is a slot name; value is an array of component instances rendered into that slot.",
+            "additionalProperties": false,
+            "properties": {
+              "default": {
+                "type": "array",
+                "description": "The link text content",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "badge": {
+                "type": "array",
+                "description": "Container for an optional badge displayed alongside the link",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              }
+            }
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-slot-descriptions": {
+          "default": "The link text content",
+          "badge": "Container for an optional badge displayed alongside the link"
+        }
       },
       "cre8-link-list": {
         "type": "object",
@@ -4835,15 +5230,41 @@
               }
             }
           },
-          "children": {
-            "type": "array",
-            "description": "The default slot to put badges or other Components",
-            "items": {
-              "$ref": "#/$defs/Component"
+          "slots": {
+            "type": "object",
+            "description": "Named slot content. Each key is a slot name; value is an array of component instances rendered into that slot.",
+            "additionalProperties": false,
+            "properties": {
+              "default": {
+                "type": "array",
+                "description": "The default slot to put badges or other Components",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "itemBefore": {
+                "type": "array",
+                "description": "Content rendered before the link text, such as an icon",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "itemAfter": {
+                "type": "array",
+                "description": "Content rendered after the link text, such as an icon",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              }
             }
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-slot-descriptions": {
+          "default": "The default slot to put badges or other Components",
+          "itemBefore": "Content rendered before the link text, such as an icon",
+          "itemAfter": "Content rendered after the link text, such as an icon"
+        }
       },
       "cre8-nav-container": {
         "type": "object",
@@ -4921,6 +5342,7 @@
                 "x-kind": "property"
               },
               "currentPage": {
+                "description": "The currently active page (1-based). Setting it programmatically navigates the pagination.",
                 "type": "number",
                 "x-kind": "property"
               },
@@ -4942,6 +5364,13 @@
                 "type": "number",
                 "x-kind": "property"
               }
+            }
+          },
+          "children": {
+            "type": "array",
+            "description": "Optional content rendered alongside the pagination controls",
+            "items": {
+              "$ref": "#/$defs/Component"
             }
           }
         },
@@ -5045,15 +5474,41 @@
               }
             }
           },
-          "children": {
-            "type": "array",
-            "description": "The label for the navigation item",
-            "items": {
-              "$ref": "#/$defs/Component"
+          "slots": {
+            "type": "object",
+            "description": "Named slot content. Each key is a slot name; value is an array of component instances rendered into that slot.",
+            "additionalProperties": false,
+            "properties": {
+              "default": {
+                "type": "array",
+                "description": "The label for the navigation item",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "itemBefore": {
+                "type": "array",
+                "description": "Content rendered before the item label, such as an icon",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "itemAfter": {
+                "type": "array",
+                "description": "Content rendered after the item label, such as an icon",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              }
             }
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-slot-descriptions": {
+          "default": "The label for the navigation item",
+          "itemBefore": "Content rendered before the item label, such as an icon",
+          "itemAfter": "Content rendered after the item label, such as an icon"
+        }
       },
       "cre8-tab": {
         "type": "object",
@@ -5581,15 +6036,33 @@
               }
             }
           },
-          "children": {
-            "type": "array",
-            "description": "The component content",
-            "items": {
-              "$ref": "#/$defs/Component"
+          "slots": {
+            "type": "object",
+            "description": "Named slot content. Each key is a slot name; value is an array of component instances rendered into that slot.",
+            "additionalProperties": false,
+            "properties": {
+              "default": {
+                "type": "array",
+                "description": "The component content",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              },
+              "linkAfter": {
+                "type": "array",
+                "description": "Content rendered after the link text, such as an icon",
+                "items": {
+                  "$ref": "#/$defs/Component"
+                }
+              }
             }
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-slot-descriptions": {
+          "default": "The component content",
+          "linkAfter": "Content rendered after the link text, such as an icon"
+        }
       },
       "cre8-text-passage": {
         "type": "object",

@@ -160,7 +160,14 @@
           "description": "Whether the field is in a success state"
         }
       },
-      "slots": {},
+      "slots": {
+        "before": {
+          "description": "Content rendered before the button text, such as an icon"
+        },
+        "after": {
+          "description": "Content rendered after the button text, such as an icon"
+        }
+      },
       "events": {},
       "cssProperties": {},
       "examples": [
@@ -353,7 +360,8 @@
       "description": "Split Button component.",
       "attributes": {
         "disabled": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Disables both the main button and the dropdown toggle."
         },
         "size": {
           "type": "string",
@@ -558,7 +566,8 @@
       "slots": {},
       "events": {
         "removeTagClicked": {
-          "detail": {}
+          "detail": {},
+          "description": "Fires when the remove tag is clicked."
         }
       },
       "cssProperties": {},
@@ -694,6 +703,12 @@
       "slots": {
         "default": {
           "description": "The component content"
+        },
+        "header": {
+          "description": "Content rendered in the table object header"
+        },
+        "footer": {
+          "description": "Content rendered in the table object footer"
         }
       },
       "events": {},
@@ -733,6 +748,9 @@
       "slots": {
         "default": {
           "description": "The component content"
+        },
+        "expandableContent": {
+          "description": "Content revealed when the row is expanded"
         }
       },
       "events": {},
@@ -745,7 +763,8 @@
       "description": "The tag component allows you to make selections, filter content, or trigger actions. While buttons are\nexpected to appear consistently and with familiar calls to actions, tags should appear dynamically\nas a group of multiple interactions elements. It is a flexible\ncomponent that comes in the following types:\n - **radio**  Clicking a Radio Button causes it to change color. These tags only allow\none option to be chosen and can be used in place of radio button when they need to be listed\nhorizontally\n\n - **checkbox** It allows for selecting options, It can be toggled on and off.",
       "attributes": {
         "text": {
-          "type": "string"
+          "type": "string",
+          "description": "The text label displayed inside the tag."
         },
         "variant": {
           "type": "string",
@@ -816,7 +835,8 @@
       "slots": {},
       "events": {
         "change": {
-          "detail": {}
+          "detail": {},
+          "description": "Fires when the tag is clicked while enabled. `event.detail` is `{ isSelected, type }`."
         }
       },
       "cssProperties": {},
@@ -843,7 +863,11 @@
           "description": "The unique id of the select"
         }
       },
-      "slots": {},
+      "slots": {
+        "default": {
+          "description": "The `cre8-tag` children of the list"
+        }
+      },
       "events": {},
       "cssProperties": {},
       "examples": []
@@ -870,7 +894,11 @@
           "description": "\nWhen it is true, the inner dividers are displayed;\nif it is false, the inner dividers are not displayed"
         }
       },
-      "slots": {},
+      "slots": {
+        "default": {
+          "description": "The `cre8-accordion-item` children to group"
+        }
+      },
       "events": {},
       "cssProperties": {},
       "examples": []
@@ -933,6 +961,9 @@
       "slots": {
         "default": {
           "description": "The body of the accordion item will be any valid html\ninserted between the cre8-accordion-item opening and closing tags."
+        },
+        "heading": {
+          "description": "Custom heading content, used when the `heading` property is not set."
         }
       },
       "events": {},
@@ -965,7 +996,11 @@
           "type": "HTMLElement"
         }
       },
-      "slots": {},
+      "slots": {
+        "default": {
+          "description": "The `cre8-dropdown-item` children of the menu"
+        }
+      },
       "events": {},
       "cssProperties": {},
       "examples": []
@@ -977,13 +1012,19 @@
       "attributes": {},
       "properties": {
         "ariaLabel": {
-          "type": "string"
+          "type": "string",
+          "description": "The accessible label for the item. Falls back to the item's text content when unset."
         }
       },
-      "slots": {},
+      "slots": {
+        "default": {
+          "description": "The label content for the dropdown item."
+        }
+      },
       "events": {
         "dropdown-item-selected": {
-          "detail": {}
+          "detail": {},
+          "description": "Fires when the item is clicked. `event.detail.originalEvent` holds the source `MouseEvent`."
         }
       },
       "cssProperties": {},
@@ -1041,9 +1082,20 @@
       "slots": {
         "default": {
           "description": "The component content"
+        },
+        "header": {
+          "description": "Custom header content for the modal"
+        },
+        "footer": {
+          "description": "Custom footer content for the modal"
         }
       },
-      "events": {},
+      "events": {
+        "close-modal": {
+          "detail": {},
+          "description": "Fires when the modal is dismissed via the close button, overlay click, or Escape key."
+        }
+      },
       "cssProperties": {},
       "examples": []
     },
@@ -1098,14 +1150,25 @@
       "slots": {
         "default": {
           "description": "The component content"
+        },
+        "trigger": {
+          "description": "The element that toggles the popover open and closed"
+        },
+        "header": {
+          "description": "Custom header content for the popover panel"
+        },
+        "footer": {
+          "description": "Custom footer content for the popover panel"
         }
       },
       "events": {
         "open": {
-          "detail": {}
+          "detail": {},
+          "description": "Fires when the popover opens. `event.detail.isActive` is `true`."
         },
         "close": {
-          "detail": {}
+          "detail": {},
+          "description": "Fires when the popover closes. `event.detail.isActive` is `false`."
         }
       },
       "cssProperties": {},
@@ -1215,10 +1278,12 @@
       },
       "events": {
         "open": {
-          "detail": {}
+          "detail": {},
+          "description": "Fires when the tooltip is shown. `event.detail.isActive` is `true`."
         },
         "close": {
-          "detail": {}
+          "detail": {},
+          "description": "Fires when the tooltip is hidden. `event.detail.isActive` is `false`."
         }
       },
       "cssProperties": {},
@@ -1257,7 +1322,8 @@
             "subtle",
             "strong"
           ],
-          "default": "subtle"
+          "default": "subtle",
+          "description": "The alert emphasis. `strong` uses a filled background; pair contained buttons/links with their `inverted` prop."
         },
         "dismissed": {
           "type": "boolean",
@@ -1267,7 +1333,8 @@
       "properties": {
         "iconAlert": {
           "type": "string",
-          "default": "undefined"
+          "default": "undefined",
+          "description": "Overrides the default status icon. Accepts a cre8 icon name."
         },
         "iconTitle": {
           "type": "string",
@@ -1275,18 +1342,27 @@
         },
         "headerText": {
           "type": "string",
-          "default": "undefined"
+          "default": "undefined",
+          "description": "The alert heading text."
         },
         "ctaBody": {
           "type": "string",
-          "default": "undefined"
+          "default": "undefined",
+          "description": "Text content for the call-to-action area. Superseded by the `cta` slot when provided."
         },
         "notDismissible": {
           "type": "boolean",
           "description": "Dismissable property\n1) Adds the ability to close when toggled to true"
         }
       },
-      "slots": {},
+      "slots": {
+        "default": {
+          "description": "The alert body content"
+        },
+        "cta": {
+          "description": "Container for a call-to-action button or link"
+        }
+      },
       "events": {},
       "cssProperties": {},
       "examples": [
@@ -1699,13 +1775,22 @@
           "description": "The type of form control (text, checkbox, radio, etc.)"
         }
       },
-      "slots": {},
-      "events": {
-        "change": {
-          "detail": {}
+      "slots": {
+        "fieldNote": {
+          "description": "Container for optional field note content"
         }
       },
-      "cssProperties": {},
+      "events": {
+        "change": {
+          "detail": {},
+          "description": "Fires when the checkbox is toggled. `event.detail` is `{ name, value }`."
+        }
+      },
+      "cssProperties": {
+        "--cre8-border-radius-checkbox": {
+          "description": "border radius of the checkbox box; falls back to --cre8-border-radius-small"
+        }
+      },
       "examples": []
     },
     {
@@ -1728,7 +1813,7 @@
         "label": {
           "type": "string",
           "default": "Label",
-          "description": "The required label that appears above the input"
+          "description": "The label text for the date picker field."
         },
         "max": {
           "type": "string | number",
@@ -1828,7 +1913,11 @@
           "type": "boolean"
         }
       },
-      "slots": {},
+      "slots": {
+        "fieldNote": {
+          "description": "Container for optional field note content"
+        }
+      },
       "events": {},
       "cssProperties": {},
       "examples": []
@@ -1946,7 +2035,11 @@
           "description": "Changes the component's treatment to represent a success state"
         }
       },
-      "slots": {},
+      "slots": {
+        "fieldNote": {
+          "description": "Container for optional field note content"
+        }
+      },
       "events": {},
       "cssProperties": {},
       "examples": []
@@ -2042,10 +2135,15 @@
           "type": "boolean"
         }
       },
-      "slots": {},
+      "slots": {
+        "fieldNote": {
+          "description": "Container for optional field note content"
+        }
+      },
       "events": {
         "selectedItemsChange": {
-          "detail": {}
+          "detail": {},
+          "description": "Fires when a tag is added or removed. `event.detail.selectedItems` is the current selection."
         }
       },
       "cssProperties": {},
@@ -2247,7 +2345,8 @@
       },
       "events": {
         "change": {
-          "detail": {}
+          "detail": {},
+          "description": "Fires when the selected option changes. `event.detail` is `{ name, value }`."
         }
       },
       "cssProperties": {},
@@ -2645,7 +2744,8 @@
           "description": "Image alt text"
         },
         "hasOverlay": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Renders a dark overlay between the background image and the content for legibility."
         }
       },
       "slots": {
@@ -2771,6 +2871,9 @@
       "slots": {
         "default": {
           "description": "The content of the section should go here.\nIt could be a cre8-text-passage, a cre8-card or any other block level html."
+        },
+        "header": {
+          "description": "Custom header content, rendered in place of the `headline` property"
         }
       },
       "events": {},
@@ -2825,6 +2928,9 @@
       "slots": {
         "default": {
           "description": "The page header content"
+        },
+        "titleAfter": {
+          "description": "Content rendered after the heading text, inside the title element"
         }
       },
       "events": {},
@@ -2845,7 +2951,8 @@
           "description": "Icon name (this method of passing in svgs is to be deprecated)"
         },
         "svg": {
-          "type": "string"
+          "type": "string",
+          "description": "Raw SVG markup to render. Preferred over `name`/sprite-path icons."
         }
       },
       "properties": {
@@ -3005,6 +3112,12 @@
       "slots": {
         "default": {
           "description": "The label for the navigation item"
+        },
+        "itemBefore": {
+          "description": "Content rendered before the item label, such as an icon"
+        },
+        "itemAfter": {
+          "description": "Content rendered after the item label, such as an icon"
         }
       },
       "events": {},
@@ -3030,6 +3143,12 @@
       "slots": {
         "default": {
           "description": "The header content"
+        },
+        "top": {
+          "description": "Content rendered above the main header row"
+        },
+        "bottom": {
+          "description": "Content rendered below the main header row"
         }
       },
       "events": {},
@@ -3113,7 +3232,14 @@
           "description": "Link with no underline"
         }
       },
-      "slots": {},
+      "slots": {
+        "default": {
+          "description": "The link text content"
+        },
+        "badge": {
+          "description": "Container for an optional badge displayed alongside the link"
+        }
+      },
       "events": {},
       "cssProperties": {},
       "examples": []
@@ -3190,6 +3316,12 @@
       "slots": {
         "default": {
           "description": "The default slot to put badges or other Components"
+        },
+        "itemBefore": {
+          "description": "Content rendered before the link text, such as an icon"
+        },
+        "itemAfter": {
+          "description": "Content rendered after the link text, such as an icon"
         }
       },
       "events": {},
@@ -3249,7 +3381,8 @@
           "type": "boolean"
         },
         "currentPage": {
-          "type": "number"
+          "type": "number",
+          "description": "The currently active page (1-based). Setting it programmatically navigates the pagination."
         },
         "elementDefinitions": {
           "type": "{ 'cre8-button': typeof Cre8Button; }"
@@ -3264,10 +3397,15 @@
           "type": "number"
         }
       },
-      "slots": {},
+      "slots": {
+        "default": {
+          "description": "Optional content rendered alongside the pagination controls"
+        }
+      },
       "events": {
         "pagination.click": {
-          "detail": {}
+          "detail": {},
+          "description": "Fires when the page changes. `event.detail` is `{ buttonName, value }` where `value` is the new current page."
         }
       },
       "cssProperties": {
@@ -3347,6 +3485,12 @@
       "slots": {
         "default": {
           "description": "The label for the navigation item"
+        },
+        "itemBefore": {
+          "description": "Content rendered before the item label, such as an icon"
+        },
+        "itemAfter": {
+          "description": "Content rendered after the item label, such as an icon"
         }
       },
       "events": {},
@@ -3389,7 +3533,8 @@
       },
       "events": {
         "tabSelected": {
-          "detail": {}
+          "detail": {},
+          "description": "Fires when the tab is clicked. `event.detail.index` is the tab's index."
         }
       },
       "cssProperties": {},
@@ -3696,6 +3841,9 @@
       "slots": {
         "default": {
           "description": "The component content"
+        },
+        "linkAfter": {
+          "description": "Content rendered after the link text, such as an icon"
         }
       },
       "events": {},
@@ -3840,258 +3988,15 @@
     }
   ],
   "designTokens": {
-    "description": "Semantic token layer consumed by Pencil designs and agent-generated code. Reference tokens as CSS custom properties: var(--cre8-<token-name>). Two skins available; load the skin CSS before using components.",
+    "description": "Design tokens are bundled inline within @tmorrow/cre8-wc under design-tokens/",
     "tokenPackage": "@tmorrow/cre8-wc",
-    "skinCssPath": "design-tokens/brands/{skin}/css/tokens_{skin}.css",
-    "availableSkins": ["cre8-teal", "claude-terracotta"],
-    "rules": [
-      "Always reference colors via a token, never a hex literal.",
-      "Use spacing-* tokens for gap and padding values.",
-      "Use radius-* tokens for border-radius (cornerRadius in Pencil).",
-      "Pick the variant that matches the semantic intent, not visual approximation.",
-      "Switch skins by loading a different skin CSS file — no component changes needed."
-    ],
-    "skins": {
-      "cre8-teal": {
-        "description": "Default cre8 skin. Teal accent on neutral white base.",
-        "tokens": {
-          "background-default":    { "cssVar": "--cre8-background-default",    "value": "#FFFFFF",                        "category": "background" },
-          "background-subtle":     { "cssVar": "--cre8-background-subtle",     "value": "#F5F5F5",                        "category": "background" },
-          "background-strong":     { "cssVar": "--cre8-background-strong",     "value": "#EAEAEA",                        "category": "background" },
-          "background-inverse":    { "cssVar": "--cre8-background-inverse",    "value": "#1A1A1A",                        "category": "background" },
-          "surface-default":       { "cssVar": "--cre8-surface-default",       "value": "#FFFFFF",                        "category": "surface"     },
-          "surface-elevated":      { "cssVar": "--cre8-surface-elevated",      "value": "#FFFFFF",                        "category": "surface"     },
-          "content-default":       { "cssVar": "--cre8-content-default",       "value": "#1A1A1A",                        "category": "content"     },
-          "content-muted":         { "cssVar": "--cre8-content-muted",         "value": "#949494",                        "category": "content"     },
-          "content-inverse":       { "cssVar": "--cre8-content-inverse",       "value": "#FFFFFF",                        "category": "content"     },
-          "content-link":          { "cssVar": "--cre8-content-link",          "value": "#1963E1",                        "category": "content"     },
-          "border-subtle":         { "cssVar": "--cre8-border-subtle",         "value": "#EAEAEA",                        "category": "border"      },
-          "border-default":        { "cssVar": "--cre8-border-default",        "value": "#D5D5D5",                        "category": "border"      },
-          "border-strong":         { "cssVar": "--cre8-border-strong",         "value": "#6C6C6C",                        "category": "border"      },
-          "border-inverse":        { "cssVar": "--cre8-border-inverse",        "value": "#ABABAB",                        "category": "border"      },
-          "accent-primary":        { "cssVar": "--cre8-accent-primary",        "value": "#0EA5A8",                        "category": "accent"      },
-          "accent-primary-hover":  { "cssVar": "--cre8-accent-primary-hover",  "value": "#0B8588",                        "category": "accent"      },
-          "accent-primary-active": { "cssVar": "--cre8-accent-primary-active", "value": "#086E70",                        "category": "accent"      },
-          "accent-primary-subtle": { "cssVar": "--cre8-accent-primary-subtle", "value": "rgba(14,165,168,0.10)",          "category": "accent"      },
-          "accent-secondary":      { "cssVar": "--cre8-accent-secondary",      "value": "#1A1A1A",                        "category": "accent"      },
-          "focus-ring":            { "cssVar": "--cre8-focus-ring",            "value": "#0EA5A8",                        "category": "accent"      },
-          "status-info":           { "cssVar": "--cre8-status-info",           "value": "#1963E1",                        "category": "status"      },
-          "status-success":        { "cssVar": "--cre8-status-success",        "value": "#1E9E5A",                        "category": "status"      },
-          "status-warning":        { "cssVar": "--cre8-status-warning",        "value": "#E08A1F",                        "category": "status"      },
-          "status-error":          { "cssVar": "--cre8-status-error",          "value": "#D02525",                        "category": "status"      },
-          "status-error-dark":     { "cssVar": "--cre8-status-error-dark",     "value": "#AA1313",                        "category": "status"      },
-          "status-error-darkest":  { "cssVar": "--cre8-status-error-darkest",  "value": "#7A0000",                        "category": "status"      },
-          "overlay":               { "cssVar": "--cre8-overlay",               "value": "rgba(0,0,0,0.20)",               "category": "status"      },
-          "spacing-2xs":           { "cssVar": "--cre8-spacing-2xs",           "value": "2px",                            "category": "spacing"     },
-          "spacing-xs":            { "cssVar": "--cre8-spacing-xs",            "value": "4px",                            "category": "spacing"     },
-          "spacing-sm":            { "cssVar": "--cre8-spacing-sm",            "value": "8px",                            "category": "spacing"     },
-          "spacing-md":            { "cssVar": "--cre8-spacing-md",            "value": "12px",                           "category": "spacing"     },
-          "spacing-lg":            { "cssVar": "--cre8-spacing-lg",            "value": "16px",                           "category": "spacing"     },
-          "spacing-xl":            { "cssVar": "--cre8-spacing-xl",            "value": "24px",                           "category": "spacing"     },
-          "spacing-2xl":           { "cssVar": "--cre8-spacing-2xl",           "value": "32px",                           "category": "spacing"     },
-          "spacing-3xl":           { "cssVar": "--cre8-spacing-3xl",           "value": "48px",                           "category": "spacing"     },
-          "spacing-4xl":           { "cssVar": "--cre8-spacing-4xl",           "value": "64px",                           "category": "spacing"     },
-          "spacing-5xl":           { "cssVar": "--cre8-spacing-5xl",           "value": "96px",                           "category": "spacing"     },
-          "radius-none":           { "cssVar": "--cre8-radius-none",           "value": "0px",                            "category": "radius"      },
-          "radius-sm":             { "cssVar": "--cre8-radius-sm",             "value": "4px",                            "category": "radius"      },
-          "radius-md":             { "cssVar": "--cre8-radius-md",             "value": "8px",                            "category": "radius"      },
-          "radius-lg":             { "cssVar": "--cre8-radius-lg",             "value": "12px",                           "category": "radius"      },
-          "radius-xl":             { "cssVar": "--cre8-radius-xl",             "value": "16px",                           "category": "radius"      },
-          "radius-2xl":            { "cssVar": "--cre8-radius-2xl",            "value": "24px",                           "category": "radius"      },
-          "radius-full":           { "cssVar": "--cre8-radius-full",           "value": "9999px",                         "category": "radius"      },
-          "font-size-xs":          { "cssVar": "--cre8-font-size-xs",          "value": "12px",                           "category": "typography"  },
-          "font-size-sm":          { "cssVar": "--cre8-font-size-sm",          "value": "14px",                           "category": "typography"  },
-          "font-size-md":          { "cssVar": "--cre8-font-size-md",          "value": "16px",                           "category": "typography"  },
-          "font-size-lg":          { "cssVar": "--cre8-font-size-lg",          "value": "18px",                           "category": "typography"  },
-          "font-size-xl":          { "cssVar": "--cre8-font-size-xl",          "value": "20px",                           "category": "typography"  },
-          "font-size-2xl":         { "cssVar": "--cre8-font-size-2xl",         "value": "24px",                           "category": "typography"  },
-          "font-size-3xl":         { "cssVar": "--cre8-font-size-3xl",         "value": "32px",                           "category": "typography"  },
-          "font-size-4xl":         { "cssVar": "--cre8-font-size-4xl",         "value": "40px",                           "category": "typography"  },
-          "font-size-5xl":         { "cssVar": "--cre8-font-size-5xl",         "value": "56px",                           "category": "typography"  },
-          "font-size-6xl":         { "cssVar": "--cre8-font-size-6xl",         "value": "72px",                           "category": "typography"  },
-          "font-weight-regular":   { "cssVar": "--cre8-font-weight-regular",   "value": "400",                            "category": "typography"  },
-          "font-weight-medium":    { "cssVar": "--cre8-font-weight-medium",    "value": "500",                            "category": "typography"  },
-          "font-weight-semibold":  { "cssVar": "--cre8-font-weight-semibold",  "value": "600",                            "category": "typography"  },
-          "font-weight-bold":      { "cssVar": "--cre8-font-weight-bold",      "value": "700",                            "category": "typography"  },
-          "font-family-sans":      { "cssVar": "--cre8-font-family-sans",      "value": "Inter, system-ui, sans-serif",   "category": "typography"  },
-          "font-family-mono":      { "cssVar": "--cre8-font-family-mono",      "value": "JetBrains Mono, Courier New, monospace", "category": "typography" },
-          "line-height-tight":     { "cssVar": "--cre8-line-height-tight",     "value": "1.2",                            "category": "typography"  },
-          "line-height-normal":    { "cssVar": "--cre8-line-height-normal",    "value": "1.5",                            "category": "typography"  }
-        }
-      },
-      "claude-terracotta": {
-        "description": "Claude-branded skin. Warm terracotta accent on warm white base. Same token names as cre8-teal — only accent and surface values differ.",
-        "tokens": {
-          "background-default":    { "cssVar": "--cre8-background-default",    "value": "#FFFFFF",                        "category": "background" },
-          "background-subtle":     { "cssVar": "--cre8-background-subtle",     "value": "#FBF6F3",                        "category": "background" },
-          "background-strong":     { "cssVar": "--cre8-background-strong",     "value": "#F2E8E2",                        "category": "background" },
-          "background-inverse":    { "cssVar": "--cre8-background-inverse",    "value": "#1A1208",                        "category": "background" },
-          "surface-default":       { "cssVar": "--cre8-surface-default",       "value": "#FFFFFF",                        "category": "surface"     },
-          "surface-elevated":      { "cssVar": "--cre8-surface-elevated",      "value": "#FFFAF8",                        "category": "surface"     },
-          "content-default":       { "cssVar": "--cre8-content-default",       "value": "#1A1208",                        "category": "content"     },
-          "content-muted":         { "cssVar": "--cre8-content-muted",         "value": "#8A7A72",                        "category": "content"     },
-          "content-inverse":       { "cssVar": "--cre8-content-inverse",       "value": "#FFFFFF",                        "category": "content"     },
-          "content-link":          { "cssVar": "--cre8-content-link",          "value": "#9E3A15",                        "category": "content"     },
-          "border-subtle":         { "cssVar": "--cre8-border-subtle",         "value": "#F0E2D9",                        "category": "border"      },
-          "border-default":        { "cssVar": "--cre8-border-default",        "value": "#D9C4B8",                        "category": "border"      },
-          "border-strong":         { "cssVar": "--cre8-border-strong",         "value": "#7A5D52",                        "category": "border"      },
-          "border-inverse":        { "cssVar": "--cre8-border-inverse",        "value": "#B09080",                        "category": "border"      },
-          "accent-primary":        { "cssVar": "--cre8-accent-primary",        "value": "#C85F2F",                        "category": "accent"      },
-          "accent-primary-hover":  { "cssVar": "--cre8-accent-primary-hover",  "value": "#A84D24",                        "category": "accent"      },
-          "accent-primary-active": { "cssVar": "--cre8-accent-primary-active", "value": "#8C3F1C",                        "category": "accent"      },
-          "accent-primary-subtle": { "cssVar": "--cre8-accent-primary-subtle", "value": "rgba(200,95,47,0.10)",           "category": "accent"      },
-          "accent-secondary":      { "cssVar": "--cre8-accent-secondary",      "value": "#1A1208",                        "category": "accent"      },
-          "focus-ring":            { "cssVar": "--cre8-focus-ring",            "value": "#C85F2F",                        "category": "accent"      },
-          "status-info":           { "cssVar": "--cre8-status-info",           "value": "#1963E1",                        "category": "status"      },
-          "status-success":        { "cssVar": "--cre8-status-success",        "value": "#1E9E5A",                        "category": "status"      },
-          "status-warning":        { "cssVar": "--cre8-status-warning",        "value": "#E08A1F",                        "category": "status"      },
-          "status-error":          { "cssVar": "--cre8-status-error",          "value": "#D02525",                        "category": "status"      },
-          "status-error-dark":     { "cssVar": "--cre8-status-error-dark",     "value": "#AA1313",                        "category": "status"      },
-          "status-error-darkest":  { "cssVar": "--cre8-status-error-darkest",  "value": "#7A0000",                        "category": "status"      },
-          "overlay":               { "cssVar": "--cre8-overlay",               "value": "rgba(0,0,0,0.20)",               "category": "status"      },
-          "spacing-2xs":           { "cssVar": "--cre8-spacing-2xs",           "value": "2px",                            "category": "spacing"     },
-          "spacing-xs":            { "cssVar": "--cre8-spacing-xs",            "value": "4px",                            "category": "spacing"     },
-          "spacing-sm":            { "cssVar": "--cre8-spacing-sm",            "value": "8px",                            "category": "spacing"     },
-          "spacing-md":            { "cssVar": "--cre8-spacing-md",            "value": "12px",                           "category": "spacing"     },
-          "spacing-lg":            { "cssVar": "--cre8-spacing-lg",            "value": "16px",                           "category": "spacing"     },
-          "spacing-xl":            { "cssVar": "--cre8-spacing-xl",            "value": "24px",                           "category": "spacing"     },
-          "spacing-2xl":           { "cssVar": "--cre8-spacing-2xl",           "value": "32px",                           "category": "spacing"     },
-          "spacing-3xl":           { "cssVar": "--cre8-spacing-3xl",           "value": "48px",                           "category": "spacing"     },
-          "spacing-4xl":           { "cssVar": "--cre8-spacing-4xl",           "value": "64px",                           "category": "spacing"     },
-          "spacing-5xl":           { "cssVar": "--cre8-spacing-5xl",           "value": "96px",                           "category": "spacing"     },
-          "radius-none":           { "cssVar": "--cre8-radius-none",           "value": "0px",                            "category": "radius"      },
-          "radius-sm":             { "cssVar": "--cre8-radius-sm",             "value": "4px",                            "category": "radius"      },
-          "radius-md":             { "cssVar": "--cre8-radius-md",             "value": "8px",                            "category": "radius"      },
-          "radius-lg":             { "cssVar": "--cre8-radius-lg",             "value": "12px",                           "category": "radius"      },
-          "radius-xl":             { "cssVar": "--cre8-radius-xl",             "value": "16px",                           "category": "radius"      },
-          "radius-2xl":            { "cssVar": "--cre8-radius-2xl",            "value": "24px",                           "category": "radius"      },
-          "radius-full":           { "cssVar": "--cre8-radius-full",           "value": "9999px",                         "category": "radius"      },
-          "font-size-xs":          { "cssVar": "--cre8-font-size-xs",          "value": "12px",                           "category": "typography"  },
-          "font-size-sm":          { "cssVar": "--cre8-font-size-sm",          "value": "14px",                           "category": "typography"  },
-          "font-size-md":          { "cssVar": "--cre8-font-size-md",          "value": "16px",                           "category": "typography"  },
-          "font-size-lg":          { "cssVar": "--cre8-font-size-lg",          "value": "18px",                           "category": "typography"  },
-          "font-size-xl":          { "cssVar": "--cre8-font-size-xl",          "value": "20px",                           "category": "typography"  },
-          "font-size-2xl":         { "cssVar": "--cre8-font-size-2xl",         "value": "24px",                           "category": "typography"  },
-          "font-size-3xl":         { "cssVar": "--cre8-font-size-3xl",         "value": "32px",                           "category": "typography"  },
-          "font-size-4xl":         { "cssVar": "--cre8-font-size-4xl",         "value": "40px",                           "category": "typography"  },
-          "font-size-5xl":         { "cssVar": "--cre8-font-size-5xl",         "value": "56px",                           "category": "typography"  },
-          "font-size-6xl":         { "cssVar": "--cre8-font-size-6xl",         "value": "72px",                           "category": "typography"  },
-          "font-weight-regular":   { "cssVar": "--cre8-font-weight-regular",   "value": "400",                            "category": "typography"  },
-          "font-weight-medium":    { "cssVar": "--cre8-font-weight-medium",    "value": "500",                            "category": "typography"  },
-          "font-weight-semibold":  { "cssVar": "--cre8-font-weight-semibold",  "value": "600",                            "category": "typography"  },
-          "font-weight-bold":      { "cssVar": "--cre8-font-weight-bold",      "value": "700",                            "category": "typography"  },
-          "font-family-sans":      { "cssVar": "--cre8-font-family-sans",      "value": "Inter, system-ui, sans-serif",   "category": "typography"  },
-          "font-family-mono":      { "cssVar": "--cre8-font-family-mono",      "value": "JetBrains Mono, Courier New, monospace", "category": "typography" },
-          "line-height-tight":     { "cssVar": "--cre8-line-height-tight",     "value": "1.2",                            "category": "typography"  },
-          "line-height-normal":    { "cssVar": "--cre8-line-height-normal",    "value": "1.5",                            "category": "typography"  }
-        }
-      }
-    }
-  },
-  "componentCatalog": {
-    "description": "133 Pencil design components grouped by family. Each family corresponds to one or more cre8-wc web component tags. Use Family/Variant to pick the right design reference; use the tag from the components array to generate HTML.",
-    "namingConvention": "Family/Variant or Family/Type/State. Two segments when only state matters, three when both type and state matter (e.g. Button/Primary/Hover).",
-    "groups": [
-      {
-        "name": "Actions",
-        "families": [
-          { "family": "Button",      "variants": ["Primary","Primary/Hover","Primary/Active","Primary/Disabled","Secondary","Secondary/Hover","Secondary/Active","Secondary/Disabled","Tertiary","Tertiary/Hover","Tertiary/Active","Tertiary/Disabled","Danger","Danger/Hover","Danger/Active","Danger/Disabled"], "tag": "cre8-button" },
-          { "family": "ButtonGroup", "variants": ["Default"], "tag": "cre8-button-group" },
-          { "family": "SplitButton", "variants": ["Default"], "tag": "cre8-split-button" }
-        ]
-      },
-      {
-        "name": "Forms",
-        "families": [
-          { "family": "Field",       "variants": ["Default","Focus","Error","Success","Disabled"],      "tag": "cre8-field" },
-          { "family": "Select",      "variants": ["Default","Focus"],                                    "tag": "cre8-select" },
-          { "family": "Checkbox",    "variants": ["Unchecked","Checked","Indeterminate","Disabled"],     "tag": "cre8-checkbox-field" },
-          { "family": "Radio",       "variants": ["Unchecked","Checked","Disabled"],                     "tag": "cre8-radio-field" },
-          { "family": "SelectTile",  "variants": ["Unselected","Selected","Disabled"],                   "tag": "cre8-select-tile" },
-          { "family": "DatePicker",  "variants": ["Default"],                                            "tag": "cre8-date-picker" },
-          { "family": "MultiSelect", "variants": ["Default"],                                            "tag": "cre8-multi-select" }
-        ]
-      },
-      {
-        "name": "Navigation",
-        "families": [
-          { "family": "Header",          "variants": ["Default","Inverse"],                               "tag": "cre8-header" },
-          { "family": "Footer",          "variants": ["Default"],                                          "tag": "cre8-footer" },
-          { "family": "PrimaryNavItem",  "variants": ["Default","Hover","Active","Selected"],              "tag": "cre8-primary-nav-item" },
-          { "family": "Tabs",            "variants": ["Default"],                                          "tag": "cre8-tabs" },
-          { "family": "Tab",             "variants": ["Unselected","Selected"],                            "tag": "cre8-tab" },
-          { "family": "SubmenuItem",     "variants": ["Default","Hover","Active"],                         "tag": "cre8-submenu-item" },
-          { "family": "Submenu",         "variants": ["Default"],                                          "tag": "cre8-submenu" },
-          { "family": "UtilityNavItem",  "variants": ["Default","Hover"],                                  "tag": "cre8-utility-nav-item" },
-          { "family": "UtilityNav",      "variants": ["Default"],                                          "tag": "cre8-utility-nav" },
-          { "family": "GlobalNavItem",   "variants": ["Default","Hover","Active"],                         "tag": "cre8-global-nav-item" },
-          { "family": "GlobalNav",       "variants": ["Default"],                                          "tag": "cre8-global-nav" },
-          { "family": "TertiaryNavItem", "variants": ["Default","Hover","Active"],                         "tag": "cre8-tertiary-nav-item" },
-          { "family": "TertiaryNav",     "variants": ["Default"],                                          "tag": "cre8-tertiary-nav" },
-          { "family": "NavContainer",    "variants": ["Default"],                                          "tag": "cre8-nav-container" },
-          { "family": "Breadcrumbs",     "variants": ["Default"],                                          "tag": "cre8-breadcrumbs" },
-          { "family": "Pagination",      "variants": ["Default"],                                          "tag": "cre8-pagination" },
-          { "family": "LinkListItem",    "variants": ["Default"],                                          "tag": "cre8-link-list-item" },
-          { "family": "LinkList",        "variants": ["Default"],                                          "tag": "cre8-link-list" }
-        ]
-      },
-      {
-        "name": "Data",
-        "families": [
-          { "family": "Table",           "variants": ["Default"],                                          "tag": "cre8-table" },
-          { "family": "TableHeader",     "variants": ["Default"],                                          "tag": "cre8-table-header" },
-          { "family": "TableHeaderCell", "variants": ["Default","Sortable"],                               "tag": "cre8-table-header-cell" },
-          { "family": "TableCell",       "variants": ["Default"],                                          "tag": "cre8-table-cell" },
-          { "family": "TableRow",        "variants": ["Default","Hover"],                                  "tag": "cre8-table-row" },
-          { "family": "AccordionItem",   "variants": ["Collapsed","Expanded"],                             "tag": "cre8-accordion-item" },
-          { "family": "DropdownItem",    "variants": ["Default","Hover","Selected"],                       "tag": "cre8-dropdown-item" },
-          { "family": "Dropdown",        "variants": ["Default"],                                          "tag": "cre8-dropdown" }
-        ]
-      },
-      {
-        "name": "Feedback",
-        "families": [
-          { "family": "Alert",             "variants": ["Info","Success","Warning","Error"],                "tag": "cre8-alert" },
-          { "family": "Badge",             "variants": ["Default","Success","Error","Warning","Info"],      "tag": "cre8-badge" },
-          { "family": "Tooltip",           "variants": ["Default"],                                         "tag": "cre8-tooltip" },
-          { "family": "Popover",           "variants": ["Default"],                                         "tag": "cre8-popover" },
-          { "family": "Modal",             "variants": ["Default"],                                         "tag": "cre8-modal" },
-          { "family": "Spinner",           "variants": ["Small","Medium","Large"],                          "tag": "cre8-loading-spinner" },
-          { "family": "ProgressMeter",     "variants": ["Default"],                                         "tag": "cre8-progress-meter" },
-          { "family": "PercentBar",        "variants": ["Default"],                                         "tag": "cre8-percent-bar" },
-          { "family": "ProgressStepsItem", "variants": ["Pending","Active","Complete"],                     "tag": "cre8-progress-steps-item" }
-        ]
-      },
-      {
-        "name": "Layout",
-        "families": [
-          { "family": "Hero",         "variants": ["Default"],                     "tag": "cre8-hero" },
-          { "family": "Band",         "variants": ["Default","Subtle","Strong"],    "tag": "cre8-band" },
-          { "family": "Grid",         "variants": ["2Col","3Col"],                  "tag": "cre8-grid" },
-          { "family": "Card",         "variants": ["Default"],                      "tag": "cre8-card" },
-          { "family": "VerticalCard", "variants": ["Default"],                      "tag": "cre8-card" },
-          { "family": "Feature",      "variants": ["Default"],                      "tag": "cre8-feature" }
-        ]
-      },
-      {
-        "name": "Typography",
-        "families": [
-          { "family": "Heading",     "variants": ["H1","H2","H3","H4","H5","H6"],                          "tag": "cre8-heading" },
-          { "family": "TextPassage", "variants": ["Default"],                                               "tag": "cre8-text-passage" },
-          { "family": "TextLink",    "variants": ["Default","Hover","Active","Visited","Disabled"],          "tag": "cre8-text-link" },
-          { "family": "Tag",         "variants": ["Default"],                                               "tag": "cre8-tag" },
-          { "family": "RemoveTag",   "variants": ["Default"],                                               "tag": "cre8-remove-tag" },
-          { "family": "TagList",     "variants": ["Default"],                                               "tag": "cre8-tag-list" }
-        ]
-      },
-      {
-        "name": "Utilities",
-        "families": [
-          { "family": "Icon",           "variants": ["Small","Default","Large","XL"], "tag": "cre8-icon" },
-          { "family": "Divider",        "variants": ["Horizontal","Vertical"],         "tag": "cre8-divider" },
-          { "family": "SkeletonLoader", "variants": ["Text","Image","Card"],           "tag": "cre8-skeleton-loader" }
-        ]
-      }
+    "categories": [
+      "colors",
+      "typography",
+      "spacing",
+      "borders",
+      "shadows",
+      "breakpoints"
     ]
   },
   "accessibility": {

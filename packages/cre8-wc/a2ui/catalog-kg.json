@@ -4,8 +4,8 @@
     "catalog_id": "cre8-wc",
     "library": "@tmorrow/cre8-wc",
     "library_version": "2.0.4",
-    "total_nodes": 172,
-    "total_edges": 161
+    "total_nodes": 214,
+    "total_edges": 203
   },
   "nodes": [
     {
@@ -285,8 +285,25 @@
           "x-kind": "property"
         }
       },
-      "slots": [],
+      "slots": [
+        "before",
+        "after"
+      ],
       "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-button:before",
+      "type": "slot",
+      "name": "before",
+      "component": "cre8-button",
+      "description": "Content rendered before the button text, such as an icon"
+    },
+    {
+      "id": "slot:cre8-button:after",
+      "type": "slot",
+      "name": "after",
+      "component": "cre8-button",
+      "description": "Content rendered after the button text, such as an icon"
     },
     {
       "id": "prop:cre8-button:variant",
@@ -681,7 +698,7 @@
           "type": "boolean",
           "enum": null,
           "default": null,
-          "description": "",
+          "description": "Disables both the main button and the dropdown toggle.",
           "x-kind": "attribute"
         },
         "size": {
@@ -1107,8 +1124,33 @@
       "category": "Data",
       "description": "Table Object component.",
       "props": {},
-      "slots": [],
-      "accepts_children": true
+      "slots": [
+        "default",
+        "header",
+        "footer"
+      ],
+      "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-table-object:default",
+      "type": "slot",
+      "name": "default",
+      "component": "cre8-table-object",
+      "description": "The component content"
+    },
+    {
+      "id": "slot:cre8-table-object:header",
+      "type": "slot",
+      "name": "header",
+      "component": "cre8-table-object",
+      "description": "Content rendered in the table object header"
+    },
+    {
+      "id": "slot:cre8-table-object:footer",
+      "type": "slot",
+      "name": "footer",
+      "component": "cre8-table-object",
+      "description": "Content rendered in the table object footer"
     },
     {
       "id": "cre8-table-row",
@@ -1152,8 +1194,25 @@
           "x-kind": "property"
         }
       },
-      "slots": [],
-      "accepts_children": true
+      "slots": [
+        "default",
+        "expandableContent"
+      ],
+      "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-table-row:default",
+      "type": "slot",
+      "name": "default",
+      "component": "cre8-table-row",
+      "description": "The component content"
+    },
+    {
+      "id": "slot:cre8-table-row:expandableContent",
+      "type": "slot",
+      "name": "expandableContent",
+      "component": "cre8-table-row",
+      "description": "Content revealed when the row is expanded"
     },
     {
       "id": "cre8-tag",
@@ -1165,7 +1224,7 @@
           "type": "string",
           "enum": null,
           "default": null,
-          "description": "",
+          "description": "The text label displayed inside the tag.",
           "x-kind": "attribute"
         },
         "variant": {
@@ -1322,7 +1381,7 @@
         }
       },
       "slots": [],
-      "accepts_children": false
+      "accepts_children": true
     },
     {
       "id": "cre8-accordion",
@@ -1351,7 +1410,7 @@
         }
       },
       "slots": [],
-      "accepts_children": false
+      "accepts_children": true
     },
     {
       "id": "prop:cre8-accordion:borderType",
@@ -1439,8 +1498,25 @@
           "x-kind": "property"
         }
       },
-      "slots": [],
-      "accepts_children": true
+      "slots": [
+        "default",
+        "heading"
+      ],
+      "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-accordion-item:default",
+      "type": "slot",
+      "name": "default",
+      "component": "cre8-accordion-item",
+      "description": "The body of the accordion item will be any valid html inserted between the cre8-\u2026"
+    },
+    {
+      "id": "slot:cre8-accordion-item:heading",
+      "type": "slot",
+      "name": "heading",
+      "component": "cre8-accordion-item",
+      "description": "Custom heading content, used when the `heading` property is not set."
     },
     {
       "id": "prop:cre8-accordion-item:size",
@@ -1511,7 +1587,7 @@
         }
       },
       "slots": [],
-      "accepts_children": false
+      "accepts_children": true
     },
     {
       "id": "cre8-dropdown-item",
@@ -1523,12 +1599,12 @@
           "type": "string",
           "enum": null,
           "default": null,
-          "description": "",
+          "description": "The accessible label for the item. Falls back to the item's text content when un\u2026",
           "x-kind": "property"
         }
       },
       "slots": [],
-      "accepts_children": false
+      "accepts_children": true
     },
     {
       "id": "cre8-modal",
@@ -1599,8 +1675,33 @@
           "x-kind": "property"
         }
       },
-      "slots": [],
-      "accepts_children": true
+      "slots": [
+        "default",
+        "header",
+        "footer"
+      ],
+      "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-modal:default",
+      "type": "slot",
+      "name": "default",
+      "component": "cre8-modal",
+      "description": "The component content"
+    },
+    {
+      "id": "slot:cre8-modal:header",
+      "type": "slot",
+      "name": "header",
+      "component": "cre8-modal",
+      "description": "Custom header content for the modal"
+    },
+    {
+      "id": "slot:cre8-modal:footer",
+      "type": "slot",
+      "name": "footer",
+      "component": "cre8-modal",
+      "description": "Custom footer content for the modal"
     },
     {
       "id": "prop:cre8-modal:status",
@@ -1693,8 +1794,41 @@
           "x-kind": "property"
         }
       },
-      "slots": [],
-      "accepts_children": true
+      "slots": [
+        "default",
+        "trigger",
+        "header",
+        "footer"
+      ],
+      "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-popover:default",
+      "type": "slot",
+      "name": "default",
+      "component": "cre8-popover",
+      "description": "The component content"
+    },
+    {
+      "id": "slot:cre8-popover:trigger",
+      "type": "slot",
+      "name": "trigger",
+      "component": "cre8-popover",
+      "description": "The element that toggles the popover open and closed"
+    },
+    {
+      "id": "slot:cre8-popover:header",
+      "type": "slot",
+      "name": "header",
+      "component": "cre8-popover",
+      "description": "Custom header content for the popover panel"
+    },
+    {
+      "id": "slot:cre8-popover:footer",
+      "type": "slot",
+      "name": "footer",
+      "component": "cre8-popover",
+      "description": "Custom footer content for the popover panel"
     },
     {
       "id": "cre8-submenu",
@@ -1881,7 +2015,7 @@
             "strong"
           ],
           "default": "subtle",
-          "description": "",
+          "description": "The alert emphasis. `strong` uses a filled background; pair contained buttons/li\u2026",
           "x-kind": "attribute"
         },
         "dismissed": {
@@ -1895,7 +2029,7 @@
           "type": "string",
           "enum": null,
           "default": "undefined",
-          "description": "",
+          "description": "Overrides the default status icon. Accepts a cre8 icon name.",
           "x-kind": "property"
         },
         "iconTitle": {
@@ -1909,14 +2043,14 @@
           "type": "string",
           "enum": null,
           "default": "undefined",
-          "description": "",
+          "description": "The alert heading text.",
           "x-kind": "property"
         },
         "ctaBody": {
           "type": "string",
           "enum": null,
           "default": "undefined",
-          "description": "",
+          "description": "Text content for the call-to-action area. Superseded by the `cta` slot when prov\u2026",
           "x-kind": "property"
         },
         "notDismissible": {
@@ -1927,8 +2061,25 @@
           "x-kind": "property"
         }
       },
-      "slots": [],
+      "slots": [
+        "default",
+        "cta"
+      ],
       "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-alert:default",
+      "type": "slot",
+      "name": "default",
+      "component": "cre8-alert",
+      "description": "The alert body content"
+    },
+    {
+      "id": "slot:cre8-alert:cta",
+      "type": "slot",
+      "name": "cta",
+      "component": "cre8-alert",
+      "description": "Container for a call-to-action button or link"
     },
     {
       "id": "prop:cre8-alert:status",
@@ -1965,7 +2116,7 @@
         "subtle",
         "strong"
       ],
-      "description": ""
+      "description": "The alert emphasis. `strong` uses a filled background; pair contained buttons/li\u2026"
     },
     {
       "id": "cre8-badge",
@@ -2560,8 +2711,17 @@
           "x-kind": "property"
         }
       },
-      "slots": [],
+      "slots": [
+        "fieldNote"
+      ],
       "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-checkbox-field-item:fieldNote",
+      "type": "slot",
+      "name": "fieldNote",
+      "component": "cre8-checkbox-field-item",
+      "description": "Container for optional field note content"
     },
     {
       "id": "cre8-date-picker",
@@ -2594,7 +2754,7 @@
           "type": "string",
           "enum": null,
           "default": "Label",
-          "description": "The required label that appears above the input",
+          "description": "The label text for the date picker field.",
           "x-kind": "attribute"
         },
         "max": {
@@ -2761,8 +2921,17 @@
           "x-kind": "property"
         }
       },
-      "slots": [],
+      "slots": [
+        "fieldNote"
+      ],
       "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-date-picker:fieldNote",
+      "type": "slot",
+      "name": "fieldNote",
+      "component": "cre8-date-picker",
+      "description": "Container for optional field note content"
     },
     {
       "id": "prop:cre8-date-picker:ariaLive",
@@ -2959,8 +3128,17 @@
           "x-kind": "property"
         }
       },
-      "slots": [],
+      "slots": [
+        "fieldNote"
+      ],
       "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-field:fieldNote",
+      "type": "slot",
+      "name": "fieldNote",
+      "component": "cre8-field",
+      "description": "Container for optional field note content"
     },
     {
       "id": "prop:cre8-field:ariaLive",
@@ -3109,8 +3287,17 @@
           "x-kind": "property"
         }
       },
-      "slots": [],
+      "slots": [
+        "fieldNote"
+      ],
       "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-multi-select:fieldNote",
+      "type": "slot",
+      "name": "fieldNote",
+      "component": "cre8-multi-select",
+      "description": "Container for optional field note content"
     },
     {
       "id": "cre8-radio-field",
@@ -4004,7 +4191,7 @@
           "type": "boolean",
           "enum": null,
           "default": null,
-          "description": "",
+          "description": "Renders a dark overlay between the background image and the content for legibili\u2026",
           "x-kind": "property"
         }
       },
@@ -4126,8 +4313,25 @@
           "x-kind": "attribute"
         }
       },
-      "slots": [],
-      "accepts_children": true
+      "slots": [
+        "default",
+        "header"
+      ],
+      "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-section:default",
+      "type": "slot",
+      "name": "default",
+      "component": "cre8-section",
+      "description": "The content of the section should go here. It could be a cre8-text-passage, a cr\u2026"
+    },
+    {
+      "id": "slot:cre8-section:header",
+      "type": "slot",
+      "name": "header",
+      "component": "cre8-section",
+      "description": "Custom header content, rendered in place of the `headline` property"
     },
     {
       "id": "cre8-feature",
@@ -4181,8 +4385,25 @@
           "x-kind": "attribute"
         }
       },
-      "slots": [],
-      "accepts_children": true
+      "slots": [
+        "default",
+        "titleAfter"
+      ],
+      "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-page-header:default",
+      "type": "slot",
+      "name": "default",
+      "component": "cre8-page-header",
+      "description": "The page header content"
+    },
+    {
+      "id": "slot:cre8-page-header:titleAfter",
+      "type": "slot",
+      "name": "titleAfter",
+      "component": "cre8-page-header",
+      "description": "Content rendered after the heading text, inside the title element"
     },
     {
       "id": "cre8-icon",
@@ -4208,7 +4429,7 @@
           "type": "string",
           "enum": null,
           "default": null,
-          "description": "",
+          "description": "Raw SVG markup to render. Preferred over `name`/sprite-path icons.",
           "x-kind": "attribute"
         },
         "iconUrl": {
@@ -4379,8 +4600,33 @@
           "x-kind": "property"
         }
       },
-      "slots": [],
-      "accepts_children": true
+      "slots": [
+        "default",
+        "itemBefore",
+        "itemAfter"
+      ],
+      "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-global-nav-item:default",
+      "type": "slot",
+      "name": "default",
+      "component": "cre8-global-nav-item",
+      "description": "The label for the navigation item"
+    },
+    {
+      "id": "slot:cre8-global-nav-item:itemBefore",
+      "type": "slot",
+      "name": "itemBefore",
+      "component": "cre8-global-nav-item",
+      "description": "Content rendered before the item label, such as an icon"
+    },
+    {
+      "id": "slot:cre8-global-nav-item:itemAfter",
+      "type": "slot",
+      "name": "itemAfter",
+      "component": "cre8-global-nav-item",
+      "description": "Content rendered after the item label, such as an icon"
     },
     {
       "id": "cre8-header",
@@ -4396,8 +4642,33 @@
           "x-kind": "property"
         }
       },
-      "slots": [],
-      "accepts_children": true
+      "slots": [
+        "default",
+        "top",
+        "bottom"
+      ],
+      "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-header:default",
+      "type": "slot",
+      "name": "default",
+      "component": "cre8-header",
+      "description": "The header content"
+    },
+    {
+      "id": "slot:cre8-header:top",
+      "type": "slot",
+      "name": "top",
+      "component": "cre8-header",
+      "description": "Content rendered above the main header row"
+    },
+    {
+      "id": "slot:cre8-header:bottom",
+      "type": "slot",
+      "name": "bottom",
+      "component": "cre8-header",
+      "description": "Content rendered below the main header row"
     },
     {
       "id": "cre8-link",
@@ -4508,8 +4779,25 @@
           "x-kind": "property"
         }
       },
-      "slots": [],
+      "slots": [
+        "default",
+        "badge"
+      ],
       "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-link:default",
+      "type": "slot",
+      "name": "default",
+      "component": "cre8-link",
+      "description": "The link text content"
+    },
+    {
+      "id": "slot:cre8-link:badge",
+      "type": "slot",
+      "name": "badge",
+      "component": "cre8-link",
+      "description": "Container for an optional badge displayed alongside the link"
     },
     {
       "id": "prop:cre8-link:target",
@@ -4647,8 +4935,33 @@
           "x-kind": "property"
         }
       },
-      "slots": [],
-      "accepts_children": true
+      "slots": [
+        "default",
+        "itemBefore",
+        "itemAfter"
+      ],
+      "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-link-list-item:default",
+      "type": "slot",
+      "name": "default",
+      "component": "cre8-link-list-item",
+      "description": "The default slot to put badges or other Components"
+    },
+    {
+      "id": "slot:cre8-link-list-item:itemBefore",
+      "type": "slot",
+      "name": "itemBefore",
+      "component": "cre8-link-list-item",
+      "description": "Content rendered before the link text, such as an icon"
+    },
+    {
+      "id": "slot:cre8-link-list-item:itemAfter",
+      "type": "slot",
+      "name": "itemAfter",
+      "component": "cre8-link-list-item",
+      "description": "Content rendered after the link text, such as an icon"
     },
     {
       "id": "cre8-nav-container",
@@ -4708,7 +5021,7 @@
           "type": "number",
           "enum": null,
           "default": null,
-          "description": "",
+          "description": "The currently active page (1-based). Setting it programmatically navigates the p\u2026",
           "x-kind": "property"
         },
         "elementDefinitions": {
@@ -4741,7 +5054,7 @@
         }
       },
       "slots": [],
-      "accepts_children": false
+      "accepts_children": true
     },
     {
       "id": "prop:cre8-pagination:display",
@@ -4828,8 +5141,33 @@
           "x-kind": "property"
         }
       },
-      "slots": [],
-      "accepts_children": true
+      "slots": [
+        "default",
+        "itemBefore",
+        "itemAfter"
+      ],
+      "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-primary-nav-item:default",
+      "type": "slot",
+      "name": "default",
+      "component": "cre8-primary-nav-item",
+      "description": "The label for the navigation item"
+    },
+    {
+      "id": "slot:cre8-primary-nav-item:itemBefore",
+      "type": "slot",
+      "name": "itemBefore",
+      "component": "cre8-primary-nav-item",
+      "description": "Content rendered before the item label, such as an icon"
+    },
+    {
+      "id": "slot:cre8-primary-nav-item:itemAfter",
+      "type": "slot",
+      "name": "itemAfter",
+      "component": "cre8-primary-nav-item",
+      "description": "Content rendered after the item label, such as an icon"
     },
     {
       "id": "cre8-tab",
@@ -5274,8 +5612,25 @@
           "x-kind": "attribute"
         }
       },
-      "slots": [],
-      "accepts_children": true
+      "slots": [
+        "default",
+        "linkAfter"
+      ],
+      "accepts_children": false
+    },
+    {
+      "id": "slot:cre8-text-link:default",
+      "type": "slot",
+      "name": "default",
+      "component": "cre8-text-link",
+      "description": "The component content"
+    },
+    {
+      "id": "slot:cre8-text-link:linkAfter",
+      "type": "slot",
+      "name": "linkAfter",
+      "component": "cre8-text-link",
+      "description": "Content rendered after the link text, such as an icon"
     },
     {
       "id": "prop:cre8-text-link:variant",
@@ -5334,6 +5689,16 @@
       "from": "cre8-button",
       "to": "cat:Actions",
       "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-button",
+      "to": "slot:cre8-button:before",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-button",
+      "to": "slot:cre8-button:after",
+      "rel": "HAS_SLOT"
     },
     {
       "from": "cre8-button",
@@ -5496,9 +5861,34 @@
       "rel": "BELONGS_TO"
     },
     {
+      "from": "cre8-table-object",
+      "to": "slot:cre8-table-object:default",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-table-object",
+      "to": "slot:cre8-table-object:header",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-table-object",
+      "to": "slot:cre8-table-object:footer",
+      "rel": "HAS_SLOT"
+    },
+    {
       "from": "cre8-table-row",
       "to": "cat:Data",
       "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-table-row",
+      "to": "slot:cre8-table-row:default",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-table-row",
+      "to": "slot:cre8-table-row:expandableContent",
+      "rel": "HAS_SLOT"
     },
     {
       "from": "cre8-tag",
@@ -5542,6 +5932,16 @@
     },
     {
       "from": "cre8-accordion-item",
+      "to": "slot:cre8-accordion-item:default",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-accordion-item",
+      "to": "slot:cre8-accordion-item:heading",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-accordion-item",
       "to": "prop:cre8-accordion-item:size",
       "rel": "HAS_ENUM_PROP"
     },
@@ -5567,6 +5967,21 @@
     },
     {
       "from": "cre8-modal",
+      "to": "slot:cre8-modal:default",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-modal",
+      "to": "slot:cre8-modal:header",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-modal",
+      "to": "slot:cre8-modal:footer",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-modal",
       "to": "prop:cre8-modal:status",
       "rel": "HAS_ENUM_PROP"
     },
@@ -5574,6 +5989,26 @@
       "from": "cre8-popover",
       "to": "cat:Disclosure",
       "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-popover",
+      "to": "slot:cre8-popover:default",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-popover",
+      "to": "slot:cre8-popover:trigger",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-popover",
+      "to": "slot:cre8-popover:header",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-popover",
+      "to": "slot:cre8-popover:footer",
+      "rel": "HAS_SLOT"
     },
     {
       "from": "cre8-submenu",
@@ -5609,6 +6044,16 @@
       "from": "cre8-alert",
       "to": "cat:Feedback",
       "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-alert",
+      "to": "slot:cre8-alert:default",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-alert",
+      "to": "slot:cre8-alert:cta",
+      "rel": "HAS_SLOT"
     },
     {
       "from": "cre8-alert",
@@ -5701,9 +6146,19 @@
       "rel": "BELONGS_TO"
     },
     {
+      "from": "cre8-checkbox-field-item",
+      "to": "slot:cre8-checkbox-field-item:fieldNote",
+      "rel": "HAS_SLOT"
+    },
+    {
       "from": "cre8-date-picker",
       "to": "cat:Forms",
       "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-date-picker",
+      "to": "slot:cre8-date-picker:fieldNote",
+      "rel": "HAS_SLOT"
     },
     {
       "from": "cre8-date-picker",
@@ -5714,6 +6169,11 @@
       "from": "cre8-field",
       "to": "cat:Forms",
       "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-field",
+      "to": "slot:cre8-field:fieldNote",
+      "rel": "HAS_SLOT"
     },
     {
       "from": "cre8-field",
@@ -5729,6 +6189,11 @@
       "from": "cre8-multi-select",
       "to": "cat:Forms",
       "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-multi-select",
+      "to": "slot:cre8-multi-select:fieldNote",
+      "rel": "HAS_SLOT"
     },
     {
       "from": "cre8-radio-field",
@@ -5921,6 +6386,16 @@
       "rel": "BELONGS_TO"
     },
     {
+      "from": "cre8-section",
+      "to": "slot:cre8-section:default",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-section",
+      "to": "slot:cre8-section:header",
+      "rel": "HAS_SLOT"
+    },
+    {
       "from": "cre8-feature",
       "to": "cat:Marketing",
       "rel": "BELONGS_TO"
@@ -5929,6 +6404,16 @@
       "from": "cre8-page-header",
       "to": "cat:Marketing",
       "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-page-header",
+      "to": "slot:cre8-page-header:default",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-page-header",
+      "to": "slot:cre8-page-header:titleAfter",
+      "rel": "HAS_SLOT"
     },
     {
       "from": "cre8-icon",
@@ -5981,14 +6466,54 @@
       "rel": "BELONGS_TO"
     },
     {
+      "from": "cre8-global-nav-item",
+      "to": "slot:cre8-global-nav-item:default",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-global-nav-item",
+      "to": "slot:cre8-global-nav-item:itemBefore",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-global-nav-item",
+      "to": "slot:cre8-global-nav-item:itemAfter",
+      "rel": "HAS_SLOT"
+    },
+    {
       "from": "cre8-header",
       "to": "cat:Navigation",
       "rel": "BELONGS_TO"
     },
     {
+      "from": "cre8-header",
+      "to": "slot:cre8-header:default",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-header",
+      "to": "slot:cre8-header:top",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-header",
+      "to": "slot:cre8-header:bottom",
+      "rel": "HAS_SLOT"
+    },
+    {
       "from": "cre8-link",
       "to": "cat:Navigation",
       "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-link",
+      "to": "slot:cre8-link:default",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-link",
+      "to": "slot:cre8-link:badge",
+      "rel": "HAS_SLOT"
     },
     {
       "from": "cre8-link",
@@ -6026,6 +6551,21 @@
       "rel": "BELONGS_TO"
     },
     {
+      "from": "cre8-link-list-item",
+      "to": "slot:cre8-link-list-item:default",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-link-list-item",
+      "to": "slot:cre8-link-list-item:itemBefore",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-link-list-item",
+      "to": "slot:cre8-link-list-item:itemAfter",
+      "rel": "HAS_SLOT"
+    },
+    {
       "from": "cre8-nav-container",
       "to": "cat:Navigation",
       "rel": "BELONGS_TO"
@@ -6049,6 +6589,21 @@
       "from": "cre8-primary-nav-item",
       "to": "cat:Navigation",
       "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-primary-nav-item",
+      "to": "slot:cre8-primary-nav-item:default",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-primary-nav-item",
+      "to": "slot:cre8-primary-nav-item:itemBefore",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-primary-nav-item",
+      "to": "slot:cre8-primary-nav-item:itemAfter",
+      "rel": "HAS_SLOT"
     },
     {
       "from": "cre8-tab",
@@ -6119,6 +6674,16 @@
       "from": "cre8-text-link",
       "to": "cat:Typography",
       "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-text-link",
+      "to": "slot:cre8-text-link:default",
+      "rel": "HAS_SLOT"
+    },
+    {
+      "from": "cre8-text-link",
+      "to": "slot:cre8-text-link:linkAfter",
+      "rel": "HAS_SLOT"
     },
     {
       "from": "cre8-text-link",
