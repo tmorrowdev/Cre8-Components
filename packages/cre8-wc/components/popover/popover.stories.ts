@@ -1,6 +1,6 @@
 import {html} from 'lit';
 import {spread} from '../../directives/spread';
-import { withActions } from 'storybook/internal/preview-api';
+import { withActions } from 'storybook/actions/decorator';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import '../../.storybook/components/f-po/f-po';
 import '../button/button';

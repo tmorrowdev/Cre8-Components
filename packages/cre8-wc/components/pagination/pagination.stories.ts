@@ -2,7 +2,7 @@ import { html, nothing } from 'lit';
 import './pagination';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import { cre8Pagination } from './pagination';
-import { withActions } from 'storybook/internal/preview-api';
+import { withActions } from 'storybook/actions/decorator';
 import './page-counter/page-counter';
 
 
@@ -41,8 +41,8 @@ const meta: Meta= {
     actions: {
       handles: ['pagination.click','button.handleOnBlur', 'pagination.keydown'],
     },
-    decorators: [withActions],
   },
+  decorators: [withActions],
 
   render: ({ currentPage, hideLastAndFirstButtons, totalResults, pageSize, display, visiblePages }) =>
     html`
