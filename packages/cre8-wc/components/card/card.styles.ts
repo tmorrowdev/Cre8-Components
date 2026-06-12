@@ -613,6 +613,7 @@ span.ripple {
   padding: 1rem;
   gap: 0.5rem;
 }
+
 /**
  * Horizontal card
  * 1) Organized block with flex-direction set to row so that header => footer appears

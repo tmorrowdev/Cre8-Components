@@ -720,8 +720,9 @@ span.ripple {
     align-items: flex-end;
   }
 }
+
 .cre8-c-hero--has-overlay::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
