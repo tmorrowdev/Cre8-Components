@@ -10,7 +10,7 @@ export default {
 
 export const Default = (args) => html`<cre8-page-header ${spread(args)} heading="Page header title"> Page header description </cre8-page-header>`;
 
-export const WithTitcre8ter = () =>
+export const WithTitleAfter = () =>
   html`<cre8-page-header heading="Page header title">
-    Page header description <cre8-badge size="lg" slot="titcre8ter" text="Badge"></cre8-badge>
+    Page header description <cre8-badge size="lg" slot="titleAfter" text="Badge"></cre8-badge>
   </cre8-page-header>`;
