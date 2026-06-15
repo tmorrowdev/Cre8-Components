@@ -47,6 +47,7 @@ export interface Cre8FieldProps {
   successNote?: string | undefined;
   /** Controls how the voiceover will experience the new information when field note changes, immediately (used for more urgently needed updates) using `assertive` or at the next convenient pause in their navigation using `polite`. */
   ariaLive?: any;
+  children?: React.ReactNode;
 }
 
 /**

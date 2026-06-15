@@ -15,6 +15,7 @@ export interface Cre8TooltipProps {
   isActive?: boolean | undefined;
   /** Accepts the ID string of the item the tooltip is referencing */
   ariaDescribes?: string | undefined;
+  /** Internal unique id used to associate the trigger with the tooltip text. Generated automatically. */
   _uniqueId?: string | undefined;
   /** svg as a raw string - The icon is defined by this prop. - Pass in a raw svg as a String for using <cre8-icon> */
   svg?: string | undefined;

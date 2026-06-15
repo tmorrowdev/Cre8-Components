@@ -16,7 +16,10 @@ export interface Cre8PaginationProps {
   /** (optional) prop that allows for a compact and icon-only variant both for mobile screen-sizes and for use in certain contexts as guided by design, the component size will show 'default' in the absence of a value on desktop and 'compact' on smaller views. */
   display?: any;
   hideLastAndFirstButtons?: boolean | undefined;
+  /** The currently active page (1-based). Setting it programmatically navigates the pagination. */
   currentPage?: any;
+  children?: React.ReactNode;
+  onPaginationClick?: (event: CustomEvent) => void;
 }
 
 /**
@@ -26,7 +29,9 @@ export const Cre8Pagination = createComponent({
   react: React,
   tagName: 'cre8-pagination',
   elementClass: Cre8PaginationElement,
-
+  events: {
+    onPaginationClick: 'pagination.click'
+  }
 });
 
 export default Cre8Pagination;

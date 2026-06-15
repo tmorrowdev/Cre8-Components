@@ -7,6 +7,7 @@ export interface Cre8AccordionProps {
   borderType?: any;
   /** When it is true, the inner dividers are displayed; if it is false, the inner dividers are not displayed */
   hasDivider?: boolean;
+  children?: React.ReactNode;
 }
 
 /**

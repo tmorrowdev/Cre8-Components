@@ -9,7 +9,7 @@ export interface Cre8BadgeProps {
   status?: string;
   /** Background Style Variant  - **dark|undefined** (default) renders a badge with a dark background - **light** renders a badge with a light background - **white** renders a badge with a white background */
   variant?: string;
-  /** SVG as a raw string - For badges with icons, the icon is defined by this prop - Pass in a raw svg as a String. We use raw string loader for this but any method of getting raw svgs will do - Import example:`import svgFeedback from '/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/icons/System/Regular/Feedback.svg?raw';` - [cre8-icons Github repo](https://github.com/tmorrowdev/cre8-icons) This is the Github repo for Cre8 icons, which includes a link to the storybook as well as relavant information for new icons */
+  /** SVG as a raw string - For badges with icons, the icon is defined by this prop - Pass in a raw svg as a String. We use raw string loader for this but any method of getting raw svgs will do - Import example:`import svgFeedback from '@tmorrow/cre8-wc/icons/Feedback.svg?raw';` - [cre8-icons Github repo](https://github.com/tmorrowdev/cre8-icons) This is the Github repo for Cre8 icons, which includes a link to the storybook as well as relavant information for new icons */
   svg?: string | undefined;
 }
 

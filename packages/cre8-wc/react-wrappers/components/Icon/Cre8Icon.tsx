@@ -7,6 +7,7 @@ export interface Cre8IconProps {
   focusable?: boolean | undefined;
   /** Icon name (this method of passing in svgs is to be deprecated) */
   name?: string;
+  /** Raw SVG markup to render. Preferred over `name`/sprite-path icons. */
   svg?: string | undefined;
   /** Icon path 1) This points to the file where the icon sprite lives 2) This method of pathing will soon be depricated */
   iconUrl?: string | undefined;

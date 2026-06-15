@@ -3,6 +3,7 @@ import { Cre8Tag as Cre8TagElement } from '@tmorrow/cre8-wc/lib/components/tag/t
 import React from 'react';
 
 export interface Cre8TagProps {
+  /** The text label displayed inside the tag. */
   text?: string;
   /** Type of tag **checkbox** renders a checkbox tag **radio** renders a radio tag */
   type?: any;
