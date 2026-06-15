@@ -1,0 +1,179 @@
+{
+  "nodes": [
+    {
+      "id": "arrow_fat_up_fill_svg",
+      "label": "Arrow Fat Up Fill Icon",
+      "file_type": "image",
+      "source_file": "packages/cre8-wc/components/icon/icons/arrow-fat-up-fill.svg"
+    },
+    {
+      "id": "error_alt_svg",
+      "label": "Error Alt Icon",
+      "file_type": "image",
+      "source_file": "packages/cre8-wc/components/icon/icons/error-alt.svg"
+    },
+    {
+      "id": "express_scripts_svg",
+      "label": "Express Scripts Logo",
+      "file_type": "image",
+      "source_file": "packages/cre8-wc/components/icon/icons/express-scripts.svg"
+    },
+    {
+      "id": "facebook_svg",
+      "label": "Facebook Icon",
+      "file_type": "image",
+      "source_file": "packages/cre8-wc/components/icon/icons/facebook.svg"
+    },
+    {
+      "id": "instagram_svg",
+      "label": "Instagram Icon",
+      "file_type": "image",
+      "source_file": "packages/cre8-wc/components/icon/icons/instagram.svg"
+    },
+    {
+      "id": "linkedin_svg",
+      "label": "LinkedIn Icon",
+      "file_type": "image",
+      "source_file": "packages/cre8-wc/components/icon/icons/linkedin.svg"
+    },
+    {
+      "id": "new_rx_svg",
+      "label": "New Rx Icon",
+      "file_type": "image",
+      "source_file": "packages/cre8-wc/components/icon/icons/new-rx.svg"
+    },
+    {
+      "id": "open_svg",
+      "label": "Open Icon",
+      "file_type": "image",
+      "source_file": "packages/cre8-wc/components/icon/icons/open.svg"
+    },
+    {
+      "id": "pause_svg",
+      "label": "Pause Icon",
+      "file_type": "image",
+      "source_file": "packages/cre8-wc/components/icon/icons/pause.svg"
+    },
+    {
+      "id": "person_bubble_svg",
+      "label": "Person Bubble Icon",
+      "file_type": "image",
+      "source_file": "packages/cre8-wc/components/icon/icons/person-bubble.svg"
+    },
+    {
+      "id": "pinterest_svg",
+      "label": "Pinterest Icon",
+      "file_type": "image",
+      "source_file": "packages/cre8-wc/components/icon/icons/pinterest.svg"
+    },
+    {
+      "id": "rss_feed_svg",
+      "label": "RSS Feed Icon",
+      "file_type": "image",
+      "source_file": "packages/cre8-wc/components/icon/icons/rss-feed.svg"
+    },
+    {
+      "id": "rx_svg",
+      "label": "Rx Icon",
+      "file_type": "image",
+      "source_file": "packages/cre8-wc/components/icon/icons/rx.svg"
+    },
+    {
+      "id": "swap_svg",
+      "label": "Swap Icon",
+      "file_type": "image",
+      "source_file": "packages/cre8-wc/components/icon/icons/swap.svg"
+    },
+    {
+      "id": "thumb_up_svg",
+      "label": "Thumb Up Icon",
+      "file_type": "image",
+      "source_file": "packages/cre8-wc/components/icon/icons/thumb-up.svg"
+    },
+    {
+      "id": "trending_flat_svg",
+      "label": "Trending Flat Icon",
+      "file_type": "image",
+      "source_file": "packages/cre8-wc/components/icon/icons/trending-flat.svg"
+    },
+    {
+      "id": "trending_up_svg",
+      "label": "Trending Up Icon",
+      "file_type": "image",
+      "source_file": "packages/cre8-wc/components/icon/icons/trending-up.svg"
+    },
+    {
+      "id": "twitter_svg",
+      "label": "Twitter Icon",
+      "file_type": "image",
+      "source_file": "packages/cre8-wc/components/icon/icons/twitter.svg"
+    },
+    {
+      "id": "modal_mdx",
+      "label": "Modal Documentation",
+      "file_type": "document",
+      "source_file": "packages/cre8-wc/components/modal/modal.mdx"
+    },
+    {
+      "id": "modal_stories",
+      "label": "Modal Stories",
+      "file_type": "code",
+      "source_file": "packages/cre8-wc/components/modal/modal.stories"
+    },
+    {
+      "id": "sample_modal_stories",
+      "label": "Sample Modal Stories",
+      "file_type": "code",
+      "source_file": "packages/cre8-wc/.storybook/patterns/sample-modal/sample-modal.stories"
+    },
+    {
+      "id": "brand_themer_html",
+      "label": "Cre8 Brand Themer",
+      "file_type": "code",
+      "source_file": "packages/cre8-wc/components/multi-select/brand-themer.html"
+    },
+    {
+      "id": "cre8_modal",
+      "label": "cre8-modal",
+      "file_type": "concept",
+      "source_file": "packages/cre8-wc/components/modal/modal.mdx"
+    }
+  ],
+  "edges": [
+    {
+      "source": "modal_mdx",
+      "target": "modal_stories",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "packages/cre8-wc/components/modal/modal.mdx"
+    },
+    {
+      "source": "modal_mdx",
+      "target": "sample_modal_stories",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "packages/cre8-wc/components/modal/modal.mdx"
+    },
+    {
+      "source": "modal_mdx",
+      "target": "cre8_modal",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "packages/cre8-wc/components/modal/modal.mdx"
+    },
+    {
+      "source": "brand_themer_html",
+      "target": "cre8_modal",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "packages/cre8-wc/components/multi-select/brand-themer.html"
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 28723,
+  "output_tokens": 1836
+}

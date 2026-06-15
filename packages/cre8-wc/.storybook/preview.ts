@@ -5,18 +5,12 @@ import './css/styleguide-only.css';
 
 // import starbucksStyles from '../design-tokens/starbucks/tokens.module';
 // import target from '../design-tokens/target/tokens.module.css';
-import * as cre8Legacy from '../design-tokens/brands/cre8-legacy/css/tokens_cre8-legacy.module.ts';
-import legacy from '../design-tokens/brands/legacy/css/tokens_legacy.module.ts';
+import cre8Legacy from '../design-tokens/brands/cre8-legacy/css/tokens_cre8-legacy.module.ts';
 import cre8 from '../design-tokens/brands/cre8/css/tokens_cre8.module.ts';
 import blue from '../design-tokens/brands/blue/css/tokens_blue.module.ts';
 import marketing from '../design-tokens/brands/marketing/css/tokens_marketing.module.ts';
 import minimalist from '../design-tokens/brands/minimalist/css/tokens_minimalist.module.ts';
-import femmecubator from '../design-tokens/brands/femmecubator/css/tokens_femmecubator2.module.ts';
-import prisma from '../design-tokens/brands/prisma/tokens_prisma.module.ts';
-import starbucks from '../design-tokens/brands/starbucks/tokens_starbucks.module.ts';
-import bolt from '../design-tokens/brands/bolt/tokens_bolt.theme.ts';
 import a2ui from '../design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.module.ts';
-import notion from '../design-tokens/brands/notion/tokens_notion.module.ts';
 
 // Prism styles (Storybook only for docs)
 import prismcss from './components/system-docs/prism.module.ts';
@@ -41,16 +35,10 @@ const excludeArray = ['shadowRootOptions', 'formAssociated', 'field'];
 const themeStyles = [
   { name: 'Cre8 Default', styles: cre8 },
   { name: 'Cre8 Legacy', styles: cre8Legacy },
-  { name: 'Legacy', styles: legacy },
   { name: 'Blue', styles: blue },
   { name: 'Marketing', styles: marketing },
   { name: 'Minimalist', styles: minimalist },
-  { name: 'Femmecubator', styles: femmecubator },
-  { name: 'Prisma', styles: prisma },
-  { name: 'Starbucks', styles: starbucks },
-  { name: 'Bolt', styles: bolt },
   { name: 'A2UI', styles: a2ui },
-  { name: 'Notion', styles: notion }
 ];
 
 // Inject all theme styles with unique IDs
@@ -77,12 +65,7 @@ const preview: Preview = {
           { value: 'Blue', title: 'Blue' },
           { value: 'Marketing', title: 'Marketing' },
           { value: 'Minimalist', title: 'Minimalist' },
-          { value: 'Femmecubator', title: 'Femmecubator' },
-          { value: 'Prisma', title: 'Prisma' },
-          { value: 'Starbucks', title: 'Starbucks' },
-          { value: 'Bolt', title: 'Bolt' },
           { value: 'A2UI', title: 'A2UI' },
-          { value: 'Notion', title: 'Notion' }
         ],
         dynamicTitle: true,
       },
@@ -90,7 +73,7 @@ const preview: Preview = {
   },
   decorators: [
     (story, context) => {
-      const selectedTheme = context.globals.theme || 'Cre8 Default';
+      const selectedTheme = context.globals.theme || 'A2UI';
 
       // Enable/disable theme stylesheets
       themeStyles.forEach(theme => {
