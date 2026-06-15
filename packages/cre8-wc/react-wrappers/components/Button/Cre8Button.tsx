@@ -47,6 +47,7 @@ export interface Cre8ButtonProps {
   splitButtonType?: any;
   /** Button aria expanded attribute */
   buttonAriaExpanded?: boolean | undefined;
+  children?: React.ReactNode;
 }
 
 /**

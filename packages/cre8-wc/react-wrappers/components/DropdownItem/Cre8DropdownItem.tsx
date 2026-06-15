@@ -3,7 +3,9 @@ import { Cre8DropdownItem as Cre8DropdownItemElement } from '@tmorrow/cre8-wc/li
 import React from 'react';
 
 export interface Cre8DropdownItemProps {
+  /** The accessible label for the item. Falls back to the item's text content when unset. */
   ariaLabel?: string;
+  children?: React.ReactNode;
   onDropdownItemSelected?: (event: CustomEvent) => void;
 }
 

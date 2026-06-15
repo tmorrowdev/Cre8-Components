@@ -29,6 +29,7 @@ export interface Cre8LinkProps {
   size?: any;
   /** Inverted colors Link (onDark) */
   inverted?: boolean | undefined;
+  children?: React.ReactNode;
 }
 
 /**

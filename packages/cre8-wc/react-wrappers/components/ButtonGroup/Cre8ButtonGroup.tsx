@@ -5,6 +5,10 @@ import React from 'react';
 export interface Cre8ButtonGroupProps {
   /** Responsive Button Group (for modals) */
   orientation?: any;
+  /** Stretch button group to fill its container width */
+  fullWidth?: boolean | undefined;
+  /** Gap between buttons - **sm** reduces gap to 8px (useful in compact contexts) */
+  gap?: any;
   children?: React.ReactNode;
 }
 
