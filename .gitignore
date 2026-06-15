@@ -31,3 +31,5 @@ packages/cre8-wc/react-wrappers/tsconfig.json
 __pycache__/
 *.pyc
 .playwright-mcp/
+.claude/worktrees/
+graphify-out/cache

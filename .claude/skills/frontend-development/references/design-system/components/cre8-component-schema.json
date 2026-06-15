@@ -1,0 +1,4904 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schema.cre8.dev/aidss/v1/system.json",
+  "title": "CRE8 Design System - AIDesign System Specification",
+  "description": "AI Design System Schema for CRE8 Web Components",
+  "system": {
+    "name": "Cre8 Web Components",
+    "version": "1.0.0",
+    "framework": "Web Components (Lit)",
+    "baseClass": "Cre8Element",
+    "formBaseClass": "Cre8FormElement",
+    "prefix": "cre8-",
+    "totalComponents": 85
+  },
+  "categories": {
+    "form": {
+      "description": "User input and form controls",
+      "count": 15,
+      "baseClass": "Cre8FormElement"
+    },
+    "layout": {
+      "description": "Page structure and containers",
+      "count": 10,
+      "baseClass": "Cre8Element"
+    },
+    "navigation": {
+      "description": "Navigation patterns and links",
+      "count": 18,
+      "baseClass": "Cre8Element"
+    },
+    "feedback": {
+      "description": "User feedback and status indicators",
+      "count": 8,
+      "baseClass": "Cre8Element"
+    },
+    "data-display": {
+      "description": "Data visualization and content display",
+      "count": 17,
+      "baseClass": "Cre8Element"
+    },
+    "overlay": {
+      "description": "Modal and popup content",
+      "count": 4,
+      "baseClass": "Cre8Element"
+    },
+    "typography": {
+      "description": "Text formatting components",
+      "count": 2,
+      "baseClass": "Cre8Element"
+    },
+    "utility": {
+      "description": "Supporting and structural components",
+      "count": 11,
+      "baseClass": "Cre8Element"
+    }
+  },
+  "designTokens": {
+    "namespace": "--cre8-{category}-{property}-{variant}",
+    "spacing": {
+      "0": "0",
+      "2": "2px",
+      "4": "4px",
+      "8": "8px",
+      "16": "16px",
+      "24": "24px"
+    },
+    "colors": {
+      "background": {
+        "default": "--cre8-color-bg-default",
+        "defaultHover": "--cre8-color-bg-default-hover",
+        "subtle": "--cre8-color-bg-subtle",
+        "strong": "--cre8-color-bg-strong",
+        "disabled": "--cre8-color-bg-disabled",
+        "transparent": "--cre8-color-bg-transparent",
+        "active": "--cre8-color-bg-active",
+        "brand": "--cre8-color-bg-brand",
+        "brandHover": "--cre8-color-bg-brand-hover",
+        "brandStrong": "--cre8-color-bg-brand-strong",
+        "brandXstrong": "--cre8-color-bg-brand-xstrong",
+        "error": "--cre8-color-bg-error",
+        "errorStrong": "--cre8-color-bg-error-strong",
+        "warning": "--cre8-color-bg-warning",
+        "warningStrong": "--cre8-color-bg-warning-strong",
+        "success": "--cre8-color-bg-success",
+        "successStrong": "--cre8-color-bg-success-strong",
+        "info": "--cre8-color-bg-info",
+        "infoStrong": "--cre8-color-bg-info-strong",
+        "attention": "--cre8-color-bg-attention",
+        "attentionStrong": "--cre8-color-bg-attention-strong"
+      },
+      "border": {
+        "default": "--cre8-color-border-default",
+        "subtle": "--cre8-color-border-subtle",
+        "strong": "--cre8-color-border-strong",
+        "disabled": "--cre8-color-border-disabled",
+        "transparent": "--cre8-color-border-transparent",
+        "knockout": "--cre8-color-border-knockout",
+        "brand": "--cre8-color-border-brand",
+        "brandStrong": "--cre8-color-border-brand-strong",
+        "activeOutline": "--cre8-color-border-active-outline",
+        "error": "--cre8-color-border-error",
+        "warning": "--cre8-color-border-warning",
+        "success": "--cre8-color-border-success",
+        "info": "--cre8-color-border-info",
+        "attention": "--cre8-color-border-attention"
+      },
+      "content": {
+        "default": "--cre8-color-content-default",
+        "subtle": "--cre8-color-content-subtle",
+        "strong": "--cre8-color-content-strong",
+        "disabled": "--cre8-color-content-disabled",
+        "knockout": "--cre8-color-content-knockout",
+        "brand": "--cre8-color-content-brand",
+        "brandStrong": "--cre8-color-content-brand-strong",
+        "brandKnockout": "--cre8-color-content-brand-knockout",
+        "link": "--cre8-color-content-link",
+        "linkHover": "--cre8-color-content-link-hover",
+        "linkActive": "--cre8-color-content-link-active",
+        "linkVisited": "--cre8-color-content-link-visited",
+        "error": "--cre8-color-content-error",
+        "success": "--cre8-color-content-success"
+      },
+      "button": {
+        "primary": {
+          "bg": "--cre8-color-button-primary-bg",
+          "bgHover": "--cre8-color-button-primary-bg-hover",
+          "border": "--cre8-color-button-primary-border",
+          "content": "--cre8-color-button-primary-content"
+        },
+        "secondary": {
+          "bg": "--cre8-color-button-secondary-bg",
+          "bgHover": "--cre8-color-button-secondary-bg-hover",
+          "border": "--cre8-color-button-secondary-border",
+          "content": "--cre8-color-button-secondary-content"
+        },
+        "tertiary": {
+          "bg": "--cre8-color-button-tertiary-bg",
+          "bgHover": "--cre8-color-button-tertiary-bg-hover",
+          "content": "--cre8-color-button-tertiary-content"
+        },
+        "danger": {
+          "bg": "--cre8-color-button-primary-danger-bg",
+          "bgHover": "--cre8-color-button-primary-danger-bg-hover",
+          "border": "--cre8-color-button-primary-danger-border",
+          "content": "--cre8-color-button-primary-danger-content"
+        }
+      }
+    },
+    "borders": {
+      "width": {
+        "none": "--cre8-border-width-none",
+        "default": "--cre8-border-width-default",
+        "focus": "--cre8-border-width-focus"
+      },
+      "radius": {
+        "none": "--cre8-border-radius-none",
+        "small": "--cre8-border-radius-small",
+        "default": "--cre8-border-radius-default",
+        "round": "--cre8-border-radius-round",
+        "badge": "--cre8-border-radius-badge",
+        "button": "--cre8-border-radius-button",
+        "container": "--cre8-border-radius-container"
+      }
+    },
+    "shadows": {
+      "default": "--cre8-shadow-default",
+      "button": "--cre8-shadow-button",
+      "medium": "--cre8-theme-box-shadow-md"
+    },
+    "animation": {
+      "fadeQuick": "--cre8-anim-fade-quick",
+      "ease": "--cre8-anim-ease",
+      "loading": "--cre8-loading-animation"
+    },
+    "sizing": {
+      "icon": {
+        "default": "--cre8-icon-size-default",
+        "small": "--cre8-icon-size-small",
+        "large": "--cre8-icon-size-large"
+      },
+      "layout": {
+        "maxWidth": "--cre8-l-max-width",
+        "linelength": "--cre8-l-linelength-width",
+        "sidebar": "--cre8-sidebar-width"
+      }
+    }
+  },
+  "statusValues": [
+    "error",
+    "warning",
+    "success",
+    "info",
+    "attention",
+    "neutral"
+  ],
+  "sizeValues": [
+    "sm",
+    "md",
+    "lg"
+  ],
+  "commonPatterns": {
+    "formValidation": {
+      "props": [
+        "isError",
+        "errorNote",
+        "isSuccess",
+        "successNote"
+      ],
+      "description": "Standard form validation state props"
+    },
+    "inverse": {
+      "props": [
+        "inverse",
+        "inverted"
+      ],
+      "description": "Dark background variant"
+    },
+    "icon": {
+      "props": [
+        "svg",
+        "iconPosition",
+        "iconRotateDegree",
+        "iconFlipDirection"
+      ],
+      "description": "Icon configuration (iconName is deprecated)"
+    }
+  },
+  "components": {
+    "form": {
+      "button-group": {
+        "$schema": "../../schema.json",
+        "id": "button-group",
+        "tag": "cre8-button-group",
+        "name": "Button Group",
+        "class": "Cre8ButtonGroup",
+        "baseClass": "Cre8Element",
+        "category": "form",
+        "description": "Container for grouping related buttons with consistent spacing and responsive layout.",
+        "props": {
+          "orientation": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "responsive-full-width",
+                "description": "Stacks on mobile, inline on desktop"
+              }
+            ]
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "description": "Button components",
+            "allowedComponents": [
+              "cre8-button",
+              "cre8-danger-button"
+            ]
+          }
+        ],
+        "examples": [
+          {
+            "name": "Form Actions",
+            "code": "<cre8-button-group>\n  <cre8-button text=\"Cancel\" variant=\"secondary\"></cre8-button>\n  <cre8-button text=\"Save\" variant=\"primary\"></cre8-button>\n</cre8-button-group>"
+          }
+        ]
+      },
+      "button": {
+        "$schema": "../../schema.json",
+        "id": "button",
+        "tag": "cre8-button",
+        "name": "Button",
+        "class": "Cre8Button",
+        "baseClass": "Cre8FormElement",
+        "category": "form",
+        "description": "Primary interaction element for user actions. Supports multiple visual variants, icons, loading states, and can render as a link.",
+        "semanticAliases": [
+          "btn",
+          "cta",
+          "action",
+          "submit",
+          "trigger"
+        ],
+        "whenToUse": [
+          "Triggering a discrete action (save, submit, delete)",
+          "Primary call-to-action in a view",
+          "Opening a modal or overlay",
+          "Submitting form data",
+          "Actions that require visual prominence"
+        ],
+        "whenNotToUse": [
+          {
+            "scenario": "Navigating to another page without action",
+            "alternative": "cre8-link"
+          },
+          {
+            "scenario": "Destructive actions like delete",
+            "alternative": "cre8-danger-button"
+          },
+          {
+            "scenario": "Button with dropdown options",
+            "alternative": "cre8-split-button"
+          }
+        ],
+        "props": {
+          "text": {
+            "type": "string",
+            "description": "Button label text",
+            "default": "Button",
+            "required": false,
+            "aiHints": {
+              "inferFrom": [
+                "action being performed",
+                "context of the form"
+              ],
+              "examples": [
+                "Save",
+                "Submit",
+                "Cancel",
+                "Continue",
+                "Add to Cart",
+                "Get Started"
+              ],
+              "antiPatterns": [
+                "Click Here",
+                "Submit (when ambiguous)",
+                "OK",
+                "Yes/No without context"
+              ]
+            }
+          },
+          "variant": {
+            "type": "enum",
+            "description": "Visual priority style",
+            "default": "primary",
+            "enumValues": [
+              {
+                "value": "primary",
+                "description": "Highest emphasis, for the main action",
+                "semanticHint": "Limit to ONE per view. Use for: save, submit, confirm, primary CTA."
+              },
+              {
+                "value": "secondary",
+                "description": "Medium emphasis, for supporting actions",
+                "semanticHint": "Use for: cancel, back, secondary options"
+              },
+              {
+                "value": "tertiary",
+                "description": "Low emphasis, text-only appearance",
+                "semanticHint": "Use sparingly - consider if a cre8-link is more appropriate"
+              }
+            ],
+            "aiHints": {
+              "inferFrom": [
+                "action importance",
+                "position in hierarchy",
+                "surrounding buttons"
+              ],
+              "antiPatterns": [
+                "Multiple primary buttons in same view",
+                "Tertiary for important actions"
+              ]
+            }
+          },
+          "size": {
+            "type": "enum",
+            "description": "Button size",
+            "default": "md",
+            "required": true,
+            "enumValues": [
+              {
+                "value": "sm",
+                "description": "Compact, for dense UIs or inline actions"
+              },
+              {
+                "value": "md",
+                "description": "Default size for most use cases"
+              },
+              {
+                "value": "lg",
+                "description": "Prominent, for primary CTAs or touch targets"
+              }
+            ],
+            "tokenReference": "--cre8-button-padding-*"
+          },
+          "type": {
+            "type": "enum",
+            "description": "HTML button type for form behavior",
+            "default": "button",
+            "required": true,
+            "enumValues": [
+              {
+                "value": "button",
+                "description": "No form submission behavior"
+              },
+              {
+                "value": "submit",
+                "description": "Submits the containing cre8-form"
+              },
+              {
+                "value": "reset",
+                "description": "Resets the containing form"
+              }
+            ]
+          },
+          "disabled": {
+            "type": "boolean",
+            "description": "Prevents interaction when true",
+            "aiHints": {
+              "inferFrom": [
+                "form validation state",
+                "loading state",
+                "permission level"
+              ],
+              "antiPatterns": [
+                "Permanently disabled buttons (remove instead)",
+                "Disabled without explanation"
+              ]
+            }
+          },
+          "neutral": {
+            "type": "boolean",
+            "description": "Neutral color scheme variant"
+          },
+          "inverse": {
+            "type": "boolean",
+            "description": "For use on dark backgrounds"
+          },
+          "href": {
+            "type": "string",
+            "description": "Converts button to anchor tag for navigation",
+            "aiHints": {
+              "inferFrom": [
+                "button should navigate",
+                "external link needed"
+              ],
+              "antiPatterns": [
+                "Using href for actions that modify state"
+              ]
+            }
+          },
+          "target": {
+            "type": "enum",
+            "description": "Link target window (only when href is set)",
+            "enumValues": [
+              {
+                "value": "_blank",
+                "description": "Opens in new tab"
+              },
+              {
+                "value": "_self",
+                "description": "Opens in same frame"
+              },
+              {
+                "value": "_parent",
+                "description": "Opens in parent frame"
+              },
+              {
+                "value": "_top",
+                "description": "Opens in full window"
+              }
+            ]
+          },
+          "svg": {
+            "type": "string",
+            "description": "SVG icon as raw string",
+            "aiHints": {
+              "inferFrom": [
+                "action type",
+                "established icon conventions"
+              ],
+              "examples": [
+                "<svg>...</svg> for plus (add)",
+                "trash (delete)",
+                "download",
+                "arrow-right (next)"
+              ]
+            }
+          },
+          "iconPosition": {
+            "type": "enum",
+            "description": "Icon placement relative to text",
+            "enumValues": [
+              {
+                "value": "before",
+                "description": "Icon before text (left in LTR)"
+              },
+              {
+                "value": "after",
+                "description": "Icon after text (right in LTR)"
+              }
+            ]
+          },
+          "iconRotateDegree": {
+            "type": "number",
+            "description": "Icon rotation in degrees",
+            "default": 0
+          },
+          "iconFlipDirection": {
+            "type": "string",
+            "description": "Icon flip direction"
+          },
+          "hideText": {
+            "type": "boolean",
+            "description": "Visually hide text but keep for accessibility",
+            "aiHints": {
+              "inferFrom": [
+                "icon-only button needed",
+                "space constraints"
+              ],
+              "antiPatterns": [
+                "hideText without meaningful text prop"
+              ]
+            }
+          },
+          "fullWidth": {
+            "type": "boolean",
+            "description": "Stretches button to 100% container width",
+            "aiHints": {
+              "inferFrom": [
+                "mobile context",
+                "modal footer",
+                "single action in narrow container"
+              ]
+            }
+          },
+          "loading": {
+            "type": "boolean",
+            "description": "Shows loading indicator and prevents interaction",
+            "aiHints": {
+              "inferFrom": [
+                "async operation in progress",
+                "form submission pending"
+              ]
+            }
+          },
+          "loadingComplete": {
+            "type": "boolean",
+            "description": "Loading has finished (shows success state briefly)"
+          },
+          "ariaLive": {
+            "type": "enum",
+            "description": "Screen reader update mode",
+            "default": "assertive",
+            "required": true,
+            "enumValues": [
+              {
+                "value": "polite",
+                "description": "Waits for user to finish"
+              },
+              {
+                "value": "assertive",
+                "description": "Interrupts immediately"
+              }
+            ]
+          },
+          "splitButtonType": {
+            "type": "enum",
+            "description": "Split button variant styling",
+            "enumValues": [
+              {
+                "value": "text",
+                "description": "Text-style split"
+              },
+              {
+                "value": "caret",
+                "description": "Caret dropdown indicator"
+              }
+            ]
+          },
+          "buttonAriaExpanded": {
+            "type": "boolean",
+            "description": "Expanded state for menu buttons"
+          }
+        },
+        "slots": [
+          {
+            "name": "before",
+            "description": "Content before button text",
+            "allowedComponents": [
+              "cre8-icon"
+            ],
+            "allowedCategories": [
+              "utility"
+            ]
+          },
+          {
+            "name": "after",
+            "description": "Content after button text",
+            "allowedComponents": [
+              "cre8-icon",
+              "cre8-badge"
+            ],
+            "allowedCategories": [
+              "utility",
+              "data-display"
+            ]
+          }
+        ],
+        "events": [
+          {
+            "name": "click",
+            "description": "Fired when the button is activated",
+            "trigger": "User clicks, taps, or presses Enter/Space while focused",
+            "payload": {
+              "originalEvent": {
+                "type": "MouseEvent | KeyboardEvent",
+                "description": "The native event"
+              }
+            },
+            "aiHints": {
+              "commonUseCases": [
+                "Form submission",
+                "Modal open/close",
+                "State mutation",
+                "Navigation"
+              ],
+              "typicalHandlers": [
+                "handleSubmit()",
+                "openModal()",
+                "deleteItem(id)",
+                "navigateTo(route)"
+              ]
+            }
+          }
+        ],
+        "states": [
+          {
+            "name": "default",
+            "description": "Normal resting state"
+          },
+          {
+            "name": "hover",
+            "description": "Pointer is over the button",
+            "visualChanges": "Background color shift per variant"
+          },
+          {
+            "name": "active",
+            "description": "Button is being pressed",
+            "visualChanges": "Pressed appearance"
+          },
+          {
+            "name": "focus",
+            "description": "Button has keyboard focus",
+            "visualChanges": "Focus ring visible"
+          },
+          {
+            "name": "disabled",
+            "description": "Interaction prevented",
+            "visualChanges": "Reduced opacity",
+            "affectedProps": [
+              "disabled"
+            ]
+          },
+          {
+            "name": "loading",
+            "description": "Async operation in progress",
+            "visualChanges": "Spinner shown, interaction blocked",
+            "affectedProps": [
+              "loading"
+            ]
+          }
+        ],
+        "accessibility": {
+          "role": "button",
+          "requiredAttributes": [
+            "text (always required for screen readers, even with hideText)"
+          ],
+          "keyboardBehavior": {
+            "Enter": "Activates the button",
+            "Space": "Activates the button"
+          },
+          "focusManagement": "self",
+          "announcements": {
+            "onStateChange": "Loading state and disabled state announced via ariaLive"
+          }
+        },
+        "composition": {
+          "canContain": [],
+          "mustBeWithin": [],
+          "incompatibleWith": [],
+          "recommendedWith": [
+            {
+              "component": "cre8-button-group",
+              "reason": "When presenting related actions together"
+            },
+            {
+              "component": "cre8-tooltip",
+              "reason": "To explain icon-only buttons or disabled state"
+            },
+            {
+              "component": "cre8-form",
+              "reason": "For form submission with type='submit'"
+            }
+          ]
+        },
+        "dependencies": [
+          "cre8-icon",
+          "cre8-loading-spinner"
+        ],
+        "designTokens": {
+          "colors": [
+            "--cre8-color-button-primary-bg",
+            "--cre8-color-button-primary-bg-hover",
+            "--cre8-color-button-primary-content",
+            "--cre8-color-button-secondary-bg",
+            "--cre8-color-button-secondary-content",
+            "--cre8-color-button-tertiary-bg",
+            "--cre8-color-button-tertiary-content"
+          ],
+          "spacing": [
+            "--cre8-button-padding-vertical-medium",
+            "--cre8-button-padding-horizontal-medium",
+            "--cre8-button-padding-vertical-small",
+            "--cre8-button-padding-horizontal-small"
+          ],
+          "borders": [
+            "--cre8-border-width-button-default",
+            "--cre8-border-radius-button"
+          ],
+          "shadows": [
+            "--cre8-shadow-button"
+          ],
+          "sizing": [
+            "--cre8-button-width",
+            "--cre8-button-height",
+            "--cre8-button-min-width",
+            "--cre8-button-min-height"
+          ]
+        },
+        "examples": [
+          {
+            "name": "Primary Submit",
+            "description": "Main form submission button",
+            "code": "<cre8-button text=\"Save Changes\" variant=\"primary\" type=\"submit\"></cre8-button>",
+            "props": {
+              "text": "Save Changes",
+              "variant": "primary",
+              "type": "submit"
+            }
+          },
+          {
+            "name": "Secondary Cancel",
+            "description": "Cancel action in button group",
+            "code": "<cre8-button text=\"Cancel\" variant=\"secondary\"></cre8-button>",
+            "props": {
+              "text": "Cancel",
+              "variant": "secondary"
+            }
+          },
+          {
+            "name": "Button with Icon",
+            "description": "Download action with icon",
+            "code": "<cre8-button text=\"Download\" svg=\"<svg>...</svg>\" iconPosition=\"after\"></cre8-button>",
+            "props": {
+              "text": "Download",
+              "svg": "<svg>...</svg>",
+              "iconPosition": "after"
+            }
+          },
+          {
+            "name": "Link Button",
+            "description": "Button that navigates to external page",
+            "code": "<cre8-button text=\"Learn More\" href=\"/about\" target=\"_blank\"></cre8-button>",
+            "props": {
+              "text": "Learn More",
+              "href": "/about",
+              "target": "_blank"
+            }
+          },
+          {
+            "name": "Loading State",
+            "description": "During async operation",
+            "code": "<cre8-button text=\"Saving...\" variant=\"primary\" loading></cre8-button>",
+            "props": {
+              "text": "Saving...",
+              "variant": "primary",
+              "loading": true
+            }
+          },
+          {
+            "name": "Icon Only",
+            "description": "Compact action with hidden text",
+            "code": "<cre8-button text=\"Add item\" svg=\"<svg>...</svg>\" hideText></cre8-button>",
+            "props": {
+              "text": "Add item",
+              "svg": "<svg>...</svg>",
+              "hideText": true
+            }
+          }
+        ]
+      },
+      "checkbox-field-item": {
+        "$schema": "../../schema.json",
+        "id": "checkbox-field-item",
+        "tag": "cre8-checkbox-field-item",
+        "name": "Checkbox Field Item",
+        "class": "Cre8CheckboxFieldItem",
+        "baseClass": "Cre8FormElement",
+        "category": "form",
+        "description": "Individual checkbox input with label. Can be used standalone or within cre8-checkbox-field.",
+        "props": {
+          "label": {
+            "type": "string",
+            "description": "Checkbox label",
+            "required": true
+          },
+          "checked": {
+            "type": "boolean",
+            "description": "Checked state"
+          },
+          "disabled": {
+            "type": "boolean",
+            "description": "Disabled state"
+          },
+          "required": {
+            "type": "boolean",
+            "description": "Required field"
+          },
+          "name": {
+            "type": "string",
+            "description": "Form field name"
+          },
+          "value": {
+            "type": "string",
+            "description": "Form value when checked"
+          },
+          "fieldId": {
+            "type": "string",
+            "description": "Unique ID"
+          },
+          "fieldNote": {
+            "type": "string",
+            "description": "Helper text"
+          },
+          "isError": {
+            "type": "boolean",
+            "description": "Error state"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "description": "Success state"
+          },
+          "indeterminate": {
+            "type": "boolean",
+            "description": "Indeterminate/partial state"
+          }
+        },
+        "events": [
+          {
+            "name": "change",
+            "trigger": "User toggles checkbox",
+            "payload": {
+              "checked": {
+                "type": "boolean"
+              }
+            }
+          }
+        ],
+        "accessibility": {
+          "role": "checkbox",
+          "keyboardBehavior": {
+            "Space": "Toggle checked state"
+          }
+        },
+        "examples": [
+          {
+            "name": "Terms Agreement",
+            "code": "<cre8-checkbox-field-item label=\"I agree to the terms and conditions\" required></cre8-checkbox-field-item>"
+          }
+        ]
+      },
+      "checkbox-field": {
+        "$schema": "../../schema.json",
+        "id": "checkbox-field",
+        "tag": "cre8-checkbox-field",
+        "name": "Checkbox Field",
+        "class": "Cre8CheckboxField",
+        "baseClass": "Cre8Element",
+        "category": "form",
+        "description": "Group container for checkbox inputs. Use for multiple selections from a set of options.",
+        "semanticAliases": [
+          "checkbox-group",
+          "multi-select-options"
+        ],
+        "whenToUse": [
+          "Multiple selections from a small set (2-7 options)",
+          "Options that can be combined",
+          "Boolean choices that need explicit labels"
+        ],
+        "whenNotToUse": [
+          {
+            "scenario": "Single yes/no toggle",
+            "alternative": "cre8-checkbox-field-item alone"
+          },
+          {
+            "scenario": "Mutually exclusive options",
+            "alternative": "cre8-radio-field"
+          },
+          {
+            "scenario": "Many options (8+)",
+            "alternative": "cre8-multi-select"
+          }
+        ],
+        "props": {
+          "legend": {
+            "type": "string",
+            "description": "Group label (fieldset legend)",
+            "required": true
+          },
+          "disabled": {
+            "type": "boolean",
+            "description": "Disable all checkboxes"
+          },
+          "isError": {
+            "type": "boolean",
+            "description": "Error state"
+          },
+          "errorNote": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "fieldNote": {
+            "type": "string",
+            "description": "Helper text"
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "description": "Checkbox items",
+            "allowedComponents": [
+              "cre8-checkbox-field-item"
+            ]
+          }
+        ],
+        "composition": {
+          "canContain": [
+            "cre8-checkbox-field-item"
+          ],
+          "mustBeWithin": [
+            "cre8-form",
+            "cre8-fieldset"
+          ]
+        },
+        "examples": [
+          {
+            "name": "Interests Selection",
+            "code": "<cre8-checkbox-field legend=\"Select your interests\">\n  <cre8-checkbox-field-item label=\"Sports\" value=\"sports\"></cre8-checkbox-field-item>\n  <cre8-checkbox-field-item label=\"Music\" value=\"music\"></cre8-checkbox-field-item>\n</cre8-checkbox-field>"
+          }
+        ]
+      },
+      "danger-button": {
+        "$schema": "../../schema.json",
+        "id": "danger-button",
+        "tag": "cre8-danger-button",
+        "name": "Danger Button",
+        "class": "Cre8DangerButton",
+        "baseClass": "Cre8FormElement",
+        "category": "form",
+        "description": "Button for potentially destructive actions. Same API as cre8-button but with danger color scheme.",
+        "semanticAliases": [
+          "destructive-button",
+          "delete-button",
+          "remove-button"
+        ],
+        "whenToUse": [
+          "Destructive actions (delete, remove, cancel irreversible)",
+          "Actions that cannot be undone",
+          "Actions with significant consequences"
+        ],
+        "whenNotToUse": [
+          {
+            "scenario": "Standard form submission",
+            "alternative": "cre8-button"
+          },
+          {
+            "scenario": "Non-destructive actions",
+            "alternative": "cre8-button"
+          }
+        ],
+        "props": {
+          "text": {
+            "type": "string",
+            "description": "Button label text",
+            "default": "Button"
+          },
+          "variant": {
+            "type": "enum",
+            "description": "Visual style (danger variants only)",
+            "enumValues": [
+              {
+                "value": "primary"
+              },
+              {
+                "value": "secondary"
+              },
+              {
+                "value": "tertiary"
+              }
+            ]
+          },
+          "size": {
+            "type": "enum",
+            "description": "Button size",
+            "default": "md",
+            "enumValues": [
+              {
+                "value": "sm"
+              },
+              {
+                "value": "md"
+              },
+              {
+                "value": "lg"
+              }
+            ]
+          },
+          "type": {
+            "type": "enum",
+            "description": "HTML button type",
+            "default": "button",
+            "enumValues": [
+              {
+                "value": "button"
+              },
+              {
+                "value": "submit"
+              },
+              {
+                "value": "reset"
+              }
+            ]
+          },
+          "disabled": {
+            "type": "boolean",
+            "description": "Disabled state"
+          },
+          "loading": {
+            "type": "boolean",
+            "description": "Loading state"
+          },
+          "svg": {
+            "type": "string",
+            "description": "Icon SVG string"
+          },
+          "iconPosition": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "before"
+              },
+              {
+                "value": "after"
+              }
+            ]
+          },
+          "fullWidth": {
+            "type": "boolean",
+            "description": "100% width"
+          }
+        },
+        "composition": {
+          "recommendedWith": [
+            {
+              "component": "cre8-modal",
+              "reason": "Confirm dangerous actions"
+            }
+          ]
+        },
+        "designTokens": {
+          "colors": [
+            "--cre8-color-button-primary-danger-bg",
+            "--cre8-color-button-primary-danger-content"
+          ]
+        },
+        "examples": [
+          {
+            "name": "Delete Action",
+            "code": "<cre8-danger-button text=\"Delete Account\"></cre8-danger-button>"
+          }
+        ]
+      },
+      "date-picker": {
+        "$schema": "../../schema.json",
+        "id": "date-picker",
+        "tag": "cre8-date-picker",
+        "name": "Date Picker",
+        "class": "Cre8DatePicker",
+        "baseClass": "Cre8Field",
+        "category": "form",
+        "description": "Date input with calendar functionality. Extends cre8-field with date-specific features.",
+        "props": {
+          "hasShortcuts": {
+            "type": "boolean",
+            "description": "Show date shortcuts like Today, Tomorrow"
+          },
+          "label": {
+            "type": "string",
+            "required": true
+          },
+          "fieldNote": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "isError": {
+            "type": "boolean"
+          },
+          "errorNote": {
+            "type": "string"
+          },
+          "min": {
+            "type": "string",
+            "description": "Minimum selectable date"
+          },
+          "max": {
+            "type": "string",
+            "description": "Maximum selectable date"
+          }
+        },
+        "examples": [
+          {
+            "name": "Birth Date",
+            "code": "<cre8-date-picker label=\"Date of Birth\" max=\"2010-01-01\"></cre8-date-picker>"
+          }
+        ]
+      },
+      "field": {
+        "$schema": "../../schema.json",
+        "id": "field",
+        "tag": "cre8-field",
+        "name": "Field",
+        "class": "Cre8Field",
+        "baseClass": "Cre8FormElement",
+        "category": "form",
+        "description": "Standard form input with label, helper text, and validation states. Supports multiple input types including text, email, password, number, date, etc.",
+        "semanticAliases": [
+          "input",
+          "text-field",
+          "text-input",
+          "form-field"
+        ],
+        "whenToUse": [
+          "Collecting single-line text input",
+          "Email, password, phone, URL inputs",
+          "Number inputs with optional constraints",
+          "Date inputs (consider cre8-date-picker for complex scenarios)",
+          "Any form field requiring label and validation"
+        ],
+        "whenNotToUse": [
+          {
+            "scenario": "Multi-line text input",
+            "alternative": "cre8-textarea"
+          },
+          {
+            "scenario": "Selection from predefined options",
+            "alternative": "cre8-select"
+          },
+          {
+            "scenario": "Yes/No or toggle inputs",
+            "alternative": "cre8-checkbox-field"
+          },
+          {
+            "scenario": "Complex date selection with calendar",
+            "alternative": "cre8-date-picker"
+          }
+        ],
+        "props": {
+          "type": {
+            "type": "enum",
+            "description": "Input type affecting keyboard, validation, and behavior",
+            "default": "text",
+            "required": true,
+            "enumValues": [
+              {
+                "value": "text",
+                "description": "Standard text input"
+              },
+              {
+                "value": "email",
+                "description": "Email with validation"
+              },
+              {
+                "value": "number",
+                "description": "Numeric input"
+              },
+              {
+                "value": "url",
+                "description": "URL with validation"
+              },
+              {
+                "value": "tel",
+                "description": "Phone number input"
+              },
+              {
+                "value": "password",
+                "description": "Masked password input"
+              },
+              {
+                "value": "date",
+                "description": "Date input"
+              }
+            ],
+            "aiHints": {
+              "inferFrom": [
+                "field purpose",
+                "expected data format"
+              ],
+              "antiPatterns": [
+                "Using text for emails/phones (loses mobile keyboard benefits)"
+              ]
+            }
+          },
+          "label": {
+            "type": "string",
+            "description": "Field label displayed above input",
+            "default": "Label",
+            "required": true,
+            "aiHints": {
+              "inferFrom": [
+                "field purpose",
+                "form context"
+              ],
+              "examples": [
+                "Email Address",
+                "Full Name",
+                "Phone Number",
+                "Password"
+              ],
+              "antiPatterns": [
+                "Relying on placeholder alone",
+                "Vague labels like 'Input'"
+              ]
+            }
+          },
+          "name": {
+            "type": "string",
+            "description": "Form field name for submission"
+          },
+          "fieldId": {
+            "type": "string",
+            "description": "Unique ID (auto-generated if not provided)"
+          },
+          "placeholder": {
+            "type": "string",
+            "description": "Placeholder text shown when empty",
+            "aiHints": {
+              "inferFrom": [
+                "expected format",
+                "example value"
+              ],
+              "examples": [
+                "name@example.com",
+                "(555) 123-4567"
+              ],
+              "antiPatterns": [
+                "Using placeholder as label replacement"
+              ]
+            }
+          },
+          "fieldNote": {
+            "type": "string",
+            "description": "Helper text below input",
+            "aiHints": {
+              "inferFrom": [
+                "input requirements",
+                "format hints",
+                "character limits"
+              ]
+            }
+          },
+          "required": {
+            "type": "boolean",
+            "description": "Field is required for form submission"
+          },
+          "disabled": {
+            "type": "boolean",
+            "description": "Prevents interaction"
+          },
+          "readonly": {
+            "type": "boolean",
+            "description": "Value visible but not editable"
+          },
+          "isError": {
+            "type": "boolean",
+            "description": "Shows error state styling"
+          },
+          "errorNote": {
+            "type": "string",
+            "description": "Error message displayed when isError is true",
+            "aiHints": {
+              "inferFrom": [
+                "validation rule violated"
+              ],
+              "examples": [
+                "Please enter a valid email",
+                "This field is required",
+                "Username already taken"
+              ]
+            }
+          },
+          "errorText": {
+            "type": "string",
+            "description": "Screen reader error announcement",
+            "default": "Error",
+            "required": true
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "description": "Shows success state styling"
+          },
+          "successNote": {
+            "type": "string",
+            "description": "Success message displayed when isSuccess is true"
+          },
+          "successText": {
+            "type": "string",
+            "description": "Screen reader success announcement",
+            "default": "Success",
+            "required": true
+          },
+          "autocomplete": {
+            "type": "string",
+            "description": "Browser autocomplete hint",
+            "aiHints": {
+              "examples": [
+                "email",
+                "tel",
+                "given-name",
+                "family-name",
+                "new-password",
+                "current-password"
+              ]
+            }
+          },
+          "pattern": {
+            "type": "string",
+            "description": "Regex validation pattern"
+          },
+          "maxlength": {
+            "type": "number",
+            "description": "Maximum character count"
+          },
+          "min": {
+            "type": "string",
+            "description": "Minimum value (for number/date types)"
+          },
+          "max": {
+            "type": "string",
+            "description": "Maximum value (for number/date types)"
+          },
+          "ariaDescribedBy": {
+            "type": "string",
+            "description": "ID of element describing the field"
+          },
+          "ariaLive": {
+            "type": "enum",
+            "description": "Screen reader update mode for validation",
+            "default": "polite",
+            "required": true,
+            "enumValues": [
+              {
+                "value": "polite",
+                "description": "Non-interrupting updates"
+              },
+              {
+                "value": "assertive",
+                "description": "Immediate announcement"
+              }
+            ]
+          }
+        },
+        "slots": [
+          {
+            "name": "fieldNote",
+            "description": "Custom field note content (overrides fieldNote prop)",
+            "allowedComponents": [
+              "cre8-link"
+            ],
+            "allowedCategories": [
+              "navigation"
+            ]
+          }
+        ],
+        "events": [
+          {
+            "name": "input",
+            "description": "Fired on each input change",
+            "trigger": "User types or modifies input value",
+            "payload": {
+              "value": {
+                "type": "string",
+                "description": "Current input value"
+              }
+            }
+          },
+          {
+            "name": "change",
+            "description": "Fired when input loses focus after change",
+            "trigger": "User finishes editing and moves focus",
+            "payload": {
+              "value": {
+                "type": "string",
+                "description": "Final input value"
+              }
+            }
+          },
+          {
+            "name": "blur",
+            "description": "Fired when field loses focus",
+            "trigger": "Focus moves to another element"
+          }
+        ],
+        "states": [
+          {
+            "name": "default",
+            "description": "Normal state"
+          },
+          {
+            "name": "focus",
+            "description": "Field has focus",
+            "visualChanges": "Focus ring visible"
+          },
+          {
+            "name": "filled",
+            "description": "Field has value",
+            "visualChanges": "Label floated (if applicable)"
+          },
+          {
+            "name": "error",
+            "description": "Validation failed",
+            "visualChanges": "Red border, error message shown",
+            "affectedProps": [
+              "isError"
+            ]
+          },
+          {
+            "name": "success",
+            "description": "Validation passed",
+            "visualChanges": "Green border, success message shown",
+            "affectedProps": [
+              "isSuccess"
+            ]
+          },
+          {
+            "name": "disabled",
+            "description": "Interaction prevented",
+            "visualChanges": "Grayed out",
+            "affectedProps": [
+              "disabled"
+            ]
+          },
+          {
+            "name": "readonly",
+            "description": "View only",
+            "visualChanges": "Subtle styling difference",
+            "affectedProps": [
+              "readonly"
+            ]
+          }
+        ],
+        "accessibility": {
+          "role": "textbox",
+          "requiredAttributes": [
+            "label (always required)",
+            "aria-required when required",
+            "aria-invalid when isError"
+          ],
+          "keyboardBehavior": {
+            "Tab": "Move focus to/from field",
+            "Standard typing": "Input characters"
+          },
+          "focusManagement": "self",
+          "announcements": {
+            "onStateChange": "Error and success states announced via ariaLive"
+          }
+        },
+        "composition": {
+          "canContain": [],
+          "mustBeWithin": [
+            "cre8-form",
+            "cre8-fieldset"
+          ],
+          "recommendedWith": [
+            {
+              "component": "cre8-form",
+              "reason": "For form submission handling"
+            },
+            {
+              "component": "cre8-fieldset",
+              "reason": "For grouping related fields"
+            },
+            {
+              "component": "cre8-field-note",
+              "reason": "For complex helper text"
+            }
+          ]
+        },
+        "designTokens": {
+          "colors": [
+            "--cre8-color-border-default",
+            "--cre8-color-border-error",
+            "--cre8-color-border-success",
+            "--cre8-color-content-default",
+            "--cre8-color-content-subtle",
+            "--cre8-color-content-error"
+          ],
+          "spacing": [
+            "--cre8-spacing-8",
+            "--cre8-spacing-4"
+          ],
+          "borders": [
+            "--cre8-border-width-default",
+            "--cre8-border-radius-default"
+          ]
+        },
+        "examples": [
+          {
+            "name": "Email Field",
+            "description": "Standard email input with helper text",
+            "code": "<cre8-field type=\"email\" label=\"Email Address\" name=\"email\" required fieldNote=\"We'll never share your email\"></cre8-field>",
+            "props": {
+              "type": "email",
+              "label": "Email Address",
+              "name": "email",
+              "required": true,
+              "fieldNote": "We'll never share your email"
+            }
+          },
+          {
+            "name": "Error State",
+            "description": "Field with validation error",
+            "code": "<cre8-field type=\"text\" label=\"Username\" isError errorNote=\"Username already taken\"></cre8-field>",
+            "props": {
+              "type": "text",
+              "label": "Username",
+              "isError": true,
+              "errorNote": "Username already taken"
+            }
+          },
+          {
+            "name": "Password Field",
+            "description": "Password input with requirements",
+            "code": "<cre8-field type=\"password\" label=\"Password\" required fieldNote=\"Minimum 8 characters\" autocomplete=\"new-password\"></cre8-field>",
+            "props": {
+              "type": "password",
+              "label": "Password",
+              "required": true,
+              "fieldNote": "Minimum 8 characters",
+              "autocomplete": "new-password"
+            }
+          },
+          {
+            "name": "Number Field",
+            "description": "Numeric input with constraints",
+            "code": "<cre8-field type=\"number\" label=\"Quantity\" min=\"1\" max=\"100\"></cre8-field>",
+            "props": {
+              "type": "number",
+              "label": "Quantity",
+              "min": "1",
+              "max": "100"
+            }
+          }
+        ]
+      },
+      "multi-select": {
+        "$schema": "../../schema.json",
+        "id": "multi-select",
+        "tag": "cre8-multi-select",
+        "name": "Multi Select",
+        "class": "Cre8MultiSelect",
+        "baseClass": "Cre8Element",
+        "category": "form",
+        "description": "Dropdown that allows selecting multiple options. Shows selected items as removable tags.",
+        "props": {
+          "items": {
+            "type": "array",
+            "description": "Available options",
+            "required": true
+          },
+          "preselectedItems": {
+            "type": "array",
+            "description": "Initially selected items",
+            "required": true
+          },
+          "label": {
+            "type": "string",
+            "required": true
+          },
+          "fieldId": {
+            "type": "string"
+          },
+          "fieldNote": {
+            "type": "string"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "isError": {
+            "type": "boolean"
+          },
+          "errorNote": {
+            "type": "string"
+          },
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "successNote": {
+            "type": "string"
+          }
+        },
+        "events": [
+          {
+            "name": "selectedItemsChange",
+            "description": "Fires on selection change",
+            "payload": {
+              "selectedItems": {
+                "type": "array"
+              }
+            }
+          }
+        ],
+        "dependencies": [
+          "cre8-remove-tag",
+          "cre8-field-note",
+          "cre8-button",
+          "cre8-checkbox-field-item"
+        ]
+      },
+      "radio-field-item": {
+        "$schema": "../../schema.json",
+        "id": "radio-field-item",
+        "tag": "cre8-radio-field-item",
+        "name": "Radio Field Item",
+        "class": "Cre8RadioFieldItem",
+        "baseClass": "Cre8FormElement",
+        "category": "form",
+        "description": "Individual radio button input. Must be used with shared name attribute for grouping.",
+        "props": {
+          "label": {
+            "type": "string",
+            "required": true
+          },
+          "checked": {
+            "type": "boolean"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string",
+            "description": "Shared name for radio group",
+            "required": true
+          },
+          "value": {
+            "type": "string",
+            "required": true
+          },
+          "fieldId": {
+            "type": "string"
+          },
+          "fieldNote": {
+            "type": "string"
+          },
+          "isError": {
+            "type": "boolean"
+          },
+          "isSuccess": {
+            "type": "boolean"
+          }
+        },
+        "events": [
+          {
+            "name": "change",
+            "trigger": "User selects radio",
+            "payload": {
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "aiUsageRules": [
+          "Radio buttons cannot be deselected once chosen",
+          "Group all related options with same name",
+          "Never use single radio button - use checkbox instead",
+          "Stack vertically for readability"
+        ]
+      },
+      "radio-field": {
+        "$schema": "../../schema.json",
+        "id": "radio-field",
+        "tag": "cre8-radio-field",
+        "name": "Radio Field",
+        "class": "Cre8RadioField",
+        "baseClass": "Cre8Element",
+        "category": "form",
+        "description": "Group container for radio button inputs. Use for single selection from mutually exclusive options.",
+        "semanticAliases": [
+          "radio-group",
+          "radio-buttons",
+          "single-select"
+        ],
+        "whenToUse": [
+          "Single selection from 2-5 options",
+          "Options are mutually exclusive",
+          "All options should be visible"
+        ],
+        "whenNotToUse": [
+          {
+            "scenario": "More than 5 options",
+            "alternative": "cre8-select"
+          },
+          {
+            "scenario": "Multiple selections",
+            "alternative": "cre8-checkbox-field"
+          },
+          {
+            "scenario": "Visual tile selection",
+            "alternative": "cre8-select-tile-list"
+          }
+        ],
+        "props": {
+          "legend": {
+            "type": "string",
+            "description": "Group label",
+            "required": true
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "isError": {
+            "type": "boolean"
+          },
+          "errorNote": {
+            "type": "string"
+          },
+          "fieldNote": {
+            "type": "string"
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "allowedComponents": [
+              "cre8-radio-field-item"
+            ]
+          }
+        ],
+        "composition": {
+          "canContain": [
+            "cre8-radio-field-item"
+          ]
+        },
+        "examples": [
+          {
+            "name": "Payment Method",
+            "code": "<cre8-radio-field legend=\"Payment Method\">\n  <cre8-radio-field-item label=\"Credit Card\" name=\"payment\" value=\"cc\"></cre8-radio-field-item>\n  <cre8-radio-field-item label=\"PayPal\" name=\"payment\" value=\"paypal\"></cre8-radio-field-item>\n</cre8-radio-field>"
+          }
+        ]
+      },
+      "select-tile-list": {
+        "$schema": "../../schema.json",
+        "id": "select-tile-list",
+        "tag": "cre8-select-tile-list",
+        "name": "Select Tile List",
+        "class": "Cre8SelectTileList",
+        "baseClass": "Cre8Element",
+        "category": "form",
+        "description": "Container for select tile components with layout and validation support.",
+        "props": {
+          "variant": {
+            "type": "enum",
+            "default": "columns",
+            "enumValues": [
+              {
+                "value": "columns"
+              },
+              {
+                "value": "rows"
+              }
+            ]
+          },
+          "label": {
+            "type": "string"
+          },
+          "fieldNote": {
+            "type": "string"
+          },
+          "fieldNoteIsError": {
+            "type": "boolean"
+          },
+          "fieldNoteIsSuccess": {
+            "type": "boolean"
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "allowedComponents": [
+              "cre8-select-tile"
+            ]
+          }
+        ]
+      },
+      "select-tile": {
+        "$schema": "../../schema.json",
+        "id": "select-tile",
+        "tag": "cre8-select-tile",
+        "name": "Select Tile",
+        "class": "Cre8SelectTile",
+        "baseClass": "Cre8FormElement",
+        "category": "form",
+        "description": "Visual selection card as alternative to checkbox/radio. Supports rich content in slots.",
+        "props": {
+          "type": {
+            "type": "enum",
+            "default": "radio",
+            "required": true,
+            "enumValues": [
+              {
+                "value": "radio",
+                "description": "Single selection"
+              },
+              {
+                "value": "checkbox",
+                "description": "Multiple selection"
+              }
+            ]
+          },
+          "variant": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "bare"
+              },
+              {
+                "value": "horizontal"
+              },
+              {
+                "value": "horizontal-bare"
+              }
+            ]
+          },
+          "variantBreakToVertical": {
+            "type": "enum",
+            "default": "sm",
+            "enumValues": [
+              {
+                "value": "sm"
+              },
+              {
+                "value": "sm-2"
+              },
+              {
+                "value": "md"
+              },
+              {
+                "value": "lg"
+              },
+              {
+                "value": "xl"
+              },
+              {
+                "value": "xxl"
+              },
+              {
+                "value": "none"
+              }
+            ]
+          },
+          "checkPosition": {
+            "type": "enum",
+            "default": "right",
+            "enumValues": [
+              {
+                "value": "left"
+              },
+              {
+                "value": "right"
+              },
+              {
+                "value": "top-right"
+              },
+              {
+                "value": "none"
+              }
+            ]
+          },
+          "radioVariant": {
+            "type": "enum",
+            "default": "dot",
+            "enumValues": [
+              {
+                "value": "dot"
+              },
+              {
+                "value": "check"
+              }
+            ]
+          },
+          "align": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "center"
+              }
+            ]
+          },
+          "checked": {
+            "type": "boolean"
+          },
+          "disabled": {
+            "type": "boolean"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "isError": {
+            "type": "boolean"
+          },
+          "isSuccess": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          },
+          "fieldId": {
+            "type": "string"
+          }
+        },
+        "slots": [
+          {
+            "name": "header",
+            "description": "Top/left content (often icon)"
+          },
+          {
+            "name": "default",
+            "description": "Main content"
+          },
+          {
+            "name": "title",
+            "description": "Title text"
+          },
+          {
+            "name": "body",
+            "description": "Body text"
+          },
+          {
+            "name": "footer",
+            "description": "Bottom/right content"
+          }
+        ],
+        "cssParts": [
+          "select-tile",
+          "header",
+          "footer",
+          "body",
+          "body-title",
+          "body-body"
+        ]
+      },
+      "select": {
+        "$schema": "../../schema.json",
+        "id": "select",
+        "tag": "cre8-select",
+        "name": "Select",
+        "class": "Cre8Select",
+        "baseClass": "Cre8FormElement",
+        "category": "form",
+        "description": "Dropdown selection from predefined options. Supports grouped options and standard form validation states.",
+        "semanticAliases": [
+          "dropdown",
+          "combobox",
+          "picker",
+          "select-menu"
+        ],
+        "whenToUse": [
+          "Selection from 5-15 predefined options",
+          "Options are mutually exclusive",
+          "Space is limited for displaying all options",
+          "Options need grouping"
+        ],
+        "whenNotToUse": [
+          {
+            "scenario": "Less than 5 options",
+            "alternative": "cre8-radio-field"
+          },
+          {
+            "scenario": "Multiple selections needed",
+            "alternative": "cre8-multi-select"
+          },
+          {
+            "scenario": "Very long list (50+) with search",
+            "alternative": "cre8-typeahead"
+          },
+          {
+            "scenario": "Visual selection with rich content",
+            "alternative": "cre8-select-tile-list"
+          }
+        ],
+        "props": {
+          "items": {
+            "type": "array",
+            "description": "Array of options or option groups",
+            "default": [],
+            "required": true,
+            "aiHints": {
+              "inferFrom": [
+                "available choices",
+                "data source"
+              ],
+              "antiPatterns": [
+                "Unsorted long lists",
+                "Duplicate values"
+              ]
+            }
+          },
+          "label": {
+            "type": "string",
+            "description": "Field label",
+            "default": "Label",
+            "required": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Form field name"
+          },
+          "fieldId": {
+            "type": "string",
+            "description": "Unique ID"
+          },
+          "fieldNote": {
+            "type": "string",
+            "description": "Helper text"
+          },
+          "required": {
+            "type": "boolean",
+            "description": "Required field"
+          },
+          "disabled": {
+            "type": "boolean",
+            "description": "Disabled state"
+          },
+          "isError": {
+            "type": "boolean",
+            "description": "Error state"
+          },
+          "errorNote": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "description": "Success state"
+          },
+          "successNote": {
+            "type": "string",
+            "description": "Success message"
+          }
+        },
+        "events": [
+          {
+            "name": "change",
+            "description": "Fired when selection changes",
+            "trigger": "User selects an option",
+            "payload": {
+              "value": {
+                "type": "string",
+                "description": "Selected option value"
+              }
+            }
+          }
+        ],
+        "interfaces": {
+          "Cre8SelectOption": {
+            "label": {
+              "type": "string",
+              "required": true
+            },
+            "value": {
+              "type": "string",
+              "required": true
+            },
+            "disabled": {
+              "type": "boolean"
+            }
+          },
+          "Cre8SelectOptionGroup": {
+            "label": {
+              "type": "string",
+              "required": true
+            },
+            "options": {
+              "type": "Cre8SelectOption[]",
+              "required": true
+            }
+          }
+        },
+        "accessibility": {
+          "role": "combobox",
+          "requiredAttributes": [
+            "label",
+            "aria-required when required"
+          ],
+          "keyboardBehavior": {
+            "Space/Enter": "Open dropdown",
+            "Arrow keys": "Navigate options",
+            "Escape": "Close dropdown"
+          }
+        },
+        "examples": [
+          {
+            "name": "Country Select",
+            "code": "<cre8-select label=\"Country\" .items=${[{label:'United States',value:'us'},{label:'Canada',value:'ca'}]}></cre8-select>"
+          },
+          {
+            "name": "Grouped Options",
+            "code": "<cre8-select label=\"Category\" .items=${[{label:'Fruits',options:[{label:'Apple',value:'apple'}]},{label:'Vegetables',options:[{label:'Carrot',value:'carrot'}]}]}></cre8-select>"
+          }
+        ]
+      },
+      "split-button": {
+        "$schema": "../../schema.json",
+        "id": "split-button",
+        "tag": "cre8-split-button",
+        "name": "Split Button",
+        "class": "Cre8SplitButton",
+        "baseClass": "Cre8Element",
+        "category": "form",
+        "description": "Button with dropdown for additional actions. Primary action is directly clickable.",
+        "props": {
+          "size": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "sm"
+              },
+              {
+                "value": "lg"
+              }
+            ]
+          },
+          "buttonText": {
+            "type": "string"
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "description": "Dropdown content"
+          }
+        ],
+        "dependencies": [
+          "cre8-button"
+        ]
+      }
+    },
+    "layout": {
+      "band": {
+        "$schema": "../../schema.json",
+        "id": "band",
+        "tag": "cre8-band",
+        "name": "Band",
+        "class": "Cre8Band",
+        "baseClass": "Cre8Element",
+        "category": "layout",
+        "description": "Full-width background section.",
+        "props": {
+          "variant": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "branded"
+              }
+            ]
+          },
+          "fullHeight": {
+            "type": "boolean"
+          }
+        }
+      },
+      "grid-item": {
+        "$schema": "../../schema.json",
+        "id": "grid-item",
+        "tag": "cre8-grid-item",
+        "name": "Grid Item",
+        "class": "Cre8GridItem",
+        "baseClass": "Cre8Element",
+        "category": "layout",
+        "description": "Individual grid cell.",
+        "composition": {
+          "mustBeWithin": [
+            "cre8-grid"
+          ]
+        }
+      },
+      "grid": {
+        "$schema": "../../schema.json",
+        "id": "grid",
+        "tag": "cre8-grid",
+        "name": "Grid",
+        "class": "Cre8Grid",
+        "baseClass": "Cre8Element",
+        "category": "layout",
+        "description": "CSS Grid layout system.",
+        "props": {
+          "variant": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "side-by-side"
+              },
+              {
+                "value": "2up"
+              },
+              {
+                "value": "3up"
+              },
+              {
+                "value": "1-3up"
+              },
+              {
+                "value": "4up"
+              },
+              {
+                "value": "1-4up"
+              },
+              {
+                "value": "1-2-4up"
+              },
+              {
+                "value": "2-4-6up"
+              }
+            ]
+          },
+          "gap": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "none"
+              },
+              {
+                "value": "sm"
+              },
+              {
+                "value": "lg"
+              }
+            ]
+          },
+          "break": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "faster"
+              },
+              {
+                "value": "slower"
+              }
+            ]
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "allowedComponents": [
+              "cre8-grid-item"
+            ]
+          }
+        ]
+      },
+      "layout-container": {
+        "$schema": "../../schema.json",
+        "id": "layout-container",
+        "tag": "cre8-layout-container",
+        "name": "Layout Container",
+        "class": "Cre8LayoutContainer",
+        "baseClass": "Cre8Element",
+        "category": "layout",
+        "description": "Max-width content container.",
+        "props": {
+          "fullHeight": {
+            "type": "boolean"
+          }
+        },
+        "designTokens": {
+          "sizing": [
+            "--cre8-l-max-width"
+          ]
+        }
+      },
+      "layout-section": {
+        "$schema": "../../schema.json",
+        "id": "layout-section",
+        "tag": "cre8-layout-section",
+        "name": "Layout Section",
+        "class": "Cre8LayoutSection",
+        "baseClass": "Cre8Element",
+        "category": "layout",
+        "description": "Layout region with sticky support.",
+        "props": {
+          "behavior": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "sticky"
+              }
+            ]
+          },
+          "top": {
+            "type": "string",
+            "default": "1rem"
+          }
+        }
+      },
+      "layout": {
+        "$schema": "../../schema.json",
+        "id": "layout",
+        "tag": "cre8-layout",
+        "name": "Layout",
+        "class": "Cre8Layout",
+        "baseClass": "Cre8Element",
+        "category": "layout",
+        "description": "Page-level layout structure with optional sidebar.",
+        "props": {
+          "variant": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "left-sidebar"
+              }
+            ]
+          }
+        },
+        "designTokens": {
+          "sizing": [
+            "--cre8-sidebar-width"
+          ]
+        }
+      },
+      "linelength-container": {
+        "$schema": "../../schema.json",
+        "id": "linelength-container",
+        "tag": "cre8-linelength-container",
+        "name": "Linelength Container",
+        "class": "Cre8LinelengthContainer",
+        "baseClass": "Cre8Element",
+        "category": "layout",
+        "description": "Optimal reading width container.",
+        "designTokens": {
+          "sizing": [
+            "--cre8-l-linelength-width"
+          ]
+        }
+      },
+      "main": {
+        "$schema": "../../schema.json",
+        "id": "main",
+        "tag": "cre8-main",
+        "name": "Main",
+        "class": "Cre8Main",
+        "baseClass": "Cre8Element",
+        "category": "layout",
+        "description": "Main content area wrapper.",
+        "props": {
+          "fullHeight": {
+            "type": "boolean"
+          }
+        },
+        "accessibility": {
+          "role": "main"
+        }
+      },
+      "nav-container": {
+        "$schema": "../../schema.json",
+        "id": "nav-container",
+        "tag": "cre8-nav-container",
+        "name": "Nav Container",
+        "class": "Cre8NavContainer",
+        "baseClass": "Cre8Element",
+        "category": "layout",
+        "description": "Navigation section container.",
+        "designTokens": {
+          "colors": [
+            "--cre8-nav-container-background"
+          ]
+        }
+      },
+      "section": {
+        "$schema": "../../schema.json",
+        "id": "section",
+        "tag": "cre8-section",
+        "name": "Section",
+        "class": "Cre8Section",
+        "baseClass": "Cre8Element",
+        "category": "layout",
+        "description": "Content section with optional headline.",
+        "props": {
+          "headline": {
+            "type": "string"
+          }
+        },
+        "slots": [
+          {
+            "name": "default"
+          },
+          {
+            "name": "header"
+          }
+        ]
+      }
+    },
+    "navigation": {
+      "breadcrumbs-item": {
+        "$schema": "../../schema.json",
+        "id": "breadcrumbs-item",
+        "tag": "cre8-breadcrumbs-item",
+        "name": "Breadcrumbs Item",
+        "class": "Cre8BreadcrumbsItem",
+        "baseClass": "Cre8Element",
+        "category": "navigation",
+        "description": "Individual breadcrumb item.",
+        "slots": [
+          {
+            "name": "default",
+            "description": "Link or text for terminal node"
+          }
+        ],
+        "dependencies": [
+          "cre8-icon"
+        ],
+        "composition": {
+          "mustBeWithin": [
+            "cre8-breadcrumbs"
+          ]
+        }
+      },
+      "breadcrumbs": {
+        "$schema": "../../schema.json",
+        "id": "breadcrumbs",
+        "tag": "cre8-breadcrumbs",
+        "name": "Breadcrumbs",
+        "class": "Cre8Breadcrumbs",
+        "baseClass": "Cre8Element",
+        "category": "navigation",
+        "description": "Secondary navigation showing page hierarchy.",
+        "props": {
+          "navAriaLabel": {
+            "type": "string",
+            "default": "breadcrumbs"
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "allowedComponents": [
+              "cre8-breadcrumbs-item"
+            ]
+          }
+        ],
+        "aiUsageRules": [
+          "Last item is current page (not a link)",
+          "All other items should be interactive links",
+          "Shows hierarchy from root to current"
+        ]
+      },
+      "global-nav-item": {
+        "$schema": "../../schema.json",
+        "id": "global-nav-item",
+        "tag": "cre8-global-nav-item",
+        "name": "Global Nav Item",
+        "class": "Cre8GlobalNavItem",
+        "baseClass": "Cre8Element",
+        "category": "navigation",
+        "description": "Global navigation link item.",
+        "props": {
+          "text": {
+            "type": "string",
+            "default": "Nav item",
+            "required": true
+          },
+          "href": {
+            "type": "string",
+            "default": "#",
+            "required": true
+          },
+          "iconName": {
+            "type": "string",
+            "default": "keyboard-arrow-down"
+          },
+          "megaMenu": {
+            "type": "boolean"
+          }
+        },
+        "slots": [
+          {
+            "name": "default"
+          },
+          {
+            "name": "itemBefore"
+          },
+          {
+            "name": "itemAfter"
+          }
+        ]
+      },
+      "global-nav": {
+        "$schema": "../../schema.json",
+        "id": "global-nav",
+        "tag": "cre8-global-nav",
+        "name": "Global Nav",
+        "class": "Cre8GlobalNav",
+        "baseClass": "Cre8Element",
+        "category": "navigation",
+        "description": "Site-wide primary navigation.",
+        "props": {
+          "inverted": {
+            "type": "boolean"
+          },
+          "behavior": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "side-by-side"
+              }
+            ]
+          },
+          "navAriaLabel": {
+            "type": "string",
+            "default": "global"
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "allowedComponents": [
+              "cre8-global-nav-item"
+            ]
+          }
+        ],
+        "designTokens": {
+          "colors": [
+            "--cre8-global-nav-link-color"
+          ]
+        }
+      },
+      "link-list-item": {
+        "$schema": "../../schema.json",
+        "id": "link-list-item",
+        "tag": "cre8-link-list-item",
+        "name": "Link List Item",
+        "class": "Cre8LinkListItem",
+        "baseClass": "Cre8Element",
+        "category": "navigation",
+        "description": "Link list item.",
+        "slots": [
+          {
+            "name": "default"
+          }
+        ],
+        "composition": {
+          "mustBeWithin": [
+            "cre8-link-list"
+          ]
+        }
+      },
+      "link-list": {
+        "$schema": "../../schema.json",
+        "id": "link-list",
+        "tag": "cre8-link-list",
+        "name": "Link List",
+        "class": "Cre8LinkList",
+        "baseClass": "Cre8Element",
+        "category": "navigation",
+        "description": "Vertical list of links.",
+        "props": {
+          "behavior": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "responsive"
+              },
+              {
+                "value": "horizontal"
+              }
+            ]
+          },
+          "inverted": {
+            "type": "boolean"
+          },
+          "size": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "sm"
+              }
+            ]
+          },
+          "spacing": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "condensed"
+              }
+            ]
+          },
+          "variant": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "secondary"
+              },
+              {
+                "value": "display"
+              }
+            ]
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "allowedComponents": [
+              "cre8-link-list-item"
+            ]
+          }
+        ]
+      },
+      "link": {
+        "$schema": "../../schema.json",
+        "id": "link",
+        "tag": "cre8-link",
+        "name": "Link",
+        "class": "Cre8Link",
+        "baseClass": "Cre8Element",
+        "category": "navigation",
+        "description": "Styled anchor link for navigation.",
+        "semanticAliases": [
+          "anchor",
+          "hyperlink",
+          "a"
+        ],
+        "whenToUse": [
+          "Navigating to another page",
+          "Linking to external resources",
+          "In-page anchor links"
+        ],
+        "whenNotToUse": [
+          {
+            "scenario": "Triggering an action",
+            "alternative": "cre8-button"
+          }
+        ],
+        "props": {
+          "href": {
+            "type": "string",
+            "required": true
+          },
+          "rel": {
+            "type": "string"
+          },
+          "target": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "_blank"
+              },
+              {
+                "value": "_self"
+              },
+              {
+                "value": "_parent"
+              },
+              {
+                "value": "_top"
+              }
+            ]
+          },
+          "svg": {
+            "type": "string"
+          },
+          "iconPosition": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "before"
+              },
+              {
+                "value": "after"
+              }
+            ]
+          },
+          "iconRotateDegree": {
+            "type": "number",
+            "default": 0
+          },
+          "ctaLink": {
+            "type": "boolean",
+            "description": "Call-to-action style"
+          },
+          "ctaIcon": {
+            "type": "string",
+            "default": "arrow-forward"
+          },
+          "noUnderline": {
+            "type": "boolean"
+          },
+          "size": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "sm"
+              },
+              {
+                "value": "lg"
+              }
+            ]
+          },
+          "inverted": {
+            "type": "boolean"
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "description": "Link text"
+          },
+          {
+            "name": "badge"
+          }
+        ],
+        "aiUsageRules": [
+          "Use only for navigation - never for actions",
+          "href is required",
+          "Use target=_blank for external links",
+          "Use ctaLink for prominent call-to-action links"
+        ]
+      },
+      "pagination": {
+        "$schema": "../../schema.json",
+        "id": "pagination",
+        "tag": "cre8-pagination",
+        "name": "Pagination",
+        "class": "Cre8Pagination",
+        "baseClass": "Cre8Element",
+        "category": "navigation",
+        "description": "Page navigation for large datasets.",
+        "props": {
+          "totalResults": {
+            "type": "number",
+            "required": true
+          },
+          "visiblePages": {
+            "type": "number",
+            "default": 5
+          },
+          "display": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "compact"
+              },
+              {
+                "value": "icon-only"
+              },
+              {
+                "value": "default"
+              }
+            ]
+          },
+          "hideLastAndFirstButtons": {
+            "type": "boolean"
+          }
+        },
+        "events": [
+          {
+            "name": "page-change",
+            "payload": {
+              "page": {
+                "type": "number"
+              }
+            }
+          }
+        ],
+        "aiUsageRules": [
+          "Use default for desktop",
+          "Use compact for mobile",
+          "Push focus to results top after page change"
+        ]
+      },
+      "primary-nav-item": {
+        "$schema": "../../schema.json",
+        "id": "primary-nav-item",
+        "tag": "cre8-primary-nav-item",
+        "name": "Primary Nav Item",
+        "class": "Cre8PrimaryNavItem",
+        "baseClass": "Cre8Element",
+        "category": "navigation",
+        "description": "Primary navigation link item.",
+        "props": {
+          "text": {
+            "type": "string",
+            "default": "Nav item",
+            "required": true
+          },
+          "href": {
+            "type": "string",
+            "default": "#",
+            "required": true
+          },
+          "iconName": {
+            "type": "string",
+            "default": "caret-down"
+          },
+          "megaMenu": {
+            "type": "boolean"
+          }
+        },
+        "slots": [
+          {
+            "name": "default"
+          },
+          {
+            "name": "itemBefore"
+          },
+          {
+            "name": "itemAfter"
+          }
+        ]
+      },
+      "primary-nav": {
+        "$schema": "../../schema.json",
+        "id": "primary-nav",
+        "tag": "cre8-primary-nav",
+        "name": "Primary Nav",
+        "class": "Cre8PrimaryNav",
+        "baseClass": "Cre8Element",
+        "category": "navigation",
+        "description": "Primary navigation bar.",
+        "props": {
+          "inverted": {
+            "type": "boolean"
+          },
+          "behavior": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "side-by-side"
+              }
+            ]
+          },
+          "navAriaLabel": {
+            "type": "string",
+            "default": "main"
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "allowedComponents": [
+              "cre8-primary-nav-item"
+            ]
+          }
+        ]
+      },
+      "submenu-item": {
+        "$schema": "../../schema.json",
+        "id": "submenu-item",
+        "tag": "cre8-submenu-item",
+        "name": "Submenu Item",
+        "class": "Cre8SubmenuItem",
+        "baseClass": "Cre8Element",
+        "category": "navigation",
+        "description": "Submenu link item.",
+        "props": {
+          "href": {
+            "type": "string"
+          }
+        }
+      },
+      "submenu": {
+        "$schema": "../../schema.json",
+        "id": "submenu",
+        "tag": "cre8-submenu",
+        "name": "Submenu",
+        "class": "Cre8Submenu",
+        "baseClass": "Cre8Element",
+        "category": "navigation",
+        "description": "Dropdown submenu container.",
+        "slots": [
+          {
+            "name": "default",
+            "allowedComponents": [
+              "cre8-submenu-item"
+            ]
+          }
+        ]
+      },
+      "tab-panel": {
+        "$schema": "../../schema.json",
+        "id": "tab-panel",
+        "tag": "cre8-tab-panel",
+        "name": "Tab Panel",
+        "class": "Cre8TabPanel",
+        "baseClass": "Cre8Element",
+        "category": "navigation",
+        "description": "Tab content panel.",
+        "props": {
+          "skipFocusOnPanel": {
+            "type": "boolean"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "index": {
+            "type": "number"
+          }
+        },
+        "composition": {
+          "mustBeWithin": [
+            "cre8-tabs"
+          ]
+        }
+      },
+      "tab": {
+        "$schema": "../../schema.json",
+        "id": "tab",
+        "tag": "cre8-tab",
+        "name": "Tab",
+        "class": "Cre8Tab",
+        "baseClass": "Cre8Element",
+        "category": "navigation",
+        "description": "Individual tab trigger.",
+        "props": {
+          "size": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "sm"
+              }
+            ]
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "index": {
+            "type": "number"
+          },
+          "ariaLabelledBy": {
+            "type": "string"
+          }
+        },
+        "composition": {
+          "mustBeWithin": [
+            "cre8-tabs"
+          ]
+        }
+      },
+      "tabs": {
+        "$schema": "../../schema.json",
+        "id": "tabs",
+        "tag": "cre8-tabs",
+        "name": "Tabs",
+        "class": "Cre8Tabs",
+        "baseClass": "Cre8Element",
+        "category": "navigation",
+        "description": "Tabbed content navigation.",
+        "props": {
+          "activeIndex": {
+            "type": "number",
+            "default": 0
+          },
+          "size": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "sm"
+              }
+            ]
+          },
+          "fullWidth": {
+            "type": "boolean"
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "description": "Tab triggers",
+            "allowedComponents": [
+              "cre8-tab"
+            ]
+          },
+          {
+            "name": "panel",
+            "description": "Tab panels",
+            "allowedComponents": [
+              "cre8-tab-panel"
+            ]
+          }
+        ],
+        "events": [
+          {
+            "name": "tab-select",
+            "payload": {
+              "index": {
+                "type": "number"
+              }
+            }
+          }
+        ],
+        "aiUsageRules": [
+          "Use for 2-6 tabs",
+          "Tab labels should be short (1-2 words)",
+          "First tab active by default",
+          "Equal number of tabs and panels"
+        ]
+      },
+      "tertiary-nav-item": {
+        "$schema": "../../schema.json",
+        "id": "tertiary-nav-item",
+        "tag": "cre8-tertiary-nav-item",
+        "name": "Tertiary Nav Item",
+        "class": "Cre8TertiaryNavItem",
+        "baseClass": "Cre8Element",
+        "category": "navigation",
+        "description": "Tertiary navigation link.",
+        "props": {
+          "href": {
+            "type": "string"
+          },
+          "isCurrent": {
+            "type": "boolean"
+          }
+        }
+      },
+      "tertiary-nav": {
+        "$schema": "../../schema.json",
+        "id": "tertiary-nav",
+        "tag": "cre8-tertiary-nav",
+        "name": "Tertiary Nav",
+        "class": "Cre8TertiaryNav",
+        "baseClass": "Cre8Element",
+        "category": "navigation",
+        "description": "Tertiary navigation (tabs-like).",
+        "props": {
+          "fullWidth": {
+            "type": "boolean"
+          },
+          "navAriaLabel": {
+            "type": "string",
+            "default": "tertiary"
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "allowedComponents": [
+              "cre8-tertiary-nav-item"
+            ]
+          }
+        ]
+      },
+      "text-link": {
+        "$schema": "../../schema.json",
+        "id": "text-link",
+        "tag": "cre8-text-link",
+        "name": "Text Link",
+        "class": "Cre8TextLink",
+        "baseClass": "Cre8Element",
+        "category": "navigation",
+        "description": "Inline text link with style variants.",
+        "props": {
+          "href": {
+            "type": "string"
+          },
+          "variant": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "display"
+              },
+              {
+                "value": "secondary"
+              }
+            ]
+          },
+          "size": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "sm"
+              }
+            ]
+          },
+          "inverted": {
+            "type": "boolean"
+          }
+        },
+        "slots": [
+          {
+            "name": "default"
+          },
+          {
+            "name": "linkAfter"
+          }
+        ]
+      },
+      "utility-nav-item": {
+        "$schema": "../../schema.json",
+        "id": "utility-nav-item",
+        "tag": "cre8-utility-nav-item",
+        "name": "Utility Nav Item",
+        "class": "Cre8UtilityNavItem",
+        "baseClass": "Cre8Element",
+        "category": "navigation",
+        "description": "Utility navigation item with icon.",
+        "props": {
+          "text": {
+            "type": "string"
+          },
+          "href": {
+            "type": "string"
+          },
+          "iconName": {
+            "type": "string"
+          },
+          "iconPosition": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "before"
+              },
+              {
+                "value": "after"
+              }
+            ]
+          },
+          "hideText": {
+            "type": "boolean"
+          }
+        }
+      },
+      "utility-nav": {
+        "$schema": "../../schema.json",
+        "id": "utility-nav",
+        "tag": "cre8-utility-nav",
+        "name": "Utility Nav",
+        "class": "Cre8UtilityNav",
+        "baseClass": "Cre8Element",
+        "category": "navigation",
+        "description": "Utility links (login, cart, etc).",
+        "props": {
+          "inverted": {
+            "type": "boolean"
+          },
+          "navAriaLabel": {
+            "type": "string",
+            "default": "utility"
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "allowedComponents": [
+              "cre8-utility-nav-item"
+            ]
+          }
+        ]
+      }
+    },
+    "feedback": {
+      "alert": {
+        "$schema": "../../schema.json",
+        "id": "alert",
+        "tag": "cre8-alert",
+        "name": "Alert",
+        "class": "Cre8Alert",
+        "baseClass": "Cre8Element",
+        "category": "feedback",
+        "description": "System-level notification banner.",
+        "semanticAliases": [
+          "notification",
+          "message",
+          "banner"
+        ],
+        "props": {
+          "status": {
+            "type": "enum",
+            "default": "info",
+            "enumValues": [
+              {
+                "value": "error"
+              },
+              {
+                "value": "info"
+              },
+              {
+                "value": "notification"
+              },
+              {
+                "value": "neutral"
+              },
+              {
+                "value": "warning"
+              },
+              {
+                "value": "success"
+              }
+            ]
+          },
+          "variant": {
+            "type": "enum",
+            "default": "standalone",
+            "required": true,
+            "enumValues": [
+              {
+                "value": "standalone",
+                "description": "In-context alert"
+              },
+              {
+                "value": "banner",
+                "description": "Page-level notification"
+              }
+            ]
+          },
+          "iconTitle": {
+            "type": "string"
+          },
+          "dismissed": {
+            "type": "boolean"
+          },
+          "notDismissible": {
+            "type": "boolean"
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "description": "Alert message"
+          },
+          {
+            "name": "cta",
+            "description": "Action button/link",
+            "allowedComponents": [
+              "cre8-button",
+              "cre8-link"
+            ]
+          }
+        ],
+        "aiUsageRules": [
+          "Use banner for page-level notifications",
+          "Use standalone for in-context alerts",
+          "Match status to severity (error > warning > info)",
+          "Use inverted buttons/links on strong emphasis"
+        ]
+      },
+      "inline-alert": {
+        "$schema": "../../schema.json",
+        "id": "inline-alert",
+        "tag": "cre8-inline-alert",
+        "name": "Inline Alert",
+        "class": "Cre8InlineAlert",
+        "baseClass": "Cre8Element",
+        "category": "feedback",
+        "description": "Contextual inline message. Non-dismissible and minimally intrusive.",
+        "props": {
+          "variant": {
+            "type": "enum",
+            "default": "subtle",
+            "required": true,
+            "enumValues": [
+              {
+                "value": "transparent"
+              },
+              {
+                "value": "subtle"
+              }
+            ]
+          },
+          "status": {
+            "type": "enum",
+            "default": "info",
+            "enumValues": [
+              {
+                "value": "error"
+              },
+              {
+                "value": "warning"
+              },
+              {
+                "value": "success"
+              },
+              {
+                "value": "attention"
+              },
+              {
+                "value": "neutral"
+              },
+              {
+                "value": "help"
+              },
+              {
+                "value": "info"
+              }
+            ]
+          },
+          "iconName": {
+            "type": "string"
+          },
+          "iconTitle": {
+            "type": "string"
+          },
+          "fullWidth": {
+            "type": "boolean"
+          }
+        },
+        "aiUsageRules": [
+          "Use for non-dismissible contextual messages",
+          "Cannot cover other content",
+          "No title or close button - minimally intrusive"
+        ]
+      },
+      "loading-spinner": {
+        "$schema": "../../schema.json",
+        "id": "loading-spinner",
+        "tag": "cre8-loading-spinner",
+        "name": "Loading Spinner",
+        "class": "Cre8LoadingSpinner",
+        "baseClass": "Cre8Element",
+        "category": "feedback",
+        "description": "Loading state indicator.",
+        "props": {
+          "determinate": {
+            "type": "boolean",
+            "description": "Show progress percentage"
+          },
+          "progress": {
+            "type": "number",
+            "default": 0,
+            "required": true,
+            "description": "Progress value (0-100)"
+          },
+          "size": {
+            "type": "enum",
+            "default": "large",
+            "enumValues": [
+              {
+                "value": "large"
+              },
+              {
+                "value": "small"
+              }
+            ]
+          },
+          "label": {
+            "type": "string",
+            "description": "Status text (required for a11y)"
+          },
+          "inverse": {
+            "type": "boolean"
+          },
+          "neutral": {
+            "type": "boolean"
+          },
+          "buttonVariant": {
+            "type": "string"
+          }
+        },
+        "aiUsageRules": [
+          "Use large for page/section loading",
+          "Use small for inline/button loading",
+          "Always include label for accessibility",
+          "Use determinate when progress is known"
+        ]
+      },
+      "modal": {
+        "$schema": "../../schema.json",
+        "id": "modal",
+        "tag": "cre8-modal",
+        "name": "Modal",
+        "class": "Cre8Modal",
+        "baseClass": "Cre8Element",
+        "category": "feedback",
+        "description": "Dialog overlay for focused content or confirmation.",
+        "props": {
+          "isActive": {
+            "type": "boolean"
+          },
+          "status": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "error"
+              },
+              {
+                "value": "warning"
+              },
+              {
+                "value": "success"
+              },
+              {
+                "value": "info"
+              },
+              {
+                "value": "help"
+              }
+            ]
+          },
+          "utilityModalTitle": {
+            "type": "string",
+            "required": true
+          },
+          "notDismissible": {
+            "type": "boolean"
+          },
+          "closeButtonText": {
+            "type": "string",
+            "default": "close",
+            "required": true
+          },
+          "closeButtonIcon": {
+            "type": "string",
+            "default": "close",
+            "required": true
+          },
+          "ariaLabel": {
+            "type": "string",
+            "required": true
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "description": "Body content"
+          },
+          {
+            "name": "header",
+            "description": "Custom header"
+          },
+          {
+            "name": "footer",
+            "description": "Action buttons",
+            "allowedComponents": [
+              "cre8-button",
+              "cre8-danger-button",
+              "cre8-button-group"
+            ]
+          }
+        ],
+        "events": [
+          {
+            "name": "close-modal"
+          }
+        ],
+        "accessibility": {
+          "role": "dialog",
+          "requiredAttributes": [
+            "ariaLabel"
+          ]
+        }
+      },
+      "progress-meter": {
+        "$schema": "../../schema.json",
+        "id": "progress-meter",
+        "tag": "cre8-progress-meter",
+        "name": "Progress Meter",
+        "class": "Cre8ProgressMeter",
+        "baseClass": "Cre8Element",
+        "category": "feedback",
+        "description": "Determinate progress bar.",
+        "props": {
+          "status": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "error"
+              },
+              {
+                "value": "warning"
+              },
+              {
+                "value": "success"
+              }
+            ]
+          },
+          "label": {
+            "type": "string",
+            "description": "Meter label (required)"
+          },
+          "fieldId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "designTokens": {
+          "colors": [
+            "--cre8-progress-meter-background"
+          ],
+          "sizing": [
+            "--cre8-progress-meter-height"
+          ]
+        }
+      },
+      "progress-steps-item": {
+        "$schema": "../../schema.json",
+        "id": "progress-steps-item",
+        "tag": "cre8-progress-steps-item",
+        "name": "Progress Steps Item",
+        "class": "Cre8ProgressStepsItem",
+        "baseClass": "Cre8Element",
+        "category": "feedback",
+        "description": "Individual step in progress indicator.",
+        "props": {
+          "name": {
+            "type": "string",
+            "required": true
+          },
+          "state": {
+            "type": "enum",
+            "required": true,
+            "enumValues": [
+              {
+                "value": "complete"
+              },
+              {
+                "value": "current"
+              },
+              {
+                "value": "error"
+              },
+              {
+                "value": "incomplete"
+              },
+              {
+                "value": "warning"
+              }
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "svg": {
+            "type": "string",
+            "required": true
+          }
+        }
+      },
+      "progress-steps": {
+        "$schema": "../../schema.json",
+        "id": "progress-steps",
+        "tag": "cre8-progress-steps",
+        "name": "Progress Steps",
+        "class": "Cre8ProgressSteps",
+        "baseClass": "Cre8Element",
+        "category": "feedback",
+        "description": "Multi-step process indicator.",
+        "slots": [
+          {
+            "name": "default",
+            "allowedComponents": [
+              "cre8-progress-steps-item"
+            ]
+          }
+        ],
+        "aiUsageRules": [
+          "Use for 2-6 step processes",
+          "Shows total steps, completion, and current position",
+          "Switch to compact on mobile",
+          "Can track order status"
+        ]
+      },
+      "skeleton-loader": {
+        "$schema": "../../schema.json",
+        "id": "skeleton-loader",
+        "tag": "cre8-skeleton-loader",
+        "name": "Skeleton Loader",
+        "class": "Cre8SkeletonLoader",
+        "baseClass": "Cre8Element",
+        "category": "feedback",
+        "description": "Content placeholder during loading.",
+        "props": {
+          "variant": {
+            "type": "enum",
+            "default": "rectangle",
+            "enumValues": [
+              {
+                "value": "rectangle"
+              },
+              {
+                "value": "square"
+              },
+              {
+                "value": "circle"
+              }
+            ]
+          },
+          "height": {
+            "type": "string"
+          },
+          "width": {
+            "type": "string"
+          }
+        },
+        "aiUsageRules": [
+          "Mimic actual content layout",
+          "Use for initial page load only",
+          "Never skeleton modals, dropdowns, or loaders",
+          "Decorative only - no a11y value"
+        ]
+      }
+    },
+    "data-display": {
+      "accordion-item": {
+        "$schema": "../../schema.json",
+        "id": "accordion-item",
+        "tag": "cre8-accordion-item",
+        "name": "Accordion Item",
+        "class": "Cre8AccordionItem",
+        "baseClass": "Cre8Element",
+        "category": "data-display",
+        "description": "Individual expandable panel.",
+        "props": {
+          "heading": {
+            "type": "string",
+            "required": true
+          },
+          "isOpen": {
+            "type": "boolean",
+            "default": false
+          },
+          "headingLevel": {
+            "type": "enum",
+            "default": "h3",
+            "enumValues": [
+              {
+                "value": "h2"
+              },
+              {
+                "value": "h3"
+              },
+              {
+                "value": "h4"
+              },
+              {
+                "value": "h5"
+              },
+              {
+                "value": "h6"
+              }
+            ]
+          },
+          "svg": {
+            "type": "string"
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "description": "Panel content"
+          },
+          {
+            "name": "header",
+            "description": "Custom header content"
+          }
+        ],
+        "events": [
+          {
+            "name": "accordion-toggle"
+          }
+        ],
+        "dependencies": [
+          "cre8-icon"
+        ],
+        "composition": {
+          "mustBeWithin": [
+            "cre8-accordion"
+          ]
+        }
+      },
+      "accordion": {
+        "$schema": "../../schema.json",
+        "id": "accordion",
+        "tag": "cre8-accordion",
+        "name": "Accordion",
+        "class": "Cre8Accordion",
+        "baseClass": "Cre8Element",
+        "category": "data-display",
+        "description": "Expandable content sections for progressive disclosure.",
+        "props": {
+          "variant": {
+            "type": "enum",
+            "default": "default",
+            "enumValues": [
+              {
+                "value": "default"
+              },
+              {
+                "value": "highlight"
+              }
+            ]
+          },
+          "allowMultiple": {
+            "type": "boolean",
+            "default": false,
+            "description": "Allow multiple panels open"
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "allowedComponents": [
+              "cre8-accordion-item"
+            ]
+          }
+        ],
+        "designTokens": {
+          "borders": [
+            "--cre8-accordion-border-top",
+            "--cre8-accordion-border-bottom",
+            "--cre8-accordion-item-border-bottom"
+          ]
+        },
+        "aiUsageRules": [
+          "Use for content that doesnt need to be visible all at once",
+          "Keep headings concise and descriptive",
+          "Dont nest accordions within accordions",
+          "Use allowMultiple for comparison scenarios"
+        ]
+      },
+      "avatar": {
+        "$schema": "../../schema.json",
+        "id": "avatar",
+        "tag": "cre8-avatar",
+        "name": "Avatar",
+        "class": "Cre8Avatar",
+        "baseClass": "Cre8Element",
+        "category": "data-display",
+        "description": "User profile image or initials.",
+        "props": {
+          "src": {
+            "type": "string"
+          },
+          "alt": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "description": "Used for initials fallback"
+          },
+          "size": {
+            "type": "enum",
+            "default": "md",
+            "enumValues": [
+              {
+                "value": "sm"
+              },
+              {
+                "value": "md"
+              },
+              {
+                "value": "lg"
+              },
+              {
+                "value": "xl"
+              }
+            ]
+          }
+        }
+      },
+      "badge": {
+        "$schema": "../../schema.json",
+        "id": "badge",
+        "tag": "cre8-badge",
+        "name": "Badge",
+        "class": "Cre8Badge",
+        "baseClass": "Cre8Element",
+        "category": "data-display",
+        "description": "Status indicator or label.",
+        "semanticAliases": [
+          "tag",
+          "label",
+          "chip",
+          "pill"
+        ],
+        "props": {
+          "text": {
+            "type": "string",
+            "required": true
+          },
+          "status": {
+            "type": "enum",
+            "default": "neutral",
+            "enumValues": [
+              {
+                "value": "error"
+              },
+              {
+                "value": "warning"
+              },
+              {
+                "value": "success"
+              },
+              {
+                "value": "info"
+              },
+              {
+                "value": "attention"
+              },
+              {
+                "value": "neutral"
+              }
+            ]
+          },
+          "variant": {
+            "type": "enum",
+            "default": "default",
+            "enumValues": [
+              {
+                "value": "default"
+              },
+              {
+                "value": "strong"
+              }
+            ]
+          },
+          "size": {
+            "type": "enum",
+            "default": "md",
+            "enumValues": [
+              {
+                "value": "sm"
+              },
+              {
+                "value": "md"
+              }
+            ]
+          },
+          "svg": {
+            "type": "string"
+          }
+        },
+        "designTokens": {
+          "spacing": [
+            "--cre8-badge-padding-vertical",
+            "--cre8-badge-padding-horizontal"
+          ],
+          "borders": [
+            "--cre8-border-radius-badge"
+          ]
+        },
+        "aiUsageRules": [
+          "Use for counts, statuses, or categorization",
+          "Keep text very short (1-3 words or numbers)",
+          "Use status colors consistently across the app",
+          "strong variant for higher emphasis"
+        ]
+      },
+      "card-group": {
+        "$schema": "../../schema.json",
+        "id": "card-group",
+        "tag": "cre8-card-group",
+        "name": "Card Group",
+        "class": "Cre8CardGroup",
+        "baseClass": "Cre8Element",
+        "category": "data-display",
+        "description": "Layout container for card grid.",
+        "props": {
+          "columns": {
+            "type": "enum",
+            "default": "3",
+            "enumValues": [
+              {
+                "value": "2"
+              },
+              {
+                "value": "3"
+              },
+              {
+                "value": "4"
+              }
+            ]
+          },
+          "gap": {
+            "type": "enum",
+            "default": "md",
+            "enumValues": [
+              {
+                "value": "sm"
+              },
+              {
+                "value": "md"
+              },
+              {
+                "value": "lg"
+              }
+            ]
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "allowedComponents": [
+              "cre8-card"
+            ]
+          }
+        ]
+      },
+      "card": {
+        "$schema": "../../schema.json",
+        "id": "card",
+        "tag": "cre8-card",
+        "name": "Card",
+        "class": "Cre8Card",
+        "baseClass": "Cre8Element",
+        "category": "data-display",
+        "description": "Contained content block for grouping related content.",
+        "semanticAliases": [
+          "tile",
+          "panel",
+          "container"
+        ],
+        "props": {
+          "variant": {
+            "type": "enum",
+            "default": "default",
+            "enumValues": [
+              {
+                "value": "default"
+              },
+              {
+                "value": "elevated"
+              },
+              {
+                "value": "outlined"
+              }
+            ]
+          },
+          "clickable": {
+            "type": "boolean",
+            "default": false
+          },
+          "href": {
+            "type": "string"
+          },
+          "padding": {
+            "type": "enum",
+            "default": "md",
+            "enumValues": [
+              {
+                "value": "none"
+              },
+              {
+                "value": "sm"
+              },
+              {
+                "value": "md"
+              },
+              {
+                "value": "lg"
+              }
+            ]
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "description": "Main content"
+          },
+          {
+            "name": "header"
+          },
+          {
+            "name": "media",
+            "description": "Image/video content"
+          },
+          {
+            "name": "footer"
+          }
+        ],
+        "cssParts": [
+          "card",
+          "header",
+          "content",
+          "footer",
+          "media"
+        ],
+        "events": [
+          {
+            "name": "card-click"
+          }
+        ],
+        "aiUsageRules": [
+          "Use for grouping related content",
+          "Keep cards consistent in same context",
+          "Dont nest cards",
+          "If clickable, entire card should be interactive"
+        ]
+      },
+      "description-list-item": {
+        "$schema": "../../schema.json",
+        "id": "description-list-item",
+        "tag": "cre8-description-list-item",
+        "name": "Description List Item",
+        "class": "Cre8DescriptionListItem",
+        "baseClass": "Cre8Element",
+        "category": "data-display",
+        "description": "Individual term-description pair.",
+        "props": {
+          "term": {
+            "type": "string",
+            "required": true
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "description": "Value/description content"
+          }
+        ]
+      },
+      "description-list": {
+        "$schema": "../../schema.json",
+        "id": "description-list",
+        "tag": "cre8-description-list",
+        "name": "Description List",
+        "class": "Cre8DescriptionList",
+        "baseClass": "Cre8Element",
+        "category": "data-display",
+        "description": "Key-value pair display.",
+        "props": {
+          "layout": {
+            "type": "enum",
+            "default": "stacked",
+            "enumValues": [
+              {
+                "value": "stacked"
+              },
+              {
+                "value": "horizontal"
+              },
+              {
+                "value": "grid"
+              }
+            ]
+          },
+          "dividers": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "allowedComponents": [
+              "cre8-description-list-item"
+            ]
+          }
+        ]
+      },
+      "divider": {
+        "$schema": "../../schema.json",
+        "id": "divider",
+        "tag": "cre8-divider",
+        "name": "Divider",
+        "class": "Cre8Divider",
+        "baseClass": "Cre8Element",
+        "category": "data-display",
+        "description": "Visual separator between content sections.",
+        "props": {
+          "orientation": {
+            "type": "enum",
+            "default": "horizontal",
+            "enumValues": [
+              {
+                "value": "horizontal"
+              },
+              {
+                "value": "vertical"
+              }
+            ]
+          }
+        }
+      },
+      "feature": {
+        "$schema": "../../schema.json",
+        "id": "feature",
+        "tag": "cre8-feature",
+        "name": "Feature",
+        "class": "Cre8Feature",
+        "baseClass": "Cre8Element",
+        "category": "data-display",
+        "description": "Feature highlight component with icon and text.",
+        "props": {
+          "inverted": {
+            "type": "boolean"
+          }
+        },
+        "slots": [
+          {
+            "name": "default"
+          },
+          {
+            "name": "icon"
+          }
+        ],
+        "designTokens": {
+          "colors": [
+            "--cre8-feature-text-color",
+            "--cre8-feature-inverted-text-color"
+          ],
+          "borders": [
+            "--cre8-feature-border-radius"
+          ]
+        }
+      },
+      "icon": {
+        "$schema": "../../schema.json",
+        "id": "icon",
+        "tag": "cre8-icon",
+        "name": "Icon",
+        "class": "Cre8Icon",
+        "baseClass": "Cre8Element",
+        "category": "data-display",
+        "description": "SVG icon display component.",
+        "props": {
+          "svg": {
+            "type": "string",
+            "description": "Raw SVG string",
+            "required": true
+          },
+          "size": {
+            "type": "enum",
+            "enumValues": [
+              {
+                "value": "small"
+              },
+              {
+                "value": "default"
+              },
+              {
+                "value": "large"
+              }
+            ]
+          },
+          "title": {
+            "type": "string",
+            "description": "Accessible title"
+          },
+          "decorative": {
+            "type": "boolean",
+            "description": "If true, hidden from screen readers"
+          }
+        },
+        "designTokens": {
+          "sizing": [
+            "--cre8-icon-size-default",
+            "--cre8-icon-size-small",
+            "--cre8-icon-size-large"
+          ]
+        }
+      },
+      "image": {
+        "$schema": "../../schema.json",
+        "id": "image",
+        "tag": "cre8-image",
+        "name": "Image",
+        "class": "Cre8Image",
+        "baseClass": "Cre8Element",
+        "category": "data-display",
+        "description": "Responsive image component.",
+        "props": {
+          "src": {
+            "type": "string",
+            "required": true
+          },
+          "alt": {
+            "type": "string",
+            "required": true
+          },
+          "loading": {
+            "type": "enum",
+            "default": "lazy",
+            "enumValues": [
+              {
+                "value": "lazy"
+              },
+              {
+                "value": "eager"
+              }
+            ]
+          },
+          "aspectRatio": {
+            "type": "string"
+          }
+        }
+      },
+      "list-item": {
+        "$schema": "../../schema.json",
+        "id": "list-item",
+        "tag": "cre8-list-item",
+        "name": "List Item",
+        "class": "Cre8ListItem",
+        "baseClass": "Cre8Element",
+        "category": "data-display",
+        "description": "Individual list item."
+      },
+      "list": {
+        "$schema": "../../schema.json",
+        "id": "list",
+        "tag": "cre8-list",
+        "name": "List",
+        "class": "Cre8List",
+        "baseClass": "Cre8Element",
+        "category": "data-display",
+        "description": "Styled list container.",
+        "props": {
+          "variant": {
+            "type": "enum",
+            "default": "unordered",
+            "enumValues": [
+              {
+                "value": "unordered"
+              },
+              {
+                "value": "ordered"
+              },
+              {
+                "value": "unstyled"
+              }
+            ]
+          },
+          "dense": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "allowedComponents": [
+              "cre8-list-item"
+            ]
+          }
+        ]
+      },
+      "table": {
+        "$schema": "../../schema.json",
+        "id": "table",
+        "tag": "cre8-table",
+        "name": "Table",
+        "class": "Cre8Table",
+        "baseClass": "Cre8Element",
+        "category": "data-display",
+        "description": "Structured data display with responsive support.",
+        "props": {
+          "variant": {
+            "type": "enum",
+            "default": "default",
+            "enumValues": [
+              {
+                "value": "default"
+              },
+              {
+                "value": "striped"
+              },
+              {
+                "value": "bordered"
+              }
+            ]
+          },
+          "responsive": {
+            "type": "boolean",
+            "default": true
+          },
+          "dense": {
+            "type": "boolean",
+            "default": false
+          },
+          "sortable": {
+            "type": "boolean",
+            "default": false
+          },
+          "caption": {
+            "type": "string",
+            "description": "Table caption for a11y"
+          },
+          "stickyHeader": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "description": "Standard table markup"
+          }
+        ],
+        "designTokens": {
+          "colors": [
+            "--cre8-table-row-odd-background",
+            "--cre8-table-row-hover-background"
+          ],
+          "borders": [
+            "--cre8-table-cell-border-bottom-width",
+            "--cre8-table-cell-border-bottom-color"
+          ]
+        },
+        "aiUsageRules": [
+          "Always include caption for accessibility",
+          "Use responsive for tables with many columns",
+          "Use striped for better row scanning",
+          "Use dense for data-heavy tables",
+          "Consider pagination for large datasets"
+        ]
+      },
+      "toast": {
+        "$schema": "../../schema.json",
+        "id": "toast",
+        "tag": "cre8-toast",
+        "name": "Toast",
+        "class": "Cre8Toast",
+        "baseClass": "Cre8Element",
+        "category": "data-display",
+        "description": "Temporary notification message.",
+        "props": {
+          "status": {
+            "type": "enum",
+            "default": "info",
+            "enumValues": [
+              {
+                "value": "error"
+              },
+              {
+                "value": "warning"
+              },
+              {
+                "value": "success"
+              },
+              {
+                "value": "info"
+              }
+            ]
+          },
+          "duration": {
+            "type": "number",
+            "default": 5000
+          },
+          "dismissible": {
+            "type": "boolean",
+            "default": true
+          }
+        }
+      },
+      "tooltip": {
+        "$schema": "../../schema.json",
+        "id": "tooltip",
+        "tag": "cre8-tooltip",
+        "name": "Tooltip",
+        "class": "Cre8Tooltip",
+        "baseClass": "Cre8Element",
+        "category": "data-display",
+        "description": "Contextual information on hover/focus.",
+        "props": {
+          "content": {
+            "type": "string",
+            "required": true
+          },
+          "position": {
+            "type": "enum",
+            "default": "top",
+            "enumValues": [
+              {
+                "value": "top"
+              },
+              {
+                "value": "bottom"
+              },
+              {
+                "value": "left"
+              },
+              {
+                "value": "right"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "overlay": {
+      "drawer": {
+        "$schema": "../../schema.json",
+        "id": "drawer",
+        "tag": "cre8-drawer",
+        "name": "Drawer",
+        "class": "Cre8Drawer",
+        "baseClass": "Cre8Element",
+        "category": "overlay",
+        "description": "Slide-in panel from edge of screen.",
+        "props": {
+          "isActive": {
+            "type": "boolean"
+          },
+          "position": {
+            "type": "enum",
+            "default": "right",
+            "enumValues": [
+              {
+                "value": "left"
+              },
+              {
+                "value": "right"
+              }
+            ]
+          },
+          "size": {
+            "type": "enum",
+            "default": "md",
+            "enumValues": [
+              {
+                "value": "sm"
+              },
+              {
+                "value": "md"
+              },
+              {
+                "value": "lg"
+              }
+            ]
+          }
+        },
+        "events": [
+          {
+            "name": "close-drawer"
+          }
+        ]
+      },
+      "popover": {
+        "$schema": "../../schema.json",
+        "id": "popover",
+        "tag": "cre8-popover",
+        "name": "Popover",
+        "class": "Cre8Popover",
+        "baseClass": "Cre8Element",
+        "category": "overlay",
+        "description": "Contextual popup content.",
+        "props": {
+          "isActive": {
+            "type": "boolean"
+          },
+          "position": {
+            "type": "enum",
+            "default": "bottom",
+            "enumValues": [
+              {
+                "value": "top"
+              },
+              {
+                "value": "bottom"
+              },
+              {
+                "value": "left"
+              },
+              {
+                "value": "right"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "typography": {
+      "heading": {
+        "$schema": "../../schema.json",
+        "id": "heading",
+        "tag": "cre8-heading",
+        "name": "Heading",
+        "class": "Cre8Heading",
+        "baseClass": "Cre8Element",
+        "category": "typography",
+        "description": "Semantic heading component with typography styles.",
+        "props": {
+          "tagVariant": {
+            "type": "enum",
+            "required": true,
+            "enumValues": [
+              {
+                "value": "h1"
+              },
+              {
+                "value": "h2"
+              },
+              {
+                "value": "h3"
+              },
+              {
+                "value": "h4"
+              },
+              {
+                "value": "h5"
+              },
+              {
+                "value": "h6"
+              }
+            ]
+          },
+          "styleVariant": {
+            "type": "enum",
+            "description": "Visual style (can differ from semantic level)",
+            "enumValues": [
+              {
+                "value": "h1"
+              },
+              {
+                "value": "h2"
+              },
+              {
+                "value": "h3"
+              },
+              {
+                "value": "h4"
+              },
+              {
+                "value": "h5"
+              },
+              {
+                "value": "h6"
+              }
+            ]
+          }
+        },
+        "aiUsageRules": [
+          "Use tagVariant for semantic level (document outline)",
+          "Use styleVariant to override visual appearance",
+          "Maintain proper heading hierarchy"
+        ]
+      },
+      "text-passage": {
+        "$schema": "../../schema.json",
+        "id": "text-passage",
+        "tag": "cre8-text-passage",
+        "name": "Text Passage",
+        "class": "Cre8TextPassage",
+        "baseClass": "Cre8Element",
+        "category": "typography",
+        "description": "Container for body text with proper typography styling.",
+        "props": {
+          "size": {
+            "type": "enum",
+            "default": "md",
+            "enumValues": [
+              {
+                "value": "sm"
+              },
+              {
+                "value": "md"
+              },
+              {
+                "value": "lg"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "utility": {
+      "field-note": {
+        "$schema": "../../schema.json",
+        "id": "field-note",
+        "tag": "cre8-field-note",
+        "name": "Field Note",
+        "class": "Cre8FieldNote",
+        "baseClass": "Cre8Element",
+        "category": "utility",
+        "description": "Helper text for form fields.",
+        "props": {
+          "isError": {
+            "type": "boolean"
+          },
+          "isSuccess": {
+            "type": "boolean"
+          }
+        }
+      },
+      "fieldset": {
+        "$schema": "../../schema.json",
+        "id": "fieldset",
+        "tag": "cre8-fieldset",
+        "name": "Fieldset",
+        "class": "Cre8Fieldset",
+        "baseClass": "Cre8Element",
+        "category": "utility",
+        "description": "Form field grouping.",
+        "props": {
+          "legend": {
+            "type": "string",
+            "required": true
+          },
+          "legendHidden": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "description": "Grouped form fields"
+          }
+        ],
+        "aiUsageRules": [
+          "Use for logically related form fields",
+          "Always provide meaningful legend",
+          "Required for checkbox/radio groups",
+          "Improves form accessibility"
+        ]
+      },
+      "footer": {
+        "$schema": "../../schema.json",
+        "id": "footer",
+        "tag": "cre8-footer",
+        "name": "Footer",
+        "class": "Cre8Footer",
+        "baseClass": "Cre8Element",
+        "category": "utility",
+        "description": "Page footer container.",
+        "props": {
+          "variant": {
+            "type": "enum",
+            "default": "default",
+            "enumValues": [
+              {
+                "value": "default"
+              },
+              {
+                "value": "minimal"
+              }
+            ]
+          }
+        },
+        "slots": [
+          {
+            "name": "default"
+          },
+          {
+            "name": "logo"
+          },
+          {
+            "name": "navigation"
+          },
+          {
+            "name": "social"
+          },
+          {
+            "name": "legal"
+          }
+        ],
+        "designTokens": {
+          "colors": [
+            "--cre8-color-bg-brand-xstrong"
+          ]
+        }
+      },
+      "form": {
+        "$schema": "../../schema.json",
+        "id": "form",
+        "tag": "cre8-form",
+        "name": "Form",
+        "class": "Cre8Form",
+        "baseClass": "Cre8Element",
+        "category": "utility",
+        "description": "Form container with validation.",
+        "props": {
+          "novalidate": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "slots": [
+          {
+            "name": "default",
+            "description": "Form fields and content"
+          }
+        ],
+        "events": [
+          {
+            "name": "cre8-submit",
+            "description": "Valid form submission"
+          },
+          {
+            "name": "cre8-invalid",
+            "description": "Validation failure"
+          }
+        ],
+        "aiUsageRules": [
+          "Always use for form submissions",
+          "Handle both success and error events",
+          "Provides consistent validation behavior",
+          "Works with all Cre8 form components"
+        ]
+      },
+      "header": {
+        "$schema": "../../schema.json",
+        "id": "header",
+        "tag": "cre8-header",
+        "name": "Header",
+        "class": "Cre8Header",
+        "baseClass": "Cre8Element",
+        "category": "utility",
+        "description": "Page header container.",
+        "props": {
+          "sticky": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "slots": [
+          {
+            "name": "top",
+            "description": "Utility nav area"
+          },
+          {
+            "name": "middle",
+            "description": "Logo and primary nav"
+          },
+          {
+            "name": "bottom",
+            "description": "Secondary navigation"
+          }
+        ],
+        "designTokens": {
+          "colors": [
+            "--cre8-header-background",
+            "--cre8-header-top-background",
+            "--cre8-color-header-bg-default"
+          ]
+        }
+      },
+      "logo": {
+        "$schema": "../../schema.json",
+        "id": "logo",
+        "tag": "cre8-logo",
+        "name": "Logo",
+        "class": "Cre8Logo",
+        "baseClass": "Cre8Element",
+        "category": "utility",
+        "description": "Brand logo display.",
+        "props": {
+          "variant": {
+            "type": "enum",
+            "default": "default",
+            "enumValues": [
+              {
+                "value": "default"
+              },
+              {
+                "value": "inverse"
+              }
+            ]
+          },
+          "size": {
+            "type": "enum",
+            "default": "md",
+            "enumValues": [
+              {
+                "value": "sm"
+              },
+              {
+                "value": "md"
+              },
+              {
+                "value": "lg"
+              }
+            ]
+          },
+          "href": {
+            "type": "string",
+            "default": "/"
+          }
+        }
+      },
+      "remove-tag": {
+        "$schema": "../../schema.json",
+        "id": "remove-tag",
+        "tag": "cre8-remove-tag",
+        "name": "Remove Tag",
+        "class": "Cre8RemoveTag",
+        "baseClass": "Cre8Element",
+        "category": "utility",
+        "description": "Removable tag for multi-select display.",
+        "props": {
+          "text": {
+            "type": "string",
+            "required": true
+          }
+        },
+        "events": [
+          {
+            "name": "remove"
+          }
+        ]
+      },
+      "sidebar": {
+        "$schema": "../../schema.json",
+        "id": "sidebar",
+        "tag": "cre8-sidebar",
+        "name": "Sidebar",
+        "class": "Cre8Sidebar",
+        "baseClass": "Cre8Element",
+        "category": "utility",
+        "description": "Page sidebar container.",
+        "props": {
+          "position": {
+            "type": "enum",
+            "default": "left",
+            "enumValues": [
+              {
+                "value": "left"
+              },
+              {
+                "value": "right"
+              }
+            ]
+          },
+          "sticky": {
+            "type": "boolean",
+            "default": false
+          },
+          "collapsible": {
+            "type": "boolean",
+            "default": false
+          },
+          "collapsed": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "events": [
+          {
+            "name": "sidebar-toggle"
+          }
+        ],
+        "designTokens": {
+          "sizing": [
+            "--cre8-sidebar-width"
+          ]
+        }
+      },
+      "skip-link": {
+        "$schema": "../../schema.json",
+        "id": "skip-link",
+        "tag": "cre8-skip-link",
+        "name": "Skip Link",
+        "class": "Cre8SkipLink",
+        "baseClass": "Cre8Element",
+        "category": "utility",
+        "description": "Keyboard navigation accessibility link.",
+        "props": {
+          "href": {
+            "type": "string",
+            "default": "#main",
+            "required": true
+          },
+          "text": {
+            "type": "string",
+            "default": "Skip to main content"
+          }
+        },
+        "aiUsageRules": [
+          "Place as first focusable element on page",
+          "Target main content landmark",
+          "Required for WCAG compliance"
+        ]
+      },
+      "visually-hidden": {
+        "$schema": "../../schema.json",
+        "id": "visually-hidden",
+        "tag": "cre8-visually-hidden",
+        "name": "Visually Hidden",
+        "class": "Cre8VisuallyHidden",
+        "baseClass": "Cre8Element",
+        "category": "utility",
+        "description": "Screen reader only content.",
+        "slots": [
+          {
+            "name": "default",
+            "description": "Hidden content"
+          }
+        ],
+        "aiUsageRules": [
+          "Use for accessible labels on icon-only buttons",
+          "Provides context for screen readers",
+          "Never use for hiding from all users"
+        ]
+      }
+    }
+  }
+}
