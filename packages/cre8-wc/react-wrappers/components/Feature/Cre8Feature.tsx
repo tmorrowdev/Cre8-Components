@@ -9,6 +9,8 @@ export interface Cre8FeatureProps {
   imgAlt?: string | undefined;
   /** Inverted variant 1) Used for dark backgrounds */
   inverted?: boolean | undefined;
+  /** CSS aspect-ratio for the image (e.g. "4/3", "16/9", "1"). Defaults to natural image ratio. */
+  aspectRatio?: string | undefined;
   children?: React.ReactNode;
 }
 

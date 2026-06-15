@@ -3,6 +3,7 @@ import { Cre8SplitButton as Cre8SplitButtonElement } from '@tmorrow/cre8-wc/lib/
 import React from 'react';
 
 export interface Cre8SplitButtonProps {
+  /** Disables both the main button and the dropdown toggle. */
   disabled?: boolean | undefined;
   /** Size variant <cre8-text-passage size="sm"> <ul> <li>**sm** shrinks the button typography and overall size</li> <li>**lg** increases the button typography size and overall size</li> </ul> </cre8-text-passage> */
   size?: any;

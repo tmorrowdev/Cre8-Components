@@ -33,6 +33,8 @@ export interface Cre8CheckboxFieldItemProps {
   validationAriaDescribedBy?: string | undefined;
   /** Checkbox fieldnote icon name */
   fieldNoteIconName?: string | undefined;
+  children?: React.ReactNode;
+  onChange?: (event: CustomEvent) => void;
 }
 
 /**
@@ -42,7 +44,9 @@ export const Cre8CheckboxFieldItem = createComponent({
   react: React,
   tagName: 'cre8-checkbox-field-item',
   elementClass: Cre8CheckboxFieldItemElement,
-
+  events: {
+    onChange: 'change'
+  }
 });
 
 export default Cre8CheckboxFieldItem;

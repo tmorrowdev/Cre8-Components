@@ -9,6 +9,7 @@ export interface Cre8DropdownProps {
   maxHeight?: string | undefined;
   /** button text represents as a link */
   dropdownWithLink?: boolean;
+  children?: React.ReactNode;
 }
 
 /**

@@ -7,6 +7,7 @@ export interface Cre8TagListProps {
   fieldId?: string | undefined;
   /** Tag list legend label */
   label?: string | undefined;
+  children?: React.ReactNode;
 }
 
 /**
