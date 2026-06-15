@@ -18,6 +18,7 @@ export interface Cre8ModalProps {
   /** Modal Aria Label - This is required for accessibility and provides context of the entire modal! */
   ariaLabel?: string;
   children?: React.ReactNode;
+  onCloseModal?: (event: CustomEvent) => void;
 }
 
 /**
@@ -27,7 +28,9 @@ export const Cre8Modal = createComponent({
   react: React,
   tagName: 'cre8-modal',
   elementClass: Cre8ModalElement,
-
+  events: {
+    onCloseModal: 'close-modal'
+  }
 });
 
 export default Cre8Modal;

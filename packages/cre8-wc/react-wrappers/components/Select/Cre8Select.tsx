@@ -28,6 +28,7 @@ export interface Cre8SelectProps {
   /** A mix of Cre8SelectOption and Cre8SelectOptionGroup definitions: - Cre8SelectOption   - label: option label text - `string`   - value: option value - `number | string` - Cre8SelectOptionGroup  - optGroupLabel: optgroup label text - `string`  - options: Array of multiple Cre8SelectOption items - `Cre8SelectOption[]` */
   items?: any;
   children?: React.ReactNode;
+  onChange?: (event: CustomEvent) => void;
 }
 
 /**
@@ -37,7 +38,9 @@ export const Cre8Select = createComponent({
   react: React,
   tagName: 'cre8-select',
   elementClass: Cre8SelectElement,
-
+  events: {
+    onChange: 'change'
+  }
 });
 
 export default Cre8Select;
