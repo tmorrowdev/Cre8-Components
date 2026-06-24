@@ -10,7 +10,13 @@
     "publish:react": "pnpm --filter @tmorrow/cre8-wc publish:react",
     "storybook": "pnpm --filter @tmorrow/cre8-wc storybook",
     "storybook:react": "pnpm --filter @tmorrow/cre8-wc storybook:react",
-    "test": "pnpm --filter @tmorrow/cre8-wc test"
+    "test": "pnpm --filter @tmorrow/cre8-wc test",
+    "mcp:api": "pnpm --filter @tmorrow/cre8-mcp dev:api",
+    "studio": "pnpm --filter @tmorrow/cre8-studio dev",
+    "studio:full": "concurrently -k -n mcp,studio -c magenta,cyan \"pnpm mcp:api\" \"pnpm studio\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
   },
   "engines": {
     "node": ">=20",
