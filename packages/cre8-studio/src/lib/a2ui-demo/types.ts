@@ -20,6 +20,9 @@ export interface CatalogComponent {
   props: string[];
   slots: string[];
   events: string[];
+  // Post-refactor content rule: true → body goes in top-level `children`;
+  // false → body goes in `slots.default` (top-level children is rejected).
+  acceptsChildren: boolean;
 }
 
 // A data source the agent can build UI against. Seeded with mock datasets; the

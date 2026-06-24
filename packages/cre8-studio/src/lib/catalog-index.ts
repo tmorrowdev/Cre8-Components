@@ -10,6 +10,7 @@ type CatalogJson = {
           props?: {
             properties?: Record<string, { description?: string; enum?: unknown[]; const?: unknown; type?: unknown }>;
           };
+          children?: unknown;
           slots?: { properties?: Record<string, { description?: string }> };
           events?: { properties?: Record<string, { description?: string }> };
         };
@@ -37,10 +38,20 @@ export function buildCatalogSummary(): string {
       .join(", ");
     const slots = Object.keys(def.properties?.slots?.properties ?? {});
     const events = Object.keys(def.properties?.events?.properties ?? {});
+    // Post-refactor the default content slot is explicit: a component either has
+    // a top-level `children` array OR a named `slots.default` — never both, and
+    // the two are NOT interchangeable. Spell this out so the model never puts
+    // body content in `children` for a slot-based component.
+    const acceptsChildren = !!def.properties?.children;
 
     let line = `- ${name}`;
     if (desc) line += ` — ${desc}`;
     if (propSummary) line += `\n    props: ${propSummary}`;
+    if (acceptsChildren) {
+      line += `\n    content: children[]`;
+    } else if (slots.includes("default")) {
+      line += `\n    content: slots.default  (NOT children)`;
+    }
     if (slots.length) line += `\n    slots: ${slots.join(", ")}`;
     if (events.length) line += `\n    events: ${events.join(", ")}`;
     lines.push(line);

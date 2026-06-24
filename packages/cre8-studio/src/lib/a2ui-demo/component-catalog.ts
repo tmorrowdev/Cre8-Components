@@ -7,6 +7,7 @@ type RawDef = {
   "x-category"?: string;
   properties?: {
     props?: { properties?: Record<string, unknown> };
+    children?: unknown;
     slots?: { properties?: Record<string, unknown> };
     events?: { properties?: Record<string, unknown> };
   };
@@ -32,6 +33,7 @@ export function getCatalogComponents(): CatalogComponent[] {
       props: Object.keys(def.properties?.props?.properties ?? {}),
       slots: Object.keys(def.properties?.slots?.properties ?? {}),
       events: Object.keys(def["x-events"] ?? def.properties?.events?.properties ?? {}),
+      acceptsChildren: !!def.properties?.children,
     };
   });
   return cached;
@@ -45,6 +47,10 @@ export function findComponent(name: string): CatalogComponent | undefined {
 export function describeComponent(c: CatalogComponent): string {
   const parts = [`${c.name} — ${c.description || c.title}`];
   if (c.props.length) parts.push(`  props: ${c.props.slice(0, 12).join(", ")}`);
+  // Make the post-refactor content rule explicit so @-mentioned components are
+  // composed correctly (children[] vs slots.default).
+  if (c.acceptsChildren) parts.push(`  content: children[]`);
+  else if (c.slots.includes("default")) parts.push(`  content: slots.default (NOT children)`);
   if (c.slots.length) parts.push(`  slots: ${c.slots.join(", ")}`);
   if (c.events.length) parts.push(`  events: ${c.events.join(", ")}`);
   return parts.join("\n");
