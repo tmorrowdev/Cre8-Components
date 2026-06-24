@@ -6,14 +6,13 @@ import {
   type FunctionDeclaration,
   type Part,
 } from "@google/genai";
-import { registerCatalog, validateSpec, type ComponentSpec } from "@tmorrow/cre8-wc/a2ui";
-import { catalog as catalogJson } from "@/lib/catalog-index";
+import { type ComponentSpec } from "@tmorrow/cre8-wc/a2ui";
 import { buildSystemPrompt } from "@/lib/system-prompt";
+import { validateA2uiSpec } from "@/lib/server/cre8-mcp";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const registered = registerCatalog(catalogJson as unknown as Parameters<typeof registerCatalog>[0]);
 const SYSTEM = buildSystemPrompt();
 
 const renderUiDeclaration: FunctionDeclaration = {
@@ -164,12 +163,11 @@ export async function POST(req: Request) {
                 send("tool_use_error", { id, error: "render_ui called without a spec" });
                 continue;
               }
-              try {
-                validateSpec(args.spec, registered);
+              const { result } = await validateA2uiSpec(args.spec);
+              if (result.ok) {
                 send("tool_use", { id, spec: args.spec, caption: args.caption });
-              } catch (err) {
-                const error = err instanceof Error ? err.message : String(err);
-                send("tool_use_error", { id, error, spec: args.spec });
+              } else {
+                send("tool_use_error", { id, error: result.error, spec: args.spec });
               }
             }
           }
