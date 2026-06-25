@@ -11,35 +11,29 @@ export const BRAND_PREVIEW_SPEC: ComponentSpec = {
       props: { variant: "branded" },
       children: [
         {
-          component: "cre8-hero",
-          props: { align: "center" },
+          component: "cre8-heading",
+          props: { type: "display-default", tagVariant: "h1" },
+          children: ["Your brand, themed"],
+        },
+        {
+          component: "cre8-text-passage",
+          props: { size: "large" },
+          children: [
+            "Every cre8 component picks up your palette through design tokens.",
+          ],
+        },
+        {
+          component: "cre8-button-group",
           children: [
             {
-              component: "cre8-heading",
-              props: { type: "display-default", tagVariant: "h1" },
-              children: ["Your brand, themed"],
+              component: "cre8-button",
+              props: { text: "Primary action", variant: "primary" },
+              events: { click: "preview-primary" },
             },
             {
-              component: "cre8-text-passage",
-              props: { size: "large" },
-              children: [
-                "Every cre8 component picks up your palette through design tokens.",
-              ],
-            },
-            {
-              component: "cre8-button-group",
-              children: [
-                {
-                  component: "cre8-button",
-                  props: { text: "Primary action", variant: "primary" },
-                  events: { click: "preview-primary" },
-                },
-                {
-                  component: "cre8-button",
-                  props: { text: "Secondary", variant: "secondary" },
-                  events: { click: "preview-secondary" },
-                },
-              ],
+              component: "cre8-button",
+              props: { text: "Secondary", variant: "secondary" },
+              events: { click: "preview-secondary" },
             },
           ],
         },
@@ -73,9 +67,9 @@ export const BRAND_PREVIEW_SPEC: ComponentSpec = {
           },
         },
         {
-          component: "cre8-alert",
-          props: { status: "info", variant: "standalone", headerText: "Heads up" },
-          slots: { default: ["Alerts use the brand's informational tones."] },
+          component: "cre8-inline-alert",
+          props: { status: "info", variant: "subtle", iconTitle: "Heads up" },
+          children: ["Inline alerts use the brand's informational tones."],
         },
       ],
     },
