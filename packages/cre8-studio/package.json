@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
+    "prebuild": "node scripts/prepare-cre8wc.mjs",
     "build": "next build",
+    "vercel-build": "node scripts/prepare-cre8wc.mjs && next build",
     "start": "next start",
     "lint": "next lint",
     "test": "vitest run"
