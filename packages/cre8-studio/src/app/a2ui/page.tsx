@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function A2uiLanding() {
   return (
-    <main className="a2ui-landing">
+    <div className="page page--center a2ui-landing">
       <div className="a2ui-landing-inner">
         <header className="a2ui-landing-header">
           <span className="a2ui-eyebrow">cre8 · A2UI</span>
@@ -51,6 +51,6 @@ export default function A2uiLanding() {
           <span>Powered by cre8-wc + A2UI</span>
         </footer>
       </div>
-    </main>
+    </div>
   );
 }

@@ -29,6 +29,8 @@ import {
 import LibraryPanel from "./library-panel";
 import MentionInput from "./mention-input";
 import AppRenderer from "./app-renderer";
+import Modal from "@/components/shell/modal";
+import { toast } from "@/components/shell/toast";
 
 // ---- chat wire model (mirrors components/chat.tsx) -------------------------
 
@@ -132,6 +134,11 @@ export default function Workspace() {
   const [patterns, setPatterns] = useState<Pattern[]>([]);
   const [dataSources, setDataSources] = useState<DataSource[]>([]);
   const components = useMemo<CatalogComponent[]>(() => getCatalogComponents(), []);
+
+  // Save-as-pattern modal
+  const [saveTarget, setSaveTarget] = useState<ComponentSpec | null>(null);
+  const [saveName, setSaveName] = useState("");
+  const [saveDesc, setSaveDesc] = useState("");
 
   const threadRef = useRef<HTMLDivElement>(null);
 
@@ -339,13 +346,23 @@ export default function Workspace() {
 
   // ---- pattern save / preview ---------------------------------------------
 
-  const saveCurrentAsPattern = useCallback((spec: ComponentSpec) => {
-    const name = window.prompt("Name this pattern (saved to your library):");
-    if (!name?.trim()) return;
-    const description =
-      window.prompt("Short description (optional):")?.trim() || "Saved from the workspace.";
-    savePattern({ name: name.trim(), description, category: "Saved", spec });
+  const openSaveModal = useCallback((spec: ComponentSpec) => {
+    setSaveTarget(spec);
+    setSaveName("");
+    setSaveDesc("");
   }, []);
+
+  const confirmSave = useCallback(() => {
+    if (!saveTarget || !saveName.trim()) return;
+    savePattern({
+      name: saveName.trim(),
+      description: saveDesc.trim() || "Saved from the workspace.",
+      category: "Saved",
+      spec: saveTarget,
+    });
+    setSaveTarget(null);
+    toast.success(`Saved “${saveName.trim()}” to your patterns`);
+  }, [saveTarget, saveName, saveDesc]);
 
   // Preview a library pattern by injecting it as a synthetic assistant UI block.
   const previewPattern = useCallback((p: Pattern) => {
@@ -367,7 +384,10 @@ export default function Workspace() {
         dataSources={dataSources}
         onMention={addMention}
         onPreviewPattern={previewPattern}
-        onDeletePattern={(id) => deletePattern(id)}
+        onDeletePattern={(id) => {
+          deletePattern(id);
+          toast("Pattern deleted");
+        }}
       />
 
       <div className="workspace-chat">
@@ -453,8 +473,52 @@ export default function Workspace() {
         spec={current?.spec ?? null}
         streaming={streaming}
         onEvent={(e) => current && handleCanvasEvent(e, current.id)}
-        onSave={saveCurrentAsPattern}
+        onSave={openSaveModal}
       />
+
+      <Modal
+        open={saveTarget !== null}
+        title="Save as pattern"
+        description="Store the current UI in your library to @-mention and reuse later."
+        onClose={() => setSaveTarget(null)}
+        footer={
+          <>
+            <button type="button" className="btn btn--ghost" onClick={() => setSaveTarget(null)}>
+              Cancel
+            </button>
+            <button
+              type="button"
+              className="btn btn--primary"
+              onClick={confirmSave}
+              disabled={!saveName.trim()}
+            >
+              Save pattern
+            </button>
+          </>
+        }
+      >
+        <div className="modal-field">
+          <label htmlFor="pattern-name">Name</label>
+          <input
+            id="pattern-name"
+            value={saveName}
+            onChange={(e) => setSaveName(e.target.value)}
+            placeholder="e.g. Orders table"
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && saveName.trim()) confirmSave();
+            }}
+          />
+        </div>
+        <div className="modal-field">
+          <label htmlFor="pattern-desc">Description</label>
+          <input
+            id="pattern-desc"
+            value={saveDesc}
+            onChange={(e) => setSaveDesc(e.target.value)}
+            placeholder="Optional — what is this pattern for?"
+          />
+        </div>
+      </Modal>
     </div>
   );
 }
