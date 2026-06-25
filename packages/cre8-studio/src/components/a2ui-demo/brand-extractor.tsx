@@ -8,6 +8,7 @@ import { applyTheme, scopedThemeCss } from "@/lib/a2ui-demo/theme";
 import { readableOn } from "@/lib/a2ui-demo/ramp";
 import { BRAND_PREVIEW_SPEC } from "@/lib/a2ui-demo/preview-spec";
 import { A2uiCanvas } from "@/components/a2ui-canvas";
+import { toast } from "@/components/shell/toast";
 
 type Status = "idle" | "loading" | "ready" | "error";
 
@@ -62,6 +63,7 @@ export default function BrandExtractor() {
     persistTheme(theme);
     applyTheme(theme);
     setSaved(true);
+    toast.success(`Applied “${theme.name}” across the workspace`);
   }, [theme]);
 
   const clearTheme = useCallback(() => {
@@ -70,6 +72,7 @@ export default function BrandExtractor() {
     setThemeState(null);
     setStatus("idle");
     setSaved(false);
+    toast("Reset to the default cre8 theme");
   }, []);
 
   // Scoped preview CSS so the comparison reflects the candidate theme without
