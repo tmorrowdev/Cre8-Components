@@ -24,10 +24,11 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y'
   ],
   // Customize Vite config
-  async viteFinal(config) {
+  async viteFinal(config, options) {
     const { mergeConfig } = await import('vite');
-    
-    return mergeConfig(config, {
+    const { storybookHelpersReloader } = await import('@wc-toolkit/storybook-helpers');
+
+    const merged = mergeConfig(config, {
       css: {
         preprocessorOptions: {
           scss: {
@@ -60,6 +61,13 @@ const config: StorybookConfig = {
         extensions: ['.ts', '.js', '.svg']
       }
     });
+
+    // Watch the Custom Elements Manifest so WC Toolkit Storybook helper
+    // controls (including design tokens) hot-reload when it is regenerated.
+    return storybookHelpersReloader({ path: 'custom-elements.json' }).viteFinal(
+      merged,
+      options,
+    );
   },
   framework: {
     name: '@storybook/web-components-vite',
