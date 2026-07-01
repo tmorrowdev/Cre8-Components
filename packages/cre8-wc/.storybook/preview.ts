@@ -1,5 +1,6 @@
 import { setCustomElementsManifest } from '@storybook/web-components';
 import type { Preview } from '@storybook/web-components';
+import { setStorybookHelpersConfig } from '@wc-toolkit/storybook-helpers';
 
 import './css/styleguide-only.css';
 
@@ -23,6 +24,28 @@ document.head.appendChild(prismStyleElement);
 // import customElements from '!!json-loader!../loaders/wca-loader!../package.json';
 import customElements from './custom-elements.json';
 setCustomElementsManifest(customElements);
+
+// Configure the WC Toolkit Storybook helpers. These read the Custom Elements
+// Manifest set above to auto-generate controls for attributes, properties,
+// slots, events, CSS shadow parts, and — importantly — the design tokens
+// (CSS custom properties) each component exposes via `@cssproperty`.
+// See https://wc-toolkit.com/integrations/storybook/
+setStorybookHelpersConfig({
+  // Keep the "arg ref" hint visible so consumers can see which binding
+  // (attr/prop/css) each control maps to.
+  hideArgRef: false,
+  // Order controls so design tokens sit alongside the component API.
+  categoryOrder: [
+    'attributes',
+    'properties',
+    'slots',
+    'events',
+    'cssProps',
+    'cssParts',
+    'cssStates',
+    'methods',
+  ],
+});
 
 import headStyles from '../design-tokens/core/scss/theming/head.module.ts';
 
