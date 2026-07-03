@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cre8 — The AI-Fluent Design System for Generative UI</title>
-    <meta name="description" content="Cre8 is an AI-fluent design system by Cre8 Solutions LLC: 98 accessible web components that LLMs and agents can read, reason about, and render into production UI.">
+    <meta name="description" content="Cre8 is an AI-fluent design system by Cre8 Solutions LLC: 93 accessible web components that LLMs and agents can read, reason about, and render into production UI.">
     <meta name="theme-color" content="#0F172A">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233B82F6'/%3E%3Cstop offset='1' stop-color='%23EC4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3C/svg%3E">
     <!-- Cre8 a2ui design tokens (vendored, self-contained) -->
@@ -12,11 +12,16 @@
     <!-- Open Graph / social -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Cre8 — The AI-Fluent Design System for Generative UI">
-    <meta property="og:description" content="98 accessible web components that agents can read, reason about, and render into production UI. By Cre8 Solutions LLC.">
+    <meta property="og:description" content="93 accessible web components that agents can read, reason about, and render into production UI. By Cre8 Solutions LLC.">
     <meta property="og:site_name" content="Cre8 Solutions LLC">
+    <meta property="og:image" content="/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Cre8 — the AI-fluent design system your agents can speak.">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Cre8 — The AI-Fluent Design System for Generative UI">
-    <meta name="twitter:description" content="98 accessible web components that agents can read, reason about, and render into production UI.">
+    <meta name="twitter:description" content="93 accessible web components that agents can read, reason about, and render into production UI.">
+    <meta name="twitter:image" content="/og.png">
     <!-- Vendored Cre8 web components (v2.0.4) — self-contained, no external requests -->
     <script type="module" src="/vendor/cre8-wc.esm.js"></script>
 
@@ -190,7 +195,7 @@
         @media (max-width: 560px){ .steps{ grid-template-columns: 1fr; } }
         .step { position: relative; padding-top: 12px; }
         .step .n { font-family: ui-monospace, monospace; font-size: .85rem; color: var(--teal); font-weight: 700; border-top: 2px solid var(--teal); padding-top: 12px; display: block; }
-        .step h4 { margin: 12px 0 6px; font-size: 1.08rem; color: #0F172A; }
+        .step h3 { margin: 12px 0 6px; font-size: 1.08rem; color: #0F172A; }
         .step p { color: #475569; font-size: .95rem; }
 
         /* MCP tools */
@@ -261,7 +266,7 @@
             <h1>The design system your <span class="grad">agents can speak</span>.</h1>
             <p class="lede">
                 Cre8 is a design system built to be read, reasoned about, and rendered by AI.
-                98 accessible web components, a machine-readable manifest, and an MCP server — so
+                93 accessible web components, a machine-readable manifest, and an MCP server — so
                 an LLM composes real, on-brand, production UI instead of throwaway markup.
             </p>
             <div class="hero-cta">
@@ -269,7 +274,7 @@
                 <cre8-button text="Explore the MCP server" variant="secondary" size="lg" inverse href="https://www.npmjs.com/package/@tmorrow/cre8-mcp" target="_blank" rel="noopener"></cre8-button>
             </div>
             <div class="hero-meta">
-                <div class="m"><strong>98</strong><span>components, WCAG-accessible</span></div>
+                <div class="m"><strong>93</strong><span>components, WCAG-accessible</span></div>
                 <div class="m"><strong>5</strong><span>MCP intelligence tools</span></div>
                 <div class="m"><strong>0</strong><span>hallucinated markup</span></div>
                 <div class="m"><strong>∞</strong><span>frameworks — it's the platform</span></div>
@@ -339,32 +344,32 @@
 
             <div class="pillars">
                 <div class="pillar">
-                    <div class="ic">📖</div>
+                    <div class="ic" aria-hidden="true">📖</div>
                     <h3>Machine-readable by design</h3>
                     <p>A full <code>custom-elements.json</code> manifest describes every tag, prop, slot, and event — so an agent knows exactly what exists and how to use it. No scraping, no guessing.</p>
                 </div>
                 <div class="pillar">
-                    <div class="ic">🧩</div>
+                    <div class="ic" aria-hidden="true">🧩</div>
                     <h3>Composable component trees</h3>
                     <p>Agents emit structured component trees, not brittle hand-rolled HTML. The output is real Cre8 elements — inspectable, diffable, and identical to what a human would ship.</p>
                 </div>
                 <div class="pillar">
-                    <div class="ic">♿</div>
+                    <div class="ic" aria-hidden="true">♿</div>
                     <h3>Accessible by construction</h3>
                     <p>Whatever the model generates inherits WCAG 2.1 semantics, keyboard support, and ARIA from the components themselves. Accessibility isn't prompted — it's guaranteed.</p>
                 </div>
                 <div class="pillar">
-                    <div class="ic">🎨</div>
+                    <div class="ic" aria-hidden="true">🎨</div>
                     <h3>On-brand through tokens</h3>
                     <p>Generated UI reads from design tokens, so a swap of the token file re-themes everything the AI produced. Cre8, brand, or a custom theme — the model stays inside the lines.</p>
                 </div>
                 <div class="pillar">
-                    <div class="ic">🔌</div>
+                    <div class="ic" aria-hidden="true">🔌</div>
                     <h3>MCP-native</h3>
                     <p>The <code>@tmorrow/cre8-mcp</code> server plugs component intelligence straight into Claude, Cursor, and any MCP client — live, versioned, and always in sync with the library.</p>
                 </div>
                 <div class="pillar">
-                    <div class="ic">🌐</div>
+                    <div class="ic" aria-hidden="true">🌐</div>
                     <h3>Framework-agnostic</h3>
                     <p>Web Components run anywhere — React, Vue, Angular, or plain HTML. Generative UI you build with Cre8 isn't locked to one renderer or one runtime.</p>
                 </div>
@@ -383,22 +388,22 @@
             <div class="steps">
                 <div class="step">
                     <span class="n">01 · ask</span>
-                    <h4>Describe the UI</h4>
+                    <h3>Describe the UI</h3>
                     <p>A user or agent states intent in plain language — "a dashboard row with three stat cards."</p>
                 </div>
                 <div class="step">
                     <span class="n">02 · ground</span>
-                    <h4>Query the system</h4>
+                    <h3>Query the system</h3>
                     <p>The model calls the MCP server to find the right components, props, and approved patterns.</p>
                 </div>
                 <div class="step">
                     <span class="n">03 · compose</span>
-                    <h4>Generate real components</h4>
+                    <h3>Generate real components</h3>
                     <p>It emits a tree of verified Cre8 tags — typed, accessible, and token-themed by default.</p>
                 </div>
                 <div class="step">
                     <span class="n">04 · render</span>
-                    <h4>Ship it live</h4>
+                    <h3>Ship it live</h3>
                     <p>The browser renders native web components. What the AI drafted is what production runs.</p>
                 </div>
             </div>
@@ -455,7 +460,7 @@
         <div class="container">
             <div class="center" style="max-width:720px;">
                 <span class="section-eyebrow">The library</span>
-                <h2 class="section-title">98 components the model already knows</h2>
+                <h2 class="section-title">93 components the model already knows</h2>
                 <p class="section-sub">Every one is a real, registered web component — the raw vocabulary your agents compose with.</p>
             </div>
 
@@ -490,7 +495,7 @@
                 <span class="chip">cre8-skeleton-loader</span>
                 <span class="chip">cre8-loading-spinner</span>
                 <span class="chip">cre8-split-button</span>
-                <span class="chip" style="border-style:dashed;">+ 68 more</span>
+                <span class="chip" style="border-style:dashed;">+ 63 more</span>
             </div>
 
             <div style="margin-top:52px; display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
@@ -534,7 +539,7 @@
                 <h2 class="section-title">Let's build your generative UI</h2>
                 <p class="section-sub">Cre8 Solutions LLC partners with teams adopting AI-native design systems — from wiring up the MCP server to custom component work and brand theming. Reach out and we'll get back to you.</p>
                 <div style="margin-top:28px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
-                    <cre8-button text="Email us" variant="primary" size="lg" href="mailto:tmorrow@cre8solutions.llc?subject=Cre8%20inquiry" target="_blank"></cre8-button>
+                    <cre8-button text="Email us" variant="primary" size="lg" href="mailto:tmorrow@cre8solutions.llc?subject=Cre8%20inquiry"></cre8-button>
                     <cre8-button text="Open an issue" variant="secondary" size="lg" href="https://github.com/tmorrowdev/Cre8-Components/issues/new" target="_blank" rel="noopener"></cre8-button>
                 </div>
                 <p style="margin-top:22px; font-family:ui-monospace,monospace; color:#334155;">
