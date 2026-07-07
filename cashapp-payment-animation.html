@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Payment sent — animation</title>
+<style>
+   html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    border: 0;
+    margin: 0;
+    padding: 0
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    display: block
+}
+
+body {
+    line-height: 1
+}
+
+ol,ul {
+    list-style: none
+}
+
+blockquote,q {
+    quotes: none
+}
+
+blockquote:before,blockquote:after,q:before,q:after {
+    content: "";
+    content: none
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+html {
+    box-sizing: border-box
+}
+
+*,:before,:after {
+    box-sizing: inherit
+}
+
+@font-face {
+    font-family: Cash Sans;
+    src: url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff2/CashSans-Regular.woff2)format("woff2"),url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff/CashSans-Regular.woff)format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Cash Sans;
+    src: url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff2/CashSans-Medium.woff2)format("woff2"),url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff/CashSans-Medium.woff)format("woff");
+    font-weight: 500;
+    font-style: medium;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Cash Sans;
+    src: url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff2/CashSans-Semibold.woff2)format("woff2"),url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff/CashSans-Semibold.woff)format("woff");
+    font-weight: 600;
+    font-style: semibold;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Cash Sans;
+    src: url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff2/CashSans-Bold.woff2)format("woff2"),url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff/CashSans-Bold.woff)format("woff");
+    font-weight: 700;
+    font-style: bold;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Cash Sans;
+    src: url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff2/CashSans-Black.woff2)format("woff2"),url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff/CashSans-Black.woff)format("woff");
+    font-weight: 900;
+    font-style: black;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Cash Sans Wide;
+    src: url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff2/CashSansWide-Regular.woff2)format("woff2"),url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff/CashSansWide-Regular.woff)format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Cash Sans Wide;
+    src: url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff2/CashSansWide-Medium.woff2)format("woff2"),url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff/CashSansWide-Medium.woff)format("woff");
+    font-weight: 500;
+    font-style: medium;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Cash Sans Wide;
+    src: url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff2/CashSansWide-Semibold.woff2)format("woff2"),url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff/CashSansWide-Semibold.woff)format("woff");
+    font-weight: 600;
+    font-style: semibold;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Cash Sans Wide;
+    src: url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff2/CashSansWide-Bold.woff2)format("woff2"),url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff/CashSansWide-Bold.woff)format("woff");
+    font-weight: 700;
+    font-style: bold;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Cash Sans Wide;
+    src: url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff2/CashSansWide-Black.woff2)format("woff2"),url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff/CashSansWide-Black.woff)format("woff");
+    font-weight: 900;
+    font-style: black;
+    font-display: swap
+}
+
+@font-face {
+    font-family: Cash Sans Mono;
+    src: url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff2/CashSansMono-Regular.woff2)format("woff2"),url(https://cash-f.squarecdn.com/static/fonts/cashsans/woff/CashSansMono-Regular.woff)format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-family: Cash Sans,Helvetica Neue,helvetica,sans-serif
+}
+
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-family: Cash Sans,Helvetica Neue,helvetica,sans-serif;
+    font-size: 16px;
+    font-weight: 400
+}
+
+html.lenis,html.lenis body {
+    height: auto
+}
+
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+    overflow: clip
+}
+
+
+</style>
+<style>
+  :root {
+    --green: #00d54b;       /* Cash App green */
+    --ink: #ffffff;
+    --bg: #000000;
+    --pill-grey: #1c1c1e;
+    /* one full loop */
+    --loop: 5.6s;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    display: grid;
+    place-items: center;
+    background: #0a0a0a;
+    font-family: "Cash Sans", "Helvetica Neue", Helvetica, -apple-system, sans-serif;
+    /* faint surround so the black screen reads as a device */
+    background:
+      radial-gradient(120% 120% at 50% 0%, #161616 0%, #050505 60%, #000 100%);
+  }
+
+  /* The phone screen */
+  .screen {
+    position: relative;
+    width: min(92vw, 400px);
+    height: min(92vh, 860px);
+    aspect-ratio: 440 / 956;
+    background: var(--bg);
+    border-radius: 44px;
+    overflow: hidden;
+    box-shadow: 0 40px 120px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.05);
+    color: var(--ink);
+  }
+
+  /* status bar */
+  .status {
+    position: absolute; inset: 0 0 auto 0; height: 54px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 28px 0; font-size: 15px; font-weight: 600;
+    color: #fff; opacity: .9; letter-spacing: .2px;
+  }
+  .status .dots { display: flex; gap: 5px; align-items: center; }
+  .status .bars { width: 18px; height: 11px;
+    background: linear-gradient(90deg,#fff 0 70%, rgba(255,255,255,.35) 70%); -webkit-mask:
+      radial-gradient(circle at 2px 9px, #000 2px, transparent 0) ; }
+
+  /* close button */
+  .close {
+    position: absolute; top: 64px; left: 22px;
+    width: 34px; height: 34px; border-radius: 50%;
+    background: #161616; display: grid; place-items: center;
+    color: #fff;
+    opacity: 0;
+    animation: chromeIn var(--loop) ease both infinite;
+  }
+  .close svg { width: 15px; height: 15px; }
+
+  /* ---- center stage: spinner + check share the same spot ---- */
+  .stage {
+    position: absolute; left: 0; right: 0; top: 30%;
+    display: grid; place-items: center;
+  }
+
+  /* spinner */
+  .spinner {
+    position: absolute;
+    width: 74px; height: 74px;
+    animation:
+      spinRotate 0.85s linear infinite,
+      spinnerLife var(--loop) ease both infinite;
+  }
+  .spinner svg { width: 100%; height: 100%; display: block; }
+  .spinner circle {
+    fill: none; stroke: #fff; stroke-width: 6; stroke-linecap: round;
+    stroke-dasharray: 200;            /* circumference ~ 2πr (r=33) ≈ 207 */
+    transform-origin: 50% 50%;
+    animation: spinDash 1.3s ease-in-out infinite;
+  }
+
+  /* success check */
+  .check {
+    position: absolute;
+    width: 86px; height: 86px; border-radius: 50%;
+    background: var(--green);
+    display: grid; place-items: center;
+    transform: scale(0);
+    animation: checkPop var(--loop) cubic-bezier(.2,.9,.25,1.2) both infinite;
+  }
+  .check svg { width: 46px; height: 46px; }
+  .check path {
+    fill: none; stroke: #000; stroke-width: 6.5; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 60; stroke-dashoffset: 60;
+    animation: checkDraw var(--loop) ease both infinite;
+  }
+
+  /* headline */
+  .headline {
+    position: absolute; left: 0; right: 0; top: calc(30% + 86px);
+    text-align: center; padding: 0 34px;
+    font-size: 30px; line-height: 1.18; font-weight: 700; letter-spacing: -.4px;
+    opacity: 0; transform: translateY(14px);
+    animation: riseIn var(--loop) cubic-bezier(.2,.7,.2,1) both infinite;
+  }
+  .headline b { font-weight: 700; }
+
+  /* bottom action buttons */
+  .actions {
+    position: absolute; left: 0; right: 0; bottom: 46px;
+    display: flex; flex-direction: column; gap: 14px; padding: 0 22px;
+    opacity: 0; transform: translateY(22px);
+    animation: riseIn var(--loop) cubic-bezier(.2,.7,.2,1) both infinite;
+    animation-delay: .12s;
+  }
+  .btn {
+    height: 62px; border-radius: 999px; display: grid; place-items: center;
+    font-size: 18px; font-weight: 600;
+  }
+  .btn--receipt { background: var(--pill-grey); color: #fff; }
+  .btn--done { background: #fff; color: #000; }
+
+  /* ---------------- keyframes (one shared loop) ----------------
+     phases of var(--loop):
+       0    –40%  : spinner (loading)
+       40%  –46%  : spinner out, check pops
+       46%  –58%  : checkmark draws
+       52%  –70%  : headline + buttons rise
+       70%  –92%  : hold
+       92%  –100% : fade everything for the reset
+  ------------------------------------------------------------- */
+  @keyframes spinRotate { to { transform: rotate(360deg); } }
+  @keyframes spinDash {
+    0%   { stroke-dashoffset: 180; }
+    50%  { stroke-dashoffset: 70;  }
+    100% { stroke-dashoffset: 180; }
+  }
+  @keyframes spinnerLife {
+    0%, 38% { opacity: 1; transform: scale(1); }
+    44%, 100% { opacity: 0; transform: scale(.5); }
+  }
+
+  @keyframes checkPop {
+    0%, 40%  { transform: scale(0);    opacity: 0; }
+    49%      { transform: scale(1.08); opacity: 1; }
+    54%, 90% { transform: scale(1);    opacity: 1; }
+    100%     { transform: scale(1);    opacity: 0; }
+  }
+  @keyframes checkDraw {
+    0%, 47%  { stroke-dashoffset: 60; }
+    60%, 100% { stroke-dashoffset: 0; }
+  }
+
+  @keyframes riseIn {
+    0%, 52%  { opacity: 0; transform: translateY(20px); }
+    66%, 90% { opacity: 1; transform: translateY(0); }
+    100%     { opacity: 0; transform: translateY(0); }
+  }
+
+  @keyframes chromeIn {
+    0%, 44%  { opacity: 0; }
+    52%, 92% { opacity: 1; }
+    100%     { opacity: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .spinner, .check, .headline, .actions, .close, .spinner circle, .check path {
+      animation-duration: 0.001s !important; animation-iteration-count: 1 !important;
+    }
+  }
+
+  /* replay hint */
+  .hint {
+    position: fixed; bottom: 18px; left: 0; right: 0; text-align: center;
+    color: #555; font-size: 12px; letter-spacing: .3px;
+  }
+</style>
+</head>
+<body>
+  <div class="screen" role="img" aria-label="Cash App payment sent animation: a spinner resolves into a green checkmark reading You sent $1 to Tran Hoang">
+    <div class="status">
+      <span>6:15</span>
+      <span class="dots"><span class="bars"></span></span>
+    </div>
+
+    <button class="close" aria-hidden="true" tabindex="-1">
+      <svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+    </button>
+
+    <div class="stage">
+      <!-- loading spinner -->
+      <div class="spinner" aria-hidden="true">
+        <svg viewBox="0 0 74 74"><circle cx="37" cy="37" r="33"/></svg>
+      </div>
+      <!-- success check -->
+      <div class="check" aria-hidden="true">
+        <svg viewBox="0 0 48 48"><path d="M12 25.5 L21 34 L37 15"/></svg>
+      </div>
+    </div>
+
+    <div class="headline">You sent <b>$1</b> to Tran&nbsp;Hoang</div>
+
+    <div class="actions">
+      <div class="btn btn--receipt">Receipt</div>
+      <div class="btn btn--done">Done</div>
+    </div>
+  </div>
+
+  <div class="hint">CSS animation · loops automatically</div>
+</body>
+</html>

@@ -13,18 +13,34 @@ export default function AppRenderer({
   onEvent,
   onSave,
   streaming,
+  count = 0,
+  index = -1,
+  viewingOlder = false,
+  onShowLatest,
 }: {
   spec: ComponentSpec | null;
   onEvent: (e: EmittedEvent) => void;
   onSave: (spec: ComponentSpec) => void;
   streaming: boolean;
+  count?: number;
+  index?: number;
+  viewingOlder?: boolean;
+  onShowLatest?: () => void;
 }) {
   const [tab, setTab] = useState<Tab>("app");
 
   return (
     <section className="app-renderer">
       <div className="app-renderer-bar">
-        <span className="app-renderer-title">App renderer</span>
+        <span className="app-renderer-title">
+          App renderer
+          {count > 1 && index >= 0 && (
+            <span className="app-renderer-count">
+              {" "}
+              · {index + 1}/{count}
+            </span>
+          )}
+        </span>
         <div className="app-renderer-tabs">
           <button
             className={tab === "app" ? "active" : ""}
@@ -50,6 +66,12 @@ export default function AppRenderer({
           ＋ Save as pattern
         </button>
       </div>
+
+      {viewingOlder && (
+        <button type="button" className="app-renderer-older" onClick={onShowLatest}>
+          Viewing an earlier render — <strong>show latest →</strong>
+        </button>
+      )}
 
       <div className="app-renderer-body">
         {!spec && (
