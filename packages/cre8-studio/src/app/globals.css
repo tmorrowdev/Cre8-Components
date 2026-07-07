@@ -1367,7 +1367,19 @@ body > div:first-child {
   border: 1px dashed var(--a2ui-border);
   border-radius: 10px;
   padding: 10px 12px;
+  font: inherit;
   font-size: 13px;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 120ms ease, background 120ms ease;
+}
+.bubble-rendered:hover {
+  border-color: var(--a2ui-brand);
+}
+.bubble-rendered.active {
+  border-style: solid;
+  border-color: var(--a2ui-brand);
 }
 .bubble-rendered-tag {
   font-size: 11px;
@@ -1485,6 +1497,22 @@ body > div:first-child {
   background: var(--ui-surface, #fff);
 }
 .app-renderer-title { font-size: 13px; font-weight: 600; }
+.app-renderer-count { font-weight: 400; opacity: 0.5; }
+.app-renderer-older {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  border-bottom: 1px solid var(--a2ui-border);
+  background: var(--a2ui-subtle);
+  color: inherit;
+  font: inherit;
+  font-size: 12px;
+  padding: 7px 12px;
+  cursor: pointer;
+}
+.app-renderer-older strong { color: var(--a2ui-brand); }
+.app-renderer-older:hover { background: var(--a2ui-border); }
 .app-renderer-tabs { display: flex; gap: 2px; margin-left: 8px; }
 .app-renderer-tabs button {
   border: none;

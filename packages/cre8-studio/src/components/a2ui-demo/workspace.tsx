@@ -104,17 +104,18 @@ function markConsumed(messages: ChatMessage[], ids: Set<string>): ChatMessage[] 
   return copy;
 }
 
-// Most recent UI spec the agent produced — drives the renderer panel.
-function latestSpec(messages: ChatMessage[]): { id: string; spec: ComponentSpec } | null {
-  for (let i = messages.length - 1; i >= 0; i--) {
-    const m = messages[i];
+type Render = { id: string; spec: ComponentSpec; caption?: string };
+
+// Every UI spec the agent has produced, oldest→newest — the render history that
+// drives the renderer panel and the clickable history in the thread.
+function allRenders(messages: ChatMessage[]): Render[] {
+  const out: Render[] = [];
+  for (const m of messages) {
     if (m.role !== "assistant") continue;
-    for (let j = m.blocks.length - 1; j >= 0; j--) {
-      const b = m.blocks[j];
-      if (b.kind === "ui") return { id: b.id, spec: b.spec };
-    }
+    for (const b of m.blocks)
+      if (b.kind === "ui") out.push({ id: b.id, spec: b.spec, caption: b.caption });
   }
-  return null;
+  return out;
 }
 
 // ---------------------------------------------------------------------------
@@ -130,6 +131,9 @@ export default function Workspace() {
   const [input, setInput] = useState("");
   const [mentions, setMentions] = useState<Mention[]>([]);
   const [streaming, setStreaming] = useState(false);
+
+  // Which render is shown in the panel; null = follow the latest.
+  const [selectedId, setSelectedId] = useState<string | null>(null);
 
   const [patterns, setPatterns] = useState<Pattern[]>([]);
   const [dataSources, setDataSources] = useState<DataSource[]>([]);
@@ -374,7 +378,19 @@ export default function Workspace() {
     ]);
   }, [messages.length]);
 
-  const current = latestSpec(messages);
+  const renders = useMemo(() => allRenders(messages), [messages]);
+  const latest = renders.length ? renders[renders.length - 1] : null;
+  const latestId = latest?.id ?? null;
+
+  // A new render takes focus — stop pinning an older one.
+  useEffect(() => {
+    setSelectedId(null);
+  }, [latestId]);
+
+  const current =
+    (selectedId ? renders.find((r) => r.id === selectedId) : undefined) ?? latest;
+  const currentIndex = current ? renders.findIndex((r) => r.id === current.id) : -1;
+  const viewingOlder = !!current && !!latest && current.id !== latest.id;
 
   return (
     <div className="workspace-grid">
@@ -444,12 +460,20 @@ export default function Workspace() {
                           {b.text}
                         </pre>
                       );
-                    // ui block — shown in the renderer, marked inline in the thread
+                    // ui block — a render in history; click to reopen in the panel
                     return (
-                      <div key={j} className="bubble bubble-rendered">
+                      <button
+                        key={j}
+                        type="button"
+                        className={`bubble bubble-rendered${current?.id === b.id ? " active" : ""}`}
+                        onClick={() => setSelectedId(b.id)}
+                        title="Show this render in the app renderer"
+                      >
                         {b.caption ? b.caption : "Composed UI"}
-                        <span className="bubble-rendered-tag">→ renderer</span>
-                      </div>
+                        <span className="bubble-rendered-tag">
+                          {current?.id === b.id ? "● showing" : "→ show"}
+                        </span>
+                      </button>
                     );
                   })}
             </div>
@@ -472,6 +496,10 @@ export default function Workspace() {
       <AppRenderer
         spec={current?.spec ?? null}
         streaming={streaming}
+        count={renders.length}
+        index={currentIndex}
+        viewingOlder={viewingOlder}
+        onShowLatest={() => setSelectedId(null)}
         onEvent={(e) => current && handleCanvasEvent(e, current.id)}
         onSave={openSaveModal}
       />
