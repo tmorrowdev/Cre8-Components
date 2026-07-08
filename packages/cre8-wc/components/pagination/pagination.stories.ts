@@ -1,62 +1,46 @@
-import { html, nothing } from 'lit';
 import './pagination';
-import type { Meta, StoryObj } from '@storybook/web-components';
-import { cre8Pagination } from './pagination';
-import { withActions } from 'storybook/actions/decorator';
 import './page-counter/page-counter';
+import type { Meta, StoryObj } from '@storybook/web-components';
+import { getStorybookHelpers } from '@wc-toolkit/storybook-helpers';
+import { withActions } from 'storybook/actions/decorator';
+import type { Cre8Pagination } from './pagination';
 
+// `getStorybookHelpers` derives controls from the Custom Elements Manifest,
+// including the layout design tokens this component exposes:
+// `--pagination-display`, `--pagination-justify-content` and
+// `--pagination-align-items`. See https://wc-toolkit.com/integrations/storybook/
+const { args, argTypes, template } = getStorybookHelpers('cre8-pagination');
 
-interface Props extends Pick<cre8Pagination, 'currentPage' | 'totalResults' | 'pageSize' | 'display' | 'visiblePages' | 'hideLastAndFirstButtons'> {
-  currentPage: number,
-  totalResults: number;
-  pageSize: number;
-  visiblePages: number;
-  display: 'compact' | 'icon-only'| 'default',
-  hideFirstAndLastButtons: boolean
-}
-type Story = StoryObj<Props>;
+type Story = StoryObj<Cre8Pagination>;
 
-const meta: Meta= {
+const meta: Meta<Cre8Pagination> = {
   title: 'cre8 Components/Pagination',
   component: 'cre8-pagination',
   args: {
+    ...args,
     currentPage: 1,
     totalResults: 300,
     pageSize: 10,
     visiblePages: 5,
-    display: 'default'
+    display: 'default',
   },
   argTypes: {
+    ...argTypes,
     display: {
-      options: ['compact', 'icon-only','range', 'default'],
-      defaultValue: 'default',
-      control: { type: 'select' }
+      ...argTypes.display,
+      options: ['compact', 'icon-only', 'range', 'default'],
+      control: { type: 'select' },
     },
-    hideLastAndFirstButtons: {
-      control: { type: 'boolean' }
-    }
   },
   parameters: {
     status: { type: 'inProgress' },
     actions: {
-      handles: ['pagination.click','button.handleOnBlur', 'pagination.keydown'],
+      handles: ['pagination.click', 'button.handleOnBlur', 'pagination.keydown'],
     },
   },
   decorators: [withActions],
-
-  render: ({ currentPage, hideLastAndFirstButtons, totalResults, pageSize, display, visiblePages }) =>
-    html`
-    <cre8-pagination
-      currentPage="${currentPage}"
-      totalResults="${totalResults}"
-      pageSize="${pageSize}"
-      visiblePages="${visiblePages}"
-      display="${display}"
-      ?hideLastAndFirstButtons=${hideLastAndFirstButtons}
-      @pagination.click="${(e: Event) => console.log(e)}"
-      @pagination.keydown="${(e: Event) => console.log(e)}"
-    ></cre8-pagination>
-  `};
+  render: (args) => template(args),
+};
 export default meta;
 
 export const Default: Story = {
@@ -92,4 +76,3 @@ export const HideFirstAndLastButtons: Story = {
     hideLastAndFirstButtons: true
   }
 }
-
