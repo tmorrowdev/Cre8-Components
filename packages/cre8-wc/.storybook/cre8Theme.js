@@ -32,15 +32,15 @@ export default create({
   inputBg: 'white',
   inputBorder: '#333333',
   inputTextColor: 'black',
-  inputBorderRadius: 4,
+  inputBorderRadius: 24,
 
-  brandTitle: `<img src="./cre8.png"/>
+  brandTitle: `<img src="cre8-logo.png"/>
                 <div class="header-title">
-                    <span class="sub-title">Web Components</span>
-                    <span class="repo-name">(cre8-web-components/cre8-wc)</span>
+                    <span class="sub-title">Cre8 Web Components</span>
+                    <span class="repo-name">@tmorrow/cre8-wc</span>
                     <span class="version">v${pkg.version}</span>
                 </div>
               `,
-  brandUrl: '/?path=/docs/documentation-changelog--docs',
-  brandTarget: '_self',
+  brandUrl: 'https://cre8.dev',
+  brandTarget: 'https://cre8.dev',
 });

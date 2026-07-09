@@ -2,7 +2,7 @@ import { setCustomElementsManifest } from '@storybook/web-components';
 import type { Preview } from '@storybook/web-components';
 import { setStorybookHelpersConfig } from '@wc-toolkit/storybook-helpers';
 
-import './css/styleguide-only.css';
+import './css/styleguide-only.ts';
 
 // import starbucksStyles from '../design-tokens/starbucks/tokens.module';
 // import target from '../design-tokens/target/tokens.module.css';

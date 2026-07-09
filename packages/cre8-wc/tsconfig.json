@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "rootDir": ".",
-    "baseUrl": ".",
     "target": "es2021",
     "module": "esNext",
     "lib": [
