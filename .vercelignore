@@ -1,24 +1,13 @@
-# Only the static site in website/ is served (see vercel.json outputDirectory).
-# Exclude the monorepo source so deploys stay small and fast.
+# The deployment builds the cre8-wc Storybook (packages/cre8-wc/dist) — see
+# vercel.json buildCommand/outputDirectory. Keep the monorepo source, lockfile,
+# and custom-elements.json (build inputs); exclude only large, unrelated dirs.
 node_modules
 .nx
 .git
-packages
+.claude
 secure-agent-team
 graphify-out
 docs
 memory
+website
 *.pen
-*.png
-pnpm-lock.yaml
-custom-elements.json
-figma.css
-tokens_*.css
-tokens_*.ts
-*.theme.ts
-blog-demo.html
-dashboard-demo.html
-portfolio-blog.html
-landing-page.html
-login-page.html
-storybook-index.html
