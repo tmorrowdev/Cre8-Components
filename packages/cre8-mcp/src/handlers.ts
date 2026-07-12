@@ -209,13 +209,22 @@ export function handleGetComponent(input: GetComponentInput): string {
     .map((s) => ({ name: (s as KGNode).name!, description: (s as KGNode).description ?? '' }));
 
   const shortName = comp.id.replace('cre8-', '');
+  const format = input.format ?? 'web';
+  // cre8-button → Cre8Button (matches generate_code's tag conversion)
+  const reactName = 'Cre8' + shortName
+    .split('-')
+    .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
+    .join('');
+
   return JSON.stringify({
-    format: input.format ?? 'web',
-    name: comp.id,
+    format,
+    name: format === 'react' ? reactName : comp.id,
     tagName: comp.id,
     category: comp.category ?? 'Other',
     description: comp.description ?? '',
-    import: `import '@tmorrow/cre8-wc/lib/components/${shortName}/${shortName}.js';`,
+    import: format === 'react'
+      ? `import { ${reactName} } from '@tmorrow/cre8-react';`
+      : `import '@tmorrow/cre8-wc/lib/components/${shortName}/${shortName}.js';`,
     props: comp.props ?? {},
     slots,
     accepts_children: comp.accepts_children ?? false,
