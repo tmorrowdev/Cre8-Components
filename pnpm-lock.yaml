@@ -40,10 +40,10 @@ importers:
         specifier: ^1.0.0
         version: 1.29.0(zod@3.25.76)
       '@tmorrow/cre8-react':
-        specifier: 2.0.4
-        version: 2.0.4(@types/react@19.2.14)(react-dom@19.2.5)(react@19.2.5)
+        specifier: ^2.0.5
+        version: 2.0.5(@types/react@19.2.14)(react-dom@19.2.5)(react@19.2.5)
       '@tmorrow/cre8-wc':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../cre8-wc
       hono:
         specifier: ^4.12.21
@@ -4459,22 +4459,22 @@ packages:
       tmcp: 1.19.3(typescript@5.9.3)
     dev: true
 
-  /@tmorrow/cre8-react@2.0.4(@types/react@19.2.14)(react-dom@19.2.5)(react@19.2.5):
-    resolution: {integrity: sha512-ioRw+EH9BDIHX8WfX+/G95LYlscrsQWvEyTFKrZ8Ts/68bMxGIbw2Pb82+GAiN5sF7xFXyce6EwEpEMwGvdQug==}
+  /@tmorrow/cre8-react@2.0.5(@types/react@19.2.14)(react-dom@19.2.5)(react@19.2.5):
+    resolution: {integrity: sha512-o+dArMEEL2rrwijco8xipayVUg0qSg09jyiX72FBP9U/tHhZ3xFAZqTg+6IkGHfICxi/CNXRHAqh+41sMNBUWQ==}
     peerDependencies:
       react: '>=18'
       react-dom: '>=18'
     dependencies:
       '@lit/react': 1.0.8(@types/react@19.2.14)
-      '@tmorrow/cre8-wc': 2.0.4(@types/react@19.2.14)
+      '@tmorrow/cre8-wc': 2.0.5(@types/react@19.2.14)
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
     transitivePeerDependencies:
       - '@types/react'
     dev: false
 
-  /@tmorrow/cre8-wc@2.0.4(@types/react@19.2.14):
-    resolution: {integrity: sha512-vb/pHSR6Xw3Ywa2g/qzXs0jW8raAKzrP6RJkSAi+fQY2Z+bsklW95Skk4n/8OTH5eOpJgp7eM5glwFGwazb41A==}
+  /@tmorrow/cre8-wc@2.0.5(@types/react@19.2.14):
+    resolution: {integrity: sha512-4FJnsR8N8vlv5rpVz290JlF9aA+/AwEiObGSGF370BWqjJn0uxgI2jwAmDbKvksqclA2KE/0ekHCeJ3m3u1h5A==}
     dependencies:
       '@a11y/focus-trap': 1.0.5
       '@lit/context': 1.1.6
