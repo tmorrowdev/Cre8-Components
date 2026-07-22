@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "installCommand": "corepack enable && corepack prepare pnpm@8.11.0 --activate && pnpm install",
-  "buildCommand": "pnpm --filter @tmorrow/cre8-wc build:all",
+  "buildCommand": "pnpm --filter @tmorrow/cre8-wc build:all && pnpm --filter @tmorrow/cre8-wc build-storybook",
   "outputDirectory": "/vercel/path0/packages/cre8-wc/dist",
   "cleanUrls": false,
   "trailingSlash": false,
