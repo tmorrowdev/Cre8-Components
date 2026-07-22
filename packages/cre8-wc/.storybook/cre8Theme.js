@@ -1,11 +1,11 @@
 import { create } from 'storybook/theming';
 import pkg from '../package.json';
 
-// Cre8 brand mark — blue→magenta gradient, inline SVG data URI so it is fully
+// Cre8 brand mark — cobalt infinity logo, inline SVG data URI so it is fully
 // self-contained (the deployed Storybook runs under a strict CSP with no
 // external image/font hosts).
 const logo =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233B82F6'/%3E%3Cstop offset='1' stop-color='%23EC4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3C/svg%3E";
+  "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%20130%20512%20252%22%20role%3D%22img%22%20aria-label%3D%22Cre8%22%3E%3Cpath%20d%3D%22M256%20256%20C%20200%20168%2078%20172%2078%20256%20C%2078%20340%20200%20344%20256%20256%20C%20312%20168%20434%20172%20434%20256%20C%20434%20340%20312%20344%20256%20256%20Z%22%20fill%3D%22none%22%20stroke%3D%22%231F2BEC%22%20stroke-width%3D%2266%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E";
 
 export default create({
   base: 'light',
