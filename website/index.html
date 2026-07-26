@@ -22,7 +22,7 @@
     <meta name="twitter:title" content="Cre8 — The AI-Fluent Design System for Generative UI">
     <meta name="twitter:description" content="93 accessible web components that agents can read, reason about, and render into production UI.">
     <meta name="twitter:image" content="/og.png">
-    <!-- Vendored Cre8 web components (v2.0.4) — self-contained, no external requests -->
+    <!-- Vendored Cre8 web components (v2.0.7) — self-contained, no external requests -->
     <script type="module" src="/vendor/cre8-wc.esm.js"></script>
 
     <style>
@@ -72,9 +72,9 @@
         }
         .brand { display: flex; align-items: center; gap: 10px; color: #fff; font-weight: 700; letter-spacing: -0.02em; }
         .brand .logo {
-            width: 30px; height: 30px; border-radius: 8px; flex: none;
-            background: #fff url("/assets/logo.svg") center / 22px auto no-repeat;
-            box-shadow: 0 0 0 4px rgba(31,43,236,0.16);
+            height: 26px; width: auto; flex: none;
+            /* render the cobalt infinity mark as a clean white knockout on the dark bar */
+            filter: brightness(0) invert(1);
         }
         .brand small { font-weight: 500; opacity: .55; margin-left: 6px; }
         .topnav { display: flex; align-items: center; gap: 28px; }
@@ -246,7 +246,7 @@
     <!-- Top bar -->
     <div class="topbar">
         <div class="container topbar-inner">
-            <div class="brand"><span class="logo" aria-hidden="true"></span>Cre8 <small>design system</small></div>
+            <div class="brand"><img class="logo" src="/assets/logo.svg" alt="" aria-hidden="true" />Cre8 <small>design system</small></div>
             <nav class="topnav">
                 <a href="#why" class="hide-sm">Why AI-fluent</a>
                 <a href="#how" class="hide-sm">How it works</a>
@@ -553,7 +553,7 @@
     <footer class="site">
         <div class="container">
             <div class="foot-top">
-                <div class="brand"><span class="logo" aria-hidden="true"></span>Cre8 <small>AI-fluent design system</small></div>
+                <div class="brand"><img class="logo" src="/assets/logo.svg" alt="" aria-hidden="true" />Cre8 <small>AI-fluent design system</small></div>
                 <div class="foot-links">
                     <a href="#why">Why AI-fluent</a>
                     <a href="#how">How it works</a>
