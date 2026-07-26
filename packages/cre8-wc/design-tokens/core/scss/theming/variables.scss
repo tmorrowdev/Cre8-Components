@@ -1,6 +1,17 @@
 // Global CSS custom properties that aren't part of a themes dcre8gn tokens
 :root {
   --size-base-unit: 0.5rem;
+
+  // Layout widths
+  // 1) `cre8-layout-container` and `cre8-linelength-container` are built
+  //    entirely around these two properties, but neither had a definition
+  //    anywhere in the shipped package. `max-width` therefore resolved to an
+  //    invalid value and fell back to `none`, so both containers silently did
+  //    nothing unless the host page declared the properties itself.
+  --cre8-l-max-width: 82.5rem;
+  /* 1 */
+  --cre8-l-linelength-width: 42rem;
+  /* 1 */
 }
 
 /**

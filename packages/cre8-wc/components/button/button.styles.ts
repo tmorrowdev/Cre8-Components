@@ -374,6 +374,10 @@ img {
 
 :root {
   --size-base-unit: 0.5rem;
+  --cre8-l-max-width: 82.5rem;
+  /* 1 */
+  --cre8-l-linelength-width: 42rem;
+  /* 1 */
 }
 
 /**
@@ -546,6 +550,10 @@ span.ripple {
 }
 :root {
   --size-base-unit: 0.5rem;
+  --cre8-l-max-width: 82.5rem;
+  /* 1 */
+  --cre8-l-linelength-width: 42rem;
+  /* 1 */
 }
 
 /**

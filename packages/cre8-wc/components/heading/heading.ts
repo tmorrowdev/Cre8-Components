@@ -111,7 +111,6 @@ export class Cre8Heading extends Cre8Element {
             : {};
 
         const componentClassName = this.componentClassNames('cre8-c-heading', {
-            ...tagVariantClassNames,
             'cre8-c-heading--headline-large': this.type === 'headline-large',
             'cre8-c-heading--headline-default': this.type === 'headline-default',
             'cre8-c-heading--headline-small': this.type === 'headline-small',
@@ -127,6 +126,13 @@ export class Cre8Heading extends Cre8Element {
             'cre8-c-heading--meta-large': this.type === 'meta-large',
             'cre8-c-heading--meta-default': this.type === 'meta-default',
             'cre8-c-heading--meta-small': this.type === 'meta-small',
+            // Spread last. `tagVariantClassNames` is `{}` whenever `type` is
+            // set, so the type-derived keys above still win when both could
+            // apply. Spreading it first meant those same keys immediately
+            // overwrote the tagVariant fallback with `false`, so an unset
+            // `type` produced no preset class at all and every heading fell
+            // back to the bare `.cre8-c-heading` size.
+            ...tagVariantClassNames,
             'cre8-c-heading--brand-color': this.brandColor,
             'cre8-c-heading--inverted': this.inverted,
         });
