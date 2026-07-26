@@ -1,0 +1,45 @@
+/**
+ * cre8 design system styles.
+ *
+ * The web components ship their own shadow-DOM styles, but those styles are
+ * written entirely against CSS custom properties (`--cre8-*`). Those properties
+ * live in the design-token stylesheets, which are NOT imported by the component
+ * modules — they must be loaded once at the document level by the consuming
+ * app. Without them every component falls back to unstyled/transparent output.
+ *
+ * Load order matters:
+ *   1. tokens  — defines all `--cre8-*` custom properties on :root
+ *   2. globals — box-sizing reset, RTL vars, keyframes, body typography
+ */
+
+/* 1. Theme tokens. Each theme entry point also pulls in tokens_brand.css + fonts.css. */
+@import '@tmorrow/cre8-wc/themes/cre8-a2ui';
+
+/* 2. Global resets + shared keyframes used by the components. */
+@import '@tmorrow/cre8-wc/styles/component.css';
+@import '@tmorrow/cre8-wc/styles/body.css';
+
+/* Document-level defaults that the token sheets expect to be provided by the host page. */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--cre8-color-bg-default);
+  color: var(--cre8-color-content-default);
+}
+
+/*
+ * `body` is set to `display: flex; flex-direction: column` by the design
+ * system's body.css, because `cre8-main` is `flex: 1 0 auto` — that pairing is
+ * what pushes the footer to the bottom on short pages. React mounts into
+ * `#root`, an extra block-level element between the two, which breaks the
+ * contract. Making #root the column flex container restores it.
+ */
+#root {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  min-height: 100vh;
+}
