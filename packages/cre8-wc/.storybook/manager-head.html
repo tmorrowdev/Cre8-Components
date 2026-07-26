@@ -1,32 +1,80 @@
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet" />
-
 <style>
-  .header-title {
-    align-content: center !important;
-    border-radius: 0.1875rem;
-    bottom: -5px;
-    color: #061376 !important;
-    display: flex !important;
-    flex-direction: column;
-    font-family: 'Open Sans', 'Liberation Mono', Menlo, Courier, monospace;
-    font-size: 0.7rem;
-    left: 10px;
-    letter-spacing: 0px;
-    line-height: inherit;
-    padding: 3px;
-    position: relative !important;
-    text-align: center;
-    align-items: center;
-    white-space: nowrap;
-    width: fit-content;
+  /* Self-hosted Plus Jakarta Sans — served from staticDirs (/fonts/*),
+     CSP-safe (font-src 'self'); no external font hosts. */
+  @font-face {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/PlusJakartaSans-Regular.woff2') format('woff2');
+    font-display: swap;
   }
+  @font-face {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./fonts/PlusJakartaSans-Medium.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./fonts/PlusJakartaSans-SemiBold.woff2') format('woff2');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./fonts/PlusJakartaSans-Bold.woff2') format('woff2');
+    font-display: swap;
+  }
+
+  /* Cre8-branded sidebar header */
+  .cre8-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .cre8-brand .cre8-logo {
+    width: auto;
+    height: 22px;
+    display: block;
+  }
+  .cre8-brand .cre8-name {
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #0F172A;
+  }
+  .cre8-brand .cre8-sub {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #64748B;
+  }
+  .cre8-brand .cre8-ver {
+    margin-left: 4px;
+    padding: 2px 8px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #3B82F6;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.22);
+    border-radius: 999px;
+  }
+
   .sidebar-header img {
-    height: auto;
-    max-width: 175px;
-    min-width: 100px;
+    height: 22px;
+    max-width: 60px;
     width: auto;
   }
-  
+
+  /* Brand gradient accent under the sidebar header */
+  .sidebar-header {
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(90deg, #3B82F6, #EC4899) 1;
+  }
 </style>

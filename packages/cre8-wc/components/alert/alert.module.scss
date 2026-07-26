@@ -1,6 +1,14 @@
 @import "../../design-tokens/core/scss/theming/component";
 
+:host {
+  display: block;
+}
+
 dialog {
+  /* The UA stylesheet gives an open <dialog> position: absolute, which
+     collapses the host to 0 height and paints the alert over following
+     content. Keep it in normal flow. */
+  position: static;
   border: none;
   width: 100%;
 }
