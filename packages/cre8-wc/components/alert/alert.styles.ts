@@ -373,6 +373,10 @@ img {
 
 :root {
   --size-base-unit: 0.5rem;
+  --cre8-l-max-width: 82.5rem;
+  /* 1 */
+  --cre8-l-linelength-width: 42rem;
+  /* 1 */
 }
 
 /**
@@ -545,6 +549,10 @@ span.ripple {
 }
 :root {
   --size-base-unit: 0.5rem;
+  --cre8-l-max-width: 82.5rem;
+  /* 1 */
+  --cre8-l-linelength-width: 42rem;
+  /* 1 */
 }
 
 /**
@@ -582,7 +590,15 @@ span.ripple {
 /**
  * Visually hidden from display
  */
+:host {
+  display: block;
+}
+
 dialog {
+  /* The UA stylesheet gives an open <dialog> position: absolute, which
+     collapses the host to 0 height and paints the alert over following
+     content. Keep it in normal flow. */
+  position: static;
   border: none;
   width: 100%;
 }
