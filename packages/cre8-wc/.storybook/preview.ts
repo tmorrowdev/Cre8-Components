@@ -49,6 +49,18 @@ setStorybookHelpersConfig({
 
 import headStyles from '../design-tokens/core/scss/theming/head.module.ts';
 
+/*
+ * Core global custom properties: `--size-base-unit`, the RTL vars, and the
+ * layout widths `--cre8-l-max-width` / `--cre8-l-linelength-width`.
+ *
+ * `head.scss` carries only abstracts — mixins and functions — so it emits no
+ * `:root` block. Without this the preview defined none of these properties, so
+ * `cre8-layout-container` and `cre8-linelength-container` computed
+ * `max-width: none` and their stories demonstrated nothing at all. Consumers
+ * pick these up through `component.css`; the preview should match.
+ */
+import '../design-tokens/core/scss/theming/variables.css';
+
 const headStyleElement = document.createElement('style') as HTMLStyleElement;
 headStyleElement.innerHTML = headStyles as unknown as string;
 document.head.appendChild(headStyleElement);

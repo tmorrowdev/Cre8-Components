@@ -1,3 +1,25 @@
+<script>
+	/*
+	 * Minimal `process` shim.
+	 *
+	 * `@wc-toolkit/storybook-helpers` imports `path`, which Vite resolves to the
+	 * userland `path@0.12.7` package present transitively via
+	 * `@bundled-es-modules/glob` and `@bundled-es-modules/memfs`. That package is
+	 * a Node polyfill and dereferences `process` at module scope, so pre-bundling
+	 * it for the browser threw `ReferenceError: process is not defined` before any
+	 * story could mount — every story sat on the "preparing story" loader.
+	 *
+	 * This runs before the preview's module graph, which a Vite `define` cannot do
+	 * safely here: defining bare `process` would also rewrite the `process.env.*`
+	 * reads that Storybook and Vite rely on.
+	 */
+	window.process = window.process || {
+		env: {},
+		platform: 'browser',
+		argv: [],
+		cwd: function () { return '/'; },
+	};
+</script>
 <style>
     @font-face {
 	font-family: 'Aeonik';

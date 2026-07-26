@@ -172,32 +172,32 @@ importers:
         specifier: ^0.2.2
         version: 0.2.2
       '@storybook/addon-a11y':
-        specifier: 10.0.6
-        version: 10.0.6(storybook@10.3.5)
+        specifier: 10.5.4
+        version: 10.5.4(storybook@10.5.4)
       '@storybook/addon-docs':
-        specifier: 10.0.6
-        version: 10.0.6(@types/react@19.2.14)(rollup@4.60.1)(storybook@10.3.5)(vite@7.3.5)(webpack@5.106.1)
+        specifier: 10.5.4
+        version: 10.5.4(@types/react@19.2.14)(rollup@4.60.1)(storybook@10.5.4)(vite@7.3.5)(webpack@5.106.1)
       '@storybook/addon-mcp':
         specifier: ^0.5.0
-        version: 0.5.0(storybook@10.3.5)(typescript@5.9.3)
+        version: 0.5.0(storybook@10.5.4)(typescript@5.9.3)
       '@storybook/addon-themes':
-        specifier: 10.0.6
-        version: 10.0.6(storybook@10.3.5)
+        specifier: 10.5.4
+        version: 10.5.4(storybook@10.5.4)
       '@storybook/builder-vite':
-        specifier: 10.0.6
-        version: 10.0.6(rollup@4.60.1)(storybook@10.3.5)(vite@7.3.5)(webpack@5.106.1)
+        specifier: 10.5.4
+        version: 10.5.4(rollup@4.60.1)(storybook@10.5.4)(vite@7.3.5)(webpack@5.106.1)
       '@storybook/react':
-        specifier: ^10.0.6
-        version: 10.3.5(react-dom@19.2.5)(react@19.2.5)(storybook@10.3.5)(typescript@5.9.3)
+        specifier: 10.5.4
+        version: 10.5.4(@types/react@19.2.14)(react-dom@19.2.5)(react@19.2.5)(storybook@10.5.4)(typescript@5.9.3)
       '@storybook/react-vite':
-        specifier: ^10.3.5
-        version: 10.3.5(react-dom@19.2.5)(react@19.2.5)(rollup@4.60.1)(storybook@10.3.5)(typescript@5.9.3)(vite@7.3.5)(webpack@5.106.1)
+        specifier: 10.5.4
+        version: 10.5.4(@types/react@19.2.14)(react-dom@19.2.5)(react@19.2.5)(rollup@4.60.1)(storybook@10.5.4)(typescript@5.9.3)(vite@7.3.5)(webpack@5.106.1)
       '@storybook/web-components':
-        specifier: ^10.0.6
-        version: 10.3.5(lit@3.3.1)(storybook@10.3.5)
+        specifier: 10.5.4
+        version: 10.5.4(lit@3.3.1)(storybook@10.5.4)
       '@storybook/web-components-vite':
-        specifier: ^10.0.6
-        version: 10.3.5(lit@3.3.1)(rollup@4.60.1)(storybook@10.3.5)(vite@7.3.5)(webpack@5.106.1)
+        specifier: 10.5.4
+        version: 10.5.4(lit@3.3.1)(rollup@4.60.1)(storybook@10.5.4)(vite@7.3.5)(webpack@5.106.1)
       '@testing-library/jest-dom':
         specifier: ^6.9.1
         version: 6.9.1
@@ -227,7 +227,7 @@ importers:
         version: 5.2.0(vite@7.3.5)
       '@wc-toolkit/storybook-helpers':
         specifier: ^10.5.1
-        version: 10.5.1(lit@3.3.1)(storybook@10.3.5)
+        version: 10.5.1(lit@3.3.1)(storybook@10.5.4)
       babel-jest:
         specifier: ^30.2.0
         version: 30.3.0(@babel/core@7.29.7)
@@ -246,9 +246,6 @@ importers:
       element-internals-polyfill:
         specifier: ^3.0.2
         version: 3.0.2
-      fs:
-        specifier: 0.0.1-security
-        version: 0.0.1-security
       glob:
         specifier: ^11.0.3
         version: 11.1.0
@@ -282,9 +279,6 @@ importers:
       marked:
         specifier: ^17.0.0
         version: 17.0.6
-      path:
-        specifier: ^0.12.7
-        version: 0.12.7
       plop:
         specifier: ^4.0.4
         version: 4.0.5(@types/node@20.19.39)
@@ -307,8 +301,8 @@ importers:
         specifier: ^1.97.2
         version: 1.99.0
       storybook:
-        specifier: ^10.0.6
-        version: 10.3.5(@testing-library/dom@10.4.1)(react-dom@19.2.5)(react@19.2.5)
+        specifier: 10.5.4
+        version: 10.5.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/react@19.2.14)(react@19.2.5)
       style-dictionary:
         specifier: ^5.1.1
         version: 5.4.0(tslib@2.8.1)
@@ -3338,12 +3332,12 @@ packages:
     dependencies:
       '@emnapi/core': 1.9.2
       '@emnapi/runtime': 1.9.2
-      '@tybys/wasm-util': 0.10.1
+      '@tybys/wasm-util': 0.10.3
     dev: true
     optional: true
 
-  /@napi-rs/wasm-runtime@1.1.3(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2):
-    resolution: {integrity: sha512-xK9sGVbJWYb08+mTJt3/YV24WxvxpXcXtP6B172paPZ+Ts69Re9dAr7lKwJoeIx8OoeuimEiRZ7umkiUVClmmQ==}
+  /@napi-rs/wasm-runtime@1.1.6(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2):
+    resolution: {integrity: sha512-ZLv/JdUfkvOy9eCnnBaGfiO+XimbjebAeO+MRQqD/B+FR1tnRN0tpKSJHRbE8sFfS6aqsXZ67TQjfwfsxULVbg==}
     requiresBuild: true
     peerDependencies:
       '@emnapi/core': ^1.7.1
@@ -3351,7 +3345,7 @@ packages:
     dependencies:
       '@emnapi/core': 1.9.2
       '@emnapi/runtime': 1.9.2
-      '@tybys/wasm-util': 0.10.1
+      '@tybys/wasm-util': 0.10.3
     dev: true
     optional: true
 
@@ -3469,6 +3463,193 @@ packages:
       '@open-wc/scoped-elements': 3.0.10
       lit: 3.3.1
       lit-html: 3.3.2
+    dev: true
+
+  /@oxc-parser/binding-android-arm-eabi@0.127.0:
+    resolution: {integrity: sha512-0LC7ye4hvqbIKxAzThzvswgHLFu2AURKzYLeSVvLdu2TBOYWQDmHnTqPLeA597BcUCxiLqLsS4CJ5uoI5WYWCQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm]
+    os: [android]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@oxc-parser/binding-android-arm64@0.127.0:
+    resolution: {integrity: sha512-b5jtVTH6AU5CJXHNdj7Jj9IEiR9yVjjnwHzPJhGyHGPdcsZSzBCkS9GBbV33niRMvKthDwQRFRJfI4a+k4PvYg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [android]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@oxc-parser/binding-darwin-arm64@0.127.0:
+    resolution: {integrity: sha512-obCE8B7ISKkJidjlhv9xRGJPOSDG2Yu6PRga9Ruaz35uintHxbp1Ki/Yc71wx4rj3Edrm0a1kzG1TAwit0wFpg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@oxc-parser/binding-darwin-x64@0.127.0:
+    resolution: {integrity: sha512-JL6Xb5IwPQT8rUzlpsX7E+AgfcdNklXNPFp8pjCQQ5MQOQo5rtEB2ui+3Hgg9Sn7Y9Egj6YOLLiHhLpdAe12Aw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@oxc-parser/binding-freebsd-x64@0.127.0:
+    resolution: {integrity: sha512-SDQ/3MQFw58fqQz3Z1PhSKFF3JoCF4gmlNjziDm8X02tTahCw0qJbd7FGPDKw1i4VTBZene9JPyC3mHtSvi+wA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [freebsd]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@oxc-parser/binding-linux-arm-gnueabihf@0.127.0:
+    resolution: {integrity: sha512-Av+D1MIqzV0YMGPT9we2SIZaMKD7Cxs4CvXSx/yxaWHewZjYEjScpOf5igc8IILASViw4WTnjlwUdI1KzVtDHQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@oxc-parser/binding-linux-arm-musleabihf@0.127.0:
+    resolution: {integrity: sha512-Cs2fdJ8cPpFdeebj6p4dag8A4+56hPvZ0AhQQzlaLswGz1tz7bXt1nETLeorrM9+AMcWFFkqxcXwDGfTVidY8g==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@oxc-parser/binding-linux-arm64-gnu@0.127.0:
+    resolution: {integrity: sha512-qdOfTcT6SY8gsJrrV92uyEUyjqMGPpIB5JZUG6QN5dukYd+7/j0kX6MwK1DgQj39jtUYixxPiaRUiEN1+0CXgQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@oxc-parser/binding-linux-arm64-musl@0.127.0:
+    resolution: {integrity: sha512-EoTCZneNFU/P2qrpEM+RHmQwt+CvDkyGESG6qhr7KaegXLZwePfbrkCDfAk8/rhxbDUVGsZILX+2tqPzFtoFWA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@oxc-parser/binding-linux-ppc64-gnu@0.127.0:
+    resolution: {integrity: sha512-zALjmZYgxFLHjXeudcDF0xFGNydTAtkAeXAr2EuC17ywCyFxcmQra4w0BMde0Yi/re4Bi4iwEoEXtYN7l6eBLQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [ppc64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@oxc-parser/binding-linux-riscv64-gnu@0.127.0:
+    resolution: {integrity: sha512-fPP8M6zQLS7Jz7o9d5ArUSuAuSK3e+WCYVrCpdzeCOejidtZExJ9tjhDrAd3HEPqARBCPmdpqxESPFqy44vkBQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [riscv64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@oxc-parser/binding-linux-riscv64-musl@0.127.0:
+    resolution: {integrity: sha512-7IcC4Ao02oGpfnjt+X/oF4U2mllo2qoSkw5xxiXNKL9MCTsTiAC6616beOuehdxGcnz1bRoPC1RQ2f1GQDdN+g==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [riscv64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@oxc-parser/binding-linux-s390x-gnu@0.127.0:
+    resolution: {integrity: sha512-pbXIhiNFHoqWeqDNLiJ9JkpHz1IM9k4DXa66x+1GTWMG7iLxtkXgE53iiuKSXwmk3zIYmaPVfBvgcAhS583K4Q==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [s390x]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@oxc-parser/binding-linux-x64-gnu@0.127.0:
+    resolution: {integrity: sha512-MYCguB9RvBvlSd6gbuNI7QwiLoCCAlGnlRJFPrzLI6U1/9wkC/WK6LtBAUln55H1Ctqw45PWmqrobKoMhsYQzQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@oxc-parser/binding-linux-x64-musl@0.127.0:
+    resolution: {integrity: sha512-5eY0B/bxf1xIUxb4NOTvOI3KWtBQfPWYyKAzgcrCt0mDibSZygVpO1Pz8bkeiSZ5Jj9+M09dkggG3H8I5d0Uyg==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@oxc-parser/binding-openharmony-arm64@0.127.0:
+    resolution: {integrity: sha512-Gld0ajrFTUXNtdw20fVBuTQx66FA75nIVg+//pPfR3sXkuABB4mTBhl3r9JNzrJpgW//qiwxf0nWXUWGJSL3UQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [openharmony]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@oxc-parser/binding-wasm32-wasi@0.127.0:
+    resolution: {integrity: sha512-T6KVD7rhLzFlwGRXMnxUFfkCZD8FHnb968wVXW1mXzgRFc5RNXOBY2mPPDZ77x5Ln76ltLMgtPg0cOkU1NSrEQ==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [wasm32]
+    requiresBuild: true
+    dependencies:
+      '@emnapi/core': 1.9.2
+      '@emnapi/runtime': 1.9.2
+      '@napi-rs/wasm-runtime': 1.1.6(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
+    dev: true
+    optional: true
+
+  /@oxc-parser/binding-win32-arm64-msvc@0.127.0:
+    resolution: {integrity: sha512-Ujvw4X+LD1CCGULcsQcvb4YNVoBGqt+JHgNNzGGaCImELiZLk477ifUH53gIbE7EKd933NdTi25JWEr9K2HwXw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@oxc-parser/binding-win32-ia32-msvc@0.127.0:
+    resolution: {integrity: sha512-0cwxKO7KHQQQfo4Uf4B2SQrhgm+cJaP9OvFFhx52Tkg4bezsacu83GB2/In5bC415Ueeym+kXdnge/57rbSfTw==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [ia32]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@oxc-parser/binding-win32-x64-msvc@0.127.0:
+    resolution: {integrity: sha512-rOrnSQSCbhI2kowr9XxE7m9a8oQXnBHjnS6j95LxxAnEZ0+Fz20WlRXG4ondQb+ejjt2KOsa65sE6++L6kUd+w==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@oxc-project/types@0.127.0:
+    resolution: {integrity: sha512-aIYXQBo4lCbO4z0R3FHeucQHpF46l2LbMdxRvqvuRuW2OxdnSkcng5B8+K12spgLDj93rtN3+J2Vac/TIO+ciQ==}
     dev: true
 
   /@oxc-resolver/binding-android-arm-eabi@11.19.1:
@@ -3605,7 +3786,7 @@ packages:
     cpu: [wasm32]
     requiresBuild: true
     dependencies:
-      '@napi-rs/wasm-runtime': 1.1.3(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
+      '@napi-rs/wasm-runtime': 1.1.6(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
     transitivePeerDependencies:
       - '@emnapi/core'
       - '@emnapi/runtime'
@@ -4099,38 +4280,43 @@ packages:
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
     dev: true
 
-  /@storybook/addon-a11y@10.0.6(storybook@10.3.5):
-    resolution: {integrity: sha512-XTrLd2jU9gNEpbiQAnKR1v0WQYGDq6Kob3ecOH/pcJ81nnlPJ+SCJ/mAxicvUJfpAS9S/0TL8raChh6FZ5+psA==}
+  /@storybook/addon-a11y@10.5.4(storybook@10.5.4):
+    resolution: {integrity: sha512-UWdZtB7Dh1GjqxTPOrisUNDhDGF5pKGzZdzW9DSSHMBcAOx2dsTmXGzLSFprAz4LTT0OHCtKhxNqKK0JZJ0Y8g==}
     peerDependencies:
-      storybook: ^10.0.6
+      storybook: ^10.5.4
     dependencies:
       '@storybook/global': 5.0.0
       axe-core: 4.11.2
-      storybook: 10.3.5(@testing-library/dom@10.4.1)(react-dom@19.2.5)(react@19.2.5)
+      storybook: 10.5.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/react@19.2.14)(react@19.2.5)
     dev: true
 
-  /@storybook/addon-docs@10.0.6(@types/react@19.2.14)(rollup@4.60.1)(storybook@10.3.5)(vite@7.3.5)(webpack@5.106.1):
-    resolution: {integrity: sha512-MrMeZyON4V08T59zOFg2Wprw/V+mMiOKsyrCf5Zb5oO9BfUb6+VqbDIETsIHdhQxOZ9H5Oi27eU3akGMgCPDMw==}
+  /@storybook/addon-docs@10.5.4(@types/react@19.2.14)(rollup@4.60.1)(storybook@10.5.4)(vite@7.3.5)(webpack@5.106.1):
+    resolution: {integrity: sha512-2Z/x2pKEmXOCQjmttYzPuQBu9aWeMly8uEs3msrCTBLiHs/F7IlBFnMu0Z+T2Qvk0LEy8O93AlcPSP76aCcKjw==}
     peerDependencies:
-      storybook: ^10.0.6
+      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      storybook: ^10.5.4
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
     dependencies:
       '@mdx-js/react': 3.1.1(@types/react@19.2.14)(react@19.2.5)
-      '@storybook/csf-plugin': 10.0.6(rollup@4.60.1)(storybook@10.3.5)(vite@7.3.5)(webpack@5.106.1)
-      '@storybook/icons': 1.6.0(react-dom@19.2.5)(react@19.2.5)
-      '@storybook/react-dom-shim': 10.0.6(react-dom@19.2.5)(react@19.2.5)(storybook@10.3.5)
+      '@storybook/csf-plugin': 10.5.4(rollup@4.60.1)(storybook@10.5.4)(vite@7.3.5)(webpack@5.106.1)
+      '@storybook/icons': 2.1.0(react@19.2.5)
+      '@storybook/react-dom-shim': 10.5.4(@types/react@19.2.14)(react-dom@19.2.5)(react@19.2.5)(storybook@10.5.4)
+      '@types/react': 19.2.14
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
-      storybook: 10.3.5(@testing-library/dom@10.4.1)(react-dom@19.2.5)(react@19.2.5)
+      storybook: 10.5.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/react@19.2.14)(react@19.2.5)
       ts-dedent: 2.2.0
     transitivePeerDependencies:
-      - '@types/react'
+      - '@types/react-dom'
       - esbuild
       - rollup
       - vite
       - webpack
     dev: true
 
-  /@storybook/addon-mcp@0.5.0(storybook@10.3.5)(typescript@5.9.3):
+  /@storybook/addon-mcp@0.5.0(storybook@10.5.4)(typescript@5.9.3):
     resolution: {integrity: sha512-yaw6S7a0596sgsAQpfhaatImRwlm+XfxLG28xZSGHXlVfaIYz9+5k1PFh6yWeKPPeJ+B6oUWD1pZCGcK5FOoYw==}
     peerDependencies:
       '@storybook/addon-vitest': ^9.1.16 || ^10.0.0 || ^10.1.0-0 || ^10.2.0-0 || ^10.3.0-0 || ^10.4.0-0
@@ -4143,7 +4329,7 @@ packages:
       '@tmcp/adapter-valibot': 0.1.5(tmcp@1.19.3)(valibot@1.2.0)
       '@tmcp/transport-http': 0.8.5(tmcp@1.19.3)
       picoquery: 2.5.0
-      storybook: 10.3.5(@testing-library/dom@10.4.1)(react-dom@19.2.5)(react@19.2.5)
+      storybook: 10.5.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/react@19.2.14)(react@19.2.5)
       tmcp: 1.19.3(typescript@5.9.3)
       valibot: 1.2.0(typescript@5.9.3)
     transitivePeerDependencies:
@@ -4151,23 +4337,23 @@ packages:
       - typescript
     dev: true
 
-  /@storybook/addon-themes@10.0.6(storybook@10.3.5):
-    resolution: {integrity: sha512-mpxDfypZSxxWtxjdwh6ui/K8XiQ/RtFK213KIiQjoRQhlGdE8evs9RCTznra9nCV/1tFXX8UQktCZqgm0JAi1g==}
+  /@storybook/addon-themes@10.5.4(storybook@10.5.4):
+    resolution: {integrity: sha512-g5uTI7/hJxwXEzSFkPBBIJ/jX6l7rYG1CotcG7+FIvZ2PPTFyph/5MmMvS+wtisppZsSprquX3RnYWwmn1bcZA==}
     peerDependencies:
-      storybook: ^10.0.6
+      storybook: ^10.5.4
     dependencies:
-      storybook: 10.3.5(@testing-library/dom@10.4.1)(react-dom@19.2.5)(react@19.2.5)
+      storybook: 10.5.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/react@19.2.14)(react@19.2.5)
       ts-dedent: 2.2.0
     dev: true
 
-  /@storybook/builder-vite@10.0.6(rollup@4.60.1)(storybook@10.3.5)(vite@7.3.5)(webpack@5.106.1):
-    resolution: {integrity: sha512-WD5BfYezOQC0B4ItY9HJg9zb4MbNjsZcfXipAQi7+i9dYNWegdAhg7Aq6arsRZ2YMMOiSpVEJhzmK08XRx+szA==}
+  /@storybook/builder-vite@10.5.4(rollup@4.60.1)(storybook@10.5.4)(vite@7.3.5)(webpack@5.106.1):
+    resolution: {integrity: sha512-eXdgow+brSzZrG3CnG18YwxZwEYNAZIh2G5qKwNoZf0uk2ZCPgLRQwtVAcd7BiiEDGnXUHm9pycAS+UiF4F4Mg==}
     peerDependencies:
-      storybook: ^10.0.6
+      storybook: ^10.5.4
       vite: ^7.3.5
     dependencies:
-      '@storybook/csf-plugin': 10.0.6(rollup@4.60.1)(storybook@10.3.5)(vite@7.3.5)(webpack@5.106.1)
-      storybook: 10.3.5(@testing-library/dom@10.4.1)(react-dom@19.2.5)(react@19.2.5)
+      '@storybook/csf-plugin': 10.5.4(rollup@4.60.1)(storybook@10.5.4)(vite@7.3.5)(webpack@5.106.1)
+      storybook: 10.5.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/react@19.2.14)(react@19.2.5)
       ts-dedent: 2.2.0
       vite: 7.3.5(@types/node@20.19.39)(sass@1.99.0)(tsx@4.21.0)
     transitivePeerDependencies:
@@ -4176,28 +4362,12 @@ packages:
       - webpack
     dev: true
 
-  /@storybook/builder-vite@10.3.5(rollup@4.60.1)(storybook@10.3.5)(vite@7.3.5)(webpack@5.106.1):
-    resolution: {integrity: sha512-i4KwCOKbhtlbQIbhm53+Kk7bMnxa0cwTn1pxmtA/x5wm1Qu7FrrBQV0V0DNjkUqzcSKo1CjspASJV/HlY0zYlw==}
-    peerDependencies:
-      storybook: ^10.3.5
-      vite: ^7.3.5
-    dependencies:
-      '@storybook/csf-plugin': 10.3.5(rollup@4.60.1)(storybook@10.3.5)(vite@7.3.5)(webpack@5.106.1)
-      storybook: 10.3.5(@testing-library/dom@10.4.1)(react-dom@19.2.5)(react@19.2.5)
-      ts-dedent: 2.2.0
-      vite: 7.3.5(@types/node@20.19.39)(sass@1.99.0)(tsx@4.21.0)
-    transitivePeerDependencies:
-      - esbuild
-      - rollup
-      - webpack
-    dev: true
-
-  /@storybook/csf-plugin@10.0.6(rollup@4.60.1)(storybook@10.3.5)(vite@7.3.5)(webpack@5.106.1):
-    resolution: {integrity: sha512-etPIKPoLAhG8wTRZrmvOiDi70CstkE8Y5fYuYhffThCP8tc2RwHEuwLrsK/6Mf9PAkTmIk/CjYG+Rp2qLqNNtg==}
+  /@storybook/csf-plugin@10.5.4(rollup@4.60.1)(storybook@10.5.4)(vite@7.3.5)(webpack@5.106.1):
+    resolution: {integrity: sha512-DSp5Z/eZlRnKq0KrKLJE6uoYf/Ysc+FP0Z5DVTGnOrie+z3tC0lNi9I4RB++EXkJeUDS9/4dxvJZVSWjhLlXxw==}
     peerDependencies:
       esbuild: ^0.28.1
       rollup: '*'
-      storybook: ^10.0.6
+      storybook: ^10.5.4
       vite: ^7.3.5
       webpack: '*'
     peerDependenciesMeta:
@@ -4211,32 +4381,7 @@ packages:
         optional: true
     dependencies:
       rollup: 4.60.1
-      storybook: 10.3.5(@testing-library/dom@10.4.1)(react-dom@19.2.5)(react@19.2.5)
-      unplugin: 2.3.11
-      vite: 7.3.5(@types/node@20.19.39)(sass@1.99.0)(tsx@4.21.0)
-      webpack: 5.106.1
-    dev: true
-
-  /@storybook/csf-plugin@10.3.5(rollup@4.60.1)(storybook@10.3.5)(vite@7.3.5)(webpack@5.106.1):
-    resolution: {integrity: sha512-qlEzNKxOjq86pvrbuMwiGD/bylnsXk1dg7ve0j77YFjEEchqtl7qTlrXvFdNaLA89GhW6D/EV6eOCu/eobPDgw==}
-    peerDependencies:
-      esbuild: ^0.28.1
-      rollup: '*'
-      storybook: ^10.3.5
-      vite: ^7.3.5
-      webpack: '*'
-    peerDependenciesMeta:
-      esbuild:
-        optional: true
-      rollup:
-        optional: true
-      vite:
-        optional: true
-      webpack:
-        optional: true
-    dependencies:
-      rollup: 4.60.1
-      storybook: 10.3.5(@testing-library/dom@10.4.1)(react-dom@19.2.5)(react@19.2.5)
+      storybook: 10.5.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/react@19.2.14)(react@19.2.5)
       unplugin: 2.3.11
       vite: 7.3.5(@types/node@20.19.39)(sass@1.99.0)(tsx@4.21.0)
       webpack: 5.106.1
@@ -4246,25 +4391,12 @@ packages:
     resolution: {integrity: sha512-FcOqPAXACP0I3oJ/ws6/rrPT9WGhu915Cg8D02a9YxLo0DE9zI+a9A5gRGvmQ09fiWPukqI8ZAEoQEdWUKMQdQ==}
     dev: true
 
-  /@storybook/icons@1.6.0(react-dom@19.2.5)(react@19.2.5):
-    resolution: {integrity: sha512-hcFZIjW8yQz8O8//2WTIXylm5Xsgc+lW9ISLgUk1xGmptIJQRdlhVIXCpSyLrQaaRiyhQRaVg7l3BD9S216BHw==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
-    dependencies:
-      react: 19.2.5
-      react-dom: 19.2.5(react@19.2.5)
-    dev: true
-
-  /@storybook/icons@2.0.1(react-dom@19.2.5)(react@19.2.5):
-    resolution: {integrity: sha512-/smVjw88yK3CKsiuR71vNgWQ9+NuY2L+e8X7IMrFjexjm6ZR8ULrV2DRkTA61aV6ryefslzHEGDInGpnNeIocg==}
+  /@storybook/icons@2.1.0(react@19.2.5):
+    resolution: {integrity: sha512-Fxh9vYpX9bQqFeHRiY8h2ApeRGDzRSMLwJwNZ/AIRqnyOKHxRKL+yFe+ctEkVJmuptRE9u1Hrn8ZZNHyfDKKNg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
     dependencies:
       react: 19.2.5
-      react-dom: 19.2.5(react@19.2.5)
     dev: true
 
   /@storybook/mcp@0.6.2(typescript@5.9.3):
@@ -4279,107 +4411,117 @@ packages:
       - typescript
     dev: true
 
-  /@storybook/react-dom-shim@10.0.6(react-dom@19.2.5)(react@19.2.5)(storybook@10.3.5):
-    resolution: {integrity: sha512-UdPSWwgo7WQg8vWIxT379pwrC2uFZX9u12Enap8//zVCJNZYHmjTLbV2P+pQ4zD0UFcqcBljptJEbu7FUMYx+A==}
+  /@storybook/react-dom-shim@10.5.4(@types/react@19.2.14)(react-dom@19.2.5)(react@19.2.5)(storybook@10.5.4):
+    resolution: {integrity: sha512-YdlppEOReg8MvTECRNuf79gu2zL83JqKDHIR/65eS0M6y+ue9pkpfjYo7hZVIcyOcRd9npBDXMdt2kC92bCuaA==}
     peerDependencies:
+      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      '@types/react-dom': ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-      storybook: ^10.0.6
+      storybook: ^10.5.4
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
     dependencies:
+      '@types/react': 19.2.14
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
-      storybook: 10.3.5(@testing-library/dom@10.4.1)(react-dom@19.2.5)(react@19.2.5)
+      storybook: 10.5.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/react@19.2.14)(react@19.2.5)
     dev: true
 
-  /@storybook/react-dom-shim@10.3.5(react-dom@19.2.5)(react@19.2.5)(storybook@10.3.5):
-    resolution: {integrity: sha512-Gw8R7XZm0zSUH0XAuxlQJhmizsLzyD6x00KOlP6l7oW9eQHXGfxg3seNDG3WrSAcW07iP1/P422kuiriQlOv7g==}
+  /@storybook/react-vite@10.5.4(@types/react@19.2.14)(react-dom@19.2.5)(react@19.2.5)(rollup@4.60.1)(storybook@10.5.4)(typescript@5.9.3)(vite@7.3.5)(webpack@5.106.1):
+    resolution: {integrity: sha512-iw7EAA98n30vpf+ZSy2Ll4Ne7oyZ/lS6W22u5Sp5UOI2oAkYuklxIWjRIKGqpY0BHP+GqaGYtUGMZQnBqgul2g==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-      storybook: ^10.3.5
-    dependencies:
-      react: 19.2.5
-      react-dom: 19.2.5(react@19.2.5)
-      storybook: 10.3.5(@testing-library/dom@10.4.1)(react-dom@19.2.5)(react@19.2.5)
-    dev: true
-
-  /@storybook/react-vite@10.3.5(react-dom@19.2.5)(react@19.2.5)(rollup@4.60.1)(storybook@10.3.5)(typescript@5.9.3)(vite@7.3.5)(webpack@5.106.1):
-    resolution: {integrity: sha512-UB5sJHeh26bfd8sNMx2YPGYRYmErIdTRaLOT28m4bykQIa1l9IgVktsYg/geW7KsJU0lXd3oTbnUjLD+enpi3w==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-      storybook: ^10.3.5
+      storybook: ^10.5.4
+      typescript: '>= 4.9.x'
       vite: ^7.3.5
+    peerDependenciesMeta:
+      typescript:
+        optional: true
     dependencies:
       '@joshwooding/vite-plugin-react-docgen-typescript': 0.7.0(typescript@5.9.3)(vite@7.3.5)
       '@rollup/pluginutils': 5.3.0(rollup@4.60.1)
-      '@storybook/builder-vite': 10.3.5(rollup@4.60.1)(storybook@10.3.5)(vite@7.3.5)(webpack@5.106.1)
-      '@storybook/react': 10.3.5(react-dom@19.2.5)(react@19.2.5)(storybook@10.3.5)(typescript@5.9.3)
+      '@storybook/builder-vite': 10.5.4(rollup@4.60.1)(storybook@10.5.4)(vite@7.3.5)(webpack@5.106.1)
+      '@storybook/react': 10.5.4(@types/react@19.2.14)(react-dom@19.2.5)(react@19.2.5)(storybook@10.5.4)(typescript@5.9.3)
       empathic: 2.0.0
       magic-string: 0.30.21
       react: 19.2.5
       react-docgen: 8.0.3
       react-dom: 19.2.5(react@19.2.5)
       resolve: 1.22.11
-      storybook: 10.3.5(@testing-library/dom@10.4.1)(react-dom@19.2.5)(react@19.2.5)
+      storybook: 10.5.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/react@19.2.14)(react@19.2.5)
       tsconfig-paths: 4.2.0
+      typescript: 5.9.3
       vite: 7.3.5(@types/node@20.19.39)(sass@1.99.0)(tsx@4.21.0)
     transitivePeerDependencies:
+      - '@types/react'
+      - '@types/react-dom'
       - esbuild
       - rollup
       - supports-color
-      - typescript
       - webpack
     dev: true
 
-  /@storybook/react@10.3.5(react-dom@19.2.5)(react@19.2.5)(storybook@10.3.5)(typescript@5.9.3):
-    resolution: {integrity: sha512-tpLTLaVGoA6fLK3ReyGzZUricq7lyPaV2hLPpj5wqdXLV/LpRtAHClUpNoPDYSBjlnSjL81hMZijbkGC3mA+gw==}
+  /@storybook/react@10.5.4(@types/react@19.2.14)(react-dom@19.2.5)(react@19.2.5)(storybook@10.5.4)(typescript@5.9.3):
+    resolution: {integrity: sha512-tOxfVgbYcaVsArN8XTDkJfdsnsnHh1LxjRHVpJ/N+VEkz4FveK/XH3jOLV0YqgrG8yXza7+CteDP4FfPVQY/mw==}
     peerDependencies:
+      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      '@types/react-dom': ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-      storybook: ^10.3.5
+      storybook: ^10.5.4
       typescript: '>= 4.9.x'
     peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
       typescript:
         optional: true
     dependencies:
       '@storybook/global': 5.0.0
-      '@storybook/react-dom-shim': 10.3.5(react-dom@19.2.5)(react@19.2.5)(storybook@10.3.5)
+      '@storybook/react-dom-shim': 10.5.4(@types/react@19.2.14)(react-dom@19.2.5)(react@19.2.5)(storybook@10.5.4)
+      '@types/react': 19.2.14
       react: 19.2.5
       react-docgen: 8.0.3
       react-docgen-typescript: 2.4.0(typescript@5.9.3)
       react-dom: 19.2.5(react@19.2.5)
-      storybook: 10.3.5(@testing-library/dom@10.4.1)(react-dom@19.2.5)(react@19.2.5)
+      storybook: 10.5.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/react@19.2.14)(react@19.2.5)
       typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@storybook/web-components-vite@10.3.5(lit@3.3.1)(rollup@4.60.1)(storybook@10.3.5)(vite@7.3.5)(webpack@5.106.1):
-    resolution: {integrity: sha512-6uAw6KAUXFsAPzp8KchcMp3gatEnEAd8ylIvzoMzvsIMiHmzXwvDNmoFZnAJ2tmsQGvF4dZRDCBg7PvWdTx8Rg==}
+  /@storybook/web-components-vite@10.5.4(lit@3.3.1)(rollup@4.60.1)(storybook@10.5.4)(vite@7.3.5)(webpack@5.106.1):
+    resolution: {integrity: sha512-cqXR7CJWOTDxOLrlraG5yJA6q0GD9BqPp0tMalGvijBIZRWZ7PB9gJQXuBgSnbfcZw0DAanR7UuFpo2j9RuR6g==}
     peerDependencies:
-      storybook: ^10.3.5
+      storybook: ^10.5.4
+      vite: ^7.3.5
     dependencies:
-      '@storybook/builder-vite': 10.3.5(rollup@4.60.1)(storybook@10.3.5)(vite@7.3.5)(webpack@5.106.1)
-      '@storybook/web-components': 10.3.5(lit@3.3.1)(storybook@10.3.5)
-      storybook: 10.3.5(@testing-library/dom@10.4.1)(react-dom@19.2.5)(react@19.2.5)
+      '@storybook/builder-vite': 10.5.4(rollup@4.60.1)(storybook@10.5.4)(vite@7.3.5)(webpack@5.106.1)
+      '@storybook/web-components': 10.5.4(lit@3.3.1)(storybook@10.5.4)
+      storybook: 10.5.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/react@19.2.14)(react@19.2.5)
+      vite: 7.3.5(@types/node@20.19.39)(sass@1.99.0)(tsx@4.21.0)
     transitivePeerDependencies:
       - esbuild
       - lit
       - rollup
-      - vite
       - webpack
     dev: true
 
-  /@storybook/web-components@10.3.5(lit@3.3.1)(storybook@10.3.5):
-    resolution: {integrity: sha512-tSppZagFCeZ+bWsaHUvdiw17ATWgfGDBz0mFicgEj0/eNuxQH2OvXyRIQUXY39b/55TBwSGeoIX3tOW91WIqpw==}
+  /@storybook/web-components@10.5.4(lit@3.3.1)(storybook@10.5.4):
+    resolution: {integrity: sha512-Z0q1DJX7fKg79h0YV+6NS6yeld3d6Y5tk0HewPRW11TDuhcxsY/Lx2aMmQNyAAs0fVXb1YtkVPxIQiHucU7+vQ==}
     peerDependencies:
       lit: ^2.0.0 || ^3.0.0
-      storybook: ^10.3.5
+      storybook: ^10.5.4
     dependencies:
       '@storybook/global': 5.0.0
       lit: 3.3.1
-      storybook: 10.3.5(@testing-library/dom@10.4.1)(react-dom@19.2.5)(react@19.2.5)
+      storybook: 10.5.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/react@19.2.14)(react@19.2.5)
       tiny-invariant: 1.3.3
       ts-dedent: 2.2.0
     dev: true
@@ -4505,8 +4647,8 @@ packages:
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
     dev: true
 
-  /@tybys/wasm-util@0.10.1:
-    resolution: {integrity: sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==}
+  /@tybys/wasm-util@0.10.3:
+    resolution: {integrity: sha512-F3fo1MYrRJYL3zER0OUOmkutjr1Vp23m7OsSgp7nq4SP6OqX6C/56XFIPAl5bt3zaBRjmW7SGz3u/6LwFpYcOg==}
     requiresBuild: true
     dependencies:
       tslib: 2.8.1
@@ -5169,14 +5311,14 @@ packages:
     resolution: {integrity: sha512-2ZUIRfhofZ/npLlf872EBnPmn27Kt4M2UssmQIfnJvgGgMYZJ5fvtHEDnttBBf2hnVtBgNCqZMVHJA+wsFVqTA==}
     dev: true
 
-  /@wc-toolkit/storybook-helpers@10.5.1(lit@3.3.1)(storybook@10.3.5):
+  /@wc-toolkit/storybook-helpers@10.5.1(lit@3.3.1)(storybook@10.5.4):
     resolution: {integrity: sha512-deS3LagKQVksbrXJZEQK8lgp+vTNUt8qiNFMAyLxzwTRa2sstQ7llNGLfeBTzx8c8GkWmSzYfoMMsc3ROfYiJQ==}
     peerDependencies:
       lit: ^2.0.0 || ^3.0.0
       storybook: '>=10.1.11-0 <11.0.0-0'
     dependencies:
       lit: 3.3.1
-      storybook: 10.3.5(@testing-library/dom@10.4.1)(react-dom@19.2.5)(react@19.2.5)
+      storybook: 10.5.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/react@19.2.14)(react@19.2.5)
     dev: true
 
   /@web/config-loader@0.1.3:
@@ -7280,10 +7422,6 @@ packages:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: true
 
-  /fs@0.0.1-security:
-    resolution: {integrity: sha512-3XY9e1pP0CVEUCdj5BmfIZxRBTSDycnbqhIOGec9QYtmVH2fbLpj86CFWkrNOkt/Fvty4KZG5lTglL9j/gJ87w==}
-    dev: true
-
   /fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -8721,6 +8859,10 @@ packages:
     hasBin: true
     dev: true
 
+  /jsonc-parser@3.3.1:
+    resolution: {integrity: sha512-HUgH65KyejrUFPvHFPbqOY0rsFip3Bo5wb4ngvdi1EpCYWUQDC5V+Y7mZws+DLkr4M//zQJoanu1SP+87Dv1oQ==}
+    dev: true
+
   /jsonfile@6.2.0:
     resolution: {integrity: sha512-FGuPw30AdOIUTRMC2OMRtQV+jkVj2cfPqSeWXv1NEAJ1qZ5zb1X6z1mFhbfOB/iy3ssJCD+3KuZ8r8C3uVFlAg==}
     dependencies:
@@ -9781,6 +9923,34 @@ packages:
       wcwidth: 1.0.1
     dev: true
 
+  /oxc-parser@0.127.0:
+    resolution: {integrity: sha512-bkgD4qHlN7WxLdX8bLXdaU54TtQtAIg/ZBAfm0aje/mo3MRDo3P0hZSgr4U7O3xfX+fQmR5AP04JS/TGcZLcFA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    dependencies:
+      '@oxc-project/types': 0.127.0
+    optionalDependencies:
+      '@oxc-parser/binding-android-arm-eabi': 0.127.0
+      '@oxc-parser/binding-android-arm64': 0.127.0
+      '@oxc-parser/binding-darwin-arm64': 0.127.0
+      '@oxc-parser/binding-darwin-x64': 0.127.0
+      '@oxc-parser/binding-freebsd-x64': 0.127.0
+      '@oxc-parser/binding-linux-arm-gnueabihf': 0.127.0
+      '@oxc-parser/binding-linux-arm-musleabihf': 0.127.0
+      '@oxc-parser/binding-linux-arm64-gnu': 0.127.0
+      '@oxc-parser/binding-linux-arm64-musl': 0.127.0
+      '@oxc-parser/binding-linux-ppc64-gnu': 0.127.0
+      '@oxc-parser/binding-linux-riscv64-gnu': 0.127.0
+      '@oxc-parser/binding-linux-riscv64-musl': 0.127.0
+      '@oxc-parser/binding-linux-s390x-gnu': 0.127.0
+      '@oxc-parser/binding-linux-x64-gnu': 0.127.0
+      '@oxc-parser/binding-linux-x64-musl': 0.127.0
+      '@oxc-parser/binding-openharmony-arm64': 0.127.0
+      '@oxc-parser/binding-wasm32-wasi': 0.127.0
+      '@oxc-parser/binding-win32-arm64-msvc': 0.127.0
+      '@oxc-parser/binding-win32-ia32-msvc': 0.127.0
+      '@oxc-parser/binding-win32-x64-msvc': 0.127.0
+    dev: true
+
   /oxc-resolver@11.19.1(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2):
     resolution: {integrity: sha512-qE/CIg/spwrTBFt5aKmwe3ifeDdLfA2NESN30E42X/lII5ClF8V7Wt6WIJhcGZjp0/Q+nQ+9vgxGk//xZNX2hg==}
     optionalDependencies:
@@ -10207,8 +10377,8 @@ packages:
     engines: {node: ^20.9.0 || >=22}
     dependencies:
       '@babel/core': 7.29.7
-      '@babel/traverse': 7.29.0
-      '@babel/types': 7.29.0
+      '@babel/traverse': 7.29.7
+      '@babel/types': 7.29.7
       '@types/babel__core': 7.20.5
       '@types/babel__traverse': 7.28.0
       '@types/doctrine': 0.0.9
@@ -10901,33 +11071,44 @@ packages:
     resolution: {integrity: sha512-Rq7ybcX2RuC55r9oaPVEW7/xu3tj8u4GeBYHBWCychFtzMIr86A7e3PPEBPT37sHStKX3+TiX/Fr/ACmJLVlLQ==}
     dev: true
 
-  /storybook@10.3.5(@testing-library/dom@10.4.1)(react-dom@19.2.5)(react@19.2.5):
-    resolution: {integrity: sha512-uBSZu/GZa9aEIW3QMGvdQPMZWhGxSe4dyRWU8B3/Vd47Gy/XLC7tsBxRr13txmmPOEDHZR94uLuq0H50fvuqBw==}
+  /storybook@10.5.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(@types/react@19.2.14)(react@19.2.5):
+    resolution: {integrity: sha512-bmLxPsxVSPnbeiZqYQpozyNOiJXfk+pf7WfHZflvPkwT6Y+rvYz3Cj/D6H4Kf2jHpuDNiMXBKO3yawLN2OWirg==}
     hasBin: true
     peerDependencies:
+      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       prettier: ^2 || ^3
+      vite-plus: ^0.1.15 || ^0.2.0
     peerDependenciesMeta:
+      '@types/react':
+        optional: true
       prettier:
+        optional: true
+      vite-plus:
         optional: true
     dependencies:
       '@storybook/global': 5.0.0
-      '@storybook/icons': 2.0.1(react-dom@19.2.5)(react@19.2.5)
+      '@storybook/icons': 2.1.0(react@19.2.5)
+      '@testing-library/dom': 10.4.1
       '@testing-library/jest-dom': 6.9.1
       '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.1)
+      '@types/react': 19.2.14
       '@vitest/expect': 3.2.4
       '@vitest/spy': 3.2.4
       '@webcontainer/env': 1.1.1
       esbuild: 0.28.1
+      jsonc-parser: 3.3.1
       open: 10.2.0
+      oxc-parser: 0.127.0
+      oxc-resolver: 11.19.1(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
       recast: 0.23.11
       semver: 7.7.4
       use-sync-external-store: 1.6.0(react@19.2.5)
       ws: 8.21.0
     transitivePeerDependencies:
-      - '@testing-library/dom'
+      - '@emnapi/core'
+      - '@emnapi/runtime'
       - bufferutil
       - react
-      - react-dom
       - utf-8-validate
     dev: true
 
