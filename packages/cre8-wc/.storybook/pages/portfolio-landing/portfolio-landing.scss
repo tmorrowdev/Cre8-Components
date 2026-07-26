@@ -1,0 +1,499 @@
+// Neobrutalism Portfolio Landing Page Styles
+// Bold, striking design with pixelated background animation
+
+// === NEOBRUTALISM DESIGN TOKENS ===
+$neo-black: #1a1a2e;
+$neo-white: #fefefe;
+$neo-cream: #fffbf0;
+$neo-pink: #ff6b9d;
+$neo-purple: #c44dff;
+$neo-blue: #4d9fff;
+$neo-yellow: #ffe156;
+$neo-green: #4dff88;
+$neo-orange: #ff8c42;
+
+$neo-border-width: 4px;
+$neo-border-width-thick: 6px;
+$neo-shadow-offset: 8px;
+$neo-shadow-offset-sm: 4px;
+$neo-shadow-offset-lg: 12px;
+
+$neo-radius: 0;
+$neo-radius-sm: 4px;
+
+// === FONTS ===
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+$font-display: 'Space Grotesk', system-ui, sans-serif;
+$font-mono: 'Space Mono', monospace;
+
+// === BASE STYLES ===
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio-landing {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, $neo-cream 0%, #fff5eb 50%, #f0e6ff 100%);
+  font-family: $font-display;
+  overflow: hidden;
+}
+
+// === PIXELATED BACKGROUND CANVAS ===
+.pixel-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+// === NOISE OVERLAY ===
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+// === MAIN CONTENT ===
+.content {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+// === HERO SECTION ===
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  max-width: 1400px;
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.hero-card {
+  background: $neo-white;
+  border: $neo-border-width-thick solid $neo-black;
+  box-shadow: $neo-shadow-offset-lg $neo-shadow-offset-lg 0 $neo-black;
+  padding: 3rem 4rem;
+  max-width: 700px;
+  position: relative;
+  transform: rotate(-1deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: rotate(0deg) translateY(-4px);
+    box-shadow: #{$neo-shadow-offset-lg + 4px} #{$neo-shadow-offset-lg + 4px} 0 $neo-black;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    width: 60px;
+    height: 24px;
+    background: $neo-yellow;
+    border: $neo-border-width solid $neo-black;
+    transform: rotate(-3deg);
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+    transform: rotate(0deg);
+  }
+}
+
+// === TYPOGRAPHY ===
+.greeting {
+  display: inline-block;
+  font-family: $font-mono;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $neo-white;
+  background: $neo-pink;
+  border: $neo-border-width solid $neo-black;
+  box-shadow: $neo-shadow-offset-sm $neo-shadow-offset-sm 0 $neo-black;
+  padding: 0.5rem 1.25rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+}
+
+.name {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: $neo-black;
+  margin-bottom: 1.5rem;
+
+  .highlight {
+    display: block;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    background: linear-gradient(135deg, $neo-purple 0%, $neo-pink 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+
+    &::after {
+      content: 'Tyler Morrow';
+      position: absolute;
+      left: 4px;
+      top: 4px;
+      z-index: -1;
+      background: $neo-yellow;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0.5;
+    }
+  }
+}
+
+.role-container {
+  margin-bottom: 2.5rem;
+}
+
+.role {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 500;
+  color: $neo-black;
+  line-height: 1.6;
+
+  .role-highlight {
+    font-weight: 700;
+    position: relative;
+    white-space: nowrap;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: $neo-yellow;
+      z-index: -1;
+      transform: skewX(-5deg);
+    }
+  }
+
+  &:first-child .role-highlight::after {
+    background: $neo-blue;
+  }
+
+  &:last-child .role-highlight::after {
+    background: $neo-purple;
+    opacity: 0.6;
+  }
+}
+
+// === BUTTONS ===
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-family: $font-display;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border: $neo-border-width solid $neo-black;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+
+  &-primary {
+    background: $neo-black;
+    color: $neo-white;
+    box-shadow: $neo-shadow-offset-sm $neo-shadow-offset-sm 0 $neo-purple;
+
+    &:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: #{$neo-shadow-offset-sm + 2px} #{$neo-shadow-offset-sm + 2px} 0 $neo-purple;
+    }
+
+    &:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 $neo-purple;
+    }
+  }
+
+  &-secondary {
+    background: $neo-white;
+    color: $neo-black;
+    box-shadow: $neo-shadow-offset-sm $neo-shadow-offset-sm 0 $neo-black;
+
+    &:hover {
+      background: $neo-yellow;
+      transform: translate(-2px, -2px);
+      box-shadow: #{$neo-shadow-offset-sm + 2px} #{$neo-shadow-offset-sm + 2px} 0 $neo-black;
+    }
+
+    &:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 $neo-black;
+    }
+  }
+
+  &-arrow {
+    transition: transform 0.2s ease;
+  }
+
+  &:hover &-arrow {
+    transform: translateX(4px);
+  }
+}
+
+// === DECORATIVE ELEMENTS ===
+.decorative-elements {
+  position: relative;
+  width: 300px;
+  height: 300px;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.shape {
+  position: absolute;
+  border: $neo-border-width-thick solid $neo-black;
+}
+
+.shape-1 {
+  width: 120px;
+  height: 120px;
+  background: $neo-yellow;
+  top: 0;
+  right: 0;
+  box-shadow: $neo-shadow-offset $neo-shadow-offset 0 $neo-black;
+  animation: float 4s ease-in-out infinite;
+}
+
+.shape-2 {
+  width: 80px;
+  height: 80px;
+  background: $neo-pink;
+  bottom: 60px;
+  left: 0;
+  border-radius: 50%;
+  box-shadow: $neo-shadow-offset $neo-shadow-offset 0 $neo-black;
+  animation: float 5s ease-in-out infinite 0.5s;
+}
+
+.shape-3 {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 86px solid $neo-blue;
+  bottom: 0;
+  right: 40px;
+  border: none;
+  background: $neo-blue;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  width: 100px;
+  height: 86px;
+  filter: drop-shadow($neo-shadow-offset $neo-shadow-offset 0 $neo-black);
+  animation: float 6s ease-in-out infinite 1s;
+}
+
+.pixel-art {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .pixel-row {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 4px;
+
+    span {
+      width: 16px;
+      height: 16px;
+      background: $neo-purple;
+      border: 2px solid $neo-black;
+    }
+  }
+}
+
+// === BOTTOM NAVIGATION ===
+.bottom-nav {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  background: $neo-white;
+  border: $neo-border-width solid $neo-black;
+  box-shadow: $neo-shadow-offset-sm $neo-shadow-offset-sm 0 $neo-black;
+  padding: 0.75rem 1rem;
+  z-index: 100;
+
+  @media (max-width: 600px) {
+    bottom: 1rem;
+    padding: 0.5rem;
+    gap: 0.25rem;
+  }
+}
+
+.nav-link {
+  font-family: $font-mono;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: $neo-black;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: $neo-yellow;
+    border-color: $neo-black;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+// === SCROLL INDICATOR ===
+.scroll-indicator {
+  position: fixed;
+  bottom: 6rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.scroll-text {
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: $neo-black;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.scroll-arrow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  span {
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid $neo-black;
+    border-bottom: 2px solid $neo-black;
+    transform: rotate(45deg);
+    animation: scrollBounce 1.5s ease-in-out infinite;
+
+    &:nth-child(2) {
+      animation-delay: 0.15s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+  }
+}
+
+// === ANIMATIONS ===
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes scrollBounce {
+  0%, 100% {
+    opacity: 0.3;
+    transform: rotate(45deg) translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(45deg) translateY(6px);
+  }
+}
+
+// === RESPONSIVE ADJUSTMENTS ===
+@media (max-width: 480px) {
+  .content {
+    padding: 1rem;
+  }
+
+  .hero-card {
+    padding: 1.5rem;
+
+    &::before {
+      width: 40px;
+      height: 18px;
+      top: -10px;
+      left: 15px;
+    }
+  }
+
+  .greeting {
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
