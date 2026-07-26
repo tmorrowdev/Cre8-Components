@@ -1,5 +1,5 @@
 {
-  "version": "2.0.6",
+  "version": "2.0.7",
   "library": "@tmorrow/cre8-wc",
   "tagPrefix": "cre8",
   "description": "cre8 Web Components is a library of presentational UI web components to be consumed by # web applications.",
