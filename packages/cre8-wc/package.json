@@ -34,7 +34,9 @@
     "publish:react": "cd react-wrappers && npm publish --access public",
     "release:publish": "node scripts/release.cjs --skip-lint --skip-tests --publish",
     "version:bump": "node scripts/version-bump.cjs",
-    "test:a2ui": "npx tsx a2ui/smoke-test.mjs && npx tsx a2ui/stream/stream-test.mjs"
+    "test:a2ui": "npx tsx a2ui/smoke-test.mjs && npx tsx a2ui/stream/stream-test.mjs && node a2ui/render-audit.mjs --check",
+    "audit:render": "node a2ui/render-audit.mjs",
+    "audit:render:check": "node a2ui/render-audit.mjs --check"
   },
   "type": "module",
   "module": "lib/index.js",

@@ -520,5 +520,23 @@ await test('cre8-tag-list is now known to contain cre8-tag, not the reverse', as
   assert(tag.observedParents.includes('cre8-tag-list'), 'and the child names its real parent');
 });
 
+await test('get_content_model warns about props that render nothing', async () => {
+  // cre8-field.errorText is declared, defaults to "Error", and is never read —
+  // an agent setting it to show a validation message gets silence, and
+  // validate_a2ui_spec says the spec is fine.
+  const field = await (await req('/content-model?component=cre8-field')).json();
+  assert(field.inertProps?.errorText, 'errorText must be flagged as inert');
+  assert(field.inertProps.errorText.reason.includes('fieldNote'),
+    'and the warning must name the prop that does work');
+  const spec = { component: 'cre8-field', props: { errorText: 'Required' }, slots: { fieldNote: ['x'] } };
+  assertEqual((await (await post('/a2ui/validate', { spec })).json()).ok, true,
+    'the point being that validation passes it regardless');
+});
+
+await test('a component with no inert props says nothing about them', async () => {
+  const button = await (await req('/content-model?component=cre8-button')).json();
+  assert(!('inertProps' in button), 'silence, rather than an empty all-clear');
+});
+
 console.log(`\n${passed} passed, ${failures.length} failed`);
 if (failures.length) process.exit(1);
