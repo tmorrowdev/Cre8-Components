@@ -10,7 +10,7 @@ const meta = {
     parameters: {
         status: { type: 'inProgress' },
         actions: {
-            handles: ['dropdown-item-selected'],
+            handles: ['percent-bar-left-action-click'],
         },
     },
     argTypes: {

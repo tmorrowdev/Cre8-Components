@@ -12,7 +12,7 @@ export interface Cre8TabProps {
   /** Used to connect tab trigger and tab panel for accessibility  _*This property is dynamically set_ */
   ariaLabelledBy?: string | undefined;
   children?: React.ReactNode;
-  onTabSelected?: (event: CustomEvent) => void;
+  onTabSelect?: (event: CustomEvent) => void;
 }
 
 /**
@@ -23,7 +23,7 @@ export const Cre8Tab = createComponent({
   tagName: 'cre8-tab',
   elementClass: Cre8TabElement,
   events: {
-    onTabSelected: 'tabSelected'
+    onTabSelect: 'tab-select'
   }
 });
 

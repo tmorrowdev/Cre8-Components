@@ -6,7 +6,7 @@ export interface Cre8DropdownItemProps {
   /** The accessible label for the item. Falls back to the item's text content when unset. */
   ariaLabel?: string;
   children?: React.ReactNode;
-  onDropdownItemSelected?: (event: CustomEvent) => void;
+  onDropdownItemSelect?: (event: CustomEvent) => void;
 }
 
 /**
@@ -17,7 +17,7 @@ export const Cre8DropdownItem = createComponent({
   tagName: 'cre8-dropdown-item',
   elementClass: Cre8DropdownItemElement,
   events: {
-    onDropdownItemSelected: 'dropdown-item-selected'
+    onDropdownItemSelect: 'dropdown-item-select'
   }
 });
 

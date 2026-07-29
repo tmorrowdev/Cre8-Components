@@ -13,7 +13,7 @@ export default {
       exclude: new RegExp(`${excludeRegexArray.join('|')}`),
     },
     actions: {
-      handles: ['selectedItemsChange'],
+      handles: ['multi-select-change'],
     },
     docs: {
       story: {

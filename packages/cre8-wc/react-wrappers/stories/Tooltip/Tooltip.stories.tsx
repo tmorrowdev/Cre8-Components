@@ -68,12 +68,12 @@ export default {
         disable: true,
       },
     },
-    onClose: {
+    onTooltipClose: {
       table: {
         disable: true,
       },
     },
-    onOpen: {
+    onTooltipOpen: {
       table: {
         disable: true,
       },

@@ -5,10 +5,6 @@ import { Cre8Element } from '../cre8-element';
 import styles from './progress-meter.styles.js';
 
 
-export enum status {
-  'error', 'warning', 'success', undefined
- }
-
 /**
  * A progress meter provides feedback that the system is working and gives
  * the user an indication of how much time they will wait.
@@ -23,8 +19,6 @@ export class Cre8ProgressMeter extends Cre8Element {
    * - **Error** renders a meter with an error status fill
    * - **Warning** renders a meter with a warning status
    * - **Success** renders a meter with a success status fill
-   *
-   * @attr {status}
    */
   @property()
       status?: 'error' | 'warning' | 'success';

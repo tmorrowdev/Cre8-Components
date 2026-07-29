@@ -13,7 +13,7 @@ export default {
     status: { type: 'inProgress' },
     layout: 'centered',
     actions: {
-      handles: ['open', 'close']
+      handles: ['tooltip-open', 'tooltip-close']
     }
   },
 

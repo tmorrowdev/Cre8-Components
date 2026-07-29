@@ -24,7 +24,7 @@ export default {
   ),
   args: {
     buttonText: 'Select',
-    onDropdownItemSelected: action('dropdown-item-selected'),
+    onDropdownItemSelect: action('dropdown-item-select'),
   },
 };
 
@@ -99,11 +99,11 @@ export const DropdownLinkWithScrollBar: StoryObj<typeof Cre8Dropdown> = { args: 
  * Please check the console log for output of callback for this example.
  */
 export const DropdownItemSelected: StoryObj<typeof Cre8Dropdown> = { args: {
-  onDropdownItemSelected: (e) => {
+  onDropdownItemSelect: (e) => {
     const dropdownElement = e.currentTarget;
     const dropdownItemElement = e.target;
 
-    console.log('dropdown-item-selected', e, dropdownElement.dropdownContent, dropdownItemElement.ariaLabel);
+    console.log('dropdown-item-select', e, dropdownElement.dropdownContent, dropdownItemElement.ariaLabel);
   },
   children: (
     <>

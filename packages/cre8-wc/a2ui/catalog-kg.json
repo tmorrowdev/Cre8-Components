@@ -3,9 +3,9 @@
     "generated_from": "catalog.json",
     "catalog_id": "cre8-wc",
     "library": "@tmorrow/cre8-wc",
-    "library_version": "2.0.4",
-    "total_nodes": 214,
-    "total_edges": 203
+    "library_version": "2.0.7",
+    "total_nodes": 220,
+    "total_edges": 209
   },
   "nodes": [
     {
@@ -1732,9 +1732,13 @@
         },
         "position": {
           "type": "string",
-          "enum": null,
+          "enum": [
+            "top",
+            "left",
+            "right"
+          ],
           "default": null,
-          "description": "Positions the popover panel absolutely to the trigger - **default** positions th\u2026",
+          "description": "Positions the popover panel absolutely to the trigger - Omitting this prop posit\u2026",
           "x-kind": "attribute"
         },
         "isVisibleOnScroll": {
@@ -1829,6 +1833,18 @@
       "name": "footer",
       "component": "cre8-popover",
       "description": "Custom footer content for the popover panel"
+    },
+    {
+      "id": "prop:cre8-popover:position",
+      "type": "enum_prop",
+      "name": "position",
+      "component": "cre8-popover",
+      "enum": [
+        "top",
+        "left",
+        "right"
+      ],
+      "description": "Positions the popover panel absolutely to the trigger - Omitting this prop posit\u2026"
     },
     {
       "id": "cre8-submenu",
@@ -2133,16 +2149,25 @@
         },
         "status": {
           "type": "string",
-          "enum": null,
+          "enum": [
+            "error",
+            "info",
+            "warning",
+            "success",
+            "attention"
+          ],
           "default": null,
-          "description": "Status (a color variant prop) - **neutral** (default) renders a badge with a neu\u2026",
+          "description": "Status (a color variant prop) - Omitting this prop renders a badge with the neut\u2026",
           "x-kind": "attribute"
         },
         "variant": {
           "type": "string",
-          "enum": null,
+          "enum": [
+            "light",
+            "white"
+          ],
           "default": null,
-          "description": "Background Style Variant - **dark|undefined** (default) renders a badge with a d\u2026",
+          "description": "Background Style Variant - Omitting this prop renders a badge with a dark backgr\u2026",
           "x-kind": "attribute"
         },
         "svg": {
@@ -2155,6 +2180,31 @@
       },
       "slots": [],
       "accepts_children": false
+    },
+    {
+      "id": "prop:cre8-badge:status",
+      "type": "enum_prop",
+      "name": "status",
+      "component": "cre8-badge",
+      "enum": [
+        "error",
+        "info",
+        "warning",
+        "success",
+        "attention"
+      ],
+      "description": "Status (a color variant prop) - Omitting this prop renders a badge with the neut\u2026"
+    },
+    {
+      "id": "prop:cre8-badge:variant",
+      "type": "enum_prop",
+      "name": "variant",
+      "component": "cre8-badge",
+      "enum": [
+        "light",
+        "white"
+      ],
+      "description": "Background Style Variant - Omitting this prop renders a badge with a dark backgr\u2026"
     },
     {
       "id": "cre8-inline-alert",
@@ -2440,6 +2490,19 @@
       "category": "Feedback",
       "description": "The Progress Steps Item component is used to display a single step in a multi-step process. It should be used as a child\u2026",
       "props": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "error",
+            "warning",
+            "complete",
+            "current",
+            "incomplete"
+          ],
+          "default": null,
+          "description": "The state of the step.",
+          "x-kind": "attribute"
+        },
         "message": {
           "type": "string",
           "enum": null,
@@ -2454,13 +2517,6 @@
           "description": "The name of the step.",
           "x-kind": "attribute"
         },
-        "state": {
-          "type": "string",
-          "enum": null,
-          "default": null,
-          "description": "The state of the step: 'complete', 'current', 'error',' incomplete', 'warning';",
-          "x-kind": "attribute"
-        },
         "svg": {
           "type": "string",
           "enum": null,
@@ -2471,6 +2527,20 @@
       },
       "slots": [],
       "accepts_children": true
+    },
+    {
+      "id": "prop:cre8-progress-steps-item:state",
+      "type": "enum_prop",
+      "name": "state",
+      "component": "cre8-progress-steps-item",
+      "enum": [
+        "error",
+        "warning",
+        "complete",
+        "current",
+        "incomplete"
+      ],
+      "description": "The state of the step."
     },
     {
       "id": "cre8-skeleton-loader",
@@ -4035,7 +4105,10 @@
         },
         "status": {
           "type": "string",
-          "enum": null,
+          "enum": [
+            "brand",
+            "knockout"
+          ],
           "default": null,
           "description": "Status (a color variant prop) - By default, the divider has gray color. - **bran\u2026",
           "x-kind": "attribute"
@@ -4054,6 +4127,17 @@
         "vertical"
       ],
       "description": "Divider variants - By default, the component renders the horizontal divider - **\u2026"
+    },
+    {
+      "id": "prop:cre8-divider:status",
+      "type": "enum_prop",
+      "name": "status",
+      "component": "cre8-divider",
+      "enum": [
+        "brand",
+        "knockout"
+      ],
+      "description": "Status (a color variant prop) - By default, the divider has gray color. - **bran\u2026"
     },
     {
       "id": "cre8-grid",
@@ -5515,7 +5599,7 @@
             "title-default",
             "title-small",
             "label-large",
-            "label",
+            "label-default",
             "label-small",
             "meta-large",
             "meta-default",
@@ -5534,7 +5618,14 @@
         },
         "tagVariant": {
           "type": "string",
-          "enum": null,
+          "enum": [
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5",
+            "h6"
+          ],
           "default": "h5",
           "description": "Dynamic tag name for the component 1) This is needed to use proper semantic head\u2026",
           "x-kind": "property"
@@ -5566,13 +5657,28 @@
         "title-default",
         "title-small",
         "label-large",
-        "label",
+        "label-default",
         "label-small",
         "meta-large",
         "meta-default",
         "meta-small"
       ],
       "description": "Heading type <cre8-text-passage size=\"small\"> <ul> <li>**display-default** rende\u2026"
+    },
+    {
+      "id": "prop:cre8-heading:tagVariant",
+      "type": "enum_prop",
+      "name": "tagVariant",
+      "component": "cre8-heading",
+      "enum": [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6"
+      ],
+      "description": "Dynamic tag name for the component 1) This is needed to use proper semantic head\u2026"
     },
     {
       "id": "cre8-text-link",
@@ -6011,6 +6117,11 @@
       "rel": "HAS_SLOT"
     },
     {
+      "from": "cre8-popover",
+      "to": "prop:cre8-popover:position",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
       "from": "cre8-submenu",
       "to": "cat:Disclosure",
       "rel": "BELONGS_TO"
@@ -6076,6 +6187,16 @@
       "rel": "BELONGS_TO"
     },
     {
+      "from": "cre8-badge",
+      "to": "prop:cre8-badge:status",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-badge",
+      "to": "prop:cre8-badge:variant",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
       "from": "cre8-inline-alert",
       "to": "cat:Feedback",
       "rel": "BELONGS_TO"
@@ -6124,6 +6245,11 @@
       "from": "cre8-progress-steps-item",
       "to": "cat:Feedback",
       "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-progress-steps-item",
+      "to": "prop:cre8-progress-steps-item:state",
+      "rel": "HAS_ENUM_PROP"
     },
     {
       "from": "cre8-skeleton-loader",
@@ -6318,6 +6444,11 @@
     {
       "from": "cre8-divider",
       "to": "prop:cre8-divider:variant",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-divider",
+      "to": "prop:cre8-divider:status",
       "rel": "HAS_ENUM_PROP"
     },
     {
@@ -6668,6 +6799,11 @@
     {
       "from": "cre8-heading",
       "to": "prop:cre8-heading:type",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-heading",
+      "to": "prop:cre8-heading:tagVariant",
       "rel": "HAS_ENUM_PROP"
     },
     {

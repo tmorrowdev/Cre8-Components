@@ -28,7 +28,7 @@ export interface Cre8MultiSelectProps {
   /** The success field note that appears below the default field note */
   successNote?: string | undefined;
   children?: React.ReactNode;
-  onSelectedItemsChange?: (event: CustomEvent) => void;
+  onMultiSelectChange?: (event: CustomEvent) => void;
 }
 
 /**
@@ -39,7 +39,7 @@ export const Cre8MultiSelect = createComponent({
   tagName: 'cre8-multi-select',
   elementClass: Cre8MultiSelectElement,
   events: {
-    onSelectedItemsChange: 'selectedItemsChange'
+    onMultiSelectChange: 'multi-select-change'
   }
 });
 

@@ -455,7 +455,28 @@ The cre8 components use a `header`, `body`, and `footer` convention for a lot of
   - `xl` = Extra large
   - `xxl` = Extra, extra large
 
-### Events
+### Event names
+
+Emitted event names use **lowercase kebab-case**, shaped as `component-action`:
+
+```
+<cre8-tabs @tab-change=${handler}>
+<cre8-modal @modal-close=${handler}>
+<cre8-pagination @pagination-change=${handler}>
+```
+
+The rules:
+
+- **kebab-case, never camelCase or dotted.** `tab-change`, not `tabChange` or `tab.change`.
+- **No `cre8-` prefix.** The tag is already namespaced; the event is not. `cre8-select` emits `change`, not `cre8-change`.
+- **Lead with the component the event describes**, dropping any plural (`cre8-tabs` emits `tab-change`). Compound children use their own full name (`cre8-dropdown-item` emits `dropdown-item-select`).
+- **End with a verb in the present tense** — `-change`, `-click`, `-select`, `-open`, `-close`. Not `-selected`, not `-clicked`.
+- **Disambiguate siblings with the part they came from**, not with a new suffix: `split-button-text-click` and `split-button-dropdown-click`.
+- **Native event names are reserved for native semantics.** A component that re-fires a native form event keeps the native name — `cre8-select`, `cre8-tag`, `cre8-checkbox-field-item`, and `cre8-select-tile` emit `change` and `input` so consumers can treat them like native controls (see [Event Handling](#event-handling) for why `change` has to be re-fired at all). Don't invent a `change`-like event on a non-form component; give it a `component-action` name instead.
+
+Existing consumers used five different conventions before this rule existed. Every renamed event is still dispatched under its old name for one major version — see `DEPRECATED_EVENT_ALIASES` in `components/cre8-element.ts`, which is the single place the deprecations are listed and the single place to delete them from. If you build an event object yourself rather than calling `this.dispatch()`, emit it through `this.dispatchWithLegacyAlias()` so the alias still fires.
+
+### Event handler methods
 
 While some components are static and don't require any interactivity, other components require functionality. For these components, we need to declare a event method. For event handling, we want to go a step further and privatize the method so consuming teams know not to call it in use by pre-fixing these methods with `private _handleOn[Event Name]`. For example:
 
@@ -627,7 +648,7 @@ It is possible to use the native DOM events in React. Typically you would use th
 
 While usually React developers use the properties method to listen for events, there's a few different versions you might use the browser native API.
 
-For example, in a previous version of cre8 Web Components, we forgot to map the custom `close-modal` event that `<cre8-modal>` fires, so the `onModalClose` property was not available.. Here is an example how the native event listeners were used instead by the consumers:
+For example, in a previous version of cre8 Web Components, we forgot to map the custom `modal-close` event that `<cre8-modal>` fires, so the `onModalClose` property was not available.. Here is an example how the native event listeners were used instead by the consumers:
 
 ```tsx
 import { type ComponentProps, type ReactNode, useEffect, useRef } from 'react';
@@ -659,7 +680,7 @@ export function ModalWrapper({
   const ref = useRef<cre8ModalElement>(null);
   useEffect(() => {
     const element = ref.current;
-    element?.addEventListener('close-modal', handleCloseClick);
+    element?.addEventListener('modal-close', handleCloseClick);
     return () => {
       window.document.body.style.overflow = 'visible';
     };
@@ -692,7 +713,7 @@ First ask yourself, is the event composed?
 
 All of the built-in events that React supports **and that are composed** are automatically mapped by `@lit/react` and do not need manual mapping.
 
-Any custom events that cre8 fires will need to be mapped, such as the 'close-modal' event that cre8Modal fires, or the custom 'change' event that `cre8Select` fires in response to the built-in, non-composed `change` event.
+Any custom events that cre8 fires will need to be mapped, such as the 'modal-close' event that cre8Modal fires, or the custom 'change' event that `cre8Select` fires in response to the built-in, non-composed `change` event.
 
 You can also use the mapping to map one name to another event. For example, React developers typically use `onChange` for `<input>`s and `<select>`s, so it makes sense to map that to something. For native elements, React maps `onChange` to the `input` event for some elements, and to `change` for others, and even to `click` sometimes, and so we'll want to do something similar.
 
@@ -793,7 +814,7 @@ Firing `CustomEvent`s in Lit are an important way for framework-specific wrapper
 ```ts
 handleOnOpen() {
   this.isActive = true;
-  this.dispatch({ eventName: 'close', detailObj: { isActive: this.isActive } });
+  this.dispatch({ eventName: 'modal-close', detailObj: { isActive: this.isActive } });
 }
 
 ```
@@ -801,7 +822,7 @@ handleOnOpen() {
 `this.dispatch` consists of an `eventName` which is used to pass in a function from the outside and a `detailObj` which allows a user to pass in the `@property` they want to expose to applications. This gives the ability for users to run another function at the application-level from the outside. It also allows access to the property value from inside the component to use to trigger other events at the application. Here is an example of logging the `isActive` interactive property to the console when the `modal` is closed:
 
 ```ts
-<cre8-modal @close=${(e) => { console.log(e.detail.isActive)}}>
+<cre8-modal @modal-close=${(e) => { console.log(e.detail.isActive)}}>
 ```
 
 While this is only a simple `console.log`, functions can be passed into these events as well and then use internal component properties to align application or framework (e.g. React) states with internal reactive property values so that those are always aligned. If you add custom events to your components, be sure to update your stories so the `Actions` tab in addons can fire that event. Here is an example story with `actions` linked up to an eventName:
@@ -813,10 +834,98 @@ export default {
   parameters: {
     status: {type: 'stable'},
     actions: {
-      handles: ['tabChange'],
+      handles: ['tab-change'],
     },
   },
 };
 ```
 
 You can also trigger these by adding child actions to the parent stories file's actions (e.g. a radio-field-item custom event within a radio-field story's actions). These custom events should be added to React's stories' actions as well. For more information on how custom event emission works, go to Lit's Documentation on custom events.
+
+---
+
+## Form submission
+
+### `cre8-button` defaults to `type="button"`, and stays that way
+
+`cre8-button` declares `type: 'button' | 'submit' | 'reset' = 'button'`, and its
+click handler calls `formSubmit()` only when `type === 'submit'`. A button left at
+the default does nothing to the form around it.
+
+This differs from a native `<button>`, which defaults to `submit` when it is
+inside a form — and that mismatch is the reason this is easy to get wrong. **The
+default stays `button` anyway.** The decision, so it does not get relitigated:
+
+- **Changing it is breaking, silently and at runtime.** Every `<cre8-button>`
+  currently sitting inside a form without a `type` would begin submitting on
+  click. The failure mode in shipped applications is a surprise navigation or a
+  duplicate POST, in code nobody edited.
+- **`cre8-button` is form-associated regardless.** It extends `Cre8FormElement`,
+  so it is inside forms often, and most of those instances are ordinary actions —
+  "Add row", "Show more", a dropdown trigger — not submits. Defaulting to
+  `submit` would make the common case the dangerous one.
+- **Opting in is one attribute; opting out would be one attribute on many more
+  buttons.** The cost lands on whichever case is not the default, and the submit
+  case is the smaller one.
+
+So the rule is: **write `type="submit"` explicitly on the button that submits.**
+
+```html
+<form>
+  <cre8-field label="Email" name="email" type="email"></cre8-field>
+  <cre8-button text="Sign In" variant="primary" type="submit"></cre8-button>
+</form>
+```
+
+Because this is opt-in and its absence is invisible, `pnpm kb:check` fails when a
+documented `<form>` example contains `cre8-button`s and none has `type="submit"`.
+
+### Three things a cre8 form needs before it submits anything
+
+The button's `type` is only the first. All three are silent when missing — the
+form renders correctly and reviews fine.
+
+1. **A real `<form>` element.** cre8 form components participate through
+   `ElementInternals` (`attachInternals()` / `setFormValue()`). Outside a form
+   there is nothing for those calls to talk to. Note that a `<button>` inside a
+   component's shadow root does *not* submit an ancestor light-DOM form on its
+   own; that is exactly why `formSubmit()` calls `form.requestSubmit()` through
+   `_internals.form`.
+2. **`type="submit"` on the button.** Per above.
+3. **`name` on every field.** `setFormValue()` contributes an entry to `FormData`
+   only when the element has a non-empty `name` attribute. A form that is
+   otherwise wired correctly but whose fields are unnamed submits an empty
+   payload — it looks like a working form and posts nothing.
+
+### Constraint attributes do not validate on their own
+
+`Cre8FormElement` calls `setValidity()` from exactly one place: `setCustomValidity()`.
+`required`, `pattern`, `min`, `max` and `type="email"` are stored as reactive
+properties and forwarded to the inner `<input>`, but that input is in the shadow
+root and its native validity never reaches the host's `ElementInternals`. An empty
+`required` field reports `validity.valueMissing === false` and submits.
+
+Enforce constraints explicitly — via `setCustomValidity()` on input/blur, or in
+the form's `submit` handler — and do not rely on `required` to block submission.
+
+### Attribute names are lowercased, not kebab-cased
+
+Lit derives an observed attribute from a property name by **lowercasing it**, not
+by kebab-casing it. No cre8 component overrides this with `attribute:`, so:
+
+| Property | Works in HTML | Silently does nothing |
+|---|---|---|
+| `fullWidth` | `fullWidth` / `fullwidth` | `full-width` |
+| `tagVariant` | `tagVariant` / `tagvariant` | `tag-variant` |
+| `isActive` | `isActive` / `isactive` | `is-active` |
+| `isError` | `isError` / `iserror` | `is-error` |
+
+HTML attribute names are case-insensitive, so writing the camelCase property name
+directly — `fullWidth`, `isActive` — is the readable form and the one to prefer.
+A kebab-cased attribute is not an error: it is an unrecognized attribute that Lit
+ignores, so the component silently keeps its default.
+
+This applies to ARIA-shaped props too. `cre8-modal` renders its inner
+`role="dialog"` label from the `ariaLabel` **property**; `<cre8-modal aria-label="…">`
+sets a host attribute the component never reads and leaves the dialog unlabelled.
+Write `ariaLabel`.

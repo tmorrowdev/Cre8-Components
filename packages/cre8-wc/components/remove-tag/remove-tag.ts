@@ -21,7 +21,7 @@ export enum Color {
  * Clicking a Remove Tag causes it to disappear from the page or field (in the case of Multi-Select).
  * These tags always display a "Close" icon.
  *
- * @fires removeTagClicked - Fires when the remove tag is clicked.
+ * @fires remove-tag-click - Fires when the remove tag is clicked.
  */
 export class Cre8RemoveTag extends Cre8Element {
     static styles = [styles];
@@ -61,12 +61,12 @@ export class Cre8RemoveTag extends Cre8Element {
    * Dispatches an event when the tag is clicked
    */
   private _handleRemoveTagClicked() {
-      const customEvent = new CustomEvent('removeTagClicked', {
+      const customEvent = new CustomEvent('remove-tag-click', {
           detail: { message: 'Remove Tag clicked.' },
           bubbles: true,
           composed: true,
       });
-      this.dispatchEvent(customEvent);
+      this.dispatchWithLegacyAlias(customEvent);
   }
 
   render() {

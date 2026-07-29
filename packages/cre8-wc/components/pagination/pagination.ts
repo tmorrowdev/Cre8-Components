@@ -68,7 +68,7 @@ import styles from './pagination.styles.js';
  *
  * @slot - Optional content rendered alongside the pagination controls
  *
- * @fires pagination.click - Fires when the page changes. `event.detail` is `{ buttonName, value }` where `value` is the new current page.
+ * @fires pagination-change - Fires when the page changes. `event.detail` is `{ buttonName, value }` where `value` is the new current page.
  */
 
 export class Cre8Pagination extends Cre8Element {
@@ -271,8 +271,8 @@ export class Cre8Pagination extends Cre8Element {
         this._currentPage = page;
         this.currentPage = this._currentPage;
         this.requestUpdate('currentPage', old);
-        this.dispatchEvent(new CustomEvent(
-            'pagination.click',
+        this.dispatchWithLegacyAlias(new CustomEvent(
+            'pagination-change',
             { detail: { buttonName: _buttonName ?? this.currentPage.toString(), value: this.currentPage } }
         ));
     };

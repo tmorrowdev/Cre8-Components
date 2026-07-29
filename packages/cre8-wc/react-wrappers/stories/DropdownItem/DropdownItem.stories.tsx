@@ -19,7 +19,7 @@ export default {
   ),
   args: {
     buttonText: 'Select',
-    onDropdownItemSelected: action('dropdown-item-selected'),
+    onDropdownItemSelect: action('dropdown-item-select'),
   },
 };
 

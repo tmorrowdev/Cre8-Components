@@ -10,7 +10,7 @@ import styles from './dropdown-item.styles.js';
  *
  * @slot - The label content for the dropdown item.
  *
- * @fires dropdown-item-selected - Fires when the item is clicked. `event.detail.originalEvent` holds the source `MouseEvent`.
+ * @fires dropdown-item-select - Fires when the item is clicked. `event.detail.originalEvent` holds the source `MouseEvent`.
  */
 export class Cre8DropdownItem extends Cre8Element {
     static styles = [styles];
@@ -22,7 +22,7 @@ export class Cre8DropdownItem extends Cre8Element {
       ariaLabel = '';
 
   private _handleClick(e: MouseEvent) {
-      this.dispatch({ e, eventName: 'dropdown-item-selected' });
+      this.dispatch({ e, eventName: 'dropdown-item-select' });
   }
 
   connectedCallback() {

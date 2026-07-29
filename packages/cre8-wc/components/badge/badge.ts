@@ -6,13 +6,6 @@ import '../icon/icon';
 
 import styles from './badge.styles.js';
 
-export enum status {
- 'error', 'warning', 'success', 'info', 'attention', undefined
-}
-export enum variant {
-  'light', 'white', undefined
-}
-
 /**
  * Status badges are used most often in tables or fat rows in a list.
  * These Components serve a contextual purpose and don't provide any functionality.
@@ -30,7 +23,7 @@ export class Cre8Badge extends Cre8Element {
 
   /**
    * Status (a color variant prop)
-   * - **neutral** (default) renders a badge with a neutral state treatment
+   * - Omitting this prop renders a badge with the neutral state treatment
    * - **success** renders a badge with success state treatment
    * - **warning** renders a badge with warning state treatment
    * - **error** renders a badge with error state treatment
@@ -38,17 +31,17 @@ export class Cre8Badge extends Cre8Element {
    * - **attention** renders a badge with attention state treatment
    */
   @property({ type: String })
-      status: string;
+      status?: 'success' | 'warning' | 'error' | 'info' | 'attention';
 
   /**
    * Background Style Variant
    *
-   * - **dark|undefined** (default) renders a badge with a dark background
+   * - Omitting this prop renders a badge with a dark background
    * - **light** renders a badge with a light background
    * - **white** renders a badge with a white background
    */
   @property({ type: String })
-      variant: string;
+      variant?: 'light' | 'white';
 
   /**
    * SVG as a raw string

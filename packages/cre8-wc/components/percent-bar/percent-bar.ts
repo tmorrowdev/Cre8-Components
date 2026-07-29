@@ -12,6 +12,8 @@ import styles from './percent-bar.styles.js';
  * The percent bar visually indicates a user's current progress and has a few features: a basic display bar with
  * a percentage, an actionable icon that allows a user to revisit a prior step and an actionable link that
  * allows a user save their progress before exiting.
+ *
+ * @fires percent-bar-left-action-click - Fires when the left action button is clicked.
  */
 export class Cre8PercentBar extends Cre8Element {
   static styles = [styles];
@@ -36,7 +38,7 @@ export class Cre8PercentBar extends Cre8Element {
   disableActionLeft?: boolean;
 
   private _handleClick(e: MouseEvent) {
-    this.dispatchEvent(new Event('leftActionButtonClick', e));
+    this.dispatchWithLegacyAlias(new Event('percent-bar-left-action-click', e));
   }
 
   private fractionAsPercent(): number {

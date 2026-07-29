@@ -8,6 +8,37 @@ This CHANGELOG lists changes for all `packages` contained within this repository
 
 ---
 
+## Unreleased
+
+### ⚠️ Deprecated — event names normalized to kebab-case
+
+Emitted event names now follow a single convention: lowercase kebab-case shaped as `component-action` (`tab-change`, `modal-close`, `chart-click`). Previously 16 components used five different conventions — bare word, camelCase, kebab-case, `cre8-`-prefixed kebab, and dotted — with no rule mapping a component to its event name. The convention is now written down in [`agent-docs/CODE_GUIDELINES.md`](packages/cre8-wc/agent-docs/CODE_GUIDELINES.md#event-names).
+
+**Nothing breaks yet.** Every renamed event is dispatched twice — once under its new name, once under its old name — so existing listeners keep working. **The old names will be removed in the next major release.** Migrate now:
+
+| Component | Deprecated name | New name |
+|---|---|---|
+| `cre8-tabs` | `tabChange` | `tab-change` |
+| `cre8-tab` | `tabSelected` | `tab-select` |
+| `cre8-modal` | `close-modal` | `modal-close` |
+| `cre8-popover` | `open` / `close` | `popover-open` / `popover-close` |
+| `cre8-tooltip` | `open` / `close` | `tooltip-open` / `tooltip-close` |
+| `cre8-multi-select` | `selectedItemsChange` | `multi-select-change` |
+| `cre8-remove-tag` | `removeTagClicked` | `remove-tag-click` |
+| `cre8-percent-bar` | `leftActionButtonClick` | `percent-bar-left-action-click` |
+| `cre8-dropdown-item` | `dropdown-item-selected` | `dropdown-item-select` |
+| `cre8-split-button` | `text-click` / `dropdown-click` | `split-button-text-click` / `split-button-dropdown-click` |
+| `cre8-pagination` | `pagination.click` | `pagination-change` |
+| `cre8-chart` | `cre8-chart-click` / `-hover` / `-ready` | `chart-click` / `chart-hover` / `chart-ready` |
+
+`change` and `input` on `cre8-select`, `cre8-tag`, `cre8-checkbox-field-item`, and `cre8-select-tile` are **unchanged**. Those are deliberate re-fires of native form events so the components behave like native controls, and they keep their native names.
+
+React consumers: the generated `on*` props follow the event names, so `onCloseModal` → `onModalClose`, `onSelectedItemsChange` → `onMultiSelectChange`, `onTabSelected` → `onTabSelect`, and `onDropdownItemSelected` → `onDropdownItemSelect`. `onTabChange` is unaffected.
+
+The aliases are listed in `DEPRECATED_EVENT_ALIASES` in `packages/cre8-wc/components/cre8-element.ts` — delete that map and `Cre8Element.dispatchWithLegacyAlias()` to complete the removal.
+
+---
+
 ## 1.0.0-beta
 
 Release date: TBD

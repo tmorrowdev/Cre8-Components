@@ -35,7 +35,7 @@ const meta: Meta<Cre8Pagination> = {
   parameters: {
     status: { type: 'inProgress' },
     actions: {
-      handles: ['pagination.click', 'button.handleOnBlur', 'pagination.keydown'],
+      handles: ['pagination-change', 'button.handleOnBlur', 'pagination.keydown'],
     },
   },
   decorators: [withActions],

@@ -18,7 +18,7 @@ export default {
   parameters: {
     status: { type: 'inProgress' },
     actions: {
-      handles: ['tabChange', 'tabSelected'],
+      handles: ['tab-change', 'tab-select'],
     },
   },
   argTypes: {
@@ -33,7 +33,7 @@ export default {
     isStart: { table: { disable: true } },
     setIsStart: { table: { disable: true } },
     setIsEnd: { table: { disable: true } },
-    tabChange: { table: { disable: true } },
+    'tab-change': { table: { disable: true } },
     tabId: { table: { disable: true } },
   },
 };

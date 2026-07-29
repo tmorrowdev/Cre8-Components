@@ -78,7 +78,7 @@ const eventSpec = {
   props: { text: 'Save', variant: 'primary' },
   events: {
     click: { handler: 'save-record', stopPropagation: true },
-    'text-click': 'emit-telemetry',
+    'split-button-text-click': 'emit-telemetry',
   },
 };
 
@@ -86,7 +86,7 @@ const emitted = [];
 const eventEl = render(eventSpec, cat, { onEvent: (e) => emitted.push(e) });
 
 eventEl.dispatchEvent(new dom.window.Event('click', { bubbles: true }));
-eventEl.dispatchEvent(new dom.window.CustomEvent('text-click', { detail: { source: 'kbd' } }));
+eventEl.dispatchEvent(new dom.window.CustomEvent('split-button-text-click', { detail: { source: 'kbd' } }));
 
 if (emitted.length !== 2) {
   console.error('FAIL: expected 2 emitted events, got', emitted.length);

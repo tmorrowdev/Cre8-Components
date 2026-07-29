@@ -17,7 +17,7 @@ const meta = {
   parameters: {
     status: { type: 'inProgress' },
     actions: {
-      handles: ['selectedItemsChange'],
+      handles: ['multi-select-change'],
     },
     docs: {
       story: {

@@ -1,12 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://cre8.dev/a2ui/catalogs/cre8-wc/2.0.6",
+  "$id": "https://cre8.dev/a2ui/catalogs/cre8-wc/2.0.7",
   "title": "cre8-wc A2UI Catalog",
   "description": "cre8 Web Components is a library of presentational UI web components to be consumed by # web applications.",
   "x-a2ui": {
     "catalogId": "cre8-wc",
     "library": "@tmorrow/cre8-wc",
-    "libraryVersion": "2.0.6",
+    "libraryVersion": "2.0.7",
     "tagPrefix": "cre8",
     "framework": "Lit 3.3.1"
   },
@@ -776,10 +776,10 @@
         },
         "additionalProperties": false,
         "x-events": {
-          "text-click": {
+          "split-button-text-click": {
             "detail": {}
           },
-          "dropdown-click": {
+          "split-button-dropdown-click": {
             "detail": {}
           }
         }
@@ -893,11 +893,11 @@
                 "x-kind": "property"
               },
               "colors": {
+                "description": "Default colors for datasets (uses cre8 design token colors).",
                 "type": "array",
                 "items": {
                   "type": "string"
                 },
-                "description": "Default colors for datasets (uses cre8 design token colors).",
                 "x-kind": "property"
               }
             }
@@ -905,13 +905,13 @@
         },
         "additionalProperties": false,
         "x-events": {
-          "cre8-chart-click": {
+          "chart-click": {
             "detail": {}
           },
-          "cre8-chart-hover": {
+          "chart-hover": {
             "detail": {}
           },
-          "cre8-chart-ready": {
+          "chart-ready": {
             "detail": {}
           }
         }
@@ -1041,7 +1041,7 @@
         },
         "additionalProperties": false,
         "x-events": {
-          "removeTagClicked": {
+          "remove-tag-click": {
             "detail": {}
           }
         }
@@ -1748,7 +1748,7 @@
         },
         "additionalProperties": false,
         "x-events": {
-          "dropdown-item-selected": {
+          "dropdown-item-select": {
             "detail": {}
           }
         }
@@ -1858,7 +1858,7 @@
           "footer": "Custom footer content for the modal"
         },
         "x-events": {
-          "close-modal": {
+          "modal-close": {
             "detail": {}
           }
         }
@@ -1886,8 +1886,13 @@
                 "x-kind": "attribute"
               },
               "position": {
-                "description": "Positions the popover panel absolutely to the trigger\n- **default** positions the popover panel below the trigger\n- **top** positions the popover panel below the trigger\n- **left** positions the popover panel below the trigger\n- **right** positions the popover panel below the trigger",
+                "description": "Positions the popover panel absolutely to the trigger\n- Omitting this prop positions the popover panel below the trigger\n- **top** positions the popover panel above the trigger\n- **left** positions the popover panel to the left of the trigger\n- **right** positions the popover panel to the right of the trigger",
                 "type": "string",
+                "enum": [
+                  "top",
+                  "left",
+                  "right"
+                ],
                 "x-kind": "attribute"
               },
               "isVisibleOnScroll": {
@@ -1979,10 +1984,10 @@
           "footer": "Custom footer content for the popover panel"
         },
         "x-events": {
-          "open": {
+          "popover-open": {
             "detail": {}
           },
-          "close": {
+          "popover-close": {
             "detail": {}
           }
         }
@@ -2159,10 +2164,10 @@
           "trigger": "Named slot container for Tooltip element to trigger showing/hiding the Tooltip text"
         },
         "x-events": {
-          "open": {
+          "tooltip-open": {
             "detail": {}
           },
-          "close": {
+          "tooltip-close": {
             "detail": {}
           }
         }
@@ -2305,13 +2310,24 @@
                 "x-kind": "attribute"
               },
               "status": {
-                "description": "Status (a color variant prop)\n- **neutral** (default) renders a badge with a neutral state treatment\n- **success** renders a badge with success state treatment\n- **warning** renders a badge with warning state treatment\n- **error** renders a badge with error state treatment\n- **info** renders a badge with information state treatment\n- **attention** renders a badge with attention state treatment",
+                "description": "Status (a color variant prop)\n- Omitting this prop renders a badge with the neutral state treatment\n- **success** renders a badge with success state treatment\n- **warning** renders a badge with warning state treatment\n- **error** renders a badge with error state treatment\n- **info** renders a badge with information state treatment\n- **attention** renders a badge with attention state treatment",
                 "type": "string",
+                "enum": [
+                  "error",
+                  "info",
+                  "warning",
+                  "success",
+                  "attention"
+                ],
                 "x-kind": "attribute"
               },
               "variant": {
-                "description": "Background Style Variant\n\n- **dark|undefined** (default) renders a badge with a dark background\n- **light** renders a badge with a light background\n- **white** renders a badge with a white background",
+                "description": "Background Style Variant\n\n- Omitting this prop renders a badge with a dark background\n- **light** renders a badge with a light background\n- **white** renders a badge with a white background",
                 "type": "string",
+                "enum": [
+                  "light",
+                  "white"
+                ],
                 "x-kind": "attribute"
               },
               "svg": {
@@ -2498,7 +2514,7 @@
         },
         "additionalProperties": false,
         "x-events": {
-          "leftActionButtonClick": {
+          "percent-bar-left-action-click": {
             "detail": {}
           }
         }
@@ -2521,13 +2537,13 @@
             "additionalProperties": false,
             "properties": {
               "status": {
+                "description": "Progress Status\n- **Default** renders a meter with default status fill\n- **Error** renders a meter with an error status fill\n- **Warning** renders a meter with a warning status\n- **Success** renders a meter with a success status fill",
                 "type": "string",
                 "enum": [
                   "error",
                   "warning",
                   "success"
                 ],
-                "description": "Progress Status\n- **Default** renders a meter with default status fill\n- **Error** renders a meter with an error status fill\n- **Warning** renders a meter with a warning status\n- **Success** renders a meter with a success status fill",
                 "x-kind": "attribute"
               },
               "knockout": {
@@ -2583,6 +2599,18 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
+              "state": {
+                "description": "The state of the step.",
+                "type": "string",
+                "enum": [
+                  "error",
+                  "warning",
+                  "complete",
+                  "current",
+                  "incomplete"
+                ],
+                "x-kind": "attribute"
+              },
               "message": {
                 "description": "Optional message to display under the step name.",
                 "type": "string",
@@ -2590,11 +2618,6 @@
               },
               "name": {
                 "description": "The name of the step.",
-                "type": "string",
-                "x-kind": "attribute"
-              },
-              "state": {
-                "description": "The state of the step: 'complete', 'current', 'error',' incomplete', 'warning';",
                 "type": "string",
                 "x-kind": "attribute"
               },
@@ -3264,7 +3287,7 @@
         "type": "object",
         "title": "cre8-multi-select",
         "x-category": "Forms",
-        "description": "Multiselect is used when multiple options can be chosen from a static dropdown\nThis component has a list of items in the dropdown that can be added as \"selected tags\"\nThe checkbox will always reflect the selected nature of the item and is not removed\nfrom the dropdown when clicked, the tags will be added and removed based on their state.\n\nEvent `selectedItemsChange` emits whenever a tag is added or remove from the list and the\ncurrent list after the change is given in the detail.",
+        "description": "Multiselect is used when multiple options can be chosen from a static dropdown\nThis component has a list of items in the dropdown that can be added as \"selected tags\"\nThe checkbox will always reflect the selected nature of the item and is not removed\nfrom the dropdown when clicked, the tags will be added and removed based on their state.\n\nEvent `multi-select-change` emits whenever a tag is added or remove from the list and the\ncurrent list after the change is given in the detail.",
         "required": [
           "component"
         ],
@@ -3377,7 +3400,7 @@
           "fieldNote": "Container for optional field note content"
         },
         "x-events": {
-          "selectedItemsChange": {
+          "multi-select-change": {
             "detail": {}
           }
         }
@@ -4132,6 +4155,10 @@
               "status": {
                 "description": "Status (a color variant prop)\n- By default, the divider has gray color.\n- **brand**, the divider has blue color.\n- **knockout**, the divider has white color.",
                 "type": "string",
+                "enum": [
+                  "brand",
+                  "knockout"
+                ],
                 "x-kind": "attribute"
               }
             }
@@ -5376,7 +5403,7 @@
         },
         "additionalProperties": false,
         "x-events": {
-          "pagination.click": {
+          "pagination-change": {
             "detail": {}
           }
         }
@@ -5560,7 +5587,7 @@
         },
         "additionalProperties": false,
         "x-events": {
-          "tabSelected": {
+          "tab-select": {
             "detail": {}
           }
         }
@@ -5721,7 +5748,7 @@
           "panel": "Container for each `cre8-tab-panel` content item"
         },
         "x-events": {
-          "tabChange": {
+          "tab-change": {
             "detail": {}
           }
         }
@@ -5955,13 +5982,13 @@
                   "title-default",
                   "title-small",
                   "label-large",
-                  "label",
+                  "label-default",
                   "label-small",
                   "meta-large",
                   "meta-default",
                   "meta-small"
                 ],
-                "description": "Heading type\n<cre8-text-passage size=\"small\">\n<ul>\n<li>**display-default** renders a heading with the heading display-default preset treatment</li>\n<li>**display-small** renders a heading with the heading display-small preset treatment</li>\n<li>**headline-large** renders a heading with the heading headline-large preset treatment</li>\n<li>**headline-default** renders a heading with the heading headline-default preset treatment</li>\n<li>**headline-small** renders a heading with the heading headline-small preset treatment</li>\n<li>**title-xlarge** renders a heading with the heading title-xlarge preset treatment</li>\n<li>**title-large** renders a heading with the heading title-large preset treatment</li>\n<li>**title-default** renders a heading with the heading title-default preset treatment</li>\n<li>**title-small** renders a heading with the heading title-small preset treatment</li>\n<li>**label-large** renders a heading with the label-large preset treatment</li>\n<li>**label** renders a heading with the label preset treatment</li>\n<li>**label-small** renders a heading with the label-small preset treatment</li>\n<li>**meta-large** renders a heading with the meta-large preset treatment</li>\n<li>**meta-default** renders a heading with the meta-default preset treatment</li>\n<li>**meta-small** renders a heading with the meta-small preset treatment</li>\n</ul>\n</cre8-text-passage>",
+                "description": "Heading type\n<cre8-text-passage size=\"small\">\n<ul>\n<li>**display-default** renders a heading with the heading display-default preset treatment</li>\n<li>**display-small** renders a heading with the heading display-small preset treatment</li>\n<li>**headline-large** renders a heading with the heading headline-large preset treatment</li>\n<li>**headline-default** renders a heading with the heading headline-default preset treatment</li>\n<li>**headline-small** renders a heading with the heading headline-small preset treatment</li>\n<li>**title-xlarge** renders a heading with the heading title-xlarge preset treatment</li>\n<li>**title-large** renders a heading with the heading title-large preset treatment</li>\n<li>**title-default** renders a heading with the heading title-default preset treatment</li>\n<li>**title-small** renders a heading with the heading title-small preset treatment</li>\n<li>**label-large** renders a heading with the label-large preset treatment</li>\n<li>**label-default** renders a heading with the label-default preset treatment</li>\n<li>**label-small** renders a heading with the label-small preset treatment</li>\n<li>**meta-large** renders a heading with the meta-large preset treatment</li>\n<li>**meta-default** renders a heading with the meta-default preset treatment</li>\n<li>**meta-small** renders a heading with the meta-small preset treatment</li>\n</ul>\n</cre8-text-passage>",
                 "x-kind": "attribute"
               },
               "inverted": {
@@ -5970,9 +5997,17 @@
                 "x-kind": "attribute"
               },
               "tagVariant": {
-                "description": "Dynamic tag name for the component\n1) This is needed to use proper semantic heading treatments depending on where the banner lives on the page\n<cre8-text-passage size=\"small\">\n<ul>\n<li>**h1** renders an `h1` tag</li>\n<li>**h2** renders an `h2` tag. This is the default</li>\n<li>**h3** renders an `h3` tag</li>\n<li>**h4** renders an `h4` tag</li>\n<li>**h5** renders an `h5` tag</li>\n<li>**h6** renders an `h6` tag</li>\n</ul>\n</cre8-text-passage>",
+                "description": "Dynamic tag name for the component\n1) This is needed to use proper semantic heading treatments depending on where the banner lives on the page\n<cre8-text-passage size=\"small\">\n<ul>\n<li>**h1** renders an `h1` tag</li>\n<li>**h2** renders an `h2` tag</li>\n<li>**h3** renders an `h3` tag</li>\n<li>**h4** renders an `h4` tag</li>\n<li>**h5** renders an `h5` tag. This is the default</li>\n<li>**h6** renders an `h6` tag</li>\n</ul>\n</cre8-text-passage>",
                 "default": "h5",
                 "type": "string",
+                "enum": [
+                  "h1",
+                  "h2",
+                  "h3",
+                  "h4",
+                  "h5",
+                  "h6"
+                ],
                 "x-kind": "property"
               },
               "brandColor": {

@@ -14,6 +14,7 @@ export interface Cre8TabsProps {
   /** If last child is fully in the viewport, set isEnd to true. Otherwise, set isEnd to false.  _*This property is dynamically set_ */
   isEnd?: boolean | undefined;
   children?: React.ReactNode;
+  onTabChange?: (event: CustomEvent) => void;
 }
 
 /**
@@ -23,7 +24,9 @@ export const Cre8Tabs = createComponent({
   react: React,
   tagName: 'cre8-tabs',
   elementClass: Cre8TabsElement,
-
+  events: {
+    onTabChange: 'tab-change'
+  }
 });
 
 export default Cre8Tabs;

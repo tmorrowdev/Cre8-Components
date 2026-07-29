@@ -6,7 +6,7 @@ import styles from './tab.styles.js';
 /**
  * @slot - The component content
  *
- * @fires tabSelected - Fires when the tab is clicked. `event.detail.index` is the tab's index.
+ * @fires tab-select - Fires when the tab is clicked. `event.detail.index` is the tab's index.
  */
 
 export class Cre8Tab extends Cre8Element {
@@ -76,14 +76,14 @@ export class Cre8Tab extends Cre8Element {
    */
 
   private _handleTabSelected() {
-      const customEvent = new CustomEvent('tabSelected', {
+      const customEvent = new CustomEvent('tab-select', {
           detail: {
               index: this.index,
           },
           bubbles: true,
           composed: true,
       });
-      this.dispatchEvent(customEvent);
+      this.dispatchWithLegacyAlias(customEvent);
   }
 
   render() {

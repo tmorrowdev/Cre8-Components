@@ -13,10 +13,10 @@ export default {
   parameters: {
     status: { type: 'inProgress' },
     controls: {
-      exclude: new RegExp(`${excludeRegexArray.join('|')}|^activeTab$|^emitEvent$|^handleResize$|^handleScroll$|^isEnd$|^isRTL$|^isStart$|^setIsStart$|^setIsEnd$|^tabChange$|^tabId$|^activeTab$|^isInViewport$|^setTabVariant$|^setTabAttributes$|^setActiveTab$|^setActiveTabFocus$|^setSelectedToPreviousTab$|^setSelectedToNextTab$|^removePreviousActiveTab$|^emitEvent$`)
+      exclude: new RegExp(`${excludeRegexArray.join('|')}|^activeTab$|^emitEvent$|^handleResize$|^handleScroll$|^isEnd$|^isRTL$|^isStart$|^setIsStart$|^setIsEnd$|^onTabChange$|^tabId$|^activeTab$|^isInViewport$|^setTabVariant$|^setTabAttributes$|^setActiveTab$|^setActiveTabFocus$|^setSelectedToPreviousTab$|^setSelectedToNextTab$|^removePreviousActiveTab$|^emitEvent$`)
     },
     actions: {
-      handles: ['tabChange', 'tabSelected']
+      handles: ['tab-change', 'tab-select']
     }
   },
   decorators: [withActions],

@@ -16,8 +16,8 @@ export interface Cre8PopoverProps {
   /** The active state for the popover - If true, the popover panel is visible - If false, the popover panel is hidden  _This property is dynamically set_ */
   isActive?: boolean | undefined;
   children?: React.ReactNode;
-  onOpen?: (event: CustomEvent) => void;
-  onClose?: (event: CustomEvent) => void;
+  onPopoverOpen?: (event: CustomEvent) => void;
+  onPopoverClose?: (event: CustomEvent) => void;
 }
 
 /**
@@ -28,8 +28,8 @@ export const Cre8Popover = createComponent({
   tagName: 'cre8-popover',
   elementClass: Cre8PopoverElement,
   events: {
-    onOpen: 'open',
-    onClose: 'close'
+    onPopoverOpen: 'popover-open',
+    onPopoverClose: 'popover-close'
   }
 });
 

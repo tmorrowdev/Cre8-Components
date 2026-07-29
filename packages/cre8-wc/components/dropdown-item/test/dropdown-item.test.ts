@@ -23,8 +23,18 @@ describe('dropdown', () => {
           <cre8-dropdown-item>Item 1</cre8-dropdown-item>`);
         const button = el.shadowRoot.querySelector('button');
         setTimeout(() => button.click());
+        const event = await oneEvent(el, 'dropdown-item-select');
+        expect(event).toBeTruthy();
+    });
+
+    test('also dispatches the deprecated dropdown-item-selected alias', async () => {
+        const el = await fixture<Cre8DropdownItem>(html`
+          <cre8-dropdown-item>Item 1</cre8-dropdown-item>`);
+        const button = el.shadowRoot.querySelector('button');
+        setTimeout(() => button.click());
         const event = await oneEvent(el, 'dropdown-item-selected');
         expect(event).toBeTruthy();
+        expect(event.detail.originalEvent).toBeTruthy();
     });
 
     describe('accessibility -  DropdownItem', () => {

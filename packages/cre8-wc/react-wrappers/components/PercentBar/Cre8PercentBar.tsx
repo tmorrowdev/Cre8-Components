@@ -6,7 +6,7 @@ export interface Cre8PercentBarProps {
   value?: number;
   max?: number;
   disableActionLeft?: boolean | undefined;
-  onLeftActionButtonClick?: (event: CustomEvent) => void;
+  onPercentBarLeftActionClick?: (event: CustomEvent) => void;
 }
 
 /**
@@ -17,7 +17,7 @@ export const Cre8PercentBar = createComponent({
   tagName: 'cre8-percent-bar',
   elementClass: Cre8PercentBarElement,
   events: {
-    onLeftActionButtonClick: 'leftActionButtonClick'
+    onPercentBarLeftActionClick: 'percent-bar-left-action-click'
   }
 });
 

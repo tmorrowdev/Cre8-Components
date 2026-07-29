@@ -8,7 +8,7 @@ export default {
   parameters: {
     status: { type: 'inProgress' },
     actions: {
-      handles: ['cre8-chart-click', 'cre8-chart-hover', 'cre8-chart-ready'],
+      handles: ['chart-click', 'chart-hover', 'chart-ready'],
     },
   },
   argTypes: {

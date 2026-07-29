@@ -39,8 +39,8 @@ import styles from './tooltip.styles.js';
  * @slot default - Default, unnamed slot container for Tooltip text
  * @slot trigger - Named slot container for Tooltip element to trigger showing/hiding the Tooltip text
  *
- * @fires open - Fires when the tooltip is shown. `event.detail.isActive` is `true`.
- * @fires close - Fires when the tooltip is hidden. `event.detail.isActive` is `false`.
+ * @fires tooltip-open - Fires when the tooltip is shown. `event.detail.isActive` is `true`.
+ * @fires tooltip-close - Fires when the tooltip is hidden. `event.detail.isActive` is `false`.
  */
 
 export class Cre8Tooltip extends Cre8Element {
@@ -297,12 +297,12 @@ export class Cre8Tooltip extends Cre8Element {
           setTimeout(() => {
               this.dynamicPosition();
           }, 1);
-          this.dispatchEvent(new CustomEvent('open', {
+          this.dispatchWithLegacyAlias(new CustomEvent('tooltip-open', {
               detail: { isActive: this.isActive }, bubbles: true, composed: true,
           }));
       } else {
       /* 3 */
-          this.dispatchEvent(new CustomEvent('close', {
+          this.dispatchWithLegacyAlias(new CustomEvent('tooltip-close', {
               detail: { isActive: this.isActive }, bubbles: true, composed: true,
           }));
       }

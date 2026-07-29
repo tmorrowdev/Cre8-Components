@@ -13,8 +13,8 @@ import { Cre8Button } from '../button/button';
  * @slot header - Custom header content for the popover panel
  * @slot footer - Custom footer content for the popover panel
  *
- * @fires open - Fires when the popover opens. `event.detail.isActive` is `true`.
- * @fires close - Fires when the popover closes. `event.detail.isActive` is `false`.
+ * @fires popover-open - Fires when the popover opens. `event.detail.isActive` is `true`.
+ * @fires popover-close - Fires when the popover closes. `event.detail.isActive` is `false`.
  */
 
 export class Cre8Popover extends Cre8Element {
@@ -29,11 +29,10 @@ export class Cre8Popover extends Cre8Element {
 
   /**
    * Positions the popover panel absolutely to the trigger
-   * - **default** positions the popover panel below the trigger
-   * - **top** positions the popover panel below the trigger
-   * - **left** positions the popover panel below the trigger
-   * - **right** positions the popover panel below the trigger
-   *  @attr {string | undefined}
+   * - Omitting this prop positions the popover panel below the trigger
+   * - **top** positions the popover panel above the trigger
+   * - **left** positions the popover panel to the left of the trigger
+   * - **right** positions the popover panel to the right of the trigger
    */
   @property()
       position?: 'top' | 'left' | 'right';
@@ -222,13 +221,13 @@ export class Cre8Popover extends Cre8Element {
           requestAnimationFrame(() => {
               this.dynamicPosition();
           });
-          this.dispatchEvent(
-              new CustomEvent('open', { detail: { isActive: this.isActive }, bubbles: true, composed: true })
+          this.dispatchWithLegacyAlias(
+              new CustomEvent('popover-open', { detail: { isActive: this.isActive }, bubbles: true, composed: true })
           );
       } else {
       /* 3 */
-          this.dispatchEvent(
-              new CustomEvent('close', { detail: { isActive: this.isActive }, bubbles: true, composed: true })
+          this.dispatchWithLegacyAlias(
+              new CustomEvent('popover-close', { detail: { isActive: this.isActive }, bubbles: true, composed: true })
           );
       }
 
