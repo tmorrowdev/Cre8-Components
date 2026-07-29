@@ -1,0 +1,266 @@
+{
+  "description": "Intent → destination index for the cre8 knowledge base. Match on intent text, then open the path relative to docs/kb/.",
+  "base": "docs/kb/",
+  "entries": [
+    {
+      "intent": "what is cre8 and how are its layers arranged",
+      "path": "00-orientation.md"
+    },
+    {
+      "intent": "where do I start",
+      "path": "00-orientation.md"
+    },
+    {
+      "intent": "which component should I use",
+      "path": "reference/components.md"
+    },
+    {
+      "intent": "what does variant or size or behavior mean on a component",
+      "path": "01-components.md#naming-conventions-you-can-rely-on"
+    },
+    {
+      "intent": "what are a components api surfaces",
+      "path": "01-components.md#the-four-api-surfaces"
+    },
+    {
+      "intent": "what is a compound component",
+      "path": "01-components.md#compound-components"
+    },
+    {
+      "intent": "why is there no storybook story for this component",
+      "path": "01-components.md#compound-components"
+    },
+    {
+      "intent": "is this component supported or experimental",
+      "path": "01-components.md#support-tiers"
+    },
+    {
+      "intent": "how does form participation work",
+      "path": "01-components.md#the-two-base-classes"
+    },
+    {
+      "intent": "why is my event listener not firing",
+      "path": "01-components.md#events-are-named-component-action"
+    },
+    {
+      "intent": "who is responsible for accessibility",
+      "path": "01-components.md#accessibility-posture"
+    },
+    {
+      "intent": "what event does this component emit",
+      "path": "reference/events.md"
+    },
+    {
+      "intent": "what props does this component take",
+      "path": "reference/props.md"
+    },
+    {
+      "intent": "what values does this prop accept",
+      "path": "reference/props.md"
+    },
+    {
+      "intent": "is this prop an attribute or a property",
+      "path": "reference/props.md"
+    },
+    {
+      "intent": "what parts can I style on this component",
+      "path": "reference/parts.md"
+    },
+    {
+      "intent": "which components expose css shadow parts",
+      "path": "reference/parts.md"
+    },
+    {
+      "intent": "how do I use ::part on a cre8 component",
+      "path": "reference/parts.md#using-a-part"
+    },
+    {
+      "intent": "what does this cre8 term mean",
+      "path": "glossary.md"
+    },
+    {
+      "intent": "define a design token or semantic token",
+      "path": "glossary.md"
+    },
+    {
+      "intent": "what is a form-associated custom element",
+      "path": "glossary.md"
+    },
+    {
+      "intent": "what is the difference between a slot and a child",
+      "path": "glossary.md"
+    },
+    {
+      "intent": "what tokens can I override",
+      "path": "reference/tokens.md"
+    },
+    {
+      "intent": "where is the evidence for this design decision",
+      "path": "07-research.md"
+    },
+    {
+      "intent": "what standards does cre8 follow",
+      "path": "07-research.md#accessibility"
+    },
+    {
+      "intent": "what research is the token architecture based on",
+      "path": "07-research.md#design-tokens"
+    },
+    {
+      "intent": "what is the published a2ui protocol",
+      "path": "07-research.md#agent-driven-ui"
+    },
+    {
+      "intent": "what is the ai fluency framework",
+      "path": "07-research.md#ai-fluency"
+    },
+    {
+      "intent": "why does our documentation disagree with our code",
+      "path": "07-research.md#provenance-and-drift"
+    },
+    {
+      "intent": "what is known to be wrong right now",
+      "path": "07-research.md#provenance-and-drift"
+    },
+    {
+      "intent": "what design decisions are still unresolved",
+      "path": "07-research.md#open-questions-not-open-bugs"
+    },
+    {
+      "intent": "why does required not block form submission",
+      "path": "07-research.md#open-questions-not-open-bugs"
+    },
+    {
+      "intent": "why do cre8 components avoid aria where possible",
+      "path": "07-research.md#accessibility"
+    },
+    {
+      "intent": "what is the token for a background or text color",
+      "path": "reference/tokens.md"
+    },
+    {
+      "intent": "is this token name real",
+      "path": "reference/tokens.md"
+    },
+    {
+      "intent": "how do I listen for a change on cre8-select",
+      "path": "reference/events.md"
+    },
+    {
+      "intent": "should I use children or slots",
+      "path": "reference/content-model.md"
+    },
+    {
+      "intent": "why does my spec say does not accept default children",
+      "path": "reference/content-model.md"
+    },
+    {
+      "intent": "which components are slot-only",
+      "path": "reference/content-model.md#slot-only-components"
+    },
+    {
+      "intent": "what props does a component take",
+      "path": "reference/components.md#component-reference"
+    },
+    {
+      "intent": "how do I build a page out of components",
+      "path": "02-composition-patterns.md"
+    },
+    {
+      "intent": "how do I lay out a form",
+      "path": "02-composition-patterns.md#forms-that-behave"
+    },
+    {
+      "intent": "how do I show tabular data",
+      "path": "02-composition-patterns.md#data-display"
+    },
+    {
+      "intent": "slot vs child vs prop",
+      "path": "02-composition-patterns.md#the-three-ways-to-pass-content"
+    },
+    {
+      "intent": "how do I change the colors",
+      "path": "03-token-theming.md"
+    },
+    {
+      "intent": "how do I brand this for a client",
+      "path": "03-token-theming.md#method-2-brand-override-file"
+    },
+    {
+      "intent": "why is my css not applying to a component",
+      "path": "03-token-theming.md#styling-across-the-shadow-boundary"
+    },
+    {
+      "intent": "how do I add dark mode",
+      "path": "03-token-theming.md#dark-mode-and-modes-in-general"
+    },
+    {
+      "intent": "how do I generate a theme from a website",
+      "path": "03-token-theming.md#method-4-generated-themes"
+    },
+    {
+      "intent": "how do agents emit cre8 ui",
+      "path": "04-a2ui.md"
+    },
+    {
+      "intent": "what is the a2ui spec shape",
+      "path": "04-a2ui.md#the-cre8-dialect"
+    },
+    {
+      "intent": "how do I validate an a2ui spec",
+      "path": "04-a2ui.md#validation"
+    },
+    {
+      "intent": "does cre8 a2ui match the a2ui.org protocol",
+      "path": "04-a2ui.md#conformance-with-a2uiorg-v10"
+    },
+    {
+      "intent": "how should I prompt an agent to build cre8 ui",
+      "path": "05-ai-fluency.md"
+    },
+    {
+      "intent": "what mcp tools exist for cre8",
+      "path": "05-ai-fluency.md#the-tool-surface"
+    },
+    {
+      "intent": "how do I check what an agent generated",
+      "path": "05-ai-fluency.md#discernment-checking-the-output"
+    },
+    {
+      "intent": "how do I use cre8 in react",
+      "path": "06-frameworks.md#react"
+    },
+    {
+      "intent": "how do I use cre8 in next.js",
+      "path": "06-frameworks.md#nextjs-and-ssr"
+    },
+    {
+      "intent": "how do I use cre8 in vue",
+      "path": "06-frameworks.md#vue"
+    },
+    {
+      "intent": "how do I use cre8 in angular",
+      "path": "06-frameworks.md#angular"
+    },
+    {
+      "intent": "how do I use cre8 in svelte",
+      "path": "06-frameworks.md#svelte"
+    },
+    {
+      "intent": "how do I use cre8 from a cdn with no build step",
+      "path": "06-frameworks.md#plain-html-and-cdn"
+    },
+    {
+      "intent": "why does my react onClick not fire",
+      "path": "06-frameworks.md#the-four-interop-problems"
+    },
+    {
+      "intent": "where is the research behind this",
+      "path": "07-research.md"
+    },
+    {
+      "intent": "what does this term mean",
+      "path": "glossary.md"
+    }
+  ]
+}

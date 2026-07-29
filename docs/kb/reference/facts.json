@@ -1,0 +1,79 @@
+{
+  "generatedFrom": {
+    "wcManifest": "packages/cre8-wc/mcp-manifest.json",
+    "reactManifest": "packages/cre8-wc/react-manifest.json",
+    "a2uiCatalog": "packages/cre8-wc/a2ui/catalog.json"
+  },
+  "library": "@tmorrow/cre8-wc",
+  "libraryVersion": "2.0.7",
+  "reactLibrary": "@tmorrow/cre8-react",
+  "reactVersion": "2.0.7",
+  "reactFramework": "React 18+ via @lit/react",
+  "tagPrefix": "cre8",
+  "framework": "Lit 3.3.1",
+  "catalogId": "cre8-wc",
+  "catalogVersion": "2.0.7",
+  "counts": {
+    "wc": 85,
+    "react": 85,
+    "a2ui": 85
+  },
+  "categories": {
+    "Layout": 12,
+    "Typography": 3,
+    "Actions": 4,
+    "Forms": 11,
+    "Data": 13,
+    "Navigation": 20,
+    "Disclosure": 9,
+    "Feedback": 8,
+    "Media": 2,
+    "Marketing": 2,
+    "Other": 1
+  },
+  "tokenPackage": "@tmorrow/cre8-wc",
+  "tokenCategories": [
+    "colors",
+    "typography",
+    "spacing",
+    "borders",
+    "shadows",
+    "breakpoints"
+  ],
+  "contentModel": {
+    "childrenOnly": 47,
+    "slotOnly": 25,
+    "leaf": 13,
+    "slotOnlyWithoutDefault": 6,
+    "both": 0
+  },
+  "events": {
+    "componentsWithEvents": 16,
+    "distinctEventNames": 19,
+    "namingConventions": [
+      "kebab-case",
+      "single word"
+    ]
+  },
+  "surfaces": {
+    "props": 468,
+    "componentsWithParts": 10
+  },
+  "tokens": {
+    "semantic": 73,
+    "primitive": 360,
+    "component": 299
+  },
+  "knowledgeGraph": {
+    "nodes": 220,
+    "edges": 209
+  },
+  "patternNames": [
+    "Login Form",
+    "Data Table",
+    "Page Layout",
+    "Alert Banner",
+    "Tabbed Content",
+    "Modal Dialog"
+  ]
+}
