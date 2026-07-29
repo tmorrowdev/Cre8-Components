@@ -138,6 +138,10 @@ export class SurfaceStore {
     return this.surfaces.has(surfaceId);
   }
 
+  summary(surfaceId: string): SurfaceSummary {
+    return this.summarize(this.get(surfaceId));
+  }
+
   list(): SurfaceSummary[] {
     this.sweep();
     return [...this.surfaces.values()].map((r) => this.summarize(r));

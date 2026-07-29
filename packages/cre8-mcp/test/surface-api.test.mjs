@@ -188,5 +188,115 @@ await test('the existing REST API still answers', async () => {
   assertEqual((await req('/react/components')).status, 200);
 });
 
+
+// ─── MCP transport ──────────────────────────────────────────────────────────
+
+const rpc = (body, appUnderTest = app, headers = {}) =>
+  appUnderTest.request('/mcp', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      accept: 'application/json, text/event-stream',
+      ...headers,
+    },
+    body: JSON.stringify(body),
+  });
+
+let rpcId = 100;
+async function callTool(name, args, appUnderTest = app) {
+  const res = await rpc(
+    { jsonrpc: '2.0', id: ++rpcId, method: 'tools/call', params: { name, arguments: args } },
+    appUnderTest
+  );
+  const json = await res.json();
+  if (json.error) throw new Error(`rpc error: ${json.error.message}`);
+  return json.result;
+}
+
+await test('the MCP endpoint speaks Streamable HTTP and identifies itself', async () => {
+  const res = await rpc({
+    jsonrpc: '2.0',
+    id: 1,
+    method: 'initialize',
+    params: { protocolVersion: '2025-06-18', capabilities: {}, clientInfo: { name: 't', version: '1' } },
+  });
+  assertEqual(res.status, 200);
+  const json = await res.json();
+  assertEqual(json.result.serverInfo.name, 'cre8-mcp');
+});
+
+await test('one tools/list carries both the knowledge tools and the streaming ones', async () => {
+  const res = await rpc({ jsonrpc: '2.0', id: 2, method: 'tools/list', params: {} });
+  const names = (await res.json()).result.tools.map((t) => t.name);
+  for (const expected of ['get_a2ui_catalog', 'validate_a2ui_spec', 'ui_open_surface', 'ui_stream', 'ui_events']) {
+    assert(names.includes(expected), `tools/list should include ${expected}`);
+  }
+});
+
+await test('ui_open_surface returns both a URL and an mcp-ui resource', async () => {
+  const result = await callTool('ui_open_surface', {
+    title: 'MCP surface',
+    spec: { component: 'cre8-layout-container' },
+  });
+  const text = result.content.find((c) => c.type === 'text');
+  const resource = result.content.find((c) => c.type === 'resource');
+  const payload = JSON.parse(text.text);
+  assert(payload.url.includes('/surfaces/'), 'should hand back a viewer URL');
+  assert(resource, 'should embed a UI resource for mcp-ui hosts');
+  assertEqual(resource.resource.uri, `ui://cre8/surface/${payload.surfaceId}`);
+  assertEqual(resource.resource.mimeType, 'text/html;profile=mcp-app');
+  assert(resource.resource.text.includes('const ORIGIN = "http://localhost:3999"'),
+    'an embedded page needs an absolute origin — a sandboxed iframe has none of its own');
+  assert(resource.resource.text.includes('"http://localhost:3999/a2ui/runtime"'),
+    'runtime imports must be absolute too');
+});
+
+await test('ui_stream applies data before ops, so a same-call binding validates', async () => {
+  const opened = JSON.parse((await callTool('ui_open_surface', {
+    spec: { component: 'cre8-layout-container' },
+  })).content[0].text);
+
+  const result = await callTool('ui_stream', {
+    surfaceId: opened.surfaceId,
+    data: [{ pointer: '/label', value: 'Checkout' }],
+    ops: [{ op: 'append', path: '$', nodes: [{ component: 'cre8-button', props: { text: { $bind: '/label' } } }] }],
+    status: 'done',
+  });
+  const summary = JSON.parse(result.content[0].text);
+  assertEqual(summary.state, 'done');
+
+  const snapshot = JSON.parse((await callTool('ui_get_surface', { surfaceId: opened.surfaceId })).content[0].text);
+  assertEqual(snapshot.root.children[0].props.text, 'Checkout');
+});
+
+await test('a bad op comes back as a tool error naming the catalog rule', async () => {
+  const opened = JSON.parse((await callTool('ui_open_surface', {
+    spec: { component: 'cre8-card' },
+  })).content[0].text);
+  const result = await callTool('ui_stream', {
+    surfaceId: opened.surfaceId,
+    ops: [{ op: 'append', path: '$', nodes: ['illegal'] }],
+  });
+  assertEqual(result.isError, true);
+  assert(result.content[0].text.includes('does not accept default children'));
+});
+
+await test('ui_events returns a queued event without waiting', async () => {
+  const opened = JSON.parse((await callTool('ui_open_surface', {
+    spec: { component: 'cre8-layout-container' },
+  })).content[0].text);
+  await post(`/surfaces/${opened.surfaceId}/events`, { event: 'click', handler: 'go' });
+  const result = await callTool('ui_events', { surfaceId: opened.surfaceId, waitMs: 5000 });
+  const payload = JSON.parse(result.content[0].text);
+  assertEqual(payload.events.length, 1);
+  assertEqual(payload.lastSeq, 1);
+});
+
+await test('/mcp is behind the bearer gate', async () => {
+  const guarded = createApp({ port: 3999, token: 'secret' });
+  const res = await rpc({ jsonrpc: '2.0', id: 1, method: 'tools/list', params: {} }, guarded);
+  assertEqual(res.status, 401);
+});
+
 console.log(`\n${passed} passed, ${failures.length} failed`);
 if (failures.length) process.exit(1);

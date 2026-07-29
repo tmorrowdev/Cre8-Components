@@ -13,13 +13,22 @@ export interface SurfacePageOptions {
   title?: string;
   /** Base path the runtime assets are served from. */
   runtimeBase?: string;
+  /**
+   * Absolute origin to prefix every URL with. Leave empty for the page served
+   * at `/surfaces/:id` (same origin). Set it when the page is embedded
+   * somewhere else — an mcp-ui host renders it inside a sandboxed iframe with
+   * no origin of its own, so relative URLs there resolve to nothing.
+   */
+  origin?: string;
 }
 
 export function renderSurfacePage(options: SurfacePageOptions): string {
   const { surfaceId, runtimeBase = '/a2ui/runtime' } = options;
+  const origin = (options.origin ?? '').replace(/\/$/, '');
   const title = escapeHtml(options.title ?? 'cre8 surface');
   const id = JSON.stringify(surfaceId);
-  const base = JSON.stringify(runtimeBase);
+  const base = JSON.stringify(origin + runtimeBase);
+  const root = JSON.stringify(origin);
 
   return `<!doctype html>
 <html lang="en">
@@ -57,6 +66,7 @@ export function renderSurfacePage(options: SurfacePageOptions): string {
 <script type="module">
 const SURFACE_ID = ${id};
 const RUNTIME = ${base};
+const ORIGIN = ${root};
 
 const statusEl = document.getElementById('cre8-surface-status');
 const rootEl = document.getElementById('cre8-surface-root');
@@ -69,7 +79,7 @@ function setStatus(state, label) {
 // The design system itself, then the A2UI runtime. Both are served by this same
 // server, so a surface works offline and pins to the library the catalog
 // describes rather than to whatever a CDN is serving today.
-await import('/cre8-wc.esm.js');
+await import(ORIGIN + '/cre8-wc.esm.js');
 const { registerCatalog } = await import(RUNTIME + '/index.js');
 const { SurfaceModel, SurfaceRenderer } = await import(RUNTIME + '/stream/index.js');
 
@@ -88,11 +98,13 @@ function sendEvent(evt) {
   } catch {
     detail = String(evt.detail);
   }
+  // text/plain keeps this a CORS-simple request, so a surface embedded in a
+  // sandboxed iframe does not need a preflight to report a click.
   navigator.sendBeacon?.(
-    '/surfaces/' + SURFACE_ID + '/events',
+    ORIGIN + '/surfaces/' + SURFACE_ID + '/events',
     new Blob(
       [JSON.stringify({ component: evt.component, path: evt.path, event: evt.event, handler: evt.handler, detail })],
-      { type: 'application/json' }
+      { type: 'text/plain' }
     )
   );
 }
@@ -106,7 +118,7 @@ let source;
 let backoff = 500;
 
 function connect() {
-  source = new EventSource('/surfaces/' + SURFACE_ID + '/stream');
+  source = new EventSource(ORIGIN + '/surfaces/' + SURFACE_ID + '/stream');
 
   source.onopen = () => {
     backoff = 500;

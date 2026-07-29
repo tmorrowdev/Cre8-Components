@@ -22,7 +22,9 @@ import {
   handleValidateA2uiSpec,
 } from './handlers.js';
 import type { GetPatternsInput, SearchComponentsInput, GenerateCodeInput } from './handlers.js';
+import { WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js';
 import { mountSurfaceApi, mountSurfaceViewer } from './surface-routes.js';
+import { SERVER_VERSION, createMcpServer } from './mcp-server.js';
 
 export interface AppOptions {
   /** Defaults to $PORT, used only to build viewer URLs. */
@@ -68,11 +70,13 @@ export function createApp(options: AppOptions = {}): Hono {
   // Info endpoint
   app.get('/', (c) => c.json({
     name: 'cre8-mcp',
-    version: '0.5.0',
-    description: 'Cre8 Design System MCP Server - Component intelligence for AI agents',
+    version: SERVER_VERSION,
+    description:
+      'Cre8 Design System MCP Server — component intelligence and streaming UI for AI agents',
     defaultFormat: 'web',
     endpoints: {
       health: 'GET /health',
+      mcp: 'POST /mcp  (Model Context Protocol, Streamable HTTP, stateless)',
       webComponents: {
         list: 'GET /components',
         detail: 'GET /components/:name',
@@ -108,6 +112,27 @@ export function createApp(options: AppOptions = {}): Hono {
       },
     },
   }));
+
+  // MCP itself, over Streamable HTTP. Stateless: a fresh server and transport
+  // per request, so there is no session table to lose behind a load balancer,
+  // and the same tools answer here as over stdio.
+  app.all('/mcp', async (c) => {
+    const server = createMcpServer({ publicBase: publicBase() });
+    const transport = new WebStandardStreamableHTTPServerTransport({
+      sessionIdGenerator: undefined,
+      enableJsonResponse: true,
+    });
+    try {
+      await server.connect(transport);
+      const response = await transport.handleRequest(c.req.raw);
+      // Materialise the body before tearing the transport down, so closing
+      // cannot truncate a response mid-flight.
+      const body = await response.text();
+      return c.body(body, response.status as 200, Object.fromEntries(response.headers));
+    } finally {
+      await server.close().catch(() => {});
+    }
+  });
 
   mountSurfaceApi(app, publicBase);
 
