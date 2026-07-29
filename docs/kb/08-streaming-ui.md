@@ -12,7 +12,6 @@ sources:
   - packages/cre8-wc/a2ui/stream/
   - packages/cre8-mcp/src/surfaces.ts
   - packages/cre8-mcp/src/ui-tools.ts
-  - docs/plans/2026-07-29-cre8-mcp-streaming-ui.md
 ---
 
 # Streaming UI — live surfaces
@@ -241,6 +240,19 @@ From an agent, the whole loop is five tools:
   intent. Give each agent its own surface.
 - **Paths are positional.** See the trade named at the top; call `ui_get_surface`
   rather than guessing an index after a structural change.
+- **Nothing renders without a token sheet.** cre8 components carry their own
+  shadow styles but read every value from a `--cre8-*` custom property, so a
+  deployment that ships the catalog and forgets `design-tokens/` serves
+  structurally perfect, entirely unstyled UI. `GET /themes` returning an empty
+  list is the symptom.
+- **The browser behaviour is verified by hand.** Streaming, theming, and the
+  cross-origin embedded path have all been checked in a real browser, but only
+  their CORS and markup contracts are covered by tests. Treat a change to the
+  viewer page as something to look at, not just to run.
+- **React gets an iframe, not a renderer.** A React host embeds a surface like
+  any other page. Rendering a surface natively in React would mean a second
+  renderer to keep in agreement with the first, which is the failure mode
+  [the drift ledger](07-research.md#provenance-and-drift) exists to record.
 
 ## Conformance with a2ui.org v1.0, revisited
 
