@@ -1,6 +1,6 @@
 {
   "name": "@tmorrow/cre8-mcp",
-  "version": "0.5.4",
+  "version": "0.6.0",
   "description": "MCP server providing component intelligence for Cre8 design system (@tmorrow/cre8-wc and @tmorrow/cre8-react)",
   "type": "module",
   "main": "dist/index.js",
@@ -14,7 +14,8 @@
     "dev": "npx tsx watch src/index.ts",
     "start": "node dist/index.js",
     "start:api": "node dist/server.js",
-    "dev:api": "npx tsx watch src/server.ts"
+    "dev:api": "npx tsx watch src/server.ts",
+    "test": "npx tsx test/surface-api.test.mjs"
   },
   "keywords": [
     "mcp",
