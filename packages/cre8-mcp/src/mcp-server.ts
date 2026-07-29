@@ -31,6 +31,7 @@ import {
 } from './handlers.js';
 import { UI_TOOL_NAMES, handleUiTool, uiTools, type UiToolContext } from './ui-tools.js';
 import { embeddedViewerBase } from './embedded-viewer.js';
+import { GetCompositionSchema, compositionTool, handleGetComposition } from './composition.js';
 import {
   Cre8GuideSchema,
   GetContentModelSchema,
@@ -67,7 +68,7 @@ export function createMcpServer(options: McpServerOptions = {}): Server {
   );
 
   server.setRequestHandler(ListToolsRequestSchema, async () => ({
-    tools: [...tools, ...knowledgeTools, ...uiTools],
+    tools: [...tools, ...knowledgeTools, compositionTool, ...uiTools],
   }));
 
   server.setRequestHandler(CallToolRequestSchema, async (request) => {
@@ -102,6 +103,9 @@ export function createMcpServer(options: McpServerOptions = {}): Server {
           break;
         case 'get_content_model':
           result = handleGetContentModel(GetContentModelSchema.parse(args));
+          break;
+        case 'get_composition':
+          result = handleGetComposition(GetCompositionSchema.parse(args));
           break;
         case 'cre8_guide':
           result = handleCre8Guide(Cre8GuideSchema.parse(args));

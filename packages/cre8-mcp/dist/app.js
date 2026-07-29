@@ -14,6 +14,7 @@ import { cors } from 'hono/cors';
 import { handleGetPatterns, handleSearchComponents, handleListComponents, handleGetComponent, handleGenerateCode, handleGetA2uiCatalog, handleValidateA2uiSpec, } from './handlers.js';
 import { WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js';
 import { Cre8GuideSchema, GetContentModelSchema, handleCre8Guide, handleGetContentModel } from './knowledge-tools.js';
+import { GetCompositionSchema, handleGetComposition } from './composition.js';
 import { mountSurfaceApi, mountSurfaceViewer } from './surface-routes.js';
 import { SERVER_VERSION, createMcpServer } from './mcp-server.js';
 export function createApp(options = {}) {
@@ -54,6 +55,7 @@ export function createApp(options = {}) {
             mcp: 'POST /mcp  (Model Context Protocol, Streamable HTTP, stateless)',
             guide: 'GET /guide?topic=overview|content-model|streaming|events|validation',
             contentModel: 'GET /content-model?component=cre8-card',
+            composition: 'GET /composition?component=cre8-table',
             webComponents: {
                 list: 'GET /components',
                 detail: 'GET /components/:name',
@@ -117,6 +119,15 @@ export function createApp(options = {}) {
                 category: c.req.query('category'),
             });
             return c.json(JSON.parse(handleGetContentModel(input)));
+        }
+        catch (err) {
+            return c.json({ error: err instanceof Error ? err.message : 'Unknown error' }, 400);
+        }
+    });
+    app.get('/composition', (c) => {
+        try {
+            const input = GetCompositionSchema.parse({ component: c.req.query('component') });
+            return c.json(JSON.parse(handleGetComposition(input)));
         }
         catch (err) {
             return c.json({ error: err instanceof Error ? err.message : 'Unknown error' }, 400);

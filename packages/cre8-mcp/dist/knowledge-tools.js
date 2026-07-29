@@ -135,6 +135,8 @@ export function handleCre8Guide(input) {
             workflow: [
                 '1. get_a2ui_catalog view="metadata" or search_components to find the component.',
                 '2. get_content_model for the ones you will use — this is where most attempts fail.',
+                '2b. get_composition before any multi-level structure. It hands back a worked, validated ' +
+                    'subtree from the shipped examples instead of a structure you assembled from names.',
                 '3. Build the spec. Props are camelCase; layout comes from composition, not margin props.',
                 '4. validate_a2ui_spec before returning anything, or ui_stream, which validates for you.',
             ],
@@ -142,6 +144,9 @@ export function handleCre8Guide(input) {
                 'A cre8-button label is the `text` prop. Not children, not slots.default — both are errors.',
                 'cre8-card takes its body through slots.default; children on a card is an error.',
                 'Undeclared props are rejected, not ignored. If you invented it, validation will say so.',
+                'Compound children are not optional scaffolding: cells live in rows, rows in a header or ' +
+                    'body, and rows hold their cells in slots.default. A table that skips a level renders, ' +
+                    'and is wrong. get_composition has the real shape.',
                 'Emit tag names (cre8-button), never React names (Cre8Button). React is a rendering choice ' +
                     'made by generate_code with format: "react".',
             ],
@@ -156,6 +161,9 @@ export function handleCre8Guide(input) {
                 both: count('both'),
             },
             lookItUp: 'get_content_model with a component name returns the answer plus a copyable example.',
+            forNestedStructures: 'get_content_model answers one level. For a family — table, tabs, accordion — use ' +
+                'get_composition, which reports the nestings the shipped examples actually demonstrate ' +
+                'and withholds an answer where none do rather than guessing from the name.',
             whyItMatters: 'The split does not follow from a component\'s name or purpose. HTML intuition does not ' +
                 'transfer: you nest cells inside <cre8-table-row> in hand-written markup, but in A2UI ' +
                 'cre8-table-row is slot-only.',

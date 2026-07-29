@@ -162,13 +162,13 @@ export declare const UiOpenSurfaceSchema: z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     data?: Record<string, unknown> | undefined;
     title?: string | undefined;
-    theme?: string | undefined;
     spec?: Record<string, unknown> | undefined;
+    theme?: string | undefined;
 }, {
     data?: Record<string, unknown> | undefined;
     title?: string | undefined;
-    theme?: string | undefined;
     spec?: Record<string, unknown> | undefined;
+    theme?: string | undefined;
 }>;
 export declare const UiStreamSchema: z.ZodObject<{
     surfaceId: z.ZodString;

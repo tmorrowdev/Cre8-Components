@@ -12,6 +12,7 @@ import { tools, ListComponentsSchema, GetComponentSchema, GetPatternsSchema, Sea
 import { handleListComponents, handleGetComponent, handleGetPatterns, handleSearchComponents, handleGenerateCode, handleGetA2uiCatalog, handleValidateA2uiSpec, } from './handlers.js';
 import { UI_TOOL_NAMES, handleUiTool, uiTools } from './ui-tools.js';
 import { embeddedViewerBase } from './embedded-viewer.js';
+import { GetCompositionSchema, compositionTool, handleGetComposition } from './composition.js';
 import { Cre8GuideSchema, GetContentModelSchema, handleCre8Guide, handleGetContentModel, knowledgeTools, } from './knowledge-tools.js';
 export const SERVER_VERSION = '0.6.0';
 export function createMcpServer(options = {}) {
@@ -23,7 +24,7 @@ export function createMcpServer(options = {}) {
     };
     const server = new Server({ name: 'cre8-mcp', version: SERVER_VERSION }, { capabilities: { tools: {} } });
     server.setRequestHandler(ListToolsRequestSchema, async () => ({
-        tools: [...tools, ...knowledgeTools, ...uiTools],
+        tools: [...tools, ...knowledgeTools, compositionTool, ...uiTools],
     }));
     server.setRequestHandler(CallToolRequestSchema, async (request) => {
         const { name, arguments: args } = request.params;
@@ -53,6 +54,9 @@ export function createMcpServer(options = {}) {
                     break;
                 case 'get_content_model':
                     result = handleGetContentModel(GetContentModelSchema.parse(args));
+                    break;
+                case 'get_composition':
+                    result = handleGetComposition(GetCompositionSchema.parse(args));
                     break;
                 case 'cre8_guide':
                     result = handleCre8Guide(Cre8GuideSchema.parse(args));

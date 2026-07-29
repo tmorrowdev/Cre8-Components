@@ -169,7 +169,7 @@ custom elements fail quietly.
 
 ## The tool surface
 
-**MCP server** — `packages/cre8-mcp`, fourteen tools over one connection
+**MCP server** — `packages/cre8-mcp`, fifteen tools over one connection
 (stdio, or Streamable HTTP at `POST /mcp`):
 
 | Tool | Use it for |
@@ -179,6 +179,7 @@ custom elements fail quietly.
 | `get_component` | One component's full definition — props, slots, events |
 | `search_components` | Find by intent when you do not know the name |
 | `get_content_model` | Whether a component takes `children` or `slots` — look this up first |
+| `get_composition` | How a family actually nests, with a worked subtree from the shipped examples |
 | `get_patterns` | The six canonical composition templates |
 | `generate_code` | Component tree → HTML or JSX |
 | `get_a2ui_catalog` | Catalog metadata, one component, or the full schema |

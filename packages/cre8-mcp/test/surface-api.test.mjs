@@ -450,5 +450,55 @@ await test('a click reports back as a CORS-simple beacon, with no preflight', as
   assertEqual(events[0].handler, 'approve');
 });
 
+// ─── composition ────────────────────────────────────────────────────────────
+//
+// The first cut of get_composition derived nesting from the naming rule and got
+// it wrong in the way that matters: cre8-table-cell directly inside cre8-table,
+// and cre8-tag containing cre8-tag-list. Both *validated*, because the catalog
+// does not type slot contents. These tests pin the ground-truth behaviour that
+// replaced it.
+
+await test('nesting comes from the worked examples, not from names', async () => {
+  const table = await (await req('/composition?component=table')).json();
+  const kids = table.observedChildren.map((c) => c.component);
+  assert(kids.includes('cre8-table-header') && kids.includes('cre8-table-body'),
+    'a table holds a header and a body');
+  assert(!kids.includes('cre8-table-cell'),
+    'cells belong to rows, not to the table — the mistake the naming rule made');
+});
+
+await test('the full hierarchy is reported level by level, slots included', async () => {
+  const row = await (await req('/composition?component=cre8-table-row')).json();
+  const cells = row.observedChildren.filter((c) => c.component.endsWith('-cell'));
+  assert(cells.length, 'a row holds cells');
+  assert(cells.every((c) => c.slot === 'default'),
+    'and holds them in slots.default, which is the detail that breaks table specs');
+  assert(row.observedParents.includes('cre8-table-body'), 'a row names the body as a parent');
+});
+
+await test('a shared name prefix is reported without a direction', async () => {
+  const list = await (await req('/composition?component=tag-list')).json();
+  assert(list.nameFamily.includes('cre8-tag'), 'the family is real');
+  assert(!('parent' in list.nameFamily), 'but it must not be presented as a hierarchy');
+  assert(list.warning?.includes('does not say which way containment runs'),
+    'and the ambiguity must be stated, not smoothed over');
+});
+
+await test('the worked example handed back is real and still validates', async () => {
+  const table = await (await req('/composition?component=table')).json();
+  assert(table.example.source.startsWith('a2ui/examples/'), 'the example must be an authored one');
+  assert(table.example.path.startsWith('$'), 'and say where in that file it came from');
+  const check = await post('/a2ui/validate', { spec: table.example.spec });
+  assertEqual((await check.json()).ok, true, 'a spec offered as a model must validate');
+});
+
+await test('get_composition is reachable over MCP', async () => {
+  const result = await callTool('get_composition', { component: 'cre8-tabs' });
+  const payload = JSON.parse(result.content[0].text);
+  const bySlot = Object.fromEntries(payload.observedChildren.map((c) => [c.component, c.slot]));
+  assertEqual(bySlot['cre8-tab'], 'default');
+  assertEqual(bySlot['cre8-tab-panel'], 'panel', 'panels go in the panel slot, not alongside tabs');
+});
+
 console.log(`\n${passed} passed, ${failures.length} failed`);
 if (failures.length) process.exit(1);
