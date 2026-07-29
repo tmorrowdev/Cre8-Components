@@ -298,5 +298,60 @@ await test('/mcp is behind the bearer gate', async () => {
   assertEqual(res.status, 401);
 });
 
+// ─── knowledge tools ────────────────────────────────────────────────────────
+
+await test('get_content_model derives the children-vs-slots split from the catalog', async () => {
+  const model = await (await req('/content-model')).json();
+  assertEqual(model.both.length, 0, 'the catalog must never let a component take both');
+  assert(model.childrenOnly.length + model.slotOnly.length + model.leaf.length === model.total,
+    'every component must land in exactly one bucket');
+  assert(model.childrenOnly.includes('cre8-heading'));
+  assert(model.slotOnly.includes('cre8-card'));
+  assert(model.noFreeContent.components.includes('cre8-button'),
+    'a button takes no free content — its label is the text prop');
+});
+
+await test('get_content_model names the rule for one component', async () => {
+  const card = await (await req('/content-model?component=card')).json();
+  assertEqual(card.contentVia, 'slots');
+  assert(card.rule.includes('children'), 'the rule should say what NOT to do');
+  assert(card.example.slots.default, 'and hand back a copyable example');
+  assertEqual((await req('/content-model?component=cre8-nope')).status, 400);
+});
+
+await test('cre8_guide counts come from the catalog, not from prose', async () => {
+  const guide = await (await req('/guide?topic=content-model')).json();
+  const model = await (await req('/content-model')).json();
+  assertEqual(guide.guide.counts.childrenOnly, model.childrenOnly.length);
+  assertEqual(guide.guide.counts.leaf, model.leaf.length);
+  assertEqual(guide.components, model.total);
+});
+
+await test('cre8_guide covers every topic it advertises', async () => {
+  for (const topic of ['overview', 'content-model', 'streaming', 'events', 'validation']) {
+    const res = await req(`/guide?topic=${topic}`);
+    assertEqual(res.status, 200, `topic ${topic}`);
+    const body = await res.json();
+    assertEqual(body.topic, topic);
+    assert(body.guide && Object.keys(body.guide).length > 0, `topic ${topic} should have content`);
+  }
+  assertEqual((await req('/guide?topic=nonsense')).status, 400);
+});
+
+await test('the knowledge tools are reachable over MCP too', async () => {
+  const result = await callTool('get_content_model', { component: 'cre8-table-row' });
+  const payload = JSON.parse(result.content[0].text);
+  assertEqual(payload.contentVia, 'slots', 'HTML intuition says children; the catalog says slots');
+});
+
+await test('generate_code emits plain HTML tags alongside cre8 ones', async () => {
+  const res = await post('/generate', {
+    schema: { component: 'div', children: [{ component: 'p', children: ['hi'] }, { component: 'cre8-button', props: { text: 'Go' } }] },
+  });
+  const { code } = await res.json();
+  assert(code.includes('<p>hi</p>'), 'a plain tag must not be prefixed with cre8-');
+  assert(code.includes('<cre8-button text="Go">'), 'and cre8 components still normalise');
+});
+
 console.log(`\n${passed} passed, ${failures.length} failed`);
 if (failures.length) process.exit(1);

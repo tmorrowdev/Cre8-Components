@@ -23,6 +23,7 @@ import {
 } from './handlers.js';
 import type { GetPatternsInput, SearchComponentsInput, GenerateCodeInput } from './handlers.js';
 import { WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js';
+import { Cre8GuideSchema, GetContentModelSchema, handleCre8Guide, handleGetContentModel } from './knowledge-tools.js';
 import { mountSurfaceApi, mountSurfaceViewer } from './surface-routes.js';
 import { SERVER_VERSION, createMcpServer } from './mcp-server.js';
 
@@ -77,6 +78,8 @@ export function createApp(options: AppOptions = {}): Hono {
     endpoints: {
       health: 'GET /health',
       mcp: 'POST /mcp  (Model Context Protocol, Streamable HTTP, stateless)',
+      guide: 'GET /guide?topic=overview|content-model|streaming|events|validation',
+      contentModel: 'GET /content-model?component=cre8-card',
       webComponents: {
         list: 'GET /components',
         detail: 'GET /components/:name',
@@ -131,6 +134,27 @@ export function createApp(options: AppOptions = {}): Hono {
       return c.body(body, response.status as 200, Object.fromEntries(response.headers));
     } finally {
       await server.close().catch(() => {});
+    }
+  });
+
+  app.get('/content-model', (c) => {
+    try {
+      const input = GetContentModelSchema.parse({
+        component: c.req.query('component'),
+        category: c.req.query('category'),
+      });
+      return c.json(JSON.parse(handleGetContentModel(input)));
+    } catch (err) {
+      return c.json({ error: err instanceof Error ? err.message : 'Unknown error' }, 400);
+    }
+  });
+
+  app.get('/guide', (c) => {
+    try {
+      const input = Cre8GuideSchema.parse({ topic: c.req.query('topic') || undefined });
+      return c.json(JSON.parse(handleCre8Guide(input)));
+    } catch (err) {
+      return c.json({ error: err instanceof Error ? err.message : 'Unknown error' }, 400);
     }
   });
 

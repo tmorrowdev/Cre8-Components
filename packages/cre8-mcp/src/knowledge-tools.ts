@@ -1,0 +1,350 @@
+/**
+ * The briefing an agent would otherwise have to read the knowledge base to get.
+ *
+ * Everything here is computed from the shipped catalog rather than written
+ * down, because a hand-maintained count is prose wearing a schema's clothing and
+ * drifts exactly like prose — the lesson `docs/kb/04-a2ui.md` draws from the
+ * `PROP_OVERRIDES` bug. If the library changes, these answers change with it.
+ */
+
+import { z } from 'zod';
+import type { CatalogComponentDef, RegisteredCatalog } from '@tmorrow/cre8-wc/a2ui/index.js';
+import { loadA2uiCatalog } from './handlers.js';
+
+export type ContentBucket = 'children' | 'slots' | 'leaf' | 'both';
+
+export interface ContentModelEntry {
+  component: string;
+  category: string;
+  /** How content gets in. `both` should never occur; it is reported if it does. */
+  contentVia: ContentBucket;
+  slots: string[];
+  /** Slot-only components that declare no `default` slot take no free content. */
+  acceptsFreeContent: boolean;
+  /** Props that carry content on a leaf component (`text`, `iconName`, `data`, …). */
+  contentProps: string[];
+  example: Record<string, unknown>;
+}
+
+const CONTENT_PROP_NAMES = ['text', 'label', 'iconName', 'data', 'items', 'src', 'value'];
+
+function bucketOf(def: CatalogComponentDef): ContentBucket {
+  const hasChildren = def.properties?.children !== undefined;
+  const hasSlots = def.properties?.slots !== undefined;
+  if (hasChildren && hasSlots) return 'both';
+  if (hasChildren) return 'children';
+  if (hasSlots) return 'slots';
+  return 'leaf';
+}
+
+function entryFor(tag: string, def: CatalogComponentDef): ContentModelEntry {
+  const contentVia = bucketOf(def);
+  const slots = def.properties?.slots ? Object.keys(def.properties.slots.properties ?? {}) : [];
+  const propNames = Object.keys(def.properties?.props?.properties ?? {});
+  const contentProps = CONTENT_PROP_NAMES.filter((p) => propNames.includes(p));
+
+  let example: Record<string, unknown>;
+  if (contentVia === 'children') {
+    example = { component: tag, children: ['…'] };
+  } else if (contentVia === 'slots' && slots.includes('default')) {
+    example = { component: tag, slots: { default: ['…'] } };
+  } else if (contentVia === 'slots') {
+    const firstProp = contentProps[0];
+    example = {
+      component: tag,
+      slots: Object.fromEntries(slots.slice(0, 1).map((s) => [s, ['…']])),
+      ...(firstProp ? { props: { [firstProp]: '…' } } : {}),
+    };
+  } else {
+    example = { component: tag, props: Object.fromEntries(contentProps.map((p) => [p, '…'])) };
+  }
+
+  return {
+    component: tag,
+    category: def['x-category'] ?? 'Other',
+    contentVia,
+    slots,
+    acceptsFreeContent: contentVia === 'children' || slots.includes('default'),
+    contentProps,
+    example,
+  };
+}
+
+function allEntries(catalog: RegisteredCatalog): ContentModelEntry[] {
+  return [...catalog.components.entries()].map(([tag, def]) => entryFor(tag, def));
+}
+
+function normalize(name: string): string {
+  return name.startsWith('cre8-') ? name : `cre8-${name}`;
+}
+
+export interface GetContentModelInput {
+  component?: string;
+  category?: string;
+}
+
+export function handleGetContentModel(input: GetContentModelInput): string {
+  const catalog = loadA2uiCatalog();
+
+  if (input.component) {
+    const tag = normalize(input.component);
+    const def = catalog.components.get(tag);
+    if (!def) {
+      throw new Error(
+        `Component "${tag}" is not in the catalog. Use search_components or list_components first.`
+      );
+    }
+    const entry = entryFor(tag, def);
+    return JSON.stringify(
+      {
+        ...entry,
+        rule:
+          entry.contentVia === 'children'
+            ? `Pass content as "children". Using "slots" on ${tag} is a validation error.`
+            : entry.contentVia === 'slots'
+              ? entry.acceptsFreeContent
+                ? `Pass content as "slots" (including "default"). Using "children" on ${tag} is a validation error.`
+                : `${tag} declares no default slot: it takes no free content at all. Its label comes from a prop.`
+              : `${tag} is a leaf. Content comes from props only — neither "children" nor "slots".`,
+      },
+      null,
+      2
+    );
+  }
+
+  let entries = allEntries(catalog);
+  if (input.category) {
+    const wanted = input.category.toLowerCase();
+    entries = entries.filter((e) => e.category.toLowerCase() === wanted);
+  }
+
+  const byBucket = (bucket: ContentBucket) =>
+    entries.filter((e) => e.contentVia === bucket).map((e) => e.component).sort();
+
+  const noFreeContent = entries
+    .filter((e) => e.contentVia === 'slots' && !e.acceptsFreeContent)
+    .map((e) => e.component)
+    .sort();
+
+  return JSON.stringify(
+    {
+      catalogId: catalog.id,
+      total: entries.length,
+      rule:
+        'Every component takes content through EITHER children OR slots, never both. The split ' +
+        'does not follow from the name, so it cannot be guessed — look it up before emitting.',
+      childrenOnly: byBucket('children'),
+      slotOnly: byBucket('slots'),
+      leaf: byBucket('leaf'),
+      // Reported rather than assumed: the catalog has never done this, and if it
+      // starts, an agent relying on "never both" needs to hear about it.
+      both: byBucket('both'),
+      noFreeContent: {
+        components: noFreeContent,
+        note:
+          'Slot-only components with no "default" slot. They accept no free content in any form — ' +
+          'a cre8-button label is the `text` prop, not children and not slots.default.',
+      },
+    },
+    null,
+    2
+  );
+}
+
+const TOPICS = ['overview', 'content-model', 'streaming', 'events', 'validation'] as const;
+export type GuideTopic = (typeof TOPICS)[number];
+
+export interface Cre8GuideInput {
+  topic?: GuideTopic;
+}
+
+export function handleCre8Guide(input: Cre8GuideInput): string {
+  const catalog = loadA2uiCatalog();
+  const entries = allEntries(catalog);
+  const count = (b: ContentBucket) => entries.filter((e) => e.contentVia === b).length;
+  const meta = (catalog.schema['x-a2ui'] ?? {}) as Record<string, unknown>;
+  const topic = input.topic ?? 'overview';
+
+  const header = {
+    catalogId: catalog.id,
+    library: meta.library ?? '@tmorrow/cre8-wc',
+    libraryVersion: meta.libraryVersion,
+    components: entries.length,
+    topic,
+  };
+
+  const sections: Record<GuideTopic, unknown> = {
+    overview: {
+      whatThisIs:
+        'cre8 is a Lit web component design system. This connector gives you three things: the ' +
+        'catalog (what exists and what it accepts), code generation (markup you hand back), and ' +
+        'live surfaces (UI a human watches you build).',
+      twoWaysToEmitUi: {
+        markup:
+          'generate_code — you produce HTML or JSX the user pastes somewhere. Right when the ' +
+          'deliverable is source.',
+        liveSurface:
+          'ui_open_surface + ui_stream — you produce UI that appears in a browser as you go, and ' +
+          'clicks come back to you. Right when the deliverable is the interface itself.',
+      },
+      workflow: [
+        '1. get_a2ui_catalog view="metadata" or search_components to find the component.',
+        '2. get_content_model for the ones you will use — this is where most attempts fail.',
+        '3. Build the spec. Props are camelCase; layout comes from composition, not margin props.',
+        '4. validate_a2ui_spec before returning anything, or ui_stream, which validates for you.',
+      ],
+      trapsThatCostMostAttempts: [
+        'A cre8-button label is the `text` prop. Not children, not slots.default — both are errors.',
+        'cre8-card takes its body through slots.default; children on a card is an error.',
+        'Undeclared props are rejected, not ignored. If you invented it, validation will say so.',
+        'Emit tag names (cre8-button), never React names (Cre8Button). React is a rendering choice ' +
+          'made by generate_code with format: "react".',
+      ],
+    },
+
+    'content-model': {
+      rule:
+        'Every component takes content through EITHER children OR slots, never both. Passing the ' +
+        'wrong one is a hard validation error.',
+      counts: {
+        childrenOnly: count('children'),
+        slotOnly: count('slots'),
+        leaf: count('leaf'),
+        both: count('both'),
+      },
+      lookItUp: 'get_content_model with a component name returns the answer plus a copyable example.',
+      whyItMatters:
+        'The split does not follow from a component\'s name or purpose. HTML intuition does not ' +
+        'transfer: you nest cells inside <cre8-table-row> in hand-written markup, but in A2UI ' +
+        'cre8-table-row is slot-only.',
+    },
+
+    streaming: {
+      whenToUse:
+        'When the user should watch the UI appear, when you are building something long enough ' +
+        'that a progress indication matters, or when you need a click back before continuing.',
+      lifecycle: [
+        'ui_open_surface { title, spec } → returns a URL. Give the URL to the user.',
+        'ui_stream { surfaceId, ops } → each call patches the live DOM. Repeat freely.',
+        'ui_events { surfaceId, waitMs } → blocks until the user does something.',
+        'ui_stream { surfaceId, status: "done" } → clears the live indicator.',
+      ],
+      ops: {
+        append: '{ op: "append", path: "$", slot?, nodes: [...] } — path "$" is the root.',
+        appendText:
+          '{ op: "appendText", path, text } — concatenates into the trailing text node. This is how ' +
+          'you stream model output token by token without resending the tree.',
+        setProps: '{ op: "setProps", path, props } — merges; a null value deletes a prop.',
+        replaceRemove: '{ op: "replace" | "remove", path } — "$" replaces or clears the whole surface.',
+        others: 'insert, setEvents, setText, clear.',
+      },
+      paths:
+        'Nodes are addressed by the path grammar events report back on: "$", "$.children[0]", ' +
+        '"$.slots.footer[0]". An insert above a node shifts its path — call ui_get_surface if you ' +
+        'have lost track rather than guessing an index.',
+      dataBinding:
+        'A prop value of { "$bind": "/pointer" } reads from the surface data model (RFC 6901). ' +
+        'ui_stream { data: [{ pointer, value }] } updates every bound prop at once, which is what ' +
+        'makes a live counter cost one small message instead of a re-render.',
+      atomicity:
+        'A patch either lands whole or not at all. If any op fails validation, the surface is left ' +
+        'exactly as it was and the error names the path and the rule.',
+    },
+
+    events: {
+      contract:
+        'Handlers are NAMES, never code. { "events": { "click": "upgrade-clicked" } }. You choose ' +
+        'the name; your application decides what it means. A model emitting a spec cannot emit ' +
+        'behaviour, which is the entire security argument for this design.',
+      reading:
+        'ui_events returns { component, path, event, handler, detail }. `path` is where the node ' +
+        'sits right now, which is how you tell two identical buttons apart without inventing ids.',
+      pattern:
+        'Poll with `since` set to the previous `lastSeq` so you never see an event twice, and ' +
+        'waitMs to block instead of spinning.',
+      whatComponentsEmit:
+        'Look events up per component — get_component lists them. Do not assume a component emits ' +
+        '"change" just because a native input would.',
+    },
+
+    validation: {
+      whatIsChecked: [
+        'Component allowlist — the tag must exist in the catalog.',
+        'Prop allowlist — an undeclared prop is an error, not a pass-through. This catches ' +
+          'hallucinated APIs.',
+        'Value constraints — const, enum, oneOf, type, array items, nested objects.',
+        'Children legality and slot names.',
+        'Event binding shape — a string, or an object with a non-empty handler.',
+      ],
+      errorShape:
+        'Errors are path-qualified: $.slots.body[0].props.variant: value "bogus" not in enum ' +
+        '["primary", …]. A second attempt almost always succeeds because the message names both ' +
+        'the location and the allowed values.',
+      limits:
+        'A green result means "consistent with the catalog", not "correct". The catalog is ' +
+        'generated, partly from a hand-maintained override table; where that table is wrong, ' +
+        'validation blesses invalid output. Look at what you built.',
+    },
+  };
+
+  return JSON.stringify({ ...header, guide: sections[topic] }, null, 2);
+}
+
+export const knowledgeTools = [
+  {
+    name: 'get_content_model',
+    description:
+      'Answers the question that breaks most generated specs: does this component take content ' +
+      'through `children` or through `slots`? Every cre8 component accepts one or the other, never ' +
+      'both, and the split does not follow from the name. Returns the bucket, the declared slot ' +
+      'names, whether it accepts free content at all, and a copyable example. Call it before ' +
+      'emitting a container, not after failing validation.',
+    inputSchema: {
+      type: 'object' as const,
+      properties: {
+        component: {
+          type: 'string',
+          description: 'Component name; the "cre8-" prefix is optional. Omit for the full breakdown.',
+        },
+        category: {
+          type: 'string',
+          description: 'Restrict the full breakdown to one category (Actions, Forms, Layout, …).',
+        },
+      },
+    },
+  },
+  {
+    name: 'cre8_guide',
+    description:
+      'The briefing you would otherwise get by reading the cre8 knowledge base: how to emit UI that ' +
+      'validates first try, the traps that cost the most attempts, and how streaming surfaces work. ' +
+      'Counts and lists are computed from the shipped catalog, so they cannot go stale. Read the ' +
+      '"overview" topic once at the start of any cre8 task.',
+    inputSchema: {
+      type: 'object' as const,
+      properties: {
+        topic: {
+          type: 'string',
+          enum: [...TOPICS],
+          description:
+            '"overview" (default) — what this connector does and the workflow. ' +
+            '"content-model" — the children-vs-slots rule. ' +
+            '"streaming" — live surfaces, ops, data binding. ' +
+            '"events" — the return path from a user click. ' +
+            '"validation" — what is checked and what is not.',
+        },
+      },
+    },
+  },
+];
+
+export const GetContentModelSchema = z.object({
+  component: z.string().optional(),
+  category: z.string().optional(),
+});
+
+export const Cre8GuideSchema = z.object({
+  topic: z.enum(TOPICS).optional(),
+});
+
+export const KNOWLEDGE_TOOL_NAMES = new Set(knowledgeTools.map((t) => t.name));

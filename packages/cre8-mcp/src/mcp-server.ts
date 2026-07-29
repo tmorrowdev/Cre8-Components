@@ -30,6 +30,13 @@ import {
   handleValidateA2uiSpec,
 } from './handlers.js';
 import { UI_TOOL_NAMES, handleUiTool, uiTools, type UiToolContext } from './ui-tools.js';
+import {
+  Cre8GuideSchema,
+  GetContentModelSchema,
+  handleCre8Guide,
+  handleGetContentModel,
+  knowledgeTools,
+} from './knowledge-tools.js';
 
 export const SERVER_VERSION = '0.6.0';
 
@@ -55,7 +62,7 @@ export function createMcpServer(options: McpServerOptions = {}): Server {
   );
 
   server.setRequestHandler(ListToolsRequestSchema, async () => ({
-    tools: [...tools, ...uiTools],
+    tools: [...tools, ...knowledgeTools, ...uiTools],
   }));
 
   server.setRequestHandler(CallToolRequestSchema, async (request) => {
@@ -87,6 +94,12 @@ export function createMcpServer(options: McpServerOptions = {}): Server {
           break;
         case 'get_a2ui_catalog':
           result = handleGetA2uiCatalog(GetA2uiCatalogSchema.parse(args));
+          break;
+        case 'get_content_model':
+          result = handleGetContentModel(GetContentModelSchema.parse(args));
+          break;
+        case 'cre8_guide':
+          result = handleCre8Guide(Cre8GuideSchema.parse(args));
           break;
         case 'validate_a2ui_spec':
           result = handleValidateA2uiSpec({ spec: ValidateA2uiSpecSchema.parse(args).spec });
