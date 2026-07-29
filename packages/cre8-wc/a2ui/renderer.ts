@@ -117,7 +117,7 @@ function attachEvent(
   });
 }
 
-function applyProp(
+export function applyProp(
   el: HTMLElement,
   key: string,
   value: unknown,

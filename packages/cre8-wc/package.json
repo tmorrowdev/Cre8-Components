@@ -13,7 +13,7 @@
     "build:react": "rm -rf react-wrappers/components react-wrappers/dist react-wrappers/index.ts && npx tsx scripts/generate-react-wrappers.ts && cd react-wrappers && npx tsc",
     "build:a2ui": "pnpm run build:a2ui:catalog && pnpm run build:a2ui:compile",
     "build:a2ui:catalog": "node a2ui/generate-catalog.mjs",
-    "build:a2ui:compile": "tsc --module esnext --moduleResolution bundler --target es2022 --lib es2022,dom,dom.iterable --strict --skipLibCheck --declaration --outDir a2ui a2ui/types.ts a2ui/registry.ts a2ui/renderer.ts a2ui/index.ts",
+    "build:a2ui:compile": "tsc --module esnext --moduleResolution bundler --target es2022 --lib es2022,dom,dom.iterable --strict --skipLibCheck --declaration --outDir a2ui a2ui/types.ts a2ui/registry.ts a2ui/renderer.ts a2ui/index.ts a2ui/stream/types.ts a2ui/stream/pointer.ts a2ui/stream/model.ts a2ui/stream/renderer.ts a2ui/stream/index.ts",
     "a2ui:demo": "python3 -m http.server 8765",
     "storybook:react": "pnpm run build:react && cd react-wrappers && npx storybook dev -p 9009",
     "build-storybook:react": "pnpm run build:react && cd react-wrappers && npx storybook build -o dist-storybook",
@@ -33,7 +33,8 @@
     "format": "eslint-config --ext .ts,.html . --fix --ignore-path ../../.eslintignore",
     "publish:react": "cd react-wrappers && npm publish --access public",
     "release:publish": "node scripts/release.cjs --skip-lint --skip-tests --publish",
-    "version:bump": "node scripts/version-bump.cjs"
+    "version:bump": "node scripts/version-bump.cjs",
+    "test:a2ui": "npx tsx a2ui/smoke-test.mjs && npx tsx a2ui/stream/stream-test.mjs"
   },
   "type": "module",
   "module": "lib/index.js",
@@ -96,7 +97,11 @@
       "import": "./a2ui/*",
       "types": "./a2ui/*"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./a2ui/stream": {
+      "import": "./a2ui/stream/index.js",
+      "types": "./a2ui/stream/index.d.ts"
+    }
   },
   "repository": {
     "url": "https://github.com/tmorrowdev/Cre8-Components.git"
