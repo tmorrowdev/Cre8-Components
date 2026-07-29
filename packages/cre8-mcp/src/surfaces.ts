@@ -23,6 +23,7 @@ import type {
 } from '@tmorrow/cre8-wc/a2ui/stream/index.js';
 import type { ComponentSpec } from '@tmorrow/cre8-wc/a2ui/index.js';
 import { loadA2uiCatalog } from './handlers.js';
+import { DEFAULT_THEME, themeExists } from './surface-routes.js';
 
 export type SurfaceListener = (message: SurfaceMessage) => void;
 
@@ -30,11 +31,14 @@ export interface CreateSurfaceInput {
   title?: string;
   root?: ComponentSpec;
   data?: Record<string, unknown>;
+  /** Brand token sheet the viewer loads. A viewer concern, not part of the spec. */
+  theme?: string;
 }
 
 export interface SurfaceSummary {
   surfaceId: string;
   title?: string;
+  theme: string;
   state: SurfaceState;
   seq: number;
   viewers: number;
@@ -69,7 +73,8 @@ class SurfaceRecord {
 
   constructor(
     readonly surfaceId: string,
-    model: SurfaceModel
+    model: SurfaceModel,
+    readonly theme: string
   ) {
     this.model = model;
   }
@@ -103,6 +108,12 @@ export class SurfaceStore {
       if (oldest) this.close(oldest.surfaceId);
     }
 
+    if (input.theme && !themeExists(input.theme)) {
+      throw new Error(
+        `Unknown theme "${input.theme}". GET /themes lists the brands this server can serve.`
+      );
+    }
+
     // Unguessable, because the surface URL *is* the viewer capability: the host
     // page and its event stream are reachable without the bearer token, since a
     // browser cannot set one on an EventSource or a page load.
@@ -110,7 +121,7 @@ export class SurfaceStore {
     const catalog = loadA2uiCatalog();
     const model = new SurfaceModel(catalog, { surfaceId, title: input.title });
 
-    const record = new SurfaceRecord(surfaceId, model);
+    const record = new SurfaceRecord(surfaceId, model, input.theme ?? DEFAULT_THEME);
     // Applied before the record is published, so a spec that fails validation
     // never leaves a half-built surface behind.
     model.apply({
@@ -208,13 +219,16 @@ export class SurfaceStore {
     title?: string;
     state: SurfaceState;
     seq: number;
+    theme: string;
     root: ComponentSpec | null;
     data: Record<string, unknown>;
   } {
-    const { model } = this.get(surfaceId);
+    const record = this.get(surfaceId);
+    const { model } = record;
     return {
       surfaceId,
       title: model.title,
+      theme: record.theme,
       state: model.state,
       seq: model.seq,
       root: model.snapshot(),
@@ -331,6 +345,7 @@ export class SurfaceStore {
     return {
       surfaceId: record.surfaceId,
       title: record.model.title,
+      theme: record.theme,
       state: record.model.state,
       seq: record.model.seq,
       viewers: record.listeners.size,

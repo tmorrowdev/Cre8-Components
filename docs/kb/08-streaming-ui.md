@@ -195,6 +195,7 @@ than a set of cooperating services:
 | `GET /surfaces/:id/stream` | Server-sent events carrying surface messages |
 | `POST /surfaces/:id/events` | The viewer reporting a handler firing |
 | `POST /surfaces` … | The same surface operations as REST, for non-MCP callers |
+| `GET /themes` and `/themes/:brand/tokens.css` | The brand token sheets a surface is styled with |
 
 ```bash
 pnpm mcp:api
@@ -205,6 +206,14 @@ put an `Authorization` header on a page load or an `EventSource`. What protects 
 surface instead is that its id is 128 random bits: the URL is the capability.
 A viewer's only write is reporting an event that already happened — it cannot
 patch, and it cannot enumerate other surfaces.
+
+A surface is styled by a **brand token sheet**, served from the same place and
+named on `ui_open_surface` with `theme` (default `cre8`; `GET /themes` lists what
+is installed). This matters more than it sounds: cre8 components carry their own
+shadow styles but read every value from a `--cre8-*` custom property, so a page
+without the token sheet renders structurally correct and completely unstyled.
+Theming is a viewer concern — it changes nothing about the spec, which is why
+[the four theming methods](03-token-theming.md) all still apply.
 
 From an agent, the whole loop is five tools:
 

@@ -353,5 +353,44 @@ await test('generate_code emits plain HTML tags alongside cre8 ones', async () =
   assert(code.includes('<cre8-button text="Go">'), 'and cre8 components still normalise');
 });
 
+// ─── theming ────────────────────────────────────────────────────────────────
+
+await test('the server lists the brands it can theme a surface with', async () => {
+  const { brands, default: fallback } = await (await req('/themes')).json();
+  assert(brands.includes('cre8'), 'the house brand should be installed');
+  assert(brands.includes(fallback), 'the default must be one of the installed brands');
+});
+
+await test('a brand sheet and the primitives it imports are both servable', async () => {
+  assertEqual((await req('/themes/cre8/tokens.css')).status, 200);
+  // tokens_<brand>.css @imports its siblings; without tokens_brand.css every
+  // semantic token resolves to an undefined var and the surface renders naked.
+  assertEqual((await req('/themes/cre8/tokens_brand.css')).status, 200);
+  const css = await (await req('/themes/cre8/tokens.css')).text();
+  assert(css.includes('--cre8-'), 'the sheet should actually define cre8 tokens');
+});
+
+await test('an unknown brand or a non-css file is refused', async () => {
+  assertEqual((await req('/themes/not-a-brand/tokens.css')).status, 404);
+  assertEqual((await req('/themes/cre8/tokens_cre8.module.ts')).status, 404);
+});
+
+await test('a surface remembers its theme and the page links it', async () => {
+  const created = await post('/surfaces', {
+    theme: 'cre8-a2ui',
+    root: { component: 'cre8-layout-container' },
+  });
+  const { surfaceId, theme } = await created.json();
+  assertEqual(theme, 'cre8-a2ui');
+  const html = await (await req(`/surfaces/${surfaceId}`)).text();
+  assert(html.includes('/themes/cre8-a2ui/tokens.css'), 'the page must link its brand sheet');
+});
+
+await test('an unknown theme is rejected at creation, not at render', async () => {
+  const res = await post('/surfaces', { theme: 'no-such-brand' });
+  assertEqual(res.status, 400);
+  assert((await res.json()).error.includes('Unknown theme'));
+});
+
 console.log(`\n${passed} passed, ${failures.length} failed`);
 if (failures.length) process.exit(1);

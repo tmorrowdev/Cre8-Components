@@ -20,6 +20,8 @@ export interface SurfacePageOptions {
    * no origin of its own, so relative URLs there resolve to nothing.
    */
   origin?: string;
+  /** Brand whose token sheet the page links. */
+  theme?: string;
 }
 
 export function renderSurfacePage(options: SurfacePageOptions): string {
@@ -29,6 +31,7 @@ export function renderSurfacePage(options: SurfacePageOptions): string {
   const id = JSON.stringify(surfaceId);
   const base = JSON.stringify(origin + runtimeBase);
   const root = JSON.stringify(origin);
+  const theme = encodeURIComponent(options.theme ?? 'cre8');
 
   return `<!doctype html>
 <html lang="en">
@@ -36,6 +39,8 @@ export function renderSurfacePage(options: SurfacePageOptions): string {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${title}</title>
+<link rel="stylesheet" href="${origin}/themes/${theme}/fonts.css">
+<link rel="stylesheet" href="${origin}/themes/${theme}/tokens.css">
 <style>
   :root { color-scheme: light dark; }
   body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }

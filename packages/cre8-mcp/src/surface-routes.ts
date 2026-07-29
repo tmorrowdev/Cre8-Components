@@ -12,7 +12,7 @@
  * the only write it can do is report an event that already happened.
  */
 
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { dirname, join, resolve } from 'node:path';
 import type { Hono } from 'hono';
@@ -66,7 +66,88 @@ function contentTypeFor(file: string): string {
   return file.endsWith('.json') ? 'application/json; charset=utf-8' : 'text/javascript; charset=utf-8';
 }
 
+
+/**
+ * Design tokens. A surface without them renders structurally correct but
+ * unstyled — the components carry their own shadow styles, but every
+ * `--cre8-*` value they read comes from a brand token sheet that has to be on
+ * the page. Serving them here is what makes a streamed surface look like cre8
+ * rather than like unstyled HTML.
+ */
+const THEME_DIR = (brand: string) => join(wcRoot(), 'design-tokens', 'brands', brand, 'css');
+
+function knownBrands(): string[] {
+  try {
+    return readdirSync(join(wcRoot(), 'design-tokens', 'brands'), { withFileTypes: true })
+      .filter((e) => e.isDirectory())
+      .map((e) => e.name);
+  } catch {
+    return [];
+  }
+}
+
+export function themeExists(brand: string): boolean {
+  return knownBrands().includes(brand);
+}
+
+function mountThemes(app: Hono): void {
+  app.get('/themes', (c) => c.json({ brands: knownBrands(), default: DEFAULT_THEME }));
+
+  app.get('/themes/:brand/:file{[a-z0-9._-]+\\.css}', (c) => {
+    const brand = c.req.param('brand');
+    const file = c.req.param('file');
+    if (!knownBrands().includes(brand)) return c.json({ error: `Unknown brand "${brand}"` }, 404);
+    // `tokens.css` is the stable alias; everything else must be a sheet that
+    // actually exists in that brand's directory. The allowlist comes from a
+    // readdir rather than from a pattern, because a brand sheet @imports its
+    // siblings — tokens_brand.css carries the primitives every semantic token
+    // resolves through, and a surface without it renders entirely unstyled.
+    const name = file === 'tokens.css' ? `tokens_${brand}.css` : file;
+    let available: string[];
+    try {
+      available = readdirSync(THEME_DIR(brand)).filter((f) => f.endsWith('.css'));
+    } catch {
+      return c.json({ error: `Brand "${brand}" has no css directory` }, 404);
+    }
+    if (!available.includes(name)) {
+      return c.json({ error: `Not a servable theme file: ${file}`, available }, 404);
+    }
+    try {
+      return c.body(readFileSync(join(THEME_DIR(brand), name), 'utf-8'), 200, {
+        'content-type': 'text/css; charset=utf-8',
+        'cache-control': 'public, max-age=3600',
+      });
+    } catch {
+      // fonts.css is optional per brand; an empty sheet keeps the page quiet.
+      return c.body('', 200, { 'content-type': 'text/css; charset=utf-8' });
+    }
+  });
+
+  // Font files referenced relatively from fonts.css. Allowlisted by listing the
+  // directory rather than by trusting the path.
+  app.get('/themes/:brand/assets/fonts/:file', (c) => {
+    const brand = c.req.param('brand');
+    const file = c.req.param('file');
+    if (!knownBrands().includes(brand)) return c.body(null, 404);
+    const dir = join(THEME_DIR(brand), 'assets', 'fonts');
+    try {
+      if (!readdirSync(dir).includes(file)) return c.body(null, 404);
+      const bytes = readFileSync(join(dir, file));
+      return c.body(new Uint8Array(bytes), 200, {
+        'content-type': file.endsWith('.woff2') ? 'font/woff2' : 'application/octet-stream',
+        'cache-control': 'public, max-age=86400',
+      });
+    } catch {
+      return c.body(null, 404);
+    }
+  });
+}
+
+export const DEFAULT_THEME = process.env.CRE8_MCP_THEME ?? 'cre8';
+
 export function mountSurfaceViewer(app: Hono): void {
+  mountThemes(app);
+
   // The design system bundle. Served locally so a surface renders offline and
   // pins to the same library version the catalog describes.
   app.get('/cre8-wc.esm.js', (c) => {
@@ -178,8 +259,8 @@ export function mountSurfaceViewer(app: Hono): void {
     if (!surfaceStore.has(surfaceId)) {
       return c.html('<!doctype html><title>Surface closed</title><p>No such surface.</p>', 404);
     }
-    const { title } = surfaceStore.snapshot(surfaceId);
-    return c.html(renderSurfacePage({ surfaceId, title }));
+    const { title, theme } = surfaceStore.snapshot(surfaceId);
+    return c.html(renderSurfacePage({ surfaceId, title, theme }));
   });
 }
 
@@ -202,12 +283,13 @@ export function mountSurfaceApi(app: Hono, publicBase: () => string): void {
 
   app.post('/surfaces', async (c) => {
     try {
-      type CreateBody = { title?: string; root?: unknown; data?: unknown };
+      type CreateBody = { title?: string; root?: unknown; data?: unknown; theme?: string };
       const body: CreateBody = await c.req.json<CreateBody>().catch(() => ({}) as CreateBody);
       const summary = surfaceStore.create({
         title: body?.title,
         root: body?.root as never,
         data: body?.data as never,
+        theme: body?.theme,
       });
       return c.json(withUrls(summary), 201);
     } catch (err) {

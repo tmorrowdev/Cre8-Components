@@ -68,6 +68,12 @@ export const uiTools = [
           type: 'object',
           description: 'Optional initial data model that { "$bind": "/pointer" } props read from.',
         },
+        theme: {
+          type: 'string',
+          description:
+            'Brand token sheet the viewer loads (default "cre8"). GET /themes on the same server ' +
+            'lists what is installed. Theming is a viewer concern — it changes nothing about the spec.',
+        },
       },
     },
   },
@@ -157,6 +163,7 @@ export const UiOpenSurfaceSchema = z.object({
   title: z.string().optional(),
   spec: z.record(z.unknown()).optional(),
   data: z.record(z.unknown()).optional(),
+  theme: z.string().optional(),
 });
 
 export const UiStreamSchema = z.object({
@@ -192,13 +199,18 @@ function json(value: unknown): ToolContentBlock {
  * than an external-URL resource, because a host renders it in a sandboxed
  * iframe with no origin of its own — the page has to know where to fetch from.
  */
-function surfaceResource(ctx: UiToolContext, surfaceId: string, title?: string): ToolContentBlock {
+function surfaceResource(
+  ctx: UiToolContext,
+  surfaceId: string,
+  title?: string,
+  theme?: string
+): ToolContentBlock {
   return {
     type: 'resource',
     resource: {
       uri: `ui://cre8/surface/${surfaceId}`,
       mimeType: 'text/html;profile=mcp-app',
-      text: renderSurfacePage({ surfaceId, title, origin: ctx.publicBase }),
+      text: renderSurfacePage({ surfaceId, title, theme, origin: ctx.publicBase }),
     },
   };
 }
@@ -215,6 +227,7 @@ export async function handleUiTool(
         title: input.title,
         root: input.spec as never,
         data: input.data,
+        theme: input.theme,
       });
       const url = viewerUrl(ctx, summary.surfaceId);
       const blocks: ToolContentBlock[] = [
@@ -225,7 +238,7 @@ export async function handleUiTool(
         }),
       ];
       if (ctx.embedResources !== false) {
-        blocks.push(surfaceResource(ctx, summary.surfaceId, summary.title));
+        blocks.push(surfaceResource(ctx, summary.surfaceId, summary.title, summary.theme));
       }
       return blocks;
     }
