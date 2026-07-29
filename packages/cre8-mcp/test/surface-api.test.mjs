@@ -392,5 +392,63 @@ await test('an unknown theme is rejected at creation, not at render', async () =
   assert((await res.json()).error.includes('Unknown theme'));
 });
 
+// ─── the embedded (mcp-ui) path ─────────────────────────────────────────────
+//
+// An mcp-ui host renders the resource HTML in a sandboxed iframe with no origin
+// of its own. Everything the page then loads is a cross-origin request back to
+// this server, so the contract is: absolute URLs in the markup, and CORS on
+// every route the page touches. Verified in a browser against a foreign origin;
+// these lock the parts that can be checked without one.
+
+const embeddedHtml = async () => {
+  const result = await callTool('ui_open_surface', {
+    theme: 'cre8',
+    spec: { component: 'cre8-layout-container' },
+  });
+  const resource = result.content.find((c) => c.type === 'resource');
+  const payload = JSON.parse(result.content.find((c) => c.type === 'text').text);
+  return { html: resource.resource.text, surfaceId: payload.surfaceId };
+};
+
+await test('the embedded page carries no root-relative URLs', async () => {
+  const { html } = await embeddedHtml();
+  // A root-relative href in a sandboxed iframe resolves to nothing.
+  assert(!/(?:href|src)="\//.test(html), 'no attribute may point at a bare "/..." path');
+  assert(html.includes('<link rel="stylesheet" href="http://localhost:3999/themes/cre8/tokens.css">'),
+    'the token sheet must be absolute');
+  assert(!/import\('\//.test(html), 'no dynamic import may start from the root');
+});
+
+await test('every route the embedded page touches allows a foreign origin', async () => {
+  const { surfaceId } = await embeddedHtml();
+  const routes = [
+    '/cre8-wc.esm.js',
+    '/a2ui/runtime/index.js',
+    '/a2ui/runtime/stream/index.js',
+    '/a2ui/runtime/catalog.json',
+    '/themes/cre8/tokens.css',
+    '/themes/cre8/tokens_brand.css',
+    `/surfaces/${surfaceId}/stream`,
+  ];
+  for (const route of routes) {
+    const res = await req(route, { headers: { Origin: 'null' } });
+    assertEqual(res.headers.get('access-control-allow-origin'), '*', `CORS on ${route}`);
+  }
+});
+
+await test('a click reports back as a CORS-simple beacon, with no preflight', async () => {
+  const { surfaceId } = await embeddedHtml();
+  // text/plain is what keeps sendBeacon a simple request. If this ever needs
+  // application/json, an embedded surface silently stops reporting clicks.
+  const res = await req(`/surfaces/${surfaceId}/events`, {
+    method: 'POST',
+    headers: { Origin: 'null', 'content-type': 'text/plain' },
+    body: JSON.stringify({ component: 'cre8-button', path: '$', event: 'click', handler: 'approve' }),
+  });
+  assertEqual(res.status, 200);
+  const { events } = await (await req(`/surfaces/${surfaceId}/events?since=0`)).json();
+  assertEqual(events[0].handler, 'approve');
+});
+
 console.log(`\n${passed} passed, ${failures.length} failed`);
 if (failures.length) process.exit(1);
