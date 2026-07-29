@@ -30,6 +30,7 @@ import {
   handleValidateA2uiSpec,
 } from './handlers.js';
 import { UI_TOOL_NAMES, handleUiTool, uiTools, type UiToolContext } from './ui-tools.js';
+import { embeddedViewerBase } from './embedded-viewer.js';
 import {
   Cre8GuideSchema,
   GetContentModelSchema,
@@ -41,7 +42,12 @@ import {
 export const SERVER_VERSION = '0.6.0';
 
 export interface McpServerOptions {
-  /** Absolute base URL a browser can reach the surface viewer on. */
+  /**
+   * Absolute base URL a browser can reach the surface viewer on. The HTTP
+   * server passes its own; stdio leaves it unset and gets an embedded viewer
+   * booted on first use, because a surface only exists in the process that
+   * created it.
+   */
   publicBase?: string;
   /** Set false to skip the mcp-ui resource block on ui_open_surface. */
   embedResources?: boolean;
@@ -49,10 +55,9 @@ export interface McpServerOptions {
 
 export function createMcpServer(options: McpServerOptions = {}): Server {
   const uiContext: UiToolContext = {
-    publicBase:
-      options.publicBase ??
-      process.env.CRE8_MCP_PUBLIC_URL ??
-      `http://localhost:${process.env.PORT || '3001'}`,
+    publicBase: options.publicBase
+      ? async () => options.publicBase as string
+      : embeddedViewerBase,
     embedResources: options.embedResources,
   };
 

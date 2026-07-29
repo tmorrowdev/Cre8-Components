@@ -201,6 +201,12 @@ than a set of cooperating services:
 pnpm mcp:api
 ```
 
+Over **stdio** there is no such server, and a surface only exists in the process
+that created it — so the stdio transport boots its own viewer on loopback the
+first time a surface is opened, and returns a URL pointing at that. Nothing to
+configure and no second process to run; `CRE8_MCP_VIEWER_PORT` pins the port and
+`CRE8_MCP_PUBLIC_URL` changes the advertised origin if you are behind a tunnel.
+
 The viewer routes sit **above** the bearer-token gate, because a browser cannot
 put an `Authorization` header on a page load or an `EventSource`. What protects a
 surface instead is that its id is 128 random bits: the URL is the capability.

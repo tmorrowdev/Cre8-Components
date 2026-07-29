@@ -15,6 +15,8 @@ RUN pnpm install --frozen-lockfile
 
 # Copy source files needed at build time and runtime
 COPY packages/cre8-wc/a2ui ./packages/cre8-wc/a2ui
+COPY packages/cre8-wc/cdn ./packages/cre8-wc/cdn
+COPY packages/cre8-wc/design-tokens ./packages/cre8-wc/design-tokens
 COPY packages/cre8-wc/mcp-manifest.json ./packages/cre8-wc/mcp-manifest.json
 COPY packages/cre8-wc/package.json ./packages/cre8-wc/package.json
 COPY packages/cre8-mcp/src ./packages/cre8-mcp/src
@@ -25,6 +27,13 @@ RUN pnpm --filter @tmorrow/cre8-mcp build
 
 # Deploy to a self-contained directory (resolves workspace symlinks to real files)
 RUN pnpm --filter @tmorrow/cre8-mcp deploy --prod /deploy
+
+# The brand token sheets are not in cre8-wc's `files`, so `deploy` leaves them
+# behind — and without them every streamed surface renders completely unstyled,
+# silently. Copied explicitly rather than published, because `lib/design-tokens`
+# already carries the same CSS for npm consumers.
+RUN cp -r packages/cre8-wc/design-tokens /deploy/node_modules/@tmorrow/cre8-wc/design-tokens && \
+    test -f /deploy/node_modules/@tmorrow/cre8-wc/cdn/cre8-wc.esm.js
 
 FROM node:22-slim
 

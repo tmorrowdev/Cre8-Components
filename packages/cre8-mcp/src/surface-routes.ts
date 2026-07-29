@@ -74,11 +74,40 @@ function contentTypeFor(file: string): string {
  * the page. Serving them here is what makes a streamed surface look like cre8
  * rather than like unstyled HTML.
  */
-const THEME_DIR = (brand: string) => join(wcRoot(), 'design-tokens', 'brands', brand, 'css');
+let brandsRootCache: string | null | undefined;
+
+/**
+ * A published `@tmorrow/cre8-wc` ships tokens under `lib/design-tokens/` (that
+ * is what the package's own `./themes/*` export points at); a source checkout
+ * has them at `design-tokens/`. Checking both is the difference between a
+ * container serving branded surfaces and serving naked ones.
+ */
+function brandsRoot(): string | null {
+  if (brandsRootCache !== undefined) return brandsRootCache;
+  for (const candidate of [
+    join(wcRoot(), 'lib', 'design-tokens', 'brands'),
+    join(wcRoot(), 'design-tokens', 'brands'),
+  ]) {
+    try {
+      if (readdirSync(candidate).length) {
+        brandsRootCache = candidate;
+        return candidate;
+      }
+    } catch {
+      /* try the next layout */
+    }
+  }
+  brandsRootCache = null;
+  return null;
+}
+
+const THEME_DIR = (brand: string) => join(brandsRoot() ?? '', brand, 'css');
 
 function knownBrands(): string[] {
+  const root = brandsRoot();
+  if (!root) return [];
   try {
-    return readdirSync(join(wcRoot(), 'design-tokens', 'brands'), { withFileTypes: true })
+    return readdirSync(root, { withFileTypes: true })
       .filter((e) => e.isDirectory())
       .map((e) => e.name);
   } catch {
@@ -91,7 +120,24 @@ export function themeExists(brand: string): boolean {
 }
 
 function mountThemes(app: Hono): void {
-  app.get('/themes', (c) => c.json({ brands: knownBrands(), default: DEFAULT_THEME }));
+  app.get('/themes', (c) => {
+    const brands = knownBrands();
+    return c.json({
+      brands,
+      default: DEFAULT_THEME,
+      // An empty list is the signature of a deployment that copied the a2ui
+      // catalog but not the token sheets — surfaces render unstyled and nothing
+      // else complains, so say it here.
+      ...(brands.length
+        ? {}
+        : {
+            hint:
+              'No brand token sheets found in the installed @tmorrow/cre8-wc. Surfaces will ' +
+              'render unstyled. Ship lib/design-tokens/ with the package, or set CRE8_WC_ROOT ' +
+              'to a checkout that has design-tokens/.',
+          }),
+    });
+  });
 
   app.get('/themes/:brand/:file{[a-z0-9._-]+\\.css}', (c) => {
     const brand = c.req.param('brand');

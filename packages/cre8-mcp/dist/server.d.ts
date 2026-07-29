@@ -1,6 +1,6 @@
+#!/usr/bin/env node
 /**
- * Cre8 MCP REST API Server
- *
- * Exposes component patterns and search as HTTP endpoints.
+ * Bootstrap for the cre8-mcp HTTP server. The application itself lives in
+ * src/app.ts so it can be driven in tests without binding a port.
  */
 export {};

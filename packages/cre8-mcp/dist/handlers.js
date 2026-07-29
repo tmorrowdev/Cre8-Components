@@ -322,7 +322,7 @@ export function handleGenerateCode(input) {
 }
 // ─── A2UI catalog tools ──────────────────────────────────────────────
 let registeredCatalogCache = null;
-function loadA2uiCatalog() {
+export function loadA2uiCatalog() {
     if (registeredCatalogCache)
         return registeredCatalogCache;
     const require = createRequire(import.meta.url);

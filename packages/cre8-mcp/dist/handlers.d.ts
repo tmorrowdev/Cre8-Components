@@ -4,6 +4,7 @@
  * Functions that implement the Cre8 Design System MCP tools.
  * Supports both Web Components (default) and React formats.
  */
+import { type RegisteredCatalog } from '@tmorrow/cre8-wc/a2ui/index.js';
 export type ComponentFormat = 'web' | 'react';
 export interface ListComponentsInput {
     category?: string;
@@ -53,6 +54,7 @@ export declare function handleSearchComponents(input: SearchComponentsInput): st
  * generate_code - Generates React or Web Component code from a JSON schema
  */
 export declare function handleGenerateCode(input: GenerateCodeInput): string;
+export declare function loadA2uiCatalog(): RegisteredCatalog;
 export interface GetA2uiCatalogInput {
     view?: 'metadata' | 'component' | 'full';
     component?: string;

@@ -14,8 +14,12 @@ import { renderSurfacePage } from './surface-page.js';
 import { surfaceStore } from './surfaces.js';
 
 export interface UiToolContext {
-  /** Absolute base URL a browser can reach this server on. */
-  publicBase: string;
+  /**
+   * Resolves the absolute base URL a browser can reach surfaces on. A function
+   * rather than a string because stdio has to boot a viewer to answer it, and
+   * only when a surface is actually opened.
+   */
+  publicBase: () => Promise<string>;
   /**
    * Whether to embed the surface as an mcp-ui resource. Hosts that do not
    * understand `ui://` ignore it, and the text block carries the URL either way.
@@ -186,8 +190,9 @@ export const UiCloseSurfaceSchema = z.object({ surfaceId: z.string() });
 
 export const UI_TOOL_NAMES = new Set(uiTools.map((t) => t.name));
 
-function viewerUrl(ctx: UiToolContext, surfaceId: string): string {
-  return `${ctx.publicBase.replace(/\/$/, '')}/surfaces/${surfaceId}`;
+async function viewerUrl(ctx: UiToolContext, surfaceId: string): Promise<string> {
+  const base = (await ctx.publicBase()).replace(/\/$/, '');
+  return `${base}/surfaces/${surfaceId}`;
 }
 
 function json(value: unknown): ToolContentBlock {
@@ -199,18 +204,19 @@ function json(value: unknown): ToolContentBlock {
  * than an external-URL resource, because a host renders it in a sandboxed
  * iframe with no origin of its own — the page has to know where to fetch from.
  */
-function surfaceResource(
+async function surfaceResource(
   ctx: UiToolContext,
   surfaceId: string,
   title?: string,
   theme?: string
-): ToolContentBlock {
+): Promise<ToolContentBlock> {
+  const origin = (await ctx.publicBase()).replace(/\/$/, '');
   return {
     type: 'resource',
     resource: {
       uri: `ui://cre8/surface/${surfaceId}`,
       mimeType: 'text/html;profile=mcp-app',
-      text: renderSurfacePage({ surfaceId, title, theme, origin: ctx.publicBase }),
+      text: renderSurfacePage({ surfaceId, title, theme, origin }),
     },
   };
 }
@@ -229,7 +235,7 @@ export async function handleUiTool(
         data: input.data,
         theme: input.theme,
       });
-      const url = viewerUrl(ctx, summary.surfaceId);
+      const url = await viewerUrl(ctx, summary.surfaceId);
       const blocks: ToolContentBlock[] = [
         json({
           ...summary,
@@ -238,7 +244,7 @@ export async function handleUiTool(
         }),
       ];
       if (ctx.embedResources !== false) {
-        blocks.push(surfaceResource(ctx, summary.surfaceId, summary.title, summary.theme));
+        blocks.push(await surfaceResource(ctx, summary.surfaceId, summary.title, summary.theme));
       }
       return blocks;
     }
@@ -257,13 +263,16 @@ export async function handleUiTool(
       const summary = input.status
         ? surfaceStore.setStatus(input.surfaceId, input.status as SurfaceState, input.statusMessage)
         : surfaceStore.summary(input.surfaceId);
-      return [json({ ...summary, url: viewerUrl(ctx, input.surfaceId) })];
+      return [json({ ...summary, url: await viewerUrl(ctx, input.surfaceId) })];
     }
 
     case 'ui_get_surface': {
       const input = UiGetSurfaceSchema.parse(args);
       return [
-        json({ ...surfaceStore.snapshot(input.surfaceId), url: viewerUrl(ctx, input.surfaceId) }),
+        json({
+          ...surfaceStore.snapshot(input.surfaceId),
+          url: await viewerUrl(ctx, input.surfaceId),
+        }),
       ];
     }
 
