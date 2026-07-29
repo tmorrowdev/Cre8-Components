@@ -7,4 +7,5 @@
 export { A2UI_STREAM_VERSION, isBindingRef, type BindingRef, type ContentTarget, type DataPatch, type JsonPointer, type PatchOp, type SurfaceChange, type SurfaceEventMessage, type SurfaceMessage, type SurfaceState, } from './types.js';
 export { SurfaceModel, SurfaceSeqGapError, resolveNode, type ApplyResult, type SurfaceModelOptions, } from './model.js';
 export { SurfaceRenderer, findPath, type SurfaceRendererOptions } from './renderer.js';
+export { diffSpecs } from './diff.js';
 export { childPath, formatPath, parsePath, parsePointer, pointerGet, pointerRemove, pointerSet, type PathSegment, } from './pointer.js';

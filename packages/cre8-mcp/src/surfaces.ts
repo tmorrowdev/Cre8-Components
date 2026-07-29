@@ -13,7 +13,7 @@
  */
 
 import { randomBytes } from 'node:crypto';
-import { SurfaceModel } from '@tmorrow/cre8-wc/a2ui/stream/index.js';
+import { SurfaceModel, diffSpecs } from '@tmorrow/cre8-wc/a2ui/stream/index.js';
 import type {
   DataPatch,
   PatchOp,
@@ -160,6 +160,27 @@ export class SurfaceStore {
 
   patch(surfaceId: string, ops: PatchOp[]): SurfaceSummary {
     const record = this.get(surfaceId);
+    return this.dispatch(record, {
+      v: 1,
+      type: 'surface.patch',
+      surfaceId,
+      seq: record.model.seq + 1,
+      ops,
+    });
+  }
+
+  /**
+   * Reconcile the surface to `spec` by diffing against what it holds now.
+   *
+   * This is the interface models actually want: asked to change one label, a
+   * model regenerates the document. Replacing the root would remount every
+   * element and lose focus, scroll, and any animation in flight; diffing keeps
+   * the elements that did not change.
+   */
+  setSpec(surfaceId: string, spec: ComponentSpec | null): SurfaceSummary {
+    const record = this.get(surfaceId);
+    const ops = diffSpecs(record.model.root, spec);
+    if (!ops.length) return this.summarize(record);
     return this.dispatch(record, {
       v: 1,
       type: 'surface.patch',

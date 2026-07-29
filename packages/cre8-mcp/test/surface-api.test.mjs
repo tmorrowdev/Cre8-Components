@@ -538,5 +538,98 @@ await test('a component with no inert props says nothing about them', async () =
   assert(!('inertProps' in button), 'silence, rather than an empty all-clear');
 });
 
+// ─── whole-tree updates ─────────────────────────────────────────────────────
+
+await test('resending the whole tree applies only what changed', async () => {
+  const { surfaceId } = await newSurface();
+  const build = (label) => ({
+    component: 'cre8-layout-container',
+    children: [
+      { component: 'cre8-heading', props: { tagVariant: 'h1' }, children: ['Title'] },
+      { component: 'cre8-button', props: { text: label, variant: 'primary' } },
+    ],
+  });
+  await post(`/surfaces/${surfaceId}/spec`, { spec: build('Before') });
+  const seqAfterFirst = (await (await req(`/surfaces/${surfaceId}/state`)).json()).seq;
+
+  await post(`/surfaces/${surfaceId}/spec`, { spec: build('After') });
+  const state = await (await req(`/surfaces/${surfaceId}/state`)).json();
+  assertEqual(state.root.children[1].props.text, 'After');
+  assertEqual(state.seq, seqAfterFirst + 1, 'one message, not a rebuild');
+});
+
+await test('resending an identical tree costs nothing', async () => {
+  const { surfaceId } = await newSurface();
+  const spec = { component: 'cre8-layout-container', children: [{ component: 'cre8-heading', children: ['Same'] }] };
+  await post(`/surfaces/${surfaceId}/spec`, { spec });
+  const before = (await (await req(`/surfaces/${surfaceId}/state`)).json()).seq;
+  await post(`/surfaces/${surfaceId}/spec`, { spec: JSON.parse(JSON.stringify(spec)) });
+  const after = (await (await req(`/surfaces/${surfaceId}/state`)).json()).seq;
+  assertEqual(after, before, 'an unchanged tree must not advance the sequence');
+});
+
+await test('an invalid tree is rejected without touching the surface', async () => {
+  const { surfaceId } = await newSurface();
+  const good = { component: 'cre8-layout-container', children: [{ component: 'cre8-heading', children: ['Kept'] }] };
+  await post(`/surfaces/${surfaceId}/spec`, { spec: good });
+  const res = await post(`/surfaces/${surfaceId}/spec`, {
+    spec: { component: 'cre8-layout-container', children: [{ component: 'cre8-card', children: ['illegal'] }] },
+  });
+  assertEqual(res.status, 400);
+  const state = await (await req(`/surfaces/${surfaceId}/state`)).json();
+  assertEqual(state.root.children[0].children[0], 'Kept');
+});
+
+await test('ui_stream takes spec or ops, and says so when given both', async () => {
+  const opened = JSON.parse((await callTool('ui_open_surface', {
+    spec: { component: 'cre8-layout-container' },
+  })).content[0].text);
+
+  const ok = await callTool('ui_stream', {
+    surfaceId: opened.surfaceId,
+    spec: { component: 'cre8-layout-container', children: [{ component: 'cre8-heading', children: ['Via spec'] }] },
+    status: 'done',
+  });
+  assert(!ok.isError, 'spec alone should work');
+
+  const both = await callTool('ui_stream', {
+    surfaceId: opened.surfaceId,
+    spec: { component: 'cre8-grid' },
+    ops: [{ op: 'append', path: '$', nodes: [] }],
+  });
+  assertEqual(both.isError, true);
+  assert(both.content[0].text.includes('not both'));
+});
+
+await test('every module the served runtime imports is itself servable', async () => {
+  // The allowlist and the compiled module graph have to agree. They did not:
+  // stream/index.js started re-exporting diff.js, diff.js was not listed, and
+  // the viewer page died on a 404 with nothing in the console to say why. Walk
+  // the graph instead of trusting the list.
+  const seen = new Set();
+  const queue = ['index.js', 'stream/index.js'];
+  while (queue.length) {
+    const file = queue.shift();
+    if (seen.has(file)) continue;
+    seen.add(file);
+    const res = await req(`/a2ui/runtime/${file}`);
+    assertEqual(res.status, 200, `${file} must be servable — the viewer imports it`);
+    const source = await res.text();
+    const dir = file.includes('/') ? `${file.slice(0, file.lastIndexOf('/'))}/` : '';
+    for (const m of source.matchAll(/from\s+['"](\.[^'"]+)['"]/g)) {
+      // Resolve the relative specifier against the importing file's directory.
+      const parts = `${dir}${m[1]}`.split('/');
+      const stack = [];
+      for (const part of parts) {
+        if (part === '.' || part === '') continue;
+        if (part === '..') stack.pop();
+        else stack.push(part);
+      }
+      queue.push(stack.join('/'));
+    }
+  }
+  assert(seen.size >= 6, `expected to walk the runtime graph, only saw ${[...seen].join(', ')}`);
+});
+
 console.log(`\n${passed} passed, ${failures.length} failed`);
 if (failures.length) process.exit(1);

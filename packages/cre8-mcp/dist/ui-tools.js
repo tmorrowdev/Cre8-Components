@@ -53,16 +53,26 @@ export const uiTools = [
     },
     {
         name: 'ui_stream',
-        description: 'Streams a change into an open surface. This is the only mutation tool: pass `data`, `ops`, ' +
-            'and/or `status` in one call and they apply in that order, so a node bound to a value this ' +
-            'same call introduces still validates. Every op is checked against the cre8 catalog before ' +
-            'anything moves — if one op fails, none of them land and the error names the path and the ' +
-            'rule. ' +
+        description: 'Streams a change into an open surface. This is the only mutation tool. ' +
+            'The easy way: pass `spec` — the whole tree as it should now be — and the server works out ' +
+            'the minimal patch, so you never have to describe an edit. The precise way: pass `ops`. ' +
+            'Either can be combined with `data` and `status`, which apply in the order data → change → ' +
+            'status, so a node bound to a value this same call introduces still validates. Everything is ' +
+            'checked against the cre8 catalog before anything moves — if one op fails, none of them land ' +
+            'and the error names the path and the rule. ' +
             OPS_SHAPE,
         inputSchema: {
             type: 'object',
             properties: {
                 surfaceId: { type: 'string', description: 'From ui_open_surface.' },
+                spec: {
+                    type: 'object',
+                    description: 'The whole tree as it should now be. The server diffs it against what the surface ' +
+                        'holds and applies only what changed, so elements that did not change keep their ' +
+                        'focus, scroll position and animations. Use this when it is easier to regenerate the ' +
+                        'page than to describe the edit — which is most of the time. Cannot be combined with ' +
+                        '`ops`.',
+                },
                 ops: { type: 'array', description: OPS_SHAPE, items: { type: 'object' } },
                 data: {
                     type: 'array',
@@ -134,6 +144,7 @@ export const UiOpenSurfaceSchema = z.object({
 });
 export const UiStreamSchema = z.object({
     surfaceId: z.string(),
+    spec: z.record(z.unknown()).optional(),
     ops: z.array(z.record(z.unknown())).optional(),
     data: z.array(z.record(z.unknown())).optional(),
     status: z.enum(['streaming', 'idle', 'done', 'error']).optional(),
@@ -200,6 +211,13 @@ export async function handleUiTool(name, args, ctx) {
             // have it yet.
             if (input.data?.length) {
                 surfaceStore.setData(input.surfaceId, input.data);
+            }
+            if (input.spec && input.ops?.length) {
+                throw new Error('ui_stream takes either `spec` (the whole tree, diffed for you) or `ops` (explicit ' +
+                    'patches), not both — the ops would be applied against a tree the diff had already moved.');
+            }
+            if (input.spec) {
+                surfaceStore.setSpec(input.surfaceId, input.spec);
             }
             if (input.ops?.length) {
                 surfaceStore.patch(input.surfaceId, input.ops);

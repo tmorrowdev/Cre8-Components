@@ -73,6 +73,15 @@ export declare class SurfaceStore {
     summary(surfaceId: string): SurfaceSummary;
     list(): SurfaceSummary[];
     patch(surfaceId: string, ops: PatchOp[]): SurfaceSummary;
+    /**
+     * Reconcile the surface to `spec` by diffing against what it holds now.
+     *
+     * This is the interface models actually want: asked to change one label, a
+     * model regenerates the document. Replacing the root would remount every
+     * element and lose focus, scroll, and any animation in flight; diffing keeps
+     * the elements that did not change.
+     */
+    setSpec(surfaceId: string, spec: ComponentSpec | null): SurfaceSummary;
     setData(surfaceId: string, patches: DataPatch[]): SurfaceSummary;
     setStatus(surfaceId: string, state: SurfaceState, message?: string): SurfaceSummary;
     close(surfaceId: string): void;

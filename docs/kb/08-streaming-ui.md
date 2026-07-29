@@ -111,6 +111,33 @@ means the component's `children` array, and `"default"` names the default slot �
 }
 ```
 
+## You do not have to write ops
+
+Asked to change one label, a model regenerates the document. That is not a flaw
+to be trained out of it, so the connector meets it where it is: pass `spec` to
+`ui_stream` — the whole tree as it should now be — and the server diffs it
+against what the surface holds and applies only the difference.
+
+```json
+{ "surfaceId": "…", "spec": { "component": "cre8-layout-container", "children": [ … ] } }
+```
+
+What that buys is not bandwidth, it is **element identity**. Replacing the root
+would remount everything: focus lost, scroll reset, half-finished animations
+restarted, a half-typed form field cleared. A diff touches only what changed, so
+a user typing into a field while the agent rewrites the page around them keeps
+what they typed.
+
+Resending an identical tree costs nothing — no message, no sequence number.
+
+The diff is deliberately *not* a minimal edit script. Node identity here is
+positional, so it compares position by position and only appends or removes at
+the tail; inserting at the head of a long list rewrites the list rather than
+shifting it. A keyed diff would do better, and keys would have to come from
+somewhere — the reason this dialect has no ids is that nothing has to invent
+them. Reach for `ops` directly when you know exactly what changed and the list
+is long.
+
 ### Streaming text is the op that matters
 
 `appendText` concatenates into the trailing text node, and the renderer mutates

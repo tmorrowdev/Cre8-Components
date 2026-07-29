@@ -72,6 +72,10 @@ export declare const uiTools: ({
                 type: string;
                 description: string;
             };
+            spec: {
+                type: string;
+                description: string;
+            };
             ops: {
                 type: string;
                 description: string;
@@ -96,7 +100,6 @@ export declare const uiTools: ({
                 description: string;
             };
             title?: undefined;
-            spec?: undefined;
             theme?: undefined;
             since?: undefined;
             waitMs?: undefined;
@@ -172,6 +175,7 @@ export declare const UiOpenSurfaceSchema: z.ZodObject<{
 }>;
 export declare const UiStreamSchema: z.ZodObject<{
     surfaceId: z.ZodString;
+    spec: z.ZodOptional<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
     ops: z.ZodOptional<z.ZodArray<z.ZodRecord<z.ZodString, z.ZodUnknown>, "many">>;
     data: z.ZodOptional<z.ZodArray<z.ZodRecord<z.ZodString, z.ZodUnknown>, "many">>;
     status: z.ZodOptional<z.ZodEnum<["streaming", "idle", "done", "error"]>>;
@@ -180,12 +184,14 @@ export declare const UiStreamSchema: z.ZodObject<{
     surfaceId: string;
     data?: Record<string, unknown>[] | undefined;
     status?: "error" | "streaming" | "idle" | "done" | undefined;
+    spec?: Record<string, unknown> | undefined;
     ops?: Record<string, unknown>[] | undefined;
     statusMessage?: string | undefined;
 }, {
     surfaceId: string;
     data?: Record<string, unknown>[] | undefined;
     status?: "error" | "streaming" | "idle" | "done" | undefined;
+    spec?: Record<string, unknown> | undefined;
     ops?: Record<string, unknown>[] | undefined;
     statusMessage?: string | undefined;
 }>;

@@ -82,6 +82,7 @@ export function createApp(options = {}) {
                 list: 'GET /surfaces',
                 state: 'GET /surfaces/:id/state',
                 patch: 'POST /surfaces/:id/patch  body: { ops: PatchOp[] }',
+                spec: 'POST /surfaces/:id/spec   body: { spec }  — diffed against the surface, minimal patch applied',
                 data: 'POST /surfaces/:id/data  body: { patches: DataPatch[] }',
                 status: 'POST /surfaces/:id/status  body: { state, message? }',
                 events: 'GET /surfaces/:id/events?since=N&wait=ms',

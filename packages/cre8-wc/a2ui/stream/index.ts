@@ -29,6 +29,8 @@ export {
 
 export { SurfaceRenderer, findPath, type SurfaceRendererOptions } from './renderer.js';
 
+export { diffSpecs } from './diff.js';
+
 export {
   childPath,
   formatPath,

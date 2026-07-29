@@ -35,6 +35,7 @@ const RUNTIME_FILES = new Set([
     'stream/pointer.js',
     'stream/model.js',
     'stream/renderer.js',
+    'stream/diff.js',
 ]);
 let wcRootCache = null;
 /**
@@ -337,6 +338,18 @@ export function mountSurfaceApi(app, publicBase) {
             if (!Array.isArray(body?.ops))
                 return c.json({ error: 'Missing required field "ops" (array)' }, 400);
             return c.json(withUrls(surfaceStore.patch(c.req.param('id'), body.ops)));
+        }
+        catch (err) {
+            const { status, body: payload } = errorPayload(err);
+            return c.json(payload, status);
+        }
+    });
+    app.post('/surfaces/:id/spec', async (c) => {
+        try {
+            const body = await c.req.json();
+            if (body?.spec === undefined)
+                return c.json({ error: 'Missing required field "spec"' }, 400);
+            return c.json(withUrls(surfaceStore.setSpec(c.req.param('id'), body.spec)));
         }
         catch (err) {
             const { status, body: payload } = errorPayload(err);
