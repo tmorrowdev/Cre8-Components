@@ -28,6 +28,7 @@ can do the same thing mechanically against
 | [Composition Patterns](02-composition-patterns.md) | How to assemble components into pages that hold together |
 | [Token Theming](03-token-theming.md) | How to change how everything looks, at four different levels of commitment |
 | [A2UI — Agent-Generated UI](04-a2ui.md) | How an agent emits cre8 UI as data, and how that is validated |
+| [Streaming UI — live surfaces](08-streaming-ui.md) | How an agent builds UI a human watches, patch by patch, and how clicks come back |
 | [AI Fluency in cre8](05-ai-fluency.md) | How to work *with* an AI on cre8 well — delegating, describing, checking, owning |
 | [Usage in Other Frameworks](06-frameworks.md) | React, Next.js, Vue, Angular, Svelte, and plain HTML |
 | [Research and Sources](07-research.md) | The external work this system is built on, with links |

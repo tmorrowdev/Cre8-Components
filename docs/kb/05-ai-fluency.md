@@ -169,17 +169,29 @@ custom elements fail quietly.
 
 ## The tool surface
 
-**MCP server** — `packages/cre8-mcp`, seven tools:
+**MCP server** — `packages/cre8-mcp`, fourteen tools over one connection
+(stdio, or Streamable HTTP at `POST /mcp`):
 
 | Tool | Use it for |
 |---|---|
+| `cre8_guide` | The briefing: workflow, traps, streaming, what validation misses |
 | `list_components` | Enumerate, optionally by category; `format: web \| react` |
 | `get_component` | One component's full definition — props, slots, events |
 | `search_components` | Find by intent when you do not know the name |
+| `get_content_model` | Whether a component takes `children` or `slots` — look this up first |
 | `get_patterns` | The six canonical composition templates |
 | `generate_code` | Component tree → HTML or JSX |
 | `get_a2ui_catalog` | Catalog metadata, one component, or the full schema |
 | `validate_a2ui_spec` | Check a spec tree before rendering |
+| `ui_open_surface` | Open a live surface and get a URL a human can watch |
+| `ui_stream` | Patch that surface — ops, data, status — as you work |
+| `ui_get_surface` | Read the current tree back when you have lost track of paths |
+| `ui_events` | Read what the user clicked; `waitMs` blocks instead of polling |
+| `ui_close_surface` | Finish |
+
+The split that matters: `generate_code` when the deliverable is source someone
+will paste, `ui_open_surface` when the deliverable is the interface itself. See
+[Streaming UI](08-streaming-ui.md).
 
 **Skills** — `cre8-a2ui` (web components), `cre8-a2ui-react` (React),
 `cre8-mcp-ui` (serving cre8 UI through a Python MCP server),

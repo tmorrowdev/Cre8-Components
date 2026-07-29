@@ -8,6 +8,7 @@
  *
  * Checks, in order of what actually catches mistakes:
  *   1. Every ```json block in the KB that looks like an A2UI spec → validateSpec
+ *      (with `$bind` values resolved away first, as a live surface would)
  *   2. Every <cre8-*> tag in ```html/```jsx/```vue/```svelte blocks →
  *      component exists, attributes are declared props, enum values are legal,
  *      and event bindings name an event the component actually emits
@@ -27,6 +28,7 @@ import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { resolve, dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { registerCatalog, validateSpec } from '../../../packages/cre8-wc/a2ui/registry.js';
+import { resolveNode } from '../../../packages/cre8-wc/a2ui/stream/model.js';
 
 const KB = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const REPO = resolve(KB, '../..');
@@ -90,7 +92,11 @@ for (const file of walk(KB)) {
     if (!spec || typeof spec !== 'object' || typeof spec.component !== 'string') continue;
     specsChecked += 1;
     try {
-      validateSpec(spec, catalog);
+      // Resolve `{ "$bind": "/pointer" }` prop values first. Against an empty
+      // data model a binding drops out entirely, which is exactly what the
+      // streaming renderer does — so a spec written for a live surface is
+      // checked on everything except the values only the surface knows.
+      validateSpec(resolveNode(spec, {}), catalog);
     } catch (e) {
       fail(rel, `embedded A2UI spec is invalid → ${e.message}`);
     }
