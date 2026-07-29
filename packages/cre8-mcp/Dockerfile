@@ -48,6 +48,11 @@ RUN chown -R appuser:appgroup /app
 
 USER appuser
 
+# The server binds loopback by default; a container needs every interface.
+# Set CRE8_MCP_TOKEN too unless the port is private to the compose network —
+# without one, anyone who can reach it can list and patch every live surface.
+ENV CRE8_MCP_HOST=0.0.0.0
+
 EXPOSE 3001
 
 HEALTHCHECK --interval=30s --timeout=10s --start-period=15s --retries=3 \

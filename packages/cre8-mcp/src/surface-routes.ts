@@ -231,6 +231,16 @@ export function mountSurfaceViewer(app: Hono): void {
     }
   });
 
+  // A viewer cannot read the status of a failed EventSource, so without this it
+  // cannot tell a closed surface from a network blip and retries forever behind
+  // a spinner that never explains itself.
+  app.get('/surfaces/:id/alive', (c) => {
+    const surfaceId = c.req.param('id');
+    return surfaceStore.has(surfaceId)
+      ? c.json({ alive: true, surfaceId })
+      : c.json({ alive: false, surfaceId }, 404);
+  });
+
   app.get('/surfaces/:id/stream', (c) => {
     const surfaceId = c.req.param('id');
     if (!surfaceStore.has(surfaceId)) return c.json({ error: 'No such surface' }, 404);

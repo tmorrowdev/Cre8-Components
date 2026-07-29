@@ -59,6 +59,10 @@ export function renderSurfacePage(options: SurfacePageOptions): string {
   #cre8-surface-status[data-state="streaming"] .dot { animation: pulse 1.1s ease-in-out infinite; }
   #cre8-surface-status[data-state="error"] .dot { background: #ff6b6b; }
   @keyframes pulse { 0%,100% { opacity: 1 } 50% { opacity: .25 } }
+  #cre8-surface-root[data-ended]::after {
+    content: "This surface has ended.";
+    display: block; padding: 24px; text-align: center; opacity: .5; font-size: 13px;
+  }
   #cre8-surface-root:empty::after {
     content: "Waiting for the agent…";
     display: block; padding: 48px; text-align: center; opacity: .55; font-size: 14px;
@@ -154,12 +158,24 @@ function connect() {
     }
   };
 
-  source.onerror = () => {
-    if (source.readyState === EventSource.CLOSED) {
-      setStatus('error', 'reconnecting');
-      setTimeout(connect, backoff);
-      backoff = Math.min(backoff * 2, 10000);
+  source.onerror = async () => {
+    if (source.readyState !== EventSource.CLOSED) return;
+    setStatus('error', 'reconnecting');
+    // Distinguish "the surface is gone" from "the network hiccuped". Retrying
+    // into a 404 forever leaves a spinner that never explains itself, and
+    // surfaces do not survive a server restart.
+    try {
+      const probe = await fetch(ORIGIN + '/surfaces/' + SURFACE_ID + '/alive');
+      if (probe.status === 404) {
+        setStatus('done', 'this surface has ended');
+        rootEl.dataset.ended = 'true';
+        return;
+      }
+    } catch {
+      // Unreachable server: that is a blip, so fall through and retry.
     }
+    setTimeout(connect, backoff);
+    backoff = Math.min(backoff * 2, 10000);
   };
 }
 

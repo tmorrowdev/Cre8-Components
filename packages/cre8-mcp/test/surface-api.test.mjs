@@ -631,5 +631,50 @@ await test('every module the served runtime imports is itself servable', async (
   assert(seen.size >= 6, `expected to walk the runtime graph, only saw ${[...seen].join(', ')}`);
 });
 
+// ─── posture and liveness ───────────────────────────────────────────────────
+
+const { bindingAdvice, isLoopback } = await import('../src/binding.ts');
+
+await test('binding beyond loopback without a token is warned about', async () => {
+  // GET /surfaces hands out surface ids, and a surface id is the only thing
+  // protecting its viewer. Reachable + no token is enumerable, not just open.
+  assertEqual(bindingAdvice({ hostname: '127.0.0.1' }), null, 'loopback needs no warning');
+  assertEqual(bindingAdvice({ hostname: '0.0.0.0', token: 'secret' }), null, 'a token is the opt-in');
+  const advice = bindingAdvice({ hostname: '0.0.0.0' });
+  assert(advice?.includes('CRE8_MCP_TOKEN'), 'and otherwise it must say so');
+  assert(advice.includes('list every live surface'), 'naming the actual exposure');
+  assert(isLoopback('::1') && !isLoopback('10.0.0.4'));
+});
+
+await test('a viewer can tell a closed surface from a network blip', async () => {
+  const { surfaceId } = await newSurface();
+  const alive = await req(`/surfaces/${surfaceId}/alive`);
+  assertEqual(alive.status, 200);
+  assertEqual((await alive.json()).alive, true);
+
+  await req(`/surfaces/${surfaceId}`, { method: 'DELETE' });
+  const gone = await req(`/surfaces/${surfaceId}/alive`);
+  assertEqual(gone.status, 404, 'a gone surface must 404, not hang the viewer in a retry loop');
+  assertEqual((await gone.json()).alive, false);
+});
+
+await test('the liveness probe needs no token, because the viewer has none', async () => {
+  const guarded = createApp({ port: 3999, token: 'secret' });
+  const created = await guarded.request('/surfaces', {
+    method: 'POST',
+    headers: { authorization: 'Bearer secret', 'content-type': 'application/json' },
+    body: JSON.stringify({}),
+  });
+  const { surfaceId } = await created.json();
+  assertEqual((await guarded.request(`/surfaces/${surfaceId}/alive`)).status, 200);
+});
+
+await test('the viewer page stops retrying once its surface is gone', async () => {
+  const { surfaceId } = await newSurface();
+  const html = await (await req(`/surfaces/${surfaceId}`)).text();
+  assert(html.includes("/alive"), 'the page must probe liveness on an error');
+  assert(html.includes('this surface has ended'), 'and say so rather than spin');
+});
+
 console.log(`\n${passed} passed, ${failures.length} failed`);
 if (failures.length) process.exit(1);
