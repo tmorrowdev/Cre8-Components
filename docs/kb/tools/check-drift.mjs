@@ -90,6 +90,17 @@ stillDrifting('CODE_GUIDELINES specifies `tagName`', () =>
   guidelines === null ? null : /name the prop `tagName`/.test(guidelines)
 );
 
+stillDrifting('`cre8-link-list-item` declares a `text` prop that renders nothing', () => {
+  const src = read('packages/cre8-wc/components/link-list-item/link-list-item.ts');
+  if (src === null) return null;
+  // The drift persists while the property is declared but never read back. An
+  // agent that follows the cre8-button pattern gets an empty link that passes
+  // validateSpec, which is the same shape as the cre8-heading.type bug.
+  const declares = /\btext\?:\s*string/.test(src);
+  const renders = /this\.text\b/.test(src);
+  return declares && !renders;
+});
+
 stillDrifting('cre8-card JSDoc documents a `body` slot', () => {
   const card = read('packages/cre8-wc/components/card/card.ts');
   return card === null ? null : /@slot body/.test(card);

@@ -476,12 +476,15 @@ await test('the full hierarchy is reported level by level, slots included', asyn
   assert(row.observedParents.includes('cre8-table-body'), 'a row names the body as a parent');
 });
 
-await test('a shared name prefix is reported without a direction', async () => {
-  const list = await (await req('/composition?component=tag-list')).json();
-  assert(list.nameFamily.includes('cre8-tag'), 'the family is real');
-  assert(!('parent' in list.nameFamily), 'but it must not be presented as a hierarchy');
-  assert(list.warning?.includes('does not say which way containment runs'),
-    'and the ambiguity must be stated, not smoothed over');
+await test('an undemonstrated family is reported without a direction', async () => {
+  // cre8-select-tile / cre8-select-tile-list is the pairing no shipped example
+  // covers, and the one the naming rule gets backwards.
+  const tile = await (await req('/composition?component=cre8-select-tile-list')).json();
+  assert(tile.nameFamily.includes('cre8-select-tile'), 'the family is real');
+  assert(Array.isArray(tile.nameFamily), 'it must be a flat list, not a hierarchy');
+  assertEqual(tile.observedChildren.length, 0, 'nothing demonstrates this nesting yet');
+  assert(tile.warning?.includes('does not say which way containment runs'),
+    'so the ambiguity must be stated, not smoothed over');
 });
 
 await test('the worked example handed back is real and still validates', async () => {
@@ -498,6 +501,23 @@ await test('get_composition is reachable over MCP', async () => {
   const bySlot = Object.fromEntries(payload.observedChildren.map((c) => [c.component, c.slot]));
   assertEqual(bySlot['cre8-tab'], 'default');
   assertEqual(bySlot['cre8-tab-panel'], 'panel', 'panels go in the panel slot, not alongside tabs');
+});
+
+await test('the compound-families example gives get_composition real coverage', async () => {
+  const all = await (await req('/composition')).json();
+  assert(all.observedNestings >= 25, `expected broad coverage, got ${all.observedNestings}`);
+  const names = all.parents.map((p) => p.component);
+  for (const family of ['cre8-accordion', 'cre8-tag-list', 'cre8-checkbox-field', 'cre8-link-list', 'cre8-dropdown']) {
+    assert(names.includes(family), `${family} should be demonstrated by a shipped example`);
+  }
+});
+
+await test('cre8-tag-list is now known to contain cre8-tag, not the reverse', async () => {
+  const list = await (await req('/composition?component=cre8-tag-list')).json();
+  assertEqual(list.observedChildren[0].component, 'cre8-tag');
+  assert(!list.warning, 'ground truth replaces the ambiguity warning');
+  const tag = await (await req('/composition?component=cre8-tag')).json();
+  assert(tag.observedParents.includes('cre8-tag-list'), 'and the child names its real parent');
 });
 
 console.log(`\n${passed} passed, ${failures.length} failed`);

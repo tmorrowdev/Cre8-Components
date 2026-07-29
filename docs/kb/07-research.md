@@ -231,6 +231,7 @@ instead of quietly becoming false.
 | React library v1.0.0 | `cre8-a2ui-react` skill | 2.0.7 in `react-manifest.json` |
 | Install `@cre8_dev/cre8-design-tokens` | `cre8-a2ui-react` skill | Tokens ship inside `@tmorrow/cre8-wc`; both manifests say so in `designTokens.tokenPackage` |
 | Prop named `tagName` | `agent-docs/CODE_GUIDELINES.md` | Components ship `tagVariant` / `headingTagVariant` |
+| `cre8-link-list-item` has a `text` prop | The component's own JSDoc ("The link text"), and therefore `a2ui/catalog.json` | `render()` never reads it; the label comes from the default slot only. A spec using `props.text` validates and renders an empty link |
 | `cre8-card` has a `body` slot | `card.ts` JSDoc | Implementation uses the unnamed default slot |
 | `pnpm generate-theme` etc. | `agent-docs/THEME_GENERATOR.md`, `THEME_SYSTEM.md` | No such scripts in either `package.json` |
 | Components live in three status directories (cre8 / Experimental / Patterns) | `agent-docs/CODE_GUIDELINES.md` line 27, "located in one of 3 directories based on their status" | `components/` is flat; no directory or manifest field records support tier, so the tier cannot be looked up. The same file contradicts itself at "Components in this library exist in a flat structure" — two statements to reconcile, not one to update |

@@ -299,7 +299,7 @@ components can still be unusable.
 
 ## Worked examples
 
-Four complete compositions ship as A2UI specs in
+Five complete compositions ship as A2UI specs in
 `packages/cre8-wc/a2ui/examples/`. They are the best available answer to "what
 does a real page look like in this system," and because they are A2UI specs they
 are machine-checkable. Checked against the shipped catalog:
@@ -310,6 +310,7 @@ are machine-checkable. Checked against the shipped catalog:
 | `card-gallery.json` | yes |
 | `dating-grid.json` | yes |
 | `llm-observability.json` | yes |
+| `compound-families.json` | yes |
 
 `llm-observability.json` has failed this check twice, and both failures are worth
 knowing. It first nested cells as `children` under `cre8-table-row`, which the
