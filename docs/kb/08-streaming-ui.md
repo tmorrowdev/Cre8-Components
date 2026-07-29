@@ -259,7 +259,10 @@ From an agent, the whole loop is five tools:
 ## Limits worth knowing before you rely on this
 
 - **Surfaces are in-memory.** A server restart drops every open surface. They are
-  also swept after an hour without a viewer or a patch.
+  also swept after an hour without a viewer or a patch. A viewer whose surface
+  has gone says so and stops: it cannot read the status of a failed
+  `EventSource`, so it probes `/surfaces/:id/alive` and tells "ended" from "the
+  network hiccuped" rather than spinning behind a reconnect that cannot succeed.
 - **Every viewer sees the same surface.** There is no per-viewer state; two people
   on the same URL watch the same thing and both can fire events.
 - **The sequence gap check assumes one writer.** Two agents patching one surface
