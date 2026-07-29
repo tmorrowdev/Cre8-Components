@@ -13,7 +13,12 @@
     "test": "pnpm --filter @tmorrow/cre8-wc test",
     "mcp:api": "pnpm --filter @tmorrow/cre8-mcp dev:api",
     "studio": "pnpm --filter @tmorrow/cre8-studio dev",
-    "studio:full": "concurrently -k -n mcp,studio -c magenta,cyan \"pnpm mcp:api\" \"pnpm studio\""
+    "studio:full": "concurrently -k -n mcp,studio -c magenta,cyan \"pnpm mcp:api\" \"pnpm studio\"",
+    "kb:generate": "node docs/kb/tools/generate-reference.mjs",
+    "kb:check": "node docs/kb/tools/check-links.mjs && node docs/kb/tools/check-examples.mjs && node docs/kb/tools/check-demo-attrs.mjs && node docs/kb/tools/check-drift.mjs",
+    "kb:check-urls": "node docs/kb/tools/check-urls.mjs",
+    "kb:check-drift": "node docs/kb/tools/check-drift.mjs",
+    "kb:check-demo-attrs": "node docs/kb/tools/check-demo-attrs.mjs"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"

@@ -196,7 +196,7 @@
     <!-- Header with Navigation -->
     <cre8-header>
         <cre8-primary-nav>
-            <cre8-primary-nav-item href="#home" isActive>Home</cre8-primary-nav-item>
+            <cre8-primary-nav-item href="#home" aria-current="page">Home</cre8-primary-nav-item>
             <cre8-primary-nav-item href="#features">Features</cre8-primary-nav-item>
             <cre8-primary-nav-item href="#components">Components</cre8-primary-nav-item>
             <cre8-primary-nav-item href="#docs">Documentation</cre8-primary-nav-item>
@@ -235,7 +235,7 @@
     </section>
 
     <!-- Alert Banner -->
-    <cre8-alert status="info" ariaLabel="New version available">
+    <cre8-alert status="info" aria-label="New version available">
         New version 1.0.7 is now available! Check out the latest features and improvements.
     </cre8-alert>
 
@@ -401,27 +401,35 @@
 
             <cre8-grid>
                 <cre8-grid-item>
-                    <cre8-feature
-                        heading="Navigation"
-                        description="Primary, utility, and tertiary navigation components with breadcrumbs and global nav options.">
+                    <cre8-feature>
+                        <cre8-heading tagVariant="h4">Navigation</cre8-heading>
+                        <cre8-text-passage>
+                            <p>Primary, utility, and tertiary navigation components with breadcrumbs and global nav options.</p>
+                        </cre8-text-passage>
                     </cre8-feature>
                 </cre8-grid-item>
                 <cre8-grid-item>
-                    <cre8-feature
-                        heading="Data Display"
-                        description="Tables, lists, progress meters, charts, and skeleton loaders for data visualization.">
+                    <cre8-feature>
+                        <cre8-heading tagVariant="h4">Data Display</cre8-heading>
+                        <cre8-text-passage>
+                            <p>Tables, lists, progress meters, charts, and skeleton loaders for data visualization.</p>
+                        </cre8-text-passage>
                     </cre8-feature>
                 </cre8-grid-item>
                 <cre8-grid-item>
-                    <cre8-feature
-                        heading="Overlays"
-                        description="Modals, tooltips, popovers, and alerts for enhanced user interactions.">
+                    <cre8-feature>
+                        <cre8-heading tagVariant="h4">Overlays</cre8-heading>
+                        <cre8-text-passage>
+                            <p>Modals, tooltips, popovers, and alerts for enhanced user interactions.</p>
+                        </cre8-text-passage>
                     </cre8-feature>
                 </cre8-grid-item>
                 <cre8-grid-item>
-                    <cre8-feature
-                        heading="Layout"
-                        description="Grid system, sections, containers, and layout components for page structure.">
+                    <cre8-feature>
+                        <cre8-heading tagVariant="h4">Layout</cre8-heading>
+                        <cre8-text-passage>
+                            <p>Grid system, sections, containers, and layout components for page structure.</p>
+                        </cre8-text-passage>
                     </cre8-feature>
                 </cre8-grid-item>
             </cre8-grid>

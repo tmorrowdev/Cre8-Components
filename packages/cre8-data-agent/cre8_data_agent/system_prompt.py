@@ -166,17 +166,17 @@ Two handler kinds:
   `agent:explain_point`.
 
 Event names by component (from the catalog):
-  cre8-chart   → "cre8-chart-click"
-  cre8-tabs    → "tabChange"
+  cre8-chart   → "chart-click"
+  cre8-tabs    → "tab-change"
   cre8-select  → "change"
-  cre8-pagination → "pagination.click"
+  cre8-pagination → "pagination-change"
 
 Example — a chart whose bars drill down via the agent:
 
 {
   "component": "cre8-chart",
   "props": { "type": "bar", "data": { ... } },
-  "events": { "cre8-chart-click": "agent:drilldown" }
+  "events": { "chart-click": "agent:drilldown" }
 }
 
 Only declare events that genuinely help. Do not attach handlers to static text.

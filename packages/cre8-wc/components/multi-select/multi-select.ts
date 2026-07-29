@@ -24,12 +24,12 @@ import Cre8CheckboxFieldItem from '../checkbox-field-item/checkbox-field-item';
  * The checkbox will always reflect the selected nature of the item and is not removed
  * from the dropdown when clicked, the tags will be added and removed based on their state.
  *
- * Event `selectedItemsChange` emits whenever a tag is added or remove from the list and the
+ * Event `multi-select-change` emits whenever a tag is added or remove from the list and the
  * current list after the change is given in the detail.
  *
  * @slot fieldNote - Container for optional field note content
  *
- * @fires selectedItemsChange - Fires when a tag is added or removed. `event.detail.selectedItems` is the current selection.
+ * @fires multi-select-change - Fires when a tag is added or removed. `event.detail.selectedItems` is the current selection.
  */
 export class Cre8MultiSelect extends Cre8Element {
   static styles = [styles];
@@ -191,7 +191,7 @@ export class Cre8MultiSelect extends Cre8Element {
           color="neutral"
           shape="square"
           ?disabled="${this.disabled}"
-          @removeTagClicked="${() => this._handleRemoveTagClick(item)}"
+          @remove-tag-click="${() => this._handleRemoveTagClick(item)}"
         ></cre8-remove-tag>
       </li>`
     );
@@ -222,14 +222,14 @@ export class Cre8MultiSelect extends Cre8Element {
   }
 
   private emitSelectedItems(): void {
-    const customEvent = new CustomEvent('selectedItemsChange', {
+    const customEvent = new CustomEvent('multi-select-change', {
       detail: {
         selectedItems: this.selectedTagItems,
       },
       bubbles: true,
       composed: true,
     });
-    this.dispatchEvent(customEvent);
+    this.dispatchWithLegacyAlias(customEvent);
   }
 
   private toggleDropDown(): void {

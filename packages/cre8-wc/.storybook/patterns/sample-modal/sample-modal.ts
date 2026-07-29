@@ -65,7 +65,7 @@ export class SampleModal extends LitElement {
         utilityModalTitle="Modal Heading"
         ?notDismissible=${(this.notDismissible)}
         ?isActive=${this.modalIsActive}
-        @close-modal="${() => this.toggleModal()}"
+        @modal-close="${() => this.toggleModal()}"
         ariaLabel="This text describes modal to screen reader when focused on"
       >
         <cre8-heading variant="title-large" ?brandColor=${true} slot="header">Modal Heading</cre8-heading>

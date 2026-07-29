@@ -10,8 +10,8 @@ export interface Cre8SplitButtonProps {
   /** Display text on the button */
   buttonText?: string;
   children?: React.ReactNode;
-  onTextClick?: (event: CustomEvent) => void;
-  onDropdownClick?: (event: CustomEvent) => void;
+  onSplitButtonTextClick?: (event: CustomEvent) => void;
+  onSplitButtonDropdownClick?: (event: CustomEvent) => void;
 }
 
 /**
@@ -22,8 +22,8 @@ export const Cre8SplitButton = createComponent({
   tagName: 'cre8-split-button',
   elementClass: Cre8SplitButtonElement,
   events: {
-    onTextClick: 'text-click',
-    onDropdownClick: 'dropdown-click'
+    onSplitButtonTextClick: 'split-button-text-click',
+    onSplitButtonDropdownClick: 'split-button-dropdown-click'
   }
 });
 

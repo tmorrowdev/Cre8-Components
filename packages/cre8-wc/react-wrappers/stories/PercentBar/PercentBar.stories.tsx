@@ -15,7 +15,7 @@ export default {
         value: { control: 'number' },
     },
     args: {
-        onLeftActionButtonClick: action('LeftActionButtonClick'),
+        onPercentBarLeftActionClick: action('percent-bar-left-action-click'),
     },
 };
 

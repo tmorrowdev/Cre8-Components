@@ -41,7 +41,6 @@ export const Default = {
  */
 export const IconVariant = {
   args: {
-    status: 'default',
     text: 'Icon Variant',
     svg: svgFeedback
   },
@@ -87,7 +86,7 @@ export const Attention = {
 
 export const Light = {
   args: {
-    status: 'light',
+    variant: 'light',
     text: 'Light',
   },
 };

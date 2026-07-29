@@ -25,9 +25,9 @@ export interface Cre8ChartProps {
   enableAnimation?: boolean;
   /** Animation duration in milliseconds. */
   animationDuration?: number;
-  onCre8ChartClick?: (event: CustomEvent) => void;
-  onCre8ChartHover?: (event: CustomEvent) => void;
-  onCre8ChartReady?: (event: CustomEvent) => void;
+  onChartClick?: (event: CustomEvent) => void;
+  onChartHover?: (event: CustomEvent) => void;
+  onChartReady?: (event: CustomEvent) => void;
 }
 
 /**
@@ -38,9 +38,9 @@ export const Cre8Chart = createComponent({
   tagName: 'cre8-chart',
   elementClass: Cre8ChartElement,
   events: {
-    onCre8ChartClick: 'cre8-chart-click',
-    onCre8ChartHover: 'cre8-chart-hover',
-    onCre8ChartReady: 'cre8-chart-ready'
+    onChartClick: 'chart-click',
+    onChartHover: 'chart-hover',
+    onChartReady: 'chart-ready'
   }
 });
 

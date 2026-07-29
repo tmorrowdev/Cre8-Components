@@ -24,8 +24,8 @@ export interface Cre8TooltipProps {
   /** iconFlipDirection is used for <cre8-icon> to set the icon in the correct direction */
   iconFlipDirection?: string | undefined;
   children?: React.ReactNode;
-  onOpen?: (event: CustomEvent) => void;
-  onClose?: (event: CustomEvent) => void;
+  onTooltipOpen?: (event: CustomEvent) => void;
+  onTooltipClose?: (event: CustomEvent) => void;
 }
 
 /**
@@ -36,8 +36,8 @@ export const Cre8Tooltip = createComponent({
   tagName: 'cre8-tooltip',
   elementClass: Cre8TooltipElement,
   events: {
-    onOpen: 'open',
-    onClose: 'close'
+    onTooltipOpen: 'tooltip-open',
+    onTooltipClose: 'tooltip-close'
   }
 });
 

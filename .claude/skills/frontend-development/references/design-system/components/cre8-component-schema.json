@@ -1615,7 +1615,7 @@
         },
         "events": [
           {
-            "name": "selectedItemsChange",
+            "name": "multi-select-change",
             "description": "Fires on selection change",
             "payload": {
               "selectedItems": {
@@ -3455,7 +3455,7 @@
         ],
         "events": [
           {
-            "name": "close-modal"
+            "name": "modal-close"
           }
         ],
         "accessibility": {

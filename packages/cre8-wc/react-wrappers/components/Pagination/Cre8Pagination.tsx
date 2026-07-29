@@ -19,7 +19,7 @@ export interface Cre8PaginationProps {
   /** The currently active page (1-based). Setting it programmatically navigates the pagination. */
   currentPage?: any;
   children?: React.ReactNode;
-  onPaginationClick?: (event: CustomEvent) => void;
+  onPaginationChange?: (event: CustomEvent) => void;
 }
 
 /**
@@ -30,7 +30,7 @@ export const Cre8Pagination = createComponent({
   tagName: 'cre8-pagination',
   elementClass: Cre8PaginationElement,
   events: {
-    onPaginationClick: 'pagination.click'
+    onPaginationChange: 'pagination-change'
   }
 });
 

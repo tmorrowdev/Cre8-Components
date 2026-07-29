@@ -26,7 +26,7 @@ export class Cre8Divider extends Cre8Element {
    * - **knockout**, the divider has white color.
    */
   @property()
-      status?: string;
+      status?: 'brand' | 'knockout';
 
   render() {
       const componentClassNames = this.componentClassNames('cre8-c-divider', {

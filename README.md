@@ -5,6 +5,17 @@
 
 cre8 Web Components provides presentational user interface (UI) reusable components to be consumed by Cre8 web applications. It's built using [web components](https://www.webcomponents.org/introduction) that are based on existing, native HTML web standards.
 
+## Documentation
+
+The [cre8 Knowledge Base](docs/kb/README.md) covers components, composition patterns, token theming, A2UI, AI fluency, and framework integration. It is intent-routed — start at the [Intent Map](docs/kb/INTENT-MAP.md) and search by what you are trying to do:
+
+**Guides** — [Components](docs/kb/01-components.md) · [Composition patterns](docs/kb/02-composition-patterns.md) · [Token theming](docs/kb/03-token-theming.md) · [A2UI (agent-generated UI)](docs/kb/04-a2ui.md) · [AI fluency in cre8](docs/kb/05-ai-fluency.md) · [Other frameworks](docs/kb/06-frameworks.md) · [Research and sources](docs/kb/07-research.md)
+
+**Look something up** — generated from the manifests and component source, so they cannot go stale:
+[components](docs/kb/reference/components.md) · [props](docs/kb/reference/props.md) · [events](docs/kb/reference/events.md) · [tokens](docs/kb/reference/tokens.md) · [CSS parts](docs/kb/reference/parts.md) · [A2UI content model](docs/kb/reference/content-model.md)
+
+Regenerate with `pnpm kb:generate`; `pnpm kb:check` verifies every claim, link, and code example in the KB against the shipped implementation.
+
 ## Dependencies
 The following dependencies are required for running this project locally:
 

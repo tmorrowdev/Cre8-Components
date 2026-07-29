@@ -387,11 +387,13 @@
         }
       },
       "events": {
-        "text-click": {
-          "detail": {}
+        "split-button-text-click": {
+          "detail": {},
+          "description": "Fires when the main text button is clicked."
         },
-        "dropdown-click": {
-          "detail": {}
+        "split-button-dropdown-click": {
+          "detail": {},
+          "description": "Fires when the dropdown toggle is clicked."
         }
       },
       "cssProperties": {},
@@ -479,15 +481,15 @@
       },
       "slots": {},
       "events": {
-        "cre8-chart-click": {
+        "chart-click": {
           "detail": {},
           "description": "Fired when a chart element is clicked"
         },
-        "cre8-chart-hover": {
+        "chart-hover": {
           "detail": {},
           "description": "Fired when hovering over chart elements"
         },
-        "cre8-chart-ready": {
+        "chart-ready": {
           "detail": {},
           "description": "Fired when the chart is initialized"
         }
@@ -565,7 +567,7 @@
       "properties": {},
       "slots": {},
       "events": {
-        "removeTagClicked": {
+        "remove-tag-click": {
           "detail": {},
           "description": "Fires when the remove tag is clicked."
         }
@@ -1022,7 +1024,7 @@
         }
       },
       "events": {
-        "dropdown-item-selected": {
+        "dropdown-item-select": {
           "detail": {},
           "description": "Fires when the item is clicked. `event.detail.originalEvent` holds the source `MouseEvent`."
         }
@@ -1091,7 +1093,7 @@
         }
       },
       "events": {
-        "close-modal": {
+        "modal-close": {
           "detail": {},
           "description": "Fires when the modal is dismissed via the close button, overlay click, or Escape key."
         }
@@ -1110,7 +1112,12 @@
         },
         "position": {
           "type": "string",
-          "description": "Positions the popover panel absolutely to the trigger\n- **default** positions the popover panel below the trigger\n- **top** positions the popover panel below the trigger\n- **left** positions the popover panel below the trigger\n- **right** positions the popover panel below the trigger"
+          "values": [
+            "top",
+            "left",
+            "right"
+          ],
+          "description": "Positions the popover panel absolutely to the trigger\n- Omitting this prop positions the popover panel below the trigger\n- **top** positions the popover panel above the trigger\n- **left** positions the popover panel to the left of the trigger\n- **right** positions the popover panel to the right of the trigger"
         }
       },
       "properties": {
@@ -1162,11 +1169,11 @@
         }
       },
       "events": {
-        "open": {
+        "popover-open": {
           "detail": {},
           "description": "Fires when the popover opens. `event.detail.isActive` is `true`."
         },
-        "close": {
+        "popover-close": {
           "detail": {},
           "description": "Fires when the popover closes. `event.detail.isActive` is `false`."
         }
@@ -1277,11 +1284,11 @@
         }
       },
       "events": {
-        "open": {
+        "tooltip-open": {
           "detail": {},
           "description": "Fires when the tooltip is shown. `event.detail.isActive` is `true`."
         },
-        "close": {
+        "tooltip-close": {
           "detail": {},
           "description": "Fires when the tooltip is hidden. `event.detail.isActive` is `false`."
         }
@@ -1384,11 +1391,22 @@
         },
         "status": {
           "type": "string",
-          "description": "Status (a color variant prop)\n- **neutral** (default) renders a badge with a neutral state treatment\n- **success** renders a badge with success state treatment\n- **warning** renders a badge with warning state treatment\n- **error** renders a badge with error state treatment\n- **info** renders a badge with information state treatment\n- **attention** renders a badge with attention state treatment"
+          "values": [
+            "error",
+            "info",
+            "warning",
+            "success",
+            "attention"
+          ],
+          "description": "Status (a color variant prop)\n- Omitting this prop renders a badge with the neutral state treatment\n- **success** renders a badge with success state treatment\n- **warning** renders a badge with warning state treatment\n- **error** renders a badge with error state treatment\n- **info** renders a badge with information state treatment\n- **attention** renders a badge with attention state treatment"
         },
         "variant": {
           "type": "string",
-          "description": "Background Style Variant\n\n- **dark|undefined** (default) renders a badge with a dark background\n- **light** renders a badge with a light background\n- **white** renders a badge with a white background"
+          "values": [
+            "light",
+            "white"
+          ],
+          "description": "Background Style Variant\n\n- Omitting this prop renders a badge with a dark background\n- **light** renders a badge with a light background\n- **white** renders a badge with a white background"
         },
         "svg": {
           "type": "string",
@@ -1399,7 +1417,12 @@
       "slots": {},
       "events": {},
       "cssProperties": {},
-      "examples": []
+      "examples": [
+        {
+          "description": "Light badge",
+          "html": "<cre8-badge variant=\"light\" text=\"Badge\"></cre8-badge>"
+        }
+      ]
     },
     {
       "name": "cre8-inline-alert",
@@ -1532,8 +1555,9 @@
       },
       "slots": {},
       "events": {
-        "leftActionButtonClick": {
-          "detail": {}
+        "percent-bar-left-action-click": {
+          "detail": {},
+          "description": "Fires when the left action button is clicked."
         }
       },
       "cssProperties": {},
@@ -1545,7 +1569,12 @@
       "description": "A progress meter provides feedback that the system is working and gives\nthe user an indication of how much time they will wait.\nThis indicator should be used when the system response time is longer and determinable.",
       "attributes": {
         "status": {
-          "type": "status",
+          "type": "string",
+          "values": [
+            "error",
+            "warning",
+            "success"
+          ],
           "description": "Progress Status\n- **Default** renders a meter with default status fill\n- **Error** renders a meter with an error status fill\n- **Warning** renders a meter with a warning status\n- **Success** renders a meter with a success status fill"
         },
         "knockout": {
@@ -1586,6 +1615,17 @@
       "category": "Feedback",
       "description": "The Progress Steps Item component is used to display a single step in a multi-step process.\nIt should be used as a child component of `cre8-progress-steps`.\nThese Components serve a contextual purpose and don't provide any functionality.",
       "attributes": {
+        "state": {
+          "type": "string",
+          "values": [
+            "error",
+            "warning",
+            "complete",
+            "current",
+            "incomplete"
+          ],
+          "description": "The state of the step."
+        },
         "message": {
           "type": "string",
           "description": "Optional message to display under the step name."
@@ -1593,10 +1633,6 @@
         "name": {
           "type": "string",
           "description": "The name of the step."
-        },
-        "state": {
-          "type": "string",
-          "description": "The state of the step: 'complete', 'current', 'error',' incomplete', 'warning';"
         },
         "svg": {
           "type": "string",
@@ -2075,7 +2111,7 @@
     {
       "name": "cre8-multi-select",
       "category": "Forms",
-      "description": "Multiselect is used when multiple options can be chosen from a static dropdown\nThis component has a list of items in the dropdown that can be added as \"selected tags\"\nThe checkbox will always reflect the selected nature of the item and is not removed\nfrom the dropdown when clicked, the tags will be added and removed based on their state.\n\nEvent `selectedItemsChange` emits whenever a tag is added or remove from the list and the\ncurrent list after the change is given in the detail.",
+      "description": "Multiselect is used when multiple options can be chosen from a static dropdown\nThis component has a list of items in the dropdown that can be added as \"selected tags\"\nThe checkbox will always reflect the selected nature of the item and is not removed\nfrom the dropdown when clicked, the tags will be added and removed based on their state.\n\nEvent `multi-select-change` emits whenever a tag is added or remove from the list and the\ncurrent list after the change is given in the detail.",
       "attributes": {
         "items": {
           "type": "string[]",
@@ -2141,7 +2177,7 @@
         }
       },
       "events": {
-        "selectedItemsChange": {
+        "multi-select-change": {
           "detail": {},
           "description": "Fires when a tag is added or removed. `event.detail.selectedItems` is the current selection."
         }
@@ -2633,6 +2669,10 @@
         },
         "status": {
           "type": "string",
+          "values": [
+            "brand",
+            "knockout"
+          ],
           "description": "Status (a color variant prop)\n- By default, the divider has gray color.\n- **brand**, the divider has blue color.\n- **knockout**, the divider has white color."
         }
       },
@@ -3403,7 +3443,7 @@
         }
       },
       "events": {
-        "pagination.click": {
+        "pagination-change": {
           "detail": {},
           "description": "Fires when the page changes. `event.detail` is `{ buttonName, value }` where `value` is the new current page."
         }
@@ -3532,7 +3572,7 @@
         }
       },
       "events": {
-        "tabSelected": {
+        "tab-select": {
           "detail": {},
           "description": "Fires when the tab is clicked. `event.detail.index` is the tab's index."
         }
@@ -3636,8 +3676,9 @@
         }
       },
       "events": {
-        "tabChange": {
-          "detail": {}
+        "tab-change": {
+          "detail": {},
+          "description": "Fires when the active tab changes. `event.detail` is `{ value, activeTabIndex }`."
         }
       },
       "cssProperties": {},
@@ -3784,7 +3825,7 @@
       "attributes": {
         "type": {
           "type": "\"display-default\" | \"display-small\" | \"headline-large\" | \"headline-default\" | \"headline-small\" | \"title-xlarge\" | \"title-large\" | \"title-default\" | \"title-small\" | \"label-large\" | ... 5 more ...",
-          "description": "Heading type\n<cre8-text-passage size=\"small\">\n<ul>\n<li>**display-default** renders a heading with the heading display-default preset treatment</li>\n<li>**display-small** renders a heading with the heading display-small preset treatment</li>\n<li>**headline-large** renders a heading with the heading headline-large preset treatment</li>\n<li>**headline-default** renders a heading with the heading headline-default preset treatment</li>\n<li>**headline-small** renders a heading with the heading headline-small preset treatment</li>\n<li>**title-xlarge** renders a heading with the heading title-xlarge preset treatment</li>\n<li>**title-large** renders a heading with the heading title-large preset treatment</li>\n<li>**title-default** renders a heading with the heading title-default preset treatment</li>\n<li>**title-small** renders a heading with the heading title-small preset treatment</li>\n<li>**label-large** renders a heading with the label-large preset treatment</li>\n<li>**label** renders a heading with the label preset treatment</li>\n<li>**label-small** renders a heading with the label-small preset treatment</li>\n<li>**meta-large** renders a heading with the meta-large preset treatment</li>\n<li>**meta-default** renders a heading with the meta-default preset treatment</li>\n<li>**meta-small** renders a heading with the meta-small preset treatment</li>\n</ul>\n</cre8-text-passage>"
+          "description": "Heading type\n<cre8-text-passage size=\"small\">\n<ul>\n<li>**display-default** renders a heading with the heading display-default preset treatment</li>\n<li>**display-small** renders a heading with the heading display-small preset treatment</li>\n<li>**headline-large** renders a heading with the heading headline-large preset treatment</li>\n<li>**headline-default** renders a heading with the heading headline-default preset treatment</li>\n<li>**headline-small** renders a heading with the heading headline-small preset treatment</li>\n<li>**title-xlarge** renders a heading with the heading title-xlarge preset treatment</li>\n<li>**title-large** renders a heading with the heading title-large preset treatment</li>\n<li>**title-default** renders a heading with the heading title-default preset treatment</li>\n<li>**title-small** renders a heading with the heading title-small preset treatment</li>\n<li>**label-large** renders a heading with the label-large preset treatment</li>\n<li>**label-default** renders a heading with the label-default preset treatment</li>\n<li>**label-small** renders a heading with the label-small preset treatment</li>\n<li>**meta-large** renders a heading with the meta-large preset treatment</li>\n<li>**meta-default** renders a heading with the meta-default preset treatment</li>\n<li>**meta-small** renders a heading with the meta-small preset treatment</li>\n</ul>\n</cre8-text-passage>"
         },
         "inverted": {
           "type": "boolean",
@@ -3794,8 +3835,16 @@
       "properties": {
         "tagVariant": {
           "type": "string",
+          "values": [
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5",
+            "h6"
+          ],
           "default": "h5",
-          "description": "Dynamic tag name for the component\n1) This is needed to use proper semantic heading treatments depending on where the banner lives on the page\n<cre8-text-passage size=\"small\">\n<ul>\n<li>**h1** renders an `h1` tag</li>\n<li>**h2** renders an `h2` tag. This is the default</li>\n<li>**h3** renders an `h3` tag</li>\n<li>**h4** renders an `h4` tag</li>\n<li>**h5** renders an `h5` tag</li>\n<li>**h6** renders an `h6` tag</li>\n</ul>\n</cre8-text-passage>"
+          "description": "Dynamic tag name for the component\n1) This is needed to use proper semantic heading treatments depending on where the banner lives on the page\n<cre8-text-passage size=\"small\">\n<ul>\n<li>**h1** renders an `h1` tag</li>\n<li>**h2** renders an `h2` tag</li>\n<li>**h3** renders an `h3` tag</li>\n<li>**h4** renders an `h4` tag</li>\n<li>**h5** renders an `h5` tag. This is the default</li>\n<li>**h6** renders an `h6` tag</li>\n</ul>\n</cre8-text-passage>"
         },
         "brandColor": {
           "type": "boolean",
@@ -3925,13 +3974,13 @@
           "type": "boolean",
           "description": "Required state"
         },
-        "is-error": {
+        "isError": {
           "type": "boolean",
-          "description": "Error state indicator"
+          "description": "Error state indicator. Lit lowercases property names to derive attribute names, so the attribute is isError/iserror — is-error does not bind."
         },
-        "is-success": {
+        "isSuccess": {
           "type": "boolean",
-          "description": "Success state indicator"
+          "description": "Success state indicator. Attribute is isSuccess/issuccess, not is-success."
         }
       },
       "properties": {
@@ -3951,25 +4000,26 @@
           "checkValidity()",
           "reportValidity()",
           "setCustomValidity(message)"
-        ]
+        ],
+        "constraintValidation": "setValidity() is only ever called from setCustomValidity(). required, pattern, min, max and type=\"email\" are stored as props but never mapped into the validity state, so they do not block submission on their own — an empty required field still submits. Enforce constraints with setCustomValidity() or in the form's submit handler."
       }
     }
   ],
   "patterns": [
     {
       "name": "Login Form",
-      "description": "Standard login form with email and password",
-      "template": "<cre8-card>\n  <cre8-heading tag-variant=\"h2\" type=\"headline-default\">Sign In</cre8-heading>\n  <cre8-field label=\"Email\" type=\"email\"></cre8-field>\n  <cre8-field label=\"Password\" type=\"password\"></cre8-field>\n  <cre8-button text=\"Sign In\" variant=\"primary\" full-width></cre8-button>\n</cre8-card>"
+      "description": "Standard login form with email and password. Three things make it submit rather than merely look right: a real <form> wrapper (cre8 form components participate via ElementInternals, which is inert outside one), type=\"submit\" on the button (cre8-button defaults to type=\"button\"), and a name on every field (setFormValue contributes nothing to FormData without one). Note that required does not block submission on its own — cre8 form elements never map constraint attributes into setValidity, so enforce it with setCustomValidity() or a submit handler.",
+      "template": "<form>\n  <cre8-card>\n    <cre8-heading tagVariant=\"h2\" type=\"headline-default\">Sign In</cre8-heading>\n    <cre8-field label=\"Email\" name=\"email\" type=\"email\" autocomplete=\"email\" required></cre8-field>\n    <cre8-field label=\"Password\" name=\"password\" type=\"password\" autocomplete=\"current-password\" required></cre8-field>\n    <cre8-button text=\"Sign In\" variant=\"primary\" fullWidth type=\"submit\"></cre8-button>\n  </cre8-card>\n</form>"
     },
     {
       "name": "Data Table",
       "description": "Table with header and data rows",
-      "template": "<cre8-table variant=\"striped\" is-hoverable>\n  <cre8-table-header>\n    <cre8-table-row>\n      <cre8-table-header-cell>Name</cre8-table-header-cell>\n      <cre8-table-header-cell>Status</cre8-table-header-cell>\n    </cre8-table-row>\n  </cre8-table-header>\n  <cre8-table-body>\n    <cre8-table-row>\n      <cre8-table-cell>Item 1</cre8-table-cell>\n      <cre8-table-cell><cre8-badge text=\"Active\" status=\"success\"></cre8-badge></cre8-table-cell>\n    </cre8-table-row>\n  </cre8-table-body>\n</cre8-table>"
+      "template": "<cre8-table variant=\"striped\" isHoverable>\n  <cre8-table-header>\n    <cre8-table-row>\n      <cre8-table-header-cell>Name</cre8-table-header-cell>\n      <cre8-table-header-cell>Status</cre8-table-header-cell>\n    </cre8-table-row>\n  </cre8-table-header>\n  <cre8-table-body>\n    <cre8-table-row>\n      <cre8-table-cell>Item 1</cre8-table-cell>\n      <cre8-table-cell><cre8-badge text=\"Active\" status=\"success\"></cre8-badge></cre8-table-cell>\n    </cre8-table-row>\n  </cre8-table-body>\n</cre8-table>"
     },
     {
       "name": "Page Layout",
-      "description": "Standard page with header, main content, and footer",
-      "template": "<cre8-layout>\n  <cre8-header>\n    <cre8-global-nav>\n      <span slot=\"logo\"><cre8-logo></cre8-logo></span>\n      <cre8-global-nav-item href=\"/\">Home</cre8-global-nav-item>\n    </cre8-global-nav>\n  </cre8-header>\n  <cre8-main>\n    <cre8-layout-container>\n      <!-- Page content -->\n    </cre8-layout-container>\n  </cre8-main>\n  <cre8-footer>\n    <span slot=\"copyright\">2024 Company Name</span>\n  </cre8-footer>\n</cre8-layout>"
+      "description": "Standard page with header, main content, and footer. cre8-global-nav and cre8-footer expose no logo or copyright slot; content addressed to a slot that does not exist is never assigned and renders nowhere, so both go in the default slot.",
+      "template": "<cre8-layout>\n  <cre8-header>\n    <cre8-logo></cre8-logo>\n    <cre8-global-nav>\n      <cre8-global-nav-item href=\"/\">Home</cre8-global-nav-item>\n    </cre8-global-nav>\n  </cre8-header>\n  <cre8-main>\n    <cre8-layout-container>\n      <!-- Page content -->\n    </cre8-layout-container>\n  </cre8-main>\n  <cre8-footer>\n    <span>2024 Company Name</span>\n  </cre8-footer>\n</cre8-layout>"
     },
     {
       "name": "Alert Banner",
@@ -3978,13 +4028,13 @@
     },
     {
       "name": "Tabbed Content",
-      "description": "Content organized in tabs",
-      "template": "<cre8-tabs>\n  <cre8-tab label=\"Tab 1\" tab-id=\"tab1\" selected></cre8-tab>\n  <cre8-tab label=\"Tab 2\" tab-id=\"tab2\"></cre8-tab>\n  <cre8-tab-panel tab-id=\"tab1\" slot=\"panel\">Content for Tab 1</cre8-tab-panel>\n  <cre8-tab-panel tab-id=\"tab2\" slot=\"panel\">Content for Tab 2</cre8-tab-panel>\n</cre8-tabs>"
+      "description": "Content organized in tabs. cre8-tab has no label, tab-id or selected prop: the label is slotted text content, and cre8-tabs pairs each tab with the panel at the same position and assigns index/isActive itself. Set activeIndex on cre8-tabs to choose the initial tab (defaults to 0).",
+      "template": "<cre8-tabs>\n  <cre8-tab>Tab 1</cre8-tab>\n  <cre8-tab>Tab 2</cre8-tab>\n  <cre8-tab-panel slot=\"panel\">Content for Tab 1</cre8-tab-panel>\n  <cre8-tab-panel slot=\"panel\">Content for Tab 2</cre8-tab-panel>\n</cre8-tabs>"
     },
     {
       "name": "Modal Dialog",
-      "description": "Modal with header, body, and footer actions",
-      "template": "<cre8-modal is-active aria-label=\"Confirmation\">\n  <span slot=\"header\">Confirm Action</span>\n  <p>Are you sure you want to proceed?</p>\n  <div slot=\"footer\">\n    <cre8-button text=\"Cancel\" variant=\"secondary\"></cre8-button>\n    <cre8-button text=\"Confirm\" variant=\"primary\"></cre8-button>\n  </div>\n</cre8-modal>"
+      "description": "Modal with header, body, and footer actions. These buttons are deliberately type=\"button\": they are not in a form, so they do nothing until the app attaches click handlers. Wire both before shipping. If the modal instead collects input, wrap the body and footer in a <form> and give Confirm type=\"submit\" — see the Login Form pattern. Use ariaLabel, not aria-label: the modal renders its inner role=\"dialog\" label from the ariaLabel property, and a host aria-label attribute leaves that dialog unlabelled.",
+      "template": "<cre8-modal isActive ariaLabel=\"Confirmation\">\n  <span slot=\"header\">Confirm Action</span>\n  <p>Are you sure you want to proceed?</p>\n  <div slot=\"footer\">\n    <!-- Both require a click handler; type=\"button\" is correct only because there is no form. -->\n    <cre8-button text=\"Cancel\" variant=\"secondary\" type=\"button\"></cre8-button>\n    <cre8-button text=\"Confirm\" variant=\"primary\" type=\"button\"></cre8-button>\n  </div>\n</cre8-modal>"
     }
   ],
   "designTokens": {

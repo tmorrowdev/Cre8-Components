@@ -37,7 +37,7 @@ export class Cre8Heading extends Cre8Element {
      * <li>**title-default** renders a heading with the heading title-default preset treatment</li>
      * <li>**title-small** renders a heading with the heading title-small preset treatment</li>
      * <li>**label-large** renders a heading with the label-large preset treatment</li>
-     * <li>**label** renders a heading with the label preset treatment</li>
+     * <li>**label-default** renders a heading with the label-default preset treatment</li>
      * <li>**label-small** renders a heading with the label-small preset treatment</li>
      * <li>**meta-large** renders a heading with the meta-large preset treatment</li>
      * <li>**meta-default** renders a heading with the meta-default preset treatment</li>
@@ -69,15 +69,13 @@ export class Cre8Heading extends Cre8Element {
      * <cre8-text-passage size="small">
      * <ul>
      * <li>**h1** renders an `h1` tag</li>
-     * <li>**h2** renders an `h2` tag. This is the default</li>
+     * <li>**h2** renders an `h2` tag</li>
      * <li>**h3** renders an `h3` tag</li>
      * <li>**h4** renders an `h4` tag</li>
-     * <li>**h5** renders an `h5` tag</li>
+     * <li>**h5** renders an `h5` tag. This is the default</li>
      * <li>**h6** renders an `h6` tag</li>
      * </ul>
      * </cre8-text-passage>
-     *
-     * @attr{string}
      */
     @property()
         tagVariant: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h5';

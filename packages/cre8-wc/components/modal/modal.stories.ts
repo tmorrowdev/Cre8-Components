@@ -11,7 +11,7 @@ export default {
   parameters: {
     status: {type: 'inProgress'},
     actions: {
-      handles: ['close-modal'],
+      handles: ['modal-close'],
     },
   },
 };

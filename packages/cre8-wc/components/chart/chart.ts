@@ -92,9 +92,9 @@ export interface Cre8ChartEventDetail {
  * ></cre8-chart>
  * ```
  *
- * @fires cre8-chart-click - Fired when a chart element is clicked
- * @fires cre8-chart-hover - Fired when hovering over chart elements
- * @fires cre8-chart-ready - Fired when the chart is initialized
+ * @fires chart-click - Fired when a chart element is clicked
+ * @fires chart-hover - Fired when hovering over chart elements
+ * @fires chart-ready - Fired when the chart is initialized
  */
 export class Cre8Chart extends Cre8Element {
     static styles = [styles];
@@ -295,7 +295,7 @@ export class Cre8Chart extends Cre8Element {
         this._chartInstance = new Chart(ctx, config);
 
         this.dispatch({
-            eventName: 'cre8-chart-ready',
+            eventName: 'chart-ready',
             detailObj: { chart: this._chartInstance },
         });
     }
@@ -554,7 +554,7 @@ export class Cre8Chart extends Cre8Element {
                 label,
             };
             // @ts-expect-error: `dispatch` is not defined on `Cre8Element`
-            this.dispatch({eventName: 'cre8-chart-click',detailObj: detail});
+            this.dispatch({eventName: 'chart-click',detailObj: detail});
         }
     }
 
@@ -584,7 +584,7 @@ export class Cre8Chart extends Cre8Element {
                 label,
             };
             // @ts-expect-error: `dispatch` is not defined on `Cre8Element`
-            this.dispatch({eventName: 'cre8-chart-hover',detailObj: detail});
+            this.dispatch({eventName: 'chart-hover',detailObj: detail});
         }
     }
 

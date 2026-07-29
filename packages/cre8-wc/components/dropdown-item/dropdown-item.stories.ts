@@ -9,7 +9,7 @@ export default {
   parameters: {
     status: {type: 'inProgress'},
     actions: {
-      handles: ['dropdown-item-selected'],
+      handles: ['dropdown-item-select'],
     },
     docs: {
       story: {

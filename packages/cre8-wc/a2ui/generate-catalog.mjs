@@ -38,7 +38,10 @@ const TS_TYPE_RESOLVERS = {
   },
   Color: { type: 'string', enum: ['neutral', 'branded', 'neutral-hybrid'] },
   Shape: { type: 'string', enum: ['round', 'square'] },
-  status: { type: 'string', enum: ['error', 'warning', 'success'] },
+  // No entry for the bare type name `status`: it existed only because
+  // `cre8-progress-meter` carried an `@attr {status}` JSDoc tag that overrode
+  // its literal union back to an unresolvable alias. The tag is gone and the
+  // union now flows through on its own.
   '(Cre8SelectOption | Cre8SelectOptionGroup)[]': {
     type: 'array',
     items: { oneOf: [SELECT_OPTION_SCHEMA, SELECT_OPTION_GROUP_SCHEMA] },
@@ -48,7 +51,10 @@ const TS_TYPE_RESOLVERS = {
 const PROP_OVERRIDES = {
   'cre8-chart.data': { type: 'object', description: 'Chart.js data object with labels and datasets arrays.' },
   'cre8-chart.options': { type: 'object', description: 'Chart.js options object.' },
-  'cre8-chart.colors': { type: 'array', items: { type: 'string' }, description: 'Dataset colors.' },
+  // No entry for `cre8-chart.colors`: the manifest type is plain `string[]`,
+  // which mapAttrPlain already resolves to the identical schema. Only add an
+  // override when the manifest type is unresolvable (an interface name, an
+  // imported alias, or a union TypeScript truncated with "... N more ...").
   'cre8-heading.type': {
     type: 'string',
     enum: [
@@ -62,7 +68,7 @@ const PROP_OVERRIDES = {
       'title-default',
       'title-small',
       'label-large',
-      'label',
+      'label-default',
       'label-small',
       'meta-large',
       'meta-default',

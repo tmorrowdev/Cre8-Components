@@ -104,7 +104,7 @@
                         "component": "cre8-heading",
                         "props": {
                           "type": "headline-large",
-                          "tagVariant": "p"
+                          "tagVariant": "h4"
                         },
                         "children": [
                           "12,847"
@@ -145,7 +145,7 @@
                         "component": "cre8-heading",
                         "props": {
                           "type": "headline-large",
-                          "tagVariant": "p"
+                          "tagVariant": "h4"
                         },
                         "children": [
                           "4.2M"
@@ -186,7 +186,7 @@
                         "component": "cre8-heading",
                         "props": {
                           "type": "headline-large",
-                          "tagVariant": "p"
+                          "tagVariant": "h4"
                         },
                         "children": [
                           "1.2s"
@@ -227,7 +227,7 @@
                         "component": "cre8-heading",
                         "props": {
                           "type": "headline-large",
-                          "tagVariant": "p"
+                          "tagVariant": "h4"
                         },
                         "children": [
                           "$38.42"
@@ -808,44 +808,46 @@
                         "children": [
                           {
                             "component": "cre8-table-row",
-                            "children": [
-                              {
-                                "component": "cre8-table-header-cell",
-                                "children": [
-                                  "Model"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-header-cell",
-                                "children": [
-                                  "Requests"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-header-cell",
-                                "children": [
-                                  "Tokens"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-header-cell",
-                                "children": [
-                                  "Avg Latency"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-header-cell",
-                                "children": [
-                                  "Cost"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-header-cell",
-                                "children": [
-                                  "Error Rate"
-                                ]
-                              }
-                            ]
+                            "slots": {
+                              "default": [
+                                {
+                                  "component": "cre8-table-header-cell",
+                                  "children": [
+                                    "Model"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-header-cell",
+                                  "children": [
+                                    "Requests"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-header-cell",
+                                  "children": [
+                                    "Tokens"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-header-cell",
+                                  "children": [
+                                    "Avg Latency"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-header-cell",
+                                  "children": [
+                                    "Cost"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-header-cell",
+                                  "children": [
+                                    "Error Rate"
+                                  ]
+                                }
+                              ]
+                            }
                           }
                         ]
                       },
@@ -854,191 +856,199 @@
                         "children": [
                           {
                             "component": "cre8-table-row",
-                            "children": [
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "claude-3-5-sonnet"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "5,267"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "1.72M"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "0.92s"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "$14.82"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  {
-                                    "component": "cre8-badge",
-                                    "props": {
-                                      "text": "0.2%",
-                                      "status": "success"
+                            "slots": {
+                              "default": [
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "claude-3-5-sonnet"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "5,267"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "1.72M"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "0.92s"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "$14.82"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    {
+                                      "component": "cre8-badge",
+                                      "props": {
+                                        "text": "0.2%",
+                                        "status": "success"
+                                      }
                                     }
-                                  }
-                                ]
-                              }
-                            ]
+                                  ]
+                                }
+                              ]
+                            }
                           },
                           {
                             "component": "cre8-table-row",
-                            "children": [
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "gpt-4o"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "4,368"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "1.43M"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "1.45s"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "$18.34"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  {
-                                    "component": "cre8-badge",
-                                    "props": {
-                                      "text": "0.5%",
-                                      "status": "info"
+                            "slots": {
+                              "default": [
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "gpt-4o"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "4,368"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "1.43M"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "1.45s"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "$18.34"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    {
+                                      "component": "cre8-badge",
+                                      "props": {
+                                        "text": "0.5%",
+                                        "status": "info"
+                                      }
                                     }
-                                  }
-                                ]
-                              }
-                            ]
+                                  ]
+                                }
+                              ]
+                            }
                           },
                           {
                             "component": "cre8-table-row",
-                            "children": [
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "gemini-1.5-pro"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "1,927"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "0.63M"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "1.12s"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "$3.87"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  {
-                                    "component": "cre8-badge",
-                                    "props": {
-                                      "text": "0.8%",
-                                      "status": "warning"
+                            "slots": {
+                              "default": [
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "gemini-1.5-pro"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "1,927"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "0.63M"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "1.12s"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "$3.87"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    {
+                                      "component": "cre8-badge",
+                                      "props": {
+                                        "text": "0.8%",
+                                        "status": "warning"
+                                      }
                                     }
-                                  }
-                                ]
-                              }
-                            ]
+                                  ]
+                                }
+                              ]
+                            }
                           },
                           {
                             "component": "cre8-table-row",
-                            "children": [
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "gpt-4o-mini"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "1,285"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "0.42M"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "0.52s"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "$1.39"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  {
-                                    "component": "cre8-badge",
-                                    "props": {
-                                      "text": "0.3%",
-                                      "status": "success"
+                            "slots": {
+                              "default": [
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "gpt-4o-mini"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "1,285"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "0.42M"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "0.52s"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "$1.39"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    {
+                                      "component": "cre8-badge",
+                                      "props": {
+                                        "text": "0.3%",
+                                        "status": "success"
+                                      }
                                     }
-                                  }
-                                ]
-                              }
-                            ]
+                                  ]
+                                }
+                              ]
+                            }
                           }
                         ]
                       }
@@ -1230,50 +1240,52 @@
                         "children": [
                           {
                             "component": "cre8-table-row",
-                            "children": [
-                              {
-                                "component": "cre8-table-header-cell",
-                                "children": [
-                                  "Time"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-header-cell",
-                                "children": [
-                                  "Model"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-header-cell",
-                                "children": [
-                                  "Prompt"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-header-cell",
-                                "children": [
-                                  "Completion"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-header-cell",
-                                "children": [
-                                  "Latency"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-header-cell",
-                                "children": [
-                                  "Cost"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-header-cell",
-                                "children": [
-                                  "Status"
-                                ]
-                              }
-                            ]
+                            "slots": {
+                              "default": [
+                                {
+                                  "component": "cre8-table-header-cell",
+                                  "children": [
+                                    "Time"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-header-cell",
+                                  "children": [
+                                    "Model"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-header-cell",
+                                  "children": [
+                                    "Prompt"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-header-cell",
+                                  "children": [
+                                    "Completion"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-header-cell",
+                                  "children": [
+                                    "Latency"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-header-cell",
+                                  "children": [
+                                    "Cost"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-header-cell",
+                                  "children": [
+                                    "Status"
+                                  ]
+                                }
+                              ]
+                            }
                           }
                         ]
                       },
@@ -1282,427 +1294,443 @@
                         "children": [
                           {
                             "component": "cre8-table-row",
-                            "children": [
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "14:23:45"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "claude-3-5-sonnet"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "847"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "400"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "0.92s"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "$0.013"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  {
-                                    "component": "cre8-badge",
-                                    "props": {
-                                      "text": "OK",
-                                      "status": "success"
+                            "slots": {
+                              "default": [
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "14:23:45"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "claude-3-5-sonnet"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "847"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "400"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "0.92s"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "$0.013"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    {
+                                      "component": "cre8-badge",
+                                      "props": {
+                                        "text": "OK",
+                                        "status": "success"
+                                      }
                                     }
-                                  }
-                                ]
-                              }
-                            ]
+                                  ]
+                                }
+                              ]
+                            }
                           },
                           {
                             "component": "cre8-table-row",
-                            "children": [
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "14:23:12"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "gpt-4o"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "512"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "320"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "1.45s"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "$0.018"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  {
-                                    "component": "cre8-badge",
-                                    "props": {
-                                      "text": "OK",
-                                      "status": "success"
+                            "slots": {
+                              "default": [
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "14:23:12"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "gpt-4o"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "512"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "320"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "1.45s"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "$0.018"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    {
+                                      "component": "cre8-badge",
+                                      "props": {
+                                        "text": "OK",
+                                        "status": "success"
+                                      }
                                     }
-                                  }
-                                ]
-                              }
-                            ]
+                                  ]
+                                }
+                              ]
+                            }
                           },
                           {
                             "component": "cre8-table-row",
-                            "children": [
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "14:22:58"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "gemini-1.5-pro"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "1,203"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "901"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "1.12s"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "$0.006"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  {
-                                    "component": "cre8-badge",
-                                    "props": {
-                                      "text": "OK",
-                                      "status": "success"
+                            "slots": {
+                              "default": [
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "14:22:58"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "gemini-1.5-pro"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "1,203"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "901"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "1.12s"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "$0.006"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    {
+                                      "component": "cre8-badge",
+                                      "props": {
+                                        "text": "OK",
+                                        "status": "success"
+                                      }
                                     }
-                                  }
-                                ]
-                              }
-                            ]
+                                  ]
+                                }
+                              ]
+                            }
                           },
                           {
                             "component": "cre8-table-row",
-                            "children": [
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "14:22:31"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "gpt-4o"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "234"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "—"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "2.87s"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "$0.000"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  {
-                                    "component": "cre8-badge",
-                                    "props": {
-                                      "text": "Error",
-                                      "status": "error"
+                            "slots": {
+                              "default": [
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "14:22:31"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "gpt-4o"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "234"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "—"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "2.87s"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "$0.000"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    {
+                                      "component": "cre8-badge",
+                                      "props": {
+                                        "text": "Error",
+                                        "status": "error"
+                                      }
                                     }
-                                  }
-                                ]
-                              }
-                            ]
+                                  ]
+                                }
+                              ]
+                            }
                           },
                           {
                             "component": "cre8-table-row",
-                            "children": [
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "14:22:15"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "claude-3-5-sonnet"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "634"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "353"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "0.78s"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "$0.010"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  {
-                                    "component": "cre8-badge",
-                                    "props": {
-                                      "text": "OK",
-                                      "status": "success"
+                            "slots": {
+                              "default": [
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "14:22:15"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "claude-3-5-sonnet"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "634"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "353"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "0.78s"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "$0.010"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    {
+                                      "component": "cre8-badge",
+                                      "props": {
+                                        "text": "OK",
+                                        "status": "success"
+                                      }
                                     }
-                                  }
-                                ]
-                              }
-                            ]
+                                  ]
+                                }
+                              ]
+                            }
                           },
                           {
                             "component": "cre8-table-row",
-                            "children": [
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "14:21:59"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "gpt-4o-mini"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "445"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "398"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "0.51s"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "$0.001"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  {
-                                    "component": "cre8-badge",
-                                    "props": {
-                                      "text": "OK",
-                                      "status": "success"
+                            "slots": {
+                              "default": [
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "14:21:59"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "gpt-4o-mini"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "445"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "398"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "0.51s"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "$0.001"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    {
+                                      "component": "cre8-badge",
+                                      "props": {
+                                        "text": "OK",
+                                        "status": "success"
+                                      }
                                     }
-                                  }
-                                ]
-                              }
-                            ]
+                                  ]
+                                }
+                              ]
+                            }
                           },
                           {
                             "component": "cre8-table-row",
-                            "children": [
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "14:21:43"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "claude-3-5-sonnet"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "1,102"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "567"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "1.14s"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "$0.017"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  {
-                                    "component": "cre8-badge",
-                                    "props": {
-                                      "text": "OK",
-                                      "status": "success"
+                            "slots": {
+                              "default": [
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "14:21:43"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "claude-3-5-sonnet"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "1,102"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "567"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "1.14s"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "$0.017"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    {
+                                      "component": "cre8-badge",
+                                      "props": {
+                                        "text": "OK",
+                                        "status": "success"
+                                      }
                                     }
-                                  }
-                                ]
-                              }
-                            ]
+                                  ]
+                                }
+                              ]
+                            }
                           },
                           {
                             "component": "cre8-table-row",
-                            "children": [
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "14:21:28"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "gpt-4o"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "782"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "418"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "1.67s"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  "$0.021"
-                                ]
-                              },
-                              {
-                                "component": "cre8-table-cell",
-                                "children": [
-                                  {
-                                    "component": "cre8-badge",
-                                    "props": {
-                                      "text": "OK",
-                                      "status": "success"
+                            "slots": {
+                              "default": [
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "14:21:28"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "gpt-4o"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "782"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "418"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "1.67s"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    "$0.021"
+                                  ]
+                                },
+                                {
+                                  "component": "cre8-table-cell",
+                                  "children": [
+                                    {
+                                      "component": "cre8-badge",
+                                      "props": {
+                                        "text": "OK",
+                                        "status": "success"
+                                      }
                                     }
-                                  }
-                                ]
-                              }
-                            ]
+                                  ]
+                                }
+                              ]
+                            }
                           }
                         ]
                       }

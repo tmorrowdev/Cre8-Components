@@ -36,6 +36,8 @@ let tabId = 1;
  *
  * @slot default - Default, unnamed slot container for each `cre8-tab` button
  * @slot panel - Container for each `cre8-tab-panel` content item
+ *
+ * @fires tab-change - Fires when the active tab changes. `event.detail` is `{ value, activeTabIndex }`.
  */
 
 export class Cre8Tabs extends Cre8Element {
@@ -347,7 +349,7 @@ export class Cre8Tabs extends Cre8Element {
      * 2. If tab is active, make the previous selected tab inactive.
      * 3. Set the clicked tab active.
      * 4. Emit the custom event.
-     * @fires tabSelected
+     * @fires tab-select
      */
     handleTabSelected(event: MouseEvent) {
         const { target } = event;
@@ -423,7 +425,7 @@ export class Cre8Tabs extends Cre8Element {
      * 2. If current activeIndex is in first position then move the tab focus to last tab.
      * 3. Set the active tab and focus.
      * 4. Emit custom event.
-     * @fires tabChange
+     * @fires tab-change
      */
     setSelectedToPreviousTab(currentTab: Cre8Tab) {
         /* 1 */
@@ -455,7 +457,7 @@ export class Cre8Tabs extends Cre8Element {
      * 2. If current activeIndex is in last position then move the tab focus to first tab.
      * 3. Set the active tab and focus.
      * 4. Emit custom event.
-     * @fires tabChange
+     * @fires tab-change
      */
     setSelectedToNextTab(currentTab: Cre8Tab) {
         /* 1 */
@@ -501,7 +503,7 @@ export class Cre8Tabs extends Cre8Element {
      * Emit custom event
      */
     emitEvent() {
-        const customEvent = new CustomEvent('tabChange', {
+        const customEvent = new CustomEvent('tab-change', {
             detail: {
                 value: this.activeTab,
                 activeTabIndex: this.activeIndex,
@@ -509,7 +511,7 @@ export class Cre8Tabs extends Cre8Element {
             bubbles: true,
             composed: true,
         });
-        this.dispatchEvent(customEvent);
+        this.dispatchWithLegacyAlias(customEvent);
     }
 
     render() {

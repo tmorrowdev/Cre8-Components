@@ -10,7 +10,6 @@ import styles from './progress-steps-item.styles.js';
  *
  * @property {string} message - Optional message to display under the step name.
  * @property {string} name - The name of the step.
- * @property {string} state - The state of the step: 'incomplete', 'current', 'complete', 'error', 'warning';
  * @property {string} svg - An SVG string to use as the step icon.
  *
  * @slot - The component content
@@ -33,8 +32,7 @@ export class Cre8ProgressStepsItem extends Cre8Element {
     name: string;
 
     /**
-     * The state of the step: 'complete', 'current', 'error',' incomplete', 'warning';
-     * @type {string}
+     * The state of the step.
      */
     @property()
     state: 'complete' | 'current' | 'error' | 'incomplete' | 'warning';

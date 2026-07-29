@@ -23,7 +23,7 @@ import styles from './modal.styles.js';
  * @slot header - Custom header content for the modal
  * @slot footer - Custom footer content for the modal
  *
- * @fires close-modal - Fires when the modal is dismissed via the close button, overlay click, or Escape key.
+ * @fires modal-close - Fires when the modal is dismissed via the close button, overlay click, or Escape key.
  */
 export class Cre8Modal extends Cre8Element {
     static styles = [styles];
@@ -103,7 +103,7 @@ export class Cre8Modal extends Cre8Element {
     handleCloseModal() {
         this.isActive = false;
         this.dispatch({
-            eventName: 'close-modal',
+            eventName: 'modal-close',
             detailObj: {
                 isActive: this.isActive,
             },
@@ -225,7 +225,7 @@ if (customElements.get('cre8-modal') === undefined) {
 }
 
 export interface CloseModalEvent extends CustomEvent<{ isActive: boolean }> {
-    type: 'close-modal';
+    type: 'modal-close';
     currentTarget: Cre8Modal;
 }
 

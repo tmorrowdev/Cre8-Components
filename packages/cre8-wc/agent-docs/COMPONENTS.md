@@ -846,7 +846,7 @@ to links, initiate commands when clicked.
 
 | Event                    |
 |--------------------------|
-| `dropdown-item-selected` |
+| `dropdown-item-select` |
 
 
 # cre8-dropdown
@@ -1662,7 +1662,7 @@ This component has a list of items in the dropdown that can be added as "selecte
 The checkbox will always reflect the selected nature of the item and is not removed
 from the dropdown when clicked, the tags will be added and removed based on their state.
 
-Event `selectedItemsChange` emits whenever a tag is added or remove from the list and the
+Event `multi-select-change` emits whenever a tag is added or remove from the list and the
 current list after the change is given in the detail.
 
 ## Properties
@@ -1697,7 +1697,7 @@ current list after the change is given in the detail.
 
 | Event                 | Type                                        |
 |-----------------------|---------------------------------------------|
-| `selectedItemsChange` | `CustomEvent<{ selectedItems: string[]; }>` |
+| `multi-select-change` | `CustomEvent<{ selectedItems: string[]; }>` |
 
 
 # cre8-nav-container
@@ -1847,7 +1847,7 @@ via a programmatic selector, e.g. < section id=“results” aria-label="results
 
 | Event              | Type                                             |
 |--------------------|--------------------------------------------------|
-| `pagination.click` | `CustomEvent<{ buttonName: string; value: number; }>` |
+| `pagination-change` | `CustomEvent<{ buttonName: string; value: number; }>` |
 
 ## CSS Shadow Parts
 
@@ -1891,7 +1891,7 @@ allows a user save their progress before exiting.
 
 | Event                   |
 |-------------------------|
-| `leftActionButtonClick` |
+| `percent-bar-left-action-click` |
 
 
 # cre8-popover
@@ -2157,7 +2157,7 @@ These tags always display a "Close" icon.
 
 | Event              | Type                                |
 |--------------------|-------------------------------------|
-| `removeTagClicked` | `CustomEvent<{ message: string; }>` |
+| `remove-tag-click` | `CustomEvent<{ message: string; }>` |
 
 
 # cre8-section
@@ -2549,7 +2549,7 @@ this is a decorative element only!
 
 | Event         | Type                                           |
 |---------------|------------------------------------------------|
-| `tabSelected` | `CustomEvent<{ index: number \| undefined; }>` |
+| `tab-select` | `CustomEvent<{ index: number \| undefined; }>` |
 
 ## Slots
 
@@ -2790,7 +2790,7 @@ Primary Tabs (for system navigation), Secondary Tabs (for sub navigation within 
 
 | Event       | Type                                             |
 |-------------|--------------------------------------------------|
-| `tabChange` | `CustomEvent<{ value: Cre8Tab \| undefined; activeTabIndex: number \| undefined; }>` |
+| `tab-change` | `CustomEvent<{ value: Cre8Tab \| undefined; activeTabIndex: number \| undefined; }>` |
 
 ## Slots
 

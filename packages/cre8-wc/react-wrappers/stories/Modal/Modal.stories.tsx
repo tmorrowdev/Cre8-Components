@@ -25,7 +25,7 @@ export default {
     </Cre8Modal>
   ),
   args: {
-    onClose: action('close-modal')
+    onModalClose: action('modal-close')
   },
 };
 

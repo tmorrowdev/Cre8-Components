@@ -57,7 +57,18 @@ describe('tab', () => {
     expect(tab.getAttribute('id')).toBe('label-id');
   });
 
-  test('dispatches tabSelected event on click', async () => {
+  test('dispatches tab-select event on click', async () => {
+    const el = await fixture<Cre8Tab>(html`
+      <cre8-tab></cre8-tab>
+    `);
+
+    const tabClick = () => el.shadowRoot.querySelector<HTMLButtonElement>('.cre8-c-tab').click();
+    setTimeout(tabClick);
+    const listener = await oneEvent(el, 'tab-select');
+    expect(listener).toBeTruthy();
+  });
+
+  test('also dispatches the deprecated tabSelected alias with the same detail', async () => {
     const el = await fixture<Cre8Tab>(html`
       <cre8-tab></cre8-tab>
     `);
@@ -66,6 +77,7 @@ describe('tab', () => {
     setTimeout(tabClick);
     const listener = await oneEvent(el, 'tabSelected');
     expect(listener).toBeTruthy();
+    expect(listener.detail).toEqual({ index: el.index });
   });
 
   describe('accessibility tests', () => {

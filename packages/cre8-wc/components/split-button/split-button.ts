@@ -6,6 +6,9 @@ import styles from './split-button.styles.js';
 
 /**
  * @slot - The component content , this will consist of the dropdown when the user clicks the caret
+ *
+ * @fires split-button-text-click - Fires when the main text button is clicked.
+ * @fires split-button-dropdown-click - Fires when the dropdown toggle is clicked.
  */
 export class Cre8SplitButton extends Cre8Element {
     static styles = [styles];
@@ -71,12 +74,12 @@ export class Cre8SplitButton extends Cre8Element {
   }
 
   private _textClick(e: MouseEvent) {
-      this.dispatchEvent(new Event('text-click', e));
+      this.dispatchWithLegacyAlias(new Event('split-button-text-click', e));
   }
 
   private _dropdownClick(e: MouseEvent) {
       this.dropdownOpen = !this.dropdownOpen;
-      this.dispatchEvent(new Event('dropdown-click', e));
+      this.dispatchWithLegacyAlias(new Event('split-button-dropdown-click', e));
   }
 }
 

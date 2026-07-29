@@ -15,7 +15,7 @@ Here is code for the example below, a completely composed modal using slots:
 ```js
 <cre8-modal
     ?isActive=${this.modalIsActive}
-    @close-modal="${() => this.toggleModal()}"
+    @modal-close="${() => this.toggleModal()}"
     ariaLabel="This text describes modal to screen reader when focused on"
 >
     <cre8-heading variant="title-large" ?brandColor=${true} slot="header">Modal Heading</cre8-heading>
@@ -39,7 +39,7 @@ Here is code for the error utility modal example below:
     status="error"
     utilityModalTitle="Modal Heading"
     isActive="${this.modalIsActive}"
-    @close-modal=${() => this.toggleModal()}
+    @modal-close=${() => this.toggleModal()}
     ariaLabel="This text describes modal to screen reader when focused on"
     >
     <cre8-text-passage>

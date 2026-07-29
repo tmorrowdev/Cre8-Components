@@ -60,7 +60,7 @@ describe('remove-tag', () => {
     await el.updateComplete;
 
     const emitSpy = jest.spyOn(el, 'dispatchEvent');
-    const emittedItem = new CustomEvent('selectedItemsChange', {
+    const emittedItem = new CustomEvent('multi-select-change', {
       detail: { selectedItems: ['Bagel'] },
     });
 
@@ -99,7 +99,7 @@ describe('remove-tag', () => {
     );
 
     const emitSpy = jest.spyOn(el, 'dispatchEvent');
-    const emittedItem = new CustomEvent('selectedItemsChange', {
+    const emittedItem = new CustomEvent('multi-select-change', {
       detail: { selectedItems: [] },
     });
 
