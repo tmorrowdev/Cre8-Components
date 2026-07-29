@@ -226,6 +226,32 @@ component list looks longer than the number of concepts:
 </cre8-table>
 ```
 
+**Or pass the data instead.** Eleven families now take a data property that
+builds that composition for you — `columns`/`rows` on a table, `items` on tabs,
+accordions, lists, link lists, breadcrumbs, dropdowns and the field groups,
+`tags` on a tag list, `steps` on progress steps:
+
+```html
+<cre8-table caption="Model performance" variant="striped"></cre8-table>
+<script>
+  document.querySelector('cre8-table').columns = [{ label: 'Model', key: 'model' }];
+  document.querySelector('cre8-table').rows = [{ model: 'claude-3-5-sonnet' }];
+</script>
+```
+
+The composition is generated into the **light DOM** — it is the markup above,
+built for you, not a second rendering path. Every `::slotted()` rule, every
+behaviour, and every consumer that reaches into the table keeps working, and the
+generated elements are reconciled in place so updating a cell does not rebuild
+the table under the user's cursor. Set neither property and the component is
+exactly as it was; do not use both on one component.
+
+Two things the data path also fixes, because the parent now owns the group:
+a table stamps each cell with its column header (which `behavior="responsive"`
+needs, and which by hand means restating every header on every row), and a radio
+field enforces single selection — see the note in
+[Provenance and drift](07-research.md#provenance-and-drift).
+
 Two consequences that bite people:
 
 1. **Children are not optional scaffolding.** `cre8-table-body` is not decoration

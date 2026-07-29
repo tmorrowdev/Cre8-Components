@@ -1,7 +1,16 @@
 import { html,  } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
+import { syncLightChildren, type ChildSpec } from '../utils/light-children';
 import styles from './accordion.styles.js';
+
+/** One panel in a data-driven accordion. */
+export interface Cre8AccordionItemData {
+  heading: string;
+  content: string;
+  isActive?: boolean;
+  headingTagVariant?: 'h1' | 'h2' | 'h3' | 'h4';
+}
 
 /**
  * The component is a vertically stacked list of headers that reveal or hide sections of related content on a page.
@@ -14,6 +23,7 @@ import styles from './accordion.styles.js';
  *
  * @slot - The `cre8-accordion-item` children to group
  */
+
 
 export class Cre8Accordion extends Cre8Element {
     static styles = [styles];
@@ -42,6 +52,33 @@ export class Cre8Accordion extends Cre8Element {
   connectedCallback(): void {
       super.connectedCallback();
   }
+  /**
+   * Panels for a data-driven accordion. Each becomes a `cre8-accordion-item`
+   * with its heading as a prop and its content in the default slot.
+   */
+  @property({ type: Array })
+      items?: Cre8AccordionItemData[];
+
+  /** The composition the data property stands for. */
+  private buildComposition(): ChildSpec[] | null {
+      if (!this.items) return null;
+      return this.items.map((item) => ({
+          tag: 'cre8-accordion-item',
+          props: {
+              heading: item.heading,
+              isActive: item.isActive,
+              headingTagVariant: item.headingTagVariant,
+          },
+          text: item.content,
+      }));
+  }
+
+  protected updated(changed: Map<string, unknown>): void {
+      if (['items'].some((key) => changed.has(key))) {
+          syncLightChildren(this, this.buildComposition());
+      }
+  }
+
 
   render() {
       const componentClassNames = this.componentClassNames('cre8-c-accordion', {

@@ -1,11 +1,18 @@
 import { html,  } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
+import { syncLightChildren, type ChildSpec } from '../utils/light-children';
 import styles from './list.styles.js';
+
+/** One item in a data-driven list. */
+export interface Cre8ListItemData {
+  text: string;
+}
 
 /**
  * @slot - The list items
  */
+
 export class Cre8List extends Cre8Element {
     static styles = [styles];
 
@@ -31,6 +38,26 @@ export class Cre8List extends Cre8Element {
    */
   @property()
       spacing?: 'padded' | 'condensed';
+  /**
+   * Items for a data-driven list. Set this and the list builds its own
+   * `cre8-list-item` children in the light DOM — the same composition you would
+   * write by hand. Leave it unset to compose the list yourself.
+   */
+  @property({ type: Array })
+      items?: Cre8ListItemData[];
+
+  /** The composition the data property stands for. */
+  private buildComposition(): ChildSpec[] | null {
+      if (!this.items) return null;
+      return this.items.map((item) => ({ tag: 'cre8-list-item', text: item.text }));
+  }
+
+  protected updated(changed: Map<string, unknown>): void {
+      if (['items'].some((key) => changed.has(key))) {
+          syncLightChildren(this, this.buildComposition());
+      }
+  }
+
 
   render() {
       const componentClassName = this.componentClassNames('cre8-c-list', {

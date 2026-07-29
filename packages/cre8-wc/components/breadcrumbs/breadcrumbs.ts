@@ -5,7 +5,15 @@
 import { html,  } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
+import { syncLightChildren, type ChildSpec } from '../utils/light-children';
 import styles from './breadcrumbs.styles.js';
+
+/** One crumb in a data-driven breadcrumb trail. */
+export interface Cre8BreadcrumbData {
+  text: string;
+  /** Omit on the final crumb — the page you are on is not a link. */
+  href?: string;
+}
 
 /**
  * The breadcrumbs component is a secondary navigation pattern that helps a user understand where the user is located.
@@ -24,6 +32,7 @@ import styles from './breadcrumbs.styles.js';
  * @slot - The component content
  */
 
+
 export class Cre8Breadcrumbs extends Cre8Element {
     static styles = [styles];
 
@@ -32,6 +41,31 @@ export class Cre8Breadcrumbs extends Cre8Element {
    */
   @property()
       navAriaLabel: string = 'breadcrumbs';
+  /**
+   * Crumbs for a data-driven trail. Each becomes a `cre8-breadcrumbs-item`,
+   * wrapping a `cre8-text-link` when it has an `href`.
+   */
+  @property({ type: Array })
+      items?: Cre8BreadcrumbData[];
+
+  /** The composition the data property stands for. */
+  private buildComposition(): ChildSpec[] | null {
+      if (!this.items) return null;
+      return this.items.map((item) => ({
+          tag: 'cre8-breadcrumbs-item',
+          children: item.href
+              ? [{ tag: 'cre8-text-link', props: { href: item.href }, text: item.text }]
+              : undefined,
+          text: item.href ? undefined : item.text,
+      }));
+  }
+
+  protected updated(changed: Map<string, unknown>): void {
+      if (['items'].some((key) => changed.has(key))) {
+          syncLightChildren(this, this.buildComposition());
+      }
+  }
+
 
   render() {
       const componentClassNames = this.componentClassNames('cre8-c-breadcrumbs', {});

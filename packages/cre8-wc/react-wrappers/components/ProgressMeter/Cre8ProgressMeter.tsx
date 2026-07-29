@@ -3,14 +3,14 @@ import { Cre8ProgressMeter as Cre8ProgressMeterElement } from '@tmorrow/cre8-wc/
 import React from 'react';
 
 export interface Cre8ProgressMeterProps {
-  /** Progress Status - **Default** renders a meter with default status fill - **Error** renders a meter with an error status fill - **Warning** renders a meter with a warning status - **Success** renders a meter with a success status fill */
-  status?: any;
   /** Progress Meter FieldId */
   fieldId?: string | undefined;
   /** Progress Meter name */
   name?: string | undefined;
   /** Progress Meter label */
   label?: string;
+  /** Progress Status - **Default** renders a meter with default status fill - **Error** renders a meter with an error status fill - **Warning** renders a meter with a warning status - **Success** renders a meter with a success status fill */
+  status?: any;
   knockout?: boolean | undefined;
   max?: number;
   value?: number;

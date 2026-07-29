@@ -4,11 +4,19 @@ import {
 } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { Cre8Element } from '../cre8-element';
+import { syncLightChildren, type ChildSpec } from '../utils/light-children';
 import { Cre8TabPanel } from '../tab-panel/tab-panel';
 import { Cre8Tab } from '../tab/tab';
 import styles from './tabs.styles.js';
 
 let tabId = 1;
+
+/** One tab and its panel in a data-driven tab set. */
+export interface Cre8TabItemData {
+  label: string;
+  /** Panel content. Omit to supply the panel yourself. */
+  content?: string;
+}
 
 /**
  * Tabs are used to quickly navigate back and forth between views.
@@ -39,6 +47,7 @@ let tabId = 1;
  *
  * @fires tab-change - Fires when the active tab changes. `event.detail` is `{ value, activeTabIndex }`.
  */
+
 
 export class Cre8Tabs extends Cre8Element {
     static styles = [styles];
@@ -201,6 +210,12 @@ export class Cre8Tabs extends Cre8Element {
      *    If the new value doesn't equal the old value, activate the proper tab
      */
     async updated(changedProperties: Map<string, unknown>) {
+        // Generated tabs and panels must exist before the existing logic below
+        // wires up indices and active state, so this runs first.
+        if (changedProperties.has('items')) {
+            syncLightChildren(this, this.buildComposition());
+        }
+
         changedProperties.forEach(async (oldValue, propName) => {
             if (propName === 'activeIndex' && this.activeIndex !== oldValue) {
                 await this.updateComplete;
@@ -513,6 +528,32 @@ export class Cre8Tabs extends Cre8Element {
         });
         this.dispatchWithLegacyAlias(customEvent);
     }
+  /**
+   * Tabs for a data-driven tab set. Each entry becomes a `cre8-tab` in the
+   * default slot *and* a `cre8-tab-panel` in the `panel` slot, with matching
+   * indices — two slots kept in step, which is the part that goes wrong when
+   * these are written by hand.
+   */
+  @property({ type: Array })
+      items?: Cre8TabItemData[];
+
+  /** The composition the data property stands for. */
+  private buildComposition(): ChildSpec[] | null {
+      if (!this.items) return null;
+      const tabs: ChildSpec[] = this.items.map((item, index) => ({
+          tag: 'cre8-tab',
+          props: { index },
+          text: item.label,
+      }));
+      const panels: ChildSpec[] = this.items.map((item, index) => ({
+          tag: 'cre8-tab-panel',
+          props: { index },
+          slot: 'panel',
+          text: item.content ?? '',
+      }));
+      return [...tabs, ...panels];
+  }
+
 
     render() {
         const componentClassNames = this.componentClassNames('cre8-c-tabs', {

@@ -3,8 +3,18 @@ import { ifDefined } from 'lit-html/directives/if-defined.js';
 import { property } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { Cre8Element } from '../cre8-element';
+import { syncLightChildren, type ChildSpec } from '../utils/light-children';
 import '../field-note/field-note';
 import styles from './checkbox-field.styles.js';
+
+/** One checkbox in a data-driven checkbox field. */
+export interface Cre8CheckboxItemData {
+  label: string;
+  value?: string;
+  checked?: boolean;
+  disabled?: boolean;
+  required?: boolean;
+}
 
 /**
  * Checkbox Field is the parent container for `checkbox-field-item`.
@@ -15,6 +25,7 @@ import styles from './checkbox-field.styles.js';
  *
  * @slot - The component content, which should be a set of `checkbox-field-item`s
  */
+
 export class Cre8CheckboxField extends Cre8Element {
     static styles = [styles];
 
@@ -69,6 +80,40 @@ export class Cre8CheckboxField extends Cre8Element {
           this.ariaDescribedBy = this.ariaDescribedBy || nanoid();
       }
   }
+  /**
+   * Checkboxes for a data-driven field. Each becomes a
+   * `cre8-checkbox-field-item`, sharing the field's `name` so they submit as a
+   * group.
+   */
+  @property({ type: Array })
+      items?: Cre8CheckboxItemData[];
+
+  /** Form control name shared by every generated item. */
+  @property()
+      name?: string;
+
+  /** The composition the data property stands for. */
+  private buildComposition(): ChildSpec[] | null {
+      if (!this.items) return null;
+      return this.items.map((item) => ({
+          tag: 'cre8-checkbox-field-item',
+          props: {
+              label: item.label,
+              value: item.value,
+              checked: item.checked,
+              disabled: item.disabled,
+              required: item.required,
+              name: this.name,
+          },
+      }));
+  }
+
+  protected updated(changed: Map<string, unknown>): void {
+      if (['items', 'name'].some((key) => changed.has(key))) {
+          syncLightChildren(this, this.buildComposition());
+      }
+  }
+
 
   render() {
       const componentClassNames = this.componentClassNames('cre8-c-checkbox-field', {});

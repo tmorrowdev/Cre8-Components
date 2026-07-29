@@ -87,8 +87,44 @@ function toPascalCase(str: string): string {
     .join('');
 }
 
+/**
+ * Types the wrapper re-exports rather than flattening to `any`.
+ *
+ * The flattened compound APIs (`columns`, `rows`, `items`, `steps`, `tags`) are
+ * the whole reason a React consumer would reach for them, and a prop typed
+ * `any` gives no autocomplete and catches no mistakes — which for a data-driven
+ * table is most of the value. These interfaces are exported from the component
+ * module the element class already comes from, so importing them is free.
+ */
+const FLATTENED_DATA_TYPES = new Set([
+  'Cre8TableColumn', 'Cre8TableRowData', 'Cre8TabItemData', 'Cre8AccordionItemData',
+  'Cre8ListItemData', 'Cre8LinkData', 'Cre8BreadcrumbData', 'Cre8TagData',
+  'Cre8CheckboxItemData', 'Cre8RadioItemData', 'Cre8ProgressStepData', 'Cre8DropdownItemData',
+]);
+
+/**
+ * The flattened data type a prop refers to, if any — `Cre8TagData[]` → `Cre8TagData`.
+ *
+ * The manifest writes an optional property's type as `Cre8TagData[] | undefined`,
+ * so the `| undefined` has to come off before matching. Missing that is why the
+ * first cut of this silently produced `any` for every one of them.
+ */
+export function flattenedTypeOf(type: string | undefined): string | null {
+  if (!type) return null;
+  const bare = type
+    .split('|')
+    .map((part) => part.trim())
+    .find((part) => part !== 'undefined' && part !== 'null');
+  const match = bare ? /^(Cre8[A-Za-z]+)\[\]$/.exec(bare) : null;
+  return match && FLATTENED_DATA_TYPES.has(match[1]) ? match[1] : null;
+}
+
 function getReactPropType(type: string | undefined): string {
   if (!type) return 'any';
+
+  // Keep the flattened data types intact; they are the point of the React layer.
+  const flattened = flattenedTypeOf(type);
+  if (flattened) return `${flattened}[]`;
 
   // Handle truncated types (e.g., "... 5 more ...")
   if (type.includes('...') && type.includes('more')) {
@@ -195,10 +231,25 @@ function generateReactWrapper(tag: Tag): string {
 
   const allProps = [...propsLines, ...eventProps].join('\n');
 
+  const dataTypes = [
+    ...new Set(
+      (tag.attributes ?? [])
+        .map((attr) => flattenedTypeOf(attr.type))
+        .filter((name): name is string => Boolean(name))
+    ),
+  ];
+  const dataTypeImport = dataTypes.length
+    ? `\nexport type { ${dataTypes.join(', ')} } from '@tmorrow/cre8-wc/lib/components/${importPath}';`
+    : '';
+
   // Generate the component
   return `import { createComponent } from '@lit/react';
 import { ${elementClassName} as ${elementClassName}Element } from '@tmorrow/cre8-wc/lib/components/${importPath}';
-import React from 'react';
+import type { ${dataTypes.join(', ')} } from '@tmorrow/cre8-wc/lib/components/${importPath}';
+import React from 'react';${dataTypeImport}`.replace(
+    dataTypes.length ? '' : `import type {  } from '@tmorrow/cre8-wc/lib/components/${importPath}';\n`,
+    ''
+  ) + `
 
 export interface ${componentName}Props {
 ${allProps}

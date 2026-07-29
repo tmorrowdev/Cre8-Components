@@ -239,6 +239,13 @@ instead of quietly becoming false.
 | `cre8-accordion-item` exposes `header` and `icon` parts | `agent-docs/COMPONENTS.md` CSS Shadow Parts table | Source emits `heading`, `button`, `body`, `body-inner` — no `header`, no `icon` |
 | COMPONENTS.md documents the parts surface | It has a "CSS Shadow Parts" section | Only 3 of the 10 components that emit parts document them there |
 
+A note on one that moved. `cre8-radio-field` options were never mutually
+exclusive: a native radio group is formed by `name`, but only within one tree
+scope, and each `cre8-radio-field-item` keeps its `input` in its own shadow root
+— so the browser never saw them as siblings and every option stayed checked once
+clicked. Hand-composed fields had this too, not just generated ones, which is why
+the fix lives on the group rather than in the data path.
+
 ### Open questions, not open bugs
 
 Four things here cannot be fixed by correcting a sentence — each needs a decision
