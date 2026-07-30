@@ -231,12 +231,20 @@ instead of quietly becoming false.
 | React library v1.0.0 | `cre8-a2ui-react` skill | 2.0.7 in `react-manifest.json` |
 | Install `@cre8_dev/cre8-design-tokens` | `cre8-a2ui-react` skill | Tokens ship inside `@tmorrow/cre8-wc`; both manifests say so in `designTokens.tokenPackage` |
 | Prop named `tagName` | `agent-docs/CODE_GUIDELINES.md` | Components ship `tagVariant` / `headingTagVariant` |
+| Six props are declared but never reach the DOM | Component JSDoc, and therefore `a2ui/catalog.json`: `cre8-link-list-item.text`, `cre8-field.errorText`/`.successText`, `cre8-date-picker.errorText`/`.successText`, `cre8-modal.closeButtonText` | Each validates cleanly and does nothing. `cre8-field.errorText` even defaults to `'Error'`; the message that renders is `fieldNote` under `isError`. Confirmed twice by `pnpm audit:render` — rendering under jsdom and reading the source — and listed in `a2ui/inert-props.json` |
 | `cre8-card` has a `body` slot | `card.ts` JSDoc | Implementation uses the unnamed default slot |
 | `pnpm generate-theme` etc. | `agent-docs/THEME_GENERATOR.md`, `THEME_SYSTEM.md` | No such scripts in either `package.json` |
 | Components live in three status directories (cre8 / Experimental / Patterns) | `agent-docs/CODE_GUIDELINES.md` line 27, "located in one of 3 directories based on their status" | `components/` is flat; no directory or manifest field records support tier, so the tier cannot be looked up. The same file contradicts itself at "Components in this library exist in a flat structure" — two statements to reconcile, not one to update |
 | `size` accepts `xs`–`xl` with an `md` default | `agent-docs/CODE_GUIDELINES.md` | Shipped `size` props are `sm`/`lg`; `xs` appears nowhere and only one component declares `md` |
 | `cre8-accordion-item` exposes `header` and `icon` parts | `agent-docs/COMPONENTS.md` CSS Shadow Parts table | Source emits `heading`, `button`, `body`, `body-inner` — no `header`, no `icon` |
 | COMPONENTS.md documents the parts surface | It has a "CSS Shadow Parts" section | Only 3 of the 10 components that emit parts document them there |
+
+A note on one that moved. `cre8-radio-field` options were never mutually
+exclusive: a native radio group is formed by `name`, but only within one tree
+scope, and each `cre8-radio-field-item` keeps its `input` in its own shadow root
+— so the browser never saw them as siblings and every option stayed checked once
+clicked. Hand-composed fields had this too, not just generated ones, which is why
+the fix lives on the group rather than in the data path.
 
 ### Open questions, not open bugs
 

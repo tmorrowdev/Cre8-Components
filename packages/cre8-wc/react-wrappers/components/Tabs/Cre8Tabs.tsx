@@ -1,6 +1,8 @@
 import { createComponent } from '@lit/react';
 import { Cre8Tabs as Cre8TabsElement } from '@tmorrow/cre8-wc/lib/components/tabs/tabs';
+import type { Cre8TabItemData } from '@tmorrow/cre8-wc/lib/components/tabs/tabs';
 import React from 'react';
+export type { Cre8TabItemData } from '@tmorrow/cre8-wc/lib/components/tabs/tabs';
 
 export interface Cre8TabsProps {
   /** Tab sizes - **default** displays the cre8-tab text with cre8-typography-label-default - **sm** displays the cre8-tab text with cre8-typography-label-small */
@@ -13,20 +15,18 @@ export interface Cre8TabsProps {
   isStart?: boolean | undefined;
   /** If last child is fully in the viewport, set isEnd to true. Otherwise, set isEnd to false.  _*This property is dynamically set_ */
   isEnd?: boolean | undefined;
-  children?: React.ReactNode;
-  onTabChange?: (event: CustomEvent) => void;
+  /** Tabs for a data-driven tab set. Each entry becomes a `cre8-tab` in the default slot *and* a `cre8-tab-panel` in the `panel` slot, with matching indices — two slots kept in step, which is the part that goes wrong when these are written by hand. */
+  items?: Cre8TabItemData[];
 }
 
 /**
- * Tabs are used to quickly navigate back and forth between views.
+ * Cre8Tabs component
  */
 export const Cre8Tabs = createComponent({
   react: React,
   tagName: 'cre8-tabs',
   elementClass: Cre8TabsElement,
-  events: {
-    onTabChange: 'tab-change'
-  }
+
 });
 
 export default Cre8Tabs;

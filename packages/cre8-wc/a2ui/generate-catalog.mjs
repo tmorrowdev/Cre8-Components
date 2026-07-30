@@ -31,6 +31,112 @@ const SELECT_OPTION_GROUP_SCHEMA = {
   },
 };
 
+
+/**
+ * Schemas for the flattened compound APIs.
+ *
+ * These are keyed by TypeScript type expression rather than by component, so a
+ * type used twice is described once — the same reason the select-option entry
+ * below is shaped this way. Without them the analyzer reports a bare interface
+ * name, `mapAttrPlain` falls back to `type: "string"`, and the catalog then
+ * *rejects* the very array the component is built to take.
+ */
+const TABLE_COLUMN_SCHEMA = {
+  type: 'object',
+  properties: {
+    label: { type: 'string' },
+    key: { type: 'string' },
+    width: { type: 'string' },
+  },
+  required: ['label'],
+  additionalProperties: false,
+};
+
+const TABLE_ROW_SCHEMA = {
+  oneOf: [
+    { type: 'object', additionalProperties: { type: ['string', 'number'] } },
+    { type: 'array', items: { type: ['string', 'number'] } },
+  ],
+};
+
+/** `{ text }` and friends: one string field plus optional flags. */
+const textItem = (extra = {}, required = ['text'], key = 'text') => ({
+  type: 'object',
+  properties: { [key]: { type: 'string' }, ...extra },
+  required,
+  additionalProperties: false,
+});
+
+const FLATTENED_ITEM_SCHEMAS = {
+  'Cre8TableColumn[]': { type: 'array', items: TABLE_COLUMN_SCHEMA },
+  'Cre8TableRowData[]': { type: 'array', items: TABLE_ROW_SCHEMA },
+  'Cre8ListItemData[]': { type: 'array', items: textItem() },
+  'Cre8DropdownItemData[]': { type: 'array', items: textItem({ ariaLabel: { type: 'string' } }) },
+  'Cre8BreadcrumbData[]': { type: 'array', items: textItem({ href: { type: 'string' } }) },
+  'Cre8LinkData[]': {
+    type: 'array',
+    items: textItem({ href: { type: 'string' }, isActive: { type: 'boolean' } }, ['text', 'href']),
+  },
+  'Cre8TagData[]': {
+    type: 'array',
+    items: textItem({
+      variant: { type: 'string', enum: ['neutral', 'branded', 'neutral-hybrid'] },
+      shape: { type: 'string', enum: ['square', 'round'] },
+      type: { type: 'string', enum: ['checkbox', 'radio'] },
+      disabled: { type: 'boolean' },
+    }),
+  },
+  'Cre8TabItemData[]': {
+    type: 'array',
+    items: textItem({ content: { type: 'string' } }, ['label'], 'label'),
+  },
+  'Cre8AccordionItemData[]': {
+    type: 'array',
+    items: {
+      type: 'object',
+      properties: {
+        heading: { type: 'string' },
+        content: { type: 'string' },
+        isActive: { type: 'boolean' },
+        headingTagVariant: { type: 'string', enum: ['h1', 'h2', 'h3', 'h4'] },
+      },
+      required: ['heading', 'content'],
+      additionalProperties: false,
+    },
+  },
+  'Cre8ProgressStepData[]': {
+    type: 'array',
+    items: {
+      type: 'object',
+      properties: {
+        name: { type: 'string' },
+        message: { type: 'string' },
+        state: { type: 'string', enum: ['error', 'warning', 'complete', 'current'] },
+      },
+      required: ['name'],
+      additionalProperties: false,
+    },
+  },
+};
+
+const choiceItem = {
+  type: 'array',
+  items: {
+    type: 'object',
+    properties: {
+      label: { type: 'string' },
+      value: { type: 'string' },
+      checked: { type: 'boolean' },
+      disabled: { type: 'boolean' },
+      required: { type: 'boolean' },
+    },
+    required: ['label'],
+    additionalProperties: false,
+  },
+};
+FLATTENED_ITEM_SCHEMAS['Cre8CheckboxItemData[]'] = choiceItem;
+FLATTENED_ITEM_SCHEMAS['Cre8RadioItemData[]'] = choiceItem;
+
 const TS_TYPE_RESOLVERS = {
   Cre8ChartType: {
     type: 'string',
@@ -46,6 +152,7 @@ const TS_TYPE_RESOLVERS = {
     type: 'array',
     items: { oneOf: [SELECT_OPTION_SCHEMA, SELECT_OPTION_GROUP_SCHEMA] },
   },
+  ...FLATTENED_ITEM_SCHEMAS,
 };
 
 const PROP_OVERRIDES = {

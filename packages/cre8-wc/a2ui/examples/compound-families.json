@@ -1,0 +1,298 @@
+{
+  "component": "cre8-layout-container",
+  "children": [
+    {
+      "component": "cre8-heading",
+      "props": {
+        "tagVariant": "h1",
+        "type": "headline-large"
+      },
+      "children": [
+        "Compound components, worked"
+      ]
+    },
+    {
+      "component": "cre8-text-passage",
+      "children": [
+        "Every family below is nested the way its Storybook story nests it. This spec exists so get_composition can answer from ground truth rather than from a naming rule."
+      ]
+    },
+    {
+      "component": "cre8-accordion",
+      "props": {
+        "borderType": "rounded",
+        "hasDivider": true
+      },
+      "children": [
+        {
+          "component": "cre8-accordion-item",
+          "props": {
+            "heading": "What is a surface?",
+            "headingTagVariant": "h3",
+            "isActive": true
+          },
+          "slots": {
+            "default": [
+              {
+                "component": "cre8-text-passage",
+                "children": [
+                  "A region of UI an agent builds up over time while someone watches it happen."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "cre8-accordion-item",
+          "props": {
+            "heading": "How do patches address a node?",
+            "headingTagVariant": "h3"
+          },
+          "slots": {
+            "default": [
+              {
+                "component": "cre8-text-passage",
+                "children": [
+                  "By the position path the renderer already emits on events: $.slots.footer[0]."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "component": "cre8-divider"
+    },
+    {
+      "component": "cre8-tag-list",
+      "props": {
+        "label": "Topics",
+        "fieldId": "topics"
+      },
+      "children": [
+        {
+          "component": "cre8-tag",
+          "props": {
+            "text": "Design tokens",
+            "type": "checkbox",
+            "variant": "neutral",
+            "shape": "round",
+            "name": "topics"
+          }
+        },
+        {
+          "component": "cre8-tag",
+          "props": {
+            "text": "Streaming UI",
+            "type": "checkbox",
+            "variant": "neutral",
+            "shape": "round",
+            "name": "topics"
+          }
+        },
+        {
+          "component": "cre8-tag",
+          "props": {
+            "text": "Accessibility",
+            "type": "checkbox",
+            "variant": "neutral",
+            "shape": "round",
+            "name": "topics"
+          }
+        },
+        {
+          "component": "cre8-tag",
+          "props": {
+            "text": "Web components",
+            "type": "checkbox",
+            "variant": "neutral",
+            "shape": "round",
+            "name": "topics"
+          }
+        }
+      ]
+    },
+    {
+      "component": "cre8-divider"
+    },
+    {
+      "component": "cre8-checkbox-field",
+      "props": {
+        "label": "Notify me about",
+        "fieldNote": "You can change this later."
+      },
+      "children": [
+        {
+          "component": "cre8-checkbox-field-item",
+          "props": {
+            "label": "Catalog changes",
+            "name": "notify",
+            "value": "catalog",
+            "checked": true
+          }
+        },
+        {
+          "component": "cre8-checkbox-field-item",
+          "props": {
+            "label": "Breaking spec changes",
+            "name": "notify",
+            "value": "breaking"
+          }
+        }
+      ]
+    },
+    {
+      "component": "cre8-divider"
+    },
+    {
+      "component": "cre8-list",
+      "children": [
+        {
+          "component": "cre8-list-item",
+          "children": [
+            "Validate before returning a spec."
+          ]
+        },
+        {
+          "component": "cre8-list-item",
+          "children": [
+            "Look up children-vs-slots; it cannot be guessed."
+          ]
+        },
+        {
+          "component": "cre8-list-item",
+          "children": [
+            "Stream tokens with appendText, not by resending the tree."
+          ]
+        }
+      ]
+    },
+    {
+      "component": "cre8-divider"
+    },
+    {
+      "component": "cre8-link-list",
+      "props": {
+        "behavior": "responsive"
+      },
+      "children": [
+        {
+          "component": "cre8-link-list-item",
+          "props": {
+            "href": "/docs/kb"
+          },
+          "slots": {
+            "default": [
+              "Knowledge base"
+            ]
+          }
+        },
+        {
+          "component": "cre8-link-list-item",
+          "props": {
+            "href": "/a2ui/catalog"
+          },
+          "slots": {
+            "default": [
+              "A2UI catalog"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "component": "cre8-divider"
+    },
+    {
+      "component": "cre8-progress-steps",
+      "children": [
+        {
+          "component": "cre8-progress-steps-item",
+          "props": {
+            "name": "Open surface",
+            "message": "Returned a URL",
+            "state": "complete"
+          }
+        },
+        {
+          "component": "cre8-progress-steps-item",
+          "props": {
+            "name": "Stream ops",
+            "message": "Patching live",
+            "state": "current"
+          }
+        },
+        {
+          "component": "cre8-progress-steps-item",
+          "props": {
+            "name": "Await events",
+            "message": "Waiting on a click"
+          }
+        }
+      ]
+    },
+    {
+      "component": "cre8-divider"
+    },
+    {
+      "component": "cre8-breadcrumbs",
+      "props": {
+        "navAriaLabel": "Breadcrumb"
+      },
+      "children": [
+        {
+          "component": "cre8-breadcrumbs-item",
+          "children": [
+            {
+              "component": "cre8-text-link",
+              "props": {
+                "href": "/docs"
+              },
+              "slots": {
+                "default": [
+                  "Docs"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "component": "cre8-breadcrumbs-item",
+          "children": [
+            "Streaming UI"
+          ]
+        }
+      ]
+    },
+    {
+      "component": "cre8-divider"
+    },
+    {
+      "component": "cre8-dropdown",
+      "props": {
+        "buttonText": "Theme"
+      },
+      "children": [
+        {
+          "component": "cre8-dropdown-item",
+          "props": {
+            "ariaLabel": "Use the cre8 brand"
+          },
+          "children": [
+            "cre8"
+          ]
+        },
+        {
+          "component": "cre8-dropdown-item",
+          "props": {
+            "ariaLabel": "Use the a2ui brand"
+          },
+          "children": [
+            "cre8-a2ui"
+          ]
+        }
+      ]
+    }
+  ]
+}

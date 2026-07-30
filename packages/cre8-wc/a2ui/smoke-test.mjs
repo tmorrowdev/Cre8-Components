@@ -19,7 +19,7 @@ const spec = {
   component: 'cre8-card',
   slots: {
     header: [{ component: 'cre8-button', props: { text: 'Close', variant: 'tertiary' } }],
-    body: [
+    default: [
       { component: 'cre8-alert', props: { status: 'info' } },
       {
         component: 'cre8-button-group',

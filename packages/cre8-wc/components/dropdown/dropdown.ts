@@ -2,13 +2,21 @@ import { html, nothing,  } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import svgCaretDown from '@tmorrow/cre8-wc/icons/Caret_Down_Filled.svg?raw';
 import { Cre8Element } from '../cre8-element';
+import { syncLightChildren, type ChildSpec } from '../utils/light-children';
 import styles from './dropdown.styles.js';
+
+/** One item in a data-driven dropdown. */
+export interface Cre8DropdownItemData {
+  text: string;
+  ariaLabel?: string;
+}
 
 /**
  * The Dropdown menu itself is a container that can host multiple interactive items, commonly formatted as a list
  *
  * @slot - The `cre8-dropdown-item` children of the menu
  */
+
 
 export class Cre8Dropdown extends Cre8Element {
     static styles = [styles];
@@ -76,6 +84,29 @@ export class Cre8Dropdown extends Cre8Element {
   private _closeDropdown() {
       this.open = false;
   }
+  /**
+   * Items for a data-driven dropdown. Set this and the dropdown builds its own
+   * `cre8-dropdown-item` children in the light DOM.
+   */
+  @property({ type: Array })
+      items?: Cre8DropdownItemData[];
+
+  /** The composition the data property stands for. */
+  private buildComposition(): ChildSpec[] | null {
+      if (!this.items) return null;
+      return this.items.map((item) => ({
+          tag: 'cre8-dropdown-item',
+          props: item.ariaLabel ? { ariaLabel: item.ariaLabel } : undefined,
+          text: item.text,
+      }));
+  }
+
+  protected updated(changed: Map<string, unknown>): void {
+      if (['items'].some((key) => changed.has(key))) {
+          syncLightChildren(this, this.buildComposition());
+      }
+  }
+
 
   render() {
       const componentClassNames = this.componentClassNames('cre8-c-dropdown', {

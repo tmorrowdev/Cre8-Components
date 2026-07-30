@@ -76,7 +76,7 @@ function attachEvent(el, component, path, eventName, binding, onEvent) {
         });
     });
 }
-function applyProp(el, key, value, schema) {
+export function applyProp(el, key, value, schema) {
     if (value === undefined || value === null)
         return;
     if (schema?.['x-kind'] === 'property') {

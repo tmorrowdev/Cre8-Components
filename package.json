@@ -18,7 +18,10 @@
     "kb:check": "node docs/kb/tools/check-links.mjs && node docs/kb/tools/check-examples.mjs && node docs/kb/tools/check-demo-attrs.mjs && node docs/kb/tools/check-drift.mjs",
     "kb:check-urls": "node docs/kb/tools/check-urls.mjs",
     "kb:check-drift": "node docs/kb/tools/check-drift.mjs",
-    "kb:check-demo-attrs": "node docs/kb/tools/check-demo-attrs.mjs"
+    "kb:check-demo-attrs": "node docs/kb/tools/check-demo-attrs.mjs",
+    "test:mcp": "pnpm --filter @tmorrow/cre8-mcp test",
+    "test:a2ui": "pnpm --filter @tmorrow/cre8-wc test:a2ui",
+    "audit:render": "pnpm --filter @tmorrow/cre8-wc audit:render"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"

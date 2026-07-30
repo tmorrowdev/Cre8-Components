@@ -2,7 +2,17 @@ import { html,  } from 'lit';
 import { property } from 'lit/decorators.js';
 import { nanoid } from 'nanoid';
 import { Cre8Element } from '../cre8-element';
+import { syncLightChildren, type ChildSpec } from '../utils/light-children';
 import styles from './tag-list.styles.js';
+
+/** One tag in a data-driven tag list. */
+export interface Cre8TagData {
+  text: string;
+  variant?: 'neutral' | 'branded' | 'neutral-hybrid';
+  shape?: 'square' | 'round';
+  type?: 'checkbox' | 'radio';
+  disabled?: boolean;
+}
 
 /**
  * Tag List must have children which are Tag components that are of type `checkbox` or `radio`.
@@ -11,6 +21,7 @@ import styles from './tag-list.styles.js';
  *
  * @slot - The `cre8-tag` children of the list
  */
+
 export class Cre8TagList extends Cre8Element {
     static styles = [styles];
 
@@ -34,6 +45,36 @@ export class Cre8TagList extends Cre8Element {
   private _initializeAria() {
       this.fieldId = this.fieldId || nanoid();
   }
+  /**
+   * Tags for a data-driven tag list. Set this and the list builds its own
+   * `cre8-tag` children in the light DOM. Leave it unset to compose them
+   * yourself.
+   */
+  @property({ type: Array })
+      tags?: Cre8TagData[];
+
+  /** The composition the data property stands for. */
+  private buildComposition(): ChildSpec[] | null {
+      if (!this.tags) return null;
+      return this.tags.map((tag) => ({
+          tag: 'cre8-tag',
+          props: {
+              text: tag.text,
+              variant: tag.variant,
+              shape: tag.shape,
+              type: tag.type,
+              disabled: tag.disabled,
+              name: this.fieldId,
+          },
+      }));
+  }
+
+  protected updated(changed: Map<string, unknown>): void {
+      if (['tags', 'fieldId'].some((key) => changed.has(key))) {
+          syncLightChildren(this, this.buildComposition());
+      }
+  }
+
 
   render() {
       const componentClassNames = this.componentClassNames('cre8-c-tag-list', { });

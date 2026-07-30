@@ -947,6 +947,23 @@
                   "padded"
                 ],
                 "x-kind": "attribute"
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "text": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "text"
+                  ],
+                  "additionalProperties": false
+                },
+                "description": "Items for a data-driven list. Set this and the list builds its own\n`cre8-list-item` children in the light DOM — the same composition you would\nwrite by hand. Leave it unset to compose the list yourself.",
+                "x-kind": "attribute"
               }
             }
           },
@@ -1063,6 +1080,56 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
+              "columns": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "key": {
+                      "type": "string"
+                    },
+                    "width": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "label"
+                  ],
+                  "additionalProperties": false
+                },
+                "description": "Columns for a data-driven table. Set this with `rows` and the table builds\nits own header, body, rows and cells — the same composition you would write\nby hand, generated into the light DOM, so nothing about styling or\nbehaviour changes.\n\nLeave both unset to compose the table yourself with `cre8-table-header`,\n`cre8-table-body` and friends. Do not do both on one table.",
+                "x-kind": "attribute"
+              },
+              "rows": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": [
+                          "string",
+                          "number"
+                        ]
+                      }
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": [
+                          "string",
+                          "number"
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "description": "Rows for a data-driven table. Each row is either an object keyed by the\ncolumns' `key`, or an array of values positioned to match `columns`.",
+                "x-kind": "attribute"
+              },
               "caption": {
                 "description": "Specifies the caption/title of the table, visible to all users.\nIncreases accessibility of table.",
                 "type": "string",
@@ -1495,6 +1562,48 @@
                 "type": "string",
                 "x-kind": "attribute"
               },
+              "tags": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "text": {
+                      "type": "string"
+                    },
+                    "variant": {
+                      "type": "string",
+                      "enum": [
+                        "neutral",
+                        "branded",
+                        "neutral-hybrid"
+                      ]
+                    },
+                    "shape": {
+                      "type": "string",
+                      "enum": [
+                        "square",
+                        "round"
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "checkbox",
+                        "radio"
+                      ]
+                    },
+                    "disabled": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "text"
+                  ],
+                  "additionalProperties": false
+                },
+                "description": "Tags for a data-driven tag list. Set this and the list builds its own\n`cre8-tag` children in the light DOM. Leave it unset to compose them\nyourself.",
+                "x-kind": "attribute"
+              },
               "fieldId": {
                 "description": "The unique id of the select",
                 "type": "string",
@@ -1529,6 +1638,39 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "heading": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    },
+                    "isActive": {
+                      "type": "boolean"
+                    },
+                    "headingTagVariant": {
+                      "type": "string",
+                      "enum": [
+                        "h1",
+                        "h2",
+                        "h3",
+                        "h4"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "heading",
+                    "content"
+                  ],
+                  "additionalProperties": false
+                },
+                "description": "Panels for a data-driven accordion. Each becomes a `cre8-accordion-item`\nwith its heading as a prop and its content in the default slot.",
+                "x-kind": "attribute"
+              },
               "borderType": {
                 "description": "borderType",
                 "type": "string",
@@ -1677,6 +1819,26 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "text": {
+                      "type": "string"
+                    },
+                    "ariaLabel": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "text"
+                  ],
+                  "additionalProperties": false
+                },
+                "description": "Items for a data-driven dropdown. Set this and the dropdown builds its own\n`cre8-dropdown-item` children in the light DOM.",
+                "x-kind": "attribute"
+              },
               "buttonText": {
                 "description": "Dropdown header",
                 "type": "string",
@@ -2703,6 +2865,40 @@
                 "type": "string",
                 "x-kind": "attribute"
               },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    },
+                    "checked": {
+                      "type": "boolean"
+                    },
+                    "disabled": {
+                      "type": "boolean"
+                    },
+                    "required": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "label"
+                  ],
+                  "additionalProperties": false
+                },
+                "description": "Checkboxes for a data-driven field. Each becomes a\n`cre8-checkbox-field-item`, sharing the field's `name` so they submit as a\ngroup.",
+                "x-kind": "attribute"
+              },
+              "name": {
+                "description": "Form control name shared by every generated item.",
+                "type": "string",
+                "x-kind": "attribute"
+              },
               "fieldNote": {
                 "description": "Checkbox container fieldnote",
                 "type": "string",
@@ -3424,6 +3620,40 @@
             "properties": {
               "label": {
                 "description": "Radio field legend label",
+                "type": "string",
+                "x-kind": "attribute"
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "string"
+                    },
+                    "checked": {
+                      "type": "boolean"
+                    },
+                    "disabled": {
+                      "type": "boolean"
+                    },
+                    "required": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "label"
+                  ],
+                  "additionalProperties": false
+                },
+                "description": "Options for a data-driven radio field. Each becomes a\n`cre8-radio-field-item` sharing the field's `name`, which is what the form\nsubmits under. Exclusivity is enforced by the field itself — see\n`enforceSingleSelection`, and do not assume `name` alone does it.",
+                "x-kind": "attribute"
+              },
+              "name": {
+                "description": "Form control name shared by every generated option.",
                 "type": "string",
                 "x-kind": "attribute"
               },
@@ -4741,6 +4971,26 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "text": {
+                      "type": "string"
+                    },
+                    "href": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "text"
+                  ],
+                  "additionalProperties": false
+                },
+                "description": "Crumbs for a data-driven trail. Each becomes a `cre8-breadcrumbs-item`,\nwrapping a `cre8-text-link` when it has an `href`.",
+                "x-kind": "attribute"
+              },
               "navAriaLabel": {
                 "description": "aria-label attribute to designate at name for the nav. Can be override by user",
                 "default": "breadcrumbs",
@@ -5210,6 +5460,30 @@
                   "display"
                 ],
                 "x-kind": "attribute"
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "text": {
+                      "type": "string"
+                    },
+                    "href": {
+                      "type": "string"
+                    },
+                    "isActive": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "href"
+                  ],
+                  "additionalProperties": false
+                },
+                "description": "Links for a data-driven list. Each becomes a `cre8-link-list-item`.\n\nWorth knowing if you compose these by hand: the label goes in the item's\ndefault slot, *not* its `text` prop. That prop is declared and documented\nbut never rendered, so setting it produces an empty link that passes every\ncheck — see the drift ledger in `docs/kb/07-research.md`. This API routes\naround it.",
+                "x-kind": "attribute"
               }
             }
           },
@@ -5659,6 +5933,26 @@
                 "const": "sm",
                 "x-kind": "attribute"
               },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "label"
+                  ],
+                  "additionalProperties": false
+                },
+                "description": "Tabs for a data-driven tab set. Each entry becomes a `cre8-tab` in the\ndefault slot *and* a `cre8-tab-panel` in the `panel` slot, with matching\nindices — two slots kept in step, which is the part that goes wrong when\nthese are written by hand.",
+                "x-kind": "attribute"
+              },
               "fullWidth": {
                 "description": "Displays a set of tabs with a spanning the width of the element",
                 "type": "boolean",
@@ -5940,7 +6234,37 @@
           "props": {
             "type": "object",
             "additionalProperties": false,
-            "properties": {}
+            "properties": {
+              "steps": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string",
+                      "enum": [
+                        "error",
+                        "warning",
+                        "complete",
+                        "current"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "additionalProperties": false
+                },
+                "description": "Steps for a data-driven progress indicator. Note that the visible label is\neach item's `name` prop rather than its content — `cre8-progress-steps-item`\ndoes not render children, which is easy to get wrong by hand.",
+                "x-kind": "attribute"
+              }
+            }
           },
           "children": {
             "type": "array",

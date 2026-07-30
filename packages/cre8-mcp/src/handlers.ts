@@ -465,7 +465,7 @@ export function handleGenerateCode(input: GenerateCodeInput): string {
 
 let registeredCatalogCache: RegisteredCatalog | null = null;
 
-function loadA2uiCatalog(): RegisteredCatalog {
+export function loadA2uiCatalog(): RegisteredCatalog {
   if (registeredCatalogCache) return registeredCatalogCache;
   const require = createRequire(import.meta.url);
   const catalogPath = require.resolve('@tmorrow/cre8-wc/a2ui/catalog.json');

@@ -215,6 +215,30 @@
       "path": "04-a2ui.md#conformance-with-a2uiorg-v10"
     },
     {
+      "intent": "how do I stream ui instead of returning markup",
+      "path": "08-streaming-ui.md"
+    },
+    {
+      "intent": "how does an agent update ui without re-rendering",
+      "path": "08-streaming-ui.md#the-ops"
+    },
+    {
+      "intent": "what is a surface",
+      "path": "08-streaming-ui.md"
+    },
+    {
+      "intent": "how do I stream tokens into a component",
+      "path": "08-streaming-ui.md#streaming-text-is-the-op-that-matters"
+    },
+    {
+      "intent": "how do I bind a prop to a data model",
+      "path": "08-streaming-ui.md#binding-props-to-a-data-model"
+    },
+    {
+      "intent": "how do I get a click back from generated ui",
+      "path": "08-streaming-ui.md#events-come-back-the-same-way-they-always-did"
+    },
+    {
       "intent": "how should I prompt an agent to build cre8 ui",
       "path": "05-ai-fluency.md"
     },
