@@ -1,0 +1,8 @@
+.venv/
+preview/
+__pycache__/
+*.pyc
+.pytest_cache/
+recording/raw/
+recording/*.webm
+recording/*.mp4
