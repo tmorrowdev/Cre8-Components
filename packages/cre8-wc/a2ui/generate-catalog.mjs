@@ -387,6 +387,11 @@ const compactComponents = Object.entries(components)
     // container look like a leaf.
     if (props.children) entry.acceptsChildren = true;
     if (props.slots) entry.slots = Object.keys(props.slots.properties ?? {});
+    // Events live under `x-events`, not under `properties`, which makes them easy
+    // to miss — the studio's hand-rolled summary looked for them in the wrong
+    // place and so showed the model none of the 22 events the library emits.
+    const events = Object.keys(def['x-events'] ?? {});
+    if (events.length) entry.events = events;
     return entry;
   })
   .sort((a, b) => a.name.localeCompare(b.name));
