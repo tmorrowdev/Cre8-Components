@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { ComponentSpec, EmittedEvent } from "@tmorrow/cre8-wc/a2ui";
 import { A2uiCanvas } from "./a2ui-canvas";
+import { streamTurn } from "@/lib/turn-source";
+import { ByokPanel } from "./byok-panel";
 
 type UiBlock =
   | { kind: "text"; text: string }
@@ -123,17 +125,6 @@ export default function Chat() {
   const postTurn = useCallback(async (history: ChatMessage[]) => {
     setStreaming(true);
     try {
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: toWire(history) }),
-      });
-      if (!res.ok || !res.body) throw new Error(`HTTP ${res.status}`);
-
-      const reader = res.body.getReader();
-      const decoder = new TextDecoder();
-      let buffer = "";
-
       const pushBlock = (fn: (blocks: UiBlock[]) => UiBlock[]) => {
         setMessages((prev) => {
           const copy = [...prev];
@@ -196,28 +187,12 @@ export default function Chat() {
         }
       };
 
-      while (true) {
-        const { value, done } = await reader.read();
-        if (done) break;
-        buffer += decoder.decode(value, { stream: true });
-        let idx;
-        while ((idx = buffer.indexOf("\n\n")) !== -1) {
-          const frame = buffer.slice(0, idx);
-          buffer = buffer.slice(idx + 2);
-          let event = "message";
-          let dataStr = "";
-          for (const line of frame.split("\n")) {
-            if (line.startsWith("event: ")) event = line.slice(7);
-            else if (line.startsWith("data: ")) dataStr += line.slice(6);
-          }
-          if (dataStr) {
-            try {
-              handleEvent(event, JSON.parse(dataStr));
-            } catch {
-              /* ignore malformed frame */
-            }
-          }
-        }
+      // Both paths yield the same events. With a BYOK key the loop runs in this
+      // tab against the user's own credentials and nothing is serialised at
+      // all; without one it falls back to the server's metered trial and the
+      // SSE frames are parsed back into the same shape.
+      for await (const event of streamTurn(toWire(history))) {
+        handleEvent(event.type, event);
       }
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
@@ -317,6 +292,7 @@ export default function Chat() {
 
   return (
     <>
+      <ByokPanel />
       <div className="thread" ref={threadRef}>
         {messages.length === 0 && (
           <div className="msg msg-assistant">
