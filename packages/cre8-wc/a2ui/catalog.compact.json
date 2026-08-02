@@ -1,7 +1,7 @@
 {
   "contractVersion": 1,
-  "sourceCatalog": "https://cre8.dev/a2ui/catalogs/cre8-wc/2.0.7",
-  "libraryVersion": "2.0.7",
+  "sourceCatalog": "https://cre8.dev/a2ui/catalogs/cre8-wc/2.1.0",
+  "libraryVersion": "2.1.0",
   "componentCount": 85,
   "components": [
     {
