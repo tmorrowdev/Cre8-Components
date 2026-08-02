@@ -23,6 +23,15 @@ import {
 } from './handlers.js';
 import type { GetPatternsInput, SearchComponentsInput, GenerateCodeInput } from './handlers.js';
 import { handleGetA2uiContext } from './a2ui-context.js';
+import {
+  RateLimiter,
+  isAlwaysOpenPath,
+  isMultiTenant,
+  isPrivilegedPath,
+  loadTenantConfig,
+  resolveTenant,
+  type TenantConfig,
+} from './tenants.js';
 import { WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js';
 import { Cre8GuideSchema, GetContentModelSchema, handleCre8Guide, handleGetContentModel } from './knowledge-tools.js';
 import { GetCompositionSchema, handleGetComposition } from './composition.js';
@@ -34,6 +43,24 @@ export interface AppOptions {
   port?: number;
   /** Overrides $CRE8_MCP_TOKEN. Pass an empty string to disable the gate. */
   token?: string;
+  /** Overrides $CRE8_MCP_TENANTS. Injected by tests. */
+  tenants?: TenantConfig;
+  /** Injected by tests so limits can be exercised without waiting a minute. */
+  rateLimiter?: RateLimiter;
+}
+
+/**
+ * Rate-limit bucket for an anonymous caller.
+ *
+ * Best-effort: behind a proxy every caller can share an address, so this
+ * throttles a runaway client rather than isolating users from each other.
+ */
+function clientKey(c: { req: { header: (name: string) => string | undefined } }): string {
+  return (
+    c.req.header('x-forwarded-for')?.split(',')[0]?.trim() ||
+    c.req.header('x-real-ip') ||
+    'unknown'
+  );
 }
 
 export function createApp(options: AppOptions = {}): Hono {
@@ -60,13 +87,60 @@ export function createApp(options: AppOptions = {}): Hono {
   // random bits, so the URL itself is the capability.
   mountSurfaceViewer(app);
 
-  // Bearer token gate — set CRE8_MCP_TOKEN to enable; skip for /health
+  /**
+   * Access control.
+   *
+   * Single-tenant (only `CRE8_MCP_TOKEN` set) behaves exactly as before: one
+   * token, gating everything but `/health`. Per-tenant mode is opt-in via
+   * `CRE8_MCP_TENANTS`, so upgrading never loosens an existing deployment.
+   *
+   * In per-tenant mode the split follows what is actually sensitive. The
+   * catalog is derived from a public npm package, so gating it protects
+   * nothing — anonymous callers get it, rate limited. Surface ids are
+   * unguessable capabilities that `GET /surfaces` enumerates, so those stay
+   * closed.
+   */
+  // `legacyToken` follows the *effective* token, not the environment, so a
+  // caller that injects one (tests, embedders) is honoured.
+  const tenantConfig = options.tenants ?? { ...loadTenantConfig(), legacyToken: token || undefined };
+  const limiter = options.rateLimiter ?? new RateLimiter();
+  const multiTenant = isMultiTenant(tenantConfig);
+
   app.use('*', async (c, next) => {
-    if (!token) return next();
-    const auth = c.req.header('authorization') ?? '';
-    if (!auth.startsWith('Bearer ') || auth.slice(7) !== token) {
-      return c.json({ error: 'Unauthorized' }, 401);
+    const path = new URL(c.req.url).pathname;
+    if (isAlwaysOpenPath(path)) return next();
+
+    const authorization = c.req.header('authorization');
+    const tenant = resolveTenant(tenantConfig, authorization);
+
+    if (!multiTenant) {
+      if (!token) return next();
+      if (!tenant) return c.json({ error: 'Unauthorized' }, 401);
+      return next();
     }
+
+    if (!tenant && isPrivilegedPath(path)) {
+      return c.json({ error: 'Unauthorized', detail: 'Surfaces require a tenant token.' }, 401);
+    }
+    if (!tenant && authorization) {
+      // A token was offered and not recognised. Falling through to anonymous
+      // would silently downgrade a caller who believes they are authenticated.
+      return c.json({ error: 'Unauthorized', detail: 'Unrecognised token.' }, 401);
+    }
+
+    const now = Date.now();
+    const key = tenant ? `t:${tenant.id}` : `anon:${clientKey(c)}`;
+    const limit = tenant ? tenant.limit : tenantConfig.anonymousLimit;
+    const retryAfter = limiter.check(key, limit, now);
+    if (retryAfter !== null) {
+      return c.json(
+        { error: 'Too Many Requests', detail: `Limit is ${limit}/min.`, retryAfter },
+        429,
+        { 'Retry-After': String(retryAfter) }
+      );
+    }
+    if (limiter.size > 10_000) limiter.sweep(now);
+
     return next();
   });
 
