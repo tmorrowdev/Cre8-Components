@@ -13,10 +13,11 @@ export interface Cre8DropdownProps {
   dropdownWithLink?: boolean;
   /** Items for a data-driven dropdown. Set this and the dropdown builds its own `cre8-dropdown-item` children in the light DOM. */
   items?: Cre8DropdownItemData[];
+  children?: React.ReactNode;
 }
 
 /**
- * Cre8Dropdown component
+ * The Dropdown menu itself is a container that can host multiple interactive items, commonly formatted as a list
  */
 export const Cre8Dropdown = createComponent({
   react: React,

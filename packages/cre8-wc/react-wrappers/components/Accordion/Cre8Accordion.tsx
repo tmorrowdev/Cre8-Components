@@ -11,10 +11,11 @@ export interface Cre8AccordionProps {
   hasDivider?: boolean;
   /** Panels for a data-driven accordion. Each becomes a `cre8-accordion-item` with its heading as a prop and its content in the default slot. */
   items?: Cre8AccordionItemData[];
+  children?: React.ReactNode;
 }
 
 /**
- * Cre8Accordion component
+ * The component is a vertically stacked list of headers that reveal or hide sections of related content on a page.
  */
 export const Cre8Accordion = createComponent({
   react: React,

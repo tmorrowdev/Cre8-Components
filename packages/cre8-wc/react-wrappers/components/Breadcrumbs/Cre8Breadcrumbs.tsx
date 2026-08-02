@@ -9,10 +9,11 @@ export interface Cre8BreadcrumbsProps {
   navAriaLabel?: string;
   /** Crumbs for a data-driven trail. Each becomes a `cre8-breadcrumbs-item`, wrapping a `cre8-text-link` when it has an `href`. */
   items?: Cre8BreadcrumbData[];
+  children?: React.ReactNode;
 }
 
 /**
- * Cre8Breadcrumbs component
+ * The breadcrumbs component is a secondary navigation pattern that helps a user understand where the user is located.
  */
 export const Cre8Breadcrumbs = createComponent({
   react: React,

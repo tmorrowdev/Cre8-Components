@@ -17,6 +17,7 @@ export interface Cre8LinkListProps {
   variant?: any;
   /** Links for a data-driven list. Each becomes a `cre8-link-list-item`.  Worth knowing if you compose these by hand: the label goes in the item's default slot, *not* its `text` prop. That prop is declared and documented but never rendered, so setting it produces an empty link that passes every check — see the drift ledger in `docs/kb/07-research.md`. This API routes around it. */
   items?: Cre8LinkData[];
+  children?: React.ReactNode;
 }
 
 /**

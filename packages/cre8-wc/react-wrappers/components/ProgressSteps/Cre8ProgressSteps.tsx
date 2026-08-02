@@ -7,10 +7,11 @@ export type { Cre8ProgressStepData } from '@tmorrow/cre8-wc/lib/components/progr
 export interface Cre8ProgressStepsProps {
   /** Steps for a data-driven progress indicator. Note that the visible label is each item's `name` prop rather than its content — `cre8-progress-steps-item` does not render children, which is easy to get wrong by hand. */
   steps?: Cre8ProgressStepData[];
+  children?: React.ReactNode;
 }
 
 /**
- * Cre8ProgressSteps component
+ * The Progress Steps component is used to display where a user is in a multistep process.
  */
 export const Cre8ProgressSteps = createComponent({
   react: React,
