@@ -336,7 +336,7 @@ function buildComponent(c) {
     def.properties.children = {
       type: 'array',
       description: (rawSlots.default?.description || '').trim() || 'Child instances rendered into the default slot.',
-      items: { $ref: '#/$defs/Component' },
+      items: { $ref: '#/$defs/Child' },
     };
   } else if (hasSlots) {
     const slotProps = {};
@@ -346,7 +346,7 @@ function buildComponent(c) {
       slotProps[name] = {
         type: 'array',
         description: (slot.description || '').trim(),
-        items: { $ref: '#/$defs/Component' },
+        items: { $ref: '#/$defs/Child' },
       };
       slotDescriptions[name] = (slot.description || '').trim();
     }
@@ -414,6 +414,19 @@ const catalog = {
     Component: {
       description: 'A component instance in the cre8-wc catalog.',
       oneOf: componentRefs,
+    },
+    // Slot content is a component *or* literal text. `renderer.ts` has always
+    // turned a bare string into a text node, but the schema never said so, and
+    // that gap is load-bearing rather than cosmetic: 56 of 85 components carry
+    // no text-bearing prop, so their entire visible content arrives this way. A
+    // schema-constrained generator — guided decoding, or any JSON-Schema-
+    // constrained model — could not give those components any content at all.
+    //
+    // `root` stays a Component deliberately: a document cannot be bare text.
+    Child: {
+      description:
+        'Slot content: either a nested component instance or literal text, which renders as a text node.',
+      oneOf: [{ $ref: '#/$defs/Component' }, { type: 'string' }],
     },
     EventBinding: EVENT_BINDING_SCHEMA,
     NativeEventName: {

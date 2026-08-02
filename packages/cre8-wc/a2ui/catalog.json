@@ -328,6 +328,17 @@
         }
       ]
     },
+    "Child": {
+      "description": "Slot content: either a nested component instance or literal text, which renders as a text node.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/Component"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
     "EventBinding": {
       "description": "A handler name, or an object naming the handler plus dispatch options.",
       "oneOf": [
@@ -610,14 +621,14 @@
                 "type": "array",
                 "description": "Content rendered before the button text, such as an icon",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "after": {
                 "type": "array",
                 "description": "Content rendered after the button text, such as an icon",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -679,7 +690,7 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -927,7 +938,7 @@
             "type": "array",
             "description": "The component content , this will consist of the dropdown when the user clicks the caret",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -1169,7 +1180,7 @@
             "type": "array",
             "description": "The list items",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -1207,7 +1218,7 @@
             "type": "array",
             "description": "The content of the list item",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -1395,7 +1406,7 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -1433,7 +1444,7 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -1488,7 +1499,7 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -1526,7 +1537,7 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -1575,7 +1586,7 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -1618,21 +1629,21 @@
                 "type": "array",
                 "description": "The component content",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "header": {
                 "type": "array",
                 "description": "Content rendered in the table object header",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "footer": {
                 "type": "array",
                 "description": "Content rendered in the table object footer",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -1711,14 +1722,14 @@
                 "type": "array",
                 "description": "The component content",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "expandableContent": {
                 "type": "array",
                 "description": "Content revealed when the row is expanded",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -1941,7 +1952,7 @@
             "type": "array",
             "description": "The `cre8-tag` children of the list",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -2030,7 +2041,7 @@
             "type": "array",
             "description": "The `cre8-accordion-item` children to group",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -2129,14 +2140,14 @@
                 "type": "array",
                 "description": "The body of the accordion item will be any valid html\ninserted between the cre8-accordion-item opening and closing tags.",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "heading": {
                 "type": "array",
                 "description": "Custom heading content, used when the `heading` property is not set.",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -2226,7 +2237,7 @@
             "type": "array",
             "description": "The `cre8-dropdown-item` children of the menu",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -2270,7 +2281,7 @@
             "type": "array",
             "description": "The label content for the dropdown item.",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -2378,21 +2389,21 @@
                 "type": "array",
                 "description": "The component content",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "header": {
                 "type": "array",
                 "description": "Custom header content for the modal",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "footer": {
                 "type": "array",
                 "description": "Custom footer content for the modal",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -2515,28 +2526,28 @@
                 "type": "array",
                 "description": "The component content",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "trigger": {
                 "type": "array",
                 "description": "The element that toggles the popover open and closed",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "header": {
                 "type": "array",
                 "description": "Custom header content for the popover panel",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "footer": {
                 "type": "array",
                 "description": "Custom footer content for the popover panel",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -2600,7 +2611,7 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -2644,7 +2655,7 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -2751,14 +2762,14 @@
                 "type": "array",
                 "description": "Default, unnamed slot container for Tooltip text",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "trigger": {
                 "type": "array",
                 "description": "Named slot container for Tooltip element to trigger showing/hiding the Tooltip text",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -2893,14 +2904,14 @@
                 "type": "array",
                 "description": "The alert body content",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "cta": {
                 "type": "array",
                 "description": "Container for a call-to-action button or link",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -3049,7 +3060,7 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -3327,7 +3338,7 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -3488,7 +3499,7 @@
             "type": "array",
             "description": "The component content, which should be a set of `checkbox-field-item`s",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -3625,7 +3636,7 @@
                 "type": "array",
                 "description": "Container for optional field note content",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -3832,7 +3843,7 @@
                 "type": "array",
                 "description": "Container for optional field note content",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -4016,7 +4027,7 @@
                 "type": "array",
                 "description": "Container for optional field note content",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -4075,7 +4086,7 @@
             "type": "array",
             "description": "The note content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -4197,7 +4208,7 @@
                 "type": "array",
                 "description": "Container for optional field note content",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -4324,7 +4335,7 @@
             "type": "array",
             "description": "The component content, which should be a set of `radio-field-item`s",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -4612,7 +4623,7 @@
                 "type": "array",
                 "description": "Container for optional field note content",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -4788,35 +4799,35 @@
                 "type": "array",
                 "description": "The default slot goes into the center, main part of the Select Tile.\n  Consider using title and body instead.",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "header": {
                 "type": "array",
                 "description": "The top or left part of the Select Tile",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "footer": {
                 "type": "array",
                 "description": "The bottom or right part of the Select Tile",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "title": {
                 "type": "array",
                 "description": "The title part of the Select Tile, use with body slot and\n        instead of the default slot for appropriate typography.",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "body": {
                 "type": "array",
                 "description": "The \"body\" part of the Select Tile, which appears under\n         the title slot and receives apporpriate typography.",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -4927,7 +4938,7 @@
             "type": "array",
             "description": "Child instances rendered into the default slot.",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -4977,7 +4988,7 @@
             "type": "array",
             "description": "The band content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -5038,21 +5049,21 @@
                 "type": "array",
                 "description": "The card's body content",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "header": {
                 "type": "array",
                 "description": "(Optional) Content in the card's header",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "footer": {
                 "type": "array",
                 "description": "(Optional) Content in the card's footer",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -5183,7 +5194,7 @@
             "type": "array",
             "description": "The grid items",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -5221,7 +5232,7 @@
             "type": "array",
             "description": "The content of the grid item",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -5290,7 +5301,7 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -5335,7 +5346,7 @@
             "type": "array",
             "description": "The layout content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -5379,7 +5390,7 @@
             "type": "array",
             "description": "The contents of the layout container",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -5430,7 +5441,7 @@
             "type": "array",
             "description": "The content of the layout section",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -5468,7 +5479,7 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -5512,7 +5523,7 @@
             "type": "array",
             "description": "The main content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -5561,14 +5572,14 @@
                 "type": "array",
                 "description": "The content of the section should go here.\nIt could be a cre8-text-passage, a cre8-card or any other block level html.",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "header": {
                 "type": "array",
                 "description": "Custom header content, rendered in place of the `headline` property",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -5633,7 +5644,7 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -5683,14 +5694,14 @@
                 "type": "array",
                 "description": "The page header content",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "titleAfter": {
                 "type": "array",
                 "description": "Content rendered after the heading text, inside the title element",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -5798,7 +5809,7 @@
             "type": "array",
             "description": "The logo element",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -5863,7 +5874,7 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -5901,7 +5912,7 @@
             "type": "array",
             "description": "The component content, the expected slotted content is a Cre8 Link or a String for the \"terminal node\"",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -5944,21 +5955,21 @@
                 "type": "array",
                 "description": "The footer content",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "top": {
                 "type": "array",
                 "description": "The top content (above the default slot)",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "bottom": {
                 "type": "array",
                 "description": "The bottom content (below the default slot)",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -6021,7 +6032,7 @@
             "type": "array",
             "description": "The primary navigation items",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -6093,21 +6104,21 @@
                 "type": "array",
                 "description": "The label for the navigation item",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "itemBefore": {
                 "type": "array",
                 "description": "Content rendered before the item label, such as an icon",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "itemAfter": {
                 "type": "array",
                 "description": "Content rendered after the item label, such as an icon",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -6163,21 +6174,21 @@
                 "type": "array",
                 "description": "The header content",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "top": {
                 "type": "array",
                 "description": "Content rendered above the main header row",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "bottom": {
                 "type": "array",
                 "description": "Content rendered below the main header row",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -6310,14 +6321,14 @@
                 "type": "array",
                 "description": "The link text content",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "badge": {
                 "type": "array",
                 "description": "Container for an optional badge displayed alongside the link",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -6421,7 +6432,7 @@
             "type": "array",
             "description": "The link list items",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -6480,21 +6491,21 @@
                 "type": "array",
                 "description": "The default slot to put badges or other Components",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "itemBefore": {
                 "type": "array",
                 "description": "Content rendered before the link text, such as an icon",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "itemAfter": {
                 "type": "array",
                 "description": "Content rendered after the link text, such as an icon",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -6539,7 +6550,7 @@
             "type": "array",
             "description": "The navigation container content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -6631,7 +6642,7 @@
             "type": "array",
             "description": "Optional content rendered alongside the pagination controls",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -6701,7 +6712,7 @@
             "type": "array",
             "description": "The primary navigation items",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -6773,21 +6784,21 @@
                 "type": "array",
                 "description": "The label for the navigation item",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "itemBefore": {
                 "type": "array",
                 "description": "Content rendered before the item label, such as an icon",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "itemAfter": {
                 "type": "array",
                 "description": "Content rendered after the item label, such as an icon",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -6854,7 +6865,7 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -6922,7 +6933,7 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -7051,14 +7062,14 @@
                 "type": "array",
                 "description": "Default, unnamed slot container for each `cre8-tab` button",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "panel": {
                 "type": "array",
                 "description": "Container for each `cre8-tab-panel` content item",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -7128,7 +7139,7 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -7177,7 +7188,7 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -7227,7 +7238,7 @@
             "type": "array",
             "description": "The utility nav items",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -7357,7 +7368,7 @@
             "type": "array",
             "description": "The Progress Steps Item components that represent the steps in the multistep process.",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -7442,7 +7453,7 @@
             "type": "array",
             "description": "The heading text content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -7511,14 +7522,14 @@
                 "type": "array",
                 "description": "The component content",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               },
               "linkAfter": {
                 "type": "array",
                 "description": "Content rendered after the link text, such as an icon",
                 "items": {
-                  "$ref": "#/$defs/Component"
+                  "$ref": "#/$defs/Child"
                 }
               }
             }
@@ -7579,7 +7590,7 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Component"
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
