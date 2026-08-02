@@ -22,6 +22,7 @@ import {
   handleValidateA2uiSpec,
 } from './handlers.js';
 import type { GetPatternsInput, SearchComponentsInput, GenerateCodeInput } from './handlers.js';
+import { handleGetA2uiContext } from './a2ui-context.js';
 import { WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js';
 import { Cre8GuideSchema, GetContentModelSchema, handleCre8Guide, handleGetContentModel } from './knowledge-tools.js';
 import { GetCompositionSchema, handleGetComposition } from './composition.js';
@@ -297,6 +298,43 @@ export function createApp(options: AppOptions = {}): Hono {
     } catch (err) {
       const msg = err instanceof Error ? err.message : 'Unknown error';
       return c.json({ error: msg }, 404);
+    }
+  });
+
+  /**
+   * The retrieval endpoint. Serves a slice of the catalog sized to the caller's
+   * context, rather than making every caller take all ~43k tokens of it.
+   *
+   *   GET /a2ui/context?projection=compact&categories=Forms,Actions&budget=1500
+   */
+  app.get('/a2ui/context', (c) => {
+    const csv = (key: string) =>
+      c.req.query(key)?.split(',').map((s) => s.trim()).filter(Boolean);
+    const budgetRaw = c.req.query('budget');
+    const budget = budgetRaw === undefined ? undefined : Number(budgetRaw);
+
+    if (budget !== undefined && (!Number.isFinite(budget) || budget <= 0)) {
+      return c.json({ error: '`budget` must be a positive number of tokens' }, 400);
+    }
+
+    const projection = c.req.query('projection');
+    if (projection !== undefined && projection !== 'compact' && projection !== 'full') {
+      return c.json({ error: '`projection` must be "compact" or "full"' }, 400);
+    }
+
+    try {
+      return c.json(
+        handleGetA2uiContext({
+          names: csv('names'),
+          categories: csv('categories'),
+          projection,
+          budget,
+          pinned: csv('pinned'),
+        })
+      );
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'Unknown error';
+      return c.json({ error: msg }, 400);
     }
   });
 
