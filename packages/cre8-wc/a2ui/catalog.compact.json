@@ -393,7 +393,12 @@
         "colors": {
           "type": "array"
         }
-      }
+      },
+      "events": [
+        "chart-click",
+        "chart-hover",
+        "chart-ready"
+      ]
     },
     {
       "name": "cre8-checkbox-field",
@@ -490,6 +495,9 @@
       },
       "slots": [
         "fieldNote"
+      ],
+      "events": [
+        "change"
       ]
     },
     {
@@ -739,7 +747,10 @@
           "type": "string"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "events": [
+        "dropdown-item-select"
+      ]
     },
     {
       "name": "cre8-feature",
@@ -1362,6 +1373,9 @@
         "default",
         "header",
         "footer"
+      ],
+      "events": [
+        "modal-close"
       ]
     },
     {
@@ -1413,6 +1427,9 @@
       },
       "slots": [
         "fieldNote"
+      ],
+      "events": [
+        "multi-select-change"
       ]
     },
     {
@@ -1473,7 +1490,10 @@
           "type": "number"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "events": [
+        "pagination-change"
+      ]
     },
     {
       "name": "cre8-percent-bar",
@@ -1488,7 +1508,10 @@
         "disableActionLeft": {
           "type": "boolean"
         }
-      }
+      },
+      "events": [
+        "percent-bar-left-action-click"
+      ]
     },
     {
       "name": "cre8-popover",
@@ -1534,6 +1557,10 @@
         "trigger",
         "header",
         "footer"
+      ],
+      "events": [
+        "popover-open",
+        "popover-close"
       ]
     },
     {
@@ -1752,7 +1779,10 @@
         "disabled": {
           "type": "boolean"
         }
-      }
+      },
+      "events": [
+        "remove-tag-click"
+      ]
     },
     {
       "name": "cre8-section",
@@ -1819,6 +1849,9 @@
       },
       "slots": [
         "fieldNote"
+      ],
+      "events": [
+        "change"
       ]
     },
     {
@@ -1903,6 +1936,10 @@
         "footer",
         "title",
         "body"
+      ],
+      "events": [
+        "change",
+        "input"
       ]
     },
     {
@@ -1978,7 +2015,11 @@
           "type": "boolean"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "events": [
+        "split-button-text-click",
+        "split-button-dropdown-click"
+      ]
     },
     {
       "name": "cre8-submenu",
@@ -2013,7 +2054,10 @@
           "type": "string"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "events": [
+        "tab-select"
+      ]
     },
     {
       "name": "cre8-tab-panel",
@@ -2182,6 +2226,9 @@
       "slots": [
         "default",
         "panel"
+      ],
+      "events": [
+        "tab-change"
       ]
     },
     {
@@ -2237,7 +2284,10 @@
         "isSuccess": {
           "type": "boolean"
         }
-      }
+      },
+      "events": [
+        "change"
+      ]
     },
     {
       "name": "cre8-tag-list",
@@ -2369,6 +2419,10 @@
       "slots": [
         "default",
         "trigger"
+      ],
+      "events": [
+        "tooltip-open",
+        "tooltip-close"
       ]
     },
     {

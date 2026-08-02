@@ -100,6 +100,30 @@ function describeType(v: unknown): string {
   return typeof v;
 }
 
+/**
+ * Native DOM events, bindable on any component.
+ *
+ * A component's `@fires` tags describe only what it dispatches itself, so the
+ * catalog can never list these — but `addEventListener` handles them on every
+ * element, and binding `click` to a button is the single most common thing an
+ * agent does. Kept deliberately narrow: the point of validating event names is
+ * to catch invented ones, so this is the set that genuinely fires, not every
+ * event name in the HTML spec.
+ */
+const NATIVE_DOM_EVENTS = new Set([
+  'click', 'dblclick', 'contextmenu',
+  'mousedown', 'mouseup', 'mouseenter', 'mouseleave', 'mouseover', 'mouseout', 'mousemove',
+  'pointerdown', 'pointerup', 'pointerenter', 'pointerleave',
+  'touchstart', 'touchend', 'touchmove', 'touchcancel',
+  'keydown', 'keyup', 'keypress',
+  'focus', 'blur', 'focusin', 'focusout',
+  'input', 'change', 'submit', 'reset', 'invalid', 'select',
+  'scroll', 'wheel', 'resize',
+  'copy', 'cut', 'paste',
+  'drag', 'dragstart', 'dragend', 'dragenter', 'dragleave', 'dragover', 'drop',
+  'load', 'error',
+]);
+
 export function validateSpec(spec: unknown, catalog: RegisteredCatalog, path = '$'): asserts spec is ComponentSpec {
   if (!spec || typeof spec !== 'object') {
     throw new Error(`${path}: spec must be an object`);
@@ -147,7 +171,25 @@ export function validateSpec(spec: unknown, catalog: RegisteredCatalog, path = '
     if (!s.events || typeof s.events !== 'object' || Array.isArray(s.events)) {
       throw new Error(`${path}.events: must be an object`);
     }
+    // Custom event *names* are checked against the catalog, the same way props
+    // and slots are. Previously only the binding shape was validated, so an
+    // invented event bound cleanly and then silently never fired — the worst
+    // failure mode available, since the UI renders and simply does nothing.
+    //
+    // Native DOM events are always allowed: `addEventListener` handles them on
+    // any element, and `@fires` documents only what a component dispatches
+    // itself. `click` on a button is legitimate and undocumented by design.
+    const declaredEvents = new Set(Object.keys(def['x-events'] ?? {}));
     for (const [evtName, binding] of Object.entries(s.events as Record<string, unknown>)) {
+      if (!NATIVE_DOM_EVENTS.has(evtName) && !declaredEvents.has(evtName)) {
+        const available = [...declaredEvents].sort().join(', ');
+        throw new Error(
+          `${path}.events.${evtName}: not a declared event on ${s.component}. ` +
+            (available
+              ? `Custom events available: ${available}`
+              : `${s.component} declares no custom events`)
+        );
+      }
       if (typeof binding === 'string') continue;
       if (!binding || typeof binding !== 'object') {
         throw new Error(`${path}.events.${evtName}: must be a string or { handler } object`);
