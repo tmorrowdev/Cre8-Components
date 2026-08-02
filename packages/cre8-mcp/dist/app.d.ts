@@ -10,10 +10,15 @@
  * binding a port.
  */
 import { Hono } from 'hono';
+import { RateLimiter, type TenantConfig } from './tenants.js';
 export interface AppOptions {
     /** Defaults to $PORT, used only to build viewer URLs. */
     port?: number;
     /** Overrides $CRE8_MCP_TOKEN. Pass an empty string to disable the gate. */
     token?: string;
+    /** Overrides $CRE8_MCP_TENANTS. Injected by tests. */
+    tenants?: TenantConfig;
+    /** Injected by tests so limits can be exercised without waiting a minute. */
+    rateLimiter?: RateLimiter;
 }
 export declare function createApp(options?: AppOptions): Hono;
