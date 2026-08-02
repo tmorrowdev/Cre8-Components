@@ -21,6 +21,7 @@
     "kb:check-demo-attrs": "node docs/kb/tools/check-demo-attrs.mjs",
     "test:mcp": "pnpm --filter @tmorrow/cre8-mcp test",
     "test:agent": "pnpm --filter @tmorrow/cre8-agent-core test",
+    "test:custody": "pnpm --filter @tmorrow/cre8-key-custody test",
     "build:agent": "pnpm --filter @tmorrow/cre8-agent-core build",
     "test:a2ui": "pnpm --filter @tmorrow/cre8-wc test:a2ui",
     "audit:render": "pnpm --filter @tmorrow/cre8-wc audit:render",
