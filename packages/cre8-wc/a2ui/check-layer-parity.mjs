@@ -206,6 +206,43 @@ check('manifest, catalog metadata, catalog schema and compact agree on events', 
   return `${total} events across ${manifest.components.length} components, ${native.size} native`;
 });
 
+check('the schema and the renderer agree on text children', () => {
+  const renderer = readFileSync(join(WC, 'a2ui', 'renderer.ts'), 'utf8');
+  const rendersText = /typeof\s+child\s*===\s*['"]string['"]/.test(renderer);
+  const child = catalog.$defs.Child;
+  const schemaAllowsText = !!child?.oneOf?.some((b) => b.type === 'string');
+
+  if (rendersText && !schemaAllowsText) {
+    throw new Error(
+      'renderer.ts turns string children into text nodes, but the schema does not permit them.\n' +
+        '      Text renders yet fails validation, and no schema-constrained generator can emit it.'
+    );
+  }
+  if (!rendersText && schemaAllowsText) {
+    throw new Error('the schema permits text children but the renderer no longer handles them');
+  }
+
+  // Every containment point must route through Child, or the ones that don't
+  // silently keep the old behaviour.
+  const offenders = [];
+  for (const [name, def] of Object.entries(catalog.$defs.components)) {
+    const children = def.properties?.children;
+    if (children && children.items?.$ref !== '#/$defs/Child') offenders.push(`${name}.children`);
+    for (const [slot, spec] of Object.entries(def.properties?.slots?.properties ?? {})) {
+      if (spec.items?.$ref !== '#/$defs/Child') offenders.push(`${name}.slots.${slot}`);
+    }
+  }
+  if (offenders.length) {
+    throw new Error(`containment not routed through $defs/Child: ${offenders.slice(0, 5).join(', ')}`);
+  }
+
+  // A document root is a component; bare text is not a document.
+  if (catalog.properties?.root?.$ref !== '#/$defs/Component') {
+    throw new Error('the document root must be a Component, not a Child');
+  }
+  return `${offenders.length === 0 ? 'all containment routed through Child' : ''}`;
+});
+
 check('the runtime validator reads its native-event list from the catalog', () => {
   const source = readFileSync(join(WC, 'a2ui', 'registry.ts'), 'utf8');
   const code = source.replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|[^:])\/\/.*$/gm, '$1');
