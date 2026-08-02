@@ -11,6 +11,7 @@ export interface Cre8ListProps {
   spacing?: any;
   /** Items for a data-driven list. Set this and the list builds its own `cre8-list-item` children in the light DOM — the same composition you would write by hand. Leave it unset to compose the list yourself. */
   items?: Cre8ListItemData[];
+  children?: React.ReactNode;
 }
 
 /**

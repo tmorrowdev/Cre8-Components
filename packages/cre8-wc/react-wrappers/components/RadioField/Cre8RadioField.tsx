@@ -23,10 +23,11 @@ export interface Cre8RadioFieldProps {
   items?: Cre8RadioItemData[];
   /** Form control name shared by every generated option. */
   name?: string | undefined;
+  children?: React.ReactNode;
 }
 
 /**
- * Cre8RadioField component
+ * Radio Field is the parent container for `radio-field-item`.
  */
 export const Cre8RadioField = createComponent({
   react: React,

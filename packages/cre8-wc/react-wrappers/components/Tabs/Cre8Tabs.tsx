@@ -17,16 +17,20 @@ export interface Cre8TabsProps {
   isEnd?: boolean | undefined;
   /** Tabs for a data-driven tab set. Each entry becomes a `cre8-tab` in the default slot *and* a `cre8-tab-panel` in the `panel` slot, with matching indices — two slots kept in step, which is the part that goes wrong when these are written by hand. */
   items?: Cre8TabItemData[];
+  children?: React.ReactNode;
+  onTabChange?: (event: CustomEvent) => void;
 }
 
 /**
- * Cre8Tabs component
+ * Tabs are used to quickly navigate back and forth between views.
  */
 export const Cre8Tabs = createComponent({
   react: React,
   tagName: 'cre8-tabs',
   elementClass: Cre8TabsElement,
-
+  events: {
+    onTabChange: 'tab-change'
+  }
 });
 
 export default Cre8Tabs;

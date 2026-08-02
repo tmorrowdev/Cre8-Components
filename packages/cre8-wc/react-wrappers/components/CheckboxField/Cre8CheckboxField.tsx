@@ -23,10 +23,11 @@ export interface Cre8CheckboxFieldProps {
   items?: Cre8CheckboxItemData[];
   /** Form control name shared by every generated item. */
   name?: string | undefined;
+  children?: React.ReactNode;
 }
 
 /**
- * Cre8CheckboxField component
+ * Checkbox Field is the parent container for `checkbox-field-item`.
  */
 export const Cre8CheckboxField = createComponent({
   react: React,

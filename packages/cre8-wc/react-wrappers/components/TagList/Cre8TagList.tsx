@@ -11,10 +11,11 @@ export interface Cre8TagListProps {
   label?: string | undefined;
   /** Tags for a data-driven tag list. Set this and the list builds its own `cre8-tag` children in the light DOM. Leave it unset to compose them yourself. */
   tags?: Cre8TagData[];
+  children?: React.ReactNode;
 }
 
 /**
- * Cre8TagList component
+ * Tag List must have children which are Tag components that are of type `checkbox` or `radio`.
  */
 export const Cre8TagList = createComponent({
   react: React,
