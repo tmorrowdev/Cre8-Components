@@ -30,6 +30,11 @@ export interface CatalogSchema {
   $defs?: {
     components?: Record<string, CatalogComponentDef>;
   };
+  /**
+   * Native DOM events bindable on any component. The single source of truth —
+   * the runtime validator reads this rather than keeping its own copy.
+   */
+  'x-native-events'?: string[];
   'x-a2ui'?: {
     catalogId?: string;
     library?: string;

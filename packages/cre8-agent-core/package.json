@@ -1,0 +1,35 @@
+{
+  "name": "@tmorrow/cre8-agent-core",
+  "version": "0.1.0",
+  "description": "The cre8 agent loop as an embeddable library — no server, no ambient credentials.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./providers/gemini": "./dist/providers/gemini.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "npx tsx test/loop.test.mjs && npx tsx test/credentials.test.mjs"
+  },
+  "dependencies": {
+    "@tmorrow/cre8-wc": "workspace:*"
+  },
+  "peerDependencies": {
+    "@google/genai": "^1.50.0"
+  },
+  "peerDependenciesMeta": {
+    "@google/genai": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@google/genai": "^1.50.0",
+    "typescript": "^5.6.0"
+  }
+}

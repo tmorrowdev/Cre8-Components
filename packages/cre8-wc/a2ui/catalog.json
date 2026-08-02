@@ -3,6 +3,54 @@
   "$id": "https://cre8.dev/a2ui/catalogs/cre8-wc/2.0.7",
   "title": "cre8-wc A2UI Catalog",
   "description": "cre8 Web Components is a library of presentational UI web components to be consumed by # web applications.",
+  "x-native-events": [
+    "click",
+    "dblclick",
+    "contextmenu",
+    "mousedown",
+    "mouseup",
+    "mouseenter",
+    "mouseleave",
+    "mouseover",
+    "mouseout",
+    "mousemove",
+    "pointerdown",
+    "pointerup",
+    "pointerenter",
+    "pointerleave",
+    "touchstart",
+    "touchend",
+    "touchmove",
+    "touchcancel",
+    "keydown",
+    "keyup",
+    "keypress",
+    "focus",
+    "blur",
+    "focusin",
+    "focusout",
+    "input",
+    "change",
+    "submit",
+    "reset",
+    "invalid",
+    "select",
+    "scroll",
+    "wheel",
+    "resize",
+    "copy",
+    "cut",
+    "paste",
+    "drag",
+    "dragstart",
+    "dragend",
+    "dragenter",
+    "dragleave",
+    "dragover",
+    "drop",
+    "load",
+    "error"
+  ],
   "x-a2ui": {
     "catalogId": "cre8-wc",
     "library": "@tmorrow/cre8-wc",
@@ -280,6 +328,85 @@
         }
       ]
     },
+    "EventBinding": {
+      "description": "A handler name, or an object naming the handler plus dispatch options.",
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "object",
+          "required": [
+            "handler"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "handler": {
+              "type": "string",
+              "minLength": 1
+            },
+            "stopPropagation": {
+              "type": "boolean"
+            },
+            "preventDefault": {
+              "type": "boolean"
+            }
+          }
+        }
+      ]
+    },
+    "NativeEventName": {
+      "description": "A native DOM event, bindable on any component.",
+      "enum": [
+        "blur",
+        "change",
+        "click",
+        "contextmenu",
+        "copy",
+        "cut",
+        "dblclick",
+        "drag",
+        "dragend",
+        "dragenter",
+        "dragleave",
+        "dragover",
+        "dragstart",
+        "drop",
+        "error",
+        "focus",
+        "focusin",
+        "focusout",
+        "input",
+        "invalid",
+        "keydown",
+        "keypress",
+        "keyup",
+        "load",
+        "mousedown",
+        "mouseenter",
+        "mouseleave",
+        "mousemove",
+        "mouseout",
+        "mouseover",
+        "mouseup",
+        "paste",
+        "pointerdown",
+        "pointerenter",
+        "pointerleave",
+        "pointerup",
+        "reset",
+        "resize",
+        "scroll",
+        "select",
+        "submit",
+        "touchcancel",
+        "touchend",
+        "touchmove",
+        "touchstart",
+        "wheel"
+      ]
+    },
     "components": {
       "cre8-button": {
         "type": "object",
@@ -494,6 +621,16 @@
                 }
               }
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false,
@@ -543,6 +680,16 @@
             "description": "The component content",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -720,6 +867,16 @@
                 "x-kind": "property"
               }
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -771,6 +928,26 @@
             "description": "The component content , this will consist of the dropdown when the user clicks the caret",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/NativeEventName"
+                },
+                {
+                  "enum": [
+                    "split-button-dropdown-click",
+                    "split-button-text-click"
+                  ]
+                }
+              ]
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -901,6 +1078,27 @@
                 "x-kind": "property"
               }
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/NativeEventName"
+                },
+                {
+                  "enum": [
+                    "chart-click",
+                    "chart-hover",
+                    "chart-ready"
+                  ]
+                }
+              ]
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false,
@@ -973,6 +1171,16 @@
             "items": {
               "$ref": "#/$defs/Component"
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -1000,6 +1208,16 @@
             "description": "The content of the list item",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -1053,6 +1271,25 @@
                 "type": "boolean",
                 "x-kind": "attribute"
               }
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/NativeEventName"
+                },
+                {
+                  "enum": [
+                    "remove-tag-click"
+                  ]
+                }
+              ]
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -1160,6 +1397,16 @@
             "items": {
               "$ref": "#/$defs/Component"
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -1187,6 +1434,16 @@
             "description": "The component content",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -1233,6 +1490,16 @@
             "items": {
               "$ref": "#/$defs/Component"
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -1260,6 +1527,16 @@
             "description": "The component content",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -1299,6 +1576,16 @@
             "description": "The component content",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -1348,6 +1635,16 @@
                   "$ref": "#/$defs/Component"
                 }
               }
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -1424,6 +1721,16 @@
                   "$ref": "#/$defs/Component"
                 }
               }
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -1531,6 +1838,25 @@
                 "x-kind": "property"
               }
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/NativeEventName"
+                },
+                {
+                  "enum": [
+                    "change"
+                  ]
+                }
+              ]
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false,
@@ -1617,6 +1943,16 @@
             "items": {
               "$ref": "#/$defs/Component"
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -1695,6 +2031,16 @@
             "description": "The `cre8-accordion-item` children to group",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -1794,6 +2140,16 @@
                 }
               }
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false,
@@ -1872,6 +2228,16 @@
             "items": {
               "$ref": "#/$defs/Component"
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -1905,6 +2271,25 @@
             "description": "The label content for the dropdown item.",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/NativeEventName"
+                },
+                {
+                  "enum": [
+                    "dropdown-item-select"
+                  ]
+                }
+              ]
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -2010,6 +2395,25 @@
                   "$ref": "#/$defs/Component"
                 }
               }
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/NativeEventName"
+                },
+                {
+                  "enum": [
+                    "modal-close"
+                  ]
+                }
+              ]
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -2136,6 +2540,26 @@
                 }
               }
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/NativeEventName"
+                },
+                {
+                  "enum": [
+                    "popover-close",
+                    "popover-open"
+                  ]
+                }
+              ]
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false,
@@ -2178,6 +2602,16 @@
             "items": {
               "$ref": "#/$defs/Component"
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -2211,6 +2645,16 @@
             "description": "The component content",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -2317,6 +2761,26 @@
                   "$ref": "#/$defs/Component"
                 }
               }
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/NativeEventName"
+                },
+                {
+                  "enum": [
+                    "tooltip-close",
+                    "tooltip-open"
+                  ]
+                }
+              ]
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -2440,6 +2904,16 @@
                 }
               }
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false,
@@ -2497,6 +2971,16 @@
                 "type": "string",
                 "x-kind": "attribute"
               }
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -2567,6 +3051,16 @@
             "items": {
               "$ref": "#/$defs/Component"
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -2635,6 +3129,16 @@
                 "x-kind": "property"
               }
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -2671,6 +3175,25 @@
                 "type": "boolean",
                 "x-kind": "property"
               }
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/NativeEventName"
+                },
+                {
+                  "enum": [
+                    "percent-bar-left-action-click"
+                  ]
+                }
+              ]
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -2740,6 +3263,16 @@
                 "x-kind": "property"
               }
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -2796,6 +3329,16 @@
             "items": {
               "$ref": "#/$defs/Component"
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -2838,6 +3381,16 @@
                 "type": "string",
                 "x-kind": "attribute"
               }
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -2936,6 +3489,16 @@
             "description": "The component content, which should be a set of `checkbox-field-item`s",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -3065,6 +3628,25 @@
                   "$ref": "#/$defs/Component"
                 }
               }
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/NativeEventName"
+                },
+                {
+                  "enum": [
+                    "change"
+                  ]
+                }
+              ]
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -3254,6 +3836,16 @@
                 }
               }
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false,
@@ -3428,6 +4020,16 @@
                 }
               }
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false,
@@ -3474,6 +4076,16 @@
             "description": "The note content",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -3589,6 +4201,25 @@
                 }
               }
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/NativeEventName"
+                },
+                {
+                  "enum": [
+                    "multi-select-change"
+                  ]
+                }
+              ]
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false,
@@ -3695,6 +4326,16 @@
             "items": {
               "$ref": "#/$defs/Component"
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -3791,6 +4432,16 @@
                 "type": "string",
                 "x-kind": "property"
               }
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -3964,6 +4615,25 @@
                   "$ref": "#/$defs/Component"
                 }
               }
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/NativeEventName"
+                },
+                {
+                  "enum": [
+                    "change"
+                  ]
+                }
+              ]
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -4150,6 +4820,26 @@
                 }
               }
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/NativeEventName"
+                },
+                {
+                  "enum": [
+                    "change",
+                    "input"
+                  ]
+                }
+              ]
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false,
@@ -4239,6 +4929,16 @@
             "items": {
               "$ref": "#/$defs/Component"
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -4278,6 +4978,16 @@
             "description": "The band content",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -4346,6 +5056,16 @@
                 }
               }
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false,
@@ -4391,6 +5111,16 @@
                 ],
                 "x-kind": "attribute"
               }
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -4455,6 +5185,16 @@
             "items": {
               "$ref": "#/$defs/Component"
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -4482,6 +5222,16 @@
             "description": "The content of the grid item",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -4542,6 +5292,16 @@
             "items": {
               "$ref": "#/$defs/Component"
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -4577,6 +5337,16 @@
             "items": {
               "$ref": "#/$defs/Component"
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -4610,6 +5380,16 @@
             "description": "The contents of the layout container",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -4652,6 +5432,16 @@
             "items": {
               "$ref": "#/$defs/Component"
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -4679,6 +5469,16 @@
             "description": "The component content",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -4713,6 +5513,16 @@
             "description": "The main content",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -4761,6 +5571,16 @@
                   "$ref": "#/$defs/Component"
                 }
               }
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -4815,6 +5635,16 @@
             "items": {
               "$ref": "#/$defs/Component"
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -4863,6 +5693,16 @@
                   "$ref": "#/$defs/Component"
                 }
               }
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -4916,6 +5756,16 @@
                 "x-kind": "property"
               }
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -4949,6 +5799,16 @@
             "description": "The logo element",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -5005,6 +5865,16 @@
             "items": {
               "$ref": "#/$defs/Component"
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -5032,6 +5902,16 @@
             "description": "The component content, the expected slotted content is a Cre8 Link or a String for the \"terminal node\"",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -5081,6 +5961,16 @@
                   "$ref": "#/$defs/Component"
                 }
               }
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -5132,6 +6022,16 @@
             "description": "The primary navigation items",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -5211,6 +6111,16 @@
                 }
               }
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false,
@@ -5270,6 +6180,16 @@
                   "$ref": "#/$defs/Component"
                 }
               }
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -5401,6 +6321,16 @@
                 }
               }
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false,
@@ -5493,6 +6423,16 @@
             "items": {
               "$ref": "#/$defs/Component"
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -5558,6 +6498,16 @@
                 }
               }
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false,
@@ -5590,6 +6540,16 @@
             "description": "The navigation container content",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -5673,6 +6633,25 @@
             "items": {
               "$ref": "#/$defs/Component"
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/NativeEventName"
+                },
+                {
+                  "enum": [
+                    "pagination-change"
+                  ]
+                }
+              ]
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false,
@@ -5723,6 +6702,16 @@
             "description": "The primary navigation items",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -5802,6 +6791,16 @@
                 }
               }
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false,
@@ -5857,6 +6856,25 @@
             "items": {
               "$ref": "#/$defs/Component"
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/NativeEventName"
+                },
+                {
+                  "enum": [
+                    "tab-select"
+                  ]
+                }
+              ]
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false,
@@ -5905,6 +6923,16 @@
             "description": "The component content",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -6034,6 +7062,25 @@
                 }
               }
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/NativeEventName"
+                },
+                {
+                  "enum": [
+                    "tab-change"
+                  ]
+                }
+              ]
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false,
@@ -6083,6 +7130,16 @@
             "items": {
               "$ref": "#/$defs/Component"
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -6121,6 +7178,16 @@
             "description": "The component content",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -6161,6 +7228,16 @@
             "description": "The utility nav items",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -6213,6 +7290,16 @@
                 ],
                 "x-kind": "property"
               }
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -6271,6 +7358,16 @@
             "description": "The Progress Steps Item components that represent the steps in the multistep process.",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },
@@ -6347,6 +7444,16 @@
             "items": {
               "$ref": "#/$defs/Component"
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false
@@ -6415,6 +7522,16 @@
                 }
               }
             }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
           }
         },
         "additionalProperties": false,
@@ -6463,6 +7580,16 @@
             "description": "The component content",
             "items": {
               "$ref": "#/$defs/Component"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
             }
           }
         },

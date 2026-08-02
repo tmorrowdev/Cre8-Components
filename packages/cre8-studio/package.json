@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@google/genai": "^1.50.0",
+    "@tmorrow/cre8-agent-core": "workspace:*",
     "@tmorrow/cre8-wc": "workspace:*",
     "esbuild": "^0.28.0",
     "next": "^16.0.0",

@@ -73,9 +73,43 @@ try {
   console.log('slot reject:', e.message);
 }
 
+// An invented custom event used to bind cleanly and then never fire — the UI
+// renders and silently does nothing, which is worse than an error.
+const badEvent = { component: 'cre8-modal', events: { 'totally-made-up': 'x' } };
+try {
+  validateSpec(badEvent, cat);
+  console.error('FAIL: expected rejection of undeclared event');
+  process.exit(1);
+} catch (e) {
+  console.log('event reject:', e.message);
+}
+
+// Binding a real event to the wrong component is the same failure wearing a
+// disguise: the name exists in the library, just not on this component.
+const misattributed = { component: 'cre8-button', events: { 'modal-close': 'x' } };
+try {
+  validateSpec(misattributed, cat);
+  console.error('FAIL: expected rejection of an event from another component');
+  process.exit(1);
+} catch (e) {
+  console.log('misattributed event reject:', e.message);
+}
+
+// Native DOM events stay bindable on anything — `@fires` documents only what a
+// component dispatches itself, so the catalog can never list `click`.
+for (const native of ['click', 'input', 'submit', 'keydown', 'focus']) {
+  validateSpec({ component: 'cre8-button', events: { [native]: 'h' } }, cat);
+}
+console.log('native events accepted on an undocumented component: ok');
+
+// Binds one native event and one custom event, on the component that actually
+// dispatches the custom one. It used to bind `split-button-text-click` to a
+// plain `cre8-button`, which no `cre8-button` ever fires — a binding that
+// renders cleanly and then silently does nothing. Event-name validation now
+// rejects that, so the example has to be a real pairing.
 const eventSpec = {
-  component: 'cre8-button',
-  props: { text: 'Save', variant: 'primary' },
+  component: 'cre8-split-button',
+  props: { buttonText: 'Save' },
   events: {
     click: { handler: 'save-record', stopPropagation: true },
     'split-button-text-click': 'emit-telemetry',
