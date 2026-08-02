@@ -29,6 +29,7 @@ packages/cre8-wc/react-wrappers/dist/
 packages/cre8-wc/react-wrappers/index.ts
 packages/cre8-wc/react-wrappers/package.json
 packages/cre8-wc/react-wrappers/tsconfig.json
+packages/cre8-wc/react-wrappers/check-version-sync.mjs
 __pycache__/
 *.pyc
 .playwright-mcp/
