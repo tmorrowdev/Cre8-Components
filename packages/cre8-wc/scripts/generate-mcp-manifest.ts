@@ -13,6 +13,31 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT = join(__dirname, '..');
 
+/**
+ * Custom elements that register but are not part of the public API.
+ *
+ * These are sub-components: they call `customElements.define` as a side effect
+ * of their parent being imported, but nothing exports them from `index.ts` or
+ * `cdn-entry.ts`, so a consumer cannot use them on their own.
+ *
+ * The list is explicit because the exclusion used to be accidental — the
+ * analyzer glob was `components/*​/*.ts`, one level too shallow to see anything
+ * nested, so all five vanished from the manifest, the catalog, the compact
+ * projection, the React manifest and custom-elements.json without anyone
+ * choosing that. Now the glob reaches everything and the omission is a
+ * decision, pinned here and asserted by `check-layer-parity.mjs`. Adding a
+ * component can no longer silently skip the pipeline.
+ *
+ * To publish one: delete it here and export it from `index.ts`/`cdn-entry.ts`.
+ */
+const INTERNAL_ELEMENTS = [
+  'cre8-calendar',
+  'cre8-calendar-month-modal',
+  'cre8-calendar-navigation',
+  'cre8-calendar-year-modal',
+  'cre8-page-counter',
+];
+
 // ─── Category Mapping ────────────────────────────────────────────────
 const CATEGORY_MAP: Record<string, string> = {
   'button': 'Actions',
@@ -410,8 +435,18 @@ function main() {
   );
 
   // Transform components
+  const seen = new Set(wcaData.tags.map(t => t.name).filter(n => n.startsWith('cre8-')));
+  const missingInternals = INTERNAL_ELEMENTS.filter(n => !seen.has(n));
+  if (missingInternals.length) {
+    throw new Error(
+      `INTERNAL_ELEMENTS lists element(s) the analyzer no longer sees: ${missingInternals.join(', ')}. ` +
+        `Remove them from the list, or fix the analyzer glob.`
+    );
+  }
+
   const components = wcaData.tags
     .filter(tag => tag.name.startsWith('cre8-'))
+    .filter(tag => !INTERNAL_ELEMENTS.includes(tag.name))
     .map(transformTag)
     .sort((a, b) => {
       // Sort by category, then name
@@ -445,6 +480,13 @@ function main() {
     tagPrefix: 'cre8',
     description: pkgJson.description,
     framework: `Lit ${pkgJson.dependencies?.lit || '3.x'}`,
+    /**
+     * Elements that register but are intentionally absent from `components`.
+     * Recorded here so `check-layer-parity.mjs` can tell a deliberate omission
+     * from a component that silently fell out of the pipeline, without keeping
+     * a second copy of the list.
+     */
+    internalElements: INTERNAL_ELEMENTS,
     components,
     baseClasses: staticData.baseClasses,
     patterns: staticData.patterns,

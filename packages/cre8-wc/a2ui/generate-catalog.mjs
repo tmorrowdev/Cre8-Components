@@ -12,6 +12,50 @@ const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
 
 const QUOTED_LITERAL = /^"([^"]*)"$/;
 
+/**
+ * Native DOM events, bindable on every component.
+ *
+ * Emitted into the catalog as `x-native-events` so the runtime validator can
+ * read it from there rather than keeping its own copy. Two lists that must stay
+ * equal is exactly the drift this pipeline is supposed to prevent, so there is
+ * one list and it lives here, next to the schema it produces.
+ *
+ * A component's `@fires` tags describe only what it dispatches itself, so these
+ * can never be discovered from source — binding `click` to a button is both the
+ * most common thing an agent does and undocumentable by the analyzer.
+ */
+const NATIVE_DOM_EVENTS = [
+  'click', 'dblclick', 'contextmenu',
+  'mousedown', 'mouseup', 'mouseenter', 'mouseleave', 'mouseover', 'mouseout', 'mousemove',
+  'pointerdown', 'pointerup', 'pointerenter', 'pointerleave',
+  'touchstart', 'touchend', 'touchmove', 'touchcancel',
+  'keydown', 'keyup', 'keypress',
+  'focus', 'blur', 'focusin', 'focusout',
+  'input', 'change', 'submit', 'reset', 'invalid', 'select',
+  'scroll', 'wheel', 'resize',
+  'copy', 'cut', 'paste',
+  'drag', 'dragstart', 'dragend', 'dragenter', 'dragleave', 'dragover', 'drop',
+  'load', 'error',
+];
+
+/** Mirrors the `EventBinding` union in types.ts. */
+const EVENT_BINDING_SCHEMA = {
+  description: 'A handler name, or an object naming the handler plus dispatch options.',
+  oneOf: [
+    { type: 'string', minLength: 1 },
+    {
+      type: 'object',
+      required: ['handler'],
+      additionalProperties: false,
+      properties: {
+        handler: { type: 'string', minLength: 1 },
+        stopPropagation: { type: 'boolean' },
+        preventDefault: { type: 'boolean' },
+      },
+    },
+  ],
+};
+
 const SELECT_OPTION_SCHEMA = {
   type: 'object',
   required: ['label', 'value'],
@@ -317,6 +361,24 @@ function buildComponent(c) {
 
   if (Object.keys(events).length) def['x-events'] = events;
 
+  // Events are declared under `properties`, alongside props and slots, rather
+  // than living only in `x-events` metadata. Previously the component defs were
+  // `additionalProperties: false` with no `events` key at all, so events were
+  // documented but second-class — and an invented event name validated cleanly.
+  // Native events are always permitted; declared custom events are added on top.
+  def.properties.events = {
+    type: 'object',
+    description:
+      'Event bindings. Each key is an event name; the value names the handler to emit.',
+    // Native names are `$ref`'d rather than inlined. Repeating all 46 on each of
+    // 85 components cost ~57 KB and made the catalog a third larger for no
+    // information gain.
+    propertyNames: Object.keys(events).length
+      ? { anyOf: [{ $ref: '#/$defs/NativeEventName' }, { enum: Object.keys(events).sort() }] }
+      : { $ref: '#/$defs/NativeEventName' },
+    additionalProperties: { $ref: '#/$defs/EventBinding' },
+  };
+
   return def;
 }
 
@@ -333,6 +395,9 @@ const catalog = {
   $id: `https://cre8.dev/a2ui/catalogs/cre8-wc/${manifest.version}`,
   title: 'cre8-wc A2UI Catalog',
   description: manifest.description,
+  // Single source of truth for the native-event allowlist. The runtime validator
+  // reads it from here instead of keeping a second copy that could drift.
+  'x-native-events': NATIVE_DOM_EVENTS,
   'x-a2ui': {
     catalogId: 'cre8-wc',
     library: manifest.library,
@@ -349,6 +414,11 @@ const catalog = {
     Component: {
       description: 'A component instance in the cre8-wc catalog.',
       oneOf: componentRefs,
+    },
+    EventBinding: EVENT_BINDING_SCHEMA,
+    NativeEventName: {
+      description: 'A native DOM event, bindable on any component.',
+      enum: [...NATIVE_DOM_EVENTS].sort(),
     },
     components,
   },

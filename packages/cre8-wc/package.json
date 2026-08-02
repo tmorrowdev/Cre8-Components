@@ -7,7 +7,7 @@
     "start": "pnpm run build:custom-elements.json && pnpm run storybook",
     "compile-styles": "npx tsx scripts/convert-scss-to-ts.ts",
     "build": "rm -rf lib && pnpm run compile-styles && pnpm build:cdn && vite build && tsc && cp .storybook/custom-elements.json custom-elements.json && pnpm run build:react && pnpm run build:mcp-manifest && pnpm run build:react-manifest",
-    "build:mcp-manifest": "npx web-component-analyzer analyze \"components/*/*.ts\" --format json --outFile /tmp/wca-raw.json && npx tsx scripts/generate-mcp-manifest.ts",
+    "build:mcp-manifest": "npx web-component-analyzer analyze \"components/**/*.ts\" --format json --outFile /tmp/wca-raw.json && npx tsx scripts/generate-mcp-manifest.ts",
     "build:react-manifest": "npx tsx scripts/generate-react-manifest.ts",
     "build:cdn": "rm -rf cdn && vite build --config vite.config.cdn.ts",
     "build:react": "rm -rf react-wrappers/components react-wrappers/dist react-wrappers/index.ts && npx tsx scripts/generate-react-wrappers.ts && cd react-wrappers && npx tsc",
@@ -34,9 +34,10 @@
     "publish:react": "cd react-wrappers && npm publish --access public",
     "release:publish": "node scripts/release.cjs --skip-lint --skip-tests --publish",
     "version:bump": "node scripts/version-bump.cjs",
-    "test:a2ui": "npx tsx a2ui/smoke-test.mjs && npx tsx a2ui/stream/stream-test.mjs && npx tsx a2ui/stream/diff-test.mjs && node a2ui/render-audit.mjs --check",
+    "test:a2ui": "npx tsx a2ui/smoke-test.mjs && npx tsx a2ui/stream/stream-test.mjs && npx tsx a2ui/stream/diff-test.mjs && node a2ui/render-audit.mjs --check && node a2ui/check-layer-parity.mjs",
     "audit:render": "node a2ui/render-audit.mjs",
-    "audit:render:check": "node a2ui/render-audit.mjs --check"
+    "audit:render:check": "node a2ui/render-audit.mjs --check",
+    "check:parity": "node a2ui/check-layer-parity.mjs"
   },
   "type": "module",
   "module": "lib/index.js",

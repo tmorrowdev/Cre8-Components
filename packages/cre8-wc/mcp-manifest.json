@@ -4,6 +4,13 @@
   "tagPrefix": "cre8",
   "description": "cre8 Web Components is a library of presentational UI web components to be consumed by # web applications.",
   "framework": "Lit 3.3.1",
+  "internalElements": [
+    "cre8-calendar",
+    "cre8-calendar-month-modal",
+    "cre8-calendar-navigation",
+    "cre8-calendar-year-modal",
+    "cre8-page-counter"
+  ],
   "components": [
     {
       "name": "cre8-button",

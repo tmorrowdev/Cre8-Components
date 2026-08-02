@@ -103,26 +103,14 @@ function describeType(v: unknown): string {
 /**
  * Native DOM events, bindable on any component.
  *
- * A component's `@fires` tags describe only what it dispatches itself, so the
- * catalog can never list these — but `addEventListener` handles them on every
- * element, and binding `click` to a button is the single most common thing an
- * agent does. Kept deliberately narrow: the point of validating event names is
- * to catch invented ones, so this is the set that genuinely fires, not every
- * event name in the HTML spec.
+ * Read from the catalog's `x-native-events` rather than kept here, so there is
+ * one list rather than two that must be held equal. A component's `@fires` tags
+ * describe only what it dispatches itself, so these can never be derived from
+ * source — `click` on a button is legitimate and undocumentable.
  */
-const NATIVE_DOM_EVENTS = new Set([
-  'click', 'dblclick', 'contextmenu',
-  'mousedown', 'mouseup', 'mouseenter', 'mouseleave', 'mouseover', 'mouseout', 'mousemove',
-  'pointerdown', 'pointerup', 'pointerenter', 'pointerleave',
-  'touchstart', 'touchend', 'touchmove', 'touchcancel',
-  'keydown', 'keyup', 'keypress',
-  'focus', 'blur', 'focusin', 'focusout',
-  'input', 'change', 'submit', 'reset', 'invalid', 'select',
-  'scroll', 'wheel', 'resize',
-  'copy', 'cut', 'paste',
-  'drag', 'dragstart', 'dragend', 'dragenter', 'dragleave', 'dragover', 'drop',
-  'load', 'error',
-]);
+function nativeEvents(catalog: RegisteredCatalog): Set<string> {
+  return new Set(catalog.schema['x-native-events'] ?? []);
+}
 
 export function validateSpec(spec: unknown, catalog: RegisteredCatalog, path = '$'): asserts spec is ComponentSpec {
   if (!spec || typeof spec !== 'object') {
@@ -180,8 +168,9 @@ export function validateSpec(spec: unknown, catalog: RegisteredCatalog, path = '
     // any element, and `@fires` documents only what a component dispatches
     // itself. `click` on a button is legitimate and undocumented by design.
     const declaredEvents = new Set(Object.keys(def['x-events'] ?? {}));
+    const native = nativeEvents(catalog);
     for (const [evtName, binding] of Object.entries(s.events as Record<string, unknown>)) {
-      if (!NATIVE_DOM_EVENTS.has(evtName) && !declaredEvents.has(evtName)) {
+      if (!native.has(evtName) && !declaredEvents.has(evtName)) {
         const available = [...declaredEvents].sort().join(', ');
         throw new Error(
           `${path}.events.${evtName}: not a declared event on ${s.component}. ` +

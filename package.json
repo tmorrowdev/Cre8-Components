@@ -23,7 +23,8 @@
     "test:agent": "pnpm --filter @tmorrow/cre8-agent-core test",
     "build:agent": "pnpm --filter @tmorrow/cre8-agent-core build",
     "test:a2ui": "pnpm --filter @tmorrow/cre8-wc test:a2ui",
-    "audit:render": "pnpm --filter @tmorrow/cre8-wc audit:render"
+    "audit:render": "pnpm --filter @tmorrow/cre8-wc audit:render",
+    "check:parity": "pnpm --filter @tmorrow/cre8-wc check:parity"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"
