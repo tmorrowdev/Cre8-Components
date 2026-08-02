@@ -1,5 +1,5 @@
 {
-  "version": "2.1.0",
+  "version": "2.1.1",
   "library": "@tmorrow/cre8-react",
   "componentPrefix": "Cre8",
   "description": "React wrappers for cre8 Web Components (@tmorrow/cre8-wc)",
@@ -3693,7 +3693,7 @@
   },
   "dependencies": {
     "@lit/react": "^1.0.8",
-    "@tmorrow/cre8-wc": "^2.1.0",
+    "@tmorrow/cre8-wc": "^2.1.1",
     "react": ">=18",
     "react-dom": ">=18"
   }

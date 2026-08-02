@@ -1,12 +1,14 @@
 {
   "name": "@tmorrow/cre8-wc",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "cre8 Web Components is a library of presentational UI web components to be consumed by # web applications.",
   "license": "BSD-3-Clause",
   "scripts": {
     "start": "pnpm run build:custom-elements.json && pnpm run storybook",
     "compile-styles": "npx tsx scripts/convert-scss-to-ts.ts",
     "build": "rm -rf lib && pnpm run compile-styles && pnpm build:cdn && vite build && tsc && cp .storybook/custom-elements.json custom-elements.json && pnpm run build:react && pnpm run build:mcp-manifest && pnpm run build:react-manifest",
+    "prepack": "node a2ui/check-layer-parity.mjs",
+    "prepublishOnly": "node a2ui/check-layer-parity.mjs",
     "build:mcp-manifest": "npx web-component-analyzer analyze \"components/**/*.ts\" --format json --outFile /tmp/wca-raw.json && npx tsx scripts/generate-mcp-manifest.ts",
     "build:react-manifest": "npx tsx scripts/generate-react-manifest.ts",
     "build:cdn": "rm -rf cdn && vite build --config vite.config.cdn.ts",
