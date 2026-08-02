@@ -20,6 +20,8 @@
     "kb:check-drift": "node docs/kb/tools/check-drift.mjs",
     "kb:check-demo-attrs": "node docs/kb/tools/check-demo-attrs.mjs",
     "test:mcp": "pnpm --filter @tmorrow/cre8-mcp test",
+    "test:agent": "pnpm --filter @tmorrow/cre8-agent-core test",
+    "build:agent": "pnpm --filter @tmorrow/cre8-agent-core build",
     "test:a2ui": "pnpm --filter @tmorrow/cre8-wc test:a2ui",
     "audit:render": "pnpm --filter @tmorrow/cre8-wc audit:render"
   },
