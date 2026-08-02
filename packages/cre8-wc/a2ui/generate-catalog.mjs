@@ -6,6 +6,7 @@ import { dirname, resolve } from 'node:path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const manifestPath = resolve(__dirname, '..', 'mcp-manifest.json');
 const outPath = resolve(__dirname, 'catalog.json');
+const compactOutPath = resolve(__dirname, 'catalog.compact.json');
 
 const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
 
@@ -356,4 +357,53 @@ const catalog = {
 writeFileSync(outPath, JSON.stringify(catalog, null, 2) + '\n');
 console.log(
   `Wrote ${outPath} (${manifest.components.length} components, ${(JSON.stringify(catalog).length / 1024).toFixed(1)} KB)`
+);
+
+// The compact projection: the minimum a model needs to emit valid A2UI. Prose is
+// ~90% of the catalog's bytes and none of its decoding constraint, so dropping it
+// is what lets a small-context model see the design system at all.
+//
+// Emitted here rather than in a separate script so it cannot drift from the
+// catalog it projects.
+function compactProps(propsNode) {
+  const out = {};
+  for (const [name, spec] of Object.entries(propsNode?.properties ?? {})) {
+    out[name] = spec.enum ? { enum: spec.enum } : { type: spec.type ?? 'string' };
+  }
+  return out;
+}
+
+const compactComponents = Object.entries(components)
+  .map(([name, def]) => {
+    const props = def.properties ?? {};
+    const entry = { name, category: def['x-category'] ?? 'Uncategorized' };
+
+    if (props.props) {
+      entry.props = compactProps(props.props);
+      if (props.props.required?.length) entry.required = props.props.required;
+    }
+    // Containment is expressed two ways and consumers need both: `children` for
+    // plain containers, `slots` for named regions. Dropping either makes a
+    // container look like a leaf.
+    if (props.children) entry.acceptsChildren = true;
+    if (props.slots) entry.slots = Object.keys(props.slots.properties ?? {});
+    return entry;
+  })
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const compact = {
+  contractVersion: 1,
+  sourceCatalog: catalog.$id,
+  libraryVersion: manifest.version,
+  componentCount: compactComponents.length,
+  components: compactComponents,
+};
+
+writeFileSync(compactOutPath, JSON.stringify(compact, null, 2) + '\n');
+
+const fullBytes = JSON.stringify(components).length;
+const compactBytes = JSON.stringify(compact).length;
+console.log(
+  `Wrote ${compactOutPath} (${compactComponents.length} components, ` +
+    `${(compactBytes / 1024).toFixed(1)} KB, ${(fullBytes / compactBytes).toFixed(1)}x smaller)`
 );

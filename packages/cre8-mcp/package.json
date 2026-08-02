@@ -15,7 +15,7 @@
     "start": "node dist/index.js",
     "start:api": "node dist/server.js",
     "dev:api": "npx tsx watch src/server.ts",
-    "test": "npx tsx test/surface-api.test.mjs && npx tsx test/stdio-viewer.test.mjs"
+    "test": "npx tsx test/surface-api.test.mjs && npx tsx test/stdio-viewer.test.mjs && npx tsx test/a2ui-context.test.mjs"
   },
   "keywords": [
     "mcp",
