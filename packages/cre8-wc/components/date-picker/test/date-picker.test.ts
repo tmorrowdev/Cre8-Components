@@ -4,7 +4,7 @@ import { html } from 'lit';
 import { Cre8DatePicker } from '../date-picker';
 import '../date-picker';
 
-jest.mock('nanoid');
+vi.mock('nanoid');
 
 describe('Cre8DatePicker', () => {
     test('renders default date-picker with label', async () => {

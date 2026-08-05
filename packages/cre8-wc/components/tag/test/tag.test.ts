@@ -25,7 +25,7 @@ describe('<cre8-tag>', () => {
         await el.updateComplete;
 
         const mockKeydownEvent = new KeyboardEvent('keydown', { code: 'ArrowDown' });
-        jest.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
+        vi.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
 
         const topItem: Cre8Tag = el.querySelector<Cre8Tag>('[text="1"]');
 
@@ -42,7 +42,7 @@ describe('<cre8-tag>', () => {
         await el.updateComplete;
 
         const mockKeydownEvent = new KeyboardEvent('keydown', { code: 'ArrowUp' });
-        jest.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
+        vi.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
 
         const topItem: Cre8Tag = el.querySelector<Cre8Tag>('[text="1"]');
         const middleItem: Cre8Tag = el.querySelector<Cre8Tag>('[text="2"]');
@@ -60,13 +60,13 @@ describe('<cre8-tag>', () => {
         await el.updateComplete;
 
         const mockKeydownEvent = new KeyboardEvent('keydown', { code: 'Tab' });
-        jest.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
+        vi.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
 
         const topItem: Cre8Tag = el.querySelector<Cre8Tag>('[text="1"]');
         const middleItem: Cre8Tag = el.querySelector<Cre8Tag>('[text="2"]');
         const bottomItem: Cre8Tag = el.querySelector<Cre8Tag>('[text="2"]');
-        const middleFocusSpy = jest.spyOn(middleItem, 'focus');
-        const bottomFocusSpy = jest.spyOn(bottomItem, 'focus');
+        const middleFocusSpy = vi.spyOn(middleItem, 'focus');
+        const bottomFocusSpy = vi.spyOn(bottomItem, 'focus');
 
         topItem.handleRadioKeyDown(mockKeydownEvent);
         await el.updateComplete;

@@ -25,7 +25,7 @@ describe('calendar', () => {
         const el = await fixture<Cre8Calendar>(html` <cre8-calendar fieldDate="2024-01-01"></cre8-calendar>`);
         await el.updateComplete;
 
-        const emitSpy = jest.spyOn(el, 'dispatchEvent');
+        const emitSpy = vi.spyOn(el, 'dispatchEvent');
         const emittedDate = new CustomEvent('dateSelect', { detail: { date: '2024-01-02' } });
 
         const JanSecondButton = el.shadowRoot!.querySelector('button[datetime="2024-01-02"]');

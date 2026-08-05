@@ -10,7 +10,7 @@
     ],
     "types": [
       "resize-observer-browser",
-      "jest",
+      "vitest/globals",
       "node"
     ],
     "declaration": true,

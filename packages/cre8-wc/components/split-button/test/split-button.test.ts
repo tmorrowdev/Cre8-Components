@@ -17,8 +17,8 @@ describe('split-button', () => {
     });
 
     test('emits only split-button-dropdown-click event after a click on arrow-button', async () => {
-        const mockTextHandler = jest.fn();
-        const mockOpenHandler = jest.fn();
+        const mockTextHandler = vi.fn();
+        const mockOpenHandler = vi.fn();
         const el = await fixture<Cre8SplitButton>(html`<cre8-split-button buttonText="Button">
       <cre8-dropdown>
         <cre8-dropdown-item>Item 1</cre8-dropdown-item>
@@ -37,8 +37,8 @@ describe('split-button', () => {
     });
 
     test('emits only split-button-text-click event after a click on text-button', async () => {
-        const mockTextHandler = jest.fn();
-        const mockOpenHandler = jest.fn();
+        const mockTextHandler = vi.fn();
+        const mockOpenHandler = vi.fn();
         const el = await fixture<Cre8SplitButton>(html`<cre8-split-button buttonText="Button">
       <cre8-dropdown>
         <cre8-dropdown-item>Item 1</cre8-dropdown-item>
@@ -57,8 +57,8 @@ describe('split-button', () => {
     });
 
     test('also emits the deprecated text-click and dropdown-click aliases', async () => {
-        const mockLegacyTextHandler = jest.fn();
-        const mockLegacyDropdownHandler = jest.fn();
+        const mockLegacyTextHandler = vi.fn();
+        const mockLegacyDropdownHandler = vi.fn();
         const el = await fixture<Cre8SplitButton>(html`<cre8-split-button buttonText="Button">
       <cre8-dropdown>
         <cre8-dropdown-item>Item 1</cre8-dropdown-item>

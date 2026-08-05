@@ -14,7 +14,7 @@ describe('percent-bar', () => {
         const el = await fixture<Cre8PercentBar>(html`<cre8-percent-bar value="5" max="10"></cre8-percent-bar>`);
         await el.updateComplete;
 
-        const emitSpy = jest.spyOn(el, 'dispatchEvent');
+        const emitSpy = vi.spyOn(el, 'dispatchEvent');
         const emittedItem = new Event('percent-bar-left-action-click', { });
 
         const actionButton = el.shadowRoot!.querySelector('cre8-button');

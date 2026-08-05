@@ -3,7 +3,7 @@ import { html } from 'lit';
 import '../field';
 import { Cre8Field } from '../field';
 
-jest.mock('nanoid');
+vi.mock('nanoid');
 
 describe('Cre8Field', () => {
     test('renders default field with label', async () => {

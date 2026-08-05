@@ -178,7 +178,7 @@ test('works with loading state secondary variant with neutral and inverse props'
     });
 
     test('submit form with button', async () => {
-        const mockSubmit = jest.fn();
+        const mockSubmit = vi.fn();
         HTMLFormElement.prototype.requestSubmit = mockSubmit;
         const el = (await fixture(html`<form id="form-example"><cre8-button type="submit"></cre8-button></form>`)) as HTMLFormElement;
         const button = el.querySelector('cre8-button').shadowRoot.querySelector('button');
@@ -187,7 +187,7 @@ test('works with loading state secondary variant with neutral and inverse props'
     });
 
     test('does not submit form with loading button', async () => {
-        const mockSubmit = jest.fn();
+        const mockSubmit = vi.fn();
         HTMLFormElement.prototype.requestSubmit = mockSubmit;
         const el = (await fixture(html`<form id="form-example"><cre8-button type="submit" ?loading=${true}></cre8-button></form>`)) as HTMLFormElement;
         const button = el.querySelector('cre8-button').shadowRoot.querySelector('button');
@@ -196,7 +196,7 @@ test('works with loading state secondary variant with neutral and inverse props'
     });
 
     test('reset form with button', async () => {
-        const mockReset = jest.fn();
+        const mockReset = vi.fn();
         HTMLFormElement.prototype.reset = mockReset;
         const el = (await fixture(html`<form id="form-example"><cre8-button type="reset"></cre8-button></form>`)) as HTMLFormElement;
         const button = el.querySelector('cre8-button').shadowRoot.querySelector('button');

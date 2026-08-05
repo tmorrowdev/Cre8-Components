@@ -45,7 +45,7 @@ describe('radio-field-item', () => {
         await el.updateComplete;
 
         const mockKeydownEvent = new KeyboardEvent('keydown', { code: 'ArrowDown' });
-        jest.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
+        vi.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
 
         const topItem: Cre8RadioFieldItem = el.querySelector<Cre8RadioFieldItem>('[label="1"]');
 
@@ -62,7 +62,7 @@ describe('radio-field-item', () => {
         await el.updateComplete;
 
         const mockKeydownEvent = new KeyboardEvent('keydown', { code: 'ArrowUp' });
-        jest.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
+        vi.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
 
         const topItem: Cre8RadioFieldItem = el.querySelector<Cre8RadioFieldItem>('[label="1"]');
         const middleItem: Cre8RadioFieldItem = el.querySelector<Cre8RadioFieldItem>('[label="2"]');
@@ -80,13 +80,13 @@ describe('radio-field-item', () => {
         await el.updateComplete;
 
         const mockKeydownEvent = new KeyboardEvent('keydown', { code: 'Tab' });
-        jest.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
+        vi.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
 
         const topItem: Cre8RadioFieldItem = el.querySelector<Cre8RadioFieldItem>('[label="1"]');
         const middleItem: Cre8RadioFieldItem = el.querySelector<Cre8RadioFieldItem>('[label="2"]');
         const bottomItem: Cre8RadioFieldItem = el.querySelector<Cre8RadioFieldItem>('[label="2"]');
-        const middleFocusSpy = jest.spyOn(middleItem, 'focus');
-        const bottomFocusSpy = jest.spyOn(bottomItem, 'focus');
+        const middleFocusSpy = vi.spyOn(middleItem, 'focus');
+        const bottomFocusSpy = vi.spyOn(bottomItem, 'focus');
 
         topItem.handleKeyDown(mockKeydownEvent);
         await el.updateComplete;
