@@ -156,6 +156,22 @@ export abstract class Cre8FormElement extends Cre8Element {
     }
 
     /**
+     * Moves focus to the underlying field.
+     *
+     * Custom elements are not focusable by default, so without this calling
+     * `focus()` on the host silently did nothing and focus stayed where it was.
+     * Anything that needs to move focus to a control - such as a form focusing
+     * its first invalid field - depends on this.
+     */
+    focus(options?: FocusOptions): void {
+        if (this.field) {
+            this.field.focus(options);
+            return;
+        }
+        super.focus(options);
+    }
+
+    /**
      * Forwards the underlying field's constraint validity to ElementInternals.
      *
      * The inner field renders the constraint attributes (`required`, `pattern`,

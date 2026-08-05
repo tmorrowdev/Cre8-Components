@@ -59,7 +59,7 @@ export const Default: Story = {
     <cre8-form @form-submit=${logSubmit}>
       <cre8-field name="firstName" label="First name"></cre8-field>
       <cre8-field name="lastName" label="Last name"></cre8-field>
-      <cre8-button type="submit">Save</cre8-button>
+      <cre8-button type="submit" text="Save"></cre8-button>
     </cre8-form>
   `,
 };
@@ -73,8 +73,8 @@ export const Validation: Story = {
     <cre8-form @form-submit=${logSubmit} @form-invalid=${logInvalid}>
       <cre8-field name="email" label="Email" required></cre8-field>
       <cre8-field name="nickname" label="Nickname"></cre8-field>
-      <cre8-button type="submit">Submit</cre8-button>
-      <cre8-button type="reset" variant="secondary">Reset</cre8-button>
+      <cre8-button type="submit" text="Submit"></cre8-button>
+      <cre8-button type="reset" variant="secondary" text="Reset"></cre8-button>
     </cre8-form>
   `,
 };
@@ -86,7 +86,7 @@ export const Validation: Story = {
 export const WithLayout: Story = {
     render: () => html`
     <cre8-form @form-submit=${logSubmit}>
-      <cre8-grid>
+      <cre8-grid variant="2up" gap="lg">
         <cre8-grid-item>
           <cre8-field name="street" label="Street" required></cre8-field>
         </cre8-grid-item>
@@ -94,7 +94,7 @@ export const WithLayout: Story = {
           <cre8-field name="city" label="City" required></cre8-field>
         </cre8-grid-item>
       </cre8-grid>
-      <cre8-button type="submit">Save address</cre8-button>
+      <cre8-button type="submit" text="Save address"></cre8-button>
     </cre8-form>
   `,
 };
@@ -108,7 +108,7 @@ export const Disabled: Story = {
     <cre8-form disabled>
       <cre8-field name="firstName" label="First name"></cre8-field>
       <cre8-field name="lastName" label="Last name"></cre8-field>
-      <cre8-button type="submit">Saving…</cre8-button>
+      <cre8-button type="submit" text="Saving…"></cre8-button>
     </cre8-form>
   `,
 };

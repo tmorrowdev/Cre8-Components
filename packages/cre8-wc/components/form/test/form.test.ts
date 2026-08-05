@@ -104,6 +104,9 @@ describe('Cre8Form', () => {
         expect(required.isError).toBe(true);
         expect(optional.isError).toBe(false);
         expect(onInvalid.mock.calls[0][0].detail.invalidControls).toEqual([required]);
+
+        // Focus is retargeted to the host when the inner field takes focus.
+        expect(document.activeElement).toBe(required);
     });
 
     test('novalidate skips aggregate validation', async () => {
