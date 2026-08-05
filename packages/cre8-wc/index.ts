@@ -62,6 +62,7 @@ export { Cre8Grid } from './components/grid/grid.js';
 export { Cre8GlobalNavItem } from './components/global-nav-item/global-nav-item.js';
 export { Cre8GlobalNav } from './components/global-nav/global-nav.js';
 export { Cre8Footer } from './components/footer/footer.js';
+export { Cre8Form } from './components/form/form.js';
 export { Cre8FieldNote } from './components/field-note/field-note.js';
 export { Cre8Field } from './components/field/field.js';
 export { Cre8Feature } from './components/feature/feature.js';
