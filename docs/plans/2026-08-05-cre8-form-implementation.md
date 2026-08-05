@@ -6,7 +6,7 @@
 
 **Architecture:** `cre8-form` renders into **light DOM** and imperatively wraps its author-supplied children in a real `<form>` element. Because the eight controls extending `Cre8FormElement` are already `formAssociated`, the browser routes their values into `FormData` with no extra code. The inner `<form>` sets `noValidate = true` so the browser never blocks submission — `cre8-form` always receives the `submit` event and owns the validation UX.
 
-**Tech Stack:** Lit 3, TypeScript, Jest + jsdom, `@open-wc/testing-helpers`, `element-internals-polyfill`.
+**Tech Stack:** Lit 3, TypeScript, Vitest + jsdom, `@open-wc/testing-helpers`, `element-internals-polyfill`.
 
 **Design doc:** `docs/plans/2026-08-05-cre8-form-design.md`
 
@@ -19,13 +19,15 @@
 **Run one test file:**
 ```bash
 cd packages/cre8-wc
-npx jest components/form --coverage=false
+npx vitest run components/form
 ```
 Coverage is on by default and slow; `--coverage=false` keeps the loop fast.
 
-**Test file location matters.** `jest.config.cjs` has `testMatch: ['<rootDir>/components/**/test/*.test.ts']`. The file must be `components/form/test/form.test.ts` or Jest will not see it.
+**Test file location matters.** `vitest.config.ts` has `include: ['components/**/test/*.test.ts']`. The file must be `components/form/test/form.test.ts` or Vitest will not see it.
 
-**Form association works in tests.** `jest.config.cjs` lists `element-internals-polyfill` in `setupFilesAfterEnv`, so `attachInternals()` and form participation work under jsdom. This is the assumption the whole component rests on — Task 1 verifies it before anything else is built.
+**Globals are on.** `vitest.config.ts` sets `globals: true`, so `describe`, `test`, `expect`, and `vi` are available without imports — match the surrounding suites and do not add imports for them.
+
+**Form association works in tests.** `vitest.setup.ts` imports `element-internals-polyfill` first, so `attachInternals()` and form participation work under jsdom. This is the assumption the whole component rests on — Task 1 verifies it before anything else is built.
 
 **Two things that will bite you:**
 
@@ -90,7 +92,7 @@ describe('Cre8Form', () => {
 **Step 2: Run it to make sure it fails**
 
 ```bash
-cd packages/cre8-wc && npx jest components/form --coverage=false
+cd packages/cre8-wc && npx vitest run components/form
 ```
 Expected: FAIL — cannot resolve `../form`.
 
@@ -189,7 +191,7 @@ export default Cre8Form;
 **Step 4: Run the tests to verify they pass**
 
 ```bash
-cd packages/cre8-wc && npx jest components/form --coverage=false
+cd packages/cre8-wc && npx vitest run components/form
 ```
 Expected: PASS, 2 tests.
 
@@ -295,7 +297,7 @@ test('emits form-submit with FormData when all controls are valid', async () => 
     field.value = 'a@b.com';
     await el.updateComplete;
 
-    const onSubmit = jest.fn();
+    const onSubmit = vi.fn();
     el.addEventListener('form-submit', onSubmit);
 
     el.form!.requestSubmit();
@@ -308,7 +310,7 @@ test('emits form-submit with FormData when all controls are valid', async () => 
 
 test('never triggers a native navigation', async () => {
     const el = await fixture<Cre8Form>(html`<cre8-form></cre8-form>`);
-    const onNativeSubmit = jest.fn();
+    const onNativeSubmit = vi.fn();
     el.form!.addEventListener('submit', onNativeSubmit);
 
     el.form!.requestSubmit();
@@ -402,8 +404,8 @@ test('blocks submit, flags errors, and focuses the first invalid control', async
     `);
     await el.updateComplete;
 
-    const onSubmit = jest.fn();
-    const onInvalid = jest.fn();
+    const onSubmit = vi.fn();
+    const onInvalid = vi.fn();
     el.addEventListener('form-submit', onSubmit);
     el.addEventListener('form-invalid', onInvalid);
 
@@ -506,7 +508,7 @@ test('novalidate skips aggregate validation', async () => {
     `);
     await el.updateComplete;
 
-    const onSubmit = jest.fn();
+    const onSubmit = vi.fn();
     el.addEventListener('form-submit', onSubmit);
 
     el.form!.requestSubmit();
@@ -549,7 +551,7 @@ test('reset clears error state and emits form-reset', async () => {
     el.form!.requestSubmit();
     expect(el.controls[0].isError).toBe(true);
 
-    const onReset = jest.fn();
+    const onReset = vi.fn();
     el.addEventListener('form-reset', onReset);
 
     el.reset();
@@ -617,7 +619,7 @@ test('submit() triggers the same flow as a submit button', async () => {
         <cre8-field name="email" label="Email"></cre8-field>
       </cre8-form>
     `);
-    const onSubmit = jest.fn();
+    const onSubmit = vi.fn();
     el.addEventListener('form-submit', onSubmit);
 
     el.submit();
@@ -783,7 +785,7 @@ git commit -m "Add cre8-form stories"
 **Step 1: Run the whole cre8-wc suite**
 
 ```bash
-cd packages/cre8-wc && npx jest --coverage=false
+cd packages/cre8-wc && npx vitest run
 ```
 Expected: no new failures. If pre-existing failures show up, confirm they also fail on `a2ui` before treating them as yours.
 
@@ -815,4 +817,4 @@ git commit -m "Regenerate custom elements manifest for cre8-form"
 
 - **`disabled` stomps per-control state.** Toggling the form's `disabled` off re-enables every control, including any that were individually disabled. Track per-control state before overriding it only if a real use case appears.
 - **No error summary.** Errors surface only inline on each control. The WCAG error-summary pattern is deliberately out of scope for this version.
-- **jsdom fidelity.** Form association relies on `element-internals-polyfill`. Behaviour that the polyfill cannot reproduce is covered in Storybook rather than Jest.
+- **jsdom fidelity.** Form association relies on `element-internals-polyfill`. Behaviour that the polyfill cannot reproduce is covered in Storybook rather than Vitest.
