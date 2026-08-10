@@ -2,4 +2,5 @@ packages:
   - packages/cre8-wc
   - packages/cre8-mcp
   - packages/cre8-agent-core
+  - packages/cre8-key-custody
   - packages/cre8-studio
