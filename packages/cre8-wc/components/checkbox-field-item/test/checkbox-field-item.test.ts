@@ -109,14 +109,21 @@ describe('checkbox-field-item', () => {
             );
         });
 
-        test('a2ui brand pins the checkbox radius to 4px', () => {
+        test('a2ui brand keeps the checkbox radius at 4px, derived from the radius seed', () => {
             const fs = require('fs');
             const path = require('path');
             const brandCss = fs.readFileSync(
                 path.resolve(__dirname, '../../../design-tokens/brands/cre8-a2ui/css/tokens_brand.css'),
                 'utf8'
             );
-            expect(brandCss).toContain('--cre8-border-radius-checkbox: 4px;');
+            // The radius scale is derived from --cre8-seed-radius, so assert the
+            // relationship and the value it resolves to at the shipped seed.
+            expect(brandCss).toContain('--cre8-radius-checkbox: calc(var(--cre8-seed-radius) / 6);');
+            expect(brandCss).toContain('--cre8-border-radius-checkbox: var(--cre8-radius-checkbox);');
+
+            const seed = brandCss.match(/--cre8-seed-radius:\s*(\d+(?:\.\d+)?)px;/);
+            expect(seed).not.toBeNull();
+            expect(Number(seed![1]) / 6).toBe(4);
         });
     });
 });

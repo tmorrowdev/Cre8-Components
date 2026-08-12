@@ -37,6 +37,21 @@ React consumers: the generated `on*` props follow the event names, so `onCloseMo
 
 The aliases are listed in `DEPRECATED_EVENT_ALIASES` in `packages/cre8-wc/components/cre8-element.ts` — delete that map and `Cre8Element.dispatchWithLegacyAlias()` to complete the removal.
 
+### Updates — `cre8-a2ui` tokens restructured into four tiers
+
+`design-tokens/brands/cre8-a2ui` previously shipped 491 flat declarations, 367 of them raw colour literals with no `var()` references, so rebranding meant a find-and-replace across the file. It is now tiered — seed → primitive → semantic → component — with each tier referencing only the one above it.
+
+**Nothing changes visually and no token names were removed.** All 491 legacy `--cre8-color-*` names are still declared, as aliases, and every one resolves to the exact value it had before (verified by comparing painted pixels for all 491 tokens in Chrome). No component styles needed changes.
+
+- **Rebranding is now the seed block.** 11 declarations — `--cre8-seed-primary`, `-neutral`, `-success`, `-error`, `-warning`, `-accent`, `-font`, `-radius`, `-space`, `-font-size`, `-border-width`. Nothing else in the file is a literal.
+- **Primitive ramps are derived** with `oklch(from var(--cre8-seed-*) …)`. Per-step lightness, chroma and hue are fitted so the default seed reproduces the shipped ramps exactly. The anchor step (`--cre8-primary-500`) is the seed verbatim, so the colour an integrator sets is the colour that renders.
+- **Dark mode arrives.** The 152 hand-maintained `-inverse-` tokens are superseded by a `[data-mode="inverse"]` block that remaps 20 mode variables; the semantic and component tiers re-resolve through it, so components follow with no per-component work. `[data-mode="auto"]` follows `prefers-color-scheme`. The legacy `-inverse-` names are untouched and still resolve as before.
+- **Theming can be scoped.** The tier stack is declared for `:root, [data-cre8-theme]`. A custom property is substituted where it is *declared*, not where it is read, so declaring the tiers only on `:root` would leave component tokens pinned to their `:root` values inside a themed subtree. Put `[data-cre8-theme]` on an element to rebrand or mode-switch that subtree.
+
+**Requires relative colour support** — Chrome 119+, Safari 16.4+, Firefox 128+. On older engines the derived ramps are invalid at parse time and colours fall back to unset. `cre8-studio`'s generated brand themes include an `@supports`-gated static ramp; the shipped brand file does not.
+
+Other brands are unchanged and keep working — tier 3 exposes the same names. Still open: renaming `--cre8-color-*` → `--cre8-*` across component styles, and the typography layer still reads `--cre8-font-families-inter`, which now aliases `--cre8-font-family-base`.
+
 ---
 
 ## 1.0.0-beta
