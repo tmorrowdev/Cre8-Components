@@ -1,52 +1,33 @@
-import { readFile } from "fs/promises";
-import path from "path";
-import { BLUE_RAMP, buildRamp, buildSubstitution } from "../a2ui-demo/ramp";
+import { buildRamp } from "../a2ui-demo/ramp";
 
 // Server helpers for the brand-extract route: build the cre8 token override CSS
 // from a brand color, and best-effort extract a brand color + font from a URL.
 
-const BRAND_CSS = "../cre8-wc/design-tokens/brands/cre8-a2ui/css/tokens_brand.css";
-
-let cachedTokenLines: { prop: string; value: string }[] | null = null;
-
-// Parse the brand token CSS once into (custom-property, value) pairs.
-async function tokenLines(): Promise<{ prop: string; value: string }[]> {
-  if (cachedTokenLines) return cachedTokenLines;
-  const file = path.resolve(process.cwd(), BRAND_CSS);
-  const css = await readFile(file, "utf8");
-  const lines: { prop: string; value: string }[] = [];
-  const re = /(--cre8-[a-z0-9-]+)\s*:\s*([^;]+);/gi;
-  let m: RegExpExecArray | null;
-  while ((m = re.exec(css)) !== null) {
-    lines.push({ prop: m[1], value: m[2].trim() });
-  }
-  cachedTokenLines = lines;
-  return lines;
-}
-
-// Produce a :root override block that substitutes the brand ramp for every token
-// whose value references a blue-ramp hex. Returns the CSS string.
+// The brand token file is tiered: every colour resolves, through the semantic
+// and component layers, back to `--cre8-seed-primary`. Retheming is therefore a
+// single declaration — we no longer parse the token CSS and rewrite the ~160
+// literals that used to carry a blue-ramp hex.
+//
+// The tier-1 primitives use `oklch(from …)`, which needs Chrome 119+,
+// Safari 16.4+ or Firefox 128+. Where that is unsupported the derived ramp is
+// invalid at parse time and the seed alone would leave the primary ramp unset,
+// so we emit the pre-resolved hexes behind a feature query. On engines that do
+// support relative colour the seed drives everything and this block never
+// applies — which is what keeps the neutral/success/error ramps derived too.
 export async function buildThemeCss(primary: string): Promise<string> {
-  const sub = buildSubstitution(primary);
-  const blueSet = new Set(BLUE_RAMP.map((h) => h.toUpperCase()));
-  const lines = await tokenLines();
-  const out: string[] = [];
-  for (const { prop, value } of lines) {
-    // Substitute any blue-ramp hex appearing in the value (covers solid fills,
-    // gradients and multi-stop values).
-    let replaced = value;
-    let touched = false;
-    replaced = replaced.replace(/#[0-9a-fA-F]{6}/g, (hex) => {
-      const up = hex.toUpperCase();
-      if (blueSet.has(up)) {
-        touched = true;
-        return sub[up];
-      }
-      return hex;
-    });
-    if (touched) out.push(`  ${prop}: ${replaced};`);
-  }
-  return `:root {\n${out.join("\n")}\n}`;
+  const ramp = buildRamp(primary);
+  const steps = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
+  const fallback = steps
+    .map((step, i) => `    --cre8-primary-${step}: ${ramp[i]};`)
+    .join("\n");
+  return [
+    `:root { --cre8-seed-primary: ${primary}; }`,
+    `@supports not (color: oklch(from #000 l c h)) {`,
+    `  :root {`,
+    fallback,
+    `  }`,
+    `}`,
+  ].join("\n");
 }
 
 // ---- URL extraction --------------------------------------------------------
