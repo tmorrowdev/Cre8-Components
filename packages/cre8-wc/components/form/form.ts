@@ -2,6 +2,7 @@ import { html, type PropertyValues } from 'lit';
 import { property } from 'lit/decorators.js';
 import { Cre8Element } from '../cre8-element';
 import type { Cre8FormElement } from '../cre8-form-element';
+import styles from './form.styles';
 
 /**
  * The form component groups form-associated Cre8 controls, aggregates their
@@ -51,6 +52,36 @@ export class Cre8Form extends Cre8Element {
     connectedCallback() {
         super.connectedCallback();
         this._ensureForm();
+        this._adoptStyles();
+    }
+
+    /**
+     * Installs the component's stylesheet into its root node.
+     *
+     * Light-DOM components have no shadow root, so Lit never attaches
+     * `static styles`. The sheet is instead adopted by the document (or the
+     * enclosing shadow root, when the form is composed inside one) exactly
+     * once per root. Falls back to appending a `<style>` element where
+     * constructable stylesheets are unavailable (e.g. jsdom).
+     */
+    private _adoptStyles() {
+        const root = this.getRootNode() as Document | ShadowRoot;
+        const sheet = styles.styleSheet;
+
+        if (sheet && 'adoptedStyleSheets' in root) {
+            if (!root.adoptedStyleSheets.includes(sheet)) {
+                root.adoptedStyleSheets = [...root.adoptedStyleSheets, sheet];
+            }
+            return;
+        }
+
+        const target = root instanceof Document ? root.head : root;
+        if (!target.querySelector('style[data-cre8-form]')) {
+            const styleEl = document.createElement('style');
+            styleEl.setAttribute('data-cre8-form', '');
+            styleEl.textContent = styles.cssText;
+            target.appendChild(styleEl);
+        }
     }
 
     protected updated(changed: PropertyValues) {

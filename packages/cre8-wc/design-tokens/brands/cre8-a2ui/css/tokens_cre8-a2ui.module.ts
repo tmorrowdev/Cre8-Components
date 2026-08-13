@@ -38,8 +38,8 @@ const a2ui = `
 :root {
   --cre8-desktop-menu-padding-vertical-padding: 1rem;
   --cre8-desktop-menu-padding-horizontal-padding: 0.5rem;
-  --cre8-input-padding: .75rem 1rem;
-  --cre8-input-label-margin-left: 1rem;
+  --cre8-input-padding: 0.625rem 0.875rem;
+  --cre8-input-label-margin-left: 0;
   --cre8-color-header-bg-default: #ffffff;
   --cre8-color-header-inverse-bg-default: #3B82F6;
   --cre8-color-header-menu-bg-default: #ffffff;
@@ -421,7 +421,7 @@ const a2ui = `
   --cre8-color-content-link-active: #1D4ED8;
   --cre8-color-content-inverse-link-active: #60A5FA;
   --cre8-color-border-default: #E2E8F0;
-  --cre8-color-border-strong: #64748B;
+  --cre8-color-border-strong: #94A3B8;
   --cre8-color-border-knockout: #ffffff;
   --cre8-color-border-disabled: #CBD5E1;
   --cre8-color-border-brand: #3B82F6;
@@ -463,7 +463,7 @@ const a2ui = `
   --cre8-text-decoration-underline: underline;
   --cre8-paragraph-indent-0: 0px;
   --cre8-border-radius-small: 12px;
-  --cre8-border-radius-default: 900px;
+  --cre8-border-radius-default: 12px;
   --cre8-border-radius-large: 24px;
   --cre8-border-radius-round: 900px;
   --cre8-border-radius-button: 900px;

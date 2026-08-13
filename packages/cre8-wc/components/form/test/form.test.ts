@@ -2,6 +2,7 @@ import { fixture } from '@open-wc/testing-helpers';
 import { html } from 'lit';
 import '../form';
 import { Cre8Form } from '../form';
+import formStyles from '../form.styles';
 import '../../field/field';
 import '../../grid/grid';
 
@@ -173,6 +174,21 @@ describe('Cre8Form', () => {
 
         expect(el.reportValidity()).toBe(false);
         expect(el.controls[0].isError).toBe(true);
+    });
+
+    test('adopts its document-level stylesheet exactly once', async () => {
+        await fixture<Cre8Form>(html`<cre8-form></cre8-form>`);
+        await fixture<Cre8Form>(html`<cre8-form></cre8-form>`);
+
+        const sheet = formStyles.styleSheet;
+        if (sheet) {
+            // Constructable-stylesheet path: adopted once, never duplicated.
+            const count = document.adoptedStyleSheets.filter((s) => s === sheet).length;
+            expect(count).toBe(1);
+        } else {
+            // Fallback path: a single tagged <style> element in head.
+            expect(document.querySelectorAll('style[data-cre8-form]')).toHaveLength(1);
+        }
     });
 
     test('disabled propagates to every control', async () => {

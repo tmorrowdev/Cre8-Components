@@ -2,6 +2,7 @@ import { html } from 'lit';
 import type { Meta, StoryObj } from '@storybook/web-components';
 import '../field/field';
 import '../button/button';
+import '../button-group/button-group';
 import '../grid/grid';
 import '../grid-item/grid-item';
 import './form';
@@ -73,8 +74,10 @@ export const Validation: Story = {
     <cre8-form @form-submit=${logSubmit} @form-invalid=${logInvalid}>
       <cre8-field name="email" label="Email" required></cre8-field>
       <cre8-field name="nickname" label="Nickname"></cre8-field>
-      <cre8-button type="submit" text="Submit"></cre8-button>
-      <cre8-button type="reset" variant="secondary" text="Reset"></cre8-button>
+      <cre8-button-group>
+        <cre8-button type="submit" text="Submit"></cre8-button>
+        <cre8-button type="reset" variant="secondary" text="Reset"></cre8-button>
+      </cre8-button-group>
     </cre8-form>
   `,
 };
