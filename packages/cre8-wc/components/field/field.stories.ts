@@ -1,6 +1,6 @@
 import {html} from 'lit';
 import {spread} from '../../directives/spread';
-import './field';
+import './field.styles';
 
 export default {
   title: 'cre8 Components/Field',

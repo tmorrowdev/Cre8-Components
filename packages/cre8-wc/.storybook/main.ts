@@ -21,7 +21,11 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-docs',
     '@storybook/addon-themes',
-    '@storybook/addon-a11y'
+    '@storybook/addon-a11y',
+    // Experimental: exposes running stories to AI agents over MCP
+    '@storybook/addon-mcp',
+    // Experimental: runs play-function stories as Vitest browser-mode tests
+    '@storybook/addon-vitest'
   ],
   // Customize Vite config
   async viteFinal(config, options) {

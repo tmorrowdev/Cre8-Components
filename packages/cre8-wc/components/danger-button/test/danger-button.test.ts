@@ -101,7 +101,7 @@ describe('danger-button', () => {
     });
 
     test('submit form with button', async () => {
-        const mockSubmit = jest.fn();
+        const mockSubmit = vi.fn();
         HTMLFormElement.prototype.requestSubmit = mockSubmit;
         const el = (await fixture(html`<form id="form-example"><cre8-danger-button type="submit"></cre8-danger-button></form>`)) as HTMLFormElement;
         const button = el.querySelector('cre8-danger-button').shadowRoot.querySelector('button');
@@ -110,7 +110,7 @@ describe('danger-button', () => {
     });
 
     test('does not submit form with loading button', async () => {
-        const mockSubmit = jest.fn();
+        const mockSubmit = vi.fn();
         HTMLFormElement.prototype.requestSubmit = mockSubmit;
         const el = (await fixture(html`<form id="form-example"><cre8-danger-button type="submit" ?loading=${true}></cre8-danger-button></form>`)) as HTMLFormElement;
         const button = el.querySelector('cre8-danger-button').shadowRoot.querySelector('button');
@@ -119,7 +119,7 @@ describe('danger-button', () => {
     });
 
     test('reset form with button', async () => {
-        const mockReset = jest.fn();
+        const mockReset = vi.fn();
         HTMLFormElement.prototype.reset = mockReset;
         const el = (await fixture(html`<form id="form-example"><cre8-danger-button type="reset"></cre8-danger-button></form>`)) as HTMLFormElement;
         const button = el.querySelector('cre8-danger-button').shadowRoot.querySelector('button');

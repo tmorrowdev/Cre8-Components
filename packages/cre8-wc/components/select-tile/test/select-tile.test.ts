@@ -78,7 +78,7 @@ describe('select-tile', () => {
         await el.updateComplete;
 
         const mockKeydownEvent = new KeyboardEvent('keydown', { code: 'ArrowDown' });
-        jest.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
+        vi.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
 
         const topItem: Cre8SelectTile = el.querySelector<Cre8SelectTile>('[value="1"]');
         const middleItem: Cre8SelectTile = el.querySelector<Cre8SelectTile>('[value="2"]');
@@ -97,7 +97,7 @@ describe('select-tile', () => {
         await el.updateComplete;
 
         const mockKeydownEvent = new KeyboardEvent('keydown', { code: 'ArrowUp' });
-        jest.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
+        vi.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
 
         const topItem: Cre8SelectTile = el.querySelector<Cre8SelectTile>('[value="1"]');
         const middleItem: Cre8SelectTile = el.querySelector<Cre8SelectTile>('[value="2"]');
@@ -118,7 +118,7 @@ describe('select-tile', () => {
         await el.updateComplete;
 
         const mockKeydownEvent = new KeyboardEvent('keydown', { code: 'ArrowDown' });
-        jest.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
+        vi.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
 
         const topItem: Cre8SelectTile = el.querySelector<Cre8SelectTile>('[value="1"]');
         const middleItem: Cre8SelectTile = el.querySelector<Cre8SelectTile>('[value="2"]');
@@ -147,7 +147,7 @@ describe('select-tile', () => {
         await el.updateComplete;
 
         const mockKeydownEvent = new KeyboardEvent('keydown', { code: 'ArrowUp' });
-        jest.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
+        vi.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
 
         const topItem: Cre8SelectTile = el.querySelector<Cre8SelectTile>('[value="1"]');
         const middleItem: Cre8SelectTile = el.querySelector<Cre8SelectTile>('[value="2"]');

@@ -8,9 +8,9 @@ import { Cre8Section } from '../../section/section';
 import '../../section/section';
 
 const mock_id = 'myid';
-const mock_nanoid = jest.fn();
+const mock_nanoid = vi.fn();
 mock_nanoid.mockReturnValue(mock_id);
-jest.mock('nanoid', () => ({
+vi.mock('nanoid', () => ({
     nanoid: () => mock_nanoid(),
 }));
 
@@ -104,16 +104,16 @@ describe('tooltip', () => {
         const tooltipPanelWidth = 200;
 
     // Mock the bounding client rect of the body
-        jest.spyOn(document.querySelector('body'), 'getBoundingClientRect').mockReturnValue({
+        vi.spyOn(document.querySelector('body'), 'getBoundingClientRect').mockReturnValue({
             width: bodyWidth,
         } as DOMRect);
 
     // Create a dummy element to mock _Cre8TooltipPanel
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_Cre8TooltipPanel', 'get').mockReturnValue(dummyPanel);
+        vi.spyOn(el, '_Cre8TooltipPanel', 'get').mockReturnValue(dummyPanel);
 
     // Mock the bounding client rect of the tooltip panel
-        jest.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
+        vi.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
             left: -tooltipPanelWidth,
             right: 0,
         } as DOMRect);
@@ -146,16 +146,16 @@ describe('tooltip', () => {
         const tooltipPanelWidth = 200;
 
     // Mock the bounding client rect of the body
-        jest.spyOn(document.querySelector('body'), 'getBoundingClientRect').mockReturnValue({
+        vi.spyOn(document.querySelector('body'), 'getBoundingClientRect').mockReturnValue({
             width: bodyWidth,
         } as DOMRect);
 
     // Create a dummy element to mock _Cre8TooltipPanel
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_Cre8TooltipPanel', 'get').mockReturnValue(dummyPanel);
+        vi.spyOn(el, '_Cre8TooltipPanel', 'get').mockReturnValue(dummyPanel);
 
     // Mock the bounding client rect of the tooltip panel
-        jest.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
+        vi.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
             left: bodyWidth - 1,
             right: bodyWidth + tooltipPanelWidth,
         } as DOMRect);
@@ -189,7 +189,7 @@ describe('tooltip', () => {
         const bodyWidth = 1000;
 
     // Mock the bounding client rect of the body
-        jest.spyOn(document.querySelector('body'), 'getBoundingClientRect').mockReturnValue({
+        vi.spyOn(document.querySelector('body'), 'getBoundingClientRect').mockReturnValue({
             width: bodyWidth,
         } as DOMRect);
 
@@ -198,13 +198,13 @@ describe('tooltip', () => {
 
     // Create a dummy element to mock _Cre8TooltipPanel
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_Cre8TooltipPanel', 'get').mockReturnValue(dummyPanel);
+        vi.spyOn(el, '_Cre8TooltipPanel', 'get').mockReturnValue(dummyPanel);
 
     // Mock the element clientHeight
         Object.defineProperty(el, 'clientHeight', { value: 200 });
 
     // Mock the bounding client rect of the tooltip panel
-        jest.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
+        vi.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
             top: windowHeight,
             bottom: windowHeight + tooltipPanelHeight,
             left: 0,
@@ -235,10 +235,10 @@ describe('tooltip', () => {
 
     // Create a dummy element to mock _Cre8TooltipPanel
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_Cre8TooltipPanel', 'get').mockReturnValue(dummyPanel);
+        vi.spyOn(el, '_Cre8TooltipPanel', 'get').mockReturnValue(dummyPanel);
 
     // Mock the bounding client rect of the tooltip panel
-        jest.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
+        vi.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
             top: -tooltipPanelHeight,
             left: 50,
             right: 100,
@@ -297,17 +297,17 @@ describe('tooltip', () => {
         el.isDynamic = true;
         await el.updateComplete;
 
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         el.toggleActive();
-        jest.advanceTimersByTime(2000);
+        vi.advanceTimersByTime(2000);
         expect(el.isActiveDynamic).toBeTruthy();
 
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         el.toggleActive();
-        jest.advanceTimersByTime(2000);
+        vi.advanceTimersByTime(2000);
         expect(el.isActiveDynamic).toBeFalsy();
 
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
 

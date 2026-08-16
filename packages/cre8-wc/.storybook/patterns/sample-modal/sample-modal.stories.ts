@@ -2,8 +2,11 @@ import {html} from 'lit';
 import './sample-modal';
 
 export default {
-  title: 'Examples/Sample Modal',
+  title: 'Patterns/Sample Modal',
   component: 'sample-modal',
+  // Docs-only composition: embedded live in components/modal/modal.mdx.
+  // '!dev' keeps it out of the sidebar without breaking that embed.
+  tags: ['!dev'],
   parameters: {
     docs: {
       story: {

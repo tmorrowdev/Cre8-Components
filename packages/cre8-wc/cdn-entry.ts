@@ -64,6 +64,7 @@ import { Cre8Feature } from './components/feature/feature';
 import { Cre8Field } from './components/field/field';
 import { Cre8FieldNote } from './components/field-note/field-note';
 import { Cre8Footer } from './components/footer/footer';
+import { Cre8Form } from './components/form/form';
 import { Cre8GlobalNav } from './components/global-nav/global-nav';
 import { Cre8GlobalNavItem } from './components/global-nav-item/global-nav-item';
 import { Cre8Grid } from './components/grid/grid';
@@ -157,6 +158,7 @@ export {
   Cre8ProgressStepsItem,
   Cre8FieldNote,
   Cre8Footer,
+  Cre8Form,
   Cre8GlobalNav,
   Cre8GlobalNavItem,
   Cre8Grid,

@@ -6,7 +6,7 @@ import { Cre8Tabs } from '../tabs';
 import { Cre8TabPanel } from '../../tab-panel/tab-panel';
 import { Cre8Tab } from '../../tab/tab';
 
-jest.mock('nanoid');
+vi.mock('nanoid');
 
 describe('tabs', () => {
     beforeEach(() => {
@@ -139,7 +139,7 @@ describe('tabs', () => {
 
     // Create a dummy element to mock _Cre8TabsHeaderList
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_Cre8TabsHeaderList', 'get').mockReturnValue(dummyPanel);
+        vi.spyOn(el, '_Cre8TabsHeaderList', 'get').mockReturnValue(dummyPanel);
         Object.defineProperty(dummyPanel, 'scrollLeft', { value: 10 });
 
         Object.defineProperty(document, 'dir', {
@@ -174,7 +174,7 @@ describe('tabs', () => {
 
     // Create a dummy element to mock _Cre8TabsHeaderList
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_Cre8TabsHeaderList', 'get').mockReturnValue(dummyPanel);
+        vi.spyOn(el, '_Cre8TabsHeaderList', 'get').mockReturnValue(dummyPanel);
         Object.defineProperty(dummyPanel, 'scrollLeft', { value: 0 });
 
         Object.defineProperty(document, 'dir', {
@@ -210,7 +210,7 @@ describe('tabs', () => {
         const secondTab = el.querySelectorAll<Cre8Tab>('cre8-tab')[1];
         const thridTab = el.querySelectorAll<Cre8Tab>('cre8-tab')[2];
 
-        jest.spyOn(document, 'activeElement', 'get').mockReturnValue(firstTab);
+        vi.spyOn(document, 'activeElement', 'get').mockReturnValue(firstTab);
 
         await userEvent.type(firstTab, '{arrowright}');
         firstTab.focus();
@@ -255,10 +255,10 @@ describe('tabs', () => {
     `);
         await el.updateComplete;
         const firstTab = el.querySelectorAll<Cre8Tab>('cre8-tab')[0];
-        jest.spyOn(document, 'activeElement', 'get').mockReturnValue(firstTab);
+        vi.spyOn(document, 'activeElement', 'get').mockReturnValue(firstTab);
 
         const tabPanel = el.querySelectorAll<Cre8TabPanel>('cre8-tab-panel')[0];
-        jest.spyOn(document, 'activeElement', 'get').mockReturnValue(tabPanel);
+        vi.spyOn(document, 'activeElement', 'get').mockReturnValue(tabPanel);
         await userEvent.type(firstTab, '{esc}');
         firstTab.dispatchEvent(new KeyboardEvent('keydown', { code: 'Escape', bubbles: true }));
         await el.updateComplete;
@@ -363,7 +363,7 @@ describe('tabs', () => {
       </cre8-tabs>
     `);
         await el.updateComplete;
-        jest.spyOn(el, 'isInViewport').mockReturnValue(true);
+        vi.spyOn(el, 'isInViewport').mockReturnValue(true);
         el.setIsEnd();
         expect(el.isEnd).toBeTruthy;
     });

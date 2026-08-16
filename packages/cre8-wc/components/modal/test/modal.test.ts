@@ -39,9 +39,9 @@ describe('modal', () => {
         el.isActive = true;
 
         const mockClickEvent = new Event('click');
-        jest.spyOn(mockClickEvent, 'composedPath').mockReturnValue([]);
-        jest.spyOn(mockClickEvent, 'target', 'get').mockReturnValue(el);
-        const dispatchSpy = jest.spyOn(el, 'dispatch');
+        vi.spyOn(mockClickEvent, 'composedPath').mockReturnValue([]);
+        vi.spyOn(mockClickEvent, 'target', 'get').mockReturnValue(el);
+        const dispatchSpy = vi.spyOn(el, 'dispatch');
         el.classList.add('cre8-c-modal');
 
         el.handleOnClickOutside(mockClickEvent);
@@ -56,8 +56,8 @@ describe('modal', () => {
         el.isActive = true;
 
         const mockKeydownEvent = new KeyboardEvent('keydown', { code: 'Escape' });
-        jest.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
-        const dispatchSpy = jest.spyOn(el, 'dispatch');
+        vi.spyOn(mockKeydownEvent, 'composedPath').mockReturnValue([]);
+        const dispatchSpy = vi.spyOn(el, 'dispatch');
 
         el.handleKeydown(mockKeydownEvent);
         expect(el.isActive).toBeFalsy();
@@ -66,7 +66,7 @@ describe('modal', () => {
 
     test('modal update', async () => {
         const el = await fixture<Cre8Modal>(html` <cre8-modal></cre8-modal>`);
-        const updateSpy = jest.spyOn(el, 'updated');
+        const updateSpy = vi.spyOn(el, 'updated');
 
         el.isActive = false;
         el.isActive = true;
@@ -81,7 +81,7 @@ describe('modal', () => {
     test('modal disconnect', async () => {
         const el = await fixture<Cre8Modal>(html`<cre8-modal></cre8-modal>`);
         el.isActive = true;
-        const dispatchSpy = jest.spyOn(el, 'dispatch');
+        const dispatchSpy = vi.spyOn(el, 'dispatch');
 
         el.disconnectedCallback();
 
