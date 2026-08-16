@@ -1,0 +1,23 @@
+{
+  "name": "@tmorrow/cre8-diet",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Nutrition tracker built on @tmorrow/cre8-wc — logging, analytics, and rule-based recommendations, packaged for iOS with Capacitor",
+  "type": "module",
+  "scripts": {
+    "sync-assets": "node scripts/sync-assets.mjs",
+    "dev": "pnpm sync-assets && node scripts/serve.mjs",
+    "test": "node test/logic.test.mjs",
+    "ios:add": "pnpm sync-assets && npx cap add ios",
+    "ios:sync": "pnpm sync-assets && npx cap sync ios",
+    "ios:open": "npx cap open ios"
+  },
+  "dependencies": {
+    "@tmorrow/cre8-wc": "workspace:^"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.2.0",
+    "@capacitor/core": "^6.2.0",
+    "@capacitor/ios": "^6.2.0"
+  }
+}

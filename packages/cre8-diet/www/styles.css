@@ -1,0 +1,150 @@
+/*
+ * Layout only. Every colour and radius below resolves to a `--cre8-*` token
+ * from the brand sheet, so the app follows the design system rather than
+ * carrying a second palette that drifts from it.
+ */
+
+:root {
+  --app-gap: 1rem;
+  --app-radius: var(--cre8-border-radius-lg, 12px);
+  --app-surface: var(--cre8-color-background-surface-1, #fff);
+  --app-page: var(--cre8-color-background-page, #f6f7f9);
+  --app-text: var(--cre8-color-text-default, #16191d);
+  --app-muted: var(--cre8-color-text-subtle, #5b6470);
+  --app-border: var(--cre8-color-border-weak, #e2e5ea);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--app-page);
+  color: var(--app-text);
+  font-family: var(--cre8-font-family-body, system-ui, -apple-system, sans-serif);
+  /* Momentum scrolling inside a WKWebView, and no rubber-banding of the body
+     itself — the panels scroll, the chrome does not. */
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+}
+
+.app {
+  max-width: 42rem;
+  margin: 0 auto;
+  /* Safe-area insets keep the header below the notch and the last card above
+     the home indicator on hardware that has them; they are 0 everywhere else. */
+  padding:
+    calc(env(safe-area-inset-top, 0px) + 1rem)
+    calc(env(safe-area-inset-right, 0px) + 1rem)
+    calc(env(safe-area-inset-bottom, 0px) + 2rem)
+    calc(env(safe-area-inset-left, 0px) + 1rem);
+}
+
+.app-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--app-gap);
+  margin-bottom: 1rem;
+}
+
+.app-date { margin: 0.15rem 0 0; color: var(--app-muted); font-size: 0.875rem; }
+
+.panel { display: flex; flex-direction: column; gap: var(--app-gap); padding-top: 1rem; }
+
+/* Ring + macro bars ------------------------------------------------------- */
+
+.summary { display: grid; grid-template-columns: auto 1fr; gap: 1.25rem; align-items: center; }
+@media (max-width: 26rem) { .summary { grid-template-columns: 1fr; } }
+
+.ring { position: relative; width: 116px; height: 116px; }
+.ring svg { transform: rotate(-90deg); width: 100%; height: 100%; }
+.ring-track { fill: none; stroke: var(--app-border); stroke-width: 10; }
+.ring-value {
+  fill: none;
+  stroke: var(--cre8-color-brand-primary, #2f6fed);
+  stroke-width: 10;
+  stroke-linecap: round;
+  transition: stroke-dasharray 400ms ease;
+}
+.ring-over { stroke: var(--cre8-color-text-warning, #b45309); }
+.ring-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+}
+.ring-label strong { font-size: 1.5rem; line-height: 1; }
+.ring-label span { font-size: 0.75rem; color: var(--app-muted); }
+
+.macros { display: flex; flex-direction: column; gap: 0.75rem; }
+.macro-row { display: grid; gap: 0.25rem; }
+.macro-head { display: flex; justify-content: space-between; font-size: 0.8125rem; }
+.macro-head span:last-child { color: var(--app-muted); }
+.macro-track { height: 8px; border-radius: 999px; background: var(--app-border); overflow: hidden; }
+.macro-fill { height: 100%; border-radius: 999px; transition: width 400ms ease; }
+.macro-fill.protein { background: var(--cre8-color-brand-primary, #2f6fed); }
+.macro-fill.carbs { background: var(--cre8-color-text-success, #15803d); }
+.macro-fill.fat { background: var(--cre8-color-text-warning, #b45309); }
+
+/* Log --------------------------------------------------------------------- */
+
+.log-form { display: grid; gap: 0.75rem; }
+.log-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+@media (max-width: 26rem) { .log-form-row { grid-template-columns: 1fr; } }
+
+.suggestions { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+.meal-group + .meal-group { margin-top: 1rem; }
+.meal-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--app-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.4rem;
+}
+
+.entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--app-border);
+}
+.entry-name { font-size: 0.9375rem; }
+.entry-sub { font-size: 0.8125rem; color: var(--app-muted); }
+.entry-kcal { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.empty { color: var(--app-muted); font-size: 0.9375rem; padding: 0.5rem 0; }
+
+/* Insights ---------------------------------------------------------------- */
+
+.rec { display: grid; gap: 0.35rem; }
+.rec-title { font-weight: 600; }
+.rec-evidence {
+  font-size: 0.8125rem;
+  color: var(--app-muted);
+  font-variant-numeric: tabular-nums;
+}
+.rec-suggestions { font-size: 0.8125rem; }
+
+.disclaimer { font-size: 0.75rem; color: var(--app-muted); line-height: 1.5; }
+
+/* Charts ------------------------------------------------------------------ */
+
+.chart-wrap { min-height: 220px; }
+
+.stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+.stat { display: grid; gap: 0.15rem; }
+.stat-value { font-size: 1.375rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.stat-label { font-size: 0.75rem; color: var(--app-muted); }
+
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }

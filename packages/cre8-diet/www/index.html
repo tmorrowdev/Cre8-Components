@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- viewport-fit=cover plus the safe-area padding in styles.css is what keeps
+       content clear of the notch and the home indicator inside a WKWebView. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+  <meta name="color-scheme" content="light dark">
+  <title>Cre8 Diet</title>
+  <!-- Inline so the browser stops asking for /favicon.ico. A data URI keeps the
+       "nothing leaves the bundle" rule intact; the real iOS icon lives in the
+       Xcode asset catalog, not here. -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%232f6fed'/%3E%3Cpath d='M16 8v16M8 16h16' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <!-- Everything below is local. Nothing on this page may reach the network:
+       the app has to work offline, and an App Store build that does not is a
+       thin client. `pnpm sync-assets` puts these here. -->
+  <link rel="stylesheet" href="vendor/tokens/tokens_cre8-a2ui.css">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="vendor/cre8-wc.esm.js"></script>
+  <script type="module" src="src/app.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div>
+        <cre8-heading tag-name="h1" variant="h4">Cre8 Diet</cre8-heading>
+        <p class="app-date" id="app-date"></p>
+      </div>
+      <cre8-badge id="streak-badge" status="success" text="0 day streak"></cre8-badge>
+    </header>
+
+    <cre8-tabs id="tabs">
+      <cre8-tab>Today</cre8-tab>
+      <cre8-tab>Trends</cre8-tab>
+      <cre8-tab>Insights</cre8-tab>
+      <cre8-tab>Goals</cre8-tab>
+
+      <cre8-tab-panel slot="panel" index="0">
+        <div id="panel-today" class="panel"></div>
+      </cre8-tab-panel>
+      <cre8-tab-panel slot="panel" index="1">
+        <div id="panel-analytics" class="panel"></div>
+      </cre8-tab-panel>
+      <cre8-tab-panel slot="panel" index="2">
+        <div id="panel-insights" class="panel"></div>
+      </cre8-tab-panel>
+      <cre8-tab-panel slot="panel" index="3">
+        <div id="panel-goals" class="panel"></div>
+      </cre8-tab-panel>
+    </cre8-tabs>
+  </div>
+</body>
+</html>
