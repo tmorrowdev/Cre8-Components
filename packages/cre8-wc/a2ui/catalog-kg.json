@@ -3309,6 +3309,44 @@
       "accepts_children": true
     },
     {
+      "id": "cre8-form",
+      "type": "component",
+      "category": "Forms",
+      "description": "The form component groups form-associated Cre8 controls, aggregates their validation on submit, and orchestrates submit …",
+      "props": {
+        "novalidate": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Skips aggregate validation on submit.",
+          "x-kind": "attribute"
+        },
+        "disabled": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Disables every control in the form, for example while submitting.",
+          "x-kind": "attribute"
+        },
+        "controls": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Every form-associated Cre8 control owned by this form, in document order. Reache…",
+          "x-kind": "property"
+        },
+        "values": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "The form's current values, derived from FormData.",
+          "x-kind": "property"
+        }
+      },
+      "slots": [],
+      "accepts_children": true
+    },
+    {
       "id": "cre8-multi-select",
       "type": "component",
       "category": "Forms",
@@ -5663,44 +5701,6 @@
       "description": "Icon position <cre8-text-passage size=\"sm\"> <ul> <li>**before** places the icon …"
     },
     {
-      "id": "cre8-form",
-      "type": "component",
-      "category": "Other",
-      "description": "The form component groups form-associated Cre8 controls, aggregates their validation on submit, and orchestrates submit …",
-      "props": {
-        "novalidate": {
-          "type": "boolean",
-          "enum": null,
-          "default": null,
-          "description": "Skips aggregate validation on submit.",
-          "x-kind": "attribute"
-        },
-        "disabled": {
-          "type": "boolean",
-          "enum": null,
-          "default": null,
-          "description": "Disables every control in the form, for example while submitting.",
-          "x-kind": "attribute"
-        },
-        "controls": {
-          "type": "string",
-          "enum": null,
-          "default": null,
-          "description": "Every form-associated Cre8 control owned by this form, in document order. Reache…",
-          "x-kind": "property"
-        },
-        "values": {
-          "type": "string",
-          "enum": null,
-          "default": null,
-          "description": "The form's current values, derived from FormData.",
-          "x-kind": "property"
-        }
-      },
-      "slots": [],
-      "accepts_children": true
-    },
-    {
       "id": "cre8-progress-steps",
       "type": "component",
       "category": "Other",
@@ -6449,6 +6449,11 @@
       "rel": "BELONGS_TO"
     },
     {
+      "from": "cre8-form",
+      "to": "cat:Forms",
+      "rel": "BELONGS_TO"
+    },
+    {
       "from": "cre8-multi-select",
       "to": "cat:Forms",
       "rel": "BELONGS_TO"
@@ -6922,11 +6927,6 @@
       "from": "cre8-utility-nav-item",
       "to": "prop:cre8-utility-nav-item:iconPosition",
       "rel": "HAS_ENUM_PROP"
-    },
-    {
-      "from": "cre8-form",
-      "to": "cat:Other",
-      "rel": "BELONGS_TO"
     },
     {
       "from": "cre8-progress-steps",

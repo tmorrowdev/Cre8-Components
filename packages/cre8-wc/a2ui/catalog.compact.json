@@ -2,7 +2,7 @@
   "contractVersion": 1,
   "sourceCatalog": "https://cre8.dev/a2ui/catalogs/cre8-wc/2.1.1",
   "libraryVersion": "2.1.1",
-  "componentCount": 85,
+  "componentCount": 86,
   "components": [
     {
       "name": "cre8-accordion",
@@ -885,6 +885,30 @@
         "default",
         "top",
         "bottom"
+      ]
+    },
+    {
+      "name": "cre8-form",
+      "category": "Forms",
+      "props": {
+        "novalidate": {
+          "type": "boolean"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "controls": {
+          "type": "string"
+        },
+        "values": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true,
+      "events": [
+        "form-submit",
+        "form-reset",
+        "form-invalid"
       ]
     },
     {
