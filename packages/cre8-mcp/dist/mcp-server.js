@@ -6,6 +6,7 @@
  * "which transport am I on" never changes what an agent can do — which is the
  * whole claim behind calling this a single connector.
  */
+import { createRequire } from 'node:module';
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
 import { tools, ListComponentsSchema, GetComponentSchema, GetPatternsSchema, SearchComponentsSchema, GenerateCodeSchema, GetA2uiCatalogSchema, ValidateA2uiSpecSchema, } from './tools.js';
@@ -14,7 +15,18 @@ import { UI_TOOL_NAMES, handleUiTool, uiTools } from './ui-tools.js';
 import { embeddedViewerBase } from './embedded-viewer.js';
 import { GetCompositionSchema, compositionTool, handleGetComposition } from './composition.js';
 import { Cre8GuideSchema, GetContentModelSchema, handleCre8Guide, handleGetContentModel, knowledgeTools, } from './knowledge-tools.js';
-export const SERVER_VERSION = '0.6.0';
+/**
+ * The published version, read from the manifest rather than repeated here.
+ *
+ * A second copy had drifted three minors behind the package it describes, so
+ * every client — over stdio and at `GET /` alike — was told `0.6.0` no matter
+ * which build it was actually talking to, which is worse than saying nothing.
+ *
+ * `files` ships only `dist`, but npm always includes the manifest itself, so
+ * `../package.json` resolves from `dist/mcp-server.js` in an installed copy
+ * exactly as it does from `src/` in a checkout.
+ */
+export const SERVER_VERSION = createRequire(import.meta.url)('../package.json').version;
 export function createMcpServer(options = {}) {
     const uiContext = {
         publicBase: options.publicBase

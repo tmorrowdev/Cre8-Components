@@ -6,7 +6,7 @@
   "outputDirectory": "public",
   "functions": {
     "api/index.js": {
-      "includeFiles": "node_modules/@tmorrow/cre8-wc/**",
+      "includeFiles": "{package.json,node_modules/@tmorrow/cre8-wc/**}",
       "maxDuration": 60
     }
   },

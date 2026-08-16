@@ -10,6 +10,7 @@
  */
 
 import { spawn } from 'node:child_process';
+import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 
@@ -107,6 +108,14 @@ try {
       clientInfo: { name: 'stdio-test', version: '1' },
     });
     assertEqual(result.serverInfo.name, 'cre8-mcp');
+    // The version a client is told has to be the version it is running. A
+    // hardcoded second copy of it sat three minors behind the package for
+    // several releases, and nothing failed.
+    assertEqual(
+      result.serverInfo.version,
+      JSON.parse(readFileSync(resolve(here, '../package.json'), 'utf-8')).version,
+      'serverInfo.version must track package.json'
+    );
     server.notify('notifications/initialized', {});
 
     const { tools } = await server.request('tools/list', {});
