@@ -946,7 +946,7 @@ const a2ui = `
   --cre8-mode-content-link: var(--cre8-primary-500);
   --cre8-mode-content-link-hover: var(--cre8-primary-600);
   --cre8-mode-border-default: var(--cre8-neutral-200);
-  --cre8-mode-border-strong: var(--cre8-neutral-500);
+  --cre8-mode-border-strong: var(--cre8-neutral-400);
   --cre8-mode-border-brand: var(--cre8-primary-500);
 
   --cre8-bg-default: var(--cre8-mode-bg-default);
@@ -1694,8 +1694,8 @@ const a2ui = `
   /* Component sizing — multiples of the spacing scale */
   --cre8-desktop-menu-padding-vertical-padding: calc(var(--cre8-seed-space) * 4);
   --cre8-desktop-menu-padding-horizontal-padding: calc(var(--cre8-seed-space) * 2);
-  --cre8-input-padding: calc(var(--cre8-seed-space) * 6) calc(var(--cre8-seed-space) * 8);
-  --cre8-input-label-margin-left: calc(var(--cre8-seed-space) * 4);
+  --cre8-input-padding: calc(var(--cre8-seed-space) * 2.5) calc(var(--cre8-seed-space) * 3.5);
+  --cre8-input-label-margin-left: 0;
   --cre8-button-padding-vertical-small: calc(var(--cre8-seed-space) * 2);
   --cre8-button-padding-vertical-medium: calc(var(--cre8-seed-space) * 3);
   --cre8-button-padding-vertical-large: calc(var(--cre8-seed-space) * 4);
@@ -1745,7 +1745,7 @@ const a2ui = `
   --cre8-line-heights-16: 0.24;
   --cre8-line-heights-17: 0.2;
   --cre8-line-heights-18: 0.16;
-  --cre8-border-radius-default: var(--cre8-radius-pill);
+  --cre8-border-radius-default: var(--cre8-radius-field);
   --cre8-border-radius-round: var(--cre8-radius-pill);
   --cre8-border-radius-button: var(--cre8-radius-pill);
   --cre8-border-radius-badge: var(--cre8-radius-pill);
