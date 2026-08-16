@@ -7,6 +7,7 @@
  * whole claim behind calling this a single connector.
  */
 
+import { createRequire } from 'node:module';
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
 
@@ -40,7 +41,18 @@ import {
   knowledgeTools,
 } from './knowledge-tools.js';
 
-export const SERVER_VERSION = '0.6.0';
+/**
+ * The published version, read from the manifest rather than repeated here.
+ *
+ * A second copy had drifted three minors behind the package it describes, so
+ * every client — over stdio and at `GET /` alike — was told `0.6.0` no matter
+ * which build it was actually talking to, which is worse than saying nothing.
+ *
+ * `files` ships only `dist`, but npm always includes the manifest itself, so
+ * `../package.json` resolves from `dist/mcp-server.js` in an installed copy
+ * exactly as it does from `src/` in a checkout.
+ */
+export const SERVER_VERSION: string = createRequire(import.meta.url)('../package.json').version;
 
 export interface McpServerOptions {
   /**
