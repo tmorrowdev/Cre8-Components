@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
-import { expect } from '@jest/globals';
+import { expect } from 'vitest';
 import { axe, toHaveNoViolations } from 'jest-axe';
 
 const defaultAxeOptions = {
@@ -21,10 +21,11 @@ const toBeAccessible = async (html: HTMLElement) => {
 expect.extend({ toBeAccessible });
 
 
-declare global {
-  namespace jest {
-    interface Matchers<R> {
-      toBeAccessible(): R;
-    }
+declare module 'vitest' {
+  interface Assertion<T = any> {
+    toBeAccessible(): Promise<T>;
+  }
+  interface AsymmetricMatchersContaining {
+    toBeAccessible(): Promise<void>;
   }
 }

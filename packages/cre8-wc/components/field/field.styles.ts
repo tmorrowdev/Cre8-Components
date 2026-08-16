@@ -1,5 +1,7 @@
 import { css } from 'lit';
-const styles = css`.cre8-u-content-knockout-brand {
+
+const styles = css`
+.cre8-u-content-knockout-brand {
   color: var(----cre8-color-content-knockout-brand);
 }
 
@@ -713,5 +715,5 @@ span.ripple {
   background-color: var(--cre8-color-bg-disabled);
   border-color: var(--cre8-color-border-disabled);
   cursor: default;
-}`;
-export default styles;
+}
+`;export default styles;

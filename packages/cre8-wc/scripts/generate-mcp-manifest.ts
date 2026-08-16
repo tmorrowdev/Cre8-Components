@@ -44,6 +44,7 @@ const CATEGORY_MAP: Record<string, string> = {
   'danger-button': 'Actions',
   'button-group': 'Actions',
   'split-button': 'Actions',
+  'form': 'Forms',
   'field': 'Forms',
   'field-note': 'Forms',
   'select': 'Forms',

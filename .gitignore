@@ -3,6 +3,7 @@ node_modules
 .yarnrc
 /docs/*
 !/docs/kb/
+!/docs/plans/
 .yarn/cache/
 *.log
 .yarn/install-state.gz

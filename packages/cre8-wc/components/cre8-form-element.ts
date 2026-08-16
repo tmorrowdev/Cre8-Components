@@ -41,6 +41,12 @@ export abstract class Cre8FormElement extends Cre8Element {
     protected field?: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | HTMLButtonElement;
 
     /**
+     * True while a message set via `setCustomValidity` is in effect, so
+     * `syncValidity` does not overwrite it with the field's constraint state.
+     */
+    protected hasCustomError = false;
+
+    /**
      * @internal
      * Stores the initial value for form reset functionality
      */
@@ -150,6 +156,69 @@ export abstract class Cre8FormElement extends Cre8Element {
     }
 
     /**
+     * Moves focus to the underlying field.
+     *
+     * Custom elements are not focusable by default, so without this calling
+     * `focus()` on the host silently did nothing and focus stayed where it was.
+     * Anything that needs to move focus to a control - such as a form focusing
+     * its first invalid field - depends on this.
+     */
+    focus(options?: FocusOptions): void {
+        if (this.field) {
+            this.field.focus(options);
+            return;
+        }
+        super.focus(options);
+    }
+
+    /**
+     * Forwards the underlying field's constraint validity to ElementInternals.
+     *
+     * The inner field renders the constraint attributes (`required`, `pattern`,
+     * `min`, `max`, ...), so the browser already computes a correct
+     * ValidityState for it. Without this the host element's own
+     * `checkValidity()` always returned true and `required` was effectively
+     * ignored by any form containing it.
+     *
+     * A message set through `setCustomValidity` takes precedence and is left
+     * untouched.
+     */
+    protected syncValidity(): void {
+        if (!this._internals || !this.field || this.hasCustomError) {
+            return;
+        }
+
+        const validity = this.field.validity;
+        if (validity.valid) {
+            this._internals.setValidity({});
+            return;
+        }
+
+        // ValidityState exposes its flags on the prototype, so it cannot be
+        // handed to setValidity() directly - copy them onto a plain object.
+        const flags: ValidityStateFlags = {
+            badInput: validity.badInput,
+            customError: validity.customError,
+            patternMismatch: validity.patternMismatch,
+            rangeOverflow: validity.rangeOverflow,
+            rangeUnderflow: validity.rangeUnderflow,
+            stepMismatch: validity.stepMismatch,
+            tooLong: validity.tooLong,
+            tooShort: validity.tooShort,
+            typeMismatch: validity.typeMismatch,
+            valueMissing: validity.valueMissing,
+        };
+
+        // setValidity() throws when a control is invalid but the message is
+        // empty, which happens in environments that do not localise one.
+        this._internals.setValidity(
+            flags,
+            this.field.validationMessage || 'This field is invalid.',
+            this.field
+        );
+    }
+
+    /**
      * Lifecycle hook called after first render
      */
     protected firstUpdated(): void {
@@ -176,6 +245,9 @@ export abstract class Cre8FormElement extends Cre8Element {
         ) {
             this.updateFormState();
         }
+
+        // Keep ElementInternals validity in step with the rendered field.
+        this.syncValidity();
     }
 
     /**
@@ -250,16 +322,19 @@ export abstract class Cre8FormElement extends Cre8Element {
     setCustomValidity(message: string): void {
         if (this._internals && this.field) {
             if (message) {
+                this.hasCustomError = true;
                 this._internals.setValidity({ customError: true }, message, this.field);
             } else {
-                this._internals.setValidity({});
+                this.hasCustomError = false;
+                // Fall back to the field's own constraint validity.
+                this.syncValidity();
             }
         }
     }
 
     constructor() {
         super();
-        this._internals = this.attachInternals() as Cre8ElementInternals;
+        this._internals = this.attachInternals() as unknown as Cre8ElementInternals;
     }
 }
 

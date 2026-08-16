@@ -154,10 +154,10 @@ describe('popover', () => {
 
     // Create a dummy element to mock _Cre8PopoverPanel
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_Cre8PopoverPanel', 'get').mockReturnValue(dummyPanel);
+        vi.spyOn(el, '_Cre8PopoverPanel', 'get').mockReturnValue(dummyPanel);
 
     // Mock the bounding client rect of the popover panel
-        jest.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
+        vi.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
             height: 200, // Less than window.innerHeight
             top: 0,
         } as DOMRect);
@@ -193,16 +193,16 @@ describe('popover', () => {
         const popoverPanelWidth = 200;
 
     // Mock the bounding client rect of the body
-        jest.spyOn(document.querySelector('body'), 'getBoundingClientRect').mockReturnValue({
+        vi.spyOn(document.querySelector('body'), 'getBoundingClientRect').mockReturnValue({
             width: bodyWidth,
         } as DOMRect);
 
     // Create a dummy element to mock _Cre8PopoverPanel
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_Cre8PopoverPanel', 'get').mockReturnValue(dummyPanel);
+        vi.spyOn(el, '_Cre8PopoverPanel', 'get').mockReturnValue(dummyPanel);
 
     // Mock the bounding client rect of the popover panel
-        jest.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
+        vi.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
             left: -popoverPanelWidth,
             right: 0,
         } as DOMRect);
@@ -235,16 +235,16 @@ describe('popover', () => {
         const popoverPanelWidth = 200;
 
     // Mock the bounding client rect of the body
-        jest.spyOn(document.querySelector('body'), 'getBoundingClientRect').mockReturnValue({
+        vi.spyOn(document.querySelector('body'), 'getBoundingClientRect').mockReturnValue({
             width: bodyWidth,
         } as DOMRect);
 
     // Create a dummy element to mock _Cre8PopoverPanel
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_Cre8PopoverPanel', 'get').mockReturnValue(dummyPanel);
+        vi.spyOn(el, '_Cre8PopoverPanel', 'get').mockReturnValue(dummyPanel);
 
     // Mock the bounding client rect of the popover panel
-        jest.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
+        vi.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
             left: bodyWidth - 1,
             right: bodyWidth + popoverPanelWidth,
         } as DOMRect);
@@ -278,7 +278,7 @@ describe('popover', () => {
         const bodyWidth = 1000;
 
     // Mock the bounding client rect of the body
-        jest.spyOn(document.querySelector('body'), 'getBoundingClientRect').mockReturnValue({
+        vi.spyOn(document.querySelector('body'), 'getBoundingClientRect').mockReturnValue({
             width: bodyWidth,
         } as DOMRect);
 
@@ -287,13 +287,13 @@ describe('popover', () => {
 
     // Create a dummy element to mock _Cre8PopoverPanel
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_Cre8PopoverPanel', 'get').mockReturnValue(dummyPanel);
+        vi.spyOn(el, '_Cre8PopoverPanel', 'get').mockReturnValue(dummyPanel);
 
     // Mock the element clientHeight
         Object.defineProperty(el, 'clientHeight', { value: 200 });
 
     // Mock the bounding client rect of the popover panel
-        jest.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
+        vi.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
             top: windowHeight,
             bottom: windowHeight + popoverPanelHeight,
             left: 0,
@@ -323,10 +323,10 @@ describe('popover', () => {
 
     // Create a dummy element to mock _Cre8PopoverPanel
         const dummyPanel = document.createElement('div');
-        jest.spyOn(el, '_Cre8PopoverPanel', 'get').mockReturnValue(dummyPanel);
+        vi.spyOn(el, '_Cre8PopoverPanel', 'get').mockReturnValue(dummyPanel);
 
     // Mock the bounding client rect of the popover panel
-        jest.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
+        vi.spyOn(dummyPanel, 'getBoundingClientRect').mockReturnValue({
             top: -popoverPanelHeight,
             left: 50,
             right: 100,
@@ -349,7 +349,7 @@ describe('popover', () => {
         Object.defineProperty(el, 'shadowRoot', { value: mockShadowRoot });
 
         const mockClickEvent = new MouseEvent('click');
-        jest.spyOn(mockClickEvent, 'composedPath').mockReturnValue([]);
+        vi.spyOn(mockClickEvent, 'composedPath').mockReturnValue([]);
 
         el.handleOnClickOutside(mockClickEvent);
         expect(el.isActive).toBeFalsy();
@@ -368,7 +368,7 @@ describe('popover', () => {
         Object.defineProperty(el, 'shadowRoot', { value: mockShadowRoot });
 
         const mockClickEvent = new MouseEvent('click');
-        jest.spyOn(mockClickEvent, 'composedPath').mockReturnValue([]);
+        vi.spyOn(mockClickEvent, 'composedPath').mockReturnValue([]);
 
         el.handleOnClickOutside(mockClickEvent);
         expect(el.isActive).toBeFalsy();
@@ -447,17 +447,17 @@ describe('popover', () => {
         await el.updateComplete;
         const button = el.querySelector('button');
 
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         button.click();
-        jest.advanceTimersByTime(2000);
+        vi.advanceTimersByTime(2000);
         expect(el.isActiveDynamic).toBeTruthy();
 
-        jest.useFakeTimers();
+        vi.useFakeTimers();
         button.click();
-        jest.advanceTimersByTime(2000);
+        vi.advanceTimersByTime(2000);
         expect(el.isActiveDynamic).toBeFalsy();
 
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     test('has a slotted header and footer', async () => {
