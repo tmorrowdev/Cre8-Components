@@ -1,15 +1,15 @@
 // Color ramp utilities shared by the brand-extract API route and the client.
 //
-// The cre8-a2ui token set is built on a Tailwind-style "blue" ramp. To retheme
-// the whole system from a single brand color we generate a parallel ramp at the
-// same lightness positions and substitute it for the original blue ramp wherever
-// those exact hex values appear in the token CSS. This retints every surface
-// (buttons, bands, headers, links, focus rings) consistently.
+// The cre8-a2ui token set derives its primary ramp from a single seed with
+// `oklch(from var(--cre8-seed-primary) …)` (see the brand's tokens_brand.css).
+// Retheming is therefore just setting that seed — but the API route also shows
+// the resulting ramp as swatches, so the math below MUST match the CSS
+// coefficients exactly or the preview will not be what actually renders.
 
 export type Hsl = { h: number; s: number; l: number };
 
-// Tailwind "blue" ramp — these are the literal hex values used throughout the
-// cre8-a2ui brand token CSS. Order: 50,100,200,300,400,500,600,700,800,900,950.
+// Tailwind "blue" ramp — the values the default seed (#3B82F6) reproduces.
+// Order: 50,100,200,300,400,500,600,700,800,900,950.
 export const BLUE_RAMP = [
   "#EFF6FF",
   "#DBEAFE",
@@ -24,9 +24,28 @@ export const BLUE_RAMP = [
   "#172554",
 ] as const;
 
-// Target lightness (%) for each ramp step. Anchored so step 500 (index 5) is the
-// brand's own lightness; the rest fan out to light tints and dark shades.
-const RAMP_LIGHTNESS = [97, 93, 86, 75, 65, 55, 47, 40, 33, 27, 18];
+// Per-step OKLCh channels, mirroring the `oklch(from …)` expressions in the
+// brand's tier-1 primitives: absolute lightness, a chroma multiplier on the
+// seed, and a hue delta in degrees. Fitted so the default seed reproduces
+// BLUE_RAMP exactly. Keep in sync with tokens_brand.css.
+//
+// Index 5 (step 500) is the anchor: it is the seed verbatim, so the colour an
+// integrator sets is the colour that renders. Its entry below is the seed's own
+// position and is only used to keep the array aligned.
+const ANCHOR_INDEX = 5;
+const PRIMARY_STEPS: ReadonlyArray<{ l: number; c: number; dh: number }> = [
+  { l: 0.9705, c: 0.0754, dh: -5.21 },
+  { l: 0.9319, c: 0.168, dh: -4.23 },
+  { l: 0.8823, c: 0.3035, dh: -5.69 },
+  { l: 0.8091, c: 0.5085, dh: -8.0 },
+  { l: 0.7137, c: 0.7626, dh: -5.19 },
+  { l: 0.6231, c: 1, dh: 0 },
+  { l: 0.5461, c: 1.1446, dh: 3.07 },
+  { l: 0.4882, c: 1.155, dh: 4.56 },
+  { l: 0.4244, c: 0.962, dh: 5.82 },
+  { l: 0.3791, c: 0.7327, dh: 5.71 },
+  { l: 0.2823, c: 0.4651, dh: 8.12 },
+];
 
 export function hexToRgb(hex: string): { r: number; g: number; b: number } | null {
   let h = hex.trim().replace(/^#/, "");
@@ -112,26 +131,46 @@ export function readableOn(hex: string): "#ffffff" | "#0F172A" {
   return luminance(hex) > 0.45 ? "#0F172A" : "#ffffff";
 }
 
-// Build an 11-step ramp from a single brand color, holding its hue/saturation and
-// walking the canonical lightness positions. Saturation tapers slightly at the
-// extremes so the lightest tints don't look neon and the darkest shades stay rich.
-export function buildRamp(primary: string): string[] {
-  const hsl = hexToHsl(primary);
-  if (!hsl) return [...BLUE_RAMP];
-  const baseSat = Math.max(20, Math.min(95, hsl.s));
-  return RAMP_LIGHTNESS.map((l, i) => {
-    const dist = Math.abs(i - 5) / 5; // 0 at anchor, 1 at extremes
-    const sat = i <= 5 ? baseSat * (1 - dist * 0.2) : baseSat * (1 - dist * 0.1);
-    return hslToHex(hsl.h, sat, l);
-  });
+// --- OKLab/OKLCh, matching the CSS Color 4 relative-color pipeline -----------
+
+const toLinear = (c: number) => (c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
+const toSrgb = (c: number) => (c <= 0.0031308 ? 12.92 * c : 1.055 * Math.pow(c, 1 / 2.4) - 0.055);
+
+function hexToOklch(hex: string): [number, number, number] | null {
+  const rgb = hexToRgb(hex);
+  if (!rgb) return null;
+  const R = toLinear(rgb.r / 255), G = toLinear(rgb.g / 255), B = toLinear(rgb.b / 255);
+  const l = Math.cbrt(0.4122214708 * R + 0.5363325363 * G + 0.0514459929 * B);
+  const m = Math.cbrt(0.2119034982 * R + 0.6806995451 * G + 0.1073969566 * B);
+  const s = Math.cbrt(0.0883024619 * R + 0.2817188376 * G + 0.6299787005 * B);
+  const L = 0.2104542553 * l + 0.793617785 * m - 0.0040720468 * s;
+  const a = 1.9779984951 * l - 2.428592205 * m + 0.4505937099 * s;
+  const b = 0.0259040371 * l + 0.7827717662 * m - 0.808675766 * s;
+  return [L, Math.hypot(a, b), (Math.atan2(b, a) * 180) / Math.PI];
 }
 
-// Map original blue ramp hex -> brand ramp hex (case-insensitive keys).
-export function buildSubstitution(primary: string): Record<string, string> {
-  const ramp = buildRamp(primary);
-  const map: Record<string, string> = {};
-  BLUE_RAMP.forEach((blue, i) => {
-    map[blue.toUpperCase()] = ramp[i];
-  });
-  return map;
+function oklchToHex([L, C, H]: [number, number, number]): string {
+  const h = (H * Math.PI) / 180;
+  const a = C * Math.cos(h), b = C * Math.sin(h);
+  const l = Math.pow(L + 0.3963377774 * a + 0.2158037573 * b, 3);
+  const m = Math.pow(L - 0.1055613458 * a - 0.0638541728 * b, 3);
+  const s = Math.pow(L - 0.0894841775 * a - 1.291485548 * b, 3);
+  return rgbToHex(
+    toSrgb(4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s) * 255,
+    toSrgb(-1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s) * 255,
+    toSrgb(-0.0041960863 * l - 0.7034186147 * m + 1.707614701 * s) * 255,
+  );
+}
+
+// Build the 11-step primary ramp the design system will derive from this seed.
+// This mirrors tokens_brand.css tier 1, so what the caller previews is what the
+// browser computes once `--cre8-seed-primary` is set.
+export function buildRamp(primary: string): string[] {
+  const seed = hexToOklch(primary);
+  if (!seed) return [...BLUE_RAMP];
+  return PRIMARY_STEPS.map(({ l, c, dh }, i) =>
+    i === ANCHOR_INDEX
+      ? primary.trim().toUpperCase()
+      : oklchToHex([l, seed[1] * c, seed[2] + dh]),
+  );
 }
