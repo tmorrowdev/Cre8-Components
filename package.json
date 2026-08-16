@@ -8,6 +8,7 @@
     "build:mcp": "pnpm --filter @tmorrow/cre8-mcp build",
     "build": "pnpm build:wc && pnpm build:mcp",
     "build:all": "pnpm --filter @tmorrow/cre8-wc build:custom-elements.json && pnpm build:wc && pnpm --filter @tmorrow/cre8-wc build:a2ui && pnpm build:mcp && pnpm --filter @tmorrow/cre8-wc build-storybook && pnpm --filter @tmorrow/cre8-wc build-storybook:react",
+    "release:publish": "pnpm --filter @tmorrow/cre8-wc release:publish",
     "publish:react": "pnpm --filter @tmorrow/cre8-wc publish:react",
     "storybook": "pnpm --filter @tmorrow/cre8-wc storybook",
     "storybook:react": "pnpm --filter @tmorrow/cre8-wc storybook:react",
