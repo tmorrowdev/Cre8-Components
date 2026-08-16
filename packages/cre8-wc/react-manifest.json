@@ -1956,6 +1956,44 @@
       "examples": []
     },
     {
+      "name": "Cre8Form",
+      "tagName": "cre8-form",
+      "category": "Forms",
+      "description": "The form component groups form-associated Cre8 controls, aggregates their\nvalidation on submit, and orchestrates submit and reset.\n\n# How to Use\n1. Place any Cre8 form controls inside `cre8-form`. They may be nested inside\n   layout components such as `cre8-grid` or `cre8-layout`.\n2. Add a `cre8-button` with `type=\"submit\"` to submit the form.\n3. Listen for `form-submit` to receive the collected `FormData`.\n\nNote: this component renders to light DOM. A form-associated control's form\nowner is the nearest `<form>` in its own node tree, so a shadow-DOM `<form>`\nwould own nothing and `new FormData(form)` would come back empty.",
+      "props": {
+        "novalidate": {
+          "type": "boolean",
+          "description": "Skips aggregate validation on submit."
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "Disables every control in the form, for example while submitting."
+        },
+        "controls": {
+          "type": "Cre8FormElement[]",
+          "description": "Every form-associated Cre8 control owned by this form, in document order.\nReaches through layout components because slotting does not move nodes\nout of the light-DOM tree."
+        },
+        "values": {
+          "type": "Record<string, FormDataEntryValue | FormDataEntryValue[]>",
+          "description": "The form's current values, derived from FormData."
+        },
+        "children": {
+          "type": "React.ReactNode",
+          "description": "Slotted content."
+        },
+        "onFormSubmit": {
+          "type": "(event: CustomEvent) => void"
+        },
+        "onFormReset": {
+          "type": "(event: CustomEvent) => void"
+        },
+        "onFormInvalid": {
+          "type": "(event: CustomEvent) => void"
+        }
+      },
+      "examples": []
+    },
+    {
       "name": "Cre8MultiSelect",
       "tagName": "cre8-multi-select",
       "category": "Forms",
@@ -3445,44 +3483,6 @@
           "jsx": "<Cre8UtilityNavItem text=\"Utility Nav Item\" />"
         }
       ]
-    },
-    {
-      "name": "Cre8Form",
-      "tagName": "cre8-form",
-      "category": "Other",
-      "description": "The form component groups form-associated Cre8 controls, aggregates their\nvalidation on submit, and orchestrates submit and reset.\n\n# How to Use\n1. Place any Cre8 form controls inside `cre8-form`. They may be nested inside\n   layout components such as `cre8-grid` or `cre8-layout`.\n2. Add a `cre8-button` with `type=\"submit\"` to submit the form.\n3. Listen for `form-submit` to receive the collected `FormData`.\n\nNote: this component renders to light DOM. A form-associated control's form\nowner is the nearest `<form>` in its own node tree, so a shadow-DOM `<form>`\nwould own nothing and `new FormData(form)` would come back empty.",
-      "props": {
-        "novalidate": {
-          "type": "boolean",
-          "description": "Skips aggregate validation on submit."
-        },
-        "disabled": {
-          "type": "boolean",
-          "description": "Disables every control in the form, for example while submitting."
-        },
-        "controls": {
-          "type": "Cre8FormElement[]",
-          "description": "Every form-associated Cre8 control owned by this form, in document order.\nReaches through layout components because slotting does not move nodes\nout of the light-DOM tree."
-        },
-        "values": {
-          "type": "Record<string, FormDataEntryValue | FormDataEntryValue[]>",
-          "description": "The form's current values, derived from FormData."
-        },
-        "children": {
-          "type": "React.ReactNode",
-          "description": "Slotted content."
-        },
-        "onFormSubmit": {
-          "type": "(event: CustomEvent) => void"
-        },
-        "onFormReset": {
-          "type": "(event: CustomEvent) => void"
-        },
-        "onFormInvalid": {
-          "type": "(event: CustomEvent) => void"
-        }
-      },
-      "examples": []
     },
     {
       "name": "Cre8ProgressSteps",

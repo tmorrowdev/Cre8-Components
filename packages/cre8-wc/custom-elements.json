@@ -721,467 +721,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/badge/badge.stories.ts",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "meta",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ title: 'cre8 Components/Badge', component: 'cre8-badge', render: (args: any) => html`<cre8-badge ${spread(args)}></cre8-badge>`, parameters: { status: { type: 'inProgress' } }, argTypes: { text: { control: 'text' }, status: { options: ['neutral', 'error', 'warning', 'success', 'info', 'attention'], control: { type: 'select' } }, variant: { options: ['default', 'light', 'white'], control: { type: 'radio' } } }, args: { text: 'Badge' } }"
-        },
-        {
-          "kind": "variable",
-          "name": "Default",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ args: { text: 'Default', }, }"
-        },
-        {
-          "kind": "variable",
-          "name": "IconVariant",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ args: { text: 'Icon Variant', svg: svgFeedback }, }",
-          "description": "**Note** SVG is passed in as a raw string for badges with icons. The icon is defined by this argument\n\n*Import example:* `import svgFeedback from '../../icons/System/Regular/Feedback.svg?raw';`"
-        },
-        {
-          "kind": "variable",
-          "name": "Success",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ args: { status: 'success', text: 'Success', }, }"
-        },
-        {
-          "kind": "variable",
-          "name": "Warning",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ args: { status: 'warning', text: 'Warning', }, }"
-        },
-        {
-          "kind": "variable",
-          "name": "Error",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ args: { status: 'error', text: 'Error', }, }"
-        },
-        {
-          "kind": "variable",
-          "name": "Info",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ args: { status: 'info', text: 'Info', }, }"
-        },
-        {
-          "kind": "variable",
-          "name": "Attention",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ args: { status: 'attention', text: 'Attention', }, }",
-          "description": "**Note** Certain brands don't currently use the `Attention` status"
-        },
-        {
-          "kind": "variable",
-          "name": "Light",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ args: { variant: 'light', text: 'Light', }, }"
-        },
-        {
-          "kind": "variable",
-          "name": "SuccessLight",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ args: { status: 'success', variant: 'light', text: 'Success Light', }, }"
-        },
-        {
-          "kind": "variable",
-          "name": "WarningLight",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ args: { status: 'warning', variant: 'light', text: 'Warning Light', }, }"
-        },
-        {
-          "kind": "variable",
-          "name": "ErrorLight",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ args: { status: 'error', variant: 'light', text: 'Error Light', }, }"
-        },
-        {
-          "kind": "variable",
-          "name": "InfoLight",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ args: { status: 'info', variant: 'light', text: 'Info Light', }, }"
-        },
-        {
-          "kind": "variable",
-          "name": "AttentionLight",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ args: { status: 'attention', variant: 'light', text: 'Attention Light', }, }",
-          "description": "**Note** Certain brands don't currently use the `Attention` status"
-        },
-        {
-          "kind": "variable",
-          "name": "White",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ parameters: { backgrounds: { default: 'dark' }, }, args: { variant: 'white', text: 'White', }, }"
-        },
-        {
-          "kind": "variable",
-          "name": "SuccessWhite",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ parameters: { backgrounds: { default: 'dark' }, }, args: { status: 'success', variant: 'white', text: 'Success White', }, }"
-        },
-        {
-          "kind": "variable",
-          "name": "WarningWhite",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ parameters: { backgrounds: { default: 'dark' }, }, args: { status: 'warning', variant: 'white', text: 'Warning White', }, }"
-        },
-        {
-          "kind": "variable",
-          "name": "ErrorWhite",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ parameters: { backgrounds: { default: 'dark' }, }, args: { status: 'error', variant: 'white', text: 'Error White', }, }"
-        },
-        {
-          "kind": "variable",
-          "name": "InfoWhite",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ parameters: { backgrounds: { default: 'dark' }, }, args: { status: 'info', variant: 'white', text: 'Info White', }, }"
-        },
-        {
-          "kind": "variable",
-          "name": "AttentionWhite",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ parameters: { backgrounds: { default: 'dark' }, }, args: { status: 'attention', variant: 'white', text: 'Attention White', }, }"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "meta",
-            "module": "components/badge/badge.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Default",
-          "declaration": {
-            "name": "Default",
-            "module": "components/badge/badge.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "IconVariant",
-          "declaration": {
-            "name": "IconVariant",
-            "module": "components/badge/badge.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Success",
-          "declaration": {
-            "name": "Success",
-            "module": "components/badge/badge.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Warning",
-          "declaration": {
-            "name": "Warning",
-            "module": "components/badge/badge.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Error",
-          "declaration": {
-            "name": "Error",
-            "module": "components/badge/badge.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Info",
-          "declaration": {
-            "name": "Info",
-            "module": "components/badge/badge.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Attention",
-          "declaration": {
-            "name": "Attention",
-            "module": "components/badge/badge.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Light",
-          "declaration": {
-            "name": "Light",
-            "module": "components/badge/badge.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "SuccessLight",
-          "declaration": {
-            "name": "SuccessLight",
-            "module": "components/badge/badge.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "WarningLight",
-          "declaration": {
-            "name": "WarningLight",
-            "module": "components/badge/badge.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "ErrorLight",
-          "declaration": {
-            "name": "ErrorLight",
-            "module": "components/badge/badge.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "InfoLight",
-          "declaration": {
-            "name": "InfoLight",
-            "module": "components/badge/badge.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "AttentionLight",
-          "declaration": {
-            "name": "AttentionLight",
-            "module": "components/badge/badge.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "White",
-          "declaration": {
-            "name": "White",
-            "module": "components/badge/badge.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "SuccessWhite",
-          "declaration": {
-            "name": "SuccessWhite",
-            "module": "components/badge/badge.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "WarningWhite",
-          "declaration": {
-            "name": "WarningWhite",
-            "module": "components/badge/badge.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "ErrorWhite",
-          "declaration": {
-            "name": "ErrorWhite",
-            "module": "components/badge/badge.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "InfoWhite",
-          "declaration": {
-            "name": "InfoWhite",
-            "module": "components/badge/badge.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "AttentionWhite",
-          "declaration": {
-            "name": "AttentionWhite",
-            "module": "components/badge/badge.stories.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/badge/badge.styles.ts",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "styles",
-          "default": "css`.cre8-u-content-knockout-brand { color: var(----cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: size(1) !important; } .cre8-u-margin-md { margin: size(2) !important; } .cre8-u-margin-lg { margin: size(3) !important; } .cre8-u-margin-xl { margin: size(4) !important; } .cre8-u-margin-xxl { margin: size(8) !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: size(1) !important; } .cre8-u-margin-top-md { margin-top: size(2) !important; } .cre8-u-margin-top-lg { margin-top: size(3) !important; } .cre8-u-margin-top-xl { margin-top: size(4) !important; } .cre8-u-margin-top-xxl { margin-top: size(8) !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: size(1) !important; } .cre8-u-margin-right-md { margin-right: size(2) !important; } .cre8-u-margin-right-lg { margin-right: size(3) !important; } .cre8-u-margin-right-xl { margin-right: size(4) !important; } .cre8-u-margin-right-xxl { margin-right: size(8) !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: size(1) !important; } .cre8-u-margin-bottom-md { margin-bottom: size(2) !important; } .cre8-u-margin-bottom-lg { margin-bottom: size(3) !important; } .cre8-u-margin-bottom-xl { margin-bottom: size(4) !important; } .cre8-u-margin-bottom-xxl { margin-bottom: size(8) !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(4) !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(8) !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: size(1) !important; } .cre8-u-margin-left-md { margin-left: size(2) !important; } .cre8-u-margin-left-lg { margin-left: size(3) !important; } .cre8-u-margin-left-xl { margin-left: size(4) !important; } .cre8-u-margin-left-xxl { margin-left: size(8) !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: size(1) !important; } .cre8-u-padding-md { padding: size(2) !important; } .cre8-u-padding-lg { padding: size(3) !important; } .cre8-u-padding-xl { padding: size(4) !important; } .cre8-u-padding-xxl { padding: size(8) !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: size(1) !important; } .cre8-u-padding-top-md { padding-top: size(2) !important; } .cre8-u-padding-top-lg { padding-top: size(3) !important; } .cre8-u-padding-top-xl { padding-top: size(4) !important; } .cre8-u-padding-top-xxl { padding-top: size(8) !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: size(1) !important; } .cre8-u-padding-right-md { padding-right: size(2) !important; } .cre8-u-padding-right-lg { padding-right: size(3) !important; } .cre8-u-padding-right-xl { padding-right: size(4) !important; } .cre8-u-padding-right-xxl { padding-right: size(8) !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: size(1) !important; } .cre8-u-padding-bottom-md { padding-bottom: size(2) !important; } .cre8-u-padding-bottom-lg { padding-bottom: size(3) !important; } .cre8-u-padding-bottom-xl { padding-bottom: size(4) !important; } .cre8-u-padding-bottom-xxl { padding-bottom: size(8) !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: size(1) !important; } .cre8-u-padding-left-md { padding-left: size(2) !important; } .cre8-u-padding-left-lg { padding-left: size(3) !important; } .cre8-u-padding-left-xl { padding-left: size(4) !important; } .cre8-u-padding-left-xxl { padding-left: size(8) !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); -webkit-text-decoration: var(--cre8-typography-body-default-text-decoration); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--background-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ :host { display: inline-flex; } /** * 1) Badges are blocks of color with text inside used for messaging */ .cre8-c-badge { font-family: var(--cre8-typography-label-small-font-family); font-size: var(--cre8-typography-label-small-font-size); font-weight: var(--cre8-typography-label-small-font-weight); line-height: var(--cre8-typography-label-small-line-height); text-decoration: var(--cre8-typography-label-small-text-decoration); text-transform: var(--cre8-typography-label-small-text-transform); display: inline-flex; border-radius: var(--cre8-border-radius-badge); padding: var(--cre8-badge-padding-vertical) var(--cre8-badge-padding-horizontal); color: var(--cre8-color-content-knockout); background-color: var(--cre8-color-bg-strong); align-items: center; } /** * Success badge */ .cre8-c-badge--success { background-color: var(--cre8-color-bg-success-strong); } /** * Warning badge */ .cre8-c-badge--warning { background-color: var(--cre8-color-bg-warning-strong); color: var(--cre8-color-content-default); } /** * Creating space between icon and text */ cre8-icon { height: var(--cre8-icon-height, 1rem); margin-right: 0.25rem; } /** * Error badge */ .cre8-c-badge--error { background-color: var(--cre8-color-bg-error-strong); } /** * Info badge */ .cre8-c-badge--info { background-color: var(--cre8-color-bg-info-strong); } /** * Attention badge */ .cre8-c-badge--attention { background-color: var(--cre8-color-bg-attention-strong); } /** * Light neutral (default) badge */ .cre8-c-badge--light { background-color: var(--cre8-color-bg-subtle); color: var(--cre8-color-content-default); } /** * Light Success badge */ .cre8-c-badge--light.cre8-c-badge--success { background-color: var(--cre8-color-bg-success); color: var(--cre8-color-content-success); } /** * Light Warning badge */ .cre8-c-badge--light.cre8-c-badge--warning { background-color: var(--cre8-color-bg-warning); } /** * Light Error badge */ .cre8-c-badge--light.cre8-c-badge--error { background-color: var(--cre8-color-bg-error); color: var(--cre8-color-content-error); } /** * Light Info badge */ .cre8-c-badge--light.cre8-c-badge--info { background-color: var(--cre8-color-bg-info); } /** * Light Attention badge */ .cre8-c-badge--light.cre8-c-badge--attention { background-color: var(--cre8-color-bg-attention); } /** * White neutral (default) badge */ .cre8-c-badge--white { background-color: var(--cre8-color-bg-default); color: var(--cre8-color-content-default); } /** * White Success badge */ .cre8-c-badge--white.cre8-c-badge--success { color: var(--cre8-color-content-success); } /** * White Error badge */ .cre8-c-badge--white.cre8-c-badge--error { background-color: none; color: var(--cre8-color-content-error); }`"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "styles",
-            "module": "components/badge/badge.styles.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/badge/badge.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "Status badges are used most often in tables or fat rows in a list.\nThese Components serve a contextual purpose and don't provide any functionality.\nBadges should be organized inside a dedicated table row communicating status such as pending, approved or rejected.",
-          "name": "Cre8Badge",
-          "members": [
-            {
-              "kind": "field",
-              "name": "text",
-              "type": {
-                "text": "string"
-              },
-              "default": "undefined",
-              "description": "The badge text",
-              "attribute": "text"
-            },
-            {
-              "kind": "field",
-              "name": "status",
-              "type": {
-                "text": "'success' | 'warning' | 'error' | 'info' | 'attention' | undefined"
-              },
-              "description": "Status (a color variant prop)\n- Omitting this prop renders a badge with the neutral state treatment\n- **success** renders a badge with success state treatment\n- **warning** renders a badge with warning state treatment\n- **error** renders a badge with error state treatment\n- **info** renders a badge with information state treatment\n- **attention** renders a badge with attention state treatment",
-              "attribute": "status"
-            },
-            {
-              "kind": "field",
-              "name": "variant",
-              "type": {
-                "text": "'light' | 'white' | undefined"
-              },
-              "description": "Background Style Variant\n\n- Omitting this prop renders a badge with a dark background\n- **light** renders a badge with a light background\n- **white** renders a badge with a white background",
-              "attribute": "variant"
-            },
-            {
-              "kind": "field",
-              "name": "svg",
-              "type": {
-                "text": "string | undefined"
-              },
-              "description": "SVG as a raw string\n- For badges with icons, the icon is defined by this prop\n- Pass in a raw svg as a String. We use raw string loader for this but any method of getting raw svgs will do\n- Import example:`import svgFeedback from '@tmorrow/cre8-wc/icons/Feedback.svg?raw';`\n- [cre8-icons Github repo](https://github.com/tmorrowdev/cre8-icons) This is the Github\nrepo for Cre8 icons, which includes a link to the storybook as well as relavant information for new icons",
-              "attribute": "svg"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "text",
-              "type": {
-                "text": "string"
-              },
-              "default": "undefined",
-              "description": "The badge text",
-              "fieldName": "text"
-            },
-            {
-              "name": "status",
-              "type": {
-                "text": "'success' | 'warning' | 'error' | 'info' | 'attention' | undefined"
-              },
-              "description": "Status (a color variant prop)\n- Omitting this prop renders a badge with the neutral state treatment\n- **success** renders a badge with success state treatment\n- **warning** renders a badge with warning state treatment\n- **error** renders a badge with error state treatment\n- **info** renders a badge with information state treatment\n- **attention** renders a badge with attention state treatment",
-              "fieldName": "status"
-            },
-            {
-              "name": "variant",
-              "type": {
-                "text": "'light' | 'white' | undefined"
-              },
-              "description": "Background Style Variant\n\n- Omitting this prop renders a badge with a dark background\n- **light** renders a badge with a light background\n- **white** renders a badge with a white background",
-              "fieldName": "variant"
-            },
-            {
-              "name": "svg",
-              "type": {
-                "text": "string | undefined"
-              },
-              "description": "SVG as a raw string\n- For badges with icons, the icon is defined by this prop\n- Pass in a raw svg as a String. We use raw string loader for this but any method of getting raw svgs will do\n- Import example:`import svgFeedback from '@tmorrow/cre8-wc/icons/Feedback.svg?raw';`\n- [cre8-icons Github repo](https://github.com/tmorrowdev/cre8-icons) This is the Github\nrepo for Cre8 icons, which includes a link to the storybook as well as relavant information for new icons",
-              "fieldName": "svg"
-            }
-          ],
-          "superclass": {
-            "name": "Cre8Element",
-            "module": "/components/cre8-element"
-          },
-          "tagName": "cre8-badge",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "Cre8Badge",
-          "declaration": {
-            "name": "Cre8Badge",
-            "module": "components/badge/badge.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cre8-badge",
-          "declaration": {
-            "name": "Cre8Badge",
-            "module": "components/badge/badge.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "components/alert/alert.stories.ts",
       "declarations": [
         {
@@ -1886,6 +1425,159 @@
           "declaration": {
             "name": "Cre8Alert",
             "module": "components/alert/alert.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/band/band.stories.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "Default",
+          "parameters": [
+            {
+              "name": "args"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "Branded"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "components/band/band.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Default",
+          "declaration": {
+            "name": "Default",
+            "module": "components/band/band.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Branded",
+          "declaration": {
+            "name": "Branded",
+            "module": "components/band/band.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/band/band.styles.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "styles",
+          "default": "css`.cre8-u-content-knockout-brand { color: var(----cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: size(1) !important; } .cre8-u-margin-md { margin: size(2) !important; } .cre8-u-margin-lg { margin: size(3) !important; } .cre8-u-margin-xl { margin: size(4) !important; } .cre8-u-margin-xxl { margin: size(8) !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: size(1) !important; } .cre8-u-margin-top-md { margin-top: size(2) !important; } .cre8-u-margin-top-lg { margin-top: size(3) !important; } .cre8-u-margin-top-xl { margin-top: size(4) !important; } .cre8-u-margin-top-xxl { margin-top: size(8) !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: size(1) !important; } .cre8-u-margin-right-md { margin-right: size(2) !important; } .cre8-u-margin-right-lg { margin-right: size(3) !important; } .cre8-u-margin-right-xl { margin-right: size(4) !important; } .cre8-u-margin-right-xxl { margin-right: size(8) !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: size(1) !important; } .cre8-u-margin-bottom-md { margin-bottom: size(2) !important; } .cre8-u-margin-bottom-lg { margin-bottom: size(3) !important; } .cre8-u-margin-bottom-xl { margin-bottom: size(4) !important; } .cre8-u-margin-bottom-xxl { margin-bottom: size(8) !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(4) !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(8) !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: size(1) !important; } .cre8-u-margin-left-md { margin-left: size(2) !important; } .cre8-u-margin-left-lg { margin-left: size(3) !important; } .cre8-u-margin-left-xl { margin-left: size(4) !important; } .cre8-u-margin-left-xxl { margin-left: size(8) !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: size(1) !important; } .cre8-u-padding-md { padding: size(2) !important; } .cre8-u-padding-lg { padding: size(3) !important; } .cre8-u-padding-xl { padding: size(4) !important; } .cre8-u-padding-xxl { padding: size(8) !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: size(1) !important; } .cre8-u-padding-top-md { padding-top: size(2) !important; } .cre8-u-padding-top-lg { padding-top: size(3) !important; } .cre8-u-padding-top-xl { padding-top: size(4) !important; } .cre8-u-padding-top-xxl { padding-top: size(8) !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: size(1) !important; } .cre8-u-padding-right-md { padding-right: size(2) !important; } .cre8-u-padding-right-lg { padding-right: size(3) !important; } .cre8-u-padding-right-xl { padding-right: size(4) !important; } .cre8-u-padding-right-xxl { padding-right: size(8) !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: size(1) !important; } .cre8-u-padding-bottom-md { padding-bottom: size(2) !important; } .cre8-u-padding-bottom-lg { padding-bottom: size(3) !important; } .cre8-u-padding-bottom-xl { padding-bottom: size(4) !important; } .cre8-u-padding-bottom-xxl { padding-bottom: size(8) !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: size(1) !important; } .cre8-u-padding-left-md { padding-left: size(2) !important; } .cre8-u-padding-left-lg { padding-left: size(3) !important; } .cre8-u-padding-left-xl { padding-left: size(4) !important; } .cre8-u-padding-left-xxl { padding-left: size(8) !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); -webkit-text-decoration: var(--cre8-typography-body-default-text-decoration); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--background-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /** * 1) A container with a background that can house various recipes of Components within */ .cre8-c-band { background: var(--cre8-color-bg-subtle); padding: 1.5rem 0; } @media all and (min-width: 1200px) { .cre8-c-band { padding: 2rem 0; } } /** * Branded variant */ .cre8-c-band--branded { color: var(--cre8-color-content-knockout); background: var(--cre8-theme-color-utility-information); } /** * Full height * 1) Height set to 100% to fill a container like a sidebar */ .cre8-c-band--full-height { height: 100%; }`"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "styles",
+            "module": "components/band/band.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/band/band.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Cre8Band",
+          "slots": [
+            {
+              "description": "The band content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "'branded' | undefined"
+              },
+              "description": "Gradient variant\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**1** renders the band with the set gradient background</li>\n</ul>\n</cre8-text-passage>",
+              "attribute": "variant"
+            },
+            {
+              "kind": "field",
+              "name": "fullHeight",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Full height variant\n1) Sets the height to 100%",
+              "attribute": "fullHeight",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "variant",
+              "type": {
+                "text": "'branded' | undefined"
+              },
+              "description": "Gradient variant\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**1** renders the band with the set gradient background</li>\n</ul>\n</cre8-text-passage>",
+              "fieldName": "variant"
+            },
+            {
+              "name": "fullHeight",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Full height variant\n1) Sets the height to 100%",
+              "fieldName": "fullHeight"
+            }
+          ],
+          "superclass": {
+            "name": "Cre8Element",
+            "module": "/components/cre8-element"
+          },
+          "tagName": "cre8-band",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Cre8Band",
+          "declaration": {
+            "name": "Cre8Band",
+            "module": "components/band/band.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cre8-band",
+          "declaration": {
+            "name": "Cre8Band",
+            "module": "components/band/band.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Cre8Band",
+            "module": "components/band/band.ts"
           }
         }
       ]
@@ -3460,20 +3152,170 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/band/band.stories.ts",
+      "path": "components/badge/badge.stories.ts",
       "declarations": [
         {
-          "kind": "function",
-          "name": "Default",
-          "parameters": [
-            {
-              "name": "args"
-            }
-          ]
+          "kind": "variable",
+          "name": "meta",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ title: 'cre8 Components/Badge', component: 'cre8-badge', render: (args: any) => html`<cre8-badge ${spread(args)}></cre8-badge>`, parameters: { status: { type: 'inProgress' } }, argTypes: { text: { control: 'text' }, status: { options: ['neutral', 'error', 'warning', 'success', 'info', 'attention'], control: { type: 'select' } }, variant: { options: ['default', 'light', 'white'], control: { type: 'radio' } } }, args: { text: 'Badge' } }"
         },
         {
-          "kind": "function",
-          "name": "Branded"
+          "kind": "variable",
+          "name": "Default",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { text: 'Default', }, }"
+        },
+        {
+          "kind": "variable",
+          "name": "IconVariant",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { text: 'Icon Variant', svg: svgFeedback }, }",
+          "description": "**Note** SVG is passed in as a raw string for badges with icons. The icon is defined by this argument\n\n*Import example:* `import svgFeedback from '../../icons/System/Regular/Feedback.svg?raw';`"
+        },
+        {
+          "kind": "variable",
+          "name": "Success",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { status: 'success', text: 'Success', }, }"
+        },
+        {
+          "kind": "variable",
+          "name": "Warning",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { status: 'warning', text: 'Warning', }, }"
+        },
+        {
+          "kind": "variable",
+          "name": "Error",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { status: 'error', text: 'Error', }, }"
+        },
+        {
+          "kind": "variable",
+          "name": "Info",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { status: 'info', text: 'Info', }, }"
+        },
+        {
+          "kind": "variable",
+          "name": "Attention",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { status: 'attention', text: 'Attention', }, }",
+          "description": "**Note** Certain brands don't currently use the `Attention` status"
+        },
+        {
+          "kind": "variable",
+          "name": "Light",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { variant: 'light', text: 'Light', }, }"
+        },
+        {
+          "kind": "variable",
+          "name": "SuccessLight",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { status: 'success', variant: 'light', text: 'Success Light', }, }"
+        },
+        {
+          "kind": "variable",
+          "name": "WarningLight",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { status: 'warning', variant: 'light', text: 'Warning Light', }, }"
+        },
+        {
+          "kind": "variable",
+          "name": "ErrorLight",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { status: 'error', variant: 'light', text: 'Error Light', }, }"
+        },
+        {
+          "kind": "variable",
+          "name": "InfoLight",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { status: 'info', variant: 'light', text: 'Info Light', }, }"
+        },
+        {
+          "kind": "variable",
+          "name": "AttentionLight",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { status: 'attention', variant: 'light', text: 'Attention Light', }, }",
+          "description": "**Note** Certain brands don't currently use the `Attention` status"
+        },
+        {
+          "kind": "variable",
+          "name": "White",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ parameters: { backgrounds: { default: 'dark' }, }, args: { variant: 'white', text: 'White', }, }"
+        },
+        {
+          "kind": "variable",
+          "name": "SuccessWhite",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ parameters: { backgrounds: { default: 'dark' }, }, args: { status: 'success', variant: 'white', text: 'Success White', }, }"
+        },
+        {
+          "kind": "variable",
+          "name": "WarningWhite",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ parameters: { backgrounds: { default: 'dark' }, }, args: { status: 'warning', variant: 'white', text: 'Warning White', }, }"
+        },
+        {
+          "kind": "variable",
+          "name": "ErrorWhite",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ parameters: { backgrounds: { default: 'dark' }, }, args: { status: 'error', variant: 'white', text: 'Error White', }, }"
+        },
+        {
+          "kind": "variable",
+          "name": "InfoWhite",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ parameters: { backgrounds: { default: 'dark' }, }, args: { status: 'info', variant: 'white', text: 'Info White', }, }"
+        },
+        {
+          "kind": "variable",
+          "name": "AttentionWhite",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ parameters: { backgrounds: { default: 'dark' }, }, args: { status: 'attention', variant: 'white', text: 'Attention White', }, }"
         }
       ],
       "exports": [
@@ -3481,7 +3323,8 @@
           "kind": "js",
           "name": "default",
           "declaration": {
-            "module": "components/band/band.stories.ts"
+            "name": "meta",
+            "module": "components/badge/badge.stories.ts"
           }
         },
         {
@@ -3489,27 +3332,163 @@
           "name": "Default",
           "declaration": {
             "name": "Default",
-            "module": "components/band/band.stories.ts"
+            "module": "components/badge/badge.stories.ts"
           }
         },
         {
           "kind": "js",
-          "name": "Branded",
+          "name": "IconVariant",
           "declaration": {
-            "name": "Branded",
-            "module": "components/band/band.stories.ts"
+            "name": "IconVariant",
+            "module": "components/badge/badge.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Success",
+          "declaration": {
+            "name": "Success",
+            "module": "components/badge/badge.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Warning",
+          "declaration": {
+            "name": "Warning",
+            "module": "components/badge/badge.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Error",
+          "declaration": {
+            "name": "Error",
+            "module": "components/badge/badge.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Info",
+          "declaration": {
+            "name": "Info",
+            "module": "components/badge/badge.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Attention",
+          "declaration": {
+            "name": "Attention",
+            "module": "components/badge/badge.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Light",
+          "declaration": {
+            "name": "Light",
+            "module": "components/badge/badge.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "SuccessLight",
+          "declaration": {
+            "name": "SuccessLight",
+            "module": "components/badge/badge.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WarningLight",
+          "declaration": {
+            "name": "WarningLight",
+            "module": "components/badge/badge.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ErrorLight",
+          "declaration": {
+            "name": "ErrorLight",
+            "module": "components/badge/badge.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "InfoLight",
+          "declaration": {
+            "name": "InfoLight",
+            "module": "components/badge/badge.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "AttentionLight",
+          "declaration": {
+            "name": "AttentionLight",
+            "module": "components/badge/badge.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "White",
+          "declaration": {
+            "name": "White",
+            "module": "components/badge/badge.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "SuccessWhite",
+          "declaration": {
+            "name": "SuccessWhite",
+            "module": "components/badge/badge.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WarningWhite",
+          "declaration": {
+            "name": "WarningWhite",
+            "module": "components/badge/badge.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ErrorWhite",
+          "declaration": {
+            "name": "ErrorWhite",
+            "module": "components/badge/badge.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "InfoWhite",
+          "declaration": {
+            "name": "InfoWhite",
+            "module": "components/badge/badge.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "AttentionWhite",
+          "declaration": {
+            "name": "AttentionWhite",
+            "module": "components/badge/badge.stories.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "components/band/band.styles.ts",
+      "path": "components/badge/badge.styles.ts",
       "declarations": [
         {
           "kind": "variable",
           "name": "styles",
-          "default": "css`.cre8-u-content-knockout-brand { color: var(----cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: size(1) !important; } .cre8-u-margin-md { margin: size(2) !important; } .cre8-u-margin-lg { margin: size(3) !important; } .cre8-u-margin-xl { margin: size(4) !important; } .cre8-u-margin-xxl { margin: size(8) !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: size(1) !important; } .cre8-u-margin-top-md { margin-top: size(2) !important; } .cre8-u-margin-top-lg { margin-top: size(3) !important; } .cre8-u-margin-top-xl { margin-top: size(4) !important; } .cre8-u-margin-top-xxl { margin-top: size(8) !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: size(1) !important; } .cre8-u-margin-right-md { margin-right: size(2) !important; } .cre8-u-margin-right-lg { margin-right: size(3) !important; } .cre8-u-margin-right-xl { margin-right: size(4) !important; } .cre8-u-margin-right-xxl { margin-right: size(8) !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: size(1) !important; } .cre8-u-margin-bottom-md { margin-bottom: size(2) !important; } .cre8-u-margin-bottom-lg { margin-bottom: size(3) !important; } .cre8-u-margin-bottom-xl { margin-bottom: size(4) !important; } .cre8-u-margin-bottom-xxl { margin-bottom: size(8) !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(4) !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(8) !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: size(1) !important; } .cre8-u-margin-left-md { margin-left: size(2) !important; } .cre8-u-margin-left-lg { margin-left: size(3) !important; } .cre8-u-margin-left-xl { margin-left: size(4) !important; } .cre8-u-margin-left-xxl { margin-left: size(8) !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: size(1) !important; } .cre8-u-padding-md { padding: size(2) !important; } .cre8-u-padding-lg { padding: size(3) !important; } .cre8-u-padding-xl { padding: size(4) !important; } .cre8-u-padding-xxl { padding: size(8) !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: size(1) !important; } .cre8-u-padding-top-md { padding-top: size(2) !important; } .cre8-u-padding-top-lg { padding-top: size(3) !important; } .cre8-u-padding-top-xl { padding-top: size(4) !important; } .cre8-u-padding-top-xxl { padding-top: size(8) !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: size(1) !important; } .cre8-u-padding-right-md { padding-right: size(2) !important; } .cre8-u-padding-right-lg { padding-right: size(3) !important; } .cre8-u-padding-right-xl { padding-right: size(4) !important; } .cre8-u-padding-right-xxl { padding-right: size(8) !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: size(1) !important; } .cre8-u-padding-bottom-md { padding-bottom: size(2) !important; } .cre8-u-padding-bottom-lg { padding-bottom: size(3) !important; } .cre8-u-padding-bottom-xl { padding-bottom: size(4) !important; } .cre8-u-padding-bottom-xxl { padding-bottom: size(8) !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: size(1) !important; } .cre8-u-padding-left-md { padding-left: size(2) !important; } .cre8-u-padding-left-lg { padding-left: size(3) !important; } .cre8-u-padding-left-xl { padding-left: size(4) !important; } .cre8-u-padding-left-xxl { padding-left: size(8) !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); -webkit-text-decoration: var(--cre8-typography-body-default-text-decoration); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--background-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /** * 1) A container with a background that can house various recipes of Components within */ .cre8-c-band { background: var(--cre8-color-bg-subtle); padding: 1.5rem 0; } @media all and (min-width: 1200px) { .cre8-c-band { padding: 2rem 0; } } /** * Branded variant */ .cre8-c-band--branded { color: var(--cre8-color-content-knockout); background: var(--cre8-theme-color-utility-information); } /** * Full height * 1) Height set to 100% to fill a container like a sidebar */ .cre8-c-band--full-height { height: 100%; }`"
+          "default": "css`.cre8-u-content-knockout-brand { color: var(----cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: size(1) !important; } .cre8-u-margin-md { margin: size(2) !important; } .cre8-u-margin-lg { margin: size(3) !important; } .cre8-u-margin-xl { margin: size(4) !important; } .cre8-u-margin-xxl { margin: size(8) !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: size(1) !important; } .cre8-u-margin-top-md { margin-top: size(2) !important; } .cre8-u-margin-top-lg { margin-top: size(3) !important; } .cre8-u-margin-top-xl { margin-top: size(4) !important; } .cre8-u-margin-top-xxl { margin-top: size(8) !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: size(1) !important; } .cre8-u-margin-right-md { margin-right: size(2) !important; } .cre8-u-margin-right-lg { margin-right: size(3) !important; } .cre8-u-margin-right-xl { margin-right: size(4) !important; } .cre8-u-margin-right-xxl { margin-right: size(8) !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: size(1) !important; } .cre8-u-margin-bottom-md { margin-bottom: size(2) !important; } .cre8-u-margin-bottom-lg { margin-bottom: size(3) !important; } .cre8-u-margin-bottom-xl { margin-bottom: size(4) !important; } .cre8-u-margin-bottom-xxl { margin-bottom: size(8) !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(4) !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(8) !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: size(1) !important; } .cre8-u-margin-left-md { margin-left: size(2) !important; } .cre8-u-margin-left-lg { margin-left: size(3) !important; } .cre8-u-margin-left-xl { margin-left: size(4) !important; } .cre8-u-margin-left-xxl { margin-left: size(8) !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: size(1) !important; } .cre8-u-padding-md { padding: size(2) !important; } .cre8-u-padding-lg { padding: size(3) !important; } .cre8-u-padding-xl { padding: size(4) !important; } .cre8-u-padding-xxl { padding: size(8) !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: size(1) !important; } .cre8-u-padding-top-md { padding-top: size(2) !important; } .cre8-u-padding-top-lg { padding-top: size(3) !important; } .cre8-u-padding-top-xl { padding-top: size(4) !important; } .cre8-u-padding-top-xxl { padding-top: size(8) !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: size(1) !important; } .cre8-u-padding-right-md { padding-right: size(2) !important; } .cre8-u-padding-right-lg { padding-right: size(3) !important; } .cre8-u-padding-right-xl { padding-right: size(4) !important; } .cre8-u-padding-right-xxl { padding-right: size(8) !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: size(1) !important; } .cre8-u-padding-bottom-md { padding-bottom: size(2) !important; } .cre8-u-padding-bottom-lg { padding-bottom: size(3) !important; } .cre8-u-padding-bottom-xl { padding-bottom: size(4) !important; } .cre8-u-padding-bottom-xxl { padding-bottom: size(8) !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: size(1) !important; } .cre8-u-padding-left-md { padding-left: size(2) !important; } .cre8-u-padding-left-lg { padding-left: size(3) !important; } .cre8-u-padding-left-xl { padding-left: size(4) !important; } .cre8-u-padding-left-xxl { padding-left: size(8) !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); -webkit-text-decoration: var(--cre8-typography-body-default-text-decoration); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--background-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ :host { display: inline-flex; } /** * 1) Badges are blocks of color with text inside used for messaging */ .cre8-c-badge { font-family: var(--cre8-typography-label-small-font-family); font-size: var(--cre8-typography-label-small-font-size); font-weight: var(--cre8-typography-label-small-font-weight); line-height: var(--cre8-typography-label-small-line-height); text-decoration: var(--cre8-typography-label-small-text-decoration); text-transform: var(--cre8-typography-label-small-text-transform); display: inline-flex; border-radius: var(--cre8-border-radius-badge); padding: var(--cre8-badge-padding-vertical) var(--cre8-badge-padding-horizontal); color: var(--cre8-color-content-knockout); background-color: var(--cre8-color-bg-strong); align-items: center; } /** * Success badge */ .cre8-c-badge--success { background-color: var(--cre8-color-bg-success-strong); } /** * Warning badge */ .cre8-c-badge--warning { background-color: var(--cre8-color-bg-warning-strong); color: var(--cre8-color-content-default); } /** * Creating space between icon and text */ cre8-icon { height: var(--cre8-icon-height, 1rem); margin-right: 0.25rem; } /** * Error badge */ .cre8-c-badge--error { background-color: var(--cre8-color-bg-error-strong); } /** * Info badge */ .cre8-c-badge--info { background-color: var(--cre8-color-bg-info-strong); } /** * Attention badge */ .cre8-c-badge--attention { background-color: var(--cre8-color-bg-attention-strong); } /** * Light neutral (default) badge */ .cre8-c-badge--light { background-color: var(--cre8-color-bg-subtle); color: var(--cre8-color-content-default); } /** * Light Success badge */ .cre8-c-badge--light.cre8-c-badge--success { background-color: var(--cre8-color-bg-success); color: var(--cre8-color-content-success); } /** * Light Warning badge */ .cre8-c-badge--light.cre8-c-badge--warning { background-color: var(--cre8-color-bg-warning); } /** * Light Error badge */ .cre8-c-badge--light.cre8-c-badge--error { background-color: var(--cre8-color-bg-error); color: var(--cre8-color-content-error); } /** * Light Info badge */ .cre8-c-badge--light.cre8-c-badge--info { background-color: var(--cre8-color-bg-info); } /** * Light Attention badge */ .cre8-c-badge--light.cre8-c-badge--attention { background-color: var(--cre8-color-bg-attention); } /** * White neutral (default) badge */ .cre8-c-badge--white { background-color: var(--cre8-color-bg-default); color: var(--cre8-color-content-default); } /** * White Success badge */ .cre8-c-badge--white.cre8-c-badge--success { color: var(--cre8-color-content-success); } /** * White Error badge */ .cre8-c-badge--white.cre8-c-badge--error { background-color: none; color: var(--cre8-color-content-error); }`"
         }
       ],
       "exports": [
@@ -3518,95 +3497,116 @@
           "name": "default",
           "declaration": {
             "name": "styles",
-            "module": "components/band/band.styles.ts"
+            "module": "components/badge/badge.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "components/band/band.ts",
+      "path": "components/badge/badge.ts",
       "declarations": [
         {
           "kind": "class",
-          "description": "",
-          "name": "Cre8Band",
-          "slots": [
-            {
-              "description": "The band content",
-              "name": ""
-            }
-          ],
+          "description": "Status badges are used most often in tables or fat rows in a list.\nThese Components serve a contextual purpose and don't provide any functionality.\nBadges should be organized inside a dedicated table row communicating status such as pending, approved or rejected.",
+          "name": "Cre8Badge",
           "members": [
+            {
+              "kind": "field",
+              "name": "text",
+              "type": {
+                "text": "string"
+              },
+              "default": "undefined",
+              "description": "The badge text",
+              "attribute": "text"
+            },
+            {
+              "kind": "field",
+              "name": "status",
+              "type": {
+                "text": "'success' | 'warning' | 'error' | 'info' | 'attention' | undefined"
+              },
+              "description": "Status (a color variant prop)\n- Omitting this prop renders a badge with the neutral state treatment\n- **success** renders a badge with success state treatment\n- **warning** renders a badge with warning state treatment\n- **error** renders a badge with error state treatment\n- **info** renders a badge with information state treatment\n- **attention** renders a badge with attention state treatment",
+              "attribute": "status"
+            },
             {
               "kind": "field",
               "name": "variant",
               "type": {
-                "text": "'branded' | undefined"
+                "text": "'light' | 'white' | undefined"
               },
-              "description": "Gradient variant\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**1** renders the band with the set gradient background</li>\n</ul>\n</cre8-text-passage>",
+              "description": "Background Style Variant\n\n- Omitting this prop renders a badge with a dark background\n- **light** renders a badge with a light background\n- **white** renders a badge with a white background",
               "attribute": "variant"
             },
             {
               "kind": "field",
-              "name": "fullHeight",
+              "name": "svg",
               "type": {
-                "text": "boolean | undefined"
+                "text": "string | undefined"
               },
-              "description": "Full height variant\n1) Sets the height to 100%",
-              "attribute": "fullHeight",
-              "reflects": true
+              "description": "SVG as a raw string\n- For badges with icons, the icon is defined by this prop\n- Pass in a raw svg as a String. We use raw string loader for this but any method of getting raw svgs will do\n- Import example:`import svgFeedback from '@tmorrow/cre8-wc/icons/Feedback.svg?raw';`\n- [cre8-icons Github repo](https://github.com/tmorrowdev/cre8-icons) This is the Github\nrepo for Cre8 icons, which includes a link to the storybook as well as relavant information for new icons",
+              "attribute": "svg"
             }
           ],
           "attributes": [
             {
+              "name": "text",
+              "type": {
+                "text": "string"
+              },
+              "default": "undefined",
+              "description": "The badge text",
+              "fieldName": "text"
+            },
+            {
+              "name": "status",
+              "type": {
+                "text": "'success' | 'warning' | 'error' | 'info' | 'attention' | undefined"
+              },
+              "description": "Status (a color variant prop)\n- Omitting this prop renders a badge with the neutral state treatment\n- **success** renders a badge with success state treatment\n- **warning** renders a badge with warning state treatment\n- **error** renders a badge with error state treatment\n- **info** renders a badge with information state treatment\n- **attention** renders a badge with attention state treatment",
+              "fieldName": "status"
+            },
+            {
               "name": "variant",
               "type": {
-                "text": "'branded' | undefined"
+                "text": "'light' | 'white' | undefined"
               },
-              "description": "Gradient variant\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**1** renders the band with the set gradient background</li>\n</ul>\n</cre8-text-passage>",
+              "description": "Background Style Variant\n\n- Omitting this prop renders a badge with a dark background\n- **light** renders a badge with a light background\n- **white** renders a badge with a white background",
               "fieldName": "variant"
             },
             {
-              "name": "fullHeight",
+              "name": "svg",
               "type": {
-                "text": "boolean | undefined"
+                "text": "string | undefined"
               },
-              "description": "Full height variant\n1) Sets the height to 100%",
-              "fieldName": "fullHeight"
+              "description": "SVG as a raw string\n- For badges with icons, the icon is defined by this prop\n- Pass in a raw svg as a String. We use raw string loader for this but any method of getting raw svgs will do\n- Import example:`import svgFeedback from '@tmorrow/cre8-wc/icons/Feedback.svg?raw';`\n- [cre8-icons Github repo](https://github.com/tmorrowdev/cre8-icons) This is the Github\nrepo for Cre8 icons, which includes a link to the storybook as well as relavant information for new icons",
+              "fieldName": "svg"
             }
           ],
           "superclass": {
             "name": "Cre8Element",
             "module": "/components/cre8-element"
           },
-          "tagName": "cre8-band",
+          "tagName": "cre8-badge",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "Cre8Band",
+          "name": "Cre8Badge",
           "declaration": {
-            "name": "Cre8Band",
-            "module": "components/band/band.ts"
+            "name": "Cre8Badge",
+            "module": "components/badge/badge.ts"
           }
         },
         {
           "kind": "custom-element-definition",
-          "name": "cre8-band",
+          "name": "cre8-badge",
           "declaration": {
-            "name": "Cre8Band",
-            "module": "components/band/band.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Cre8Band",
-            "module": "components/band/band.ts"
+            "name": "Cre8Badge",
+            "module": "components/badge/badge.ts"
           }
         }
       ]

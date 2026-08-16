@@ -153,7 +153,9 @@ class ReleaseManager {
    */
   commitVersionBump(version) {
     console.log('📝 Committing version bump...');
-    this.exec('git add package.json react-wrappers/package.json ../cre8-mcp/package.json');
+    // react-wrappers/package.json is generated and gitignored on purpose -
+    // npm publishes it from disk, so it is synced but never committed.
+    this.exec('git add package.json ../cre8-mcp/package.json');
     this.exec(`git commit -m "chore: bump version to ${version}"`);
     console.log('✅ Version bump committed\n');
   }
@@ -303,6 +305,10 @@ class ReleaseManager {
       // Sync react-wrappers and cre8-mcp to the same version BEFORE the
       // commit, so the committed tree matches what gets published.
       this.syncWorkspaceVersions(newVersion);
+
+      // The main build ran before the bump, so regenerate the a2ui catalog
+      // chain - its metadata embeds the library version.
+      this.exec('pnpm run build:a2ui');
 
       // Commit version bump
       this.commitVersionBump(newVersion);
