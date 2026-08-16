@@ -3,7 +3,7 @@
     "generated_from": "catalog.json",
     "catalog_id": "cre8-wc",
     "library": "@tmorrow/cre8-wc",
-    "library_version": "2.2.2",
+    "library_version": "2.3.0",
     "total_nodes": 221,
     "total_edges": 210
   },
