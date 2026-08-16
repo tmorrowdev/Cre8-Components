@@ -1,11 +1,11 @@
 // Auto-generated React wrappers
 export { Cre8Accordion } from './components/Accordion';
 export { Cre8AccordionItem } from './components/AccordionItem';
-export { Cre8Badge } from './components/Badge';
 export { Cre8Alert } from './components/Alert';
+export { Cre8Badge } from './components/Badge';
 export { Cre8Breadcrumbs } from './components/Breadcrumbs';
-export { Cre8BreadcrumbsItem } from './components/BreadcrumbsItem';
 export { Cre8Button } from './components/Button';
+export { Cre8BreadcrumbsItem } from './components/BreadcrumbsItem';
 export { Cre8Band } from './components/Band';
 export { Cre8ButtonGroup } from './components/ButtonGroup';
 export { Cre8Card } from './components/Card';
