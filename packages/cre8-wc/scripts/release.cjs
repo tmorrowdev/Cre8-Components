@@ -89,9 +89,34 @@ class ReleaseManager {
   /**
    * Build the project
    */
+  /**
+   * Sync every workspace package that releases in lockstep with cre8-wc.
+   * cre8-mcp keeps its `workspace:^` dependency on cre8-wc - pnpm publish
+   * rewrites it to the real version at pack time.
+   */
+  syncWorkspaceVersions(newVersion) {
+    console.log('🔗 Syncing lockstep package versions...');
+
+    const reactPkgPath = path.join(__dirname, '..', 'react-wrappers', 'package.json');
+    const reactPkg = JSON.parse(fs.readFileSync(reactPkgPath, 'utf8'));
+    reactPkg.version = newVersion;
+    reactPkg.dependencies['@tmorrow/cre8-wc'] = `^${newVersion}`;
+    fs.writeFileSync(reactPkgPath, JSON.stringify(reactPkg, null, 2) + '\n');
+    console.log(`✅ @tmorrow/cre8-react -> ${newVersion}`);
+
+    const mcpPkgPath = path.join(__dirname, '..', '..', 'cre8-mcp', 'package.json');
+    const mcpPkg = JSON.parse(fs.readFileSync(mcpPkgPath, 'utf8'));
+    mcpPkg.version = newVersion;
+    if (mcpPkg.dependencies && mcpPkg.dependencies['@tmorrow/cre8-react']) {
+      mcpPkg.dependencies['@tmorrow/cre8-react'] = `^${newVersion}`;
+    }
+    fs.writeFileSync(mcpPkgPath, JSON.stringify(mcpPkg, null, 2) + '\n');
+    console.log(`✅ @tmorrow/cre8-mcp -> ${newVersion}\n`);
+  }
+
   build() {
-    console.log('🔨 Building project...');
-    this.exec('npm run build');
+    console.log('🔨 Building all aligned artifacts (libs, storybooks, mcp)...');
+    this.exec('pnpm -w run build:all');
     console.log('✅ Build completed\n');
   }
 
@@ -128,7 +153,7 @@ class ReleaseManager {
    */
   commitVersionBump(version) {
     console.log('📝 Committing version bump...');
-    this.exec('git add package.json react-wrappers/package.json');
+    this.exec('git add package.json react-wrappers/package.json ../cre8-mcp/package.json');
     this.exec(`git commit -m "chore: bump version to ${version}"`);
     console.log('✅ Version bump committed\n');
   }
@@ -248,8 +273,11 @@ class ReleaseManager {
 
       // Determine version bump
       console.log('📦 Determining version bump...\n');
-      const newVersion = this.bumper.run({ dryRun: true });
-      
+      const newVersion = options.version || this.bumper.run({ dryRun: true });
+      if (options.version) {
+        console.log(`📌 Using explicit version: ${newVersion}`);
+      }
+
       if (newVersion === this.bumper.pkg.version) {
         console.log('✨ No version bump needed. Release completed.');
         return newVersion;
@@ -262,7 +290,19 @@ class ReleaseManager {
 
       // Bump version
       console.log('📈 Bumping version...\n');
-      this.bumper.run({ dryRun: false });
+      if (options.version) {
+        const pkgPath = path.join(__dirname, '..', 'package.json');
+        const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
+        pkg.version = newVersion;
+        fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
+        console.log(`✅ Set version to ${newVersion}`);
+      } else {
+        this.bumper.run({ dryRun: false });
+      }
+
+      // Sync react-wrappers and cre8-mcp to the same version BEFORE the
+      // commit, so the committed tree matches what gets published.
+      this.syncWorkspaceVersions(newVersion);
 
       // Commit version bump
       this.commitVersionBump(newVersion);
@@ -295,19 +335,25 @@ class ReleaseManager {
           throw error;
         }
 
-        // Sync version and publish react wrappers
+        // react wrappers (version already synced pre-commit)
         console.log('📦 Publishing @tmorrow/cre8-react...');
         try {
-          const reactPkgPath = path.join(__dirname, '..', 'react-wrappers', 'package.json');
-          const reactPkg = JSON.parse(fs.readFileSync(reactPkgPath, 'utf8'));
-          reactPkg.version = newVersion;
-          reactPkg.dependencies['@tmorrow/cre8-wc'] = `^${newVersion}`;
-          fs.writeFileSync(reactPkgPath, JSON.stringify(reactPkg, null, 2) + '\n');
-
           this.exec('cd react-wrappers && npm publish --access public');
           console.log('✅ @tmorrow/cre8-react published successfully\n');
         } catch (error) {
           console.log('❌ Failed to publish @tmorrow/cre8-react\n');
+          throw error;
+        }
+
+        // cre8-mcp: pnpm publish rewrites the workspace:^ dependency on
+        // cre8-wc to the real version at pack time (npm publish would ship
+        // the literal "workspace:^" and break installs).
+        console.log('📦 Publishing @tmorrow/cre8-mcp...');
+        try {
+          this.exec('cd ../cre8-mcp && pnpm publish --access public --no-git-checks');
+          console.log('✅ @tmorrow/cre8-mcp published successfully\n');
+        } catch (error) {
+          console.log('❌ Failed to publish @tmorrow/cre8-mcp\n');
           throw error;
         }
       }
@@ -333,8 +379,17 @@ if (require.main === module) {
     skipLint: args.includes('--skip-lint'),
     publish: args.includes('--publish') || args.includes('-p'),
     push: args.includes('--push'),
+    // Explicit version override, e.g. --version 2.2.0. The commit analyzer
+    // only recognises conventional-commit prefixes, which this repo does not
+    // use consistently, so feature releases need the explicit form.
+    version: args.includes('--version') ? args[args.indexOf('--version') + 1] : null,
     help: args.includes('--help') || args.includes('-h')
   };
+
+  if (options.version && !/^\d+\.\d+\.\d+(-[\w.]+)?$/.test(options.version)) {
+    console.error(`❌ Invalid --version value: ${options.version}`);
+    process.exit(1);
+  }
 
   if (options.help) {
     console.log(`
