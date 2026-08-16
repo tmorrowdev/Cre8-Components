@@ -51,6 +51,9 @@
     "components/**/*.test.ts",
     "dist",
     "lib",
-    "react-wrappers"
+    "react-wrappers",
+    "vitest.config.ts",
+    "vitest.setup.ts",
+    ".storybook/vitest.setup.ts"
   ]
 }

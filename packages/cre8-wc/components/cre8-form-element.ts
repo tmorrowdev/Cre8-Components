@@ -334,7 +334,7 @@ export abstract class Cre8FormElement extends Cre8Element {
 
     constructor() {
         super();
-        this._internals = this.attachInternals() as Cre8ElementInternals;
+        this._internals = this.attachInternals() as unknown as Cre8ElementInternals;
     }
 }
 
