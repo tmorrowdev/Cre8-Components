@@ -24,7 +24,7 @@ import {
   saveState,
 } from './store.js';
 import { summarize, totals } from './analytics.js';
-import { alertStatus, recommend } from './recommendations.js';
+import { recommend } from './recommendations.js';
 import { sampleFortnight } from './sample-data.js';
 
 const WINDOW_DAYS = 14;
@@ -37,6 +37,21 @@ const $ = (id) => document.getElementById(id);
 const esc = (s) =>
   String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const round = (n) => Math.round(n);
+
+/**
+ * Read a design token at runtime.
+ *
+ * Chart.js paints to a canvas, so it cannot resolve `var(--app-macro-carbs)`
+ * the way CSS does — the value has to be handed over as a literal. Reading it
+ * back from the theme rather than repeating the hex here is what keeps the
+ * chart palette identical to the macro bars, and what makes dark mode work at
+ * all.
+ */
+const token = (name) =>
+  getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+
+/** A card heading with the brand dot. Structural markup, not a component. */
+const cardTitle = (text) => `<div class="card-title"><span class="dot"></span>${esc(text)}</div>`;
 
 function persist() {
   if (!saveState(state)) {
@@ -58,11 +73,21 @@ function ringSvg(consumed, goal) {
   const circumference = 2 * Math.PI * r;
   const ratio = goal > 0 ? Math.min(consumed / goal, 1) : 0;
   const over = consumed > goal;
+  // An SVG gradient cannot be expressed as a CSS custom property, so the stops
+  // read the theme's ring tokens through `var()` on stop-color instead. Over
+  // goal, the ramp swaps to amber/red rather than just changing one stroke —
+  // the whole arc should change character, not pick up a warning tint.
   return `
     <div class="ring">
       <svg viewBox="0 0 120 120" aria-hidden="true">
+        <defs>
+          <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="var(${over ? '--app-ring-over-from' : '--app-ring-from'})"/>
+            <stop offset="100%" stop-color="var(${over ? '--app-ring-over-to' : '--app-ring-to'})"/>
+          </linearGradient>
+        </defs>
         <circle class="ring-track" cx="60" cy="60" r="${r}"></circle>
-        <circle class="ring-value ${over ? 'ring-over' : ''}" cx="60" cy="60" r="${r}"
+        <circle class="ring-value" cx="60" cy="60" r="${r}" stroke="url(#ringGrad)"
                 stroke-dasharray="${(ratio * circumference).toFixed(1)} ${circumference.toFixed(1)}"></circle>
       </svg>
       <div class="ring-label">
@@ -77,8 +102,10 @@ function macroBar(label, key, value, target) {
   return `
     <div class="macro-row">
       <div class="macro-head">
-        <span>${label}</span>
-        <span>${round(value)} / ${target}g</span>
+        <span class="macro-name">
+          <span class="macro-swatch" style="background:var(--app-macro-${key})"></span>${label}
+        </span>
+        <span class="macro-value">${round(value)} / ${target}g</span>
       </div>
       <div class="macro-track">
         <div class="macro-fill ${key}" style="width:${(ratio * 100).toFixed(1)}%"></div>
@@ -143,7 +170,7 @@ function renderEntries() {
     const mealKcal = totals(inMeal).kcal;
     return `
       <div class="meal-group">
-        <div class="meal-title"><span>${meal}</span><span>${round(mealKcal)} kcal</span></div>
+        <div class="meal-title"><span>${meal}</span><span class="meal-kcal">${round(mealKcal)} kcal</span></div>
         ${inMeal
           .map((e) => {
             const food = getFood(e.foodId);
@@ -154,8 +181,11 @@ function renderEntries() {
                   <div class="entry-name">${esc(food ? food.name : 'Unknown food')}</div>
                   <div class="entry-sub">${round(e.grams)}g · ${round(n.protein)}p ${round(n.carbs)}c ${round(n.fat)}f</div>
                 </div>
-                <div class="entry-kcal">${round(n.kcal)} kcal</div>
-                <cre8-button variant="tertiary" size="sm" neutral data-remove="${e.id}" text="Remove"></cre8-button>
+                <div class="entry-kcal">${round(n.kcal)}<span class="unit">kcal</span></div>
+                <button class="icon-btn" type="button" data-remove="${e.id}"
+                        aria-label="Remove ${esc(food ? food.name : 'entry')}">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+                </button>
               </div>`;
           })
           .join('')}
@@ -170,7 +200,7 @@ function buildTodayPanel() {
     </cre8-card>
 
     <cre8-card>
-      <cre8-heading slot="header" tag-name="h2" variant="h6">Log a food</cre8-heading>
+      <div slot="header">${cardTitle('Log a food')}</div>
       <div class="log-form">
         <cre8-field id="search" label="Search foods" placeholder="chicken, oats, banana…"></cre8-field>
         <div class="suggestions" id="suggestions"></div>
@@ -184,7 +214,7 @@ function buildTodayPanel() {
     </cre8-card>
 
     <cre8-card>
-      <cre8-heading slot="header" tag-name="h2" variant="h6">Today's log</cre8-heading>
+      <div slot="header">${cardTitle("Today's log")}</div>
       <div id="entries"></div>
     </cre8-card>`;
 
@@ -275,14 +305,14 @@ function renderAnalytics() {
     </cre8-card>
 
     <cre8-card>
-      <cre8-heading slot="header" tag-name="h2" variant="h6">Calories vs goal</cre8-heading>
+      <div slot="header">${cardTitle('Calories vs goal')}</div>
       <div class="chart-wrap">
         <cre8-chart id="chart-trend" type="line" height="220" aria-label="Daily calories against goal"></cre8-chart>
       </div>
     </cre8-card>
 
     <cre8-card>
-      <cre8-heading slot="header" tag-name="h2" variant="h6">Where calories come from</cre8-heading>
+      <div slot="header">${cardTitle('Where calories come from')}</div>
       <div class="chart-wrap">
         <cre8-chart id="chart-macros" type="doughnut" height="220" legend-position="bottom"
                     aria-label="Share of calories by macronutrient"></cre8-chart>
@@ -290,7 +320,7 @@ function renderAnalytics() {
     </cre8-card>
 
     <cre8-card>
-      <cre8-heading slot="header" tag-name="h2" variant="h6">Biggest contributors</cre8-heading>
+      <div slot="header">${cardTitle('Biggest contributors')}</div>
       <div id="contributors"></div>
     </cre8-card>`;
 
@@ -307,39 +337,67 @@ function renderAnalytics() {
         // null rather than 0 on unlogged days: Chart.js draws a gap, which is
         // the truth. A zero would read as a day of not eating.
         data: series.map((d) => (d.logged ? round(d.kcal) : null)),
-        borderColor: '#2f6fed',
-        backgroundColor: 'rgba(47,111,237,0.12)',
+        borderColor: token('--app-macro-protein'),
+        backgroundColor: token('--app-chart-fill'),
+        borderWidth: 3,
         fill: true,
-        tension: 0.3,
+        tension: 0.35,
         spanGaps: false,
+        pointBackgroundColor: token('--cre8-color-bg-default'),
+        pointBorderWidth: 2,
+        pointRadius: 3.5,
       },
       {
         label: 'Goal',
         data: series.map(() => state.goals.kcal),
-        borderColor: '#94a3b8',
+        borderColor: token('--cre8-color-content-disabled'),
         borderDash: [5, 4],
+        borderWidth: 2,
         pointRadius: 0,
         fill: false,
       },
     ],
   };
+  // Gridlines and tick labels are read from the token layer too, or the chart
+  // keeps Chart.js's own greys and stops matching the card it sits in.
+  const grid = token('--cre8-color-border-default');
+  const tick = token('--cre8-color-content-subtle');
   $('chart-trend').options = {
-    scales: { y: { beginAtZero: true } },
-    plugins: { legend: { display: true, position: 'bottom' } },
+    scales: {
+      y: { beginAtZero: true, grid: { color: grid }, ticks: { color: tick } },
+      x: { grid: { display: false }, ticks: { color: tick } },
+    },
+    plugins: { legend: { display: true, position: 'bottom', labels: { color: tick, usePointStyle: true } } },
   };
 
   const macroKcal = [s.avg.protein * 4, s.avg.carbs * 4, s.avg.fat * 9].map(round);
   $('chart-macros').data = {
     labels: ['Protein', 'Carbs', 'Fat'],
-    datasets: [{ data: macroKcal, backgroundColor: ['#2f6fed', '#15803d', '#b45309'] }],
+    datasets: [
+      {
+        data: macroKcal,
+        backgroundColor: [
+          token('--app-macro-protein'),
+          token('--app-macro-carbs'),
+          token('--app-macro-fat'),
+        ],
+        borderColor: token('--cre8-color-bg-default'),
+        borderWidth: 3,
+      },
+    ],
+  };
+  $('chart-macros').options = {
+    cutout: '62%',
+    plugins: { legend: { position: 'bottom', labels: { color: tick, usePointStyle: true } } },
   };
 
   const contributors = s.topContributors;
   $('contributors').innerHTML = contributors.length
     ? contributors
         .map(
-          (c) => `
-          <div class="entry">
+          (c, i) => `
+          <div class="entry contributor">
+            <span class="rank">${i + 1}</span>
             <div>
               <div class="entry-name">${esc(c.food.name)}</div>
               <div class="entry-sub">${c.count} ${c.count === 1 ? 'entry' : 'entries'} · ${c.food.group}</div>
@@ -358,26 +416,34 @@ function renderAnalytics() {
 function renderInsights() {
   const s = summarize(state.entries, state.goals, WINDOW_DAYS);
   const recs = recommend(s);
+  const LABEL = { high: 'Act on this', medium: 'Worth a look', low: 'FYI', positive: 'Going well' };
 
+  // Plain elements rather than cre8-inline-alert. Five saturated alert panels
+  // stacked in a column is noise, and severity ranking is the whole point of
+  // this screen — a coloured spine ranks, a coloured panel just shouts. Every
+  // colour still comes from the cre8 token layer via the .rec-card rules.
   $('panel-insights').innerHTML = `
     ${recs
       .map(
         (r) => `
-      <cre8-inline-alert status="${alertStatus(r.severity)}" full-width>
-        <div class="rec">
-          <div class="rec-title">${esc(r.title)}</div>
-          <div>${esc(r.detail)}</div>
-          <div class="rec-evidence">${esc(r.evidence)}</div>
-          ${
-            r.suggestions?.length
-              ? `<div class="rec-suggestions">Try: ${r.suggestions.map(esc).join(' · ')}</div>`
-              : ''
-          }
+      <div class="rec-card ${r.severity}">
+        <div class="rec-head">
+          <span class="rec-title">${esc(r.title)}</span>
+          <span class="rec-chip">${LABEL[r.severity] ?? 'Note'}</span>
         </div>
-      </cre8-inline-alert>`
+        <div class="rec-detail">${esc(r.detail)}</div>
+        <div class="rec-evidence">${esc(r.evidence)}</div>
+        ${
+          r.suggestions?.length
+            ? `<div class="rec-suggestions">${r.suggestions
+                .map((x) => `<span class="pill">${esc(x)}</span>`)
+                .join('')}</div>`
+            : ''
+        }
+      </div>`
       )
       .join('')}
-    <cre8-card variant="compact">
+    <cre8-card>
       <p class="disclaimer">
         These are rules, not a model and not a clinician. Each card shows the number that
         triggered it so you can check the reasoning — and disagree with it. Nothing here
@@ -397,7 +463,7 @@ function renderGoals() {
 
   $('panel-goals').innerHTML = `
     <cre8-card>
-      <cre8-heading slot="header" tag-name="h2" variant="h6">Daily targets</cre8-heading>
+      <div slot="header">${cardTitle('Daily targets')}</div>
       <div class="log-form">
         <cre8-field id="goal-kcal" label="Calories" type="number" min="0" value="${g.kcal}"></cre8-field>
         <div class="log-form-row">
@@ -426,7 +492,7 @@ function renderGoals() {
     </cre8-card>
 
     <cre8-card>
-      <cre8-heading slot="header" tag-name="h2" variant="h6">Data</cre8-heading>
+      <div slot="header">${cardTitle('Data')}</div>
       <div class="log-form">
         <p class="disclaimer">
           Everything stays on this device. There is no account, no sync, and nothing leaves
@@ -498,13 +564,26 @@ function renderGoals() {
 /* -------------------------------------------------------------------------- */
 
 function renderHeader() {
-  $('app-date').textContent = new Date().toLocaleDateString(undefined, {
+  $('hero-date').textContent = new Date().toLocaleDateString(undefined, {
     weekday: 'long',
     month: 'long',
     day: 'numeric',
   });
+
   const s = summarize(state.entries, state.goals, WINDOW_DAYS);
-  $('streak-badge').setAttribute('text', `${s.streak} day streak`);
+  $('hero-streak-text').textContent = `${s.streak} day${s.streak === 1 ? '' : 's'}`;
+
+  const consumed = totals(todayEntries()).kcal;
+  const remaining = state.goals.kcal - consumed;
+  $('hero-kcal').textContent = round(consumed);
+  // Past the goal, "over" is the number that matters — counting up toward a
+  // target already missed tells the reader nothing they can act on.
+  $('hero-kcal-sub').textContent =
+    remaining >= 0
+      ? `of ${state.goals.kcal} kcal · ${round(remaining)} left`
+      : `${round(-remaining)} kcal over goal`;
+  const ratio = state.goals.kcal > 0 ? Math.min(consumed / state.goals.kcal, 1) : 0;
+  $('hero-meter').style.width = `${(ratio * 100).toFixed(1)}%`;
 }
 
 function renderAll() {

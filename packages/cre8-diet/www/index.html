@@ -6,28 +6,60 @@
        content clear of the notch and the home indicator inside a WKWebView. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
   <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#4F46E5">
   <title>Cre8 Diet</title>
   <!-- Inline so the browser stops asking for /favicon.ico. A data URI keeps the
        "nothing leaves the bundle" rule intact; the real iOS icon lives in the
        Xcode asset catalog, not here. -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%232f6fed'/%3E%3Cpath d='M16 8v16M8 16h16' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234F46E5'/%3E%3Cstop offset='1' stop-color='%2306B6D4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Cpath d='M11 9v7a5 5 0 0 0 10 0V9M16 21v4' stroke='white' stroke-width='2.4' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
 
   <!-- Everything below is local. Nothing on this page may reach the network:
        the app has to work offline, and an App Store build that does not is a
-       thin client. `pnpm sync-assets` puts these here. -->
+       thin client. `pnpm sync-assets` puts the vendor files here.
+
+       Order matters — the brand theme overrides cre8 tokens, so it has to come
+       after the sheet that defines them. -->
   <link rel="stylesheet" href="vendor/tokens/tokens_cre8-a2ui.css">
+  <link rel="stylesheet" href="theme/cre8-vivid.css">
   <link rel="stylesheet" href="styles.css">
   <script type="module" src="vendor/cre8-wc.esm.js"></script>
   <script type="module" src="src/app.js"></script>
 </head>
 <body>
   <div class="app">
-    <header class="app-header">
-      <div>
-        <cre8-heading tag-name="h1" variant="h4">Cre8 Diet</cre8-heading>
-        <p class="app-date" id="app-date"></p>
+    <!-- The hero is plain markup, not a cre8 component: it carries the gradient,
+         the brand mark, and the day's headline number. cre8 supplies the
+         controls and containers inside the panels; the layout and the identity
+         around them are structural HTML, which is what keeps the app from
+         looking like a component gallery. -->
+    <header class="hero">
+      <div class="hero-top">
+        <div class="hero-brand">
+          <span class="hero-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M8 3v9a4 4 0 0 0 8 0V3M12 16v5" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <div>
+            <div class="hero-title">Cre8 Diet</div>
+            <div class="hero-date" id="hero-date"></div>
+          </div>
+        </div>
+        <span class="hero-streak" id="hero-streak">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
+            <path d="M12 2s5 5 5 9a5 5 0 0 1-10 0c0-1.5.7-2.8 1.5-3.8C9 8.5 12 6 12 2z"/>
+          </svg>
+          <span id="hero-streak-text">0 days</span>
+        </span>
       </div>
-      <cre8-badge id="streak-badge" status="success" text="0 day streak"></cre8-badge>
+
+      <div class="hero-stats">
+        <span class="hero-kcal" id="hero-kcal">0</span>
+        <span class="hero-kcal-sub" id="hero-kcal-sub">kcal today</span>
+      </div>
+      <div class="hero-meter" role="presentation">
+        <div class="hero-meter-fill" id="hero-meter" style="width:0%"></div>
+      </div>
     </header>
 
     <cre8-tabs id="tabs">

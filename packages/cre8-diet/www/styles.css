@@ -1,29 +1,26 @@
 /*
- * Layout only. Every colour and radius below resolves to a `--cre8-*` token
- * from the brand sheet, so the app follows the design system rather than
- * carrying a second palette that drifts from it.
+ * App layout.
+ *
+ * Every value here resolves to a token from theme/cre8-vivid.css — either a
+ * `--cre8-*` the design system defines or an `--app-*` the theme adds. Nothing
+ * in this file names a colour, so re-theming the app means editing one file.
+ *
+ * (An earlier cut of this referenced ten `--cre8-*` names that do not exist —
+ * `--cre8-color-text-default`, `--cre8-color-background-surface-1` and friends.
+ * Every one silently fell through to its hardcoded fallback, so the app was not
+ * on the design system at all. Names below are checked against tokens_brand.css.)
  */
-
-:root {
-  --app-gap: 1rem;
-  --app-radius: var(--cre8-border-radius-lg, 12px);
-  --app-surface: var(--cre8-color-background-surface-1, #fff);
-  --app-page: var(--cre8-color-background-page, #f6f7f9);
-  --app-text: var(--cre8-color-text-default, #16191d);
-  --app-muted: var(--cre8-color-text-subtle, #5b6470);
-  --app-border: var(--cre8-color-border-weak, #e2e5ea);
-}
 
 * { box-sizing: border-box; }
 
 html, body {
   margin: 0;
   padding: 0;
+  min-height: 100%;
   background: var(--app-page);
-  color: var(--app-text);
-  font-family: var(--cre8-font-family-body, system-ui, -apple-system, sans-serif);
-  /* Momentum scrolling inside a WKWebView, and no rubber-banding of the body
-     itself — the panels scroll, the chrome does not. */
+  background-attachment: fixed;
+  color: var(--cre8-color-content-default);
+  font-family: var(--cre8-typography-body-default-font-family, system-ui, -apple-system, sans-serif);
   -webkit-font-smoothing: antialiased;
   overscroll-behavior-y: none;
 }
@@ -31,43 +28,154 @@ html, body {
 .app {
   max-width: 42rem;
   margin: 0 auto;
-  /* Safe-area insets keep the header below the notch and the last card above
-     the home indicator on hardware that has them; they are 0 everywhere else. */
+  /* Safe-area insets keep the hero clear of the notch and the last card above
+     the home indicator; they are 0 everywhere without that hardware. */
   padding:
-    calc(env(safe-area-inset-top, 0px) + 1rem)
+    calc(env(safe-area-inset-top, 0px) + 0.75rem)
     calc(env(safe-area-inset-right, 0px) + 1rem)
-    calc(env(safe-area-inset-bottom, 0px) + 2rem)
+    calc(env(safe-area-inset-bottom, 0px) + 2.5rem)
     calc(env(safe-area-inset-left, 0px) + 1rem);
 }
 
-.app-header {
+/* Hero ------------------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--app-radius);
+  padding: 1.25rem 1.25rem 1.5rem;
+  background: var(--app-gradient-hero);
+  box-shadow: var(--app-shadow-hero);
+  color: #fff;
+  margin-bottom: 0.875rem;
+}
+
+/* Two soft light sources, so the gradient reads as a surface with depth
+   rather than as a flat swatch. Purely decorative and non-interactive. */
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero::before {
+  width: 220px; height: 220px;
+  top: -120px; right: -60px;
+  background: radial-gradient(circle, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0) 70%);
+}
+.hero::after {
+  width: 180px; height: 180px;
+  bottom: -110px; left: -50px;
+  background: radial-gradient(circle, rgba(34,211,238,0.45) 0%, rgba(34,211,238,0) 70%);
+}
+
+.hero-top {
+  position: relative;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: var(--app-gap);
-  margin-bottom: 1rem;
+  gap: 1rem;
 }
 
-.app-date { margin: 0.15rem 0 0; color: var(--app-muted); font-size: 0.875rem; }
+.hero-brand { display: flex; align-items: center; gap: 0.6rem; }
 
-.panel { display: flex; flex-direction: column; gap: var(--app-gap); padding-top: 1rem; }
+.hero-mark {
+  width: 34px; height: 34px;
+  border-radius: 11px;
+  display: grid; place-items: center;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  backdrop-filter: blur(6px);
+  flex: none;
+}
+.hero-mark svg { width: 19px; height: 19px; display: block; }
 
-/* Ring + macro bars ------------------------------------------------------- */
+.hero-title { font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
+.hero-date { font-size: 0.75rem; opacity: 0.82; margin-top: 0.1rem; }
+
+.hero-streak {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 0.75rem;
+  font-weight: 650;
+  white-space: nowrap;
+  flex: none;
+}
+
+/* The headline number lives in the hero, knocked out on the gradient, so the
+   one thing a person opens the app to see is the first thing they read. */
+.hero-stats {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-top: 1.1rem;
+}
+.hero-kcal { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.035em; line-height: 1; }
+.hero-kcal-sub { font-size: 0.8125rem; opacity: 0.85; }
+
+.hero-meter {
+  position: relative;
+  margin-top: 0.85rem;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.24);
+  overflow: hidden;
+}
+.hero-meter-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: #fff;
+  transition: width 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Tabs ------------------------------------------------------------------- */
+
+cre8-tabs { display: block; }
+.panel { display: flex; flex-direction: column; gap: 0.875rem; padding-top: 0.875rem; }
+
+/* Cards ------------------------------------------------------------------ */
+
+cre8-card {
+  border-radius: var(--app-radius);
+  box-shadow: var(--app-shadow-card);
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.card-title .dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--app-gradient-brand);
+  flex: none;
+}
+
+/* Ring + macros ---------------------------------------------------------- */
 
 .summary { display: grid; grid-template-columns: auto 1fr; gap: 1.25rem; align-items: center; }
-@media (max-width: 26rem) { .summary { grid-template-columns: 1fr; } }
+@media (max-width: 25rem) { .summary { grid-template-columns: 1fr; justify-items: center; } }
 
-.ring { position: relative; width: 116px; height: 116px; }
-.ring svg { transform: rotate(-90deg); width: 100%; height: 100%; }
-.ring-track { fill: none; stroke: var(--app-border); stroke-width: 10; }
+.ring { position: relative; width: 124px; height: 124px; flex: none; }
+.ring svg { transform: rotate(-90deg); width: 100%; height: 100%; overflow: visible; }
+.ring-track { fill: none; stroke: var(--cre8-color-border-default); stroke-width: 11; }
 .ring-value {
   fill: none;
-  stroke: var(--cre8-color-brand-primary, #2f6fed);
-  stroke-width: 10;
+  stroke-width: 11;
   stroke-linecap: round;
-  transition: stroke-dasharray 400ms ease;
+  filter: drop-shadow(0 3px 8px rgba(79, 70, 229, 0.35));
+  transition: stroke-dasharray 600ms cubic-bezier(0.22, 1, 0.36, 1);
 }
-.ring-over { stroke: var(--cre8-color-text-warning, #b45309); }
 .ring-label {
   position: absolute;
   inset: 0;
@@ -75,76 +183,214 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.1rem;
+  gap: 0.05rem;
 }
-.ring-label strong { font-size: 1.5rem; line-height: 1; }
-.ring-label span { font-size: 0.75rem; color: var(--app-muted); }
+.ring-label strong {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  background: var(--app-gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.ring-label span { font-size: 0.6875rem; color: var(--cre8-color-content-subtle); }
 
-.macros { display: flex; flex-direction: column; gap: 0.75rem; }
-.macro-row { display: grid; gap: 0.25rem; }
-.macro-head { display: flex; justify-content: space-between; font-size: 0.8125rem; }
-.macro-head span:last-child { color: var(--app-muted); }
-.macro-track { height: 8px; border-radius: 999px; background: var(--app-border); overflow: hidden; }
-.macro-fill { height: 100%; border-radius: 999px; transition: width 400ms ease; }
-.macro-fill.protein { background: var(--cre8-color-brand-primary, #2f6fed); }
-.macro-fill.carbs { background: var(--cre8-color-text-success, #15803d); }
-.macro-fill.fat { background: var(--cre8-color-text-warning, #b45309); }
+.macros { display: flex; flex-direction: column; gap: 0.7rem; width: 100%; }
+.macro-row { display: grid; gap: 0.3rem; }
+.macro-head { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.8125rem; }
+.macro-name { display: flex; align-items: center; gap: 0.4rem; font-weight: 600; }
+.macro-swatch { width: 8px; height: 8px; border-radius: 3px; flex: none; }
+.macro-head .macro-value { color: var(--cre8-color-content-subtle); font-variant-numeric: tabular-nums; }
+.macro-track {
+  height: 9px;
+  border-radius: 999px;
+  background: var(--cre8-color-bg-subtle);
+  overflow: hidden;
+}
+.macro-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.macro-fill.protein { background: linear-gradient(90deg, var(--app-macro-protein), #818CF8); }
+.macro-fill.carbs { background: linear-gradient(90deg, var(--app-macro-carbs), #67E8F9); }
+.macro-fill.fat { background: linear-gradient(90deg, var(--app-macro-fat), #FCD34D); }
 
-/* Log --------------------------------------------------------------------- */
+/* Log -------------------------------------------------------------------- */
 
 .log-form { display: grid; gap: 0.75rem; }
 .log-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-@media (max-width: 26rem) { .log-form-row { grid-template-columns: 1fr; } }
+@media (max-width: 25rem) { .log-form-row { grid-template-columns: 1fr; } }
 
 .suggestions { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
-.meal-group + .meal-group { margin-top: 1rem; }
+.meal-group + .meal-group { margin-top: 1.1rem; }
 .meal-title {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--app-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 0.4rem;
-}
-
-.entry {
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  padding: 0.6rem 0;
-  border-top: 1px solid var(--app-border);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--cre8-color-content-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 0.35rem;
 }
-.entry-name { font-size: 0.9375rem; }
-.entry-sub { font-size: 0.8125rem; color: var(--app-muted); }
-.entry-kcal { font-variant-numeric: tabular-nums; white-space: nowrap; }
-
-.empty { color: var(--app-muted); font-size: 0.9375rem; padding: 0.5rem 0; }
-
-/* Insights ---------------------------------------------------------------- */
-
-.rec { display: grid; gap: 0.35rem; }
-.rec-title { font-weight: 600; }
-.rec-evidence {
-  font-size: 0.8125rem;
-  color: var(--app-muted);
+.meal-title .meal-kcal {
+  color: var(--cre8-color-content-brand);
   font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
 }
-.rec-suggestions { font-size: 0.8125rem; }
 
-.disclaimer { font-size: 0.75rem; color: var(--app-muted); line-height: 1.5; }
+/* Three tracks with the name on the only flexible one. A text "Remove" button
+   here took enough width to wrap every food name onto two lines; an icon keeps
+   the row to one line and is still a 30px tap target. */
+.entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0;
+  border-top: 1px solid var(--app-hairline);
+}
 
-/* Charts ------------------------------------------------------------------ */
+.icon-btn {
+  width: 30px; height: 30px;
+  display: grid; place-items: center;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--cre8-color-border-default);
+  background: var(--cre8-color-bg-default);
+  color: var(--cre8-color-content-subtle);
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+.icon-btn svg { width: 13px; height: 13px; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; fill: none; }
+.icon-btn:hover, .icon-btn:focus-visible {
+  background: var(--cre8-color-bg-error);
+  border-color: var(--cre8-color-border-error);
+  color: var(--cre8-color-content-error);
+}
+.entry-name { font-size: 0.9375rem; font-weight: 550; }
+.entry-sub { font-size: 0.75rem; color: var(--cre8-color-content-subtle); margin-top: 0.1rem; }
+.entry-kcal {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  text-align: right;
+}
+.entry-kcal .unit {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--cre8-color-content-subtle);
+  margin-left: 0.2rem;
+}
 
-.chart-wrap { min-height: 220px; }
+.empty { color: var(--cre8-color-content-subtle); font-size: 0.9375rem; padding: 0.4rem 0; margin: 0; }
 
-.stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
-.stat { display: grid; gap: 0.15rem; }
-.stat-value { font-size: 1.375rem; font-weight: 700; font-variant-numeric: tabular-nums; }
-.stat-label { font-size: 0.75rem; color: var(--app-muted); }
+/* Insights --------------------------------------------------------------- */
+
+/* The severity accent is a left bar rather than a fill, so a screen of cards
+   stays scannable — five saturated panels in a column is noise, five spines is
+   a ranking. */
+.rec-card {
+  position: relative;
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.9rem 1rem 0.95rem 1.15rem;
+  border-radius: var(--app-radius-sm);
+  background: var(--app-surface);
+  border: 1px solid var(--cre8-color-border-default);
+  box-shadow: var(--app-shadow-card);
+  overflow: hidden;
+}
+.rec-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: var(--rec-accent);
+}
+.rec-card.high { --rec-accent: linear-gradient(180deg, #F59E0B, #E11D48); }
+.rec-card.medium { --rec-accent: linear-gradient(180deg, #8B5CF6, #6366F1); }
+.rec-card.low { --rec-accent: linear-gradient(180deg, #4F46E5, #06B6D4); }
+.rec-card.positive { --rec-accent: linear-gradient(180deg, #10B981, #22D3EE); }
+
+.rec-head { display: flex; align-items: center; gap: 0.5rem; }
+.rec-title { font-weight: 700; font-size: 0.9375rem; letter-spacing: -0.01em; }
+.rec-chip {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex: none;
+}
+.rec-card.high .rec-chip { background: var(--cre8-color-bg-warning); color: var(--cre8-color-content-warning-icon); }
+.rec-card.medium .rec-chip { background: var(--cre8-color-bg-attention); color: var(--cre8-color-content-attention-icon); }
+.rec-card.low .rec-chip { background: var(--cre8-color-bg-info); color: var(--cre8-color-content-info-icon); }
+.rec-card.positive .rec-chip { background: var(--cre8-color-bg-success); color: var(--cre8-color-content-success); }
+
+.rec-detail { font-size: 0.875rem; line-height: 1.5; color: var(--cre8-color-content-default); }
+.rec-evidence {
+  font-size: 0.75rem;
+  color: var(--cre8-color-content-subtle);
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.1rem;
+}
+.rec-suggestions { font-size: 0.8125rem; display: flex; flex-wrap: wrap; gap: 0.3rem; padding-top: 0.15rem; }
+.rec-suggestions .pill {
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--cre8-color-bg-subtle);
+  border: 1px solid var(--cre8-color-border-default);
+  font-weight: 550;
+}
+
+.disclaimer { font-size: 0.75rem; color: var(--cre8-color-content-subtle); line-height: 1.55; margin: 0; }
+
+/* Trends ----------------------------------------------------------------- */
+
+.chart-wrap { height: 230px; }
+
+.stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+.stat {
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: var(--app-radius-sm);
+  background: var(--cre8-color-bg-subtle);
+  border: 1px solid var(--app-hairline);
+}
+.stat-value {
+  font-size: 1.375rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  font-variant-numeric: tabular-nums;
+  background: var(--app-gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.stat-label { font-size: 0.6875rem; color: var(--cre8-color-content-subtle); line-height: 1.3; }
+
+/* A rank number gives the contributor list a shape the entry list does not
+   have, which is the whole point of it being a ranking. */
+.rank {
+  width: 22px; height: 22px;
+  border-radius: 7px;
+  display: grid; place-items: center;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--app-gradient-brand);
+  flex: none;
+}
+.contributor { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 0.6rem; }
 
 .actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }

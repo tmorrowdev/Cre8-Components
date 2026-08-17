@@ -1,0 +1,257 @@
+/*
+ * cre8 Vivid — a brand theme for Cre8 Diet.
+ *
+ * A token override layer, loaded after the base brand sheet. It redefines
+ * `--cre8-*` values rather than restyling components, so every cre8 component
+ * on the page follows it: buttons, cards, tabs, alerts, fields and badges all
+ * pick the new palette up without a single component-level rule.
+ *
+ * The palette amplifies cre8's own DNA instead of replacing it — the base brand
+ * already runs blue / cyan / pink / amber, and this pushes those same hues to
+ * full saturation and pairs the blue with cyan as a gradient. A nutrition app
+ * has to make progress feel like something, and flat #3B82F6 on white does not.
+ *
+ * Two layers live here:
+ *   1. cre8 token overrides — what the components read.
+ *   2. `--app-*` design tokens — gradients, glows, and the macro palette, which
+ *      have no cre8 equivalent because no cre8 component needs them.
+ *
+ * Dark mode is a second pass over the same names, so nothing in styles.css or
+ * app.js needs to know which mode is active.
+ */
+
+:root {
+  /* ---- Brand ramp ----------------------------------------------------- */
+  --app-indigo-50: #EEF0FF;
+  --app-indigo-100: #DDE1FF;
+  --app-indigo-300: #A5B0FF;
+  --app-indigo-500: #4F46E5;
+  --app-indigo-600: #4338CA;
+  --app-indigo-700: #3730A3;
+
+  --app-cyan-50: #E7FBFF;
+  --app-cyan-400: #22D3EE;
+  --app-cyan-500: #06B6D4;
+  --app-cyan-600: #0891B2;
+
+  --app-violet-50: #F3EEFF;
+  --app-violet-500: #8B5CF6;
+  --app-violet-600: #7C3AED;
+
+  /* Magenta stays in the palette for the hero gradient only. It is decorative
+     there; it is never a status, because it is not distinguishable from the
+     error hue at a glance. */
+  --app-magenta-500: #EC4899;
+
+  --app-amber-50: #FFF7E6;
+  --app-amber-500: #F59E0B;
+  --app-amber-600: #D97706;
+
+  --app-emerald-50: #E7FBF3;
+  --app-emerald-500: #10B981;
+  --app-emerald-600: #059669;
+
+  --app-rose-50: #FFEFF2;
+  --app-rose-500: #E11D48;
+  --app-rose-600: #BE123C;
+
+  --app-ink-900: #0A0F1F;
+  --app-ink-700: #232B45;
+  --app-ink-500: #5B6484;
+  --app-ink-300: #9AA3BF;
+  --app-ink-100: #E4E8F4;
+  --app-ink-50: #F2F5FD;
+
+  /* ---- App design tokens ---------------------------------------------- */
+  /* The signature gradient. Used on the hero, the calorie ring, and primary
+     emphasis — one gradient everywhere, so it reads as an identity rather
+     than as decoration. */
+  --app-gradient-brand: linear-gradient(135deg, var(--app-indigo-500) 0%, var(--app-cyan-500) 100%);
+  --app-gradient-hero: linear-gradient(150deg, #4F46E5 0%, #6D28D9 42%, #06B6D4 100%);
+  --app-gradient-accent: linear-gradient(135deg, var(--app-magenta-500) 0%, #F97316 100%);
+
+  --app-ring-from: #4F46E5;
+  --app-ring-to: #22D3EE;
+  --app-ring-over-from: #F59E0B;
+  --app-ring-over-to: #F43F5E;
+
+  /* One hue per macro, held stable across the ring, the bars, and the
+     doughnut — the same colour must mean "protein" everywhere or the charts
+     stop being readable at a glance. */
+  --app-macro-protein: #4F46E5;
+  --app-macro-carbs: #06B6D4;
+  --app-macro-fat: #F59E0B;
+
+  /* Area fill under the calorie line. Chart.js needs a literal, so this cannot
+     be an alpha applied to the line colour at use site. */
+  --app-chart-fill: rgba(79, 70, 229, 0.14);
+
+  --app-page: linear-gradient(180deg, #F5F7FF 0%, #EEF1FB 100%);
+  --app-surface: #FFFFFF;
+  --app-surface-raised: #FFFFFF;
+  --app-hairline: rgba(10, 15, 31, 0.08);
+
+  --app-shadow-card: 0 1px 2px rgba(10, 15, 31, 0.04), 0 8px 24px -12px rgba(10, 15, 31, 0.18);
+  --app-shadow-hero: 0 18px 40px -18px rgba(79, 70, 229, 0.65);
+  --app-shadow-glow: 0 6px 18px -8px rgba(79, 70, 229, 0.55);
+
+  --app-radius: 18px;
+  --app-radius-sm: 12px;
+
+  /* ---- cre8 token overrides ------------------------------------------- */
+  /* Surfaces */
+  --cre8-color-bg-default: #FFFFFF;
+  --cre8-color-bg-default-hover: var(--app-indigo-50);
+  --cre8-color-bg-default-active: var(--app-indigo-100);
+  --cre8-color-bg-subtle: var(--app-ink-50);
+  --cre8-color-bg-moderate: var(--app-ink-300);
+  --cre8-color-bg-strong: var(--app-ink-900);
+  --cre8-color-bg-disabled: var(--app-ink-100);
+
+  /* Brand */
+  --cre8-color-bg-brand: #FFFFFF;
+  --cre8-color-bg-brand-hover: var(--app-indigo-50);
+  --cre8-color-bg-brand-active: var(--app-indigo-100);
+  --cre8-color-bg-brand-strong: var(--app-indigo-500);
+  --cre8-color-bg-brand-strong-hover: var(--app-indigo-600);
+  --cre8-color-bg-brand-strong-active: var(--app-indigo-700);
+  --cre8-color-bg-brand-xstrong: var(--app-indigo-700);
+  --cre8-color-bg-brand-xstrong-hover: var(--app-indigo-600);
+  --cre8-color-bg-brand-xstrong-active: var(--app-indigo-700);
+
+  /* ---- Status ----------------------------------------------------------
+   * The base a2ui ramp maps success to cyan and error to pink, which is the
+   * single biggest reason the stock theme is hard to read: neither hue carries
+   * its meaning, and the two sit close enough that an alert's status has to be
+   * read rather than seen. This ramp goes back to the conventional mapping —
+   * green good, red bad, amber caution — and keeps every hue far enough apart
+   * to be told apart at a glance.
+   *
+   * Success is also emerald rather than cyan because cyan now carries "carbs"
+   * in every chart on the Trends tab, and one hue cannot mean two things. */
+  --cre8-color-bg-success: var(--app-emerald-50);
+  --cre8-color-bg-success-strong: var(--app-emerald-500);
+  --cre8-color-bg-error: var(--app-rose-50);
+  --cre8-color-bg-error-strong: var(--app-rose-500);
+  --cre8-color-bg-warning: var(--app-amber-50);
+  --cre8-color-bg-warning-strong: var(--app-amber-500);
+  --cre8-color-bg-info: var(--app-indigo-50);
+  --cre8-color-bg-info-strong: var(--app-indigo-500);
+  --cre8-color-bg-attention: var(--app-violet-50);
+  --cre8-color-bg-attention-strong: var(--app-violet-500);
+
+  /* Content */
+  --cre8-color-content-default: var(--app-ink-900);
+  --cre8-color-content-subtle: var(--app-ink-500);
+  --cre8-color-content-disabled: var(--app-ink-300);
+  --cre8-color-content-knockout: #FFFFFF;
+  --cre8-color-content-brand: var(--app-indigo-500);
+  --cre8-color-content-brand-strong: var(--app-indigo-600);
+  --cre8-color-content-success: var(--app-emerald-600);
+  --cre8-color-content-success-icon: var(--app-emerald-600);
+  --cre8-color-content-error: var(--app-rose-600);
+  --cre8-color-content-error-icon: var(--app-rose-600);
+  --cre8-color-content-warning-icon: var(--app-amber-600);
+  --cre8-color-content-info-icon: var(--app-indigo-500);
+  --cre8-color-content-attention-icon: var(--app-violet-600);
+  --cre8-color-content-link: var(--app-indigo-500);
+  --cre8-color-content-link-hover: var(--app-indigo-600);
+
+  /* Borders */
+  --cre8-color-border-default: var(--app-ink-100);
+  --cre8-color-border-strong: var(--app-ink-300);
+  --cre8-color-border-brand: var(--app-indigo-500);
+  --cre8-color-border-brand-subtle: var(--app-indigo-300);
+  --cre8-color-border-brand-strong: var(--app-indigo-600);
+  --cre8-color-border-success: var(--app-emerald-500);
+  --cre8-color-border-error: var(--app-rose-500);
+  --cre8-color-border-warning: var(--app-amber-500);
+  --cre8-color-border-info: var(--app-indigo-500);
+  --cre8-color-border-attention: var(--app-violet-500);
+
+  /* Primary button */
+  --cre8-color-button-primary-bg: var(--app-indigo-500);
+  --cre8-color-button-primary-bg-hover: var(--app-indigo-600);
+  --cre8-color-button-primary-bg-active: var(--app-indigo-700);
+  --cre8-color-button-primary-border: var(--app-indigo-500);
+  --cre8-color-button-primary-border-hover: var(--app-indigo-600);
+  --cre8-color-button-primary-border-active: var(--app-indigo-700);
+  --cre8-color-button-primary-content: #FFFFFF;
+  --cre8-color-button-primary-danger-bg: var(--app-rose-500);
+  --cre8-color-button-primary-danger-bg-hover: var(--app-rose-600);
+  --cre8-color-button-primary-danger-border: var(--app-rose-500);
+  --cre8-color-button-primary-danger-border-hover: var(--app-rose-600);
+
+  /* Shape. Softer than stock cre8 — this is a phone app, and the rounder
+     container radius is what makes the stacked cards read as cards. */
+  --cre8-border-radius-container: var(--app-radius);
+  --cre8-border-radius-large: var(--app-radius);
+  --cre8-border-radius-default: var(--app-radius-sm);
+  --cre8-shadow-default: var(--app-shadow-card);
+  --cre8-shadow-large: var(--app-shadow-hero);
+}
+
+/*
+ * Dark mode.
+ *
+ * Same token names, so nothing downstream branches on the mode. Surfaces lift
+ * away from the page rather than sinking, and the accent hues are pulled a step
+ * lighter — full-saturation indigo on near-black loses too much contrast to
+ * read as text.
+ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --app-page: linear-gradient(180deg, #070B18 0%, #0B1226 100%);
+    --app-surface: #111a30;
+    --app-surface-raised: #16203a;
+    --app-hairline: rgba(233, 237, 247, 0.10);
+
+    --app-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 12px 28px -16px rgba(0, 0, 0, 0.8);
+    --app-shadow-hero: 0 18px 44px -20px rgba(79, 70, 229, 0.8);
+
+    --app-gradient-hero: linear-gradient(150deg, #4338CA 0%, #6D28D9 45%, #0891B2 100%);
+    --app-ring-from: #818CF8;
+    --app-ring-to: #22D3EE;
+
+    --app-macro-protein: #818CF8;
+    --app-macro-carbs: #22D3EE;
+    --app-macro-fat: #FBBF24;
+    --app-chart-fill: rgba(129, 140, 248, 0.18);
+
+    --cre8-color-bg-default: #111a30;
+    --cre8-color-bg-default-hover: #18223C;
+    --cre8-color-bg-subtle: #0D1425;
+    --cre8-color-bg-strong: #E9EDF7;
+    --cre8-color-bg-disabled: #1E2740;
+
+    --cre8-color-bg-brand-strong: #6366F1;
+    --cre8-color-bg-brand-strong-hover: #818CF8;
+    --cre8-color-bg-success: #06251B;
+    --cre8-color-bg-error: #2A0B14;
+    --cre8-color-bg-warning: #2A1C05;
+    --cre8-color-bg-info: #141A3A;
+    --cre8-color-bg-attention: #1E1440;
+
+    --cre8-color-content-default: #E9EDF7;
+    --cre8-color-content-subtle: #9AA3BF;
+    --cre8-color-content-disabled: #5B6484;
+    --cre8-color-content-brand: #A5B0FF;
+    --cre8-color-content-brand-strong: #C7CDFF;
+    --cre8-color-content-success: #34D399;
+    --cre8-color-content-success-icon: #34D399;
+    --cre8-color-content-error: #FB7185;
+    --cre8-color-content-error-icon: #FB7185;
+    --cre8-color-content-warning-icon: #FBBF24;
+    --cre8-color-content-info-icon: #A5B0FF;
+    --cre8-color-content-attention-icon: #C4B5FD;
+    --cre8-color-content-link: #A5B0FF;
+
+    --cre8-color-border-default: #1E2740;
+    --cre8-color-border-strong: #39435F;
+
+    --cre8-color-button-primary-bg: #6366F1;
+    --cre8-color-button-primary-bg-hover: #818CF8;
+    --cre8-color-button-primary-border: #6366F1;
+    --cre8-color-button-primary-border-hover: #818CF8;
+  }
+}
