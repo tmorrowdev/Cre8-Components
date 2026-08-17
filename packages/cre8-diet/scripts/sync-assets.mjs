@@ -21,8 +21,9 @@ const vendor = join(dirname(here), 'www', 'vendor');
 const require = createRequire(import.meta.url);
 const wc = dirname(require.resolve('@tmorrow/cre8-wc/package.json'));
 
-/** The brand whose token sheet the app loads. */
-const BRAND = 'cre8-a2ui';
+/** The brand whose token sheet the app loads. cre8-vivid ships in
+ *  @tmorrow/cre8-wc; see design-tokens/brands/cre8-vivid. */
+const BRAND = 'cre8-vivid';
 
 /**
  * A published cre8-wc keeps tokens under `lib/design-tokens/`; a workspace
