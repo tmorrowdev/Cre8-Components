@@ -30,10 +30,12 @@ html, body {
   margin: 0 auto;
   /* Safe-area insets keep the hero clear of the notch and the last card above
      the home indicator; they are 0 everywhere without that hardware. */
+  /* The bottom pad clears the fixed tab bar — 49px of bar, the home
+     indicator's inset, and a little air — or the last card sits under it. */
   padding:
     calc(env(safe-area-inset-top, 0px) + 0.75rem)
     calc(env(safe-area-inset-right, 0px) + 1rem)
-    calc(env(safe-area-inset-bottom, 0px) + 2.5rem)
+    calc(env(safe-area-inset-bottom, 0px) + 49px + 1.5rem)
     calc(env(safe-area-inset-left, 0px) + 1rem);
 }
 
@@ -89,7 +91,7 @@ html, body {
   backdrop-filter: blur(6px);
   flex: none;
 }
-.hero-mark svg { width: 19px; height: 19px; display: block; }
+.hero-mark svg { width: 21px; height: 21px; display: block; color: #fff; }
 
 .hero-title { font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
 .hero-date { font-size: 0.75rem; opacity: 0.82; margin-top: 0.1rem; }
@@ -135,10 +137,10 @@ html, body {
   transition: width 500ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Tabs ------------------------------------------------------------------- */
+/* Panels ----------------------------------------------------------------- */
 
-cre8-tabs { display: block; }
 .panel { display: flex; flex-direction: column; gap: 0.875rem; padding-top: 0.875rem; }
+.panel[hidden] { display: none; }
 
 /* Cards ------------------------------------------------------------------ */
 

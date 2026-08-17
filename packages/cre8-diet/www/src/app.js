@@ -606,10 +606,36 @@ function renderAll() {
  * a definition exists upgrade synchronously, so waiting once here is enough for
  * every later re-render too.
  */
+const PANELS = ['panel-today', 'panel-analytics', 'panel-insights', 'panel-goals'];
+
+/**
+ * Show one destination.
+ *
+ * `cre8-tabs` used to own this; a bottom bar is navigation for the whole app
+ * rather than a control on one screen, so it reports the selection and the app
+ * decides what that means. Scroll resets on every switch, which is what a
+ * native tab bar does — arriving at a screen halfway down is disorienting.
+ */
+function showPanel(index) {
+  PANELS.forEach((id, i) => {
+    $(id).hidden = i !== index;
+  });
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
 async function start() {
-  await Promise.all(['cre8-select', 'cre8-chart'].map((tag) => customElements.whenDefined(tag)));
+  await Promise.all(
+    ['cre8-select', 'cre8-chart', 'cre8-tab-bar', 'cre8-tab-bar-item'].map((tag) =>
+      customElements.whenDefined(tag)
+    )
+  );
   buildTodayPanel();
   renderAll();
+
+  $('tab-bar').addEventListener('tab-bar-select', (event) => {
+    showPanel(event.detail.index);
+  });
+  showPanel(0);
 }
 
 if (document.readyState === 'loading') {

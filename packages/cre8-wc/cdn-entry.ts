@@ -110,6 +110,8 @@ import { Cre8SplitButton } from './components/split-button/split-button';
 import { Cre8Submenu } from './components/submenu/submenu';
 import { Cre8SubmenuItem } from './components/submenu-item/submenu-item';
 import { Cre8Tab } from './components/tab/tab';
+import { Cre8TabBar } from './components/tab-bar/tab-bar';
+import { Cre8TabBarItem } from './components/tab-bar-item/tab-bar-item';
 import { Cre8TabPanel } from './components/tab-panel/tab-panel';
 import { Cre8Table } from './components/table/table';
 import { Cre8TableBody } from './components/table-body/table-body';
@@ -202,6 +204,8 @@ export {
   Cre8Submenu,
   Cre8SubmenuItem,
   Cre8Tab,
+  Cre8TabBar,
+  Cre8TabBarItem,
   Cre8TabPanel,
   Cre8Table,
   Cre8TableBody,

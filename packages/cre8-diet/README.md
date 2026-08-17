@@ -1,8 +1,9 @@
 # Cre8 Diet
 
-A nutrition tracker built entirely from `@tmorrow/cre8-wc`, packaged for iOS
-with Capacitor. Four screens: log what you ate, see what that adds up to, read
-what the numbers imply, set what you are aiming at.
+A nutrition tracker built on `@tmorrow/cre8-wc`, packaged for iOS with
+Capacitor. Four screens behind a native-shaped bottom tab bar: log what you ate,
+see what that adds up to, read what the numbers imply, set what you are aiming
+at.
 
 ```sh
 pnpm install
@@ -76,10 +77,10 @@ Because the log never leaves the device, the App Privacy questionnaire is
 
 ## Theme
 
-`www/theme/cre8-vivid.css` is a **cre8 brand theme** — a token override layer
-loaded after the base brand sheet. It redefines `--cre8-*` values rather than
-restyling components, so every cre8 element on the page follows it without a
-single component-level rule, and re-theming the app means editing one file.
+The palette lives in **`cre8-vivid`**, a real brand in `@tmorrow/cre8-wc`
+(`design-tokens/brands/cre8-vivid/`) rather than an override file here. It is a
+complete sheet, so anything that loads `tokens_cre8-vivid.css` on its own — the
+MCP surface viewer, for instance — gets a whole design system.
 
 Three things it changes, and why:
 
@@ -89,30 +90,40 @@ Three things it changes, and why:
   to green good / red bad / amber caution, with violet for attention so no two
   statuses share a hue.
 - **One gradient, used as identity.** Indigo → cyan on the hero, the calorie
-  ring, the stat numerals and the rank chips. Flat `#3B82F6` on white is
-  perfectly correct and completely forgettable; a nutrition app has to make
-  progress feel like something.
+  ring, the stat numerals and the rank chips, shipped as `--cre8-gradient-brand`.
+  Flat `#3B82F6` on white is perfectly correct and completely forgettable.
 - **One hue per macro, everywhere.** Protein indigo, carbs cyan, fat amber —
   identical in the macro bars, the doughnut, and the trend line. Success moved
   off cyan precisely because cyan now means "carbs", and one hue cannot mean two
   things on the same screen.
 
-Dark mode is a second pass over the same token names, so nothing in `styles.css`
-or `app.js` branches on the mode. Chart.js paints to a canvas and cannot resolve
-`var()`, so `app.js` reads the tokens back with `getComputedStyle` — which is
-what keeps the charts matching the bars in both modes.
+`www/theme/app-theme.css` holds only what a design system has no opinion about:
+the macro hues (a fact about this app's data model), the literals Chart.js needs
+because a canvas cannot resolve `var()`, and page chrome. If a `--cre8-*` value
+looks wrong, the brand is where to fix it, so every cre8 app gets the fix.
 
-To use it in another cre8 app, copy the file and load it after the brand sheet.
-To make it available to every cre8 app, promote it to
-`packages/cre8-wc/design-tokens/brands/cre8-vivid/`; it is deliberately a single
-file with no app-specific selectors so that move is a copy.
+Dark mode is a second pass over the same token names in the brand, so nothing in
+`styles.css` or `app.js` branches on the mode.
 
 **cre8 components supply the primitives; the layout around them is structural
 HTML.** The hero, the ring, the macro bars, the severity-spined insight cards
 and the ranked contributor rows are plain markup styled with cre8 tokens —
-`cre8-card`, `cre8-field`, `cre8-select`, `cre8-button`, `cre8-tabs` and
-`cre8-chart` do the rest. Built only from components, the app reads as a
+`cre8-card`, `cre8-field`, `cre8-select`, `cre8-button`, `cre8-chart` and
+`cre8-tab-bar` do the rest. Built only from components, the app reads as a
 component gallery; built only from markup, it stops being cre8.
+
+## Navigation
+
+The app navigates with **`cre8-tab-bar`**, a bottom tab bar added to cre8-wc for
+this app. It is not `cre8-tabs`: a tab strip sits above its content and scrolls
+away with the page, while a tab bar is pinned to the bottom for the life of the
+app, sits inside the thumb's reach, and navigates the whole application rather
+than one screen.
+
+Because the bar is navigation rather than a control on one screen, the panels
+are plain `<section>`s here and `src/app.js` owns the switching — the bar only
+reports which destination is current. `.app` carries bottom padding of 49px plus
+the home-indicator inset so the last card never sits under the bar.
 
 ## Layout
 
@@ -120,7 +131,7 @@ component gallery; built only from markup, it stops being cre8.
 www/
   index.html          app shell — header, tabs, four empty panels
   styles.css          layout only; every colour resolves to a token
-  theme/cre8-vivid.css  the brand theme — cre8 token overrides + app tokens
+  theme/app-theme.css   macro hues, chart literals, page chrome
   src/foods.js        food table, per 100g, with ranked search
   src/store.js        goals, entries, localStorage, local-date handling
   src/analytics.js    aggregations — pure functions of (entries, goals)

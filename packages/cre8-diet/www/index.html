@@ -8,10 +8,10 @@
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#4F46E5">
   <title>Cre8 Diet</title>
-  <!-- Inline so the browser stops asking for /favicon.ico. A data URI keeps the
-       "nothing leaves the bundle" rule intact; the real iOS icon lives in the
-       Xcode asset catalog, not here. -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234F46E5'/%3E%3Cstop offset='1' stop-color='%2306B6D4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Cpath d='M11 9v7a5 5 0 0 0 10 0V9M16 21v4' stroke='white' stroke-width='2.4' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+  <!-- The mark knocked out on brand blue — the inverse of the logo as drawn.
+       Inline as a data URI so the "nothing leaves the bundle" rule holds; the
+       real iOS icon lives in the Xcode asset catalog, not here. -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231B32E8'/%3E%3Cpath d='M50 50C40 30 22 30 22 50C22 70 40 70 50 50C60 30 78 30 78 50C78 70 60 70 50 50Z' fill='none' stroke='white' stroke-width='11' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
   <!-- Everything below is local. Nothing on this page may reach the network:
        the app has to work offline, and an App Store build that does not is a
@@ -30,16 +30,20 @@
 <body>
   <div class="app">
     <!-- The hero is plain markup, not a cre8 component: it carries the gradient,
-         the brand mark, and the day's headline number. cre8 supplies the
-         controls and containers inside the panels; the layout and the identity
-         around them are structural HTML, which is what keeps the app from
-         looking like a component gallery. -->
+         the mark, and the day's headline number. cre8 supplies the controls and
+         containers inside the panels; the layout and the identity around them
+         are structural HTML, which is what keeps the app from looking like a
+         component gallery. -->
     <header class="hero">
       <div class="hero-top">
         <div class="hero-brand">
+          <!-- The logo inverse: white on the brand gradient rather than brand
+               blue on white. `currentColor` means the same markup serves the
+               tab bar, where it inherits the item's tint instead. -->
           <span class="hero-mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M8 3v9a4 4 0 0 0 8 0V3M12 16v5" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+            <svg viewBox="0 0 100 100" fill="none">
+              <path d="M50 50C40 30 22 30 22 50C22 70 40 70 50 50C60 30 78 30 78 50C78 70 60 70 50 50Z"
+                    stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
           <div>
@@ -48,7 +52,7 @@
           </div>
         </div>
         <span class="hero-streak" id="hero-streak">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M12 2s5 5 5 9a5 5 0 0 1-10 0c0-1.5.7-2.8 1.5-3.8C9 8.5 12 6 12 2z"/>
           </svg>
           <span id="hero-streak-text">0 days</span>
@@ -64,25 +68,48 @@
       </div>
     </header>
 
-    <cre8-tabs id="tabs">
-      <cre8-tab>Today</cre8-tab>
-      <cre8-tab>Trends</cre8-tab>
-      <cre8-tab>Insights</cre8-tab>
-      <cre8-tab>Goals</cre8-tab>
-
-      <cre8-tab-panel slot="panel" index="0">
-        <div id="panel-today" class="panel"></div>
-      </cre8-tab-panel>
-      <cre8-tab-panel slot="panel" index="1">
-        <div id="panel-analytics" class="panel"></div>
-      </cre8-tab-panel>
-      <cre8-tab-panel slot="panel" index="2">
-        <div id="panel-insights" class="panel"></div>
-      </cre8-tab-panel>
-      <cre8-tab-panel slot="panel" index="3">
-        <div id="panel-goals" class="panel"></div>
-      </cre8-tab-panel>
-    </cre8-tabs>
+    <!-- Panels are plain sections now. `cre8-tabs` owned both the strip and the
+         panel switching; a bottom bar is navigation for the whole app, so the
+         switching moves here and the bar only reports which destination is
+         current. -->
+    <main class="panels">
+      <section id="panel-today" class="panel" role="tabpanel" aria-label="Today"></section>
+      <section id="panel-analytics" class="panel" role="tabpanel" aria-label="Trends" hidden></section>
+      <section id="panel-insights" class="panel" role="tabpanel" aria-label="Insights" hidden></section>
+      <section id="panel-goals" class="panel" role="tabpanel" aria-label="Goals" hidden></section>
+    </main>
   </div>
+
+  <cre8-tab-bar id="tab-bar" label="Sections">
+    <cre8-tab-bar-item label="Today" value="today">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+           stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="8.5"/>
+        <path d="M12 3.5a8.5 8.5 0 0 1 7.4 12.7"/>
+      </svg>
+    </cre8-tab-bar-item>
+    <cre8-tab-bar-item label="Trends" value="trends">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+           stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 16.5l5-5 3.5 3.5L21 6"/>
+        <path d="M21 6h-5m5 0v5"/>
+      </svg>
+    </cre8-tab-bar-item>
+    <cre8-tab-bar-item label="Insights" value="insights">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+           stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 18h6M10 21h4"/>
+        <path d="M12 3a6 6 0 0 0-3.5 10.9c.3.3.5.7.5 1.1h6c0-.4.2-.8.5-1.1A6 6 0 0 0 12 3z"/>
+      </svg>
+    </cre8-tab-bar-item>
+    <cre8-tab-bar-item label="Goals" value="goals">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+           stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="8.5"/>
+        <circle cx="12" cy="12" r="4.5"/>
+        <circle cx="12" cy="12" r="1"/>
+      </svg>
+    </cre8-tab-bar-item>
+  </cre8-tab-bar>
 </body>
 </html>

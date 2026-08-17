@@ -3502,6 +3502,75 @@
       "examples": []
     },
     {
+      "name": "Cre8TabBar",
+      "tagName": "cre8-tab-bar",
+      "category": "Other",
+      "description": "A bottom tab bar, in the shape iOS expects.\n\nThis is deliberately not `cre8-tabs`. A tab strip sits above its content and\nscrolls away with the page; a tab bar is pinned to the bottom of the viewport\nfor the life of the app, sits inside the thumb's reach, and is the primary\nnavigation of the whole application rather than a control on one screen.\nTrying to serve both from one component gets you something that is wrong in\nboth places.\n\nThe bar owns its children's state: it assigns each item its index and clears\nthe others when one is chosen, so a host only listens for one event and never\nhas to keep item state in sync by hand.",
+      "props": {
+        "label": {
+          "type": "string",
+          "default": "Main",
+          "description": "Accessible name for the navigation landmark. A bar with no name is one more\nunlabelled `nav` for a screen reader to disambiguate."
+        },
+        "fixed": {
+          "type": "boolean",
+          "default": true,
+          "description": "Floats the bar over the content instead of sitting in flow. This is the\niOS shape and the default; unset it when embedding the bar inside a frame\nthat already positions it."
+        },
+        "activeIndex": {
+          "type": "number",
+          "default": 0,
+          "description": "Index of the selected item. Set it to move the selection; read it back\nafter a `tab-bar-select`."
+        },
+        "children": {
+          "type": "React.ReactNode",
+          "description": "Slotted content."
+        },
+        "onTabBarSelect": {
+          "type": "(event: CustomEvent) => void",
+          "description": "Fires when an item is chosen. `event.detail.index` is\nits position and `event.detail.value` its `value`, if it has one."
+        }
+      },
+      "examples": []
+    },
+    {
+      "name": "Cre8TabBarItem",
+      "tagName": "cre8-tab-bar-item",
+      "category": "Other",
+      "description": "One destination in a `cre8-tab-bar`.\n\n`index` and `isActive` are set by the parent bar, not by the host — an item\nthat decided its own selected state would let two items be active at once.",
+      "props": {
+        "label": {
+          "type": "string",
+          "description": "The visible label. iOS shows one below the icon; keep it to a word."
+        },
+        "value": {
+          "type": "string",
+          "description": "Optional identifier handed back in the select event, for routing."
+        },
+        "index": {
+          "type": "number",
+          "description": "Position within the bar.\n\n_*This property is dynamically set by `cre8-tab-bar`_"
+        },
+        "badge": {
+          "type": "number",
+          "description": "A count rendered on the icon. Numbers above 99 render as \"99+\", because the\nbadge is a glance, not a readout."
+        },
+        "isActive": {
+          "type": "boolean",
+          "description": "Whether this is the current destination.\n\n_*This property is dynamically set by `cre8-tab-bar`_"
+        },
+        "children": {
+          "type": "React.ReactNode",
+          "description": "Slotted content."
+        },
+        "onTabBarSelect": {
+          "type": "(event: CustomEvent) => void",
+          "description": "Fires on activation. Handled by the parent bar, which\nre-emits it after updating its own state."
+        }
+      },
+      "examples": []
+    },
+    {
       "name": "Cre8Heading",
       "tagName": "cre8-heading",
       "category": "Typography",

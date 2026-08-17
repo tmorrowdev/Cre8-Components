@@ -21,6 +21,8 @@ export { Cre8TableBody } from './components/table-body/table-body.js';
 export { Cre8Table } from './components/table/table.js';
 export { Cre8TabPanel } from './components/tab-panel/tab-panel.js';
 export { Cre8Tab } from './components/tab/tab.js';
+export { Cre8TabBar } from './components/tab-bar/tab-bar.js';
+export { Cre8TabBarItem } from './components/tab-bar-item/tab-bar-item.js';
 export { Cre8SubmenuItem } from './components/submenu-item/submenu-item.js';
 export { Cre8Submenu } from './components/submenu/submenu.js';
 export { Cre8SplitButton } from './components/split-button/split-button.js';

@@ -1,0 +1,72 @@
+@import '/design-tokens/core/scss/theming/component';
+/*------------------------------------*\
+ #TAB BAR
+\*------------------------------------*/
+
+/**
+ * Tab bar host
+ */
+:host {
+  display: contents;
+}
+
+/**
+ * Tab bar
+ * 1. Pinned to the bottom of the viewport, above everything. A bar that
+ *    scrolls away is a tab strip, not a tab bar.
+ * 2. The iOS material: a translucent surface that samples what passes beneath
+ *    it. `backdrop-filter` is what makes it read as glass rather than as a
+ *    panel; the fallback below covers browsers without it.
+ * 3. Hairline, not a border. On a 3x screen 1px is already heavy, so this is
+ *    the thinnest line the device can draw.
+ */
+.cre8-c-tab-bar {
+  z-index: 100; /* 1 */
+  background-color: color-mix(in srgb, var(--cre8-color-bg-default) 82%, transparent); /* 2 */
+  -webkit-backdrop-filter: saturate(180%) blur(20px); /* 2 */
+  backdrop-filter: saturate(180%) blur(20px); /* 2 */
+  border-top: 0.5px solid var(--cre8-color-border-default); /* 3 */
+}
+
+/**
+ * Fixed variant
+ * 1. `env()` resolves to 0 on hardware without a home indicator, so the same
+ *    rule is correct on a phone, in a simulator, and in a desktop browser.
+ */
+.cre8-c-tab-bar--fixed {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-bottom: env(safe-area-inset-bottom, 0px); /* 1 */
+}
+
+/**
+ * Items
+ * 1. Equal-width columns. iOS distributes destinations evenly regardless of
+ *    label length, which is what keeps the bar from reflowing as labels change.
+ * 2. 49px is the platform height, excluding the safe-area inset.
+ */
+.cre8-c-tab-bar__items {
+  display: flex;
+  align-items: stretch;
+  margin: 0 auto;
+  max-width: 42rem;
+  min-height: 49px; /* 2 */
+}
+
+.cre8-c-tab-bar__items ::slotted(cre8-tab-bar-item) {
+  flex: 1 1 0; /* 1 */
+  min-width: 0;
+}
+
+/**
+ * No backdrop-filter support: fall back to an opaque surface. Translucency
+ * without the blur behind it just makes the content underneath show through as
+ * noise, which is worse than a solid bar.
+ */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .cre8-c-tab-bar {
+    background-color: var(--cre8-color-bg-default);
+  }
+}

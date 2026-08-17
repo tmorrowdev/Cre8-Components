@@ -1,0 +1,114 @@
+@import '/design-tokens/core/scss/theming/component';
+/*------------------------------------*\
+ #TAB BAR ITEM
+\*------------------------------------*/
+
+/**
+ * Tab bar item host
+ */
+:host {
+  display: flex;
+}
+
+/**
+ * Item
+ * 1. The whole column is the tap target, not just the icon. Below 44px iOS
+ *    considers a control unreachable, and the label is the part people aim at.
+ * 2. Tint is inherited by the slotted icon through `currentColor`, so one
+ *    colour change moves icon and label together.
+ */
+.cre8-c-tab-bar-item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.15rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.25rem 0.3rem;
+  min-height: 44px; /* 1 */
+  border: 0;
+  background: none;
+  color: var(--cre8-color-content-subtle); /* 2 */
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 150ms ease;
+}
+
+/**
+ * Active
+ * 1. Colour alone carries the state, as on iOS. The label weight lifts too, so
+ *    the selection survives a greyscale screenshot and colour-blind vision.
+ */
+.cre8-c-tab-bar-item.cre8-is-active {
+  color: var(--cre8-color-content-brand); /* 1 */
+}
+
+.cre8-c-tab-bar-item.cre8-is-active .cre8-c-tab-bar-item__label {
+  font-weight: 650;
+}
+
+/**
+ * Icon
+ * 1. 24px is the iOS glyph size. The slotted svg is sized here so a host can
+ *    pass any icon without knowing the metrics.
+ */
+.cre8-c-tab-bar-item__icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+}
+
+.cre8-c-tab-bar-item__icon ::slotted(*) {
+  width: 24px; /* 1 */
+  height: 24px;
+  display: block;
+}
+
+/**
+ * Label
+ * 1. 10px is the platform size. It is small on purpose: the icon carries
+ *    recognition and the label only disambiguates.
+ */
+.cre8-c-tab-bar-item__label {
+  font-size: 0.625rem; /* 1 */
+  font-weight: 550;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/**
+ * Badge
+ * 1. Sits on the icon's top-right corner, clear of the label.
+ */
+.cre8-c-tab-bar-item__badge {
+  position: absolute; /* 1 */
+  top: -2px;
+  left: 55%;
+  padding: 0 0.25rem;
+  min-width: 16px;
+  border-radius: 999px;
+  background-color: var(--cre8-color-bg-error-strong);
+  color: var(--cre8-color-content-knockout);
+  font-size: 0.5625rem;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+}
+
+/**
+ * Focus
+ * 1. Keyboard focus has to be visible even though the pointer state is not —
+ *    a bar with no focus ring is unusable with a hardware keyboard, which iPad
+ *    users do have.
+ */
+.cre8-c-tab-bar-item:focus-visible {
+  outline: 2px solid var(--cre8-color-border-brand);
+  outline-offset: -2px;
+  border-radius: var(--cre8-border-radius-default);
+}
