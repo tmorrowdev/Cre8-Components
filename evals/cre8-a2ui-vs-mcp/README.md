@@ -112,6 +112,44 @@ That writes `RESULTS.md` (publishable tables) and `results.json` (the same data,
 machine-readable). Everything else in this README — the catalog diff below, the
 selftest deltas above — is already reproducible today, without an agent.
 
+## Isolating the arms (and the run that failed to)
+
+An arm is only an arm if it is the agent's *only* route to the catalog. The
+first full run of this eval was invalid because it wasn't.
+
+All three arms scored 1.000 on every fidelity dimension — including the
+baseline, which is supposed to have no CRE8 knowledge at all. The transcripts
+say why: the baseline agent ran `npm pack @tmorrow/cre8-wc` in 14 of 15 trials
+and read `catalog.json` in 15 of 15. The skill arm did the same in 12 of 15.
+Given a shell and a network, a capable agent simply fetches ground truth, and
+all three arms collapse into the same experiment — "can an agent find a public
+npm package", which is not the question.
+
+The fix is a tool restriction, identical in every arm, in `arms/*.yaml`:
+
+```yaml
+    kwargs:
+      disallowed_tools: Bash,WebFetch,WebSearch,Task
+```
+
+That leaves `Read`, `Write`, `Glob`, `Grep` and — in the MCP arm — the `cre8`
+MCP tools. The agent can still write its answer and read anything already in the
+container; it cannot go and get the catalog. With it in place a baseline trial
+scored 0.714 with real violations, where before it scored 1.000.
+
+Two things worth saying plainly about this. First, it is a constraint on the
+comparison, not a discovery about agents: in the real world an agent with a
+shell *would* fetch the package, and on that day the delivery mechanism matters
+much less than this eval implies. Second, it is exactly the kind of error that
+publishing a table without reading the transcripts would have hidden — the
+numbers looked clean, and the clean numbers were the tell.
+
+Verify it yourself on any trial:
+
+```sh
+grep -c "npm pack\|WebFetch\|catalog.json" jobs/*/*/agent/claude-code.txt
+```
+
 ## Why this is worth measuring
 
 The tasks were not invented from a blank page. They were derived by querying the
