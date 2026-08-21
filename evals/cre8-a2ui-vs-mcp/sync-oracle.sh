@@ -32,6 +32,7 @@ copy() {
 for task in tasks/*/; do
     [[ -f "$task/task.toml" ]] || continue
     copy templates/Dockerfile "$task/environment/Dockerfile"
+    copy templates/ca/README.md "$task/environment/ca/README.md"
     copy templates/test.sh "$task/tests/test.sh"
     [[ $CHECK -eq 1 ]] || chmod +x "$task/tests/test.sh"
     for file in "${SHARED[@]}"; do

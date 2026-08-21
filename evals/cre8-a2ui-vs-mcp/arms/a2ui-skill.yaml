@@ -11,6 +11,6 @@ datasets:
 
 agents:
   - name: claude-code
-    model_name: anthropic/claude-opus-4-5
+    model_name: claude-opus-5
     skills:
       - .arm-inputs/cre8-a2ui

@@ -35,6 +35,24 @@ else
     status=1
 fi
 
+# 1b. proxy CA -----------------------------------------------------------------
+CA_SOURCE=""
+for candidate in "${CRE8_EVAL_PROXY_CA:-}" /root/.ccr/ca-bundle.crt "${SSL_CERT_FILE:-}" "${NODE_EXTRA_CA_CERTS:-}"; do
+    [[ -n $candidate && -f $candidate ]] && { CA_SOURCE=$candidate; break; }
+done
+
+if [[ -n $CA_SOURCE ]]; then
+    for task in tasks/*/; do
+        [[ -f "$task/task.toml" ]] || continue
+        mkdir -p "$task/environment/ca"
+        cp "$CA_SOURCE" "$task/environment/ca/proxy-ca.crt"
+    done
+    say "proxy CA:     installed into every task image from $CA_SOURCE"
+else
+    rm -f tasks/*/environment/ca/proxy-ca.crt
+    say "proxy CA:     none on this host - task images trust the system roots only"
+fi
+
 # 2. oracle --------------------------------------------------------------------
 if ./sync-oracle.sh --check >/dev/null 2>&1; then
     say "oracle:       fixtures in sync with packages/cre8-wc/a2ui"
