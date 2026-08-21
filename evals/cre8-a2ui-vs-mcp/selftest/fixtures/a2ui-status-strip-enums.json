@@ -1,0 +1,65 @@
+{
+  "schema": "cre8-a2ui/1.0",
+  "root": {
+    "component": "cre8-layout-container",
+    "children": [
+      {
+        "component": "cre8-alert",
+        "props": {
+          "variant": "warning",
+          "headline": "Degraded performance",
+          "dismissible": true
+        },
+        "children": [
+          "Write requests are queuing in us-east-1. Reads are unaffected."
+        ]
+      },
+      {
+        "component": "cre8-badge",
+        "props": {
+          "variant": "success",
+          "size": "sm"
+        },
+        "children": [
+          "Dashboard"
+        ]
+      },
+      {
+        "component": "cre8-badge",
+        "props": {
+          "variant": "warning",
+          "size": "sm"
+        },
+        "children": [
+          "API"
+        ]
+      },
+      {
+        "component": "cre8-badge",
+        "props": {
+          "variant": "error",
+          "size": "sm"
+        },
+        "children": [
+          "Webhooks"
+        ]
+      },
+      {
+        "component": "cre8-button",
+        "props": {
+          "variant": "ghost",
+          "size": "sm",
+          "label": "View incident history"
+        }
+      },
+      {
+        "component": "cre8-button",
+        "props": {
+          "variant": "primary",
+          "size": "lg",
+          "label": "Subscribe to updates"
+        }
+      }
+    ]
+  }
+}

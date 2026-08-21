@@ -1,0 +1,198 @@
+# cre8-a2ui vs cre8-mcp — a Harbor eval
+
+A [Harbor](https://github.com/harbor-framework/harbor) eval that measures one
+thing: **when an agent builds CRE8 UI, does it matter whether the component
+catalog reaches it as a static skill or as a live MCP server?**
+
+Three arms, same five tasks, same container, same model:
+
+| Arm | What the agent gets |
+|---|---|
+| `baseline` | Nothing. Whatever the model already knows about `@tmorrow/cre8-wc`. |
+| `a2ui-skill` | The `cre8-a2ui` skill — markdown reference pages, read as context. |
+| `cre8-mcp` | `@tmorrow/cre8-mcp` over stdio — `list_components`, `get_component`, `get_a2ui_catalog`, `get_content_model`, `get_composition`, `validate_a2ui_spec`, answered live from the shipped catalog. |
+
+Each task asks for one page of UI, written as an A2UI spec to
+`/app/ui.a2ui.json`. Scoring is deterministic and offline: the spec is compared
+against the catalog the library actually ships.
+
+## Why this is worth measuring
+
+The tasks were not invented from a blank page. They were derived by querying the
+two knowledge graphs this repo already carries:
+
+- `packages/cre8-wc/a2ui/catalog-kg.json` — 221 nodes / 210 edges over 86
+  components, their categories, slots and enum props, generated from
+  `catalog.json` by `build-knowledge-graph.py`.
+- `graphify-out/graph.json` — 1,566 nodes / 2,144 edges over the component
+  sources. Traversing it from `Cre8FormElement` shows the real error path
+  (`fieldNote` + `isError`, via `.validationMessage()` / `.validity()`), which
+  is what the form task scores.
+
+Querying the first against the `cre8-a2ui` skill's own reference pages is what
+picked the five task subjects. As of this commit:
+
+- the skill documents **38 element names the library does not ship**
+  (`cre8-avatar`, `cre8-toast`, `cre8-stat`, `cre8-sidebar`, `cre8-text-area`, …);
+- **41 of the 86 shipped components** are never mentioned by the skill;
+- the skill's own page-shell example puts header content in `slot="middle"`;
+  `cre8-header` declares `default`, `top`, `bottom`;
+- it documents `cre8-badge.variant` as `default|success|warning|error|info|brand`;
+  the shipped component takes `status` for that, and `variant` is `light|white`;
+- it documents `cre8-table` with `striped`/`hoverable` and raw `<thead>`/`<tr>`
+  children; the shipped table takes `isHoverable` and nests
+  `cre8-table` → `cre8-table-body` → `cre8-table-row` → `cre8-table-cell`;
+- **6 props across 4 components** are declared by the catalog and never rendered
+  (`cre8-field.errorText`, `cre8-modal.closeButtonText`, …); the skill documents
+  one of them and warns about none.
+
+Every one of those is invisible to a spec validator — a spec using them
+validates against the catalog and renders wrong — which is exactly the class of
+error a live catalog query can prevent and a stale document cannot. The eval
+turns that into a number.
+
+## The tasks
+
+| Task | Asks for | Fails on |
+|---|---|---|
+| `a2ui-account-dashboard` | Account overview: identity chip, failed-payment notice, three key numbers, activity list | Reaching for components the library does not ship |
+| `a2ui-app-shell-slots` | Header / main / footer shell with logo, primary nav, utility actions | Slot names the component does not declare |
+| `a2ui-status-strip-enums` | Status banner plus three service pills, two actions | Enum values the prop does not accept |
+| `a2ui-form-error-states` | Sign-up form in error and success states, plus a dialog | Props that are declared but never rendered |
+| `a2ui-orders-table` | `Recent orders` table, status shown as a pill | Skipping a level in the table family |
+
+Instructions are written in product language and name no component. The only
+steer is the standing rule that everything used must be something the library
+ships — which is the requirement the product has anyway.
+
+## Scoring
+
+`oracle/score.py` writes a reward dict per trial. Seven dimensions, each a
+fraction with an explicit denominator, plus `spec_valid` and an overall `reward`
+(their unweighted mean):
+
+| Dimension | Denominator | Hit |
+|---|---|---|
+| `component_validity` | every node | component is in the catalog |
+| `prop_validity` | every prop on a known component | prop is declared for it |
+| `enum_validity` | every enum-typed prop given a scalar | value is in the enum |
+| `slot_validity` | every named slot used, plus free children on a component with no default slot | slot is declared |
+| `containment` | every *family child* node (`cre8-table-cell`, `cre8-accordion-item`, …) | sits under a parent the shipped examples put it under |
+| `inert_free` | every prop on a known component | prop is not on the inert list |
+| `task_completion` | the task's own requirements | requirement met |
+
+A dimension with no opportunities scores 1.0. That is why `compare.py` also
+reports the **opportunity-weighted** mean (Σ hits / Σ denominators): the flat
+mean is what Harbor's metric reports, the weighted mean is the one to quote.
+
+Ground truth comes from `oracle/`, regenerated by `sync-oracle.sh` from the
+checkout — the compact catalog, the inert-prop audit, and a containment relation
+derived from the authored specs in `packages/cre8-wc/a2ui/examples/`. Nothing in
+it is hand-written, and nothing is synthesized from the naming rule; `cre8-mcp`'s
+`composition.ts` documents why a synthesized nesting skeleton is confidently
+wrong.
+
+## Run it
+
+```sh
+cd evals/cre8-a2ui-vs-mcp
+./prepare.sh                          # materialise the skill arm, check fixtures, selftest
+harbor run -c arms/all-arms.yaml      # 5 tasks x 3 arms x 3 attempts = 45 trials
+python3 compare.py jobs/cre8-a2ui-vs-mcp
+```
+
+Or one arm at a time, into the same `jobs/` directory:
+
+```sh
+harbor run -c arms/baseline.yaml
+harbor run -c arms/a2ui-skill.yaml
+harbor run -c arms/cre8-mcp.yaml
+python3 compare.py jobs           # compare.py labels arms from each trial's config
+```
+
+Sanity checks that need no agent and no Docker:
+
+```sh
+./selftest.sh                         # reference solutions score 1.0; skill-documented specs do not
+harbor run -c arms/baseline.yaml -a oracle   # runs each task's solution/solve.sh instead of a model
+```
+
+(`-a oracle` is the one time to pass `--agent` with `--config`: replacing the
+arm is the intent, and the oracle agent copies `solution/` rather than reasoning,
+so it has no use for a skill or an MCP server. It needs Docker but no API key.)
+
+**Do not pass `-a/--agent` or `-m/--model` alongside `-c`.** Harbor replaces the
+config's entire `agents` list when `--agent` is given, which silently drops the
+skill or MCP server that defines the arm; `--model` without `--agent` is ignored.
+The model is pinned inside each arm file — change it in all of them together.
+
+Requirements: `harbor` (`uv tool install harbor`), a reachable Docker daemon,
+outbound network for the agent and for `npx` in the MCP arm, and Python 3 on the
+host for `selftest.sh` / `compare.py`. The verifier itself is standard library
+only and needs no network.
+
+## Reading the output
+
+`compare.py` prints overall reward per task per arm, then per-dimension means
+both flat and opportunity-weighted, then the violations behind them, counted:
+
+```
+Top violations - a2ui-skill
+n   violation
+--  ---------------------------------------
+12  containment  cre8-table-cell
+6   prop_validity  cre8-button.label
+3   component_validity  cre8-stat
+```
+
+That last block is the point. A one-line delta says an arm is better; the
+violation counts say what it got wrong, which is what turns an eval result into
+a fix — either to the skill's reference pages or to the catalog itself.
+
+`--json report.json` writes the same thing machine-readably.
+
+## Layout
+
+```
+arms/            one job config per arm (+ all-arms.yaml), _shared.md explains the rules
+tasks/<task>/    task.toml, instruction.md, environment/, tests/, solution/
+oracle/          scorer + fixtures, and build_oracle.py which regenerates them
+selftest/        specs written to the cre8-a2ui skill's documented API, used as a negative control
+sync-oracle.sh   regenerate fixtures and fan them into every task (--check for CI)
+prepare.sh       set up the arms and verify the eval is runnable
+compare.py       arm-vs-arm comparison from Harbor job results
+selftest.sh      host-side proof that the scorer discriminates
+```
+
+Each task carries its own copy of the scorer and fixtures because a Harbor task
+has to be self-contained — only the task directory is uploaded to the
+environment. `sync-oracle.sh` is the single writer of those copies, and
+`sync-oracle.sh --check` fails if any has drifted.
+
+## Caveats
+
+- **`task_completion` encodes ground truth in places.** The form task requires
+  the error message to arrive through `fieldNote`, because that is the only way
+  it renders. That is deliberate — it is the product requirement — but it means
+  completion and fidelity are not fully independent. Read the fidelity
+  dimensions when you want the cleaner signal.
+- **Arms differ in more than knowledge.** The MCP arm also spends turns and
+  tokens on tool calls. This eval scores the artifact, not the cost of producing
+  it; Harbor records per-trial timing and token usage in `result.json` if you
+  want to weigh that too.
+- **The version stamps in the generated catalog lag the package.**
+  `catalog.compact.json` says `libraryVersion 2.3.0` and `inert-props.json` says
+  `2.1.1` while `packages/cre8-wc` is at `2.3.1`; the stamps are written when the
+  generators last ran, not on publish. The fixtures are copied from the checkout,
+  so they match this repo whatever the stamp says.
+- **The MCP arm answers from npm, the oracle from the checkout.** `arms/cre8-mcp.yaml`
+  pins `@tmorrow/cre8-mcp@2.3.1`. If the checkout moves ahead of the published
+  package, re-pin the arm and re-run `sync-oracle.sh` together.
+- **The skill arm depends on a skill that lives outside this repo.**
+  `prepare.sh` copies it from `~/.claude/skills/synced/cre8-a2ui` (override with
+  `CRE8_A2UI_SKILL_PATH`) into `.arm-inputs/`, which is gitignored. Two runs on
+  two machines can therefore compare two different skill versions — record which
+  one you used.
+- **`n_attempts: 3` is small.** Enough to see a large effect, not enough for a
+  confident claim about a small one. Raise it before quoting a delta under a few
+  points.

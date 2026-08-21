@@ -1,0 +1,198 @@
+{
+  "schema": "cre8-a2ui/1.0",
+  "target": "web-components",
+  "root": {
+    "component": "cre8-layout-container",
+    "children": [
+      {
+        "component": "cre8-table",
+        "props": {
+          "caption": "Recent orders",
+          "isHoverable": true
+        },
+        "children": [
+          {
+            "component": "cre8-table-header",
+            "children": [
+              {
+                "component": "cre8-table-row",
+                "children": [
+                  {
+                    "component": "cre8-table-header-cell",
+                    "children": [
+                      "Order"
+                    ]
+                  },
+                  {
+                    "component": "cre8-table-header-cell",
+                    "children": [
+                      "Customer"
+                    ]
+                  },
+                  {
+                    "component": "cre8-table-header-cell",
+                    "children": [
+                      "Status"
+                    ]
+                  },
+                  {
+                    "component": "cre8-table-header-cell",
+                    "children": [
+                      "Total"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "component": "cre8-table-body",
+            "children": [
+              {
+                "component": "cre8-table-row",
+                "children": [
+                  {
+                    "component": "cre8-table-cell",
+                    "props": {
+                      "dataHeader": "Order"
+                    },
+                    "children": [
+                      "#4471"
+                    ]
+                  },
+                  {
+                    "component": "cre8-table-cell",
+                    "props": {
+                      "dataHeader": "Customer"
+                    },
+                    "children": [
+                      "Northwind Labs"
+                    ]
+                  },
+                  {
+                    "component": "cre8-table-cell",
+                    "props": {
+                      "dataHeader": "Status"
+                    },
+                    "children": [
+                      {
+                        "component": "cre8-badge",
+                        "props": {
+                          "text": "Paid",
+                          "status": "success"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "component": "cre8-table-cell",
+                    "props": {
+                      "dataHeader": "Total"
+                    },
+                    "children": [
+                      "$1,240.00"
+                    ]
+                  }
+                ]
+              },
+              {
+                "component": "cre8-table-row",
+                "children": [
+                  {
+                    "component": "cre8-table-cell",
+                    "props": {
+                      "dataHeader": "Order"
+                    },
+                    "children": [
+                      "#4470"
+                    ]
+                  },
+                  {
+                    "component": "cre8-table-cell",
+                    "props": {
+                      "dataHeader": "Customer"
+                    },
+                    "children": [
+                      "Acme Robotics"
+                    ]
+                  },
+                  {
+                    "component": "cre8-table-cell",
+                    "props": {
+                      "dataHeader": "Status"
+                    },
+                    "children": [
+                      {
+                        "component": "cre8-badge",
+                        "props": {
+                          "text": "Refunded",
+                          "status": "info"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "component": "cre8-table-cell",
+                    "props": {
+                      "dataHeader": "Total"
+                    },
+                    "children": [
+                      "$860.00"
+                    ]
+                  }
+                ]
+              },
+              {
+                "component": "cre8-table-row",
+                "children": [
+                  {
+                    "component": "cre8-table-cell",
+                    "props": {
+                      "dataHeader": "Order"
+                    },
+                    "children": [
+                      "#4469"
+                    ]
+                  },
+                  {
+                    "component": "cre8-table-cell",
+                    "props": {
+                      "dataHeader": "Customer"
+                    },
+                    "children": [
+                      "Contoso Metals"
+                    ]
+                  },
+                  {
+                    "component": "cre8-table-cell",
+                    "props": {
+                      "dataHeader": "Status"
+                    },
+                    "children": [
+                      {
+                        "component": "cre8-badge",
+                        "props": {
+                          "text": "Failed",
+                          "status": "error"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "component": "cre8-table-cell",
+                    "props": {
+                      "dataHeader": "Total"
+                    },
+                    "children": [
+                      "$2,100.00"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

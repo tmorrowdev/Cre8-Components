@@ -1,0 +1,90 @@
+{
+  "task": "a2ui-account-dashboard",
+  "output_path": "/app/ui.a2ui.json",
+  "requirements": [
+    {
+      "id": "page-heading",
+      "kind": "text_present",
+      "any_of": [
+        "Account overview"
+      ]
+    },
+    {
+      "id": "customer-name",
+      "kind": "text_present",
+      "any_of": [
+        "Dana Whitfield"
+      ]
+    },
+    {
+      "id": "customer-initials",
+      "kind": "text_present",
+      "any_of": [
+        "DW"
+      ]
+    },
+    {
+      "id": "failure-notice",
+      "kind": "text_present",
+      "any_of": [
+        "Payment failed - update your card to avoid service interruption"
+      ]
+    },
+    {
+      "id": "failure-is-error",
+      "kind": "prop_value",
+      "component": "cre8-alert",
+      "prop": "status",
+      "value": "error"
+    },
+    {
+      "id": "balance",
+      "kind": "text_present",
+      "any_of": [
+        "$4,280.00"
+      ]
+    },
+    {
+      "id": "open-invoices",
+      "kind": "text_present",
+      "any_of": [
+        "Open invoices"
+      ]
+    },
+    {
+      "id": "next-payment",
+      "kind": "text_present",
+      "any_of": [
+        "Mar 14"
+      ]
+    },
+    {
+      "id": "activity-lines",
+      "kind": "text_present",
+      "any_of": [
+        "Invoice #4471 issued"
+      ]
+    },
+    {
+      "id": "primary-action",
+      "kind": "text_present",
+      "any_of": [
+        "Add funds"
+      ]
+    },
+    {
+      "id": "primary-action-is-primary",
+      "kind": "prop_value",
+      "component": "cre8-button",
+      "prop": "variant",
+      "value": "primary"
+    },
+    {
+      "id": "secondary-action",
+      "kind": "text_present",
+      "any_of": [
+        "Download statements"
+      ]
+    }
+  ]
+}
