@@ -67,6 +67,18 @@ done
 if command -v docker >/dev/null 2>&1 && ! docker info >/dev/null 2>&1; then
     say "docker: installed but not reachable - trials cannot start"
     status=1
+elif command -v docker >/dev/null 2>&1; then
+    # A reachable daemon is not enough: a network that blocks the registry
+    # fails every trial at build time, 15 identical RuntimeErrors deep. Find
+    # out here instead.
+    base=$(sed -n 's/^FROM //p' templates/Dockerfile | head -1)
+    if timeout 180 docker pull -q "$base" >/dev/null 2>&1; then
+        say "base image: $base pulled"
+    else
+        say "base image: cannot pull $base - registry unreachable or blocked."
+        say "            The daemon is up, but every trial will fail at build time."
+        status=1
+    fi
 fi
 
 exit $status

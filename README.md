@@ -16,6 +16,19 @@ The [cre8 Knowledge Base](docs/kb/README.md) covers components, composition patt
 
 Regenerate with `pnpm kb:generate`; `pnpm kb:check` verifies every claim, link, and code example in the KB against the shipped implementation.
 
+## Agent tooling, and an eval of it
+
+Two ways an agent can build UI from this library: the `cre8-a2ui` skill (markdown
+reference pages) and [`@tmorrow/cre8-mcp`](packages/cre8-mcp) (the catalog
+answered live over MCP).
+
+[`evals/cre8-a2ui-vs-mcp`](evals/cre8-a2ui-vs-mcp) is a five-task
+[Harbor](https://github.com/harbor-framework/harbor) case study comparing them
+against a no-knowledge baseline. Scoring is deterministic and offline — no LLM
+judge — against fixtures regenerated from this repo's own generated catalog.
+`./selftest.sh` in that directory reproduces the scorer's behaviour with no
+Docker, agent, or API key.
+
 ## Dependencies
 The following dependencies are required for running this project locally:
 
@@ -34,14 +47,18 @@ cre8 Web Components builds out base reusable components as web components. It al
 
 ### Using components in cre8-wc
 
-1. Install the package and the dependencies:
+1. Install the package:
 ```
-pnpm i @cre8_dev/cre8-wc
+pnpm i @tmorrow/cre8-wc
 ```
 
-2. Import it at the top of your file, then call the component where needed:
+2. Import the library and a theme once, then use the elements anywhere in your markup:
+```js
+import '@tmorrow/cre8-wc';
+import '@tmorrow/cre8-wc/themes/cre8';
 ```
-import { cre8-component-name } from "@cre8/cre8-wc";
+```html
+<cre8-button text="Save" variant="primary"></cre8-button>
 ```
 
 
