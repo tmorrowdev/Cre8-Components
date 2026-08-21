@@ -1,0 +1,182 @@
+{
+  "$comment": "Derived from the authored specs under packages/cre8-wc/a2ui/examples. 'children' and 'slots' are the full observed nesting and are informational. 'family_parents' is the scored relation: a component that only ever appears under a parent from its own family, mapped to the parents it was observed under.",
+  "sources": [
+    "card-gallery.json",
+    "compound-families.json",
+    "dating-grid.json",
+    "llm-observability.json",
+    "portfolio.json"
+  ],
+  "children": {
+    "cre8-accordion": [
+      "cre8-accordion-item"
+    ],
+    "cre8-band": [
+      "cre8-hero",
+      "cre8-layout-container"
+    ],
+    "cre8-breadcrumbs": [
+      "cre8-breadcrumbs-item"
+    ],
+    "cre8-breadcrumbs-item": [
+      "cre8-text-link"
+    ],
+    "cre8-button-group": [
+      "cre8-button"
+    ],
+    "cre8-checkbox-field": [
+      "cre8-checkbox-field-item"
+    ],
+    "cre8-dropdown": [
+      "cre8-dropdown-item"
+    ],
+    "cre8-grid": [
+      "cre8-grid-item"
+    ],
+    "cre8-grid-item": [
+      "cre8-card",
+      "cre8-tag"
+    ],
+    "cre8-hero": [
+      "cre8-button-group",
+      "cre8-heading",
+      "cre8-text-passage"
+    ],
+    "cre8-layout-container": [
+      "cre8-accordion",
+      "cre8-breadcrumbs",
+      "cre8-button-group",
+      "cre8-checkbox-field",
+      "cre8-divider",
+      "cre8-dropdown",
+      "cre8-heading",
+      "cre8-link-list",
+      "cre8-list",
+      "cre8-progress-steps",
+      "cre8-tag-list",
+      "cre8-text-passage"
+    ],
+    "cre8-layout-section": [
+      "cre8-band",
+      "cre8-button-group",
+      "cre8-divider",
+      "cre8-grid",
+      "cre8-heading",
+      "cre8-inline-alert",
+      "cre8-layout-section",
+      "cre8-tabs",
+      "cre8-text-passage"
+    ],
+    "cre8-link-list": [
+      "cre8-link-list-item"
+    ],
+    "cre8-list": [
+      "cre8-list-item"
+    ],
+    "cre8-progress-steps": [
+      "cre8-progress-steps-item"
+    ],
+    "cre8-tab-panel": [
+      "cre8-grid",
+      "cre8-heading",
+      "cre8-table"
+    ],
+    "cre8-table": [
+      "cre8-table-body",
+      "cre8-table-header"
+    ],
+    "cre8-table-body": [
+      "cre8-table-row"
+    ],
+    "cre8-table-cell": [
+      "cre8-badge"
+    ],
+    "cre8-table-header": [
+      "cre8-table-row"
+    ],
+    "cre8-tag-list": [
+      "cre8-tag"
+    ]
+  },
+  "slots": {
+    "cre8-accordion-item": {
+      "default": [
+        "cre8-text-passage"
+      ]
+    },
+    "cre8-card": {
+      "default": [
+        "cre8-badge",
+        "cre8-button",
+        "cre8-chart",
+        "cre8-heading",
+        "cre8-progress-meter",
+        "cre8-tag",
+        "cre8-text-passage"
+      ],
+      "footer": [
+        "cre8-button-group"
+      ],
+      "header": [
+        "cre8-feature",
+        "cre8-heading"
+      ]
+    },
+    "cre8-table-row": {
+      "default": [
+        "cre8-table-cell",
+        "cre8-table-header-cell"
+      ]
+    },
+    "cre8-tabs": {
+      "default": [
+        "cre8-tab"
+      ],
+      "panel": [
+        "cre8-tab-panel"
+      ]
+    }
+  },
+  "family_parents": {
+    "cre8-accordion-item": [
+      "cre8-accordion"
+    ],
+    "cre8-breadcrumbs-item": [
+      "cre8-breadcrumbs"
+    ],
+    "cre8-checkbox-field-item": [
+      "cre8-checkbox-field"
+    ],
+    "cre8-dropdown-item": [
+      "cre8-dropdown"
+    ],
+    "cre8-grid-item": [
+      "cre8-grid"
+    ],
+    "cre8-link-list-item": [
+      "cre8-link-list"
+    ],
+    "cre8-list-item": [
+      "cre8-list"
+    ],
+    "cre8-progress-steps-item": [
+      "cre8-progress-steps"
+    ],
+    "cre8-table-body": [
+      "cre8-table"
+    ],
+    "cre8-table-cell": [
+      "cre8-table-row"
+    ],
+    "cre8-table-header": [
+      "cre8-table"
+    ],
+    "cre8-table-header-cell": [
+      "cre8-table-row"
+    ],
+    "cre8-table-row": [
+      "cre8-table-body",
+      "cre8-table-header"
+    ]
+  }
+}

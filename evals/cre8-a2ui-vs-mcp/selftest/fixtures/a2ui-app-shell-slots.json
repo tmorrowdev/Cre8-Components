@@ -1,0 +1,101 @@
+{
+  "schema": "cre8-a2ui/1.0",
+  "root": {
+    "component": "cre8-layout",
+    "children": [
+      {
+        "component": "cre8-header",
+        "props": {
+          "sticky": true
+        },
+        "slots": {
+          "middle": [
+            {
+              "component": "cre8-logo",
+              "props": {
+                "href": "/"
+              }
+            },
+            {
+              "component": "cre8-nav-item",
+              "props": {
+                "text": "Overview",
+                "href": "/overview"
+              }
+            },
+            {
+              "component": "cre8-nav-item",
+              "props": {
+                "text": "Usage",
+                "href": "/usage",
+                "active": true
+              }
+            },
+            {
+              "component": "cre8-nav-item",
+              "props": {
+                "text": "Billing",
+                "href": "/billing"
+              }
+            }
+          ],
+          "right": [
+            {
+              "component": "cre8-link",
+              "props": {
+                "href": "/support"
+              },
+              "children": [
+                "Support"
+              ]
+            },
+            {
+              "component": "cre8-button",
+              "props": {
+                "variant": "secondary",
+                "label": "Sign out"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "component": "cre8-main",
+        "children": [
+          {
+            "component": "cre8-heading",
+            "props": {
+              "level": 1
+            },
+            "children": [
+              "Usage"
+            ]
+          },
+          {
+            "component": "cre8-section",
+            "props": {
+              "headline": "This billing period"
+            },
+            "children": [
+              {
+                "component": "cre8-text-passage",
+                "children": [
+                  "You have used 62% of your included requests."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "component": "cre8-footer",
+        "props": {
+          "variant": "simple"
+        },
+        "children": [
+          "(c) 2026 Innovexa, Inc."
+        ]
+      }
+    ]
+  }
+}

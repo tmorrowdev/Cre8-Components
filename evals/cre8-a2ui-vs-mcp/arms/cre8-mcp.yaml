@@ -1,0 +1,20 @@
+# MCP arm: the catalog answered live by @tmorrow/cre8-mcp over stdio.
+# The version is pinned so a run is reproducible; it must match the version the
+# oracle fixtures were built from (oracle/catalog.compact.json -> libraryVersion).
+# See _shared.md before editing. Run: harbor run -c arms/cre8-mcp.yaml
+job_name: cre8-a2ui-vs-mcp__cre8-mcp
+jobs_dir: jobs
+n_attempts: 3
+n_concurrent_trials: 4
+
+datasets:
+  - path: tasks
+
+agents:
+  - name: claude-code
+    model_name: anthropic/claude-opus-4-5
+    mcp_servers:
+      - name: cre8
+        transport: stdio
+        command: npx
+        args: ["-y", "@tmorrow/cre8-mcp@2.3.1"]

@@ -1,0 +1,85 @@
+{
+  "task": "a2ui-orders-table",
+  "output_path": "/app/ui.a2ui.json",
+  "requirements": [
+    {
+      "id": "caption",
+      "kind": "text_present",
+      "any_of": [
+        "Recent orders"
+      ]
+    },
+    {
+      "id": "column-headers",
+      "kind": "text_present",
+      "any_of": [
+        "Customer"
+      ]
+    },
+    {
+      "id": "header-cells",
+      "kind": "min_count",
+      "component": "cre8-table-header-cell",
+      "min": 4
+    },
+    {
+      "id": "body-under-table",
+      "kind": "nesting",
+      "parent": "cre8-table",
+      "child": "cre8-table-body"
+    },
+    {
+      "id": "row-under-body",
+      "kind": "nesting",
+      "parent": "cre8-table-body",
+      "child": "cre8-table-row"
+    },
+    {
+      "id": "cell-under-row",
+      "kind": "nesting",
+      "parent": "cre8-table-row",
+      "child": "cre8-table-cell"
+    },
+    {
+      "id": "three-rows",
+      "kind": "min_count",
+      "component": "cre8-table-row",
+      "min": 3
+    },
+    {
+      "id": "twelve-cells",
+      "kind": "min_count",
+      "component": "cre8-table-cell",
+      "min": 12
+    },
+    {
+      "id": "order-ids",
+      "kind": "text_present",
+      "any_of": [
+        "#4469"
+      ]
+    },
+    {
+      "id": "totals",
+      "kind": "text_present",
+      "any_of": [
+        "$2,100.00"
+      ]
+    },
+    {
+      "id": "status-pill",
+      "kind": "component_present",
+      "any_of": [
+        "cre8-badge",
+        "cre8-tag"
+      ]
+    },
+    {
+      "id": "failed-status",
+      "kind": "text_present",
+      "any_of": [
+        "Failed"
+      ]
+    }
+  ]
+}

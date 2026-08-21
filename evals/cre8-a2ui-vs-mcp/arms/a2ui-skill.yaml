@@ -1,0 +1,16 @@
+# Skill arm: the cre8-a2ui skill's markdown, copied into the agent's skills dir.
+# `prepare.sh` materialises .arm-inputs/cre8-a2ui first.
+# See _shared.md before editing. Run: harbor run -c arms/a2ui-skill.yaml
+job_name: cre8-a2ui-vs-mcp__a2ui-skill
+jobs_dir: jobs
+n_attempts: 3
+n_concurrent_trials: 4
+
+datasets:
+  - path: tasks
+
+agents:
+  - name: claude-code
+    model_name: anthropic/claude-opus-4-5
+    skills:
+      - .arm-inputs/cre8-a2ui

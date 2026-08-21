@@ -1,0 +1,13 @@
+# Control arm: no CRE8 knowledge beyond what the model carries.
+# See _shared.md before editing. Run: harbor run -c arms/baseline.yaml
+job_name: cre8-a2ui-vs-mcp__baseline
+jobs_dir: jobs
+n_attempts: 3
+n_concurrent_trials: 4
+
+datasets:
+  - path: tasks
+
+agents:
+  - name: claude-code
+    model_name: anthropic/claude-opus-4-5

@@ -1,0 +1,97 @@
+{
+  "task": "a2ui-app-shell-slots",
+  "output_path": "/app/ui.a2ui.json",
+  "requirements": [
+    {
+      "id": "has-header",
+      "kind": "component_present",
+      "any_of": [
+        "cre8-header"
+      ]
+    },
+    {
+      "id": "has-main",
+      "kind": "component_present",
+      "any_of": [
+        "cre8-main"
+      ]
+    },
+    {
+      "id": "has-footer",
+      "kind": "component_present",
+      "any_of": [
+        "cre8-footer"
+      ]
+    },
+    {
+      "id": "has-logo",
+      "kind": "component_present",
+      "any_of": [
+        "cre8-logo"
+      ]
+    },
+    {
+      "id": "nav-overview",
+      "kind": "text_present",
+      "any_of": [
+        "Overview"
+      ]
+    },
+    {
+      "id": "nav-usage",
+      "kind": "text_present",
+      "any_of": [
+        "Usage"
+      ]
+    },
+    {
+      "id": "nav-billing",
+      "kind": "text_present",
+      "any_of": [
+        "Billing"
+      ]
+    },
+    {
+      "id": "nav-active-item",
+      "kind": "prop_value",
+      "component": "cre8-primary-nav-item",
+      "prop": "isActive",
+      "value": true
+    },
+    {
+      "id": "utility-support",
+      "kind": "text_present",
+      "any_of": [
+        "Support"
+      ]
+    },
+    {
+      "id": "utility-signout",
+      "kind": "text_present",
+      "any_of": [
+        "Sign out"
+      ]
+    },
+    {
+      "id": "section-headline",
+      "kind": "text_present",
+      "any_of": [
+        "This billing period"
+      ]
+    },
+    {
+      "id": "section-body",
+      "kind": "text_present",
+      "any_of": [
+        "You have used 62% of your included requests."
+      ]
+    },
+    {
+      "id": "footer-line",
+      "kind": "text_present",
+      "any_of": [
+        "2026 Innovexa, Inc."
+      ]
+    }
+  ]
+}

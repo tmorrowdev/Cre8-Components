@@ -1,0 +1,124 @@
+{
+  "schema": "cre8-a2ui/1.0",
+  "root": {
+    "component": "cre8-layout",
+    "children": [
+      {
+        "component": "cre8-main",
+        "children": [
+          {
+            "component": "cre8-heading",
+            "props": {
+              "level": 1,
+              "size": "xl"
+            },
+            "children": [
+              "Account overview"
+            ]
+          },
+          {
+            "component": "cre8-toast",
+            "props": {
+              "variant": "error",
+              "dismissible": true,
+              "message": "Payment failed - update your card to avoid service interruption"
+            }
+          },
+          {
+            "component": "cre8-avatar",
+            "props": {
+              "initials": "DW",
+              "size": "md",
+              "alt": "Dana Whitfield"
+            }
+          },
+          {
+            "component": "cre8-heading",
+            "props": {
+              "level": 2
+            },
+            "children": [
+              "Dana Whitfield"
+            ]
+          },
+          {
+            "component": "cre8-grid",
+            "props": {
+              "columns": 3,
+              "gap": "md"
+            },
+            "children": [
+              {
+                "component": "cre8-stat",
+                "props": {
+                  "label": "Balance",
+                  "value": "$4,280.00"
+                }
+              },
+              {
+                "component": "cre8-stat",
+                "props": {
+                  "label": "Open invoices",
+                  "value": "3"
+                }
+              },
+              {
+                "component": "cre8-stat",
+                "props": {
+                  "label": "Next payment",
+                  "value": "Mar 14"
+                }
+              }
+            ]
+          },
+          {
+            "component": "cre8-list",
+            "props": {
+              "variant": "unordered"
+            },
+            "children": [
+              {
+                "component": "cre8-list-item",
+                "children": [
+                  "Invoice #4471 issued"
+                ]
+              },
+              {
+                "component": "cre8-list-item",
+                "children": [
+                  "Card ending 4242 declined"
+                ]
+              },
+              {
+                "component": "cre8-list-item",
+                "children": [
+                  "Seat added: r.okafor"
+                ]
+              },
+              {
+                "component": "cre8-list-item",
+                "children": [
+                  "Plan changed to Scale"
+                ]
+              }
+            ]
+          },
+          {
+            "component": "cre8-button",
+            "props": {
+              "variant": "primary",
+              "label": "Add funds"
+            }
+          },
+          {
+            "component": "cre8-button",
+            "props": {
+              "variant": "ghost",
+              "label": "Download statements"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

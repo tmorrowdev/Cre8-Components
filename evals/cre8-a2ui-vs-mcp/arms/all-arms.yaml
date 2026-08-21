@@ -1,0 +1,29 @@
+# All three arms in one job: same tasks, same scheduling, one results file.
+# Trials are (tasks x agents x n_attempts) = 5 x 3 x 3 = 45.
+# compare.py tells the arms apart from each trial's recorded agent config, so
+# this and three separate jobs produce the same table.
+# See _shared.md before editing. Run: harbor run -c arms/all-arms.yaml
+job_name: cre8-a2ui-vs-mcp
+jobs_dir: jobs
+n_attempts: 3
+n_concurrent_trials: 4
+
+datasets:
+  - path: tasks
+
+agents:
+  - name: claude-code
+    model_name: anthropic/claude-opus-4-5
+
+  - name: claude-code
+    model_name: anthropic/claude-opus-4-5
+    skills:
+      - .arm-inputs/cre8-a2ui
+
+  - name: claude-code
+    model_name: anthropic/claude-opus-4-5
+    mcp_servers:
+      - name: cre8
+        transport: stdio
+        command: npx
+        args: ["-y", "@tmorrow/cre8-mcp@2.3.1"]
