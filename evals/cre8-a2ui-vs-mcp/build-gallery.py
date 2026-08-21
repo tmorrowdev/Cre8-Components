@@ -27,6 +27,18 @@ ARM_LABEL = {
     "a2ui-skill": "cre8-a2ui skill",
     "cre8-mcp": "cre8-mcp server",
 }
+# Brands the picker offers. Each needs design-tokens/brands/<id>/css/tokens_<id>.css;
+# three more brand directories exist but ship empty sheets, so they are left out.
+BRANDS = [
+    {"id": "minimalist", "label": "Minimalist", "note": "square edges, semantic status ramp"},
+    {"id": "cre8-vivid", "label": "Vivid", "note": "indigo brand; tags lose their pill chrome"},
+    {"id": "cre8-a2ui", "label": "A2UI", "note": "the agent-facing brand — success reads cyan"},
+    {"id": "blue", "label": "Blue", "note": "cool primary"},
+    {"id": "cre8", "label": "Cre8", "note": "the library default"},
+    {"id": "legacy", "label": "Legacy", "note": "the previous look"},
+]
+DEFAULT_BRAND = "minimalist"
+
 DIMENSIONS = (
     "component_validity",
     "prop_validity",
@@ -164,6 +176,8 @@ def main() -> int:
         "dimensions": list(DIMENSIONS),
         "gallery": gallery,
         "aggregate": aggregate(trials),
+        "brands": BRANDS,
+        "defaultBrand": DEFAULT_BRAND,
         "propKinds": prop_kinds(),
         "trialCounts": {
             arm: sum(len(v) for (t, a), v in trials.items() if a == arm) for arm in ARMS
@@ -174,12 +188,31 @@ def main() -> int:
     # The map file is not shipped with the page; the reference would 404.
     bundle = bundle.replace("//# sourceMappingURL=cre8-wc.esm.js.map", "")
 
-    # Scope the brand sheet to the specimen frames. It is authored at :root,
-    # which would put ~500 library variables on the document and let them bleed
+    # Brand sheets, scoped to the specimen frames. They are authored at :root,
+    # which would put ~1000 library variables on the document and let them bleed
     # into the chrome; custom properties inherit, so a class scope reaches every
     # component inside a frame just as well.
-    tokens = (WC / "design-tokens" / "brands" / "cre8" / "css" / "tokens_cre8.css").read_text()
-    tokens = tokens.replace(":root", ".specimen")
+    #
+    # A brand is two files, and both are needed: tokens_brand.css carries colour
+    # and shape (~485 variables), tokens_<id>.css carries typography. Inlining
+    # only the second one is a silent no-op — the type is already the same, so
+    # the frames render identically and nothing looks broken.
+    brands_dir = WC / "design-tokens" / "brands"
+    tokens = []
+    for brand in BRANDS:
+        bid = brand["id"]
+        # The default also answers to a bare .specimen, so a frame is styled
+        # before any script runs.
+        scope = f'.specimen[data-brand="{bid}"]'
+        if bid == DEFAULT_BRAND:
+            scope = f'.specimen, {scope}'
+        parts = []
+        for sheet in (brands_dir / bid / "css" / "tokens_brand.css",
+                      brands_dir / bid / "css" / f"tokens_{bid}.css"):
+            if sheet.exists():
+                parts.append(sheet.read_text().replace(":root", scope))
+        tokens.append(f"\n/* ── brand: {bid} ── */\n" + "\n".join(parts))
+    tokens = "\n".join(tokens)
 
     html = (HERE / "gallery-template.html").read_text()
     html = html.replace("/*__TOKENS__*/", tokens)
