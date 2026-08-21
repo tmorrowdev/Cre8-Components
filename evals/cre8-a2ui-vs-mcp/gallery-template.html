@@ -476,7 +476,9 @@ function applyBrand() {
     button.setAttribute("aria-pressed", String(button.dataset.brand === brand));
   }
   const meta = DATA.brands.find((b) => b.id === brand);
-  brandNote.textContent = meta ? `${meta.id} — ${meta.note}` : "";
+  brandNote.textContent = meta
+    ? `${meta.layers.join(" + ")} · ${meta.coverage} tokens · ${meta.note}`
+    : "";
 }
 
 for (const item of DATA.brands) {

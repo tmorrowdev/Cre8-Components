@@ -27,17 +27,33 @@ ARM_LABEL = {
     "a2ui-skill": "cre8-a2ui skill",
     "cre8-mcp": "cre8-mcp server",
 }
-# Brands the picker offers. Each needs design-tokens/brands/<id>/css/tokens_<id>.css;
-# three more brand directories exist but ship empty sheets, so they are left out.
+# Brands the picker offers, each as the stack of sheets to inline, in cascade
+# order. No brand defines every token the components read, so a brand alone
+# leaves gaps that show up as missing component chrome — cre8-vivid omits
+# --cre8-badge-padding-*, which is why its tags render as bare text with no
+# pill. Layering the library default underneath is also how a consumer applies
+# a brand in a real app. cre8-vivid is derived from cre8-a2ui, so it stacks on
+# that too, which takes it to 486/546 of the variables the components read —
+# the most any brand reaches (the remaining 60 are component-level fallbacks
+# no brand defines). Coverage is asserted at build time.
 BRANDS = [
-    {"id": "minimalist", "label": "Minimalist", "note": "square edges, semantic status ramp"},
-    {"id": "cre8-vivid", "label": "Vivid", "note": "indigo brand; tags lose their pill chrome"},
-    {"id": "cre8-a2ui", "label": "A2UI", "note": "the agent-facing brand — success reads cyan"},
-    {"id": "blue", "label": "Blue", "note": "cool primary"},
-    {"id": "cre8", "label": "Cre8", "note": "the library default"},
-    {"id": "legacy", "label": "Legacy", "note": "the previous look"},
+    {"id": "cre8-vivid", "label": "Vivid", "note": "the newest brand — indigo, semantic status ramp",
+     "layers": ["cre8", "cre8-a2ui", "cre8-vivid"]},
+    {"id": "cre8-a2ui", "label": "A2UI", "note": "the agent-facing brand, four-tier tokens",
+     "layers": ["cre8", "cre8-a2ui"]},
+    {"id": "minimalist", "label": "Minimalist", "note": "square edges, low chroma",
+     "layers": ["cre8", "minimalist"]},
+    {"id": "blue", "label": "Blue", "note": "cool primary", "layers": ["cre8", "blue"]},
+    {"id": "cre8", "label": "Cre8", "note": "the library default", "layers": ["cre8"]},
+    {"id": "legacy", "label": "Legacy", "note": "the previous look", "layers": ["cre8", "legacy"]},
 ]
-DEFAULT_BRAND = "minimalist"
+DEFAULT_BRAND = "cre8-vivid"
+# The floor is what the library's own default brand reaches: a stack that covers
+# less than `cre8` does is missing component chrome somewhere. It is set here
+# rather than computed so that a brand quietly losing tokens fails the build
+# instead of lowering the bar. (cre8-vivid alone covers 479 and trips this;
+# stacked on cre8 + cre8-a2ui it reaches 486.)
+MIN_TOKEN_COVERAGE = 482
 
 DIMENSIONS = (
     "component_validity",
@@ -189,15 +205,22 @@ def main() -> int:
     bundle = bundle.replace("//# sourceMappingURL=cre8-wc.esm.js.map", "")
 
     # Brand sheets, scoped to the specimen frames. They are authored at :root,
-    # which would put ~1000 library variables on the document and let them bleed
+    # which would put ~1200 library variables on the document and let them bleed
     # into the chrome; custom properties inherit, so a class scope reaches every
     # component inside a frame just as well.
     #
-    # A brand is two files, and both are needed: tokens_brand.css carries colour
-    # and shape (~485 variables), tokens_<id>.css carries typography. Inlining
-    # only the second one is a silent no-op — the type is already the same, so
-    # the frames render identically and nothing looks broken.
+    # A brand is two files and both are needed: tokens_brand.css carries colour
+    # and shape, tokens_<id>.css carries typography. Inlining only the second is
+    # a silent no-op, because the type is already shared.
+    import re
+
     brands_dir = WC / "design-tokens" / "brands"
+    used = set(re.findall(r"var\(\s*(--cre8-[a-zA-Z0-9-]+)", bundle))
+
+    def sheets_for(brand_id: str) -> list[Path]:
+        css = brands_dir / brand_id / "css"
+        return [p for p in (css / "tokens_brand.css", css / f"tokens_{brand_id}.css") if p.exists()]
+
     tokens = []
     for brand in BRANDS:
         bid = brand["id"]
@@ -205,13 +228,20 @@ def main() -> int:
         # before any script runs.
         scope = f'.specimen[data-brand="{bid}"]'
         if bid == DEFAULT_BRAND:
-            scope = f'.specimen, {scope}'
-        parts = []
-        for sheet in (brands_dir / bid / "css" / "tokens_brand.css",
-                      brands_dir / bid / "css" / f"tokens_{bid}.css"):
-            if sheet.exists():
-                parts.append(sheet.read_text().replace(":root", scope))
-        tokens.append(f"\n/* ── brand: {bid} ── */\n" + "\n".join(parts))
+            scope = f".specimen, {scope}"
+        css = ""
+        for layer in brand["layers"]:
+            for sheet in sheets_for(layer):
+                css += sheet.read_text()
+        covered = len(used & set(re.findall(r"(--cre8-[a-zA-Z0-9-]+)\s*:", css)))
+        if covered < MIN_TOKEN_COVERAGE:
+            raise SystemExit(
+                f"brand {bid} covers only {covered}/{len(used)} of the variables the "
+                f"components read (minimum {MIN_TOKEN_COVERAGE}) — check its layer stack"
+            )
+        brand["coverage"] = f"{covered}/{len(used)}"
+        tokens.append(f"\n/* ── brand: {bid} ({' + '.join(brand['layers'])}) ── */\n"
+                      + css.replace(":root", scope))
     tokens = "\n".join(tokens)
 
     html = (HERE / "gallery-template.html").read_text()
