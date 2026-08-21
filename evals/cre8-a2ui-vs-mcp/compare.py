@@ -56,6 +56,10 @@ def load_trials(roots: list[Path]) -> list[dict]:
                 continue
             if "task_name" not in result:
                 continue
+            # The oracle agent copies solution/ and scores 1.000 by construction.
+            # It belongs in a harness check, never in an arm's mean.
+            if ((result.get("config") or {}).get("agent") or {}).get("name") != "claude-code":
+                continue
             report_path = result_path.parent / "verifier" / "report.json"
             report = {}
             if report_path.exists():

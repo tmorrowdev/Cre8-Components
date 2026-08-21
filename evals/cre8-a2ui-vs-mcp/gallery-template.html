@@ -1,0 +1,527 @@
+<title>Three Arms, One Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap">
+
+<style>
+/* ── Chrome tokens ───────────────────────────────────────────────────────────
+   The frame is deliberately quiet and cool-neutral: everything inside a
+   specimen frame is the CRE8 design system rendering itself, and a loud frame
+   would compete with the thing on display. Series hues are categorical slots
+   1–3 of the validated data palette. */
+:root {
+  color-scheme: light;
+  --ground: #f2f3f2;
+  --surface: #fcfcfb;
+  --surface-2: #ffffff;
+  --line: #dcdedc;
+  --line-strong: #c2c5c3;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --ink-3: #7c7b76;
+  --accent: #185e6b;
+  --series-baseline: #2a78d6;
+  --series-a2ui-skill: #eb6834;
+  --series-cre8-mcp: #1baf7a;
+  --bad: #b3261e;
+  --shadow: 0 1px 2px rgba(11,11,11,.05), 0 8px 24px -12px rgba(11,11,11,.18);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ground: #0e0f0e;
+    --surface: #1a1a19;
+    --surface-2: #202120;
+    --line: #2f302e;
+    --line-strong: #45463f;
+    --ink: #ffffff;
+    --ink-2: #c3c2b7;
+    --ink-3: #8f8e86;
+    --accent: #58b6c4;
+    --series-baseline: #3987e5;
+    --series-a2ui-skill: #d95926;
+    --series-cre8-mcp: #199e70;
+    --bad: #e66767;
+    --shadow: 0 1px 2px rgba(0,0,0,.5), 0 8px 24px -12px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #0e0f0e;
+  --surface: #1a1a19;
+  --surface-2: #202120;
+  --line: #2f302e;
+  --line-strong: #45463f;
+  --ink: #ffffff;
+  --ink-2: #c3c2b7;
+  --ink-3: #8f8e86;
+  --accent: #58b6c4;
+  --series-baseline: #3987e5;
+  --series-a2ui-skill: #d95926;
+  --series-cre8-mcp: #199e70;
+  --bad: #e66767;
+  --shadow: 0 1px 2px rgba(0,0,0,.5), 0 8px 24px -12px rgba(0,0,0,.7);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font: 400 15px/1.55 "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+/* The library's global sheet sets `body { display: flex }` — it assumes it owns
+   the document. Sizing the wrapper for both cases (flex item or block child)
+   keeps the chrome intact without fighting it with !important. */
+.wrap {
+  width: 100%; flex: 1 1 auto; min-width: 0;
+  max-width: 1400px; margin: 0 auto; padding: 40px 24px 96px;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+header { display: flex; flex-direction: column; gap: 18px; margin-bottom: 44px; }
+.eyebrow {
+  font: 500 11px/1 "IBM Plex Mono", ui-monospace, monospace;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3);
+}
+h1 {
+  margin: 0; font-size: clamp(30px, 4.4vw, 46px); font-weight: 600;
+  letter-spacing: -.022em; text-wrap: balance; line-height: 1.08;
+}
+.lede {
+  margin: 0; max-width: 65ch;
+  font: 400 18px/1.6 "IBM Plex Serif", Georgia, serif; color: var(--ink-2);
+}
+.lede em { color: var(--ink); font-style: italic; }
+.runmeta {
+  display: flex; flex-wrap: wrap; gap: 8px 20px; padding-top: 4px;
+  font: 400 12.5px/1.4 "IBM Plex Mono", ui-monospace, monospace; color: var(--ink-3);
+}
+.runmeta b { color: var(--ink-2); font-weight: 500; }
+
+/* ── Section furniture ──────────────────────────────────────────────────── */
+section { margin-bottom: 52px; }
+h2 {
+  margin: 0 0 6px; font-size: 13px; font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ink-2);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+}
+.section-note { margin: 0 0 20px; max-width: 68ch; color: var(--ink-2); font-size: 14.5px; }
+
+/* ── Aggregate: stat tiles + dimension meters ───────────────────────────── */
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+.tile {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+  padding: 18px 20px; display: flex; flex-direction: column; gap: 8px;
+  box-shadow: var(--shadow);
+}
+.tile-head { display: flex; align-items: center; gap: 9px; }
+.swatch { width: 11px; height: 11px; border-radius: 3px; flex: none; }
+.tile-name { font-weight: 600; font-size: 14.5px; }
+.tile-sub {
+  font: 400 12px/1.4 "IBM Plex Mono", ui-monospace, monospace; color: var(--ink-3);
+}
+.hero-num {
+  font: 600 40px/1 "IBM Plex Sans", sans-serif; letter-spacing: -.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.meters { margin-top: 26px; display: flex; flex-direction: column; gap: 3px; }
+.meter-row {
+  display: grid; grid-template-columns: 168px 1fr; gap: 16px; align-items: center;
+  padding: 9px 0; border-top: 1px solid var(--line);
+}
+.meter-row:first-child { border-top: none; }
+.meter-label {
+  font: 400 12.5px/1.3 "IBM Plex Mono", ui-monospace, monospace; color: var(--ink-2);
+}
+.meter-label span { display: block; color: var(--ink-3); font-size: 11px; }
+.meter-bars { display: flex; flex-direction: column; gap: 5px; }
+.bar-line { display: grid; grid-template-columns: 1fr 92px; gap: 12px; align-items: center; }
+.track {
+  position: relative; height: 9px; border-radius: 0 4px 4px 0;
+  background: color-mix(in oklab, var(--line) 70%, transparent);
+}
+.fill { position: absolute; inset: 0 auto 0 0; border-radius: 0 4px 4px 0; }
+.bar-value {
+  font: 500 12.5px/1 "IBM Plex Mono", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums; color: var(--ink-2); text-align: right;
+}
+.bar-value i { color: var(--ink-3); font-style: normal; font-size: 11px; }
+
+/* ── Task tabs ──────────────────────────────────────────────────────────── */
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; }
+.tab {
+  appearance: none; cursor: pointer; border: 1px solid var(--line);
+  background: var(--surface); color: var(--ink-2);
+  padding: 8px 14px; border-radius: 7px;
+  font: 500 13px/1 "IBM Plex Mono", ui-monospace, monospace;
+}
+.tab:hover { border-color: var(--line-strong); color: var(--ink); }
+.tab[aria-selected="true"] {
+  background: var(--ink); color: var(--ground); border-color: var(--ink);
+}
+.tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.brief {
+  background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent);
+  border-radius: 8px; padding: 14px 18px; margin-bottom: 20px;
+  font-size: 14.5px; color: var(--ink-2); max-width: 90ch;
+}
+.brief b { color: var(--ink); font-weight: 600; }
+
+/* ── Specimens ──────────────────────────────────────────────────────────── */
+.specimens { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 16px; }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 11px;
+  overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow);
+  /* A grid item defaults to min-width:auto, so one wide table inside a
+     specimen's shadow DOM stretches its track and drops the row to two
+     columns. The frame scrolls instead. */
+  min-width: 0;
+}
+.card-head {
+  display: flex; align-items: center; gap: 10px; padding: 13px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.card-name { font-weight: 600; font-size: 14px; }
+.card-arm {
+  font: 400 11.5px/1 "IBM Plex Mono", ui-monospace, monospace; color: var(--ink-3);
+}
+.score {
+  margin-left: auto; font: 600 15px/1 "IBM Plex Mono", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums; padding: 5px 9px; border-radius: 6px;
+  background: color-mix(in oklab, var(--line) 55%, transparent); color: var(--ink);
+}
+
+/* The frame holds the real design system. It always renders in the library's
+   light brand, whatever theme the page is in — that is what the page looks
+   like when it ships. */
+.stage {
+  min-width: 0;
+  background: #ffffff; border-bottom: 1px solid var(--line);
+  max-height: 560px; overflow: auto; padding: 18px;
+}
+.specimen {
+  color-scheme: light; background: #fff; color: #16181d;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: block; min-height: 60px;
+}
+.specimen * { max-width: 100%; }
+.empty {
+  padding: 34px 18px; text-align: center; color: var(--ink-3);
+  font: 400 13px/1.5 "IBM Plex Mono", ui-monospace, monospace;
+}
+
+.faults { padding: 13px 16px; display: flex; flex-direction: column; gap: 7px; }
+.faults-head {
+  font: 500 11px/1 "IBM Plex Mono", ui-monospace, monospace;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3);
+}
+.fault {
+  display: flex; gap: 9px; align-items: baseline;
+  font: 400 12.5px/1.45 "IBM Plex Mono", ui-monospace, monospace; color: var(--ink-2);
+}
+.fault-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--bad);
+  flex: none; transform: translateY(-1px);
+}
+.fault b { color: var(--ink); font-weight: 500; }
+.clean { color: var(--ink-3); font: 400 12.5px/1.4 "IBM Plex Mono", ui-monospace, monospace; }
+
+.dims { display: flex; flex-wrap: wrap; gap: 4px; padding: 0 16px 14px; }
+.chip {
+  font: 500 11px/1 "IBM Plex Mono", ui-monospace, monospace;
+  padding: 5px 7px; border-radius: 5px; border: 1px solid var(--line);
+  color: var(--ink-3);
+}
+.chip.miss { color: var(--bad); border-color: color-mix(in oklab, var(--bad) 40%, var(--line)); }
+
+footer {
+  border-top: 1px solid var(--line); padding-top: 22px; margin-top: 12px;
+  color: var(--ink-3); font-size: 13.5px; max-width: 76ch;
+}
+footer p { margin: 0 0 10px; }
+footer code {
+  font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12.5px;
+  color: var(--ink-2);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .fill { transition: width .35s cubic-bezier(.22,.61,.36,1); }
+}
+</style>
+
+<style>
+/* ── CRE8 brand tokens, scoped to the specimen frames ─────────────────────
+   Scoped rather than global so the library's variables cannot bleed into the
+   chrome; custom properties inherit, so components inside .specimen resolve
+   them normally. */
+/*__TOKENS__*/
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Harbor eval · cre8-a2ui vs cre8-mcp</div>
+    <h1>Three arms, one brief</h1>
+    <p class="lede">
+      Every page below answers the same product brief, written by the same model
+      under the same constraints. The only difference is where the component
+      catalog came from: <em>nowhere</em>, a <em>markdown skill</em>, or a
+      <em>live MCP query</em>. These are the real specs, rendered with the real
+      <code>@tmorrow/cre8-wc</code> elements — a component the library does not
+      ship simply does not appear.
+    </p>
+    <div class="runmeta" id="runmeta"></div>
+  </header>
+
+  <section>
+    <h2>Aggregate</h2>
+    <p class="section-note">
+      Mean reward per arm, then each scoring dimension as hits over opportunities
+      — pooled across every trial, so a dimension a spec never exercised cannot
+      inflate it.
+    </p>
+    <div class="tiles" id="tiles"></div>
+    <div class="meters" id="meters"></div>
+  </section>
+
+  <section>
+    <h2>What each arm built</h2>
+    <p class="section-note">
+      One trial per arm, the median by reward — not the best, which would flatter.
+      Scroll a frame to see the whole page.
+    </p>
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <div class="brief" id="brief"></div>
+    <div class="specimens" id="specimens"></div>
+  </section>
+
+  <footer>
+    <p>
+      The frames render in the library's light brand regardless of your theme —
+      that is what these pages look like when they ship.
+    </p>
+    <p>
+      Every arm ran with <code>Bash</code>, <code>WebFetch</code>,
+      <code>WebSearch</code> and <code>Task</code> disallowed. Without that, the
+      agent fetches <code>@tmorrow/cre8-wc</code> from npm and reads the catalog
+      directly — which is what happened on the first full run, and it made all
+      three arms score 1.000.
+    </p>
+  </footer>
+</div>
+
+<script type="module">
+/*__BUNDLE__*/
+</script>
+
+<script>
+const DATA = /*__DATA__*/;
+
+const BRIEFS = {
+  "a2ui-account-dashboard": "An account overview: identity for the signed-in customer, a failed-payment notice, three key numbers, recent activity, and two actions.",
+  "a2ui-app-shell-slots": "The application shell — header, main, footer — carrying a logo, primary navigation with an active item, and utility actions.",
+  "a2ui-status-strip-enums": "A platform status strip: a strong banner warning, three service pills in success/warning/error states, and two actions of different priority.",
+  "a2ui-form-error-states": "A sign-up form showing its validated state — an email field in error, a password field in success, and an open confirmation dialog.",
+  "a2ui-orders-table": "A Recent orders table: four column headers, three data rows, and the status shown as a pill rather than bare text.",
+};
+
+/* ── Renderer: the same walk as a2ui/renderer.ts ─────────────────────────── */
+function applyProp(el, key, value, kind) {
+  if (value === undefined || value === null) return;
+  if (kind === "property") { el[key] = value; return; }
+  if (typeof value === "boolean") {
+    if (value) el.setAttribute(key, ""); else el.removeAttribute(key);
+    return;
+  }
+  if (typeof value === "object") { el[key] = value; return; }
+  el.setAttribute(key, String(value));
+}
+
+function build(spec, doc) {
+  const el = doc.createElement(spec.component);
+  const kinds = DATA.propKinds[spec.component] || {};
+  for (const [key, value] of Object.entries(spec.props || {})) {
+    applyProp(el, key, value, kinds[key]);
+  }
+  for (const child of spec.children || []) {
+    el.appendChild(typeof child === "string" ? doc.createTextNode(child) : build(child, doc));
+  }
+  for (const [slot, children] of Object.entries(spec.slots || {})) {
+    for (const child of children || []) {
+      if (typeof child === "string") {
+        if (slot === "default") { el.appendChild(doc.createTextNode(child)); continue; }
+        const wrap = doc.createElement("span");
+        wrap.setAttribute("slot", slot);
+        wrap.textContent = child;
+        el.appendChild(wrap);
+        continue;
+      }
+      const childEl = build(child, doc);
+      if (slot !== "default") childEl.setAttribute("slot", slot);
+      el.appendChild(childEl);
+    }
+  }
+  return el;
+}
+
+/* ── Formatting helpers ─────────────────────────────────────────────────── */
+const fmt = (n) => (n === null || n === undefined) ? "–" : n.toFixed(3);
+const armVar = (arm) => `var(--series-${arm})`;
+const el = (tag, cls, text) => {
+  const node = document.createElement(tag);
+  if (cls) node.className = cls;
+  if (text !== undefined) node.textContent = text;
+  return node;
+};
+
+/* ── Header meta ────────────────────────────────────────────────────────── */
+const meta = document.getElementById("runmeta");
+const counts = DATA.arms.map((a) => `${a} ${DATA.trialCounts[a] || 0}`).join("  ·  ");
+meta.innerHTML =
+  `<span><b>${Object.values(DATA.trialCounts).reduce((a, b) => a + b, 0)}</b> trials</span>` +
+  `<span>${DATA.tasks.length} tasks × ${DATA.arms.length} arms</span>` +
+  `<span>claude-opus-5</span>` +
+  `<span>${counts}</span>`;
+
+/* ── Aggregate tiles ────────────────────────────────────────────────────── */
+const tiles = document.getElementById("tiles");
+for (const arm of DATA.arms) {
+  const agg = DATA.aggregate[arm];
+  if (!agg) continue;
+  const tile = el("div", "tile");
+  const head = el("div", "tile-head");
+  const sw = el("span", "swatch");
+  sw.style.background = armVar(arm);
+  head.append(sw, el("span", "tile-name", DATA.armLabels[arm]));
+  const num = el("div", "hero-num", fmt(agg.reward));
+  num.style.color = armVar(arm);
+  tile.append(head, num, el("div", "tile-sub", `mean reward · ${agg.n} trials · ${arm}`));
+  tiles.append(tile);
+}
+
+/* ── Dimension meters ───────────────────────────────────────────────────── */
+const meters = document.getElementById("meters");
+for (const dim of DATA.dimensions) {
+  const row = el("div", "meter-row");
+  const totals = DATA.arms
+    .map((a) => DATA.aggregate[a]?.weighted?.[dim]?.total || 0)
+    .reduce((a, b) => Math.max(a, b), 0);
+  const label = el("div", "meter-label", dim.replace(/_/g, " "));
+  label.append(el("span", null, totals ? `n up to ${totals}` : "not exercised"));
+  const bars = el("div", "meter-bars");
+  for (const arm of DATA.arms) {
+    const w = DATA.aggregate[arm]?.weighted?.[dim];
+    const value = w && w.total ? w.hits / w.total : null;
+    const line = el("div", "bar-line");
+    const track = el("div", "track");
+    const fill = el("div", "fill");
+    fill.style.width = `${(value ?? 0) * 100}%`;
+    fill.style.background = armVar(arm);
+    track.append(fill);
+    const val = el("div", "bar-value", fmt(value));
+    val.append(el("i", null, w && w.total ? ` /${w.total}` : ""));
+    line.append(track, val);
+    line.title = `${DATA.armLabels[arm]} — ${dim}`;
+    bars.append(line);
+  }
+  row.append(label, bars);
+  meters.append(row);
+}
+
+/* ── Task tabs + specimens ──────────────────────────────────────────────── */
+const tabs = document.getElementById("tabs");
+const brief = document.getElementById("brief");
+const specimens = document.getElementById("specimens");
+let current = DATA.tasks[0];
+
+function renderTask(task) {
+  current = task;
+  for (const button of tabs.children) {
+    button.setAttribute("aria-selected", String(button.dataset.task === task));
+  }
+  brief.innerHTML = `<b>${task}</b> — ${BRIEFS[task] || ""}`;
+  specimens.replaceChildren();
+
+  for (const arm of DATA.arms) {
+    const entry = (DATA.gallery[task] || {})[arm];
+    const card = el("div", "card");
+
+    const head = el("div", "card-head");
+    const sw = el("span", "swatch");
+    sw.style.background = armVar(arm);
+    head.append(sw, el("span", "card-name", DATA.armLabels[arm]), el("span", "card-arm", arm));
+    if (entry) {
+      const score = el("span", "score", fmt(entry.reward));
+      score.title = "overall reward for this trial";
+      head.append(score);
+    }
+    card.append(head);
+
+    const stage = el("div", "stage");
+    if (entry && entry.spec) {
+      const host = el("div", "specimen");
+      const root = entry.spec.root || entry.spec;
+      try {
+        host.append(build(root, document));
+      } catch (err) {
+        host.append(el("div", "empty", `could not render: ${err.message}`));
+      }
+      stage.append(host);
+    } else {
+      stage.append(el("div", "empty", "no spec produced"));
+    }
+    card.append(stage);
+
+    if (entry) {
+      const chips = el("div", "dims");
+      for (const dim of DATA.dimensions) {
+        const value = entry.rewards[dim];
+        const chip = el("span", `chip${value !== null && value < 1 ? " miss" : ""}`,
+          `${dim.replace(/_validity|_/g, (m) => (m === "_validity" ? "" : " "))} ${fmt(value)}`);
+        chips.append(chip);
+      }
+      card.append(chips);
+
+      const faults = el("div", "faults");
+      const items = [];
+      for (const [dim, list] of Object.entries(entry.violations || {})) {
+        for (const v of list) {
+          const what = v.component
+            ? (v.prop ? `${v.component}.${v.prop}` : v.slot ? `${v.component} slot:${v.slot}` : v.component)
+            : (v.id || "");
+          items.push({ dim, what, why: v.reason || (v.allowed ? `allowed: ${v.allowed.join("|")}` : "") });
+        }
+      }
+      faults.append(el("div", "faults-head", items.length ? `${items.length} violation${items.length > 1 ? "s" : ""}` : "violations"));
+      if (!items.length) {
+        faults.append(el("div", "clean", "none — every name, prop, value and slot exists"));
+      } else {
+        for (const item of items.slice(0, 8)) {
+          const line = el("div", "fault");
+          line.append(el("span", "fault-dot"));
+          const body = el("span");
+          body.innerHTML = `<b>${item.what}</b> · ${item.dim.replace(/_/g, " ")}`;
+          line.append(body);
+          faults.append(line);
+        }
+        if (items.length > 8) {
+          faults.append(el("div", "clean", `… ${items.length - 8} more`));
+        }
+      }
+      card.append(faults);
+    }
+    specimens.append(card);
+  }
+}
+
+for (const task of DATA.tasks) {
+  const button = el("button", "tab", task.replace(/^a2ui-/, ""));
+  button.dataset.task = task;
+  button.setAttribute("role", "tab");
+  button.addEventListener("click", () => renderTask(task));
+  tabs.append(button);
+}
+renderTask(current);
+</script>

@@ -83,34 +83,63 @@ right there.
 
 **Where the scoring does encode a preference, it says so.** See Caveats.
 
-## Status of the numbers
+## The result
 
-**The harness is verified; the three arms have not been run yet.** No results
-are published here, and this README will not carry a table until they are.
+45 trials, 15 per arm, `claude-opus-5`, three attempts per task. Full tables in
+[`RESULTS.md`](RESULTS.md); the numbers to quote are opportunity-weighted:
 
-What has been run, in Docker, end to end: the oracle agent over all five tasks —
-container built, reference solution copied in, verifier executed inside the
-container, rewards parsed by Harbor. All five score 1.000 on every key, which is
-what the tasks being solvable and the scorer being wired correctly looks like:
+| | baseline | a2ui-skill | cre8-mcp |
+|---|---|---|---|
+| **mean reward** | **0.803** | **0.828** | **0.991** |
+| component_validity | 0.941 | 0.883 | 1.000 |
+| prop_validity | 0.948 | 0.882 | 1.000 |
+| enum_validity | 0.750 | 0.753 | 1.000 |
+| slot_validity | 0.000 | 0.389 | 1.000 |
+| containment | 0.962 | 0.955 | 1.000 |
+| inert_free | 1.000 | 1.000 | 0.997 |
+| task_completion | 0.823 | 0.855 | 0.941 |
 
-```sh
-harbor run -c arms/baseline.yaml -a oracle -k 1     # 5/5 trials, reward 1.0
-```
+Reading it honestly:
 
-What remains is agent credentials. The three model arms drive `claude-code`
-inside the container, which needs either `ANTHROPIC_API_KEY`, or — on a
-claude.ai subscription — a token from `claude setup-token` in
-`CLAUDE_CODE_OAUTH_TOKEN` with `CLAUDE_FORCE_OAUTH=1`. `prepare.sh` reports
-which of those it can see. Then:
+- **The live catalog is the difference.** `cre8-mcp` makes essentially no
+  fidelity errors: every component, prop, enum value and slot it writes exists.
+- **The skill is barely better than nothing overall** (0.828 vs 0.803) and is
+  *worse* than nothing on component validity (0.883 vs 0.941) — it names
+  components the library does not ship, which is exactly what the catalog diff
+  below predicts. On the table task it scores 0.662 against the baseline's 0.845.
+- **Slots are where unaided knowledge collapses.** The baseline never once put
+  content in a slot the component declares (0.000 over 52 opportunities). The
+  skill, which documents a `slot="middle"` that does not exist, reaches 0.389.
+- **`inert_free` separates nobody**, and the one violation is the MCP arm's.
+  A dimension that does not discriminate is worth reporting as such.
+
+Run it yourself:
 
 ```sh
 cd evals/cre8-a2ui-vs-mcp
 ./run-all.sh                 # three arms, then writes RESULTS.md
 ```
 
-That writes `RESULTS.md` (publishable tables) and `results.json` (the same data,
-machine-readable). Everything else in this README — the catalog diff below, the
-selftest deltas above — is already reproducible today, without an agent.
+The three model arms drive `claude-code` inside the container, which needs
+either `ANTHROPIC_API_KEY`, or — on a claude.ai subscription — a token from
+`claude setup-token` in `CLAUDE_CODE_OAUTH_TOKEN` with `CLAUDE_FORCE_OAUTH=1`.
+`prepare.sh` reports which of those it can see.
+
+### Look at the pages, not just the table
+
+```sh
+python3 build-gallery.py     # → gallery.html
+```
+
+That builds a single self-contained page which renders every produced spec with
+the real `@tmorrow/cre8-wc` elements — the library bundle and its brand tokens
+are inlined, so it needs no network. A component the library does not ship
+renders as nothing, which is the failure mode a reward number hides: the
+baseline's status strip is three empty rectangles where the service pills should
+be, because it invented `cre8-notification` and mis-set `cre8-badge.variant`.
+The oracle trials are excluded from both the tables and the gallery — the oracle
+agent copies `solution/` and scores 1.000 by construction, so counting it as an
+arm silently inflates the baseline.
 
 ## Isolating the arms (and the run that failed to)
 

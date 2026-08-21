@@ -1,0 +1,220 @@
+{
+  "arms": [
+    "baseline",
+    "a2ui-skill",
+    "cre8-mcp"
+  ],
+  "tasks": [
+    "cre8/a2ui-account-dashboard",
+    "cre8/a2ui-app-shell-slots",
+    "cre8/a2ui-form-error-states",
+    "cre8/a2ui-orders-table",
+    "cre8/a2ui-status-strip-enums"
+  ],
+  "trial_counts": {
+    "a2ui-skill": 15,
+    "baseline": 20,
+    "cre8-mcp": 15
+  },
+  "overall": {
+    "baseline": {
+      "cre8/a2ui-account-dashboard": 0.858519011469322,
+      "cre8/a2ui-app-shell-slots": 0.8727106227106227,
+      "cre8/a2ui-form-error-states": 0.8382034632034633,
+      "cre8/a2ui-orders-table": 0.8836342229199372,
+      "cre8/a2ui-status-strip-enums": 0.8091313448456305,
+      "ALL": 0.8524397330297951
+    },
+    "a2ui-skill": {
+      "cre8/a2ui-account-dashboard": 0.9001569858712717,
+      "cre8/a2ui-app-shell-slots": 0.8383667747021785,
+      "cre8/a2ui-form-error-states": 0.9719581601140822,
+      "cre8/a2ui-orders-table": 0.6620055429579239,
+      "cre8/a2ui-status-strip-enums": 0.7661709983138554,
+      "ALL": 0.8277316923918625
+    },
+    "cre8-mcp": {
+      "cre8/a2ui-account-dashboard": 0.9880952380952381,
+      "cre8/a2ui-app-shell-slots": 0.9963369963369964,
+      "cre8/a2ui-form-error-states": 0.9821428571428571,
+      "cre8/a2ui-orders-table": 1.0,
+      "cre8/a2ui-status-strip-enums": 0.989010989010989,
+      "ALL": 0.9911172161172161
+    }
+  },
+  "flat_means": {
+    "baseline": {
+      "component_validity": 0.9446422337726685,
+      "prop_validity": 0.9708333333333334,
+      "enum_validity": 0.9404761904761905,
+      "slot_validity": 0.25,
+      "containment": 0.9928571428571429,
+      "inert_free": 1.0,
+      "task_completion": 0.8682692307692308
+    },
+    "a2ui-skill": {
+      "component_validity": 0.8720312162341147,
+      "prop_validity": 0.9002286036468945,
+      "enum_validity": 0.7053174603174602,
+      "slot_validity": 0.4666666666666667,
+      "containment": 0.9904761904761905,
+      "inert_free": 1.0,
+      "task_completion": 0.8594017094017093
+    },
+    "cre8-mcp": {
+      "component_validity": 1.0,
+      "prop_validity": 1.0,
+      "enum_validity": 1.0,
+      "slot_validity": 1.0,
+      "containment": 1.0,
+      "inert_free": 0.9972222222222222,
+      "task_completion": 0.9405982905982906
+    }
+  },
+  "weighted_means": {
+    "baseline": {
+      "component_validity": {
+        "hits": 338,
+        "denominator": 353
+      },
+      "prop_validity": {
+        "hits": 162,
+        "denominator": 165
+      },
+      "enum_validity": {
+        "hits": 69,
+        "denominator": 76
+      },
+      "slot_validity": {
+        "hits": 17,
+        "denominator": 69
+      },
+      "containment": {
+        "hits": 107,
+        "denominator": 110
+      },
+      "inert_free": {
+        "hits": 165,
+        "denominator": 165
+      },
+      "task_completion": {
+        "hits": 215,
+        "denominator": 248
+      }
+    },
+    "a2ui-skill": {
+      "component_validity": {
+        "hits": 256,
+        "denominator": 290
+      },
+      "prop_validity": {
+        "hits": 165,
+        "denominator": 187
+      },
+      "enum_validity": {
+        "hits": 58,
+        "denominator": 77
+      },
+      "slot_validity": {
+        "hits": 14,
+        "denominator": 36
+      },
+      "containment": {
+        "hits": 63,
+        "denominator": 66
+      },
+      "inert_free": {
+        "hits": 187,
+        "denominator": 187
+      },
+      "task_completion": {
+        "hits": 159,
+        "denominator": 186
+      }
+    },
+    "cre8-mcp": {
+      "component_validity": {
+        "hits": 274,
+        "denominator": 274
+      },
+      "prop_validity": {
+        "hits": 295,
+        "denominator": 295
+      },
+      "enum_validity": {
+        "hits": 149,
+        "denominator": 149
+      },
+      "slot_validity": {
+        "hits": 71,
+        "denominator": 71
+      },
+      "containment": {
+        "hits": 87,
+        "denominator": 87
+      },
+      "inert_free": {
+        "hits": 294,
+        "denominator": 295
+      },
+      "task_completion": {
+        "hits": 175,
+        "denominator": 186
+      }
+    }
+  },
+  "violations": {
+    "baseline": {
+      "component_validity  cre8-avatar": 1,
+      "prop_validity  cre8-alert.isDismissible": 1,
+      "enum_validity  cre8-alert.variant": 1,
+      "slot_validity  cre8-button slot:children": 21,
+      "component_validity  cre8-notification": 5,
+      "slot_validity  cre8-tag slot:children": 14,
+      "prop_validity  cre8-link.isActive": 2,
+      "slot_validity  cre8-layout slot:header": 1,
+      "slot_validity  cre8-layout slot:footer": 1,
+      "slot_validity  cre8-header slot:logo": 3,
+      "slot_validity  cre8-header slot:nav": 2,
+      "slot_validity  cre8-header slot:utility": 2,
+      "slot_validity  cre8-header slot:primary-nav": 1,
+      "slot_validity  cre8-header slot:utility-nav": 1,
+      "component_validity  cre8-text-input": 6,
+      "component_validity  cre8-table-head": 3,
+      "containment  cre8-table-row": 3,
+      "slot_validity  cre8-badge slot:children": 6,
+      "enum_validity  cre8-tag.variant": 3,
+      "enum_validity  cre8-badge.variant": 3
+    },
+    "a2ui-skill": {
+      "prop_validity  cre8-alert.dismissible": 3,
+      "enum_validity  cre8-alert.variant": 3,
+      "slot_validity  cre8-tag slot:children": 10,
+      "component_validity  cre8-avatar": 2,
+      "component_validity  cre8-stat": 3,
+      "component_validity  cre8-nav-item": 15,
+      "slot_validity  cre8-footer slot:legal": 3,
+      "slot_validity  cre8-header slot:middle": 3,
+      "prop_validity  cre8-heading.styleVariant": 5,
+      "prop_validity  cre8-header.sticky": 1,
+      "enum_validity  cre8-text-passage.size": 1,
+      "prop_validity  cre8-modal.size": 3,
+      "prop_validity  cre8-layout-container.size": 3,
+      "prop_validity  cre8-modal.headline": 1,
+      "component_validity  cre8-table-container": 3,
+      "component_validity  cre8-table-head": 3,
+      "component_validity  cre8-table-caption": 2,
+      "enum_validity  cre8-badge.variant": 6,
+      "slot_validity  cre8-badge slot:children": 6,
+      "containment  cre8-table-row": 3,
+      "prop_validity  cre8-badge.size": 3,
+      "prop_validity  cre8-badge.pill": 3,
+      "enum_validity  cre8-tag.variant": 9,
+      "component_validity  cre8-notification": 3,
+      "component_validity  cre8-tag-status": 3
+    },
+    "cre8-mcp": {
+      "inert_free  cre8-modal.closeButtonText": 1
+    }
+  }
+}
