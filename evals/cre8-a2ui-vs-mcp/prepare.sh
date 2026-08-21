@@ -35,6 +35,24 @@ else
     status=1
 fi
 
+# 1b. proxy CA -----------------------------------------------------------------
+CA_SOURCE=""
+for candidate in "${CRE8_EVAL_PROXY_CA:-}" /root/.ccr/ca-bundle.crt "${SSL_CERT_FILE:-}" "${NODE_EXTRA_CA_CERTS:-}"; do
+    [[ -n $candidate && -f $candidate ]] && { CA_SOURCE=$candidate; break; }
+done
+
+if [[ -n $CA_SOURCE ]]; then
+    for task in tasks/*/; do
+        [[ -f "$task/task.toml" ]] || continue
+        mkdir -p "$task/environment/ca"
+        cp "$CA_SOURCE" "$task/environment/ca/proxy-ca.crt"
+    done
+    say "proxy CA:     installed into every task image from $CA_SOURCE"
+else
+    rm -f tasks/*/environment/ca/proxy-ca.crt
+    say "proxy CA:     none on this host - task images trust the system roots only"
+fi
+
 # 2. oracle --------------------------------------------------------------------
 if ./sync-oracle.sh --check >/dev/null 2>&1; then
     say "oracle:       fixtures in sync with packages/cre8-wc/a2ui"
@@ -56,6 +74,18 @@ fi
 
 # 4. tooling -------------------------------------------------------------------
 say ""
+if [[ -n ${ANTHROPIC_API_KEY:-} ]]; then
+    say "agent auth:   ANTHROPIC_API_KEY set"
+elif [[ -n ${CLAUDE_CODE_OAUTH_TOKEN:-} ]]; then
+    say "agent auth:   CLAUDE_CODE_OAUTH_TOKEN set$([[ -n ${CLAUDE_FORCE_OAUTH:-} ]] && echo " (CLAUDE_FORCE_OAUTH on)" || echo " - also set CLAUDE_FORCE_OAUTH=1 to use it")"
+else
+    say "agent auth:   none found. The three model arms need either"
+    say "              ANTHROPIC_API_KEY, or a subscription token from"
+    say "              \`claude setup-token\` in CLAUDE_CODE_OAUTH_TOKEN with"
+    say "              CLAUDE_FORCE_OAUTH=1. Not needed for \`-a oracle\`."
+fi
+
+say ""
 for tool in harbor docker npx; do
     if command -v "$tool" >/dev/null 2>&1; then
         say "$tool: $(command -v "$tool")"
@@ -67,6 +97,18 @@ done
 if command -v docker >/dev/null 2>&1 && ! docker info >/dev/null 2>&1; then
     say "docker: installed but not reachable - trials cannot start"
     status=1
+elif command -v docker >/dev/null 2>&1; then
+    # A reachable daemon is not enough: a network that blocks the registry
+    # fails every trial at build time, 15 identical RuntimeErrors deep. Find
+    # out here instead.
+    base=$(sed -n 's/^FROM //p' templates/Dockerfile | head -1)
+    if timeout 180 docker pull -q "$base" >/dev/null 2>&1; then
+        say "base image: $base pulled"
+    else
+        say "base image: cannot pull $base - registry unreachable or blocked."
+        say "            The daemon is up, but every trial will fail at build time."
+        status=1
+    fi
 fi
 
 exit $status

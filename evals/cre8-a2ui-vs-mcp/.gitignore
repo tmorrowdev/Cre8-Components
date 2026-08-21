@@ -1,2 +1,4 @@
 jobs/
 .arm-inputs/
+tasks/*/environment/ca/*.crt
+gallery.html

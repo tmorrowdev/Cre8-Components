@@ -13,15 +13,33 @@ datasets:
 
 agents:
   - name: claude-code
-    model_name: anthropic/claude-opus-4-5
+    model_name: claude-opus-5
+    kwargs:
+      # The arm under test must be the agent's only route to the catalog.
+      # Without this the agent simply npm-packs @tmorrow/cre8-wc and reads
+      # catalog.json, which makes all three arms the same experiment.
+      # Identical in every arm, so it constrains the comparison equally.
+      disallowed_tools: Bash,WebFetch,WebSearch,Task
 
   - name: claude-code
-    model_name: anthropic/claude-opus-4-5
+    model_name: claude-opus-5
+    kwargs:
+      # The arm under test must be the agent's only route to the catalog.
+      # Without this the agent simply npm-packs @tmorrow/cre8-wc and reads
+      # catalog.json, which makes all three arms the same experiment.
+      # Identical in every arm, so it constrains the comparison equally.
+      disallowed_tools: Bash,WebFetch,WebSearch,Task
     skills:
       - .arm-inputs/cre8-a2ui
 
   - name: claude-code
-    model_name: anthropic/claude-opus-4-5
+    model_name: claude-opus-5
+    kwargs:
+      # The arm under test must be the agent's only route to the catalog.
+      # Without this the agent simply npm-packs @tmorrow/cre8-wc and reads
+      # catalog.json, which makes all three arms the same experiment.
+      # Identical in every arm, so it constrains the comparison equally.
+      disallowed_tools: Bash,WebFetch,WebSearch,Task
     mcp_servers:
       - name: cre8
         transport: stdio
