@@ -221,11 +221,62 @@ h2 {
 
 /* The frame holds the real design system. It always renders in the library's
    light brand, whatever theme the page is in — that is what the page looks
-   like when it ships. */
+   like when it ships.
+
+   The card renders the page at desktop width and scales the whole thing down,
+   rather than letting it reflow into a 440px column. A responsive layout
+   squeezed into a third of the screen is a different page from the one the
+   agent was asked for, and grading the arms on a thumbnail of the mobile
+   breakpoint would be measuring my grid, not their spec. */
 .stage {
-  min-width: 0;
+  min-width: 0; position: relative;
   background: #ffffff; border-bottom: 1px solid var(--line);
-  max-height: 560px; overflow: auto; padding: 18px;
+  overflow: hidden; cursor: zoom-in;
+}
+.canvas {
+  width: 1280px; transform-origin: top left; padding: 20px;
+  background: #fff;
+}
+.stage::after {
+  content: ""; position: absolute; inset: auto 0 0 0; height: 42px;
+  background: linear-gradient(to top, #fff, transparent); pointer-events: none;
+}
+.stage:hover .zoom, .stage:focus-visible .zoom { opacity: 1; }
+.zoom {
+  position: absolute; right: 10px; bottom: 10px; z-index: 2; opacity: 0;
+  transition: opacity .15s; pointer-events: none;
+  background: var(--ink); color: var(--ground); border-radius: 6px;
+  padding: 6px 10px; font: 500 11.5px/1 "IBM Plex Mono", ui-monospace, monospace;
+}
+
+/* ── Full-screen view ───────────────────────────────────────────────────── */
+.viewer[hidden] { display: none; }
+.viewer {
+  position: fixed; inset: 0; z-index: 50; display: flex; flex-direction: column;
+  background: var(--ground);
+}
+.viewer-bar {
+  display: flex; align-items: center; gap: 12px; flex: none;
+  padding: 12px 18px; background: var(--surface); border-bottom: 1px solid var(--line);
+}
+.viewer-title { font-weight: 600; font-size: 14.5px; }
+.viewer-sub {
+  font: 400 12px/1 "IBM Plex Mono", ui-monospace, monospace; color: var(--ink-3);
+}
+.viewer-actions { margin-left: auto; display: flex; align-items: center; gap: 6px; }
+.vbtn {
+  appearance: none; cursor: pointer; border: 1px solid var(--line);
+  background: transparent; color: var(--ink-2); border-radius: 6px; padding: 7px 11px;
+  font: 500 12.5px/1 "IBM Plex Mono", ui-monospace, monospace;
+}
+.vbtn:hover { border-color: var(--line-strong); color: var(--ink); }
+.vbtn[aria-pressed="true"] { background: var(--ink); color: var(--ground); border-color: var(--ink); }
+.vbtn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.viewer-body { flex: 1; overflow: auto; background: #fff; }
+.viewer-body .specimen { display: block; margin: 0 auto; padding: 28px; }
+.viewer-faults {
+  flex: none; max-height: 26vh; overflow: auto;
+  padding: 12px 18px; background: var(--surface); border-top: 1px solid var(--line);
 }
 .specimen {
   color-scheme: light; background: #fff; color: #16181d;
@@ -314,7 +365,9 @@ footer code {
     <h2>What each arm built</h2>
     <p class="section-note">
       One trial per arm, the median by reward — not the best, which would flatter.
-      Scroll a frame to see the whole page.
+      Each card is the page rendered at desktop width and scaled down, so it is a
+      miniature rather than a reflowed narrow column. <b>Click any frame</b> to
+      open it full size; arrow keys move between arms.
     </p>
     <div class="brandbar" id="brandbar">
       <span class="brandbar-label">Brand</span>
@@ -323,6 +376,21 @@ footer code {
     <div class="brief" id="brief"></div>
     <div class="specimens" id="specimens"></div>
   </section>
+
+  <div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-label="Full-screen render">
+    <div class="viewer-bar">
+      <span class="swatch" id="viewer-swatch"></span>
+      <span class="viewer-title" id="viewer-title"></span>
+      <span class="viewer-sub" id="viewer-sub"></span>
+      <span class="viewer-actions">
+        <button class="vbtn" id="viewer-prev" type="button">&larr; prev arm</button>
+        <button class="vbtn" id="viewer-next" type="button">next arm &rarr;</button>
+        <button class="vbtn" id="viewer-close" type="button">close &times;</button>
+      </span>
+    </div>
+    <div class="viewer-body" id="viewer-body"></div>
+    <div class="viewer-faults" id="viewer-faults"></div>
+  </div>
 
   <footer>
     <p>
@@ -472,6 +540,7 @@ const brandNote = el("span", "brand-note");
 
 function applyBrand() {
   for (const host of document.querySelectorAll(".specimen")) host.dataset.brand = brand;
+  if (viewerAt) openViewer(viewerAt.task, viewerAt.arm);
   for (const button of brandbar.querySelectorAll(".brand")) {
     button.setAttribute("aria-pressed", String(button.dataset.brand === brand));
   }
@@ -493,6 +562,114 @@ for (const item of DATA.brands) {
   brandbar.append(button);
 }
 brandbar.append(brandNote);
+
+/* ── Scaling a desktop render down to card size ─────────────────────────── */
+const CANVAS_WIDTH = 1280;
+const CARD_MAX_HEIGHT = 460;
+
+function fitStage(stage, canvas) {
+  const apply = () => {
+    const width = stage.clientWidth;
+    if (!width) return;
+    const scale = width / CANVAS_WIDTH;
+    canvas.style.transform = `scale(${scale})`;
+    // Custom elements upgrade asynchronously, so the height is only final once
+    // they have rendered; a ResizeObserver keeps the frame honest instead of
+    // guessing with a timeout.
+    stage.style.height = `${Math.min(canvas.scrollHeight * scale, CARD_MAX_HEIGHT)}px`;
+  };
+  apply();
+  new ResizeObserver(apply).observe(canvas);
+  window.addEventListener("resize", apply);
+}
+
+/* ── Full-screen view ───────────────────────────────────────────────────── */
+const viewer = document.getElementById("viewer");
+const viewerBody = document.getElementById("viewer-body");
+const viewerFaults = document.getElementById("viewer-faults");
+let viewerAt = null;   // { task, arm }
+let lastFocus = null;
+
+function faultList(entry) {
+  const items = [];
+  for (const [dim, list] of Object.entries(entry.violations || {})) {
+    for (const v of list) {
+      const what = v.component
+        ? (v.prop ? `${v.component}.${v.prop}` : v.slot ? `${v.component} slot:${v.slot}` : v.component)
+        : (v.id || "");
+      items.push({ dim, what });
+    }
+  }
+  return items;
+}
+
+function openViewer(task, arm) {
+  const entry = (DATA.gallery[task] || {})[arm];
+  if (!entry || !entry.spec) return;
+  viewerAt = { task, arm };
+  lastFocus = document.activeElement;
+
+  document.getElementById("viewer-swatch").style.background = armVar(arm);
+  document.getElementById("viewer-title").textContent = DATA.armLabels[arm];
+  document.getElementById("viewer-sub").textContent =
+    `${task} · ${arm} · reward ${fmt(entry.reward)}`;
+
+  const host = el("div", "specimen");
+  host.dataset.brand = brand;
+  try {
+    host.append(build(entry.spec.root || entry.spec, document));
+  } catch (err) {
+    host.append(el("div", "empty", `could not render: ${err.message}`));
+  }
+  viewerBody.replaceChildren(host);
+  viewerBody.scrollTop = 0;
+
+  const items = faultList(entry);
+  viewerFaults.replaceChildren(
+    el("div", "faults-head", items.length ? `${items.length} violation${items.length > 1 ? "s" : ""}` : "violations")
+  );
+  if (!items.length) {
+    viewerFaults.append(el("div", "clean", "none — every name, prop, value and slot exists"));
+  } else {
+    for (const item of items) {
+      const line = el("div", "fault");
+      line.append(el("span", "fault-dot"));
+      const body = el("span");
+      body.innerHTML = `<b>${item.what}</b> · ${item.dim.replace(/_/g, " ")}`;
+      line.append(body);
+      viewerFaults.append(line);
+    }
+  }
+
+  viewer.hidden = false;
+  document.body.style.overflow = "hidden";
+  document.getElementById("viewer-close").focus();
+}
+
+function closeViewer() {
+  viewer.hidden = true;
+  viewerBody.replaceChildren();
+  document.body.style.overflow = "";
+  if (lastFocus) lastFocus.focus();
+  viewerAt = null;
+}
+
+function stepViewer(delta) {
+  if (!viewerAt) return;
+  const order = DATA.arms.filter((a) => (DATA.gallery[viewerAt.task] || {})[a]);
+  const i = order.indexOf(viewerAt.arm);
+  openViewer(viewerAt.task, order[(i + delta + order.length) % order.length]);
+}
+
+document.getElementById("viewer-close").addEventListener("click", closeViewer);
+document.getElementById("viewer-prev").addEventListener("click", () => stepViewer(-1));
+document.getElementById("viewer-next").addEventListener("click", () => stepViewer(1));
+document.addEventListener("keydown", (e) => {
+  if (viewer.hidden) return;
+  if (e.key === "Escape") closeViewer();
+  if (e.key === "ArrowLeft") stepViewer(-1);
+  if (e.key === "ArrowRight") stepViewer(1);
+});
 
 /* ── Task tabs + specimens ──────────────────────────────────────────────── */
 const tabs = document.getElementById("tabs");
@@ -525,15 +702,27 @@ function renderTask(task) {
 
     const stage = el("div", "stage");
     if (entry && entry.spec) {
+      const canvas = el("div", "canvas");
       const host = el("div", "specimen");
-      const root = entry.spec.root || entry.spec;
+      host.dataset.brand = brand;
       try {
-        host.append(build(root, document));
+        host.append(build(entry.spec.root || entry.spec, document));
       } catch (err) {
         host.append(el("div", "empty", `could not render: ${err.message}`));
       }
-      stage.append(host);
+      canvas.append(host);
+      stage.append(canvas, el("div", "zoom", "click to open full size"));
+      fitStage(stage, canvas);
+      stage.tabIndex = 0;
+      stage.setAttribute("role", "button");
+      stage.setAttribute("aria-label", `Open ${DATA.armLabels[arm]} full size`);
+      const open = () => openViewer(task, arm);
+      stage.addEventListener("click", open);
+      stage.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
+      });
     } else {
+      stage.style.cursor = "default";
       stage.append(el("div", "empty", "no spec produced"));
     }
     card.append(stage);
