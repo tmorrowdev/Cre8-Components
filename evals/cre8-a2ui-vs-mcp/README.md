@@ -85,9 +85,23 @@ right there.
 
 ## Status of the numbers
 
-**The three arms have not been run yet.** No results are published here, and
-this README will not carry a table until they are. Running them needs a machine
-with a reachable Docker daemon and agent credentials:
+**The harness is verified; the three arms have not been run yet.** No results
+are published here, and this README will not carry a table until they are.
+
+What has been run, in Docker, end to end: the oracle agent over all five tasks —
+container built, reference solution copied in, verifier executed inside the
+container, rewards parsed by Harbor. All five score 1.000 on every key, which is
+what the tasks being solvable and the scorer being wired correctly looks like:
+
+```sh
+harbor run -c arms/baseline.yaml -a oracle -k 1     # 5/5 trials, reward 1.0
+```
+
+What remains is agent credentials. The three model arms drive `claude-code`
+inside the container, which needs either `ANTHROPIC_API_KEY`, or — on a
+claude.ai subscription — a token from `claude setup-token` in
+`CLAUDE_CODE_OAUTH_TOKEN` with `CLAUDE_FORCE_OAUTH=1`. `prepare.sh` reports
+which of those it can see. Then:
 
 ```sh
 cd evals/cre8-a2ui-vs-mcp
@@ -212,6 +226,14 @@ of them together.
 Requirements: `harbor` (`uv tool install harbor`), a reachable Docker daemon,
 outbound network for the agent and for `npx` in the MCP arm, and Python 3 on the
 host. The verifier is standard library only and needs no network.
+
+The task image installs nothing. It is the full `node:22-bookworm`, which already
+carries node, npm, python3, git and curl — so the build is a pull plus a
+`WORKDIR`, with no apt step to fail on a network that proxies or blocks the
+Debian mirrors. It is pulled through `mirror.gcr.io` (Google's pull-through
+mirror of Docker Hub, same image and digest) because more restrictive networks
+allow that host than allow Docker Hub's blob CDN; edit `templates/Dockerfile`
+and re-run `./sync-oracle.sh` to point it anywhere else.
 
 ## Reading the output
 

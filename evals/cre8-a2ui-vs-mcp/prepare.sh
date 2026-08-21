@@ -56,6 +56,18 @@ fi
 
 # 4. tooling -------------------------------------------------------------------
 say ""
+if [[ -n ${ANTHROPIC_API_KEY:-} ]]; then
+    say "agent auth:   ANTHROPIC_API_KEY set"
+elif [[ -n ${CLAUDE_CODE_OAUTH_TOKEN:-} ]]; then
+    say "agent auth:   CLAUDE_CODE_OAUTH_TOKEN set$([[ -n ${CLAUDE_FORCE_OAUTH:-} ]] && echo " (CLAUDE_FORCE_OAUTH on)" || echo " - also set CLAUDE_FORCE_OAUTH=1 to use it")"
+else
+    say "agent auth:   none found. The three model arms need either"
+    say "              ANTHROPIC_API_KEY, or a subscription token from"
+    say "              \`claude setup-token\` in CLAUDE_CODE_OAUTH_TOKEN with"
+    say "              CLAUDE_FORCE_OAUTH=1. Not needed for \`-a oracle\`."
+fi
+
+say ""
 for tool in harbor docker npx; do
     if command -v "$tool" >/dev/null 2>&1; then
         say "$tool: $(command -v "$tool")"
