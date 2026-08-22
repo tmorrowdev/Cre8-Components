@@ -1,5 +1,5 @@
 {
-  "version": "2.3.0",
+  "version": "2.3.1",
   "library": "@tmorrow/cre8-react",
   "componentPrefix": "Cre8",
   "description": "React wrappers for cre8 Web Components (@tmorrow/cre8-wc)",
@@ -1475,6 +1475,23 @@
         "fieldId": {
           "type": "string",
           "description": "Progress Meter FieldId"
+        }
+      },
+      "examples": []
+    },
+    {
+      "name": "Cre8ProgressSteps",
+      "tagName": "cre8-progress-steps",
+      "category": "Feedback",
+      "description": "The Progress Steps component is used to display where a user is in a multistep process.\nIt clearly indicates the total number of steps, which steps are complete and incomplete,\nand which step you’re currently on. They help users estimate how long a task will take and can be\nused to track status on orders.\n\nThe Progress Steps component should be used as a parent component for `cre8-progress-steps-item` components.\nThese Components serve a contextual purpose and don't provide any functionality.\n\n# How to Use\n\nProgress Steps is used when there is ample horizontal space and two to six steps. It displays each step by name\nand number to help users understand exactly where they are in a process. It is the preferred option for desktop.\nProgress Steps should change to Compact Steps on mobile web to conserve space.\n\nProgress Steps can also be used to track order status. It provides a quick visual of how an order is progressing\nwith options to alert users of any problems along the way. When used for order status, Progress Steps should\nchange to Vertical Steps on mobile web to conserve space while allowing alerts and messages to remain visible.",
+      "props": {
+        "steps": {
+          "type": "Cre8ProgressStepData[]",
+          "description": "Steps for a data-driven progress indicator. Note that the visible label is\neach item's `name` prop rather than its content — `cre8-progress-steps-item`\ndoes not render children, which is easy to get wrong by hand."
+        },
+        "children": {
+          "type": "React.ReactNode",
+          "description": "Slotted content."
         }
       },
       "examples": []
@@ -3485,23 +3502,6 @@
       ]
     },
     {
-      "name": "Cre8ProgressSteps",
-      "tagName": "cre8-progress-steps",
-      "category": "Other",
-      "description": "The Progress Steps component is used to display where a user is in a multistep process.\nIt clearly indicates the total number of steps, which steps are complete and incomplete,\nand which step you’re currently on. They help users estimate how long a task will take and can be\nused to track status on orders.\n\nThe Progress Steps component should be used as a parent component for `cre8-progress-steps-item` components.\nThese Components serve a contextual purpose and don't provide any functionality.\n\n# How to Use\n\nProgress Steps is used when there is ample horizontal space and two to six steps. It displays each step by name\nand number to help users understand exactly where they are in a process. It is the preferred option for desktop.\nProgress Steps should change to Compact Steps on mobile web to conserve space.\n\nProgress Steps can also be used to track order status. It provides a quick visual of how an order is progressing\nwith options to alert users of any problems along the way. When used for order status, Progress Steps should\nchange to Vertical Steps on mobile web to conserve space while allowing alerts and messages to remain visible.",
-      "props": {
-        "steps": {
-          "type": "Cre8ProgressStepData[]",
-          "description": "Steps for a data-driven progress indicator. Note that the visible label is\neach item's `name` prop rather than its content — `cre8-progress-steps-item`\ndoes not render children, which is easy to get wrong by hand."
-        },
-        "children": {
-          "type": "React.ReactNode",
-          "description": "Slotted content."
-        }
-      },
-      "examples": []
-    },
-    {
       "name": "Cre8Heading",
       "tagName": "cre8-heading",
       "category": "Typography",
@@ -3731,7 +3731,7 @@
   },
   "dependencies": {
     "@lit/react": "^1.0.8",
-    "@tmorrow/cre8-wc": "^2.3.0",
+    "@tmorrow/cre8-wc": "^2.3.1",
     "react": ">=18",
     "react-dom": ">=18"
   }
