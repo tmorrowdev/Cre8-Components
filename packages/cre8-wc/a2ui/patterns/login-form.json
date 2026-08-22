@@ -1,0 +1,55 @@
+{
+  "name": "Login Form",
+  "description": "Standard login form with email and password. Three things make it submit rather than merely look right: a cre8-form (or real <form>) wrapper (cre8 form components participate via ElementInternals, which is inert outside one), type=\"submit\" on the button (cre8-button defaults to type=\"button\"), and a name on every field (setFormValue contributes nothing to FormData without one). Note that required does not block submission on its own \u2014 cre8 form elements never map constraint attributes into setValidity, so enforce it with setCustomValidity() or a submit handler.",
+  "spec": {
+    "component": "cre8-form",
+    "children": [
+      {
+        "component": "cre8-card",
+        "slots": {
+          "default": [
+            {
+              "component": "cre8-heading",
+              "props": {
+                "tagVariant": "h2",
+                "type": "headline-default"
+              },
+              "children": [
+                "Sign In"
+              ]
+            },
+            {
+              "component": "cre8-field",
+              "props": {
+                "label": "Email",
+                "name": "email",
+                "type": "email",
+                "autocomplete": "email",
+                "required": true
+              }
+            },
+            {
+              "component": "cre8-field",
+              "props": {
+                "label": "Password",
+                "name": "password",
+                "type": "password",
+                "autocomplete": "current-password",
+                "required": true
+              }
+            },
+            {
+              "component": "cre8-button",
+              "props": {
+                "text": "Sign In",
+                "variant": "primary",
+                "fullWidth": true,
+                "type": "submit"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

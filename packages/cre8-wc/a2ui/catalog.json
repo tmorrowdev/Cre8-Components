@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://cre8.dev/a2ui/catalogs/cre8-wc/2.3.0",
+  "$id": "https://cre8.dev/a2ui/catalogs/cre8-wc/2.3.1",
   "title": "cre8-wc A2UI Catalog",
   "description": "cre8 Web Components is a library of presentational UI web components to be consumed by # web applications.",
   "x-native-events": [
@@ -54,7 +54,7 @@
   "x-a2ui": {
     "catalogId": "cre8-wc",
     "library": "@tmorrow/cre8-wc",
-    "libraryVersion": "2.3.0",
+    "libraryVersion": "2.3.1",
     "tagPrefix": "cre8",
     "framework": "Lit 3.3.1"
   },
@@ -166,6 +166,9 @@
         },
         {
           "$ref": "#/$defs/components/cre8-progress-meter"
+        },
+        {
+          "$ref": "#/$defs/components/cre8-progress-steps"
         },
         {
           "$ref": "#/$defs/components/cre8-progress-steps-item"
@@ -316,9 +319,6 @@
         },
         {
           "$ref": "#/$defs/components/cre8-utility-nav-item"
-        },
-        {
-          "$ref": "#/$defs/components/cre8-progress-steps"
         },
         {
           "$ref": "#/$defs/components/cre8-heading"
@@ -3276,6 +3276,74 @@
                 "type": "string",
                 "x-kind": "property"
               }
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "cre8-progress-steps": {
+        "type": "object",
+        "title": "cre8-progress-steps",
+        "x-category": "Feedback",
+        "description": "The Progress Steps component is used to display where a user is in a multistep process.\nIt clearly indicates the total number of steps, which steps are complete and incomplete,\nand which step you’re currently on. They help users estimate how long a task will take and can be\nused to track status on orders.\n\nThe Progress Steps component should be used as a parent component for `cre8-progress-steps-item` components.\nThese Components serve a contextual purpose and don't provide any functionality.\n\n# How to Use\n\nProgress Steps is used when there is ample horizontal space and two to six steps. It displays each step by name\nand number to help users understand exactly where they are in a process. It is the preferred option for desktop.\nProgress Steps should change to Compact Steps on mobile web to conserve space.\n\nProgress Steps can also be used to track order status. It provides a quick visual of how an order is progressing\nwith options to alert users of any problems along the way. When used for order status, Progress Steps should\nchange to Vertical Steps on mobile web to conserve space while allowing alerts and messages to remain visible.",
+        "required": [
+          "component"
+        ],
+        "properties": {
+          "component": {
+            "const": "cre8-progress-steps",
+            "description": "Component tag name"
+          },
+          "props": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "steps": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string",
+                      "enum": [
+                        "error",
+                        "warning",
+                        "complete",
+                        "current"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ],
+                  "additionalProperties": false
+                },
+                "description": "Steps for a data-driven progress indicator. Note that the visible label is\neach item's `name` prop rather than its content — `cre8-progress-steps-item`\ndoes not render children, which is easy to get wrong by hand.",
+                "x-kind": "attribute"
+              }
+            }
+          },
+          "children": {
+            "type": "array",
+            "description": "The Progress Steps Item components that represent the steps in the multistep process.",
+            "items": {
+              "$ref": "#/$defs/Child"
             }
           },
           "events": {
@@ -7387,74 +7455,6 @@
                 ],
                 "x-kind": "property"
               }
-            }
-          },
-          "events": {
-            "type": "object",
-            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
-            "propertyNames": {
-              "$ref": "#/$defs/NativeEventName"
-            },
-            "additionalProperties": {
-              "$ref": "#/$defs/EventBinding"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "cre8-progress-steps": {
-        "type": "object",
-        "title": "cre8-progress-steps",
-        "x-category": "Other",
-        "description": "The Progress Steps component is used to display where a user is in a multistep process.\nIt clearly indicates the total number of steps, which steps are complete and incomplete,\nand which step you’re currently on. They help users estimate how long a task will take and can be\nused to track status on orders.\n\nThe Progress Steps component should be used as a parent component for `cre8-progress-steps-item` components.\nThese Components serve a contextual purpose and don't provide any functionality.\n\n# How to Use\n\nProgress Steps is used when there is ample horizontal space and two to six steps. It displays each step by name\nand number to help users understand exactly where they are in a process. It is the preferred option for desktop.\nProgress Steps should change to Compact Steps on mobile web to conserve space.\n\nProgress Steps can also be used to track order status. It provides a quick visual of how an order is progressing\nwith options to alert users of any problems along the way. When used for order status, Progress Steps should\nchange to Vertical Steps on mobile web to conserve space while allowing alerts and messages to remain visible.",
-        "required": [
-          "component"
-        ],
-        "properties": {
-          "component": {
-            "const": "cre8-progress-steps",
-            "description": "Component tag name"
-          },
-          "props": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "steps": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "name": {
-                      "type": "string"
-                    },
-                    "message": {
-                      "type": "string"
-                    },
-                    "state": {
-                      "type": "string",
-                      "enum": [
-                        "error",
-                        "warning",
-                        "complete",
-                        "current"
-                      ]
-                    }
-                  },
-                  "required": [
-                    "name"
-                  ],
-                  "additionalProperties": false
-                },
-                "description": "Steps for a data-driven progress indicator. Note that the visible label is\neach item's `name` prop rather than its content — `cre8-progress-steps-item`\ndoes not render children, which is easy to get wrong by hand.",
-                "x-kind": "attribute"
-              }
-            }
-          },
-          "children": {
-            "type": "array",
-            "description": "The Progress Steps Item components that represent the steps in the multistep process.",
-            "items": {
-              "$ref": "#/$defs/Child"
             }
           },
           "events": {

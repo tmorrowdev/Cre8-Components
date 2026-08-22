@@ -1,0 +1,16 @@
+{
+  "name": "Alert Banner",
+  "description": "Dismissible alert at top of page. The message is slots.default; a call to action goes in slots.cta.",
+  "spec": {
+    "component": "cre8-alert",
+    "props": {
+      "status": "info",
+      "variant": "banner"
+    },
+    "slots": {
+      "default": [
+        "Important announcement message here."
+      ]
+    }
+  }
+}

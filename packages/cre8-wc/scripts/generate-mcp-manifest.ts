@@ -116,6 +116,7 @@ const CATEGORY_MAP: Record<string, string> = {
   'skeleton-loader': 'Feedback',
   'progress-meter': 'Feedback',
   'percent-bar': 'Feedback',
+  'progress-steps': 'Feedback',
   'progress-steps-item': 'Feedback',
   'table': 'Data',
   'table-header': 'Data',

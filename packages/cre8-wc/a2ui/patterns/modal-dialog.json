@@ -1,0 +1,47 @@
+{
+  "name": "Modal Dialog",
+  "description": "Modal with header, body, and footer actions. These buttons are deliberately type=\"button\": they are not in a form, so they do nothing until click handlers are attached \u2014 bind events on both before shipping. If the modal instead collects input, wrap the body and footer in a cre8-form and give Confirm type=\"submit\" \u2014 see the Login Form pattern. Use ariaLabel, not aria-label: the modal renders its inner role=\"dialog\" label from the ariaLabel property, and a host aria-label attribute leaves that dialog unlabelled.",
+  "spec": {
+    "component": "cre8-modal",
+    "props": {
+      "isActive": true,
+      "ariaLabel": "Confirmation"
+    },
+    "slots": {
+      "header": [
+        "Confirm Action"
+      ],
+      "default": [
+        {
+          "component": "cre8-text-passage",
+          "children": [
+            "Are you sure you want to proceed?"
+          ]
+        }
+      ],
+      "footer": [
+        {
+          "component": "cre8-button-group",
+          "children": [
+            {
+              "component": "cre8-button",
+              "props": {
+                "text": "Cancel",
+                "variant": "secondary",
+                "type": "button"
+              }
+            },
+            {
+              "component": "cre8-button",
+              "props": {
+                "text": "Confirm",
+                "variant": "primary",
+                "type": "button"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Page Layout",
+  "description": "Standard page with header, main content, and footer. cre8-global-nav and cre8-footer expose no logo or copyright slot; content addressed to a slot that does not exist is never assigned and renders nowhere, so both go in the default slot.",
+  "spec": {
+    "component": "cre8-layout",
+    "children": [
+      {
+        "component": "cre8-header",
+        "slots": {
+          "default": [
+            {
+              "component": "cre8-logo"
+            },
+            {
+              "component": "cre8-global-nav",
+              "children": [
+                {
+                  "component": "cre8-global-nav-item",
+                  "props": {
+                    "href": "/",
+                    "text": "Home"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "component": "cre8-main",
+        "children": [
+          {
+            "component": "cre8-layout-container",
+            "children": [
+              {
+                "component": "cre8-text-passage",
+                "children": [
+                  "Page content"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "component": "cre8-footer",
+        "slots": {
+          "default": [
+            "2024 Company Name"
+          ]
+        }
+      }
+    ]
+  }
+}

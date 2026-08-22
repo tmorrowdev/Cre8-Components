@@ -1,0 +1,6 @@
+{
+  "enabledMcpjsonServers": [
+    "cre8-mcp",
+    "storybook-react"
+  ]
+}

@@ -16,6 +16,7 @@
     "build:a2ui": "pnpm run build:a2ui:catalog && pnpm run build:a2ui:kg && pnpm run build:a2ui:compile",
     "build:a2ui:catalog": "node a2ui/generate-catalog.mjs",
     "build:a2ui:kg": "node a2ui/generate-catalog-kg.mjs",
+    "check:deploy-drift": "node a2ui/check-deploy-drift.mjs",
     "build:a2ui:compile": "tsc --module esnext --moduleResolution bundler --target es2022 --lib es2022,dom,dom.iterable --strict --skipLibCheck --declaration --outDir a2ui a2ui/types.ts a2ui/registry.ts a2ui/renderer.ts a2ui/index.ts a2ui/stream/types.ts a2ui/stream/pointer.ts a2ui/stream/model.ts a2ui/stream/renderer.ts a2ui/stream/diff.ts a2ui/stream/index.ts",
     "a2ui:demo": "python3 -m http.server 8765",
     "storybook:react": "pnpm run build:react && cd react-wrappers && npx storybook dev -p 9009",

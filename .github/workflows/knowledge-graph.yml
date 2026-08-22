@@ -1,0 +1,77 @@
+name: Knowledge graph
+
+# The catalog-kg.json cre8-mcp serves must be (1) what the library in this
+# checkout generates and (2) what every published surface actually ships.
+# Generation is checked on every PR; deployment drift is checked after a
+# publish and nightly, because it can only be fixed by publishing.
+
+on:
+  pull_request:
+    paths:
+      - 'packages/cre8-wc/**'
+      - 'packages/cre8-mcp/**'
+      - 'evals/cre8-a2ui-vs-mcp/**'
+      - 'graphify-out/graph.json'
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  generated-in-sync:
+    name: graph regenerates to what is committed
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 8.11.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Regenerate manifest, catalog and knowledge graph
+        run: |
+          pnpm --filter @tmorrow/cre8-wc build:mcp-manifest
+          pnpm --filter @tmorrow/cre8-wc build:a2ui:catalog
+          pnpm --filter @tmorrow/cre8-wc build:a2ui:kg
+      - name: Committed artifacts match regenerated ones
+        run: |
+          git diff --exit-code -- \
+            packages/cre8-wc/mcp-manifest.json \
+            packages/cre8-wc/a2ui/catalog.json \
+            packages/cre8-wc/a2ui/catalog.compact.json \
+            packages/cre8-wc/a2ui/catalog-kg.json \
+          || { echo '::error::catalog-kg.json (or its inputs) is stale — run pnpm build:a2ui and commit'; exit 1; }
+      - name: Eval oracle derives from the same graph
+        run: |
+          cd evals/cre8-a2ui-vs-mcp
+          python3 oracle/build_oracle.py
+          ./sync-oracle.sh --check
+      - name: cre8-mcp builds and its tests pass against the graph
+        run: |
+          pnpm --filter @tmorrow/cre8-mcp build
+          pnpm --filter @tmorrow/cre8-mcp test
+
+  published-in-sync:
+    name: published packages and plugin serve this graph
+    # Only meaningful for what is on main; a PR cannot fix a publish.
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fetch the plugin's server config
+        run: git clone --depth 1 https://github.com/tmorrowdev/tmorrow_ai.git /tmp/tmorrow_ai
+      - name: Compare
+        env:
+          # Add hosted cre8-mcp servers here (comma-separated) if one is ever deployed.
+          CRE8_MCP_URLS: ${{ vars.CRE8_MCP_URLS }}
+        run: |
+          node packages/cre8-wc/a2ui/check-deploy-drift.mjs \
+            --npm \
+            --plugin /tmp/tmorrow_ai/cre8/.mcp.json

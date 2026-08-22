@@ -476,15 +476,28 @@ await test('the full hierarchy is reported level by level, slots included', asyn
   assert(row.observedParents.includes('cre8-table-body'), 'a row names the body as a parent');
 });
 
-await test('an undemonstrated family is reported without a direction', async () => {
-  // cre8-select-tile / cre8-select-tile-list is the pairing no shipped example
-  // covers, and the one the naming rule gets backwards.
-  const tile = await (await req('/composition?component=cre8-select-tile-list')).json();
-  assert(tile.nameFamily.includes('cre8-select-tile'), 'the family is real');
-  assert(Array.isArray(tile.nameFamily), 'it must be a flat list, not a hierarchy');
-  assertEqual(tile.observedChildren.length, 0, 'nothing demonstrates this nesting yet');
-  assert(tile.warning?.includes('does not say which way containment runs'),
-    'so the ambiguity must be stated, not smoothed over');
+await test('a family the examples never covered is still known, from the library\'s own stories', async () => {
+  // cre8-select-tile / cre8-select-tile-list is the pairing no a2ui example
+  // covers, and the one the naming rule gets backwards. The knowledge graph
+  // now draws containment from component stories as well, so the direction is
+  // no longer ambiguous — and the answer must say where it came from.
+  const list = await (await req('/composition?component=cre8-select-tile-list')).json();
+  assert(Array.isArray(list.nameFamily) && list.nameFamily.includes('cre8-select-tile'), 'the family is real');
+  const tile = list.observedChildren.find((c) => c.component === 'cre8-select-tile');
+  assert(tile, 'cre8-select-tile-list contains cre8-select-tile');
+  assert(tile.evidence.includes('story') && !tile.evidence.includes('example'),
+    'and the graph says this comes from a story, not from an authored example');
+  assert(!list.warning, 'a demonstrated nesting carries no ambiguity warning');
+
+  const reverse = await (await req('/composition?component=cre8-select-tile')).json();
+  assert(!reverse.observedChildren.some((c) => c.component === 'cre8-select-tile-list'),
+    'and never the other way round');
+});
+
+await test('every answer names the evidence it rests on', async () => {
+  const all = await (await req('/composition')).json();
+  assert(all.source.startsWith('catalog-kg.json'), 'composition is served from the knowledge graph');
+  assert(/\d+ component stories/.test(all.source), 'and the graph reports how many stories fed it');
 });
 
 await test('the worked example handed back is real and still validates', async () => {
