@@ -1,0 +1,11 @@
+{
+  "enabledMcpjsonServers": [
+    "cre8-mcp",
+    "storybook-react"
+  ],
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:adk.dev)"
+    ]
+  }
+}

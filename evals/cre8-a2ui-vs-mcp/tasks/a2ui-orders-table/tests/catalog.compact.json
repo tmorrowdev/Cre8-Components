@@ -1,7 +1,7 @@
 {
   "contractVersion": 1,
-  "sourceCatalog": "https://cre8.dev/a2ui/catalogs/cre8-wc/2.3.0",
-  "libraryVersion": "2.3.0",
+  "sourceCatalog": "https://cre8.dev/a2ui/catalogs/cre8-wc/2.3.1",
+  "libraryVersion": "2.3.1",
   "componentCount": 86,
   "components": [
     {
@@ -1662,7 +1662,7 @@
     },
     {
       "name": "cre8-progress-steps",
-      "category": "Other",
+      "category": "Feedback",
       "props": {
         "steps": {
           "type": "array"

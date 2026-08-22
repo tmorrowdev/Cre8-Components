@@ -1,0 +1,37 @@
+{
+  "name": "Tabbed Content",
+  "description": "Content organized in tabs. cre8-tab has no label, tab-id or selected prop: the label is its text content, and cre8-tabs pairs each tab with the panel at the same position and assigns index/isActive itself. Tabs go in slots.default, panels in slots.panel. Set activeIndex on cre8-tabs to choose the initial tab (defaults to 0).",
+  "spec": {
+    "component": "cre8-tabs",
+    "slots": {
+      "default": [
+        {
+          "component": "cre8-tab",
+          "children": [
+            "Tab 1"
+          ]
+        },
+        {
+          "component": "cre8-tab",
+          "children": [
+            "Tab 2"
+          ]
+        }
+      ],
+      "panel": [
+        {
+          "component": "cre8-tab-panel",
+          "children": [
+            "Content for Tab 1"
+          ]
+        },
+        {
+          "component": "cre8-tab-panel",
+          "children": [
+            "Content for Tab 2"
+          ]
+        }
+      ]
+    }
+  }
+}
