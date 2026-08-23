@@ -20,6 +20,7 @@ Usage:
 
 import argparse
 import json
+import re
 from collections import defaultdict
 from pathlib import Path
 
@@ -32,10 +33,37 @@ DIMENSIONS = (
     "inert_free",
     "task_completion",
 )
-ARMS = ("baseline", "a2ui-skill", "cre8-mcp")
+ARMS = (
+    "baseline",
+    "a2ui-skill",
+    "cre8-mcp",
+    "baseline-freecode",
+    "a2ui-skill-freecode",
+    "cre8-mcp-freecode",
+    "cre8-mcp-design-freecode",
+)
+
+# Harbor writes each arm's trials under jobs/<job_name>/, and every arm yaml
+# sets job_name to "<eval>__<arm>". That name is the arm, exactly, so use it.
+JOB_DIR = re.compile(r"__(?P<arm>[a-z0-9-]+)$")
 
 
-def arm_of(result: dict) -> str:
+def arm_of(result: dict, result_path: Path) -> str:
+    """Identify the arm from the job directory, falling back to the config.
+
+    Inferring from the config alone is not sufficient any more and silently
+    merged arms that differ. Every MCP-bearing arm looks identical to it, so
+    cre8-mcp-design-freecode - the MCP paired with the design skill, the whole
+    point of that arm - collapsed into plain cre8-mcp; and the freecode
+    baseline and skill arms merged into their A2UI namesakes despite running a
+    different task family under different tool permissions. The job directory
+    distinguishes all of them because the arm files already do.
+    """
+    for parent in result_path.parents:
+        match = JOB_DIR.search(parent.name)
+        if match and match.group("arm") in ARMS:
+            return match.group("arm")
+
     agent = (result.get("config") or {}).get("agent") or {}
     if any(
         "cre8" in (server.get("name") or "") for server in agent.get("mcp_servers") or []
@@ -71,7 +99,7 @@ def load_trials(roots: list[Path]) -> list[dict]:
                 {
                     "task": result["task_name"],
                     "trial": result.get("trial_name", result_path.parent.name),
-                    "arm": arm_of(result),
+                    "arm": arm_of(result, result_path),
                     "rewards": (result.get("verifier_result") or {}).get("rewards") or {},
                     "report": report,
                 }
