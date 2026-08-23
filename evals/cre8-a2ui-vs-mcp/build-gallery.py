@@ -14,6 +14,7 @@ this shows you the page that scored 0.71, next to the page that scored 1.00.
 
 import argparse
 import json
+import re
 from collections import defaultdict
 from pathlib import Path
 
@@ -21,10 +22,9 @@ HERE = Path(__file__).parent
 REPO = HERE.parents[1]
 WC = REPO / "packages" / "cre8-wc"
 
-ARMS = ("baseline", "a2ui-skill", "cre8-mcp")
+ARMS = ("baseline", "cre8-mcp", "cre8-mcp-design")
 ARM_LABEL = {
     "baseline": "No knowledge",
-    "a2ui-skill": "cre8-a2ui skill",
     "cre8-mcp": "cre8-mcp server",
 }
 # Brands the picker offers, each as the stack of sheets to inline, in cascade
@@ -66,12 +66,23 @@ DIMENSIONS = (
 )
 
 
-def arm_of(result: dict) -> str:
+JOB_DIR = re.compile(r"__(?P<arm>[a-z0-9-]+)$")
+
+
+def arm_of(result: dict, result_path: Path) -> str:
+    """Identify the arm from its job directory, as compare.py does.
+
+    Config inference cannot separate arms that share an MCP server, so
+    cre8-mcp-design would report as plain cre8-mcp and its trials would be
+    drawn in the gallery under the arm it exists to be compared against.
+    """
+    for parent in result_path.parents:
+        match = JOB_DIR.search(parent.name)
+        if match and match.group("arm") in ARMS:
+            return match.group("arm")
     agent = (result.get("config") or {}).get("agent") or {}
     if any("cre8" in (s.get("name") or "") for s in agent.get("mcp_servers") or []):
         return "cre8-mcp"
-    if any("cre8-a2ui" in str(s) for s in agent.get("skills") or []):
-        return "a2ui-skill"
     return "baseline"
 
 
@@ -120,7 +131,7 @@ def collect(jobs_dir: Path) -> dict:
                 pass
         rewards = (result.get("verifier_result") or {}).get("rewards") or {}
         task = result["task_name"].split("/")[-1]
-        trials[(task, arm_of(result))].append(
+        trials[(task, arm_of(result, result_path))].append(
             {
                 "trial": result.get("trial_name", trial_dir.name),
                 "reward": rewards.get("reward", 0.0),

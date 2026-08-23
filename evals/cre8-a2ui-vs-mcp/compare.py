@@ -35,10 +35,9 @@ DIMENSIONS = (
 )
 ARMS = (
     "baseline",
-    "a2ui-skill",
     "cre8-mcp",
+    "cre8-mcp-design",
     "baseline-freecode",
-    "a2ui-skill-freecode",
     "cre8-mcp-freecode",
     "cre8-mcp-design-freecode",
 )
@@ -69,8 +68,6 @@ def arm_of(result: dict, result_path: Path) -> str:
         "cre8" in (server.get("name") or "") for server in agent.get("mcp_servers") or []
     ):
         return "cre8-mcp"
-    if any("cre8-a2ui" in str(skill) for skill in agent.get("skills") or []):
-        return "a2ui-skill"
     return "baseline"
 
 

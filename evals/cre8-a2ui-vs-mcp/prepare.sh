@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Get this checkout ready to run the eval, and refuse to pretend when it is not.
 #
-#   1. materialise the a2ui arm's input (the cre8-a2ui skill) into .arm-inputs/
+#   1. materialise the skill arms' input (the cre8-design skill) into .arm-inputs/
 #   2. confirm the oracle fixtures in each task match the shipped library
 #   3. run the host-side selftest, which proves the scorer still discriminates
 #   4. report on the tooling a real run needs (harbor, docker, npx)
@@ -11,31 +11,7 @@ cd "$(dirname "$0")"
 status=0
 say () { printf '%s\n' "$*"; }
 
-# 1. skill ---------------------------------------------------------------------
-SKILL_PATH=${CRE8_A2UI_SKILL_PATH:-}
-if [[ -z $SKILL_PATH ]]; then
-    for candidate in \
-        "$HOME/.claude/skills/synced/cre8-a2ui" \
-        "$HOME/.claude/skills/cre8-a2ui" \
-        "../../.claude/skills/cre8-a2ui"
-    do
-        [[ -f "$candidate/SKILL.md" ]] && { SKILL_PATH=$candidate; break; }
-    done
-fi
-
-if [[ -n $SKILL_PATH && -f "$SKILL_PATH/SKILL.md" ]]; then
-    rm -rf .arm-inputs/cre8-a2ui
-    mkdir -p .arm-inputs
-    cp -R "$SKILL_PATH" .arm-inputs/cre8-a2ui
-    say "skill arm:    .arm-inputs/cre8-a2ui  <- $SKILL_PATH"
-else
-    say "skill arm:    NOT FOUND. Set CRE8_A2UI_SKILL_PATH to the cre8-a2ui skill"
-    say "              directory (the one containing SKILL.md). arms/a2ui-skill.yaml"
-    say "              and arms/all-arms.yaml cannot run until it resolves."
-    status=1
-fi
-
-# 1a. design skill -------------------------------------------------------------
+# 1. design skill -------------------------------------------------------------
 # The cre8-design skill is versioned in this repo rather than synced from
 # ~/.claude, because unlike cre8-a2ui it is an input the eval owns: it carries
 # design judgment and token architecture only, and deliberately restates no

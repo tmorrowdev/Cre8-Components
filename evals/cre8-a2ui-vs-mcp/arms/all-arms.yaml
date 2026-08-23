@@ -36,7 +36,7 @@ agents:
       # Identical in every arm, so it constrains the comparison equally.
       disallowed_tools: Bash,WebFetch,WebSearch,Task
     skills:
-      - .arm-inputs/cre8-a2ui
+      - .arm-inputs/cre8-design
 
   - name: claude-code
     model_name: claude-opus-5

@@ -1,7 +1,12 @@
-# Skill arm: the cre8-a2ui skill's markdown, copied into the agent's skills dir.
-# `prepare.sh` materialises .arm-inputs/cre8-a2ui first.
-# See _shared.md before editing. Run: harbor run -c arms/a2ui-skill.yaml
-job_name: cre8-a2ui-vs-mcp__a2ui-skill
+# Combined arm: cre8-mcp for component API facts, plus the cre8-design skill
+# for judgment and token architecture. The configuration a real harness ships
+# - the MCP alone answers what exists and what its props are, but nothing in
+# it says which component a given job calls for.
+#
+# Run: harbor run -c arms/cre8-mcp-design.yaml
+#
+# Read against arms/cre8-mcp.yaml, which is identical minus the skill.
+job_name: cre8-a2ui-vs-mcp__cre8-mcp-design
 jobs_dir: jobs
 n_attempts: 3
 n_concurrent_trials: 4
@@ -10,9 +15,8 @@ datasets:
   - path: tasks
     # mcp-freecode-portfolio is scored by building and rendering real React
     # code, which needs Bash and an installed @tmorrow/cre8-react - neither of
-    # which this arm's isolation allows. It has its own *-freecode.yaml arm
-    # per condition, which relaxes that isolation deliberately; see the note
-    # in arms/baseline-freecode.yaml.
+    # which this arm's isolation allows. It runs from arms/cre8-mcp-freecode.yaml
+    # instead.
     exclude_task_names:
       - mcp-freecode-portfolio
 
@@ -26,4 +30,9 @@ agents:
       # Identical in every arm, so it constrains the comparison equally.
       disallowed_tools: Bash,WebFetch,WebSearch,Task
     skills:
-      - .arm-inputs/cre8-a2ui
+      - .arm-inputs/cre8-design
+    mcp_servers:
+      - name: cre8
+        transport: stdio
+        command: npx
+        args: ["-y", "@tmorrow/cre8-mcp@2.3.6"]
