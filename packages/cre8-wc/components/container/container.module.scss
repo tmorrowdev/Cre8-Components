@@ -1,0 +1,35 @@
+@import '/design-tokens/core/scss/theming/component';
+
+// #CONTAINER
+
+/**
+ * 1) Establishes a CSS containment context so anything slotted inside can be
+ * styled with `@container` queries against this element's own rendered size,
+ * rather than the viewport. It renders no visible chrome of its own; the
+ * only effect is making container queries possible for its content.
+ */
+.cre8-c-container {
+  container-type: inline-size;
+  display: block;
+}
+
+/**
+ * Size containment
+ * 1) Contains both the inline and block axis, so `@container` rules can also
+ * query height. Use only when this element's own height does not depend on
+ * its content - size containment forces the content box to 0x0 before
+ * layout runs, so a height derived from content collapses under this mode.
+ */
+.cre8-c-container--size {
+  container-type: size;
+}
+
+/**
+ * Normal containment
+ * 1) Names the container without adding size containment. Use for
+ * `@container style(...)` queries, which read custom-property values rather
+ * than dimensions and don't need a measured size to query against.
+ */
+.cre8-c-container--normal {
+  container-type: normal;
+}

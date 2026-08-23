@@ -43,6 +43,16 @@ export class Cre8Card extends Cre8Element {
   @property()
   align?: 'center';
 
+  /**
+   * Full height
+   * 1) Stretches the card to fill its parent's height and width. Off by
+   *   default - only turn this on when the card is a flex/grid item whose
+   *   siblings should determine its height, e.g. a row of cards that should
+   *   line up edge to edge regardless of how much content each one has.
+   */
+  @property({ type: Boolean, reflect: true })
+  fullHeight?: boolean;
+
   render() {
     const componentClassNames = this.componentClassNames('cre8-c-card', {
       'cre8-c-card--bare': this.variant === 'bare',
@@ -50,6 +60,7 @@ export class Cre8Card extends Cre8Element {
       'cre8-c-card--horizontal': this.variant === 'horizontal',
       'cre8-c-card--horizontal-bare': this.variant === 'horizontal-bare',
       'cre8-c-card--align-center': this.align === 'center',
+      'cre8-c-card--full-height': this.fullHeight === true,
     });
 
     return html`

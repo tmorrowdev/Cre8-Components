@@ -78,3 +78,20 @@ export const HorizontalAlignCenter = {
    variant: 'horizontal'
   },
 };
+
+export const FullHeight = {
+  args: {
+    ...Default.args,
+    fullHeight: true,
+  },
+  render: (args) => html`<div style="display: flex; gap: 16px; height: 320px;">
+    <cre8-card ${spread(args)}>
+      ${unsafeHTML(sanitizeInput(args.header, 'cre8-icon-legacy'))}
+      ${unsafeHTML(sanitizeInput(args.body, 'cre8-text-passage', 'cre8-heading'))}
+      ${unsafeHTML(sanitizeInput(args.footer, 'cre8-badge', 'cre8-text-passage'))}
+    </cre8-card>
+    <cre8-card ${spread(args)}>
+      <cre8-text-passage><p>A shorter card, forced to the same height by its flex parent.</p></cre8-text-passage>
+    </cre8-card>
+  </div>`,
+};

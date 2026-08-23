@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://cre8.dev/a2ui/catalogs/cre8-wc/2.3.1",
+  "$id": "https://cre8.dev/a2ui/catalogs/cre8-wc/2.3.2",
   "title": "cre8-wc A2UI Catalog",
   "description": "cre8 Web Components is a library of presentational UI web components to be consumed by # web applications.",
   "x-native-events": [
@@ -54,7 +54,7 @@
   "x-a2ui": {
     "catalogId": "cre8-wc",
     "library": "@tmorrow/cre8-wc",
-    "libraryVersion": "2.3.1",
+    "libraryVersion": "2.3.2",
     "tagPrefix": "cre8",
     "framework": "Lit 3.3.1"
   },
@@ -217,6 +217,12 @@
         },
         {
           "$ref": "#/$defs/components/cre8-card"
+        },
+        {
+          "$ref": "#/$defs/components/cre8-container"
+        },
+        {
+          "$ref": "#/$defs/components/cre8-container-grid"
         },
         {
           "$ref": "#/$defs/components/cre8-divider"
@@ -5191,6 +5197,11 @@
                 "type": "string",
                 "const": "center",
                 "x-kind": "attribute"
+              },
+              "fullHeight": {
+                "description": "Full height\n1) Stretches the card to fill its parent's height and width. Off by\n  default - only turn this on when the card is a flex/grid item whose\n  siblings should determine its height, e.g. a row of cards that should\n  line up edge to edge regardless of how much content each one has.",
+                "type": "boolean",
+                "x-kind": "property"
               }
             }
           },
@@ -5239,6 +5250,133 @@
           "header": "(Optional) Content in the card's header",
           "footer": "(Optional) Content in the card's footer"
         }
+      },
+      "cre8-container": {
+        "type": "object",
+        "title": "cre8-container",
+        "x-category": "Layout",
+        "description": "`cre8-container` establishes a CSS containment context so anything slotted\ninside it - a `cre8-container-grid`, a `cre8-card`, plain markup - can be\nstyled with `@container` queries against *this element's own rendered\nsize*, not the viewport. It renders no visible chrome of its own; the only\neffect is making container queries possible for its content.\n\n# How to Use\n1. Wrap `cre8-container` around whatever should respond to the space it is\nactually given rather than the screen size - a sidebar widget, a card\nthat might land in a narrow or a wide column depending on a layout the\ncomponent itself can't see.\n2. Write `@container` rules in your own stylesheet keyed to `name`, if\nset, to target this container specifically when containers are nested\nand the nearest one isn't the one you mean to query.",
+        "required": [
+          "component"
+        ],
+        "properties": {
+          "component": {
+            "const": "cre8-container",
+            "description": "Component tag name"
+          },
+          "props": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "type": {
+                "description": "Containment type\n- **inline-size** (default) contains layout, style, and inline size -\n  the right choice for width-based `@container` queries on a\n  block-level container\n- **size** contains both the inline and block size, so `@container`\n  rules can also query height - only use this when the container's own\n  height does not depend on its content\n- **normal** names the container without adding size containment, for\n  `@container style(...)` queries",
+                "type": "string",
+                "enum": [
+                  "inline-size",
+                  "size",
+                  "normal"
+                ],
+                "x-kind": "attribute"
+              },
+              "name": {
+                "description": "Container name\n1) Lets `@container <name> (...)` target this container specifically\n  when containers are nested and the nearest one isn't the one being\n  queried.",
+                "type": "string",
+                "x-kind": "attribute"
+              }
+            }
+          },
+          "children": {
+            "type": "array",
+            "description": "The content to establish a containment context for",
+            "items": {
+              "$ref": "#/$defs/Child"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "cre8-container-grid": {
+        "type": "object",
+        "title": "cre8-container-grid",
+        "x-category": "Layout",
+        "description": "`cre8-container-grid` is `cre8-grid`'s layout vocabulary - stacked to\nN-across patterns - keyed to this element's own rendered width via\n`@container` instead of the viewport via `@media`. It establishes its own\ncontainment context, so use it wherever the number of columns should\ndepend on the space actually available: a grid placed in a narrow sidebar\non a wide viewport still stacks, and a grid placed in a wide main column\non a narrow viewport still goes multi-up.",
+        "required": [
+          "component"
+        ],
+        "properties": {
+          "component": {
+            "const": "cre8-container-grid",
+            "description": "Component tag name"
+          },
+          "props": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "variant": {
+                "description": "Style variant\n- **side-by-side** yields a grid whose grid items display side-by-side (2 per row) regardless of width\n- **2up** yields a grid whose grid items are stacked when this element is narrow\n  but display side-by-side once it has enough of its own width to do so\n- **3up** yields a grid whose grid items are stacked when narrow,\n  transforms to a 2-across pattern and then transforms again to a 3-across pattern\n- **1-3up** yields a grid whose grid items are stacked when narrow\n  and transforms to a 3-across pattern once wide enough\n- **4up** yields a grid whose grid items are stacked when narrow,\n  transforms to a 2-across pattern, transforms again to a 3-across pattern,\n  and ultimately transforms to a 4-across pattern\n- **1-2-4up** yields a grid whose grid items are stacked when narrow,\n  transforms to a 2-across pattern, and ultimately transforms to a 4-across pattern\n- **1-4up** yields a grid whose grid items are stacked when narrow,\n  transforms to a 4-across pattern once wide enough",
+                "type": "string",
+                "enum": [
+                  "side-by-side",
+                  "2up",
+                  "3up",
+                  "1-3up",
+                  "4up",
+                  "1-4up",
+                  "1-2-4up",
+                  "2-4-6up"
+                ],
+                "x-kind": "attribute"
+              },
+              "gap": {
+                "description": "Style variant\n- **none** yields a grid whose grid items are spaced without any gutter in between\n- **sm** yields a grid whose grid items are spaced with a gap smaller than the default\n- **lg** yields a grid whose grid items are spaced with a gap larger than the default",
+                "type": "string",
+                "enum": [
+                  "sm",
+                  "lg",
+                  "none"
+                ],
+                "x-kind": "attribute"
+              },
+              "break": {
+                "description": "Break variant\n- **faster** breaks the grid at a smaller container width than the default.\n  Example: 2up grid breaks to 2 per row at a smaller width than default\n- **slower** breaks the grid at a larger container width than the default.\n  Example: 2up grid breaks to 2 per row at a larger width than default",
+                "type": "string",
+                "enum": [
+                  "faster",
+                  "slower"
+                ],
+                "x-kind": "attribute"
+              }
+            }
+          },
+          "children": {
+            "type": "array",
+            "description": "The grid items",
+            "items": {
+              "$ref": "#/$defs/Child"
+            }
+          },
+          "events": {
+            "type": "object",
+            "description": "Event bindings. Each key is an event name; the value names the handler to emit.",
+            "propertyNames": {
+              "$ref": "#/$defs/NativeEventName"
+            },
+            "additionalProperties": {
+              "$ref": "#/$defs/EventBinding"
+            }
+          }
+        },
+        "additionalProperties": false
       },
       "cre8-divider": {
         "type": "object",
@@ -5380,7 +5518,13 @@
           "props": {
             "type": "object",
             "additionalProperties": false,
-            "properties": {}
+            "properties": {
+              "fullHeight": {
+                "description": "Full height\n1) Stretches the item to fill the height of its row. Off by default -\n  only turn this on when the items in a row should line up edge to\n  edge regardless of how much content each one has.",
+                "type": "boolean",
+                "x-kind": "property"
+              }
+            }
           },
           "children": {
             "type": "array",
@@ -5588,6 +5732,11 @@
                 "default": "1rem",
                 "type": "string",
                 "x-kind": "attribute"
+              },
+              "fullHeight": {
+                "description": "Full height\n1) Stretches the section to fill the height of its row in `cre8-layout`'s\n  grid. Off by default - only turn this on when the sections in a row\n  should line up edge to edge regardless of how much content each one\n  has.",
+                "type": "boolean",
+                "x-kind": "property"
               }
             }
           },

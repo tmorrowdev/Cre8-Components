@@ -37,6 +37,18 @@ describe('card', () => {
         expect(card.classList.contains('cre8-c-card--align-center')).toBeTruthy();
     });
 
+    test('does not fill its parent height by default', async () => {
+        const el = await fixture<Cre8Card>(html`<cre8-card></cre8-card>`);
+        const card = el.shadowRoot!.querySelector('.cre8-c-card');
+        expect(card.classList.contains('cre8-c-card--full-height')).toBeFalsy();
+    });
+
+    test('has the full-height class when fullHeight is set', async () => {
+        const el = await fixture<Cre8Card>(html`<cre8-card fullHeight></cre8-card>`);
+        const card = el.shadowRoot!.querySelector('.cre8-c-card');
+        expect(card.classList.contains('cre8-c-card--full-height')).toBeTruthy();
+    });
+
     describe('accessibility -  Card', () => {
         test('tests accessibility for a simple composed card', async () => {
             const el = await fixture<Cre8Card>(html`<cre8-card>

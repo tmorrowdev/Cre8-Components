@@ -2,3 +2,4 @@ jobs/
 .arm-inputs/
 tasks/*/environment/ca/*.crt
 gallery.html
+compare.html

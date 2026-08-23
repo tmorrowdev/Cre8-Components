@@ -1,0 +1,2490 @@
+{
+  "contractVersion": 1,
+  "sourceCatalog": "https://cre8.dev/a2ui/catalogs/cre8-wc/2.3.1",
+  "libraryVersion": "2.3.1",
+  "componentCount": 86,
+  "components": [
+    {
+      "name": "cre8-accordion",
+      "category": "Disclosure",
+      "props": {
+        "items": {
+          "type": "array"
+        },
+        "borderType": {
+          "enum": [
+            "rectangle",
+            "rounded-bottom",
+            "rounded",
+            "none"
+          ]
+        },
+        "hasDivider": {
+          "type": "boolean"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-accordion-item",
+      "category": "Disclosure",
+      "props": {
+        "size": {
+          "enum": [
+            "sm",
+            "lg"
+          ]
+        },
+        "heading": {
+          "type": "string"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "iconBefore": {
+          "type": "boolean"
+        },
+        "tertiaryIcon": {
+          "type": "boolean"
+        },
+        "headingTagVariant": {
+          "enum": [
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5",
+            "h6"
+          ]
+        },
+        "brandHeader": {
+          "type": "boolean"
+        },
+        "accordionItemId": {
+          "type": "string"
+        }
+      },
+      "slots": [
+        "default",
+        "heading"
+      ]
+    },
+    {
+      "name": "cre8-alert",
+      "category": "Feedback",
+      "props": {
+        "status": {
+          "enum": [
+            "error",
+            "info",
+            "notification",
+            "neutral",
+            "warning",
+            "success"
+          ]
+        },
+        "variant": {
+          "enum": [
+            "standalone",
+            "banner"
+          ]
+        },
+        "emphasis": {
+          "enum": [
+            "subtle",
+            "strong"
+          ]
+        },
+        "dismissed": {
+          "type": "boolean"
+        },
+        "iconAlert": {
+          "type": "string"
+        },
+        "iconTitle": {
+          "type": "string"
+        },
+        "headerText": {
+          "type": "string"
+        },
+        "ctaBody": {
+          "type": "string"
+        },
+        "notDismissible": {
+          "type": "boolean"
+        }
+      },
+      "slots": [
+        "default",
+        "cta"
+      ]
+    },
+    {
+      "name": "cre8-badge",
+      "category": "Feedback",
+      "props": {
+        "text": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "error",
+            "info",
+            "warning",
+            "success",
+            "attention"
+          ]
+        },
+        "variant": {
+          "enum": [
+            "light",
+            "white"
+          ]
+        },
+        "svg": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "cre8-band",
+      "category": "Layout",
+      "props": {
+        "variant": {
+          "type": "string"
+        },
+        "fullHeight": {
+          "type": "boolean"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-breadcrumbs",
+      "category": "Navigation",
+      "props": {
+        "items": {
+          "type": "array"
+        },
+        "navAriaLabel": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-breadcrumbs-item",
+      "category": "Navigation",
+      "props": {},
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-button",
+      "category": "Actions",
+      "props": {
+        "text": {
+          "type": "string"
+        },
+        "variant": {
+          "enum": [
+            "primary",
+            "secondary",
+            "tertiary"
+          ]
+        },
+        "neutral": {
+          "type": "boolean"
+        },
+        "inverse": {
+          "type": "boolean"
+        },
+        "href": {
+          "type": "string"
+        },
+        "target": {
+          "enum": [
+            "_blank",
+            "_self",
+            "_parent",
+            "_top"
+          ]
+        },
+        "rel": {
+          "type": "string"
+        },
+        "svg": {
+          "type": "string"
+        },
+        "size": {
+          "enum": [
+            "sm",
+            "lg",
+            "md"
+          ]
+        },
+        "loading": {
+          "type": "boolean"
+        },
+        "type": {
+          "enum": [
+            "button",
+            "submit",
+            "reset"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "value": {
+          "type": "string"
+        },
+        "iconName": {
+          "type": "string"
+        },
+        "iconRotateDegree": {
+          "type": "number"
+        },
+        "iconFlipDirection": {
+          "type": "string"
+        },
+        "iconPosition": {
+          "enum": [
+            "before",
+            "after"
+          ]
+        },
+        "hideText": {
+          "type": "boolean"
+        },
+        "fullWidth": {
+          "type": "boolean"
+        },
+        "loadingComplete": {
+          "type": "boolean"
+        },
+        "ariaLive": {
+          "enum": [
+            "polite",
+            "assertive"
+          ]
+        },
+        "splitButtonType": {
+          "enum": [
+            "text",
+            "caret"
+          ]
+        },
+        "buttonAriaExpanded": {
+          "type": "boolean"
+        },
+        "isError": {
+          "type": "boolean"
+        },
+        "isSuccess": {
+          "type": "boolean"
+        }
+      },
+      "slots": [
+        "before",
+        "after"
+      ]
+    },
+    {
+      "name": "cre8-button-group",
+      "category": "Actions",
+      "props": {
+        "orientation": {
+          "type": "string"
+        },
+        "gap": {
+          "type": "string"
+        },
+        "fullWidth": {
+          "type": "boolean"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-card",
+      "category": "Layout",
+      "props": {
+        "variant": {
+          "enum": [
+            "bare",
+            "compact",
+            "horizontal",
+            "horizontal-bare"
+          ]
+        },
+        "align": {
+          "type": "string"
+        }
+      },
+      "slots": [
+        "default",
+        "header",
+        "footer"
+      ]
+    },
+    {
+      "name": "cre8-chart",
+      "category": "Data",
+      "props": {
+        "type": {
+          "enum": [
+            "line",
+            "bar",
+            "pie",
+            "doughnut",
+            "radar",
+            "polarArea",
+            "bubble",
+            "scatter"
+          ]
+        },
+        "width": {
+          "type": "number"
+        },
+        "height": {
+          "type": "number"
+        },
+        "maintain-aspect-ratio": {
+          "type": "boolean"
+        },
+        "responsive": {
+          "type": "boolean"
+        },
+        "loading": {
+          "type": "boolean"
+        },
+        "aria-label": {
+          "type": "string"
+        },
+        "show-legend": {
+          "type": "boolean"
+        },
+        "legend-position": {
+          "enum": [
+            "top",
+            "bottom",
+            "left",
+            "right"
+          ]
+        },
+        "enable-animation": {
+          "type": "boolean"
+        },
+        "animation-duration": {
+          "type": "number"
+        },
+        "data": {
+          "type": "object"
+        },
+        "options": {
+          "type": "object"
+        },
+        "colors": {
+          "type": "array"
+        }
+      },
+      "events": [
+        "chart-click",
+        "chart-hover",
+        "chart-ready"
+      ]
+    },
+    {
+      "name": "cre8-checkbox-field",
+      "category": "Forms",
+      "props": {
+        "label": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
+        "fieldNote": {
+          "type": "string"
+        },
+        "ariaDescribedBy": {
+          "type": "string"
+        },
+        "fieldNoteIconName": {
+          "type": "string"
+        },
+        "fieldNoteKnockout": {
+          "type": "boolean"
+        },
+        "fieldNoteIsSuccess": {
+          "type": "boolean"
+        },
+        "fieldNoteIsError": {
+          "type": "boolean"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-checkbox-field-item",
+      "category": "Forms",
+      "props": {
+        "label": {
+          "type": "string"
+        },
+        "checked": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "value": {
+          "type": "string"
+        },
+        "errorText": {
+          "type": "string"
+        },
+        "errorNote": {
+          "type": "string"
+        },
+        "successText": {
+          "type": "string"
+        },
+        "successNote": {
+          "type": "string"
+        },
+        "fieldId": {
+          "type": "string"
+        },
+        "fieldNote": {
+          "type": "string"
+        },
+        "ariaDescribedBy": {
+          "type": "string"
+        },
+        "validationAriaDescribedBy": {
+          "type": "string"
+        },
+        "fieldNoteIconName": {
+          "type": "string"
+        },
+        "isError": {
+          "type": "boolean"
+        },
+        "isSuccess": {
+          "type": "boolean"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "slots": [
+        "fieldNote"
+      ],
+      "events": [
+        "change"
+      ]
+    },
+    {
+      "name": "cre8-danger-button",
+      "category": "Actions",
+      "props": {
+        "text": {
+          "type": "string"
+        },
+        "variant": {
+          "enum": [
+            "primary",
+            "secondary",
+            "tertiary"
+          ]
+        },
+        "href": {
+          "type": "string"
+        },
+        "target": {
+          "enum": [
+            "_blank",
+            "_self",
+            "_parent",
+            "_top"
+          ]
+        },
+        "rel": {
+          "type": "string"
+        },
+        "svg": {
+          "type": "string"
+        },
+        "size": {
+          "enum": [
+            "sm",
+            "lg"
+          ]
+        },
+        "loading": {
+          "type": "boolean"
+        },
+        "inverted": {
+          "type": "boolean"
+        },
+        "type": {
+          "enum": [
+            "button",
+            "submit",
+            "reset"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "value": {
+          "type": "string"
+        },
+        "iconRotateDegree": {
+          "type": "number"
+        },
+        "iconFlipDirection": {
+          "type": "string"
+        },
+        "iconPosition": {
+          "enum": [
+            "before",
+            "after"
+          ]
+        },
+        "hideText": {
+          "type": "boolean"
+        },
+        "fullWidth": {
+          "type": "boolean"
+        },
+        "loadingComplete": {
+          "type": "boolean"
+        },
+        "ariaLive": {
+          "enum": [
+            "polite",
+            "assertive"
+          ]
+        },
+        "buttonAriaExpanded": {
+          "type": "boolean"
+        },
+        "isError": {
+          "type": "boolean"
+        },
+        "isSuccess": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "cre8-date-picker",
+      "category": "Forms",
+      "props": {
+        "autocomplete": {
+          "type": "string"
+        },
+        "pattern": {
+          "type": "string"
+        },
+        "placeholder": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "max": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "min": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "maxlength": {
+          "type": "string"
+        },
+        "readonly": {
+          "type": "boolean"
+        },
+        "type": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "value": {
+          "type": "string"
+        },
+        "hasShortcuts": {
+          "type": "boolean"
+        },
+        "fieldId": {
+          "type": "string"
+        },
+        "fieldNote": {
+          "type": "string"
+        },
+        "ariaLive": {
+          "enum": [
+            "polite",
+            "assertive"
+          ]
+        },
+        "ariaDescribedBy": {
+          "type": "string"
+        },
+        "errorText": {
+          "type": "string"
+        },
+        "errorNote": {
+          "type": "string"
+        },
+        "validationAriaDescribedBy": {
+          "type": "string"
+        },
+        "successText": {
+          "type": "string"
+        },
+        "successNote": {
+          "type": "string"
+        },
+        "isError": {
+          "type": "boolean"
+        },
+        "isSuccess": {
+          "type": "boolean"
+        },
+        "showCalendar": {
+          "type": "boolean"
+        }
+      },
+      "slots": [
+        "fieldNote"
+      ]
+    },
+    {
+      "name": "cre8-divider",
+      "category": "Layout",
+      "props": {
+        "variant": {
+          "enum": [
+            "horizontal",
+            "vertical"
+          ]
+        },
+        "status": {
+          "enum": [
+            "brand",
+            "knockout"
+          ]
+        }
+      }
+    },
+    {
+      "name": "cre8-dropdown",
+      "category": "Disclosure",
+      "props": {
+        "items": {
+          "type": "array"
+        },
+        "buttonText": {
+          "type": "string"
+        },
+        "maxHeight": {
+          "type": "string"
+        },
+        "dropdownWithLink": {
+          "type": "boolean"
+        },
+        "open": {
+          "type": "boolean"
+        },
+        "dropdownContent": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-dropdown-item",
+      "category": "Disclosure",
+      "props": {
+        "ariaLabel": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true,
+      "events": [
+        "dropdown-item-select"
+      ]
+    },
+    {
+      "name": "cre8-feature",
+      "category": "Marketing",
+      "props": {
+        "inverted": {
+          "type": "boolean"
+        },
+        "imgSrc": {
+          "type": "string"
+        },
+        "imgAlt": {
+          "type": "string"
+        },
+        "aspectRatio": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-field",
+      "category": "Forms",
+      "props": {
+        "autocomplete": {
+          "type": "string"
+        },
+        "pattern": {
+          "type": "string"
+        },
+        "placeholder": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "max": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "min": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "maxlength": {
+          "type": "string"
+        },
+        "readonly": {
+          "type": "boolean"
+        },
+        "type": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "value": {
+          "type": "string"
+        },
+        "fieldId": {
+          "type": "string"
+        },
+        "fieldNote": {
+          "type": "string"
+        },
+        "ariaLive": {
+          "enum": [
+            "polite",
+            "assertive"
+          ]
+        },
+        "ariaDescribedBy": {
+          "type": "string"
+        },
+        "errorText": {
+          "type": "string"
+        },
+        "errorNote": {
+          "type": "string"
+        },
+        "validationAriaDescribedBy": {
+          "type": "string"
+        },
+        "successText": {
+          "type": "string"
+        },
+        "successNote": {
+          "type": "string"
+        },
+        "isError": {
+          "type": "boolean"
+        },
+        "isSuccess": {
+          "type": "boolean"
+        }
+      },
+      "slots": [
+        "fieldNote"
+      ]
+    },
+    {
+      "name": "cre8-field-note",
+      "category": "Forms",
+      "props": {
+        "isError": {
+          "type": "boolean"
+        },
+        "isSuccess": {
+          "type": "boolean"
+        },
+        "iconName": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-footer",
+      "category": "Navigation",
+      "props": {},
+      "slots": [
+        "default",
+        "top",
+        "bottom"
+      ]
+    },
+    {
+      "name": "cre8-form",
+      "category": "Forms",
+      "props": {
+        "novalidate": {
+          "type": "boolean"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "controls": {
+          "type": "string"
+        },
+        "values": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true,
+      "events": [
+        "form-submit",
+        "form-reset",
+        "form-invalid"
+      ]
+    },
+    {
+      "name": "cre8-global-nav",
+      "category": "Navigation",
+      "props": {
+        "inverted": {
+          "type": "boolean"
+        },
+        "behavior": {
+          "type": "string"
+        },
+        "navAriaLabel": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-global-nav-item",
+      "category": "Navigation",
+      "props": {
+        "text": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "iconName": {
+          "type": "string"
+        },
+        "megaMenu": {
+          "type": "boolean"
+        },
+        "isActive": {
+          "type": "boolean"
+        }
+      },
+      "slots": [
+        "default",
+        "itemBefore",
+        "itemAfter"
+      ]
+    },
+    {
+      "name": "cre8-grid",
+      "category": "Layout",
+      "props": {
+        "variant": {
+          "enum": [
+            "side-by-side",
+            "2up",
+            "3up",
+            "1-3up",
+            "4up",
+            "1-4up",
+            "1-2-4up",
+            "2-4-6up"
+          ]
+        },
+        "gap": {
+          "enum": [
+            "sm",
+            "lg",
+            "none"
+          ]
+        },
+        "break": {
+          "enum": [
+            "faster",
+            "slower"
+          ]
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-grid-item",
+      "category": "Layout",
+      "props": {},
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-header",
+      "category": "Navigation",
+      "props": {
+        "isActive": {
+          "type": "boolean"
+        }
+      },
+      "slots": [
+        "default",
+        "top",
+        "bottom"
+      ]
+    },
+    {
+      "name": "cre8-heading",
+      "category": "Typography",
+      "props": {
+        "type": {
+          "enum": [
+            "display-default",
+            "display-small",
+            "headline-large",
+            "headline-default",
+            "headline-small",
+            "title-xlarge",
+            "title-large",
+            "title-default",
+            "title-small",
+            "label-large",
+            "label-default",
+            "label-small",
+            "meta-large",
+            "meta-default",
+            "meta-small"
+          ]
+        },
+        "inverted": {
+          "type": "boolean"
+        },
+        "tagVariant": {
+          "enum": [
+            "h1",
+            "h2",
+            "h3",
+            "h4",
+            "h5",
+            "h6"
+          ]
+        },
+        "brandColor": {
+          "type": "boolean"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-hero",
+      "category": "Layout",
+      "props": {
+        "align": {
+          "enum": [
+            "center",
+            "left",
+            "right",
+            "top-left",
+            "top-center",
+            "bottom-center",
+            "top-right",
+            "bottom-right"
+          ]
+        },
+        "imgSrc": {
+          "type": "string"
+        },
+        "imgAlt": {
+          "type": "string"
+        },
+        "hasOverlay": {
+          "type": "boolean"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-icon",
+      "category": "Media",
+      "props": {
+        "focusable": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "svg": {
+          "type": "string"
+        },
+        "iconUrl": {
+          "type": "string"
+        },
+        "iconTitle": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "cre8-inline-alert",
+      "category": "Feedback",
+      "props": {
+        "variant": {
+          "enum": [
+            "subtle",
+            "transparent"
+          ]
+        },
+        "status": {
+          "enum": [
+            "error",
+            "info",
+            "neutral",
+            "warning",
+            "success",
+            "attention",
+            "help"
+          ]
+        },
+        "iconName": {
+          "type": "string"
+        },
+        "fullWidth": {
+          "type": "boolean"
+        },
+        "iconTitle": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-layout",
+      "category": "Layout",
+      "props": {
+        "variant": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-layout-container",
+      "category": "Layout",
+      "props": {
+        "fullHeight": {
+          "type": "boolean"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-layout-section",
+      "category": "Layout",
+      "props": {
+        "behavior": {
+          "type": "string"
+        },
+        "top": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-linelength-container",
+      "category": "Layout",
+      "props": {},
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-link",
+      "category": "Navigation",
+      "props": {
+        "href": {
+          "type": "string"
+        },
+        "rel": {
+          "type": "string"
+        },
+        "target": {
+          "enum": [
+            "_blank",
+            "_self",
+            "_parent",
+            "_top"
+          ]
+        },
+        "svg": {
+          "type": "string"
+        },
+        "size": {
+          "enum": [
+            "sm",
+            "lg"
+          ]
+        },
+        "inverted": {
+          "type": "boolean"
+        },
+        "iconName": {
+          "type": "string"
+        },
+        "iconRotateDegree": {
+          "type": "number"
+        },
+        "iconFlipDirection": {
+          "type": "string"
+        },
+        "iconPosition": {
+          "enum": [
+            "before",
+            "after"
+          ]
+        },
+        "ctaIcon": {
+          "type": "string"
+        },
+        "ctaLink": {
+          "type": "boolean"
+        },
+        "noUnderline": {
+          "type": "boolean"
+        }
+      },
+      "slots": [
+        "default",
+        "badge"
+      ]
+    },
+    {
+      "name": "cre8-link-list",
+      "category": "Navigation",
+      "props": {
+        "behavior": {
+          "enum": [
+            "horizontal",
+            "responsive"
+          ]
+        },
+        "inverted": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "string"
+        },
+        "spacing": {
+          "type": "string"
+        },
+        "variant": {
+          "enum": [
+            "secondary",
+            "display"
+          ]
+        },
+        "items": {
+          "type": "array"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-link-list-item",
+      "category": "Navigation",
+      "props": {
+        "text": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "isActive": {
+          "type": "boolean"
+        }
+      },
+      "slots": [
+        "default",
+        "itemBefore",
+        "itemAfter"
+      ]
+    },
+    {
+      "name": "cre8-list",
+      "category": "Data",
+      "props": {
+        "variant": {
+          "type": "string"
+        },
+        "spacing": {
+          "enum": [
+            "condensed",
+            "padded"
+          ]
+        },
+        "items": {
+          "type": "array"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-list-item",
+      "category": "Data",
+      "props": {},
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-loading-spinner",
+      "category": "Feedback",
+      "props": {
+        "determinate": {
+          "type": "boolean"
+        },
+        "inverse": {
+          "type": "boolean"
+        },
+        "neutral": {
+          "type": "boolean"
+        },
+        "label": {
+          "type": "string"
+        },
+        "progress": {
+          "type": "number"
+        },
+        "size": {
+          "enum": [
+            "large",
+            "small"
+          ]
+        },
+        "buttonVariant": {
+          "enum": [
+            "primary",
+            "secondary",
+            "tertiary"
+          ]
+        }
+      }
+    },
+    {
+      "name": "cre8-logo",
+      "category": "Media",
+      "props": {
+        "href": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-main",
+      "category": "Layout",
+      "props": {
+        "fullHeight": {
+          "type": "boolean"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-modal",
+      "category": "Disclosure",
+      "props": {
+        "status": {
+          "enum": [
+            "error",
+            "info",
+            "warning",
+            "success",
+            "help"
+          ]
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "utilityModalTitle": {
+          "type": "string"
+        },
+        "notDismissible": {
+          "type": "boolean"
+        },
+        "closeButtonText": {
+          "type": "string"
+        },
+        "closeButtonIcon": {
+          "type": "string"
+        },
+        "ariaLabel": {
+          "type": "string"
+        },
+        "mapStatusToIconModal": {
+          "type": "string"
+        }
+      },
+      "slots": [
+        "default",
+        "header",
+        "footer"
+      ],
+      "events": [
+        "modal-close"
+      ]
+    },
+    {
+      "name": "cre8-multi-select",
+      "category": "Forms",
+      "props": {
+        "items": {
+          "type": "array"
+        },
+        "label": {
+          "type": "string"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "preselectedItems": {
+          "type": "array"
+        },
+        "fieldId": {
+          "type": "string"
+        },
+        "fieldNote": {
+          "type": "string"
+        },
+        "ariaDescribedBy": {
+          "type": "string"
+        },
+        "validationAriaDescribedBy": {
+          "type": "string"
+        },
+        "isError": {
+          "type": "boolean"
+        },
+        "errorNote": {
+          "type": "string"
+        },
+        "isSuccess": {
+          "type": "boolean"
+        },
+        "successNote": {
+          "type": "string"
+        },
+        "selectedTagItems": {
+          "type": "array"
+        },
+        "dropdownOpen": {
+          "type": "boolean"
+        }
+      },
+      "slots": [
+        "fieldNote"
+      ],
+      "events": [
+        "multi-select-change"
+      ]
+    },
+    {
+      "name": "cre8-nav-container",
+      "category": "Navigation",
+      "props": {},
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-page-header",
+      "category": "Marketing",
+      "props": {
+        "heading": {
+          "type": "string"
+        }
+      },
+      "slots": [
+        "default",
+        "titleAfter"
+      ]
+    },
+    {
+      "name": "cre8-pagination",
+      "category": "Navigation",
+      "props": {
+        "display": {
+          "enum": [
+            "compact",
+            "icon-only",
+            "default"
+          ]
+        },
+        "totalResults": {
+          "type": "number"
+        },
+        "pageSize": {
+          "type": "number"
+        },
+        "visiblePages": {
+          "type": "number"
+        },
+        "hideLastAndFirstButtons": {
+          "type": "boolean"
+        },
+        "currentPage": {
+          "type": "number"
+        },
+        "elementDefinitions": {
+          "type": "string"
+        },
+        "windowWidth": {
+          "type": "number"
+        },
+        "buttons": {
+          "type": "string"
+        },
+        "maxVisiblePages": {
+          "type": "number"
+        }
+      },
+      "acceptsChildren": true,
+      "events": [
+        "pagination-change"
+      ]
+    },
+    {
+      "name": "cre8-percent-bar",
+      "category": "Feedback",
+      "props": {
+        "value": {
+          "type": "number"
+        },
+        "max": {
+          "type": "number"
+        },
+        "disableActionLeft": {
+          "type": "boolean"
+        }
+      },
+      "events": [
+        "percent-bar-left-action-click"
+      ]
+    },
+    {
+      "name": "cre8-popover",
+      "category": "Disclosure",
+      "props": {
+        "heading": {
+          "type": "string"
+        },
+        "position": {
+          "enum": [
+            "top",
+            "left",
+            "right"
+          ]
+        },
+        "isVisibleOnScroll": {
+          "type": "boolean"
+        },
+        "isDynamic": {
+          "type": "boolean"
+        },
+        "isActiveDynamic": {
+          "type": "boolean"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "isRTL": {
+          "type": "boolean"
+        },
+        "handleOnClickOutside": {
+          "type": "string"
+        },
+        "removeActiveOnScroll": {
+          "type": "string"
+        },
+        "removeActive": {
+          "type": "string"
+        }
+      },
+      "slots": [
+        "default",
+        "trigger",
+        "header",
+        "footer"
+      ],
+      "events": [
+        "popover-open",
+        "popover-close"
+      ]
+    },
+    {
+      "name": "cre8-primary-nav",
+      "category": "Navigation",
+      "props": {
+        "inverted": {
+          "type": "boolean"
+        },
+        "behavior": {
+          "type": "string"
+        },
+        "navAriaLabel": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-primary-nav-item",
+      "category": "Navigation",
+      "props": {
+        "text": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "iconName": {
+          "type": "string"
+        },
+        "megaMenu": {
+          "type": "boolean"
+        },
+        "isActive": {
+          "type": "boolean"
+        }
+      },
+      "slots": [
+        "default",
+        "itemBefore",
+        "itemAfter"
+      ]
+    },
+    {
+      "name": "cre8-progress-meter",
+      "category": "Feedback",
+      "props": {
+        "status": {
+          "enum": [
+            "error",
+            "warning",
+            "success"
+          ]
+        },
+        "knockout": {
+          "type": "boolean"
+        },
+        "max": {
+          "type": "number"
+        },
+        "value": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "fieldId": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "cre8-progress-steps",
+      "category": "Feedback",
+      "props": {
+        "steps": {
+          "type": "array"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-progress-steps-item",
+      "category": "Feedback",
+      "props": {
+        "state": {
+          "enum": [
+            "error",
+            "warning",
+            "complete",
+            "current",
+            "incomplete"
+          ]
+        },
+        "message": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "svg": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-radio-field",
+      "category": "Forms",
+      "props": {
+        "label": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
+        "fieldNote": {
+          "type": "string"
+        },
+        "ariaDescribedBy": {
+          "type": "string"
+        },
+        "fieldNoteIconName": {
+          "type": "string"
+        },
+        "fieldNoteKnockout": {
+          "type": "boolean"
+        },
+        "isSuccess": {
+          "type": "boolean"
+        },
+        "isError": {
+          "type": "boolean"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-radio-field-item",
+      "category": "Forms",
+      "props": {
+        "checked": {
+          "type": "boolean"
+        },
+        "label": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "value": {
+          "type": "string"
+        },
+        "ariaDescribedBy": {
+          "type": "string"
+        },
+        "fieldId": {
+          "type": "string"
+        },
+        "fieldNote": {
+          "type": "string"
+        },
+        "fieldNoteIconName": {
+          "type": "string"
+        },
+        "fieldNoteKnockout": {
+          "type": "boolean"
+        },
+        "fieldNoteIsError": {
+          "type": "boolean"
+        },
+        "isError": {
+          "type": "boolean"
+        },
+        "isSuccess": {
+          "type": "boolean"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "cre8-remove-tag",
+      "category": "Data",
+      "props": {
+        "text": {
+          "type": "string"
+        },
+        "color": {
+          "enum": [
+            "neutral",
+            "branded",
+            "neutral-hybrid"
+          ]
+        },
+        "shape": {
+          "enum": [
+            "round",
+            "square"
+          ]
+        },
+        "disabled": {
+          "type": "boolean"
+        }
+      },
+      "events": [
+        "remove-tag-click"
+      ]
+    },
+    {
+      "name": "cre8-section",
+      "category": "Layout",
+      "props": {
+        "headline": {
+          "type": "string"
+        }
+      },
+      "slots": [
+        "default",
+        "header"
+      ]
+    },
+    {
+      "name": "cre8-select",
+      "category": "Forms",
+      "props": {
+        "items": {
+          "type": "array"
+        },
+        "label": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "value": {
+          "type": "string"
+        },
+        "fieldId": {
+          "type": "string"
+        },
+        "fieldNote": {
+          "type": "string"
+        },
+        "ariaDescribedBy": {
+          "type": "string"
+        },
+        "validationAriaDescribedBy": {
+          "type": "string"
+        },
+        "errorNote": {
+          "type": "string"
+        },
+        "successNote": {
+          "type": "string"
+        },
+        "isError": {
+          "type": "boolean"
+        },
+        "isSuccess": {
+          "type": "boolean"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "slots": [
+        "fieldNote"
+      ],
+      "events": [
+        "change"
+      ]
+    },
+    {
+      "name": "cre8-select-tile",
+      "category": "Forms",
+      "props": {
+        "variant": {
+          "enum": [
+            "bare",
+            "horizontal",
+            "horizontal-bare"
+          ]
+        },
+        "align": {
+          "type": "string"
+        },
+        "checked": {
+          "type": "boolean"
+        },
+        "type": {
+          "enum": [
+            "checkbox",
+            "radio"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "value": {
+          "type": "string"
+        },
+        "variantBreakToVertical": {
+          "enum": [
+            "sm",
+            "lg",
+            "none",
+            "md",
+            "sm-2",
+            "xl",
+            "xxl"
+          ]
+        },
+        "checkPosition": {
+          "enum": [
+            "none",
+            "left",
+            "right",
+            "top-right"
+          ]
+        },
+        "radioVariant": {
+          "enum": [
+            "dot",
+            "check"
+          ]
+        },
+        "fieldId": {
+          "type": "string"
+        },
+        "isError": {
+          "type": "boolean"
+        },
+        "isSuccess": {
+          "type": "boolean"
+        },
+        "shadowRootOptions": {
+          "type": "string"
+        },
+        "defaultChecked": {
+          "type": "boolean"
+        }
+      },
+      "slots": [
+        "default",
+        "header",
+        "footer",
+        "title",
+        "body"
+      ],
+      "events": [
+        "change",
+        "input"
+      ]
+    },
+    {
+      "name": "cre8-select-tile-list",
+      "category": "Forms",
+      "props": {
+        "variant": {
+          "enum": [
+            "columns",
+            "rows"
+          ]
+        },
+        "label": {
+          "type": "string"
+        },
+        "fieldNote": {
+          "type": "string"
+        },
+        "ariaDescribedBy": {
+          "type": "string"
+        },
+        "fieldNoteIconName": {
+          "type": "string"
+        },
+        "fieldNoteKnockout": {
+          "type": "boolean"
+        },
+        "fieldNoteIsSuccess": {
+          "type": "boolean"
+        },
+        "fieldNoteIsError": {
+          "type": "boolean"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-skeleton-loader",
+      "category": "Feedback",
+      "props": {
+        "variant": {
+          "enum": [
+            "rectangle",
+            "square",
+            "circle"
+          ]
+        },
+        "height": {
+          "type": "string"
+        },
+        "width": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "cre8-split-button",
+      "category": "Actions",
+      "props": {
+        "disabled": {
+          "type": "boolean"
+        },
+        "size": {
+          "enum": [
+            "sm",
+            "lg"
+          ]
+        },
+        "buttonText": {
+          "type": "string"
+        },
+        "dropdownOpen": {
+          "type": "boolean"
+        }
+      },
+      "acceptsChildren": true,
+      "events": [
+        "split-button-text-click",
+        "split-button-dropdown-click"
+      ]
+    },
+    {
+      "name": "cre8-submenu",
+      "category": "Disclosure",
+      "props": {},
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-submenu-item",
+      "category": "Disclosure",
+      "props": {
+        "href": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-tab",
+      "category": "Navigation",
+      "props": {
+        "size": {
+          "type": "string"
+        },
+        "index": {
+          "type": "number"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "ariaLabelledBy": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true,
+      "events": [
+        "tab-select"
+      ]
+    },
+    {
+      "name": "cre8-tab-panel",
+      "category": "Navigation",
+      "props": {
+        "index": {
+          "type": "number"
+        },
+        "skipFocusOnPanel": {
+          "type": "boolean"
+        },
+        "isActive": {
+          "type": "boolean"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-table",
+      "category": "Data",
+      "props": {
+        "columns": {
+          "type": "array"
+        },
+        "rows": {
+          "type": "array"
+        },
+        "caption": {
+          "type": "string"
+        },
+        "behavior": {
+          "type": "string"
+        },
+        "variant": {
+          "type": "string"
+        },
+        "isHoverable": {
+          "type": "boolean"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-table-body",
+      "category": "Data",
+      "props": {},
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-table-cell",
+      "category": "Data",
+      "props": {
+        "colspan": {
+          "type": "number"
+        },
+        "variant": {
+          "type": "string"
+        },
+        "dataHeader": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-table-header",
+      "category": "Data",
+      "props": {},
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-table-header-cell",
+      "category": "Data",
+      "props": {
+        "colspan": {
+          "type": "number"
+        },
+        "width": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-table-object",
+      "category": "Data",
+      "props": {},
+      "slots": [
+        "default",
+        "header",
+        "footer"
+      ]
+    },
+    {
+      "name": "cre8-table-row",
+      "category": "Data",
+      "props": {
+        "variant": {
+          "type": "string"
+        },
+        "isExpanded": {
+          "type": "boolean"
+        },
+        "isExpandable": {
+          "type": "boolean"
+        },
+        "expandedButtonText": {
+          "type": "string"
+        },
+        "collapsedButtonText": {
+          "type": "string"
+        }
+      },
+      "slots": [
+        "default",
+        "expandableContent"
+      ]
+    },
+    {
+      "name": "cre8-tabs",
+      "category": "Navigation",
+      "props": {
+        "size": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array"
+        },
+        "fullWidth": {
+          "type": "boolean"
+        },
+        "activeIndex": {
+          "type": "number"
+        },
+        "isStart": {
+          "type": "boolean"
+        },
+        "isEnd": {
+          "type": "boolean"
+        },
+        "activeTab": {
+          "type": "string"
+        },
+        "isRTL": {
+          "type": "boolean"
+        },
+        "handleScroll": {
+          "type": "string"
+        },
+        "handleResize": {
+          "type": "string"
+        },
+        "setIsStart": {
+          "type": "string"
+        },
+        "setIsEnd": {
+          "type": "string"
+        },
+        "emitEvent": {
+          "type": "string"
+        },
+        "tabId": {
+          "type": "string"
+        }
+      },
+      "slots": [
+        "default",
+        "panel"
+      ],
+      "events": [
+        "tab-change"
+      ]
+    },
+    {
+      "name": "cre8-tag",
+      "category": "Data",
+      "props": {
+        "text": {
+          "type": "string"
+        },
+        "variant": {
+          "enum": [
+            "neutral",
+            "branded",
+            "neutral-hybrid"
+          ]
+        },
+        "shape": {
+          "enum": [
+            "square",
+            "round"
+          ]
+        },
+        "type": {
+          "enum": [
+            "checkbox",
+            "radio"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "disabled": {
+          "type": "boolean"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "value": {
+          "type": "string"
+        },
+        "isDisabled": {
+          "type": "boolean"
+        },
+        "isSelected": {
+          "type": "boolean"
+        },
+        "fieldId": {
+          "type": "string"
+        },
+        "isError": {
+          "type": "boolean"
+        },
+        "isSuccess": {
+          "type": "boolean"
+        }
+      },
+      "events": [
+        "change"
+      ]
+    },
+    {
+      "name": "cre8-tag-list",
+      "category": "Data",
+      "props": {
+        "label": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array"
+        },
+        "fieldId": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-tertiary-nav",
+      "category": "Navigation",
+      "props": {
+        "fullWidth": {
+          "type": "boolean"
+        },
+        "navAriaLabel": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-tertiary-nav-item",
+      "category": "Navigation",
+      "props": {
+        "href": {
+          "type": "string"
+        },
+        "isCurrent": {
+          "type": "boolean"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-text-link",
+      "category": "Typography",
+      "props": {
+        "href": {
+          "type": "string"
+        },
+        "variant": {
+          "enum": [
+            "secondary",
+            "display"
+          ]
+        },
+        "size": {
+          "type": "string"
+        },
+        "inverted": {
+          "type": "boolean"
+        }
+      },
+      "slots": [
+        "default",
+        "linkAfter"
+      ]
+    },
+    {
+      "name": "cre8-text-passage",
+      "category": "Typography",
+      "props": {
+        "inverted": {
+          "type": "boolean"
+        },
+        "size": {
+          "enum": [
+            "large",
+            "small",
+            "default"
+          ]
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-tooltip",
+      "category": "Disclosure",
+      "props": {
+        "position": {
+          "enum": [
+            "default",
+            "top",
+            "left",
+            "right"
+          ]
+        },
+        "knockout": {
+          "type": "boolean"
+        },
+        "svg": {
+          "type": "string"
+        },
+        "isDynamic": {
+          "type": "boolean"
+        },
+        "isActiveDynamic": {
+          "type": "boolean"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "ariaDescribes": {
+          "type": "string"
+        },
+        "iconRotateDegree": {
+          "type": "number"
+        },
+        "iconFlipDirection": {
+          "type": "string"
+        },
+        "isRTL": {
+          "type": "boolean"
+        },
+        "removeActive": {
+          "type": "string"
+        }
+      },
+      "slots": [
+        "default",
+        "trigger"
+      ],
+      "events": [
+        "tooltip-open",
+        "tooltip-close"
+      ]
+    },
+    {
+      "name": "cre8-utility-nav",
+      "category": "Navigation",
+      "props": {
+        "inverted": {
+          "type": "boolean"
+        },
+        "navAriaLabel": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-utility-nav-item",
+      "category": "Navigation",
+      "props": {
+        "href": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "hideText": {
+          "type": "boolean"
+        },
+        "iconName": {
+          "type": "string"
+        },
+        "iconPosition": {
+          "enum": [
+            "before",
+            "after"
+          ]
+        }
+      }
+    }
+  ]
+}

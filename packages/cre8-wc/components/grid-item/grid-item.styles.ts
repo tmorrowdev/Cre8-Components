@@ -591,9 +591,13 @@ span.ripple {
  * Visually hidden from display
  */
 /**
- * 1) Item used for the various items within the grid
+ * Full height grid item
+ * 1) Stretches the item to fill the height of its row. Off by default -
+ * see the same note on \`cre8-card--full-height\`: unconditional \`height: 100%\`
+ * inside a shadow root composes unpredictably with whatever ancestor ends up
+ * establishing the item's containing block.
  */
-.cre8-c-grid__item {
+.cre8-c-grid__item--full-height {
   height: 100%;
 }`;
 export default styles;

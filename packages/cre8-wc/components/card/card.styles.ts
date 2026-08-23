@@ -603,8 +603,6 @@ span.ripple {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
   padding: 1.5rem;
   gap: 1rem;
   border-color: var(--cre8-color-border-default);
@@ -612,6 +610,21 @@ span.ripple {
   border-width: var(--cre8-border-width-default);
   border-radius: var(--cre8-border-radius-container);
   background: var(--cre8-color-bg-default);
+}
+
+/**
+ * Full height card
+ * 1) Stretches the card to fill its parent's height and width. Off by
+ * default: the host is \`display: block\` with no explicit height, so a card
+ * placed in a flex or grid ancestor with \`align-items: stretch\` would
+ * otherwise inherit whatever height that ancestor happens to establish -
+ * invisible from outside the shadow boundary and unrelated to the card's
+ * own content. Opt in only when the parent's height is actually meant to be
+ * shared, e.g. cards as flex/grid items that should line up edge to edge.
+ */
+.cre8-c-card--full-height {
+  height: 100%;
+  width: 100%;
 }
 
 /**

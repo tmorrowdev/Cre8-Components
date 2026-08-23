@@ -85,33 +85,54 @@ right there.
 
 ## The result
 
-45 trials, 15 per arm, `claude-opus-5`, three attempts per task. Full tables in
-[`RESULTS.md`](RESULTS.md); the numbers to quote are opportunity-weighted:
+45 trials, 15 per arm, `claude-opus-5`, three attempts per task, against
+`@tmorrow/cre8-mcp@2.3.2`. Full tables in [`RESULTS.md`](RESULTS.md); the
+numbers to quote are opportunity-weighted:
 
 | | baseline | a2ui-skill | cre8-mcp |
 |---|---|---|---|
-| **mean reward** | **0.803** | **0.828** | **0.991** |
-| component_validity | 0.941 | 0.883 | 1.000 |
-| prop_validity | 0.948 | 0.882 | 1.000 |
-| enum_validity | 0.750 | 0.753 | 1.000 |
-| slot_validity | 0.000 | 0.389 | 1.000 |
-| containment | 0.962 | 0.955 | 1.000 |
-| inert_free | 1.000 | 1.000 | 0.997 |
-| task_completion | 0.823 | 0.855 | 0.941 |
+| **mean reward** | **0.789** | **0.844** | **0.989** |
+| component_validity | 0.922 | 0.865 | 1.000 |
+| prop_validity | 0.806 | 0.833 | 1.000 |
+| enum_validity | 0.957 | 0.889 | 1.000 |
+| slot_validity | 0.000 | 0.366 | 1.000 |
+| containment | 0.959 | 0.873 | 1.000 |
+| inert_free | 1.000 | 1.000 | 0.990 |
+| task_completion | 0.796 | 0.823 | 0.930 |
 
 Reading it honestly:
 
-- **The live catalog is the difference.** `cre8-mcp` makes essentially no
-  fidelity errors: every component, prop, enum value and slot it writes exists.
-- **The skill is barely better than nothing overall** (0.828 vs 0.803) and is
-  *worse* than nothing on component validity (0.883 vs 0.941) — it names
-  components the library does not ship, which is exactly what the catalog diff
-  below predicts. On the table task it scores 0.662 against the baseline's 0.845.
-- **Slots are where unaided knowledge collapses.** The baseline never once put
-  content in a slot the component declares (0.000 over 52 opportunities). The
-  skill, which documents a `slot="middle"` that does not exist, reaches 0.389.
-- **`inert_free` separates nobody**, and the one violation is the MCP arm's.
-  A dimension that does not discriminate is worth reporting as such.
+- **The live catalog is the difference.** `cre8-mcp` makes no component, prop,
+  enum, slot or containment error in 15 trials. Its only imperfect dimensions
+  are `inert_free` (one violation) and `task_completion`.
+- **The skill beats no-knowledge overall** (0.844 vs 0.789) but is *worse* than
+  it on component validity (0.865 vs 0.922) — it names components the library
+  does not ship, which is what the catalog diff below predicts.
+- **Slots are where unaided knowledge collapses.** The baseline used a slot the
+  component declares zero times, across every opportunity in both runs.
+
+### How much of this is noise?
+
+The eval was run twice, against `cre8-mcp` 2.3.1 and then 2.3.2. Baseline and
+a2ui-skill cannot be affected by an MCP version bump, so their movement between
+the two runs is a free estimate of run-to-run variance:
+
+| arm | 2.3.1 | 2.3.2 | delta | |
+|---|---|---|---|---|
+| baseline | 0.803 | 0.789 | −0.014 | unchanged by the bump |
+| a2ui-skill | 0.828 | 0.844 | +0.016 | unchanged by the bump |
+| cre8-mcp | 0.991 | 0.989 | **−0.002** | **below the noise floor** |
+
+So **2.3.2 produced no detectable change**: the MCP arm moved less than the arms
+that could not have moved at all. 2.3.2's substance — the knowledge graph as the
+structural source, and six authored `patterns/*.json` — targets containment and
+composition, and the MCP arm was already scoring 1.000 on containment in 2.3.1.
+There was no headroom left on the dimensions it improves.
+
+Per-dimension numbers are noisier still. Between the two runs the *unchanged*
+baseline moved −0.142 on `prop_validity` and +0.207 on `enum_validity`. At 15
+trials per arm, read the per-dimension column to one decimal at most, and treat
+any gap under ~0.05 as nothing.
 
 Run it yourself:
 
@@ -125,6 +146,15 @@ either `ANTHROPIC_API_KEY`, or — on a claude.ai subscription — a token from
 `claude setup-token` in `CLAUDE_CODE_OAUTH_TOKEN` with `CLAUDE_FORCE_OAUTH=1`.
 `prepare.sh` reports which of those it can see.
 
+### One dimension to read with care
+
+Since `25e4240`, containment is scored from `catalog-kg.json`'s CONTAINS edges —
+the same graph `cre8-mcp` serves. The graph is generated from the components'
+own stories, render templates, examples and patterns rather than from the
+server, so it is not circular in provenance; but the MCP arm can read the exact
+structure it is graded on, and the other two arms cannot. A containment win for
+MCP is close to tautological. The other five fidelity dimensions are unaffected.
+
 ### Look at the pages, not just the table
 
 ```sh
@@ -133,10 +163,9 @@ python3 build-gallery.py     # → gallery.html
 
 That builds a single self-contained page which renders every produced spec with
 the real `@tmorrow/cre8-wc` elements — the library bundle and its brand tokens
-are inlined, so it needs no network. A component the library does not ship
-renders as nothing, which is the failure mode a reward number hides: the
-baseline's status strip is three empty rectangles where the service pills should
-be, because it invented `cre8-notification` and mis-set `cre8-badge.variant`.
+are inlined, so it needs no network. Cards are the page rendered at desktop
+width and scaled down; click one for a full-size view. A component the library
+does not ship renders as nothing, which is the failure a reward number hides.
 The oracle trials are excluded from both the tables and the gallery — the oracle
 agent copies `solution/` and scores 1.000 by construction, so counting it as an
 arm silently inflates the baseline.

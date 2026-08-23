@@ -27,6 +27,16 @@ printf '%-26s %-10s %-10s %s\n' TASK REFERENCE SKILL-DOC VERDICT
 for task in tasks/*/; do
     name=$(basename "$task")
     ref=$(reward "$task" "$task/solution/ui.a2ui.json")
+    # A task with no skill-documented fixture has no negative control - an open
+    # brief has no single wrong answer to write one from. Report the reference
+    # score and say so, rather than scoring a missing file as 0.000 and calling
+    # it a pass.
+    if [[ ! -f "selftest/fixtures/$name.json" ]]; then
+        printf '%-26s %-10.3f %-10s %s\n' "$name" "$ref" "n/a" \
+            "$(python3 -c "print('ok   no negative control (open brief)' if $ref > 0.999 else 'FAIL reference solution does not score 1.0')")"
+        [[ $(python3 -c "print(1 if $ref < 0.999 else 0)") == 1 ]] && status=1
+        continue
+    fi
     doc=$(reward "$task" "selftest/fixtures/$name.json")
     verdict=$(python3 - "$ref" "$doc" <<'PY'
 import sys
