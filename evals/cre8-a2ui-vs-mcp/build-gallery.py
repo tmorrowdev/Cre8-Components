@@ -66,7 +66,12 @@ DIMENSIONS = (
 )
 
 
-JOB_DIR = re.compile(r"__(?P<arm>[a-z0-9-]+)$")
+# Anchored on this eval's own job_name prefix. Matching any directory ending
+# in "__<arm>" was too loose: jobs/ also held cre8-a2ui-open-portfolio__baseline
+# and friends from an earlier run, and those merged straight into the current
+# arms - baseline reported 30 trials for a run of 18, with two library
+# versions averaged together.
+JOB_DIR = re.compile(r"^cre8-a2ui-vs-mcp__(?P<arm>[a-z0-9-]+)$")
 
 
 def arm_of(result: dict, result_path: Path) -> str:
@@ -77,7 +82,7 @@ def arm_of(result: dict, result_path: Path) -> str:
     drawn in the gallery under the arm it exists to be compared against.
     """
     for parent in result_path.parents:
-        match = JOB_DIR.search(parent.name)
+        match = JOB_DIR.match(parent.name)
         if match and match.group("arm") in ARMS:
             return match.group("arm")
     agent = (result.get("config") or {}).get("agent") or {}
