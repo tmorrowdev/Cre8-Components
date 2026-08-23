@@ -3,8 +3,13 @@ export { Cre8Accordion } from './components/Accordion';
 export { Cre8Alert } from './components/Alert';
 export { Cre8AccordionItem } from './components/AccordionItem';
 export { Cre8Badge } from './components/Badge';
+<<<<<<< HEAD
 export { Cre8Breadcrumbs } from './components/Breadcrumbs';
 export { Cre8BreadcrumbsItem } from './components/BreadcrumbsItem';
+=======
+export { Cre8BreadcrumbsItem } from './components/BreadcrumbsItem';
+export { Cre8Breadcrumbs } from './components/Breadcrumbs';
+>>>>>>> a2ui
 export { Cre8Button } from './components/Button';
 export { Cre8Band } from './components/Band';
 export { Cre8ButtonGroup } from './components/ButtonGroup';
@@ -50,9 +55,16 @@ export { Cre8PageHeader } from './components/PageHeader';
 export { Cre8Pagination } from './components/Pagination';
 export { Cre8PercentBar } from './components/PercentBar';
 export { Cre8Popover } from './components/Popover';
+<<<<<<< HEAD
 export { Cre8PrimaryNavItem } from './components/PrimaryNavItem';
 export { Cre8ProgressMeter } from './components/ProgressMeter';
 export { Cre8PrimaryNav } from './components/PrimaryNav';
+=======
+export { Cre8PrimaryNav } from './components/PrimaryNav';
+export { Cre8PrimaryNavItem } from './components/PrimaryNavItem';
+export { Cre8ProgressMeter } from './components/ProgressMeter';
+export { Cre8ProgressSteps } from './components/ProgressSteps';
+>>>>>>> a2ui
 export { Cre8ProgressStepsItem } from './components/ProgressStepsItem';
 export { Cre8RadioField } from './components/RadioField';
 export { Cre8ProgressSteps } from './components/ProgressSteps';
@@ -63,11 +75,18 @@ export { Cre8RadioFieldItem } from './components/RadioFieldItem';
 export { Cre8SelectTileList } from './components/SelectTileList';
 export { Cre8SelectTile } from './components/SelectTile';
 export { Cre8SkeletonLoader } from './components/SkeletonLoader';
+<<<<<<< HEAD
 export { Cre8SubmenuItem } from './components/SubmenuItem';
 export { Cre8Submenu } from './components/Submenu';
 export { Cre8SplitButton } from './components/SplitButton';
 export { Cre8TabPanel } from './components/TabPanel';
+=======
+export { Cre8SplitButton } from './components/SplitButton';
+export { Cre8Submenu } from './components/Submenu';
+export { Cre8SubmenuItem } from './components/SubmenuItem';
+>>>>>>> a2ui
 export { Cre8Tab } from './components/Tab';
+export { Cre8TabPanel } from './components/TabPanel';
 export { Cre8Table } from './components/Table';
 export { Cre8TableBody } from './components/TableBody';
 export { Cre8TableCell } from './components/TableCell';
@@ -81,6 +100,10 @@ export { Cre8TagList } from './components/TagList';
 export { Cre8TertiaryNav } from './components/TertiaryNav';
 export { Cre8TertiaryNavItem } from './components/TertiaryNavItem';
 export { Cre8TextLink } from './components/TextLink';
+<<<<<<< HEAD
+=======
+export { Cre8TextPassage } from './components/TextPassage';
+>>>>>>> a2ui
 export { Cre8Tooltip } from './components/Tooltip';
 export { Cre8UtilityNav } from './components/UtilityNav';
 export { Cre8UtilityNavItem } from './components/UtilityNavItem';
