@@ -1,0 +1,725 @@
+{
+  "$comment": "Derived from packages/cre8-wc/a2ui/catalog-kg.json CONTAINS edges - the same graph cre8-mcp serves. 'children' and 'slots' are the full observed nesting and are informational. 'family_parents' is the scored relation: a component that only ever appears under a parent from its own family, mapped to the parents it was observed under.",
+  "graph": {
+    "library_version": "2.3.5",
+    "generated_from": [
+      "catalog.json",
+      "components/*/*.stories.ts",
+      "components/*/*.ts",
+      "a2ui/examples/*.json",
+      "a2ui/patterns/*.json",
+      "graphify-out/graph.json"
+    ],
+    "graphify_commit": "735ed2c2ff3caf037f8faf1b71e1ccdb85d80cae",
+    "evidence": {
+      "story_files": 72,
+      "source_files": 88,
+      "example_files": [
+        "card-gallery.json",
+        "compound-families.json",
+        "dating-grid.json",
+        "llm-observability.json",
+        "portfolio.json"
+      ],
+      "pattern_files": [
+        "alert-banner.json",
+        "data-table.json",
+        "login-form.json",
+        "modal-dialog.json",
+        "page-layout.json",
+        "tabbed-content.json"
+      ]
+    }
+  },
+  "sources": [
+    "catalog.json",
+    "components/*/*.stories.ts",
+    "components/*/*.ts",
+    "a2ui/examples/*.json",
+    "a2ui/patterns/*.json",
+    "graphify-out/graph.json"
+  ],
+  "children": {
+    "cre8-accordion": [
+      "cre8-accordion-item"
+    ],
+    "cre8-band": [
+      "cre8-hero",
+      "cre8-layout-container"
+    ],
+    "cre8-breadcrumbs": [
+      "cre8-breadcrumbs-item"
+    ],
+    "cre8-breadcrumbs-item": [
+      "cre8-link",
+      "cre8-text-link"
+    ],
+    "cre8-button": [
+      "cre8-icon"
+    ],
+    "cre8-button-group": [
+      "cre8-button"
+    ],
+    "cre8-checkbox-field": [
+      "cre8-checkbox-field-item"
+    ],
+    "cre8-dropdown": [
+      "cre8-dropdown-item"
+    ],
+    "cre8-feature": [
+      "cre8-heading",
+      "cre8-text-passage"
+    ],
+    "cre8-field-note": [
+      "cre8-text-link"
+    ],
+    "cre8-form": [
+      "cre8-button",
+      "cre8-button-group",
+      "cre8-card",
+      "cre8-field",
+      "cre8-grid"
+    ],
+    "cre8-global-nav": [
+      "cre8-global-nav-item"
+    ],
+    "cre8-grid": [
+      "cre8-grid-item"
+    ],
+    "cre8-grid-item": [
+      "cre8-card",
+      "cre8-field",
+      "cre8-tag"
+    ],
+    "cre8-heading": [
+      "cre8-icon"
+    ],
+    "cre8-hero": [
+      "cre8-button-group",
+      "cre8-heading",
+      "cre8-text-passage"
+    ],
+    "cre8-inline-alert": [
+      "cre8-heading"
+    ],
+    "cre8-layout": [
+      "cre8-footer",
+      "cre8-header",
+      "cre8-layout-section",
+      "cre8-main"
+    ],
+    "cre8-layout-container": [
+      "cre8-accordion",
+      "cre8-breadcrumbs",
+      "cre8-button-group",
+      "cre8-checkbox-field",
+      "cre8-divider",
+      "cre8-dropdown",
+      "cre8-heading",
+      "cre8-link-list",
+      "cre8-list",
+      "cre8-progress-steps",
+      "cre8-tag-list",
+      "cre8-text-passage"
+    ],
+    "cre8-layout-section": [
+      "cre8-band",
+      "cre8-button-group",
+      "cre8-divider",
+      "cre8-grid",
+      "cre8-heading",
+      "cre8-inline-alert",
+      "cre8-layout-section",
+      "cre8-tabs",
+      "cre8-text-passage"
+    ],
+    "cre8-link-list": [
+      "cre8-link-list-item"
+    ],
+    "cre8-list": [
+      "cre8-list-item"
+    ],
+    "cre8-main": [
+      "cre8-layout-container"
+    ],
+    "cre8-primary-nav": [
+      "cre8-primary-nav-item"
+    ],
+    "cre8-progress-steps": [
+      "cre8-progress-steps-item"
+    ],
+    "cre8-radio-field": [
+      "cre8-radio-field-item"
+    ],
+    "cre8-select": [
+      "cre8-link"
+    ],
+    "cre8-select-tile-list": [
+      "cre8-select-tile"
+    ],
+    "cre8-split-button": [
+      "cre8-dropdown"
+    ],
+    "cre8-submenu": [
+      "cre8-submenu-item"
+    ],
+    "cre8-tab-panel": [
+      "cre8-grid",
+      "cre8-heading",
+      "cre8-table"
+    ],
+    "cre8-table": [
+      "cre8-table-body",
+      "cre8-table-header"
+    ],
+    "cre8-table-body": [
+      "cre8-table-row"
+    ],
+    "cre8-table-cell": [
+      "cre8-badge",
+      "cre8-icon"
+    ],
+    "cre8-table-header": [
+      "cre8-table-row"
+    ],
+    "cre8-tag-list": [
+      "cre8-tag"
+    ],
+    "cre8-tertiary-nav": [
+      "cre8-tertiary-nav-item"
+    ],
+    "cre8-text-passage": [
+      "cre8-heading"
+    ],
+    "cre8-utility-nav": [
+      "cre8-utility-nav-item"
+    ]
+  },
+  "slots": {
+    "cre8-accordion-item": {
+      "default": [
+        "cre8-text-passage"
+      ]
+    },
+    "cre8-alert": {
+      "cta": [
+        "cre8-button",
+        "cre8-link"
+      ]
+    },
+    "cre8-button": {
+      "before": [
+        "cre8-icon"
+      ]
+    },
+    "cre8-card": {
+      "default": [
+        "cre8-badge",
+        "cre8-button",
+        "cre8-chart",
+        "cre8-field",
+        "cre8-heading",
+        "cre8-progress-meter",
+        "cre8-tag",
+        "cre8-text-passage"
+      ],
+      "footer": [
+        "cre8-badge",
+        "cre8-button-group",
+        "cre8-text-passage"
+      ],
+      "header": [
+        "cre8-feature",
+        "cre8-heading"
+      ]
+    },
+    "cre8-header": {
+      "default": [
+        "cre8-global-nav",
+        "cre8-logo"
+      ]
+    },
+    "cre8-link": {
+      "badge": [
+        "cre8-badge"
+      ]
+    },
+    "cre8-link-list-item": {
+      "itemAfter": [
+        "cre8-badge"
+      ]
+    },
+    "cre8-modal": {
+      "default": [
+        "cre8-text-passage"
+      ],
+      "footer": [
+        "cre8-button-group"
+      ]
+    },
+    "cre8-page-header": {
+      "titleAfter": [
+        "cre8-badge"
+      ]
+    },
+    "cre8-popover": {
+      "footer": [
+        "cre8-button"
+      ],
+      "trigger": [
+        "cre8-button"
+      ]
+    },
+    "cre8-section": {
+      "default": [
+        "cre8-button",
+        "cre8-text-passage"
+      ],
+      "header": [
+        "cre8-heading"
+      ]
+    },
+    "cre8-select-tile": {
+      "header": [
+        "cre8-icon"
+      ]
+    },
+    "cre8-table-object": {
+      "default": [
+        "cre8-table"
+      ]
+    },
+    "cre8-table-row": {
+      "default": [
+        "cre8-table-cell",
+        "cre8-table-header-cell"
+      ]
+    },
+    "cre8-tabs": {
+      "default": [
+        "cre8-tab"
+      ],
+      "panel": [
+        "cre8-tab-panel"
+      ]
+    }
+  },
+  "family_parents": {
+    "cre8-accordion-item": [
+      "cre8-accordion"
+    ],
+    "cre8-breadcrumbs-item": [
+      "cre8-breadcrumbs"
+    ],
+    "cre8-checkbox-field-item": [
+      "cre8-checkbox-field"
+    ],
+    "cre8-dropdown-item": [
+      "cre8-dropdown"
+    ],
+    "cre8-global-nav-item": [
+      "cre8-global-nav"
+    ],
+    "cre8-grid-item": [
+      "cre8-grid"
+    ],
+    "cre8-link-list-item": [
+      "cre8-link-list"
+    ],
+    "cre8-list-item": [
+      "cre8-list"
+    ],
+    "cre8-primary-nav-item": [
+      "cre8-primary-nav"
+    ],
+    "cre8-progress-steps-item": [
+      "cre8-progress-steps"
+    ],
+    "cre8-radio-field-item": [
+      "cre8-radio-field"
+    ],
+    "cre8-select-tile": [
+      "cre8-select-tile-list"
+    ],
+    "cre8-submenu-item": [
+      "cre8-submenu"
+    ],
+    "cre8-table-body": [
+      "cre8-table"
+    ],
+    "cre8-table-cell": [
+      "cre8-table-row"
+    ],
+    "cre8-table-header": [
+      "cre8-table"
+    ],
+    "cre8-table-header-cell": [
+      "cre8-table-row"
+    ],
+    "cre8-table-row": [
+      "cre8-table-body",
+      "cre8-table-header"
+    ],
+    "cre8-tertiary-nav-item": [
+      "cre8-tertiary-nav"
+    ],
+    "cre8-utility-nav-item": [
+      "cre8-utility-nav"
+    ]
+  },
+  "evidence_kinds": {
+    "cre8-accordion-item>cre8-text-passage": [
+      "example"
+    ],
+    "cre8-accordion>cre8-accordion-item": [
+      "example",
+      "story"
+    ],
+    "cre8-alert>cre8-button": [
+      "story"
+    ],
+    "cre8-alert>cre8-link": [
+      "story"
+    ],
+    "cre8-band>cre8-hero": [
+      "example"
+    ],
+    "cre8-band>cre8-layout-container": [
+      "example"
+    ],
+    "cre8-breadcrumbs-item>cre8-link": [
+      "story"
+    ],
+    "cre8-breadcrumbs-item>cre8-text-link": [
+      "example"
+    ],
+    "cre8-breadcrumbs>cre8-breadcrumbs-item": [
+      "example",
+      "story"
+    ],
+    "cre8-button-group>cre8-button": [
+      "example",
+      "pattern",
+      "story"
+    ],
+    "cre8-button>cre8-icon": [
+      "source"
+    ],
+    "cre8-card>cre8-badge": [
+      "example",
+      "story"
+    ],
+    "cre8-card>cre8-button": [
+      "example",
+      "pattern"
+    ],
+    "cre8-card>cre8-button-group": [
+      "example"
+    ],
+    "cre8-card>cre8-chart": [
+      "example"
+    ],
+    "cre8-card>cre8-feature": [
+      "example"
+    ],
+    "cre8-card>cre8-field": [
+      "pattern"
+    ],
+    "cre8-card>cre8-heading": [
+      "example",
+      "pattern"
+    ],
+    "cre8-card>cre8-progress-meter": [
+      "example"
+    ],
+    "cre8-card>cre8-tag": [
+      "example"
+    ],
+    "cre8-card>cre8-text-passage": [
+      "example",
+      "story"
+    ],
+    "cre8-checkbox-field>cre8-checkbox-field-item": [
+      "example",
+      "story"
+    ],
+    "cre8-dropdown>cre8-dropdown-item": [
+      "example",
+      "story"
+    ],
+    "cre8-feature>cre8-heading": [
+      "story"
+    ],
+    "cre8-feature>cre8-text-passage": [
+      "story"
+    ],
+    "cre8-field-note>cre8-text-link": [
+      "story"
+    ],
+    "cre8-form>cre8-button": [
+      "story"
+    ],
+    "cre8-form>cre8-button-group": [
+      "story"
+    ],
+    "cre8-form>cre8-card": [
+      "pattern"
+    ],
+    "cre8-form>cre8-field": [
+      "story"
+    ],
+    "cre8-form>cre8-grid": [
+      "story"
+    ],
+    "cre8-global-nav>cre8-global-nav-item": [
+      "pattern"
+    ],
+    "cre8-grid-item>cre8-card": [
+      "example"
+    ],
+    "cre8-grid-item>cre8-field": [
+      "story"
+    ],
+    "cre8-grid-item>cre8-tag": [
+      "example"
+    ],
+    "cre8-grid>cre8-grid-item": [
+      "example",
+      "story"
+    ],
+    "cre8-header>cre8-global-nav": [
+      "pattern"
+    ],
+    "cre8-header>cre8-logo": [
+      "pattern"
+    ],
+    "cre8-heading>cre8-icon": [
+      "source"
+    ],
+    "cre8-hero>cre8-button-group": [
+      "example"
+    ],
+    "cre8-hero>cre8-heading": [
+      "example",
+      "story"
+    ],
+    "cre8-hero>cre8-text-passage": [
+      "example",
+      "story"
+    ],
+    "cre8-inline-alert>cre8-heading": [
+      "story"
+    ],
+    "cre8-layout-container>cre8-accordion": [
+      "example"
+    ],
+    "cre8-layout-container>cre8-breadcrumbs": [
+      "example"
+    ],
+    "cre8-layout-container>cre8-button-group": [
+      "example"
+    ],
+    "cre8-layout-container>cre8-checkbox-field": [
+      "example"
+    ],
+    "cre8-layout-container>cre8-divider": [
+      "example"
+    ],
+    "cre8-layout-container>cre8-dropdown": [
+      "example"
+    ],
+    "cre8-layout-container>cre8-heading": [
+      "example"
+    ],
+    "cre8-layout-container>cre8-link-list": [
+      "example"
+    ],
+    "cre8-layout-container>cre8-list": [
+      "example"
+    ],
+    "cre8-layout-container>cre8-progress-steps": [
+      "example"
+    ],
+    "cre8-layout-container>cre8-tag-list": [
+      "example"
+    ],
+    "cre8-layout-container>cre8-text-passage": [
+      "example",
+      "pattern"
+    ],
+    "cre8-layout-section>cre8-band": [
+      "example"
+    ],
+    "cre8-layout-section>cre8-button-group": [
+      "example"
+    ],
+    "cre8-layout-section>cre8-divider": [
+      "example"
+    ],
+    "cre8-layout-section>cre8-grid": [
+      "example"
+    ],
+    "cre8-layout-section>cre8-heading": [
+      "example"
+    ],
+    "cre8-layout-section>cre8-inline-alert": [
+      "example"
+    ],
+    "cre8-layout-section>cre8-layout-section": [
+      "example"
+    ],
+    "cre8-layout-section>cre8-tabs": [
+      "example"
+    ],
+    "cre8-layout-section>cre8-text-passage": [
+      "example"
+    ],
+    "cre8-layout>cre8-footer": [
+      "pattern"
+    ],
+    "cre8-layout>cre8-header": [
+      "pattern"
+    ],
+    "cre8-layout>cre8-layout-section": [
+      "story"
+    ],
+    "cre8-layout>cre8-main": [
+      "pattern"
+    ],
+    "cre8-link-list-item>cre8-badge": [
+      "story"
+    ],
+    "cre8-link-list>cre8-link-list-item": [
+      "example",
+      "story"
+    ],
+    "cre8-link>cre8-badge": [
+      "story"
+    ],
+    "cre8-list>cre8-list-item": [
+      "example",
+      "story"
+    ],
+    "cre8-main>cre8-layout-container": [
+      "pattern"
+    ],
+    "cre8-modal>cre8-button-group": [
+      "pattern"
+    ],
+    "cre8-modal>cre8-text-passage": [
+      "pattern"
+    ],
+    "cre8-page-header>cre8-badge": [
+      "story"
+    ],
+    "cre8-popover>cre8-button": [
+      "story"
+    ],
+    "cre8-primary-nav>cre8-primary-nav-item": [
+      "story"
+    ],
+    "cre8-progress-steps>cre8-progress-steps-item": [
+      "example",
+      "story"
+    ],
+    "cre8-radio-field>cre8-radio-field-item": [
+      "story"
+    ],
+    "cre8-section>cre8-button": [
+      "story"
+    ],
+    "cre8-section>cre8-heading": [
+      "story"
+    ],
+    "cre8-section>cre8-text-passage": [
+      "story"
+    ],
+    "cre8-select-tile-list>cre8-select-tile": [
+      "story"
+    ],
+    "cre8-select-tile>cre8-icon": [
+      "story"
+    ],
+    "cre8-select>cre8-link": [
+      "story"
+    ],
+    "cre8-split-button>cre8-dropdown": [
+      "story"
+    ],
+    "cre8-submenu>cre8-submenu-item": [
+      "story"
+    ],
+    "cre8-tab-panel>cre8-grid": [
+      "example"
+    ],
+    "cre8-tab-panel>cre8-heading": [
+      "example"
+    ],
+    "cre8-tab-panel>cre8-table": [
+      "example"
+    ],
+    "cre8-table-body>cre8-table-row": [
+      "example",
+      "pattern",
+      "story"
+    ],
+    "cre8-table-cell>cre8-badge": [
+      "example",
+      "pattern"
+    ],
+    "cre8-table-cell>cre8-icon": [
+      "source"
+    ],
+    "cre8-table-header>cre8-table-row": [
+      "example",
+      "pattern",
+      "story"
+    ],
+    "cre8-table-object>cre8-table": [
+      "story"
+    ],
+    "cre8-table-row>cre8-table-cell": [
+      "example",
+      "pattern",
+      "story"
+    ],
+    "cre8-table-row>cre8-table-header-cell": [
+      "example",
+      "pattern",
+      "story"
+    ],
+    "cre8-table>cre8-table-body": [
+      "example",
+      "pattern",
+      "story"
+    ],
+    "cre8-table>cre8-table-header": [
+      "example",
+      "pattern",
+      "story"
+    ],
+    "cre8-tabs>cre8-tab": [
+      "example",
+      "pattern",
+      "story"
+    ],
+    "cre8-tabs>cre8-tab-panel": [
+      "example",
+      "pattern",
+      "story"
+    ],
+    "cre8-tag-list>cre8-tag": [
+      "example",
+      "story"
+    ],
+    "cre8-tertiary-nav>cre8-tertiary-nav-item": [
+      "story"
+    ],
+    "cre8-text-passage>cre8-heading": [
+      "story"
+    ],
+    "cre8-utility-nav>cre8-utility-nav-item": [
+      "story"
+    ]
+  }
+}

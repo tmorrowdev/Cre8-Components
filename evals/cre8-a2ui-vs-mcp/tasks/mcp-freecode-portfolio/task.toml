@@ -1,0 +1,32 @@
+schema_version = "1.4"
+artifacts = ["/app/src/App.tsx", "/app/dist"]
+
+[task]
+name = "cre8/mcp-freecode-portfolio"
+version = "1.0.0"
+description = "The open portfolio brief, but as real code instead of an A2UI JSON tree: a React app using @tmorrow/cre8-react. cre8-mcp's actual mode is generating code, not authoring a JSON envelope that happens to validate against the schema it can also check itself with - a2ui-open-portfolio conflated the two. Scores by rendering the component for real and auditing the live DOM against the same catalog-fidelity dimensions the a2ui tasks use."
+keywords = ["cre8", "cre8-mcp", "react", "freecode", "open-ended", "tool-use"]
+
+[[task.authors]]
+name = "Tyler Morrow"
+email = "tsmorro@gmail.com"
+
+[metadata]
+author_name = "Tyler Morrow"
+author_email = "tsmorro@gmail.com"
+difficulty = "medium"
+category = "software_engineering"
+tags = ["design-system", "react", "cre8-mcp", "open-brief", "freecode"]
+expert_time_estimate_min = 25
+junior_time_estimate_min = 60
+
+[verifier]
+timeout_sec = 300.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 900.0
+os = "linux"

@@ -31,11 +31,20 @@ copy() {
 
 for task in tasks/*/; do
     [[ -f "$task/task.toml" ]] || continue
-    copy templates/Dockerfile "$task/environment/Dockerfile"
+    # A task whose deliverable isn't A2UI JSON (e.g. a freecode task scored by
+    # rendering real component code) needs its own Dockerfile and score.py -
+    # the shared ones assume `ui.a2ui.json` at a fixed path. `.custom-harness`
+    # opts a task out of having those two overwritten; it still gets the
+    # catalog fixtures and test.sh like everyone else.
+    if [[ ! -f "$task/.custom-harness" ]]; then
+        copy templates/Dockerfile "$task/environment/Dockerfile"
+        copy oracle/score.py "$task/tests/score.py"
+    fi
     copy templates/ca/README.md "$task/environment/ca/README.md"
     copy templates/test.sh "$task/tests/test.sh"
     [[ $CHECK -eq 1 ]] || chmod +x "$task/tests/test.sh"
     for file in "${SHARED[@]}"; do
+        [[ $file == score.py && -f "$task/.custom-harness" ]] && continue
         copy "oracle/$file" "$task/tests/$file"
     done
 done
