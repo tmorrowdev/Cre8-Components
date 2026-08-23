@@ -39,3 +39,4 @@ graphify-out/cache
 # Local Claude Code artifacts
 .claude/marketplaces/
 .claude/*.local.md
+packages/cre8-wc/react-wrappers/dist-storybook

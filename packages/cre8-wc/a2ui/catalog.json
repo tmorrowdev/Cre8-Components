@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://cre8.dev/a2ui/catalogs/cre8-wc/2.3.2",
+  "$id": "https://cre8.dev/a2ui/catalogs/cre8-wc/2.3.5",
   "title": "cre8-wc A2UI Catalog",
   "description": "cre8 Web Components is a library of presentational UI web components to be consumed by # web applications.",
   "x-native-events": [
@@ -54,7 +54,7 @@
   "x-a2ui": {
     "catalogId": "cre8-wc",
     "library": "@tmorrow/cre8-wc",
-    "libraryVersion": "2.3.2",
+    "libraryVersion": "2.3.5",
     "tagPrefix": "cre8",
     "framework": "Lit 3.3.1"
   },

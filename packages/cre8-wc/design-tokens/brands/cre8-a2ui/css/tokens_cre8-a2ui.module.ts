@@ -773,6 +773,26 @@ const a2ui = `
       --cre8-typography-meta-small-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-meta-small-text-transform: var(--cre8-text-case-uppercase);}
 
+:root {
+
+/* ===========================================================================
+   TIER 0 · SEED — the only literals in the system
+   Owned by the integrator. Override these and every tier below follows.
+   Nothing else in this file is a literal colour.
+   =========================================================================== */
+  --cre8-seed-primary: #3b82f6;
+  --cre8-seed-neutral: #64748b;
+  --cre8-seed-success: #06b6d4;
+  --cre8-seed-error: #ec4899;
+  --cre8-seed-warning: #f59e0b;
+  --cre8-seed-accent: #7c3aed;
+  --cre8-seed-font: "Plus Jakarta Sans", sans-serif;
+  --cre8-seed-radius: 24px;
+  --cre8-seed-space: 0.25rem;
+  --cre8-seed-font-size: 1rem;
+  --cre8-seed-border-width: 0.0625rem;
+}
+
 /* A custom property is substituted where it is DECLARED, not where it is
    read. Declaring the tiers only on :root would mean a [data-mode] or a
    reseeded subtree changed the semantic layer while every component token

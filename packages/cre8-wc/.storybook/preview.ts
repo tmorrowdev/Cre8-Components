@@ -12,6 +12,7 @@ import blue from '../design-tokens/brands/blue/css/tokens_blue.module.ts';
 import marketing from '../design-tokens/brands/marketing/css/tokens_marketing.module.ts';
 import minimalist from '../design-tokens/brands/minimalist/css/tokens_minimalist.module.ts';
 import a2ui from '../design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.module.ts';
+import vivid from '../design-tokens/brands/cre8-vivid/css/tokens_cre8-vivid.module.ts';
 
 // Prism styles (Storybook only for docs)
 import prismcss from './components/system-docs/prism.module.ts';
@@ -74,6 +75,7 @@ const themeStyles = [
   { name: 'Marketing', styles: marketing },
   { name: 'Minimalist', styles: minimalist },
   { name: 'A2UI', styles: a2ui },
+  { name: 'Vivid', styles: vivid },
 ];
 
 // Inject all theme styles with unique IDs
@@ -101,6 +103,7 @@ const preview: Preview = {
           { value: 'Marketing', title: 'Marketing' },
           { value: 'Minimalist', title: 'Minimalist' },
           { value: 'A2UI', title: 'A2UI' },
+          { value: 'Vivid', title: 'Vivid' },
         ],
         dynamicTitle: true,
       },
