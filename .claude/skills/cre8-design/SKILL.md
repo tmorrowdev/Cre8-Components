@@ -21,13 +21,18 @@ fact. Get them from the `cre8` MCP server, every time:
 | Whether an A2UI tree is valid | `validate_a2ui_spec` |
 
 This split is deliberate and was paid for. A previous version of this skill
-carried its own component tables, and by release 2.3.5 they had drifted badly:
+carried its own component tables, and by release 2.3.6 they had drifted badly:
 **46% of the components it documented no longer existed**, alongside 27
 undeclared props and 16 invalid enum values - each written out with
 confident-looking examples. An eval measured agents *worse* with that skill
 than with no CRE8 knowledge at all, because it taught them to reach for
 `cre8-toast`, `cre8-toggle`, `cre8-avatar` and 35 other components that had
 been removed or never shipped.
+
+`pnpm --filter @tmorrow/cre8-wc check:skills` re-runs that audit against the
+catalog the current release regenerated, and the release itself runs it. If
+this file ever starts reporting defects, it has stopped being a design skill
+and started restating the catalog again.
 
 A restated catalog is always a stale catalog. If you catch yourself about to
 write a component name into this file as reference material, that is the bug.

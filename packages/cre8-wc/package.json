@@ -44,7 +44,8 @@
     "test:a2ui": "npx tsx a2ui/smoke-test.mjs && npx tsx a2ui/stream/stream-test.mjs && npx tsx a2ui/stream/diff-test.mjs && node a2ui/render-audit.mjs --check && node a2ui/check-layer-parity.mjs",
     "audit:render": "node a2ui/render-audit.mjs",
     "audit:render:check": "node a2ui/render-audit.mjs --check",
-    "check:parity": "node a2ui/check-layer-parity.mjs"
+    "check:parity": "node a2ui/check-layer-parity.mjs",
+    "check:skills": "node a2ui/check-skill-fidelity.mjs"
   },
   "type": "module",
   "module": "lib/index.js",
