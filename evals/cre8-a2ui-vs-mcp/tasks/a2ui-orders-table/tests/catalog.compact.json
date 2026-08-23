@@ -1,8 +1,8 @@
 {
   "contractVersion": 1,
-  "sourceCatalog": "https://cre8.dev/a2ui/catalogs/cre8-wc/2.3.1",
-  "libraryVersion": "2.3.1",
-  "componentCount": 86,
+  "sourceCatalog": "https://cre8.dev/a2ui/catalogs/cre8-wc/2.3.3",
+  "libraryVersion": "2.3.3",
+  "componentCount": 88,
   "components": [
     {
       "name": "cre8-accordion",
@@ -325,6 +325,9 @@
         },
         "align": {
           "type": "string"
+        },
+        "fullHeight": {
+          "type": "boolean"
         }
       },
       "slots": [
@@ -499,6 +502,55 @@
       "events": [
         "change"
       ]
+    },
+    {
+      "name": "cre8-container",
+      "category": "Layout",
+      "props": {
+        "type": {
+          "enum": [
+            "inline-size",
+            "size",
+            "normal"
+          ]
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "acceptsChildren": true
+    },
+    {
+      "name": "cre8-container-grid",
+      "category": "Layout",
+      "props": {
+        "variant": {
+          "enum": [
+            "side-by-side",
+            "2up",
+            "3up",
+            "1-3up",
+            "4up",
+            "1-4up",
+            "1-2-4up",
+            "2-4-6up"
+          ]
+        },
+        "gap": {
+          "enum": [
+            "sm",
+            "lg",
+            "none"
+          ]
+        },
+        "break": {
+          "enum": [
+            "faster",
+            "slower"
+          ]
+        }
+      },
+      "acceptsChildren": true
     },
     {
       "name": "cre8-danger-button",
@@ -988,7 +1040,11 @@
     {
       "name": "cre8-grid-item",
       "category": "Layout",
-      "props": {},
+      "props": {
+        "fullHeight": {
+          "type": "boolean"
+        }
+      },
       "acceptsChildren": true
     },
     {
@@ -1158,6 +1214,9 @@
         },
         "top": {
           "type": "string"
+        },
+        "fullHeight": {
+          "type": "boolean"
         }
       },
       "acceptsChildren": true
