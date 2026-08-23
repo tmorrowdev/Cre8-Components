@@ -1,7 +1,7 @@
 {
   "$comment": "Derived from packages/cre8-wc/a2ui/catalog-kg.json CONTAINS edges - the same graph cre8-mcp serves. 'children' and 'slots' are the full observed nesting and are informational. 'family_parents' is the scored relation: a component that only ever appears under a parent from its own family, mapped to the parents it was observed under.",
   "graph": {
-    "library_version": "2.3.4",
+    "library_version": "2.3.5",
     "generated_from": [
       "catalog.json",
       "components/*/*.stories.ts",
