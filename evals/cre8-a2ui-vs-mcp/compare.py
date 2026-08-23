@@ -133,12 +133,18 @@ def main() -> int:
     counts = defaultdict(int)
     violations = defaultdict(lambda: defaultdict(int))  # arm -> label -> n
 
+    # A dimension no trial scored is absent, not zero: the open brief drops
+    # task_completion because there is nothing to complete against, and
+    # defaulting it to 0.0 would drag every arm's mean down by a seventh.
+    present = {d for t in trials for d in DIMENSIONS if d in t["rewards"]}
+    dimensions = [d for d in DIMENSIONS if d in present]
+
     for trial in trials:
         arm, rewards, report = trial["arm"], trial["rewards"], trial["report"]
         counts[arm] += 1
         overall[(arm, trial["task"])].append(rewards.get("reward", 0.0))
         overall[(arm, "ALL")].append(rewards.get("reward", 0.0))
-        for dimension in DIMENSIONS:
+        for dimension in dimensions:
             flat[(arm, dimension)].append(rewards.get(dimension, 0.0))
             hits = (report.get("hits") or {}).get(dimension)
             total = (report.get("denominators") or {}).get(dimension)
@@ -169,13 +175,13 @@ def main() -> int:
     print("Per-dimension mean (flat, as Harbor reports it)")
     rows = [
         [dimension] + [fmt(mean(flat[(arm, dimension)])) for arm in arms]
-        for dimension in DIMENSIONS
+        for dimension in dimensions
     ]
     print(table(rows, ["dimension"] + list(arms)) + "\n")
 
     print("Per-dimension mean weighted by opportunities (hits / denominator)")
     rows = []
-    for dimension in DIMENSIONS:
+    for dimension in dimensions:
         row = [dimension]
         for arm in arms:
             hits, total = weighted[(arm, dimension)]
@@ -223,7 +229,7 @@ def main() -> int:
             "",
         ]
         rows = []
-        for dimension in DIMENSIONS:
+        for dimension in dimensions:
             row = [dimension]
             for arm in arms:
                 hits, total = weighted[(arm, dimension)]
@@ -238,7 +244,7 @@ def main() -> int:
             md_table(
                 [
                     [d] + [fmt(mean(flat[(arm, d)])) for arm in arms]
-                    for d in DIMENSIONS
+                    for d in dimensions
                 ],
                 ["dimension"] + list(arms),
             ),
@@ -270,7 +276,7 @@ def main() -> int:
                 for arm in arms
             },
             "flat_means": {
-                arm: {d: mean(flat[(arm, d)]) for d in DIMENSIONS} for arm in arms
+                arm: {d: mean(flat[(arm, d)]) for d in dimensions} for arm in arms
             },
             "weighted_means": {
                 arm: {
@@ -278,7 +284,7 @@ def main() -> int:
                         "hits": weighted[(arm, d)][0],
                         "denominator": weighted[(arm, d)][1],
                     }
-                    for d in DIMENSIONS
+                    for d in dimensions
                 }
                 for arm in arms
             },
