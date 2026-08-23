@@ -1,8 +1,7 @@
-@use 'field.styles' as inputStyles;
 @import '../../design-tokens/core/scss/theming/component';
 :host {
   display: block;
-    @include inputStyles.input-styles();
+    @include input-styles();
 
 }
 
@@ -26,7 +25,7 @@
  * 1) The html5 input element
  */
 .cre8-c-field__input {
-  @include inputStyles.input-styles();
+  @include input-styles();
 
   /**
    * Readonly input styles

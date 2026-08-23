@@ -1,6 +1,6 @@
 import { css } from 'lit';
 const styles = css`.cre8-u-content-knockout-brand {
-  color: var(----cre8-color-content-knockout-brand);
+  color: var(--cre8-color-content-knockout-brand);
 }
 
 .cre8-u-is-hidden {
@@ -73,23 +73,23 @@ const styles = css`.cre8-u-content-knockout-brand {
 }
 
 .cre8-u-margin-sm {
-  margin: size(1) !important;
+  margin: 0.5rem !important;
 }
 
 .cre8-u-margin-md {
-  margin: size(2) !important;
+  margin: 1rem !important;
 }
 
 .cre8-u-margin-lg {
-  margin: size(3) !important;
+  margin: 1.5rem !important;
 }
 
 .cre8-u-margin-xl {
-  margin: size(4) !important;
+  margin: 2rem !important;
 }
 
 .cre8-u-margin-xxl {
-  margin: size(8) !important;
+  margin: 4rem !important;
 }
 
 .cre8-u-margin-top-none {
@@ -97,23 +97,23 @@ const styles = css`.cre8-u-content-knockout-brand {
 }
 
 .cre8-u-margin-top-sm {
-  margin-top: size(1) !important;
+  margin-top: 0.5rem !important;
 }
 
 .cre8-u-margin-top-md {
-  margin-top: size(2) !important;
+  margin-top: 1rem !important;
 }
 
 .cre8-u-margin-top-lg {
-  margin-top: size(3) !important;
+  margin-top: 1.5rem !important;
 }
 
 .cre8-u-margin-top-xl {
-  margin-top: size(4) !important;
+  margin-top: 2rem !important;
 }
 
 .cre8-u-margin-top-xxl {
-  margin-top: size(8) !important;
+  margin-top: 4rem !important;
 }
 
 .cre8-u-margin-right-none {
@@ -121,23 +121,23 @@ const styles = css`.cre8-u-content-knockout-brand {
 }
 
 .cre8-u-margin-right-sm {
-  margin-right: size(1) !important;
+  margin-right: 0.5rem !important;
 }
 
 .cre8-u-margin-right-md {
-  margin-right: size(2) !important;
+  margin-right: 1rem !important;
 }
 
 .cre8-u-margin-right-lg {
-  margin-right: size(3) !important;
+  margin-right: 1.5rem !important;
 }
 
 .cre8-u-margin-right-xl {
-  margin-right: size(4) !important;
+  margin-right: 2rem !important;
 }
 
 .cre8-u-margin-right-xxl {
-  margin-right: size(8) !important;
+  margin-right: 4rem !important;
 }
 
 .cre8-u-margin-bottom-none {
@@ -145,32 +145,32 @@ const styles = css`.cre8-u-content-knockout-brand {
 }
 
 .cre8-u-margin-bottom-sm {
-  margin-bottom: size(1) !important;
+  margin-bottom: 0.5rem !important;
 }
 
 .cre8-u-margin-bottom-md {
-  margin-bottom: size(2) !important;
+  margin-bottom: 1rem !important;
 }
 
 .cre8-u-margin-bottom-lg {
-  margin-bottom: size(3) !important;
+  margin-bottom: 1.5rem !important;
 }
 
 .cre8-u-margin-bottom-xl {
-  margin-bottom: size(4) !important;
+  margin-bottom: 2rem !important;
 }
 
 .cre8-u-margin-bottom-xxl {
-  margin-bottom: size(8) !important;
+  margin-bottom: 4rem !important;
 }
 
 .cre8-u-margin-bottom-xl-xxl {
-  margin-bottom: size(4) !important;
+  margin-bottom: 2rem !important;
 }
 
 @media all and (min-width: 768px) {
   .cre8-u-margin-bottom-xl-xxl {
-    margin-bottom: size(8) !important;
+    margin-bottom: 4rem !important;
   }
 }
 .cre8-u-margin-left-none {
@@ -178,23 +178,23 @@ const styles = css`.cre8-u-content-knockout-brand {
 }
 
 .cre8-u-margin-left-sm {
-  margin-left: size(1) !important;
+  margin-left: 0.5rem !important;
 }
 
 .cre8-u-margin-left-md {
-  margin-left: size(2) !important;
+  margin-left: 1rem !important;
 }
 
 .cre8-u-margin-left-lg {
-  margin-left: size(3) !important;
+  margin-left: 1.5rem !important;
 }
 
 .cre8-u-margin-left-xl {
-  margin-left: size(4) !important;
+  margin-left: 2rem !important;
 }
 
 .cre8-u-margin-left-xxl {
-  margin-left: size(8) !important;
+  margin-left: 4rem !important;
 }
 
 .cre8-u-padding-none {
@@ -202,23 +202,23 @@ const styles = css`.cre8-u-content-knockout-brand {
 }
 
 .cre8-u-padding-sm {
-  padding: size(1) !important;
+  padding: 0.5rem !important;
 }
 
 .cre8-u-padding-md {
-  padding: size(2) !important;
+  padding: 1rem !important;
 }
 
 .cre8-u-padding-lg {
-  padding: size(3) !important;
+  padding: 1.5rem !important;
 }
 
 .cre8-u-padding-xl {
-  padding: size(4) !important;
+  padding: 2rem !important;
 }
 
 .cre8-u-padding-xxl {
-  padding: size(8) !important;
+  padding: 4rem !important;
 }
 
 .cre8-u-padding-top-none {
@@ -226,23 +226,23 @@ const styles = css`.cre8-u-content-knockout-brand {
 }
 
 .cre8-u-padding-top-sm {
-  padding-top: size(1) !important;
+  padding-top: 0.5rem !important;
 }
 
 .cre8-u-padding-top-md {
-  padding-top: size(2) !important;
+  padding-top: 1rem !important;
 }
 
 .cre8-u-padding-top-lg {
-  padding-top: size(3) !important;
+  padding-top: 1.5rem !important;
 }
 
 .cre8-u-padding-top-xl {
-  padding-top: size(4) !important;
+  padding-top: 2rem !important;
 }
 
 .cre8-u-padding-top-xxl {
-  padding-top: size(8) !important;
+  padding-top: 4rem !important;
 }
 
 .cre8-u-padding-right-none {
@@ -250,23 +250,23 @@ const styles = css`.cre8-u-content-knockout-brand {
 }
 
 .cre8-u-padding-right-sm {
-  padding-right: size(1) !important;
+  padding-right: 0.5rem !important;
 }
 
 .cre8-u-padding-right-md {
-  padding-right: size(2) !important;
+  padding-right: 1rem !important;
 }
 
 .cre8-u-padding-right-lg {
-  padding-right: size(3) !important;
+  padding-right: 1.5rem !important;
 }
 
 .cre8-u-padding-right-xl {
-  padding-right: size(4) !important;
+  padding-right: 2rem !important;
 }
 
 .cre8-u-padding-right-xxl {
-  padding-right: size(8) !important;
+  padding-right: 4rem !important;
 }
 
 .cre8-u-padding-bottom-none {
@@ -274,23 +274,23 @@ const styles = css`.cre8-u-content-knockout-brand {
 }
 
 .cre8-u-padding-bottom-sm {
-  padding-bottom: size(1) !important;
+  padding-bottom: 0.5rem !important;
 }
 
 .cre8-u-padding-bottom-md {
-  padding-bottom: size(2) !important;
+  padding-bottom: 1rem !important;
 }
 
 .cre8-u-padding-bottom-lg {
-  padding-bottom: size(3) !important;
+  padding-bottom: 1.5rem !important;
 }
 
 .cre8-u-padding-bottom-xl {
-  padding-bottom: size(4) !important;
+  padding-bottom: 2rem !important;
 }
 
 .cre8-u-padding-bottom-xxl {
-  padding-bottom: size(8) !important;
+  padding-bottom: 4rem !important;
 }
 
 .cre8-u-padding-left-none {
@@ -298,23 +298,23 @@ const styles = css`.cre8-u-content-knockout-brand {
 }
 
 .cre8-u-padding-left-sm {
-  padding-left: size(1) !important;
+  padding-left: 0.5rem !important;
 }
 
 .cre8-u-padding-left-md {
-  padding-left: size(2) !important;
+  padding-left: 1rem !important;
 }
 
 .cre8-u-padding-left-lg {
-  padding-left: size(3) !important;
+  padding-left: 1.5rem !important;
 }
 
 .cre8-u-padding-left-xl {
-  padding-left: size(4) !important;
+  padding-left: 2rem !important;
 }
 
 .cre8-u-padding-left-xxl {
-  padding-left: size(8) !important;
+  padding-left: 4rem !important;
 }
 
 .cre8-u-display-flex {
@@ -330,7 +330,6 @@ body {
   font-size: var(--cre8-typography-body-default-font-size);
   font-weight: var(--cre8-typography-body-default-font-weight);
   line-height: var(--cre8-typography-body-default-line-height);
-  -webkit-text-decoration: var(--cre8-typography-body-default-text-decoration);
   text-decoration: var(--cre8-typography-body-default-text-decoration);
   text-transform: var(--cre8-typography-body-default-text-transform);
   display: flex;
@@ -338,7 +337,7 @@ body {
   padding: 0;
   margin: 0;
   color: var(--cre8-color-content-default);
-  background: var(--background-default);
+  background: var(--cre8-color-bg-default);
 }
 
 @media all and (min-width: 60rem) {
@@ -639,9 +638,12 @@ span.ripple {
  * Horizontal card
  * 1) Organized block with flex-direction set to row so that header => footer appears
  * from left to right rather than top to bottom
+ * 2) Wraps to a stack once the body can no longer hold its basis
  */
 .cre8-c-card--horizontal {
   flex-direction: row;
+  flex-wrap: wrap;
+  /* 2 */
   align-items: center;
   justify-content: center;
 }
@@ -661,9 +663,12 @@ span.ripple {
  * Horizontal-bare card
  * 1) Organized block with flex-direction set to row so that header => footer appears
  * from left to right rather than top to bottom without a border, background, or padding
+ * 2) Wraps to a stack once the body can no longer hold its basis
  */
 .cre8-c-card--horizontal-bare {
   flex-direction: row;
+  flex-wrap: wrap;
+  /* 2 */
   border: 0;
   padding: 0;
   gap: 0;
@@ -696,26 +701,42 @@ span.ripple {
 /**
  * Card header
  * 1) Remove flex so that body always takes up remaining space
+ * 2) ...except in a horizontal card, where holding max-content width would
+ * starve the body instead.
  */
 .cre8-c-card__header {
   display: block;
   flex: none;
   /* 1 */
 }
+.cre8-c-card--horizontal .cre8-c-card__header, .cre8-c-card--horizontal-bare .cre8-c-card__header {
+  flex: 0 1 auto;
+  /* 2 */
+}
 
 /**
  * Card body
  * 1) Flex applied to always fill the remaining space of the card
+ * 2) In a horizontal card the body is the flexible track, so it needs a basis
+ * of its own and \`min-width: 0\`; otherwise it is the only item able to shrink
+ * and collapses to min-content beside a wide header.
  */
 .cre8-c-card__body {
   display: block;
   flex: 1 1 auto;
   /* 1 */
 }
+.cre8-c-card--horizontal .cre8-c-card__body, .cre8-c-card--horizontal-bare .cre8-c-card__body {
+  flex: 1 1 20rem;
+  /* 2 */
+  min-width: 0;
+  /* 2 */
+}
 
 /**
  * Card footer
  * 1) Remove flex so that body always takes up remaining space
+ * 2) ...except in a horizontal card - see the note on the header.
  */
 .cre8-c-card__footer {
   display: block;
@@ -727,5 +748,9 @@ span.ripple {
 }
 .cre8-c-card--horizontal-bare .cre8-c-card__footer {
   padding: 0;
+}
+.cre8-c-card--horizontal .cre8-c-card__footer, .cre8-c-card--horizontal-bare .cre8-c-card__footer {
+  flex: 0 1 auto;
+  /* 2 */
 }`;
 export default styles;
