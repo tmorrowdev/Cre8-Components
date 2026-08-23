@@ -18,6 +18,14 @@
 // uses, which is backwards from what the eval wants to reward - hence a
 // fixture that uses a lot of it.
 //
+// The verifier has since moved from jsdom to real Chromium, which removes
+// the second failure mode at the source: the browser implements
+// form-associated custom elements properly, and this fixture now renders
+// with zero render_errors where jsdom reported one. The first (scalar-only
+// props) is still live and still load-bearing. The fixture stays either
+// way - it is the only one here big enough to catch a whole class of
+// "breaks on realistic input" bug that the reference solution cannot.
+//
 // Asserted only to score > 0 over a substantial node count, not to hit a
 // fixed number. It's one agent's answer to an open brief, so its exact
 // reward isn't a spec, but "the harness survives it" is.

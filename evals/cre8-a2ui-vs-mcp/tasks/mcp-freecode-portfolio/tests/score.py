@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Verifier entrypoint for the freecode task. Renders /app/src/App.tsx for
-real and scores the DOM it produces, instead of parsing a JSON file the
-oracle/score.py that every A2UI task shares assumes.
+"""Verifier entrypoint for the freecode task. Builds /app/src/App.tsx and
+renders it in real Chromium, scoring the DOM it produces, instead of parsing
+a JSON file the way the oracle/score.py every A2UI task shares assumes.
 
 Run as `python3 /tests/score.py` from /tests/test.sh (same contract as every
 other task). Writes the same two files in the same shape:
@@ -54,20 +54,20 @@ def main() -> int:
     if not app_path.exists():
         report["error"] = f"{app_path} was never written"
     else:
-        # jsdom/tsx live in /app/node_modules (declared as devDependencies of
-        # the scaffolded app, installed at image build time). Node's ESM
-        # resolver looks for bare imports relative to the *importing file's*
-        # own location, not the process cwd - running serialize-dom.mjs
-        # straight out of /tests would never find them, since /tests isn't
-        # under /app. Copying it into /app first (rather than, say, setting
-        # NODE_PATH) is what actually works: ESM resolution ignores NODE_PATH
-        # entirely, by design, since Node 12.
+        # playwright lives in /app/node_modules (a devDependency of the
+        # scaffolded app, installed at image build time). Node's ESM resolver
+        # looks for bare imports relative to the *importing file's* own
+        # location, not the process cwd - running serialize-dom.mjs straight
+        # out of /tests would never find it, since /tests isn't under /app.
+        # Copying it into /app first (rather than, say, setting NODE_PATH) is
+        # what actually works: ESM resolution ignores NODE_PATH entirely, by
+        # design, since Node 12.
         harness_copy = APP_DIR / ".verifier-serialize-dom.mjs"
         shutil.copy(TESTS_DIR / "serialize-dom.mjs", harness_copy)
         proc = subprocess.run(
-            ["npx", "tsx", str(harness_copy),
+            ["node", str(harness_copy),
              str(TESTS_DIR / "catalog.compact.json"), str(APP_DIR)],
-            cwd=APP_DIR, capture_output=True, text=True, timeout=120,
+            cwd=APP_DIR, capture_output=True, text=True, timeout=240,
         )
         harness_copy.unlink(missing_ok=True)
         if proc.returncode != 0:
@@ -84,9 +84,12 @@ def main() -> int:
 
             if result is not None and result.get("render_errors"):
                 # Components that threw while rendering but didn't stop the
-                # tree being produced - mostly jsdom's partial support for
-                # form-associated custom elements. Reported, not scored: the
-                # light DOM being audited is what the agent actually wrote.
+                # tree being produced. Reported, not scored: the light DOM
+                # being audited is what the agent actually wrote, and a
+                # component failing to finish its own update doesn't remove
+                # it. Under jsdom this was routine (no setValidity on its
+                # ElementInternals); in Chromium anything showing up here is
+                # far more likely to be real.
                 report["render_errors"] = result["render_errors"]
 
             if result is not None and "error" in result:

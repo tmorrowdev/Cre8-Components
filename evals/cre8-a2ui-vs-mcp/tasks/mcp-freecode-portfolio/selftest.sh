@@ -7,12 +7,12 @@
 # this selftest called oracle.score_spec() directly against a locally-run
 # serialize-dom.mjs and passed cleanly while tests/score.py itself was
 # silently broken (it ran serialize-dom.mjs straight out of /tests, and
-# Node's ESM resolver looks for jsdom relative to the *importing file's* own
-# path, not cwd - since /tests isn't under /app, every real verifier run
-# would have failed to find jsdom - `docker run` + the real entrypoint is
-# what actually exercises the code path a real trial runs).
+# Node's ESM resolver looks for a bare import relative to the *importing
+# file's* own path, not cwd - since /tests isn't under /app, every real
+# verifier run would have failed to resolve it - `docker run` + the real
+# entrypoint is what actually exercises the code path a real trial runs).
 #
-# Three fixtures against the same App.tsx-editing task:
+# Four fixtures against the same App.tsx-editing task:
 #   1. solution/App.tsx (real cre8-react components, real slots, real enum
 #      values)   -> expect reward 1.000, zero violations.
 #   2. selftest/bad-App.tsx (an invalid slot name and an invalid enum value -
@@ -21,6 +21,9 @@
 #      with slot_validity and enum_validity specifically flagged.
 #   3. environment/app/src/App.tsx untouched (the placeholder every real
 #      trial starts from) -> expect reward 0.000 (renders no cre8-* content).
+#   4. selftest/rich-App.tsx, a real ~40-component trial submission kept
+#      verbatim -> expect > 0 over a substantial node count. This one is a
+#      regression guard, not a correctness assertion: see its header.
 #
 # There's no fixture proving component_validity/prop_validity catch mistakes,
 # unlike the JSON tasks' selftests: for honestly-typed React code, an unknown

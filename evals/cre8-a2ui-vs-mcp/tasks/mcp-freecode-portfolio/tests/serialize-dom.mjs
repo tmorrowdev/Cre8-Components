@@ -1,239 +1,192 @@
 #!/usr/bin/env node
-// Builds /app for real with the agent's own `npm run build` (vite), then
-// imports the built bundle under jsdom and walks the resulting light DOM to
-// reconstruct an A2UI-shaped node tree from it - so the exact same
-// oracle.score_spec()/check_requirements() that scores a hand-authored A2UI
-// JSON file can score real rendered React code too, unchanged. Building
-// first rather than importing src/App.tsx directly is deliberate: plain
-// Node's ESM loader (even through tsx) doesn't know what to do with the
-// `.svg` imports and other bundler-only asset syntax @tmorrow/cre8-wc's own
-// components use internally, and vite already resolves every one of those
-// into plain, inlined JS the same way it would for a real deployed page - a
-// build failure is also exactly the failure a real "ship this" check would
-// hit, which the task's own instructions already tell the agent to run.
+// Builds /app with the agent's own vite build, then loads the built page in
+// real Chromium and walks the rendered light DOM to reconstruct an
+// A2UI-shaped node tree - so the exact same oracle.score_spec() that scores
+// a hand-authored A2UI JSON file scores real rendered React too, unchanged.
 //
-// Run as `node --import tsx serialize-dom.mjs <catalog.compact.json path>
-// <app dir>`; prints the node tree as JSON on stdout, or `{"error": "..."}`
-// if the app never built or never rendered (scores like an empty spec, not
-// a crash).
+// This replaced a jsdom implementation. jsdom cost two workarounds that a
+// real browser simply doesn't need: it implements form-associated custom
+// elements only partially (attachInternals() returns an ElementInternals
+// with no setValidity, so every cre8 field component threw mid-update and
+// killed the run), and it has no layout engine at all, so nothing about the
+// rendered result could be checked beyond the tree itself. Chromium runs the
+// same code the design system actually ships to, which is the point.
+//
+// Run as `node serialize-dom.mjs <catalog.compact.json> <app dir>`; prints
+// the node tree as JSON on stdout, or {"error": "..."} if the app never
+// built or never rendered (scores like an empty spec, not a crash).
 //
 // Two divergences from the A2UI schema, both because this is real code with
-// real DOM semantics instead of a JSON tree someone hand-wrote:
+// real DOM semantics rather than a JSON tree someone hand-wrote:
 //
 //   - Plain HTML wrapper elements (a `<div>` for layout, most commonly the
-//     one carrying `slot="x"` - see instruction.md's own example) have no
-//     A2UI equivalent. They're walked through rather than treated as nodes:
-//     a cre8-* element nested inside one is attached to the nearest real
-//     cre8-* ancestor exactly as if the wrapper weren't there, and a `slot`
-//     attribute encountered on the way down is inherited by whatever cre8-*
-//     descendants it reaches, so `<div slot="header"><Cre8Heading/></div>`
-//     scores identically to slotting the heading directly.
-//   - Property values are read back from the live DOM node
-//     (`element[propName]`), which is exactly what @lit/react's
-//     `createComponent` sets `node[name] = value` from - the same value the
-//     JSX literal passed, for every type, not just what happens to survive
-//     as a string attribute. The one gap: a prop whose class default is
-//     already non-undefined (rare - `cre8-layout-section`'s `top` is the one
-//     in this catalog) can't be told apart from the agent having set it
-//     explicitly. Documented, not fixed - the alternative (patching
-//     React.createElement to capture literal JSX props) can't reliably
-//     re-associate a prop set with the DOM node it produced once
-//     Suspense/conditionals are in play, which real code uses far more than
-//     hand-authored JSON does.
+//     one carrying `slot="x"`) have no A2UI equivalent. They're walked
+//     through rather than treated as nodes: a cre8-* element inside one
+//     attaches to the nearest real cre8-* ancestor as if the wrapper weren't
+//     there, and a `slot` attribute met on the way down is inherited by the
+//     cre8-* descendants it reaches, so `<div slot="header"><Cre8Heading/>`
+//     scores the same as slotting the heading directly.
+//   - Property values are read off the live element, which is what
+//     @lit/react's createComponent assigns from the JSX literal - the actual
+//     value for every type, not just what survives as a string attribute.
+//     The gap: a prop whose class default is already non-undefined can't be
+//     told apart from one the agent set explicitly. Documented, not fixed;
+//     the alternative (patching React.createElement to capture literal JSX
+//     props) can't reliably tie a prop set back to the DOM node it produced
+//     once Suspense and conditionals are involved.
 
-import { JSDOM, VirtualConsole } from 'jsdom';
+import { chromium } from 'playwright';
 import { readFileSync } from 'node:fs';
-import { pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
+import http from 'node:http';
 import path from 'node:path';
 
 const [, , catalogPath, appDir] = process.argv;
 const catalog = JSON.parse(readFileSync(catalogPath, 'utf8'));
-const knownProps = new Map(catalog.components.map((c) => [c.name, Object.keys(c.props || {})]));
+// name -> declared prop names, the only props worth reading back.
+const knownProps = Object.fromEntries(
+  catalog.components.map((c) => [c.name, Object.keys(c.props || {})]),
+);
 
-// jsdom reports an exception thrown inside a custom element's
-// connectedCallback as a "jsdomError" rather than letting it reach Node.
-// Swallow those: one component throwing while it connects shouldn't zero an
-// otherwise-complete tree, and whatever did render is still there to audit.
-const virtualConsole = new VirtualConsole();
-virtualConsole.on('jsdomError', () => {});
-// The same tolerance, for throws jsdom never sees. Lit updates run in a
-// microtask, so a component that throws while updating (rather than while
-// connecting) surfaces as a process-level uncaught exception and would kill
-// the run outright. jsdom implements form-associated custom elements only
-// partially - `attachInternals()` returns an ElementInternals with no
-// setValidity - so every cre8 field component throws here through no fault
-// of the code being scored. What we serialize is the *light* DOM, which
-// React has already placed by then and which a failed shadow-render doesn't
-// remove, so the tree is still the one the agent wrote. Recorded and
-// reported alongside the score rather than silently dropped.
-const renderErrors = [];
-process.on('uncaughtException', (err) => renderErrors.push(String(err?.stack || err)));
-process.on('unhandledRejection', (err) => renderErrors.push(String(err?.stack || err)));
-const dom = new JSDOM('<!doctype html><html><body><div id="root"></div></body></html>', {
-  url: 'http://localhost/',
-  pretendToBeVisual: true,
-  virtualConsole,
-});
-// Copy jsdom's whole window onto the Node global object rather than
-// enumerate every browser API a Lit component or React might touch by
-// name - that list turned out to be long (Document, MutationObserver,
-// Element, ... - one ReferenceError at a time). Node's own globals
-// (process, Buffer, require, console, the Node-native `navigator`, ...)
-// win on conflict, same as `global-jsdom` and similar setup packages do.
-//
-// A note on what that costs, since it looks like a bug and isn't: Node 22
-// ships its own Event/CustomEvent/EventTarget, so they're kept over jsdom's,
-// and jsdom type-checks across realms - a component that does
-// `this.dispatchEvent(new CustomEvent(...))` while connecting throws
-// "parameter 1 is not of type 'Event'". Several cre8 components do. Those
-// throws are caught below and reported as render_errors; they do not affect
-// the score, because what's serialized is the *light* DOM, which React has
-// already placed and which a failed connectedCallback doesn't remove.
-// Letting jsdom win instead was tried and is worse: jsdom implements
-// `performance` and the timer family by delegating back to the global of the
-// same name (Performance-impl.now() is literally
-// `return performance.now() - this._nowAtTimeOrigin`), so overriding those
-// recurses until the stack blows. Not worth reintroducing to silence a
-// harmless log line.
-const RESERVED = new Set(['undefined', 'eval', 'Function', 'GLOBAL', 'global', 'globalThis']);
-for (const key of Object.getOwnPropertyNames(dom.window)) {
-  if (RESERVED.has(key) || key in globalThis) continue;
-  try {
-    globalThis[key] = dom.window[key];
-  } catch {
-    // A handful of window accessors throw outside a real browser (e.g.
-    // `localStorage` under some jsdom configs) - not needed for this.
+const MIME = {
+  '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css',
+  '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.woff': 'font/woff',
+  '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpeg',
+};
+
+function build() {
+  const result = spawnSync('npx', ['vite', 'build'], { cwd: appDir, encoding: 'utf8' });
+  if (result.status !== 0) {
+    throw new Error(`vite build failed:\n${result.stdout}\n${result.stderr}`);
   }
 }
-globalThis.window = dom.window;
-globalThis.document = dom.window.document;
-// Node has its own read-only `navigator` global since v21; only a
-// defineProperty can override it, a plain assignment throws.
-Object.defineProperty(globalThis, 'navigator', { value: dom.window.navigator, configurable: true });
-// jsdom doesn't implement these (no real layout engine to observe) but some
-// components reference the constructors even when nothing is ever observed.
-globalThis.ResizeObserver ??= class { observe() {} unobserve() {} disconnect() {} };
-globalThis.IntersectionObserver ??= class { observe() {} unobserve() {} disconnect() {} };
-globalThis.requestAnimationFrame = (cb) => setTimeout(cb, 0);
-globalThis.cancelAnimationFrame = (id) => clearTimeout(id);
 
-// Walks one element's childNodes, returning a flat list of {node, slot}
-// items - `node` is either a text string or a nested component object.
-// Plain HTML children are walked through rather than becoming nodes
-// themselves: their own text and cre8-* descendants surface directly into
-// this list, carrying the wrapper's `slot` attribute down if it had one and
-// nothing closer inside it already set one. This is what makes
-// `<p>text</p>` inside a cre8-text-passage register as text content, and
-// `<div slot="header"><Cre8Heading/></div>` (this task's own instruction.md
-// example) score identically to slotting the heading directly.
-function collectChildren(el, inheritedSlot) {
-  const out = [];
-  for (const child of el.childNodes) {
-    if (child.nodeType === 3) {
-      const text = child.textContent.trim();
-      if (text) out.push({ node: text, slot: inheritedSlot });
-      continue;
+// The built index.html references /assets/... absolutely, so file:// can't
+// resolve it - it needs an origin. A throwaway static server over the dist
+// directory is the smallest thing that gives it one.
+function serve(root) {
+  const server = http.createServer((req, res) => {
+    const rel = decodeURIComponent(req.url.split('?')[0]);
+    const file = path.join(root, rel === '/' ? 'index.html' : rel);
+    if (!path.resolve(file).startsWith(path.resolve(root))) {
+      res.statusCode = 403;
+      return res.end();
     }
-    if (child.nodeType !== 1) continue;
-    out.push(...serialize(child, inheritedSlot));
-  }
-  return out;
+    try {
+      const body = readFileSync(file);
+      res.setHeader('Content-Type', MIME[path.extname(file)] || 'application/octet-stream');
+      res.end(body);
+    } catch {
+      res.statusCode = 404;
+      res.end();
+    }
+  });
+  return new Promise((resolve) => server.listen(0, () => resolve(server)));
 }
 
-function serialize(el, inheritedSlot) {
-  const tag = el.tagName ? el.tagName.toLowerCase() : null;
-  const isCre8 = tag && knownProps.has(tag);
-  const ownSlot = el.getAttribute && el.getAttribute('slot');
-  const slot = ownSlot || inheritedSlot || null;
+// Runs inside the page. Returns {root} or {empty:true}; everything it hands
+// back has to survive structured cloning, which is why props are filtered to
+// scalars - reading a live property can return an internal Lit object, and
+// those are circular (a template result's renderOptions.host points back at
+// the element it rendered into).
+function walk(knownProps) {
+  function collectChildren(el, inheritedSlot) {
+    const out = [];
+    for (const child of el.childNodes) {
+      if (child.nodeType === 3) {
+        const text = child.textContent.trim();
+        if (text) out.push({ node: text, slot: inheritedSlot });
+        continue;
+      }
+      if (child.nodeType !== 1) continue;
+      out.push(...serialize(child, inheritedSlot));
+    }
+    return out;
+  }
 
-  if (isCre8) {
+  function serialize(el, inheritedSlot) {
+    const tag = el.tagName ? el.tagName.toLowerCase() : null;
+    const declared = tag ? knownProps[tag] : undefined;
+    const ownSlot = el.getAttribute ? el.getAttribute('slot') : null;
+    const slot = ownSlot || inheritedSlot || null;
+
+    if (!declared) {
+      // Not a cre8-* element: walk through it rather than emitting a node.
+      return collectChildren(el, slot);
+    }
+
     const props = {};
-    for (const name of knownProps.get(tag)) {
+    for (const name of declared) {
       const value = el[name];
       if (value === undefined || value === null || value === false) continue;
-      // Reading a live property can hand back an internal object rather than
-      // the scalar the JSX passed - a Lit template result, a controller, a
-      // DOM node - and those are both unserializable (circular: a template's
-      // renderOptions.host points back at the element) and meaningless as a
-      // "prop value the agent chose". Every prop the catalog declares is a
-      // string, number, boolean or enum, and score_spec's own enum check only
-      // considers those types, so keeping scalars loses nothing real.
       if (typeof value === 'object' || typeof value === 'function') continue;
       props[name] = value;
     }
+
     const children = [];
     const slots = {};
     for (const item of collectChildren(el, null)) {
-      if (item.slot) {
-        (slots[item.slot] ||= []).push(item.node);
-      } else {
-        children.push(item.node);
-      }
+      if (item.slot) (slots[item.slot] ||= []).push(item.node);
+      else children.push(item.node);
     }
+
     const node = { component: tag, props };
     if (children.length) node.children = children;
     if (Object.keys(slots).length) node.slots = slots;
     return [{ node, slot }];
   }
 
-  // Not a cre8-* element: walk through it rather than emitting a node.
-  return collectChildren(el, slot);
-}
-
-function buildAndFindEntry() {
-  const build = spawnSync('npx', ['vite', 'build'], { cwd: appDir, encoding: 'utf8' });
-  if (build.status !== 0) {
-    throw new Error(`vite build failed:\n${build.stdout}\n${build.stderr}`);
-  }
-  const indexHtml = readFileSync(path.join(appDir, 'dist', 'index.html'), 'utf8');
-  const match = indexHtml.match(/<script[^>]+type="module"[^>]+src="([^"]+)"/);
-  if (!match) {
-    throw new Error(`dist/index.html has no module script tag:\n${indexHtml}`);
-  }
-  return path.join(appDir, 'dist', match[1].replace(/^\//, ''));
+  const container = document.getElementById('root');
+  if (!container) return { empty: true, reason: 'no #root element' };
+  const results = collectChildren(container, null).filter((r) => typeof r.node === 'object');
+  if (!results.length) return { empty: true, reason: 'App rendered no content' };
+  // score_spec needs a single root. Multiple top-level cre8-* siblings (a
+  // header and a main, say) get wrapped in cre8-main: inventing a component
+  // name would score as an invalid name, and cre8-main is the only real
+  // component in this catalog that accepts free children, isn't a restricted
+  // family child of anything, and has no required props.
+  const root = results.length === 1
+    ? results[0].node
+    : { component: 'cre8-main', props: {}, children: results.map((r) => r.node) };
+  return { root };
 }
 
 async function main() {
+  let server;
+  let browser;
+  const renderErrors = [];
   try {
-    const entryPath = buildAndFindEntry();
-    // The built entry's own top-level code is main.tsx's
-    // `createRoot(...).render(<App/>)` - importing it mounts the app as a
-    // side effect, into the `#root` div already sitting in the jsdom
-    // document above.
-    await import(pathToFileURL(entryPath).href);
+    build();
+    server = await serve(path.join(appDir, 'dist'));
+    const { port } = server.address();
 
-    const container = document.getElementById('root');
-    // Flush React's commit + any effects; jsdom has no real paint loop.
-    await new Promise((resolve) => setTimeout(resolve, 300));
+    browser = await chromium.launch({
+      args: ['--no-sandbox', '--disable-dev-shm-usage'],
+    });
+    const page = await browser.newPage({ viewport: { width: 1280, height: 1000 } });
+    // A component that throws while rendering is reported, not fatal: what
+    // gets serialized is the light DOM, which React has already placed and
+    // which a failed update doesn't remove.
+    page.on('pageerror', (err) => renderErrors.push(String(err).split('\n')[0]));
 
-    const results = collectChildren(container, null).filter((r) => typeof r.node === 'object');
-    if (!results.length) {
-      throw new Error('App rendered no content');
-    }
-    // Multiple top-level cre8-* elements (a page with a header and a main as
-    // siblings, say): score.py needs one root. Wrapping in a synthetic node
-    // would either invent a fake component (scored as an invalid name, unfair)
-    // or use a real one the agent never wrote (its own containment rules,
-    // if any, then apply to children that never asked for them). `cre8-main`
-    // is the least-bad real choice available: it accepts free children,
-    // isn't a restricted family child of anything, and has no required props
-    // - the only real component in this catalog with all three.
-    const root_ = results.length === 1
-      ? results[0].node
-      : { component: 'cre8-main', props: {}, children: results.map((r) => r.node) };
-    const out = { root: root_ };
-    if (renderErrors.length) {
-      // Deduplicated: one broken component in a list of ten throws ten
-      // identical stacks, which says nothing more than one does.
-      out.render_errors = [...new Set(renderErrors)].slice(0, 10);
-    }
+    await page.goto(`http://127.0.0.1:${port}/`, { waitUntil: 'networkidle', timeout: 60000 });
+    // Let custom elements upgrade and Lit flush its first update.
+    await page.waitForTimeout(1500);
+
+    const result = await page.evaluate(walk, knownProps);
+    if (result.empty) throw new Error(result.reason);
+
+    const out = { root: result.root };
+    if (renderErrors.length) out.render_errors = [...new Set(renderErrors)].slice(0, 10);
     process.stdout.write(JSON.stringify(out));
   } catch (err) {
     process.stdout.write(JSON.stringify({
       error: `${err.message}\n${err.stack || ''}`,
       ...(renderErrors.length ? { render_errors: [...new Set(renderErrors)].slice(0, 10) } : {}),
     }));
+  } finally {
+    if (browser) await browser.close().catch(() => {});
+    if (server) server.close();
   }
 }
 
