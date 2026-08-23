@@ -39,6 +39,13 @@ text; they just aren't scored the way `cre8-*` components are.
 Do not add new npm dependencies. Nothing outside `/app/src/App.tsx` is
 scored.
 
+The page is already themed: `main.tsx` loads the design tokens and fonts
+before your component renders. Do not import a theme or any token CSS
+yourself (`@tmorrow/cre8-wc/themes/...`) - an import inside `App.tsx` is
+evaluated *after* the ones in `main.tsx` and would override the brand the
+page is meant to be shown in. Style with the components and their props;
+the palette and type are not yours to set.
+
 ## The brief
 
 Design and build a unique and eye-catching portfolio for an AI engineer.
