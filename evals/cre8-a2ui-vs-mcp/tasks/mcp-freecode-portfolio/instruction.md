@@ -1,5 +1,5 @@
 You are building UI for Innovexa, a web app built on the CRE8 design system's
-React package `@tmorrow/cre8-react` (version 2.3.5).
+React package `@tmorrow/cre8-react` (version 2.3.6).
 
 A minimal Vite + React + TypeScript app is already scaffolded at `/app`.
 `react`, `react-dom`, and `@tmorrow/cre8-react` are already installed. Edit

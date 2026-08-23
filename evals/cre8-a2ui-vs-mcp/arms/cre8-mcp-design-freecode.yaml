@@ -41,4 +41,4 @@ agents:
       - name: cre8
         transport: stdio
         command: npx
-        args: ["-y", "@tmorrow/cre8-mcp@2.3.5"]
+        args: ["-y", "@tmorrow/cre8-mcp@2.3.6"]
