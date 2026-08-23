@@ -1,0 +1,33 @@
+import{j as e}from"./jsx-runtime-u17CrQMm.js";import{t as l,p as a}from"./Cre8TextPassage-BVQSRsKO.js";import{e as d}from"./iframe-DsBIbsq0.js";import"./preload-helper-PPVm8Dsz.js";const g={title:"Cre8 Components/Field Note",render:c=>e.jsx(l,{...c,children:c.children}),component:l,parameters:{status:{type:"inProgress"},controls:{exclude:new RegExp(`${d.join("|")}`)}},args:{children:void 0,isError:void 0,isSuccess:void 0},argTypes:{iconName:{control:"text"},isError:{control:"boolean"},isSuccess:{control:"boolean"}}},r={args:{children:"This is a field note."}},s={args:{children:e.jsxs(e.Fragment,{children:[e.jsx(a,{href:"https://www.cre8.com",children:"Helpful link"})," at the beginning of a field note"]})}},n={args:{children:e.jsxs(e.Fragment,{children:["This is a field note with a ",e.jsx(a,{href:"https://www.cre8.com",children:"helpful link"})," in the middle of content"]})}},i={args:{children:e.jsxs(e.Fragment,{children:["This is a field note with an ending ",e.jsx(a,{href:"https://www.cre8.com",children:"helpful link"})]})}},t={args:{isError:!0,children:"This is a field note with an error state."}},o={args:{isSuccess:!0,children:"This is a field note with an success state."}};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:`{
+  args: {
+    children: 'This is a field note.'
+  }
+}`,...r.parameters?.docs?.source}}};s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:`{
+  args: {
+    children: <>
+      <Cre8TextLink href="https://www.cre8.com">Helpful link</Cre8TextLink> at the beginning of a field note
+    </>
+  }
+}`,...s.parameters?.docs?.source}}};n.parameters={...n.parameters,docs:{...n.parameters?.docs,source:{originalSource:`{
+  args: {
+    children: <>
+      This is a field note with a <Cre8TextLink href="https://www.cre8.com">helpful link</Cre8TextLink> in the middle of content
+    </>
+  }
+}`,...n.parameters?.docs?.source}}};i.parameters={...i.parameters,docs:{...i.parameters?.docs,source:{originalSource:`{
+  args: {
+    children: <>
+      This is a field note with an ending <Cre8TextLink href="https://www.cre8.com">helpful link</Cre8TextLink>
+    </>
+  }
+}`,...i.parameters?.docs?.source}}};t.parameters={...t.parameters,docs:{...t.parameters?.docs,source:{originalSource:`{
+  args: {
+    isError: true,
+    children: 'This is a field note with an error state.'
+  }
+}`,...t.parameters?.docs?.source}}};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:`{
+  args: {
+    isSuccess: true,
+    children: 'This is a field note with an success state.'
+  }
+}`,...o.parameters?.docs?.source}}};const f=["Default","BeginningLink","MiddleLink","EndingLink","Error","Success"];export{s as BeginningLink,r as Default,i as EndingLink,t as Error,n as MiddleLink,o as Success,f as __namedExportsOrder,g as default};
