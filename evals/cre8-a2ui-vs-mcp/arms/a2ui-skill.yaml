@@ -10,8 +10,9 @@ datasets:
   - path: tasks
     # mcp-freecode-portfolio is scored by building and rendering real React
     # code, which needs Bash and an installed @tmorrow/cre8-react - neither of
-    # which this arm's isolation allows. It runs from arms/cre8-mcp-freecode.yaml
-    # instead.
+    # which this arm's isolation allows. It has its own *-freecode.yaml arm
+    # per condition, which relaxes that isolation deliberately; see the note
+    # in arms/baseline-freecode.yaml.
     exclude_task_names:
       - mcp-freecode-portfolio
 
