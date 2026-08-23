@@ -44,14 +44,14 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
       "subcomponents": {
         "Cre8AccordionItem": {
           "name": "Cre8AccordionItem",
-          "path": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/react-wrappers/index.ts",
+          "path": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/react-wrappers/index.ts",
           "description": "The component is a vertically stacked list of headers that reveal or hide sections of related content on a page.\nThe header title gives the user a high level overview of the content allowing the user to decide\nwhich sections to expand for the information.\n\nAccordion contains Accordion Items as children. This component is the wrapper for grouping related accordion items.\n\nUsers can select different border types: default (no border), rectangle, rounded bottom, and rounded.",
           "import": "import { Cre8AccordionItem } from \"@tmorrow/cre8-react\";",
           "jsDocTags": {
@@ -92,14 +92,14 @@
               }
             ],
             "displayName": "Cre8Accordion",
-            "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+            "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
             "actualName": "Cre8Accordion",
             "exportName": "Cre8Accordion"
           }
         },
         "Cre8TextPassage": {
           "name": "Cre8TextPassage",
-          "path": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/react-wrappers/index.ts",
+          "path": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/react-wrappers/index.ts",
           "description": "The component is a vertically stacked list of headers that reveal or hide sections of related content on a page.\nThe header title gives the user a high level overview of the content allowing the user to decide\nwhich sections to expand for the information.\n\nAccordion contains Accordion Items as children. This component is the wrapper for grouping related accordion items.\n\nUsers can select different border types: default (no border), rectangle, rounded bottom, and rounded.",
           "import": "import { Cre8TextPassage } from \"@tmorrow/cre8-react\";",
           "jsDocTags": {
@@ -140,7 +140,7 @@
               }
             ],
             "displayName": "Cre8Accordion",
-            "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+            "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
             "actualName": "Cre8Accordion",
             "exportName": "Cre8Accordion"
           }
@@ -233,7 +233,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -319,7 +319,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -465,7 +465,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -514,14 +514,14 @@
           }
         ],
         "displayName": "Cre8Breadcrumbs",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/breadcrumbs/breadcrumbs.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/breadcrumbs/breadcrumbs.js",
         "actualName": "Cre8Breadcrumbs",
         "exportName": "Cre8Breadcrumbs"
       },
       "subcomponents": {
         "Cre8BreadcrumbsItem": {
           "name": "Cre8BreadcrumbsItem",
-          "path": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/react-wrappers/index.ts",
+          "path": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/react-wrappers/index.ts",
           "description": "The component is a vertically stacked list of headers that reveal or hide sections of related content on a page.\nThe header title gives the user a high level overview of the content allowing the user to decide\nwhich sections to expand for the information.\n\nAccordion contains Accordion Items as children. This component is the wrapper for grouping related accordion items.\n\nUsers can select different border types: default (no border), rectangle, rounded bottom, and rounded.",
           "import": "import { Cre8BreadcrumbsItem } from \"@tmorrow/cre8-react\";",
           "jsDocTags": {
@@ -562,7 +562,7 @@
               }
             ],
             "displayName": "Cre8Accordion",
-            "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+            "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
             "actualName": "Cre8Accordion",
             "exportName": "Cre8Accordion"
           }
@@ -620,7 +620,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -921,7 +921,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -982,7 +982,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -1063,7 +1063,7 @@
           }
         ],
         "displayName": "Cre8CheckboxField",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/checkbox-field/checkbox-field.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/checkbox-field/checkbox-field.js",
         "actualName": "Cre8CheckboxField",
         "exportName": "Cre8CheckboxField"
       },
@@ -1119,7 +1119,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -1215,7 +1215,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -1301,7 +1301,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -1387,7 +1387,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -1443,7 +1443,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -1574,7 +1574,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -1655,7 +1655,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -1711,14 +1711,14 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
       "subcomponents": {
         "Cre8GlobalNavItem": {
           "name": "Cre8GlobalNavItem",
-          "path": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/react-wrappers/index.ts",
+          "path": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/react-wrappers/index.ts",
           "description": "The component is a vertically stacked list of headers that reveal or hide sections of related content on a page.\nThe header title gives the user a high level overview of the content allowing the user to decide\nwhich sections to expand for the information.\n\nAccordion contains Accordion Items as children. This component is the wrapper for grouping related accordion items.\n\nUsers can select different border types: default (no border), rectangle, rounded bottom, and rounded.",
           "import": "import { Cre8GlobalNavItem } from \"@tmorrow/cre8-react\";",
           "jsDocTags": {
@@ -1759,7 +1759,7 @@
               }
             ],
             "displayName": "Cre8Accordion",
-            "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+            "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
             "actualName": "Cre8Accordion",
             "exportName": "Cre8Accordion"
           }
@@ -1817,7 +1817,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -1873,7 +1873,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -1929,7 +1929,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -1985,7 +1985,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -2161,7 +2161,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -2217,7 +2217,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -2273,7 +2273,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -2406,7 +2406,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -2462,7 +2462,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -2518,7 +2518,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -2574,7 +2574,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -2678,7 +2678,7 @@
           }
         ],
         "displayName": "Cre8LinkList",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/link-list/link-list.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/link-list/link-list.js",
         "actualName": "Cre8LinkList",
         "exportName": "Cre8LinkList"
       },
@@ -2734,7 +2734,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -2820,7 +2820,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -2876,7 +2876,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -2932,7 +2932,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -3018,7 +3018,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -3074,7 +3074,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -3145,7 +3145,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -3251,14 +3251,14 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
       "subcomponents": {
         "Cre8PrimaryNavItem": {
           "name": "Cre8PrimaryNavItem",
-          "path": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/react-wrappers/index.ts",
+          "path": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/react-wrappers/index.ts",
           "description": "The component is a vertically stacked list of headers that reveal or hide sections of related content on a page.\nThe header title gives the user a high level overview of the content allowing the user to decide\nwhich sections to expand for the information.\n\nAccordion contains Accordion Items as children. This component is the wrapper for grouping related accordion items.\n\nUsers can select different border types: default (no border), rectangle, rounded bottom, and rounded.",
           "import": "import { Cre8PrimaryNavItem } from \"@tmorrow/cre8-react\";",
           "jsDocTags": {
@@ -3299,7 +3299,7 @@
               }
             ],
             "displayName": "Cre8Accordion",
-            "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+            "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
             "actualName": "Cre8Accordion",
             "exportName": "Cre8Accordion"
           }
@@ -3357,7 +3357,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -3445,14 +3445,14 @@
           }
         ],
         "displayName": "Cre8RadioField",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/radio-field/radio-field.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/radio-field/radio-field.js",
         "actualName": "Cre8RadioField",
         "exportName": "Cre8RadioField"
       },
       "subcomponents": {
         "Cre8RadioFieldItem": {
           "name": "Cre8RadioFieldItem",
-          "path": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/react-wrappers/index.ts",
+          "path": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/react-wrappers/index.ts",
           "description": "The component is a vertically stacked list of headers that reveal or hide sections of related content on a page.\nThe header title gives the user a high level overview of the content allowing the user to decide\nwhich sections to expand for the information.\n\nAccordion contains Accordion Items as children. This component is the wrapper for grouping related accordion items.\n\nUsers can select different border types: default (no border), rectangle, rounded bottom, and rounded.",
           "import": "import { Cre8RadioFieldItem } from \"@tmorrow/cre8-react\";",
           "jsDocTags": {
@@ -3493,7 +3493,7 @@
               }
             ],
             "displayName": "Cre8Accordion",
-            "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+            "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
             "actualName": "Cre8Accordion",
             "exportName": "Cre8Accordion"
           }
@@ -3566,7 +3566,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -3667,7 +3667,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -3728,7 +3728,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -3825,7 +3825,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -3911,7 +3911,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -3977,14 +3977,14 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
       "subcomponents": {
         "Cre8SubmenuItem": {
           "name": "Cre8SubmenuItem",
-          "path": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/react-wrappers/index.ts",
+          "path": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/react-wrappers/index.ts",
           "description": "The component is a vertically stacked list of headers that reveal or hide sections of related content on a page.\nThe header title gives the user a high level overview of the content allowing the user to decide\nwhich sections to expand for the information.\n\nAccordion contains Accordion Items as children. This component is the wrapper for grouping related accordion items.\n\nUsers can select different border types: default (no border), rectangle, rounded bottom, and rounded.",
           "import": "import { Cre8SubmenuItem } from \"@tmorrow/cre8-react\";",
           "jsDocTags": {
@@ -4025,7 +4025,7 @@
               }
             ],
             "displayName": "Cre8Accordion",
-            "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+            "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
             "actualName": "Cre8Accordion",
             "exportName": "Cre8Accordion"
           }
@@ -4076,7 +4076,7 @@
           }
         ],
         "displayName": "Cre8Table",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/table/table.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/table/table.js",
         "actualName": "Cre8Table",
         "exportName": "Cre8Table"
       },
@@ -4157,7 +4157,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -4388,7 +4388,7 @@
           }
         ],
         "displayName": "Cre8Tabs",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/tabs/tabs.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/tabs/tabs.js",
         "actualName": "Cre8Tabs",
         "exportName": "Cre8Tabs"
       },
@@ -4465,14 +4465,14 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
       "subcomponents": {
         "Cre8TertiaryNavItem": {
           "name": "Cre8TertiaryNavItem",
-          "path": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/react-wrappers/index.ts",
+          "path": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/react-wrappers/index.ts",
           "description": "The component is a vertically stacked list of headers that reveal or hide sections of related content on a page.\nThe header title gives the user a high level overview of the content allowing the user to decide\nwhich sections to expand for the information.\n\nAccordion contains Accordion Items as children. This component is the wrapper for grouping related accordion items.\n\nUsers can select different border types: default (no border), rectangle, rounded bottom, and rounded.",
           "import": "import { Cre8TertiaryNavItem } from \"@tmorrow/cre8-react\";",
           "jsDocTags": {
@@ -4513,7 +4513,7 @@
               }
             ],
             "displayName": "Cre8Accordion",
-            "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+            "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
             "actualName": "Cre8Accordion",
             "exportName": "Cre8Accordion"
           }
@@ -4576,7 +4576,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -4632,7 +4632,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -4703,7 +4703,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -4784,14 +4784,14 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
       "subcomponents": {
         "Cre8UtilityNavItem": {
           "name": "Cre8UtilityNavItem",
-          "path": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/react-wrappers/index.ts",
+          "path": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/react-wrappers/index.ts",
           "description": "The component is a vertically stacked list of headers that reveal or hide sections of related content on a page.\nThe header title gives the user a high level overview of the content allowing the user to decide\nwhich sections to expand for the information.\n\nAccordion contains Accordion Items as children. This component is the wrapper for grouping related accordion items.\n\nUsers can select different border types: default (no border), rectangle, rounded bottom, and rounded.",
           "import": "import { Cre8UtilityNavItem } from \"@tmorrow/cre8-react\";",
           "jsDocTags": {
@@ -4832,7 +4832,7 @@
               }
             ],
             "displayName": "Cre8Accordion",
-            "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+            "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
             "actualName": "Cre8Accordion",
             "exportName": "Cre8Accordion"
           }
@@ -4890,7 +4890,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -5076,7 +5076,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -5311,7 +5311,7 @@
           }
         ],
         "displayName": "Cre8Dropdown",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/dropdown/dropdown.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/dropdown/dropdown.js",
         "actualName": "Cre8Dropdown",
         "exportName": "Cre8Dropdown"
       },
@@ -5393,7 +5393,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -5449,7 +5449,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -5535,7 +5535,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -5619,7 +5619,7 @@
           }
         ],
         "displayName": "Cre8ProgressSteps",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/progress-steps/progress-steps.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/progress-steps/progress-steps.js",
         "actualName": "Cre8ProgressSteps",
         "exportName": "Cre8ProgressSteps"
       },
@@ -5690,7 +5690,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -5766,7 +5766,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -5847,7 +5847,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -5938,7 +5938,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -6009,7 +6009,7 @@
           }
         ],
         "displayName": "Cre8Accordion",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
         "actualName": "Cre8Accordion",
         "exportName": "Cre8Accordion"
       },
@@ -6147,14 +6147,14 @@
           }
         ],
         "displayName": "Cre8TagList",
-        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/tag-list/tag-list.js",
+        "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/tag-list/tag-list.js",
         "actualName": "Cre8TagList",
         "exportName": "Cre8TagList"
       },
       "subcomponents": {
         "Cre8Tag": {
           "name": "Cre8Tag",
-          "path": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/react-wrappers/index.ts",
+          "path": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/react-wrappers/index.ts",
           "description": "The component is a vertically stacked list of headers that reveal or hide sections of related content on a page.\nThe header title gives the user a high level overview of the content allowing the user to decide\nwhich sections to expand for the information.\n\nAccordion contains Accordion Items as children. This component is the wrapper for grouping related accordion items.\n\nUsers can select different border types: default (no border), rectangle, rounded bottom, and rounded.",
           "import": "import { Cre8Tag } from \"@tmorrow/cre8-react\";",
           "jsDocTags": {
@@ -6195,7 +6195,7 @@
               }
             ],
             "displayName": "Cre8Accordion",
-            "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/packages/cre8-wc/lib/components/accordion/accordion.js",
+            "definedInFile": "/Users/tylersmbp/Projects/cre8-web-components/.claude/worktrees/serene-feynman-da0ebb/packages/cre8-wc/lib/components/accordion/accordion.js",
             "actualName": "Cre8Accordion",
             "exportName": "Cre8Accordion"
           }
@@ -6241,6 +6241,6 @@
   },
   "meta": {
     "docgen": "react-docgen",
-    "durationMs": 1088
+    "durationMs": 809
   }
 }
