@@ -35,6 +35,23 @@ else
     status=1
 fi
 
+# 1a. design skill -------------------------------------------------------------
+# The cre8-design skill is versioned in this repo rather than synced from
+# ~/.claude, because unlike cre8-a2ui it is an input the eval owns: it carries
+# design judgment and token architecture only, and deliberately restates no
+# component API. See its own header for why that split exists.
+DESIGN_SKILL=${CRE8_DESIGN_SKILL_PATH:-../../.claude/skills/cre8-design}
+if [[ -f "$DESIGN_SKILL/SKILL.md" ]]; then
+    rm -rf .arm-inputs/cre8-design
+    mkdir -p .arm-inputs
+    cp -R "$DESIGN_SKILL" .arm-inputs/cre8-design
+    say "design skill: .arm-inputs/cre8-design  <- $DESIGN_SKILL"
+else
+    say "design skill: NOT FOUND at $DESIGN_SKILL."
+    say "              arms/cre8-mcp-design-freecode.yaml cannot run until it resolves."
+    status=1
+fi
+
 # 1b. proxy CA -----------------------------------------------------------------
 CA_SOURCE=""
 for candidate in "${CRE8_EVAL_PROXY_CA:-}" /root/.ccr/ca-bundle.crt "${SSL_CERT_FILE:-}" "${NODE_EXTRA_CA_CERTS:-}"; do
