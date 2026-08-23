@@ -82,6 +82,13 @@ def main() -> int:
                 report["error"] = f"render harness produced non-JSON output: {exc}\n{proc.stdout[-4000:]}"
                 result = None
 
+            if result is not None and result.get("render_errors"):
+                # Components that threw while rendering but didn't stop the
+                # tree being produced - mostly jsdom's partial support for
+                # form-associated custom elements. Reported, not scored: the
+                # light DOM being audited is what the agent actually wrote.
+                report["render_errors"] = result["render_errors"]
+
             if result is not None and "error" in result:
                 report["error"] = f"App.tsx did not render: {result['error']}"
             elif result is not None:

@@ -41,7 +41,7 @@
 //     Suspense/conditionals are in play, which real code uses far more than
 //     hand-authored JSON does.
 
-import { JSDOM } from 'jsdom';
+import { JSDOM, VirtualConsole } from 'jsdom';
 import { readFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
@@ -51,9 +51,29 @@ const [, , catalogPath, appDir] = process.argv;
 const catalog = JSON.parse(readFileSync(catalogPath, 'utf8'));
 const knownProps = new Map(catalog.components.map((c) => [c.name, Object.keys(c.props || {})]));
 
+// jsdom reports an exception thrown inside a custom element's
+// connectedCallback as a "jsdomError" rather than letting it reach Node.
+// Swallow those: one component throwing while it connects shouldn't zero an
+// otherwise-complete tree, and whatever did render is still there to audit.
+const virtualConsole = new VirtualConsole();
+virtualConsole.on('jsdomError', () => {});
+// The same tolerance, for throws jsdom never sees. Lit updates run in a
+// microtask, so a component that throws while updating (rather than while
+// connecting) surfaces as a process-level uncaught exception and would kill
+// the run outright. jsdom implements form-associated custom elements only
+// partially - `attachInternals()` returns an ElementInternals with no
+// setValidity - so every cre8 field component throws here through no fault
+// of the code being scored. What we serialize is the *light* DOM, which
+// React has already placed by then and which a failed shadow-render doesn't
+// remove, so the tree is still the one the agent wrote. Recorded and
+// reported alongside the score rather than silently dropped.
+const renderErrors = [];
+process.on('uncaughtException', (err) => renderErrors.push(String(err?.stack || err)));
+process.on('unhandledRejection', (err) => renderErrors.push(String(err?.stack || err)));
 const dom = new JSDOM('<!doctype html><html><body><div id="root"></div></body></html>', {
   url: 'http://localhost/',
   pretendToBeVisual: true,
+  virtualConsole,
 });
 // Copy jsdom's whole window onto the Node global object rather than
 // enumerate every browser API a Lit component or React might touch by
@@ -61,6 +81,21 @@ const dom = new JSDOM('<!doctype html><html><body><div id="root"></div></body></
 // Element, ... - one ReferenceError at a time). Node's own globals
 // (process, Buffer, require, console, the Node-native `navigator`, ...)
 // win on conflict, same as `global-jsdom` and similar setup packages do.
+//
+// A note on what that costs, since it looks like a bug and isn't: Node 22
+// ships its own Event/CustomEvent/EventTarget, so they're kept over jsdom's,
+// and jsdom type-checks across realms - a component that does
+// `this.dispatchEvent(new CustomEvent(...))` while connecting throws
+// "parameter 1 is not of type 'Event'". Several cre8 components do. Those
+// throws are caught below and reported as render_errors; they do not affect
+// the score, because what's serialized is the *light* DOM, which React has
+// already placed and which a failed connectedCallback doesn't remove.
+// Letting jsdom win instead was tried and is worse: jsdom implements
+// `performance` and the timer family by delegating back to the global of the
+// same name (Performance-impl.now() is literally
+// `return performance.now() - this._nowAtTimeOrigin`), so overriding those
+// recurses until the stack blows. Not worth reintroducing to silence a
+// harmless log line.
 const RESERVED = new Set(['undefined', 'eval', 'Function', 'GLOBAL', 'global', 'globalThis']);
 for (const key of Object.getOwnPropertyNames(dom.window)) {
   if (RESERVED.has(key) || key in globalThis) continue;
@@ -116,7 +151,16 @@ function serialize(el, inheritedSlot) {
     const props = {};
     for (const name of knownProps.get(tag)) {
       const value = el[name];
-      if (value !== undefined && value !== null && value !== false) props[name] = value;
+      if (value === undefined || value === null || value === false) continue;
+      // Reading a live property can hand back an internal object rather than
+      // the scalar the JSX passed - a Lit template result, a controller, a
+      // DOM node - and those are both unserializable (circular: a template's
+      // renderOptions.host points back at the element) and meaningless as a
+      // "prop value the agent chose". Every prop the catalog declares is a
+      // string, number, boolean or enum, and score_spec's own enum check only
+      // considers those types, so keeping scalars loses nothing real.
+      if (typeof value === 'object' || typeof value === 'function') continue;
+      props[name] = value;
     }
     const children = [];
     const slots = {};
@@ -178,9 +222,18 @@ async function main() {
     const root_ = results.length === 1
       ? results[0].node
       : { component: 'cre8-main', props: {}, children: results.map((r) => r.node) };
-    process.stdout.write(JSON.stringify({ root: root_ }));
+    const out = { root: root_ };
+    if (renderErrors.length) {
+      // Deduplicated: one broken component in a list of ten throws ten
+      // identical stacks, which says nothing more than one does.
+      out.render_errors = [...new Set(renderErrors)].slice(0, 10);
+    }
+    process.stdout.write(JSON.stringify(out));
   } catch (err) {
-    process.stdout.write(JSON.stringify({ error: `${err.message}\n${err.stack || ''}` }));
+    process.stdout.write(JSON.stringify({
+      error: `${err.message}\n${err.stack || ''}`,
+      ...(renderErrors.length ? { render_errors: [...new Set(renderErrors)].slice(0, 10) } : {}),
+    }));
   }
 }
 

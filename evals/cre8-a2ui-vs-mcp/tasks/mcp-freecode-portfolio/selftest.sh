@@ -65,6 +65,17 @@ cat "$SCRATCH/placeholder/reward.json"
 PLACEHOLDER_REWARD=$(reward_of placeholder)
 
 echo
+echo "== rich fixture: a real ~40-component agent submission (expect > 0) =="
+run rich "$(pwd)/selftest" rich-App.tsx
+cat "$SCRATCH/rich/reward.json"
+RICH_REWARD=$(reward_of rich)
+RICH_NODES=$(python3 -c "
+import json
+print(json.load(open('$SCRATCH/rich/report.json')).get('shape',{}).get('nodes',0))
+")
+echo "rich fixture nodes: $RICH_NODES"
+
+echo
 FAIL=0
 python3 -c "exit(0 if $GOOD_REWARD == 1.0 else 1)" || { echo "FAIL: reference solution did not score 1.000"; FAIL=1; }
 python3 -c "exit(0 if $BAD_REWARD < 1.0 else 1)" || { echo "FAIL: bad fixture did not score below 1.000"; FAIL=1; }
@@ -74,9 +85,16 @@ v = json.load(open('$SCRATCH/bad/report.json')).get('violations', {})
 exit(0 if 'slot_validity' in v and 'enum_validity' in v else 1)
 " || { echo "FAIL: bad fixture didn't flag both slot_validity and enum_validity"; FAIL=1; }
 python3 -c "exit(0 if $PLACEHOLDER_REWARD == 0.0 else 1)" || { echo "FAIL: untouched placeholder did not score 0.000"; FAIL=1; }
+# The regression assertion: a rich tree must survive the render at all. A 0
+# here means the harness crashed, not that the code was bad - see the header
+# comment in selftest/rich-App.tsx.
+python3 -c "exit(0 if $RICH_REWARD > 0.0 else 1)" \
+    || { echo "FAIL: rich fixture scored 0 - the render harness crashed on a realistic tree"; FAIL=1; }
+python3 -c "exit(0 if $RICH_NODES > 50 else 1)" \
+    || { echo "FAIL: rich fixture only produced $RICH_NODES nodes - the tree was truncated"; FAIL=1; }
 
 if [[ $FAIL -eq 0 ]]; then
-    echo "PASS: scorer discriminates (good=$GOOD_REWARD, bad=$BAD_REWARD, placeholder=$PLACEHOLDER_REWARD)"
+    echo "PASS: scorer discriminates (good=$GOOD_REWARD, bad=$BAD_REWARD, placeholder=$PLACEHOLDER_REWARD, rich=$RICH_REWARD over $RICH_NODES nodes)"
 else
     exit 1
 fi
