@@ -153,9 +153,16 @@ class ReleaseManager {
    */
   commitVersionBump(version) {
     console.log('📝 Committing version bump...');
-    // react-wrappers/package.json is generated and gitignored on purpose -
-    // npm publishes it from disk, so it is synced but never committed.
-    this.exec('git add package.json ../cre8-mcp/package.json');
+    // Stage repo-wide, not just the two package.json files: the post-bump
+    // rebuild above touches mcp-manifest.json, both custom-elements.json
+    // copies, the a2ui catalog/kg, react-manifest.json, and the eval's
+    // oracle fixtures under evals/cre8-a2ui-vs-mcp - all of it needs to
+    // land in the same commit as the version bump, or the published
+    // package and the committed tree disagree about what was released.
+    // react-wrappers/package.json is the one exception: generated and
+    // gitignored on purpose, npm publishes it from disk without it ever
+    // being committed.
+    this.exec('git -C ../.. add -A');
     this.exec(`git commit -m "chore: bump version to ${version}"`);
     console.log('✅ Version bump committed\n');
   }
@@ -306,9 +313,26 @@ class ReleaseManager {
       // commit, so the committed tree matches what gets published.
       this.syncWorkspaceVersions(newVersion);
 
-      // The main build ran before the bump, so regenerate the a2ui catalog
-      // chain - its metadata embeds the library version.
-      this.exec('pnpm run build:a2ui');
+      // The main build ran before the bump, so everything whose content
+      // embeds the library version or the current component set is now
+      // stale: mcp-manifest.json, both custom-elements.json copies, the
+      // a2ui catalog/kg, and react-manifest.json. Re-running only
+      // `build:a2ui` here (the previous fix attempt) was not enough - it
+      // regenerates the catalog FROM mcp-manifest.json, which itself was
+      // never rebuilt post-bump, so the catalog kept restating the old
+      // version. That precise gap shipped two consecutive stale releases
+      // (2.3.3 and 2.3.4 both published with a catalog one version behind
+      // and missing components that had already landed in source). Redo
+      // the full build so every derived layer is generated from the
+      // post-bump tree, not just the a2ui slice of it.
+      this.exec('pnpm -w run build:all');
+
+      // The eval's oracle fixtures (evals/cre8-a2ui-vs-mcp) are their own
+      // copy of catalog.compact.json/inert-props.json/containment.json,
+      // fanned out per task. build:all doesn't touch them, but CI's
+      // "graph regenerates to what is committed" job checks them against
+      // the same rebuilt graph - sync-oracle.sh --check fails otherwise.
+      this.exec('cd ../../evals/cre8-a2ui-vs-mcp && python3 oracle/build_oracle.py && ./sync-oracle.sh');
 
       // Commit version bump
       this.commitVersionBump(newVersion);
