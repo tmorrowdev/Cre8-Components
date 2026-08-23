@@ -1,0 +1,37 @@
+# Control arm, freecode variant: no CRE8 knowledge beyond what the model
+# carries, on the task whose deliverable is real React code.
+# See _shared.md before editing.
+# Run: harbor run -c arms/baseline-freecode.yaml
+job_name: cre8-a2ui-vs-mcp__baseline-freecode
+jobs_dir: jobs
+n_attempts: 3
+n_concurrent_trials: 4
+
+datasets:
+  - path: tasks
+    task_names:
+      - mcp-freecode-portfolio
+
+agents:
+  - name: claude-code
+    model_name: claude-opus-5
+    kwargs:
+      # Bash is allowed, matching arms/cre8-mcp-freecode.yaml, and that is a
+      # deliberate departure from arms/baseline.yaml - which disallows it so
+      # that the arm under test is the agent's only route to the catalog.
+      #
+      # That isolation is not available on this task and withholding Bash
+      # would not recreate it. The deliverable is code that must typecheck
+      # and build against a real installed @tmorrow/cre8-react, so its .d.ts
+      # files sit in node_modules whatever this setting says; the agent reads
+      # them through its ordinary file tools, no shell required. Disallowing
+      # Bash would only stop it running the build the instructions tell it to
+      # run, while leaving the library just as readable - a worse arm, not a
+      # more isolated one.
+      #
+      # So this comparison measures something different from the a2ui-* one,
+      # and the difference is worth stating: not "MCP versus no catalog
+      # knowledge", but "MCP versus an installed, typed library". A small gap
+      # here is a real result about the marginal value of the MCP when the
+      # types are already on disk, not a failure to reproduce the a2ui-* gap.
+      disallowed_tools: WebFetch,WebSearch,Task

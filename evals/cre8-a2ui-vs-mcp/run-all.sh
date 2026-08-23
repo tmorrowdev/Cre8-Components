@@ -18,7 +18,7 @@ if ! ./prepare.sh; then
     exit 1
 fi
 
-for arm in baseline a2ui-skill cre8-mcp; do
+for arm in baseline cre8-mcp cre8-mcp-design; do
     echo
     echo "══ arm: $arm ══"
     harbor run -c "arms/$arm.yaml" "$@"

@@ -1,8 +1,12 @@
-# MCP arm: the catalog answered live by @tmorrow/cre8-mcp over stdio.
-# The version is pinned so a run is reproducible; it must match the version the
-# oracle fixtures were built from (oracle/catalog.compact.json -> libraryVersion).
-# See _shared.md before editing. Run: harbor run -c arms/cre8-mcp.yaml
-job_name: cre8-a2ui-vs-mcp__cre8-mcp
+# Combined arm: cre8-mcp for component API facts, plus the cre8-design skill
+# for judgment and token architecture. The configuration a real harness ships
+# - the MCP alone answers what exists and what its props are, but nothing in
+# it says which component a given job calls for.
+#
+# Run: harbor run -c arms/cre8-mcp-design.yaml
+#
+# Read against arms/cre8-mcp.yaml, which is identical minus the skill.
+job_name: cre8-a2ui-vs-mcp__cre8-mcp-design
 jobs_dir: jobs
 n_attempts: 3
 n_concurrent_trials: 4
@@ -25,6 +29,8 @@ agents:
       # catalog.json, which makes all three arms the same experiment.
       # Identical in every arm, so it constrains the comparison equally.
       disallowed_tools: Bash,WebFetch,WebSearch,Task
+    skills:
+      - .arm-inputs/cre8-design
     mcp_servers:
       - name: cre8
         transport: stdio

@@ -1,0 +1,39 @@
+# MCP arm, freecode variant: the catalog answered live by @tmorrow/cre8-mcp
+# over stdio, on the task whose deliverable is real React code rather than a
+# hand-authored A2UI JSON tree. See _shared.md before editing.
+# Run: harbor run -c arms/cre8-mcp-freecode.yaml
+job_name: cre8-a2ui-vs-mcp__cre8-mcp-freecode
+jobs_dir: jobs
+n_attempts: 3
+n_concurrent_trials: 4
+
+datasets:
+  - path: tasks
+    # This arm only applies to the freecode task. The a2ui-* tasks are the
+    # three-arm comparison and are scored from a JSON file the agent writes;
+    # running them here would just duplicate cre8-mcp.yaml.
+    task_names:
+      - mcp-freecode-portfolio
+
+agents:
+  - name: claude-code
+    model_name: claude-opus-5
+    kwargs:
+      # Bash is *allowed* here, unlike every other arm. The a2ui-* tasks
+      # disallow it to keep the arm under test as the agent's only route to
+      # the catalog - with Bash it would just npm-pack @tmorrow/cre8-wc and
+      # read catalog.json, collapsing the comparison. That isolation isn't
+      # available to this task and isn't what it measures: the deliverable is
+      # real code that has to typecheck and build against a real installed
+      # @tmorrow/cre8-react, whose .d.ts files are sitting in node_modules
+      # either way. Withholding Bash here would only stop the agent from
+      # running the build the instructions tell it to run, while leaving the
+      # library just as readable. So this arm measures what cre8-mcp produces
+      # under realistic conditions, not a like-for-like knowledge-isolation
+      # contrast against baseline/a2ui-skill.
+      disallowed_tools: WebFetch,WebSearch,Task
+    mcp_servers:
+      - name: cre8
+        transport: stdio
+        command: npx
+        args: ["-y", "@tmorrow/cre8-mcp@2.3.6"]

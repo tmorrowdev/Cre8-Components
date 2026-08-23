@@ -118,6 +118,29 @@ class ReleaseManager {
     console.log('🔨 Building all aligned artifacts (libs, storybooks, mcp)...');
     this.exec('pnpm -w run build:all');
     console.log('✅ Build completed\n');
+    this.checkSkills();
+  }
+
+  /**
+   * Audit agent skills against the catalog this release just regenerated.
+   *
+   * Reported, never fatal. Skills are documentation an agent acts on verbatim,
+   * so a stale one does real damage - by 2.3.6 the cre8-a2ui skill named 38
+   * components (46%) that no longer existed, and agents carrying it scored
+   * below agents given no CRE8 knowledge at all. But the skills that drift
+   * are synced from a claude.ai account, not built from this repo, so this
+   * release cannot fix them and must not be blocked by them.
+   */
+  checkSkills() {
+    console.log('📚 Auditing agent skills against the regenerated catalog...');
+    try {
+      this.exec('node a2ui/check-skill-fidelity.mjs');
+      console.log('✅ Skills agree with the catalog\n');
+    } catch (error) {
+      console.log('⚠️  Skills contradict the catalog - see above.');
+      console.log('   Not blocking the release: these are account-synced, not built here.');
+      console.log('   Fix them at the source, or move their API tables out and let the MCP answer.\n');
+    }
   }
 
   /**
