@@ -63,6 +63,8 @@ const CATEGORY_MAP: Record<string, string> = {
   'text-area': 'Forms',
   'form-fieldset': 'Forms',
   'card': 'Layout',
+  'container': 'Layout',
+  'container-grid': 'Layout',
   'grid': 'Layout',
   'grid-item': 'Layout',
   'layout': 'Layout',

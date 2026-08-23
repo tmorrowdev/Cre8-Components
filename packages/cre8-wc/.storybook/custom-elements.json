@@ -1892,12 +1892,56 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/breadcrumbs-item/breadcrumbs-item.styles.ts",
+      "path": "components/band/band.stories.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "Default",
+          "parameters": [
+            {
+              "name": "args"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "Branded"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "components/band/band.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Default",
+          "declaration": {
+            "name": "Default",
+            "module": "components/band/band.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Branded",
+          "declaration": {
+            "name": "Branded",
+            "module": "components/band/band.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/band/band.styles.ts",
       "declarations": [
         {
           "kind": "variable",
           "name": "styles",
-          "default": "css`.cre8-u-content-knockout-brand { color: var(----cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: size(1) !important; } .cre8-u-margin-md { margin: size(2) !important; } .cre8-u-margin-lg { margin: size(3) !important; } .cre8-u-margin-xl { margin: size(4) !important; } .cre8-u-margin-xxl { margin: size(8) !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: size(1) !important; } .cre8-u-margin-top-md { margin-top: size(2) !important; } .cre8-u-margin-top-lg { margin-top: size(3) !important; } .cre8-u-margin-top-xl { margin-top: size(4) !important; } .cre8-u-margin-top-xxl { margin-top: size(8) !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: size(1) !important; } .cre8-u-margin-right-md { margin-right: size(2) !important; } .cre8-u-margin-right-lg { margin-right: size(3) !important; } .cre8-u-margin-right-xl { margin-right: size(4) !important; } .cre8-u-margin-right-xxl { margin-right: size(8) !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: size(1) !important; } .cre8-u-margin-bottom-md { margin-bottom: size(2) !important; } .cre8-u-margin-bottom-lg { margin-bottom: size(3) !important; } .cre8-u-margin-bottom-xl { margin-bottom: size(4) !important; } .cre8-u-margin-bottom-xxl { margin-bottom: size(8) !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(4) !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(8) !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: size(1) !important; } .cre8-u-margin-left-md { margin-left: size(2) !important; } .cre8-u-margin-left-lg { margin-left: size(3) !important; } .cre8-u-margin-left-xl { margin-left: size(4) !important; } .cre8-u-margin-left-xxl { margin-left: size(8) !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: size(1) !important; } .cre8-u-padding-md { padding: size(2) !important; } .cre8-u-padding-lg { padding: size(3) !important; } .cre8-u-padding-xl { padding: size(4) !important; } .cre8-u-padding-xxl { padding: size(8) !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: size(1) !important; } .cre8-u-padding-top-md { padding-top: size(2) !important; } .cre8-u-padding-top-lg { padding-top: size(3) !important; } .cre8-u-padding-top-xl { padding-top: size(4) !important; } .cre8-u-padding-top-xxl { padding-top: size(8) !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: size(1) !important; } .cre8-u-padding-right-md { padding-right: size(2) !important; } .cre8-u-padding-right-lg { padding-right: size(3) !important; } .cre8-u-padding-right-xl { padding-right: size(4) !important; } .cre8-u-padding-right-xxl { padding-right: size(8) !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: size(1) !important; } .cre8-u-padding-bottom-md { padding-bottom: size(2) !important; } .cre8-u-padding-bottom-lg { padding-bottom: size(3) !important; } .cre8-u-padding-bottom-xl { padding-bottom: size(4) !important; } .cre8-u-padding-bottom-xxl { padding-bottom: size(8) !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: size(1) !important; } .cre8-u-padding-left-md { padding-left: size(2) !important; } .cre8-u-padding-left-lg { padding-left: size(3) !important; } .cre8-u-padding-left-xl { padding-left: size(4) !important; } .cre8-u-padding-left-xxl { padding-left: size(8) !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); -webkit-text-decoration: var(--cre8-typography-body-default-text-decoration); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--background-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ :host { display: inline-flex; } /** * 1) Singular item within the breadcrumbs component that contains a link elsewhere on the site */ .cre8-c-breadcrumbs--item { display: inline-flex; align-items: center; /** * Breadcrumbs caret doesn't display for last breadcrumb item */ } :host(:last-child) .cre8-c-breadcrumbs--item cre8-icon { display: none; } /** * Breadcrumbs icon */ cre8-icon { margin-left: 0.5rem; color: var(--cre8-color-content-subtle); display: inline-flex; } cre8-icon svg { height: 1rem; width: 1rem; }`"
+          "default": "css`.cre8-u-content-knockout-brand { color: var(----cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: size(1) !important; } .cre8-u-margin-md { margin: size(2) !important; } .cre8-u-margin-lg { margin: size(3) !important; } .cre8-u-margin-xl { margin: size(4) !important; } .cre8-u-margin-xxl { margin: size(8) !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: size(1) !important; } .cre8-u-margin-top-md { margin-top: size(2) !important; } .cre8-u-margin-top-lg { margin-top: size(3) !important; } .cre8-u-margin-top-xl { margin-top: size(4) !important; } .cre8-u-margin-top-xxl { margin-top: size(8) !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: size(1) !important; } .cre8-u-margin-right-md { margin-right: size(2) !important; } .cre8-u-margin-right-lg { margin-right: size(3) !important; } .cre8-u-margin-right-xl { margin-right: size(4) !important; } .cre8-u-margin-right-xxl { margin-right: size(8) !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: size(1) !important; } .cre8-u-margin-bottom-md { margin-bottom: size(2) !important; } .cre8-u-margin-bottom-lg { margin-bottom: size(3) !important; } .cre8-u-margin-bottom-xl { margin-bottom: size(4) !important; } .cre8-u-margin-bottom-xxl { margin-bottom: size(8) !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(4) !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(8) !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: size(1) !important; } .cre8-u-margin-left-md { margin-left: size(2) !important; } .cre8-u-margin-left-lg { margin-left: size(3) !important; } .cre8-u-margin-left-xl { margin-left: size(4) !important; } .cre8-u-margin-left-xxl { margin-left: size(8) !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: size(1) !important; } .cre8-u-padding-md { padding: size(2) !important; } .cre8-u-padding-lg { padding: size(3) !important; } .cre8-u-padding-xl { padding: size(4) !important; } .cre8-u-padding-xxl { padding: size(8) !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: size(1) !important; } .cre8-u-padding-top-md { padding-top: size(2) !important; } .cre8-u-padding-top-lg { padding-top: size(3) !important; } .cre8-u-padding-top-xl { padding-top: size(4) !important; } .cre8-u-padding-top-xxl { padding-top: size(8) !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: size(1) !important; } .cre8-u-padding-right-md { padding-right: size(2) !important; } .cre8-u-padding-right-lg { padding-right: size(3) !important; } .cre8-u-padding-right-xl { padding-right: size(4) !important; } .cre8-u-padding-right-xxl { padding-right: size(8) !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: size(1) !important; } .cre8-u-padding-bottom-md { padding-bottom: size(2) !important; } .cre8-u-padding-bottom-lg { padding-bottom: size(3) !important; } .cre8-u-padding-bottom-xl { padding-bottom: size(4) !important; } .cre8-u-padding-bottom-xxl { padding-bottom: size(8) !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: size(1) !important; } .cre8-u-padding-left-md { padding-left: size(2) !important; } .cre8-u-padding-left-lg { padding-left: size(3) !important; } .cre8-u-padding-left-xl { padding-left: size(4) !important; } .cre8-u-padding-left-xxl { padding-left: size(8) !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); -webkit-text-decoration: var(--cre8-typography-body-default-text-decoration); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--background-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /** * 1) A container with a background that can house various recipes of Components within */ .cre8-c-band { background: var(--cre8-color-bg-subtle); padding: 1.5rem 0; } @media all and (min-width: 1200px) { .cre8-c-band { padding: 2rem 0; } } /** * Branded variant */ .cre8-c-band--branded { color: var(--cre8-color-content-knockout); background: var(--cre8-theme-color-utility-information); } /** * Full height * 1) Height set to 100% to fill a container like a sidebar */ .cre8-c-band--full-height { height: 100%; }`"
         }
       ],
       "exports": [
@@ -1906,57 +1950,95 @@
           "name": "default",
           "declaration": {
             "name": "styles",
-            "module": "components/breadcrumbs-item/breadcrumbs-item.styles.ts"
+            "module": "components/band/band.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "components/breadcrumbs-item/breadcrumbs-item.ts",
+      "path": "components/band/band.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "Cre8BreadcrumbsItem",
+          "name": "Cre8Band",
           "slots": [
             {
-              "description": "The component content, the expected slotted content is a Cre8 Link or a String for the \"terminal node\"",
+              "description": "The band content",
               "name": ""
             }
           ],
-          "members": [],
+          "members": [
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "'branded' | undefined"
+              },
+              "description": "Gradient variant\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**1** renders the band with the set gradient background</li>\n</ul>\n</cre8-text-passage>",
+              "attribute": "variant"
+            },
+            {
+              "kind": "field",
+              "name": "fullHeight",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Full height variant\n1) Sets the height to 100%",
+              "attribute": "fullHeight",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "variant",
+              "type": {
+                "text": "'branded' | undefined"
+              },
+              "description": "Gradient variant\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**1** renders the band with the set gradient background</li>\n</ul>\n</cre8-text-passage>",
+              "fieldName": "variant"
+            },
+            {
+              "name": "fullHeight",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Full height variant\n1) Sets the height to 100%",
+              "fieldName": "fullHeight"
+            }
+          ],
           "superclass": {
             "name": "Cre8Element",
             "module": "/components/cre8-element"
           },
-          "tagName": "cre8-breadcrumbs-item",
+          "tagName": "cre8-band",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "Cre8BreadcrumbsItem",
+          "name": "Cre8Band",
           "declaration": {
-            "name": "Cre8BreadcrumbsItem",
-            "module": "components/breadcrumbs-item/breadcrumbs-item.ts"
+            "name": "Cre8Band",
+            "module": "components/band/band.ts"
           }
         },
         {
           "kind": "custom-element-definition",
-          "name": "cre8-breadcrumbs-item",
+          "name": "cre8-band",
           "declaration": {
-            "name": "Cre8BreadcrumbsItem",
-            "module": "components/breadcrumbs-item/breadcrumbs-item.ts"
+            "name": "Cre8Band",
+            "module": "components/band/band.ts"
           }
         },
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "Cre8BreadcrumbsItem",
-            "module": "components/breadcrumbs-item/breadcrumbs-item.ts"
+            "name": "Cre8Band",
+            "module": "components/band/band.ts"
           }
         }
       ]
@@ -2110,6 +2192,77 @@
           "declaration": {
             "name": "Cre8Breadcrumbs",
             "module": "components/breadcrumbs/breadcrumbs.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/breadcrumbs-item/breadcrumbs-item.styles.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "styles",
+          "default": "css`.cre8-u-content-knockout-brand { color: var(----cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: size(1) !important; } .cre8-u-margin-md { margin: size(2) !important; } .cre8-u-margin-lg { margin: size(3) !important; } .cre8-u-margin-xl { margin: size(4) !important; } .cre8-u-margin-xxl { margin: size(8) !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: size(1) !important; } .cre8-u-margin-top-md { margin-top: size(2) !important; } .cre8-u-margin-top-lg { margin-top: size(3) !important; } .cre8-u-margin-top-xl { margin-top: size(4) !important; } .cre8-u-margin-top-xxl { margin-top: size(8) !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: size(1) !important; } .cre8-u-margin-right-md { margin-right: size(2) !important; } .cre8-u-margin-right-lg { margin-right: size(3) !important; } .cre8-u-margin-right-xl { margin-right: size(4) !important; } .cre8-u-margin-right-xxl { margin-right: size(8) !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: size(1) !important; } .cre8-u-margin-bottom-md { margin-bottom: size(2) !important; } .cre8-u-margin-bottom-lg { margin-bottom: size(3) !important; } .cre8-u-margin-bottom-xl { margin-bottom: size(4) !important; } .cre8-u-margin-bottom-xxl { margin-bottom: size(8) !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(4) !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(8) !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: size(1) !important; } .cre8-u-margin-left-md { margin-left: size(2) !important; } .cre8-u-margin-left-lg { margin-left: size(3) !important; } .cre8-u-margin-left-xl { margin-left: size(4) !important; } .cre8-u-margin-left-xxl { margin-left: size(8) !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: size(1) !important; } .cre8-u-padding-md { padding: size(2) !important; } .cre8-u-padding-lg { padding: size(3) !important; } .cre8-u-padding-xl { padding: size(4) !important; } .cre8-u-padding-xxl { padding: size(8) !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: size(1) !important; } .cre8-u-padding-top-md { padding-top: size(2) !important; } .cre8-u-padding-top-lg { padding-top: size(3) !important; } .cre8-u-padding-top-xl { padding-top: size(4) !important; } .cre8-u-padding-top-xxl { padding-top: size(8) !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: size(1) !important; } .cre8-u-padding-right-md { padding-right: size(2) !important; } .cre8-u-padding-right-lg { padding-right: size(3) !important; } .cre8-u-padding-right-xl { padding-right: size(4) !important; } .cre8-u-padding-right-xxl { padding-right: size(8) !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: size(1) !important; } .cre8-u-padding-bottom-md { padding-bottom: size(2) !important; } .cre8-u-padding-bottom-lg { padding-bottom: size(3) !important; } .cre8-u-padding-bottom-xl { padding-bottom: size(4) !important; } .cre8-u-padding-bottom-xxl { padding-bottom: size(8) !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: size(1) !important; } .cre8-u-padding-left-md { padding-left: size(2) !important; } .cre8-u-padding-left-lg { padding-left: size(3) !important; } .cre8-u-padding-left-xl { padding-left: size(4) !important; } .cre8-u-padding-left-xxl { padding-left: size(8) !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); -webkit-text-decoration: var(--cre8-typography-body-default-text-decoration); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--background-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ :host { display: inline-flex; } /** * 1) Singular item within the breadcrumbs component that contains a link elsewhere on the site */ .cre8-c-breadcrumbs--item { display: inline-flex; align-items: center; /** * Breadcrumbs caret doesn't display for last breadcrumb item */ } :host(:last-child) .cre8-c-breadcrumbs--item cre8-icon { display: none; } /** * Breadcrumbs icon */ cre8-icon { margin-left: 0.5rem; color: var(--cre8-color-content-subtle); display: inline-flex; } cre8-icon svg { height: 1rem; width: 1rem; }`"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "styles",
+            "module": "components/breadcrumbs-item/breadcrumbs-item.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/breadcrumbs-item/breadcrumbs-item.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Cre8BreadcrumbsItem",
+          "slots": [
+            {
+              "description": "The component content, the expected slotted content is a Cre8 Link or a String for the \"terminal node\"",
+              "name": ""
+            }
+          ],
+          "members": [],
+          "superclass": {
+            "name": "Cre8Element",
+            "module": "/components/cre8-element"
+          },
+          "tagName": "cre8-breadcrumbs-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Cre8BreadcrumbsItem",
+          "declaration": {
+            "name": "Cre8BreadcrumbsItem",
+            "module": "components/breadcrumbs-item/breadcrumbs-item.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cre8-breadcrumbs-item",
+          "declaration": {
+            "name": "Cre8BreadcrumbsItem",
+            "module": "components/breadcrumbs-item/breadcrumbs-item.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Cre8BreadcrumbsItem",
+            "module": "components/breadcrumbs-item/breadcrumbs-item.ts"
           }
         }
       ]
@@ -3460,159 +3613,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/band/band.stories.ts",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "Default",
-          "parameters": [
-            {
-              "name": "args"
-            }
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "Branded"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "components/band/band.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Default",
-          "declaration": {
-            "name": "Default",
-            "module": "components/band/band.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Branded",
-          "declaration": {
-            "name": "Branded",
-            "module": "components/band/band.stories.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/band/band.styles.ts",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "styles",
-          "default": "css`.cre8-u-content-knockout-brand { color: var(----cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: size(1) !important; } .cre8-u-margin-md { margin: size(2) !important; } .cre8-u-margin-lg { margin: size(3) !important; } .cre8-u-margin-xl { margin: size(4) !important; } .cre8-u-margin-xxl { margin: size(8) !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: size(1) !important; } .cre8-u-margin-top-md { margin-top: size(2) !important; } .cre8-u-margin-top-lg { margin-top: size(3) !important; } .cre8-u-margin-top-xl { margin-top: size(4) !important; } .cre8-u-margin-top-xxl { margin-top: size(8) !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: size(1) !important; } .cre8-u-margin-right-md { margin-right: size(2) !important; } .cre8-u-margin-right-lg { margin-right: size(3) !important; } .cre8-u-margin-right-xl { margin-right: size(4) !important; } .cre8-u-margin-right-xxl { margin-right: size(8) !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: size(1) !important; } .cre8-u-margin-bottom-md { margin-bottom: size(2) !important; } .cre8-u-margin-bottom-lg { margin-bottom: size(3) !important; } .cre8-u-margin-bottom-xl { margin-bottom: size(4) !important; } .cre8-u-margin-bottom-xxl { margin-bottom: size(8) !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(4) !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(8) !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: size(1) !important; } .cre8-u-margin-left-md { margin-left: size(2) !important; } .cre8-u-margin-left-lg { margin-left: size(3) !important; } .cre8-u-margin-left-xl { margin-left: size(4) !important; } .cre8-u-margin-left-xxl { margin-left: size(8) !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: size(1) !important; } .cre8-u-padding-md { padding: size(2) !important; } .cre8-u-padding-lg { padding: size(3) !important; } .cre8-u-padding-xl { padding: size(4) !important; } .cre8-u-padding-xxl { padding: size(8) !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: size(1) !important; } .cre8-u-padding-top-md { padding-top: size(2) !important; } .cre8-u-padding-top-lg { padding-top: size(3) !important; } .cre8-u-padding-top-xl { padding-top: size(4) !important; } .cre8-u-padding-top-xxl { padding-top: size(8) !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: size(1) !important; } .cre8-u-padding-right-md { padding-right: size(2) !important; } .cre8-u-padding-right-lg { padding-right: size(3) !important; } .cre8-u-padding-right-xl { padding-right: size(4) !important; } .cre8-u-padding-right-xxl { padding-right: size(8) !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: size(1) !important; } .cre8-u-padding-bottom-md { padding-bottom: size(2) !important; } .cre8-u-padding-bottom-lg { padding-bottom: size(3) !important; } .cre8-u-padding-bottom-xl { padding-bottom: size(4) !important; } .cre8-u-padding-bottom-xxl { padding-bottom: size(8) !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: size(1) !important; } .cre8-u-padding-left-md { padding-left: size(2) !important; } .cre8-u-padding-left-lg { padding-left: size(3) !important; } .cre8-u-padding-left-xl { padding-left: size(4) !important; } .cre8-u-padding-left-xxl { padding-left: size(8) !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); -webkit-text-decoration: var(--cre8-typography-body-default-text-decoration); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--background-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /** * 1) A container with a background that can house various recipes of Components within */ .cre8-c-band { background: var(--cre8-color-bg-subtle); padding: 1.5rem 0; } @media all and (min-width: 1200px) { .cre8-c-band { padding: 2rem 0; } } /** * Branded variant */ .cre8-c-band--branded { color: var(--cre8-color-content-knockout); background: var(--cre8-theme-color-utility-information); } /** * Full height * 1) Height set to 100% to fill a container like a sidebar */ .cre8-c-band--full-height { height: 100%; }`"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "styles",
-            "module": "components/band/band.styles.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/band/band.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Cre8Band",
-          "slots": [
-            {
-              "description": "The band content",
-              "name": ""
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "variant",
-              "type": {
-                "text": "'branded' | undefined"
-              },
-              "description": "Gradient variant\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**1** renders the band with the set gradient background</li>\n</ul>\n</cre8-text-passage>",
-              "attribute": "variant"
-            },
-            {
-              "kind": "field",
-              "name": "fullHeight",
-              "type": {
-                "text": "boolean | undefined"
-              },
-              "description": "Full height variant\n1) Sets the height to 100%",
-              "attribute": "fullHeight",
-              "reflects": true
-            }
-          ],
-          "attributes": [
-            {
-              "name": "variant",
-              "type": {
-                "text": "'branded' | undefined"
-              },
-              "description": "Gradient variant\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**1** renders the band with the set gradient background</li>\n</ul>\n</cre8-text-passage>",
-              "fieldName": "variant"
-            },
-            {
-              "name": "fullHeight",
-              "type": {
-                "text": "boolean | undefined"
-              },
-              "description": "Full height variant\n1) Sets the height to 100%",
-              "fieldName": "fullHeight"
-            }
-          ],
-          "superclass": {
-            "name": "Cre8Element",
-            "module": "/components/cre8-element"
-          },
-          "tagName": "cre8-band",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "Cre8Band",
-          "declaration": {
-            "name": "Cre8Band",
-            "module": "components/band/band.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cre8-band",
-          "declaration": {
-            "name": "Cre8Band",
-            "module": "components/band/band.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Cre8Band",
-            "module": "components/band/band.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "components/button-group/button-group.stories.ts",
       "declarations": [
         {
@@ -3854,6 +3854,14 @@
             "text": "object"
           },
           "default": "{ args: { ...Horizontal.args, align: 'center', variant: 'horizontal' }, }"
+        },
+        {
+          "kind": "variable",
+          "name": "FullHeight",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { ...Default.args, fullHeight: true, }, render: (args) => html`<div style=\"display: flex; gap: 16px; height: 320px;\"> <cre8-card ${spread(args)}> ${unsafeHTML(sanitizeInput(args.header, 'cre8-icon-legacy'))} ${unsafeHTML(sanitizeInput(args.body, 'cre8-text-passage', 'cre8-heading'))} ${unsafeHTML(sanitizeInput(args.footer, 'cre8-badge', 'cre8-text-passage'))} </cre8-card> <cre8-card ${spread(args)}> <cre8-text-passage><p>A shorter card, forced to the same height by its flex parent.</p></cre8-text-passage> </cre8-card> </div>`, }"
         }
       ],
       "exports": [
@@ -3911,6 +3919,14 @@
             "name": "HorizontalAlignCenter",
             "module": "components/card/card.stories.ts"
           }
+        },
+        {
+          "kind": "js",
+          "name": "FullHeight",
+          "declaration": {
+            "name": "FullHeight",
+            "module": "components/card/card.stories.ts"
+          }
         }
       ]
     },
@@ -3921,7 +3937,7 @@
         {
           "kind": "variable",
           "name": "styles",
-          "default": "css`.cre8-u-content-knockout-brand { color: var(----cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: size(1) !important; } .cre8-u-margin-md { margin: size(2) !important; } .cre8-u-margin-lg { margin: size(3) !important; } .cre8-u-margin-xl { margin: size(4) !important; } .cre8-u-margin-xxl { margin: size(8) !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: size(1) !important; } .cre8-u-margin-top-md { margin-top: size(2) !important; } .cre8-u-margin-top-lg { margin-top: size(3) !important; } .cre8-u-margin-top-xl { margin-top: size(4) !important; } .cre8-u-margin-top-xxl { margin-top: size(8) !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: size(1) !important; } .cre8-u-margin-right-md { margin-right: size(2) !important; } .cre8-u-margin-right-lg { margin-right: size(3) !important; } .cre8-u-margin-right-xl { margin-right: size(4) !important; } .cre8-u-margin-right-xxl { margin-right: size(8) !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: size(1) !important; } .cre8-u-margin-bottom-md { margin-bottom: size(2) !important; } .cre8-u-margin-bottom-lg { margin-bottom: size(3) !important; } .cre8-u-margin-bottom-xl { margin-bottom: size(4) !important; } .cre8-u-margin-bottom-xxl { margin-bottom: size(8) !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(4) !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(8) !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: size(1) !important; } .cre8-u-margin-left-md { margin-left: size(2) !important; } .cre8-u-margin-left-lg { margin-left: size(3) !important; } .cre8-u-margin-left-xl { margin-left: size(4) !important; } .cre8-u-margin-left-xxl { margin-left: size(8) !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: size(1) !important; } .cre8-u-padding-md { padding: size(2) !important; } .cre8-u-padding-lg { padding: size(3) !important; } .cre8-u-padding-xl { padding: size(4) !important; } .cre8-u-padding-xxl { padding: size(8) !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: size(1) !important; } .cre8-u-padding-top-md { padding-top: size(2) !important; } .cre8-u-padding-top-lg { padding-top: size(3) !important; } .cre8-u-padding-top-xl { padding-top: size(4) !important; } .cre8-u-padding-top-xxl { padding-top: size(8) !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: size(1) !important; } .cre8-u-padding-right-md { padding-right: size(2) !important; } .cre8-u-padding-right-lg { padding-right: size(3) !important; } .cre8-u-padding-right-xl { padding-right: size(4) !important; } .cre8-u-padding-right-xxl { padding-right: size(8) !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: size(1) !important; } .cre8-u-padding-bottom-md { padding-bottom: size(2) !important; } .cre8-u-padding-bottom-lg { padding-bottom: size(3) !important; } .cre8-u-padding-bottom-xl { padding-bottom: size(4) !important; } .cre8-u-padding-bottom-xxl { padding-bottom: size(8) !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: size(1) !important; } .cre8-u-padding-left-md { padding-left: size(2) !important; } .cre8-u-padding-left-lg { padding-left: size(3) !important; } .cre8-u-padding-left-xl { padding-left: size(4) !important; } .cre8-u-padding-left-xxl { padding-left: size(8) !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); -webkit-text-decoration: var(--cre8-typography-body-default-text-decoration); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--background-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ :host { display: block; } /** * 1) A card is an organized block that typically contains a title, image, * text, and/or calls to action. It is made up of an optional header slot, required * body slot, and optional footer slot to place other Components and content within. */ .cre8-c-card { overflow: hidden; display: flex; flex-direction: column; height: 100%; width: 100%; padding: 1.5rem; gap: 1rem; border-color: var(--cre8-color-border-default); border-style: var(--cre8-border-style-default); border-width: var(--cre8-border-width-default); border-radius: var(--cre8-border-radius-container); background: var(--cre8-color-bg-default); } /** * Compact card - reduced padding for narrow layouts */ .cre8-c-card--compact { padding: 1rem; gap: 0.5rem; } /** * Horizontal card * 1) Organized block with flex-direction set to row so that header => footer appears * from left to right rather than top to bottom */ .cre8-c-card--horizontal { flex-direction: row; align-items: center; justify-content: center; } /** * Bare card * 1) Organized block without a border, background, or padding */ .cre8-c-card--bare { border: 0; padding: 0; gap: 0; box-shadow: none; } /** * Horizontal-bare card * 1) Organized block with flex-direction set to row so that header => footer appears * from left to right rather than top to bottom without a border, background, or padding */ .cre8-c-card--horizontal-bare { flex-direction: row; border: 0; padding: 0; gap: 0; box-shadow: none; align-items: center; justify-content: center; } /** * Center aligned card * 1) Center content and text within the card */ .cre8-c-card--align-center { text-align: center; /* 1 */ align-items: center; /* 1 */ justify-content: center; /* 1 */ } /** * Slotted image within a card * 1) Make the image full width */ ::slotted(img) { width: 100%; } /** * Card header * 1) Remove flex so that body always takes up remaining space */ .cre8-c-card__header { display: block; flex: none; /* 1 */ } /** * Card body * 1) Flex applied to always fill the remaining space of the card */ .cre8-c-card__body { display: block; flex: 1 1 auto; /* 1 */ } /** * Card footer * 1) Remove flex so that body always takes up remaining space */ .cre8-c-card__footer { display: block; flex: none; /* 1 */ } .cre8-c-card--bare .cre8-c-card__footer { padding: 0; } .cre8-c-card--horizontal-bare .cre8-c-card__footer { padding: 0; }`"
+          "default": "css`.cre8-u-content-knockout-brand { color: var(----cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: size(1) !important; } .cre8-u-margin-md { margin: size(2) !important; } .cre8-u-margin-lg { margin: size(3) !important; } .cre8-u-margin-xl { margin: size(4) !important; } .cre8-u-margin-xxl { margin: size(8) !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: size(1) !important; } .cre8-u-margin-top-md { margin-top: size(2) !important; } .cre8-u-margin-top-lg { margin-top: size(3) !important; } .cre8-u-margin-top-xl { margin-top: size(4) !important; } .cre8-u-margin-top-xxl { margin-top: size(8) !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: size(1) !important; } .cre8-u-margin-right-md { margin-right: size(2) !important; } .cre8-u-margin-right-lg { margin-right: size(3) !important; } .cre8-u-margin-right-xl { margin-right: size(4) !important; } .cre8-u-margin-right-xxl { margin-right: size(8) !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: size(1) !important; } .cre8-u-margin-bottom-md { margin-bottom: size(2) !important; } .cre8-u-margin-bottom-lg { margin-bottom: size(3) !important; } .cre8-u-margin-bottom-xl { margin-bottom: size(4) !important; } .cre8-u-margin-bottom-xxl { margin-bottom: size(8) !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(4) !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(8) !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: size(1) !important; } .cre8-u-margin-left-md { margin-left: size(2) !important; } .cre8-u-margin-left-lg { margin-left: size(3) !important; } .cre8-u-margin-left-xl { margin-left: size(4) !important; } .cre8-u-margin-left-xxl { margin-left: size(8) !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: size(1) !important; } .cre8-u-padding-md { padding: size(2) !important; } .cre8-u-padding-lg { padding: size(3) !important; } .cre8-u-padding-xl { padding: size(4) !important; } .cre8-u-padding-xxl { padding: size(8) !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: size(1) !important; } .cre8-u-padding-top-md { padding-top: size(2) !important; } .cre8-u-padding-top-lg { padding-top: size(3) !important; } .cre8-u-padding-top-xl { padding-top: size(4) !important; } .cre8-u-padding-top-xxl { padding-top: size(8) !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: size(1) !important; } .cre8-u-padding-right-md { padding-right: size(2) !important; } .cre8-u-padding-right-lg { padding-right: size(3) !important; } .cre8-u-padding-right-xl { padding-right: size(4) !important; } .cre8-u-padding-right-xxl { padding-right: size(8) !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: size(1) !important; } .cre8-u-padding-bottom-md { padding-bottom: size(2) !important; } .cre8-u-padding-bottom-lg { padding-bottom: size(3) !important; } .cre8-u-padding-bottom-xl { padding-bottom: size(4) !important; } .cre8-u-padding-bottom-xxl { padding-bottom: size(8) !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: size(1) !important; } .cre8-u-padding-left-md { padding-left: size(2) !important; } .cre8-u-padding-left-lg { padding-left: size(3) !important; } .cre8-u-padding-left-xl { padding-left: size(4) !important; } .cre8-u-padding-left-xxl { padding-left: size(8) !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); -webkit-text-decoration: var(--cre8-typography-body-default-text-decoration); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--background-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ :host { display: block; } /** * 1) A card is an organized block that typically contains a title, image, * text, and/or calls to action. It is made up of an optional header slot, required * body slot, and optional footer slot to place other Components and content within. */ .cre8-c-card { overflow: hidden; display: flex; flex-direction: column; padding: 1.5rem; gap: 1rem; border-color: var(--cre8-color-border-default); border-style: var(--cre8-border-style-default); border-width: var(--cre8-border-width-default); border-radius: var(--cre8-border-radius-container); background: var(--cre8-color-bg-default); } /** * Full height card * 1) Stretches the card to fill its parent's height and width. Off by * default: the host is \\`display: block\\` with no explicit height, so a card * placed in a flex or grid ancestor with \\`align-items: stretch\\` would * otherwise inherit whatever height that ancestor happens to establish - * invisible from outside the shadow boundary and unrelated to the card's * own content. Opt in only when the parent's height is actually meant to be * shared, e.g. cards as flex/grid items that should line up edge to edge. */ .cre8-c-card--full-height { height: 100%; width: 100%; } /** * Compact card - reduced padding for narrow layouts */ .cre8-c-card--compact { padding: 1rem; gap: 0.5rem; } /** * Horizontal card * 1) Organized block with flex-direction set to row so that header => footer appears * from left to right rather than top to bottom */ .cre8-c-card--horizontal { flex-direction: row; align-items: center; justify-content: center; } /** * Bare card * 1) Organized block without a border, background, or padding */ .cre8-c-card--bare { border: 0; padding: 0; gap: 0; box-shadow: none; } /** * Horizontal-bare card * 1) Organized block with flex-direction set to row so that header => footer appears * from left to right rather than top to bottom without a border, background, or padding */ .cre8-c-card--horizontal-bare { flex-direction: row; border: 0; padding: 0; gap: 0; box-shadow: none; align-items: center; justify-content: center; } /** * Center aligned card * 1) Center content and text within the card */ .cre8-c-card--align-center { text-align: center; /* 1 */ align-items: center; /* 1 */ justify-content: center; /* 1 */ } /** * Slotted image within a card * 1) Make the image full width */ ::slotted(img) { width: 100%; } /** * Card header * 1) Remove flex so that body always takes up remaining space */ .cre8-c-card__header { display: block; flex: none; /* 1 */ } /** * Card body * 1) Flex applied to always fill the remaining space of the card */ .cre8-c-card__body { display: block; flex: 1 1 auto; /* 1 */ } /** * Card footer * 1) Remove flex so that body always takes up remaining space */ .cre8-c-card__footer { display: block; flex: none; /* 1 */ } .cre8-c-card--bare .cre8-c-card__footer { padding: 0; } .cre8-c-card--horizontal-bare .cre8-c-card__footer { padding: 0; }`"
         }
       ],
       "exports": [
@@ -3975,6 +3991,16 @@
               },
               "description": "Alignment variant\n- **center** renders a card that has center aligned content/text",
               "attribute": "align"
+            },
+            {
+              "kind": "field",
+              "name": "fullHeight",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Full height\n1) Stretches the card to fill its parent's height and width. Off by\n  default - only turn this on when the card is a flex/grid item whose\n  siblings should determine its height, e.g. a row of cards that should\n  line up edge to edge regardless of how much content each one has.",
+              "attribute": "fullHeight",
+              "reflects": true
             }
           ],
           "attributes": [
@@ -3993,6 +4019,14 @@
               },
               "description": "Alignment variant\n- **center** renders a card that has center aligned content/text",
               "fieldName": "align"
+            },
+            {
+              "name": "fullHeight",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Full height\n1) Stretches the card to fill its parent's height and width. Off by\n  default - only turn this on when the card is a flex/grid item whose\n  siblings should determine its height, e.g. a row of cards that should\n  line up edge to edge regardless of how much content each one has.",
+              "fieldName": "fullHeight"
             }
           ],
           "superclass": {
@@ -5754,6 +5788,451 @@
           "declaration": {
             "name": "Cre8CheckboxFieldItem",
             "module": "components/checkbox-field-item/checkbox-field-item.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/container/container.stories.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "Default",
+          "parameters": [
+            {
+              "name": "args"
+            }
+          ]
+        },
+        {
+          "kind": "variable",
+          "name": "NamedContainer",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { name: 'demo', }, render: (args) => Default(args), }"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "components/container/container.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Default",
+          "declaration": {
+            "name": "Default",
+            "module": "components/container/container.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "NamedContainer",
+          "declaration": {
+            "name": "NamedContainer",
+            "module": "components/container/container.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/container/container.styles.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "styles",
+          "default": "css`.cre8-u-content-knockout-brand { color: var(----cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: size(1) !important; } .cre8-u-margin-md { margin: size(2) !important; } .cre8-u-margin-lg { margin: size(3) !important; } .cre8-u-margin-xl { margin: size(4) !important; } .cre8-u-margin-xxl { margin: size(8) !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: size(1) !important; } .cre8-u-margin-top-md { margin-top: size(2) !important; } .cre8-u-margin-top-lg { margin-top: size(3) !important; } .cre8-u-margin-top-xl { margin-top: size(4) !important; } .cre8-u-margin-top-xxl { margin-top: size(8) !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: size(1) !important; } .cre8-u-margin-right-md { margin-right: size(2) !important; } .cre8-u-margin-right-lg { margin-right: size(3) !important; } .cre8-u-margin-right-xl { margin-right: size(4) !important; } .cre8-u-margin-right-xxl { margin-right: size(8) !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: size(1) !important; } .cre8-u-margin-bottom-md { margin-bottom: size(2) !important; } .cre8-u-margin-bottom-lg { margin-bottom: size(3) !important; } .cre8-u-margin-bottom-xl { margin-bottom: size(4) !important; } .cre8-u-margin-bottom-xxl { margin-bottom: size(8) !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(4) !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(8) !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: size(1) !important; } .cre8-u-margin-left-md { margin-left: size(2) !important; } .cre8-u-margin-left-lg { margin-left: size(3) !important; } .cre8-u-margin-left-xl { margin-left: size(4) !important; } .cre8-u-margin-left-xxl { margin-left: size(8) !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: size(1) !important; } .cre8-u-padding-md { padding: size(2) !important; } .cre8-u-padding-lg { padding: size(3) !important; } .cre8-u-padding-xl { padding: size(4) !important; } .cre8-u-padding-xxl { padding: size(8) !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: size(1) !important; } .cre8-u-padding-top-md { padding-top: size(2) !important; } .cre8-u-padding-top-lg { padding-top: size(3) !important; } .cre8-u-padding-top-xl { padding-top: size(4) !important; } .cre8-u-padding-top-xxl { padding-top: size(8) !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: size(1) !important; } .cre8-u-padding-right-md { padding-right: size(2) !important; } .cre8-u-padding-right-lg { padding-right: size(3) !important; } .cre8-u-padding-right-xl { padding-right: size(4) !important; } .cre8-u-padding-right-xxl { padding-right: size(8) !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: size(1) !important; } .cre8-u-padding-bottom-md { padding-bottom: size(2) !important; } .cre8-u-padding-bottom-lg { padding-bottom: size(3) !important; } .cre8-u-padding-bottom-xl { padding-bottom: size(4) !important; } .cre8-u-padding-bottom-xxl { padding-bottom: size(8) !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: size(1) !important; } .cre8-u-padding-left-md { padding-left: size(2) !important; } .cre8-u-padding-left-lg { padding-left: size(3) !important; } .cre8-u-padding-left-xl { padding-left: size(4) !important; } .cre8-u-padding-left-xxl { padding-left: size(8) !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); -webkit-text-decoration: var(--cre8-typography-body-default-text-decoration); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--background-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /** * 1) Establishes a CSS containment context so anything slotted inside can be * styled with \\`@container\\` queries against this element's own rendered size, * rather than the viewport. It renders no visible chrome of its own; the * only effect is making container queries possible for its content. */ .cre8-c-container { container-type: inline-size; display: block; } /** * Size containment * 1) Contains both the inline and block axis, so \\`@container\\` rules can also * query height. Use only when this element's own height does not depend on * its content - size containment forces the content box to 0x0 before * layout runs, so a height derived from content collapses under this mode. */ .cre8-c-container--size { container-type: size; } /** * Normal containment * 1) Names the container without adding size containment. Use for * \\`@container style(...)\\` queries, which read custom-property values rather * than dimensions and don't need a measured size to query against. */ .cre8-c-container--normal { container-type: normal; }`"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "styles",
+            "module": "components/container/container.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/container/container.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "`cre8-container` establishes a CSS containment context so anything slotted\ninside it - a `cre8-container-grid`, a `cre8-card`, plain markup - can be\nstyled with `@container` queries against *this element's own rendered\nsize*, not the viewport. It renders no visible chrome of its own; the only\neffect is making container queries possible for its content.\n\n# How to Use\n1. Wrap `cre8-container` around whatever should respond to the space it is\nactually given rather than the screen size - a sidebar widget, a card\nthat might land in a narrow or a wide column depending on a layout the\ncomponent itself can't see.\n2. Write `@container` rules in your own stylesheet keyed to `name`, if\nset, to target this container specifically when containers are nested\nand the nearest one isn't the one you mean to query.",
+          "name": "Cre8Container",
+          "slots": [
+            {
+              "description": "The content to establish a containment context for",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "'inline-size' | 'size' | 'normal' | undefined"
+              },
+              "description": "Containment type\n- **inline-size** (default) contains layout, style, and inline size -\n  the right choice for width-based `@container` queries on a\n  block-level container\n- **size** contains both the inline and block size, so `@container`\n  rules can also query height - only use this when the container's own\n  height does not depend on its content\n- **normal** names the container without adding size containment, for\n  `@container style(...)` queries",
+              "attribute": "type"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Container name\n1) Lets `@container <name> (...)` target this container specifically\n  when containers are nested and the nearest one isn't the one being\n  queried.",
+              "attribute": "name"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "type",
+              "type": {
+                "text": "'inline-size' | 'size' | 'normal' | undefined"
+              },
+              "description": "Containment type\n- **inline-size** (default) contains layout, style, and inline size -\n  the right choice for width-based `@container` queries on a\n  block-level container\n- **size** contains both the inline and block size, so `@container`\n  rules can also query height - only use this when the container's own\n  height does not depend on its content\n- **normal** names the container without adding size containment, for\n  `@container style(...)` queries",
+              "fieldName": "type"
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Container name\n1) Lets `@container <name> (...)` target this container specifically\n  when containers are nested and the nearest one isn't the one being\n  queried.",
+              "fieldName": "name"
+            }
+          ],
+          "superclass": {
+            "name": "Cre8Element",
+            "module": "/components/cre8-element"
+          },
+          "tagName": "cre8-container",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Cre8Container",
+          "declaration": {
+            "name": "Cre8Container",
+            "module": "components/container/container.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cre8-container",
+          "declaration": {
+            "name": "Cre8Container",
+            "module": "components/container/container.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Cre8Container",
+            "module": "components/container/container.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/container-grid/container-grid.stories.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "Default",
+          "parameters": [
+            {
+              "name": "args"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "SideBySide"
+        },
+        {
+          "kind": "function",
+          "name": "TwoUp"
+        },
+        {
+          "kind": "function",
+          "name": "TwoUpBreakFaster"
+        },
+        {
+          "kind": "function",
+          "name": "TwoUpBreakSlower"
+        },
+        {
+          "kind": "function",
+          "name": "ThreeUp"
+        },
+        {
+          "kind": "function",
+          "name": "OneToThreeUp"
+        },
+        {
+          "kind": "function",
+          "name": "OneToFourUp"
+        },
+        {
+          "kind": "function",
+          "name": "OneToTwoToFourUp"
+        },
+        {
+          "kind": "function",
+          "name": "FourUp"
+        },
+        {
+          "kind": "function",
+          "name": "TwoTo4to6Up"
+        },
+        {
+          "kind": "function",
+          "name": "SidebarVsMain"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "components/container-grid/container-grid.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Default",
+          "declaration": {
+            "name": "Default",
+            "module": "components/container-grid/container-grid.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "SideBySide",
+          "declaration": {
+            "name": "SideBySide",
+            "module": "components/container-grid/container-grid.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "TwoUp",
+          "declaration": {
+            "name": "TwoUp",
+            "module": "components/container-grid/container-grid.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "TwoUpBreakFaster",
+          "declaration": {
+            "name": "TwoUpBreakFaster",
+            "module": "components/container-grid/container-grid.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "TwoUpBreakSlower",
+          "declaration": {
+            "name": "TwoUpBreakSlower",
+            "module": "components/container-grid/container-grid.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ThreeUp",
+          "declaration": {
+            "name": "ThreeUp",
+            "module": "components/container-grid/container-grid.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OneToThreeUp",
+          "declaration": {
+            "name": "OneToThreeUp",
+            "module": "components/container-grid/container-grid.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OneToFourUp",
+          "declaration": {
+            "name": "OneToFourUp",
+            "module": "components/container-grid/container-grid.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OneToTwoToFourUp",
+          "declaration": {
+            "name": "OneToTwoToFourUp",
+            "module": "components/container-grid/container-grid.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "FourUp",
+          "declaration": {
+            "name": "FourUp",
+            "module": "components/container-grid/container-grid.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "TwoTo4to6Up",
+          "declaration": {
+            "name": "TwoTo4to6Up",
+            "module": "components/container-grid/container-grid.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "SidebarVsMain",
+          "declaration": {
+            "name": "SidebarVsMain",
+            "module": "components/container-grid/container-grid.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/container-grid/container-grid.styles.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "styles",
+          "default": "css`.cre8-u-content-knockout-brand { color: var(----cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: size(1) !important; } .cre8-u-margin-md { margin: size(2) !important; } .cre8-u-margin-lg { margin: size(3) !important; } .cre8-u-margin-xl { margin: size(4) !important; } .cre8-u-margin-xxl { margin: size(8) !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: size(1) !important; } .cre8-u-margin-top-md { margin-top: size(2) !important; } .cre8-u-margin-top-lg { margin-top: size(3) !important; } .cre8-u-margin-top-xl { margin-top: size(4) !important; } .cre8-u-margin-top-xxl { margin-top: size(8) !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: size(1) !important; } .cre8-u-margin-right-md { margin-right: size(2) !important; } .cre8-u-margin-right-lg { margin-right: size(3) !important; } .cre8-u-margin-right-xl { margin-right: size(4) !important; } .cre8-u-margin-right-xxl { margin-right: size(8) !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: size(1) !important; } .cre8-u-margin-bottom-md { margin-bottom: size(2) !important; } .cre8-u-margin-bottom-lg { margin-bottom: size(3) !important; } .cre8-u-margin-bottom-xl { margin-bottom: size(4) !important; } .cre8-u-margin-bottom-xxl { margin-bottom: size(8) !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(4) !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(8) !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: size(1) !important; } .cre8-u-margin-left-md { margin-left: size(2) !important; } .cre8-u-margin-left-lg { margin-left: size(3) !important; } .cre8-u-margin-left-xl { margin-left: size(4) !important; } .cre8-u-margin-left-xxl { margin-left: size(8) !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: size(1) !important; } .cre8-u-padding-md { padding: size(2) !important; } .cre8-u-padding-lg { padding: size(3) !important; } .cre8-u-padding-xl { padding: size(4) !important; } .cre8-u-padding-xxl { padding: size(8) !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: size(1) !important; } .cre8-u-padding-top-md { padding-top: size(2) !important; } .cre8-u-padding-top-lg { padding-top: size(3) !important; } .cre8-u-padding-top-xl { padding-top: size(4) !important; } .cre8-u-padding-top-xxl { padding-top: size(8) !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: size(1) !important; } .cre8-u-padding-right-md { padding-right: size(2) !important; } .cre8-u-padding-right-lg { padding-right: size(3) !important; } .cre8-u-padding-right-xl { padding-right: size(4) !important; } .cre8-u-padding-right-xxl { padding-right: size(8) !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: size(1) !important; } .cre8-u-padding-bottom-md { padding-bottom: size(2) !important; } .cre8-u-padding-bottom-lg { padding-bottom: size(3) !important; } .cre8-u-padding-bottom-xl { padding-bottom: size(4) !important; } .cre8-u-padding-bottom-xxl { padding-bottom: size(8) !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: size(1) !important; } .cre8-u-padding-left-md { padding-left: size(2) !important; } .cre8-u-padding-left-lg { padding-left: size(3) !important; } .cre8-u-padding-left-xl { padding-left: size(4) !important; } .cre8-u-padding-left-xxl { padding-left: size(8) !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); -webkit-text-decoration: var(--cre8-typography-body-default-text-decoration); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--background-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /** * 1) Same layout vocabulary as \\`cre8-grid\\` - stacked to N-across patterns - * but keyed to this element's own rendered width via \\`@container\\` instead * of the viewport via \\`@media\\`. Establishes its own containment context, so * it breaks into columns based on the space it is actually given: inside a * narrow sidebar on a wide viewport, or a wide main column on a narrow one. */ .cre8-c-container-grid { container-type: inline-size; display: flex; flex-direction: column; flex-wrap: wrap; margin: -0.75rem; } /** * Grid with no gap in between items */ .cre8-c-container-grid--gap-none { margin: 0; } /** * Small gap grid * 1) Spacing between grid items is smaller than default */ .cre8-c-container-grid--gap-sm { margin: -0.25rem; } /** * Large gap grid * 1) Spacing between grid items is larger than default */ .cre8-c-container-grid--gap-lg { margin: -1rem; } /** * Side by Side Grid * 1) Grid that stays 2 items per row regardless of its own width */ .cre8-c-container-grid--side-by-side { flex-direction: row; } /** * 2up grid * 1) Stacked items when this element is narrow, 2 items per row once it has * enough of its own width to fit them */ @container (min-width: 768px) { .cre8-c-container-grid--2up { flex-direction: row; } } .cre8-c-container-grid--2up { /** * 2up grid that breaks faster * 1) Grid that breaks from 1 to 2up at a smaller container width than the default */ } @container (min-width: 560px) { .cre8-c-container-grid--2up.cre8-c-container-grid--break-faster { flex-direction: row; } } .cre8-c-container-grid--2up { /** * 2up grid that breaks slower * 1) Grid that breaks from 1 to 2up at a larger container width than the default */ } @container (min-width: 768px) { .cre8-c-container-grid--2up.cre8-c-container-grid--break-slower { flex-direction: column; } } @container (min-width: 1400px) { .cre8-c-container-grid--2up.cre8-c-container-grid--break-slower { flex-direction: row; } } /** * 3up grid * 1) Stacked items when narrow, 3 items per row once this element is wide enough */ @container (min-width: 768px) { .cre8-c-container-grid--3up { flex-direction: row; } } /** * 1 to 3up grid * 1) Stacked items when narrow, 3 items per row once this element is wide enough */ @container (min-width: 960px) { .cre8-c-container-grid--1-3up { flex-direction: row; } } .cre8-c-container-grid--1-3up { /** * 1 to 3 up grid that breaks faster * 1) Grid that breaks from 1 to 3up at a smaller container width than the default */ } @container (min-width: 768px) { .cre8-c-container-grid--1-3up.cre8-c-container-grid--break-faster { flex-direction: row; } } .cre8-c-container-grid--1-3up { /** * 1 to 3up grid that breaks slower * 1) Grid that breaks from 1 to 3up at a larger container width than the default */ } @container (min-width: 960px) { .cre8-c-container-grid--1-3up.cre8-c-container-grid--break-slower { flex-direction: column; } } @container (min-width: 1200px) { .cre8-c-container-grid--1-3up.cre8-c-container-grid--break-slower { flex-direction: row; } } /** * 1 to 2 to 4up grid * 1) Stacked when narrow, 2 items per row at medium container widths, 4 items * per row once this element is wide enough */ @container (min-width: 560px) { .cre8-c-container-grid--1-2-4up { flex-direction: row; } } /** * 1 to 4up grid * 1) Stacked when narrow, 4 items per row once this element is wide enough */ @container (min-width: 768px) { .cre8-c-container-grid--1-4up { flex-direction: row; } } /** * 1 to 2 to 4up grid * 1) Stacked when narrow, 2 items per row at small/medium container widths, * 3 items per row at medium widths, and 4 items per row once wide enough */ @container (min-width: 560px) { .cre8-c-container-grid--4up { flex-direction: row; } } /** * Slotted grid item within 4up Grid */ .cre8-c-container-grid--2-4-6up { flex-direction: row; } /** * Slotted grid item */ ::slotted(cre8-grid-item) { display: block; padding: 0.75rem; /** * Slotted grid item within grid with no gap between items */ } .cre8-c-container-grid--gap-none > ::slotted(cre8-grid-item) { padding: 0; } ::slotted(cre8-grid-item) { /** * Slotted grid item within grid with small gap between items */ } .cre8-c-container-grid--gap-sm > ::slotted(cre8-grid-item) { padding: 0.25rem; } ::slotted(cre8-grid-item) { /** * Slotted grid item within grid with large gap between items */ } .cre8-c-container-grid--gap-lg > ::slotted(cre8-grid-item) { padding: 1rem; } ::slotted(cre8-grid-item) { /** * Slotted grid item within side by side grid * 1) Grid that stays 2 items per row regardless of its own width */ } .cre8-c-container-grid--side-by-side > ::slotted(cre8-grid-item) { width: 50%; } ::slotted(cre8-grid-item) { /** * Slotted grid item within 2up Grid */ } @container (min-width: 768px) { .cre8-c-container-grid--2up > ::slotted(cre8-grid-item) { width: 50%; } } ::slotted(cre8-grid-item) { /** * Slotted grid item within 2up break faster (small to large container widths) Grid */ } @container (min-width: 560px) { .cre8-c-container-grid--2up.cre8-c-container-grid--break-faster > ::slotted(cre8-grid-item) { width: 50%; } } ::slotted(cre8-grid-item) { /** * Slotted grid item within 2up break slower (small to large container widths) Grid */ } @container (min-width: 768px) { .cre8-c-container-grid--2up.cre8-c-container-grid--break-slower > ::slotted(cre8-grid-item) { width: 100%; } } @container (min-width: 1400px) { .cre8-c-container-grid--2up.cre8-c-container-grid--break-slower > ::slotted(cre8-grid-item) { width: 50%; } } ::slotted(cre8-grid-item) { /** * Slotted grid item within 3up Grid */ } @container (min-width: 768px) { .cre8-c-container-grid--3up > ::slotted(cre8-grid-item) { width: 50%; } } @container (min-width: 960px) { .cre8-c-container-grid--3up > ::slotted(cre8-grid-item) { width: 33.3333%; } } ::slotted(cre8-grid-item) { /** * Slotted grid item within 1-3up Grid */ } @container (min-width: 960px) { .cre8-c-container-grid--1-3up > ::slotted(cre8-grid-item) { width: 33.3333%; } } ::slotted(cre8-grid-item) { /** * Slotted grid item within 1 to 3up break faster (small to large container widths) grid */ } @container (min-width: 768px) { .cre8-c-container-grid--1-3up.cre8-c-container-grid--break-faster > ::slotted(cre8-grid-item) { width: 33.33%; } } ::slotted(cre8-grid-item) { /** * Slotted grid item within 2up break slower (small to large container widths) Grid */ } @container (min-width: 960px) { .cre8-c-container-grid--1-3up.cre8-c-container-grid--break-slower > ::slotted(cre8-grid-item) { width: 100%; } } @container (min-width: 1200px) { .cre8-c-container-grid--1-3up.cre8-c-container-grid--break-slower > ::slotted(cre8-grid-item) { width: 33.33%; } } ::slotted(cre8-grid-item) { /** * Slotted grid item within 1-2-4up Grid */ } @container (min-width: 560px) { .cre8-c-container-grid--1-2-4up > ::slotted(cre8-grid-item) { width: 50%; } } @container (min-width: 960px) { .cre8-c-container-grid--1-2-4up > ::slotted(cre8-grid-item) { width: 25%; } } ::slotted(cre8-grid-item) { /** * Slotted grid item within 1-2-4up Grid */ } @container (min-width: 768px) { .cre8-c-container-grid--1-4up > ::slotted(cre8-grid-item) { width: 25%; } } ::slotted(cre8-grid-item) { /** * Slotted grid item within 4up Grid */ } @container (min-width: 560px) { .cre8-c-container-grid--4up > ::slotted(cre8-grid-item) { width: 50%; } } @container (min-width: 768px) { .cre8-c-container-grid--4up > ::slotted(cre8-grid-item) { width: 33.3333%; } } @container (min-width: 960px) { .cre8-c-container-grid--4up > ::slotted(cre8-grid-item) { width: 25%; } } ::slotted(cre8-grid-item) { /** * Slotted grid item within 4up Grid */ } .cre8-c-container-grid--2-4-6up > ::slotted(cre8-grid-item) { width: 50%; } @container (min-width: 960px) { .cre8-c-container-grid--2-4-6up > ::slotted(cre8-grid-item) { width: 25%; } } @container (min-width: 1200px) { .cre8-c-container-grid--2-4-6up > ::slotted(cre8-grid-item) { width: 16.66%; } }`"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "styles",
+            "module": "components/container-grid/container-grid.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/container-grid/container-grid.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "`cre8-container-grid` is `cre8-grid`'s layout vocabulary - stacked to\nN-across patterns - keyed to this element's own rendered width via\n`@container` instead of the viewport via `@media`. It establishes its own\ncontainment context, so use it wherever the number of columns should\ndepend on the space actually available: a grid placed in a narrow sidebar\non a wide viewport still stacks, and a grid placed in a wide main column\non a narrow viewport still goes multi-up.",
+          "name": "Cre8ContainerGrid",
+          "slots": [
+            {
+              "description": "The grid items",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "'side-by-side' | '2up' | '3up' | '1-3up' | '4up' | '1-4up' | '1-2-4up' | '2-4-6up' | undefined"
+              },
+              "description": "Style variant\n- **side-by-side** yields a grid whose grid items display side-by-side (2 per row) regardless of width\n- **2up** yields a grid whose grid items are stacked when this element is narrow\n  but display side-by-side once it has enough of its own width to do so\n- **3up** yields a grid whose grid items are stacked when narrow,\n  transforms to a 2-across pattern and then transforms again to a 3-across pattern\n- **1-3up** yields a grid whose grid items are stacked when narrow\n  and transforms to a 3-across pattern once wide enough\n- **4up** yields a grid whose grid items are stacked when narrow,\n  transforms to a 2-across pattern, transforms again to a 3-across pattern,\n  and ultimately transforms to a 4-across pattern\n- **1-2-4up** yields a grid whose grid items are stacked when narrow,\n  transforms to a 2-across pattern, and ultimately transforms to a 4-across pattern\n- **1-4up** yields a grid whose grid items are stacked when narrow,\n  transforms to a 4-across pattern once wide enough",
+              "attribute": "variant"
+            },
+            {
+              "kind": "field",
+              "name": "gap",
+              "type": {
+                "text": "'none' | 'sm' | 'lg' | undefined"
+              },
+              "description": "Style variant\n- **none** yields a grid whose grid items are spaced without any gutter in between\n- **sm** yields a grid whose grid items are spaced with a gap smaller than the default\n- **lg** yields a grid whose grid items are spaced with a gap larger than the default",
+              "attribute": "gap"
+            },
+            {
+              "kind": "field",
+              "name": "break",
+              "type": {
+                "text": "'faster' | 'slower' | undefined"
+              },
+              "description": "Break variant\n- **faster** breaks the grid at a smaller container width than the default.\n  Example: 2up grid breaks to 2 per row at a smaller width than default\n- **slower** breaks the grid at a larger container width than the default.\n  Example: 2up grid breaks to 2 per row at a larger width than default",
+              "attribute": "break"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "variant",
+              "type": {
+                "text": "'side-by-side' | '2up' | '3up' | '1-3up' | '4up' | '1-4up' | '1-2-4up' | '2-4-6up' | undefined"
+              },
+              "description": "Style variant\n- **side-by-side** yields a grid whose grid items display side-by-side (2 per row) regardless of width\n- **2up** yields a grid whose grid items are stacked when this element is narrow\n  but display side-by-side once it has enough of its own width to do so\n- **3up** yields a grid whose grid items are stacked when narrow,\n  transforms to a 2-across pattern and then transforms again to a 3-across pattern\n- **1-3up** yields a grid whose grid items are stacked when narrow\n  and transforms to a 3-across pattern once wide enough\n- **4up** yields a grid whose grid items are stacked when narrow,\n  transforms to a 2-across pattern, transforms again to a 3-across pattern,\n  and ultimately transforms to a 4-across pattern\n- **1-2-4up** yields a grid whose grid items are stacked when narrow,\n  transforms to a 2-across pattern, and ultimately transforms to a 4-across pattern\n- **1-4up** yields a grid whose grid items are stacked when narrow,\n  transforms to a 4-across pattern once wide enough",
+              "fieldName": "variant"
+            },
+            {
+              "name": "gap",
+              "type": {
+                "text": "'none' | 'sm' | 'lg' | undefined"
+              },
+              "description": "Style variant\n- **none** yields a grid whose grid items are spaced without any gutter in between\n- **sm** yields a grid whose grid items are spaced with a gap smaller than the default\n- **lg** yields a grid whose grid items are spaced with a gap larger than the default",
+              "fieldName": "gap"
+            },
+            {
+              "name": "break",
+              "type": {
+                "text": "'faster' | 'slower' | undefined"
+              },
+              "description": "Break variant\n- **faster** breaks the grid at a smaller container width than the default.\n  Example: 2up grid breaks to 2 per row at a smaller width than default\n- **slower** breaks the grid at a larger container width than the default.\n  Example: 2up grid breaks to 2 per row at a larger width than default",
+              "fieldName": "break"
+            }
+          ],
+          "superclass": {
+            "name": "Cre8Element",
+            "module": "/components/cre8-element"
+          },
+          "tagName": "cre8-container-grid",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Cre8ContainerGrid",
+          "declaration": {
+            "name": "Cre8ContainerGrid",
+            "module": "components/container-grid/container-grid.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cre8-container-grid",
+          "declaration": {
+            "name": "Cre8ContainerGrid",
+            "module": "components/container-grid/container-grid.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Cre8ContainerGrid",
+            "module": "components/container-grid/container-grid.ts"
           }
         }
       ]
@@ -10728,7 +11207,7 @@
         {
           "kind": "variable",
           "name": "styles",
-          "default": "css`.cre8-u-content-knockout-brand { color: var(----cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: size(1) !important; } .cre8-u-margin-md { margin: size(2) !important; } .cre8-u-margin-lg { margin: size(3) !important; } .cre8-u-margin-xl { margin: size(4) !important; } .cre8-u-margin-xxl { margin: size(8) !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: size(1) !important; } .cre8-u-margin-top-md { margin-top: size(2) !important; } .cre8-u-margin-top-lg { margin-top: size(3) !important; } .cre8-u-margin-top-xl { margin-top: size(4) !important; } .cre8-u-margin-top-xxl { margin-top: size(8) !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: size(1) !important; } .cre8-u-margin-right-md { margin-right: size(2) !important; } .cre8-u-margin-right-lg { margin-right: size(3) !important; } .cre8-u-margin-right-xl { margin-right: size(4) !important; } .cre8-u-margin-right-xxl { margin-right: size(8) !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: size(1) !important; } .cre8-u-margin-bottom-md { margin-bottom: size(2) !important; } .cre8-u-margin-bottom-lg { margin-bottom: size(3) !important; } .cre8-u-margin-bottom-xl { margin-bottom: size(4) !important; } .cre8-u-margin-bottom-xxl { margin-bottom: size(8) !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(4) !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(8) !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: size(1) !important; } .cre8-u-margin-left-md { margin-left: size(2) !important; } .cre8-u-margin-left-lg { margin-left: size(3) !important; } .cre8-u-margin-left-xl { margin-left: size(4) !important; } .cre8-u-margin-left-xxl { margin-left: size(8) !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: size(1) !important; } .cre8-u-padding-md { padding: size(2) !important; } .cre8-u-padding-lg { padding: size(3) !important; } .cre8-u-padding-xl { padding: size(4) !important; } .cre8-u-padding-xxl { padding: size(8) !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: size(1) !important; } .cre8-u-padding-top-md { padding-top: size(2) !important; } .cre8-u-padding-top-lg { padding-top: size(3) !important; } .cre8-u-padding-top-xl { padding-top: size(4) !important; } .cre8-u-padding-top-xxl { padding-top: size(8) !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: size(1) !important; } .cre8-u-padding-right-md { padding-right: size(2) !important; } .cre8-u-padding-right-lg { padding-right: size(3) !important; } .cre8-u-padding-right-xl { padding-right: size(4) !important; } .cre8-u-padding-right-xxl { padding-right: size(8) !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: size(1) !important; } .cre8-u-padding-bottom-md { padding-bottom: size(2) !important; } .cre8-u-padding-bottom-lg { padding-bottom: size(3) !important; } .cre8-u-padding-bottom-xl { padding-bottom: size(4) !important; } .cre8-u-padding-bottom-xxl { padding-bottom: size(8) !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: size(1) !important; } .cre8-u-padding-left-md { padding-left: size(2) !important; } .cre8-u-padding-left-lg { padding-left: size(3) !important; } .cre8-u-padding-left-xl { padding-left: size(4) !important; } .cre8-u-padding-left-xxl { padding-left: size(8) !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); -webkit-text-decoration: var(--cre8-typography-body-default-text-decoration); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--background-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /** * 1) Item used for the various items within the grid */ .cre8-c-grid__item { height: 100%; }`"
+          "default": "css`.cre8-u-content-knockout-brand { color: var(----cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: size(1) !important; } .cre8-u-margin-md { margin: size(2) !important; } .cre8-u-margin-lg { margin: size(3) !important; } .cre8-u-margin-xl { margin: size(4) !important; } .cre8-u-margin-xxl { margin: size(8) !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: size(1) !important; } .cre8-u-margin-top-md { margin-top: size(2) !important; } .cre8-u-margin-top-lg { margin-top: size(3) !important; } .cre8-u-margin-top-xl { margin-top: size(4) !important; } .cre8-u-margin-top-xxl { margin-top: size(8) !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: size(1) !important; } .cre8-u-margin-right-md { margin-right: size(2) !important; } .cre8-u-margin-right-lg { margin-right: size(3) !important; } .cre8-u-margin-right-xl { margin-right: size(4) !important; } .cre8-u-margin-right-xxl { margin-right: size(8) !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: size(1) !important; } .cre8-u-margin-bottom-md { margin-bottom: size(2) !important; } .cre8-u-margin-bottom-lg { margin-bottom: size(3) !important; } .cre8-u-margin-bottom-xl { margin-bottom: size(4) !important; } .cre8-u-margin-bottom-xxl { margin-bottom: size(8) !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(4) !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(8) !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: size(1) !important; } .cre8-u-margin-left-md { margin-left: size(2) !important; } .cre8-u-margin-left-lg { margin-left: size(3) !important; } .cre8-u-margin-left-xl { margin-left: size(4) !important; } .cre8-u-margin-left-xxl { margin-left: size(8) !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: size(1) !important; } .cre8-u-padding-md { padding: size(2) !important; } .cre8-u-padding-lg { padding: size(3) !important; } .cre8-u-padding-xl { padding: size(4) !important; } .cre8-u-padding-xxl { padding: size(8) !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: size(1) !important; } .cre8-u-padding-top-md { padding-top: size(2) !important; } .cre8-u-padding-top-lg { padding-top: size(3) !important; } .cre8-u-padding-top-xl { padding-top: size(4) !important; } .cre8-u-padding-top-xxl { padding-top: size(8) !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: size(1) !important; } .cre8-u-padding-right-md { padding-right: size(2) !important; } .cre8-u-padding-right-lg { padding-right: size(3) !important; } .cre8-u-padding-right-xl { padding-right: size(4) !important; } .cre8-u-padding-right-xxl { padding-right: size(8) !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: size(1) !important; } .cre8-u-padding-bottom-md { padding-bottom: size(2) !important; } .cre8-u-padding-bottom-lg { padding-bottom: size(3) !important; } .cre8-u-padding-bottom-xl { padding-bottom: size(4) !important; } .cre8-u-padding-bottom-xxl { padding-bottom: size(8) !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: size(1) !important; } .cre8-u-padding-left-md { padding-left: size(2) !important; } .cre8-u-padding-left-lg { padding-left: size(3) !important; } .cre8-u-padding-left-xl { padding-left: size(4) !important; } .cre8-u-padding-left-xxl { padding-left: size(8) !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); -webkit-text-decoration: var(--cre8-typography-body-default-text-decoration); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--background-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /** * Full height grid item * 1) Stretches the item to fill the height of its row. Off by default - * see the same note on \\`cre8-card--full-height\\`: unconditional \\`height: 100%\\` * inside a shadow root composes unpredictably with whatever ancestor ends up * establishing the item's containing block. */ .cre8-c-grid__item--full-height { height: 100%; }`"
         }
       ],
       "exports": [
@@ -10756,7 +11235,28 @@
               "name": ""
             }
           ],
-          "members": [],
+          "members": [
+            {
+              "kind": "field",
+              "name": "fullHeight",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Full height\n1) Stretches the item to fill the height of its row. Off by default -\n  only turn this on when the items in a row should line up edge to\n  edge regardless of how much content each one has.",
+              "attribute": "fullHeight",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "fullHeight",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Full height\n1) Stretches the item to fill the height of its row. Off by default -\n  only turn this on when the items in a row should line up edge to\n  edge regardless of how much content each one has.",
+              "fieldName": "fullHeight"
+            }
+          ],
           "superclass": {
             "name": "Cre8Element",
             "module": "/components/cre8-element"
@@ -12710,7 +13210,7 @@
         {
           "kind": "variable",
           "name": "styles",
-          "default": "css`.cre8-u-content-knockout-brand { color: var(----cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: size(1) !important; } .cre8-u-margin-md { margin: size(2) !important; } .cre8-u-margin-lg { margin: size(3) !important; } .cre8-u-margin-xl { margin: size(4) !important; } .cre8-u-margin-xxl { margin: size(8) !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: size(1) !important; } .cre8-u-margin-top-md { margin-top: size(2) !important; } .cre8-u-margin-top-lg { margin-top: size(3) !important; } .cre8-u-margin-top-xl { margin-top: size(4) !important; } .cre8-u-margin-top-xxl { margin-top: size(8) !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: size(1) !important; } .cre8-u-margin-right-md { margin-right: size(2) !important; } .cre8-u-margin-right-lg { margin-right: size(3) !important; } .cre8-u-margin-right-xl { margin-right: size(4) !important; } .cre8-u-margin-right-xxl { margin-right: size(8) !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: size(1) !important; } .cre8-u-margin-bottom-md { margin-bottom: size(2) !important; } .cre8-u-margin-bottom-lg { margin-bottom: size(3) !important; } .cre8-u-margin-bottom-xl { margin-bottom: size(4) !important; } .cre8-u-margin-bottom-xxl { margin-bottom: size(8) !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(4) !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(8) !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: size(1) !important; } .cre8-u-margin-left-md { margin-left: size(2) !important; } .cre8-u-margin-left-lg { margin-left: size(3) !important; } .cre8-u-margin-left-xl { margin-left: size(4) !important; } .cre8-u-margin-left-xxl { margin-left: size(8) !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: size(1) !important; } .cre8-u-padding-md { padding: size(2) !important; } .cre8-u-padding-lg { padding: size(3) !important; } .cre8-u-padding-xl { padding: size(4) !important; } .cre8-u-padding-xxl { padding: size(8) !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: size(1) !important; } .cre8-u-padding-top-md { padding-top: size(2) !important; } .cre8-u-padding-top-lg { padding-top: size(3) !important; } .cre8-u-padding-top-xl { padding-top: size(4) !important; } .cre8-u-padding-top-xxl { padding-top: size(8) !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: size(1) !important; } .cre8-u-padding-right-md { padding-right: size(2) !important; } .cre8-u-padding-right-lg { padding-right: size(3) !important; } .cre8-u-padding-right-xl { padding-right: size(4) !important; } .cre8-u-padding-right-xxl { padding-right: size(8) !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: size(1) !important; } .cre8-u-padding-bottom-md { padding-bottom: size(2) !important; } .cre8-u-padding-bottom-lg { padding-bottom: size(3) !important; } .cre8-u-padding-bottom-xl { padding-bottom: size(4) !important; } .cre8-u-padding-bottom-xxl { padding-bottom: size(8) !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: size(1) !important; } .cre8-u-padding-left-md { padding-left: size(2) !important; } .cre8-u-padding-left-lg { padding-left: size(3) !important; } .cre8-u-padding-left-xl { padding-left: size(4) !important; } .cre8-u-padding-left-xxl { padding-left: size(8) !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); -webkit-text-decoration: var(--cre8-typography-body-default-text-decoration); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--background-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /** * 1) Section within the layout component for each item */ .cre8-c-layout-section { width: 100%; height: 100%; }`"
+          "default": "css`.cre8-u-content-knockout-brand { color: var(----cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: size(1) !important; } .cre8-u-margin-md { margin: size(2) !important; } .cre8-u-margin-lg { margin: size(3) !important; } .cre8-u-margin-xl { margin: size(4) !important; } .cre8-u-margin-xxl { margin: size(8) !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: size(1) !important; } .cre8-u-margin-top-md { margin-top: size(2) !important; } .cre8-u-margin-top-lg { margin-top: size(3) !important; } .cre8-u-margin-top-xl { margin-top: size(4) !important; } .cre8-u-margin-top-xxl { margin-top: size(8) !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: size(1) !important; } .cre8-u-margin-right-md { margin-right: size(2) !important; } .cre8-u-margin-right-lg { margin-right: size(3) !important; } .cre8-u-margin-right-xl { margin-right: size(4) !important; } .cre8-u-margin-right-xxl { margin-right: size(8) !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: size(1) !important; } .cre8-u-margin-bottom-md { margin-bottom: size(2) !important; } .cre8-u-margin-bottom-lg { margin-bottom: size(3) !important; } .cre8-u-margin-bottom-xl { margin-bottom: size(4) !important; } .cre8-u-margin-bottom-xxl { margin-bottom: size(8) !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(4) !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: size(8) !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: size(1) !important; } .cre8-u-margin-left-md { margin-left: size(2) !important; } .cre8-u-margin-left-lg { margin-left: size(3) !important; } .cre8-u-margin-left-xl { margin-left: size(4) !important; } .cre8-u-margin-left-xxl { margin-left: size(8) !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: size(1) !important; } .cre8-u-padding-md { padding: size(2) !important; } .cre8-u-padding-lg { padding: size(3) !important; } .cre8-u-padding-xl { padding: size(4) !important; } .cre8-u-padding-xxl { padding: size(8) !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: size(1) !important; } .cre8-u-padding-top-md { padding-top: size(2) !important; } .cre8-u-padding-top-lg { padding-top: size(3) !important; } .cre8-u-padding-top-xl { padding-top: size(4) !important; } .cre8-u-padding-top-xxl { padding-top: size(8) !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: size(1) !important; } .cre8-u-padding-right-md { padding-right: size(2) !important; } .cre8-u-padding-right-lg { padding-right: size(3) !important; } .cre8-u-padding-right-xl { padding-right: size(4) !important; } .cre8-u-padding-right-xxl { padding-right: size(8) !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: size(1) !important; } .cre8-u-padding-bottom-md { padding-bottom: size(2) !important; } .cre8-u-padding-bottom-lg { padding-bottom: size(3) !important; } .cre8-u-padding-bottom-xl { padding-bottom: size(4) !important; } .cre8-u-padding-bottom-xxl { padding-bottom: size(8) !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: size(1) !important; } .cre8-u-padding-left-md { padding-left: size(2) !important; } .cre8-u-padding-left-lg { padding-left: size(3) !important; } .cre8-u-padding-left-xl { padding-left: size(4) !important; } .cre8-u-padding-left-xxl { padding-left: size(8) !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); -webkit-text-decoration: var(--cre8-typography-body-default-text-decoration); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--background-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /** * 1) Section within the layout component for each item */ .cre8-c-layout-section { width: 100%; } /** * Full height layout section * 1) Stretches the section to fill the height of its row in \\`cre8-layout\\`'s * grid. Off by default - see the same note on \\`cre8-card--full-height\\`: * unconditional \\`height: 100%\\` inside a shadow root composes unpredictably * with whatever ancestor ends up establishing the section's containing * block. */ .cre8-c-layout-section--full-height { height: 100%; }`"
         }
       ],
       "exports": [
@@ -12757,6 +13257,16 @@
               "default": "'1rem'",
               "description": "Top style\n1) Used to create dynamic sticky containers that can be adjusted based on the content",
               "attribute": "top"
+            },
+            {
+              "kind": "field",
+              "name": "fullHeight",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Full height\n1) Stretches the section to fill the height of its row in `cre8-layout`'s\n  grid. Off by default - only turn this on when the sections in a row\n  should line up edge to edge regardless of how much content each one\n  has.",
+              "attribute": "fullHeight",
+              "reflects": true
             }
           ],
           "attributes": [
@@ -12776,6 +13286,14 @@
               "default": "'1rem'",
               "description": "Top style\n1) Used to create dynamic sticky containers that can be adjusted based on the content",
               "fieldName": "top"
+            },
+            {
+              "name": "fullHeight",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Full height\n1) Stretches the section to fill the height of its row in `cre8-layout`'s\n  grid. Off by default - only turn this on when the sections in a row\n  should line up edge to edge regardless of how much content each one\n  has.",
+              "fieldName": "fullHeight"
             }
           ],
           "superclass": {

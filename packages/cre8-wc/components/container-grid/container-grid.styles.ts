@@ -590,142 +590,360 @@ span.ripple {
 /**
  * Visually hidden from display
  */
-:host {
-  display: block;
-}
-
 /**
- * 1) A card is an organized block that typically contains a title, image,
- * text, and/or calls to action. It is made up of an optional header slot, required
- * body slot, and optional footer slot to place other Components and content within.
+ * 1) Same layout vocabulary as \`cre8-grid\` - stacked to N-across patterns -
+ * but keyed to this element's own rendered width via \`@container\` instead
+ * of the viewport via \`@media\`. Establishes its own containment context, so
+ * it breaks into columns based on the space it is actually given: inside a
+ * narrow sidebar on a wide viewport, or a wide main column on a narrow one.
  */
-.cre8-c-card {
-  overflow: hidden;
+.cre8-c-container-grid {
+  container-type: inline-size;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
-  gap: 1rem;
-  border-color: var(--cre8-color-border-default);
-  border-style: var(--cre8-border-style-default);
-  border-width: var(--cre8-border-width-default);
-  border-radius: var(--cre8-border-radius-container);
-  background: var(--cre8-color-bg-default);
+  flex-wrap: wrap;
+  margin: -0.75rem;
 }
 
 /**
- * Full height card
- * 1) Stretches the card to fill its parent's height and width. Off by
- * default: the host is \`display: block\` with no explicit height, so a card
- * placed in a flex or grid ancestor with \`align-items: stretch\` would
- * otherwise inherit whatever height that ancestor happens to establish -
- * invisible from outside the shadow boundary and unrelated to the card's
- * own content. Opt in only when the parent's height is actually meant to be
- * shared, e.g. cards as flex/grid items that should line up edge to edge.
+ * Grid with no gap in between items
  */
-.cre8-c-card--full-height {
-  height: 100%;
-  width: 100%;
+.cre8-c-container-grid--gap-none {
+  margin: 0;
 }
 
 /**
- * Compact card - reduced padding for narrow layouts
+ * Small gap grid
+ * 1) Spacing between grid items is smaller than default
  */
-.cre8-c-card--compact {
+.cre8-c-container-grid--gap-sm {
+  margin: -0.25rem;
+}
+
+/**
+ * Large gap grid
+ * 1) Spacing between grid items is larger than default
+ */
+.cre8-c-container-grid--gap-lg {
+  margin: -1rem;
+}
+
+/**
+ * Side by Side Grid
+ * 1) Grid that stays 2 items per row regardless of its own width
+ */
+.cre8-c-container-grid--side-by-side {
+  flex-direction: row;
+}
+
+/**
+ * 2up grid
+ * 1) Stacked items when this element is narrow, 2 items per row once it has
+ * enough of its own width to fit them
+ */
+@container (min-width: 768px) {
+  .cre8-c-container-grid--2up {
+    flex-direction: row;
+  }
+}
+.cre8-c-container-grid--2up {
+  /**
+  * 2up grid that breaks faster
+  * 1) Grid that breaks from 1 to 2up at a smaller container width than the default
+  */
+}
+@container (min-width: 560px) {
+  .cre8-c-container-grid--2up.cre8-c-container-grid--break-faster {
+    flex-direction: row;
+  }
+}
+.cre8-c-container-grid--2up {
+  /**
+  * 2up grid that breaks slower
+  * 1) Grid that breaks from 1 to 2up at a larger container width than the default
+  */
+}
+@container (min-width: 768px) {
+  .cre8-c-container-grid--2up.cre8-c-container-grid--break-slower {
+    flex-direction: column;
+  }
+}
+@container (min-width: 1400px) {
+  .cre8-c-container-grid--2up.cre8-c-container-grid--break-slower {
+    flex-direction: row;
+  }
+}
+
+/**
+ * 3up grid
+ * 1) Stacked items when narrow, 3 items per row once this element is wide enough
+ */
+@container (min-width: 768px) {
+  .cre8-c-container-grid--3up {
+    flex-direction: row;
+  }
+}
+
+/**
+ * 1 to 3up grid
+ * 1) Stacked items when narrow, 3 items per row once this element is wide enough
+ */
+@container (min-width: 960px) {
+  .cre8-c-container-grid--1-3up {
+    flex-direction: row;
+  }
+}
+.cre8-c-container-grid--1-3up {
+  /**
+  * 1 to 3 up grid that breaks faster
+  * 1) Grid that breaks from 1 to 3up at a smaller container width than the default
+  */
+}
+@container (min-width: 768px) {
+  .cre8-c-container-grid--1-3up.cre8-c-container-grid--break-faster {
+    flex-direction: row;
+  }
+}
+.cre8-c-container-grid--1-3up {
+  /**
+  * 1 to 3up grid that breaks slower
+  * 1) Grid that breaks from 1 to 3up at a larger container width than the default
+  */
+}
+@container (min-width: 960px) {
+  .cre8-c-container-grid--1-3up.cre8-c-container-grid--break-slower {
+    flex-direction: column;
+  }
+}
+@container (min-width: 1200px) {
+  .cre8-c-container-grid--1-3up.cre8-c-container-grid--break-slower {
+    flex-direction: row;
+  }
+}
+
+/**
+ * 1 to 2 to 4up grid
+ * 1) Stacked when narrow, 2 items per row at medium container widths, 4 items
+ * per row once this element is wide enough
+ */
+@container (min-width: 560px) {
+  .cre8-c-container-grid--1-2-4up {
+    flex-direction: row;
+  }
+}
+
+/**
+ * 1 to 4up grid
+ * 1) Stacked when narrow, 4 items per row once this element is wide enough
+ */
+@container (min-width: 768px) {
+  .cre8-c-container-grid--1-4up {
+    flex-direction: row;
+  }
+}
+
+/**
+ * 1 to 2 to 4up grid
+ * 1) Stacked when narrow, 2 items per row at small/medium container widths,
+ * 3 items per row at medium widths, and 4 items per row once wide enough
+ */
+@container (min-width: 560px) {
+  .cre8-c-container-grid--4up {
+    flex-direction: row;
+  }
+}
+
+/**
+  * Slotted grid item within 4up Grid
+  */
+.cre8-c-container-grid--2-4-6up {
+  flex-direction: row;
+}
+
+/**
+ * Slotted grid item
+ */
+::slotted(cre8-grid-item) {
+  display: block;
+  padding: 0.75rem;
+  /**
+  * Slotted grid item within grid with no gap between items
+  */
+}
+.cre8-c-container-grid--gap-none > ::slotted(cre8-grid-item) {
+  padding: 0;
+}
+::slotted(cre8-grid-item) {
+  /**
+  * Slotted grid item within grid with small gap between items
+  */
+}
+.cre8-c-container-grid--gap-sm > ::slotted(cre8-grid-item) {
+  padding: 0.25rem;
+}
+::slotted(cre8-grid-item) {
+  /**
+  * Slotted grid item within grid with large gap between items
+  */
+}
+.cre8-c-container-grid--gap-lg > ::slotted(cre8-grid-item) {
   padding: 1rem;
-  gap: 0.5rem;
 }
-
-/**
- * Horizontal card
- * 1) Organized block with flex-direction set to row so that header => footer appears
- * from left to right rather than top to bottom
- */
-.cre8-c-card--horizontal {
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+::slotted(cre8-grid-item) {
+  /**
+  * Slotted grid item within side by side grid
+  * 1) Grid that stays 2 items per row regardless of its own width
+  */
 }
-
-/**
- * Bare card
- * 1) Organized block without a border, background, or padding
- */
-.cre8-c-card--bare {
-  border: 0;
-  padding: 0;
-  gap: 0;
-  box-shadow: none;
+.cre8-c-container-grid--side-by-side > ::slotted(cre8-grid-item) {
+  width: 50%;
 }
-
-/**
- * Horizontal-bare card
- * 1) Organized block with flex-direction set to row so that header => footer appears
- * from left to right rather than top to bottom without a border, background, or padding
- */
-.cre8-c-card--horizontal-bare {
-  flex-direction: row;
-  border: 0;
-  padding: 0;
-  gap: 0;
-  box-shadow: none;
-  align-items: center;
-  justify-content: center;
+::slotted(cre8-grid-item) {
+  /**
+  * Slotted grid item within 2up Grid
+  */
 }
-
-/**
- * Center aligned card
- * 1) Center content and text within the card
- */
-.cre8-c-card--align-center {
-  text-align: center;
-  /* 1 */
-  align-items: center;
-  /* 1 */
-  justify-content: center;
-  /* 1 */
+@container (min-width: 768px) {
+  .cre8-c-container-grid--2up > ::slotted(cre8-grid-item) {
+    width: 50%;
+  }
 }
-
-/**
- * Slotted image within a card
- * 1) Make the image full width
- */
-::slotted(img) {
-  width: 100%;
+::slotted(cre8-grid-item) {
+  /**
+  * Slotted grid item within 2up break faster (small to large container widths) Grid
+  */
 }
-
-/**
- * Card header
- * 1) Remove flex so that body always takes up remaining space
- */
-.cre8-c-card__header {
-  display: block;
-  flex: none;
-  /* 1 */
+@container (min-width: 560px) {
+  .cre8-c-container-grid--2up.cre8-c-container-grid--break-faster > ::slotted(cre8-grid-item) {
+    width: 50%;
+  }
 }
-
-/**
- * Card body
- * 1) Flex applied to always fill the remaining space of the card
- */
-.cre8-c-card__body {
-  display: block;
-  flex: 1 1 auto;
-  /* 1 */
+::slotted(cre8-grid-item) {
+  /**
+  * Slotted grid item within 2up break slower (small to large container widths) Grid
+  */
 }
-
-/**
- * Card footer
- * 1) Remove flex so that body always takes up remaining space
- */
-.cre8-c-card__footer {
-  display: block;
-  flex: none;
-  /* 1 */
+@container (min-width: 768px) {
+  .cre8-c-container-grid--2up.cre8-c-container-grid--break-slower > ::slotted(cre8-grid-item) {
+    width: 100%;
+  }
 }
-.cre8-c-card--bare .cre8-c-card__footer {
-  padding: 0;
+@container (min-width: 1400px) {
+  .cre8-c-container-grid--2up.cre8-c-container-grid--break-slower > ::slotted(cre8-grid-item) {
+    width: 50%;
+  }
 }
-.cre8-c-card--horizontal-bare .cre8-c-card__footer {
-  padding: 0;
+::slotted(cre8-grid-item) {
+  /**
+  * Slotted grid item within 3up Grid
+  */
+}
+@container (min-width: 768px) {
+  .cre8-c-container-grid--3up > ::slotted(cre8-grid-item) {
+    width: 50%;
+  }
+}
+@container (min-width: 960px) {
+  .cre8-c-container-grid--3up > ::slotted(cre8-grid-item) {
+    width: 33.3333%;
+  }
+}
+::slotted(cre8-grid-item) {
+  /**
+  * Slotted grid item within 1-3up Grid
+  */
+}
+@container (min-width: 960px) {
+  .cre8-c-container-grid--1-3up > ::slotted(cre8-grid-item) {
+    width: 33.3333%;
+  }
+}
+::slotted(cre8-grid-item) {
+  /**
+  * Slotted grid item within 1 to 3up break faster (small to large container widths) grid
+  */
+}
+@container (min-width: 768px) {
+  .cre8-c-container-grid--1-3up.cre8-c-container-grid--break-faster > ::slotted(cre8-grid-item) {
+    width: 33.33%;
+  }
+}
+::slotted(cre8-grid-item) {
+  /**
+  * Slotted grid item within 2up break slower (small to large container widths) Grid
+  */
+}
+@container (min-width: 960px) {
+  .cre8-c-container-grid--1-3up.cre8-c-container-grid--break-slower > ::slotted(cre8-grid-item) {
+    width: 100%;
+  }
+}
+@container (min-width: 1200px) {
+  .cre8-c-container-grid--1-3up.cre8-c-container-grid--break-slower > ::slotted(cre8-grid-item) {
+    width: 33.33%;
+  }
+}
+::slotted(cre8-grid-item) {
+  /**
+  * Slotted grid item within 1-2-4up Grid
+  */
+}
+@container (min-width: 560px) {
+  .cre8-c-container-grid--1-2-4up > ::slotted(cre8-grid-item) {
+    width: 50%;
+  }
+}
+@container (min-width: 960px) {
+  .cre8-c-container-grid--1-2-4up > ::slotted(cre8-grid-item) {
+    width: 25%;
+  }
+}
+::slotted(cre8-grid-item) {
+  /**
+  * Slotted grid item within 1-2-4up Grid
+  */
+}
+@container (min-width: 768px) {
+  .cre8-c-container-grid--1-4up > ::slotted(cre8-grid-item) {
+    width: 25%;
+  }
+}
+::slotted(cre8-grid-item) {
+  /**
+  * Slotted grid item within 4up Grid
+  */
+}
+@container (min-width: 560px) {
+  .cre8-c-container-grid--4up > ::slotted(cre8-grid-item) {
+    width: 50%;
+  }
+}
+@container (min-width: 768px) {
+  .cre8-c-container-grid--4up > ::slotted(cre8-grid-item) {
+    width: 33.3333%;
+  }
+}
+@container (min-width: 960px) {
+  .cre8-c-container-grid--4up > ::slotted(cre8-grid-item) {
+    width: 25%;
+  }
+}
+::slotted(cre8-grid-item) {
+  /**
+  * Slotted grid item within 4up Grid
+  */
+}
+.cre8-c-container-grid--2-4-6up > ::slotted(cre8-grid-item) {
+  width: 50%;
+}
+@container (min-width: 960px) {
+  .cre8-c-container-grid--2-4-6up > ::slotted(cre8-grid-item) {
+    width: 25%;
+  }
+}
+@container (min-width: 1200px) {
+  .cre8-c-container-grid--2-4-6up > ::slotted(cre8-grid-item) {
+    width: 16.66%;
+  }
 }`;
 export default styles;

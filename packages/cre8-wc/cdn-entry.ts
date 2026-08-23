@@ -55,6 +55,8 @@ import { Cre8Card } from './components/card/card';
 import { Cre8Chart } from './components/chart/chart';
 import { Cre8CheckboxField } from './components/checkbox-field/checkbox-field';
 import { Cre8CheckboxFieldItem } from './components/checkbox-field-item/checkbox-field-item';
+import { Cre8Container } from './components/container/container';
+import { Cre8ContainerGrid } from './components/container-grid/container-grid';
 import { Cre8DangerButton } from './components/danger-button/danger-button';
 import { Cre8DatePicker } from './components/date-picker/date-picker';
 import { Cre8Divider } from './components/divider/divider';
@@ -147,6 +149,8 @@ export {
   Cre8Chart,
   Cre8CheckboxField,
   Cre8CheckboxFieldItem,
+  Cre8Container,
+  Cre8ContainerGrid,
   Cre8DangerButton,
   Cre8DatePicker,
   Cre8Divider,

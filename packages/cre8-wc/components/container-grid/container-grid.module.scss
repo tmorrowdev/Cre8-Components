@@ -1,0 +1,333 @@
+@import '/design-tokens/core/scss/theming/component';
+
+// #CONTAINER GRID
+
+/**
+ * 1) Same layout vocabulary as `cre8-grid` - stacked to N-across patterns -
+ * but keyed to this element's own rendered width via `@container` instead
+ * of the viewport via `@media`. Establishes its own containment context, so
+ * it breaks into columns based on the space it is actually given: inside a
+ * narrow sidebar on a wide viewport, or a wide main column on a narrow one.
+ */
+.cre8-c-container-grid {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: size(-1.5);
+}
+
+/**
+ * Grid with no gap in between items
+ */
+.cre8-c-container-grid--gap-none {
+  margin: 0;
+}
+
+/**
+ * Small gap grid
+ * 1) Spacing between grid items is smaller than default
+ */
+.cre8-c-container-grid--gap-sm {
+  margin: size(-0.5);
+}
+
+/**
+ * Large gap grid
+ * 1) Spacing between grid items is larger than default
+ */
+.cre8-c-container-grid--gap-lg {
+  margin: size(-2);
+}
+
+/**
+ * Side by Side Grid
+ * 1) Grid that stays 2 items per row regardless of its own width
+ */
+.cre8-c-container-grid--side-by-side {
+  flex-direction: row;
+}
+
+/**
+ * 2up grid
+ * 1) Stacked items when this element is narrow, 2 items per row once it has
+ * enough of its own width to fit them
+ */
+.cre8-c-container-grid--2up {
+  @container (min-width: #{$cre8-breakpoint-md}) {
+    flex-direction: row;
+  }
+
+  /**
+  * 2up grid that breaks faster
+  * 1) Grid that breaks from 1 to 2up at a smaller container width than the default
+  */
+  &.cre8-c-container-grid--break-faster {
+    @container (min-width: #{$cre8-breakpoint-sm}) {
+      flex-direction: row;
+    }
+  }
+
+  /**
+  * 2up grid that breaks slower
+  * 1) Grid that breaks from 1 to 2up at a larger container width than the default
+  */
+  &.cre8-c-container-grid--break-slower {
+    @container (min-width: #{$cre8-breakpoint-md}) {
+      flex-direction: column;
+    }
+
+    @container (min-width: #{$cre8-breakpoint-xxl}) {
+      flex-direction: row;
+    }
+  }
+}
+
+/**
+ * 3up grid
+ * 1) Stacked items when narrow, 3 items per row once this element is wide enough
+ */
+.cre8-c-container-grid--3up {
+  @container (min-width: #{$cre8-breakpoint-md}) {
+    flex-direction: row;
+  }
+}
+
+/**
+ * 1 to 3up grid
+ * 1) Stacked items when narrow, 3 items per row once this element is wide enough
+ */
+.cre8-c-container-grid--1-3up {
+  @container (min-width: #{$cre8-breakpoint-lg}) {
+    flex-direction: row;
+  }
+
+  /**
+  * 1 to 3 up grid that breaks faster
+  * 1) Grid that breaks from 1 to 3up at a smaller container width than the default
+  */
+  &.cre8-c-container-grid--break-faster {
+    @container (min-width: #{$cre8-breakpoint-md}) {
+      flex-direction: row;
+    }
+  }
+
+  /**
+  * 1 to 3up grid that breaks slower
+  * 1) Grid that breaks from 1 to 3up at a larger container width than the default
+  */
+  &.cre8-c-container-grid--break-slower {
+    @container (min-width: #{$cre8-breakpoint-lg}) {
+      flex-direction: column;
+    }
+
+    @container (min-width: #{$cre8-breakpoint-xl}) {
+      flex-direction: row;
+    }
+  }
+}
+
+/**
+ * 1 to 2 to 4up grid
+ * 1) Stacked when narrow, 2 items per row at medium container widths, 4 items
+ * per row once this element is wide enough
+ */
+.cre8-c-container-grid--1-2-4up {
+  @container (min-width: #{$cre8-breakpoint-sm}) {
+    flex-direction: row;
+  }
+}
+
+/**
+ * 1 to 4up grid
+ * 1) Stacked when narrow, 4 items per row once this element is wide enough
+ */
+.cre8-c-container-grid--1-4up {
+  @container (min-width: #{$cre8-breakpoint-md}) {
+    flex-direction: row;
+  }
+}
+
+/**
+ * 1 to 2 to 4up grid
+ * 1) Stacked when narrow, 2 items per row at small/medium container widths,
+ * 3 items per row at medium widths, and 4 items per row once wide enough
+ */
+.cre8-c-container-grid--4up {
+  @container (min-width: #{$cre8-breakpoint-sm}) {
+    flex-direction: row;
+  }
+}
+
+/**
+  * Slotted grid item within 4up Grid
+  */
+.cre8-c-container-grid--2-4-6up {
+  flex-direction: row;
+}
+
+/**
+ * Slotted grid item
+ */
+::slotted(cre8-grid-item) {
+  display: block;
+  padding: size(1.5);
+
+  /**
+  * Slotted grid item within grid with no gap between items
+  */
+  .cre8-c-container-grid--gap-none>& {
+    padding: 0;
+  }
+
+  /**
+  * Slotted grid item within grid with small gap between items
+  */
+  .cre8-c-container-grid--gap-sm>& {
+    padding: size(0.5);
+  }
+
+  /**
+  * Slotted grid item within grid with large gap between items
+  */
+  .cre8-c-container-grid--gap-lg>& {
+    padding: size(2);
+  }
+
+  /**
+  * Slotted grid item within side by side grid
+  * 1) Grid that stays 2 items per row regardless of its own width
+  */
+  .cre8-c-container-grid--side-by-side>& {
+    width: 50%;
+  }
+
+  /**
+  * Slotted grid item within 2up Grid
+  */
+  .cre8-c-container-grid--2up>& {
+    @container (min-width: #{$cre8-breakpoint-md}) {
+      width: 50%;
+    }
+  }
+
+  /**
+  * Slotted grid item within 2up break faster (small to large container widths) Grid
+  */
+  .cre8-c-container-grid--2up.cre8-c-container-grid--break-faster>& {
+    @container (min-width: #{$cre8-breakpoint-sm}) {
+      width: 50%;
+    }
+  }
+
+  /**
+  * Slotted grid item within 2up break slower (small to large container widths) Grid
+  */
+  .cre8-c-container-grid--2up.cre8-c-container-grid--break-slower>& {
+    @container (min-width: #{$cre8-breakpoint-md}) {
+      width: 100%;
+    }
+
+    @container (min-width: #{$cre8-breakpoint-xxl}) {
+      width: 50%;
+    }
+  }
+
+  /**
+  * Slotted grid item within 3up Grid
+  */
+  .cre8-c-container-grid--3up>& {
+    @container (min-width: #{$cre8-breakpoint-md}) {
+      width: 50%;
+    }
+
+    @container (min-width: #{$cre8-breakpoint-lg}) {
+      width: 33.3333%;
+    }
+  }
+
+  /**
+  * Slotted grid item within 1-3up Grid
+  */
+  .cre8-c-container-grid--1-3up>& {
+    @container (min-width: #{$cre8-breakpoint-lg}) {
+      width: 33.3333%;
+    }
+  }
+
+  /**
+  * Slotted grid item within 1 to 3up break faster (small to large container widths) grid
+  */
+  .cre8-c-container-grid--1-3up.cre8-c-container-grid--break-faster>& {
+    @container (min-width: #{$cre8-breakpoint-md}) {
+      width: 33.33%;
+    }
+  }
+
+  /**
+  * Slotted grid item within 2up break slower (small to large container widths) Grid
+  */
+  .cre8-c-container-grid--1-3up.cre8-c-container-grid--break-slower>& {
+    @container (min-width: #{$cre8-breakpoint-lg}) {
+      width: 100%;
+    }
+
+    @container (min-width: #{$cre8-breakpoint-xl}) {
+      width: 33.33%;
+    }
+  }
+
+  /**
+  * Slotted grid item within 1-2-4up Grid
+  */
+  .cre8-c-container-grid--1-2-4up>& {
+    @container (min-width: #{$cre8-breakpoint-sm}) {
+      width: 50%;
+    }
+
+    @container (min-width: #{$cre8-breakpoint-lg}) {
+      width: 25%;
+    }
+  }
+
+  /**
+  * Slotted grid item within 1-2-4up Grid
+  */
+  .cre8-c-container-grid--1-4up>& {
+    @container (min-width: #{$cre8-breakpoint-md}) {
+      width: 25%;
+    }
+  }
+
+  /**
+  * Slotted grid item within 4up Grid
+  */
+  .cre8-c-container-grid--4up>& {
+    @container (min-width: #{$cre8-breakpoint-sm}) {
+      width: 50%;
+    }
+
+    @container (min-width: #{$cre8-breakpoint-md}) {
+      width: 33.3333%;
+    }
+
+    @container (min-width: #{$cre8-breakpoint-lg}) {
+      width: 25%;
+    }
+  }
+
+  /**
+  * Slotted grid item within 4up Grid
+  */
+  .cre8-c-container-grid--2-4-6up>& {
+    width: 50%;
+
+    @container (min-width: #{$cre8-breakpoint-lg}) {
+      width: 25%;
+    }
+
+    @container (min-width: #{$cre8-breakpoint-xl}) {
+      width: 16.66%;
+    }
+  }
+}

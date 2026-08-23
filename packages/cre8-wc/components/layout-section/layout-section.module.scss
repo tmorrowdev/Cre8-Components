@@ -5,5 +5,16 @@
  */
 .cre8-c-layout-section {
   width: 100%;
+}
+
+/**
+ * Full height layout section
+ * 1) Stretches the section to fill the height of its row in `cre8-layout`'s
+ * grid. Off by default - see the same note on `cre8-card--full-height`:
+ * unconditional `height: 100%` inside a shadow root composes unpredictably
+ * with whatever ancestor ends up establishing the section's containing
+ * block.
+ */
+.cre8-c-layout-section--full-height {
   height: 100%;
 }

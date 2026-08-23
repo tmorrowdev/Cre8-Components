@@ -1,5 +1,5 @@
 {
-  "version": "2.3.1",
+  "version": "2.3.2",
   "library": "@tmorrow/cre8-react",
   "componentPrefix": "Cre8",
   "description": "React wrappers for cre8 Web Components (@tmorrow/cre8-wc)",
@@ -2495,6 +2495,10 @@
           "type": "\"center\"",
           "description": "Alignment variant\n- **center** renders a card that has center aligned content/text"
         },
+        "fullHeight": {
+          "type": "boolean",
+          "description": "Full height\n1) Stretches the card to fill its parent's height and width. Off by\n  default - only turn this on when the card is a flex/grid item whose\n  siblings should determine its height, e.g. a row of cards that should\n  line up edge to edge regardless of how much content each one has."
+        },
         "children": {
           "type": "React.ReactNode",
           "description": "Slotted content. Named slots (set slot=\"...\" on the child): body, header, footer"
@@ -2504,6 +2508,81 @@
         {
           "description": "Bare card",
           "jsx": "<Cre8Card variant=\"bare\" />"
+        }
+      ]
+    },
+    {
+      "name": "Cre8Container",
+      "tagName": "cre8-container",
+      "category": "Layout",
+      "description": "`cre8-container` establishes a CSS containment context so anything slotted\ninside it - a `cre8-container-grid`, a `cre8-card`, plain markup - can be\nstyled with `@container` queries against *this element's own rendered\nsize*, not the viewport. It renders no visible chrome of its own; the only\neffect is making container queries possible for its content.\n\n# How to Use\n1. Wrap `cre8-container` around whatever should respond to the space it is\nactually given rather than the screen size - a sidebar widget, a card\nthat might land in a narrow or a wide column depending on a layout the\ncomponent itself can't see.\n2. Write `@container` rules in your own stylesheet keyed to `name`, if\nset, to target this container specifically when containers are nested\nand the nearest one isn't the one you mean to query.",
+      "props": {
+        "type": {
+          "type": "string",
+          "values": [
+            "inline-size",
+            "size",
+            "normal"
+          ],
+          "description": "Containment type\n- **inline-size** (default) contains layout, style, and inline size -\n  the right choice for width-based `@container` queries on a\n  block-level container\n- **size** contains both the inline and block size, so `@container`\n  rules can also query height - only use this when the container's own\n  height does not depend on its content\n- **normal** names the container without adding size containment, for\n  `@container style(...)` queries"
+        },
+        "name": {
+          "type": "string",
+          "description": "Container name\n1) Lets `@container <name> (...)` target this container specifically\n  when containers are nested and the nearest one isn't the one being\n  queried."
+        },
+        "children": {
+          "type": "React.ReactNode",
+          "description": "Slotted content."
+        }
+      },
+      "examples": []
+    },
+    {
+      "name": "Cre8ContainerGrid",
+      "tagName": "cre8-container-grid",
+      "category": "Layout",
+      "description": "`cre8-container-grid` is `cre8-grid`'s layout vocabulary - stacked to\nN-across patterns - keyed to this element's own rendered width via\n`@container` instead of the viewport via `@media`. It establishes its own\ncontainment context, so use it wherever the number of columns should\ndepend on the space actually available: a grid placed in a narrow sidebar\non a wide viewport still stacks, and a grid placed in a wide main column\non a narrow viewport still goes multi-up.",
+      "props": {
+        "variant": {
+          "type": "string",
+          "values": [
+            "side-by-side",
+            "2up",
+            "3up",
+            "1-3up",
+            "4up",
+            "1-4up",
+            "1-2-4up",
+            "2-4-6up"
+          ],
+          "description": "Style variant\n- **side-by-side** yields a grid whose grid items display side-by-side (2 per row) regardless of width\n- **2up** yields a grid whose grid items are stacked when this element is narrow\n  but display side-by-side once it has enough of its own width to do so\n- **3up** yields a grid whose grid items are stacked when narrow,\n  transforms to a 2-across pattern and then transforms again to a 3-across pattern\n- **1-3up** yields a grid whose grid items are stacked when narrow\n  and transforms to a 3-across pattern once wide enough\n- **4up** yields a grid whose grid items are stacked when narrow,\n  transforms to a 2-across pattern, transforms again to a 3-across pattern,\n  and ultimately transforms to a 4-across pattern\n- **1-2-4up** yields a grid whose grid items are stacked when narrow,\n  transforms to a 2-across pattern, and ultimately transforms to a 4-across pattern\n- **1-4up** yields a grid whose grid items are stacked when narrow,\n  transforms to a 4-across pattern once wide enough"
+        },
+        "gap": {
+          "type": "string",
+          "values": [
+            "sm",
+            "lg",
+            "none"
+          ],
+          "description": "Style variant\n- **none** yields a grid whose grid items are spaced without any gutter in between\n- **sm** yields a grid whose grid items are spaced with a gap smaller than the default\n- **lg** yields a grid whose grid items are spaced with a gap larger than the default"
+        },
+        "break": {
+          "type": "string",
+          "values": [
+            "faster",
+            "slower"
+          ],
+          "description": "Break variant\n- **faster** breaks the grid at a smaller container width than the default.\n  Example: 2up grid breaks to 2 per row at a smaller width than default\n- **slower** breaks the grid at a larger container width than the default.\n  Example: 2up grid breaks to 2 per row at a larger width than default"
+        },
+        "children": {
+          "type": "React.ReactNode",
+          "description": "Slotted content."
+        }
+      },
+      "examples": [
+        {
+          "description": "Side By Side container-grid",
+          "jsx": "<Cre8ContainerGrid variant=\"side-by-side\" />"
         }
       ]
     },
@@ -2593,6 +2672,10 @@
       "category": "Layout",
       "description": "Grid Item component.",
       "props": {
+        "fullHeight": {
+          "type": "boolean",
+          "description": "Full height\n1) Stretches the item to fill the height of its row. Off by default -\n  only turn this on when the items in a row should line up edge to\n  edge regardless of how much content each one has."
+        },
         "children": {
           "type": "React.ReactNode",
           "description": "Slotted content."
@@ -2687,6 +2770,10 @@
           "type": "string",
           "default": "1rem",
           "description": "Top style\n1) Used to create dynamic sticky containers that can be adjusted based on the content"
+        },
+        "fullHeight": {
+          "type": "boolean",
+          "description": "Full height\n1) Stretches the section to fill the height of its row in `cre8-layout`'s\n  grid. Off by default - only turn this on when the sections in a row\n  should line up edge to edge regardless of how much content each one\n  has."
         },
         "children": {
           "type": "React.ReactNode",
@@ -3731,7 +3818,7 @@
   },
   "dependencies": {
     "@lit/react": "^1.0.8",
-    "@tmorrow/cre8-wc": "^2.3.1",
+    "@tmorrow/cre8-wc": "^2.3.2",
     "react": ">=18",
     "react-dom": ">=18"
   }

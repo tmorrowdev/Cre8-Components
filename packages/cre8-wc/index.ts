@@ -59,6 +59,8 @@ export { Cre8Heading } from './components/heading/heading.js';
 export { Cre8Header } from './components/header/header.js';
 export { Cre8GridItem } from './components/grid-item/grid-item.js';
 export { Cre8Grid } from './components/grid/grid.js';
+export { Cre8ContainerGrid } from './components/container-grid/container-grid.js';
+export { Cre8Container } from './components/container/container.js';
 export { Cre8GlobalNavItem } from './components/global-nav-item/global-nav-item.js';
 export { Cre8GlobalNav } from './components/global-nav/global-nav.js';
 export { Cre8Footer } from './components/footer/footer.js';

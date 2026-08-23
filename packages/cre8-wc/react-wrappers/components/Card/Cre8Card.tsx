@@ -7,6 +7,8 @@ export interface Cre8CardProps {
   variant?: any;
   /** Alignment variant - **center** renders a card that has center aligned content/text */
   align?: any;
+  /** Full height 1) Stretches the card to fill its parent's height and width. Off by   default - only turn this on when the card is a flex/grid item whose   siblings should determine its height, e.g. a row of cards that should   line up edge to edge regardless of how much content each one has. */
+  fullHeight?: boolean | undefined;
   children?: React.ReactNode;
 }
 

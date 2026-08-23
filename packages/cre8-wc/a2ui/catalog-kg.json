@@ -13,8 +13,8 @@
     "library_version": "2.3.2",
     "graphify_commit": "735ed2c2ff3caf037f8faf1b71e1ccdb85d80cae",
     "evidence": {
-      "story_files": 70,
-      "source_files": 86,
+      "story_files": 72,
+      "source_files": 88,
       "example_files": [
         "card-gallery.json",
         "compound-families.json",
@@ -31,8 +31,8 @@
         "tabbed-content.json"
       ]
     },
-    "total_nodes": 226,
-    "total_edges": 510,
+    "total_nodes": 232,
+    "total_edges": 517,
     "contains_edges": 111
   },
   "nodes": [
@@ -5350,6 +5350,13 @@
           "default": null,
           "description": "Alignment variant - **center** renders a card that has center aligned content/te…",
           "x-kind": "attribute"
+        },
+        "fullHeight": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Full height 1) Stretches the card to fill its parent's height and width. Off by …",
+          "x-kind": "property"
         }
       },
       "slots": [
@@ -5489,6 +5496,137 @@
         "horizontal-bare"
       ],
       "description": "Style variants - **bare** renders a card without a border and without padding ar…"
+    },
+    {
+      "id": "cre8-container",
+      "type": "component",
+      "category": "Layout",
+      "description": "`cre8-container` establishes a CSS containment context so anything slotted inside it - a `cre8-container-grid`, a `cre8-…",
+      "props": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "inline-size",
+            "size",
+            "normal"
+          ],
+          "default": null,
+          "description": "Containment type - **inline-size** (default) contains layout, style, and inline …",
+          "x-kind": "attribute"
+        },
+        "name": {
+          "type": "string",
+          "enum": null,
+          "default": null,
+          "description": "Container name 1) Lets `@container <name> (...)` target this container specifica…",
+          "x-kind": "attribute"
+        }
+      },
+      "slots": [],
+      "accepts_children": true,
+      "extends": null,
+      "exemplar": null
+    },
+    {
+      "id": "prop:cre8-container:type",
+      "type": "enum_prop",
+      "name": "type",
+      "component": "cre8-container",
+      "enum": [
+        "inline-size",
+        "size",
+        "normal"
+      ],
+      "description": "Containment type - **inline-size** (default) contains layout, style, and inline …"
+    },
+    {
+      "id": "cre8-container-grid",
+      "type": "component",
+      "category": "Layout",
+      "description": "`cre8-container-grid` is `cre8-grid`'s layout vocabulary - stacked to N-across patterns - keyed to this element's own re…",
+      "props": {
+        "variant": {
+          "type": "string",
+          "enum": [
+            "side-by-side",
+            "2up",
+            "3up",
+            "1-3up",
+            "4up",
+            "1-4up",
+            "1-2-4up",
+            "2-4-6up"
+          ],
+          "default": null,
+          "description": "Style variant - **side-by-side** yields a grid whose grid items display side-by-…",
+          "x-kind": "attribute"
+        },
+        "gap": {
+          "type": "string",
+          "enum": [
+            "sm",
+            "lg",
+            "none"
+          ],
+          "default": null,
+          "description": "Style variant - **none** yields a grid whose grid items are spaced without any g…",
+          "x-kind": "attribute"
+        },
+        "break": {
+          "type": "string",
+          "enum": [
+            "faster",
+            "slower"
+          ],
+          "default": null,
+          "description": "Break variant - **faster** breaks the grid at a smaller container width than the…",
+          "x-kind": "attribute"
+        }
+      },
+      "slots": [],
+      "accepts_children": true,
+      "extends": null,
+      "exemplar": null
+    },
+    {
+      "id": "prop:cre8-container-grid:variant",
+      "type": "enum_prop",
+      "name": "variant",
+      "component": "cre8-container-grid",
+      "enum": [
+        "side-by-side",
+        "2up",
+        "3up",
+        "1-3up",
+        "4up",
+        "1-4up",
+        "1-2-4up",
+        "2-4-6up"
+      ],
+      "description": "Style variant - **side-by-side** yields a grid whose grid items display side-by-…"
+    },
+    {
+      "id": "prop:cre8-container-grid:gap",
+      "type": "enum_prop",
+      "name": "gap",
+      "component": "cre8-container-grid",
+      "enum": [
+        "sm",
+        "lg",
+        "none"
+      ],
+      "description": "Style variant - **none** yields a grid whose grid items are spaced without any g…"
+    },
+    {
+      "id": "prop:cre8-container-grid:break",
+      "type": "enum_prop",
+      "name": "break",
+      "component": "cre8-container-grid",
+      "enum": [
+        "faster",
+        "slower"
+      ],
+      "description": "Break variant - **faster** breaks the grid at a smaller container width than the…"
     },
     {
       "id": "cre8-divider",
@@ -5807,7 +5945,15 @@
       "type": "component",
       "category": "Layout",
       "description": "Grid Item component.",
-      "props": {},
+      "props": {
+        "fullHeight": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Full height 1) Stretches the item to fill the height of its row. Off by default …",
+          "x-kind": "property"
+        }
+      },
       "slots": [],
       "accepts_children": true,
       "extends": "Cre8Element",
@@ -6041,6 +6187,13 @@
           "default": "1rem",
           "description": "Top style 1) Used to create dynamic sticky containers that can be adjusted based…",
           "x-kind": "attribute"
+        },
+        "fullHeight": {
+          "type": "boolean",
+          "enum": null,
+          "default": null,
+          "description": "Full height 1) Stretches the section to fill the height of its row in `cre8-layo…",
+          "x-kind": "property"
         }
       },
       "slots": [],
@@ -10589,6 +10742,36 @@
       "rel": "HAS_ENUM_PROP"
     },
     {
+      "from": "cre8-container",
+      "to": "cat:Layout",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-container",
+      "to": "prop:cre8-container:type",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-container-grid",
+      "to": "cat:Layout",
+      "rel": "BELONGS_TO"
+    },
+    {
+      "from": "cre8-container-grid",
+      "to": "prop:cre8-container-grid:variant",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-container-grid",
+      "to": "prop:cre8-container-grid:gap",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
+      "from": "cre8-container-grid",
+      "to": "prop:cre8-container-grid:break",
+      "rel": "HAS_ENUM_PROP"
+    },
+    {
       "from": "cre8-divider",
       "to": "cat:Layout",
       "rel": "BELONGS_TO"
@@ -11303,7 +11486,7 @@
       "to": "cre8-text-passage",
       "rel": "CONTAINS",
       "slot": "default",
-      "count": 26,
+      "count": 27,
       "evidence": [
         {
           "kind": "story",
@@ -12917,6 +13100,11 @@
     {
       "from": "cre8-checkbox-field",
       "to": "cre8-checkbox-field-item",
+      "rel": "IN_FAMILY"
+    },
+    {
+      "from": "cre8-container",
+      "to": "cre8-container-grid",
       "rel": "IN_FAMILY"
     },
     {

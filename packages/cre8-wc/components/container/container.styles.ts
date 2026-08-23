@@ -590,142 +590,35 @@ span.ripple {
 /**
  * Visually hidden from display
  */
-:host {
+/**
+ * 1) Establishes a CSS containment context so anything slotted inside can be
+ * styled with \`@container\` queries against this element's own rendered size,
+ * rather than the viewport. It renders no visible chrome of its own; the
+ * only effect is making container queries possible for its content.
+ */
+.cre8-c-container {
+  container-type: inline-size;
   display: block;
 }
 
 /**
- * 1) A card is an organized block that typically contains a title, image,
- * text, and/or calls to action. It is made up of an optional header slot, required
- * body slot, and optional footer slot to place other Components and content within.
+ * Size containment
+ * 1) Contains both the inline and block axis, so \`@container\` rules can also
+ * query height. Use only when this element's own height does not depend on
+ * its content - size containment forces the content box to 0x0 before
+ * layout runs, so a height derived from content collapses under this mode.
  */
-.cre8-c-card {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem;
-  gap: 1rem;
-  border-color: var(--cre8-color-border-default);
-  border-style: var(--cre8-border-style-default);
-  border-width: var(--cre8-border-width-default);
-  border-radius: var(--cre8-border-radius-container);
-  background: var(--cre8-color-bg-default);
+.cre8-c-container--size {
+  container-type: size;
 }
 
 /**
- * Full height card
- * 1) Stretches the card to fill its parent's height and width. Off by
- * default: the host is \`display: block\` with no explicit height, so a card
- * placed in a flex or grid ancestor with \`align-items: stretch\` would
- * otherwise inherit whatever height that ancestor happens to establish -
- * invisible from outside the shadow boundary and unrelated to the card's
- * own content. Opt in only when the parent's height is actually meant to be
- * shared, e.g. cards as flex/grid items that should line up edge to edge.
+ * Normal containment
+ * 1) Names the container without adding size containment. Use for
+ * \`@container style(...)\` queries, which read custom-property values rather
+ * than dimensions and don't need a measured size to query against.
  */
-.cre8-c-card--full-height {
-  height: 100%;
-  width: 100%;
-}
-
-/**
- * Compact card - reduced padding for narrow layouts
- */
-.cre8-c-card--compact {
-  padding: 1rem;
-  gap: 0.5rem;
-}
-
-/**
- * Horizontal card
- * 1) Organized block with flex-direction set to row so that header => footer appears
- * from left to right rather than top to bottom
- */
-.cre8-c-card--horizontal {
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-/**
- * Bare card
- * 1) Organized block without a border, background, or padding
- */
-.cre8-c-card--bare {
-  border: 0;
-  padding: 0;
-  gap: 0;
-  box-shadow: none;
-}
-
-/**
- * Horizontal-bare card
- * 1) Organized block with flex-direction set to row so that header => footer appears
- * from left to right rather than top to bottom without a border, background, or padding
- */
-.cre8-c-card--horizontal-bare {
-  flex-direction: row;
-  border: 0;
-  padding: 0;
-  gap: 0;
-  box-shadow: none;
-  align-items: center;
-  justify-content: center;
-}
-
-/**
- * Center aligned card
- * 1) Center content and text within the card
- */
-.cre8-c-card--align-center {
-  text-align: center;
-  /* 1 */
-  align-items: center;
-  /* 1 */
-  justify-content: center;
-  /* 1 */
-}
-
-/**
- * Slotted image within a card
- * 1) Make the image full width
- */
-::slotted(img) {
-  width: 100%;
-}
-
-/**
- * Card header
- * 1) Remove flex so that body always takes up remaining space
- */
-.cre8-c-card__header {
-  display: block;
-  flex: none;
-  /* 1 */
-}
-
-/**
- * Card body
- * 1) Flex applied to always fill the remaining space of the card
- */
-.cre8-c-card__body {
-  display: block;
-  flex: 1 1 auto;
-  /* 1 */
-}
-
-/**
- * Card footer
- * 1) Remove flex so that body always takes up remaining space
- */
-.cre8-c-card__footer {
-  display: block;
-  flex: none;
-  /* 1 */
-}
-.cre8-c-card--bare .cre8-c-card__footer {
-  padding: 0;
-}
-.cre8-c-card--horizontal-bare .cre8-c-card__footer {
-  padding: 0;
+.cre8-c-container--normal {
+  container-type: normal;
 }`;
 export default styles;
