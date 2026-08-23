@@ -1,6 +1,16 @@
 @import '/design-tokens/core/scss/theming/component';
 
 /**
+ * 1) Custom elements default to `display: inline`, which makes the host a text
+ * box and lets its children flow like inline content. Every layout rule below
+ * lives on a wrapper inside the shadow root, so without this the host itself
+ * never takes part in block layout.
+ */
+:host {
+  display: block;
+}
+
+/**
  * 1) Container used to cap the width of a passage of text to be readable
  */
 .cre8-c-linelength-container {

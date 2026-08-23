@@ -51,9 +51,12 @@
  * Horizontal card
  * 1) Organized block with flex-direction set to row so that header => footer appears
  * from left to right rather than top to bottom
+ * 2) Wraps to a stack once the body can no longer hold its basis
  */
 .cre8-c-card--horizontal {
   flex-direction: row;
+  flex-wrap: wrap;
+  /* 2 */
   align-items: center;
   justify-content: center;
 }
@@ -73,9 +76,12 @@
  * Horizontal-bare card
  * 1) Organized block with flex-direction set to row so that header => footer appears
  * from left to right rather than top to bottom without a border, background, or padding
+ * 2) Wraps to a stack once the body can no longer hold its basis
  */
 .cre8-c-card--horizontal-bare {
   flex-direction: row;
+  flex-wrap: wrap;
+  /* 2 */
   border: 0;
   padding: 0;
   gap: 0;
@@ -108,27 +114,46 @@
 /**
  * Card header
  * 1) Remove flex so that body always takes up remaining space
+ * 2) ...except in a horizontal card, where holding max-content width would
+ * starve the body instead.
  */
 .cre8-c-card__header {
   display: block;
   flex: none;
   /* 1 */
+
+  .cre8-c-card--horizontal &,
+  .cre8-c-card--horizontal-bare & {
+    flex: 0 1 auto;
+    /* 2 */
+  }
 }
 
 /**
  * Card body
  * 1) Flex applied to always fill the remaining space of the card
+ * 2) In a horizontal card the body is the flexible track, so it needs a basis
+ * of its own and `min-width: 0`; otherwise it is the only item able to shrink
+ * and collapses to min-content beside a wide header.
  */
 .cre8-c-card__body {
   display: block;
   flex: 1 1 auto;
   /* 1 */
 
+  .cre8-c-card--horizontal &,
+  .cre8-c-card--horizontal-bare & {
+    flex: 1 1 size(40);
+    /* 2 */
+    min-width: 0;
+    /* 2 */
+  }
 }
 
 /**
  * Card footer
  * 1) Remove flex so that body always takes up remaining space
+ * 2) ...except in a horizontal card - see the note on the header.
  */
 .cre8-c-card__footer {
   display: block;
@@ -141,5 +166,11 @@
 
   .cre8-c-card--horizontal-bare & {
     padding: 0;
+  }
+
+  .cre8-c-card--horizontal &,
+  .cre8-c-card--horizontal-bare & {
+    flex: 0 1 auto;
+    /* 2 */
   }
 }
