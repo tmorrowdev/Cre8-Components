@@ -219,6 +219,33 @@ def score_spec(spec, oracle: Oracle) -> dict:
     return rewards, report
 
 
+def shape(spec, oracle: Oracle) -> dict:
+    """Descriptive stats about what the agent reached for.
+
+    Deliberately *not* rewards. On an open brief there is no correct answer to
+    score against, but how much of the library an agent touches, and how deeply
+    it composes, is a fact about the spec that needs no taste to measure. A
+    reader can decide whether more breadth is better; the eval only reports it.
+    """
+    root = spec.get("root", spec) if isinstance(spec, dict) else spec
+    nodes = list(iter_nodes(root))
+    used = [n.get("component") for n, _p, _s, _path in nodes if isinstance(n.get("component"), str)]
+    real = [c for c in used if c in oracle.components]
+    depth = max((path.count(".") for _n, _p, _s, path in nodes), default=0)
+    slots_used = sum(len(n.get("slots") or {}) for n, _p, _s, _path in nodes)
+    categories = {oracle.components[c].get("category") for c in real if c in oracle.components}
+    return {
+        "nodes": len(nodes),
+        "distinct_components": len(set(used)),
+        "distinct_real_components": len(set(real)),
+        "catalog_breadth": round(len(set(real)) / len(oracle.components), 4),
+        "categories_touched": len(categories),
+        "max_depth": depth,
+        "slots_used": slots_used,
+        "text_chars": len(collect_text(root)),
+    }
+
+
 def check_requirements(spec, requirements) -> tuple:
     """Score the task's own semantic requirements. Returns (fraction, details)."""
     root = spec.get("root", spec) if isinstance(spec, dict) else spec

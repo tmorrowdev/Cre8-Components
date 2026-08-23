@@ -21,7 +21,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from oracle import DIMENSIONS, Oracle, check_requirements, score_spec  # noqa: E402
+from oracle import DIMENSIONS, Oracle, check_requirements, score_spec, shape  # noqa: E402
 
 TESTS_DIR = Path(__file__).parent
 
@@ -69,22 +69,26 @@ def main() -> int:
                 rewards["spec_valid"] = 1.0
                 fidelity, detail = score_spec(spec, oracle)
                 rewards.update(fidelity)
-                completion, requirement_detail = check_requirements(
-                    spec, expectations["requirements"]
-                )
-                rewards["task_completion"] = completion
-                detail["denominators"]["task_completion"] = len(
-                    expectations["requirements"]
-                )
-                detail["hits"]["task_completion"] = round(
-                    completion * len(expectations["requirements"])
-                )
+                requirements = expectations["requirements"]
+                if requirements:
+                    completion, requirement_detail = check_requirements(spec, requirements)
+                    rewards["task_completion"] = completion
+                    detail["denominators"]["task_completion"] = len(requirements)
+                    detail["hits"]["task_completion"] = round(completion * len(requirements))
+                    report["requirements"] = requirement_detail
+                else:
+                    # An open brief has nothing to complete against. Scoring it
+                    # 1.0 would flatter every arm equally and still move the
+                    # mean; dropping the dimension is the honest option.
+                    rewards.pop("task_completion", None)
+                    report["requirements"] = "open brief - no requirements to check"
                 report.update(detail)
-                report["requirements"] = requirement_detail
+                report["shape"] = shape(spec, oracle)
 
+    scored = [name for name in DIMENSIONS if name in rewards]
     rewards["reward"] = (
-        sum(rewards[name] for name in DIMENSIONS) / len(DIMENSIONS)
-        if rewards["spec_valid"]
+        sum(rewards[name] for name in scored) / len(scored)
+        if rewards["spec_valid"] and scored
         else 0.0
     )
 

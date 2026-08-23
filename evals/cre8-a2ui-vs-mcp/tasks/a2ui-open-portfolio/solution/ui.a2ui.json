@@ -1,0 +1,35 @@
+{
+  "schema": "cre8-a2ui/1.0",
+  "target": "web-components",
+  "root": {
+    "component": "cre8-layout",
+    "children": [
+      {
+        "component": "cre8-main",
+        "children": [
+          {
+            "component": "cre8-layout-container",
+            "children": [
+              {
+                "component": "cre8-heading",
+                "props": {
+                  "tagVariant": "h1",
+                  "type": "headline-large"
+                },
+                "children": [
+                  "Dana Whitfield"
+                ]
+              },
+              {
+                "component": "cre8-text-passage",
+                "children": [
+                  "AI engineer."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
