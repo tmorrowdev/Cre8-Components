@@ -7,6 +7,12 @@ n_concurrent_trials: 4
 
 datasets:
   - path: tasks
+    # mcp-freecode-portfolio is scored by building and rendering real React
+    # code, which needs Bash and an installed @tmorrow/cre8-react - neither of
+    # which this arm's isolation allows. It runs from arms/cre8-mcp-freecode.yaml
+    # instead.
+    exclude_task_names:
+      - mcp-freecode-portfolio
 
 agents:
   - name: claude-code
