@@ -42,6 +42,48 @@ const CHECK = process.argv.includes('--check');
 
 const kg = JSON.parse(readFileSync(KG_PATH, 'utf8'));
 const phrases = JSON.parse(readFileSync(PHRASES_PATH, 'utf8'));
+
+// Usage vocabulary mined from the graphify knowledge graph, when one exists.
+// Story and symbol names carry the words real usage is described with -
+// "loading", "disabled", "inverse", "fullWidth" - which neither the catalog
+// descriptions nor the intent phrases reliably contain. The graph maps each
+// AST node to its source file, and components/<name>/ names the component,
+// so the join is deterministic. Optional by design: a checkout without
+// graphify-out/ still builds, just without this layer.
+const GRAPHIFY_PATH =
+  process.env.CRE8_GRAPHIFY ?? join(HERE, '..', '..', '..', 'graphify-out', 'graph.json');
+// Code-infrastructure words that appear in every component's AST and say
+// nothing about what the component is for.
+const CODE_NOISE = new Set([
+  'cre8', 'stories', 'story', 'styles', 'style', 'render', 'htmlelement',
+  'element', 'component', 'default', 'map', 'name', 'type', 'value', 'event',
+  'events', 'handle', 'handler', 'callback', 'connected', 'disconnected',
+  'updated', 'firstupdated', 'documentation', 'template', 'slot', 'slots',
+  'prop', 'props', 'attribute', 'class', 'export', 'import', 'const', 'get',
+  'set', 'has', 'test', 'spec',
+]);
+
+function graphifyVocab() {
+  const vocab = new Map();
+  if (!existsSync(GRAPHIFY_PATH)) return vocab;
+  const graph = JSON.parse(readFileSync(GRAPHIFY_PATH, 'utf8'));
+  const filePattern = /packages\/cre8-wc\/components\/([a-z0-9-]+)\//;
+  for (const node of graph.nodes ?? []) {
+    const match = filePattern.exec(node.source_file ?? '');
+    if (!match) continue;
+    const tag = `cre8-${match[1]}`;
+    if (!ids.has(tag)) continue;
+    const words = (node.label ?? '')
+      .replace(/[().]/g, ' ')
+      .replace(/(?<=[a-z0-9])(?=[A-Z])/g, ' ')
+      .toLowerCase()
+      .split(/[\s_-]+/)
+      .filter((w) => w.length > 2 && !CODE_NOISE.has(w) && !/\.(ts|js)$/.test(w));
+    if (!vocab.has(tag)) vocab.set(tag, new Set());
+    for (const w of words) vocab.get(tag).add(w);
+  }
+  return vocab;
+}
 const components = kg.nodes.filter((n) => n.type === 'component');
 const ids = new Set(components.map((c) => c.id));
 
@@ -64,6 +106,7 @@ const slotsOf = (id) =>
 // What gets embedded per component. Name and category anchor the literal
 // matches; intent phrases carry the purpose vocabulary the descriptions
 // often lack; the description and slot names round it out.
+const vocab = graphifyVocab();
 const textOf = (c) =>
   [
     c.id.replace(/^cre8-/, '').replace(/-/g, ' '),
@@ -71,6 +114,7 @@ const textOf = (c) =>
     phrases[c.id] ?? '',
     c.description ?? '',
     slotsOf(c.id).length ? `slots: ${slotsOf(c.id).join(' ')}` : '',
+    vocab.has(c.id) ? `usage: ${[...vocab.get(c.id)].sort().join(' ')}` : '',
   ]
     .filter(Boolean)
     .join('. ');
@@ -116,7 +160,7 @@ writeFileSync(
       model: 'energetic-ai/model-embeddings-en (universal-sentence-encoder-lite)',
       dims,
       library_version: kg.meta?.library_version,
-      generated_from: ['catalog-kg.json', 'intent-phrases.json'],
+      generated_from: ['catalog-kg.json', 'intent-phrases.json', vocab.size ? 'graphify-out/graph.json' : null].filter(Boolean),
       // Stored so --check can prove the embedded text still matches the
       // catalog without re-running the model.
       texts,
