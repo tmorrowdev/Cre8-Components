@@ -13,7 +13,7 @@
     "build:react-manifest": "npx tsx scripts/generate-react-manifest.ts",
     "build:cdn": "rm -rf cdn && vite build --config vite.config.cdn.ts",
     "build:react": "rm -rf react-wrappers/components react-wrappers/dist react-wrappers/index.ts && npx tsx scripts/generate-react-wrappers.ts && cd react-wrappers && npx tsc",
-    "build:a2ui": "pnpm run build:a2ui:catalog && pnpm run build:a2ui:kg && pnpm run build:a2ui:compile",
+    "build:a2ui": "pnpm run build:a2ui:catalog && pnpm run build:a2ui:kg && pnpm run build:a2ui:vectors && pnpm run build:a2ui:compile",
     "build:a2ui:catalog": "node a2ui/generate-catalog.mjs",
     "build:a2ui:kg": "node a2ui/generate-catalog-kg.mjs",
     "check:deploy-drift": "node a2ui/check-deploy-drift.mjs",
@@ -45,7 +45,8 @@
     "audit:render": "node a2ui/render-audit.mjs",
     "audit:render:check": "node a2ui/render-audit.mjs --check",
     "check:parity": "node a2ui/check-layer-parity.mjs",
-    "check:skills": "node a2ui/check-skill-fidelity.mjs"
+    "check:skills": "node a2ui/check-skill-fidelity.mjs",
+    "build:a2ui:vectors": "node a2ui/generate-catalog-vectors.mjs"
   },
   "type": "module",
   "module": "lib/index.js",
@@ -192,7 +193,9 @@
     "typescript": "^5.9.3",
     "vite": "^7.2.2",
     "vitest": "^4.1.8",
-    "vitest-canvas-mock": "^1.1.4"
+    "vitest-canvas-mock": "^1.1.4",
+    "@energetic-ai/embeddings": "^0.2.0",
+    "@energetic-ai/model-embeddings-en": "^0.2.0"
   },
   "lint-staged": {
     "*.ts": "eslint --cache --fix"

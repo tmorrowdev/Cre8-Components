@@ -103,7 +103,7 @@ export function createMcpServer(options: McpServerOptions = {}): Server {
           result = handleGetPatterns(GetPatternsSchema.parse(args));
           break;
         case 'search_components':
-          result = handleSearchComponents(SearchComponentsSchema.parse(args));
+          result = await handleSearchComponents(SearchComponentsSchema.parse(args));
           break;
         case 'generate_code':
           result = handleGenerateCode(

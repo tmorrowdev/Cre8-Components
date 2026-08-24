@@ -48,7 +48,9 @@
     "@tmorrow/cre8-wc": "workspace:^",
     "@tmorrow/cre8-react": "^2.3.6",
     "hono": "^4.11.4",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "@energetic-ai/embeddings": "^0.2.0",
+    "@energetic-ai/model-embeddings-en": "^0.2.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
