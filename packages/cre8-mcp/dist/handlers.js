@@ -6,6 +6,7 @@
  */
 import { readFileSync } from 'fs';
 import { createRequire } from 'module';
+import { rankComponents } from './semantic-search.js';
 import { registerCatalog, validateSpec, } from '@tmorrow/cre8-wc/a2ui/index.js';
 let _kgCache = null;
 /**
@@ -163,30 +164,48 @@ export function handleGetPatterns(input) {
     }, null, 2);
 }
 /**
- * search_components - Search components by name, description, or category (KG-backed)
+ * search_components - rank components against a free-text query.
+ *
+ * Semantic when the pre-computed vectors and the npm-delivered embedding
+ * model are available (the normal case), lexical token-overlap otherwise.
+ * Either way the query can describe an INTENT - "show progress toward a
+ * goal", "warn the user" - not just name a component. The old implementation
+ * was a literal substring match, which returned nothing for every
+ * intent-shaped query; eval transcripts showed agents abandoning the MCP
+ * and grepping node_modules instead.
  */
-export function handleSearchComponents(input) {
+export async function handleSearchComponents(input) {
     const { components } = loadKG();
-    const query = input.query.toLowerCase();
-    const matches = Array.from(components.values()).filter((c) => c.id.toLowerCase().includes(query) ||
-        (c.description ?? '').toLowerCase().includes(query) ||
-        (c.category ?? '').toLowerCase().includes(query));
-    if (matches.length === 0) {
+    // Lexical fallback corpus, from the KG - only used when vectors are absent.
+    const fallbackTexts = {};
+    for (const c of components.values()) {
+        fallbackTexts[c.id] = `${c.id.replace(/^cre8-/, '').replace(/-/g, ' ')} ${c.category ?? ''} ${c.description ?? ''}`;
+    }
+    const { mode, ranked } = await rankComponents(input.query, fallbackTexts);
+    const top = ranked.slice(0, 10).filter((r) => components.has(r.id));
+    if (top.length === 0) {
         return JSON.stringify({
             format: input.format ?? 'web',
             message: `No components found matching "${input.query}"`,
-            suggestion: 'Try a broader search term or use list_components',
+            suggestion: 'Try describing what the user is trying to do, or use list_components',
         });
     }
     return JSON.stringify({
         format: input.format ?? 'web',
         query: input.query,
-        results: matches.map((c) => ({
-            name: c.id,
-            category: c.category ?? 'Uncategorized',
-            description: (c.description ?? '').slice(0, 160),
-        })),
-        count: matches.length,
+        mode,
+        results: top.map((r) => {
+            const c = components.get(r.id);
+            return {
+                name: c.id,
+                category: c.category ?? 'Uncategorized',
+                score: Math.round(r.score * 1000) / 1000,
+                description: (c.description ?? '').slice(0, 160),
+            };
+        }),
+        note: mode === 'semantic'
+            ? 'Ranked by intent similarity; scores are relative, not probabilities. Confirm the API with get_component before use.'
+            : 'Semantic index unavailable - ranked by keyword overlap only.',
     }, null, 2);
 }
 /**

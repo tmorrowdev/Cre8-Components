@@ -65,8 +65,11 @@ export const tools = [
     },
     {
         name: 'search_components',
-        description: 'Search Cre8 components by name, description, or category. ' +
-            'Useful for finding components that match a specific need.',
+        description: 'Find components by describing what the user is trying to do - an intent, ' +
+            'not just a name. Queries like "show progress toward a goal", "warn the ' +
+            'user about a problem" or "big eye-catching banner" return a ranked list; ' +
+            'exact names and categories still work. Confirm the winning component\'s ' +
+            'API with get_component before using it.',
         inputSchema: {
             type: 'object',
             properties: {

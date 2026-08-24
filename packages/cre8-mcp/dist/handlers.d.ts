@@ -136,9 +136,17 @@ export declare function handleGetComponent(input: GetComponentInput): string;
  */
 export declare function handleGetPatterns(input: GetPatternsInput): string;
 /**
- * search_components - Search components by name, description, or category (KG-backed)
+ * search_components - rank components against a free-text query.
+ *
+ * Semantic when the pre-computed vectors and the npm-delivered embedding
+ * model are available (the normal case), lexical token-overlap otherwise.
+ * Either way the query can describe an INTENT - "show progress toward a
+ * goal", "warn the user" - not just name a component. The old implementation
+ * was a literal substring match, which returned nothing for every
+ * intent-shaped query; eval transcripts showed agents abandoning the MCP
+ * and grepping node_modules instead.
  */
-export declare function handleSearchComponents(input: SearchComponentsInput): string;
+export declare function handleSearchComponents(input: SearchComponentsInput): Promise<string>;
 /**
  * generate_code - Generates React or Web Component code from a JSON schema
  */
