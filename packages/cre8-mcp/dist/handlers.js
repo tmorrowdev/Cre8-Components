@@ -163,33 +163,6 @@ export function handleGetPatterns(input) {
     }, null, 2);
 }
 /**
- * search_components - Search components by name, description, or category (KG-backed)
- */
-export function handleSearchComponents(input) {
-    const { components } = loadKG();
-    const query = input.query.toLowerCase();
-    const matches = Array.from(components.values()).filter((c) => c.id.toLowerCase().includes(query) ||
-        (c.description ?? '').toLowerCase().includes(query) ||
-        (c.category ?? '').toLowerCase().includes(query));
-    if (matches.length === 0) {
-        return JSON.stringify({
-            format: input.format ?? 'web',
-            message: `No components found matching "${input.query}"`,
-            suggestion: 'Try a broader search term or use list_components',
-        });
-    }
-    return JSON.stringify({
-        format: input.format ?? 'web',
-        query: input.query,
-        results: matches.map((c) => ({
-            name: c.id,
-            category: c.category ?? 'Uncategorized',
-            description: (c.description ?? '').slice(0, 160),
-        })),
-        count: matches.length,
-    }, null, 2);
-}
-/**
  * generate_code - Generates React or Web Component code from a JSON schema
  */
 export function handleGenerateCode(input) {

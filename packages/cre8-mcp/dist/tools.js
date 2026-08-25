@@ -64,26 +64,6 @@ export const tools = [
         },
     },
     {
-        name: 'search_components',
-        description: 'Search Cre8 components by name, description, or category. ' +
-            'Useful for finding components that match a specific need.',
-        inputSchema: {
-            type: 'object',
-            properties: {
-                query: {
-                    type: 'string',
-                    description: 'Search query (e.g., "button", "form", "navigation")',
-                },
-                format: {
-                    type: 'string',
-                    enum: ['web', 'react'],
-                    description: 'Component format: "web" (default) or "react"',
-                },
-            },
-            required: ['query'],
-        },
-    },
-    {
         name: 'generate_code',
         description: 'Generates Web Component HTML or React JSX code from a JSON schema. ' +
             'Takes a component tree definition and outputs formatted code ready to use.',
@@ -157,10 +137,6 @@ export const GetComponentSchema = z.object({
 });
 export const GetPatternsSchema = z.object({
     name: z.string().optional(),
-    format: z.enum(['web', 'react']).optional(),
-});
-export const SearchComponentsSchema = z.object({
-    query: z.string(),
     format: z.enum(['web', 'react']).optional(),
 });
 const ComponentNodeSchema = z.lazy(() => z.object({

@@ -14,9 +14,8 @@ fact. Get them from the `cre8` MCP server, every time:
 
 | You need | Call |
 | --- | --- |
-| What exists, by category | `list_components` |
-| Something for a job you can describe | `search_components` |
-| The exact props, enums and slots of one component | `get_component` |
+| What exists, by category | `list_components` - **start here.** One call puts every real component name in context; pick from what actually ships rather than from memory. |
+| The exact props, enums and slots of one component | `get_component` - always, before using anything the list surfaced. |
 | A worked composition (page shell, form, table) | `get_patterns` / `get_composition` |
 | Whether an A2UI tree is valid | `validate_a2ui_spec` |
 
@@ -48,6 +47,15 @@ silently at runtime rather than erroring.
 
 Ask what the content *is*, not what it should look like. Most wrong choices
 here are a visual match to a semantic mismatch.
+
+And ask the MCP, not your memory. The reflex to skip the catalog because you
+already have a name in mind is exactly how phantom components and dead props
+get written: the name in your head may be another design system's, or a
+component this library removed. `list_components` is one call and shows what
+actually ships; guessing costs a build failure or a silently dead page. When
+nothing in the list looks right for the job, that usually means the library
+expresses the need differently - check `get_patterns` before concluding a
+component is missing.
 
 **Page skeleton.** Work outside in: the outermost frame, then the banded
 regions, then the width constraint, then the content. Reach for a layout
