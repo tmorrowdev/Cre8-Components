@@ -14,9 +14,9 @@ fact. Get them from the `cre8` MCP server, every time:
 
 | You need | Call |
 | --- | --- |
-| What exists, by category | `list_components` |
-| Something for a job you can describe | `search_components` |
-| The exact props, enums and slots of one component | `get_component` |
+| A component for a job you can describe | `search_components` - **start here.** The query is plain language, not a name: "show progress toward a goal", "warn the user about a problem", "schedule a post on a calendar". It ranks every component by intent similarity and returns the top matches with scores. Do not guess a name and go looking for it - describe the job and let the ranking tell you what exists for it. |
+| The lay of the land, by category | `list_components` - orientation, not selection. Reach for it to see the shape of the catalog, not to answer "what do I use for X" - that is search's job, and reading the full list to find one component wastes the context the list costs. |
+| The exact props, enums and slots of one component | `get_component` - always, before using anything search or the list surfaced. |
 | A worked composition (page shell, form, table) | `get_patterns` / `get_composition` |
 | Whether an A2UI tree is valid | `validate_a2ui_spec` |
 
@@ -48,6 +48,15 @@ silently at runtime rather than erroring.
 
 Ask what the content *is*, not what it should look like. Most wrong choices
 here are a visual match to a semantic mismatch.
+
+And ask the MCP, not your memory. The reflex to skip search because you
+already have a name in mind is exactly how phantom components and dead props
+get written: the name in your head may be another design system's, or a
+component this library removed. `search_components("let someone pick a date")`
+is one call and returns what actually ships, ranked; guessing costs a build
+failure or a silently dead page. When search's top results all look wrong for
+the job, that usually means the library expresses the need differently -
+follow up with `get_patterns` before concluding a component is missing.
 
 **Page skeleton.** Work outside in: the outermost frame, then the banded
 regions, then the width constraint, then the content. Reach for a layout
