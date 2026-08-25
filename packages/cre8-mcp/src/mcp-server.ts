@@ -16,7 +16,6 @@ import {
   ListComponentsSchema,
   GetComponentSchema,
   GetPatternsSchema,
-  SearchComponentsSchema,
   GenerateCodeSchema,
   GetA2uiCatalogSchema,
   ValidateA2uiSpecSchema,
@@ -25,7 +24,6 @@ import {
   handleListComponents,
   handleGetComponent,
   handleGetPatterns,
-  handleSearchComponents,
   handleGenerateCode,
   handleGetA2uiCatalog,
   handleValidateA2uiSpec,
@@ -101,9 +99,6 @@ export function createMcpServer(options: McpServerOptions = {}): Server {
           break;
         case 'get_patterns':
           result = handleGetPatterns(GetPatternsSchema.parse(args));
-          break;
-        case 'search_components':
-          result = await handleSearchComponents(SearchComponentsSchema.parse(args));
           break;
         case 'generate_code':
           result = handleGenerateCode(

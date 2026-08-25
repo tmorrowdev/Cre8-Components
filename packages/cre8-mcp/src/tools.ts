@@ -70,30 +70,6 @@ export const tools = [
     },
   },
   {
-    name: 'search_components',
-    description:
-      'Find components by describing what the user is trying to do - an intent, ' +
-      'not just a name. Queries like "show progress toward a goal", "warn the ' +
-      'user about a problem" or "big eye-catching banner" return a ranked list; ' +
-      'exact names and categories still work. Confirm the winning component\'s ' +
-      'API with get_component before using it.',
-    inputSchema: {
-      type: 'object' as const,
-      properties: {
-        query: {
-          type: 'string',
-          description: 'Search query (e.g., "button", "form", "navigation")',
-        },
-        format: {
-          type: 'string',
-          enum: ['web', 'react'],
-          description: 'Component format: "web" (default) or "react"',
-        },
-      },
-      required: ['query'],
-    },
-  },
-  {
     name: 'generate_code',
     description:
       'Generates Web Component HTML or React JSX code from a JSON schema. ' +
@@ -179,10 +155,6 @@ export const GetPatternsSchema = z.object({
   format: z.enum(['web', 'react']).optional(),
 });
 
-export const SearchComponentsSchema = z.object({
-  query: z.string(),
-  format: z.enum(['web', 'react']).optional(),
-});
 
 const ComponentNodeSchema: z.ZodType<unknown> = z.lazy(() =>
   z.object({

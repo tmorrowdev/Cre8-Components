@@ -68,12 +68,6 @@ importers:
 
   packages/cre8-mcp:
     dependencies:
-      '@energetic-ai/embeddings':
-        specifier: ^0.2.0
-        version: 0.2.0(@energetic-ai/core@0.2.0)
-      '@energetic-ai/model-embeddings-en':
-        specifier: ^0.2.0
-        version: 0.2.0(@energetic-ai/core@0.2.0)
       '@hono/node-server':
         specifier: ^1.19.9
         version: 1.19.13(hono@4.12.25)
@@ -200,12 +194,6 @@ importers:
       '@custom-elements-manifest/analyzer':
         specifier: ^0.11.0
         version: 0.11.0(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
-      '@energetic-ai/embeddings':
-        specifier: ^0.2.0
-        version: 0.2.0(@energetic-ai/core@0.2.0)
-      '@energetic-ai/model-embeddings-en':
-        specifier: ^0.2.0
-        version: 0.2.0(@energetic-ai/core@0.2.0)
       '@lit-labs/cli':
         specifier: ^0.6.6
         version: 0.6.6
@@ -1899,32 +1887,6 @@ packages:
       tslib: 2.8.1
     dev: true
     optional: true
-
-  /@energetic-ai/core@0.2.0:
-    resolution: {integrity: sha512-/XgrbYDM59ox7jhK/YMIXgDLMzHLoVmSuvyU8Ctj2EpFtloZYtZoeRmRpZb5XgzAjvzBvwER6Mt6FYSnS8v8fw==}
-    engines: {node: '>=18'}
-    dependencies:
-      long: 4.0.0
-      node-fetch: 2.6.13
-      seedrandom: 3.0.5
-    transitivePeerDependencies:
-      - encoding
-
-  /@energetic-ai/embeddings@0.2.0(@energetic-ai/core@0.2.0):
-    resolution: {integrity: sha512-SkKaFY9ztSlEVcw2NC+RqN6SXMQA9of8x8DRmjO+e9v3bqmHPoGKB5TvTCCh5q7jxgGz1MBKWBhnNMt/DIEjjg==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      '@energetic-ai/core': ^0.2.0
-    dependencies:
-      '@energetic-ai/core': 0.2.0
-
-  /@energetic-ai/model-embeddings-en@0.2.0(@energetic-ai/core@0.2.0):
-    resolution: {integrity: sha512-cVuMYBGNcH8uNJwd3gPf5cAPxu2wQDpSZQ9Vzr9M66mHk0xj0hktT8UzAKLTDGnZF3l+wbKq7WM3KvvwTiPUzQ==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      '@energetic-ai/core': ^0.2.0
-    dependencies:
-      '@energetic-ai/core': 0.2.0
 
   /@esbuild/aix-ppc64@0.28.1:
     resolution: {integrity: sha512-Svl7tq8k/08+p6CXPpRjQ1fKX+1odH/BQbb48fV6fj3CWHhsoIOoY87w1oHXm0qEpkIK3ZfVgp0hed3XBXzXMQ==}
@@ -8157,9 +8119,6 @@ packages:
       wrap-ansi: 9.0.2
     dev: true
 
-  /long@4.0.0:
-    resolution: {integrity: sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA==}
-
   /long@5.3.2:
     resolution: {integrity: sha512-mNAgZ1GmyNhD7AuqnTG3/VQ26o760+ZYBPKjPvugO8+nLbYfX6TVpJPseBvopbdY+qpZ/lKUnmEc1LeZYS3QAA==}
 
@@ -8888,17 +8847,6 @@ packages:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
     deprecated: Use your platform's native DOMException instead
-
-  /node-fetch@2.6.13:
-    resolution: {integrity: sha512-StxNAxh15zr77QvvkmveSQ8uCQ4+v5FkvNTj0OESmiHu+VRi/gXArXtkWMElOsOUNLtUEvI4yS+rdtOHZTwlQA==}
-    engines: {node: 4.x || >=6.0.0}
-    peerDependencies:
-      encoding: ^0.1.0
-    peerDependenciesMeta:
-      encoding:
-        optional: true
-    dependencies:
-      whatwg-url: 5.0.0
 
   /node-fetch@3.3.2:
     resolution: {integrity: sha512-dRB78srN/l6gqWulah9SrxeYnxeddIG30+GOqK/9OlLVyLg3HPnr6SqOWTWOXKRwC2eGYCkZ59NNuSgvSrpgOA==}
@@ -9947,9 +9895,6 @@ packages:
       ajv-keywords: 5.1.0(ajv@8.18.0)
     dev: true
 
-  /seedrandom@3.0.5:
-    resolution: {integrity: sha512-8OwmbklUNzwezjGInmZ+2clQmExQPvomqjL7LFqOYqtmuxRgQYqOD3mHaU+MvZn5FLUeVxVfQjwLZW/n/JFuqg==}
-
   /semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
@@ -10629,9 +10574,6 @@ packages:
       tldts: 7.0.28
     dev: true
 
-  /tr46@0.0.3:
-    resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
-
   /tr46@6.0.0:
     resolution: {integrity: sha512-bLVMLPtstlZ4iMQHpFHTR7GAGj2jxi8Dg0s2h2MafAE4uSWF98FC/3MomU51iQAMf8/qDUbKWf5GxuvvVcXEhw==}
     engines: {node: '>=20'}
@@ -11238,9 +11180,6 @@ packages:
     resolution: {integrity: sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw==}
     engines: {node: '>= 8'}
 
-  /webidl-conversions@3.0.1:
-    resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
-
   /webidl-conversions@8.0.1:
     resolution: {integrity: sha512-BMhLD/Sw+GbJC21C/UgyaZX41nPt8bUTg+jWyDeg7e7YN4xOM05YPSIXceACnXVtqyEw/LMClUQMtMZ+PGGpqQ==}
     engines: {node: '>=20'}
@@ -11354,12 +11293,6 @@ packages:
       tr46: 6.0.0
       webidl-conversions: 8.0.1
     dev: true
-
-  /whatwg-url@5.0.0:
-    resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
-    dependencies:
-      tr46: 0.0.3
-      webidl-conversions: 3.0.1
 
   /which-typed-array@1.1.20:
     resolution: {integrity: sha512-LYfpUkmqwl0h9A2HL09Mms427Q1RZWuOHsukfVcKRq9q95iQxdw0ix1JQrqbcDR9PH1QDwf5Qo8OZb5lksZ8Xg==}

@@ -11,7 +11,7 @@
  */
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
-import { handleGetPatterns, handleSearchComponents, handleListComponents, handleGetComponent, handleGenerateCode, handleGetA2uiCatalog, handleValidateA2uiSpec, } from './handlers.js';
+import { handleGetPatterns, handleListComponents, handleGetComponent, handleGenerateCode, handleGetA2uiCatalog, handleValidateA2uiSpec, } from './handlers.js';
 import { handleGetA2uiContext } from './a2ui-context.js';
 import { RateLimiter, isAlwaysOpenPath, isMultiTenant, isPrivilegedPath, loadTenantConfig, resolveTenant, } from './tenants.js';
 import { WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js';
@@ -219,15 +219,6 @@ export function createApp(options = {}) {
         const result = handleGetPatterns(input);
         return c.json(JSON.parse(result));
     });
-    app.get('/search', async (c) => {
-        const q = c.req.query('q');
-        if (!q) {
-            return c.json({ error: 'Missing required query parameter: q' }, 400);
-        }
-        const input = { query: q, format: 'web' };
-        const result = await handleSearchComponents(input);
-        return c.json(JSON.parse(result));
-    });
     app.post('/generate', async (c) => {
         try {
             const body = await c.req.json();
@@ -262,15 +253,6 @@ export function createApp(options = {}) {
     app.get('/react/patterns/:name', (c) => {
         const input = { name: c.req.param('name'), format: 'react' };
         const result = handleGetPatterns(input);
-        return c.json(JSON.parse(result));
-    });
-    app.get('/react/search', async (c) => {
-        const q = c.req.query('q');
-        if (!q) {
-            return c.json({ error: 'Missing required query parameter: q' }, 400);
-        }
-        const input = { query: q, format: 'react' };
-        const result = await handleSearchComponents(input);
         return c.json(JSON.parse(result));
     });
     app.post('/react/generate', async (c) => {
