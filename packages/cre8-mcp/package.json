@@ -1,6 +1,6 @@
 {
   "name": "@tmorrow/cre8-mcp",
-  "version": "2.3.6",
+  "version": "2.3.7",
   "description": "MCP server providing component intelligence for Cre8 design system (@tmorrow/cre8-wc and @tmorrow/cre8-react)",
   "type": "module",
   "main": "dist/index.js",
