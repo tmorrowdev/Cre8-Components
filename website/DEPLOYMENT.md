@@ -29,15 +29,17 @@ mkdir -p /tmp/website-deploy && cp deploy/vercel.bootstrap.json /tmp/website-dep
 cd /tmp/website-deploy && vercel deploy
 ```
 
-Note: because the bootstrap clones `main`, the deployed content always tracks
-`main`, regardless of which branch the deploy is made from.
+Note: the bootstrap clones `main` by default, so the deployed content tracks
+`main` regardless of which branch the deploy is made from. To preview a work
+branch instead, add `--branch <name>` to the `git clone` in `installCommand`.
 
 ## Current deployment
 
-A preview deployment built this way lives in the `cre8-components-cre8-wc-u2p6`
-Vercel project (team `tmorrowdevs-projects`):
+A preview deployment built this way (from `claude/website-deployment-b3wgau`,
+which carries the cre8-vivid retheme) lives in the
+`cre8-components-cre8-wc-u2p6` Vercel project (team `tmorrowdevs-projects`):
 
-- https://cre8-components-cre8-wc-u2p6-49ra5rgs9-tmorrowdevs-projects.vercel.app
+- https://cre8-components-cre8-wc-u2p6-nthniviyx-tmorrowdevs-projects.vercel.app
 
 Preview URLs in that project are behind Vercel Authentication (Standard
 Protection), so they require a Vercel login or a share link. To make the site
