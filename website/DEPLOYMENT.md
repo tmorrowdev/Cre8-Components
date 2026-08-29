@@ -39,7 +39,7 @@ A preview deployment built this way (from `claude/website-deployment-b3wgau`,
 which carries the cre8-vivid retheme) lives in the
 `cre8-components-cre8-wc-u2p6` Vercel project (team `tmorrowdevs-projects`):
 
-- https://cre8-components-cre8-wc-u2p6-7tig8zyq8-tmorrowdevs-projects.vercel.app
+- https://cre8-components-cre8-wc-u2p6-poqa7jhio-tmorrowdevs-projects.vercel.app
 
 Preview URLs in that project are behind Vercel Authentication (Standard
 Protection), so they require a Vercel login or a share link. To make the site
