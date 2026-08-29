@@ -33,6 +33,7 @@
             --brand-ink: var(--cre8-color-bg-brand-xstrong);
             --accent: var(--cre8-color-bg-attention-strong);     /* violet */
             --accent-soft: var(--cre8-color-bg-attention);
+            --accent-deep: var(--cre8-color-content-attention-icon);
             --ink: var(--cre8-color-bg-strong);
             --ink-2: var(--cre8-color-bg-active);
             --paper: var(--cre8-color-bg-subtle);
@@ -154,7 +155,7 @@
         .chat-line { display: flex; gap: 10px; margin-bottom: 16px; align-items: flex-start; }
         .chat-avatar { width: 26px; height: 26px; border-radius: 8px; flex: none; display: grid; place-items: center; font-size: .8rem; font-weight: 700; }
         .chat-avatar.user { background: rgba(255,255,255,0.1); color: #fff; }
-        .chat-avatar.ai { background: linear-gradient(135deg, var(--brand), var(--accent)); color: #0B1220; }
+        .chat-avatar.ai { background: linear-gradient(135deg, var(--brand), var(--accent)); color: var(--cre8-color-content-knockout); }
         .chat-text { color: #E2E8F0; font-size: .95rem; }
         .chat-text .who { display:block; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color: var(--mut); margin-bottom:2px; }
         .tool-call {
@@ -216,7 +217,7 @@
         .codewrap { margin-top: 42px; border-radius: var(--radius); overflow: hidden; border: 1px solid #26324A; }
         .codewrap .bar { background: #0B1220; color: var(--mut); font-size: .78rem; padding: 10px 16px; border-bottom: 1px solid #26324A; font-family: ui-monospace, monospace; }
         pre.code { background: #080D1A; color: #E2E8F0; padding: 22px; overflow-x: auto; font-size: .86rem; line-height: 1.7; }
-        pre.code .k { color: var(--cre8-color-content-inverse-link); } pre.code .s { color: #BBF7D0; } pre.code .c { color: #64748B; } pre.code .t { color: var(--accent); }
+        pre.code .k { color: var(--cre8-color-content-inverse-link); } pre.code .s { color: #BBF7D0; } pre.code .c { color: #94A3B8; } pre.code .t { color: var(--accent); }
 
         /* component wall */
         .wall { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px; }
@@ -310,7 +311,7 @@
                 </div>
                 <div class="demo-pane">
                     <div class="demo-head" style="justify-content:space-between;">
-                        <span>rendered output</span><span style="text-transform:none; letter-spacing:0; opacity:.6;">live Cre8 components ↓</span>
+                        <span>rendered output</span><span style="text-transform:none; letter-spacing:0; opacity:.85;">live Cre8 components ↓</span>
                     </div>
                     <div class="render-surface">
                         <span class="render-label">Generated UI</span>
@@ -513,7 +514,7 @@
                     <div slot="footer" style="padding:14px 18px; background:var(--paper);"><cre8-badge text="Composable" status="info"></cre8-badge></div>
                 </cre8-card>
                 <cre8-card variant="vertical">
-                    <div slot="header" style="padding:16px 18px; background:var(--accent); color:#fff;"><h3 style="margin:0; font-size:1.05rem;">Overlays &amp; nav</h3></div>
+                    <div slot="header" style="padding:16px 18px; background:var(--accent-deep); color:#fff;"><h3 style="margin:0; font-size:1.05rem;">Overlays &amp; nav</h3></div>
                     <div style="padding:18px; color:var(--cre8-color-content-subtle);">Modals, tooltips, popovers, and full navigation systems — grounded, not guessed.</div>
                     <div slot="footer" style="padding:14px 18px; background:var(--paper);"><cre8-badge text="Accessible" status="success"></cre8-badge></div>
                 </cre8-card>
