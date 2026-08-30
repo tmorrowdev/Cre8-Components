@@ -13,7 +13,7 @@
     "build:react-manifest": "npx tsx scripts/generate-react-manifest.ts",
     "build:cdn": "rm -rf cdn && vite build --config vite.config.cdn.ts",
     "build:react": "rm -rf react-wrappers/components react-wrappers/dist react-wrappers/index.ts && npx tsx scripts/generate-react-wrappers.ts && cd react-wrappers && npx tsc",
-    "build:a2ui": "pnpm run build:a2ui:catalog && pnpm run build:a2ui:kg && pnpm run build:a2ui:compile",
+    "build:a2ui": "pnpm run build:a2ui:catalog && pnpm run build:a2ui:kg && pnpm run build:a2ui:compile && pnpm run build:a2ui:embeddings",
     "build:a2ui:catalog": "node a2ui/generate-catalog.mjs",
     "build:a2ui:kg": "node a2ui/generate-catalog-kg.mjs",
     "build:a2ui:embeddings": "node a2ui/generate-embeddings.mjs",

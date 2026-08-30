@@ -4,7 +4,7 @@
       "catalog-kg.json"
     ],
     "library": "@tmorrow/cre8-wc",
-    "library_version": "2.3.9",
+    "library_version": "2.3.10",
     "model": "text-embedding-3-small",
     "dims": 512,
     "component_count": 88

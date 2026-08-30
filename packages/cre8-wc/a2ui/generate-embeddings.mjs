@@ -3,17 +3,23 @@
  * Generates catalog-embeddings.json — the vectors search_components ranks
  * against for semantic (query-time) search in cre8-mcp.
  *
- * Unlike the other a2ui/generate-*.mjs scripts, this one is NOT free or
- * deterministic-by-recompute: it calls OpenAI's embeddings API and spends
- * real (if tiny) money per changed component. It is therefore deliberately
- * NOT wired into `build:a2ui` or CI — run it by hand, with OPENAI_API_KEY
- * set, whenever catalog-kg.json's component text changes:
+ * Wired into `build:a2ui` (and so into `build:all` and `release:publish`),
+ * unlike a typical "costs real money, so keep it manual" script, because the
+ * common case is free: a component whose embedding text is unchanged since
+ * the last run (by hash) is reused rather than re-embedded — this run only
+ * re-stamps meta.library_version against the current package.json, no
+ * network call, no OPENAI_API_KEY required. That version stamp going stale
+ * against a bumped release is exactly the bug this wiring exists to prevent
+ * (check-layer-parity.mjs's prepublishOnly gate caught 2.3.9 shipping with
+ * an embeddings file still stamped 2.3.6).
+ *
+ * OPENAI_API_KEY is only needed on the rarer path: catalog-kg.json's
+ * component text actually changed since the last run, so there's a real
+ * vector to (re-)embed. Missing the key in that case fails loudly rather
+ * than silently shipping a stale vector — see the exit(1) below. To embed
+ * by hand ahead of a build:
  *
  *   OPENAI_API_KEY=sk-... node a2ui/generate-embeddings.mjs
- *
- * Incremental: a component whose embedding text is unchanged since the last
- * run (by hash) is reused rather than re-embedded, so editing one
- * description costs one API call, not eighty-eight.
  *
  * check-layer-parity.mjs re-derives the same text hashes with no network
  * call and fails the build if a committed vector has gone stale against
