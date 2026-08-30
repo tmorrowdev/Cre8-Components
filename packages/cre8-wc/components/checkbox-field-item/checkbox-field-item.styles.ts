@@ -715,7 +715,7 @@ span.ripple {
   display: flex;
   position: relative;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--cre8-spacing-8);
   min-height: 1.5rem;
   /** 
   * Checkbox field item within last cre8-checkbox-field-item wrapper in a fieldset
@@ -853,7 +853,7 @@ span.ripple {
  * Checkbox field item input 
  */
 .cre8-c-checkbox-field-item__label {
-  margin-left: 2rem;
+  margin-left: var(--cre8-spacing-32);
   font-family: var(--cre8-typography-label-small-font-family);
   font-size: var(--cre8-typography-label-small-font-size);
   font-weight: var(--cre8-typography-label-small-font-weight);

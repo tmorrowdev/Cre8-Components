@@ -616,7 +616,7 @@ span.ripple {
   */
 }
 .cre8-c-utility-nav__list ::slotted(cre8-utility-nav-item) {
-  margin-left: 1rem;
-  margin-top: 1rem;
+  margin-left: var(--cre8-spacing-16);
+  margin-top: var(--cre8-spacing-16);
 }`;
 export default styles;

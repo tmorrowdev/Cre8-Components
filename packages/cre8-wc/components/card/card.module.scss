@@ -15,8 +15,8 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: size(3);
-  gap: size(2);
+  padding: var(--cre8-padding-24);
+  gap: var(--cre8-padding-16);
   border-color: var(--cre8-color-border-default);
   border-style: var(--cre8-border-style-default);
   border-width: var(--cre8-border-width-default);
@@ -43,8 +43,8 @@
  * Compact card - reduced padding for narrow layouts
  */
 .cre8-c-card--compact {
-  padding: size(2);
-  gap: size(1);
+  padding: var(--cre8-padding-16);
+  gap: var(--cre8-padding-8);
 }
 
 /**

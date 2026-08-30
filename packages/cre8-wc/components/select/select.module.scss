@@ -45,7 +45,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: size(1);
+  gap: var(--cre8-spacing-8);
   pointer-events: none;
 }
 
@@ -53,7 +53,7 @@
  * Select Arrow Icon
  */
 .cre8-c-select__icon-arrow {
-  margin-right: size(0.75);
+  margin-right: var(--cre8-spacing-6);
   width: size(1.5);
   height: size(1.5);
 }

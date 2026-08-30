@@ -45,7 +45,7 @@
  * 1) Container to place things like badges after an item
  */
 .cre8-c-link-list__item-before {
-  margin-right: size(1);
+  margin-right: var(--cre8-spacing-8);
 }
 
 /**
@@ -53,7 +53,7 @@
  * 1) Container to place things like badges after an item
  */
 .cre8-c-link-list__item-after {
-  margin-left: size(1);
+  margin-left: var(--cre8-spacing-8);
 }
 
 ::slotted(cre8-icon-legacy) {

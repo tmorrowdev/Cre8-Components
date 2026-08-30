@@ -631,7 +631,7 @@ span.ripple {
 */
 cre8-icon {
   height: var(--cre8-icon-height, 1rem);
-  margin-right: 0.25rem;
+  margin-right: var(--cre8-spacing-4);
 }
 
 /**

@@ -620,14 +620,14 @@ span.ripple {
  * 2) Take up the remaining space on medr screens
  */
 .cre8-c-feature__body {
-  margin-bottom: 2rem;
+  margin-bottom: var(--cre8-spacing-32);
 }
 @media all and (min-width: 768px) {
   .cre8-c-feature__body {
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding-right: 2rem;
+    padding-right: var(--cre8-spacing-32);
     margin-bottom: 0;
   }
 }

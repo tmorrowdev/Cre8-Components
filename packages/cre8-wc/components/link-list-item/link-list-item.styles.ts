@@ -632,7 +632,7 @@ span.ripple {
  * 1) Container to place things like badges after an item
  */
 .cre8-c-link-list__item-before {
-  margin-right: 0.5rem;
+  margin-right: var(--cre8-spacing-8);
 }
 
 /**
@@ -640,7 +640,7 @@ span.ripple {
  * 1) Container to place things like badges after an item
  */
 .cre8-c-link-list__item-after {
-  margin-left: 0.5rem;
+  margin-left: var(--cre8-spacing-8);
 }
 
 ::slotted(cre8-icon-legacy) {

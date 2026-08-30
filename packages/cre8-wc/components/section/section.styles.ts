@@ -603,7 +603,7 @@ span.ripple {
  * 1) A major section of a page (<section> tag) with a title and optional description.
  */
 .cre8-c-section {
-  margin-bottom: 2rem;
+  margin-bottom: var(--cre8-spacing-32);
   display: block;
 }
 
@@ -620,11 +620,11 @@ span.ripple {
 * Section body
 */
 .cre8-c-section__body {
-  padding-top: 1rem;
+  padding-top: var(--cre8-padding-16);
 }
 @media all and (min-width: 960px) {
   .cre8-c-section__body {
-    padding-top: 2rem;
+    padding-top: var(--cre8-spacing-32);
   }
 }`;
 export default styles;

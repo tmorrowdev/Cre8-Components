@@ -598,8 +598,8 @@ span.ripple {
  */
 .cre8-c-divider {
   background-color: var(--cre8-color-border-default);
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: var(--cre8-spacing-8);
+  margin-bottom: var(--cre8-spacing-8);
 }
 
 .cre8-c-divider--horizontal {
@@ -612,8 +612,8 @@ span.ripple {
   height: 100%;
   margin-top: 0;
   margin-bottom: 0;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  margin-left: var(--cre8-spacing-8);
+  margin-right: var(--cre8-spacing-8);
 }
 
 /**

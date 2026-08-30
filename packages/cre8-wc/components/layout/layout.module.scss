@@ -19,11 +19,11 @@
 .cre8-c-layout {
   display: grid;
   flex: 1;
-  gap: size(2);
+  gap: var(--cre8-spacing-16);
   grid-template-columns: minmax(0, 1fr);
 
   @media all and (min-width: component.$cre8-breakpoint-lg) {
-    gap: size(4);
+    gap: var(--cre8-spacing-32);
     grid-template-columns: minmax(0, 1fr) calc(var(--cre8-sidebar-width, 40%) - (size(1)));
     /* 2 */
   }

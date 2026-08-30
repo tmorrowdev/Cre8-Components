@@ -604,7 +604,7 @@ span.ripple {
  */
 .cre8-c-hero {
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: var(--cre8-spacing-32);
 }
 @media all and (min-width: 768px) {
   .cre8-c-hero {
@@ -635,7 +635,7 @@ span.ripple {
 .cre8-c-hero__body {
   display: flex;
   flex-direction: column;
-  padding-top: 1rem;
+  padding-top: var(--cre8-padding-16);
 }
 @media all and (min-width: 768px) {
   .cre8-c-hero__body {
@@ -644,8 +644,8 @@ span.ripple {
     justify-content: flex-end;
     width: 100%;
     min-height: 40vh;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: var(--cre8-spacing-32);
+    padding-bottom: var(--cre8-spacing-32);
   }
 }
 .cre8-c-hero__body {

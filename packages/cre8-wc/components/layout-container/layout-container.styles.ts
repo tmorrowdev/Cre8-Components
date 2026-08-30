@@ -607,8 +607,8 @@ span.ripple {
 .cre8-l-layout-container {
   width: 100%;
   max-width: var(--cre8-l-max-width);
-  padding-right: 1rem;
-  padding-left: 1rem;
+  padding-right: var(--cre8-padding-16);
+  padding-left: var(--cre8-padding-16);
   margin: 0 auto;
 }
 

@@ -611,7 +611,7 @@ span.ripple {
 * Breadcrumbs icon
 */
 cre8-icon {
-  margin-left: 0.5rem;
+  margin-left: var(--cre8-spacing-8);
   color: var(--cre8-color-content-subtle);
   display: inline-flex;
 }

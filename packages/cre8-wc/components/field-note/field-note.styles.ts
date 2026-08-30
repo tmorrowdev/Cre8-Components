@@ -600,13 +600,13 @@ span.ripple {
 .cre8-c-field-note {
   display: flex;
   align-items: flex-start;
-  gap: 0.25rem;
+  gap: var(--cre8-spacing-4);
   color: var(--cre8-color-content-default);
-  margin-top: 0.25rem;
+  margin-top: var(--cre8-spacing-4);
 }
 
 .cre8-field-note-icon {
-  margin-top: 0.25rem;
+  margin-top: var(--cre8-spacing-4);
   height: 1rem;
   width: 1rem;
 }

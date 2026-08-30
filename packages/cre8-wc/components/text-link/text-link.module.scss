@@ -61,5 +61,5 @@
 * 1) Container used to place items after the text link
 */
 .cre8-c-text-link__after {
-  margin-left: size(1);
+  margin-left: var(--cre8-spacing-8);
 }

@@ -764,7 +764,7 @@ span.ripple {
  */
 ::slotted(cre8-grid-item) {
   display: block;
-  padding: 0.75rem;
+  padding: var(--cre8-padding-8);
   /**
   * Slotted grid item within grid with no gap between items
   */
@@ -778,7 +778,7 @@ span.ripple {
   */
 }
 .cre8-c-container-grid--gap-sm > ::slotted(cre8-grid-item) {
-  padding: 0.25rem;
+  padding: var(--cre8-padding-4);
 }
 ::slotted(cre8-grid-item) {
   /**
@@ -786,7 +786,7 @@ span.ripple {
   */
 }
 .cre8-c-container-grid--gap-lg > ::slotted(cre8-grid-item) {
-  padding: 1rem;
+  padding: var(--cre8-padding-16);
 }
 ::slotted(cre8-grid-item) {
   /**

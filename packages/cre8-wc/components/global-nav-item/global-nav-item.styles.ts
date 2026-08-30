@@ -621,7 +621,7 @@ span.ripple {
   white-space: nowrap;
   width: 100%;
   margin: 0;
-  padding: 0.5rem 1rem;
+  padding: var(--cre8-padding-8) var(--cre8-padding-16);
   color: var(--cre8-global-nav-link-color, var(--cre8-color-content-subtle));
   text-decoration: none;
   transition: all var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
@@ -659,13 +659,13 @@ cre8-icon-legacy {
 }
 @media all and (min-width: 960px) {
   cre8-icon-legacy {
-    margin-left: 0.5rem;
+    margin-left: var(--cre8-spacing-8);
   }
 }
 
 .cre8-c-global-nav__item-after {
   --cre8-icon-height: 0.75rem;
   --cre8-icon-width: 0.75rem;
-  margin-left: 0.5rem;
+  margin-left: var(--cre8-spacing-8);
 }`;
 export default styles;

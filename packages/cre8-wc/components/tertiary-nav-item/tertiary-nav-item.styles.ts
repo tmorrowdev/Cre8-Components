@@ -608,8 +608,8 @@ span.ripple {
   text-transform: var(--cre8-typography-body-default-text-transform);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  gap: var(--cre8-spacing-8);
+  padding: var(--cre8-padding-8) var(--cre8-padding-8) var(--cre8-padding-8) var(--cre8-padding-16);
   color: var(--cre8-color-content-brand-strong);
   background-color: var(--cre8-color-bg-default);
   border-block-end: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-default);

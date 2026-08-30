@@ -99,8 +99,16 @@
   --cre8-warning-500: var(--cre8-seed-warning);
   --cre8-warning-600: oklch(from var(--cre8-seed-warning) 0.6658 calc(c * 0.956) calc(h - 11.76));
 
-  /* accent */
+  /* accent
+     -50 and -500 added by hand (not from the original generator, which never
+     emitted them) to give info-status tokens a real ramp to point at instead
+     of borrowing primary's. Simple relative lightness offsets from the -600
+     identity step, not the per-hue-tuned coefficients the rest of this ramp
+     uses -- close enough for a light tint and a mid-strength fill, not a
+     claim of the same precision. */
+  --cre8-accent-50: oklch(from var(--cre8-seed-accent) 0.96 calc(c * 0.15) h);
   --cre8-accent-200: oklch(from var(--cre8-seed-accent) 0.9024 calc(c * 0.245) calc(h + 13.69));
+  --cre8-accent-500: oklch(from var(--cre8-seed-accent) calc(l + 0.08) c h);
   --cre8-accent-600: var(--cre8-seed-accent);
 
   /* Overlays — neutral-900 at fixed alpha */
@@ -128,6 +136,22 @@
   --cre8-spacing-96: calc(var(--cre8-seed-space) * 24);
   --cre8-spacing-120: calc(var(--cre8-seed-space) * 30);
   --cre8-spacing-160: calc(var(--cre8-seed-space) * 40);
+
+  /* Padding — a deliberately narrow slice of the spacing scale.
+     The full scale above spans a 0.5x-40x range (80x), which is right for
+     layout gaps and section margins but wrong for component padding: reseed
+     --cre8-seed-space for a chunkier padding feel and the *layout* end of
+     that same scale swings by tens of pixels for a change meant to nudge
+     button/card padding by a couple of pixels. Padding gets its own 0.5x-6x
+     range (12x) instead -- aliases of the existing tight-end steps, not new
+     math -- so retheming padding doesn't also retheme page layout. Component
+     padding should reference these, never --cre8-spacing-* directly; gap and
+     margin (genuine layout) can still reach the full scale above. */
+  --cre8-padding-2: var(--cre8-spacing-2);
+  --cre8-padding-4: var(--cre8-spacing-4);
+  --cre8-padding-8: var(--cre8-spacing-8);
+  --cre8-padding-16: var(--cre8-spacing-16);
+  --cre8-padding-24: var(--cre8-spacing-24);
 
   /* Font size — multiples of the font-size seed */
   --cre8-font-size-0: calc(var(--cre8-seed-font-size) * 0.75);
@@ -251,9 +275,9 @@
   --cre8-color-bg-warning: var(--cre8-bg-warning);
   --cre8-bg-warning-strong: var(--cre8-warning-500);
   --cre8-color-bg-warning-strong: var(--cre8-bg-warning-strong);
-  --cre8-bg-info: var(--cre8-primary-50);
+  --cre8-bg-info: var(--cre8-accent-50);
   --cre8-color-bg-info: var(--cre8-bg-info);
-  --cre8-bg-info-strong: var(--cre8-primary-500);
+  --cre8-bg-info-strong: var(--cre8-accent-500);
   --cre8-color-bg-info-strong: var(--cre8-bg-info-strong);
   --cre8-bg-attention: var(--cre8-neutral-0);
   --cre8-color-bg-attention: var(--cre8-bg-attention);
@@ -291,7 +315,7 @@
   --cre8-color-content-error-icon: var(--cre8-content-error-icon);
   --cre8-content-warning-icon: var(--cre8-warning-600);
   --cre8-color-content-warning-icon: var(--cre8-content-warning-icon);
-  --cre8-content-info-icon: var(--cre8-primary-500);
+  --cre8-content-info-icon: var(--cre8-accent-500);
   --cre8-color-content-info-icon: var(--cre8-content-info-icon);
   --cre8-content-attention-icon: var(--cre8-primary-400);
   --cre8-color-content-attention-icon: var(--cre8-content-attention-icon);
@@ -339,7 +363,7 @@
   --cre8-color-border-error: var(--cre8-border-error);
   --cre8-border-warning: var(--cre8-warning-400);
   --cre8-color-border-warning: var(--cre8-border-warning);
-  --cre8-border-info: var(--cre8-primary-500);
+  --cre8-border-info: var(--cre8-accent-500);
   --cre8-color-border-info: var(--cre8-border-info);
   --cre8-border-attention: var(--cre8-primary-400);
   --cre8-color-border-attention: var(--cre8-border-attention);

@@ -307,7 +307,7 @@ span.ripple {
   border: none;
   background-color: transparent;
   gap: 0.5rem;
-  border-radius: none;
+  border-radius: var(--cre8-border-radius-none);
 }
 
 /**

@@ -33,7 +33,7 @@
   transform: translateX(var(--rtlTranslateX, -50%));
   display: flex;
   flex-direction: column;
-  gap: size(1);
+  gap: var(--cre8-spacing-8);
   width: max-content;
   max-width: size(35);
   z-index: 400;
@@ -41,7 +41,7 @@
   background-color: var(--cre8-color-bg-strong);
   border: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
   border-radius: var(--cre8-border-radius-container);
-  padding: size(1);
+  padding: var(--cre8-padding-8);
 
   /**
    * Active state for tooltip panel
@@ -167,7 +167,7 @@
  */
 .cre8-c-tooltip__footer {
   display: flex;
-  gap: size(2);
+  gap: var(--cre8-spacing-16);
   justify-content: flex-end;
   flex-grow: 1;
 }

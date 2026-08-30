@@ -606,12 +606,12 @@ span.ripple {
 .cre8-c-layout {
   display: grid;
   flex: 1;
-  gap: 1rem;
+  gap: var(--cre8-spacing-16);
   grid-template-columns: minmax(0, 1fr);
 }
 @media all and (min-width: 960px) {
   .cre8-c-layout {
-    gap: 2rem;
+    gap: var(--cre8-spacing-32);
     grid-template-columns: minmax(0, 1fr) calc(var(--cre8-sidebar-width, 40%) - (0.5rem));
     /* 2 */
   }
