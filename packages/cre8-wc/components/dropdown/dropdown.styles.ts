@@ -617,12 +617,12 @@ span.ripple {
 
 .cre8-c-dropdown--icon-button {
   color: var(--cre8-color-button-secondary-content);
-  margin-top: 0.5rem;
+  margin-top: var(--cre8-spacing-8);
 }
 
 .cre8-c-dropdown--icon-link {
   color: var(--cre8-color-content-link);
-  margin-top: 0.5rem;
+  margin-top: var(--cre8-spacing-8);
 }
 
 .cre8-c-dropdown--toggle {

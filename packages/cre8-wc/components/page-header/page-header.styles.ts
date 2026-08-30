@@ -593,7 +593,7 @@ span.ripple {
  * 1) Headline of a page with an h1 heading and optional description
  */
 .cre8-c-page-header {
-  margin-bottom: 2rem;
+  margin-bottom: var(--cre8-spacing-32);
 }
 
 /**
@@ -628,7 +628,7 @@ span.ripple {
   display: inline-block;
   position: relative;
   bottom: 0.625rem;
-  margin-left: 1rem;
+  margin-left: var(--cre8-spacing-16);
 }
 
 /**

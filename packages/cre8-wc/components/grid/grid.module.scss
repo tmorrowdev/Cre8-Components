@@ -174,7 +174,7 @@
  */
 ::slotted(cre8-grid-item) {
   display: block;
-  padding: size(1.5);
+  padding: var(--cre8-padding-8);
 
   /**
   * Slotted grid item within grid with no gap between items
@@ -187,14 +187,14 @@
   * Slotted grid item within grid with small gap between items
   */
   .cre8-c-grid--gap-sm>& {
-    padding: size(0.5);
+    padding: var(--cre8-padding-4);
   }
 
   /**
   * Slotted grid item within grid with large gap between items
   */
   .cre8-c-grid--gap-lg>& {
-    padding: size(2);
+    padding: var(--cre8-padding-16);
   }
 
   /**

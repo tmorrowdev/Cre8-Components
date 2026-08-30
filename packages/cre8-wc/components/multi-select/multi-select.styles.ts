@@ -733,7 +733,7 @@ span.ripple {
   min-height: 30px;
   width: 100%;
   border-right: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
-  padding-right: 2.75rem;
+  padding-right: var(--cre8-spacing-40);
 }
 
 .cre8-c-multi-select__tag-wrapper {
@@ -743,7 +743,7 @@ span.ripple {
   display: flex;
   flex-wrap: wrap;
   height: 100%;
-  gap: 0.25rem;
+  gap: var(--cre8-spacing-4);
 }
 
 .cre8-c-multi-select__icons-wrapper {
@@ -751,7 +751,7 @@ span.ripple {
   justify-content: end;
   margin-right: -36px;
   margin-left: -48px;
-  gap: 1.5rem;
+  gap: var(--cre8-spacing-24);
   min-width: 96px;
 }
 .cre8-c-multi-select__icons-wrapper button {

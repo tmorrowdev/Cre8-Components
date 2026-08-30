@@ -637,7 +637,7 @@ cre8-icon-legacy {
 * 1) Create space between text and icon
 */
 .cre8-c-utility-nav__text + cre8-icon-legacy {
-  margin-left: 0.5rem;
+  margin-left: var(--cre8-spacing-8);
   /* 1 */
 }
 
@@ -646,7 +646,7 @@ cre8-icon-legacy {
 * 1) Create space between text and icon
 */
 cre8-icon-legacy + .cre8-c-utility-nav__text {
-  margin-left: 0.5rem;
+  margin-left: var(--cre8-spacing-8);
   /* 1 */
 }`;
 export default styles;

@@ -608,7 +608,7 @@ span.ripple {
   --cre8-u-icon-display: flex;
   --cre8-u-icon-align-items: center;
   --cre8-u-icon-justify-content: center;
-  padding: 1.5rem 0.5rem;
+  padding: var(--cre8-padding-24) var(--cre8-padding-8);
 }
 
 .cre8-c-accordion-item--small cre8-heading button {
@@ -650,9 +650,9 @@ span.ripple {
 }
 
 .cre8-c-accordion-item__body {
-  margin-right: 0rem;
-  margin-left: 0rem;
-  padding: 0rem;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0;
   overflow: hidden;
   visibility: hidden;
   transition: height var(--cre8-anim-fade-quick) var(--cre8-anim-ease), visibility var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
@@ -669,7 +669,7 @@ span.ripple {
   line-height: var(--cre8-typography-body-default-line-height);
   text-decoration: var(--cre8-typography-body-default-text-decoration);
   text-transform: var(--cre8-typography-body-default-text-transform);
-  padding: 0.5rem 3rem 0rem 0.5rem;
+  padding: var(--cre8-padding-8) var(--cre8-spacing-48) 0 var(--cre8-padding-8);
 }
 
 cre8-icon {
@@ -694,8 +694,8 @@ cre8-icon {
   display: flex;
   height: 2rem;
   justify-content: center;
-  margin-left: 0.5rem;
-  margin-right: 0.125rem;
+  margin-left: var(--cre8-spacing-8);
+  margin-right: var(--cre8-spacing-2);
   min-height: 2rem;
   min-width: 2rem;
   width: 2rem;
@@ -733,7 +733,7 @@ cre8-icon {
   background-color: var(--cre8-color-bg-transparent);
   border: var(--cre8-border-width-none);
   cursor: pointer;
-  padding: 0.25rem 0.5rem;
+  padding: var(--cre8-padding-4) var(--cre8-padding-8);
   overflow-x: hidden;
   transition: color var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
   width: 100%;
@@ -745,7 +745,7 @@ cre8-icon {
   justify-content: flex-start;
 }
 .cre8-c-accordion-item__button.cre8-u-justify-content-start .cre8-c-accordion-item__icon-before {
-  margin-left: 0rem;
+  margin-left: 0;
 }
 .cre8-c-accordion-item__button:hover .cre8-c-accordion-item__icon {
   border-color: var(--cre8-color-button-primary-border-hover);
@@ -779,11 +779,11 @@ cre8-icon {
 }
 
 .cre8-c-accordion-item--icon-before .cre8-c-accordion-item__body {
-  margin-left: 2.5rem;
+  margin-left: var(--cre8-spacing-40);
 }
 
 .cre8-c-accordion-item__icon-before {
-  margin-right: 0.75rem;
+  margin-right: var(--cre8-spacing-12);
 }
 .cre8-c-accordion-item__icon-before h4[slot=header] {
   display: block;

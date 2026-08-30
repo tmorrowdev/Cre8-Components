@@ -14,7 +14,7 @@
 .cre8-c-button-group {
   display: flex;
   flex-wrap: wrap;
-  gap: size(2);
+  gap: var(--cre8-spacing-16);
 }
 
 :host([fullWidth]) {
@@ -25,7 +25,7 @@
 }
 
 .cre8-c-button-group--gap-sm {
-  gap: size(1);
+  gap: var(--cre8-spacing-8);
 }
 
 /**

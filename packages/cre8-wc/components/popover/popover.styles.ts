@@ -627,7 +627,7 @@ span.ripple {
   transform: translateX(var(--rtlTranslateX, -50%));
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--cre8-spacing-8);
   width: 16rem;
   z-index: 400;
   /* 1 */
@@ -635,7 +635,7 @@ span.ripple {
   border: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
   border-radius: var(--cre8-border-radius-container);
   box-shadow: var(--cre8-shadow-default);
-  padding: 1rem;
+  padding: var(--cre8-padding-16);
   /**
    * Focus state for popover panel
    */
@@ -770,6 +770,6 @@ span.ripple {
  */
 .cre8-c-popover__footer {
   display: flex;
-  gap: 1rem;
+  gap: var(--cre8-spacing-16);
 }`;
 export default styles;

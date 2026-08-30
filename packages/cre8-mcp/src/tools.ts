@@ -181,6 +181,7 @@ export const SearchComponentsSchema = z.object({
   format: z.enum(['web', 'react']).optional(),
 });
 
+
 const ComponentNodeSchema: z.ZodType<unknown> = z.lazy(() =>
   z.object({
     component: z.string(),

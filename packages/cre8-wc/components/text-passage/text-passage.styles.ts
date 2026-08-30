@@ -626,6 +626,6 @@ span.ripple {
 }
 
 ::slotted(.header) {
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--cre8-spacing-12);
 }`;
 export default styles;

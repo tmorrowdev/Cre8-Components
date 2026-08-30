@@ -33,7 +33,7 @@
   transform: translateX(var(--rtlTranslateX, -50%));
   display: flex;
   flex-direction: column;
-  gap: size(1);
+  gap: var(--cre8-spacing-8);
   width: size(32);
   z-index: 400;
   /* 1 */
@@ -41,7 +41,7 @@
   border: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
   border-radius: var(--cre8-border-radius-container);
   box-shadow: var(--cre8-shadow-default);
-  padding: size(2);
+  padding: var(--cre8-padding-16);
 
   /**
    * Focus state for popover panel
@@ -166,5 +166,5 @@
  */
 .cre8-c-popover__footer {
   display: flex;
-  gap: size(2);
+  gap: var(--cre8-spacing-16);
 }

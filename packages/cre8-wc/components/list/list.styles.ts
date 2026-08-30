@@ -606,7 +606,7 @@ span.ripple {
   list-style: none;
   padding: 0;
   margin: 0;
-  margin-bottom: 1rem;
+  margin-bottom: var(--cre8-spacing-16);
 }
 
 /**
@@ -615,8 +615,8 @@ span.ripple {
  */
 ::slotted(cre8-list-item) {
   display: block;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: var(--cre8-padding-16);
+  padding-bottom: var(--cre8-padding-16);
   border-bottom: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-subtle);
   /**
   * List item with bare list
@@ -634,8 +634,8 @@ span.ripple {
   */
 }
 .cre8-c-list--condensed ::slotted(cre8-list-item) {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: var(--cre8-padding-8);
+  padding-bottom: var(--cre8-padding-8);
 }
 ::slotted(cre8-list-item) {
   /**
@@ -644,7 +644,7 @@ span.ripple {
   */
 }
 .cre8-c-list--padded ::slotted(cre8-list-item) {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: var(--cre8-spacing-32);
+  padding-bottom: var(--cre8-spacing-32);
 }`;
 export default styles;

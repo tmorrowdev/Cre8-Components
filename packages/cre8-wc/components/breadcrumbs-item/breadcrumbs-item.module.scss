@@ -25,7 +25,7 @@
 * Breadcrumbs icon
 */
 cre8-icon {
-  margin-left: size(1);
+  margin-left: var(--cre8-spacing-8);
   color: var(--cre8-color-content-subtle);
   display: inline-flex;
 

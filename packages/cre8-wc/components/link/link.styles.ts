@@ -697,7 +697,7 @@ span.ripple {
 .cre8-c-link__cta-wrapper {
   color: var(--cre8-color-button-primary-content);
   display: inline-flex;
-  margin-left: 0.5rem;
+  margin-left: var(--cre8-spacing-8);
   padding: var(--cre8-spacing-4);
   background-color: var(--cre8-color-content-link);
   border-radius: var(--cre8-border-radius-round);
@@ -709,15 +709,15 @@ span.ripple {
 }
 
 .cre8-c-link__icon.before {
-  padding-right: 0.5rem;
+  padding-right: var(--cre8-padding-8);
 }
 
 .cre8-c-link__icon.after {
-  padding-left: 0.5rem;
+  padding-left: var(--cre8-padding-8);
 }
 
 ::slotted([slot=badge]) {
-  padding-left: 0.5rem;
+  padding-left: var(--cre8-padding-8);
 }
 
 .cre8-c-link--inverted .cre8-c-link__text {

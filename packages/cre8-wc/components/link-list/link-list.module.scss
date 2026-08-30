@@ -27,7 +27,7 @@
   * Slotted link list item
   */
   ::slotted(cre8-link-list-item) {
-    margin-top: size(2);
+    margin-top: var(--cre8-spacing-16);
   }
 }
 
@@ -68,7 +68,7 @@
   * Slotted link list item within condensed link list
   */
   ::slotted(cre8-link-list-item) {
-    margin-top: size(1.25);
+    margin-top: var(--cre8-spacing-8);
   }
 }
 
@@ -92,8 +92,8 @@
   * Slotted link list item within horizontal link list
   */
   ::slotted(cre8-link-list-item) {
-    margin-top: size(1);
-    margin-left: size(2);
+    margin-top: var(--cre8-spacing-8);
+    margin-left: var(--cre8-spacing-16);
   }
 }
 
@@ -111,8 +111,8 @@
     * Slotted link list item within responsive link list
     */
     ::slotted(cre8-link-list-item) {
-      margin-top: size(1);
-      margin-left: size(2);
+      margin-top: var(--cre8-spacing-8);
+      margin-left: var(--cre8-spacing-16);
     }
   }
 }

@@ -611,7 +611,7 @@ span.ripple {
   flex-direction: column;
   height: 100%;
   width: 100%;
-  padding: 1rem;
+  padding: var(--cre8-padding-16);
   gap: 1rem;
   background: var(--cre8-color-bg-default);
 }

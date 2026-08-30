@@ -121,7 +121,7 @@ export function handleGetContentModel(input: GetContentModelInput): string {
     const def = catalog.components.get(tag);
     if (!def) {
       throw new Error(
-        `Component "${tag}" is not in the catalog. Use search_components or list_components first.`
+        `Component "${tag}" is not in the catalog. Use list_components first.`
       );
     }
     const entry = entryFor(tag, def);
@@ -241,7 +241,7 @@ export function handleCre8Guide(input: Cre8GuideInput): string {
           'clicks come back to you. Right when the deliverable is the interface itself.',
       },
       workflow: [
-        '1. get_a2ui_catalog view="metadata" or search_components to find the component.',
+        '1. get_a2ui_catalog view="metadata" or list_components to find the component.',
         '2. get_content_model for the ones you will use — this is where most attempts fail.',
         '2b. get_composition before any multi-level structure. It answers from the knowledge ' +
           'graph — nestings observed in the library\'s own stories, render templates and authored ' +

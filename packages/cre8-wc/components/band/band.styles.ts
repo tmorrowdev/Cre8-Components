@@ -604,11 +604,11 @@ span.ripple {
  */
 .cre8-c-band {
   background: var(--cre8-color-bg-subtle);
-  padding: 1.5rem 0;
+  padding: var(--cre8-padding-24) 0;
 }
 @media all and (min-width: 1200px) {
   .cre8-c-band {
-    padding: 2rem 0;
+    padding: var(--cre8-spacing-32) 0;
   }
 }
 

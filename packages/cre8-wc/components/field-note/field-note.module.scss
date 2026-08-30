@@ -11,13 +11,13 @@
 .cre8-c-field-note {
   display: flex;
   align-items: flex-start;
-  gap: size(0.5);
+  gap: var(--cre8-spacing-4);
   color: var(--cre8-color-content-default);
-  margin-top: size(0.5);
+  margin-top: var(--cre8-spacing-4);
 }
 
 .cre8-field-note-icon {
-  margin-top: size(0.5);
+  margin-top: var(--cre8-spacing-4);
   height: size(2);
   width: size(2);
 }

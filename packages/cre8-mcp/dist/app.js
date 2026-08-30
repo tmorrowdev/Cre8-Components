@@ -11,7 +11,7 @@
  */
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
-import { handleGetPatterns, handleSearchComponents, handleListComponents, handleGetComponent, handleGenerateCode, handleGetA2uiCatalog, handleValidateA2uiSpec, } from './handlers.js';
+import { handleGetPatterns, handleListComponents, handleGetComponent, handleSearchComponents, handleGenerateCode, handleGetA2uiCatalog, handleValidateA2uiSpec, } from './handlers.js';
 import { handleGetA2uiContext } from './a2ui-context.js';
 import { RateLimiter, isAlwaysOpenPath, isMultiTenant, isPrivilegedPath, loadTenantConfig, resolveTenant, } from './tenants.js';
 import { WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js';

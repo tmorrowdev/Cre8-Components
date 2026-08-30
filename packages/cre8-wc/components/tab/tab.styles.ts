@@ -617,7 +617,7 @@ span.ripple {
   padding: 0;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: var(--cre8-spacing-8);
   color: var(--cre8-color-content-default);
   background-color: transparent;
   border: 0;

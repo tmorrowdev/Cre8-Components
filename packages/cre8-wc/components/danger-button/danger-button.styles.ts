@@ -1027,7 +1027,7 @@ span.ripple {
  * Button icon directly before button text
  */
 cre8-icon + .cre8-c-danger-button__text:not(.cre8-u-is-vishidden) {
-  margin-left: 0.5rem;
+  margin-left: var(--cre8-spacing-8);
   display: inline-flex;
 }
 
@@ -1035,7 +1035,7 @@ cre8-icon + .cre8-c-danger-button__text:not(.cre8-u-is-vishidden) {
    * Button icon directly after button text
    */
 .cre8-c-danger-button__text:not(.cre8-u-is-vishidden) + cre8-icon {
-  margin-left: 0.5rem;
+  margin-left: var(--cre8-spacing-8);
   display: inline-flex;
 }
 
@@ -1112,7 +1112,7 @@ cre8-icon {
 }
 
 span.cre8-c-danger-button__icon {
-  margin-left: 0.5rem;
+  margin-left: var(--cre8-spacing-8);
   max-width: fit-content;
   min-width: 0px;
   width: auto;

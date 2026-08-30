@@ -109,7 +109,7 @@
 .cre8-c-link__cta-wrapper {
   color: var(--cre8-color-button-primary-content); // TODO: token not defined
   display: inline-flex;
-  margin-left: size(1);
+  margin-left: var(--cre8-spacing-8);
   padding: var(--cre8-spacing-4);
   background-color: var(--cre8-color-content-link);
   border-radius: var(--cre8-border-radius-round);
@@ -122,15 +122,15 @@
 }
 
 .cre8-c-link__icon.before {
-  padding-right: size(1);
+  padding-right: var(--cre8-padding-8);
 }
 
 .cre8-c-link__icon.after {
-  padding-left: size(1);
+  padding-left: var(--cre8-padding-8);
 }
 
 ::slotted([slot='badge']) {
-  padding-left: size(1);
+  padding-left: var(--cre8-padding-8);
 }
 
 .cre8-c-link--inverted {

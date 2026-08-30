@@ -7,3 +7,4 @@ jobs-archive-*/
 tasks/*/environment/ca/*.crt
 gallery.html
 compare.html
+jobs-demo/

@@ -27,7 +27,7 @@
   * Slotted utility nav item
   */
   ::slotted(cre8-utility-nav-item) {
-    margin-left: size(2);
-    margin-top: size(2);
+    margin-left: var(--cre8-spacing-16);
+    margin-top: var(--cre8-spacing-16);
   }
 }

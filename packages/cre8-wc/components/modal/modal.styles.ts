@@ -660,7 +660,7 @@ span.ripple {
  */
 .cre8-c-modal__header {
   display: flex;
-  padding: 2rem 3rem 1rem;
+  padding: var(--cre8-spacing-32) var(--cre8-spacing-48) var(--cre8-padding-16);
   align-items: center;
   /**
    * Modal Header with Error state
@@ -708,7 +708,7 @@ span.ripple {
 .cre8-c-modal__header-inner {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: var(--cre8-spacing-16);
 }
 .cre8-c-modal__header-inner cre8-icon .cre8-modal-icon {
   height: 2rem;
@@ -721,7 +721,7 @@ span.ripple {
 .cre8-c-modal__body {
   max-height: 240px;
   overflow: auto;
-  padding: 0 3rem;
+  padding: 0 var(--cre8-spacing-48);
   /**
    * Modal Window Body for mobile user screen widths
    */
@@ -737,7 +737,7 @@ span.ripple {
  * Modal Window Footer
  */
 .cre8-c-modal__footer {
-  padding: 1.5rem 3rem calc(100vh - 95dvh);
+  padding: var(--cre8-padding-24) var(--cre8-spacing-48) calc(100vh - 95dvh);
 }
 
 /**

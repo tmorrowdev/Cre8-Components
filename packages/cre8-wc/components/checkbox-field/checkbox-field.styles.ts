@@ -615,7 +615,7 @@ span.ripple {
   line-height: var(--cre8-typography-label-small-line-height);
   text-decoration: var(--cre8-typography-label-small-text-decoration);
   text-transform: var(--cre8-typography-label-small-text-transform);
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--cre8-spacing-8);
 }
 
 /** 

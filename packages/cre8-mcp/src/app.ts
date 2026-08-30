@@ -14,9 +14,9 @@ import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import {
   handleGetPatterns,
-  handleSearchComponents,
   handleListComponents,
   handleGetComponent,
+  handleSearchComponents,
   handleGenerateCode,
   handleGetA2uiCatalog,
   handleValidateA2uiSpec,

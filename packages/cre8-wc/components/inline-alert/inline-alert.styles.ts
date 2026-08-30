@@ -611,8 +611,8 @@ span.ripple {
   font-weight: normal;
   display: inline-flex;
   align-items: flex-start;
-  gap: 0.5rem;
-  padding: 1rem;
+  gap: var(--cre8-spacing-8);
+  padding: var(--cre8-padding-16);
   color: var(--cre8-color-content-default);
   background-color: var(--cre8-color-bg-info);
   border-color: var(--cre8-color-border-info);
@@ -675,8 +675,8 @@ span.ripple {
   padding: 0;
   border: none;
   background-color: transparent;
-  gap: 0.5rem;
-  border-radius: none;
+  gap: var(--cre8-spacing-8);
+  border-radius: var(--cre8-border-radius-none);
 }
 
 /**
@@ -756,6 +756,6 @@ span.ripple {
 }
 .cre8-c-inline-alert--transparent .cre8-c-inline-alert__icon {
   top: 0;
-  padding: 0.125rem;
+  padding: var(--cre8-padding-2);
 }`;
 export default styles;

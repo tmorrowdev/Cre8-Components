@@ -615,11 +615,11 @@ span.ripple {
   line-height: var(--cre8-typography-label-default-line-height);
   text-decoration: var(--cre8-typography-label-default-text-decoration);
   text-transform: var(--cre8-typography-label-default-text-transform);
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--cre8-spacing-8);
 }
 
 .cre8-c-select-tile-list__list {
-  gap: 1.5rem;
+  gap: var(--cre8-spacing-24);
   display: grid;
   grid-template-columns: repeat(auto-fit, var(--cre8-select-tile-list-item-width, 13rem));
 }

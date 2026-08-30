@@ -60,7 +60,7 @@
   min-height: 30px;
   width: 100%;
   border-right: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
-  padding-right: size(5.5);
+  padding-right: var(--cre8-spacing-40);
 }
 
 .cre8-c-multi-select__tag-wrapper {
@@ -70,7 +70,7 @@
   display: flex;
   flex-wrap: wrap;
   height: 100%;
-  gap: size(0.5);
+  gap: var(--cre8-spacing-4);
 }
 
 .cre8-c-multi-select__icons-wrapper {
@@ -78,7 +78,7 @@
   justify-content: end;
   margin-right: -36px;
   margin-left: -48px;
-  gap: size(3);
+  gap: var(--cre8-spacing-24);
   min-width: 96px;
 
   button {

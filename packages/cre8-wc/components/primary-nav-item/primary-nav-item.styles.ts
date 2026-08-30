@@ -632,7 +632,7 @@ span.ripple {
   white-space: nowrap;
   width: 100%;
   margin: 0;
-  padding: 1rem 2rem;
+  padding: var(--cre8-padding-16) var(--cre8-spacing-32);
   color: var(--cre8-primary-nav-link-color, var(--cre8-color-header-menu-content-default));
   text-decoration: none;
   transition: all var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
@@ -663,12 +663,12 @@ span.ripple {
 }
 @media all and (min-width: 960px) {
   .cre8-c-primary-nav__link {
-    padding: 1rem 0.5rem;
+    padding: var(--cre8-padding-16) var(--cre8-padding-8);
   }
 }
 @media all and (min-width: 960px) {
   .cre8-c-primary-nav__link {
-    padding: 1rem;
+    padding: var(--cre8-padding-16);
     border-bottom: none;
   }
 }
@@ -694,7 +694,7 @@ cre8-icon-legacy {
 }
 @media all and (min-width: 960px) {
   cre8-icon-legacy {
-    margin-left: 0.5rem;
+    margin-left: var(--cre8-spacing-8);
   }
 }
 
@@ -738,8 +738,8 @@ cre8-icon-legacy {
   /* 1 */
   height: auto;
   /* 1 */
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: var(--cre8-spacing-32);
+  padding-bottom: var(--cre8-spacing-32);
   background: var(--cre8-color-bg-default);
   opacity: 1;
   /* 1 */
@@ -760,17 +760,17 @@ cre8-icon-legacy {
 .cre8-c-primary-nav__item--megamenu .cre8-c-primary-nav__item-panel-inner {
   max-width: 70rem;
   /* 1 */
-  padding-right: 2rem;
-  padding-left: 2rem;
+  padding-right: var(--cre8-spacing-32);
+  padding-left: var(--cre8-spacing-32);
   margin: 0 auto;
   /* 1 */
 }
 
 .cre8-c-primary-nav__item-before {
-  margin-right: 0.5rem;
+  margin-right: var(--cre8-spacing-8);
 }
 
 .cre8-c-primary-nav__item-after {
-  margin-left: 0.5rem;
+  margin-left: var(--cre8-spacing-8);
 }`;
 export default styles;
