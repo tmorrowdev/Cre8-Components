@@ -942,6 +942,10 @@ const a2ui = `
   --cre8-radius-tabs: calc(var(--cre8-seed-radius) * 0.5);
   --cre8-radius-large: var(--cre8-seed-radius);
   --cre8-radius-container: var(--cre8-seed-radius);
+  /* Rounder than a card by convention, but proportional to the seed --
+     not forced to a pill. A near-zero seed radius should produce a nearly
+     square button, not a full pill regardless of that value. */
+  --cre8-radius-button: calc(var(--cre8-seed-radius) * 2);
   --cre8-radius-pill: calc(var(--cre8-seed-radius) * 37.5);
 
   /* Border width — multiples of the border-width seed */
@@ -1791,7 +1795,7 @@ const a2ui = `
   --cre8-line-heights-18: 0.16;
   --cre8-border-radius-default: var(--cre8-radius-field);
   --cre8-border-radius-round: var(--cre8-radius-pill);
-  --cre8-border-radius-button: var(--cre8-radius-pill);
+  --cre8-border-radius-button: var(--cre8-radius-button);
   --cre8-border-radius-badge: var(--cre8-radius-pill);
   --cre8-border-radius-brand: var(--cre8-radius-pill);
   --cre8-border-radius-none: var(--cre8-radius-none);
