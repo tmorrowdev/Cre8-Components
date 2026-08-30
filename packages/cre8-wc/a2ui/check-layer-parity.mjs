@@ -23,6 +23,8 @@ import { readFileSync, existsSync } from 'node:fs';
 import { execSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { buildEmbeddingText, textHash } from './embedding-text.mjs';
+import { MODEL as EMBEDDING_MODEL, DIMENSIONS as EMBEDDING_DIMENSIONS } from './generate-embeddings.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const WC = join(HERE, '..');
@@ -264,6 +266,55 @@ check('the catalog matches the manifest it was generated from', () => {
     throw new Error(`compact was built from version ${compact.libraryVersion}, manifest is ${manifest.version}`);
   }
   return `all at ${manifest.version}`;
+});
+
+check('semantic search vectors match current component text', () => {
+  const embeddingsPath = join(WC, 'a2ui', 'catalog-embeddings.json');
+  if (!existsSync(embeddingsPath)) {
+    return 'no catalog-embeddings.json yet — search_components falls back to lexical matching; ' +
+      'run `OPENAI_API_KEY=... node a2ui/generate-embeddings.mjs` to enable semantic search';
+  }
+
+  const kgPath = join(WC, 'a2ui', 'catalog-kg.json');
+  const kg = read(kgPath);
+  const embeddings = read(embeddingsPath);
+  const components = kg.nodes.filter((n) => n.type === 'component');
+
+  if (embeddings.meta?.library_version !== manifest.version) {
+    throw new Error(
+      `catalog-embeddings.json was built from version ${embeddings.meta?.library_version}, ` +
+        `manifest is ${manifest.version} — regenerate with generate-embeddings.mjs`
+    );
+  }
+
+  const missing = [];
+  const stale = [];
+  for (const c of components) {
+    const vector = embeddings.vectors?.[c.id];
+    if (!vector) {
+      missing.push(c.id);
+      continue;
+    }
+    const expectedHash = textHash(buildEmbeddingText(kg, c));
+    if (vector.text_hash !== expectedHash) stale.push(c.id);
+    else if (vector.model !== EMBEDDING_MODEL || vector.dims !== EMBEDDING_DIMENSIONS) stale.push(c.id);
+  }
+
+  const orphaned = Object.keys(embeddings.vectors ?? {}).filter(
+    (id) => !components.some((c) => c.id === id)
+  );
+
+  if (missing.length || stale.length || orphaned.length) {
+    const parts = [];
+    if (missing.length) parts.push(`missing vector(s): ${missing.join(', ')}`);
+    if (stale.length) parts.push(`stale vector(s) (component text changed): ${stale.join(', ')}`);
+    if (orphaned.length) parts.push(`orphaned vector(s) (component no longer in catalog): ${orphaned.join(', ')}`);
+    throw new Error(
+      `catalog-embeddings.json is out of sync with catalog-kg.json\n      ${parts.join('\n      ')}\n` +
+        '      Regenerate with: OPENAI_API_KEY=... node a2ui/generate-embeddings.mjs'
+    );
+  }
+  return `${components.length} vectors, all current`;
 });
 
 // ── Report ───────────────────────────────────────────────────────────

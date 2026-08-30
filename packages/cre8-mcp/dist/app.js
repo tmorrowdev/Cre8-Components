@@ -219,13 +219,13 @@ export function createApp(options = {}) {
         const result = handleGetPatterns(input);
         return c.json(JSON.parse(result));
     });
-    app.get('/search', (c) => {
+    app.get('/search', async (c) => {
         const q = c.req.query('q');
         if (!q) {
             return c.json({ error: 'Missing required query parameter: q' }, 400);
         }
         const input = { query: q, format: 'web' };
-        const result = handleSearchComponents(input);
+        const result = await handleSearchComponents(input);
         return c.json(JSON.parse(result));
     });
     app.post('/generate', async (c) => {
@@ -264,13 +264,13 @@ export function createApp(options = {}) {
         const result = handleGetPatterns(input);
         return c.json(JSON.parse(result));
     });
-    app.get('/react/search', (c) => {
+    app.get('/react/search', async (c) => {
         const q = c.req.query('q');
         if (!q) {
             return c.json({ error: 'Missing required query parameter: q' }, 400);
         }
         const input = { query: q, format: 'react' };
-        const result = handleSearchComponents(input);
+        const result = await handleSearchComponents(input);
         return c.json(JSON.parse(result));
     });
     app.post('/react/generate', async (c) => {

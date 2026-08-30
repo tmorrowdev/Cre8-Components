@@ -56,7 +56,7 @@ export function createMcpServer(options = {}) {
                     result = handleGetPatterns(GetPatternsSchema.parse(args));
                     break;
                 case 'search_components':
-                    result = handleSearchComponents(SearchComponentsSchema.parse(args));
+                    result = await handleSearchComponents(SearchComponentsSchema.parse(args));
                     break;
                 case 'generate_code':
                     result = handleGenerateCode(GenerateCodeSchema.parse(args));

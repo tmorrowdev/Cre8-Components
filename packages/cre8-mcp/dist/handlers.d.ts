@@ -137,8 +137,16 @@ export declare function handleGetComponent(input: GetComponentInput): string;
 export declare function handleGetPatterns(input: GetPatternsInput): string;
 /**
  * search_components - Search components by name, description, or category (KG-backed)
+ *
+ * Tries semantic search first (query-time OpenAI embedding, ranked by cosine
+ * similarity against the vectors in catalog-embeddings.json). Falls back to
+ * the original lexical substring match whenever semantic search isn't
+ * available — no OPENAI_API_KEY, no committed embeddings file, or a failed
+ * API call — and also when semantic search runs but finds nothing above the
+ * similarity threshold, so a query never comes back emptier than the old
+ * lexical-only behavior would have.
  */
-export declare function handleSearchComponents(input: SearchComponentsInput): string;
+export declare function handleSearchComponents(input: SearchComponentsInput): Promise<string>;
 /**
  * generate_code - Generates React or Web Component code from a JSON schema
  */
