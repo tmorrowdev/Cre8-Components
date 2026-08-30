@@ -35,13 +35,15 @@ branch instead, add `--branch <name>` to the `git clone` in `installCommand`.
 
 ## Current deployment
 
-A preview deployment built this way (from `claude/website-deployment-b3wgau`,
-which carries the cre8-vivid retheme) lives in the
-`cre8-components-cre8-wc-u2p6` Vercel project (team `tmorrowdevs-projects`):
+The site is the **production** deployment of the
+`cre8-components-cre8-wc-u2p6` Vercel project (team `tmorrowdevs-projects`),
+built from `claude/website-deployment-b3wgau` via the bootstrap config:
 
-- https://cre8-components-cre8-wc-u2p6-poqa7jhio-tmorrowdevs-projects.vercel.app
+- https://cre8-components-cre8-wc-u2p6.vercel.app (production alias)
+- Intended custom domain: `cre8.dev` (attach in Project Settings > Domains;
+  custom-domain traffic bypasses the project's Vercel Authentication, so the
+  site is public there)
 
-Preview URLs in that project are behind Vercel Authentication (Standard
-Protection), so they require a Vercel login or a share link. To make the site
-public, either disable deployment protection for that project or move to the
-dedicated-project setup above.
+Preview URLs remain behind Vercel Authentication (Standard Protection).
+Note the bootstrap clones the branch above; after merging to `main`, redeploy
+with the clone pointed back at `main` so production tracks the default branch.
