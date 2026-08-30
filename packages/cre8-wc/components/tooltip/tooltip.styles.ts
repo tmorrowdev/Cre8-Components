@@ -627,7 +627,7 @@ span.ripple {
   transform: translateX(var(--rtlTranslateX, -50%));
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--cre8-spacing-8);
   width: max-content;
   max-width: 17.5rem;
   z-index: 400;
@@ -635,7 +635,7 @@ span.ripple {
   background-color: var(--cre8-color-bg-strong);
   border: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-strong);
   border-radius: var(--cre8-border-radius-container);
-  padding: 0.5rem;
+  padding: var(--cre8-padding-8);
   /**
    * Active state for tooltip panel
    */
@@ -765,7 +765,7 @@ span.ripple {
  */
 .cre8-c-tooltip__footer {
   display: flex;
-  gap: 1rem;
+  gap: var(--cre8-spacing-16);
   justify-content: flex-end;
   flex-grow: 1;
 }

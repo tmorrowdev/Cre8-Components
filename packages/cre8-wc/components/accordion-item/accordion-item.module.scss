@@ -21,7 +21,7 @@
   --cre8-u-icon-display: flex;
   --cre8-u-icon-align-items: center;
   --cre8-u-icon-justify-content: center;
-  padding: size(3) size(1);
+  padding: var(--cre8-padding-24) var(--cre8-padding-8);
 }
 
 .cre8-c-accordion-item--small cre8-heading button {
@@ -33,9 +33,9 @@
 }
 
 .cre8-c-accordion-item__body {
-  margin-right: size(0);
-  margin-left: size(0);
-  padding: size(0);
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0;
   overflow: hidden;
   visibility: hidden;
   transition: height var(--cre8-anim-fade-quick) var(--cre8-anim-ease), visibility var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
@@ -48,7 +48,7 @@
 .cre8-c-accordion-item__body-inner {
   display: flex;
   @include cre8-typography-body-default();
-  padding: size(1) size(6) size(0) size(1);
+  padding: var(--cre8-padding-8) var(--cre8-spacing-48) 0 var(--cre8-padding-8);
 }
 
 cre8-icon {
@@ -74,8 +74,8 @@ cre8-icon {
   display: flex;
   height: size(4);
   justify-content: center;
-  margin-left: size(1);
-  margin-right: size(0.25);
+  margin-left: var(--cre8-spacing-8);
+  margin-right: var(--cre8-spacing-2);
   min-height: size(4);
   min-width: size(4);
   width: size(4);
@@ -118,7 +118,7 @@ cre8-icon {
   background-color: var(--cre8-color-bg-transparent);
   border: var(--cre8-border-width-none);
   cursor: pointer;
-  padding: size(0.5) size(1);
+  padding: var(--cre8-padding-4) var(--cre8-padding-8);
   overflow-x: hidden;
   transition: color var(--cre8-anim-fade-quick) var(--cre8-anim-ease);
   width: 100%;
@@ -131,7 +131,7 @@ cre8-icon {
     justify-content: flex-start;
 
     .cre8-c-accordion-item__icon-before {
-      margin-left: size(0);
+      margin-left: 0;
     }
   }
 
@@ -176,12 +176,12 @@ cre8-icon {
 
 .cre8-c-accordion-item--icon-before {
   .cre8-c-accordion-item__body {
-    margin-left: size(5);
+    margin-left: var(--cre8-spacing-40);
   }
 }
 
 .cre8-c-accordion-item__icon-before {
-  margin-right: size(1.5);
+  margin-right: var(--cre8-spacing-12);
 
   h4[slot='header'] {
     display: block;

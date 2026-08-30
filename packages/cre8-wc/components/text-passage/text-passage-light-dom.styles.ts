@@ -628,7 +628,7 @@ cre8-text-passage[size=default] h1 {
 }
 cre8-text-passage h1,
 cre8-text-passage[size=default] h1 {
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--cre8-spacing-12);
 }
 cre8-text-passage,
 cre8-text-passage[size=default] {
@@ -658,7 +658,7 @@ cre8-text-passage[size=default] h2 {
 }
 cre8-text-passage h2,
 cre8-text-passage[size=default] h2 {
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--cre8-spacing-12);
 }
 cre8-text-passage,
 cre8-text-passage[size=default] {
@@ -688,7 +688,7 @@ cre8-text-passage[size=default] h3 {
 }
 cre8-text-passage h3,
 cre8-text-passage[size=default] h3 {
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--cre8-spacing-12);
 }
 cre8-text-passage,
 cre8-text-passage[size=default] {
@@ -718,7 +718,7 @@ cre8-text-passage[size=default] h4 {
 }
 cre8-text-passage h4,
 cre8-text-passage[size=default] h4 {
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--cre8-spacing-12);
 }
 cre8-text-passage,
 cre8-text-passage[size=default] {
@@ -734,7 +734,7 @@ cre8-text-passage[size=default] h5 {
   line-height: var(--cre8-typography-meta-large-line-height);
   text-decoration: var(--cre8-typography-meta-large-text-decoration);
   text-transform: var(--cre8-typography-meta-large-text-transform);
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--cre8-spacing-12);
 }
 cre8-text-passage,
 cre8-text-passage[size=default] {
@@ -756,7 +756,7 @@ cre8-text-passage[size=default] {
 }
 cre8-text-passage ul,
 cre8-text-passage[size=default] ul {
-  margin-left: 1.25rem;
+  margin-left: var(--cre8-spacing-18);
   padding-left: 0;
 }
 cre8-text-passage,
@@ -767,7 +767,7 @@ cre8-text-passage[size=default] {
 }
 cre8-text-passage ol,
 cre8-text-passage[size=default] ol {
-  margin-left: 1.125rem;
+  margin-left: var(--cre8-spacing-18);
   padding-left: 0;
 }
 cre8-text-passage,
@@ -795,7 +795,7 @@ cre8-text-passage[size=default] {
 cre8-text-passage p,
 cre8-text-passage[size=default] p {
   margin-top: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--cre8-spacing-24);
 }
 cre8-text-passage,
 cre8-text-passage[size=default] {
@@ -808,9 +808,9 @@ cre8-text-passage[size=default] blockquote {
   font-style: italic;
   border-left: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-content-subtle);
   color: var(--cre8-color-content-subtle);
-  padding-left: 1rem;
+  padding-left: var(--cre8-padding-16);
   margin-left: 0;
-  margin-bottom: 1rem;
+  margin-bottom: var(--cre8-spacing-16);
 }
 cre8-text-passage,
 cre8-text-passage[size=default] {
@@ -842,8 +842,8 @@ cre8-text-passage[inverted] blockquote {
   color: var(--cre8-color-content-knockout);
   font-style: italic;
   border-left: var(--cre8-border-width-default) var(--cre8-border-style-default) var(--cre8-color-border-knockout);
-  padding-left: 1rem;
+  padding-left: var(--cre8-padding-16);
   margin-left: 0;
-  margin-bottom: 1rem;
+  margin-bottom: var(--cre8-spacing-16);
 }`;
 export default styles;

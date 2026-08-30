@@ -602,6 +602,6 @@ span.ripple {
   margin: 0;
   padding: 0;
   list-style: none;
-  gap: 0.5rem;
+  gap: var(--cre8-spacing-8);
 }`;
 export default styles;

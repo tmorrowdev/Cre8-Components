@@ -73,7 +73,7 @@
  */
 .cre8-c-modal__header {
   display: flex;
-  padding: size(4) size(6) size(2);
+  padding: var(--cre8-spacing-32) var(--cre8-spacing-48) var(--cre8-padding-16);
   align-items: center;
 
   /**
@@ -128,7 +128,7 @@
 .cre8-c-modal__header-inner {
   display: flex;
   align-items: center;
-  gap: size(2);
+  gap: var(--cre8-spacing-16);
 
   cre8-icon {
     .cre8-modal-icon {
@@ -144,7 +144,7 @@
 .cre8-c-modal__body {
   max-height: 240px; // Prevent modal from getting too big based on content
   overflow: auto; // Force scrolling based on long amounts of content
-  padding: 0 size(6);
+  padding: 0 var(--cre8-spacing-48);
 
   /**
    * Modal Window Body for mobile user screen widths
@@ -159,7 +159,7 @@
  * Modal Window Footer
  */
 .cre8-c-modal__footer {
-  padding: size(3) size(6) calc(100vh - 95dvh); // Ensure footer slot isn't cut off on certain devices
+  padding: var(--cre8-padding-24) var(--cre8-spacing-48) calc(100vh - 95dvh);
 }
 
 /**

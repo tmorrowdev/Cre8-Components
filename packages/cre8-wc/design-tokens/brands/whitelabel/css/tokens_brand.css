@@ -1,9 +1,13 @@
 /**
- * cre8-a2ui: all tokens
+ * whitelabel: all tokens
  *
- * Four tiers, each referencing only the tier above it. Literal values appear
- * in exactly one place — the seed — so rebranding means overriding the seed
- * block, not editing this file.
+ * The blank base brand. Same four-tier structure as cre8-a2ui — literal
+ * values appear in exactly one place, the seed — but the seed itself is
+ * deliberately unbranded: a muted slate primary, the conventional
+ * green/red/amber status mapping, a system font stack, and a modest 8px
+ * radius. Nothing here should read as "someone's brand" before it is
+ * reseeded. Rebranding means overriding the seed block below, not editing
+ * this file.
  *
  * The legacy --cre8-color-* names are still emitted, as aliases, in tier 3.
  * Every one resolves to the value it had before the restructure.
@@ -15,15 +19,21 @@
    TIER 0 · SEED — the only literals in the system
    Owned by the integrator. Override these and every tier below follows.
    Nothing else in this file is a literal colour.
+
+   These particular values are deliberately unbranded — a neutral slate
+   primary and the conventional success/error/warning mapping (green/red/
+   amber, not this system's own cre8-a2ui default of cyan/pink/amber) — so
+   that an app looks like a blank, professional default before anyone runs
+   the cre8-brand skill against it, and fully like the target brand after.
    =========================================================================== */
-  --cre8-seed-primary: #3b82f6;
+  --cre8-seed-primary: #475569;
   --cre8-seed-neutral: #64748b;
-  --cre8-seed-success: #06b6d4;
-  --cre8-seed-error: #ec4899;
-  --cre8-seed-warning: #f59e0b;
-  --cre8-seed-accent: #7c3aed;
-  --cre8-seed-font: "Plus Jakarta Sans", sans-serif;
-  --cre8-seed-radius: 24px;
+  --cre8-seed-success: #16a34a;
+  --cre8-seed-error: #dc2626;
+  --cre8-seed-warning: #d97706;
+  --cre8-seed-accent: #6366f1;
+  --cre8-seed-font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --cre8-seed-radius: 8px;
   --cre8-seed-space: 0.25rem;
   --cre8-seed-font-size: 1rem;
   --cre8-seed-border-width: 0.0625rem;

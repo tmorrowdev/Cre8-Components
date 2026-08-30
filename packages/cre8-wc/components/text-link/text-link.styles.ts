@@ -656,6 +656,6 @@ span.ripple {
 * 1) Container used to place items after the text link
 */
 .cre8-c-text-link__after {
-  margin-left: 0.5rem;
+  margin-left: var(--cre8-spacing-8);
 }`;
 export default styles;

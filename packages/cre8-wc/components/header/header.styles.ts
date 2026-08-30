@@ -640,8 +640,8 @@ span.ripple {
   display: flex;
   align-items: center;
   width: 100%;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: var(--cre8-padding-16);
+  padding-bottom: var(--cre8-padding-16);
 }
 
 .cre8-c-header__bottom {

@@ -601,12 +601,12 @@ span.ripple {
   text-transform: var(--cre8-typography-body-default-text-transform);
   background: var(--cre8-color-bg-brand-xstrong);
   color: var(--cre8-color-content-knockout);
-  padding-top: 2.5rem;
-  padding-bottom: 3rem;
+  padding-top: var(--cre8-spacing-40);
+  padding-bottom: var(--cre8-spacing-48);
 }
 @media all and (min-width: 960px) {
   .cre8-c-footer {
-    padding-top: 3.4375rem;
+    padding-top: var(--cre8-spacing-48);
   }
 }`;
 export default styles;

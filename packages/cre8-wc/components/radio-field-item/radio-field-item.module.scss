@@ -14,7 +14,7 @@
   display: flex;
   position: relative;
   align-items: center;
-  margin-bottom: size(1);
+  margin-bottom: var(--cre8-spacing-8);
   min-height: size(3);
 
   /** 
@@ -130,6 +130,6 @@
  * Radio field item input 
  */
 .cre8-c-radio-field-item__label {
-  margin-left: size(4);
+  margin-left: var(--cre8-spacing-32);
   @include cre8-typography-label-small;
 }

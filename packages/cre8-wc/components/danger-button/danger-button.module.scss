@@ -488,7 +488,7 @@
  */
 
 cre8-icon+.cre8-c-danger-button__text:not(.cre8-u-is-vishidden) {
-  margin-left: size(1);
+  margin-left: var(--cre8-spacing-8);
   display: inline-flex;
 }
 
@@ -496,7 +496,7 @@ cre8-icon+.cre8-c-danger-button__text:not(.cre8-u-is-vishidden) {
    * Button icon directly after button text
    */
 .cre8-c-danger-button__text:not(.cre8-u-is-vishidden)+cre8-icon {
-  margin-left: size(1);
+  margin-left: var(--cre8-spacing-8);
   display: inline-flex;
 }
 
@@ -553,7 +553,7 @@ cre8-icon {
 }
 
 span.cre8-c-danger-button__icon {
-  margin-left: size(1);
+  margin-left: var(--cre8-spacing-8);
   max-width: fit-content;
   min-width: 0px;
   width: auto;

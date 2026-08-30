@@ -602,7 +602,7 @@ span.ripple {
 .cre8-c-button-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: var(--cre8-spacing-16);
 }
 
 :host([fullWidth]) {
@@ -614,7 +614,7 @@ span.ripple {
 }
 
 .cre8-c-button-group--gap-sm {
-  gap: 0.5rem;
+  gap: var(--cre8-spacing-8);
 }
 
 /**

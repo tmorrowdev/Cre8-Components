@@ -724,7 +724,7 @@ span.ripple {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.5rem;
+  gap: var(--cre8-spacing-8);
   pointer-events: none;
 }
 
@@ -732,7 +732,7 @@ span.ripple {
  * Select Arrow Icon
  */
 .cre8-c-select__icon-arrow {
-  margin-right: 0.375rem;
+  margin-right: var(--cre8-spacing-6);
   width: 0.75rem;
   height: 0.75rem;
 }

@@ -23,7 +23,7 @@
   padding: 0;
   align-items: center;
   justify-content: center;
-  gap: size(1);
+  gap: var(--cre8-spacing-8);
   color: var(--cre8-color-content-default);
   background-color: transparent;
   border: 0;

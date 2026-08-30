@@ -602,8 +602,8 @@ span.ripple {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
-  gap: 1rem;
+  padding: var(--cre8-padding-24);
+  gap: var(--cre8-padding-16);
   border-color: var(--cre8-color-border-default);
   border-style: var(--cre8-border-style-default);
   border-width: var(--cre8-border-width-default);
@@ -630,8 +630,8 @@ span.ripple {
  * Compact card - reduced padding for narrow layouts
  */
 .cre8-c-card--compact {
-  padding: 1rem;
-  gap: 0.5rem;
+  padding: var(--cre8-padding-16);
+  gap: var(--cre8-padding-8);
 }
 
 /**

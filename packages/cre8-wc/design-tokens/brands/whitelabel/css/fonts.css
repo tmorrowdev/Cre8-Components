@@ -1,0 +1,7 @@
+/**
+ * whitelabel ships no custom typeface on purpose — --cre8-seed-font resolves
+ * to the system font stack, so there is nothing to declare here. Once an
+ * integrator reseeds --cre8-seed-font to a real brand typeface, that
+ * typeface's own @font-face rules (if it isn't a system/Google font) belong
+ * in the integrator's own stylesheet, loaded after this one.
+ */

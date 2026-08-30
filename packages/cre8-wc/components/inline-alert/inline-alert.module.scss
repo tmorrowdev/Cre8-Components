@@ -16,8 +16,8 @@
   font-weight: normal;
   display: inline-flex;
   align-items: flex-start;
-  gap: size(1);
-  padding: size(2);
+  gap: var(--cre8-spacing-8);
+  padding: var(--cre8-padding-16);
   color: var(--cre8-color-content-default);
   background-color: var(--cre8-color-bg-info);
   border-color: var(--cre8-color-border-info);
@@ -80,8 +80,8 @@
   padding: 0;
   border: none;
   background-color: transparent;
-  gap: size(1);
-  border-radius: none;
+  gap: var(--cre8-spacing-8);
+  border-radius: var(--cre8-border-radius-none);
 }
 
 /**
@@ -156,6 +156,6 @@
    */
   .cre8-c-inline-alert--transparent & {
     top: 0;
-    padding: size(0.25);
+    padding: var(--cre8-padding-2);
   }
 }

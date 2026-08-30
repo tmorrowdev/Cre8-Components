@@ -19,7 +19,7 @@ $hero-min-height: 40vh;
  */
 .cre8-c-hero {
   position: relative;
-  margin-bottom: size(4);
+  margin-bottom: var(--cre8-spacing-32);
 
   @media all and (min-width: component.$cre8-breakpoint-md) {
     min-height: $hero-min-height;
@@ -48,7 +48,7 @@ $hero-min-height: 40vh;
 .cre8-c-hero__body {
   display: flex;
   flex-direction: column;
-  padding-top: size(2);
+  padding-top: var(--cre8-padding-16);
 
   @media all and (min-width: component.$cre8-breakpoint-md) {
     position: relative;
@@ -56,8 +56,8 @@ $hero-min-height: 40vh;
     justify-content: flex-end;
     width: 100%;
     min-height: $hero-min-height;
-    padding-top: size(4);
-    padding-bottom: size(4);
+    padding-top: var(--cre8-spacing-32);
+    padding-bottom: var(--cre8-spacing-32);
   }
 
   /**

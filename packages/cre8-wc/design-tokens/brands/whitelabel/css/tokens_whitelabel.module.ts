@@ -1,9 +1,14 @@
+const whitelabel = `
 /**
- * cre8-a2ui: all tokens
+ * whitelabel: all tokens
  *
- * Four tiers, each referencing only the tier above it. Literal values appear
- * in exactly one place — the seed — so rebranding means overriding the seed
- * block, not editing this file.
+ * The blank base brand. Same four-tier structure as cre8-a2ui — literal
+ * values appear in exactly one place, the seed — but the seed itself is
+ * deliberately unbranded: a muted slate primary, the conventional
+ * green/red/amber status mapping, a system font stack, and a modest 8px
+ * radius. Nothing here should read as "someone's brand" before it is
+ * reseeded. Rebranding means overriding the seed block below, not editing
+ * this file.
  *
  * The legacy --cre8-color-* names are still emitted, as aliases, in tier 3.
  * Every one resolves to the value it had before the restructure.
@@ -15,15 +20,21 @@
    TIER 0 · SEED — the only literals in the system
    Owned by the integrator. Override these and every tier below follows.
    Nothing else in this file is a literal colour.
+
+   These particular values are deliberately unbranded — a neutral slate
+   primary and the conventional success/error/warning mapping (green/red/
+   amber, not this system's own cre8-a2ui default of cyan/pink/amber) — so
+   that an app looks like a blank, professional default before anyone runs
+   the cre8-brand skill against it, and fully like the target brand after.
    =========================================================================== */
-  --cre8-seed-primary: #3b82f6;
+  --cre8-seed-primary: #475569;
   --cre8-seed-neutral: #64748b;
-  --cre8-seed-success: #06b6d4;
-  --cre8-seed-error: #ec4899;
-  --cre8-seed-warning: #f59e0b;
-  --cre8-seed-accent: #7c3aed;
-  --cre8-seed-font: "Plus Jakarta Sans", sans-serif;
-  --cre8-seed-radius: 24px;
+  --cre8-seed-success: #16a34a;
+  --cre8-seed-error: #dc2626;
+  --cre8-seed-warning: #d97706;
+  --cre8-seed-accent: #6366f1;
+  --cre8-seed-font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --cre8-seed-radius: 8px;
   --cre8-seed-space: 0.25rem;
   --cre8-seed-font-size: 1rem;
   --cre8-seed-border-width: 0.0625rem;
@@ -1132,3 +1143,260 @@
     --cre8-mode-border-brand: var(--cre8-primary-300);
   }
 }
+
+/**
+ * whitelabel ships no custom typeface on purpose — --cre8-seed-font resolves
+ * to the system font stack, so there is nothing to declare here. Once an
+ * integrator reseeds --cre8-seed-font to a real brand typeface, that
+ * typeface's own @font-face rules (if it isn't a system/Google font) belong
+ * in the integrator's own stylesheet, loaded after this one.
+ */
+
+:root{--cre8-typography-body-xlarge-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-xlarge-font-size: var(--cre8-font-size-5);
+      --cre8-typography-body-xlarge-font-weight: var(--cre8-font-weights-inter-0);
+      --cre8-typography-body-xlarge-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-body-xlarge-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-body-xlarge-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-xlarge-strong-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-xlarge-strong-font-size: var(--cre8-font-size-5);
+      --cre8-typography-body-xlarge-strong-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-body-xlarge-strong-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-body-xlarge-strong-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-body-xlarge-strong-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-xlarge-link-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-xlarge-link-font-size: var(--cre8-font-size-5);
+      --cre8-typography-body-xlarge-link-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-body-xlarge-link-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-body-xlarge-link-text-decoration: var(--cre8-text-decoration-underline);
+      --cre8-typography-body-xlarge-link-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-large-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-large-font-size: var(--cre8-font-size-3);
+      --cre8-typography-body-large-font-weight: var(--cre8-font-weights-inter-0);
+      --cre8-typography-body-large-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-body-large-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-body-large-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-large-strong-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-large-strong-font-size: var(--cre8-font-size-3);
+      --cre8-typography-body-large-strong-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-body-large-strong-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-body-large-strong-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-body-large-strong-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-default-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-default-font-size: var(--cre8-font-size-2);
+      --cre8-typography-body-default-font-weight: var(--cre8-font-weights-inter-0);
+      --cre8-typography-body-default-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-body-default-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-body-default-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-default-strong-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-default-strong-font-size: var(--cre8-font-size-2);
+      --cre8-typography-body-default-strong-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-body-default-strong-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-body-default-strong-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-body-default-strong-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-small-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-small-font-size: var(--cre8-font-size-1);
+      --cre8-typography-body-small-font-weight: var(--cre8-font-weights-inter-0);
+      --cre8-typography-body-small-line-height: var(--cre8-line-heights-8);
+      --cre8-typography-body-small-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-body-small-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-small-strong-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-small-strong-font-size: var(--cre8-font-size-1);
+      --cre8-typography-body-small-strong-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-body-small-strong-line-height: var(--cre8-line-heights-8);
+      --cre8-typography-body-small-strong-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-body-small-strong-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-large-link-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-large-link-font-size: var(--cre8-font-size-3);
+      --cre8-typography-body-large-link-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-body-large-link-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-body-large-link-text-decoration: var(--cre8-text-decoration-underline);
+      --cre8-typography-body-large-link-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-default-link-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-default-link-font-size: var(--cre8-font-size-2);
+      --cre8-typography-body-default-link-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-body-default-link-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-body-default-link-text-decoration: var(--cre8-text-decoration-underline);
+      --cre8-typography-body-default-link-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-small-link-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-small-link-font-size: var(--cre8-font-size-1);
+      --cre8-typography-body-small-link-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-body-small-link-line-height: var(--cre8-line-heights-8);
+      --cre8-typography-body-small-link-text-decoration: var(--cre8-text-decoration-underline);
+      --cre8-typography-body-small-link-text-transform: var(--cre8-text-case-none);
+--cre8-typography-label-default-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-label-default-font-size: var(--cre8-font-size-2);
+      --cre8-typography-label-default-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-label-default-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-label-default-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-label-default-text-transform: var(--cre8-text-case-none);
+--cre8-typography-label-large-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-label-large-font-size: var(--cre8-font-size-3);
+      --cre8-typography-label-large-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-label-large-line-height: var(--cre8-line-heights-5);
+      --cre8-typography-label-large-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-label-large-text-transform: var(--cre8-text-case-none);
+--cre8-typography-label-small-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-label-small-font-size: var(--cre8-font-size-1);
+      --cre8-typography-label-small-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-label-small-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-label-small-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-label-small-text-transform: var(--cre8-text-case-none);
+--cre8-typography-title-xlarge-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-title-xlarge-font-size: var(--cre8-font-size-8);
+      --cre8-typography-title-xlarge-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-title-xlarge-line-height: var(--cre8-line-heights-4);
+      --cre8-typography-title-xlarge-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-title-xlarge-text-transform: var(--cre8-text-case-none);
+--cre8-typography-title-xlarge-mobile-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-title-xlarge-mobile-font-size: var(--cre8-font-size-7);
+      --cre8-typography-title-xlarge-mobile-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-title-xlarge-mobile-line-height: var(--cre8-line-heights-4);
+      --cre8-typography-title-xlarge-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-title-xlarge-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-title-large-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-title-large-font-size: var(--cre8-font-size-6);
+      --cre8-typography-title-large-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-title-large-line-height: var(--cre8-line-heights-1);
+      --cre8-typography-title-large-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-title-large-text-transform: var(--cre8-text-case-none);
+--cre8-typography-title-large-mobile-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-title-large-mobile-font-size: var(--cre8-font-size-5);
+      --cre8-typography-title-large-mobile-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-title-large-mobile-line-height: var(--cre8-line-heights-1);
+      --cre8-typography-title-large-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-title-large-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-title-default-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-title-default-font-size: var(--cre8-font-size-5);
+      --cre8-typography-title-default-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-title-default-line-height: var(--cre8-line-heights-2);
+      --cre8-typography-title-default-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-title-default-text-transform: var(--cre8-text-case-none);
+--cre8-typography-title-default-mobile-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-title-default-mobile-font-size: var(--cre8-font-size-3);
+      --cre8-typography-title-default-mobile-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-title-default-mobile-line-height: var(--cre8-line-heights-2);
+      --cre8-typography-title-default-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-title-default-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-title-small-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-title-small-font-size: var(--cre8-font-size-3);
+      --cre8-typography-title-small-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-title-small-line-height: var(--cre8-line-heights-6);
+      --cre8-typography-title-small-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-title-small-text-transform: var(--cre8-text-case-none);
+--cre8-typography-title-small-mobile-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-title-small-mobile-font-size: var(--cre8-font-size-2);
+      --cre8-typography-title-small-mobile-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-title-small-mobile-line-height: var(--cre8-line-heights-6);
+      --cre8-typography-title-small-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-title-small-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-headline-large-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-headline-large-font-size: var(--cre8-font-size-9);
+      --cre8-typography-headline-large-font-weight: var(--cre8-font-weights-inter-3);
+      --cre8-typography-headline-large-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-headline-large-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-headline-large-text-transform: var(--cre8-text-case-none);
+--cre8-typography-headline-large-mobile-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-headline-large-mobile-font-size: var(--cre8-font-size-8);
+      --cre8-typography-headline-large-mobile-font-weight: var(--cre8-font-weights-inter-3);
+      --cre8-typography-headline-large-mobile-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-headline-large-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-headline-large-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-headline-default-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-headline-default-font-size: var(--cre8-font-size-8);
+      --cre8-typography-headline-default-font-weight: var(--cre8-font-weights-inter-3);
+      --cre8-typography-headline-default-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-headline-default-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-headline-default-text-transform: var(--cre8-text-case-none);
+--cre8-typography-headline-default-mobile-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-headline-default-mobile-font-size: var(--cre8-font-size-7);
+      --cre8-typography-headline-default-mobile-font-weight: var(--cre8-font-weights-inter-3);
+      --cre8-typography-headline-default-mobile-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-headline-default-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-headline-default-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-headline-small-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-headline-small-font-size: var(--cre8-font-size-7);
+      --cre8-typography-headline-small-font-weight: var(--cre8-font-weights-inter-3);
+      --cre8-typography-headline-small-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-headline-small-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-headline-small-text-transform: var(--cre8-text-case-none);
+--cre8-typography-headline-small-mobile-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-headline-small-mobile-font-size: var(--cre8-font-size-6);
+      --cre8-typography-headline-small-mobile-font-weight: var(--cre8-font-weights-inter-3);
+      --cre8-typography-headline-small-mobile-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-headline-small-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-headline-small-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-headline-xsmall-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-headline-xsmall-font-size: var(--cre8-font-size-5);
+      --cre8-typography-headline-xsmall-font-weight: var(--cre8-font-weights-inter-3);
+      --cre8-typography-headline-xsmall-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-headline-xsmall-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-headline-xsmall-text-transform: var(--cre8-text-case-none);
+--cre8-typography-headline-xsmall-mobile-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-headline-xsmall-mobile-font-size: var(--cre8-font-size-5);
+      --cre8-typography-headline-xsmall-mobile-font-weight: var(--cre8-font-weights-inter-3);
+      --cre8-typography-headline-xsmall-mobile-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-headline-xsmall-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-headline-xsmall-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-display-large-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-display-large-font-size: var(--cre8-font-size-13);
+      --cre8-typography-display-large-font-weight: var(--cre8-font-weights-inter-2);
+      --cre8-typography-display-large-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-display-large-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-display-large-text-transform: var(--cre8-text-case-none);
+--cre8-typography-display-large-mobile-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-display-large-mobile-font-size: var(--cre8-font-size-12);
+      --cre8-typography-display-large-mobile-font-weight: var(--cre8-font-weights-inter-2);
+      --cre8-typography-display-large-mobile-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-display-large-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-display-large-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-display-default-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-display-default-font-size: var(--cre8-font-size-11);
+      --cre8-typography-display-default-font-weight: var(--cre8-font-weights-inter-2);
+      --cre8-typography-display-default-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-display-default-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-display-default-text-transform: var(--cre8-text-case-none);
+--cre8-typography-display-default-mobile-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-display-default-mobile-font-size: var(--cre8-font-size-10);
+      --cre8-typography-display-default-mobile-font-weight: var(--cre8-font-weights-inter-2);
+      --cre8-typography-display-default-mobile-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-display-default-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-display-default-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-display-small-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-display-small-font-size: var(--cre8-font-size-9);
+      --cre8-typography-display-small-font-weight: var(--cre8-font-weights-inter-2);
+      --cre8-typography-display-small-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-display-small-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-display-small-text-transform: var(--cre8-text-case-none);
+--cre8-typography-display-small-mobile-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-display-small-mobile-font-size: var(--cre8-font-size-8);
+      --cre8-typography-display-small-mobile-font-weight: var(--cre8-font-weights-inter-2);
+      --cre8-typography-display-small-mobile-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-display-small-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-display-small-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-meta-default-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-meta-default-font-size: var(--cre8-font-size-2);
+      --cre8-typography-meta-default-font-weight: var(--cre8-font-weights-inter-2);
+      --cre8-typography-meta-default-line-height: var(--cre8-line-heights-3);
+      --cre8-typography-meta-default-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-meta-default-text-transform: var(--cre8-text-case-uppercase);
+--cre8-typography-meta-default-sentence-case-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-meta-default-sentence-case-font-size: var(--cre8-font-size-2);
+      --cre8-typography-meta-default-sentence-case-font-weight: var(--cre8-font-weights-inter-2);
+      --cre8-typography-meta-default-sentence-case-line-height: var(--cre8-line-heights-11);
+      --cre8-typography-meta-default-sentence-case-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-meta-default-sentence-case-text-transform: var(--cre8-text-case-none);
+--cre8-typography-meta-large-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-meta-large-font-size: var(--cre8-font-size-4);
+      --cre8-typography-meta-large-font-weight: var(--cre8-font-weights-inter-2);
+      --cre8-typography-meta-large-line-height: var(--cre8-line-heights-3);
+      --cre8-typography-meta-large-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-meta-large-text-transform: var(--cre8-text-case-uppercase);
+--cre8-typography-meta-small-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-meta-small-font-size: var(--cre8-font-size-1);
+      --cre8-typography-meta-small-font-weight: var(--cre8-font-weights-inter-2);
+      --cre8-typography-meta-small-line-height: var(--cre8-line-heights-3);
+      --cre8-typography-meta-small-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-meta-small-text-transform: var(--cre8-text-case-uppercase);}`;
+
+export default whitelabel;

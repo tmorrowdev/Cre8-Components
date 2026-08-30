@@ -11,6 +11,7 @@ import starbucks from '../../design-tokens/brands/starbucks/tokens_starbucks.mod
 import bolt from '../../design-tokens/brands/bolt/tokens_bolt.theme.ts';
 import a2ui from '../../design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.module.ts';
 import vivid from '../../design-tokens/brands/cre8-vivid/css/tokens_cre8-vivid.module.ts';
+import whitelabel from '../../design-tokens/brands/whitelabel/css/tokens_whitelabel.module.ts';
 import notion from '../../design-tokens/brands/notion/tokens_notion.module.ts';
 
 import headStyles from '../../design-tokens/core/scss/theming/head.scss?inline';
@@ -25,6 +26,7 @@ const themeStyles = [
   { name: 'Cre8 Default', styles: cre8 },
   { name: 'A2UI', styles: a2ui },
   { name: 'Vivid', styles: vivid },
+  { name: 'Whitelabel', styles: whitelabel },
   { name: 'Notion', styles: notion },
   { name: 'Cre8 Legacy', styles: cre8Legacy },
   { name: 'Legacy', styles: legacy },

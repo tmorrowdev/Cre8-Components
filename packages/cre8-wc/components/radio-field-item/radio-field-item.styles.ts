@@ -603,7 +603,7 @@ span.ripple {
   display: flex;
   position: relative;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--cre8-spacing-8);
   min-height: 1.5rem;
   /** 
   * 1) Form field that is compose of a radio input, label, and optional fieldnote.
@@ -719,7 +719,7 @@ span.ripple {
  * Radio field item input 
  */
 .cre8-c-radio-field-item__label {
-  margin-left: 2rem;
+  margin-left: var(--cre8-spacing-32);
   font-family: var(--cre8-typography-label-small-font-family);
   font-size: var(--cre8-typography-label-small-font-size);
   font-weight: var(--cre8-typography-label-small-font-weight);
