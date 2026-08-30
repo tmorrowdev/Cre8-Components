@@ -206,6 +206,9 @@
         .tools-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 40px; }
         @media (max-width: 900px){ .tools-grid{ grid-template-columns: 1fr 1fr; } }
         @media (max-width: 560px){ .tools-grid{ grid-template-columns: 1fr; } }
+
+        .install-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 40px; }
+        @media (max-width: 900px){ .install-grid{ grid-template-columns: 1fr; } }
         .tool {
             border: 1px solid #26324A; border-radius: 12px; padding: 20px;
             background: linear-gradient(180deg, #111A2E, #0B1220); color: #E2E8F0;
@@ -255,6 +258,7 @@
                 <a href="#why" class="hide-sm">Why AI-fluent</a>
                 <a href="#how" class="hide-sm">How it works</a>
                 <a href="#mcp" class="hide-sm">MCP server</a>
+                <a href="#plugin" class="hide-sm">Claude Code plugin</a>
                 <a href="#components" class="hide-sm">Components</a>
                 <a href="#consulting" class="hide-sm">Consulting</a>
                 <a href="https://github.com/tmorrowdev/Cre8-Components" target="_blank" rel="noopener" class="hide-sm">GitHub ↗</a>
@@ -279,7 +283,7 @@
             </div>
             <div class="hero-meta">
                 <div class="m"><strong>93</strong><span>components, WCAG-accessible</span></div>
-                <div class="m"><strong>5</strong><span>MCP intelligence tools</span></div>
+                <div class="m"><strong>15</strong><span>MCP tools — lookup, A2UI, live surfaces</span></div>
                 <div class="m"><strong>0</strong><span>hallucinated markup</span></div>
                 <div class="m"><strong>∞</strong><span>frameworks — it's the platform</span></div>
             </div>
@@ -420,16 +424,35 @@
             <div class="center" style="max-width:760px;">
                 <span class="section-eyebrow" style="color:var(--accent);">Component intelligence</span>
                 <h2 class="section-title" style="color:#fff;">An MCP server that teaches any model your design system</h2>
-                <p class="section-sub" style="color:var(--mut);">Point your AI client at <code style="color:var(--cre8-color-content-inverse-link);">@tmorrow/cre8-mcp</code> and it gains five tools for reasoning about Cre8 — no fine-tuning, no stale context.</p>
+                <p class="section-sub" style="color:var(--mut);">Point your AI client at <code style="color:var(--cre8-color-content-inverse-link);">@tmorrow/cre8-mcp</code> and it gains 15 tools spanning lookup, agent-authored UI trees, and UI that streams live — no fine-tuning, no stale context.</p>
             </div>
 
+            <h3 style="color:#fff; font-size:1rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; margin-top:48px; opacity:.75;">Component lookup</h3>
             <div class="tools-grid">
                 <div class="tool"><div class="fn">list_components</div><p>Enumerate every component in the library with its category and summary.</p></div>
                 <div class="tool"><div class="fn">get_component</div><p>Pull the full spec for one component — props, slots, events, and usage rules.</p></div>
-                <div class="tool"><div class="fn">search_components</div><p>Find the right building blocks by intent, keyword, or use case.</p></div>
-                <div class="tool"><div class="fn">get_patterns</div><p>Retrieve approved composition patterns — cards, forms, layouts, nav.</p></div>
-                <div class="tool"><div class="fn">generate_code</div><p>Turn an intent into ready-to-render Cre8 markup for web components or React.</p></div>
-                <div class="tool" style="border-style:dashed; background:transparent;"><div class="fn" style="color:var(--accent);">your client</div><p>Works in Claude, Cursor, and any Model Context Protocol host.</p></div>
+                <div class="tool"><div class="fn">search_components</div><p>Find the right building blocks by name, description, or category.</p></div>
+                <div class="tool"><div class="fn">get_patterns</div><p>Retrieve approved composition patterns — login forms, data tables, page layouts.</p></div>
+                <div class="tool"><div class="fn">get_composition</div><p>See how a component actually nests, from the library's own stories and examples — not a guessed naming rule.</p></div>
+                <div class="tool"><div class="fn">generate_code</div><p>Turn a component tree into ready-to-render markup for web components or React.</p></div>
+            </div>
+
+            <h3 style="color:#fff; font-size:1rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; margin-top:40px; opacity:.75;">A2UI — agent-authored UI trees</h3>
+            <div class="tools-grid">
+                <div class="tool"><div class="fn">get_a2ui_catalog</div><p>The full JSON-Schema catalog: every component, typed props, enum constraints, slots, events.</p></div>
+                <div class="tool"><div class="fn">validate_a2ui_spec</div><p>Validates a component tree against the catalog before it ships — not after.</p></div>
+                <div class="tool"><div class="fn">get_content_model</div><p>Whether a component takes content through <code>children</code> or <code>slots</code> — never both.</p></div>
+                <div class="tool"><div class="fn">cre8_guide</div><p>The briefing on emitting UI that validates first try and the traps that cost the most attempts.</p></div>
+            </div>
+
+            <h3 style="color:#fff; font-size:1rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; margin-top:40px; opacity:.75;">Live UI surfaces — streamed, not generated-and-done</h3>
+            <div class="tools-grid">
+                <div class="tool"><div class="fn">ui_open_surface</div><p>Opens a live surface and returns a URL a human can watch update in place.</p></div>
+                <div class="tool"><div class="fn">ui_stream</div><p>Streams a change into an open surface — the only mutation tool.</p></div>
+                <div class="tool"><div class="fn">ui_get_surface</div><p>Returns a surface's current tree and data model, with bindings resolved.</p></div>
+                <div class="tool"><div class="fn">ui_events</div><p>Reads what the user did — events fired by components you bound handlers to.</p></div>
+                <div class="tool"><div class="fn">ui_close_surface</div><p>Closes a surface. Also swept automatically after an hour of inactivity.</p></div>
+                <div class="tool" style="border-style:dashed; background:transparent;"><div class="fn" style="color:var(--accent);">your client</div><p>Works in Claude Code, Cursor, Windsurf, VS Code, Gemini CLI, OpenCode, Codex CLI, and any other Model Context Protocol host.</p></div>
             </div>
 
             <div class="codewrap">
@@ -456,6 +479,64 @@
   <span class="k">&lt;/<span class="t">cre8-grid-item</span>&gt;</span>
 <span class="k">&lt;/<span class="t">cre8-grid</span>&gt;</span>  <span class="c">// ← real components, accessible, on-brand</span></pre>
             </div>
+        </div>
+    </section>
+
+    <!-- Claude Code plugin -->
+    <section class="block" id="plugin" style="background:var(--paper);">
+        <div class="container">
+            <div class="center" style="max-width:760px;">
+                <span class="section-eyebrow">Install it as a plugin</span>
+                <h2 class="section-title">The MCP server above, plus four skills that teach an agent to actually use it</h2>
+                <p class="section-sub">A live tool call finds the right component. A skill is what stops an agent from stopping there — composition rules, token architecture, and framework-specific conventions the MCP intentionally doesn't restate. Bundled together as one plugin — on Claude Code, Codex CLI, and Gemini CLI today — they're the full arsenal: lookup, generation, brand theming, and live interactive surfaces.</p>
+            </div>
+
+            <div class="tools-grid" style="margin-top:40px;">
+                <div class="tool" style="border-color:#d8d4cc; background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">cre8-a2ui</div>
+                    <p style="color:var(--cre8-color-content-subtle);">Web Components guidance for vanilla JS/HTML and Lit — which component a job calls for, and the token/brand architecture underneath it.</p>
+                </div>
+                <div class="tool" style="border-color:#d8d4cc; background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">cre8-a2ui-react</div>
+                    <p style="color:var(--cre8-color-content-subtle);">The same judgment, for React — 72 components with props, patterns, and usage conventions specific to the React wrappers.</p>
+                </div>
+                <div class="tool" style="border-color:#d8d4cc; background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">cre8-mcp-ui</div>
+                    <p style="color:var(--cre8-color-content-subtle);">Serves Cre8 components as live, interactive UI from a Python FastMCP server — a tool call that returns a working surface, not a text reply.</p>
+                </div>
+                <div class="tool" style="border-color:#d8d4cc; background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">cre8-theming</div>
+                    <p style="color:var(--cre8-color-content-subtle);">Extracts a brand's colors, type and shape from a website, a picture, or a Design.md, and turns it into a seed-token override — your product, on-brand, in minutes.</p>
+                </div>
+            </div>
+
+            <div class="install-grid">
+                <div class="codewrap" style="margin-top:0;">
+                    <div class="bar">Claude Code</div>
+<pre class="code"><span class="c">// The MCP server and all four skills</span>
+<span class="k">claude</span> plugin install <span class="s">cre8@tmorrow_ai</span></pre>
+                </div>
+                <div class="codewrap" style="margin-top:0;">
+                    <div class="bar">Codex CLI</div>
+<pre class="code"><span class="c">// Same bundle, Codex's own plugin format</span>
+<span class="k">codex</span> plugin add <span class="s">cre8@tmorrow_ai</span></pre>
+                </div>
+                <div class="codewrap" style="margin-top:0;">
+                    <div class="bar">Gemini CLI</div>
+<pre class="code"><span class="c">// Same bundle, as a Gemini extension</span>
+<span class="k">gemini</span> extensions install <span class="s">https://github.com/tmorrowdev/cre8-gemini-extension.git</span></pre>
+                </div>
+            </div>
+
+            <p class="section-sub" style="margin-top:24px; max-width:70ch;">
+                <strong style="color:var(--cre8-color-content-default);">On Cursor, Windsurf, VS Code, OpenCode, or any other MCP-compatible tool?</strong>
+                Those don't have an equivalent plugin mechanism for the skills yet. But
+                <code>@tmorrow/cre8-mcp</code> is the same standard MCP server either way: drop the
+                <code>mcp.json</code> snippet above into that tool's MCP config and every tool works identically.
+                The composition and workflow guidance the skills carry is still reachable directly through the
+                MCP itself — call <code>cre8_guide</code> and <code>get_composition</code> the same way an agent
+                with the skills installed would.
+            </p>
         </div>
     </section>
 
@@ -562,6 +643,7 @@
                     <a href="#why">Why AI-fluent</a>
                     <a href="#how">How it works</a>
                     <a href="#mcp">MCP server</a>
+                    <a href="#plugin">Claude Code plugin</a>
                     <a href="#components">Components</a>
                     <a href="#consulting">Consulting</a>
                     <a href="https://github.com/tmorrowdev/Cre8-Components" target="_blank" rel="noopener">GitHub ↗</a>
