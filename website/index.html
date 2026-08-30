@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cre8 — The AI-Fluent Design System for Generative UI</title>
     <meta name="description" content="Cre8 is an AI-fluent design system by Cre8 Solutions LLC: 93 accessible web components that LLMs and agents can read, reason about, and render into production UI.">
-    <meta name="theme-color" content="#0F172A">
+    <meta name="theme-color" content="#0A0F1F">
     <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
-    <!-- Cre8 a2ui design tokens (vendored, self-contained) -->
+    <!-- Cre8 vivid design tokens (vendored, self-contained) -->
     <link rel="stylesheet" href="/vendor/cre8-theme.css">
     <!-- Open Graph / social -->
     <meta property="og:type" content="website">
@@ -27,15 +27,16 @@
 
     <style>
         :root {
-            /* Cre8 a2ui palette — blue + slate + magenta */
-            --teal: #3B82F6;         /* brand blue (primary) */
-            --teal-deep: #1D4ED8;    /* blue-700 */
-            --teal-ink: #1E40AF;     /* blue-800 */
-            --purple: #EC4899;       /* magenta accent */
-            --purple-soft: #FBCFE8;  /* pink-200 */
-            --ink: #0F172A;          /* slate-900 */
-            --ink-2: #1E293B;        /* slate-800 */
-            --paper: #F8FAFC;        /* slate-50 */
+            /* Page palette — resolved from the vendored cre8-vivid brand tokens */
+            --brand: var(--cre8-color-bg-brand-strong);          /* indigo */
+            --brand-deep: var(--cre8-color-bg-brand-strong-hover);
+            --brand-ink: var(--cre8-color-bg-brand-xstrong);
+            --accent: var(--cre8-color-bg-attention-strong);     /* violet */
+            --accent-soft: var(--cre8-color-bg-attention);
+            --accent-deep: var(--cre8-color-content-attention-icon);
+            --ink: var(--cre8-color-bg-strong);
+            --ink-2: var(--cre8-color-bg-active);
+            --paper: var(--cre8-color-bg-subtle);
             --line: rgba(255,255,255,0.10);
             --mut: rgba(226,232,240,0.74);
             --radius: 16px;
@@ -46,10 +47,10 @@
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: var(--cre8-typography-body-default-font-family);
             line-height: 1.6;
-            color: #0F172A;
-            background: #ffffff;
+            color: var(--cre8-color-content-default);
+            background: var(--cre8-color-bg-default);
             -webkit-font-smoothing: antialiased;
         }
 
@@ -74,7 +75,7 @@
         .brand .logo {
             width: 30px; height: 30px; border-radius: 8px; flex: none;
             background: #fff url("/assets/logo.svg") center / 22px auto no-repeat;
-            box-shadow: 0 0 0 4px rgba(31,43,236,0.16);
+            box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand) 16%, transparent);
         }
         .brand small { font-weight: 500; opacity: .55; margin-left: 6px; }
         .topnav { display: flex; align-items: center; gap: 28px; }
@@ -86,8 +87,8 @@
         .hero {
             position: relative; overflow: hidden;
             background:
-                radial-gradient(1100px 500px at 80% -10%, rgba(236,72,153,0.22), transparent 60%),
-                radial-gradient(900px 500px at 10% 0%, rgba(59,130,246,0.35), transparent 55%),
+                radial-gradient(1100px 500px at 80% -10%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 60%),
+                radial-gradient(900px 500px at 10% 0%, color-mix(in srgb, var(--brand) 35%, transparent), transparent 55%),
                 linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
             color: #fff;
             padding: 96px 0 84px;
@@ -105,22 +106,24 @@
         .eyebrow {
             display: inline-flex; align-items: center; gap: 8px;
             padding: 6px 14px; border-radius: 999px;
-            background: rgba(236,72,153,0.12);
-            border: 1px solid rgba(236,72,153,0.32);
-            color: var(--purple-soft);
+            background: color-mix(in srgb, var(--accent) 14%, transparent);
+            border: 1px solid color-mix(in srgb, var(--accent) 38%, transparent);
+            color: var(--accent-soft);
             font-size: .82rem; font-weight: 600; letter-spacing: .02em;
             margin-bottom: 26px;
         }
-        .eyebrow .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--purple); box-shadow: 0 0 0 0 rgba(236,72,153,0.7); animation: pulse 2.2s infinite; }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(236,72,153,0.6);} 70%{ box-shadow: 0 0 0 10px rgba(236,72,153,0);} 100%{ box-shadow:0 0 0 0 rgba(236,72,153,0);} }
+        .eyebrow .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 70%, transparent); animation: pulse 2.2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent);} 70%{ box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent) 0%, transparent);} 100%{ box-shadow:0 0 0 0 color-mix(in srgb, var(--accent) 0%, transparent);} }
 
         .hero h1 {
+            font-family: var(--cre8-typography-display-large-font-family);
+            font-weight: var(--cre8-typography-display-large-font-weight);
             font-size: clamp(2.5rem, 5.4vw, 4.1rem);
-            line-height: 1.03; letter-spacing: -0.03em; font-weight: 800;
+            line-height: 1.03; letter-spacing: -0.03em;
             max-width: 15ch;
         }
         .hero h1 .grad {
-            background: linear-gradient(100deg, var(--teal) 0%, var(--purple) 90%);
+            background: linear-gradient(100deg, color-mix(in srgb, var(--brand) 55%, #fff) 0%, var(--accent) 90%);
             -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
         }
         .hero p.lede {
@@ -152,26 +155,26 @@
         .chat-line { display: flex; gap: 10px; margin-bottom: 16px; align-items: flex-start; }
         .chat-avatar { width: 26px; height: 26px; border-radius: 8px; flex: none; display: grid; place-items: center; font-size: .8rem; font-weight: 700; }
         .chat-avatar.user { background: rgba(255,255,255,0.1); color: #fff; }
-        .chat-avatar.ai { background: linear-gradient(135deg, var(--teal), var(--purple)); color: #0B1220; }
+        .chat-avatar.ai { background: linear-gradient(135deg, var(--brand), var(--accent)); color: var(--cre8-color-content-knockout); }
         .chat-text { color: #E2E8F0; font-size: .95rem; }
         .chat-text .who { display:block; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color: var(--mut); margin-bottom:2px; }
         .tool-call {
             font-family: ui-monospace, monospace; font-size: .8rem;
-            background: rgba(59,130,246,0.14); border: 1px solid rgba(59,130,246,0.4);
-            color: #93C5FD; border-radius: 8px; padding: 7px 10px; margin: 8px 0; display: inline-block;
+            background: color-mix(in srgb, var(--brand) 14%, transparent); border: 1px solid color-mix(in srgb, var(--brand) 40%, transparent);
+            color: var(--cre8-color-content-inverse-link); border-radius: 8px; padding: 7px 10px; margin: 8px 0; display: inline-block;
         }
-        .tool-call b { color: #DBEAFE; }
+        .tool-call b { color: var(--cre8-color-bg-brand-active); }
         .render-surface {
             background: #ffffff; height: 100%;
             padding: 22px; display: flex; flex-direction: column; gap: 16px;
         }
-        .render-label { font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:#64748B; font-weight:700; }
+        .render-label { font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--cre8-color-content-subtle); font-weight:700; }
 
         /* ---------- Sections ---------- */
         section.block { padding: 88px 0; }
-        .section-eyebrow { color: var(--teal); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .8rem; }
-        .section-title { font-size: clamp(1.9rem, 3.4vw, 2.7rem); letter-spacing: -0.02em; font-weight: 800; margin: 10px 0 14px; color: #0F172A; }
-        .section-sub { color: #475569; font-size: 1.1rem; max-width: 62ch; }
+        .section-eyebrow { color: var(--brand); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .8rem; }
+        .section-title { font-family: var(--cre8-typography-headline-large-font-family); font-weight: var(--cre8-typography-headline-large-font-weight); font-size: clamp(1.9rem, 3.4vw, 2.7rem); letter-spacing: -0.02em; margin: 10px 0 14px; color: var(--cre8-color-content-default); }
+        .section-sub { color: var(--cre8-color-content-subtle); font-size: 1.1rem; max-width: 62ch; }
         .center { text-align: center; margin: 0 auto; }
         .center .section-sub { margin-left: auto; margin-right: auto; }
 
@@ -182,11 +185,12 @@
             border: 1px solid #e6e3dd; border-radius: var(--radius); padding: 28px;
             background: #fff; transition: transform .25s, box-shadow .25s, border-color .25s;
         }
-        .pillar:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -22px rgba(59,130,246,0.5); border-color: rgba(59,130,246,0.4); }
-        .pillar .ic { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; font-size: 1.4rem; margin-bottom: 16px;
-            background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(236,72,153,0.16)); }
-        .pillar h3 { font-size: 1.22rem; font-weight: 700; color: #0F172A; margin-bottom: 8px; }
-        .pillar p { color: #475569; font-size: .98rem; }
+        .pillar:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -22px color-mix(in srgb, var(--brand) 50%, transparent); border-color: color-mix(in srgb, var(--brand) 40%, transparent); }
+        .pillar .ic { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 16px;
+            background: linear-gradient(135deg, color-mix(in srgb, var(--brand) 12%, transparent), color-mix(in srgb, var(--accent) 16%, transparent)); }
+        .pillar .ic cre8-icon { color: var(--brand); }
+        .pillar h3 { font-family: var(--cre8-typography-title-default-font-family); font-weight: var(--cre8-typography-title-default-font-weight); font-size: 1.22rem; color: var(--cre8-color-content-default); margin-bottom: 8px; }
+        .pillar p { color: var(--cre8-color-content-subtle); font-size: .98rem; }
 
         /* how it works */
         .how { background: var(--paper); }
@@ -194,9 +198,9 @@
         @media (max-width: 900px){ .steps{ grid-template-columns: 1fr 1fr; } }
         @media (max-width: 560px){ .steps{ grid-template-columns: 1fr; } }
         .step { position: relative; padding-top: 12px; }
-        .step .n { font-family: ui-monospace, monospace; font-size: .85rem; color: var(--teal); font-weight: 700; border-top: 2px solid var(--teal); padding-top: 12px; display: block; }
-        .step h3 { margin: 12px 0 6px; font-size: 1.08rem; color: #0F172A; }
-        .step p { color: #475569; font-size: .95rem; }
+        .step .n { font-family: ui-monospace, monospace; font-size: .85rem; color: var(--brand); font-weight: 700; border-top: 2px solid var(--brand); padding-top: 12px; display: block; }
+        .step h3 { font-family: var(--cre8-typography-title-default-font-family); font-weight: var(--cre8-typography-title-default-font-weight); margin: 12px 0 6px; font-size: 1.08rem; color: var(--cre8-color-content-default); }
+        .step p { color: var(--cre8-color-content-subtle); font-size: .95rem; }
 
         /* MCP tools */
         .tools-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 40px; }
@@ -206,32 +210,32 @@
             border: 1px solid #26324A; border-radius: 12px; padding: 20px;
             background: linear-gradient(180deg, #111A2E, #0B1220); color: #E2E8F0;
         }
-        .tool .fn { font-family: ui-monospace, monospace; font-size: .95rem; color: #93C5FD; font-weight: 600; }
-        .tool .fn::before { content: "▸ "; color: var(--purple); }
+        .tool .fn { font-family: ui-monospace, monospace; font-size: .95rem; color: var(--cre8-color-content-inverse-link); font-weight: 600; }
+        .tool .fn::before { content: "▸ "; color: var(--accent); }
         .tool p { color: var(--mut); font-size: .9rem; margin-top: 8px; }
 
         .codewrap { margin-top: 42px; border-radius: var(--radius); overflow: hidden; border: 1px solid #26324A; }
         .codewrap .bar { background: #0B1220; color: var(--mut); font-size: .78rem; padding: 10px 16px; border-bottom: 1px solid #26324A; font-family: ui-monospace, monospace; }
         pre.code { background: #080D1A; color: #E2E8F0; padding: 22px; overflow-x: auto; font-size: .86rem; line-height: 1.7; }
-        pre.code .k { color: #93C5FD; } pre.code .s { color: #BBF7D0; } pre.code .c { color: #64748B; } pre.code .t { color: var(--purple); }
+        pre.code .k { color: var(--cre8-color-content-inverse-link); } pre.code .s { color: #BBF7D0; } pre.code .c { color: #94A3B8; } pre.code .t { color: var(--accent); }
 
         /* component wall */
         .wall { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px; }
-        .chip { border: 1px solid #d8d4cc; background: #fff; color: #334155; border-radius: 999px; padding: 7px 14px; font-family: ui-monospace, monospace; font-size: .82rem; }
-        .chip.hot { border-color: var(--teal); color: var(--teal); background: rgba(59,130,246,0.06); }
+        .chip { border: 1px solid #d8d4cc; background: #fff; color: var(--cre8-color-content-subtle); border-radius: 999px; padding: 7px 14px; font-family: ui-monospace, monospace; font-size: .82rem; }
+        .chip.hot { border-color: var(--brand); color: var(--brand); background: color-mix(in srgb, var(--brand) 6%, transparent); }
 
         /* CTA */
         .cta {
             color: #fff; text-align: center;
             background:
-                radial-gradient(700px 300px at 50% 0%, rgba(236,72,153,0.25), transparent 60%),
-                linear-gradient(135deg, var(--teal-deep) 0%, var(--teal) 100%);
+                radial-gradient(700px 300px at 50% 0%, color-mix(in srgb, var(--accent) 25%, transparent), transparent 60%),
+                linear-gradient(135deg, var(--brand-deep) 0%, var(--brand) 100%);
         }
-        .cta h2 { font-size: clamp(2rem,4vw,3rem); font-weight: 800; letter-spacing: -0.02em; }
+        .cta h2 { font-family: var(--cre8-typography-headline-large-font-family); font-weight: var(--cre8-typography-headline-large-font-weight); font-size: clamp(2rem,4vw,3rem); letter-spacing: -0.02em; }
         .cta p { color: rgba(255,255,255,0.85); font-size: 1.2rem; margin: 16px auto 30px; max-width: 52ch; }
         .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-        .cmd { display:inline-flex; align-items:center; gap:10px; margin-top:26px; font-family: ui-monospace, monospace; font-size:.92rem; background: rgba(0,0,0,0.28); border:1px solid rgba(255,255,255,0.2); border-radius:10px; padding:12px 16px; color:#EFF6FF; }
-        .cmd .p { color: var(--purple-soft); }
+        .cmd { display:inline-flex; align-items:center; gap:10px; margin-top:26px; font-family: ui-monospace, monospace; font-size:.92rem; background: rgba(0,0,0,0.28); border:1px solid rgba(255,255,255,0.2); border-radius:10px; padding:12px 16px; color:var(--cre8-color-bg-info); }
+        .cmd .p { color: var(--accent-soft); }
 
         footer.site { background: var(--ink); color: var(--mut); padding: 54px 0 40px; }
         .foot-top { display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; align-items:flex-start; }
@@ -252,7 +256,7 @@
                 <a href="#how" class="hide-sm">How it works</a>
                 <a href="#mcp" class="hide-sm">MCP server</a>
                 <a href="#components" class="hide-sm">Components</a>
-                <a href="#contact" class="hide-sm">Contact</a>
+                <a href="#consulting" class="hide-sm">Consulting</a>
                 <a href="https://github.com/tmorrowdev/Cre8-Components" target="_blank" rel="noopener" class="hide-sm">GitHub ↗</a>
                 <a href="#start">Get started</a>
             </nav>
@@ -291,7 +295,7 @@
                         <div class="chat-line">
                             <div class="chat-avatar user">U</div>
                             <div class="chat-text"><span class="who">prompt</span>
-                                "Build me a plan-upgrade card with a heading, a couple of benefit badges, and a primary CTA."
+                                "Build me a getting-started card with a heading, a couple of highlight badges, and a primary CTA."
                             </div>
                         </div>
                         <div class="chat-line">
@@ -299,7 +303,7 @@
                             <div class="chat-text"><span class="who">Cre8-aware agent</span>
                                 Querying the design system…
                                 <div class="tool-call">search_components(<b>"card, badge, button"</b>)</div>
-                                <div class="tool-call">generate_code(<b>intent: "upgrade card"</b>)</div>
+                                <div class="tool-call">generate_code(<b>intent: "getting-started card"</b>)</div>
                                 Composing verified components →
                             </div>
                         </div>
@@ -307,24 +311,24 @@
                 </div>
                 <div class="demo-pane">
                     <div class="demo-head" style="justify-content:space-between;">
-                        <span>rendered output</span><span style="text-transform:none; letter-spacing:0; opacity:.6;">live Cre8 components ↓</span>
+                        <span>rendered output</span><span style="text-transform:none; letter-spacing:0; opacity:.85;">live Cre8 components ↓</span>
                     </div>
                     <div class="render-surface">
                         <span class="render-label">Generated UI</span>
                         <cre8-card variant="vertical">
-                            <div slot="header" style="padding:18px 20px; background:linear-gradient(135deg,#3B82F6,#1D4ED8); color:#fff;">
-                                <h3 style="margin:0; font-size:1.15rem;">Upgrade to Pro</h3>
+                            <div slot="header" style="padding:18px 20px; background:linear-gradient(135deg,var(--brand),var(--brand-deep)); color:#fff;">
+                                <h3 style="margin:0; font-size:1.15rem;">Build with Cre8</h3>
                             </div>
                             <div style="padding:20px;">
-                                <p style="color:#475569; margin-bottom:14px;">Everything in Free, plus advanced generative workflows.</p>
+                                <p style="color:var(--cre8-color-content-subtle); margin-bottom:14px;">Free and open source — install the library and compose your first page in minutes.</p>
                                 <div style="display:flex; gap:8px; flex-wrap:wrap;">
-                                    <cre8-badge text="Unlimited" status="success" variant="light"></cre8-badge>
-                                    <cre8-badge text="Priority AI" status="info" variant="light"></cre8-badge>
-                                    <cre8-badge text="SSO" status="attention" variant="light"></cre8-badge>
+                                    <cre8-badge text="Open source" status="success" variant="light"></cre8-badge>
+                                    <cre8-badge text="MIT licensed" status="info" variant="light"></cre8-badge>
+                                    <cre8-badge text="93 components" status="attention" variant="light"></cre8-badge>
                                 </div>
                             </div>
-                            <div slot="footer" style="padding:16px 20px; background:#f6f5f3;">
-                                <cre8-button text="Upgrade now" variant="primary" size="sm"></cre8-button>
+                            <div slot="footer" style="padding:16px 20px; background:var(--paper);">
+                                <cre8-button text="Get started" variant="primary" size="sm"></cre8-button>
                             </div>
                         </cre8-card>
                     </div>
@@ -344,32 +348,32 @@
 
             <div class="pillars">
                 <div class="pillar">
-                    <div class="ic" aria-hidden="true">📖</div>
+                    <div class="ic" aria-hidden="true"><cre8-icon svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M17.1527 15.0943H16.0686L15.6844 14.7238C17.0292 13.1595 17.8388 11.1286 17.8388 8.91938C17.8388 3.99314 13.8456 0 8.91938 0C3.99314 0 0 3.99314 0 8.91938C0 13.8456 3.99314 17.8388 8.91938 17.8388C11.1286 17.8388 13.1595 17.0292 14.7238 15.6844L15.0943 16.0686V17.1527L21.9554 24L24 21.9554L17.1527 15.0943ZM8.91938 15.0943C5.50257 15.0943 2.74443 12.3362 2.74443 8.91938C2.74443 5.50257 5.50257 2.74443 8.91938 2.74443C12.3362 2.74443 15.0943 5.50257 15.0943 8.91938C15.0943 12.3362 12.3362 15.0943 8.91938 15.0943Z"/></svg>'></cre8-icon></div>
                     <h3>Machine-readable by design</h3>
                     <p>A full <code>custom-elements.json</code> manifest describes every tag, prop, slot, and event — so an agent knows exactly what exists and how to use it. No scraping, no guessing.</p>
                 </div>
                 <div class="pillar">
-                    <div class="ic" aria-hidden="true">🧩</div>
+                    <div class="ic" aria-hidden="true"><cre8-icon svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M24 13.7143H13.7143V24H10.2857V13.7143H0V10.2857H10.2857V0H13.7143V10.2857H24V13.7143Z"/></svg>'></cre8-icon></div>
                     <h3>Composable component trees</h3>
                     <p>Agents emit structured component trees, not brittle hand-rolled HTML. The output is real Cre8 elements — inspectable, diffable, and identical to what a human would ship.</p>
                 </div>
                 <div class="pillar">
-                    <div class="ic" aria-hidden="true">♿</div>
+                    <div class="ic" aria-hidden="true"><cre8-icon svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M12 12C15.315 12 18 9.315 18 6C18 2.685 15.315 0 12 0C8.685 0 6 2.685 6 6C6 9.315 8.685 12 12 12ZM12 15C7.995 15 0 17.01 0 21V24H24V21C24 17.01 16.005 15 12 15Z"/></svg>'></cre8-icon></div>
                     <h3>Accessible by construction</h3>
                     <p>Whatever the model generates inherits WCAG 2.1 semantics, keyboard support, and ARIA from the components themselves. Accessibility isn't prompted — it's guaranteed.</p>
                 </div>
                 <div class="pillar">
-                    <div class="ic" aria-hidden="true">🎨</div>
+                    <div class="ic" aria-hidden="true"><cre8-icon svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24" fill="currentColor" aria-hidden="true"><g> <path fill-rule="evenodd" clip-rule="evenodd" d="M9.96354 1.84117C9.94878 1.8529 9.93456 1.86558 9.92097 1.87922L0.778116 11.0545C0.766444 11.0752 0.754799 11.0947 0.743545 11.1135C0.691872 11.2002 0.64843 11.273 0.64843 11.3798L0 15.3493C0 15.5445 0 15.6747 0.129686 15.8699C0.185139 15.9187 0.336764 16 0.518744 16L4.47416 15.2842C4.49293 15.2802 4.51051 15.2769 4.52726 15.2736C4.62256 15.2553 4.69107 15.2422 4.79838 15.1541L13.9412 5.9788L13.9414 5.97422L15.3679 4.59847C16.2109 3.90443 16.2109 2.57945 15.3679 1.75922L14.2007 0.623525C13.4875 -0.196703 12.0749 -0.213285 11.232 0.606942L9.96354 1.84117ZM11.0527 2.29683L13.6534 4.908L14.6547 3.89649C15.0438 3.50605 15.0438 2.85532 14.6547 2.46489L13.4875 1.29357C13.0985 0.903137 12.4501 0.903137 12.061 1.29357L11.0527 2.29683ZM1.68584 11.7052L1.1671 14.8287L4.27956 14.3081L4.63633 13.9501L2.04261 11.3472L1.68584 11.7052ZM2.75589 10.6314L10.31 3.05053L12.9037 5.65345L5.3496 13.2343L2.75589 10.6314Z"/> </g></svg>'></cre8-icon></div>
                     <h3>On-brand through tokens</h3>
                     <p>Generated UI reads from design tokens, so a swap of the token file re-themes everything the AI produced. Cre8, brand, or a custom theme — the model stays inside the lines.</p>
                 </div>
                 <div class="pillar">
-                    <div class="ic" aria-hidden="true">🔌</div>
+                    <div class="ic" aria-hidden="true"><cre8-icon svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M17.6667 18.68V9.33333H15V18.68H11L16.3333 24L21.6667 18.68H17.6667ZM8.33333 0L3 5.32H7V14.6667H9.66667V5.32H13.6667L8.33333 0Z"/></svg>'></cre8-icon></div>
                     <h3>MCP-native</h3>
                     <p>The <code>@tmorrow/cre8-mcp</code> server plugs component intelligence straight into Claude, Cursor, and any MCP client — live, versioned, and always in sync with the library.</p>
                 </div>
                 <div class="pillar">
-                    <div class="ic" aria-hidden="true">🌐</div>
+                    <div class="ic" aria-hidden="true"><cre8-icon svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM9.96661 14.4241C11.6165 13.9237 12.9965 12.8029 13.8354 11.3333H11.2975C10.9487 12.7195 10.4242 13.7362 9.96661 14.4241ZM8.11204 14.7105C8.69142 14.0313 9.43024 12.9258 9.89827 11.3333H6.10173C6.56959 12.9252 7.30805 14.0305 7.88732 14.7098C7.93218 14.7107 7.97715 14.7111 8.02222 14.7111C8.05221 14.7111 8.08215 14.7109 8.11204 14.7105ZM11.5553 10H14.4139C14.6071 9.37494 14.7111 8.71073 14.7111 8.02222C14.7111 7.31737 14.6021 6.63798 14.4 6H11.555C11.6398 6.61136 11.6889 7.27776 11.6889 8.00143C11.6889 8.72403 11.64 9.38948 11.5553 10ZM10.199 6C10.2982 6.61144 10.3556 7.27785 10.3556 8.00143C10.3556 8.72394 10.2984 9.3894 10.1995 10H5.80054C5.70165 9.3894 5.64444 8.72394 5.64444 8.00143C5.64444 7.27785 5.70182 6.61144 5.80098 6H10.199ZM11.2969 4.66667H13.8098C12.9748 3.22953 11.6198 2.13189 10.0025 1.63131C10.4511 2.31811 10.9572 3.31747 11.2969 4.66667ZM8.14947 1.33452C8.72262 2.01721 9.43951 3.10914 9.89755 4.66667H6.10245C6.56027 3.1099 7.27668 2.01828 7.84969 1.33552C7.90703 1.33406 7.96454 1.33333 8.02222 1.33333C8.06473 1.33333 8.10715 1.33373 8.14947 1.33452ZM4.31111 8.00143C4.31111 7.27776 4.36019 6.61136 4.44504 6H1.64446C1.44236 6.63798 1.33333 7.31737 1.33333 8.02222C1.33333 8.71073 1.43736 9.37494 1.63055 10H4.44467C4.36005 9.38948 4.31111 8.72403 4.31111 8.00143ZM4.70309 4.66667C5.03991 3.32892 5.54031 2.33511 5.98609 1.64888C4.39342 2.15727 3.06002 3.24612 2.23463 4.66667H4.70309ZM6.02197 14.4069C5.56711 13.7193 5.04836 12.708 4.70248 11.3333H2.20903C3.03842 12.7863 4.39684 13.8983 6.02197 14.4069Z"/></svg>'></cre8-icon></div>
                     <h3>Framework-agnostic</h3>
                     <p>Web Components run anywhere — React, Vue, Angular, or plain HTML. Generative UI you build with Cre8 isn't locked to one renderer or one runtime.</p>
                 </div>
@@ -414,9 +418,9 @@
     <section class="block" id="mcp" style="background:linear-gradient(180deg,#0B1220,#080D1A); color:#E2E8F0;">
         <div class="container">
             <div class="center" style="max-width:760px;">
-                <span class="section-eyebrow" style="color:var(--purple);">Component intelligence</span>
+                <span class="section-eyebrow" style="color:var(--accent);">Component intelligence</span>
                 <h2 class="section-title" style="color:#fff;">An MCP server that teaches any model your design system</h2>
-                <p class="section-sub" style="color:var(--mut);">Point your AI client at <code style="color:#93C5FD;">@tmorrow/cre8-mcp</code> and it gains five tools for reasoning about Cre8 — no fine-tuning, no stale context.</p>
+                <p class="section-sub" style="color:var(--mut);">Point your AI client at <code style="color:var(--cre8-color-content-inverse-link);">@tmorrow/cre8-mcp</code> and it gains five tools for reasoning about Cre8 — no fine-tuning, no stale context.</p>
             </div>
 
             <div class="tools-grid">
@@ -425,7 +429,7 @@
                 <div class="tool"><div class="fn">search_components</div><p>Find the right building blocks by intent, keyword, or use case.</p></div>
                 <div class="tool"><div class="fn">get_patterns</div><p>Retrieve approved composition patterns — cards, forms, layouts, nav.</p></div>
                 <div class="tool"><div class="fn">generate_code</div><p>Turn an intent into ready-to-render Cre8 markup for web components or React.</p></div>
-                <div class="tool" style="border-style:dashed; background:transparent;"><div class="fn" style="color:var(--purple);">your client</div><p>Works in Claude, Cursor, and any Model Context Protocol host.</p></div>
+                <div class="tool" style="border-style:dashed; background:transparent;"><div class="fn" style="color:var(--accent);">your client</div><p>Works in Claude, Cursor, and any Model Context Protocol host.</p></div>
             </div>
 
             <div class="codewrap">
@@ -500,19 +504,19 @@
 
             <div style="margin-top:52px; display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
                 <cre8-card variant="vertical">
-                    <div slot="header" style="padding:16px 18px; background:#3B82F6; color:#fff;"><h3 style="margin:0; font-size:1.05rem;">Forms</h3></div>
-                    <div style="padding:18px; color:#475569;">Fields, selects, date pickers, and validation the agent wires up correctly every time.</div>
-                    <div slot="footer" style="padding:14px 18px; background:#f6f5f3;"><cre8-badge text="Validated" status="success"></cre8-badge></div>
+                    <div slot="header" style="padding:16px 18px; background:var(--brand); color:#fff;"><h3 style="margin:0; font-size:1.05rem;">Forms</h3></div>
+                    <div style="padding:18px; color:var(--cre8-color-content-subtle);">Fields, selects, date pickers, and validation the agent wires up correctly every time.</div>
+                    <div slot="footer" style="padding:14px 18px; background:var(--paper);"><cre8-badge text="Validated" status="success"></cre8-badge></div>
                 </cre8-card>
                 <cre8-card variant="vertical">
-                    <div slot="header" style="padding:16px 18px; background:#1D4ED8; color:#fff;"><h3 style="margin:0; font-size:1.05rem;">Data display</h3></div>
-                    <div style="padding:18px; color:#475569;">Tables, progress meters, and skeleton loaders for the dashboards models love to build.</div>
-                    <div slot="footer" style="padding:14px 18px; background:#f6f5f3;"><cre8-badge text="Composable" status="info"></cre8-badge></div>
+                    <div slot="header" style="padding:16px 18px; background:var(--brand-deep); color:#fff;"><h3 style="margin:0; font-size:1.05rem;">Data display</h3></div>
+                    <div style="padding:18px; color:var(--cre8-color-content-subtle);">Tables, progress meters, and skeleton loaders for the dashboards models love to build.</div>
+                    <div slot="footer" style="padding:14px 18px; background:var(--paper);"><cre8-badge text="Composable" status="info"></cre8-badge></div>
                 </cre8-card>
                 <cre8-card variant="vertical">
-                    <div slot="header" style="padding:16px 18px; background:#EC4899; color:#fff;"><h3 style="margin:0; font-size:1.05rem;">Overlays &amp; nav</h3></div>
-                    <div style="padding:18px; color:#475569;">Modals, tooltips, popovers, and full navigation systems — grounded, not guessed.</div>
-                    <div slot="footer" style="padding:14px 18px; background:#f6f5f3;"><cre8-badge text="Accessible" status="success"></cre8-badge></div>
+                    <div slot="header" style="padding:16px 18px; background:var(--accent-deep); color:#fff;"><h3 style="margin:0; font-size:1.05rem;">Overlays &amp; nav</h3></div>
+                    <div style="padding:18px; color:var(--cre8-color-content-subtle);">Modals, tooltips, popovers, and full navigation systems — grounded, not guessed.</div>
+                    <div slot="footer" style="padding:14px 18px; background:var(--paper);"><cre8-badge text="Accessible" status="success"></cre8-badge></div>
                 </cre8-card>
             </div>
         </div>
@@ -531,19 +535,19 @@
         </div>
     </section>
 
-    <!-- Contact -->
-    <section class="block" id="contact" style="background:var(--paper);">
+    <!-- Consulting -->
+    <section class="block" id="consulting" style="background:var(--paper);">
         <div class="container">
             <div class="center" style="max-width:640px;">
-                <span class="section-eyebrow">Get in touch</span>
-                <h2 class="section-title">Let's build your generative UI</h2>
-                <p class="section-sub">Cre8 Solutions LLC partners with teams adopting AI-native design systems — from wiring up the MCP server to custom component work and brand theming. Reach out and we'll get back to you.</p>
+                <span class="section-eyebrow">Consulting</span>
+                <h2 class="section-title">Bring this to your organization</h2>
+                <p class="section-sub">Cre8 is free and open source. Contact me if you would like to see how this scales within your organization, using your design system.</p>
                 <div style="margin-top:28px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
-                    <cre8-button text="Email us" variant="primary" size="lg" href="mailto:tmorrow@cre8solutions.llc?subject=Cre8%20inquiry"></cre8-button>
+                    <cre8-button text="Email me" variant="primary" size="lg" href="mailto:tmorrow@cre8solutions.llc?subject=Cre8%20consulting"></cre8-button>
                     <cre8-button text="Open an issue" variant="secondary" size="lg" href="https://github.com/tmorrowdev/Cre8-Components/issues/new" target="_blank" rel="noopener"></cre8-button>
                 </div>
-                <p style="margin-top:22px; font-family:ui-monospace,monospace; color:#334155;">
-                    <a href="mailto:tmorrow@cre8solutions.llc" style="color:var(--teal); text-decoration:none;">tmorrow@cre8solutions.llc</a>
+                <p style="margin-top:22px; font-family:ui-monospace,monospace; color:var(--cre8-color-content-subtle);">
+                    <a href="mailto:tmorrow@cre8solutions.llc" style="color:var(--brand); text-decoration:none;">tmorrow@cre8solutions.llc</a>
                 </p>
             </div>
         </div>
@@ -559,7 +563,7 @@
                     <a href="#how">How it works</a>
                     <a href="#mcp">MCP server</a>
                     <a href="#components">Components</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#consulting">Consulting</a>
                     <a href="https://github.com/tmorrowdev/Cre8-Components" target="_blank" rel="noopener">GitHub ↗</a>
                     <a href="https://www.npmjs.com/package/@tmorrow/cre8-wc" target="_blank" rel="noopener">npm ↗</a>
                 </div>
