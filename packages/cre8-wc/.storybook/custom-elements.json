@@ -1892,56 +1892,12 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/band/band.stories.ts",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "Default",
-          "parameters": [
-            {
-              "name": "args"
-            }
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "Branded"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "components/band/band.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Default",
-          "declaration": {
-            "name": "Default",
-            "module": "components/band/band.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Branded",
-          "declaration": {
-            "name": "Branded",
-            "module": "components/band/band.stories.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/band/band.styles.ts",
+      "path": "components/breadcrumbs-item/breadcrumbs-item.styles.ts",
       "declarations": [
         {
           "kind": "variable",
           "name": "styles",
-          "default": "css`.cre8-u-content-knockout-brand { color: var(--cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: 0.5rem !important; } .cre8-u-margin-md { margin: 1rem !important; } .cre8-u-margin-lg { margin: 1.5rem !important; } .cre8-u-margin-xl { margin: 2rem !important; } .cre8-u-margin-xxl { margin: 4rem !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: 0.5rem !important; } .cre8-u-margin-top-md { margin-top: 1rem !important; } .cre8-u-margin-top-lg { margin-top: 1.5rem !important; } .cre8-u-margin-top-xl { margin-top: 2rem !important; } .cre8-u-margin-top-xxl { margin-top: 4rem !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: 0.5rem !important; } .cre8-u-margin-right-md { margin-right: 1rem !important; } .cre8-u-margin-right-lg { margin-right: 1.5rem !important; } .cre8-u-margin-right-xl { margin-right: 2rem !important; } .cre8-u-margin-right-xxl { margin-right: 4rem !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: 0.5rem !important; } .cre8-u-margin-bottom-md { margin-bottom: 1rem !important; } .cre8-u-margin-bottom-lg { margin-bottom: 1.5rem !important; } .cre8-u-margin-bottom-xl { margin-bottom: 2rem !important; } .cre8-u-margin-bottom-xxl { margin-bottom: 4rem !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: 2rem !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: 4rem !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: 0.5rem !important; } .cre8-u-margin-left-md { margin-left: 1rem !important; } .cre8-u-margin-left-lg { margin-left: 1.5rem !important; } .cre8-u-margin-left-xl { margin-left: 2rem !important; } .cre8-u-margin-left-xxl { margin-left: 4rem !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: 0.5rem !important; } .cre8-u-padding-md { padding: 1rem !important; } .cre8-u-padding-lg { padding: 1.5rem !important; } .cre8-u-padding-xl { padding: 2rem !important; } .cre8-u-padding-xxl { padding: 4rem !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: 0.5rem !important; } .cre8-u-padding-top-md { padding-top: 1rem !important; } .cre8-u-padding-top-lg { padding-top: 1.5rem !important; } .cre8-u-padding-top-xl { padding-top: 2rem !important; } .cre8-u-padding-top-xxl { padding-top: 4rem !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: 0.5rem !important; } .cre8-u-padding-right-md { padding-right: 1rem !important; } .cre8-u-padding-right-lg { padding-right: 1.5rem !important; } .cre8-u-padding-right-xl { padding-right: 2rem !important; } .cre8-u-padding-right-xxl { padding-right: 4rem !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: 0.5rem !important; } .cre8-u-padding-bottom-md { padding-bottom: 1rem !important; } .cre8-u-padding-bottom-lg { padding-bottom: 1.5rem !important; } .cre8-u-padding-bottom-xl { padding-bottom: 2rem !important; } .cre8-u-padding-bottom-xxl { padding-bottom: 4rem !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: 0.5rem !important; } .cre8-u-padding-left-md { padding-left: 1rem !important; } .cre8-u-padding-left-lg { padding-left: 1.5rem !important; } .cre8-u-padding-left-xl { padding-left: 2rem !important; } .cre8-u-padding-left-xxl { padding-left: 4rem !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--cre8-color-bg-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /** * 1) Custom elements default to \\`display: inline\\`, which makes the host a text * box and lets its children flow like inline content. Every layout rule below * lives on a wrapper inside the shadow root, so without this the host itself * never takes part in block layout. */ :host { display: block; } /** * 1) A container with a background that can house various recipes of Components within */ .cre8-c-band { background: var(--cre8-color-bg-subtle); padding: var(--cre8-padding-24) 0; } @media all and (min-width: 1200px) { .cre8-c-band { padding: var(--cre8-spacing-32) 0; } } /** * Branded variant */ .cre8-c-band--branded { color: var(--cre8-color-content-knockout); background: var(--cre8-theme-color-utility-information); } /** * Full height * 1) Height set to 100% to fill a container like a sidebar */ .cre8-c-band--full-height { height: 100%; }`"
+          "default": "css`.cre8-u-content-knockout-brand { color: var(--cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: 0.5rem !important; } .cre8-u-margin-md { margin: 1rem !important; } .cre8-u-margin-lg { margin: 1.5rem !important; } .cre8-u-margin-xl { margin: 2rem !important; } .cre8-u-margin-xxl { margin: 4rem !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: 0.5rem !important; } .cre8-u-margin-top-md { margin-top: 1rem !important; } .cre8-u-margin-top-lg { margin-top: 1.5rem !important; } .cre8-u-margin-top-xl { margin-top: 2rem !important; } .cre8-u-margin-top-xxl { margin-top: 4rem !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: 0.5rem !important; } .cre8-u-margin-right-md { margin-right: 1rem !important; } .cre8-u-margin-right-lg { margin-right: 1.5rem !important; } .cre8-u-margin-right-xl { margin-right: 2rem !important; } .cre8-u-margin-right-xxl { margin-right: 4rem !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: 0.5rem !important; } .cre8-u-margin-bottom-md { margin-bottom: 1rem !important; } .cre8-u-margin-bottom-lg { margin-bottom: 1.5rem !important; } .cre8-u-margin-bottom-xl { margin-bottom: 2rem !important; } .cre8-u-margin-bottom-xxl { margin-bottom: 4rem !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: 2rem !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: 4rem !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: 0.5rem !important; } .cre8-u-margin-left-md { margin-left: 1rem !important; } .cre8-u-margin-left-lg { margin-left: 1.5rem !important; } .cre8-u-margin-left-xl { margin-left: 2rem !important; } .cre8-u-margin-left-xxl { margin-left: 4rem !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: 0.5rem !important; } .cre8-u-padding-md { padding: 1rem !important; } .cre8-u-padding-lg { padding: 1.5rem !important; } .cre8-u-padding-xl { padding: 2rem !important; } .cre8-u-padding-xxl { padding: 4rem !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: 0.5rem !important; } .cre8-u-padding-top-md { padding-top: 1rem !important; } .cre8-u-padding-top-lg { padding-top: 1.5rem !important; } .cre8-u-padding-top-xl { padding-top: 2rem !important; } .cre8-u-padding-top-xxl { padding-top: 4rem !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: 0.5rem !important; } .cre8-u-padding-right-md { padding-right: 1rem !important; } .cre8-u-padding-right-lg { padding-right: 1.5rem !important; } .cre8-u-padding-right-xl { padding-right: 2rem !important; } .cre8-u-padding-right-xxl { padding-right: 4rem !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: 0.5rem !important; } .cre8-u-padding-bottom-md { padding-bottom: 1rem !important; } .cre8-u-padding-bottom-lg { padding-bottom: 1.5rem !important; } .cre8-u-padding-bottom-xl { padding-bottom: 2rem !important; } .cre8-u-padding-bottom-xxl { padding-bottom: 4rem !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: 0.5rem !important; } .cre8-u-padding-left-md { padding-left: 1rem !important; } .cre8-u-padding-left-lg { padding-left: 1.5rem !important; } .cre8-u-padding-left-xl { padding-left: 2rem !important; } .cre8-u-padding-left-xxl { padding-left: 4rem !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--cre8-color-bg-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ :host { display: inline-flex; } /** * 1) Singular item within the breadcrumbs component that contains a link elsewhere on the site */ .cre8-c-breadcrumbs--item { display: inline-flex; align-items: center; /** * Breadcrumbs caret doesn't display for last breadcrumb item */ } :host(:last-child) .cre8-c-breadcrumbs--item cre8-icon { display: none; } /** * Breadcrumbs icon */ cre8-icon { margin-left: var(--cre8-spacing-8); color: var(--cre8-color-content-subtle); display: inline-flex; } cre8-icon svg { height: 1rem; width: 1rem; }`"
         }
       ],
       "exports": [
@@ -1950,95 +1906,57 @@
           "name": "default",
           "declaration": {
             "name": "styles",
-            "module": "components/band/band.styles.ts"
+            "module": "components/breadcrumbs-item/breadcrumbs-item.styles.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "components/band/band.ts",
+      "path": "components/breadcrumbs-item/breadcrumbs-item.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "Cre8Band",
+          "name": "Cre8BreadcrumbsItem",
           "slots": [
             {
-              "description": "The band content",
+              "description": "The component content, the expected slotted content is a Cre8 Link or a String for the \"terminal node\"",
               "name": ""
             }
           ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "variant",
-              "type": {
-                "text": "'branded' | undefined"
-              },
-              "description": "Gradient variant\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**1** renders the band with the set gradient background</li>\n</ul>\n</cre8-text-passage>",
-              "attribute": "variant"
-            },
-            {
-              "kind": "field",
-              "name": "fullHeight",
-              "type": {
-                "text": "boolean | undefined"
-              },
-              "description": "Full height variant\n1) Sets the height to 100%",
-              "attribute": "fullHeight",
-              "reflects": true
-            }
-          ],
-          "attributes": [
-            {
-              "name": "variant",
-              "type": {
-                "text": "'branded' | undefined"
-              },
-              "description": "Gradient variant\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**1** renders the band with the set gradient background</li>\n</ul>\n</cre8-text-passage>",
-              "fieldName": "variant"
-            },
-            {
-              "name": "fullHeight",
-              "type": {
-                "text": "boolean | undefined"
-              },
-              "description": "Full height variant\n1) Sets the height to 100%",
-              "fieldName": "fullHeight"
-            }
-          ],
+          "members": [],
           "superclass": {
             "name": "Cre8Element",
             "module": "/components/cre8-element"
           },
-          "tagName": "cre8-band",
+          "tagName": "cre8-breadcrumbs-item",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "Cre8Band",
+          "name": "Cre8BreadcrumbsItem",
           "declaration": {
-            "name": "Cre8Band",
-            "module": "components/band/band.ts"
+            "name": "Cre8BreadcrumbsItem",
+            "module": "components/breadcrumbs-item/breadcrumbs-item.ts"
           }
         },
         {
           "kind": "custom-element-definition",
-          "name": "cre8-band",
+          "name": "cre8-breadcrumbs-item",
           "declaration": {
-            "name": "Cre8Band",
-            "module": "components/band/band.ts"
+            "name": "Cre8BreadcrumbsItem",
+            "module": "components/breadcrumbs-item/breadcrumbs-item.ts"
           }
         },
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "Cre8Band",
-            "module": "components/band/band.ts"
+            "name": "Cre8BreadcrumbsItem",
+            "module": "components/breadcrumbs-item/breadcrumbs-item.ts"
           }
         }
       ]
@@ -3389,77 +3307,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/breadcrumbs-item/breadcrumbs-item.styles.ts",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "styles",
-          "default": "css`.cre8-u-content-knockout-brand { color: var(--cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: 0.5rem !important; } .cre8-u-margin-md { margin: 1rem !important; } .cre8-u-margin-lg { margin: 1.5rem !important; } .cre8-u-margin-xl { margin: 2rem !important; } .cre8-u-margin-xxl { margin: 4rem !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: 0.5rem !important; } .cre8-u-margin-top-md { margin-top: 1rem !important; } .cre8-u-margin-top-lg { margin-top: 1.5rem !important; } .cre8-u-margin-top-xl { margin-top: 2rem !important; } .cre8-u-margin-top-xxl { margin-top: 4rem !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: 0.5rem !important; } .cre8-u-margin-right-md { margin-right: 1rem !important; } .cre8-u-margin-right-lg { margin-right: 1.5rem !important; } .cre8-u-margin-right-xl { margin-right: 2rem !important; } .cre8-u-margin-right-xxl { margin-right: 4rem !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: 0.5rem !important; } .cre8-u-margin-bottom-md { margin-bottom: 1rem !important; } .cre8-u-margin-bottom-lg { margin-bottom: 1.5rem !important; } .cre8-u-margin-bottom-xl { margin-bottom: 2rem !important; } .cre8-u-margin-bottom-xxl { margin-bottom: 4rem !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: 2rem !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: 4rem !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: 0.5rem !important; } .cre8-u-margin-left-md { margin-left: 1rem !important; } .cre8-u-margin-left-lg { margin-left: 1.5rem !important; } .cre8-u-margin-left-xl { margin-left: 2rem !important; } .cre8-u-margin-left-xxl { margin-left: 4rem !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: 0.5rem !important; } .cre8-u-padding-md { padding: 1rem !important; } .cre8-u-padding-lg { padding: 1.5rem !important; } .cre8-u-padding-xl { padding: 2rem !important; } .cre8-u-padding-xxl { padding: 4rem !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: 0.5rem !important; } .cre8-u-padding-top-md { padding-top: 1rem !important; } .cre8-u-padding-top-lg { padding-top: 1.5rem !important; } .cre8-u-padding-top-xl { padding-top: 2rem !important; } .cre8-u-padding-top-xxl { padding-top: 4rem !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: 0.5rem !important; } .cre8-u-padding-right-md { padding-right: 1rem !important; } .cre8-u-padding-right-lg { padding-right: 1.5rem !important; } .cre8-u-padding-right-xl { padding-right: 2rem !important; } .cre8-u-padding-right-xxl { padding-right: 4rem !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: 0.5rem !important; } .cre8-u-padding-bottom-md { padding-bottom: 1rem !important; } .cre8-u-padding-bottom-lg { padding-bottom: 1.5rem !important; } .cre8-u-padding-bottom-xl { padding-bottom: 2rem !important; } .cre8-u-padding-bottom-xxl { padding-bottom: 4rem !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: 0.5rem !important; } .cre8-u-padding-left-md { padding-left: 1rem !important; } .cre8-u-padding-left-lg { padding-left: 1.5rem !important; } .cre8-u-padding-left-xl { padding-left: 2rem !important; } .cre8-u-padding-left-xxl { padding-left: 4rem !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--cre8-color-bg-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ :host { display: inline-flex; } /** * 1) Singular item within the breadcrumbs component that contains a link elsewhere on the site */ .cre8-c-breadcrumbs--item { display: inline-flex; align-items: center; /** * Breadcrumbs caret doesn't display for last breadcrumb item */ } :host(:last-child) .cre8-c-breadcrumbs--item cre8-icon { display: none; } /** * Breadcrumbs icon */ cre8-icon { margin-left: var(--cre8-spacing-8); color: var(--cre8-color-content-subtle); display: inline-flex; } cre8-icon svg { height: 1rem; width: 1rem; }`"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "styles",
-            "module": "components/breadcrumbs-item/breadcrumbs-item.styles.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/breadcrumbs-item/breadcrumbs-item.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Cre8BreadcrumbsItem",
-          "slots": [
-            {
-              "description": "The component content, the expected slotted content is a Cre8 Link or a String for the \"terminal node\"",
-              "name": ""
-            }
-          ],
-          "members": [],
-          "superclass": {
-            "name": "Cre8Element",
-            "module": "/components/cre8-element"
-          },
-          "tagName": "cre8-breadcrumbs-item",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "Cre8BreadcrumbsItem",
-          "declaration": {
-            "name": "Cre8BreadcrumbsItem",
-            "module": "components/breadcrumbs-item/breadcrumbs-item.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cre8-breadcrumbs-item",
-          "declaration": {
-            "name": "Cre8BreadcrumbsItem",
-            "module": "components/breadcrumbs-item/breadcrumbs-item.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Cre8BreadcrumbsItem",
-            "module": "components/breadcrumbs-item/breadcrumbs-item.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "components/breadcrumbs/breadcrumbs.stories.ts",
       "declarations": [
         {
@@ -3607,6 +3454,159 @@
           "declaration": {
             "name": "Cre8Breadcrumbs",
             "module": "components/breadcrumbs/breadcrumbs.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/band/band.stories.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "Default",
+          "parameters": [
+            {
+              "name": "args"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "Branded"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "components/band/band.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Default",
+          "declaration": {
+            "name": "Default",
+            "module": "components/band/band.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Branded",
+          "declaration": {
+            "name": "Branded",
+            "module": "components/band/band.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/band/band.styles.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "styles",
+          "default": "css`.cre8-u-content-knockout-brand { color: var(--cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: 0.5rem !important; } .cre8-u-margin-md { margin: 1rem !important; } .cre8-u-margin-lg { margin: 1.5rem !important; } .cre8-u-margin-xl { margin: 2rem !important; } .cre8-u-margin-xxl { margin: 4rem !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: 0.5rem !important; } .cre8-u-margin-top-md { margin-top: 1rem !important; } .cre8-u-margin-top-lg { margin-top: 1.5rem !important; } .cre8-u-margin-top-xl { margin-top: 2rem !important; } .cre8-u-margin-top-xxl { margin-top: 4rem !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: 0.5rem !important; } .cre8-u-margin-right-md { margin-right: 1rem !important; } .cre8-u-margin-right-lg { margin-right: 1.5rem !important; } .cre8-u-margin-right-xl { margin-right: 2rem !important; } .cre8-u-margin-right-xxl { margin-right: 4rem !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: 0.5rem !important; } .cre8-u-margin-bottom-md { margin-bottom: 1rem !important; } .cre8-u-margin-bottom-lg { margin-bottom: 1.5rem !important; } .cre8-u-margin-bottom-xl { margin-bottom: 2rem !important; } .cre8-u-margin-bottom-xxl { margin-bottom: 4rem !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: 2rem !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: 4rem !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: 0.5rem !important; } .cre8-u-margin-left-md { margin-left: 1rem !important; } .cre8-u-margin-left-lg { margin-left: 1.5rem !important; } .cre8-u-margin-left-xl { margin-left: 2rem !important; } .cre8-u-margin-left-xxl { margin-left: 4rem !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: 0.5rem !important; } .cre8-u-padding-md { padding: 1rem !important; } .cre8-u-padding-lg { padding: 1.5rem !important; } .cre8-u-padding-xl { padding: 2rem !important; } .cre8-u-padding-xxl { padding: 4rem !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: 0.5rem !important; } .cre8-u-padding-top-md { padding-top: 1rem !important; } .cre8-u-padding-top-lg { padding-top: 1.5rem !important; } .cre8-u-padding-top-xl { padding-top: 2rem !important; } .cre8-u-padding-top-xxl { padding-top: 4rem !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: 0.5rem !important; } .cre8-u-padding-right-md { padding-right: 1rem !important; } .cre8-u-padding-right-lg { padding-right: 1.5rem !important; } .cre8-u-padding-right-xl { padding-right: 2rem !important; } .cre8-u-padding-right-xxl { padding-right: 4rem !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: 0.5rem !important; } .cre8-u-padding-bottom-md { padding-bottom: 1rem !important; } .cre8-u-padding-bottom-lg { padding-bottom: 1.5rem !important; } .cre8-u-padding-bottom-xl { padding-bottom: 2rem !important; } .cre8-u-padding-bottom-xxl { padding-bottom: 4rem !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: 0.5rem !important; } .cre8-u-padding-left-md { padding-left: 1rem !important; } .cre8-u-padding-left-lg { padding-left: 1.5rem !important; } .cre8-u-padding-left-xl { padding-left: 2rem !important; } .cre8-u-padding-left-xxl { padding-left: 4rem !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--cre8-color-bg-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /** * 1) Custom elements default to \\`display: inline\\`, which makes the host a text * box and lets its children flow like inline content. Every layout rule below * lives on a wrapper inside the shadow root, so without this the host itself * never takes part in block layout. */ :host { display: block; } /** * 1) A container with a background that can house various recipes of Components within */ .cre8-c-band { background: var(--cre8-color-bg-subtle); padding: var(--cre8-padding-24) 0; } @media all and (min-width: 1200px) { .cre8-c-band { padding: var(--cre8-spacing-32) 0; } } /** * Branded variant */ .cre8-c-band--branded { color: var(--cre8-color-content-knockout); background: var(--cre8-theme-color-utility-information); } /** * Full height * 1) Height set to 100% to fill a container like a sidebar */ .cre8-c-band--full-height { height: 100%; }`"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "styles",
+            "module": "components/band/band.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/band/band.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Cre8Band",
+          "slots": [
+            {
+              "description": "The band content",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "'branded' | undefined"
+              },
+              "description": "Gradient variant\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**1** renders the band with the set gradient background</li>\n</ul>\n</cre8-text-passage>",
+              "attribute": "variant"
+            },
+            {
+              "kind": "field",
+              "name": "fullHeight",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Full height variant\n1) Sets the height to 100%",
+              "attribute": "fullHeight",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "variant",
+              "type": {
+                "text": "'branded' | undefined"
+              },
+              "description": "Gradient variant\n<cre8-text-passage size=\"sm\">\n<ul>\n<li>**1** renders the band with the set gradient background</li>\n</ul>\n</cre8-text-passage>",
+              "fieldName": "variant"
+            },
+            {
+              "name": "fullHeight",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Full height variant\n1) Sets the height to 100%",
+              "fieldName": "fullHeight"
+            }
+          ],
+          "superclass": {
+            "name": "Cre8Element",
+            "module": "/components/cre8-element"
+          },
+          "tagName": "cre8-band",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Cre8Band",
+          "declaration": {
+            "name": "Cre8Band",
+            "module": "components/band/band.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cre8-band",
+          "declaration": {
+            "name": "Cre8Band",
+            "module": "components/band/band.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Cre8Band",
+            "module": "components/band/band.ts"
           }
         }
       ]
@@ -18198,312 +18198,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "components/progress-meter/progress-meter.stories.ts",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "Default",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ args: { label: 'Default progress label', } }"
-        },
-        {
-          "kind": "variable",
-          "name": "KnockoutTrue",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ args: { label: 'Knockout progress label', knockout: true } }"
-        },
-        {
-          "kind": "variable",
-          "name": "Empty",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ args: { label: 'Empty progress label', value: 0, } }"
-        },
-        {
-          "kind": "variable",
-          "name": "NotStrong",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ args: { label: 'Not strong progress label', value: '25', status: 'error' } }"
-        },
-        {
-          "kind": "variable",
-          "name": "Weak",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ args: { label: 'Weak progress label', status: 'warning' } }"
-        },
-        {
-          "kind": "variable",
-          "name": "Good",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ args: { label: 'Good progress label', value: '75', status: 'success' } }"
-        },
-        {
-          "kind": "variable",
-          "name": "Excellent",
-          "type": {
-            "text": "object"
-          },
-          "default": "{ args: { label: 'Excellent progress label', value: '100', status: 'success' } }"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "components/progress-meter/progress-meter.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Default",
-          "declaration": {
-            "name": "Default",
-            "module": "components/progress-meter/progress-meter.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "KnockoutTrue",
-          "declaration": {
-            "name": "KnockoutTrue",
-            "module": "components/progress-meter/progress-meter.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Empty",
-          "declaration": {
-            "name": "Empty",
-            "module": "components/progress-meter/progress-meter.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "NotStrong",
-          "declaration": {
-            "name": "NotStrong",
-            "module": "components/progress-meter/progress-meter.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Weak",
-          "declaration": {
-            "name": "Weak",
-            "module": "components/progress-meter/progress-meter.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Good",
-          "declaration": {
-            "name": "Good",
-            "module": "components/progress-meter/progress-meter.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Excellent",
-          "declaration": {
-            "name": "Excellent",
-            "module": "components/progress-meter/progress-meter.stories.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/progress-meter/progress-meter.styles.ts",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "styles",
-          "default": "css`.cre8-u-content-knockout-brand { color: var(--cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: 0.5rem !important; } .cre8-u-margin-md { margin: 1rem !important; } .cre8-u-margin-lg { margin: 1.5rem !important; } .cre8-u-margin-xl { margin: 2rem !important; } .cre8-u-margin-xxl { margin: 4rem !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: 0.5rem !important; } .cre8-u-margin-top-md { margin-top: 1rem !important; } .cre8-u-margin-top-lg { margin-top: 1.5rem !important; } .cre8-u-margin-top-xl { margin-top: 2rem !important; } .cre8-u-margin-top-xxl { margin-top: 4rem !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: 0.5rem !important; } .cre8-u-margin-right-md { margin-right: 1rem !important; } .cre8-u-margin-right-lg { margin-right: 1.5rem !important; } .cre8-u-margin-right-xl { margin-right: 2rem !important; } .cre8-u-margin-right-xxl { margin-right: 4rem !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: 0.5rem !important; } .cre8-u-margin-bottom-md { margin-bottom: 1rem !important; } .cre8-u-margin-bottom-lg { margin-bottom: 1.5rem !important; } .cre8-u-margin-bottom-xl { margin-bottom: 2rem !important; } .cre8-u-margin-bottom-xxl { margin-bottom: 4rem !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: 2rem !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: 4rem !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: 0.5rem !important; } .cre8-u-margin-left-md { margin-left: 1rem !important; } .cre8-u-margin-left-lg { margin-left: 1.5rem !important; } .cre8-u-margin-left-xl { margin-left: 2rem !important; } .cre8-u-margin-left-xxl { margin-left: 4rem !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: 0.5rem !important; } .cre8-u-padding-md { padding: 1rem !important; } .cre8-u-padding-lg { padding: 1.5rem !important; } .cre8-u-padding-xl { padding: 2rem !important; } .cre8-u-padding-xxl { padding: 4rem !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: 0.5rem !important; } .cre8-u-padding-top-md { padding-top: 1rem !important; } .cre8-u-padding-top-lg { padding-top: 1.5rem !important; } .cre8-u-padding-top-xl { padding-top: 2rem !important; } .cre8-u-padding-top-xxl { padding-top: 4rem !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: 0.5rem !important; } .cre8-u-padding-right-md { padding-right: 1rem !important; } .cre8-u-padding-right-lg { padding-right: 1.5rem !important; } .cre8-u-padding-right-xl { padding-right: 2rem !important; } .cre8-u-padding-right-xxl { padding-right: 4rem !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: 0.5rem !important; } .cre8-u-padding-bottom-md { padding-bottom: 1rem !important; } .cre8-u-padding-bottom-lg { padding-bottom: 1.5rem !important; } .cre8-u-padding-bottom-xl { padding-bottom: 2rem !important; } .cre8-u-padding-bottom-xxl { padding-bottom: 4rem !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: 0.5rem !important; } .cre8-u-padding-left-md { padding-left: 1rem !important; } .cre8-u-padding-left-lg { padding-left: 1.5rem !important; } .cre8-u-padding-left-xl { padding-left: 2rem !important; } .cre8-u-padding-left-xxl { padding-left: 4rem !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--cre8-color-bg-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /** * 1) Progress Meter * 2) Progress bar fill color custom property */ :host { display: block; } .cre8-c-progress-meter__progress { --cre8-progress-meter-background: var(--cre8-color-content-brand); /* 2 */ width: 100%; height: var(--cre8-progress-meter-height, 0.5rem); background: var(--cre8-color-bg-transparent); border-width: var(--cre8-border-width-default); border-style: var(--cre8-border-style-default); border-color: var(--cre8-color-border-strong); border-radius: var(--cre8-border-radius-round); } .cre8-c-progress-meter--knockout .cre8-c-progress-meter__progress { --cre8-progress-meter-background: var(--cre8-color-content-brand-knockout); border-color: var(--cre8-color-border-default); } .cre8-c-progress-meter__progress { /** * Progress bar background styling error */ } .cre8-c-progress-meter--error .cre8-c-progress-meter__progress { --cre8-progress-meter-background: var(--cre8-color-bg-error-strong); } .cre8-c-progress-meter__progress { /** * Progress bar background styling warning */ } .cre8-c-progress-meter--warning .cre8-c-progress-meter__progress { --cre8-progress-meter-background: var(--cre8-color-bg-warning-strong); } .cre8-c-progress-meter__progress { /** * Progress bar background styling success */ } .cre8-c-progress-meter--success .cre8-c-progress-meter__progress { --cre8-progress-meter-background: var(--cre8-color-bg-success-strong); } .cre8-c-progress-meter__progress { /** * Progress bar background styling indeterminate */ } .cre8-c-progress-meter--indeterminate .cre8-c-progress-meter__progress { --cre8-progress-meter-background: repeating-linear-gradient(-45deg, #009bdf, #009bdf 10px, #00628e 10px, #00628e 20px); } /** * Progress bar sr-only escriptor */ .cre8-c-progress-meter__sr-only { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; } /** * Progress bar background styling */ progress { color: var(--cre8-progress-meter-background); appearance: none; } /** * Progress bar background styling for Mozilla */ progress::-moz-progress-bar { background: var(--cre8-progress-meter-background); border-radius: var(--cre8-border-radius-round); } /** * Progress bar background styling for Safari and Chrome */ progress::-webkit-progress-bar { background: var(--cre8-color-bg-subtle); border-radius: var(--cre8-border-radius-round); } progress::-webkit-progress-value { background: var(--cre8-progress-meter-background); border-radius: var(--cre8-border-radius-round); } /** * Hide Label except for screen readers */ .cre8-c-progress-meter__label { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }`"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "styles",
-            "module": "components/progress-meter/progress-meter.styles.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/progress-meter/progress-meter.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "A progress meter provides feedback that the system is working and gives\nthe user an indication of how much time they will wait.\nThis indicator should be used when the system response time is longer and determinable.",
-          "name": "Cre8ProgressMeter",
-          "members": [
-            {
-              "kind": "field",
-              "name": "status",
-              "type": {
-                "text": "'error' | 'warning' | 'success' | undefined"
-              },
-              "description": "Progress Status\n- **Default** renders a meter with default status fill\n- **Error** renders a meter with an error status fill\n- **Warning** renders a meter with a warning status\n- **Success** renders a meter with a success status fill",
-              "attribute": "status"
-            },
-            {
-              "kind": "field",
-              "name": "knockout",
-              "type": {
-                "text": "boolean | undefined"
-              },
-              "attribute": "knockout",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "max",
-              "type": {
-                "text": "number"
-              },
-              "default": "100",
-              "attribute": "max"
-            },
-            {
-              "kind": "field",
-              "name": "value",
-              "type": {
-                "text": "number"
-              },
-              "attribute": "value"
-            },
-            {
-              "kind": "field",
-              "name": "fieldId",
-              "type": {
-                "text": "string | undefined"
-              },
-              "description": "Progress Meter FieldId",
-              "attribute": "fieldId"
-            },
-            {
-              "kind": "field",
-              "name": "name",
-              "type": {
-                "text": "string | undefined"
-              },
-              "description": "Progress Meter name",
-              "attribute": "name"
-            },
-            {
-              "kind": "field",
-              "name": "label",
-              "type": {
-                "text": "string"
-              },
-              "description": "Progress Meter label",
-              "attribute": "label"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "fieldId",
-              "type": {
-                "text": "string | undefined"
-              },
-              "description": "Progress Meter FieldId",
-              "fieldName": "fieldId",
-              "attribute": "fieldId"
-            },
-            {
-              "name": "name",
-              "type": {
-                "text": "string | undefined"
-              },
-              "description": "Progress Meter name",
-              "fieldName": "name",
-              "attribute": "name"
-            },
-            {
-              "name": "label",
-              "type": {
-                "text": "string"
-              },
-              "description": "Progress Meter label",
-              "fieldName": "label",
-              "attribute": "label"
-            },
-            {
-              "name": "status",
-              "type": {
-                "text": "'error' | 'warning' | 'success' | undefined"
-              },
-              "description": "Progress Status\n- **Default** renders a meter with default status fill\n- **Error** renders a meter with an error status fill\n- **Warning** renders a meter with a warning status\n- **Success** renders a meter with a success status fill",
-              "fieldName": "status"
-            },
-            {
-              "name": "knockout",
-              "type": {
-                "text": "boolean | undefined"
-              },
-              "fieldName": "knockout"
-            },
-            {
-              "name": "max",
-              "type": {
-                "text": "number"
-              },
-              "default": "100",
-              "fieldName": "max"
-            },
-            {
-              "name": "value",
-              "type": {
-                "text": "number"
-              },
-              "fieldName": "value"
-            }
-          ],
-          "superclass": {
-            "name": "Cre8Element",
-            "module": "/components/cre8-element"
-          },
-          "tagName": "cre8-progress-meter",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "Cre8ProgressMeter",
-          "declaration": {
-            "name": "Cre8ProgressMeter",
-            "module": "components/progress-meter/progress-meter.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cre8-progress-meter",
-          "declaration": {
-            "name": "Cre8ProgressMeter",
-            "module": "components/progress-meter/progress-meter.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "components/progress-steps/progress-steps.stories.ts",
       "declarations": [
         {
@@ -19860,6 +19554,312 @@
     },
     {
       "kind": "javascript-module",
+      "path": "components/progress-meter/progress-meter.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Default",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { label: 'Default progress label', } }"
+        },
+        {
+          "kind": "variable",
+          "name": "KnockoutTrue",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { label: 'Knockout progress label', knockout: true } }"
+        },
+        {
+          "kind": "variable",
+          "name": "Empty",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { label: 'Empty progress label', value: 0, } }"
+        },
+        {
+          "kind": "variable",
+          "name": "NotStrong",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { label: 'Not strong progress label', value: '25', status: 'error' } }"
+        },
+        {
+          "kind": "variable",
+          "name": "Weak",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { label: 'Weak progress label', status: 'warning' } }"
+        },
+        {
+          "kind": "variable",
+          "name": "Good",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { label: 'Good progress label', value: '75', status: 'success' } }"
+        },
+        {
+          "kind": "variable",
+          "name": "Excellent",
+          "type": {
+            "text": "object"
+          },
+          "default": "{ args: { label: 'Excellent progress label', value: '100', status: 'success' } }"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "components/progress-meter/progress-meter.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Default",
+          "declaration": {
+            "name": "Default",
+            "module": "components/progress-meter/progress-meter.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "KnockoutTrue",
+          "declaration": {
+            "name": "KnockoutTrue",
+            "module": "components/progress-meter/progress-meter.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Empty",
+          "declaration": {
+            "name": "Empty",
+            "module": "components/progress-meter/progress-meter.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "NotStrong",
+          "declaration": {
+            "name": "NotStrong",
+            "module": "components/progress-meter/progress-meter.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Weak",
+          "declaration": {
+            "name": "Weak",
+            "module": "components/progress-meter/progress-meter.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Good",
+          "declaration": {
+            "name": "Good",
+            "module": "components/progress-meter/progress-meter.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Excellent",
+          "declaration": {
+            "name": "Excellent",
+            "module": "components/progress-meter/progress-meter.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/progress-meter/progress-meter.styles.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "styles",
+          "default": "css`.cre8-u-content-knockout-brand { color: var(--cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: 0.5rem !important; } .cre8-u-margin-md { margin: 1rem !important; } .cre8-u-margin-lg { margin: 1.5rem !important; } .cre8-u-margin-xl { margin: 2rem !important; } .cre8-u-margin-xxl { margin: 4rem !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: 0.5rem !important; } .cre8-u-margin-top-md { margin-top: 1rem !important; } .cre8-u-margin-top-lg { margin-top: 1.5rem !important; } .cre8-u-margin-top-xl { margin-top: 2rem !important; } .cre8-u-margin-top-xxl { margin-top: 4rem !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: 0.5rem !important; } .cre8-u-margin-right-md { margin-right: 1rem !important; } .cre8-u-margin-right-lg { margin-right: 1.5rem !important; } .cre8-u-margin-right-xl { margin-right: 2rem !important; } .cre8-u-margin-right-xxl { margin-right: 4rem !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: 0.5rem !important; } .cre8-u-margin-bottom-md { margin-bottom: 1rem !important; } .cre8-u-margin-bottom-lg { margin-bottom: 1.5rem !important; } .cre8-u-margin-bottom-xl { margin-bottom: 2rem !important; } .cre8-u-margin-bottom-xxl { margin-bottom: 4rem !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: 2rem !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: 4rem !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: 0.5rem !important; } .cre8-u-margin-left-md { margin-left: 1rem !important; } .cre8-u-margin-left-lg { margin-left: 1.5rem !important; } .cre8-u-margin-left-xl { margin-left: 2rem !important; } .cre8-u-margin-left-xxl { margin-left: 4rem !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: 0.5rem !important; } .cre8-u-padding-md { padding: 1rem !important; } .cre8-u-padding-lg { padding: 1.5rem !important; } .cre8-u-padding-xl { padding: 2rem !important; } .cre8-u-padding-xxl { padding: 4rem !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: 0.5rem !important; } .cre8-u-padding-top-md { padding-top: 1rem !important; } .cre8-u-padding-top-lg { padding-top: 1.5rem !important; } .cre8-u-padding-top-xl { padding-top: 2rem !important; } .cre8-u-padding-top-xxl { padding-top: 4rem !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: 0.5rem !important; } .cre8-u-padding-right-md { padding-right: 1rem !important; } .cre8-u-padding-right-lg { padding-right: 1.5rem !important; } .cre8-u-padding-right-xl { padding-right: 2rem !important; } .cre8-u-padding-right-xxl { padding-right: 4rem !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: 0.5rem !important; } .cre8-u-padding-bottom-md { padding-bottom: 1rem !important; } .cre8-u-padding-bottom-lg { padding-bottom: 1.5rem !important; } .cre8-u-padding-bottom-xl { padding-bottom: 2rem !important; } .cre8-u-padding-bottom-xxl { padding-bottom: 4rem !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: 0.5rem !important; } .cre8-u-padding-left-md { padding-left: 1rem !important; } .cre8-u-padding-left-lg { padding-left: 1.5rem !important; } .cre8-u-padding-left-xl { padding-left: 2rem !important; } .cre8-u-padding-left-xxl { padding-left: 4rem !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--cre8-color-bg-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /** * 1) Progress Meter * 2) Progress bar fill color custom property */ :host { display: block; } .cre8-c-progress-meter__progress { --cre8-progress-meter-background: var(--cre8-color-content-brand); /* 2 */ width: 100%; height: var(--cre8-progress-meter-height, 0.5rem); background: var(--cre8-color-bg-transparent); border-width: var(--cre8-border-width-default); border-style: var(--cre8-border-style-default); border-color: var(--cre8-color-border-strong); border-radius: var(--cre8-border-radius-round); } .cre8-c-progress-meter--knockout .cre8-c-progress-meter__progress { --cre8-progress-meter-background: var(--cre8-color-content-brand-knockout); border-color: var(--cre8-color-border-default); } .cre8-c-progress-meter__progress { /** * Progress bar background styling error */ } .cre8-c-progress-meter--error .cre8-c-progress-meter__progress { --cre8-progress-meter-background: var(--cre8-color-bg-error-strong); } .cre8-c-progress-meter__progress { /** * Progress bar background styling warning */ } .cre8-c-progress-meter--warning .cre8-c-progress-meter__progress { --cre8-progress-meter-background: var(--cre8-color-bg-warning-strong); } .cre8-c-progress-meter__progress { /** * Progress bar background styling success */ } .cre8-c-progress-meter--success .cre8-c-progress-meter__progress { --cre8-progress-meter-background: var(--cre8-color-bg-success-strong); } .cre8-c-progress-meter__progress { /** * Progress bar background styling indeterminate */ } .cre8-c-progress-meter--indeterminate .cre8-c-progress-meter__progress { --cre8-progress-meter-background: repeating-linear-gradient(-45deg, #009bdf, #009bdf 10px, #00628e 10px, #00628e 20px); } /** * Progress bar sr-only escriptor */ .cre8-c-progress-meter__sr-only { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; } /** * Progress bar background styling */ progress { color: var(--cre8-progress-meter-background); appearance: none; } /** * Progress bar background styling for Mozilla */ progress::-moz-progress-bar { background: var(--cre8-progress-meter-background); border-radius: var(--cre8-border-radius-round); } /** * Progress bar background styling for Safari and Chrome */ progress::-webkit-progress-bar { background: var(--cre8-color-bg-subtle); border-radius: var(--cre8-border-radius-round); } progress::-webkit-progress-value { background: var(--cre8-progress-meter-background); border-radius: var(--cre8-border-radius-round); } /** * Hide Label except for screen readers */ .cre8-c-progress-meter__label { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }`"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "styles",
+            "module": "components/progress-meter/progress-meter.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/progress-meter/progress-meter.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A progress meter provides feedback that the system is working and gives\nthe user an indication of how much time they will wait.\nThis indicator should be used when the system response time is longer and determinable.",
+          "name": "Cre8ProgressMeter",
+          "members": [
+            {
+              "kind": "field",
+              "name": "status",
+              "type": {
+                "text": "'error' | 'warning' | 'success' | undefined"
+              },
+              "description": "Progress Status\n- **Default** renders a meter with default status fill\n- **Error** renders a meter with an error status fill\n- **Warning** renders a meter with a warning status\n- **Success** renders a meter with a success status fill",
+              "attribute": "status"
+            },
+            {
+              "kind": "field",
+              "name": "knockout",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "attribute": "knockout",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "max",
+              "type": {
+                "text": "number"
+              },
+              "default": "100",
+              "attribute": "max"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "value"
+            },
+            {
+              "kind": "field",
+              "name": "fieldId",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Progress Meter FieldId",
+              "attribute": "fieldId"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Progress Meter name",
+              "attribute": "name"
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "description": "Progress Meter label",
+              "attribute": "label"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "fieldId",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Progress Meter FieldId",
+              "fieldName": "fieldId",
+              "attribute": "fieldId"
+            },
+            {
+              "name": "name",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Progress Meter name",
+              "fieldName": "name",
+              "attribute": "name"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "description": "Progress Meter label",
+              "fieldName": "label",
+              "attribute": "label"
+            },
+            {
+              "name": "status",
+              "type": {
+                "text": "'error' | 'warning' | 'success' | undefined"
+              },
+              "description": "Progress Status\n- **Default** renders a meter with default status fill\n- **Error** renders a meter with an error status fill\n- **Warning** renders a meter with a warning status\n- **Success** renders a meter with a success status fill",
+              "fieldName": "status"
+            },
+            {
+              "name": "knockout",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "fieldName": "knockout"
+            },
+            {
+              "name": "max",
+              "type": {
+                "text": "number"
+              },
+              "default": "100",
+              "fieldName": "max"
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "value"
+            }
+          ],
+          "superclass": {
+            "name": "Cre8Element",
+            "module": "/components/cre8-element"
+          },
+          "tagName": "cre8-progress-meter",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Cre8ProgressMeter",
+          "declaration": {
+            "name": "Cre8ProgressMeter",
+            "module": "components/progress-meter/progress-meter.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cre8-progress-meter",
+          "declaration": {
+            "name": "Cre8ProgressMeter",
+            "module": "components/progress-meter/progress-meter.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "components/remove-tag/remove-tag.stories.ts",
       "declarations": [
         {
@@ -20125,154 +20125,6 @@
           "declaration": {
             "name": "Cre8RemoveTag",
             "module": "components/remove-tag/remove-tag.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/section/section.stories.ts",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "meta",
-          "default": "{ title: 'cre8 Components/Section', component: 'cre8-section', parameters: { status: { type: 'inProgress' }, controls: { hideNoControlsWarning: true, }, }, argTypes:{ headline:{ control:{ type: 'text' } }, contents: { control:{ type: 'text' } } }, args: { headline: 'Section Headline', contents: `<cre8-text-passage> <p> This is a paragraph of text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p> <p> <a href=\"#\">Lorem ipsum dolor sit amet</a>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p> <blockquote style=\"margin-left:20px;\"> <p>This is a quotation from something.</p> <cite>Cite source</cite> </blockquote> <p> This is another paragraph of text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p> </cre8-text-passage>`, }, render: ({headline, contents}) =>{ return html` <cre8-section headline=\"${headline}\"> ${unsafeHTML(sanitizeInput(contents, 'cre8-text-passage', 'cre8-heading', 'cre8-button'))} </cre8-section>` } } satisfies Meta<Props>"
-        },
-        {
-          "kind": "variable",
-          "name": "Default",
-          "type": {
-            "text": "Story"
-          },
-          "default": "{}"
-        },
-        {
-          "kind": "variable",
-          "name": "CustomHeading",
-          "type": {
-            "text": "Story"
-          },
-          "default": "{ args:{ headline: undefined, contents: `<div style=\"display:flex; justify-content: space-between;\" slot=\"header\"> <cre8-heading tagVariant=\"h2\" slot=\"header\"> Section Heading </cre8-heading> <cre8-button iconPosition=\"before\" variant=\"secondary\" iconName=\"search\" text=\"ID cards\"></cre8-button> </div> <cre8-text-passage> <p> This is a paragraph of text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p> <p> <a href=\"#\">Lorem ipsum dolor sit amet</a>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p> </cre8-text-passage>` } }"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "meta",
-            "module": "components/section/section.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Default",
-          "declaration": {
-            "name": "Default",
-            "module": "components/section/section.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "CustomHeading",
-          "declaration": {
-            "name": "CustomHeading",
-            "module": "components/section/section.stories.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/section/section.styles.ts",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "styles",
-          "default": "css`.cre8-u-content-knockout-brand { color: var(--cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: 0.5rem !important; } .cre8-u-margin-md { margin: 1rem !important; } .cre8-u-margin-lg { margin: 1.5rem !important; } .cre8-u-margin-xl { margin: 2rem !important; } .cre8-u-margin-xxl { margin: 4rem !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: 0.5rem !important; } .cre8-u-margin-top-md { margin-top: 1rem !important; } .cre8-u-margin-top-lg { margin-top: 1.5rem !important; } .cre8-u-margin-top-xl { margin-top: 2rem !important; } .cre8-u-margin-top-xxl { margin-top: 4rem !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: 0.5rem !important; } .cre8-u-margin-right-md { margin-right: 1rem !important; } .cre8-u-margin-right-lg { margin-right: 1.5rem !important; } .cre8-u-margin-right-xl { margin-right: 2rem !important; } .cre8-u-margin-right-xxl { margin-right: 4rem !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: 0.5rem !important; } .cre8-u-margin-bottom-md { margin-bottom: 1rem !important; } .cre8-u-margin-bottom-lg { margin-bottom: 1.5rem !important; } .cre8-u-margin-bottom-xl { margin-bottom: 2rem !important; } .cre8-u-margin-bottom-xxl { margin-bottom: 4rem !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: 2rem !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: 4rem !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: 0.5rem !important; } .cre8-u-margin-left-md { margin-left: 1rem !important; } .cre8-u-margin-left-lg { margin-left: 1.5rem !important; } .cre8-u-margin-left-xl { margin-left: 2rem !important; } .cre8-u-margin-left-xxl { margin-left: 4rem !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: 0.5rem !important; } .cre8-u-padding-md { padding: 1rem !important; } .cre8-u-padding-lg { padding: 1.5rem !important; } .cre8-u-padding-xl { padding: 2rem !important; } .cre8-u-padding-xxl { padding: 4rem !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: 0.5rem !important; } .cre8-u-padding-top-md { padding-top: 1rem !important; } .cre8-u-padding-top-lg { padding-top: 1.5rem !important; } .cre8-u-padding-top-xl { padding-top: 2rem !important; } .cre8-u-padding-top-xxl { padding-top: 4rem !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: 0.5rem !important; } .cre8-u-padding-right-md { padding-right: 1rem !important; } .cre8-u-padding-right-lg { padding-right: 1.5rem !important; } .cre8-u-padding-right-xl { padding-right: 2rem !important; } .cre8-u-padding-right-xxl { padding-right: 4rem !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: 0.5rem !important; } .cre8-u-padding-bottom-md { padding-bottom: 1rem !important; } .cre8-u-padding-bottom-lg { padding-bottom: 1.5rem !important; } .cre8-u-padding-bottom-xl { padding-bottom: 2rem !important; } .cre8-u-padding-bottom-xxl { padding-bottom: 4rem !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: 0.5rem !important; } .cre8-u-padding-left-md { padding-left: 1rem !important; } .cre8-u-padding-left-lg { padding-left: 1.5rem !important; } .cre8-u-padding-left-xl { padding-left: 2rem !important; } .cre8-u-padding-left-xxl { padding-left: 4rem !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--cre8-color-bg-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /** * 1) Custom elements default to \\`display: inline\\`, which makes the host a text * box and lets its children flow like inline content. Every layout rule below * lives on a wrapper inside the shadow root, so without this the host itself * never takes part in block layout. */ :host { display: block; } /** * 1) A major section of a page (<section> tag) with a title and optional description. */ .cre8-c-section { margin-bottom: var(--cre8-spacing-32); display: block; } /** * Section header * 1) Contains the section title and possibly a description */ .cre8-c-section-header { display: flex; justify-content: space-between; } /** * Section body */ .cre8-c-section__body { padding-top: var(--cre8-padding-16); } @media all and (min-width: 960px) { .cre8-c-section__body { padding-top: var(--cre8-spacing-32); } }`"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "styles",
-            "module": "components/section/section.styles.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "components/section/section.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "The section component acts as a block level HTML element that takes a 'headline' property\nthat renders the section's heading which wraps around any HTML template\nthat is found under this heading in the page layout.\n\n# How to Use\n1. Use the headline attribute to create the section header, or if you need a more custom header\n   there is a slot=\"header\" that you can target for inserting a custom template.\n2. For the main body contents, any html template can be placed inside the cre8-section component\n   and will automatically render below the header.\n\nNote: for a section with a dark background please control this with the internal Components' inverted attributes.",
-          "name": "Cre8Section",
-          "slots": [
-            {
-              "description": "content of the section should go here. It could be a cre8-text-passage, a cre8-card or any other block level html.",
-              "name": "The"
-            },
-            {
-              "description": "Custom header content, rendered in place of the `headline` property",
-              "name": "header"
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "headline",
-              "type": {
-                "text": "string | undefined"
-              },
-              "description": "The Headline will be rendered as the Section Headline with the correct brand styling applied",
-              "attribute": "headline"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "headline",
-              "type": {
-                "text": "string | undefined"
-              },
-              "description": "The Headline will be rendered as the Section Headline with the correct brand styling applied",
-              "fieldName": "headline"
-            }
-          ],
-          "superclass": {
-            "name": "Cre8Element",
-            "module": "/components/cre8-element"
-          },
-          "tagName": "cre8-section",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "Cre8Section",
-          "declaration": {
-            "name": "Cre8Section",
-            "module": "components/section/section.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "cre8-section",
-          "declaration": {
-            "name": "Cre8Section",
-            "module": "components/section/section.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Cre8Section",
-            "module": "components/section/section.ts"
           }
         }
       ]
@@ -22181,6 +22033,154 @@
           "declaration": {
             "name": "Cre8SkeletonLoader",
             "module": "components/skeleton-loader/skeleton-loader.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/section/section.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "meta",
+          "default": "{ title: 'cre8 Components/Section', component: 'cre8-section', parameters: { status: { type: 'inProgress' }, controls: { hideNoControlsWarning: true, }, }, argTypes:{ headline:{ control:{ type: 'text' } }, contents: { control:{ type: 'text' } } }, args: { headline: 'Section Headline', contents: `<cre8-text-passage> <p> This is a paragraph of text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p> <p> <a href=\"#\">Lorem ipsum dolor sit amet</a>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p> <blockquote style=\"margin-left:20px;\"> <p>This is a quotation from something.</p> <cite>Cite source</cite> </blockquote> <p> This is another paragraph of text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p> </cre8-text-passage>`, }, render: ({headline, contents}) =>{ return html` <cre8-section headline=\"${headline}\"> ${unsafeHTML(sanitizeInput(contents, 'cre8-text-passage', 'cre8-heading', 'cre8-button'))} </cre8-section>` } } satisfies Meta<Props>"
+        },
+        {
+          "kind": "variable",
+          "name": "Default",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{}"
+        },
+        {
+          "kind": "variable",
+          "name": "CustomHeading",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{ args:{ headline: undefined, contents: `<div style=\"display:flex; justify-content: space-between;\" slot=\"header\"> <cre8-heading tagVariant=\"h2\" slot=\"header\"> Section Heading </cre8-heading> <cre8-button iconPosition=\"before\" variant=\"secondary\" iconName=\"search\" text=\"ID cards\"></cre8-button> </div> <cre8-text-passage> <p> This is a paragraph of text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p> <p> <a href=\"#\">Lorem ipsum dolor sit amet</a>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p> </cre8-text-passage>` } }"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "meta",
+            "module": "components/section/section.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Default",
+          "declaration": {
+            "name": "Default",
+            "module": "components/section/section.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CustomHeading",
+          "declaration": {
+            "name": "CustomHeading",
+            "module": "components/section/section.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/section/section.styles.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "styles",
+          "default": "css`.cre8-u-content-knockout-brand { color: var(--cre8-color-content-knockout-brand); } .cre8-u-is-hidden { display: none !important; visibility: hidden !important; } .cre8-u-is-vishidden { position: absolute !important; overflow: hidden; width: 1px; height: 1px; padding: 0; border: 0; clip: rect(1px, 1px, 1px, 1px); } @media all and (min-width: 23.4375rem) { .cre8-u-hide-sm { display: none !important; } } @media all and (min-width: 35rem) { .cre8-u-hide-sm-2 { display: none !important; } } @media all and (min-width: 48rem) { .cre8-u-hide-md { display: none !important; } } @media all and (min-width: 60rem) { .cre8-u-hide-lg { display: none !important; } } @media all and (min-width: 75rem) { .cre8-u-hide-xl { display: none !important; } } @media all and (max-width: 23.4375rem) { .cre8-u-show-sm { display: none !important; } } @media all and (max-width: 35rem) { .cre8-u-show-sm-2 { display: none !important; } } @media all and (max-width: 48rem) { .cre8-u-show-md { display: none !important; } } @media all and (max-width: 60rem) { .cre8-u-show-lg { display: none !important; } } @media all and (max-width: 75rem) { .cre8-u-show-xl { display: none !important; } } .cre8-u-margin-none { margin: 0 !important; } .cre8-u-margin-sm { margin: 0.5rem !important; } .cre8-u-margin-md { margin: 1rem !important; } .cre8-u-margin-lg { margin: 1.5rem !important; } .cre8-u-margin-xl { margin: 2rem !important; } .cre8-u-margin-xxl { margin: 4rem !important; } .cre8-u-margin-top-none { margin-top: 0 !important; } .cre8-u-margin-top-sm { margin-top: 0.5rem !important; } .cre8-u-margin-top-md { margin-top: 1rem !important; } .cre8-u-margin-top-lg { margin-top: 1.5rem !important; } .cre8-u-margin-top-xl { margin-top: 2rem !important; } .cre8-u-margin-top-xxl { margin-top: 4rem !important; } .cre8-u-margin-right-none { margin-right: 0 !important; } .cre8-u-margin-right-sm { margin-right: 0.5rem !important; } .cre8-u-margin-right-md { margin-right: 1rem !important; } .cre8-u-margin-right-lg { margin-right: 1.5rem !important; } .cre8-u-margin-right-xl { margin-right: 2rem !important; } .cre8-u-margin-right-xxl { margin-right: 4rem !important; } .cre8-u-margin-bottom-none { margin-bottom: 0 !important; } .cre8-u-margin-bottom-sm { margin-bottom: 0.5rem !important; } .cre8-u-margin-bottom-md { margin-bottom: 1rem !important; } .cre8-u-margin-bottom-lg { margin-bottom: 1.5rem !important; } .cre8-u-margin-bottom-xl { margin-bottom: 2rem !important; } .cre8-u-margin-bottom-xxl { margin-bottom: 4rem !important; } .cre8-u-margin-bottom-xl-xxl { margin-bottom: 2rem !important; } @media all and (min-width: 768px) { .cre8-u-margin-bottom-xl-xxl { margin-bottom: 4rem !important; } } .cre8-u-margin-left-none { margin-left: 0 !important; } .cre8-u-margin-left-sm { margin-left: 0.5rem !important; } .cre8-u-margin-left-md { margin-left: 1rem !important; } .cre8-u-margin-left-lg { margin-left: 1.5rem !important; } .cre8-u-margin-left-xl { margin-left: 2rem !important; } .cre8-u-margin-left-xxl { margin-left: 4rem !important; } .cre8-u-padding-none { padding: 0 !important; } .cre8-u-padding-sm { padding: 0.5rem !important; } .cre8-u-padding-md { padding: 1rem !important; } .cre8-u-padding-lg { padding: 1.5rem !important; } .cre8-u-padding-xl { padding: 2rem !important; } .cre8-u-padding-xxl { padding: 4rem !important; } .cre8-u-padding-top-none { padding-top: 0 !important; } .cre8-u-padding-top-sm { padding-top: 0.5rem !important; } .cre8-u-padding-top-md { padding-top: 1rem !important; } .cre8-u-padding-top-lg { padding-top: 1.5rem !important; } .cre8-u-padding-top-xl { padding-top: 2rem !important; } .cre8-u-padding-top-xxl { padding-top: 4rem !important; } .cre8-u-padding-right-none { padding-right: 0 !important; } .cre8-u-padding-right-sm { padding-right: 0.5rem !important; } .cre8-u-padding-right-md { padding-right: 1rem !important; } .cre8-u-padding-right-lg { padding-right: 1.5rem !important; } .cre8-u-padding-right-xl { padding-right: 2rem !important; } .cre8-u-padding-right-xxl { padding-right: 4rem !important; } .cre8-u-padding-bottom-none { padding-bottom: 0 !important; } .cre8-u-padding-bottom-sm { padding-bottom: 0.5rem !important; } .cre8-u-padding-bottom-md { padding-bottom: 1rem !important; } .cre8-u-padding-bottom-lg { padding-bottom: 1.5rem !important; } .cre8-u-padding-bottom-xl { padding-bottom: 2rem !important; } .cre8-u-padding-bottom-xxl { padding-bottom: 4rem !important; } .cre8-u-padding-left-none { padding-left: 0 !important; } .cre8-u-padding-left-sm { padding-left: 0.5rem !important; } .cre8-u-padding-left-md { padding-left: 1rem !important; } .cre8-u-padding-left-lg { padding-left: 1.5rem !important; } .cre8-u-padding-left-xl { padding-left: 2rem !important; } .cre8-u-padding-left-xxl { padding-left: 4rem !important; } .cre8-u-display-flex { display: flex !important; } .cre8-u-display-block { display: block !important; } body { font-family: var(--cre8-typography-body-default-font-family); font-size: var(--cre8-typography-body-default-font-size); font-weight: var(--cre8-typography-body-default-font-weight); line-height: var(--cre8-typography-body-default-line-height); text-decoration: var(--cre8-typography-body-default-text-decoration); text-transform: var(--cre8-typography-body-default-text-transform); display: flex; flex-direction: column; padding: 0; margin: 0; color: var(--cre8-color-content-default); background: var(--cre8-color-bg-default); } @media all and (min-width: 60rem) { .page-container { background: linear-gradient(90deg, #fff 0, #fff 66.66%, #f8f8f9 0, #f8f8f9 0); } } .band__inner { margin-left: 2rem; margin-right: 2rem; } @media all and (min-width: 60rem) { .band__inner { margin-right: 0; } } img { max-width: 100%; height: auto; } /** * Border-Box http:/paulirish.com/2012/box-sizing-border-box-ftw/ */ *, ::slotted(*), *:before, *:after { box-sizing: border-box; } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /* ======= Animations ======= */ :host { --cre8-z-index-1: 1; --cre8-z-index-50: 50; --cre8-z-index-100: 100; --cre8-z-index-200: 200; --cre8-z-index-1030: 1030; --cre8-anim-fade-quick: 0.35s; --cre8-anim-ease: ease; } @keyframes fadeIn { 100% { opacity: 1; } } @keyframes slideIn { 100% { transform: translateX(0); } } @keyframes slideInFwd { 100% { width: 272px; height: 272px; } } @keyframes slideOutRight { 100% { width: 272px; height: 272px; } } @keyframes slideUp { 100% { transform: translateY(0); } } @media (width >= 481px) { @keyframes slideInFwd { 100% { width: 417px; height: 417px; } } @keyframes slideOutRight { 100% { width: 417px; height: 417px; } } } @media (width >= 48rem) { @keyframes slideInFwd { 100% { width: 330px; height: 330px; } } @keyframes slideOutRight { 100% { width: 330px; height: 330px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 60rem) { @keyframes slideInFwd { 100% { width: 460px; height: 460px; } } @keyframes slideOutRight { 100% { width: 460px; height: 460px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 75rem) { @keyframes slideInFwd { 100% { width: 592px; height: 591px; } } @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 45px)); } } } @media (width >= 87.5rem) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 120px)); } } } @media (width >= 2200px) { @keyframes slideOutRight { 100% { width: 592px; height: 591px; transform: translateX(calc(100vw - 592px)); } } } span.ripple { position: absolute; border-radius: 50%; transform: scale(0); animation: ripple 600ms linear; background-color: var(--ripple-bg-color); } @keyframes ripple { to { transform: scale(4); opacity: 1; } } :root { --size-base-unit: 0.5rem; --cre8-l-max-width: 82.5rem; /* 1 */ --cre8-l-linelength-width: 42rem; /* 1 */ } /** * RTL support for values logical properties can't automatically adjust for * 1) Percentage based horizontal translate values need to be flipped * 2) Background gradients using \"to-right\" or \"to-left\" need to be switched to using deg values. * 3) Inverse items that have 45degs */ [dir=rtl] { --rtlTranslateX: 50%; /* 1 */ --rtlGradientToRight: 270deg; /* 2 */ --rtlRotate45Inverse: -45deg; /* 3 */ } /** * Visible focus outline for elements on a light background */ /** * Visible focus outline for elements with an error status */ /** * Visible focus outline for elements on a dark background */ /** * Focus state for themes that need a dashed outline for focus * state **/ /** * Invisible focus outline for elements that need a more visible * focus state for high-contrast mode */ /** * Visually hidden from display */ /** * 1) Custom elements default to \\`display: inline\\`, which makes the host a text * box and lets its children flow like inline content. Every layout rule below * lives on a wrapper inside the shadow root, so without this the host itself * never takes part in block layout. */ :host { display: block; } /** * 1) A major section of a page (<section> tag) with a title and optional description. */ .cre8-c-section { margin-bottom: var(--cre8-spacing-32); display: block; } /** * Section header * 1) Contains the section title and possibly a description */ .cre8-c-section-header { display: flex; justify-content: space-between; } /** * Section body */ .cre8-c-section__body { padding-top: var(--cre8-padding-16); } @media all and (min-width: 960px) { .cre8-c-section__body { padding-top: var(--cre8-spacing-32); } }`"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "styles",
+            "module": "components/section/section.styles.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/section/section.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "The section component acts as a block level HTML element that takes a 'headline' property\nthat renders the section's heading which wraps around any HTML template\nthat is found under this heading in the page layout.\n\n# How to Use\n1. Use the headline attribute to create the section header, or if you need a more custom header\n   there is a slot=\"header\" that you can target for inserting a custom template.\n2. For the main body contents, any html template can be placed inside the cre8-section component\n   and will automatically render below the header.\n\nNote: for a section with a dark background please control this with the internal Components' inverted attributes.",
+          "name": "Cre8Section",
+          "slots": [
+            {
+              "description": "content of the section should go here. It could be a cre8-text-passage, a cre8-card or any other block level html.",
+              "name": "The"
+            },
+            {
+              "description": "Custom header content, rendered in place of the `headline` property",
+              "name": "header"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "headline",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The Headline will be rendered as the Section Headline with the correct brand styling applied",
+              "attribute": "headline"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "headline",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The Headline will be rendered as the Section Headline with the correct brand styling applied",
+              "fieldName": "headline"
+            }
+          ],
+          "superclass": {
+            "name": "Cre8Element",
+            "module": "/components/cre8-element"
+          },
+          "tagName": "cre8-section",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Cre8Section",
+          "declaration": {
+            "name": "Cre8Section",
+            "module": "components/section/section.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "cre8-section",
+          "declaration": {
+            "name": "Cre8Section",
+            "module": "components/section/section.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Cre8Section",
+            "module": "components/section/section.ts"
           }
         }
       ]
