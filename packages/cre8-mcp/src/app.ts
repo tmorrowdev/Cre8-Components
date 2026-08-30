@@ -16,11 +16,12 @@ import {
   handleGetPatterns,
   handleListComponents,
   handleGetComponent,
+  handleSearchComponents,
   handleGenerateCode,
   handleGetA2uiCatalog,
   handleValidateA2uiSpec,
 } from './handlers.js';
-import type { GetPatternsInput, GenerateCodeInput } from './handlers.js';
+import type { GetPatternsInput, SearchComponentsInput, GenerateCodeInput } from './handlers.js';
 import { handleGetA2uiContext } from './a2ui-context.js';
 import {
   RateLimiter,
@@ -273,6 +274,16 @@ export function createApp(options: AppOptions = {}): Hono {
     return c.json(JSON.parse(result));
   });
 
+  app.get('/search', async (c) => {
+    const q = c.req.query('q');
+    if (!q) {
+      return c.json({ error: 'Missing required query parameter: q' }, 400);
+    }
+    const input: SearchComponentsInput = { query: q, format: 'web' };
+    const result = await handleSearchComponents(input);
+    return c.json(JSON.parse(result));
+  });
+
   app.post('/generate', async (c) => {
     try {
       const body = await c.req.json();
@@ -311,6 +322,16 @@ export function createApp(options: AppOptions = {}): Hono {
   app.get('/react/patterns/:name', (c) => {
     const input: GetPatternsInput = { name: c.req.param('name'), format: 'react' };
     const result = handleGetPatterns(input);
+    return c.json(JSON.parse(result));
+  });
+
+  app.get('/react/search', async (c) => {
+    const q = c.req.query('q');
+    if (!q) {
+      return c.json({ error: 'Missing required query parameter: q' }, 400);
+    }
+    const input: SearchComponentsInput = { query: q, format: 'react' };
+    const result = await handleSearchComponents(input);
     return c.json(JSON.parse(result));
   });
 

@@ -9,8 +9,8 @@
 import { createRequire } from 'node:module';
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
-import { tools, ListComponentsSchema, GetComponentSchema, GetPatternsSchema, GenerateCodeSchema, GetA2uiCatalogSchema, ValidateA2uiSpecSchema, } from './tools.js';
-import { handleListComponents, handleGetComponent, handleGetPatterns, handleGenerateCode, handleGetA2uiCatalog, handleValidateA2uiSpec, } from './handlers.js';
+import { tools, ListComponentsSchema, GetComponentSchema, GetPatternsSchema, SearchComponentsSchema, GenerateCodeSchema, GetA2uiCatalogSchema, ValidateA2uiSpecSchema, } from './tools.js';
+import { handleListComponents, handleGetComponent, handleGetPatterns, handleSearchComponents, handleGenerateCode, handleGetA2uiCatalog, handleValidateA2uiSpec, } from './handlers.js';
 import { UI_TOOL_NAMES, handleUiTool, uiTools } from './ui-tools.js';
 import { embeddedViewerBase } from './embedded-viewer.js';
 import { GetCompositionSchema, compositionTool, handleGetComposition } from './composition.js';
@@ -54,6 +54,9 @@ export function createMcpServer(options = {}) {
                     break;
                 case 'get_patterns':
                     result = handleGetPatterns(GetPatternsSchema.parse(args));
+                    break;
+                case 'search_components':
+                    result = await handleSearchComponents(SearchComponentsSchema.parse(args));
                     break;
                 case 'generate_code':
                     result = handleGenerateCode(GenerateCodeSchema.parse(args));

@@ -13,6 +13,7 @@ import {
   type CatalogSchema,
   type RegisteredCatalog,
 } from '@tmorrow/cre8-wc/a2ui/index.js';
+import { semanticSearch } from './embeddings.js';
 
 // ─── Knowledge Graph types & loader ─────────────────────────────────────────
 
@@ -141,6 +142,11 @@ export interface GetComponentInput {
 
 export interface GetPatternsInput {
   name?: string;
+  format?: ComponentFormat;
+}
+
+export interface SearchComponentsInput {
+  query: string;
   format?: ComponentFormat;
 }
 
@@ -302,6 +308,69 @@ export function handleGetPatterns(input: GetPatternsInput): string {
       description: p.description,
       components: p.components ?? [],
     })),
+  }, null, 2);
+}
+
+/**
+ * search_components - Search components by name, description, or category (KG-backed)
+ *
+ * Tries semantic search first (query-time OpenAI embedding, ranked by cosine
+ * similarity against the vectors in catalog-embeddings.json). Falls back to
+ * the original lexical substring match whenever semantic search isn't
+ * available — no OPENAI_API_KEY, no committed embeddings file, or a failed
+ * API call — and also when semantic search runs but finds nothing above the
+ * similarity threshold, so a query never comes back emptier than the old
+ * lexical-only behavior would have.
+ */
+export async function handleSearchComponents(input: SearchComponentsInput): Promise<string> {
+  const { components } = loadKG();
+
+  const semantic = await semanticSearch(input.query);
+  if (semantic && semantic.length > 0) {
+    return JSON.stringify({
+      format: input.format ?? 'web',
+      query: input.query,
+      searchMode: 'semantic',
+      results: semantic.map(({ id, score }) => {
+        const c = components.get(id);
+        return {
+          name: id,
+          category: c?.category ?? 'Uncategorized',
+          description: (c?.description ?? '').slice(0, 160),
+          score: Math.round(score * 1000) / 1000,
+        };
+      }),
+      count: semantic.length,
+    }, null, 2);
+  }
+
+  const query = input.query.toLowerCase();
+  const matches = Array.from(components.values()).filter(
+    (c) =>
+      c.id.toLowerCase().includes(query) ||
+      (c.description ?? '').toLowerCase().includes(query) ||
+      (c.category ?? '').toLowerCase().includes(query),
+  );
+
+  if (matches.length === 0) {
+    return JSON.stringify({
+      format: input.format ?? 'web',
+      searchMode: 'lexical',
+      message: `No components found matching "${input.query}"`,
+      suggestion: 'Try a broader search term or use list_components',
+    });
+  }
+
+  return JSON.stringify({
+    format: input.format ?? 'web',
+    query: input.query,
+    searchMode: 'lexical',
+    results: matches.map((c) => ({
+      name: c.id,
+      category: c.category ?? 'Uncategorized',
+      description: (c.description ?? '').slice(0, 160),
+    })),
+    count: matches.length,
   }, null, 2);
 }
 

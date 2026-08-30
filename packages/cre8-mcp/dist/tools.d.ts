@@ -18,6 +18,7 @@ export declare const tools: ({
                 description: string;
             };
             name?: undefined;
+            query?: undefined;
             schema?: undefined;
             view?: undefined;
             component?: undefined;
@@ -41,6 +42,7 @@ export declare const tools: ({
                 description: string;
             };
             category?: undefined;
+            query?: undefined;
             schema?: undefined;
             view?: undefined;
             component?: undefined;
@@ -64,12 +66,37 @@ export declare const tools: ({
                 description: string;
             };
             category?: undefined;
+            query?: undefined;
             schema?: undefined;
             view?: undefined;
             component?: undefined;
             spec?: undefined;
         };
         required?: undefined;
+    };
+} | {
+    name: string;
+    description: string;
+    inputSchema: {
+        type: "object";
+        properties: {
+            query: {
+                type: string;
+                description: string;
+            };
+            format: {
+                type: string;
+                enum: string[];
+                description: string;
+            };
+            category?: undefined;
+            name?: undefined;
+            schema?: undefined;
+            view?: undefined;
+            component?: undefined;
+            spec?: undefined;
+        };
+        required: string[];
     };
 } | {
     name: string;
@@ -88,6 +115,7 @@ export declare const tools: ({
             };
             category?: undefined;
             name?: undefined;
+            query?: undefined;
             view?: undefined;
             component?: undefined;
             spec?: undefined;
@@ -112,6 +140,7 @@ export declare const tools: ({
             category?: undefined;
             format?: undefined;
             name?: undefined;
+            query?: undefined;
             schema?: undefined;
             spec?: undefined;
         };
@@ -130,6 +159,7 @@ export declare const tools: ({
             category?: undefined;
             format?: undefined;
             name?: undefined;
+            query?: undefined;
             schema?: undefined;
             view?: undefined;
             component?: undefined;
@@ -165,6 +195,16 @@ export declare const GetPatternsSchema: z.ZodObject<{
     format?: "web" | "react" | undefined;
 }, {
     name?: string | undefined;
+    format?: "web" | "react" | undefined;
+}>;
+export declare const SearchComponentsSchema: z.ZodObject<{
+    query: z.ZodString;
+    format: z.ZodOptional<z.ZodEnum<["web", "react"]>>;
+}, "strip", z.ZodTypeAny, {
+    query: string;
+    format?: "web" | "react" | undefined;
+}, {
+    query: string;
     format?: "web" | "react" | undefined;
 }>;
 export declare const GenerateCodeSchema: z.ZodObject<{
