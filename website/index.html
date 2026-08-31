@@ -6,6 +6,7 @@
     <title>Cre8 — The AI-Fluent Design System for Generative UI</title>
     <meta name="description" content="Cre8 is an AI-fluent design system by Cre8 Solutions LLC: 93 accessible web components, install as one plugin — MCP server plus four skills — for Claude Code, Codex CLI, and Gemini CLI.">
     <meta name="theme-color" content="#0A0F1F">
+    <meta name="color-scheme" content="light">
     <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
     <!-- Cre8 vivid design tokens (vendored, self-contained) -->
     <link rel="stylesheet" href="vendor/cre8-theme.css">
@@ -27,6 +28,7 @@
 
     <style>
         :root {
+            color-scheme: light;
             /* Page palette — resolved from the vendored cre8-vivid brand tokens */
             --brand: var(--cre8-color-bg-brand-strong);          /* indigo */
             --brand-deep: var(--cre8-color-bg-brand-strong-hover);
@@ -43,6 +45,11 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* Grid/flex items default to a content-based minimum size, which lets
+           non-wrapping content (code blocks) force the whole row wider than
+           the viewport. Reset it everywhere so overflow stays inside the
+           element that declares it, not the page. */
+        .pillars > *, .steps > *, .tools-grid > *, .install-grid > *, .demo > *, .category-grid > * { min-width: 0; }
 
         html { scroll-behavior: smooth; }
 
@@ -52,6 +59,7 @@
             color: var(--cre8-color-content-default);
             background: var(--cre8-color-bg-default);
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
         .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
@@ -87,9 +95,9 @@
         .hero {
             position: relative; overflow: hidden;
             background:
-                radial-gradient(1100px 500px at 80% -10%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 60%),
-                radial-gradient(900px 500px at 10% 0%, color-mix(in srgb, var(--brand) 35%, transparent), transparent 55%),
-                linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+                radial-gradient(1100px 550px at 82% -10%, color-mix(in srgb, var(--accent) 40%, transparent), transparent 62%),
+                radial-gradient(950px 550px at 8% 4%, color-mix(in srgb, var(--brand) 55%, transparent), transparent 60%),
+                linear-gradient(160deg, var(--brand-ink) 0%, #1B1140 48%, #150C2E 100%);
             color: #fff;
             padding: 96px 0 84px;
         }
@@ -103,15 +111,15 @@
             pointer-events: none;
         }
         .hero .container { position: relative; z-index: 1; }
-        .eyebrow {
+       .eyebrow {
             display: inline-flex; align-items: center; gap: 8px;
             padding: 6px 14px; border-radius: 999px;
             background: color-mix(in srgb, var(--accent) 14%, transparent);
-            border: 1px solid color-mix(in srgb, var(--accent) 38%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 38%, transparent);
             color: var(--accent-soft);
             font-size: .82rem; font-weight: 600; letter-spacing: .02em;
-            margin-bottom: 26px;
-        }
+    margin-bottom: 26px;
+}
         .eyebrow .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 70%, transparent); animation: pulse 2.2s infinite; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent);} 70%{ box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent) 0%, transparent);} 100%{ box-shadow:0 0 0 0 color-mix(in srgb, var(--accent) 0%, transparent);} }
 
@@ -217,10 +225,13 @@
         .tool .fn::before { content: "▸ "; color: var(--accent); }
         .tool p { color: var(--mut); font-size: .9rem; margin-top: 8px; }
 
-        .codewrap { margin-top: 42px; border-radius: var(--radius); overflow: hidden; border: 1px solid #26324A; }
+        .codewrap { margin-top: 42px; border-radius: var(--radius); overflow: hidden; border: 1px solid #26324A; min-width: 0; }
         .codewrap .bar { background: #0B1220; color: var(--mut); font-size: .78rem; padding: 10px 16px; border-bottom: 1px solid #26324A; font-family: ui-monospace, monospace; }
-        pre.code { background: #080D1A; color: #E2E8F0; padding: 22px; overflow-x: auto; font-size: .86rem; line-height: 1.7; }
+        pre.code { background: #080D1A; color: #E2E8F0; padding: 22px; overflow-x: auto; max-width: 100%; font-size: .86rem; line-height: 1.7; }
         pre.code .k { color: var(--cre8-color-content-inverse-link); } pre.code .s { color: #BBF7D0; } pre.code .c { color: #94A3B8; } pre.code .t { color: var(--accent); }
+
+        .category-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+        @media (max-width: 760px){ .category-grid{ grid-template-columns: 1fr; } }
 
         /* component wall */
         .wall { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px; }
@@ -584,7 +595,7 @@
                 <span class="chip" style="border-style:dashed;">+ 63 more</span>
             </div>
 
-            <div style="margin-top:52px; display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+            <div class="category-grid" style="margin-top:52px;">
                 <cre8-card variant="vertical">
                     <div slot="header" style="padding:16px 18px; background:var(--brand); color:#fff;"><h3 style="margin:0; font-size:1.05rem;">Forms</h3></div>
                     <div style="padding:18px; color:var(--cre8-color-content-subtle);">Fields, selects, date pickers, and validation the agent wires up correctly every time.</div>
