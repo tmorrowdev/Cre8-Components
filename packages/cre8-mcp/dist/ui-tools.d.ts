@@ -8,6 +8,12 @@
  * introduces can validate.
  */
 import { z } from 'zod';
+/**
+ * The predeclared MCP Apps template (SEP-1865). One static URI for every
+ * surface: the host fetches it once via resources/read and learns which
+ * surface to show from the ui_open_surface result's structuredContent.
+ */
+export declare const SURFACE_APP_URI = "ui://cre8/surface";
 export interface UiToolContext {
     /**
      * Resolves the absolute base URL a browser can reach surfaces on. A function
@@ -30,9 +36,22 @@ export interface ToolContentBlock {
         text: string;
     };
 }
+export interface UiToolResult {
+    content: ToolContentBlock[];
+    /**
+     * Present on ui_open_surface: what an MCP Apps view reads to know which
+     * surface to attach to. Hosts without the extension simply ignore it.
+     */
+    structuredContent?: Record<string, unknown>;
+}
 export declare const uiTools: ({
     name: string;
     description: string;
+    _meta: {
+        ui: {
+            resourceUri: string;
+        };
+    };
     inputSchema: {
         type: "object";
         properties: {
@@ -106,6 +125,7 @@ export declare const uiTools: ({
         };
         required: string[];
     };
+    _meta?: undefined;
 } | {
     name: string;
     description: string;
@@ -128,6 +148,7 @@ export declare const uiTools: ({
         };
         required: string[];
     };
+    _meta?: undefined;
 } | {
     name: string;
     description: string;
@@ -156,6 +177,7 @@ export declare const uiTools: ({
         };
         required: string[];
     };
+    _meta?: undefined;
 })[];
 export declare const UiOpenSurfaceSchema: z.ZodObject<{
     title: z.ZodOptional<z.ZodString>;
@@ -223,4 +245,4 @@ export declare const UiCloseSurfaceSchema: z.ZodObject<{
     surfaceId: string;
 }>;
 export declare const UI_TOOL_NAMES: Set<string>;
-export declare function handleUiTool(name: string, args: unknown, ctx: UiToolContext): Promise<ToolContentBlock[]>;
+export declare function handleUiTool(name: string, args: unknown, ctx: UiToolContext): Promise<UiToolResult>;

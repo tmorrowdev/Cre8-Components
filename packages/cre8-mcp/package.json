@@ -15,7 +15,7 @@
     "start": "node dist/index.js",
     "start:api": "node dist/server.js",
     "dev:api": "npx tsx watch src/server.ts",
-    "test": "npx tsx test/surface-api.test.mjs && npx tsx test/stdio-viewer.test.mjs && npx tsx test/a2ui-context.test.mjs && npx tsx test/tenants.test.mjs && npx tsx test/search-components.test.mjs"
+    "test": "npx tsx test/surface-api.test.mjs && npx tsx test/stdio-viewer.test.mjs && npx tsx test/a2ui-context.test.mjs && npx tsx test/tenants.test.mjs && npx tsx test/search-components.test.mjs && npx tsx test/mcp-apps.test.mjs"
   },
   "keywords": [
     "mcp",
@@ -48,7 +48,8 @@
     "@tmorrow/cre8-wc": "workspace:^",
     "@tmorrow/cre8-react": "^2.3.10",
     "hono": "^4.11.4",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "@modelcontextprotocol/ext-apps": "^1.7.5"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",

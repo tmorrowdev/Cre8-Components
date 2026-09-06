@@ -209,6 +209,29 @@ export function mountSurfaceViewer(app: Hono): void {
     }
   });
 
+  // The MCP Apps view bridge (`App` from @modelcontextprotocol/ext-apps),
+  // served from here so the ui://cre8/surface template stays inside the CSP it
+  // declares — one origin, no CDN. `app-with-deps` is the self-contained ESM
+  // build; the bare entry has externalized imports a browser cannot resolve.
+  app.get('/mcp-app/app.js', (c) => {
+    try {
+      const require = createRequire(import.meta.url);
+      const body = readFileSync(
+        require.resolve('@modelcontextprotocol/ext-apps/app-with-deps'),
+        'utf-8'
+      );
+      return c.body(body, 200, {
+        'content-type': 'text/javascript; charset=utf-8',
+        'cache-control': 'public, max-age=3600',
+      });
+    } catch {
+      return c.json(
+        { error: 'The MCP Apps view bridge (@modelcontextprotocol/ext-apps) is not installed.' },
+        503
+      );
+    }
+  });
+
   app.get('/a2ui/runtime/:file{.+}', (c) => {
     const file = c.req.param('file');
     if (!RUNTIME_FILES.has(file)) {

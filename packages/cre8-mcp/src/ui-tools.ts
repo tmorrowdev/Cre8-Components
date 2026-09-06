@@ -10,8 +10,16 @@
 
 import { z } from 'zod';
 import type { DataPatch, PatchOp, SurfaceState } from '@tmorrow/cre8-wc/a2ui/stream/index.js';
+import { RESOURCE_MIME_TYPE } from '@modelcontextprotocol/ext-apps';
 import { renderSurfacePage } from './surface-page.js';
 import { surfaceStore } from './surfaces.js';
+
+/**
+ * The predeclared MCP Apps template (SEP-1865). One static URI for every
+ * surface: the host fetches it once via resources/read and learns which
+ * surface to show from the ui_open_surface result's structuredContent.
+ */
+export const SURFACE_APP_URI = 'ui://cre8/surface';
 
 export interface UiToolContext {
   /**
@@ -31,6 +39,15 @@ export interface ToolContentBlock {
   type: 'text' | 'resource';
   text?: string;
   resource?: { uri: string; mimeType: string; text: string };
+}
+
+export interface UiToolResult {
+  content: ToolContentBlock[];
+  /**
+   * Present on ui_open_surface: what an MCP Apps view reads to know which
+   * surface to attach to. Hosts without the extension simply ignore it.
+   */
+  structuredContent?: Record<string, unknown>;
 }
 
 const SPEC_SHAPE =
@@ -57,6 +74,9 @@ export const uiTools = [
       'Typical flow: ui_open_surface → give the user the URL → ui_stream repeatedly as you work → ' +
       'ui_events to react to clicks → ui_stream with status "done". ' +
       SPEC_SHAPE,
+    // MCP Apps (SEP-1865): hosts that speak the io.modelcontextprotocol/ui
+    // extension render the predeclared template instead of following the URL.
+    _meta: { ui: { resourceUri: SURFACE_APP_URI } },
     inputSchema: {
       type: 'object' as const,
       properties: {
@@ -226,8 +246,8 @@ async function surfaceResource(
   return {
     type: 'resource',
     resource: {
-      uri: `ui://cre8/surface/${surfaceId}`,
-      mimeType: 'text/html;profile=mcp-app',
+      uri: `${SURFACE_APP_URI}/${surfaceId}`,
+      mimeType: RESOURCE_MIME_TYPE,
       text: renderSurfacePage({ surfaceId, title, theme, origin }),
     },
   };
@@ -237,7 +257,7 @@ export async function handleUiTool(
   name: string,
   args: unknown,
   ctx: UiToolContext
-): Promise<ToolContentBlock[]> {
+): Promise<UiToolResult> {
   switch (name) {
     case 'ui_open_surface': {
       const input = UiOpenSurfaceSchema.parse(args);
@@ -258,7 +278,9 @@ export async function handleUiTool(
       if (ctx.embedResources !== false) {
         blocks.push(await surfaceResource(ctx, summary.surfaceId, summary.title, summary.theme));
       }
-      return blocks;
+      // What the MCP Apps view boots from — it needs surfaceId and theme; the
+      // rest is there for hosts that surface structured results to the model.
+      return { content: blocks, structuredContent: { ...summary, url } };
     }
 
     case 'ui_stream': {
@@ -284,17 +306,19 @@ export async function handleUiTool(
       const summary = input.status
         ? surfaceStore.setStatus(input.surfaceId, input.status as SurfaceState, input.statusMessage)
         : surfaceStore.summary(input.surfaceId);
-      return [json({ ...summary, url: await viewerUrl(ctx, input.surfaceId) })];
+      return { content: [json({ ...summary, url: await viewerUrl(ctx, input.surfaceId) })] };
     }
 
     case 'ui_get_surface': {
       const input = UiGetSurfaceSchema.parse(args);
-      return [
-        json({
-          ...surfaceStore.snapshot(input.surfaceId),
-          url: await viewerUrl(ctx, input.surfaceId),
-        }),
-      ];
+      return {
+        content: [
+          json({
+            ...surfaceStore.snapshot(input.surfaceId),
+            url: await viewerUrl(ctx, input.surfaceId),
+          }),
+        ],
+      };
     }
 
     case 'ui_events': {
@@ -303,21 +327,23 @@ export async function handleUiTool(
       const events = input.waitMs
         ? await surfaceStore.awaitEvents(input.surfaceId, since, Math.min(input.waitMs, 60_000))
         : surfaceStore.eventsSince(input.surfaceId, since);
-      return [
-        json({
-          events,
-          lastSeq: events.length ? events[events.length - 1].seq : since,
-          note: events.length
-            ? undefined
-            : 'No events yet. Pass waitMs to block instead of polling in a loop.',
-        }),
-      ];
+      return {
+        content: [
+          json({
+            events,
+            lastSeq: events.length ? events[events.length - 1].seq : since,
+            note: events.length
+              ? undefined
+              : 'No events yet. Pass waitMs to block instead of polling in a loop.',
+          }),
+        ],
+      };
     }
 
     case 'ui_close_surface': {
       const input = UiCloseSurfaceSchema.parse(args);
       surfaceStore.close(input.surfaceId);
-      return [json({ ok: true, surfaceId: input.surfaceId })];
+      return { content: [json({ ok: true, surfaceId: input.surfaceId })] };
     }
 
     default:

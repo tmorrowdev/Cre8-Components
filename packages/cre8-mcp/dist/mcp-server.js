@@ -8,10 +8,12 @@
  */
 import { createRequire } from 'node:module';
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
-import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
+import { CallToolRequestSchema, ListResourcesRequestSchema, ListToolsRequestSchema, ReadResourceRequestSchema, } from '@modelcontextprotocol/sdk/types.js';
+import { RESOURCE_MIME_TYPE } from '@modelcontextprotocol/ext-apps';
 import { tools, ListComponentsSchema, GetComponentSchema, GetPatternsSchema, SearchComponentsSchema, GenerateCodeSchema, GetA2uiCatalogSchema, ValidateA2uiSpecSchema, } from './tools.js';
 import { handleListComponents, handleGetComponent, handleGetPatterns, handleSearchComponents, handleGenerateCode, handleGetA2uiCatalog, handleValidateA2uiSpec, } from './handlers.js';
-import { UI_TOOL_NAMES, handleUiTool, uiTools } from './ui-tools.js';
+import { SURFACE_APP_URI, UI_TOOL_NAMES, handleUiTool, uiTools, } from './ui-tools.js';
+import { renderSurfaceAppPage, renderSurfacePage } from './surface-page.js';
 import { embeddedViewerBase } from './embedded-viewer.js';
 import { GetCompositionSchema, compositionTool, handleGetComposition } from './composition.js';
 import { Cre8GuideSchema, GetContentModelSchema, handleCre8Guide, handleGetContentModel, knowledgeTools, } from './knowledge-tools.js';
@@ -34,15 +36,87 @@ export function createMcpServer(options = {}) {
             : embeddedViewerBase,
         embedResources: options.embedResources,
     };
-    const server = new Server({ name: 'cre8-mcp', version: SERVER_VERSION }, { capabilities: { tools: {} } });
+    const server = new Server({ name: 'cre8-mcp', version: SERVER_VERSION }, { capabilities: { tools: {}, resources: {} } });
     server.setRequestHandler(ListToolsRequestSchema, async () => ({
         tools: [...tools, ...knowledgeTools, compositionTool, ...uiTools],
     }));
+    /**
+     * MCP Apps (SEP-1865): the surface view template, predeclared. The CSP names
+     * this server's own origin and nothing else — the template loads the design
+     * system, the A2UI runtime, and the view bridge from here, and streams from
+     * here, so an apps host can render it with no third-party grants at all.
+     *
+     * Resolving the origin may boot the embedded viewer on stdio; only hosts
+     * that actually speak the extension list or read resources, so the cost
+     * lands exactly where the capability is used.
+     */
+    const surfaceAppMeta = async () => {
+        const origin = (await uiContext.publicBase()).replace(/\/$/, '');
+        return {
+            origin,
+            meta: {
+                ui: {
+                    csp: { connectDomains: [origin], resourceDomains: [origin] },
+                    prefersBorder: true,
+                },
+            },
+        };
+    };
+    server.setRequestHandler(ListResourcesRequestSchema, async () => {
+        const { meta } = await surfaceAppMeta();
+        return {
+            resources: [
+                {
+                    uri: SURFACE_APP_URI,
+                    name: 'cre8 live surface',
+                    description: 'Interactive view for ui_open_surface: renders the surface the tool result names and ' +
+                        'streams updates from the cre8-mcp server.',
+                    mimeType: RESOURCE_MIME_TYPE,
+                    _meta: meta,
+                },
+            ],
+        };
+    });
+    server.setRequestHandler(ReadResourceRequestSchema, async (request) => {
+        const { uri } = request.params;
+        const { origin, meta } = await surfaceAppMeta();
+        if (uri === SURFACE_APP_URI) {
+            return {
+                contents: [
+                    {
+                        uri,
+                        mimeType: RESOURCE_MIME_TYPE,
+                        text: renderSurfaceAppPage({ origin }),
+                        _meta: meta,
+                    },
+                ],
+            };
+        }
+        // Per-surface pages keep working for hosts that stored the URI a tool
+        // result embedded (the pre-SEP mcp-ui flow).
+        const perSurface = uri.startsWith(`${SURFACE_APP_URI}/`)
+            ? uri.slice(SURFACE_APP_URI.length + 1)
+            : null;
+        if (perSurface) {
+            return {
+                contents: [
+                    {
+                        uri,
+                        mimeType: RESOURCE_MIME_TYPE,
+                        text: renderSurfacePage({ surfaceId: perSurface, origin }),
+                        _meta: meta,
+                    },
+                ],
+            };
+        }
+        throw new Error(`Unknown resource: ${uri}`);
+    });
     server.setRequestHandler(CallToolRequestSchema, async (request) => {
         const { name, arguments: args } = request.params;
         try {
             if (UI_TOOL_NAMES.has(name)) {
-                return { content: await handleUiTool(name, args, uiContext) };
+                const { content, structuredContent } = await handleUiTool(name, args, uiContext);
+                return structuredContent ? { content, structuredContent } : { content };
             }
             let result;
             switch (name) {

@@ -71,12 +71,15 @@ importers:
       '@hono/node-server':
         specifier: ^1.19.9
         version: 1.19.13(hono@4.12.25)
+      '@modelcontextprotocol/ext-apps':
+        specifier: ^1.7.5
+        version: 1.7.5(@modelcontextprotocol/sdk@1.29.0)(react-dom@19.2.5)(react@19.2.5)(zod@3.25.76)
       '@modelcontextprotocol/sdk':
         specifier: ^1.0.0
         version: 1.29.0(zod@3.25.76)
       '@tmorrow/cre8-react':
-        specifier: ^2.3.6
-        version: 2.3.6(@types/react@19.2.14)(react-dom@19.2.5)(react@19.2.5)
+        specifier: ^2.3.10
+        version: 2.3.10(@types/react@19.2.14)(react-dom@19.2.5)(react@19.2.5)
       '@tmorrow/cre8-wc':
         specifier: workspace:^
         version: link:../cre8-wc
@@ -3077,6 +3080,27 @@ packages:
       - supports-color
     dev: true
 
+  /@modelcontextprotocol/ext-apps@1.7.5(@modelcontextprotocol/sdk@1.29.0)(react-dom@19.2.5)(react@19.2.5)(zod@3.25.76):
+    resolution: {integrity: sha512-TjPH2S2y5UEGKhmI6+XGFuqfqOV4ppe1x6DA3txnUaEWkgtA4G5vo14jGKFZmegdkZ1H4QMLyujLvoU1BEdnAg==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      '@modelcontextprotocol/sdk': ^1.29.0
+      react: ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^17.0.0 || ^18.0.0 || ^19.0.0
+      zod: ^3.25.0 || ^4.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@modelcontextprotocol/sdk': 1.29.0(zod@3.25.76)
+      '@standard-schema/spec': 1.1.0
+      react: 19.2.5
+      react-dom: 19.2.5(react@19.2.5)
+      zod: 3.25.76
+    dev: false
+
   /@modelcontextprotocol/sdk@1.29.0(zod@3.25.76):
     resolution: {integrity: sha512-zo37mZA9hJWpULgkRpowewez1y6ML5GsXJPY8FI0tBBCd77HEvza4jDqRKOXgHNn867PVGCyTdzqpz0izu5ZjQ==}
     engines: {node: '>=18'}
@@ -4021,7 +4045,6 @@ packages:
 
   /@standard-schema/spec@1.1.0:
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
-    dev: true
 
   /@storybook/addon-a11y@10.5.4(storybook@10.5.4):
     resolution: {integrity: sha512-UWdZtB7Dh1GjqxTPOrisUNDhDGF5pKGzZdzW9DSSHMBcAOx2dsTmXGzLSFprAz4LTT0OHCtKhxNqKK0JZJ0Y8g==}
@@ -4372,22 +4395,22 @@ packages:
       tmcp: 1.19.3(typescript@5.9.3)
     dev: true
 
-  /@tmorrow/cre8-react@2.3.6(@types/react@19.2.14)(react-dom@19.2.5)(react@19.2.5):
-    resolution: {integrity: sha512-gFtFT5+Fo6NzoFkQVc0ujEX2W6Czv1BGTohgYkKq6a6odP5TiTGcYawVoFMAIyewX4Xbixi6G/2Hskjh6z+urg==}
+  /@tmorrow/cre8-react@2.3.10(@types/react@19.2.14)(react-dom@19.2.5)(react@19.2.5):
+    resolution: {integrity: sha512-BofhWvm29sesV3l40Z9dYM3XIchU4AEBI1mVKF+1nol4TsI8GXN3ICrqOlgChkcq/Dtl7YL3gbDYT/9zov2Gjg==}
     peerDependencies:
       react: '>=18'
       react-dom: '>=18'
     dependencies:
       '@lit/react': 1.0.8(@types/react@19.2.14)
-      '@tmorrow/cre8-wc': 2.3.6(@types/react@19.2.14)
+      '@tmorrow/cre8-wc': 2.3.10(@types/react@19.2.14)
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
     transitivePeerDependencies:
       - '@types/react'
     dev: false
 
-  /@tmorrow/cre8-wc@2.3.6(@types/react@19.2.14):
-    resolution: {integrity: sha512-ueK3dZHjbpqEwejf8e8kLIn43Beh/tJlPDLl4zNdXpDhI58BaWVS9Owjw1V4s4IVM8DlJ2SIbt33rxh0e60wZw==}
+  /@tmorrow/cre8-wc@2.3.10(@types/react@19.2.14):
+    resolution: {integrity: sha512-+suvLtuFwF77l5zul/JlQzE1bYppGAogjdo3AQqFMDvMjAKqfucEO1XUmAXqPYdyAhvlFHCr56a2ofg07vbN8w==}
     dependencies:
       '@a11y/focus-trap': 1.0.5
       '@lit/context': 1.1.6
