@@ -40,3 +40,6 @@ graphify-out/cache
 .claude/marketplaces/
 .claude/*.local.md
 packages/cre8-wc/react-wrappers/dist-storybook
+memory/*
+memory/**
+memory
