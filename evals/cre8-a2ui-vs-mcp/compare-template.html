@@ -1,0 +1,183 @@
+<title>Before and After the KB</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+<style>
+:root {
+  color-scheme: light;
+  --ground: #f2f3f2; --surface: #fcfcfb; --line: #dcdedc;
+  --ink: #0b0b0b; --ink-2: #52514e; --ink-3: #7c7b76;
+  --pre: #2a78d6; --post: #1baf7a; --bad: #b3261e;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ground: #0e0f0e; --surface: #1a1a19; --line: #2f302e;
+    --ink: #fff; --ink-2: #c3c2b7; --ink-3: #8f8e86;
+    --pre: #3987e5; --post: #199e70; --bad: #e66767;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ground: #0e0f0e; --surface: #1a1a19; --line: #2f302e;
+  --ink: #fff; --ink-2: #c3c2b7; --ink-3: #8f8e86;
+  --pre: #3987e5; --post: #199e70; --bad: #e66767;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--ground); color: var(--ink);
+  font: 400 15px/1.55 "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+}
+.wrap { width: 100%; flex: 1 1 auto; min-width: 0; max-width: 1720px; margin: 0 auto; padding: 32px 20px 80px; }
+h1 { margin: 0 0 8px; font-size: 30px; font-weight: 600; letter-spacing: -.02em; }
+.lede { margin: 0 0 6px; max-width: 78ch; color: var(--ink-2); }
+.meta { font: 400 12.5px/1.5 "IBM Plex Mono", ui-monospace, monospace; color: var(--ink-3); margin-bottom: 34px; }
+
+.pair { margin-bottom: 40px; }
+.pair-head {
+  display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px;
+  padding-bottom: 8px; border-bottom: 1px solid var(--line);
+}
+.pair-task { font-weight: 600; font-size: 16px; }
+.pair-note { font: 400 13px/1.4 "IBM Plex Sans", sans-serif; color: var(--ink-3); }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.col {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+  overflow: hidden; min-width: 0; display: flex; flex-direction: column;
+}
+.col-head { display: flex; align-items: center; gap: 9px; padding: 11px 14px; border-bottom: 1px solid var(--line); }
+.dot { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.col-name { font-weight: 600; font-size: 13.5px; }
+.col-ver { font: 400 11.5px/1 "IBM Plex Mono", ui-monospace, monospace; color: var(--ink-3); }
+.col-score {
+  margin-left: auto; font: 600 14px/1 "IBM Plex Mono", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums; padding: 5px 8px; border-radius: 5px;
+  background: color-mix(in oklab, var(--line) 55%, transparent);
+}
+.stage { background: #fff; overflow: hidden; position: relative; min-width: 0; }
+.canvas { width: 1100px; transform-origin: top left; padding: 18px; background: #fff; }
+.faults { padding: 10px 14px; border-top: 1px solid var(--line); }
+.faults-head {
+  font: 500 10.5px/1 "IBM Plex Mono", ui-monospace, monospace;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 6px;
+}
+.fault { display: flex; gap: 8px; align-items: baseline; font: 400 12px/1.45 "IBM Plex Mono", ui-monospace, monospace; color: var(--ink-2); }
+.fault-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--bad); flex: none; }
+.clean { color: var(--ink-3); font: 400 12px/1.4 "IBM Plex Mono", ui-monospace, monospace; }
+.same { color: var(--ink-3); font: 400 12.5px/1.4 "IBM Plex Mono", ui-monospace, monospace; }
+</style>
+
+<style>/*__TOKENS__*/</style>
+
+<div class="wrap">
+  <h1>Before and after the KB</h1>
+  <p class="lede">
+    The same five briefs, the same arm, the same model — only the version of
+    <code>@tmorrow/cre8-mcp</code> differs. Left is 2.3.1, before the knowledge
+    graph became the structural source; right is 2.3.2, after.
+  </p>
+  <div class="meta" id="meta"></div>
+  <div id="pairs"></div>
+</div>
+
+<script type="module">/*__BUNDLE__*/</script>
+<script>
+const DATA = /*__DATA__*/;
+
+function applyProp(el, key, value, kind) {
+  if (value === undefined || value === null) return;
+  if (kind === "property") { el[key] = value; return; }
+  if (typeof value === "boolean") { if (value) el.setAttribute(key, ""); else el.removeAttribute(key); return; }
+  if (typeof value === "object") { el[key] = value; return; }
+  el.setAttribute(key, String(value));
+}
+function build(spec, doc) {
+  const el = doc.createElement(spec.component);
+  const kinds = DATA.propKinds[spec.component] || {};
+  for (const [k, v] of Object.entries(spec.props || {})) applyProp(el, k, v, kinds[k]);
+  for (const c of spec.children || []) el.appendChild(typeof c === "string" ? doc.createTextNode(c) : build(c, doc));
+  for (const [slot, kids] of Object.entries(spec.slots || {})) {
+    for (const c of kids || []) {
+      if (typeof c === "string") {
+        if (slot === "default") { el.appendChild(doc.createTextNode(c)); continue; }
+        const w = doc.createElement("span"); w.setAttribute("slot", slot); w.textContent = c; el.appendChild(w); continue;
+      }
+      const ce = build(c, doc);
+      if (slot !== "default") ce.setAttribute("slot", slot);
+      el.appendChild(ce);
+    }
+  }
+  return el;
+}
+const el = (t, c, x) => { const n = document.createElement(t); if (c) n.className = c; if (x !== undefined) n.textContent = x; return n; };
+const fmt = (n) => (n === null || n === undefined) ? "–" : n.toFixed(3);
+
+function faults(entry) {
+  const out = [];
+  for (const [dim, list] of Object.entries(entry.violations || {})) {
+    for (const v of list) {
+      const what = v.component ? (v.prop ? `${v.component}.${v.prop}` : v.slot ? `${v.component} slot:${v.slot}` : v.component) : (v.id || "");
+      out.push(`${what} · ${dim.replace(/_/g, " ")}`);
+    }
+  }
+  return out;
+}
+
+function panel(side, entry, label, version) {
+  const col = el("div", "col");
+  const head = el("div", "col-head");
+  const dot = el("span", "dot");
+  dot.style.background = `var(--${side})`;
+  head.append(dot, el("span", "col-name", label), el("span", "col-ver", version));
+  if (entry) head.append(el("span", "col-score", fmt(entry.reward)));
+  col.append(head);
+
+  const stage = el("div", "stage");
+  if (entry && entry.spec) {
+    const canvas = el("div", "canvas");
+    const host = el("div", "specimen");
+    host.dataset.brand = DATA.defaultBrand;
+    try { host.append(build(entry.spec.root || entry.spec, document)); }
+    catch (err) { host.append(el("div", "clean", `could not render: ${err.message}`)); }
+    canvas.append(host); stage.append(canvas);
+    const fit = () => {
+      const w = stage.clientWidth;
+      if (!w) return;
+      const s = w / 1100;
+      canvas.style.transform = `scale(${s})`;
+      stage.style.height = `${canvas.scrollHeight * s}px`;
+    };
+    fit(); new ResizeObserver(fit).observe(canvas); window.addEventListener("resize", fit);
+  } else {
+    stage.append(el("div", "clean", "no spec"));
+  }
+  col.append(stage);
+
+  const f = el("div", "faults");
+  const items = entry ? faults(entry) : [];
+  f.append(el("div", "faults-head", items.length ? `${items.length} violation${items.length > 1 ? "s" : ""}` : "violations"));
+  if (!items.length) f.append(el("div", "clean", "none"));
+  else for (const item of items.slice(0, 6)) {
+    const line = el("div", "fault"); line.append(el("span", "fault-dot"), el("span", null, item)); f.append(line);
+  }
+  col.append(f);
+  return col;
+}
+
+document.getElementById("meta").textContent =
+  `${DATA.tasks.length} tasks · median trial per side · ${DATA.model} · left ${DATA.preVersion} · right ${DATA.postVersion}`;
+
+const pairs = document.getElementById("pairs");
+for (const task of DATA.tasks) {
+  const pre = DATA.pre[task], post = DATA.post[task];
+  const block = el("div", "pair");
+  const head = el("div", "pair-head");
+  head.append(el("span", "pair-task", task));
+  const identical = pre && post && JSON.stringify(pre.spec) === JSON.stringify(post.spec);
+  head.append(el("span", "pair-note", identical ? "byte-identical specs" : "specs differ"));
+  block.append(head);
+  const cols = el("div", "cols");
+  cols.append(panel("pre", pre, "before the KB", DATA.preVersion), panel("post", post, "after the KB", DATA.postVersion));
+  block.append(cols);
+  pairs.append(block);
+}
+</script>

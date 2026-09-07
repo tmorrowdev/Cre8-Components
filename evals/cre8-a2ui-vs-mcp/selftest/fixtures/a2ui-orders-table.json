@@ -1,0 +1,137 @@
+{
+  "schema": "cre8-a2ui/1.0",
+  "root": {
+    "component": "cre8-layout-container",
+    "children": [
+      {
+        "component": "cre8-table",
+        "props": {
+          "striped": true,
+          "hoverable": true,
+          "caption": "Recent orders"
+        },
+        "children": [
+          {
+            "component": "cre8-table-row",
+            "children": [
+              {
+                "component": "cre8-table-cell",
+                "children": [
+                  "Order"
+                ]
+              },
+              {
+                "component": "cre8-table-cell",
+                "children": [
+                  "Customer"
+                ]
+              },
+              {
+                "component": "cre8-table-cell",
+                "children": [
+                  "Status"
+                ]
+              },
+              {
+                "component": "cre8-table-cell",
+                "children": [
+                  "Total"
+                ]
+              }
+            ]
+          },
+          {
+            "component": "cre8-table-cell",
+            "children": [
+              "#4471"
+            ]
+          },
+          {
+            "component": "cre8-table-cell",
+            "children": [
+              "Northwind Labs"
+            ]
+          },
+          {
+            "component": "cre8-table-cell",
+            "children": [
+              {
+                "component": "cre8-tag",
+                "props": {
+                  "text": "Paid",
+                  "variant": "success"
+                }
+              }
+            ]
+          },
+          {
+            "component": "cre8-table-cell",
+            "children": [
+              "$1,240.00"
+            ]
+          },
+          {
+            "component": "cre8-table-cell",
+            "children": [
+              "#4470"
+            ]
+          },
+          {
+            "component": "cre8-table-cell",
+            "children": [
+              "Acme Robotics"
+            ]
+          },
+          {
+            "component": "cre8-table-cell",
+            "children": [
+              {
+                "component": "cre8-tag",
+                "props": {
+                  "text": "Refunded",
+                  "variant": "info"
+                }
+              }
+            ]
+          },
+          {
+            "component": "cre8-table-cell",
+            "children": [
+              "$860.00"
+            ]
+          },
+          {
+            "component": "cre8-table-cell",
+            "children": [
+              "#4469"
+            ]
+          },
+          {
+            "component": "cre8-table-cell",
+            "children": [
+              "Contoso Metals"
+            ]
+          },
+          {
+            "component": "cre8-table-cell",
+            "children": [
+              {
+                "component": "cre8-tag",
+                "props": {
+                  "text": "Failed",
+                  "variant": "error"
+                }
+              }
+            ]
+          },
+          {
+            "component": "cre8-table-cell",
+            "children": [
+              "$2,100.00"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 ---
 name: cre8-design
-description: Design judgment for the CRE8 design system - which component a given job calls for, how to compose a page out of them, and how the design token and brand architecture fits together. Use alongside the cre8-mcp server, which supplies the component API facts (names, props, enum values, slots) this skill deliberately does not restate. Triggers on building UI with CRE8, @tmorrow/cre8-wc, @tmorrow/cre8-react,  components, theming CRE8, or choosing between CRE8 components.
+description: Design judgment for the CRE8/Innovexa design system - which component a given job calls for, how to compose a page out of them, and how the design token and brand architecture fits together. Use alongside the cre8-mcp server, which supplies the component API facts (names, props, enum values, slots) this skill deliberately does not restate. Triggers on building UI with CRE8, @tmorrow/cre8-wc, @tmorrow/cre8-react, Innovexa components, theming CRE8, or choosing between CRE8 components.
 ---
 
 # CRE8 design judgment

@@ -1,0 +1,33 @@
+{
+  "task": "mcp-freecode-portfolio",
+  "library_version": "2.3.6",
+  "output_path": "/app/src/App.tsx",
+  "requirements": "open brief - no requirements to check",
+  "denominators": {
+    "component_validity": 332,
+    "prop_validity": 565,
+    "enum_validity": 192,
+    "slot_validity": 36,
+    "containment": 168,
+    "inert_free": 565
+  },
+  "hits": {
+    "component_validity": 332,
+    "prop_validity": 565,
+    "enum_validity": 192,
+    "slot_validity": 36,
+    "containment": 168,
+    "inert_free": 565
+  },
+  "violations": {},
+  "shape": {
+    "nodes": 332,
+    "distinct_components": 43,
+    "distinct_real_components": 43,
+    "catalog_breadth": 0.4886,
+    "categories_touched": 8,
+    "max_depth": 13,
+    "slots_used": 36,
+    "text_chars": 8383
+  }
+}

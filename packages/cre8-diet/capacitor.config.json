@@ -1,0 +1,12 @@
+{
+  "appId": "dev.tmorrow.cre8diet",
+  "appName": "Cre8 Diet",
+  "webDir": "www",
+  "ios": {
+    "contentInset": "always",
+    "limitsNavigationsToAppBoundDomains": true
+  },
+  "server": {
+    "iosScheme": "capacitor"
+  }
+}

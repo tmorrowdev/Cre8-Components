@@ -1,0 +1,90 @@
+{
+  "task": "a2ui-form-error-states",
+  "output_path": "/app/ui.a2ui.json",
+  "requirements": [
+    {
+      "id": "form-heading",
+      "kind": "text_present",
+      "any_of": [
+        "Create your workspace"
+      ]
+    },
+    {
+      "id": "email-label",
+      "kind": "text_present",
+      "any_of": [
+        "Work email"
+      ]
+    },
+    {
+      "id": "email-error-state",
+      "kind": "prop_value",
+      "component": "cre8-field",
+      "prop": "isError",
+      "value": true
+    },
+    {
+      "id": "email-message-renders",
+      "kind": "prop_value",
+      "component": "cre8-field",
+      "prop": "fieldNote",
+      "value": "Enter a work email address - free providers are not supported."
+    },
+    {
+      "id": "password-label",
+      "kind": "text_present",
+      "any_of": [
+        "Password"
+      ]
+    },
+    {
+      "id": "password-success-state",
+      "kind": "prop_value",
+      "component": "cre8-field",
+      "prop": "isSuccess",
+      "value": true
+    },
+    {
+      "id": "password-message-renders",
+      "kind": "prop_value",
+      "component": "cre8-field",
+      "prop": "fieldNote",
+      "value": "Strong password."
+    },
+    {
+      "id": "submit-action",
+      "kind": "text_present",
+      "any_of": [
+        "Create workspace"
+      ]
+    },
+    {
+      "id": "dialog-open",
+      "kind": "prop_value",
+      "component": "cre8-modal",
+      "prop": "isActive",
+      "value": true
+    },
+    {
+      "id": "dialog-heading",
+      "kind": "text_present",
+      "any_of": [
+        "Confirm your email"
+      ]
+    },
+    {
+      "id": "dialog-body",
+      "kind": "text_present",
+      "any_of": [
+        "We sent a link to dana@innovexa.com."
+      ]
+    },
+    {
+      "id": "dialog-close-label",
+      "kind": "text_present",
+      "any_of": [
+        "Close"
+      ]
+    }
+  ]
+}

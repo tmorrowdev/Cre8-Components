@@ -1,0 +1,32 @@
+schema_version = "1.4"
+artifacts = ["/app/ui.a2ui.json"]
+
+[task]
+name = "cre8/a2ui-open-portfolio"
+version = "1.0.0"
+description = "An open brief with no requirements list: design a portfolio page. Scores catalog fidelity only, and reports what the agent reached for."
+keywords = ["cre8", "a2ui", "design-system", "open-ended", "tool-use"]
+
+[[task.authors]]
+name = "Tyler Morrow"
+email = "tsmorro@gmail.com"
+
+[metadata]
+author_name = "Tyler Morrow"
+author_email = "tsmorro@gmail.com"
+difficulty = "medium"
+category = "software_engineering"
+tags = ["design-system", "a2ui", "open-brief"]
+expert_time_estimate_min = 20
+junior_time_estimate_min = 50
+
+[verifier]
+timeout_sec = 300.0
+
+[agent]
+timeout_sec = 1200.0
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 900.0
+os = "linux"

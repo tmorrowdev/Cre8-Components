@@ -1,0 +1,97 @@
+{
+  "task": "a2ui-status-strip-enums",
+  "output_path": "/app/ui.a2ui.json",
+  "requirements": [
+    {
+      "id": "banner-heading",
+      "kind": "text_present",
+      "any_of": [
+        "Degraded performance"
+      ]
+    },
+    {
+      "id": "banner-body",
+      "kind": "text_present",
+      "any_of": [
+        "Write requests are queuing in us-east-1. Reads are unaffected."
+      ]
+    },
+    {
+      "id": "banner-is-warning",
+      "kind": "prop_value",
+      "component": "cre8-alert",
+      "prop": "status",
+      "value": "warning"
+    },
+    {
+      "id": "banner-is-banner",
+      "kind": "prop_value",
+      "component": "cre8-alert",
+      "prop": "variant",
+      "value": "banner"
+    },
+    {
+      "id": "banner-is-strong",
+      "kind": "prop_value",
+      "component": "cre8-alert",
+      "prop": "emphasis",
+      "value": "strong"
+    },
+    {
+      "id": "pill-success",
+      "kind": "prop_value",
+      "component": "cre8-badge",
+      "prop": "status",
+      "value": "success"
+    },
+    {
+      "id": "pill-warning",
+      "kind": "prop_value",
+      "component": "cre8-badge",
+      "prop": "status",
+      "value": "warning"
+    },
+    {
+      "id": "pill-error",
+      "kind": "prop_value",
+      "component": "cre8-badge",
+      "prop": "status",
+      "value": "error"
+    },
+    {
+      "id": "service-names",
+      "kind": "text_present",
+      "any_of": [
+        "Webhooks"
+      ]
+    },
+    {
+      "id": "low-priority-action",
+      "kind": "prop_value",
+      "component": "cre8-button",
+      "prop": "variant",
+      "value": "tertiary"
+    },
+    {
+      "id": "high-priority-action",
+      "kind": "prop_value",
+      "component": "cre8-button",
+      "prop": "variant",
+      "value": "primary"
+    },
+    {
+      "id": "large-action",
+      "kind": "prop_value",
+      "component": "cre8-button",
+      "prop": "size",
+      "value": "lg"
+    },
+    {
+      "id": "action-labels",
+      "kind": "text_present",
+      "any_of": [
+        "Subscribe to updates"
+      ]
+    }
+  ]
+}

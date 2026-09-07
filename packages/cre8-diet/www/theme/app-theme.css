@@ -1,0 +1,70 @@
+/*
+ * App-level design tokens.
+ *
+ * The palette, the status ramp, the radii and the brand gradient now live in
+ * the cre8-vivid brand inside @tmorrow/cre8-wc — this file is only what a
+ * design system has no opinion about:
+ *
+ *   - one hue per macronutrient, which is a fact about this app's data model
+ *     and meaningless to cre8;
+ *   - literals Chart.js needs, because a canvas cannot resolve `var()`;
+ *   - page chrome and elevation, which are this app's, not the system's.
+ *
+ * Everything here either aliases a cre8 token or sits beside it. Nothing here
+ * redefines one — if a `--cre8-*` value looks wrong, the brand is where to fix
+ * it, so that every cre8 app gets the fix.
+ */
+
+:root {
+  /* Aliases, so layout rules read as intent rather than as token paths. */
+  --app-radius: var(--cre8-border-radius-container, 18px);
+  --app-radius-sm: var(--cre8-border-radius-default, 12px);
+  --app-gradient-brand: var(--cre8-gradient-brand);
+  --app-gradient-hero: var(--cre8-gradient-brand-rich);
+  --app-surface: var(--cre8-color-bg-default);
+
+  /* One hue per macro, held stable across the ring, the bars and the doughnut.
+     The same colour must mean "protein" everywhere or the charts stop being
+     readable at a glance. */
+  --app-macro-protein: #4F46E5;
+  --app-macro-carbs: #06B6D4;
+  --app-macro-fat: #F59E0B;
+
+  /* The calorie ring. Over goal the ramp swaps entirely rather than tinting —
+     the arc should change character, not pick up a warning wash. */
+  --app-ring-from: var(--cre8-gradient-brand-from, #4F46E5);
+  --app-ring-to: #22D3EE;
+  --app-ring-over-from: #F59E0B;
+  --app-ring-over-to: #E11D48;
+
+  /* Area fill under the calorie line. Chart.js needs a literal, so this cannot
+     be an alpha applied to the line colour at the use site. */
+  --app-chart-fill: rgba(79, 70, 229, 0.14);
+
+  --app-page: linear-gradient(180deg, #F5F7FF 0%, #EEF1FB 100%);
+  --app-hairline: rgba(10, 15, 31, 0.08);
+
+  --app-shadow-card: 0 1px 2px rgba(10, 15, 31, 0.04), 0 8px 24px -12px rgba(10, 15, 31, 0.18);
+  --app-shadow-hero: 0 18px 40px -18px rgba(79, 70, 229, 0.65);
+}
+
+/* The brand carries its own dark palette; these are the app-side counterparts
+   that have no cre8 equivalent to inherit from. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --app-macro-protein: #818CF8;
+    --app-macro-carbs: #22D3EE;
+    --app-macro-fat: #FBBF24;
+
+    --app-ring-from: #818CF8;
+    --app-ring-to: #22D3EE;
+
+    --app-chart-fill: rgba(129, 140, 248, 0.18);
+
+    --app-page: linear-gradient(180deg, #070B18 0%, #0B1226 100%);
+    --app-hairline: rgba(233, 237, 247, 0.10);
+
+    --app-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 12px 28px -16px rgba(0, 0, 0, 0.8);
+    --app-shadow-hero: 0 18px 44px -20px rgba(79, 70, 229, 0.8);
+  }
+}

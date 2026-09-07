@@ -1,0 +1,53 @@
+# All three arms in one job: same tasks, same scheduling, one results file.
+# Trials are (tasks x agents x n_attempts) = 5 x 3 x 3 = 45.
+# compare.py tells the arms apart from each trial's recorded agent config, so
+# this and three separate jobs produce the same table.
+# See _shared.md before editing. Run: harbor run -c arms/all-arms.yaml
+job_name: cre8-a2ui-vs-mcp
+jobs_dir: jobs
+n_attempts: 3
+n_concurrent_trials: 4
+
+datasets:
+  - path: tasks
+    # mcp-freecode-portfolio is scored by building and rendering real React
+    # code, which needs Bash and an installed @tmorrow/cre8-react - neither of
+    # which this arm's isolation allows. It runs from arms/cre8-mcp-freecode.yaml
+    # instead.
+    exclude_task_names:
+      - mcp-freecode-portfolio
+
+agents:
+  - name: claude-code
+    model_name: claude-opus-5
+    kwargs:
+      # The arm under test must be the agent's only route to the catalog.
+      # Without this the agent simply npm-packs @tmorrow/cre8-wc and reads
+      # catalog.json, which makes all three arms the same experiment.
+      # Identical in every arm, so it constrains the comparison equally.
+      disallowed_tools: Bash,WebFetch,WebSearch,Task
+
+  - name: claude-code
+    model_name: claude-opus-5
+    kwargs:
+      # The arm under test must be the agent's only route to the catalog.
+      # Without this the agent simply npm-packs @tmorrow/cre8-wc and reads
+      # catalog.json, which makes all three arms the same experiment.
+      # Identical in every arm, so it constrains the comparison equally.
+      disallowed_tools: Bash,WebFetch,WebSearch,Task
+    skills:
+      - .arm-inputs/cre8-design
+
+  - name: claude-code
+    model_name: claude-opus-5
+    kwargs:
+      # The arm under test must be the agent's only route to the catalog.
+      # Without this the agent simply npm-packs @tmorrow/cre8-wc and reads
+      # catalog.json, which makes all three arms the same experiment.
+      # Identical in every arm, so it constrains the comparison equally.
+      disallowed_tools: Bash,WebFetch,WebSearch,Task
+    mcp_servers:
+      - name: cre8
+        transport: stdio
+        command: npx
+        args: ["-y", "@tmorrow/cre8-mcp@2.3.6"]

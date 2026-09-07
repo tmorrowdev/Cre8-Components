@@ -1,0 +1,128 @@
+{
+  "schema": "cre8-a2ui/1.0",
+  "target": "web-components",
+  "root": {
+    "component": "cre8-layout",
+    "children": [
+      {
+        "component": "cre8-header",
+        "slots": {
+          "default": [
+            {
+              "component": "cre8-nav-container",
+              "children": [
+                {
+                  "component": "cre8-logo",
+                  "props": {
+                    "href": "/"
+                  },
+                  "children": [
+                    "Innovexa"
+                  ]
+                },
+                {
+                  "component": "cre8-primary-nav",
+                  "props": {
+                    "navAriaLabel": "Primary"
+                  },
+                  "children": [
+                    {
+                      "component": "cre8-primary-nav-item",
+                      "props": {
+                        "text": "Overview",
+                        "href": "/overview"
+                      }
+                    },
+                    {
+                      "component": "cre8-primary-nav-item",
+                      "props": {
+                        "text": "Usage",
+                        "href": "/usage",
+                        "isActive": true
+                      }
+                    },
+                    {
+                      "component": "cre8-primary-nav-item",
+                      "props": {
+                        "text": "Billing",
+                        "href": "/billing"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "component": "cre8-utility-nav",
+                  "props": {
+                    "navAriaLabel": "Utility"
+                  },
+                  "children": [
+                    {
+                      "component": "cre8-utility-nav-item",
+                      "props": {
+                        "text": "Support",
+                        "href": "/support"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "component": "cre8-button",
+                  "props": {
+                    "text": "Sign out",
+                    "variant": "secondary",
+                    "size": "sm"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "component": "cre8-main",
+        "children": [
+          {
+            "component": "cre8-page-header",
+            "props": {
+              "heading": "Usage"
+            }
+          },
+          {
+            "component": "cre8-layout-container",
+            "children": [
+              {
+                "component": "cre8-section",
+                "props": {
+                  "headline": "This billing period"
+                },
+                "slots": {
+                  "default": [
+                    {
+                      "component": "cre8-text-passage",
+                      "children": [
+                        "You have used 62% of your included requests."
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "component": "cre8-footer",
+        "slots": {
+          "default": [
+            {
+              "component": "cre8-text-passage",
+              "children": [
+                "(c) 2026 Innovexa, Inc."
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

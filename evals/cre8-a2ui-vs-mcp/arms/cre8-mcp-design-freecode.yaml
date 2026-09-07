@@ -1,0 +1,44 @@
+# Combined arm: cre8-mcp for component API facts, plus the cre8-design skill
+# for judgment and token architecture. This is the configuration a real
+# harness would actually ship - the MCP alone answers "what exists and what
+# are its props", but nothing in it says which component a given job calls
+# for, or that overlay brands have to be stacked on a base.
+#
+# Run: harbor run -c arms/cre8-mcp-design-freecode.yaml
+#
+# Read against arms/cre8-mcp-freecode.yaml, which is identical minus the
+# skill. That pairing is the whole question: does design guidance on top of a
+# live catalog add anything measurable, once the catalog has already removed
+# every invalid-name and invalid-prop error?
+#
+# Expect the catalog-fidelity dimensions to stay saturated - they were already
+# ~1.0 for MCP alone on this task, because the compiler rejects what they
+# measure. The signal to watch is composition: `shape.max_depth` and
+# `shape.slots_used`, where the arms did separate, plus the one violation
+# class that survives everywhere (a documented prop that renders nothing).
+# A skill that changes nothing on any of those is a skill that isn't earning
+# its context window.
+job_name: cre8-a2ui-vs-mcp__cre8-mcp-design-freecode
+jobs_dir: jobs
+n_attempts: 3
+n_concurrent_trials: 4
+
+datasets:
+  - path: tasks
+    task_names:
+      - mcp-freecode-portfolio
+
+agents:
+  - name: claude-code
+    model_name: claude-opus-5
+    kwargs:
+      # Matches every other freecode arm; see arms/baseline-freecode.yaml for
+      # why isolation is neither achievable nor meaningful on this task.
+      disallowed_tools: WebFetch,WebSearch,Task
+    skills:
+      - .arm-inputs/cre8-design
+    mcp_servers:
+      - name: cre8
+        transport: stdio
+        command: npx
+        args: ["-y", "@tmorrow/cre8-mcp@2.3.6"]

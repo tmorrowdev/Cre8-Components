@@ -1,0 +1,32 @@
+schema_version = "1.4"
+artifacts = ["/app/ui.a2ui.json"]
+
+[task]
+name = "cre8/a2ui-form-error-states"
+version = "1.0.0"
+description = "Build a sign-up form with error and success states as an A2UI spec. Scores inert-prop avoidance: cre8-field declares errorText and successText but never renders them."
+keywords = ["cre8", "a2ui", "design-system", "web-components", "tool-use"]
+
+[[task.authors]]
+name = "Tyler Morrow"
+email = "tsmorro@gmail.com"
+
+[metadata]
+author_name = "Tyler Morrow"
+author_email = "tsmorro@gmail.com"
+difficulty = "hard"
+category = "software_engineering"
+tags = ["design-system", "a2ui", "context-retrieval"]
+expert_time_estimate_min = 20
+junior_time_estimate_min = 50
+
+[verifier]
+timeout_sec = 300.0
+
+[agent]
+timeout_sec = 900.0
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 900.0
+os = "linux"
