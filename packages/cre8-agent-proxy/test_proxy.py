@@ -92,3 +92,67 @@ async def test_sse_streams_through():
                 body = b"".join([c async for c in resp.aiter_bytes()])
     assert b"tok1" in body
     assert b"tok2" in body
+
+
+@pytest.mark.parametrize("method", ["POST", "PUT", "PATCH", "DELETE"])
+def test_unknown_prefix_forbidden_for_write_methods(method):
+    # The allowlist must answer 403 for every method, not just GET — a bare 405
+    # from the router would read as "wrong verb" instead of "host not allowed".
+    with TestClient(app) as client:
+        r = client.request(method, "/evil.example.com/exfil", content=b"{}")
+    assert r.status_code == 403
+
+
+@respx.mock
+def test_upstream_error_status_propagates():
+    respx.get("https://api.anthropic.com/v1/models").mock(
+        return_value=httpx.Response(401, json={"error": {"message": "bad key"}})
+    )
+    with TestClient(app) as client:
+        r = client.get("/llm/v1/models")
+    assert r.status_code == 401
+    assert r.json()["error"]["message"] == "bad key"
+
+
+@pytest.mark.asyncio
+async def test_streaming_request_error_keeps_status_and_body():
+    # A streaming chat request that upstream rejects returns JSON, not SSE.
+    # Regression: keying the streaming path off the client's Accept header
+    # forwarded this as 200 with an empty-looking stream, so auth and
+    # rate-limit failures reached the agent as silent dead air.
+    with respx.mock:
+        respx.post("https://api.anthropic.com/v1/messages").mock(
+            return_value=httpx.Response(
+                429,
+                json={"error": {"type": "rate_limit_error"}},
+                headers={"content-type": "application/json"},
+            )
+        )
+        transport = httpx.ASGITransport(app=app)
+        async with httpx.AsyncClient(transport=transport, base_url="http://test") as client:
+            resp = await client.post(
+                "/llm/v1/messages",
+                headers={"accept": "text/event-stream", "x-api-key": "sentinel"},
+                content=b"{}",
+            )
+    assert resp.status_code == 429
+    assert resp.json()["error"]["type"] == "rate_limit_error"
+
+
+@pytest.mark.asyncio
+async def test_sse_preserves_upstream_status():
+    with respx.mock:
+        respx.post("https://api.anthropic.com/v1/messages").mock(
+            return_value=httpx.Response(
+                200,
+                content=b"data: {\"delta\":\"x\"}\n\n",
+                headers={"content-type": "text/event-stream"},
+            )
+        )
+        transport = httpx.ASGITransport(app=app)
+        async with httpx.AsyncClient(transport=transport, base_url="http://test") as client:
+            async with client.stream("POST", "/llm/v1/messages", content=b"{}") as resp:
+                body = b"".join([c async for c in resp.aiter_bytes()])
+                assert resp.status_code == 200
+                assert resp.headers["content-type"].startswith("text/event-stream")
+    assert b"delta" in body

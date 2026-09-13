@@ -1,8 +1,10 @@
 services:
   agent:
     build: .
-    ports:
-      - "127.0.0.1:8002:8002"
+    # No `ports:` here on purpose. Docker cannot publish a host port for a
+    # container whose only network is internal:true (verified: the bind
+    # succeeds but connections are refused). Host access comes from the
+    # `gateway` service instead, so the agent keeps zero egress.
     environment:
       - PYTHONDONTWRITEBYTECODE=1
       - PYTHONUNBUFFERED=1
@@ -10,7 +12,11 @@ services:
       - ANTHROPIC_API_KEY=sentinel-not-a-real-key
       - ANTHROPIC_BASE_URL=http://proxy:8080/llm
       - CRE8_MCP_URL=http://proxy:8080/mcp
-      - CLAUDE_MODEL=claude-opus-4-7
+      - CLAUDE_MODEL=${CLAUDE_MODEL:-claude-opus-4-7}
+      # Non-secret agent config, passed through so .env can drive it. Defaults
+      # match the values the agent falls back to on its own.
+      - CORS_ORIGINS=${CORS_ORIGINS:-http://localhost:3000}
+      - API_TOKEN=${API_TOKEN:-}
     security_opt:
       - no-new-privileges:true
     read_only: true
@@ -25,7 +31,6 @@ services:
           cpus: "0.5"
     networks:
       - agent-net
-      - frontend-net
     depends_on:
       proxy:
         condition: service_healthy
@@ -37,13 +42,51 @@ services:
       start_period: 10s
     restart: unless-stopped
 
+  # Secret-free ingress. Sits between the host and the internal agent network
+  # so the agent itself never needs a non-internal interface.
+  gateway:
+    image: nginxinc/nginx-unprivileged:1.27-alpine
+    ports:
+      - "127.0.0.1:8002:8002"
+    volumes:
+      - ./gateway.conf:/etc/nginx/conf.d/default.conf:ro
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+      - /var/cache/nginx:size=16m
+      - /var/run:size=1m
+    cap_drop:
+      - ALL
+    deploy:
+      resources:
+        limits:
+          memory: 64m
+          cpus: "0.25"
+    networks:
+      - agent-net
+      - frontend-net
+    depends_on:
+      agent:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:8002/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+
   proxy:
     build:
       context: ../cre8-agent-proxy
       dockerfile: Dockerfile
-    env_file:
-      - proxy.env
+    # Secrets are passed per-service from ./.env so each container receives only
+    # what it actually reads. The proxy is the sole holder of ANTHROPIC_API_KEY.
     environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:?set ANTHROPIC_API_KEY in packages/cre8-data-agent/.env}
+      - CRE8_MCP_TOKEN=${CRE8_MCP_TOKEN:?set CRE8_MCP_TOKEN in packages/cre8-data-agent/.env}
       - CRE8_MCP_UPSTREAM=http://cre8-mcp:3001
     security_opt:
       - no-new-privileges:true
@@ -75,10 +118,11 @@ services:
     build:
       context: ../..
       dockerfile: packages/cre8-mcp/Dockerfile
-    env_file:
-      - proxy.env
+    # No ANTHROPIC_API_KEY here: cre8-mcp never reads it, so it never gets it.
     environment:
       - NODE_ENV=production
+      - CRE8_MCP_TOKEN=${CRE8_MCP_TOKEN:?set CRE8_MCP_TOKEN in packages/cre8-data-agent/.env}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
     security_opt:
       - no-new-privileges:true
     read_only: true
@@ -102,7 +146,13 @@ services:
     restart: unless-stopped
 
 networks:
+  # The untrusted zone. internal:true means no route to the internet — the proxy
+  # is the only host the agent can reach. Do not attach the agent to any other
+  # network: a single non-internal network restores full egress and voids the
+  # entire sandbox.
   agent-net:
     internal: true
   egress-net: {}
+  # Ingress only. The `gateway` service is the ONLY member — attaching the
+  # agent here is what voided the sandbox before.
   frontend-net: {}
