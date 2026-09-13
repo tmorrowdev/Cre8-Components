@@ -13,7 +13,7 @@ intents:
 
 <!-- DO NOT EDIT BY HAND. Regenerate with: node docs/kb/tools/generate-reference.mjs -->
 
-Every component in `@tmorrow/cre8-wc` v2.0.7, grouped by the
+Every component in `@tmorrow/cre8-wc` v2.3.10, grouped by the
 job it does. The **React** column is the `@tmorrow/cre8-react` wrapper name;
 the **A2UI** column says whether an agent can emit the component through the
 [A2UI catalog](../04-a2ui.md).
@@ -48,6 +48,8 @@ know the tag.
 |---|---|---|---|
 | `<cre8-band>` | `Cre8Band` | yes | Band component. |
 | `<cre8-card>` | `Cre8Card` | yes | A general container sectioned by slots: `header`, `footer`, and the default slot for body content. (Its JSDoc names a `body` slot; there is none — see 02-composition-patterns.) |
+| `<cre8-container>` | `Cre8Container` | yes | `cre8-container` establishes a CSS containment context so anything slotted inside it - a `cre8-container-grid`, a `cre8-card`, plain markup - can be styled with `@container` queries against *this e... |
+| `<cre8-container-grid>` | `Cre8ContainerGrid` | yes | `cre8-container-grid` is `cre8-grid`'s layout vocabulary - stacked to N-across patterns - keyed to this element's own rendered width via `@container` instead of the viewport via `@media`. |
 | `<cre8-divider>` | `Cre8Divider` | yes | The divider component is a separator between sections of content or groups of items. |
 | `<cre8-grid>` | `Cre8Grid` | yes | Grid component. |
 | `<cre8-grid-item>` | `Cre8GridItem` | yes | Grid Item component. |
@@ -91,6 +93,7 @@ know the tag.
 | `<cre8-date-picker>` | `Cre8DatePicker` | yes | The Date Picker component renders a form group with label, control, help text and validation styling much like the Field component but exclusively for type=date. |
 | `<cre8-field>` | `Cre8Field` | yes | The Field component renders a form group with label, control, help text and validation styling. |
 | `<cre8-field-note>` | `Cre8FieldNote` | yes | Field Note gives direction on how to fill out a form field and to alert users of form errors and successes. |
+| `<cre8-form>` | `Cre8Form` | yes | The form component groups form-associated Cre8 controls, aggregates their validation on submit, and orchestrates submit and reset. |
 | `<cre8-multi-select>` | `Cre8MultiSelect` | yes | Multiselect is used when multiple options can be chosen from a static dropdown This component has a list of items in the dropdown that can be added as "selected tags" The checkbox will always refle... |
 | `<cre8-radio-field>` | `Cre8RadioField` | yes | Radio Field is the parent container for `radio-field-item`. |
 | `<cre8-radio-field-item>` | `Cre8RadioFieldItem` | yes | A Radio Field Item adds a radio button to a Radio Field. |
@@ -173,6 +176,7 @@ know the tag.
 | `<cre8-loading-spinner>` | `Cre8LoadingSpinner` | yes | A loading spinner notifies the user that their request is being processed while the front end is retrieving data or performing slow computations. |
 | `<cre8-percent-bar>` | `Cre8PercentBar` | yes | The percent bar visually indicates a user's current progress and has a few features: a basic display bar with a percentage, an actionable icon that allows a user to revisit a prior step and an acti... |
 | `<cre8-progress-meter>` | `Cre8ProgressMeter` | yes | A progress meter provides feedback that the system is working and gives the user an indication of how much time they will wait. |
+| `<cre8-progress-steps>` | `Cre8ProgressSteps` | yes | The Progress Steps component is used to display where a user is in a multistep process. |
 | `<cre8-progress-steps-item>` | `Cre8ProgressStepsItem` | yes | The Progress Steps Item component is used to display a single step in a multi-step process. |
 | `<cre8-skeleton-loader>` | `Cre8SkeletonLoader` | yes | Skeleton Loader allows for the ability to create placeholder UI loading states. |
 
@@ -194,21 +198,13 @@ know the tag.
 | `<cre8-feature>` | `Cre8Feature` | yes | Feature component. |
 | `<cre8-page-header>` | `Cre8PageHeader` | yes | Page Header component. |
 
-## Other
-
-> **Intent:** Uncategorized
-
-| Tag | React | A2UI | What it is for |
-|---|---|---|---|
-| `<cre8-progress-steps>` | `Cre8ProgressSteps` | yes | The Progress Steps component is used to display where a user is in a multistep process. |
-
 ## Counts
 
 | Surface | Components |
 |---|---|
-| Web components (`@tmorrow/cre8-wc` v2.0.7) | 85 |
-| React wrappers (`@tmorrow/cre8-react` v2.0.7) | 85 |
-| A2UI catalog entries (`https://cre8.dev/a2ui/catalogs/cre8-wc/2.0.7`) | 85 |
+| Web components (`@tmorrow/cre8-wc` v2.3.10) | 88 |
+| React wrappers (`@tmorrow/cre8-react` v2.3.10) | 88 |
+| A2UI catalog entries (`https://cre8.dev/a2ui/catalogs/cre8-wc/2.3.10`) | 88 |
 
 If these three numbers disagree, the wrappers or the catalog are stale relative to
 the components — regenerate them before trusting a count you find elsewhere.

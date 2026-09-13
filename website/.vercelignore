@@ -1,0 +1,8 @@
+# Final Cut Pro libraries. These contain a self-referential `.fcpcache -> .`
+# symlink, so any directory walk loops forever (ELOOP) — it already breaks
+# `next start`. They are source material for the recordings, not site assets.
+public/media/*.fcpbundle
+
+# The QuickTime/HEVC originals. The .mp4 files beside them are what the pages
+# actually load; these are 36 MB and will not play in Chrome or Firefox.
+public/media/*.mov

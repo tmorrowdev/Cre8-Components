@@ -13,7 +13,7 @@ intents:
 
 <!-- DO NOT EDIT BY HAND. Regenerate with: node docs/kb/tools/generate-reference.mjs -->
 
-16 of 85 components emit events.
+17 of 88 components emit events.
 
 **Names are `component-action` kebab-case.** `cre8-tabs` emits `tab-change`,
 `cre8-modal` emits `modal-close`. There is **no `cre8-` prefix** on events — the
@@ -30,6 +30,9 @@ table below: kebab-case, single word. See
 | `cre8-chart` | `chart-ready` | `onChartReady` |
 | `cre8-checkbox-field-item` | `change` | `onChange` |
 | `cre8-dropdown-item` | `dropdown-item-select` | `onDropdownItemSelect` |
+| `cre8-form` | `form-submit` | `onFormSubmit` |
+| `cre8-form` | `form-reset` | `onFormReset` |
+| `cre8-form` | `form-invalid` | `onFormInvalid` |
 | `cre8-modal` | `modal-close` | `onModalClose` |
 | `cre8-multi-select` | `multi-select-change` | `onMultiSelectChange` |
 | `cre8-pagination` | `pagination-change` | `onPaginationChange` |
@@ -75,6 +78,9 @@ your `onEvent` callback. See [Events and the return path](../04-a2ui.md#events-a
 - `chart-hover` — kebab-case
 - `chart-ready` — kebab-case
 - `dropdown-item-select` — kebab-case
+- `form-invalid` — kebab-case
+- `form-reset` — kebab-case
+- `form-submit` — kebab-case
 - `input` — single word
 - `modal-close` — kebab-case
 - `multi-select-change` — kebab-case

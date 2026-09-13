@@ -40,6 +40,28 @@ function childrenOf(tag) {
         .map((e) => ({ component: e.to, slot: e.slot ?? null, count: e.count ?? 0, evidence: kinds(e) }))
         .sort((a, b) => b.count - a.count || a.component.localeCompare(b.component));
 }
+function eligibleChildrenOf(tag) {
+    const { edgesFrom } = loadKG();
+    const byRegion = new Map();
+    for (const e of edgesFrom.get(tag) ?? []) {
+        if (e.rel !== 'ALLOWS')
+            continue;
+        const region = e.slot ?? 'children';
+        const r = byRegion.get(region) ?? { region, accepts: [], text: e.text === true };
+        r.accepts.push(e.to);
+        byRegion.set(region, r);
+    }
+    return [...byRegion.values()]
+        .map((r) => ({ ...r, accepts: r.accepts.sort() }))
+        .sort((a, b) => (a.region === 'children' || a.region === 'default' ? -1 : a.region.localeCompare(b.region)));
+}
+function eligibleParentsOf(tag) {
+    const { edgesTo } = loadKG();
+    return (edgesTo.get(tag) ?? [])
+        .filter((e) => e.rel === 'ALLOWS')
+        .map((e) => ({ component: e.from, region: e.slot ?? 'children' }))
+        .sort((a, b) => a.component.localeCompare(b.component) || a.region.localeCompare(b.region));
+}
 function parentsOf(tag) {
     const { edgesTo } = loadKG();
     return [...new Set((edgesTo.get(tag) ?? []).filter((e) => e.rel === 'CONTAINS').map((e) => e.from))].sort();
@@ -105,27 +127,36 @@ export function handleGetComposition(input, catalog = loadA2uiCatalog()) {
         caveat: parents.length === 0
             ? 'The knowledge graph carries no CONTAINS edges, so nesting cannot be reported. Rebuild it with pnpm build:a2ui:kg.'
             : 'These are the pairings some shipped artifact demonstrates. Absence here means "not ' +
-                'demonstrated", not "not allowed".',
+                'demonstrated", not "not allowed" — ask about a single component for `eligibleChildren`, ' +
+                'the authored allowlist the validator enforces.',
     }, null, 2);
 }
 function answer(tag, observedChildren, source, exemplar, withheld) {
     const family = nameFamily(tag);
     const parents = parentsOf(tag);
+    const eligibleChildren = eligibleChildrenOf(tag);
+    const eligibleParents = eligibleParentsOf(tag);
     return JSON.stringify({
         component: tag,
         source,
+        eligibleChildren,
+        eligibleParents,
         observedChildren,
         observedParents: parents,
         nameFamily: family,
         example: exemplar,
         ...(withheld ? { withheld } : {}),
-        guidance: observedChildren.length || exemplar
-            ? 'Copy the shape of `example` rather than inventing one. It is an authored spec that ' +
-                'validates against this catalog. `observedChildren[].evidence` says whether a nesting is ' +
-                'demonstrated by the library\'s own stories and render templates, by an authored a2ui ' +
-                'example, or both.'
-            : 'No shipped artifact demonstrates nesting for this component. Use get_content_model for ' +
-                'the children-vs-slots rule, then validate_a2ui_spec before returning anything.',
+        guidance: (eligibleChildren.length
+            ? '`eligibleChildren` is the rule: anything outside a region\'s `accepts` list fails ' +
+                'validate_a2ui_spec, and a region without `text: true` rejects bare strings. '
+            : `${tag} is a leaf: it takes no children and no slots; see \`eligibleParents\` for where it goes. `) +
+            (observedChildren.length || exemplar
+                ? 'Copy the shape of `example` rather than inventing one. It is an authored spec that ' +
+                    'validates against this catalog. `observedChildren[].evidence` says whether a nesting is ' +
+                    'demonstrated by the library\'s own stories and render templates, by an authored a2ui ' +
+                    'example, or both.'
+                : 'No shipped artifact demonstrates nesting for this component. Use get_content_model for ' +
+                    'the children-vs-slots rule, then validate_a2ui_spec before returning anything.'),
         warning: family.length > 1 && !observedChildren.length && !parents.length
             ? `${tag} shares a name prefix with ${family.filter((f) => f !== tag).join(', ')}, which ` +
                 'usually means a compound family — but no shipped artifact demonstrates the nesting, ' +
@@ -137,10 +168,11 @@ function answer(tag, observedChildren, source, exemplar, withheld) {
 }
 export const compositionTool = {
     name: 'get_composition',
-    description: 'Returns how a component actually nests — the parents and children the cre8 knowledge graph ' +
-        'records from the library\'s own stories, render templates and authored a2ui examples, with ' +
-        'the evidence for each — plus the smallest authored subtree demonstrating it, re-validated ' +
-        'against the catalog before you get it. Use it before emitting any multi-level structure ' +
+    description: 'Returns what a component may contain and where it may go — `eligibleChildren` per slot (the ' +
+        'authored allowlist validate_a2ui_spec enforces, with whether literal text is allowed) and ' +
+        '`eligibleParents` — alongside how it actually nests in the library\'s own stories, render ' +
+        'templates and authored a2ui examples, with the evidence for each, plus the smallest authored ' +
+        'subtree demonstrating it, re-validated against the catalog before you get it. Use it before emitting any multi-level structure ' +
         '(tables above all): compound children are not optional scaffolding, and skipping a level ' +
         'produces markup that renders but is subtly wrong. Where nothing demonstrates a nesting, this ' +
         'says so rather than guessing — a name like cre8-tag-list does not tell you which way ' +

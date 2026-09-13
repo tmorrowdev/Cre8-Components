@@ -2,7 +2,7 @@
 # cre8-data-agent: Sandboxed Agent + Auth Proxy Design
 
 **Date:** 2026-05-25
-**Status:** Approved, pending implementation
+**Status:** Implemented and verified (see *Verification* below).
 
 ## Goal
 
@@ -15,10 +15,20 @@ nor reach any host but the two allowlisted upstreams.
 
 ## Topology
 
-Three containers, two trust boundaries.
+Four containers, three trust boundaries. (The design was written for three; the
+`gateway` was added during verification — see *Ingress* below for why it is
+required rather than optional.)
 
 ```
-        +-----------------------------+
+                  host: 127.0.0.1:8002
+                            |
+        +-------------------v---------+
+        |  gateway (ingress, no keys)  |   networks: agent-net + frontend-net
+        |  - nginx, one fixed upstream |   -- publishes the only host port
+        |  - proxy_pass http://agent   |
+        +-------------------+---------+
+                            | agent-net
+        +-------------------v---------+
         |  agent  (untrusted zone)     |   network: agent-net (internal: true)
         |  - cre8_data_agent only      |   -- NO internet, NO source, NO secrets
         |  - ANTHROPIC_BASE_URL=       |
@@ -45,8 +55,36 @@ Three containers, two trust boundaries.
         +-----------------------------+
 ```
 
-The agent sits on an `internal: true` Docker network with the proxy as its only
-reachable peer. It physically cannot reach the internet or cre8-mcp directly.
+The agent sits on an `internal: true` Docker network. Its only reachable peers
+are the proxy (outbound) and the gateway (inbound); neither will carry traffic to
+an address the agent chooses. It cannot reach the internet or cre8-mcp directly.
+The agent must never be attached to any other network.
+
+## Ingress: why a fourth container
+
+The agent serves an HTTP API on :8002 that a browser on the host consumes. That
+requirement collides with `internal: true`: Docker accepts a `ports:` mapping on
+a container whose only network is internal, but connections to it are refused.
+The published port simply does not work.
+
+The tempting fix — attach the agent to a second, non-internal network — is the
+one thing that must never be done. It was in fact done once (`frontend-net`, in
+commit d6d2f60c) and silently voided the entire sandbox: a plain bridge network
+carries NAT egress, so the agent could reach any host on the internet directly
+and route around the proxy. Verified empirically: a container on a plain compose
+bridge opens a socket to api.anthropic.com without trouble.
+
+So ingress gets its own container. `gateway` (nginx-unprivileged) sits on
+agent-net plus a non-internal frontend-net, publishes 127.0.0.1:8002, and
+forwards to a single constant upstream, `http://agent:8002`. It holds no
+secrets. The agent can reach it, but it will only ever forward to the agent, so
+it is not an egress path. Its upstream must stay a literal: a `proxy_pass` built
+from request data would let the agent choose its own destination and reopen the
+hole. `tests/test_sandbox_topology.py` enforces that.
+
+Note also that `enable_ip_masquerade=false` is *not* a substitute for a separate
+container. On Docker Desktop the VM performs its own NAT, so the option has no
+effect and egress survives — measured, not assumed.
 
 ## Component 1: Auth Proxy (cre8-agent-proxy)
 
@@ -93,18 +131,39 @@ Changes to packages/cre8-data-agent:
   ANTHROPIC_API_KEY=sentinel-not-a-real-key, CRE8_MCP_URL=http://proxy:8080/mcp.
   No real secret, no source mount.
 - Dockerfile: drop jsonschema; image carries zero catalog/KG/source.
-- compose: three services; agent-net marked internal: true; real secrets in a
-  proxy-only env file.
+- compose: four services; agent-net marked internal: true; secrets live in
+  ./.env and are handed to services one variable at a time, so the agent gets
+  none and cre8-mcp gets only the token it validates.
 
 ## Verification
 
-1. docker compose up --build resolves; all three services healthcheck green.
-2. From inside the agent container: curl api.anthropic.com FAILS (no egress); a chat
-   request SUCCEEDS (proves proxy injection).
-3. Proxy logs show injected requests with the key masked.
-4. A render_ui call round-trips validation through /mcp; SSE chat streams
-   token-by-token.
-5. Grep the agent image filesystem for the real key -> absent.
+Two layers, both executable — the invariants here are invisible in code review,
+so neither is left as prose.
+
+**Static, no Docker required.** `packages/cre8-data-agent/tests/test_sandbox_topology.py`
+parses docker-compose.yml and fails if the agent gains a non-internal network,
+if any service takes an `env_file`, if a secret reaches a service that does not
+read it, if the agent shares a network with cre8-mcp, if anything but the
+gateway publishes a port, or if the gateway upstream becomes request-derived.
+This runs in CI and is what catches the `frontend-net` class of regression.
+
+**Live, against a running stack.** `packages/cre8-data-agent/verify-sandbox.sh`
+brings the stack up and asserts, 15 checks:
+
+1. All four services build and report healthy.
+2. From inside the agent: api.anthropic.com is unreachable, and so is cre8-mcp.
+3. The proxy is reachable, and an authed `GET /mcp/components` succeeds —
+   proving the proxy injected a bearer token the agent does not hold. The same
+   request straight at cre8-mcp without a token is rejected.
+4. The agent's env holds the sentinel, and `docker export` of the agent
+   filesystem contains neither the real key nor the MCP token. (The grep runs on
+   the host, so the secret is never piped into the container to look for it.)
+5. Proxy logs contain no unredacted key.
+6. GET/POST/DELETE to an unknown route prefix all return 403.
+7. The host reaches the agent through the gateway on 127.0.0.1:8002.
+8. A spoofed `Host` header does not steer the gateway's upstream.
+
+Last run: 15/15 passing.
 
 ## Out of scope (YAGNI)
 

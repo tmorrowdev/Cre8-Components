@@ -630,15 +630,39 @@
                 "type": "array",
                 "description": "Content rendered before the button text, such as an icon",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-loading-spinner"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-icon",
+                  "cre8-loading-spinner"
+                ],
+                "x-accepts-text": false
               },
               "after": {
                 "type": "array",
                 "description": "Content rendered after the button text, such as an icon",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-loading-spinner"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-icon",
+                  "cre8-loading-spinner"
+                ],
+                "x-accepts-text": false
               }
             }
           },
@@ -699,8 +723,44 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-danger-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-dropdown"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-popover"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-split-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tooltip"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-button",
+              "cre8-danger-button",
+              "cre8-dropdown",
+              "cre8-link",
+              "cre8-popover",
+              "cre8-split-button",
+              "cre8-text-link",
+              "cre8-tooltip"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -947,8 +1007,16 @@
             "type": "array",
             "description": "The component content , this will consist of the dropdown when the user clicks the caret",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-dropdown"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-dropdown"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -1189,8 +1257,16 @@
             "type": "array",
             "description": "The list items",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-list-item"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-list-item"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -1227,8 +1303,47 @@
             "type": "array",
             "description": "The content of the list item",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-badge"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-icon"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tag"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-passage"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tooltip"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-badge",
+              "cre8-icon",
+              "cre8-link",
+              "cre8-list",
+              "cre8-tag",
+              "cre8-text-link",
+              "cre8-text-passage",
+              "cre8-tooltip"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -1415,8 +1530,20 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-table-body"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-table-header"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-table-body",
+              "cre8-table-header"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -1453,8 +1580,16 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-table-row"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-table-row"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -1508,8 +1643,95 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-badge"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-button-group"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-checkbox-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-danger-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-dropdown"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-icon"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-loading-spinner"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-percent-bar"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-popover"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-progress-meter"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-remove-tag"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-select"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-skeleton-loader"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tag"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tag-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tooltip"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-badge",
+              "cre8-button",
+              "cre8-button-group",
+              "cre8-checkbox-field",
+              "cre8-danger-button",
+              "cre8-dropdown",
+              "cre8-field",
+              "cre8-icon",
+              "cre8-link",
+              "cre8-loading-spinner",
+              "cre8-percent-bar",
+              "cre8-popover",
+              "cre8-progress-meter",
+              "cre8-remove-tag",
+              "cre8-select",
+              "cre8-skeleton-loader",
+              "cre8-tag",
+              "cre8-tag-list",
+              "cre8-text-link",
+              "cre8-tooltip"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -1546,8 +1768,16 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-table-row"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-table-row"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -1595,8 +1825,43 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-badge"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-checkbox-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-icon"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tag"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tooltip"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-badge",
+              "cre8-checkbox-field",
+              "cre8-icon",
+              "cre8-link",
+              "cre8-tag",
+              "cre8-text-link",
+              "cre8-tooltip"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -1638,22 +1903,104 @@
                 "type": "array",
                 "description": "The component content",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-table"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-table"
+                ],
+                "x-accepts-text": false
               },
               "header": {
                 "type": "array",
                 "description": "Content rendered in the table object header",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button-group"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-dropdown"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-field"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-heading"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-select"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-button",
+                  "cre8-button-group",
+                  "cre8-dropdown",
+                  "cre8-field",
+                  "cre8-heading",
+                  "cre8-select",
+                  "cre8-tag-list",
+                  "cre8-text-passage"
+                ],
+                "x-accepts-text": true
               },
               "footer": {
                 "type": "array",
                 "description": "Content rendered in the table object footer",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button-group"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-pagination"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-button",
+                  "cre8-button-group",
+                  "cre8-link",
+                  "cre8-pagination",
+                  "cre8-text-link",
+                  "cre8-text-passage"
+                ],
+                "x-accepts-text": true
               }
             }
           },
@@ -1731,15 +2078,90 @@
                 "type": "array",
                 "description": "The component content",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-table-cell"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-table-header-cell"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-table-cell",
+                  "cre8-table-header-cell"
+                ],
+                "x-accepts-text": false
               },
               "expandableContent": {
                 "type": "array",
                 "description": "Content revealed when the row is expanded",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-button-group"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-card"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-chart"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-container"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-divider"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-field"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-grid"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-heading"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-inline-alert"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-table"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-button-group",
+                  "cre8-card",
+                  "cre8-chart",
+                  "cre8-container",
+                  "cre8-divider",
+                  "cre8-field",
+                  "cre8-grid",
+                  "cre8-heading",
+                  "cre8-inline-alert",
+                  "cre8-list",
+                  "cre8-table",
+                  "cre8-tag-list",
+                  "cre8-text-link",
+                  "cre8-text-passage"
+                ],
+                "x-accepts-text": true
               }
             }
           },
@@ -1961,8 +2383,20 @@
             "type": "array",
             "description": "The `cre8-tag` children of the list",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-remove-tag"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tag"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-remove-tag",
+              "cre8-tag"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -2050,8 +2484,16 @@
             "type": "array",
             "description": "The `cre8-accordion-item` children to group",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-accordion-item"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-accordion-item"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -2149,15 +2591,197 @@
                 "type": "array",
                 "description": "The body of the accordion item will be any valid html\ninserted between the cre8-accordion-item opening and closing tags.",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-accordion"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-alert"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button-group"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-card"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-chart"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-checkbox-field"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-container"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-danger-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-date-picker"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-divider"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-field"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-field-note"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-form"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-grid"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-heading"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-inline-alert"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-loading-spinner"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-multi-select"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-percent-bar"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-progress-meter"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-radio-field"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-remove-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-select"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-select-tile-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-skeleton-loader"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-split-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-table"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-table-object"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tabs"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-accordion",
+                  "cre8-alert",
+                  "cre8-badge",
+                  "cre8-button",
+                  "cre8-button-group",
+                  "cre8-card",
+                  "cre8-chart",
+                  "cre8-checkbox-field",
+                  "cre8-container",
+                  "cre8-danger-button",
+                  "cre8-date-picker",
+                  "cre8-divider",
+                  "cre8-field",
+                  "cre8-field-note",
+                  "cre8-form",
+                  "cre8-grid",
+                  "cre8-heading",
+                  "cre8-inline-alert",
+                  "cre8-link",
+                  "cre8-link-list",
+                  "cre8-list",
+                  "cre8-loading-spinner",
+                  "cre8-multi-select",
+                  "cre8-percent-bar",
+                  "cre8-progress-meter",
+                  "cre8-radio-field",
+                  "cre8-remove-tag",
+                  "cre8-select",
+                  "cre8-select-tile-list",
+                  "cre8-skeleton-loader",
+                  "cre8-split-button",
+                  "cre8-table",
+                  "cre8-table-object",
+                  "cre8-tabs",
+                  "cre8-tag",
+                  "cre8-tag-list",
+                  "cre8-text-link",
+                  "cre8-text-passage"
+                ],
+                "x-accepts-text": true
               },
               "heading": {
                 "type": "array",
                 "description": "Custom heading content, used when the `heading` property is not set.",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-heading"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-heading",
+                  "cre8-icon",
+                  "cre8-tag"
+                ],
+                "x-accepts-text": true
               }
             }
           },
@@ -2246,8 +2870,16 @@
             "type": "array",
             "description": "The `cre8-dropdown-item` children of the menu",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-dropdown-item"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-dropdown-item"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -2290,8 +2922,31 @@
             "type": "array",
             "description": "The label content for the dropdown item.",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-badge"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-icon"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-badge",
+              "cre8-icon",
+              "cre8-link",
+              "cre8-text-link"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -2398,22 +3053,219 @@
                 "type": "array",
                 "description": "The component content",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-accordion"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-alert"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-card"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-chart"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-checkbox-field"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-container"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-date-picker"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-divider"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-field"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-field-note"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-form"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-grid"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-heading"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-inline-alert"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-loading-spinner"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-multi-select"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-percent-bar"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-progress-meter"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-radio-field"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-remove-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-select"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-select-tile-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-skeleton-loader"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-table"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-table-object"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tabs"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-accordion",
+                  "cre8-alert",
+                  "cre8-badge",
+                  "cre8-card",
+                  "cre8-chart",
+                  "cre8-checkbox-field",
+                  "cre8-container",
+                  "cre8-date-picker",
+                  "cre8-divider",
+                  "cre8-field",
+                  "cre8-field-note",
+                  "cre8-form",
+                  "cre8-grid",
+                  "cre8-heading",
+                  "cre8-inline-alert",
+                  "cre8-link-list",
+                  "cre8-list",
+                  "cre8-loading-spinner",
+                  "cre8-multi-select",
+                  "cre8-percent-bar",
+                  "cre8-progress-meter",
+                  "cre8-radio-field",
+                  "cre8-remove-tag",
+                  "cre8-select",
+                  "cre8-select-tile-list",
+                  "cre8-skeleton-loader",
+                  "cre8-table",
+                  "cre8-table-object",
+                  "cre8-tabs",
+                  "cre8-tag",
+                  "cre8-tag-list",
+                  "cre8-text-link",
+                  "cre8-text-passage"
+                ],
+                "x-accepts-text": true
               },
               "header": {
                 "type": "array",
                 "description": "Custom header content for the modal",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-heading"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-heading",
+                  "cre8-icon",
+                  "cre8-tag",
+                  "cre8-text-passage"
+                ],
+                "x-accepts-text": true
               },
               "footer": {
                 "type": "array",
                 "description": "Custom footer content for the modal",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button-group"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-danger-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-button",
+                  "cre8-button-group",
+                  "cre8-danger-button",
+                  "cre8-link",
+                  "cre8-text-link",
+                  "cre8-text-passage"
+                ],
+                "x-accepts-text": true
               }
             }
           },
@@ -2535,29 +3387,210 @@
                 "type": "array",
                 "description": "The component content",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-alert"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-checkbox-field"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-date-picker"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-divider"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-field"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-form"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-heading"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-inline-alert"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-loading-spinner"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-percent-bar"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-progress-meter"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-radio-field"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-remove-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-select"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-skeleton-loader"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-alert",
+                  "cre8-badge",
+                  "cre8-checkbox-field",
+                  "cre8-date-picker",
+                  "cre8-divider",
+                  "cre8-field",
+                  "cre8-form",
+                  "cre8-heading",
+                  "cre8-inline-alert",
+                  "cre8-link-list",
+                  "cre8-list",
+                  "cre8-loading-spinner",
+                  "cre8-percent-bar",
+                  "cre8-progress-meter",
+                  "cre8-radio-field",
+                  "cre8-remove-tag",
+                  "cre8-select",
+                  "cre8-skeleton-loader",
+                  "cre8-tag",
+                  "cre8-tag-list",
+                  "cre8-text-link",
+                  "cre8-text-passage"
+                ],
+                "x-accepts-text": true
               },
               "trigger": {
                 "type": "array",
                 "description": "The element that toggles the popover open and closed",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-danger-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-button",
+                  "cre8-danger-button",
+                  "cre8-icon",
+                  "cre8-link",
+                  "cre8-tag",
+                  "cre8-text-link"
+                ],
+                "x-accepts-text": false
               },
               "header": {
                 "type": "array",
                 "description": "Custom header content for the popover panel",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-heading"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-heading",
+                  "cre8-icon",
+                  "cre8-tag",
+                  "cre8-text-passage"
+                ],
+                "x-accepts-text": true
               },
               "footer": {
                 "type": "array",
                 "description": "Custom footer content for the popover panel",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button-group"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-danger-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-button",
+                  "cre8-button-group",
+                  "cre8-danger-button",
+                  "cre8-link",
+                  "cre8-text-link"
+                ],
+                "x-accepts-text": true
               }
             }
           },
@@ -2620,8 +3653,16 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-submenu-item"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-submenu-item"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -2664,8 +3705,31 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-badge"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-icon"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-badge",
+              "cre8-icon",
+              "cre8-link",
+              "cre8-text-link"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -2771,15 +3835,69 @@
                 "type": "array",
                 "description": "Default, unnamed slot container for Tooltip text",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-link",
+                  "cre8-text-link",
+                  "cre8-text-passage"
+                ],
+                "x-accepts-text": true
               },
               "trigger": {
                 "type": "array",
                 "description": "Named slot container for Tooltip element to trigger showing/hiding the Tooltip text",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-heading"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-button",
+                  "cre8-heading",
+                  "cre8-icon",
+                  "cre8-link",
+                  "cre8-tag",
+                  "cre8-text-link"
+                ],
+                "x-accepts-text": true
               }
             }
           },
@@ -2913,15 +4031,62 @@
                 "type": "array",
                 "description": "The alert body content",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-heading"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-heading",
+                  "cre8-link",
+                  "cre8-list",
+                  "cre8-text-link",
+                  "cre8-text-passage"
+                ],
+                "x-accepts-text": true
               },
               "cta": {
                 "type": "array",
                 "description": "Container for a call-to-action button or link",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button-group"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-button",
+                  "cre8-button-group",
+                  "cre8-link",
+                  "cre8-text-link"
+                ],
+                "x-accepts-text": false
               }
             }
           },
@@ -3069,8 +4234,35 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-heading"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-icon"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-passage"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-heading",
+              "cre8-icon",
+              "cre8-link",
+              "cre8-text-link",
+              "cre8-text-passage"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -3349,8 +4541,16 @@
             "type": "array",
             "description": "The Progress Steps Item components that represent the steps in the multistep process.",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-progress-steps-item"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-progress-steps-item"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -3415,8 +4615,27 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-icon"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-icon",
+              "cre8-link",
+              "cre8-text-link"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -3576,8 +4795,16 @@
             "type": "array",
             "description": "The component content, which should be a set of `checkbox-field-item`s",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-checkbox-field-item"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-checkbox-field-item"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -3713,8 +4940,27 @@
                 "type": "array",
                 "description": "Container for optional field note content",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-field-note"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-field-note",
+                  "cre8-link",
+                  "cre8-text-link"
+                ],
+                "x-accepts-text": true
               }
             }
           },
@@ -3920,8 +5166,27 @@
                 "type": "array",
                 "description": "Container for optional field note content",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-field-note"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-field-note",
+                  "cre8-link",
+                  "cre8-text-link"
+                ],
+                "x-accepts-text": true
               }
             }
           },
@@ -4104,8 +5369,27 @@
                 "type": "array",
                 "description": "Container for optional field note content",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-field-note"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-field-note",
+                  "cre8-link",
+                  "cre8-text-link"
+                ],
+                "x-accepts-text": true
               }
             }
           },
@@ -4163,8 +5447,27 @@
             "type": "array",
             "description": "The note content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-icon"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-icon",
+              "cre8-link",
+              "cre8-text-link"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -4224,8 +5527,108 @@
             "type": "array",
             "description": "The form's controls and layout.",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-accordion"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-alert"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-button-group"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-card"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-checkbox-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-container-grid"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-danger-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-date-picker"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-divider"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-field-note"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-grid"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-heading"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-inline-alert"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-layout-section"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-multi-select"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-radio-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-section"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-select"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-select-tile-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tabs"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-passage"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-accordion",
+              "cre8-alert",
+              "cre8-button",
+              "cre8-button-group",
+              "cre8-card",
+              "cre8-checkbox-field",
+              "cre8-container",
+              "cre8-container-grid",
+              "cre8-danger-button",
+              "cre8-date-picker",
+              "cre8-divider",
+              "cre8-field",
+              "cre8-field-note",
+              "cre8-grid",
+              "cre8-heading",
+              "cre8-inline-alert",
+              "cre8-layout-section",
+              "cre8-multi-select",
+              "cre8-radio-field",
+              "cre8-section",
+              "cre8-select",
+              "cre8-select-tile-list",
+              "cre8-tabs",
+              "cre8-text-passage"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -4368,8 +5771,27 @@
                 "type": "array",
                 "description": "Container for optional field note content",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-field-note"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-field-note",
+                  "cre8-link",
+                  "cre8-text-link"
+                ],
+                "x-accepts-text": true
               }
             }
           },
@@ -4495,8 +5917,16 @@
             "type": "array",
             "description": "The component content, which should be a set of `radio-field-item`s",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-radio-field-item"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-radio-field-item"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -4783,8 +6213,27 @@
                 "type": "array",
                 "description": "Container for optional field note content",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-field-note"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-field-note",
+                  "cre8-link",
+                  "cre8-text-link"
+                ],
+                "x-accepts-text": true
               }
             }
           },
@@ -4959,36 +6408,151 @@
                 "type": "array",
                 "description": "The default slot goes into the center, main part of the Select Tile.\n  Consider using title and body instead.",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-heading"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-percent-bar"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-heading",
+                  "cre8-icon",
+                  "cre8-percent-bar",
+                  "cre8-tag",
+                  "cre8-text-link",
+                  "cre8-text-passage"
+                ],
+                "x-accepts-text": true
               },
               "header": {
                 "type": "array",
                 "description": "The top or left part of the Select Tile",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-heading"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-logo"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-heading",
+                  "cre8-icon",
+                  "cre8-logo"
+                ],
+                "x-accepts-text": true
               },
               "footer": {
                 "type": "array",
                 "description": "The bottom or right part of the Select Tile",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-tag",
+                  "cre8-text-link",
+                  "cre8-text-passage"
+                ],
+                "x-accepts-text": true
               },
               "title": {
                 "type": "array",
                 "description": "The title part of the Select Tile, use with body slot and\n        instead of the default slot for appropriate typography.",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-heading"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-heading"
+                ],
+                "x-accepts-text": true
               },
               "body": {
                 "type": "array",
                 "description": "The \"body\" part of the Select Tile, which appears under\n         the title slot and receives apporpriate typography.",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-list",
+                  "cre8-text-link",
+                  "cre8-text-passage"
+                ],
+                "x-accepts-text": true
               }
             }
           },
@@ -5098,8 +6662,16 @@
             "type": "array",
             "description": "Child instances rendered into the default slot.",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-select-tile"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-select-tile"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -5148,8 +6720,56 @@
             "type": "array",
             "description": "The band content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-button-group"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-card"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-feature"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-grid"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-heading"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-hero"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-layout-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-linelength-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-section"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-passage"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-button-group",
+              "cre8-card",
+              "cre8-container",
+              "cre8-feature",
+              "cre8-grid",
+              "cre8-heading",
+              "cre8-hero",
+              "cre8-layout-container",
+              "cre8-linelength-container",
+              "cre8-section",
+              "cre8-text-passage"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -5214,22 +6834,307 @@
                 "type": "array",
                 "description": "The card's body content",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-accordion"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-alert"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button-group"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-chart"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-checkbox-field"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-container"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-danger-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-date-picker"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-divider"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-dropdown"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-feature"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-field"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-field-note"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-form"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-grid"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-heading"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-inline-alert"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-loading-spinner"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-multi-select"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-percent-bar"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-popover"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-progress-meter"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-radio-field"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-remove-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-select"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-select-tile-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-skeleton-loader"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-split-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-table"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-table-object"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tabs"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tooltip"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-accordion",
+                  "cre8-alert",
+                  "cre8-badge",
+                  "cre8-button",
+                  "cre8-button-group",
+                  "cre8-chart",
+                  "cre8-checkbox-field",
+                  "cre8-container",
+                  "cre8-danger-button",
+                  "cre8-date-picker",
+                  "cre8-divider",
+                  "cre8-dropdown",
+                  "cre8-feature",
+                  "cre8-field",
+                  "cre8-field-note",
+                  "cre8-form",
+                  "cre8-grid",
+                  "cre8-heading",
+                  "cre8-icon",
+                  "cre8-inline-alert",
+                  "cre8-link",
+                  "cre8-link-list",
+                  "cre8-list",
+                  "cre8-loading-spinner",
+                  "cre8-multi-select",
+                  "cre8-percent-bar",
+                  "cre8-popover",
+                  "cre8-progress-meter",
+                  "cre8-radio-field",
+                  "cre8-remove-tag",
+                  "cre8-select",
+                  "cre8-select-tile-list",
+                  "cre8-skeleton-loader",
+                  "cre8-split-button",
+                  "cre8-table",
+                  "cre8-table-object",
+                  "cre8-tabs",
+                  "cre8-tag",
+                  "cre8-tag-list",
+                  "cre8-text-link",
+                  "cre8-text-passage",
+                  "cre8-tooltip"
+                ],
+                "x-accepts-text": true
               },
               "header": {
                 "type": "array",
                 "description": "(Optional) Content in the card's header",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button-group"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-chart"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-danger-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-feature"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-heading"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-logo"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-split-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-button",
+                  "cre8-button-group",
+                  "cre8-chart",
+                  "cre8-danger-button",
+                  "cre8-feature",
+                  "cre8-heading",
+                  "cre8-icon",
+                  "cre8-link",
+                  "cre8-logo",
+                  "cre8-split-button",
+                  "cre8-tag",
+                  "cre8-text-link",
+                  "cre8-text-passage"
+                ],
+                "x-accepts-text": true
               },
               "footer": {
                 "type": "array",
                 "description": "(Optional) Content in the card's footer",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button-group"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-danger-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-divider"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-button",
+                  "cre8-button-group",
+                  "cre8-danger-button",
+                  "cre8-divider",
+                  "cre8-link",
+                  "cre8-tag",
+                  "cre8-tag-list",
+                  "cre8-text-link",
+                  "cre8-text-passage"
+                ],
+                "x-accepts-text": true
               }
             }
           },
@@ -5289,8 +7194,239 @@
             "type": "array",
             "description": "The content to establish a containment context for",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-accordion"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-alert"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-badge"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-breadcrumbs"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-button-group"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-card"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-chart"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-checkbox-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-container-grid"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-danger-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-date-picker"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-divider"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-dropdown"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-feature"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-field-note"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-form"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-grid"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-heading"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-hero"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-icon"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-inline-alert"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-layout-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-layout-section"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-linelength-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-loading-spinner"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-logo"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-modal"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-multi-select"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-page-header"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-pagination"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-percent-bar"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-popover"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-progress-meter"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-progress-steps"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-radio-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-remove-tag"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-section"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-select"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-select-tile-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-skeleton-loader"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-split-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-table"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-table-object"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tabs"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tag"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tag-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tertiary-nav"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-passage"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tooltip"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-accordion",
+              "cre8-alert",
+              "cre8-badge",
+              "cre8-breadcrumbs",
+              "cre8-button",
+              "cre8-button-group",
+              "cre8-card",
+              "cre8-chart",
+              "cre8-checkbox-field",
+              "cre8-container",
+              "cre8-container-grid",
+              "cre8-danger-button",
+              "cre8-date-picker",
+              "cre8-divider",
+              "cre8-dropdown",
+              "cre8-feature",
+              "cre8-field",
+              "cre8-field-note",
+              "cre8-form",
+              "cre8-grid",
+              "cre8-heading",
+              "cre8-hero",
+              "cre8-icon",
+              "cre8-inline-alert",
+              "cre8-layout-container",
+              "cre8-layout-section",
+              "cre8-linelength-container",
+              "cre8-link",
+              "cre8-link-list",
+              "cre8-list",
+              "cre8-loading-spinner",
+              "cre8-logo",
+              "cre8-modal",
+              "cre8-multi-select",
+              "cre8-page-header",
+              "cre8-pagination",
+              "cre8-percent-bar",
+              "cre8-popover",
+              "cre8-progress-meter",
+              "cre8-progress-steps",
+              "cre8-radio-field",
+              "cre8-remove-tag",
+              "cre8-section",
+              "cre8-select",
+              "cre8-select-tile-list",
+              "cre8-skeleton-loader",
+              "cre8-split-button",
+              "cre8-table",
+              "cre8-table-object",
+              "cre8-tabs",
+              "cre8-tag",
+              "cre8-tag-list",
+              "cre8-tertiary-nav",
+              "cre8-text-link",
+              "cre8-text-passage",
+              "cre8-tooltip"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -5362,8 +7498,68 @@
             "type": "array",
             "description": "The grid items",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-button-group"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-card"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-chart"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-date-picker"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-feature"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-heading"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-multi-select"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-select"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-select-tile"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-passage"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-button-group",
+              "cre8-card",
+              "cre8-chart",
+              "cre8-container",
+              "cre8-date-picker",
+              "cre8-feature",
+              "cre8-field",
+              "cre8-heading",
+              "cre8-link-list",
+              "cre8-list",
+              "cre8-multi-select",
+              "cre8-select",
+              "cre8-select-tile",
+              "cre8-text-passage"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -5486,8 +7682,16 @@
             "type": "array",
             "description": "The grid items",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-grid-item"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-grid-item"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -5530,8 +7734,239 @@
             "type": "array",
             "description": "The content of the grid item",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-accordion"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-alert"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-badge"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-breadcrumbs"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-button-group"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-card"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-chart"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-checkbox-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-container-grid"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-danger-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-date-picker"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-divider"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-dropdown"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-feature"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-field-note"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-form"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-grid"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-heading"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-hero"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-icon"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-inline-alert"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-layout-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-layout-section"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-linelength-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-loading-spinner"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-logo"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-modal"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-multi-select"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-page-header"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-pagination"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-percent-bar"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-popover"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-progress-meter"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-progress-steps"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-radio-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-remove-tag"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-section"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-select"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-select-tile-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-skeleton-loader"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-split-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-table"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-table-object"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tabs"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tag"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tag-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tertiary-nav"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-passage"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tooltip"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-accordion",
+              "cre8-alert",
+              "cre8-badge",
+              "cre8-breadcrumbs",
+              "cre8-button",
+              "cre8-button-group",
+              "cre8-card",
+              "cre8-chart",
+              "cre8-checkbox-field",
+              "cre8-container",
+              "cre8-container-grid",
+              "cre8-danger-button",
+              "cre8-date-picker",
+              "cre8-divider",
+              "cre8-dropdown",
+              "cre8-feature",
+              "cre8-field",
+              "cre8-field-note",
+              "cre8-form",
+              "cre8-grid",
+              "cre8-heading",
+              "cre8-hero",
+              "cre8-icon",
+              "cre8-inline-alert",
+              "cre8-layout-container",
+              "cre8-layout-section",
+              "cre8-linelength-container",
+              "cre8-link",
+              "cre8-link-list",
+              "cre8-list",
+              "cre8-loading-spinner",
+              "cre8-logo",
+              "cre8-modal",
+              "cre8-multi-select",
+              "cre8-page-header",
+              "cre8-pagination",
+              "cre8-percent-bar",
+              "cre8-popover",
+              "cre8-progress-meter",
+              "cre8-progress-steps",
+              "cre8-radio-field",
+              "cre8-remove-tag",
+              "cre8-section",
+              "cre8-select",
+              "cre8-select-tile-list",
+              "cre8-skeleton-loader",
+              "cre8-split-button",
+              "cre8-table",
+              "cre8-table-object",
+              "cre8-tabs",
+              "cre8-tag",
+              "cre8-tag-list",
+              "cre8-tertiary-nav",
+              "cre8-text-link",
+              "cre8-text-passage",
+              "cre8-tooltip"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -5599,8 +8034,63 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-badge"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-breadcrumbs"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-button-group"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-form"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-heading"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-logo"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tag"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-passage"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-badge",
+              "cre8-breadcrumbs",
+              "cre8-button",
+              "cre8-button-group",
+              "cre8-field",
+              "cre8-form",
+              "cre8-heading",
+              "cre8-link",
+              "cre8-logo",
+              "cre8-tag",
+              "cre8-text-link",
+              "cre8-text-passage"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -5644,8 +8134,40 @@
             "type": "array",
             "description": "The layout content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-band"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-footer"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-header"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-layout-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-layout-section"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-main"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-nav-container"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-band",
+              "cre8-footer",
+              "cre8-header",
+              "cre8-layout-container",
+              "cre8-layout-section",
+              "cre8-main",
+              "cre8-nav-container"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -5688,8 +8210,239 @@
             "type": "array",
             "description": "The contents of the layout container",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-accordion"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-alert"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-badge"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-breadcrumbs"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-button-group"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-card"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-chart"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-checkbox-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-container-grid"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-danger-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-date-picker"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-divider"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-dropdown"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-feature"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-field-note"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-form"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-grid"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-heading"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-hero"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-icon"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-inline-alert"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-layout-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-layout-section"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-linelength-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-loading-spinner"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-logo"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-modal"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-multi-select"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-page-header"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-pagination"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-percent-bar"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-popover"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-progress-meter"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-progress-steps"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-radio-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-remove-tag"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-section"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-select"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-select-tile-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-skeleton-loader"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-split-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-table"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-table-object"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tabs"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tag"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tag-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tertiary-nav"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-passage"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tooltip"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-accordion",
+              "cre8-alert",
+              "cre8-badge",
+              "cre8-breadcrumbs",
+              "cre8-button",
+              "cre8-button-group",
+              "cre8-card",
+              "cre8-chart",
+              "cre8-checkbox-field",
+              "cre8-container",
+              "cre8-container-grid",
+              "cre8-danger-button",
+              "cre8-date-picker",
+              "cre8-divider",
+              "cre8-dropdown",
+              "cre8-feature",
+              "cre8-field",
+              "cre8-field-note",
+              "cre8-form",
+              "cre8-grid",
+              "cre8-heading",
+              "cre8-hero",
+              "cre8-icon",
+              "cre8-inline-alert",
+              "cre8-layout-container",
+              "cre8-layout-section",
+              "cre8-linelength-container",
+              "cre8-link",
+              "cre8-link-list",
+              "cre8-list",
+              "cre8-loading-spinner",
+              "cre8-logo",
+              "cre8-modal",
+              "cre8-multi-select",
+              "cre8-page-header",
+              "cre8-pagination",
+              "cre8-percent-bar",
+              "cre8-popover",
+              "cre8-progress-meter",
+              "cre8-progress-steps",
+              "cre8-radio-field",
+              "cre8-remove-tag",
+              "cre8-section",
+              "cre8-select",
+              "cre8-select-tile-list",
+              "cre8-skeleton-loader",
+              "cre8-split-button",
+              "cre8-table",
+              "cre8-table-object",
+              "cre8-tabs",
+              "cre8-tag",
+              "cre8-tag-list",
+              "cre8-tertiary-nav",
+              "cre8-text-link",
+              "cre8-text-passage",
+              "cre8-tooltip"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -5744,8 +8497,243 @@
             "type": "array",
             "description": "The content of the layout section",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-accordion"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-alert"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-badge"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-band"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-breadcrumbs"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-button-group"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-card"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-chart"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-checkbox-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-container-grid"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-danger-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-date-picker"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-divider"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-dropdown"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-feature"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-field-note"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-form"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-grid"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-heading"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-hero"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-icon"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-inline-alert"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-layout-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-layout-section"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-linelength-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-loading-spinner"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-logo"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-modal"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-multi-select"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-page-header"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-pagination"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-percent-bar"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-popover"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-progress-meter"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-progress-steps"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-radio-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-remove-tag"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-section"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-select"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-select-tile-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-skeleton-loader"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-split-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-table"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-table-object"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tabs"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tag"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tag-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tertiary-nav"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-passage"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tooltip"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-accordion",
+              "cre8-alert",
+              "cre8-badge",
+              "cre8-band",
+              "cre8-breadcrumbs",
+              "cre8-button",
+              "cre8-button-group",
+              "cre8-card",
+              "cre8-chart",
+              "cre8-checkbox-field",
+              "cre8-container",
+              "cre8-container-grid",
+              "cre8-danger-button",
+              "cre8-date-picker",
+              "cre8-divider",
+              "cre8-dropdown",
+              "cre8-feature",
+              "cre8-field",
+              "cre8-field-note",
+              "cre8-form",
+              "cre8-grid",
+              "cre8-heading",
+              "cre8-hero",
+              "cre8-icon",
+              "cre8-inline-alert",
+              "cre8-layout-container",
+              "cre8-layout-section",
+              "cre8-linelength-container",
+              "cre8-link",
+              "cre8-link-list",
+              "cre8-list",
+              "cre8-loading-spinner",
+              "cre8-logo",
+              "cre8-modal",
+              "cre8-multi-select",
+              "cre8-page-header",
+              "cre8-pagination",
+              "cre8-percent-bar",
+              "cre8-popover",
+              "cre8-progress-meter",
+              "cre8-progress-steps",
+              "cre8-radio-field",
+              "cre8-remove-tag",
+              "cre8-section",
+              "cre8-select",
+              "cre8-select-tile-list",
+              "cre8-skeleton-loader",
+              "cre8-split-button",
+              "cre8-table",
+              "cre8-table-object",
+              "cre8-tabs",
+              "cre8-tag",
+              "cre8-tag-list",
+              "cre8-tertiary-nav",
+              "cre8-text-link",
+              "cre8-text-passage",
+              "cre8-tooltip"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -5782,8 +8770,75 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-accordion"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-alert"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-badge"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-button-group"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-divider"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-heading"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-icon"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-inline-alert"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tag"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-passage"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tooltip"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-accordion",
+              "cre8-alert",
+              "cre8-badge",
+              "cre8-button-group",
+              "cre8-divider",
+              "cre8-heading",
+              "cre8-icon",
+              "cre8-inline-alert",
+              "cre8-link",
+              "cre8-link-list",
+              "cre8-list",
+              "cre8-tag",
+              "cre8-text-link",
+              "cre8-text-passage",
+              "cre8-tooltip"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -5826,8 +8881,76 @@
             "type": "array",
             "description": "The main content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-alert"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-band"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-breadcrumbs"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-card"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-form"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-grid"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-heading"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-hero"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-inline-alert"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-layout-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-layout-section"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-page-header"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-section"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tabs"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-passage"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-alert",
+              "cre8-band",
+              "cre8-breadcrumbs",
+              "cre8-card",
+              "cre8-container",
+              "cre8-form",
+              "cre8-grid",
+              "cre8-heading",
+              "cre8-hero",
+              "cre8-inline-alert",
+              "cre8-layout-container",
+              "cre8-layout-section",
+              "cre8-page-header",
+              "cre8-section",
+              "cre8-tabs",
+              "cre8-text-passage"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -5875,15 +8998,281 @@
                 "type": "array",
                 "description": "The content of the section should go here.\nIt could be a cre8-text-passage, a cre8-card or any other block level html.",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-accordion"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-alert"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-breadcrumbs"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button-group"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-card"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-chart"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-checkbox-field"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-container"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-container-grid"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-danger-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-date-picker"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-divider"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-dropdown"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-feature"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-field"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-field-note"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-form"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-grid"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-heading"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-hero"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-inline-alert"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-layout-container"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-layout-section"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-linelength-container"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-loading-spinner"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-logo"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-modal"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-multi-select"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-page-header"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-pagination"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-percent-bar"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-popover"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-progress-meter"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-progress-steps"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-radio-field"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-remove-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-section"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-select"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-select-tile-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-skeleton-loader"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-split-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-table"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-table-object"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tabs"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tertiary-nav"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tooltip"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-accordion",
+                  "cre8-alert",
+                  "cre8-badge",
+                  "cre8-breadcrumbs",
+                  "cre8-button",
+                  "cre8-button-group",
+                  "cre8-card",
+                  "cre8-chart",
+                  "cre8-checkbox-field",
+                  "cre8-container",
+                  "cre8-container-grid",
+                  "cre8-danger-button",
+                  "cre8-date-picker",
+                  "cre8-divider",
+                  "cre8-dropdown",
+                  "cre8-feature",
+                  "cre8-field",
+                  "cre8-field-note",
+                  "cre8-form",
+                  "cre8-grid",
+                  "cre8-heading",
+                  "cre8-hero",
+                  "cre8-icon",
+                  "cre8-inline-alert",
+                  "cre8-layout-container",
+                  "cre8-layout-section",
+                  "cre8-linelength-container",
+                  "cre8-link",
+                  "cre8-link-list",
+                  "cre8-list",
+                  "cre8-loading-spinner",
+                  "cre8-logo",
+                  "cre8-modal",
+                  "cre8-multi-select",
+                  "cre8-page-header",
+                  "cre8-pagination",
+                  "cre8-percent-bar",
+                  "cre8-popover",
+                  "cre8-progress-meter",
+                  "cre8-progress-steps",
+                  "cre8-radio-field",
+                  "cre8-remove-tag",
+                  "cre8-section",
+                  "cre8-select",
+                  "cre8-select-tile-list",
+                  "cre8-skeleton-loader",
+                  "cre8-split-button",
+                  "cre8-table",
+                  "cre8-table-object",
+                  "cre8-tabs",
+                  "cre8-tag",
+                  "cre8-tag-list",
+                  "cre8-tertiary-nav",
+                  "cre8-text-link",
+                  "cre8-text-passage",
+                  "cre8-tooltip"
+                ],
+                "x-accepts-text": true
               },
               "header": {
                 "type": "array",
                 "description": "Custom header content, rendered in place of the `headline` property",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button-group"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-heading"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-button-group",
+                  "cre8-heading",
+                  "cre8-link",
+                  "cre8-tag",
+                  "cre8-text-link",
+                  "cre8-text-passage"
+                ],
+                "x-accepts-text": true
               }
             }
           },
@@ -5947,8 +9336,55 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-badge"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-button-group"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-heading"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-icon"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-logo"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tag"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-passage"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-badge",
+              "cre8-button",
+              "cre8-button-group",
+              "cre8-heading",
+              "cre8-icon",
+              "cre8-link",
+              "cre8-logo",
+              "cre8-tag",
+              "cre8-text-link",
+              "cre8-text-passage"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -5997,15 +9433,81 @@
                 "type": "array",
                 "description": "The page header content",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-breadcrumbs"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button-group"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-breadcrumbs",
+                  "cre8-button",
+                  "cre8-button-group",
+                  "cre8-link",
+                  "cre8-tag",
+                  "cre8-tag-list",
+                  "cre8-text-link",
+                  "cre8-text-passage"
+                ],
+                "x-accepts-text": true
               },
               "titleAfter": {
                 "type": "array",
                 "description": "Content rendered after the heading text, inside the title element",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tooltip"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-icon",
+                  "cre8-tag",
+                  "cre8-tooltip"
+                ],
+                "x-accepts-text": true
               }
             }
           },
@@ -6112,8 +9614,27 @@
             "type": "array",
             "description": "The logo element",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-icon"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-icon",
+              "cre8-link",
+              "cre8-text-link"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -6177,8 +9698,16 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-breadcrumbs-item"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-breadcrumbs-item"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -6215,8 +9744,23 @@
             "type": "array",
             "description": "The component content, the expected slotted content is a Cre8 Link or a String for the \"terminal node\"",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-link",
+              "cre8-text-link"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -6258,22 +9802,159 @@
                 "type": "array",
                 "description": "The footer content",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-button-group"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-container"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-container-grid"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-divider"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-grid"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-heading"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-layout-container"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-logo"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tertiary-nav"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-utility-nav"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-button-group",
+                  "cre8-container",
+                  "cre8-container-grid",
+                  "cre8-divider",
+                  "cre8-grid",
+                  "cre8-heading",
+                  "cre8-layout-container",
+                  "cre8-link",
+                  "cre8-link-list",
+                  "cre8-list",
+                  "cre8-logo",
+                  "cre8-tertiary-nav",
+                  "cre8-text-link",
+                  "cre8-text-passage",
+                  "cre8-utility-nav"
+                ],
+                "x-accepts-text": true
               },
               "top": {
                 "type": "array",
                 "description": "The top content (above the default slot)",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-button-group"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-divider"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-heading"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-logo"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-utility-nav"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-button-group",
+                  "cre8-divider",
+                  "cre8-heading",
+                  "cre8-link-list",
+                  "cre8-logo",
+                  "cre8-text-passage",
+                  "cre8-utility-nav"
+                ],
+                "x-accepts-text": true
               },
               "bottom": {
                 "type": "array",
                 "description": "The bottom content (below the default slot)",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-divider"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link-list"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-logo"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-utility-nav"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-divider",
+                  "cre8-link",
+                  "cre8-link-list",
+                  "cre8-logo",
+                  "cre8-text-link",
+                  "cre8-text-passage",
+                  "cre8-utility-nav"
+                ],
+                "x-accepts-text": true
               }
             }
           },
@@ -6335,8 +10016,16 @@
             "type": "array",
             "description": "The primary navigation items",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-global-nav-item"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-global-nav-item"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -6407,22 +10096,69 @@
                 "type": "array",
                 "description": "The label for the navigation item",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-link",
+                  "cre8-text-link"
+                ],
+                "x-accepts-text": true
               },
               "itemBefore": {
                 "type": "array",
                 "description": "Content rendered before the item label, such as an icon",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-logo"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-icon",
+                  "cre8-logo"
+                ],
+                "x-accepts-text": false
               },
               "itemAfter": {
                 "type": "array",
                 "description": "Content rendered after the item label, such as an icon",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-icon",
+                  "cre8-tag"
+                ],
+                "x-accepts-text": false
               }
             }
           },
@@ -6477,22 +10213,155 @@
                 "type": "array",
                 "description": "The header content",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-button"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-button-group"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-dropdown"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-field"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-global-nav"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-heading"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-logo"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-nav-container"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-popover"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-primary-nav"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-utility-nav"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-button",
+                  "cre8-button-group",
+                  "cre8-dropdown",
+                  "cre8-field",
+                  "cre8-global-nav",
+                  "cre8-heading",
+                  "cre8-icon",
+                  "cre8-link",
+                  "cre8-logo",
+                  "cre8-nav-container",
+                  "cre8-popover",
+                  "cre8-primary-nav",
+                  "cre8-text-link",
+                  "cre8-utility-nav"
+                ],
+                "x-accepts-text": true
               },
               "top": {
                 "type": "array",
                 "description": "Content rendered above the main header row",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-alert"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-inline-alert"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-logo"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-passage"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-utility-nav"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-alert",
+                  "cre8-inline-alert",
+                  "cre8-link",
+                  "cre8-logo",
+                  "cre8-text-link",
+                  "cre8-text-passage",
+                  "cre8-utility-nav"
+                ],
+                "x-accepts-text": true
               },
               "bottom": {
                 "type": "array",
                 "description": "Content rendered below the main header row",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-breadcrumbs"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-field"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-global-nav"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-nav-container"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-primary-nav"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tabs"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tertiary-nav"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-breadcrumbs",
+                  "cre8-field",
+                  "cre8-global-nav",
+                  "cre8-nav-container",
+                  "cre8-primary-nav",
+                  "cre8-tabs",
+                  "cre8-tertiary-nav"
+                ],
+                "x-accepts-text": true
               }
             }
           },
@@ -6624,15 +10493,38 @@
                 "type": "array",
                 "description": "The link text content",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-icon"
+                ],
+                "x-accepts-text": true
               },
               "badge": {
                 "type": "array",
                 "description": "Container for an optional badge displayed alongside the link",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-tag"
+                ],
+                "x-accepts-text": false
               }
             }
           },
@@ -6735,8 +10627,16 @@
             "type": "array",
             "description": "The link list items",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-link-list-item"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-link-list-item"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -6794,22 +10694,81 @@
                 "type": "array",
                 "description": "The default slot to put badges or other Components",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-icon",
+                  "cre8-link",
+                  "cre8-tag",
+                  "cre8-text-link"
+                ],
+                "x-accepts-text": true
               },
               "itemBefore": {
                 "type": "array",
                 "description": "Content rendered before the link text, such as an icon",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-logo"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-icon",
+                  "cre8-logo"
+                ],
+                "x-accepts-text": false
               },
               "itemAfter": {
                 "type": "array",
                 "description": "Content rendered after the link text, such as an icon",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-icon",
+                  "cre8-tag"
+                ],
+                "x-accepts-text": false
               }
             }
           },
@@ -6853,8 +10812,56 @@
             "type": "array",
             "description": "The navigation container content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-button-group"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-dropdown"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-global-nav"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-logo"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-primary-nav"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-submenu"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tertiary-nav"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-utility-nav"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-button",
+              "cre8-button-group",
+              "cre8-dropdown",
+              "cre8-field",
+              "cre8-global-nav",
+              "cre8-link",
+              "cre8-logo",
+              "cre8-primary-nav",
+              "cre8-submenu",
+              "cre8-tertiary-nav",
+              "cre8-utility-nav"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -6945,8 +10952,35 @@
             "type": "array",
             "description": "Optional content rendered alongside the pagination controls",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-button-group"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-select"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-passage"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-button",
+              "cre8-button-group",
+              "cre8-field",
+              "cre8-select",
+              "cre8-text-passage"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -7015,8 +11049,16 @@
             "type": "array",
             "description": "The primary navigation items",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-primary-nav-item"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-primary-nav-item"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -7087,22 +11129,73 @@
                 "type": "array",
                 "description": "The label for the navigation item",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-dropdown"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-link"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-submenu"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-text-link"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-dropdown",
+                  "cre8-link",
+                  "cre8-submenu",
+                  "cre8-text-link"
+                ],
+                "x-accepts-text": true
               },
               "itemBefore": {
                 "type": "array",
                 "description": "Content rendered before the item label, such as an icon",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-icon"
+                ],
+                "x-accepts-text": false
               },
               "itemAfter": {
                 "type": "array",
                 "description": "Content rendered after the item label, such as an icon",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-tag"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-icon",
+                  "cre8-tag"
+                ],
+                "x-accepts-text": false
               }
             }
           },
@@ -7168,8 +11261,27 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-badge"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-icon"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tag"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-badge",
+              "cre8-icon",
+              "cre8-tag"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -7236,8 +11348,239 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-accordion"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-alert"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-badge"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-breadcrumbs"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-button-group"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-card"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-chart"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-checkbox-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-container-grid"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-danger-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-date-picker"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-divider"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-dropdown"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-feature"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-field-note"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-form"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-grid"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-heading"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-hero"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-icon"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-inline-alert"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-layout-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-layout-section"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-linelength-container"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-loading-spinner"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-logo"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-modal"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-multi-select"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-page-header"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-pagination"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-percent-bar"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-popover"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-progress-meter"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-progress-steps"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-radio-field"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-remove-tag"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-section"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-select"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-select-tile-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-skeleton-loader"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-split-button"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-table"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-table-object"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tabs"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tag"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tag-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tertiary-nav"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-passage"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tooltip"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-accordion",
+              "cre8-alert",
+              "cre8-badge",
+              "cre8-breadcrumbs",
+              "cre8-button",
+              "cre8-button-group",
+              "cre8-card",
+              "cre8-chart",
+              "cre8-checkbox-field",
+              "cre8-container",
+              "cre8-container-grid",
+              "cre8-danger-button",
+              "cre8-date-picker",
+              "cre8-divider",
+              "cre8-dropdown",
+              "cre8-feature",
+              "cre8-field",
+              "cre8-field-note",
+              "cre8-form",
+              "cre8-grid",
+              "cre8-heading",
+              "cre8-hero",
+              "cre8-icon",
+              "cre8-inline-alert",
+              "cre8-layout-container",
+              "cre8-layout-section",
+              "cre8-linelength-container",
+              "cre8-link",
+              "cre8-link-list",
+              "cre8-list",
+              "cre8-loading-spinner",
+              "cre8-logo",
+              "cre8-modal",
+              "cre8-multi-select",
+              "cre8-page-header",
+              "cre8-pagination",
+              "cre8-percent-bar",
+              "cre8-popover",
+              "cre8-progress-meter",
+              "cre8-progress-steps",
+              "cre8-radio-field",
+              "cre8-remove-tag",
+              "cre8-section",
+              "cre8-select",
+              "cre8-select-tile-list",
+              "cre8-skeleton-loader",
+              "cre8-split-button",
+              "cre8-table",
+              "cre8-table-object",
+              "cre8-tabs",
+              "cre8-tag",
+              "cre8-tag-list",
+              "cre8-tertiary-nav",
+              "cre8-text-link",
+              "cre8-text-passage",
+              "cre8-tooltip"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -7365,15 +11708,31 @@
                 "type": "array",
                 "description": "Default, unnamed slot container for each `cre8-tab` button",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-tab"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-tab"
+                ],
+                "x-accepts-text": false
               },
               "panel": {
                 "type": "array",
                 "description": "Container for each `cre8-tab-panel` content item",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-tab-panel"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-tab-panel"
+                ],
+                "x-accepts-text": false
               }
             }
           },
@@ -7442,8 +11801,16 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-tertiary-nav-item"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-tertiary-nav-item"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -7491,8 +11858,35 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-badge"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-icon"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tertiary-nav"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-badge",
+              "cre8-icon",
+              "cre8-link",
+              "cre8-tertiary-nav",
+              "cre8-text-link"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -7541,8 +11935,16 @@
             "type": "array",
             "description": "The utility nav items",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-utility-nav-item"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-utility-nav-item"
+            ],
+            "x-accepts-text": false
           },
           "events": {
             "type": "object",
@@ -7688,8 +12090,39 @@
             "type": "array",
             "description": "The heading text content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-badge"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-icon"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tag"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tooltip"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-badge",
+              "cre8-icon",
+              "cre8-link",
+              "cre8-tag",
+              "cre8-text-link",
+              "cre8-tooltip"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",
@@ -7757,15 +12190,38 @@
                 "type": "array",
                 "description": "The component content",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-icon"
+                ],
+                "x-accepts-text": true
               },
               "linkAfter": {
                 "type": "array",
                 "description": "Content rendered after the link text, such as an icon",
                 "items": {
-                  "$ref": "#/$defs/Child"
-                }
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/components/cre8-badge"
+                    },
+                    {
+                      "$ref": "#/$defs/components/cre8-icon"
+                    }
+                  ]
+                },
+                "x-accepts": [
+                  "cre8-badge",
+                  "cre8-icon"
+                ],
+                "x-accepts-text": false
               }
             }
           },
@@ -7825,8 +12281,55 @@
             "type": "array",
             "description": "The component content",
             "items": {
-              "$ref": "#/$defs/Child"
-            }
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/components/cre8-badge"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-divider"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-heading"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-icon"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-inline-alert"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-list"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tag"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-text-link"
+                },
+                {
+                  "$ref": "#/$defs/components/cre8-tooltip"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "x-accepts": [
+              "cre8-badge",
+              "cre8-divider",
+              "cre8-heading",
+              "cre8-icon",
+              "cre8-inline-alert",
+              "cre8-link",
+              "cre8-list",
+              "cre8-tag",
+              "cre8-text-link",
+              "cre8-tooltip"
+            ],
+            "x-accepts-text": true
           },
           "events": {
             "type": "object",

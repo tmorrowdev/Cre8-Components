@@ -226,9 +226,8 @@ instead of quietly becoming false.
 
 | Claim | Where it appears | Reality |
 |---|---|---|
-| "93 components" | `website/index.html` meta description and body copy | 85 in `mcp-manifest.json`, `react-manifest.json`, and `a2ui/catalog.json` |
-| "72 React components" | `cre8-a2ui-react` skill | 85 in `react-manifest.json` v2.0.7 |
-| React library v1.0.0 | `cre8-a2ui-react` skill | 2.0.7 in `react-manifest.json` |
+| "72 React components" | `cre8-a2ui-react` skill | 88 in `react-manifest.json` v2.3.10 |
+| React library v1.0.0 | `cre8-a2ui-react` skill | 2.3.10 in `react-manifest.json` |
 | Install `@cre8_dev/cre8-design-tokens` | `cre8-a2ui-react` skill | Tokens ship inside `@tmorrow/cre8-wc`; both manifests say so in `designTokens.tokenPackage` |
 | Prop named `tagName` | `agent-docs/CODE_GUIDELINES.md` | Components ship `tagVariant` / `headingTagVariant` |
 | Six props are declared but never reach the DOM | Component JSDoc, and therefore `a2ui/catalog.json`: `cre8-link-list-item.text`, `cre8-field.errorText`/`.successText`, `cre8-date-picker.errorText`/`.successText`, `cre8-modal.closeButtonText` | Each validates cleanly and does nothing. `cre8-field.errorText` even defaults to `'Error'`; the message that renders is `fieldNote` under `isError`. Confirmed twice by `pnpm audit:render` — rendering under jsdom and reading the source — and listed in `a2ui/inert-props.json` |
@@ -299,6 +298,7 @@ before is useful even once the instance is gone.
 
 | Was | Fixed by |
 |---|---|
+| The website advertised "93 components" in the old static site page while every manifest said 88 — the number outlived several releases because nothing checked it | The static page became a Next.js app, and the count moved to `COMPONENT_COUNT` / `REACT_COMPONENT_COUNT` in `website/lib/content.ts`, corrected to 88. `check-drift` now re-verifies both against `mcp-manifest.json` and `react-manifest.json` rather than grepping prose |
 | Heading `type` accepted `"label"` in the catalog while the component implemented `"label-default"` — specs validated clean and rendered unstyled | Correcting the `PROP_OVERRIDES` entry in `generate-catalog.mjs` and regenerating. See [What validation cannot catch](04-a2ui.md#what-validation-cannot-catch) |
 | Heading `tagVariant` JSDoc claimed `h2` was the default; the code default is `h5` | JSDoc corrected; the catalog description is generated from it, so the fix propagated |
 | Catalog stamped 2.0.6 and the knowledge graph 2.0.4 against a 2.0.7 package | Regenerating all artifacts together; now uniformly 2.0.7. See [Keeping the A2UI artifacts in sync](04-a2ui.md#keeping-the-a2ui-artifacts-in-sync) |

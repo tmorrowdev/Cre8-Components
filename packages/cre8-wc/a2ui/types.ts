@@ -56,11 +56,26 @@ export interface CatalogComponentDef {
     props?: {
       properties?: Record<string, PropSchema>;
     };
-    children?: unknown;
+    children?: ContentRegionSchema;
     slots?: {
-      properties?: Record<string, unknown>;
+      properties?: Record<string, ContentRegionSchema>;
     };
   };
+}
+
+/**
+ * One content region of a component: its `children` array or one named slot.
+ * `x-accepts` / `x-accepts-text` are derived by generate-catalog.mjs from
+ * slot-eligibility.json; when absent (an older catalog) the region is untyped
+ * and any catalog component or string is accepted.
+ */
+export interface ContentRegionSchema {
+  description?: string;
+  /** Component names eligible in this region. */
+  'x-accepts'?: string[];
+  /** Whether literal strings are eligible in this region. */
+  'x-accepts-text'?: boolean;
+  [key: string]: unknown;
 }
 
 export interface PropSchema {
