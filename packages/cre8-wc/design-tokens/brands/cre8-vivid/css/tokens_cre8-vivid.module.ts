@@ -33,7 +33,7 @@ const vivid = `
 /**
  * cre8-vivid — a high-saturation brand for cre8.
  *
- * Derived from cre8-a2ui and identical to it in structure, typography and
+ * Derived from cre8 and identical to it in structure, typography and
  * spacing. What changes is colour, and one change carries the rest:
  *
  *   The a2ui status ramp maps success to cyan and error to pink. Neither hue

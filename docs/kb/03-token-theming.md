@@ -121,10 +121,17 @@ is teal" — and survive upstream primitive renames better.
 
 ### Method 3: a new brand directory
 
-Brands live in `packages/cre8-wc/design-tokens/brands/<name>/`. Fifteen exist
-today (`cre8`, `cre8-teal`, `cre8-a2ui`, `blue`, `bolt`, `claude-terracotta`,
-`femmecubator`, `legacy`, `cre8-legacy`, `marketing`, `minimalist`, `notion`,
-`prisma`, `starbucks`, `tmorrow`).
+Brands live in `packages/cre8-wc/design-tokens/brands/<name>/`. Three exist
+today:
+
+| Brand | Role |
+|---|---|
+| `cre8` | The default. What a surface or page gets when it asks for nothing. |
+| `cre8-vivid` | Marketing treatment — same structure, its own colour layer. |
+| `blank` | Unbranded base, for a consumer bringing their own colours. |
+
+The set was cut from fifteen to these three; the rest were experiments and
+one-off client themes that nothing shipped against.
 
 The shape to copy is `brands/cre8/css/`:
 
@@ -142,11 +149,12 @@ import '@tmorrow/cre8-wc/themes/cre8';
 
 which resolves to `lib/design-tokens/brands/<brand>/css/tokens_<brand>.css`.
 
-> **Drift.** The brand directories are not uniformly structured. `notion` and
-> `bolt` contain only a `.module.ts`; `prisma` carries raw Figma token JSON;
-> `starbucks` has module files but no `css/` directory. Only brands with a
-> `css/tokens_<brand>.css` are reachable through the `./themes/*` export. If you
-> add a brand, add the CSS or it will not be loadable by consumers.
+> **Uniformity.** All three brands now have the same shape: `css/fonts.css`,
+> `css/tokens_brand.css` and `css/tokens_<brand>.css`. That was not true of the
+> fifteen — some carried only a `.module.ts`, one only raw Figma JSON, one no
+> `css/` directory at all — and only brands with a `css/tokens_<brand>.css` are
+> reachable through the `./themes/*` export. If you add a brand, match this
+> shape or it will not be loadable by consumers.
 
 **Use when:** the brand is a first-class artifact other projects will consume.
 

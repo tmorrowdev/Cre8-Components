@@ -11,7 +11,7 @@ import path from "path";
 // the semantic tokens on top. `fonts.css` is intentionally skipped — its
 // @font-face rules reference relative `assets/fonts/*.woff2` URLs we don't serve,
 // so text falls back to the token-defined font-family fallbacks.
-const CSS_DIR = "../cre8-wc/design-tokens/brands/cre8-a2ui/css";
+const CSS_DIR = "../cre8-wc/design-tokens/brands/cre8/css";
 
 let cached: string | null = null;
 

@@ -1,7 +1,7 @@
 /**
  * cre8-vivid — a high-saturation brand for cre8.
  *
- * Derived from cre8-a2ui and identical to it in structure, typography and
+ * Derived from cre8 and identical to it in structure, typography and
  * spacing. What changes is colour, and one change carries the rest:
  *
  *   The a2ui status ramp maps success to cyan and error to pink. Neither hue
@@ -606,4 +606,12 @@
 
     --cre8-gradient-brand-rich: linear-gradient(150deg, #4338CA 0%, #6D28D9 45%, #0891B2 100%);
   }
+
+  /* Padding alias tier. 21 components pad through these; without them
+     every one renders flush to its border and nothing errors. */
+  --cre8-padding-2: var(--cre8-spacing-2);
+  --cre8-padding-4: var(--cre8-spacing-4);
+  --cre8-padding-8: var(--cre8-spacing-8);
+  --cre8-padding-16: var(--cre8-spacing-16);
+  --cre8-padding-24: var(--cre8-spacing-24);
 }

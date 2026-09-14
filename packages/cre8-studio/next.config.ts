@@ -11,8 +11,8 @@ const config: NextConfig = {
   outputFileTracingRoot: path.join(process.cwd(), "..", ".."),
   outputFileTracingIncludes: {
     "/api/cre8-wc-cdn": ["../cre8-wc/cdn/cre8-wc.esm.js"],
-    "/api/cre8-wc-tokens": ["../cre8-wc/design-tokens/brands/cre8-a2ui/css/**"],
-    "/api/brand-extract": ["../cre8-wc/design-tokens/brands/cre8-a2ui/css/**"],
+    "/api/cre8-wc-tokens": ["../cre8-wc/design-tokens/brands/cre8/css/**"],
+    "/api/brand-extract": ["../cre8-wc/design-tokens/brands/cre8/css/**"],
     "/api/a2ui-patterns": ["../cre8-wc/a2ui/examples/**"],
     "/api/a2ui-runtime": ["../cre8-wc/a2ui/**", "../cre8-wc/cdn/cre8-wc.esm.js"],
     "/api/explore-report": ["../cre8-wc/cdn/cre8-wc.esm.js"],
