@@ -10,6 +10,67 @@ const compactOutPath = resolve(__dirname, 'catalog.compact.json');
 
 const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
 
+// ─── Slot eligibility ────────────────────────────────────────────────────────
+// Which components may go in which slot is not discoverable from source: a slot
+// is an untyped hole in a render template, and the analyzer records only that it
+// exists. So it is authored, once, in slot-eligibility.json, and everything else
+// (the schema's per-slot `oneOf`, `x-accepts`, the compact projection, the KG's
+// ALLOWS edges, validateSpec) is derived from that one file here. Any drift
+// between the sidecar and the manifest — a component with no entry, a slot with
+// no list, a name that does not exist — fails this build rather than shipping.
+const eligibilityPath = resolve(__dirname, 'slot-eligibility.json');
+const eligibility = JSON.parse(readFileSync(eligibilityPath, 'utf8'));
+const manifestNames = new Set(manifest.components.map((c) => c.name));
+
+function resolveGroup(name, seen = new Set()) {
+  if (seen.has(name)) throw new Error(`slot-eligibility.json: group "$${name}" references itself`);
+  const members = eligibility.groups?.[name];
+  if (!members) throw new Error(`slot-eligibility.json: unknown group "$${name}"`);
+  seen.add(name);
+  return members.flatMap((m) => (m.startsWith('$') ? resolveGroup(m.slice(1), new Set(seen)) : [m]));
+}
+
+function resolveAccepts(list, where) {
+  if (!Array.isArray(list)) throw new Error(`slot-eligibility.json: ${where}.accepts must be an array`);
+  const out = new Set();
+  for (const entry of list) {
+    const names = entry.startsWith('$') ? resolveGroup(entry.slice(1)) : [entry];
+    for (const n of names) {
+      if (!manifestNames.has(n)) {
+        throw new Error(`slot-eligibility.json: ${where} accepts "${n}", which is not a component in mcp-manifest.json`);
+      }
+      out.add(n);
+    }
+  }
+  return [...out].sort();
+}
+
+/**
+ * Returns `{ accepts: string[], text: boolean }` for one content region of a
+ * component (`region` is 'children' or a slot name), or throws when the sidecar
+ * does not cover it. Called only for regions the manifest declares, so the
+ * sidecar can never widen a component's content model — only constrain it.
+ */
+function eligibilityFor(componentName, region) {
+  const entry = eligibility.components?.[componentName];
+  if (!entry) throw new Error(`slot-eligibility.json: no entry for ${componentName}`);
+  if (entry.leaf) {
+    throw new Error(`slot-eligibility.json: ${componentName} is marked leaf but the manifest declares content region "${region}"`);
+  }
+  const node = region === 'children' ? entry.children : entry.slots?.[region];
+  const where = `${componentName}.${region === 'children' ? 'children' : `slots.${region}`}`;
+  if (!node) throw new Error(`slot-eligibility.json: ${where} is declared by the manifest but has no eligibility entry`);
+  return { accepts: resolveAccepts(node.accepts, where), text: node.text === true };
+}
+
+/** JSON Schema for one content region: the eligible components, plus text when allowed. */
+function slotItemsSchema({ accepts, text }) {
+  const branches = accepts.map((n) => ({ $ref: `#/$defs/components/${n}` }));
+  if (text) branches.push({ type: 'string' });
+  if (branches.length === 0) return { not: {}, description: 'This region accepts nothing.' };
+  return { oneOf: branches };
+}
+
 const QUOTED_LITERAL = /^"([^"]*)"$/;
 
 /**
@@ -333,20 +394,26 @@ function buildComponent(c) {
   };
 
   if (onlyDefault) {
+    const elig = eligibilityFor(c.name, 'children');
     def.properties.children = {
       type: 'array',
       description: (rawSlots.default?.description || '').trim() || 'Child instances rendered into the default slot.',
-      items: { $ref: '#/$defs/Child' },
+      items: slotItemsSchema(elig),
+      'x-accepts': elig.accepts,
+      'x-accepts-text': elig.text,
     };
   } else if (hasSlots) {
     const slotProps = {};
     const slotDescriptions = {};
     for (const [rawName, slot] of Object.entries(rawSlots)) {
       const name = normalizeSlotName(rawName, c.name);
+      const elig = eligibilityFor(c.name, name);
       slotProps[name] = {
         type: 'array',
         description: (slot.description || '').trim(),
-        items: { $ref: '#/$defs/Child' },
+        items: slotItemsSchema(elig),
+        'x-accepts': elig.accepts,
+        'x-accepts-text': elig.text,
       };
       slotDescriptions[name] = (slot.description || '').trim();
     }
@@ -357,6 +424,14 @@ function buildComponent(c) {
       properties: slotProps,
     };
     def['x-slot-descriptions'] = slotDescriptions;
+  }
+
+  if (!hasSlots) {
+    const entry = eligibility.components?.[c.name];
+    if (!entry) throw new Error(`slot-eligibility.json: no entry for ${c.name}`);
+    if (!entry.leaf) {
+      throw new Error(`slot-eligibility.json: ${c.name} declares no slots in the manifest, so its entry must be { "leaf": true }`);
+    }
   }
 
   if (Object.keys(events).length) def['x-events'] = events;
@@ -380,6 +455,12 @@ function buildComponent(c) {
   };
 
   return def;
+}
+
+for (const name of Object.keys(eligibility.components ?? {})) {
+  if (!manifestNames.has(name)) {
+    throw new Error(`slot-eligibility.json: entry for "${name}", which is not a component in mcp-manifest.json`);
+  }
 }
 
 const components = {};
@@ -423,6 +504,11 @@ const catalog = {
     // constrained model — could not give those components any content at all.
     //
     // `root` stays a Component deliberately: a document cannot be bare text.
+    // Since slot eligibility was authored, no slot references Child directly:
+    // each region carries its own `oneOf` of eligible components (plus
+    // `{type:'string'}` where text is allowed). Child stays as the catalog-wide
+    // vocabulary — what a region *could* hold before eligibility narrows it —
+    // for consumers that reason about content generically.
     Child: {
       description:
         'Slot content: either a nested component instance or literal text, which renders as a text node.',
@@ -470,6 +556,22 @@ const compactComponents = Object.entries(components)
     // container look like a leaf.
     if (props.children) entry.acceptsChildren = true;
     if (props.slots) entry.slots = Object.keys(props.slots.properties ?? {});
+    // Eligibility travels with the compact catalog too: a model that only ever
+    // sees this projection still needs to know that cre8-tabs.panel takes
+    // cre8-tab-panel and nothing else. `accepts` is keyed by region — `children`
+    // for plain containers, the slot name otherwise — and `text` lists the
+    // regions that also take literal strings.
+    const regions = props.children
+      ? { children: props.children }
+      : Object.fromEntries(Object.entries(props.slots?.properties ?? {}));
+    const accepts = {};
+    const text = [];
+    for (const [region, node] of Object.entries(regions)) {
+      accepts[region] = node['x-accepts'] ?? [];
+      if (node['x-accepts-text']) text.push(region);
+    }
+    if (Object.keys(accepts).length) entry.accepts = accepts;
+    if (text.length) entry.text = text;
     // Events live under `x-events`, not under `properties`, which makes them easy
     // to miss — the studio's hand-rolled summary looked for them in the wrong
     // place and so showed the model none of the 22 events the library emits.

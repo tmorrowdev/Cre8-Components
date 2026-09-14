@@ -165,6 +165,25 @@ check('catalog and compact agree on containment', () => {
     }
     const catSlots = new Set(Object.keys(def.properties?.slots?.properties ?? {}));
     assertSameSet(`${name}: slot sets differ`, catSlots, new Set(cmp.slots ?? []), 'catalog', 'compact');
+
+    // Eligibility must survive the projection: a region's x-accepts in the
+    // catalog is the same list as compact.accepts[region], and the text-taking
+    // regions are exactly compact.text.
+    const regions = def.properties?.children
+      ? { children: def.properties.children }
+      : (def.properties?.slots?.properties ?? {});
+    const textRegions = new Set();
+    for (const [region, node] of Object.entries(regions)) {
+      assertSameSet(
+        `${name}.${region}: eligible components differ`,
+        new Set(node['x-accepts'] ?? []),
+        new Set(cmp.accepts?.[region] ?? []),
+        'catalog',
+        'compact'
+      );
+      if (node['x-accepts-text']) textRegions.add(region);
+    }
+    assertSameSet(`${name}: text-accepting regions differ`, textRegions, new Set(cmp.text ?? []), 'catalog', 'compact');
   }
 });
 
@@ -224,25 +243,42 @@ check('the schema and the renderer agree on text children', () => {
     throw new Error('the schema permits text children but the renderer no longer handles them');
   }
 
-  // Every containment point must route through Child, or the ones that don't
-  // silently keep the old behaviour.
+  // Every containment point carries its own eligibility: a `oneOf` of the
+  // eligible component refs, plus `{type:'string'}` exactly when the region
+  // takes text, and an `x-accepts` list that says the same thing in a form the
+  // runtime validator and the compact projection can read. The three must
+  // agree with each other and with slot-eligibility.json, or a region silently
+  // keeps the old anything-goes behaviour on one layer and not another.
   const offenders = [];
+  const regionsOf = (def) =>
+    def.properties?.children
+      ? { children: def.properties.children }
+      : (def.properties?.slots?.properties ?? {});
   for (const [name, def] of Object.entries(catalog.$defs.components)) {
-    const children = def.properties?.children;
-    if (children && children.items?.$ref !== '#/$defs/Child') offenders.push(`${name}.children`);
-    for (const [slot, spec] of Object.entries(def.properties?.slots?.properties ?? {})) {
-      if (spec.items?.$ref !== '#/$defs/Child') offenders.push(`${name}.slots.${slot}`);
+    for (const [region, spec] of Object.entries(regionsOf(def))) {
+      const label = region === 'children' ? `${name}.children` : `${name}.slots.${region}`;
+      const accepts = spec['x-accepts'];
+      if (!Array.isArray(accepts)) { offenders.push(`${label} (no x-accepts)`); continue; }
+      const branches = spec.items?.oneOf ?? [];
+      const refs = branches.filter((b) => b.$ref).map((b) => b.$ref.replace('#/$defs/components/', ''));
+      const hasText = branches.some((b) => b.type === 'string');
+      if (refs.join() !== [...accepts].sort().join()) offenders.push(`${label} (oneOf ≠ x-accepts)`);
+      if (hasText !== (spec['x-accepts-text'] === true)) offenders.push(`${label} (text branch ≠ x-accepts-text)`);
+      for (const r of accepts) {
+        if (!catalog.$defs.components[r]) offenders.push(`${label} (accepts unknown ${r})`);
+      }
     }
   }
   if (offenders.length) {
-    throw new Error(`containment not routed through $defs/Child: ${offenders.slice(0, 5).join(', ')}`);
+    throw new Error(`eligibility layers disagree: ${offenders.slice(0, 5).join(', ')}`);
   }
 
   // A document root is a component; bare text is not a document.
   if (catalog.properties?.root?.$ref !== '#/$defs/Component') {
     throw new Error('the document root must be a Component, not a Child');
   }
-  return `${offenders.length === 0 ? 'all containment routed through Child' : ''}`;
+  const regionCount = Object.values(catalog.$defs.components).reduce((n, d) => n + Object.keys(regionsOf(d)).length, 0);
+  return `${regionCount} content regions, each with a oneOf that matches its x-accepts`;
 });
 
 check('the runtime validator reads its native-event list from the catalog', () => {

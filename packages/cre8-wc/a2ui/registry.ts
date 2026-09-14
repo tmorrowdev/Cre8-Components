@@ -1,4 +1,10 @@
-import type { CatalogSchema, ComponentSpec, PropSchema, RegisteredCatalog } from './types.js';
+import type {
+  CatalogSchema,
+  ComponentSpec,
+  ContentRegionSchema,
+  PropSchema,
+  RegisteredCatalog,
+} from './types.js';
 
 export function registerCatalog(schema: CatalogSchema): RegisteredCatalog {
   const defs = schema.$defs?.components ?? {};
@@ -112,6 +118,47 @@ function nativeEvents(catalog: RegisteredCatalog): Set<string> {
   return new Set(catalog.schema['x-native-events'] ?? []);
 }
 
+/**
+ * Checks one entry of a content region against the region's eligibility.
+ *
+ * Before eligibility was authored, a slot was an untyped hole: `cre8-tabs.panel`
+ * holding a `cre8-button` validated cleanly and rendered nothing useful — the
+ * eval's slot_validity dimension was the discriminating metric between catalog
+ * arms precisely because nothing here caught it. A region without `x-accepts`
+ * (an older catalog) keeps the old behaviour.
+ */
+function validateRegionEntry(
+  entry: unknown,
+  region: ContentRegionSchema | undefined,
+  parent: string,
+  regionLabel: string,
+  path: string,
+  catalog: RegisteredCatalog
+): void {
+  const accepts = region?.['x-accepts'];
+  if (!Array.isArray(accepts)) return;
+  if (typeof entry === 'string') {
+    if (region?.['x-accepts-text'] === true) return;
+    throw new Error(
+      `${path}: ${parent}.${regionLabel} does not accept literal text. ` +
+        (accepts.length ? `Eligible components: ${accepts.join(', ')}` : `It accepts nothing.`)
+    );
+  }
+  const child = (entry as { component?: unknown } | null)?.component;
+  // An unregistered component is a more fundamental error than a misplaced one,
+  // and the recursive validateSpec below reports it precisely. Flagging it here
+  // as "not eligible" would name the wrong problem.
+  if (typeof child === 'string' && !catalog.components.has(child)) return;
+  if (typeof child === 'string' && !accepts.includes(child)) {
+    throw new Error(
+      `${path}: ${child} is not eligible in ${parent}.${regionLabel}. ` +
+        (accepts.length
+          ? `Eligible: ${accepts.join(', ')}${region?.['x-accepts-text'] ? ', or literal text' : ''}`
+          : `${parent}.${regionLabel} accepts nothing.`)
+    );
+  }
+}
+
 export function validateSpec(spec: unknown, catalog: RegisteredCatalog, path = '$'): asserts spec is ComponentSpec {
   if (!spec || typeof spec !== 'object') {
     throw new Error(`${path}: spec must be an object`);
@@ -149,7 +196,9 @@ export function validateSpec(spec: unknown, catalog: RegisteredCatalog, path = '
       throw new Error(`${path}.children: ${s.component} does not accept default children`);
     }
     if (!Array.isArray(s.children)) throw new Error(`${path}.children: must be an array`);
+    const region = def.properties?.children;
     s.children.forEach((c, i) => {
+      validateRegionEntry(c, region, s.component as string, 'children', `${path}.children[${i}]`, catalog);
       if (typeof c === 'string') return;
       validateSpec(c, catalog, `${path}.children[${i}]`);
     });
@@ -204,7 +253,9 @@ export function validateSpec(spec: unknown, catalog: RegisteredCatalog, path = '
       if (!Array.isArray(arr)) {
         throw new Error(`${path}.slots.${slotName}: must be an array`);
       }
+      const region = def.properties?.slots?.properties?.[slotName];
       arr.forEach((c, i) => {
+        validateRegionEntry(c, region, s.component as string, `slots.${slotName}`, `${path}.slots.${slotName}[${i}]`, catalog);
         if (typeof c === 'string') return;
         validateSpec(c, catalog, `${path}.slots.${slotName}[${i}]`);
       });

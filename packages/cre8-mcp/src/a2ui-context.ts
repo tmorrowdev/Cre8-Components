@@ -28,6 +28,10 @@ export interface CompactComponent {
   required?: string[];
   acceptsChildren?: boolean;
   slots?: string[];
+  /** Eligible child components per region (`children`, or a slot name). */
+  accepts?: Record<string, string[]>;
+  /** Regions that also accept literal text. */
+  text?: string[];
 }
 
 interface CompactCatalog {

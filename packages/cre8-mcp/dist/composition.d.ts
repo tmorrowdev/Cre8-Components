@@ -40,8 +40,24 @@ export interface ObservedChild {
     /** Which kinds of shipped artifact demonstrate it. */
     evidence: KGEvidenceKind[];
 }
+/** One content region of a component and what the catalog lets it hold. */
+export interface EligibleRegion {
+    /** `children` for a plain container, otherwise the slot name. */
+    region: string;
+    /** Every component that validates in this region, authored in slot-eligibility.json. */
+    accepts: string[];
+    /** Whether literal strings validate here too. */
+    text: boolean;
+}
 export interface CompositionAnswer {
     component: string;
+    /** What MAY go where — the catalog's eligibility, enforced by validate_a2ui_spec. */
+    eligibleChildren: EligibleRegion[];
+    /** Every (parent, region) this component is eligible in. */
+    eligibleParents: Array<{
+        component: string;
+        region: string;
+    }>;
     observedChildren: ObservedChild[];
     observedParents: string[];
     /**

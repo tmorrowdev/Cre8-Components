@@ -5,31 +5,30 @@
     "a2uiCatalog": "packages/cre8-wc/a2ui/catalog.json"
   },
   "library": "@tmorrow/cre8-wc",
-  "libraryVersion": "2.0.7",
+  "libraryVersion": "2.3.10",
   "reactLibrary": "@tmorrow/cre8-react",
-  "reactVersion": "2.0.7",
+  "reactVersion": "2.3.10",
   "reactFramework": "React 18+ via @lit/react",
   "tagPrefix": "cre8",
   "framework": "Lit 3.3.1",
   "catalogId": "cre8-wc",
-  "catalogVersion": "2.0.7",
+  "catalogVersion": "2.3.10",
   "counts": {
-    "wc": 85,
-    "react": 85,
-    "a2ui": 85
+    "wc": 88,
+    "react": 88,
+    "a2ui": 88
   },
   "categories": {
-    "Layout": 12,
+    "Layout": 14,
     "Typography": 3,
     "Actions": 4,
-    "Forms": 11,
+    "Forms": 12,
     "Data": 13,
     "Navigation": 20,
     "Disclosure": 9,
-    "Feedback": 8,
+    "Feedback": 9,
     "Media": 2,
-    "Marketing": 2,
-    "Other": 1
+    "Marketing": 2
   },
   "tokenPackage": "@tmorrow/cre8-wc",
   "tokenCategories": [
@@ -41,23 +40,23 @@
     "breakpoints"
   ],
   "contentModel": {
-    "childrenOnly": 47,
+    "childrenOnly": 50,
     "slotOnly": 25,
     "leaf": 13,
     "slotOnlyWithoutDefault": 6,
     "both": 0
   },
   "events": {
-    "componentsWithEvents": 16,
-    "distinctEventNames": 19,
+    "componentsWithEvents": 17,
+    "distinctEventNames": 22,
     "namingConventions": [
       "kebab-case",
       "single word"
     ]
   },
   "surfaces": {
-    "props": 468,
-    "componentsWithParts": 10
+    "props": 494,
+    "componentsWithParts": 11
   },
   "tokens": {
     "semantic": 73,
@@ -65,8 +64,8 @@
     "component": 299
   },
   "knowledgeGraph": {
-    "nodes": 220,
-    "edges": 209
+    "nodes": 232,
+    "edges": 1480
   },
   "patternNames": [
     "Login Form",

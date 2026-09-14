@@ -81,10 +81,11 @@ rather than from memory; at time of writing:
   package.
 
 > **Drift.** Some skill files and marketing copy still reference
-> `@cre8_dev/cre8-design-tokens` as a separate install, and `website/index.html`
-> says 93 components. Neither matches the shipped package. Trust
-> [`reference/facts.json`](reference/facts.json), which is generated from the
-> manifests. See [Provenance and drift](07-research.md#provenance-and-drift).
+> `@cre8_dev/cre8-design-tokens` as a separate install, and the
+> `cre8-a2ui-react` skill says 72 components. Neither matches the shipped
+> package. Trust [`reference/facts.json`](reference/facts.json), which is
+> generated from the manifests. See
+> [Provenance and drift](07-research.md#provenance-and-drift).
 
 ## Choosing your entry point
 

@@ -6,14 +6,9 @@ import './css/styleguide-only.ts';
 
 // import starbucksStyles from '../design-tokens/starbucks/tokens.module';
 // import target from '../design-tokens/target/tokens.module.css';
-import cre8Legacy from '../design-tokens/brands/cre8-legacy/css/tokens_cre8-legacy.module.ts';
 import cre8 from '../design-tokens/brands/cre8/css/tokens_cre8.module.ts';
-import blue from '../design-tokens/brands/blue/css/tokens_blue.module.ts';
-import marketing from '../design-tokens/brands/marketing/css/tokens_marketing.module.ts';
-import minimalist from '../design-tokens/brands/minimalist/css/tokens_minimalist.module.ts';
-import a2ui from '../design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.module.ts';
 import vivid from '../design-tokens/brands/cre8-vivid/css/tokens_cre8-vivid.module.ts';
-import whitelabel from '../design-tokens/brands/whitelabel/css/tokens_whitelabel.module.ts';
+import blank from '../design-tokens/brands/blank/css/tokens_blank.module.ts';
 
 // Prism styles (Storybook only for docs)
 import prismcss from './components/system-docs/prism.module.ts';
@@ -70,14 +65,9 @@ const excludeArray = ['shadowRootOptions', 'formAssociated', 'field'];
 
 // Apply theme styles to document head
 const themeStyles = [
-  { name: 'Cre8 Default', styles: cre8 },
-  { name: 'Cre8 Legacy', styles: cre8Legacy },
-  { name: 'Blue', styles: blue },
-  { name: 'Marketing', styles: marketing },
-  { name: 'Minimalist', styles: minimalist },
-  { name: 'A2UI', styles: a2ui },
-  { name: 'Vivid', styles: vivid },
-  { name: 'Whitelabel', styles: whitelabel },
+  { name: 'Cre8', styles: cre8 },
+  { name: 'Cre8 Vivid', styles: vivid },
+  { name: 'Blank', styles: blank },
 ];
 
 // Inject all theme styles with unique IDs

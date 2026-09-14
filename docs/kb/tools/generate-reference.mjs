@@ -199,6 +199,19 @@ for (const [tag, def] of Object.entries(catalogDefs)) {
 const slotNamesFor = (tag) =>
   Object.keys(catalogDefs[tag]?.properties?.slots?.properties ?? {});
 
+/** One table row per content region: what slot-eligibility.json lets it hold. */
+const regionRows = [];
+for (const tag of [...buckets.children, ...buckets.slots].sort()) {
+  const props = catalogDefs[tag]?.properties ?? {};
+  const regions = props.children ? { children: props.children } : (props.slots?.properties ?? {});
+  for (const [region, node] of Object.entries(regions)) {
+    const accepts = node['x-accepts'] ?? [];
+    regionRows.push(
+      `| \`${tag}\` | \`${region}\` | ${accepts.map((a) => `\`${a}\``).join(', ') || '—'} | ${node['x-accepts-text'] ? '**text**' : ''} |`
+    );
+  }
+}
+
 /** Slot-only components that do not even declare a `default` slot. */
 const noDefaultSlot = buckets.slots.filter((t) => !slotNamesFor(t).includes('default'));
 
@@ -211,6 +224,8 @@ intents:
   - "should I use children or slots for this component"
   - "why does my spec fail with does not accept default children"
   - "which components are slot-only"
+  - "which components can go in this slot"
+  - "why does my spec fail with is not eligible in"
 ---
 
 # A2UI Content Model
@@ -264,6 +279,24 @@ ${buckets.neither.sort().map((t) => `- \`${t}\``).join('\n')}
 The remaining ${buckets.children.length}. Use \`children\`; passing \`slots\` is an error.
 
 ${buckets.children.sort().map((t) => `- \`${t}\``).join('\n')}
+
+## What each slot accepts
+
+Knowing *whether* a component takes \`children\` or \`slots\` is half the rule; the
+other half is *which* components a region holds. That is authored per region in
+\`packages/cre8-wc/a2ui/slot-eligibility.json\`, compiled into the catalog as a
+per-slot \`oneOf\` (and \`x-accepts\`), and enforced by \`validateSpec\` / the
+\`validate_a2ui_spec\` tool: a component outside the list fails with
+\`… is not eligible in <parent>.<region>\`, and a bare string in a region that is
+not marked **text** fails with \`… does not accept literal text\`. \`get_composition\`
+returns the same lists as \`eligibleChildren\`.
+
+${regionRows.length} regions across ${buckets.children.length + buckets.slots.length} components.
+Regions marked **text** also accept literal strings.
+
+| Component | Region | Accepts | Text |
+|---|---|---|---|
+${regionRows.join('\n')}
 `;
 
 writeFileSync(resolve(KB, 'reference/content-model.md'), cm);
@@ -739,6 +772,8 @@ const intents = [
   ['should I use children or slots', 'reference/content-model.md'],
   ['why does my spec say does not accept default children', 'reference/content-model.md'],
   ['which components are slot-only', 'reference/content-model.md#slot-only-components'],
+  ['which components can go in this slot', 'reference/content-model.md#what-each-slot-accepts'],
+  ['why does my spec say is not eligible in', 'reference/content-model.md#what-each-slot-accepts'],
   ['what props does a component take', 'reference/components.md#component-reference'],
   ['how do I build a page out of components', '02-composition-patterns.md'],
   ['how do I lay out a form', '02-composition-patterns.md#forms-that-behave'],

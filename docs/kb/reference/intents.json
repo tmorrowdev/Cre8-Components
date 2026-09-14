@@ -159,6 +159,14 @@
       "path": "reference/content-model.md#slot-only-components"
     },
     {
+      "intent": "which components can go in this slot",
+      "path": "reference/content-model.md#what-each-slot-accepts"
+    },
+    {
+      "intent": "why does my spec say is not eligible in",
+      "path": "reference/content-model.md#what-each-slot-accepts"
+    },
+    {
       "intent": "what props does a component take",
       "path": "reference/components.md#component-reference"
     },

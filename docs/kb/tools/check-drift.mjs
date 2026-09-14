@@ -69,11 +69,6 @@ const guidelines = read('packages/cre8-wc/agent-docs/CODE_GUIDELINES.md');
 const componentsDoc = read('packages/cre8-wc/agent-docs/COMPONENTS.md');
 const reactSkill = read('.claude/marketplaces/tmorrow_ai/cre8/skills/cre8-a2ui-react/SKILL.md');
 
-stillDrifting('"93 components" on the website', () => {
-  const site = read('website/index.html');
-  return site === null ? null : site.includes('93 accessible web components');
-});
-
 stillDrifting('"72 React components" in the cre8-a2ui-react skill', () =>
   reactSkill === null ? null : /componentCount:\s*72/.test(reactSkill)
 );
@@ -205,6 +200,20 @@ const nowHolds = (claim, test) => {
  * re-fire them so consumers can treat the host like a native control.
  */
 const NATIVE_EVENT_NAMES = new Set(['change', 'input']);
+
+nowHolds('The website states the manifest component count', () => {
+  const content = read('website/lib/content.ts');
+  if (content === null) return null;
+  const wc = content.match(/COMPONENT_COUNT = (\d+)/);
+  const react = content.match(/REACT_COMPONENT_COUNT = (\d+)/);
+  if (!wc || !react) return 'component count constants not found in website/lib/content.ts';
+  const expected = wcManifest?.components?.length;
+  if (!expected) return null;
+  if (Number(wc[1]) !== expected) return `website says ${wc[1]}, manifest says ${expected}`;
+  if (Number(react[1]) !== reactManifest?.components?.length)
+    return `website says ${react[1]} React, manifest says ${reactManifest?.components?.length}`;
+  return true;
+});
 
 nowHolds('Event names are `component-action` kebab-case with no `cre8-` prefix', () => {
   const catalog = json('packages/cre8-wc/a2ui/catalog.json');

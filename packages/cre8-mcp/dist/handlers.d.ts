@@ -47,9 +47,13 @@ export type KGEvidenceKind = 'story' | 'source' | 'example' | 'pattern';
 export interface KGEdge {
     from: string;
     to: string;
-    rel: 'BELONGS_TO' | 'HAS_ENUM_PROP' | 'HAS_SLOT' | 'CONTAINS' | 'IN_FAMILY' | 'EXTENDS' | 'IMPORTS' | 'USED_IN_PATTERN';
-    /** CONTAINS only: the A2UI slot, or null for `children`. */
+    rel: 'BELONGS_TO' | 'HAS_ENUM_PROP' | 'HAS_SLOT' | 'CONTAINS' | 'ALLOWS' | 'IN_FAMILY' | 'EXTENDS' | 'IMPORTS' | 'USED_IN_PATTERN';
+    /** CONTAINS and ALLOWS: the A2UI slot, or null for `children`. */
     slot?: string | null;
+    /** ALLOWS only: the region also accepts literal text. */
+    text?: boolean;
+    /** ALLOWS only: a CONTAINS edge backs the same pairing. */
+    observed?: boolean;
     /** CONTAINS only: occurrences across all evidence. */
     count?: number;
     /** CONTAINS only: the shipped artifacts that demonstrate this nesting. */

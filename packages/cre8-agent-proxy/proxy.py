@@ -67,27 +67,50 @@ async def _proxy(
     url = upstream_url + ("?" + qs if qs else "")
     log.info("→ %s %s", request.method, _redact(url))
 
-    if "text/event-stream" in request.headers.get("accept", ""):
-        async def _stream_gen() -> AsyncIterator[bytes]:
-            async with httpx.AsyncClient(timeout=120) as client:
-                async with client.stream(
-                    request.method, url, headers=headers, content=body
-                ) as resp:
-                    log.info("← %d SSE", resp.status_code)
-                    async for chunk in resp.aiter_bytes():
-                        yield chunk
+    # Send every request in streaming mode and decide how to return it from the
+    # UPSTREAM content-type, not from the client's Accept header. A streaming
+    # chat request that upstream rejects comes back as a JSON error, not SSE —
+    # keying off Accept would forward that as a 200 with an empty-looking
+    # stream, turning auth and rate-limit failures into silent dead air.
+    client = httpx.AsyncClient(timeout=120)
+    try:
+        req = client.build_request(request.method, url, headers=headers, content=body)
+        resp = await client.send(req, stream=True)
+    except BaseException:
+        await client.aclose()
+        raise
 
+    fwd_headers = {
+        k: v for k, v in resp.headers.items() if k.lower() not in _STRIP_RESPONSE
+    }
+
+    if "text/event-stream" in resp.headers.get("content-type", ""):
+        log.info("← %d SSE", resp.status_code)
+
+        async def _stream_gen() -> AsyncIterator[bytes]:
+            try:
+                async for chunk in resp.aiter_bytes():
+                    yield chunk
+            finally:
+                await resp.aclose()
+                await client.aclose()
+
+        fwd_headers.setdefault("Cache-Control", "no-cache")
+        fwd_headers["X-Accel-Buffering"] = "no"
         return StreamingResponse(
             _stream_gen(),
+            status_code=resp.status_code,
+            headers=fwd_headers,
             media_type="text/event-stream",
-            headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
         )
 
-    async with httpx.AsyncClient(timeout=120) as client:
-        resp = await client.request(request.method, url, headers=headers, content=body)
+    try:
+        content = await resp.aread()
+    finally:
+        await resp.aclose()
+        await client.aclose()
     log.info("← %d", resp.status_code)
-    fwd_headers = {k: v for k, v in resp.headers.items() if k.lower() not in _STRIP_RESPONSE}
-    return Response(resp.content, status_code=resp.status_code, headers=fwd_headers)
+    return Response(content, status_code=resp.status_code, headers=fwd_headers)
 
 
 async def health(request: Request) -> Response:
@@ -123,5 +146,7 @@ app = Starlette(routes=[
     Route("/health", health),
     Route("/llm/{path:path}", llm_proxy, methods=list(ALLOWED_METHODS)),
     Route("/mcp/{path:path}", mcp_proxy, methods=list(ALLOWED_METHODS)),
-    Route("/{path:path}", forbidden),
+    # Every method, not just GET: an unknown prefix must read as a deliberate
+    # 403 from the allowlist rather than a bare 405 from the router.
+    Route("/{path:path}", forbidden, methods=list(ALLOWED_METHODS | {"HEAD", "OPTIONS"})),
 ])

@@ -113,7 +113,7 @@ describe('checkbox-field-item', () => {
             const fs = require('fs');
             const path = require('path');
             const brandCss = fs.readFileSync(
-                path.resolve(__dirname, '../../../design-tokens/brands/cre8-a2ui/css/tokens_brand.css'),
+                path.resolve(__dirname, '../../../design-tokens/brands/cre8/css/tokens_brand.css'),
                 'utf8'
             );
             // The radius scale is derived from --cre8-seed-radius, so assert the

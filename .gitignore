@@ -40,3 +40,14 @@ graphify-out/cache
 .claude/marketplaces/
 .claude/*.local.md
 packages/cre8-wc/react-wrappers/dist-storybook
+evals/
+packages/cre8-react-starter-mcp/
+theme-render-light.png
+tokens_bolt.theme.ts
+tokens_starbucks.theme.ts
+integration-verify-light.png
+cre8-panel-light.png
+media-grid.png
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/

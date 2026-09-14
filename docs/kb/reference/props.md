@@ -60,6 +60,22 @@ Related: [events](events.md) · [content model](content-model.md) ·
 |---|---|---|---|---|
 | `variant` | string | `bare`, `compact`, `horizontal`, `horizontal-bare` |  | attribute |
 | `align` | `"center"` |  |  | attribute |
+| `fullHeight` | boolean |  |  | **property** |
+
+### `cre8-container`
+
+| Prop | Type | Values | Default | Kind |
+|---|---|---|---|---|
+| `type` | string | `inline-size`, `size`, `normal` |  | attribute |
+| `name` | string |  |  | attribute |
+
+### `cre8-container-grid`
+
+| Prop | Type | Values | Default | Kind |
+|---|---|---|---|---|
+| `variant` | string | `side-by-side`, `2up`, `3up`, `1-3up`, `4up`, `1-4up`, `1-2-4up`, `2-4-6up` |  | attribute |
+| `gap` | string | `sm`, `lg`, `none` |  | attribute |
+| `break` | string | `faster`, `slower` |  | attribute |
 
 ### `cre8-divider`
 
@@ -78,7 +94,9 @@ Related: [events](events.md) · [content model](content-model.md) ·
 
 ### `cre8-grid-item`
 
-No declared props — this component is configured entirely by its content.
+| Prop | Type | Values | Default | Kind |
+|---|---|---|---|---|
+| `fullHeight` | boolean |  |  | **property** |
 
 ### `cre8-hero`
 
@@ -107,6 +125,7 @@ No declared props — this component is configured entirely by its content.
 |---|---|---|---|---|
 | `behavior` | `"sticky"` |  |  | attribute |
 | `top` | string |  | `1rem` | attribute |
+| `fullHeight` | boolean |  |  | **property** |
 
 ### `cre8-linelength-container`
 
@@ -238,6 +257,8 @@ No declared props — this component is configured entirely by its content.
 | Prop | Type | Values | Default | Kind |
 |---|---|---|---|---|
 | `label` | string |  |  | attribute |
+| `items` | object[] |  |  | attribute |
+| `name` | string |  |  | attribute |
 | `fieldNote` | string |  |  | **property** |
 | `ariaDescribedBy` | string |  |  | **property** |
 | `fieldNoteIconName` | string |  |  | **property** |
@@ -336,6 +357,15 @@ No declared props — this component is configured entirely by its content.
 | `isSuccess` | boolean |  |  | **property** |
 | `iconName` | string |  |  | **property** |
 
+### `cre8-form`
+
+| Prop | Type | Values | Default | Kind |
+|---|---|---|---|---|
+| `novalidate` | boolean |  |  | attribute |
+| `disabled` | boolean |  |  | attribute |
+| `controls` | `Cre8FormElement[]` |  |  | **property** |
+| `values` | `Record<string, FormDataEntryValue | FormDataEntryValue[]>` |  |  | **property** |
+
 ### `cre8-multi-select`
 
 | Prop | Type | Values | Default | Kind |
@@ -360,6 +390,8 @@ No declared props — this component is configured entirely by its content.
 | Prop | Type | Values | Default | Kind |
 |---|---|---|---|---|
 | `label` | string |  |  | attribute |
+| `items` | object[] |  |  | attribute |
+| `name` | string |  |  | attribute |
 | `fieldNote` | string |  |  | **property** |
 | `ariaDescribedBy` | string |  |  | **property** |
 | `fieldNoteIconName` | string |  |  | **property** |
@@ -468,6 +500,7 @@ No declared props — this component is configured entirely by its content.
 |---|---|---|---|---|
 | `variant` | `"bare"` |  |  | attribute |
 | `spacing` | string | `condensed`, `padded` |  | attribute |
+| `items` | object[] |  |  | attribute |
 
 ### `cre8-list-item`
 
@@ -486,6 +519,8 @@ No declared props — this component is configured entirely by its content.
 
 | Prop | Type | Values | Default | Kind |
 |---|---|---|---|---|
+| `columns` | object[] |  |  | attribute |
+| `rows` | any[] |  |  | attribute |
 | `caption` | string |  |  | attribute |
 | `behavior` | `"responsive"` |  |  | attribute |
 | `variant` | `"striped"` |  |  | attribute |
@@ -551,6 +586,7 @@ No declared props — this component is configured entirely by its content.
 | Prop | Type | Values | Default | Kind |
 |---|---|---|---|---|
 | `label` | string |  |  | attribute |
+| `tags` | object[] |  |  | attribute |
 | `fieldId` | string |  |  | **property** |
 
 ## Navigation
@@ -559,6 +595,7 @@ No declared props — this component is configured entirely by its content.
 
 | Prop | Type | Values | Default | Kind |
 |---|---|---|---|---|
+| `items` | object[] |  |  | attribute |
 | `navAriaLabel` | string |  | `breadcrumbs` | **property** |
 
 ### `cre8-breadcrumbs-item`
@@ -620,6 +657,7 @@ No declared props — this component is configured entirely by its content.
 | `size` | `"sm"` |  |  | attribute |
 | `spacing` | `"condensed"` |  |  | attribute |
 | `variant` | string | `secondary`, `display` |  | attribute |
+| `items` | object[] |  |  | attribute |
 
 ### `cre8-link-list-item`
 
@@ -688,6 +726,7 @@ No declared props — this component is configured entirely by its content.
 | Prop | Type | Values | Default | Kind |
 |---|---|---|---|---|
 | `size` | `"sm"` |  |  | attribute |
+| `items` | object[] |  |  | attribute |
 | `fullWidth` | boolean |  |  | **property** |
 | `activeIndex` | number |  | `0` | **property** |
 | `isStart` | boolean |  | `true` | **property** |
@@ -738,6 +777,7 @@ No declared props — this component is configured entirely by its content.
 
 | Prop | Type | Values | Default | Kind |
 |---|---|---|---|---|
+| `items` | object[] |  |  | attribute |
 | `borderType` | string | `rectangle`, `rounded-bottom`, `rounded`, `none` |  | **property** |
 | `hasDivider` | boolean |  | `false` | **property** |
 
@@ -758,6 +798,7 @@ No declared props — this component is configured entirely by its content.
 
 | Prop | Type | Values | Default | Kind |
 |---|---|---|---|---|
+| `items` | object[] |  |  | attribute |
 | `buttonText` | string |  |  | **property** |
 | `maxHeight` | string |  |  | **property** |
 | `dropdownWithLink` | boolean |  | `false` | **property** |
@@ -891,6 +932,12 @@ No declared props — this component is configured entirely by its content.
 | `label` | string |  |  | attribute |
 | `fieldId` | string |  |  | **property** |
 
+### `cre8-progress-steps`
+
+| Prop | Type | Values | Default | Kind |
+|---|---|---|---|---|
+| `steps` | object[] |  |  | attribute |
+
 ### `cre8-progress-steps-item`
 
 | Prop | Type | Values | Default | Kind |
@@ -942,10 +989,4 @@ No declared props — this component is configured entirely by its content.
 | Prop | Type | Values | Default | Kind |
 |---|---|---|---|---|
 | `heading` | string |  | `Page header title` | attribute |
-
-## Other
-
-### `cre8-progress-steps`
-
-No declared props — this component is configured entirely by its content.
 

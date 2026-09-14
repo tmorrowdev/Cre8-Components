@@ -88,8 +88,6 @@
       "default": "./lib/icons/*"
     },
     "./themes/*": "./lib/design-tokens/brands/*/css/tokens_*.css",
-    "./themes/tmorrow-frost": "./lib/design-tokens/brands/tmorrow/css/tokens_tmorrow-frost.css",
-    "./themes/tmorrow-neon": "./lib/design-tokens/brands/tmorrow/css/tokens_tmorrow-neon.css",
     "./styles/*": "./lib/design-tokens/core/scss/theming/*",
     "./design-tokens/*": {
       "import": "./lib/design-tokens/*",

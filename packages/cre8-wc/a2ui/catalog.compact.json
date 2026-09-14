@@ -23,7 +23,12 @@
           "type": "boolean"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-accordion-item"
+        ]
+      }
     },
     {
       "name": "cre8-accordion-item",
@@ -65,6 +70,58 @@
         }
       },
       "slots": [
+        "default",
+        "heading"
+      ],
+      "accepts": {
+        "default": [
+          "cre8-accordion",
+          "cre8-alert",
+          "cre8-badge",
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-card",
+          "cre8-chart",
+          "cre8-checkbox-field",
+          "cre8-container",
+          "cre8-danger-button",
+          "cre8-date-picker",
+          "cre8-divider",
+          "cre8-field",
+          "cre8-field-note",
+          "cre8-form",
+          "cre8-grid",
+          "cre8-heading",
+          "cre8-inline-alert",
+          "cre8-link",
+          "cre8-link-list",
+          "cre8-list",
+          "cre8-loading-spinner",
+          "cre8-multi-select",
+          "cre8-percent-bar",
+          "cre8-progress-meter",
+          "cre8-radio-field",
+          "cre8-remove-tag",
+          "cre8-select",
+          "cre8-select-tile-list",
+          "cre8-skeleton-loader",
+          "cre8-split-button",
+          "cre8-table",
+          "cre8-table-object",
+          "cre8-tabs",
+          "cre8-tag",
+          "cre8-tag-list",
+          "cre8-text-link",
+          "cre8-text-passage"
+        ],
+        "heading": [
+          "cre8-badge",
+          "cre8-heading",
+          "cre8-icon",
+          "cre8-tag"
+        ]
+      },
+      "text": [
         "default",
         "heading"
       ]
@@ -117,6 +174,24 @@
       "slots": [
         "default",
         "cta"
+      ],
+      "accepts": {
+        "default": [
+          "cre8-heading",
+          "cre8-link",
+          "cre8-list",
+          "cre8-text-link",
+          "cre8-text-passage"
+        ],
+        "cta": [
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-link",
+          "cre8-text-link"
+        ]
+      },
+      "text": [
+        "default"
       ]
     },
     {
@@ -157,7 +232,22 @@
           "type": "boolean"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-button-group",
+          "cre8-card",
+          "cre8-container",
+          "cre8-feature",
+          "cre8-grid",
+          "cre8-heading",
+          "cre8-hero",
+          "cre8-layout-container",
+          "cre8-linelength-container",
+          "cre8-section",
+          "cre8-text-passage"
+        ]
+      }
     },
     {
       "name": "cre8-breadcrumbs",
@@ -170,13 +260,27 @@
           "type": "string"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-breadcrumbs-item"
+        ]
+      }
     },
     {
       "name": "cre8-breadcrumbs-item",
       "category": "Navigation",
       "props": {},
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-link",
+          "cre8-text-link"
+        ]
+      },
+      "text": [
+        "children"
+      ]
     },
     {
       "name": "cre8-button",
@@ -293,7 +397,17 @@
       "slots": [
         "before",
         "after"
-      ]
+      ],
+      "accepts": {
+        "before": [
+          "cre8-icon",
+          "cre8-loading-spinner"
+        ],
+        "after": [
+          "cre8-icon",
+          "cre8-loading-spinner"
+        ]
+      }
     },
     {
       "name": "cre8-button-group",
@@ -309,7 +423,19 @@
           "type": "boolean"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-button",
+          "cre8-danger-button",
+          "cre8-dropdown",
+          "cre8-link",
+          "cre8-popover",
+          "cre8-split-button",
+          "cre8-text-link",
+          "cre8-tooltip"
+        ]
+      }
     },
     {
       "name": "cre8-card",
@@ -331,6 +457,85 @@
         }
       },
       "slots": [
+        "default",
+        "header",
+        "footer"
+      ],
+      "accepts": {
+        "default": [
+          "cre8-accordion",
+          "cre8-alert",
+          "cre8-badge",
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-chart",
+          "cre8-checkbox-field",
+          "cre8-container",
+          "cre8-danger-button",
+          "cre8-date-picker",
+          "cre8-divider",
+          "cre8-dropdown",
+          "cre8-feature",
+          "cre8-field",
+          "cre8-field-note",
+          "cre8-form",
+          "cre8-grid",
+          "cre8-heading",
+          "cre8-icon",
+          "cre8-inline-alert",
+          "cre8-link",
+          "cre8-link-list",
+          "cre8-list",
+          "cre8-loading-spinner",
+          "cre8-multi-select",
+          "cre8-percent-bar",
+          "cre8-popover",
+          "cre8-progress-meter",
+          "cre8-radio-field",
+          "cre8-remove-tag",
+          "cre8-select",
+          "cre8-select-tile-list",
+          "cre8-skeleton-loader",
+          "cre8-split-button",
+          "cre8-table",
+          "cre8-table-object",
+          "cre8-tabs",
+          "cre8-tag",
+          "cre8-tag-list",
+          "cre8-text-link",
+          "cre8-text-passage",
+          "cre8-tooltip"
+        ],
+        "header": [
+          "cre8-badge",
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-chart",
+          "cre8-danger-button",
+          "cre8-feature",
+          "cre8-heading",
+          "cre8-icon",
+          "cre8-link",
+          "cre8-logo",
+          "cre8-split-button",
+          "cre8-tag",
+          "cre8-text-link",
+          "cre8-text-passage"
+        ],
+        "footer": [
+          "cre8-badge",
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-danger-button",
+          "cre8-divider",
+          "cre8-link",
+          "cre8-tag",
+          "cre8-tag-list",
+          "cre8-text-link",
+          "cre8-text-passage"
+        ]
+      },
+      "text": [
         "default",
         "header",
         "footer"
@@ -435,7 +640,12 @@
           "type": "boolean"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-checkbox-field-item"
+        ]
+      }
     },
     {
       "name": "cre8-checkbox-field-item",
@@ -499,6 +709,16 @@
       "slots": [
         "fieldNote"
       ],
+      "accepts": {
+        "fieldNote": [
+          "cre8-field-note",
+          "cre8-link",
+          "cre8-text-link"
+        ]
+      },
+      "text": [
+        "fieldNote"
+      ],
       "events": [
         "change"
       ]
@@ -518,7 +738,70 @@
           "type": "string"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-accordion",
+          "cre8-alert",
+          "cre8-badge",
+          "cre8-breadcrumbs",
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-card",
+          "cre8-chart",
+          "cre8-checkbox-field",
+          "cre8-container",
+          "cre8-container-grid",
+          "cre8-danger-button",
+          "cre8-date-picker",
+          "cre8-divider",
+          "cre8-dropdown",
+          "cre8-feature",
+          "cre8-field",
+          "cre8-field-note",
+          "cre8-form",
+          "cre8-grid",
+          "cre8-heading",
+          "cre8-hero",
+          "cre8-icon",
+          "cre8-inline-alert",
+          "cre8-layout-container",
+          "cre8-layout-section",
+          "cre8-linelength-container",
+          "cre8-link",
+          "cre8-link-list",
+          "cre8-list",
+          "cre8-loading-spinner",
+          "cre8-logo",
+          "cre8-modal",
+          "cre8-multi-select",
+          "cre8-page-header",
+          "cre8-pagination",
+          "cre8-percent-bar",
+          "cre8-popover",
+          "cre8-progress-meter",
+          "cre8-progress-steps",
+          "cre8-radio-field",
+          "cre8-remove-tag",
+          "cre8-section",
+          "cre8-select",
+          "cre8-select-tile-list",
+          "cre8-skeleton-loader",
+          "cre8-split-button",
+          "cre8-table",
+          "cre8-table-object",
+          "cre8-tabs",
+          "cre8-tag",
+          "cre8-tag-list",
+          "cre8-tertiary-nav",
+          "cre8-text-link",
+          "cre8-text-passage",
+          "cre8-tooltip"
+        ]
+      },
+      "text": [
+        "children"
+      ]
     },
     {
       "name": "cre8-container-grid",
@@ -550,7 +833,25 @@
           ]
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-button-group",
+          "cre8-card",
+          "cre8-chart",
+          "cre8-container",
+          "cre8-date-picker",
+          "cre8-feature",
+          "cre8-field",
+          "cre8-heading",
+          "cre8-link-list",
+          "cre8-list",
+          "cre8-multi-select",
+          "cre8-select",
+          "cre8-select-tile",
+          "cre8-text-passage"
+        ]
+      }
     },
     {
       "name": "cre8-danger-button",
@@ -746,6 +1047,16 @@
       },
       "slots": [
         "fieldNote"
+      ],
+      "accepts": {
+        "fieldNote": [
+          "cre8-field-note",
+          "cre8-link",
+          "cre8-text-link"
+        ]
+      },
+      "text": [
+        "fieldNote"
       ]
     },
     {
@@ -789,7 +1100,12 @@
           "type": "string"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-dropdown-item"
+        ]
+      }
     },
     {
       "name": "cre8-dropdown-item",
@@ -800,6 +1116,17 @@
         }
       },
       "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-badge",
+          "cre8-icon",
+          "cre8-link",
+          "cre8-text-link"
+        ]
+      },
+      "text": [
+        "children"
+      ],
       "events": [
         "dropdown-item-select"
       ]
@@ -821,7 +1148,24 @@
           "type": "string"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-badge",
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-heading",
+          "cre8-icon",
+          "cre8-link",
+          "cre8-logo",
+          "cre8-tag",
+          "cre8-text-link",
+          "cre8-text-passage"
+        ]
+      },
+      "text": [
+        "children"
+      ]
     },
     {
       "name": "cre8-field",
@@ -911,6 +1255,16 @@
       },
       "slots": [
         "fieldNote"
+      ],
+      "accepts": {
+        "fieldNote": [
+          "cre8-field-note",
+          "cre8-link",
+          "cre8-text-link"
+        ]
+      },
+      "text": [
+        "fieldNote"
       ]
     },
     {
@@ -927,13 +1281,65 @@
           "type": "string"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-icon",
+          "cre8-link",
+          "cre8-text-link"
+        ]
+      },
+      "text": [
+        "children"
+      ]
     },
     {
       "name": "cre8-footer",
       "category": "Navigation",
       "props": {},
       "slots": [
+        "default",
+        "top",
+        "bottom"
+      ],
+      "accepts": {
+        "default": [
+          "cre8-button-group",
+          "cre8-container",
+          "cre8-container-grid",
+          "cre8-divider",
+          "cre8-grid",
+          "cre8-heading",
+          "cre8-layout-container",
+          "cre8-link",
+          "cre8-link-list",
+          "cre8-list",
+          "cre8-logo",
+          "cre8-tertiary-nav",
+          "cre8-text-link",
+          "cre8-text-passage",
+          "cre8-utility-nav"
+        ],
+        "top": [
+          "cre8-button-group",
+          "cre8-divider",
+          "cre8-heading",
+          "cre8-link-list",
+          "cre8-logo",
+          "cre8-text-passage",
+          "cre8-utility-nav"
+        ],
+        "bottom": [
+          "cre8-divider",
+          "cre8-link",
+          "cre8-link-list",
+          "cre8-logo",
+          "cre8-text-link",
+          "cre8-text-passage",
+          "cre8-utility-nav"
+        ]
+      },
+      "text": [
         "default",
         "top",
         "bottom"
@@ -957,6 +1363,34 @@
         }
       },
       "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-accordion",
+          "cre8-alert",
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-card",
+          "cre8-checkbox-field",
+          "cre8-container",
+          "cre8-container-grid",
+          "cre8-danger-button",
+          "cre8-date-picker",
+          "cre8-divider",
+          "cre8-field",
+          "cre8-field-note",
+          "cre8-grid",
+          "cre8-heading",
+          "cre8-inline-alert",
+          "cre8-layout-section",
+          "cre8-multi-select",
+          "cre8-radio-field",
+          "cre8-section",
+          "cre8-select",
+          "cre8-select-tile-list",
+          "cre8-tabs",
+          "cre8-text-passage"
+        ]
+      },
       "events": [
         "form-submit",
         "form-reset",
@@ -977,7 +1411,12 @@
           "type": "string"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-global-nav-item"
+        ]
+      }
     },
     {
       "name": "cre8-global-nav-item",
@@ -1003,6 +1442,25 @@
         "default",
         "itemBefore",
         "itemAfter"
+      ],
+      "accepts": {
+        "default": [
+          "cre8-link",
+          "cre8-text-link"
+        ],
+        "itemBefore": [
+          "cre8-badge",
+          "cre8-icon",
+          "cre8-logo"
+        ],
+        "itemAfter": [
+          "cre8-badge",
+          "cre8-icon",
+          "cre8-tag"
+        ]
+      },
+      "text": [
+        "default"
       ]
     },
     {
@@ -1035,7 +1493,12 @@
           ]
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-grid-item"
+        ]
+      }
     },
     {
       "name": "cre8-grid-item",
@@ -1045,7 +1508,70 @@
           "type": "boolean"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-accordion",
+          "cre8-alert",
+          "cre8-badge",
+          "cre8-breadcrumbs",
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-card",
+          "cre8-chart",
+          "cre8-checkbox-field",
+          "cre8-container",
+          "cre8-container-grid",
+          "cre8-danger-button",
+          "cre8-date-picker",
+          "cre8-divider",
+          "cre8-dropdown",
+          "cre8-feature",
+          "cre8-field",
+          "cre8-field-note",
+          "cre8-form",
+          "cre8-grid",
+          "cre8-heading",
+          "cre8-hero",
+          "cre8-icon",
+          "cre8-inline-alert",
+          "cre8-layout-container",
+          "cre8-layout-section",
+          "cre8-linelength-container",
+          "cre8-link",
+          "cre8-link-list",
+          "cre8-list",
+          "cre8-loading-spinner",
+          "cre8-logo",
+          "cre8-modal",
+          "cre8-multi-select",
+          "cre8-page-header",
+          "cre8-pagination",
+          "cre8-percent-bar",
+          "cre8-popover",
+          "cre8-progress-meter",
+          "cre8-progress-steps",
+          "cre8-radio-field",
+          "cre8-remove-tag",
+          "cre8-section",
+          "cre8-select",
+          "cre8-select-tile-list",
+          "cre8-skeleton-loader",
+          "cre8-split-button",
+          "cre8-table",
+          "cre8-table-object",
+          "cre8-tabs",
+          "cre8-tag",
+          "cre8-tag-list",
+          "cre8-tertiary-nav",
+          "cre8-text-link",
+          "cre8-text-passage",
+          "cre8-tooltip"
+        ]
+      },
+      "text": [
+        "children"
+      ]
     },
     {
       "name": "cre8-header",
@@ -1056,6 +1582,47 @@
         }
       },
       "slots": [
+        "default",
+        "top",
+        "bottom"
+      ],
+      "accepts": {
+        "default": [
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-dropdown",
+          "cre8-field",
+          "cre8-global-nav",
+          "cre8-heading",
+          "cre8-icon",
+          "cre8-link",
+          "cre8-logo",
+          "cre8-nav-container",
+          "cre8-popover",
+          "cre8-primary-nav",
+          "cre8-text-link",
+          "cre8-utility-nav"
+        ],
+        "top": [
+          "cre8-alert",
+          "cre8-inline-alert",
+          "cre8-link",
+          "cre8-logo",
+          "cre8-text-link",
+          "cre8-text-passage",
+          "cre8-utility-nav"
+        ],
+        "bottom": [
+          "cre8-breadcrumbs",
+          "cre8-field",
+          "cre8-global-nav",
+          "cre8-nav-container",
+          "cre8-primary-nav",
+          "cre8-tabs",
+          "cre8-tertiary-nav"
+        ]
+      },
+      "text": [
         "default",
         "top",
         "bottom"
@@ -1101,7 +1668,20 @@
           "type": "boolean"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-badge",
+          "cre8-icon",
+          "cre8-link",
+          "cre8-tag",
+          "cre8-text-link",
+          "cre8-tooltip"
+        ]
+      },
+      "text": [
+        "children"
+      ]
     },
     {
       "name": "cre8-hero",
@@ -1129,7 +1709,26 @@
           "type": "boolean"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-badge",
+          "cre8-breadcrumbs",
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-field",
+          "cre8-form",
+          "cre8-heading",
+          "cre8-link",
+          "cre8-logo",
+          "cre8-tag",
+          "cre8-text-link",
+          "cre8-text-passage"
+        ]
+      },
+      "text": [
+        "children"
+      ]
     },
     {
       "name": "cre8-icon",
@@ -1183,7 +1782,19 @@
           "type": "string"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-heading",
+          "cre8-icon",
+          "cre8-link",
+          "cre8-text-link",
+          "cre8-text-passage"
+        ]
+      },
+      "text": [
+        "children"
+      ]
     },
     {
       "name": "cre8-layout",
@@ -1193,7 +1804,18 @@
           "type": "string"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-band",
+          "cre8-footer",
+          "cre8-header",
+          "cre8-layout-container",
+          "cre8-layout-section",
+          "cre8-main",
+          "cre8-nav-container"
+        ]
+      }
     },
     {
       "name": "cre8-layout-container",
@@ -1203,7 +1825,70 @@
           "type": "boolean"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-accordion",
+          "cre8-alert",
+          "cre8-badge",
+          "cre8-breadcrumbs",
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-card",
+          "cre8-chart",
+          "cre8-checkbox-field",
+          "cre8-container",
+          "cre8-container-grid",
+          "cre8-danger-button",
+          "cre8-date-picker",
+          "cre8-divider",
+          "cre8-dropdown",
+          "cre8-feature",
+          "cre8-field",
+          "cre8-field-note",
+          "cre8-form",
+          "cre8-grid",
+          "cre8-heading",
+          "cre8-hero",
+          "cre8-icon",
+          "cre8-inline-alert",
+          "cre8-layout-container",
+          "cre8-layout-section",
+          "cre8-linelength-container",
+          "cre8-link",
+          "cre8-link-list",
+          "cre8-list",
+          "cre8-loading-spinner",
+          "cre8-logo",
+          "cre8-modal",
+          "cre8-multi-select",
+          "cre8-page-header",
+          "cre8-pagination",
+          "cre8-percent-bar",
+          "cre8-popover",
+          "cre8-progress-meter",
+          "cre8-progress-steps",
+          "cre8-radio-field",
+          "cre8-remove-tag",
+          "cre8-section",
+          "cre8-select",
+          "cre8-select-tile-list",
+          "cre8-skeleton-loader",
+          "cre8-split-button",
+          "cre8-table",
+          "cre8-table-object",
+          "cre8-tabs",
+          "cre8-tag",
+          "cre8-tag-list",
+          "cre8-tertiary-nav",
+          "cre8-text-link",
+          "cre8-text-passage",
+          "cre8-tooltip"
+        ]
+      },
+      "text": [
+        "children"
+      ]
     },
     {
       "name": "cre8-layout-section",
@@ -1219,13 +1904,99 @@
           "type": "boolean"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-accordion",
+          "cre8-alert",
+          "cre8-badge",
+          "cre8-band",
+          "cre8-breadcrumbs",
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-card",
+          "cre8-chart",
+          "cre8-checkbox-field",
+          "cre8-container",
+          "cre8-container-grid",
+          "cre8-danger-button",
+          "cre8-date-picker",
+          "cre8-divider",
+          "cre8-dropdown",
+          "cre8-feature",
+          "cre8-field",
+          "cre8-field-note",
+          "cre8-form",
+          "cre8-grid",
+          "cre8-heading",
+          "cre8-hero",
+          "cre8-icon",
+          "cre8-inline-alert",
+          "cre8-layout-container",
+          "cre8-layout-section",
+          "cre8-linelength-container",
+          "cre8-link",
+          "cre8-link-list",
+          "cre8-list",
+          "cre8-loading-spinner",
+          "cre8-logo",
+          "cre8-modal",
+          "cre8-multi-select",
+          "cre8-page-header",
+          "cre8-pagination",
+          "cre8-percent-bar",
+          "cre8-popover",
+          "cre8-progress-meter",
+          "cre8-progress-steps",
+          "cre8-radio-field",
+          "cre8-remove-tag",
+          "cre8-section",
+          "cre8-select",
+          "cre8-select-tile-list",
+          "cre8-skeleton-loader",
+          "cre8-split-button",
+          "cre8-table",
+          "cre8-table-object",
+          "cre8-tabs",
+          "cre8-tag",
+          "cre8-tag-list",
+          "cre8-tertiary-nav",
+          "cre8-text-link",
+          "cre8-text-passage",
+          "cre8-tooltip"
+        ]
+      },
+      "text": [
+        "children"
+      ]
     },
     {
       "name": "cre8-linelength-container",
       "category": "Layout",
       "props": {},
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-accordion",
+          "cre8-alert",
+          "cre8-badge",
+          "cre8-button-group",
+          "cre8-divider",
+          "cre8-heading",
+          "cre8-icon",
+          "cre8-inline-alert",
+          "cre8-link",
+          "cre8-link-list",
+          "cre8-list",
+          "cre8-tag",
+          "cre8-text-link",
+          "cre8-text-passage",
+          "cre8-tooltip"
+        ]
+      },
+      "text": [
+        "children"
+      ]
     },
     {
       "name": "cre8-link",
@@ -1285,6 +2056,18 @@
       "slots": [
         "default",
         "badge"
+      ],
+      "accepts": {
+        "default": [
+          "cre8-icon"
+        ],
+        "badge": [
+          "cre8-badge",
+          "cre8-tag"
+        ]
+      },
+      "text": [
+        "default"
       ]
     },
     {
@@ -1316,7 +2099,12 @@
           "type": "array"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-link-list-item"
+        ]
+      }
     },
     {
       "name": "cre8-link-list-item",
@@ -1336,6 +2124,28 @@
         "default",
         "itemBefore",
         "itemAfter"
+      ],
+      "accepts": {
+        "default": [
+          "cre8-badge",
+          "cre8-icon",
+          "cre8-link",
+          "cre8-tag",
+          "cre8-text-link"
+        ],
+        "itemBefore": [
+          "cre8-badge",
+          "cre8-icon",
+          "cre8-logo"
+        ],
+        "itemAfter": [
+          "cre8-badge",
+          "cre8-icon",
+          "cre8-tag"
+        ]
+      },
+      "text": [
+        "default"
       ]
     },
     {
@@ -1355,13 +2165,33 @@
           "type": "array"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-list-item"
+        ]
+      }
     },
     {
       "name": "cre8-list-item",
       "category": "Data",
       "props": {},
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-badge",
+          "cre8-icon",
+          "cre8-link",
+          "cre8-list",
+          "cre8-tag",
+          "cre8-text-link",
+          "cre8-text-passage",
+          "cre8-tooltip"
+        ]
+      },
+      "text": [
+        "children"
+      ]
     },
     {
       "name": "cre8-loading-spinner",
@@ -1405,7 +2235,17 @@
           "type": "string"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-icon",
+          "cre8-link",
+          "cre8-text-link"
+        ]
+      },
+      "text": [
+        "children"
+      ]
     },
     {
       "name": "cre8-main",
@@ -1415,7 +2255,27 @@
           "type": "boolean"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-alert",
+          "cre8-band",
+          "cre8-breadcrumbs",
+          "cre8-card",
+          "cre8-container",
+          "cre8-form",
+          "cre8-grid",
+          "cre8-heading",
+          "cre8-hero",
+          "cre8-inline-alert",
+          "cre8-layout-container",
+          "cre8-layout-section",
+          "cre8-page-header",
+          "cre8-section",
+          "cre8-tabs",
+          "cre8-text-passage"
+        ]
+      }
     },
     {
       "name": "cre8-modal",
@@ -1453,6 +2313,63 @@
         }
       },
       "slots": [
+        "default",
+        "header",
+        "footer"
+      ],
+      "accepts": {
+        "default": [
+          "cre8-accordion",
+          "cre8-alert",
+          "cre8-badge",
+          "cre8-card",
+          "cre8-chart",
+          "cre8-checkbox-field",
+          "cre8-container",
+          "cre8-date-picker",
+          "cre8-divider",
+          "cre8-field",
+          "cre8-field-note",
+          "cre8-form",
+          "cre8-grid",
+          "cre8-heading",
+          "cre8-inline-alert",
+          "cre8-link-list",
+          "cre8-list",
+          "cre8-loading-spinner",
+          "cre8-multi-select",
+          "cre8-percent-bar",
+          "cre8-progress-meter",
+          "cre8-radio-field",
+          "cre8-remove-tag",
+          "cre8-select",
+          "cre8-select-tile-list",
+          "cre8-skeleton-loader",
+          "cre8-table",
+          "cre8-table-object",
+          "cre8-tabs",
+          "cre8-tag",
+          "cre8-tag-list",
+          "cre8-text-link",
+          "cre8-text-passage"
+        ],
+        "header": [
+          "cre8-badge",
+          "cre8-heading",
+          "cre8-icon",
+          "cre8-tag",
+          "cre8-text-passage"
+        ],
+        "footer": [
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-danger-button",
+          "cre8-link",
+          "cre8-text-link",
+          "cre8-text-passage"
+        ]
+      },
+      "text": [
         "default",
         "header",
         "footer"
@@ -1511,6 +2428,16 @@
       "slots": [
         "fieldNote"
       ],
+      "accepts": {
+        "fieldNote": [
+          "cre8-field-note",
+          "cre8-link",
+          "cre8-text-link"
+        ]
+      },
+      "text": [
+        "fieldNote"
+      ],
       "events": [
         "multi-select-change"
       ]
@@ -1519,7 +2446,22 @@
       "name": "cre8-nav-container",
       "category": "Navigation",
       "props": {},
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-dropdown",
+          "cre8-field",
+          "cre8-global-nav",
+          "cre8-link",
+          "cre8-logo",
+          "cre8-primary-nav",
+          "cre8-submenu",
+          "cre8-tertiary-nav",
+          "cre8-utility-nav"
+        ]
+      }
     },
     {
       "name": "cre8-page-header",
@@ -1530,6 +2472,29 @@
         }
       },
       "slots": [
+        "default",
+        "titleAfter"
+      ],
+      "accepts": {
+        "default": [
+          "cre8-badge",
+          "cre8-breadcrumbs",
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-link",
+          "cre8-tag",
+          "cre8-tag-list",
+          "cre8-text-link",
+          "cre8-text-passage"
+        ],
+        "titleAfter": [
+          "cre8-badge",
+          "cre8-icon",
+          "cre8-tag",
+          "cre8-tooltip"
+        ]
+      },
+      "text": [
         "default",
         "titleAfter"
       ]
@@ -1574,6 +2539,18 @@
         }
       },
       "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-field",
+          "cre8-select",
+          "cre8-text-passage"
+        ]
+      },
+      "text": [
+        "children"
+      ],
       "events": [
         "pagination-change"
       ]
@@ -1641,6 +2618,60 @@
         "header",
         "footer"
       ],
+      "accepts": {
+        "default": [
+          "cre8-alert",
+          "cre8-badge",
+          "cre8-checkbox-field",
+          "cre8-date-picker",
+          "cre8-divider",
+          "cre8-field",
+          "cre8-form",
+          "cre8-heading",
+          "cre8-inline-alert",
+          "cre8-link-list",
+          "cre8-list",
+          "cre8-loading-spinner",
+          "cre8-percent-bar",
+          "cre8-progress-meter",
+          "cre8-radio-field",
+          "cre8-remove-tag",
+          "cre8-select",
+          "cre8-skeleton-loader",
+          "cre8-tag",
+          "cre8-tag-list",
+          "cre8-text-link",
+          "cre8-text-passage"
+        ],
+        "trigger": [
+          "cre8-badge",
+          "cre8-button",
+          "cre8-danger-button",
+          "cre8-icon",
+          "cre8-link",
+          "cre8-tag",
+          "cre8-text-link"
+        ],
+        "header": [
+          "cre8-badge",
+          "cre8-heading",
+          "cre8-icon",
+          "cre8-tag",
+          "cre8-text-passage"
+        ],
+        "footer": [
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-danger-button",
+          "cre8-link",
+          "cre8-text-link"
+        ]
+      },
+      "text": [
+        "default",
+        "header",
+        "footer"
+      ],
       "events": [
         "popover-open",
         "popover-close"
@@ -1660,7 +2691,12 @@
           "type": "string"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-primary-nav-item"
+        ]
+      }
     },
     {
       "name": "cre8-primary-nav-item",
@@ -1686,6 +2722,26 @@
         "default",
         "itemBefore",
         "itemAfter"
+      ],
+      "accepts": {
+        "default": [
+          "cre8-dropdown",
+          "cre8-link",
+          "cre8-submenu",
+          "cre8-text-link"
+        ],
+        "itemBefore": [
+          "cre8-badge",
+          "cre8-icon"
+        ],
+        "itemAfter": [
+          "cre8-badge",
+          "cre8-icon",
+          "cre8-tag"
+        ]
+      },
+      "text": [
+        "default"
       ]
     },
     {
@@ -1727,7 +2783,12 @@
           "type": "array"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-progress-steps-item"
+        ]
+      }
     },
     {
       "name": "cre8-progress-steps-item",
@@ -1752,7 +2813,17 @@
           "type": "string"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-icon",
+          "cre8-link",
+          "cre8-text-link"
+        ]
+      },
+      "text": [
+        "children"
+      ]
     },
     {
       "name": "cre8-radio-field",
@@ -1786,7 +2857,12 @@
           "type": "boolean"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-radio-field-item"
+        ]
+      }
     },
     {
       "name": "cre8-radio-field-item",
@@ -1878,6 +2954,79 @@
       "slots": [
         "default",
         "header"
+      ],
+      "accepts": {
+        "default": [
+          "cre8-accordion",
+          "cre8-alert",
+          "cre8-badge",
+          "cre8-breadcrumbs",
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-card",
+          "cre8-chart",
+          "cre8-checkbox-field",
+          "cre8-container",
+          "cre8-container-grid",
+          "cre8-danger-button",
+          "cre8-date-picker",
+          "cre8-divider",
+          "cre8-dropdown",
+          "cre8-feature",
+          "cre8-field",
+          "cre8-field-note",
+          "cre8-form",
+          "cre8-grid",
+          "cre8-heading",
+          "cre8-hero",
+          "cre8-icon",
+          "cre8-inline-alert",
+          "cre8-layout-container",
+          "cre8-layout-section",
+          "cre8-linelength-container",
+          "cre8-link",
+          "cre8-link-list",
+          "cre8-list",
+          "cre8-loading-spinner",
+          "cre8-logo",
+          "cre8-modal",
+          "cre8-multi-select",
+          "cre8-page-header",
+          "cre8-pagination",
+          "cre8-percent-bar",
+          "cre8-popover",
+          "cre8-progress-meter",
+          "cre8-progress-steps",
+          "cre8-radio-field",
+          "cre8-remove-tag",
+          "cre8-section",
+          "cre8-select",
+          "cre8-select-tile-list",
+          "cre8-skeleton-loader",
+          "cre8-split-button",
+          "cre8-table",
+          "cre8-table-object",
+          "cre8-tabs",
+          "cre8-tag",
+          "cre8-tag-list",
+          "cre8-tertiary-nav",
+          "cre8-text-link",
+          "cre8-text-passage",
+          "cre8-tooltip"
+        ],
+        "header": [
+          "cre8-badge",
+          "cre8-button-group",
+          "cre8-heading",
+          "cre8-link",
+          "cre8-tag",
+          "cre8-text-link",
+          "cre8-text-passage"
+        ]
+      },
+      "text": [
+        "default",
+        "header"
       ]
     },
     {
@@ -1931,6 +3080,16 @@
         }
       },
       "slots": [
+        "fieldNote"
+      ],
+      "accepts": {
+        "fieldNote": [
+          "cre8-field-note",
+          "cre8-link",
+          "cre8-text-link"
+        ]
+      },
+      "text": [
         "fieldNote"
       ],
       "events": [
@@ -2020,6 +3179,45 @@
         "title",
         "body"
       ],
+      "accepts": {
+        "default": [
+          "cre8-badge",
+          "cre8-heading",
+          "cre8-icon",
+          "cre8-percent-bar",
+          "cre8-tag",
+          "cre8-text-link",
+          "cre8-text-passage"
+        ],
+        "header": [
+          "cre8-badge",
+          "cre8-heading",
+          "cre8-icon",
+          "cre8-logo"
+        ],
+        "footer": [
+          "cre8-badge",
+          "cre8-tag",
+          "cre8-text-link",
+          "cre8-text-passage"
+        ],
+        "title": [
+          "cre8-badge",
+          "cre8-heading"
+        ],
+        "body": [
+          "cre8-list",
+          "cre8-text-link",
+          "cre8-text-passage"
+        ]
+      },
+      "text": [
+        "default",
+        "header",
+        "footer",
+        "title",
+        "body"
+      ],
       "events": [
         "change",
         "input"
@@ -2057,7 +3255,12 @@
           "type": "boolean"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-select-tile"
+        ]
+      }
     },
     {
       "name": "cre8-skeleton-loader",
@@ -2099,6 +3302,11 @@
         }
       },
       "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-dropdown"
+        ]
+      },
       "events": [
         "split-button-text-click",
         "split-button-dropdown-click"
@@ -2108,7 +3316,12 @@
       "name": "cre8-submenu",
       "category": "Disclosure",
       "props": {},
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-submenu-item"
+        ]
+      }
     },
     {
       "name": "cre8-submenu-item",
@@ -2118,7 +3331,18 @@
           "type": "string"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-badge",
+          "cre8-icon",
+          "cre8-link",
+          "cre8-text-link"
+        ]
+      },
+      "text": [
+        "children"
+      ]
     },
     {
       "name": "cre8-tab",
@@ -2138,6 +3362,16 @@
         }
       },
       "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-badge",
+          "cre8-icon",
+          "cre8-tag"
+        ]
+      },
+      "text": [
+        "children"
+      ],
       "events": [
         "tab-select"
       ]
@@ -2156,7 +3390,70 @@
           "type": "boolean"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-accordion",
+          "cre8-alert",
+          "cre8-badge",
+          "cre8-breadcrumbs",
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-card",
+          "cre8-chart",
+          "cre8-checkbox-field",
+          "cre8-container",
+          "cre8-container-grid",
+          "cre8-danger-button",
+          "cre8-date-picker",
+          "cre8-divider",
+          "cre8-dropdown",
+          "cre8-feature",
+          "cre8-field",
+          "cre8-field-note",
+          "cre8-form",
+          "cre8-grid",
+          "cre8-heading",
+          "cre8-hero",
+          "cre8-icon",
+          "cre8-inline-alert",
+          "cre8-layout-container",
+          "cre8-layout-section",
+          "cre8-linelength-container",
+          "cre8-link",
+          "cre8-link-list",
+          "cre8-list",
+          "cre8-loading-spinner",
+          "cre8-logo",
+          "cre8-modal",
+          "cre8-multi-select",
+          "cre8-page-header",
+          "cre8-pagination",
+          "cre8-percent-bar",
+          "cre8-popover",
+          "cre8-progress-meter",
+          "cre8-progress-steps",
+          "cre8-radio-field",
+          "cre8-remove-tag",
+          "cre8-section",
+          "cre8-select",
+          "cre8-select-tile-list",
+          "cre8-skeleton-loader",
+          "cre8-split-button",
+          "cre8-table",
+          "cre8-table-object",
+          "cre8-tabs",
+          "cre8-tag",
+          "cre8-tag-list",
+          "cre8-tertiary-nav",
+          "cre8-text-link",
+          "cre8-text-passage",
+          "cre8-tooltip"
+        ]
+      },
+      "text": [
+        "children"
+      ]
     },
     {
       "name": "cre8-table",
@@ -2181,13 +3478,24 @@
           "type": "boolean"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-table-body",
+          "cre8-table-header"
+        ]
+      }
     },
     {
       "name": "cre8-table-body",
       "category": "Data",
       "props": {},
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-table-row"
+        ]
+      }
     },
     {
       "name": "cre8-table-cell",
@@ -2203,13 +3511,45 @@
           "type": "string"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-badge",
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-checkbox-field",
+          "cre8-danger-button",
+          "cre8-dropdown",
+          "cre8-field",
+          "cre8-icon",
+          "cre8-link",
+          "cre8-loading-spinner",
+          "cre8-percent-bar",
+          "cre8-popover",
+          "cre8-progress-meter",
+          "cre8-remove-tag",
+          "cre8-select",
+          "cre8-skeleton-loader",
+          "cre8-tag",
+          "cre8-tag-list",
+          "cre8-text-link",
+          "cre8-tooltip"
+        ]
+      },
+      "text": [
+        "children"
+      ]
     },
     {
       "name": "cre8-table-header",
       "category": "Data",
       "props": {},
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-table-row"
+        ]
+      }
     },
     {
       "name": "cre8-table-header-cell",
@@ -2222,7 +3562,21 @@
           "type": "string"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-badge",
+          "cre8-checkbox-field",
+          "cre8-icon",
+          "cre8-link",
+          "cre8-tag",
+          "cre8-text-link",
+          "cre8-tooltip"
+        ]
+      },
+      "text": [
+        "children"
+      ]
     },
     {
       "name": "cre8-table-object",
@@ -2230,6 +3584,34 @@
       "props": {},
       "slots": [
         "default",
+        "header",
+        "footer"
+      ],
+      "accepts": {
+        "default": [
+          "cre8-table"
+        ],
+        "header": [
+          "cre8-badge",
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-dropdown",
+          "cre8-field",
+          "cre8-heading",
+          "cre8-select",
+          "cre8-tag-list",
+          "cre8-text-passage"
+        ],
+        "footer": [
+          "cre8-button",
+          "cre8-button-group",
+          "cre8-link",
+          "cre8-pagination",
+          "cre8-text-link",
+          "cre8-text-passage"
+        ]
+      },
+      "text": [
         "header",
         "footer"
       ]
@@ -2256,6 +3638,31 @@
       },
       "slots": [
         "default",
+        "expandableContent"
+      ],
+      "accepts": {
+        "default": [
+          "cre8-table-cell",
+          "cre8-table-header-cell"
+        ],
+        "expandableContent": [
+          "cre8-button-group",
+          "cre8-card",
+          "cre8-chart",
+          "cre8-container",
+          "cre8-divider",
+          "cre8-field",
+          "cre8-grid",
+          "cre8-heading",
+          "cre8-inline-alert",
+          "cre8-list",
+          "cre8-table",
+          "cre8-tag-list",
+          "cre8-text-link",
+          "cre8-text-passage"
+        ]
+      },
+      "text": [
         "expandableContent"
       ]
     },
@@ -2310,6 +3717,14 @@
         "default",
         "panel"
       ],
+      "accepts": {
+        "default": [
+          "cre8-tab"
+        ],
+        "panel": [
+          "cre8-tab-panel"
+        ]
+      },
       "events": [
         "tab-change"
       ]
@@ -2386,7 +3801,13 @@
           "type": "string"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-remove-tag",
+          "cre8-tag"
+        ]
+      }
     },
     {
       "name": "cre8-tertiary-nav",
@@ -2399,7 +3820,12 @@
           "type": "string"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-tertiary-nav-item"
+        ]
+      }
     },
     {
       "name": "cre8-tertiary-nav-item",
@@ -2412,7 +3838,19 @@
           "type": "boolean"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-badge",
+          "cre8-icon",
+          "cre8-link",
+          "cre8-tertiary-nav",
+          "cre8-text-link"
+        ]
+      },
+      "text": [
+        "children"
+      ]
     },
     {
       "name": "cre8-text-link",
@@ -2437,6 +3875,18 @@
       "slots": [
         "default",
         "linkAfter"
+      ],
+      "accepts": {
+        "default": [
+          "cre8-icon"
+        ],
+        "linkAfter": [
+          "cre8-badge",
+          "cre8-icon"
+        ]
+      },
+      "text": [
+        "default"
       ]
     },
     {
@@ -2454,7 +3904,24 @@
           ]
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-badge",
+          "cre8-divider",
+          "cre8-heading",
+          "cre8-icon",
+          "cre8-inline-alert",
+          "cre8-link",
+          "cre8-list",
+          "cre8-tag",
+          "cre8-text-link",
+          "cre8-tooltip"
+        ]
+      },
+      "text": [
+        "children"
+      ]
     },
     {
       "name": "cre8-tooltip",
@@ -2503,6 +3970,26 @@
         "default",
         "trigger"
       ],
+      "accepts": {
+        "default": [
+          "cre8-link",
+          "cre8-text-link",
+          "cre8-text-passage"
+        ],
+        "trigger": [
+          "cre8-badge",
+          "cre8-button",
+          "cre8-heading",
+          "cre8-icon",
+          "cre8-link",
+          "cre8-tag",
+          "cre8-text-link"
+        ]
+      },
+      "text": [
+        "default",
+        "trigger"
+      ],
       "events": [
         "tooltip-open",
         "tooltip-close"
@@ -2519,7 +4006,12 @@
           "type": "string"
         }
       },
-      "acceptsChildren": true
+      "acceptsChildren": true,
+      "accepts": {
+        "children": [
+          "cre8-utility-nav-item"
+        ]
+      }
     },
     {
       "name": "cre8-utility-nav-item",

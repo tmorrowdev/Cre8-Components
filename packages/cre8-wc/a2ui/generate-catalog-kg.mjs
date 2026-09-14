@@ -28,6 +28,14 @@
  *                  Only ever from observed artifacts (stories, component
  *                  render templates, a2ui examples, a2ui patterns) — never
  *                  from the naming rule. See kg-sources.mjs for the readers.
+ *   ALLOWS         parent -> child   { slot, text, observed }
+ *                  The authored eligibility (slot-eligibility.json, surfaced
+ *                  by the catalog as `x-accepts`): what MAY go in a region,
+ *                  as opposed to CONTAINS, which is what HAS been seen there.
+ *                  `slot` is null for `children`. `observed` is true when a
+ *                  CONTAINS edge backs the same pairing. Every CONTAINS pairing
+ *                  must have an ALLOWS edge — the build fails otherwise, since
+ *                  that means a shipped story or example no longer validates.
  *   USED_IN_PATTERN component -> pattern
  *   IN_FAMILY      component <-> component sharing a name prefix. Undirected
  *                  on purpose: cre8-tag-list contains cre8-tag, and the names
@@ -112,6 +120,16 @@ for (const [tag, def] of Object.entries(components)) {
     }
 
     const ex = examples.exemplar.get(tag);
+    const regionNodes = def.properties?.children
+        ? { children: def.properties.children }
+        : (def.properties?.slots?.properties ?? {});
+    const accepts = {};
+    for (const [region, node] of Object.entries(regionNodes)) {
+        if (Array.isArray(node['x-accepts'])) {
+            accepts[region] = { components: node['x-accepts'], text: node['x-accepts-text'] === true };
+        }
+    }
+
     nodes.push({
         id: tag,
         type: 'component',
@@ -120,6 +138,7 @@ for (const [tag, def] of Object.entries(components)) {
         props,
         slots: slotNames,
         accepts_children: Boolean(def.properties?.children),
+        accepts,
         extends: graphify.extends.get(tag) ?? null,
         exemplar: ex ? { source: ex.source, path: ex.path, spec: ex.spec } : null,
     });
@@ -208,6 +227,40 @@ const containsEdges = [...contains.values()]
     }));
 edges.push(...containsEdges);
 
+// ─── ALLOWS: authored eligibility ───────────────────────────────────────────
+
+const observedPairs = new Set(containsEdges.map((e) => `${e.from}\u0000${e.slot ?? ''}\u0000${e.to}`));
+const allowsEdges = [];
+for (const [tag, def] of Object.entries(catalog.$defs?.components ?? {})) {
+    const regionNodes = def.properties?.children
+        ? { children: def.properties.children }
+        : (def.properties?.slots?.properties ?? {});
+    for (const [region, node] of Object.entries(regionNodes)) {
+        if (!Array.isArray(node['x-accepts'])) continue;
+        const slot = region === 'children' ? null : region;
+        for (const child of node['x-accepts']) {
+            allowsEdges.push({
+                from: tag,
+                to: child,
+                rel: 'ALLOWS',
+                slot,
+                text: node['x-accepts-text'] === true,
+                observed: observedPairs.has(`${tag}\u0000${slot ?? ''}\u0000${child}`),
+            });
+        }
+    }
+}
+edges.push(...allowsEdges);
+
+// An observed nesting the eligibility does not allow is a contradiction between
+// what the library demonstrates and what the catalog now validates. Surface it
+// here, where both are in hand, rather than as a validation failure downstream.
+// Pairings observed only under a region that does not exist on the parent (a
+// story slotting into a component that declares no such slot) are reported but
+// not fatal: they are the story's mistake, and the catalog already rejects them.
+const allowedPairs = new Set(allowsEdges.map((e) => `${e.from}\u0000${e.slot ?? ''}\u0000${e.to}`));
+const disallowedObserved = containsEdges.filter((e) => !allowedPairs.has(`${e.from}\u0000${e.slot ?? ''}\u0000${e.to}`));
+
 // ─── patterns ───────────────────────────────────────────────────────────────
 
 // A pattern is an authored spec, so it is held to the same bar as anything an
@@ -271,6 +324,8 @@ const kg = {
         total_nodes: nodes.length,
         total_edges: edges.length,
         contains_edges: containsEdges.length,
+        allows_edges: allowsEdges.length,
+        allows_observed: allowsEdges.filter((e) => e.observed).length,
     },
     nodes,
     edges,
@@ -280,9 +335,18 @@ writeFileSync(outPath, `${JSON.stringify(kg, null, 2)}\n`, 'utf8');
 console.log(
     `catalog-kg.json: ${nodes.length} nodes, ${edges.length} edges `
   + `(${knownTags.size} components, ${categories.size} categories, `
-  + `${containsEdges.length} CONTAINS from ${scanned.storyFiles} stories + ${scanned.sourceFiles} sources + ${examples.files.length} examples + ${patternSet.patterns.length} patterns`
+  + `${containsEdges.length} CONTAINS from ${scanned.storyFiles} stories + ${scanned.sourceFiles} sources + ${examples.files.length} examples + ${patternSet.patterns.length} patterns, `
+  + `${allowsEdges.length} ALLOWS from slot-eligibility.json (${allowsEdges.filter((e) => e.observed).length} observed)`
   + `${graphify.found ? `, graphify@${(graphify.commit ?? '').slice(0, 7)}` : ', no graphify graph'})`,
 );
+
+if (disallowedObserved.length) {
+    console.warn(
+        `\ncatalog-kg: ${disallowedObserved.length} observed nesting(s) are not allowed by slot-eligibility.json:\n  `
+      + disallowedObserved.map((e) => `${e.from}${e.slot ? `.slots.${e.slot}` : '.children'} -> ${e.to}  [${e.evidence.map((v) => v.kind).join(', ')}]`).join('\n  ')
+      + '\nEither the eligibility list is too narrow or the artifact is wrong; a2ui examples and patterns are also validated below and fail hard.',
+    );
+}
 
 if (invalidPatterns.length) {
     console.error(`\ncatalog-kg: ${invalidPatterns.length} pattern(s) do not validate against the catalog:\n  ${invalidPatterns.join('\n  ')}`);
