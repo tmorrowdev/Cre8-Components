@@ -1,8 +1,6 @@
 @import '../../design-tokens/core/scss/theming/component';
 :host {
   display: block;
-    @include input-styles();
-
 }
 
 /** 
