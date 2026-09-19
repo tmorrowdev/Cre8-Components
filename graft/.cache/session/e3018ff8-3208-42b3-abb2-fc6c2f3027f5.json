@@ -1,0 +1,13 @@
+{
+  "lastQuery": "fix the vercel builds and move the website to only publish from website branch",
+  "perAgentQuery": {},
+  "graftReads": 0,
+  "sourceReads": 8,
+  "savedTokens": 0,
+  "injectedPointers": [],
+  "nudges": 0,
+  "inputCostMicros": 8813326,
+  "inputTokensBilled": 15624818,
+  "lastBillingUuid": "7829a35a-7091-4274-8b97-f0cf78d3c871",
+  "host": "claude-code"
+}
