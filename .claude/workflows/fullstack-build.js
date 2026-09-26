@@ -40,6 +40,7 @@ if (!A.spec && !A.architecture) throw new Error('fullstack-build needs args.spec
 //   architecture: '<path>'     skip Research/Architecture and plan from this doc
 //   architects: 3              number of competing architecture proposals (1-3)
 //   backendLanguage: 'python'  default backend language (the repo's backends are Python)
+//   extraResearch: [{ key, prompt }]  additional research lenses run alongside the defaults
 const BACKEND_LANG = A.backendLanguage || 'python'
 const MAX_ROUNDS = A.maxRounds || 3
 const BLOCKING = A.blockingSeverities || ['critical', 'high']
@@ -519,12 +520,14 @@ if (A.architecture) {
     { key: 'repo', prompt: 'Reuse in this repo: which existing packages (pnpm-workspace.yaml, packages/), CRE8 components (@tmorrow/cre8-wc / cre8-react), agents and docs/plans this app can build on. Name concrete files and components, and flag gaps.' },
     { key: 'stack', prompt: `Technical stack: backend language (the repo's existing backends are Python; default to ${BACKEND_LANG} unless there is a concrete reason not to), framework, data storage, auth, hosting (the repo deploys on Vercel), and how the TypeScript frontend shares types with the backend.` },
     { key: 'risk', prompt: 'Risks: a threat model (assets, actors, abuse cases), privacy and data-handling concerns, hard technical unknowns, and what would make this project fail.' },
-  ]
+  ].concat(A.extraResearch || [])
   const research = await parallel(RESEARCH_LENSES.map(l => () => agent(`You are a researcher on an app-planning team. Research ONE lens and report facts with sources, not opinions dressed up as facts. Do not edit files.
 
 App idea / spec (text, or a path to read): ${A.spec}
 
-Lens: ${l.prompt}`, { label: `research:${l.key}`, phase: 'Research', schema: RESEARCH_SCHEMA })))
+Lens: ${l.prompt}
+
+Use WebSearch and WebFetch (load them with ToolSearch) for anything outside this repo, and cite the URLs.`, { label: `research:${l.key}`, phase: 'Research', schema: RESEARCH_SCHEMA })))
   const researchText = RESEARCH_LENSES.map((l, i) => {
     const r = research[i]
     if (!r) return `## ${l.key}\n(researcher failed)`
