@@ -6408,8 +6408,8 @@
         "iconUrl": {
           "type": "string",
           "enum": null,
-          "default": "iconSprite",
-          "description": "Icon path 1) This points to the file where the icon sprite lives 2) This method …",
+          "default": null,
+          "description": "URL of an external icon sprite. When set (or when `window.Cre8_ICON_URL` is set)…",
           "x-kind": "property"
         },
         "iconTitle": {
