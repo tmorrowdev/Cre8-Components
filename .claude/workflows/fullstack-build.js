@@ -1,8 +1,10 @@
 export const meta = {
   name: 'fullstack-build',
-  description: 'Plan a feature into frontend/backend units, build them in parallel, and red-team each unit in lockstep with a two-way message bus',
-  whenToUse: 'Building a feature that spans CRE8 UI and backend code, where every unit of work should be adversarially checked before it is accepted. Pass args: { spec: "<feature description or path to a plan doc>" }.',
+  description: 'Research an app idea, architect it, plan it into frontend/backend units, build them in parallel, and red-team each unit in lockstep with a two-way message bus',
+  whenToUse: 'Building a feature that spans CRE8 UI and backend code, where every unit of work should be adversarially checked before it is accepted. Pass args: { spec: "<app idea, feature description, or path to a plan doc>" }. Add stopAfter: "architecture" to review the brief and architecture before building, then rerun with architecture: "<path to the architecture doc>" to build from it.',
   phases: [
+    { title: 'Research', detail: 'parallel researchers: users & flows, prior art, repo reuse, stack, risks' },
+    { title: 'Architecture', detail: 'product brief vs red team, competing architectures vs red team, judges, synthesis doc' },
     { title: 'Plan', detail: 'decompose the spec into units with owned paths, deps and acceptance checks' },
     { title: 'Contract', detail: 'build + red-team the shared API/type contract every unit codes against' },
     { title: 'Build', detail: 'units run in parallel as deps allow; each round is build -> red team -> revise' },
@@ -32,7 +34,13 @@ export const meta = {
 // ---------------------------------------------------------------------------
 
 const A = args || {}
-if (!A.spec) throw new Error('fullstack-build needs args.spec (a feature description or a path to a plan doc)')
+if (!A.spec && !A.architecture) throw new Error('fullstack-build needs args.spec (an app idea, feature description, or path to a plan doc) or args.architecture (path to an architecture doc)')
+// Research + architecture options:
+//   stopAfter: 'architecture'  return after writing the brief and architecture docs
+//   architecture: '<path>'     skip Research/Architecture and plan from this doc
+//   architects: 3              number of competing architecture proposals (1-3)
+//   backendLanguage: 'python'  default backend language (the repo's backends are Python)
+const BACKEND_LANG = A.backendLanguage || 'python'
 const MAX_ROUNDS = A.maxRounds || 3
 const BLOCKING = A.blockingSeverities || ['critical', 'high']
 // Optional custom subagent types, e.g. from the secure-agent-team plugin:
@@ -41,7 +49,7 @@ const AGENT_TYPES = A.agentTypes || {}
 
 const LAYER_GUIDE = {
   frontend: 'Build UI with the CRE8 design system (@tmorrow/cre8-wc web components or @tmorrow/cre8-react). Load the cre8-design skill for component choice and composition. Use design tokens rather than hard-coded colors or spacing. Every interactive element must be keyboard reachable and labeled.',
-  backend: 'Write tests first. Use closed input schemas (enums, regex-validated ids, no additional properties). Fail closed on auth and validation. Keep secrets out of source and read them from env. Map internal errors to generic client messages, never stack traces. Put timeouts on outbound calls and caps on list results.',
+  backend: `Use ${BACKEND_LANG} unless the architecture doc says otherwise. Write tests first. Use closed input schemas (enums, regex-validated ids, no additional properties). Fail closed on auth and validation. Keep secrets out of source and read them from env. Map internal errors to generic client messages, never stack traces. Put timeouts on outbound calls and caps on list results.`,
   data: 'Keep migrations forward-only and reversible where possible. Enforce constraints in the schema, not only in app code. Scope every query to the tenant/user it belongs to.',
   infra: 'Keep config typed and minimal. Add no dependencies you do not use. Wire scripts into the existing pnpm workspace commands.',
   contract: 'Write the single source of truth for the API: request/response types, error shapes and status codes, auth requirements, pagination. Both frontend and backend units import from it, so make it importable, not just prose.',
@@ -255,6 +263,7 @@ async function buildRound(u, round, seedMail) {
   const prompt = `You are a BUILD agent on a multi-agent team. Other builders are writing other parts of the repo at the same time, so write only inside your owned paths. Do not commit, and do not revert changes to files you do not own.
 
 Feature: ${plan.summary}
+${designContext}
 Shared contract lives at: ${plan.contract.ownedPaths.join(', ')}. Code against it exactly. If it is wrong or missing something, send a heads-up to "contract" rather than editing it or working around it.
 
 ${unitBrief(u)}
@@ -359,14 +368,292 @@ async function runUnit(u, opts) {
   return s
 }
 
+
+// ------------------------------------------------ research + architecture --
+//
+// Research fans out across independent lenses. Architecture turns the findings
+// into a product brief (challenged by a red team), then has competing
+// architects each defend a proposal against their own red team before judges
+// pick and a synthesizer writes the final doc. Same message pattern as the
+// build loop: critique goes in, a revision that answers every point comes out.
+
+const RESEARCH_SCHEMA = {
+  type: 'object',
+  properties: {
+    findings: {
+      type: 'array',
+      items: {
+        type: 'object',
+        properties: {
+          claim: { type: 'string' },
+          source: { type: 'string', description: 'file path, URL, or "reasoning"' },
+          confidence: { type: 'string', enum: ['high', 'medium', 'low'] },
+        },
+        required: ['claim', 'source', 'confidence'],
+      },
+    },
+    implications: { type: 'array', items: { type: 'string' }, description: 'what this means for the build' },
+    openQuestions: { type: 'array', items: { type: 'string' } },
+  },
+  required: ['findings', 'implications', 'openQuestions'],
+}
+
+const BRIEF_SCHEMA = {
+  type: 'object',
+  properties: {
+    slug: { type: 'string', description: 'short kebab-case app name for file names' },
+    name: { type: 'string' },
+    problem: { type: 'string' },
+    users: { type: 'array', items: { type: 'string' } },
+    coreFlows: { type: 'array', items: { type: 'string' }, description: 'step-by-step user journeys the MVP must support' },
+    mvpScope: { type: 'array', items: { type: 'string' } },
+    nonGoals: { type: 'array', items: { type: 'string' } },
+    successMetrics: { type: 'array', items: { type: 'string' } },
+    assumptions: { type: 'array', items: { type: 'string' } },
+    openQuestions: { type: 'array', items: { type: 'string' } },
+    critiqueResponses: { type: 'array', items: { type: 'string' }, description: 'how each red-team point was handled (revisions only)' },
+  },
+  required: ['slug', 'name', 'problem', 'users', 'coreFlows', 'mvpScope', 'nonGoals', 'successMetrics', 'assumptions', 'openQuestions', 'critiqueResponses'],
+}
+
+const CRITIQUE_SCHEMA = {
+  type: 'object',
+  properties: {
+    points: {
+      type: 'array',
+      items: {
+        type: 'object',
+        properties: {
+          severity: { type: 'string', enum: ['critical', 'high', 'medium', 'low'] },
+          issue: { type: 'string' },
+          why: { type: 'string' },
+          suggestion: { type: 'string' },
+        },
+        required: ['severity', 'issue', 'why', 'suggestion'],
+      },
+    },
+  },
+  required: ['points'],
+}
+
+const ARCH_SCHEMA = {
+  type: 'object',
+  properties: {
+    approach: { type: 'string' },
+    backendLanguage: { type: 'string' },
+    components: {
+      type: 'array',
+      items: {
+        type: 'object',
+        properties: {
+          name: { type: 'string' },
+          layer: { type: 'string', enum: ['frontend', 'backend', 'data', 'infra'] },
+          responsibility: { type: 'string' },
+          location: { type: 'string', description: 'existing package to extend or new path' },
+        },
+        required: ['name', 'layer', 'responsibility', 'location'],
+      },
+    },
+    apiSurface: { type: 'array', items: { type: 'string' }, description: 'METHOD /path: purpose, auth' },
+    dataModel: { type: 'array', items: { type: 'string' } },
+    authAndSecurity: { type: 'string' },
+    decisions: {
+      type: 'array',
+      items: {
+        type: 'object',
+        properties: { decision: { type: 'string' }, rationale: { type: 'string' }, rejected: { type: 'string' } },
+        required: ['decision', 'rationale', 'rejected'],
+      },
+    },
+    risks: { type: 'array', items: { type: 'string' } },
+    critiqueResponses: { type: 'array', items: { type: 'string' } },
+  },
+  required: ['approach', 'backendLanguage', 'components', 'apiSurface', 'dataModel', 'authAndSecurity', 'decisions', 'risks', 'critiqueResponses'],
+}
+
+const SCORE_SCHEMA = {
+  type: 'object',
+  properties: {
+    scores: {
+      type: 'array',
+      items: {
+        type: 'object',
+        properties: {
+          proposal: { type: 'integer', description: '1-based proposal number' },
+          score: { type: 'integer', description: '1-10' },
+          strengths: { type: 'string' },
+          weaknesses: { type: 'string' },
+        },
+        required: ['proposal', 'score', 'strengths', 'weaknesses'],
+      },
+    },
+  },
+  required: ['scores'],
+}
+
+const FINAL_ARCH_SCHEMA = {
+  type: 'object',
+  properties: {
+    briefPath: { type: 'string' },
+    architecturePath: { type: 'string' },
+    summary: { type: 'string', description: 'one-paragraph architecture summary for the planner' },
+  },
+  required: ['briefPath', 'architecturePath', 'summary'],
+}
+
+const fmtCritique = c => c && c.points.length
+  ? c.points.map((p, i) => `${i + 1}. [${p.severity}] ${p.issue}. Why: ${p.why}. Suggestion: ${p.suggestion}`).join('\n')
+  : '(no points raised)'
+
+let designContext = ''
+let brief = null, architecture = null
+
+if (A.architecture) {
+  designContext = `Architecture doc (decided, read it in full): ${A.architecture}`
+  log(`using existing architecture ${A.architecture}; skipping Research and Architecture`)
+} else {
+  phase('Research')
+  const RESEARCH_LENSES = [
+    { key: 'users', prompt: 'Users and flows: who uses this, what jobs they need done, the core journeys step by step, what the MVP must include versus what can wait, and how success would be measured.' },
+    { key: 'prior-art', prompt: 'Prior art: comparable products and open-source projects (use web search if available). What patterns they share, what users complain about, and what to copy or avoid.' },
+    { key: 'repo', prompt: 'Reuse in this repo: which existing packages (pnpm-workspace.yaml, packages/), CRE8 components (@tmorrow/cre8-wc / cre8-react), agents and docs/plans this app can build on. Name concrete files and components, and flag gaps.' },
+    { key: 'stack', prompt: `Technical stack: backend language (the repo's existing backends are Python; default to ${BACKEND_LANG} unless there is a concrete reason not to), framework, data storage, auth, hosting (the repo deploys on Vercel), and how the TypeScript frontend shares types with the backend.` },
+    { key: 'risk', prompt: 'Risks: a threat model (assets, actors, abuse cases), privacy and data-handling concerns, hard technical unknowns, and what would make this project fail.' },
+  ]
+  const research = await parallel(RESEARCH_LENSES.map(l => () => agent(`You are a researcher on an app-planning team. Research ONE lens and report facts with sources, not opinions dressed up as facts. Do not edit files.
+
+App idea / spec (text, or a path to read): ${A.spec}
+
+Lens: ${l.prompt}`, { label: `research:${l.key}`, phase: 'Research', schema: RESEARCH_SCHEMA })))
+  const researchText = RESEARCH_LENSES.map((l, i) => {
+    const r = research[i]
+    if (!r) return `## ${l.key}\n(researcher failed)`
+    return `## ${l.key}\n` + r.findings.map(f => `- ${f.claim} (${f.source}, ${f.confidence})`).join('\n') +
+      `\nImplications:\n` + r.implications.map(x => '- ' + x).join('\n') +
+      `\nOpen questions:\n` + r.openQuestions.map(x => '- ' + x).join('\n')
+  }).join('\n\n')
+  const failed = RESEARCH_LENSES.filter((l, i) => !research[i]).map(l => l.key)
+  if (failed.length) log(`research lenses with no result: ${failed.join(', ')}`)
+
+  phase('Architecture')
+  // Idea -> brief, challenged by a product red team, then revised.
+  const briefPrompt = `You are the product lead. Turn this app idea and the research into a tight product brief. Keep the MVP small enough to build in one pass. Anything not needed for the core flows goes in nonGoals. Do not edit files.
+
+App idea / spec: ${A.spec}
+
+Research:
+${researchText}`
+  const draft = await agent(briefPrompt, { label: 'brief:draft', phase: 'Architecture', schema: BRIEF_SCHEMA })
+  if (!draft) throw new Error('brief agent returned nothing')
+  const briefCritique = await agent(`You are the product RED TEAM. Attack this brief: unsupported assumptions, flows that do not solve the stated problem, an MVP that is too big or missing something essential, unmeasurable metrics, and user groups nobody asked for. Every point needs a reason. Do not edit files.
+
+Brief:
+${JSON.stringify(draft, null, 2)}
+
+Research it was based on:
+${researchText}`, { label: 'brief:red', phase: 'Architecture', schema: CRITIQUE_SCHEMA, effort: 'high', agentType: AGENT_TYPES.red })
+  brief = await agent(`${briefPrompt}
+
+Your draft:
+${JSON.stringify(draft, null, 2)}
+
+The red team's critique. Address EVERY point in critiqueResponses: say what you changed, or why you kept it:
+${fmtCritique(briefCritique)}`, { label: 'brief:revise', phase: 'Architecture', schema: BRIEF_SCHEMA }) || draft
+
+  // Competing architectures, each defended against its own red team.
+  const ANGLES = [
+    'simplest-MVP: the fewest moving parts that satisfy every core flow; boring, proven choices',
+    'reuse-first: build as much as possible on existing packages, CRE8 components and agents in this repo',
+    'secure-and-scalable: design the auth, tenancy, data boundaries and failure handling you would want in production',
+  ].slice(0, Math.max(1, Math.min(3, A.architects || 3)))
+  const archBase = angle => `You are a software architect. Propose an architecture for this app from one angle: ${angle}.
+Read the repo (pnpm-workspace.yaml, packages/, docs/plans) so your proposal fits it. Frontend uses CRE8 (@tmorrow/cre8-wc or cre8-react). Default backend language: ${BACKEND_LANG}; justify it in decisions if you pick another. Do not edit files.
+
+Brief:
+${JSON.stringify(brief, null, 2)}
+
+Research:
+${researchText}`
+  const proposals = await pipeline(ANGLES,
+    (angle, _, i) => agent(archBase(angle), { label: `arch:${i + 1}:propose`, phase: 'Architecture', schema: ARCH_SCHEMA }),
+    (prop, angle, i) => prop && agent(`You are the architecture RED TEAM. Break this proposal: core flows it cannot support, security and tenancy holes, data model problems, single points of failure, over-engineering for an MVP, and places it ignores what already exists in this repo. Read the repo to check its claims. Every point needs a reason. Do not edit files.
+
+Brief:
+${JSON.stringify(brief, null, 2)}
+
+Proposal:
+${JSON.stringify(prop, null, 2)}`, { label: `arch:${i + 1}:red`, phase: 'Architecture', schema: CRITIQUE_SCHEMA, effort: 'high', agentType: AGENT_TYPES.red })
+      .then(critique => ({ prop, critique })),
+    (x, angle, i) => x && agent(`${archBase(angle)}
+
+Your proposal:
+${JSON.stringify(x.prop, null, 2)}
+
+The red team's critique. Revise, and address EVERY point in critiqueResponses: say what you changed, or why you kept it:
+${fmtCritique(x.critique)}`, { label: `arch:${i + 1}:revise`, phase: 'Architecture', schema: ARCH_SCHEMA }).then(r => r || x.prop))
+  const finalists = proposals.map((p, i) => p && { n: i + 1, angle: ANGLES[i], p }).filter(Boolean)
+  if (!finalists.length) throw new Error('no architecture proposals survived')
+
+  // Judges need every proposal at once, so this is a barrier.
+  const proposalsText = finalists.map(f => `### Proposal ${f.n} (${f.angle})\n${JSON.stringify(f.p, null, 2)}`).join('\n\n')
+  const judgeLenses = ['fit to the brief and core flows', 'security and operational risk', 'build cost and fit with this repo']
+  const judged = finalists.length === 1 ? [] : await parallel(judgeLenses.map((lens, i) => () => agent(`You are a judge on an architecture review. Score every proposal 1-10, weighting: ${lens}. Do not edit files.
+
+Brief:
+${JSON.stringify(brief, null, 2)}
+
+${proposalsText}`, { label: `judge:${i + 1}`, phase: 'Architecture', schema: SCORE_SCHEMA })))
+  const totals = {}
+  judged.filter(Boolean).forEach(j => j.scores.forEach(s => { totals[s.proposal] = (totals[s.proposal] || 0) + s.score }))
+  const winner = finalists.slice().sort((a, b) => (totals[b.n] || 0) - (totals[a.n] || 0))[0]
+  const judgeNotes = judged.filter(Boolean).map((j, i) => `Judge ${i + 1} (${judgeLenses[i]}):\n` +
+    j.scores.map(s => `- proposal ${s.proposal}: ${s.score}/10. + ${s.strengths} / - ${s.weaknesses}`).join('\n')).join('\n\n')
+  log(`architecture scores: ${finalists.map(f => `#${f.n} ${totals[f.n] || 0}`).join(', ')}; building on #${winner.n}`)
+  architecture = winner.p
+
+  const final = await agent(`You are the lead architect. Write the final design docs for this app.
+
+Start from proposal ${winner.n} (it scored highest). Graft in the strongest ideas from the others where the judges' notes support it, and resolve any contradictions.
+
+Brief:
+${JSON.stringify(brief, null, 2)}
+
+${proposalsText}
+
+Judges' notes:
+${judgeNotes || '(single proposal, not judged)'}
+
+Write two markdown files. Create the folder if needed. Do not commit.
+1. docs/plans/${brief.slug}-brief.md: problem, users, core flows, MVP scope, non-goals, success metrics, assumptions, open questions.
+2. docs/plans/${brief.slug}-architecture.md: overview, component diagram (mermaid), components with locations, API surface, data model, auth and security, key decisions (decision / rationale / rejected alternative), risks, and open questions.
+Match the style of the existing docs/plans files.`, { label: 'arch:synthesize', phase: 'Architecture', schema: FINAL_ARCH_SCHEMA })
+  if (!final) throw new Error('architecture synthesis returned nothing')
+  designContext = `Product brief: ${final.briefPath}
+Architecture doc (decided, read it in full): ${final.architecturePath}
+Summary: ${final.summary}`
+
+  if (A.stopAfter === 'architecture') {
+    return {
+      stoppedAfter: 'architecture',
+      brief: final.briefPath,
+      architecture: final.architecturePath,
+      summary: final.summary,
+      scores: totals,
+      openQuestions: brief.openQuestions,
+      next: `Review the docs, then rerun with args { architecture: "${final.architecturePath}" } to build.`,
+    }
+  }
+}
+
 // ------------------------------------------------------------------- plan --
 
 phase('Plan')
 plan = await agent(`You are the lead architect. Break this feature into units of work that separate builder agents can do IN PARALLEL in this repo.
 
-Spec (text, or a path to read): ${A.spec}
+Spec (text, or a path to read): ${A.spec || '(see architecture doc)'}
+${designContext}
 
-Read the repo first: pnpm-workspace.yaml, packages/, and any related docs/plans. Reuse existing packages where they fit (for example cre8-wc/cre8-react for UI, cre8-agent-core or cre8-mcp for services) before proposing new ones.
+Follow the architecture: its components, API surface, data model and backend language are decided. Your job is to cut them into units, not to redesign them. Read the repo first: pnpm-workspace.yaml, packages/, and any related docs/plans. Reuse existing packages where they fit (for example cre8-wc/cre8-react for UI, cre8-agent-core or cre8-mcp for services) before proposing new ones.
 
 Rules:
 - First, a shared CONTRACT (API types, error shapes, routes) that every other unit codes against. Give it its own ownedPaths and a verify command (typecheck at least).
