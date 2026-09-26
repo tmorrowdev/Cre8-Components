@@ -42,7 +42,12 @@ if (!A.spec && !A.architecture) throw new Error('fullstack-build needs args.spec
 //   judges: false              skip the scoring panel; the synthesizer compares proposals itself
 //   backendLanguage: 'python'  default backend language (the repo's backends are Python)
 //   extraResearch: [{ key, prompt }]  additional research lenses run alongside the defaults
+//   targetDir: '/abs/path'     build into a separate project directory (e.g. a private repo checkout)
+//   context: '...'             extra context (design references, scope limits) for the planner and builders
 const BACKEND_LANG = A.backendLanguage || 'python'
+// targetDir: build into a separate project directory instead of this repo.
+// context: extra text (e.g. design references) given to the planner and every builder.
+const TARGET = A.targetDir || ''
 const MAX_ROUNDS = A.maxRounds || 3
 const BLOCKING = A.blockingSeverities || ['critical', 'high']
 // Optional custom subagent types, e.g. from the secure-agent-team plugin:
@@ -651,6 +656,8 @@ Summary: ${final.summary}`
 }
 
 // ------------------------------------------------------------------- plan --
+if (A.context) designContext += `\n${A.context}`
+if (TARGET) designContext += `\nProject directory: ${TARGET}. All code lives there.`
 
 phase('Plan')
 plan = await agent(`You are the lead architect. Break this feature into units of work that separate builder agents can do IN PARALLEL in this repo.
@@ -658,7 +665,7 @@ plan = await agent(`You are the lead architect. Break this feature into units of
 Spec (text, or a path to read): ${A.spec || '(see architecture doc)'}
 ${designContext}
 
-Follow the architecture: its components, API surface, data model and backend language are decided. Your job is to cut them into units, not to redesign them. Read the repo first: pnpm-workspace.yaml, packages/, and any related docs/plans. Reuse existing packages where they fit (for example cre8-wc/cre8-react for UI, cre8-agent-core or cre8-mcp for services) before proposing new ones.
+Follow the architecture: its components, API surface, data model and backend language are decided. Your job is to cut them into units, not to redesign them. ${TARGET ? `Build in the separate project directory ${TARGET}, not in this repo. The contract unit creates its skeleton (workspace, package manifests, git-ignored env example) if it does not exist yet. Every ownedPath must be an absolute path inside ${TARGET}, and every verifyCommand must start with \`cd ${TARGET} &&\`. Consume CRE8 from npm (@tmorrow/cre8-wc / @tmorrow/cre8-react); read this repo only as reference.` : 'Read the repo first: pnpm-workspace.yaml, packages/, and any related docs/plans. Reuse existing packages where they fit (for example cre8-wc/cre8-react for UI, cre8-agent-core or cre8-mcp for services) before proposing new ones.'}
 
 Rules:
 - First, a shared CONTRACT (API types, error shapes, routes) that every other unit codes against. Give it its own ownedPaths and a verify command (typecheck at least).
@@ -744,7 +751,7 @@ await drainMail()
 
 const ownership = allUnits.map(u => `${u.id}: ${u.ownedPaths.join(', ')}`).join('\n')
 async function integrationCheck(tag) {
-  return agent(`Run repo-level integration checks for this feature: typecheck, lint and tests for every touched package, plus a build of any package whose public surface changed. Use the repo's existing pnpm scripts. Do not edit files.
+  return agent(`Run repo-level integration checks for this feature${TARGET ? ` in ${TARGET}` : ''}: typecheck, lint and tests for every touched package, plus a build of any package whose public surface changed. Use the project's existing scripts. Do not edit files.
 Feature: ${plan.summary}
 Ownership map (attribute each failure to the unit that owns the failing file):
 ${ownership}`, { label: `integration:${tag}`, phase: 'Integrate', schema: INTEGRATION_SCHEMA })
