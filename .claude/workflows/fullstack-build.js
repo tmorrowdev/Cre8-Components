@@ -39,6 +39,7 @@ if (!A.spec && !A.architecture) throw new Error('fullstack-build needs args.spec
 //   stopAfter: 'architecture'  return after writing the brief and architecture docs
 //   architecture: '<path>'     skip Research/Architecture and plan from this doc
 //   architects: 3              number of competing architecture proposals (1-3)
+//   judges: false              skip the scoring panel; the synthesizer compares proposals itself
 //   backendLanguage: 'python'  default backend language (the repo's backends are Python)
 //   extraResearch: [{ key, prompt }]  additional research lenses run alongside the defaults
 const BACKEND_LANG = A.backendLanguage || 'python'
@@ -600,7 +601,8 @@ ${fmtCritique(x.critique)}`, { label: `arch:${i + 1}:revise`, phase: 'Architectu
   // Judges need every proposal at once, so this is a barrier.
   const proposalsText = finalists.map(f => `### Proposal ${f.n} (${f.angle})\n${JSON.stringify(f.p, null, 2)}`).join('\n\n')
   const judgeLenses = ['fit to the brief and core flows', 'security and operational risk', 'build cost and fit with this repo']
-  const judged = finalists.length === 1 ? [] : await parallel(judgeLenses.map((lens, i) => () => agent(`You are a judge on an architecture review. Score every proposal 1-10, weighting: ${lens}. Do not edit files.
+  const useJudges = finalists.length > 1 && A.judges !== false
+  const judged = !useJudges ? [] : await parallel(judgeLenses.map((lens, i) => () => agent(`You are a judge on an architecture review. Score every proposal 1-10, weighting: ${lens}. Do not edit files.
 
 Brief:
 ${JSON.stringify(brief, null, 2)}
@@ -611,12 +613,12 @@ ${proposalsText}`, { label: `judge:${i + 1}`, phase: 'Architecture', schema: SCO
   const winner = finalists.slice().sort((a, b) => (totals[b.n] || 0) - (totals[a.n] || 0))[0]
   const judgeNotes = judged.filter(Boolean).map((j, i) => `Judge ${i + 1} (${judgeLenses[i]}):\n` +
     j.scores.map(s => `- proposal ${s.proposal}: ${s.score}/10. + ${s.strengths} / - ${s.weaknesses}`).join('\n')).join('\n\n')
-  log(`architecture scores: ${finalists.map(f => `#${f.n} ${totals[f.n] || 0}`).join(', ')}; building on #${winner.n}`)
-  architecture = winner.p
+  if (useJudges) log(`architecture scores: ${finalists.map(f => `#${f.n} ${totals[f.n] || 0}`).join(', ')}; building on #${winner.n}`)
+  architecture = useJudges ? winner.p : null
 
   const final = await agent(`You are the lead architect. Write the final design docs for this app.
 
-Start from proposal ${winner.n} (it scored highest). Graft in the strongest ideas from the others where the judges' notes support it, and resolve any contradictions.
+${useJudges ? `Start from proposal ${winner.n} (it scored highest). Graft in the strongest ideas from the others where the judges' notes support it, and resolve any contradictions.` : finalists.length > 1 ? 'No judges scored these proposals. Compare them yourself on fit to the brief, security and operational risk, and build cost and fit with this repo. Pick the strongest as the base, graft in the best ideas from the others, resolve contradictions, and record in the architecture doc which proposal you started from and why.' : 'Build on this proposal and resolve anything its red team left open.'}
 
 Brief:
 ${JSON.stringify(brief, null, 2)}
@@ -624,7 +626,7 @@ ${JSON.stringify(brief, null, 2)}
 ${proposalsText}
 
 Judges' notes:
-${judgeNotes || '(single proposal, not judged)'}
+${judgeNotes || '(not judged)'}
 
 Write two markdown files. Create the folder if needed. Do not commit.
 1. docs/plans/${brief.slug}-brief.md: problem, users, core flows, MVP scope, non-goals, success metrics, assumptions, open questions.
