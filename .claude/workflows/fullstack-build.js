@@ -1,7 +1,7 @@
 export const meta = {
   name: 'fullstack-build',
   description: 'Research an app idea, architect it, plan it into frontend/backend units, build them in parallel, and red-team each unit in lockstep with a two-way message bus',
-  whenToUse: 'Building a feature that spans CRE8 UI and backend code, where every unit of work should be adversarially checked before it is accepted. Pass args: { spec: "<app idea, feature description, or path to a plan doc>" }. Add stopAfter: "architecture" to review the brief and architecture before building, then rerun with architecture: "<path to the architecture doc>" to build from it.',
+  whenToUse: 'Building a feature that spans CRE8 UI and backend code, where every unit of work should be adversarially checked before it is accepted. Pass args: { spec: "<app idea, feature description, or path to a plan doc>" }. Add stopAfter: "architecture" to review the brief and architecture before building, then rerun with architecture: "<path to the architecture doc>" plus estimateOnly: true to see the plan and worst-case agent count, then with maxOutputTokens: <ceiling> to build.',
   phases: [
     { title: 'Research', detail: 'parallel researchers: users & flows, prior art, repo reuse, stack, risks' },
     { title: 'Architecture', detail: 'product brief vs red team, competing architectures vs red team, judges, synthesis doc' },
@@ -48,7 +48,28 @@ const BACKEND_LANG = A.backendLanguage || 'python'
 // targetDir: build into a separate project directory instead of this repo.
 // context: extra text (e.g. design references) given to the planner and every builder.
 const TARGET = A.targetDir || ''
-const MAX_ROUNDS = A.maxRounds || 3
+const MAX_ROUNDS = A.maxRounds || 1
+// Cost controls. A build must name an output-token ceiling (maxOutputTokens) unless it
+// opts out with unbounded: true; research/architecture-only runs (stopAfter) do not.
+// budget.spent() counts output tokens only; input tokens (the larger share of cost)
+// scale with it, so treat the ceiling as a proxy, not an exact bill.
+const MAX_UNITS = A.maxUnits || 8
+const RED_EFFORT = A.redEffort || undefined           // e.g. 'high'; default: session effort
+const PANEL = A.panel === true                        // whole-feature review panel is opt-in
+const LATE_ROUNDS = A.lateMailRounds || 1
+const REPAIR_ROUNDS = A.repairRounds || 1
+const CEILING = A.maxOutputTokens || (budget.total || null)
+if (!CEILING && !A.unbounded && A.stopAfter !== 'architecture' && !A.estimateOnly) {
+  throw new Error('fullstack-build needs args.maxOutputTokens (or a "+N" token budget) for a build; pass estimateOnly: true first to see the plan and worst-case agent count, or unbounded: true to opt out')
+}
+let agentCount = 0
+async function ag(prompt, opts) {
+  if (CEILING && budget.spent() >= CEILING) {
+    throw new Error(`output-token ceiling reached (${budget.spent()} >= ${CEILING}); stopping before ${opts && opts.label}`)
+  }
+  agentCount++
+  return agent(prompt, opts)
+}
 const BLOCKING = A.blockingSeverities || ['critical', 'high']
 // Optional custom subagent types, e.g. from the secure-agent-team plugin:
 // { frontend: '...', backend: 'secure-agent-team:backend-engineer', red: 'secure-agent-team:security-engineer' }
@@ -288,7 +309,7 @@ Messages for you:
 ${fmtMail(mail)}
 
 Before you finish, run the verify command yourself and report the real result. Ask your red team about anything ambiguous, and send a heads-up to any unit whose work your changes affect.`
-  return agent(prompt, {
+  return ag(prompt, {
     label: `build:${u.id}#${round}`,
     phase: u.id === 'contract' ? 'Contract' : 'Build',
     schema: BUILD_SCHEMA,
@@ -329,11 +350,11 @@ Instructions:
 5. Return the COMPLETE current set of unresolved findings. Reuse ids for carried-over ones. Anything you omit counts as closed.
 6. Answer the builder's questions. Put problems that belong to another unit in crossUnit (unit ids: ${Object.keys(byId).join(', ')}).
 7. verdict is "pass" only if the verify command passes for you and no ${BLOCKING.join('/')} finding remains.`
-  return agent(prompt, {
+  return ag(prompt, {
     label: `red:${u.id}#${round}`,
     phase: u.id === 'contract' ? 'Contract' : 'Build',
     schema: RED_SCHEMA,
-    effort: 'high',
+    effort: RED_EFFORT,
     agentType: AGENT_TYPES.red,
   })
 }
@@ -527,7 +548,7 @@ if (A.architecture) {
     { key: 'stack', prompt: `Technical stack: backend language (the repo's existing backends are Python; default to ${BACKEND_LANG} unless there is a concrete reason not to), framework, data storage, auth, hosting (the repo deploys on Vercel), and how the TypeScript frontend shares types with the backend.` },
     { key: 'risk', prompt: 'Risks: a threat model (assets, actors, abuse cases), privacy and data-handling concerns, hard technical unknowns, and what would make this project fail.' },
   ].concat(A.extraResearch || [])
-  const research = await parallel(RESEARCH_LENSES.map(l => () => agent(`You are a researcher on an app-planning team. Research ONE lens and report facts with sources, not opinions dressed up as facts. Do not edit files.
+  const research = await parallel(RESEARCH_LENSES.map(l => () => ag(`You are a researcher on an app-planning team. Research ONE lens and report facts with sources, not opinions dressed up as facts. Do not edit files.
 
 App idea / spec (text, or a path to read): ${A.spec}
 
@@ -552,16 +573,16 @@ App idea / spec: ${A.spec}
 
 Research:
 ${researchText}`
-  const draft = await agent(briefPrompt, { label: 'brief:draft', phase: 'Architecture', schema: BRIEF_SCHEMA })
+  const draft = await ag(briefPrompt, { label: 'brief:draft', phase: 'Architecture', schema: BRIEF_SCHEMA })
   if (!draft) throw new Error('brief agent returned nothing')
-  const briefCritique = await agent(`You are the product RED TEAM. Attack this brief: unsupported assumptions, flows that do not solve the stated problem, an MVP that is too big or missing something essential, unmeasurable metrics, and user groups nobody asked for. Every point needs a reason. Do not edit files.
+  const briefCritique = await ag(`You are the product RED TEAM. Attack this brief: unsupported assumptions, flows that do not solve the stated problem, an MVP that is too big or missing something essential, unmeasurable metrics, and user groups nobody asked for. Every point needs a reason. Do not edit files.
 
 Brief:
 ${JSON.stringify(draft, null, 2)}
 
 Research it was based on:
-${researchText}`, { label: 'brief:red', phase: 'Architecture', schema: CRITIQUE_SCHEMA, effort: 'high', agentType: AGENT_TYPES.red })
-  brief = await agent(`${briefPrompt}
+${researchText}`, { label: 'brief:red', phase: 'Architecture', schema: CRITIQUE_SCHEMA, effort: RED_EFFORT, agentType: AGENT_TYPES.red })
+  brief = await ag(`${briefPrompt}
 
 Your draft:
 ${JSON.stringify(draft, null, 2)}
@@ -584,16 +605,16 @@ ${JSON.stringify(brief, null, 2)}
 Research:
 ${researchText}`
   const proposals = await pipeline(ANGLES,
-    (angle, _, i) => agent(archBase(angle), { label: `arch:${i + 1}:propose`, phase: 'Architecture', schema: ARCH_SCHEMA }),
-    (prop, angle, i) => prop && agent(`You are the architecture RED TEAM. Break this proposal: core flows it cannot support, security and tenancy holes, data model problems, single points of failure, over-engineering for an MVP, and places it ignores what already exists in this repo. Read the repo to check its claims. Every point needs a reason. Do not edit files.
+    (angle, _, i) => ag(archBase(angle), { label: `arch:${i + 1}:propose`, phase: 'Architecture', schema: ARCH_SCHEMA }),
+    (prop, angle, i) => prop && ag(`You are the architecture RED TEAM. Break this proposal: core flows it cannot support, security and tenancy holes, data model problems, single points of failure, over-engineering for an MVP, and places it ignores what already exists in this repo. Read the repo to check its claims. Every point needs a reason. Do not edit files.
 
 Brief:
 ${JSON.stringify(brief, null, 2)}
 
 Proposal:
-${JSON.stringify(prop, null, 2)}`, { label: `arch:${i + 1}:red`, phase: 'Architecture', schema: CRITIQUE_SCHEMA, effort: 'high', agentType: AGENT_TYPES.red })
+${JSON.stringify(prop, null, 2)}`, { label: `arch:${i + 1}:red`, phase: 'Architecture', schema: CRITIQUE_SCHEMA, effort: RED_EFFORT, agentType: AGENT_TYPES.red })
       .then(critique => ({ prop, critique })),
-    (x, angle, i) => x && agent(`${archBase(angle)}
+    (x, angle, i) => x && ag(`${archBase(angle)}
 
 Your proposal:
 ${JSON.stringify(x.prop, null, 2)}
@@ -607,7 +628,7 @@ ${fmtCritique(x.critique)}`, { label: `arch:${i + 1}:revise`, phase: 'Architectu
   const proposalsText = finalists.map(f => `### Proposal ${f.n} (${f.angle})\n${JSON.stringify(f.p, null, 2)}`).join('\n\n')
   const judgeLenses = ['fit to the brief and core flows', 'security and operational risk', 'build cost and fit with this repo']
   const useJudges = finalists.length > 1 && A.judges !== false
-  const judged = !useJudges ? [] : await parallel(judgeLenses.map((lens, i) => () => agent(`You are a judge on an architecture review. Score every proposal 1-10, weighting: ${lens}. Do not edit files.
+  const judged = !useJudges ? [] : await parallel(judgeLenses.map((lens, i) => () => ag(`You are a judge on an architecture review. Score every proposal 1-10, weighting: ${lens}. Do not edit files.
 
 Brief:
 ${JSON.stringify(brief, null, 2)}
@@ -621,7 +642,7 @@ ${proposalsText}`, { label: `judge:${i + 1}`, phase: 'Architecture', schema: SCO
   if (useJudges) log(`architecture scores: ${finalists.map(f => `#${f.n} ${totals[f.n] || 0}`).join(', ')}; building on #${winner.n}`)
   architecture = useJudges ? winner.p : null
 
-  const final = await agent(`You are the lead architect. Write the final design docs for this app.
+  const final = await ag(`You are the lead architect. Write the final design docs for this app.
 
 ${useJudges ? `Start from proposal ${winner.n} (it scored highest). Graft in the strongest ideas from the others where the judges' notes support it, and resolve any contradictions.` : finalists.length > 1 ? 'No judges scored these proposals. Compare them yourself on fit to the brief, security and operational risk, and build cost and fit with this repo. Pick the strongest as the base, graft in the best ideas from the others, resolve contradictions, and record in the architecture doc which proposal you started from and why.' : 'Build on this proposal and resolve anything its red team left open.'}
 
@@ -660,7 +681,7 @@ if (A.context) designContext += `\n${A.context}`
 if (TARGET) designContext += `\nProject directory: ${TARGET}. All code lives there.`
 
 phase('Plan')
-plan = await agent(`You are the lead architect. Break this feature into units of work that separate builder agents can do IN PARALLEL in this repo.
+plan = await ag(`You are the lead architect. Break this feature into units of work that separate builder agents can do IN PARALLEL in this repo.
 
 Spec (text, or a path to read): ${A.spec || '(see architecture doc)'}
 ${designContext}
@@ -669,7 +690,7 @@ Follow the architecture: its components, API surface, data model and backend lan
 
 Rules:
 - First, a shared CONTRACT (API types, error shapes, routes) that every other unit codes against. Give it its own ownedPaths and a verify command (typecheck at least).
-- Split the work into frontend, backend, data and infra units. Keep them small, about one builder session each.
+- Split the work into frontend, backend, data and infra units: AT MOST ${MAX_UNITS} units besides the contract. Merge related work rather than exceed it; each unit is about one builder session.
 - ownedPaths must not overlap between units. Two builders writing the same file at once will clobber each other.
 - dependsOn only where a unit truly needs another unit's code to exist. Frontend units should depend on the contract, not on backend units, so they can run in parallel.
 - Each unit needs concrete acceptance criteria and a verify command that runs only that unit's checks.`, { schema: PLAN_SCHEMA })
@@ -709,6 +730,20 @@ function checkCycle(id) {
 }
 plan.units.forEach(u => checkCycle(u.id))
 log(`plan: ${plan.units.length} units + contract. ${plan.units.map(u => `${u.id}(${u.layer})`).join(', ')}`)
+// Worst case if every unit uses every round: build + red per round, late mail, integration,
+// repair, and (opt-in) the panel with one refuter per finding (counted as 3 findings/lens).
+const nUnits = plan.units.length + 1
+const worstCaseAgents = agentCount + nUnits * MAX_ROUNDS * 2 + nUnits * LATE_ROUNDS * 2 + 2 +
+  nUnits * REPAIR_ROUNDS * 2 + (PANEL ? 3 + 9 : 0)
+log(`worst case ~${worstCaseAgents} agents (${MAX_ROUNDS} round(s)/unit, panel ${PANEL ? 'on' : 'off'})`)
+if (A.estimateOnly) {
+  return { estimateOnly: true, units: plan.units.map(u => ({ id: u.id, layer: u.layer, title: u.title, dependsOn: u.dependsOn })),
+    worstCaseAgents, agentsSoFar: agentCount, outputTokensSoFar: budget.spent(),
+    next: 'Rerun with the same args minus estimateOnly, plus maxOutputTokens, to build.' }
+}
+if (plan.units.length > MAX_UNITS) {
+  throw new Error(`plan has ${plan.units.length} units, over maxUnits ${MAX_UNITS}; narrow the scope or raise maxUnits`)
+}
 
 // --------------------------------------------------------------- contract --
 
@@ -744,14 +779,14 @@ async function drainMail() {
   log(`delivering late mail to ${late.map(u => u.id).join(', ')}`)
   // The contract goes first because other units may be waiting on its change.
   const c = late.find(u => u.id === 'contract')
-  if (c) await runUnit(c, { rounds: 2 })
-  await parallel(late.filter(u => u.id !== 'contract').map(u => () => runUnit(u, { rounds: 2 })))
+  if (c) await runUnit(c, { rounds: LATE_ROUNDS })
+  await parallel(late.filter(u => u.id !== 'contract').map(u => () => runUnit(u, { rounds: LATE_ROUNDS })))
 }
 await drainMail()
 
 const ownership = allUnits.map(u => `${u.id}: ${u.ownedPaths.join(', ')}`).join('\n')
 async function integrationCheck(tag) {
-  return agent(`Run repo-level integration checks for this feature${TARGET ? ` in ${TARGET}` : ''}: typecheck, lint and tests for every touched package, plus a build of any package whose public surface changed. Use the project's existing scripts. Do not edit files.
+  return ag(`Run repo-level integration checks for this feature${TARGET ? ` in ${TARGET}` : ''}: typecheck, lint and tests for every touched package, plus a build of any package whose public surface changed. Use the project's existing scripts. Do not edit files.
 Feature: ${plan.summary}
 Ownership map (attribute each failure to the unit that owns the failing file):
 ${ownership}`, { label: `integration:${tag}`, phase: 'Integrate', schema: INTEGRATION_SCHEMA })
@@ -759,30 +794,35 @@ ${ownership}`, { label: `integration:${tag}`, phase: 'Integrate', schema: INTEGR
 
 let integ = await integrationCheck('1')
 
-// Cross-cutting red-team panel: each lens sees the whole feature, not one unit.
-const LENSES = [
-  'security: authn/authz and tenant isolation end to end, injection, secret handling, what the UI trusts that the server should verify',
-  'contract drift: every frontend call and backend handler against the shared contract, including error shapes and status codes',
-  'user-facing correctness: walk each acceptance criterion through UI -> API -> data and back, including empty, error and loading states',
-]
-const panel = await parallel(LENSES.map((lens, i) => () => agent(`You are a RED TEAM auditor looking at the whole feature through one lens: ${lens}.
-Feature: ${plan.summary}
-Ownership map:
-${ownership}
-Read the code and do not edit files. Report only findings that span units or that the per-unit red teams could not see. Every finding needs concrete evidence and the owning unit id.`, { label: `panel:${i + 1}`, phase: 'Integrate', schema: PANEL_SCHEMA, effort: 'high', agentType: AGENT_TYPES.red })))
+let confirmed = []
+if (PANEL) {
+  // Cross-cutting red-team panel: each lens sees the whole feature, not one unit.
+  const LENSES = [
+    'security: authn/authz and tenant isolation end to end, injection, secret handling, what the UI trusts that the server should verify',
+    'contract drift: every frontend call and backend handler against the shared contract, including error shapes and status codes',
+    'user-facing correctness: walk each acceptance criterion through UI -> API -> data and back, including empty, error and loading states',
+  ]
+  const panel = await parallel(LENSES.map((lens, i) => () => ag(`You are a RED TEAM auditor looking at the whole feature through one lens: ${lens}.
+  Feature: ${plan.summary}
+  Ownership map:
+  ${ownership}
+  Read the code and do not edit files. Report only findings that span units or that the per-unit red teams could not see. Every finding needs concrete evidence and the owning unit id.`, { label: `panel:${i + 1}`, phase: 'Integrate', schema: PANEL_SCHEMA, effort: RED_EFFORT, agentType: AGENT_TYPES.red })))
 
-// Dedup across the panel, then have one skeptic try to refute each finding.
-const seen = new Set()
-const candidates = panel.filter(Boolean).flatMap(p => p.findings).filter(f => {
-  const k = `${f.file}:${f.line || ''}:${f.issue.slice(0, 60)}`
-  if (seen.has(k)) return false
-  seen.add(k); return true
-})
-const verdicts = await parallel(candidates.map((f, i) => () => agent(`Try to REFUTE this red-team finding. Read the code and run whatever you need; do not edit files. If you are uncertain, say refuted=false: an unrefuted real bug costs more than an extra fix pass.
-[${f.severity}] ${f.file}${f.line ? ':' + f.line : ''}: ${f.issue}
-evidence: ${f.evidence}`, { label: `refute:${i + 1}`, phase: 'Integrate', schema: VERDICT_SCHEMA })))
-const confirmed = candidates.filter((f, i) => verdicts[i] && !verdicts[i].refuted)
-log(`panel: ${candidates.length} findings, ${confirmed.length} survived refutation`)
+  // Dedup across the panel, then have one skeptic try to refute each finding.
+  const seen = new Set()
+  const candidates = panel.filter(Boolean).flatMap(p => p.findings).filter(f => {
+    const k = `${f.file}:${f.line || ''}:${f.issue.slice(0, 60)}`
+    if (seen.has(k)) return false
+    seen.add(k); return true
+  })
+  const verdicts = await parallel(candidates.map((f, i) => () => ag(`Try to REFUTE this red-team finding. Read the code and run whatever you need; do not edit files. If you are uncertain, say refuted=false: an unrefuted real bug costs more than an extra fix pass.
+  [${f.severity}] ${f.file}${f.line ? ':' + f.line : ''}: ${f.issue}
+  evidence: ${f.evidence}`, { label: `refute:${i + 1}`, phase: 'Integrate', schema: VERDICT_SCHEMA })))
+  confirmed = candidates.filter((f, i) => verdicts[i] && !verdicts[i].refuted)
+  log(`panel: ${candidates.length} findings, ${confirmed.length} survived refutation`)
+} else {
+  log('whole-feature review panel skipped (pass panel: true to run it)')
+}
 
 // Repair pass: route integration failures and confirmed findings to owners.
 const repairs = {}
@@ -797,9 +837,9 @@ if (integ && !integ.passed) {
 const repairIds = Object.keys(repairs)
 if (repairIds.length) {
   log(`repair pass for ${repairIds.join(', ')}`)
-  if (repairs.contract) await runUnit(contractUnit, { rounds: 2, seedFindings: repairs.contract.findings, seedMail: repairs.contract.mail })
+  if (repairs.contract) await runUnit(contractUnit, { rounds: REPAIR_ROUNDS, seedFindings: repairs.contract.findings, seedMail: repairs.contract.mail })
   await parallel(repairIds.filter(id => id !== 'contract').map(id => () =>
-    runUnit(byId[id], { rounds: 2, seedFindings: repairs[id].findings, seedMail: repairs[id].mail })))
+    runUnit(byId[id], { rounds: REPAIR_ROUNDS, seedFindings: repairs[id].findings, seedMail: repairs[id].mail })))
   await drainMail()
   integ = await integrationCheck('2')
 }
