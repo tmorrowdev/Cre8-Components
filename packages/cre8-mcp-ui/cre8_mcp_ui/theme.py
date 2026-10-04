@@ -170,8 +170,8 @@ class UnknownBrandError(FileNotFoundError):
 
 def _missing_brand(brand: str, judge) -> tuple[str, BrandSuggestion | None]:
     available = available_brands()
-    suggestion = None
-    if judge is not None:
+    suggestion = _deterministic_match(brand, available)
+    if suggestion is None and judge is not None:
         # The judge is advice inside an error path. If it fails, the caller
         # still needs the real error, not the judge's.
         try:
@@ -190,6 +190,30 @@ def _missing_brand(brand: str, judge) -> tuple[str, BrandSuggestion | None]:
     elif suggestion:
         msg += f" No available brand looks like a match ({suggestion.source})."
     return msg, suggestion
+
+
+# Brands that were renamed rather than removed. This is history, not judgment:
+# nothing in a brand's name or token values says that `whitelabel` became
+# `blank`, and Jev, asked live, said no match. The evidence is that 3.0 removed
+# whitelabel and added blank with identical identity — slate #475569 primary,
+# system font stack, 8px radius, all eleven seeds.
+_KNOWN_RENAMES = {"whitelabel": "blank"}
+
+
+def _normalise(name: str) -> str:
+    return "-".join(name.strip().lower().replace("_", " ").split())
+
+
+def _deterministic_match(brand: str, available: list[str]) -> BrandSuggestion | None:
+    """Spelling variants and known renames: lookups, so they never reach a model."""
+    wanted = _normalise(brand)
+    for name in available:
+        if _normalise(name) == wanted:
+            return BrandSuggestion(name, 1.0, "spelling")
+    renamed = _KNOWN_RENAMES.get(wanted)
+    if renamed in available:
+        return BrandSuggestion(renamed, 1.0, "known rename")
+    return None
 
 
 _USE_DEFAULT_JUDGE = object()

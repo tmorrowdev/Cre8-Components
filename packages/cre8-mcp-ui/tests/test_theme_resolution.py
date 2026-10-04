@@ -291,3 +291,28 @@ def test_body_cannot_move_the_bundle_placeholder(monkeypatch):
     monkeypatch.setenv("CRE8_WC_CDN", "/vendor/real.js")
     html = biu.wrap_in_shell("{{cre8_wc_src}}")
     assert html.count("/vendor/real.js") == 1
+
+
+# ── lookups that never reach the judge ──
+
+def _never(requested, profiles):
+    raise AssertionError("the judge should not be consulted")
+
+
+def test_spelling_variants_resolve_without_a_model(tokens):
+    _brand(tokens, "cre8-vivid", complete=True)
+    with pytest.raises(theme.UnknownBrandError, match=r"Did you mean 'cre8-vivid'\? \(spelling") as err:
+        theme.load_brand_theme("Cre8 Vivid", judge=_never)
+    assert err.value.suggestion.confidence == 1.0
+
+
+def test_known_rename_resolves_without_a_model(tokens):
+    with pytest.raises(theme.UnknownBrandError, match=r"Did you mean 'blank'\? \(known rename"):
+        theme.load_brand_theme("whitelabel", judge=_never)
+
+
+def test_known_rename_still_needs_opt_in_but_then_applies(tokens):
+    with warnings.catch_warnings(record=True):
+        warnings.simplefilter("always")
+        css = theme.load_brand_theme("whitelabel", judge=_never, auto_resolve=True, page_extras=False)
+    assert "--cre8-brand-marker:blank" in css
