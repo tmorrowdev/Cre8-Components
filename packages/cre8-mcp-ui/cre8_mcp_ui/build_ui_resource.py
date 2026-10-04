@@ -39,6 +39,8 @@ form data for free.
 
 from __future__ import annotations
 
+import os
+
 import json
 import re
 from pathlib import Path
@@ -56,6 +58,20 @@ _SHELL_TEMPLATE: str | None = None
 # accept built-in tags like div, span, h1-h6, p, ul, li, etc.
 _TAG_RE = re.compile(r"^[a-z][a-z0-9-]*$")
 _ATTR_NAME_RE = re.compile(r"^[a-zA-Z_][a-zA-Z0-9_:.-]*$")
+
+
+# The component bundle every page loads. This was hardcoded in the shell at
+# 2.0.7, three majors behind; it is now one exact pin, overridable with
+# CRE8_WC_CDN for a different version or a self-hosted copy. Exact rather than a
+# range so a page renders the same way next month as it does today.
+CRE8_WC_VERSION = "3.0.1"
+
+
+def cre8_wc_src() -> str:
+    return os.environ.get(
+        "CRE8_WC_CDN",
+        f"https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@{CRE8_WC_VERSION}/cdn/cre8-wc.esm.js",
+    )
 
 
 def _load_shell() -> str:
@@ -236,7 +252,10 @@ def wrap_in_shell(
     """Inject a body fragment into the page shell, returning a full HTML doc."""
     shell = _load_shell()
     return (
-        shell.replace("{{title}}", _escape_text(title))
+        # Substituted first, before any caller-supplied content is inserted, so
+        # a body or theme that happens to contain the placeholder cannot move it.
+        shell.replace("{{cre8_wc_src}}", _escape_attr(cre8_wc_src()))
+        .replace("{{title}}", _escape_text(title))
         .replace("{{theme_css}}", theme_css)
         .replace("{{body}}", body_html)
     )

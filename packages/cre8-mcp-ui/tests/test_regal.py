@@ -14,7 +14,16 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from cre8_mcp_ui import build_ui_resource as biu  # noqa: E402
 from cre8_mcp_ui.pages import regal_home_schema  # noqa: E402
-from cre8_mcp_ui.theme import load_brand_theme  # noqa: E402
+from cre8_mcp_ui.theme import available_brands, load_brand_theme  # noqa: E402
+
+# These check Regal Bank's own identity (navy primary, square corners, Aeonik),
+# not the library, so they run wherever the regal brand exists and skip where it
+# does not - which is the whole cre8-wc 3.x line. Library behaviour that does not
+# depend on a particular brand is covered in test_theme_resolution.py.
+needs_regal = pytest.mark.skipif(
+    "regal" not in available_brands(),
+    reason="the regal brand is not in this cre8-wc (absent from the 3.x line)",
+)
 
 
 # ── renderer: `children` is the catalog's spelling for default content ──
@@ -57,6 +66,7 @@ def test_scalar_children_is_accepted():
 
 # ── theme layering ──
 
+@needs_regal
 def test_regal_theme_layers_over_the_minimalist_base():
     css = load_brand_theme("regal")
     # A token only the base defines survives...
@@ -70,6 +80,7 @@ def test_regal_theme_layers_over_the_minimalist_base():
     assert radii[-1].strip() == "0px"
 
 
+@needs_regal
 def test_theme_without_base_is_only_the_brand():
     css = load_brand_theme("regal", with_base=False, page_extras=False)
     assert "--cre8-color-button-primary-bg" in css
@@ -78,7 +89,7 @@ def test_theme_without_base_is_only_the_brand():
 
 def test_unknown_brand_fails_loudly():
     with pytest.raises(FileNotFoundError, match="No token file for brand"):
-        load_brand_theme("not-a-brand")
+        load_brand_theme("not-a-brand", judge=None)
 
 
 # ── the page ──
@@ -126,6 +137,7 @@ def test_no_real_brand_names_leak_into_the_page():
         assert mark not in html, f"real-brand mark leaked: {mark}"
 
 
+@needs_regal
 def test_theme_makes_no_external_requests():
     """The website CSP is default-src 'self'; an @import or remote font would
     silently fail there, so the theme must be self-contained."""
