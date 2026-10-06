@@ -1,0 +1,33 @@
+[project]
+name = "cre8-mcp-ui"
+version = "0.1.0"
+description = "Serves cre8-wc UIs as interactive mcp-ui resources from a FastMCP server."
+requires-python = ">=3.11"
+# mcp is pinned below 2.0 deliberately, for two independent reasons:
+#   * mcp 2.0 removed the `mcp.server.fastmcp` module, so `from
+#     mcp.server.fastmcp import FastMCP` raises ModuleNotFoundError.
+#   * mcp 2.0 changed TextResourceContents.uri from AnyUrl to str, while
+#     mcp-ui-server 1.0.0 (the only release) still constructs it with
+#     AnyUrl(...). Every create_ui_resource call fails pydantic validation.
+# Revisit when mcp-ui-server ships an mcp 2.x-compatible release.
+dependencies = [
+    "mcp>=1.2.0,<2",
+    "mcp-ui-server>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0"]
+# Suggest the intended brand when a requested one does not exist (Jev).
+judge = ["typesafe-sdk>=0.7.2"]
+# Recording the walkthrough video; not needed to serve the UI.
+recording = ["playwright>=1.55"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["cre8_mcp_ui", "cre8_mcp_ui.pages"]
+
+[tool.setuptools.package-data]
+cre8_mcp_ui = ["assets/*.html"]
