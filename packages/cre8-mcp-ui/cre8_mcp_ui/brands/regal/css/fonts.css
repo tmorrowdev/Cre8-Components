@@ -1,22 +1,22 @@
-/* Regal Bank uses Aeonik, vendored with the minimalist brand. */
+/* Regal Bank uses Aeonik, bundled in ../assets/fonts. */
 @font-face {
   font-family: 'Aeonik';
   font-style: normal;
   font-weight: 400;
-  src: url('../../minimalist/assets/fonts/Aeonik-Regular.woff2') format('woff2');
+  src: url('../assets/fonts/Aeonik-Regular.woff2') format('woff2');
   font-display: fallback;
 }
 @font-face {
   font-family: 'Aeonik';
   font-style: normal;
   font-weight: 300;
-  src: url('../../minimalist/assets/fonts/Aeonik-Light.woff2') format('woff2');
+  src: url('../assets/fonts/Aeonik-Light.woff2') format('woff2');
   font-display: fallback;
 }
 @font-face {
   font-family: 'Aeonik';
   font-style: normal;
   font-weight: 700;
-  src: url('../../minimalist/assets/fonts/Aeonik-Bold.woff2') format('woff2');
+  src: url('../assets/fonts/Aeonik-Bold.woff2') format('woff2');
   font-display: fallback;
 }

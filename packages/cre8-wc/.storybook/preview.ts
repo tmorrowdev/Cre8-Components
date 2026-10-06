@@ -64,11 +64,14 @@ document.head.appendChild(headStyleElement);
 const excludeArray = ['shadowRootOptions', 'formAssociated', 'field'];
 
 // Apply theme styles to document head
+// The three shipped brands. `name` is the toolbar value and the source of the
+// <style> id, so the toolbar and the stylesheets can never drift apart.
 const themeStyles = [
-  { name: 'Cre8', styles: cre8 },
-  { name: 'Cre8 Vivid', styles: vivid },
+  { name: 'A2UI', styles: cre8 },
+  { name: 'Vivid', styles: vivid },
   { name: 'Blank', styles: blank },
 ];
+const DEFAULT_THEME = 'A2UI';
 
 // Inject all theme styles with unique IDs
 themeStyles.forEach(theme => {
@@ -83,28 +86,18 @@ const preview: Preview = {
   globalTypes: {
     theme: {
       description: 'Global theme for components',
-      defaultValue: 'Cre8 Default',
+      defaultValue: DEFAULT_THEME,
       toolbar: {
         title: 'Theme',
         icon: 'paintbrush',
-        items: [
-          { value: 'Cre8 Default', title: 'Cre8 Default' },
-          { value: 'Cre8 Legacy', title: 'Cre8 Legacy' },
-          { value: 'Legacy', title: 'Legacy' },
-          { value: 'Blue', title: 'Blue' },
-          { value: 'Marketing', title: 'Marketing' },
-          { value: 'Minimalist', title: 'Minimalist' },
-          { value: 'A2UI', title: 'A2UI' },
-          { value: 'Vivid', title: 'Vivid' },
-          { value: 'Whitelabel', title: 'Whitelabel' },
-        ],
+        items: themeStyles.map(t => ({ value: t.name, title: t.name })),
         dynamicTitle: true,
       },
     },
   },
   decorators: [
     (story, context) => {
-      const selectedTheme = context.globals.theme || 'A2UI';
+      const selectedTheme = context.globals.theme || DEFAULT_THEME;
 
       // Enable/disable theme stylesheets
       themeStyles.forEach(theme => {

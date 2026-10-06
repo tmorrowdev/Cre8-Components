@@ -5,18 +5,25 @@
  * brand definition (`../brand.json`) to on-brand generated UI. It is not a real
  * financial institution and nothing rendered with it is a real product offer.
  *
- * The identity is the design system's `minimalist` skin: navy ink on white,
- * square corners, Aeonik. This file layers *over* minimalist and restates only
- * the tokens that carry the identity, so the brand reads as a short document
- * rather than a 500-line dump. Everything it doesn't mention it inherits.
+ * The identity was the design system's former `minimalist` skin: navy ink on
+ * white, square corners, Aeonik. Minimalist is gone from cre8-wc, so this file
+ * layers over `blank` and states the identity itself, Aeonik included. It
+ * restates only the tokens that carry the identity; everything else it
+ * inherits. It ships with cre8-mcp-ui, not cre8-wc: Regal is a demo brand for
+ * mcp-ui pages, not one of the design system's three themes.
  *
  * Layer order is set in packages/cre8-mcp-ui/cre8_mcp_ui/theme.py:
- *   minimalist/tokens_minimalist.css  (type scale, spacing, sizing)
- *   minimalist/tokens_brand.css       (per-component values)
- *   regal/tokens_brand.css            (this file)
+ *   blank/tokens_blank.css   (type scale, spacing, sizing)
+ *   blank/tokens_brand.css   (per-component values)
+ *   regal/tokens_brand.css   (this file)
  */
 
 :root {
+  /* ─── Type ─────────────────────────────────────────────────────
+     Aeonik, embedded by theme.py from ../assets/fonts. Set at the seed so
+     every role and legacy alias in the base resolves to it. */
+  --cre8-seed-font: 'Aeonik', sans-serif;
+
   /* ─── Geometry ─────────────────────────────────────────────────
      The load-bearing brand signal: nothing on a Regal surface is
      rounded. Stated explicitly so a reskin can't quietly soften it. */

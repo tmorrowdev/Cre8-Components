@@ -26,7 +26,7 @@ let playing = false;
 let token = 0;              // invalidates an in-flight run when reset/re-run
 
 // ── the brand definition, shown as the thing being consumed ──────────
-// Mirrors design-tokens/brands/regal/brand.json. Kept short on purpose: the
+// Mirrors packages/cre8-mcp-ui/cre8_mcp_ui/brands/regal/brand.json. Kept short on purpose: the
 // point of the demo is that this much input is enough.
 const BRAND_DEF = [
   ['{', ''],

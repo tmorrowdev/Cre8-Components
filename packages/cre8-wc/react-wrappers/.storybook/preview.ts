@@ -11,11 +11,14 @@ headStyleElement.innerHTML = headStyles;
 document.head.appendChild(headStyleElement);
 
 // Theme definitions
+// The three shipped brands. `name` is the toolbar value and the source of the
+// <style> id, so the toolbar and the stylesheets can never drift apart.
 const themeStyles = [
-  { name: 'Cre8', styles: cre8 },
-  { name: 'Cre8 Vivid', styles: vivid },
+  { name: 'A2UI', styles: cre8 },
+  { name: 'Vivid', styles: vivid },
   { name: 'Blank', styles: blank },
 ];
+const DEFAULT_THEME = 'A2UI';
 
 // Inject all theme styles with unique IDs
 themeStyles.forEach(theme => {
@@ -57,7 +60,7 @@ export const excludeRegexArray = [
 export const globalTypes = {
   theme: {
     description: 'Global theme for components',
-    defaultValue: 'Cre8 Default',
+    defaultValue: DEFAULT_THEME,
     toolbar: {
       title: 'Theme',
       icon: 'paintbrush',
@@ -69,7 +72,7 @@ export const globalTypes = {
 
 export const decorators = [
   (story: any, context: any) => {
-    const selectedTheme = context.globals.theme || 'Cre8 Default';
+    const selectedTheme = context.globals.theme || DEFAULT_THEME;
 
     themeStyles.forEach(theme => {
       const el = document.getElementById(`theme-${theme.name.toLowerCase().replace(/\s+/g, '-')}`);
