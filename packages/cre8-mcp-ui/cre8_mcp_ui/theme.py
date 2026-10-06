@@ -109,6 +109,25 @@ def default_base() -> str:
     )
 
 
+def demo_brand(preferred: str = "regal", fallback: str = "cre8") -> str:
+    """The brand the bundled Regal Bank page is themed with.
+
+    An explicit CRE8_MCP_UI_BRAND always wins, and fails loudly if it names a
+    brand that does not exist. Otherwise Regal's own brand where it is
+    installed, and the flagship `cre8` brand on the 3.x line, which ships
+    without it. Callers log the choice; it is a stated default, not a silent
+    substitution.
+    """
+    explicit = os.environ.get("CRE8_MCP_UI_BRAND")
+    if explicit:
+        return explicit
+    available = available_brands()
+    for name in (preferred, fallback):
+        if name in available:
+            return name
+    return default_base()
+
+
 # Kept for callers that read it. `None` means "choose from what is installed";
 # a fixed name here is what broke when the brand set changed underneath it.
 DEFAULT_BASE: str | None = None
@@ -306,6 +325,7 @@ __all__ = [
     "available_brands",
     "brands_dir",
     "default_base",
+    "demo_brand",
     "is_complete",
     "UnknownBrandError",
     "REGAL_THEME_CSS",

@@ -14,6 +14,7 @@ from mcp.server.fastmcp import FastMCP
 from mcp_ui_server.core import UIResource
 
 from cre8_mcp_ui import from_schema, load_brand_theme
+from cre8_mcp_ui.theme import demo_brand
 from cre8_mcp_ui.pages import regal_home_schema
 
 logging.basicConfig(level=logging.INFO)
@@ -28,15 +29,16 @@ mcp = FastMCP("cre8-mcp-ui")
 
 @mcp.tool()
 def show_regal_home() -> list[UIResource]:
-    """Render the Regal Bank home page using the cre8-wc Regal brand theme."""
+    """Render the Regal Bank home page, themed with the installed demo brand."""
+    log.info("show_regal_home: brand=%s", demo_brand())
     return [
         from_schema(
             regal_home_schema(),
             uri="ui://cre8-mcp-ui/regal-home",
             title="Regal Bank — Personal Banking",
-            # Resolved per call so the server starts even where the Regal
-            # brand is absent; the tool then fails loudly instead.
-            theme_css=load_brand_theme("regal"),
+            # Resolved per call: Regal's own brand where it is installed,
+            # `cre8` on the 3.x line, or CRE8_MCP_UI_BRAND.
+            theme_css=load_brand_theme(demo_brand()),
         )
     ]
 

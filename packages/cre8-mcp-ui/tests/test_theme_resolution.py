@@ -316,3 +316,19 @@ def test_known_rename_still_needs_opt_in_but_then_applies(tokens):
         warnings.simplefilter("always")
         css = theme.load_brand_theme("whitelabel", judge=_never, auto_resolve=True, page_extras=False)
     assert "--cre8-brand-marker:blank" in css
+
+
+# ── the bundled page's brand ──
+
+def test_demo_brand_prefers_regal_then_cre8(tokens, monkeypatch):
+    monkeypatch.delenv("CRE8_MCP_UI_BRAND", raising=False)
+    assert theme.demo_brand() == "cre8"
+    _brand(tokens, "regal", complete=False)
+    assert theme.demo_brand() == "regal"
+
+
+def test_demo_brand_env_wins_and_is_not_second_guessed(tokens, monkeypatch):
+    monkeypatch.setenv("CRE8_MCP_UI_BRAND", "nope")
+    assert theme.demo_brand() == "nope"
+    with pytest.raises(theme.UnknownBrandError):
+        theme.load_brand_theme(theme.demo_brand(), judge=None)
