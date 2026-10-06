@@ -1,0 +1,12 @@
+{
+  "lastQuery": "apply blank theme and then regal",
+  "perAgentQuery": {},
+  "graftReads": 0,
+  "sourceReads": 0,
+  "savedTokens": 0,
+  "injectedPointers": [],
+  "nudges": 0,
+  "inputCostMicros": 127853,
+  "inputTokensBilled": 184841,
+  "lastBillingUuid": "387d0764-b664-4a7f-9e3d-3f51f8f112b4"
+}

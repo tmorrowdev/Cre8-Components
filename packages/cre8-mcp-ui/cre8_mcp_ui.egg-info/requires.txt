@@ -1,0 +1,11 @@
+mcp<2,>=1.2.0
+mcp-ui-server>=1.0.0
+
+[dev]
+pytest>=8.0.0
+
+[judge]
+typesafe-sdk>=0.7.2
+
+[recording]
+playwright>=1.55
