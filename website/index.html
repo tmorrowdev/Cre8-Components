@@ -269,6 +269,7 @@
                 <a href="#why" class="hide-sm">Why AI-fluent</a>
                 <a href="#how" class="hide-sm">How it works</a>
                 <a href="#plugin" class="hide-sm">Plugin</a>
+                <a href="#data" class="hide-sm">Data plugin</a>
                 <a href="#mcp" class="hide-sm">MCP server</a>
                 <a href="#components" class="hide-sm">Components</a>
                 <a href="#consulting" class="hide-sm">Consulting</a>
@@ -281,12 +282,12 @@
     <!-- Hero -->
     <header class="hero">
         <div class="container">
-            <span class="eyebrow"><span class="pulse"></span> One plugin · Claude Code, Codex CLI, Gemini CLI</span>
+            <span class="eyebrow"><span class="pulse"></span> Two plugins · Claude Code, Cowork, Codex CLI, Gemini CLI</span>
             <h1>The design system your <span class="grad">agents can speak</span>.</h1>
             <p class="lede">
                 Cre8 is a design system built to be read, reasoned about, and rendered by AI.
                 Install it as a plugin — 93 accessible web components' worth of MCP-served lookup,
-                plus four skills for composition, theming, and framework conventions — and your
+                plus five skills, three specialist agents, and a verification workflow — and your
                 agent composes real, on-brand, production UI instead of throwaway markup.
             </p>
             <div class="hero-cta">
@@ -295,7 +296,7 @@
             </div>
             <div class="hero-meta">
                 <div class="m"><strong>93</strong><span>components, WCAG-accessible</span></div>
-                <div class="m"><strong>1</strong><span>plugin — MCP server + 4 skills</span></div>
+                <div class="m"><strong>2</strong><span>plugins — design system + data</span></div>
                 <div class="m"><strong>0</strong><span>hallucinated markup</span></div>
                 <div class="m"><strong>∞</strong><span>frameworks — it's the platform</span></div>
             </div>
@@ -435,8 +436,8 @@
         <div class="container">
             <div class="center" style="max-width:760px;">
                 <span class="section-eyebrow">Install it as a plugin</span>
-                <h2 class="section-title">The full arsenal: an MCP server plus four skills that teach an agent to actually use it</h2>
-                <p class="section-sub">A live tool call finds the right component. A skill is what stops an agent from stopping there — composition rules, token architecture, and framework-specific conventions the MCP intentionally doesn't restate. Bundled together as one plugin — on Claude Code, Codex CLI, and Gemini CLI today — they're the full arsenal: lookup, generation, brand theming, and live interactive surfaces.</p>
+                <h2 class="section-title">The full arsenal: an MCP server plus five skills that teach an agent to actually use it</h2>
+                <p class="section-sub">A live tool call finds the right component. A skill is what stops an agent from stopping there — composition rules, token architecture, and framework-specific conventions the MCP intentionally doesn't restate. Bundled together as one plugin — on Claude Code, Cowork, Codex CLI, and Gemini CLI today — they're the full arsenal: lookup, generation, brand theming, and live interactive surfaces.</p>
             </div>
 
             <div class="tools-grid" style="margin-top:40px;">
@@ -456,12 +457,47 @@
                     <div class="fn" style="color:var(--brand);">cre8-theming</div>
                     <p style="color:var(--cre8-color-content-subtle);">Extracts a brand's colors, type and shape from a website, a picture, or a Design.md, and turns it into a seed-token override — your product, on-brand, in minutes.</p>
                 </div>
+                <div class="tool" style="border-color:#d8d4cc; background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">cre8-mcp-app-workflow</div>
+                    <p style="color:var(--cre8-color-content-subtle);">Coordinates the whole branded-app build — theming, then integration, then per-host rendering checks — handing each stage's artifacts to the next instead of leaving the sequencing to chance.</p>
+                </div>
             </div>
+
+            <h3 style="font-size:1rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; margin-top:48px; opacity:.6;">Three specialist agents, one workflow that drives them</h3>
+            <p class="section-sub" style="max-width:70ch; margin-top:8px;">Building a branded MCP App is three jobs with hard handoffs between them. Each runs as its own agent that returns to the main session with named artifacts, so the next stage starts from evidence rather than a summary.</p>
+
+            <div class="tools-grid" style="margin-top:24px;">
+                <div class="tool" style="border-color:#d8d4cc; background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">cre8-brand-themer</div>
+                    <p style="color:var(--cre8-color-content-subtle);">Extracts and verifies the brand. Returns <code>theme.css</code> and a handoff recording source evidence, inferred values, and anything it could not confirm.</p>
+                </div>
+                <div class="tool" style="border-color:#d8d4cc; background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">cre8-mcp-app-builder</div>
+                    <p style="color:var(--cre8-color-content-subtle);">Builds the MCP server and embedded UI on the ext-apps bridge for both Claude Desktop and ChatGPT, keeping host-specific extensions isolated and capability-gated.</p>
+                </div>
+                <div class="tool" style="border-color:#d8d4cc; background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">cre8-mcp-render-debugger</div>
+                    <p style="color:var(--cre8-color-content-subtle);">Reproduces the failing tool call and traces it end to end — connection, resource URI, CSP, bridge init, component upgrade, theme cascade, callback round trip.</p>
+                </div>
+                <div class="tool" style="border-color:var(--brand); background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">cre8:workflow-themed-mcp-app</div>
+                    <p style="color:var(--cre8-color-content-subtle);">In Claude Code, runs all three as a deterministic workflow: one verification lane per host, and an independent auditor that downgrades any &ldquo;pass&rdquo; the agent could not show it observed.</p>
+                </div>
+            </div>
+
+            <p class="section-sub" style="max-width:70ch; margin-top:20px;">
+                <strong style="color:var(--cre8-color-content-default);">Why the auditor matters.</strong>
+                A local harness passing is not the desktop app working, and the difference is invisible in a
+                summary. Every scenario the debugger reports carries how it was observed and what evidence
+                backs it; a separate agent that did not do the work then tries to refute each pass claim.
+                What survives is reported as passing. What doesn't is marked unverified — which is the
+                honest answer, and the one you can act on.
+            </p>
 
             <div class="install-grid">
                 <div class="codewrap" style="margin-top:0;">
                     <div class="bar">Claude Code</div>
-<pre class="code"><span class="c">// The MCP server and all four skills</span>
+<pre class="code"><span class="c">// MCP server, five skills, three agents, one workflow</span>
 <span class="k">claude</span> plugin install <span class="s">cre8@tmorrow_ai</span></pre>
                 </div>
                 <div class="codewrap" style="margin-top:0;">
@@ -485,6 +521,104 @@
                 MCP itself — call <code>cre8_guide</code> and <code>get_composition</code> the same way an agent
                 with the skills installed would.
             </p>
+        </div>
+    </section>
+
+    <!-- Data plugin -->
+    <section class="block" id="data">
+        <div class="container">
+            <div class="center" style="max-width:760px;">
+                <span class="section-eyebrow">The second plugin</span>
+                <h2 class="section-title">The UI is half the job. <span class="grad">cre8-data</span> is the other half.</h2>
+                <p class="section-sub">A dashboard is only as good as the query behind it. <code>cre8-data</code> gives the same agent the analyst half of the work — writing SQL that holds up, profiling a dataset before trusting it, and validating a result before it reaches a stakeholder. Nine skills, four connected sources, and the same four hosts as the design system plugin.</p>
+            </div>
+
+            <h3 style="font-size:1rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; margin-top:48px; opacity:.6;">Query, explore, and present</h3>
+            <div class="tools-grid" style="margin-top:24px;">
+                <div class="tool" style="border-color:#d8d4cc; background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">sql-queries</div>
+                    <p style="color:var(--cre8-color-content-subtle);">Writing and optimizing SQL, including where dialects actually diverge rather than where they're merely spelled differently.</p>
+                </div>
+                <div class="tool" style="border-color:#d8d4cc; background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">data-exploration</div>
+                    <p style="color:var(--cre8-color-content-subtle);">Profiling, quality assessment, and pattern discovery — what the data is before anything is concluded from it.</p>
+                </div>
+                <div class="tool" style="border-color:#d8d4cc; background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">statistical-analysis</div>
+                    <p style="color:var(--cre8-color-content-subtle);">Descriptive statistics, trend analysis, outlier detection, and hypothesis testing that names its assumptions.</p>
+                </div>
+                <div class="tool" style="border-color:#d8d4cc; background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">data-visualization</div>
+                    <p style="color:var(--cre8-color-content-subtle);">Choosing the chart the data calls for, and the code to render it — form following the question being asked.</p>
+                </div>
+                <div class="tool" style="border-color:#d8d4cc; background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">interactive-dashboard-builder</div>
+                    <p style="color:var(--cre8-color-content-subtle);">Dashboards with real filters and interaction, built to be handed to someone else rather than screenshotted.</p>
+                </div>
+                <div class="tool" style="border-color:#d8d4cc; background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">data-validation</div>
+                    <p style="color:var(--cre8-color-content-subtle);">Pre-delivery QA and sanity checks — the pass that catches the join that silently doubled your row count.</p>
+                </div>
+                <div class="tool" style="border-color:#d8d4cc; background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">api-data-contracts</div>
+                    <p style="color:var(--cre8-color-content-subtle);">Typed contracts generated from an OpenAPI spec so a UI agent can build against the shape of your data without ever seeing the data.</p>
+                </div>
+                <div class="tool" style="border-color:#d8d4cc; background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">data-context-extractor</div>
+                    <p style="color:var(--cre8-color-content-subtle);">Packages your domain's quirks — the table that lies, the column that means something else — into a reusable skill.</p>
+                </div>
+                <div class="tool" style="border-color:var(--brand); background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">auth-gated-data-sources</div>
+                    <p style="color:var(--cre8-color-content-subtle);">Getting an agent through the front door of a credentialed source with Clerk machine auth — M2M tokens, API keys, or OAuth, chosen by whose data is being read.</p>
+                </div>
+            </div>
+
+            <h3 style="font-size:1rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; margin-top:48px; opacity:.6;">Connected sources</h3>
+            <div class="tools-grid" style="margin-top:24px;">
+                <div class="tool" style="border-color:#d8d4cc; background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">Snowflake</div>
+                    <p style="color:var(--cre8-color-content-subtle);">Query the warehouse directly with your own role and warehouse — schemas, metadata, and live results without copy-paste.</p>
+                </div>
+                <div class="tool" style="border-color:#d8d4cc; background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">Amplitude</div>
+                    <p style="color:var(--cre8-color-content-subtle);">Product analytics alongside warehouse data, so behavioural questions and revenue questions get answered in one place.</p>
+                </div>
+                <div class="tool" style="border-color:#d8d4cc; background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">Atlassian</div>
+                    <p style="color:var(--cre8-color-content-subtle);">Jira context for the analysis — what shipped, when, and what it was supposed to change.</p>
+                </div>
+                <div class="tool" style="border-color:#d8d4cc; background:#fff; color:inherit;">
+                    <div class="fn" style="color:var(--brand);">Clerk</div>
+                    <p style="color:var(--cre8-color-content-subtle);">Clerk's own MCP server, for writing machine-auth code correctly against current SDK patterns.</p>
+                </div>
+            </div>
+
+            <p class="section-sub" style="max-width:70ch; margin-top:24px;">
+                <strong style="color:var(--cre8-color-content-default);">One thing we're explicit about.</strong>
+                Adding the Clerk connector does not authenticate your agent to anything — it serves SDK
+                snippets, and both of its tools are read-only. Reaching a gated source is separate code you
+                write, using Clerk machine auth in the service being called. The
+                <code>auth-gated-data-sources</code> skill leads with that distinction, because believing
+                otherwise costs you an afternoon of debugging a 401 that was never going to resolve.
+            </p>
+
+            <div class="install-grid">
+                <div class="codewrap" style="margin-top:0;">
+                    <div class="bar">Claude Code</div>
+<pre class="code"><span class="c">// Nine skills and four connected sources</span>
+<span class="k">claude</span> plugin install <span class="s">cre8-data@tmorrow_ai</span></pre>
+                </div>
+                <div class="codewrap" style="margin-top:0;">
+                    <div class="bar">Codex CLI</div>
+<pre class="code"><span class="c">// Same bundle, Codex's own plugin format</span>
+<span class="k">codex</span> plugin add <span class="s">cre8-data@tmorrow_ai</span></pre>
+                </div>
+                <div class="codewrap" style="margin-top:0;">
+                    <div class="bar">Gemini CLI</div>
+<pre class="code"><span class="c">// Clone the marketplace, install the extension root</span>
+<span class="k">gemini</span> extensions install <span class="s">./tmorrow_ai/cre8-data</span></pre>
+                </div>
+            </div>
         </div>
     </section>
 
