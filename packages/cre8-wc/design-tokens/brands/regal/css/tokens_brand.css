@@ -1,0 +1,88 @@
+/**
+ * Regal Bank — brand token layer.
+ *
+ * Regal Bank is a FICTIONAL brand. It exists to demonstrate the path from a
+ * brand definition (`../brand.json`) to on-brand generated UI. It is not a real
+ * financial institution and nothing rendered with it is a real product offer.
+ *
+ * The identity is the design system's `minimalist` skin: navy ink on white,
+ * square corners, Aeonik. This file layers *over* minimalist and restates only
+ * the tokens that carry the identity, so the brand reads as a short document
+ * rather than a 500-line dump. Everything it doesn't mention it inherits.
+ *
+ * Layer order is set in packages/cre8-mcp-ui/cre8_mcp_ui/theme.py:
+ *   minimalist/tokens_minimalist.css  (type scale, spacing, sizing)
+ *   minimalist/tokens_brand.css       (per-component values)
+ *   regal/tokens_brand.css            (this file)
+ */
+
+:root {
+  /* ─── Geometry ─────────────────────────────────────────────────
+     The load-bearing brand signal: nothing on a Regal surface is
+     rounded. Stated explicitly so a reskin can't quietly soften it. */
+  --cre8-border-radius-button:    0px;
+  --cre8-border-radius-default:   0px;
+  --cre8-border-radius-container: 0px;
+  --cre8-border-radius-field:     0px;
+  --cre8-border-radius-small:     0px;
+  --cre8-border-radius-large:     0px;
+  --cre8-border-radius-badge:     0px;
+  --cre8-border-radius-tabs:      0px;
+  --cre8-border-radius-brand:     0px;
+  --cre8-border-radius-none:      0px;
+
+  /* ─── Ink & surface ────────────────────────────────────────── */
+  --cre8-color-content-default:   #132342;
+  --cre8-color-content-subtle:    #979AA0;
+  --cre8-color-content-knockout:  #FFFFFF;
+  --cre8-color-content-brand:     #132342;
+  --cre8-color-content-link:      #132342;
+  --cre8-color-content-link-hover:#0C1730;
+
+  --cre8-color-bg-default:        #FFFFFF;
+  --cre8-color-bg-subtle:         #F8F8F9;
+  --cre8-color-bg-brand:          #EDF8FD;
+  --cre8-color-bg-brand-strong:   #132342;
+  --cre8-color-bg-brand-xstrong:  #132342;
+
+  --cre8-color-border-default:    #B9BCC0;
+  --cre8-color-border-brand:      #132342;
+
+  /* ─── Buttons ──────────────────────────────────────────────── */
+  --cre8-color-button-primary-bg:              #132342;
+  --cre8-color-button-primary-bg-hover:        #0C1730;
+  --cre8-color-button-primary-bg-active:       #080F20;
+  --cre8-color-button-primary-content:         #FFFFFF;
+  --cre8-color-button-primary-border:          #132342;
+  --cre8-color-button-primary-border-hover:    #0C1730;
+  --cre8-color-button-primary-border-active:   #080F20;
+
+  /* Knockout button, for use on the navy band. */
+  --cre8-color-button-primary-inverse-bg:      #FFFFFF;
+  --cre8-color-button-primary-inverse-content: #132342;
+  --cre8-color-button-primary-inverse-border:  #FFFFFF;
+
+  --cre8-color-button-secondary-bg:            #FFFFFF;
+  --cre8-color-button-secondary-content:       #132342;
+  --cre8-color-button-secondary-border:        #132342;
+
+  /* ─── Type ─────────────────────────────────────────────────── */
+  --cre8-font-family-default:  'Aeonik', sans-serif;
+  --cre8-font-families-aeonik: 'Aeonik', sans-serif;
+  --cre8-font-families-inter:  'Aeonik', sans-serif;
+  --cre8-font-family-sans:     'Aeonik', sans-serif;
+}
+
+/**
+ * Scoped override.
+ *
+ * cre8-footer paints itself with --cre8-color-bg-brand-xstrong and knocks its
+ * text out to white, which on this brand means a full navy footer. Regal wants
+ * the footer as a quiet light surface, so the token is re-pointed on the footer
+ * host: custom properties inherit into shadow DOM, so this reskins the footer
+ * without changing what "xstrong brand background" means elsewhere.
+ */
+cre8-footer {
+  --cre8-color-bg-brand-xstrong: #F8F8F9;
+  --cre8-color-content-knockout: #132342;
+}
