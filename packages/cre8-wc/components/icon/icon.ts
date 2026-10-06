@@ -63,6 +63,38 @@ import { Cre8Element } from '../cre8-element';
 import styles from './icon.styles.js';
 import iconSprite from '@tmorrow/cre8-wc/icons/cre8-icons.svg?raw';
 
+interface SpriteSymbol {
+    /** Attributes of the <symbol> tag minus its id, e.g. ` viewBox="0 0 24 24"`. */
+    attrs: string;
+    body: string;
+}
+
+let spriteSymbols: Map<string, SpriteSymbol> | undefined;
+
+/**
+ * Index the bundled sprite's <symbol>s by id, once, on first use.
+ *
+ * The sprite is bundled as a string, so there is no URL to point <use> at:
+ * from a CDN it would be cross-origin (which <use> refuses), and a copy
+ * injected into the document is not reachable from inside a shadow root.
+ * Inlining the symbol into each icon's shadow root works everywhere.
+ */
+function getSpriteSymbol(name: string): SpriteSymbol | undefined {
+    if (!spriteSymbols) {
+        spriteSymbols = new Map();
+        const symbolRe = /<symbol\b([^>]*)>([\s\S]*?)<\/symbol>/g;
+        let match: RegExpExecArray | null;
+        while ((match = symbolRe.exec(iconSprite)) !== null) {
+            const [, attrs, body] = match;
+            const id = /\sid="([^"]+)"/.exec(attrs)?.[1];
+            if (id && !spriteSymbols.has(id)) {
+                spriteSymbols.set(id, { attrs: attrs.replace(/\sid="[^"]*"/, ''), body: body.trim() });
+            }
+        }
+    }
+    return spriteSymbols.get(name);
+}
+
 /**
  *
  * 
@@ -121,13 +153,12 @@ export class Cre8Icon extends Cre8Element {
     @property({ reflect: true })
     svg?: string
     /**
-     * Icon path
-     * 1) This points to the file where the icon sprite lives
-     * 2) This method of pathing will soon be depricated
-     *
+     * URL of an external icon sprite. When set (or when `window.Cre8_ICON_URL` is set)
+     * the icon renders `<use href="{iconUrl}#{name}">`, which only works for a
+     * same-origin sprite. Leave unset to inline the symbol from the bundled sprite.
      */
     @property()
-    iconUrl?: string = iconSprite;
+    iconUrl?: string;
 
     /**
      * Icon Title, this string is used for the aira-label of the svg
@@ -237,13 +268,26 @@ export class Cre8Icon extends Cre8Element {
         }
 
         const wrapperRole = this.iconTitle ? 'img' : undefined;
-        return html`
-            ${this.svg ? html`<span class="${componentClassName}" role="${ifDefined(wrapperRole)}" aria-label="${this.iconTitle}" aria-hidden="${!this.iconTitle}">${unsafeHTML(this.svg)}</span>` : html`
+        if (this.svg) {
+            return html`<span class="${componentClassName}" role="${ifDefined(wrapperRole)}" aria-label="${this.iconTitle}" aria-hidden="${!this.iconTitle}">${unsafeHTML(this.svg)}</span>`;
+        }
+        if (iconPath) {
+            return html`
         <span class="${componentClassName}" role="${ifDefined(wrapperRole)}" aria-label="${this.iconTitle}" aria-hidden="${!this.iconTitle}">
             <svg class="cre8-c-icon" xmlns="http://www.w3.org/2000/svg" focusable="${this.focusable ? 'true' : 'false'}" aria-hidden="true">
                 <use href="${iconPath}#${this.name}"></use>
             </svg>
-        </span>` }`;
+        </span>`;
+        }
+        return html`
+        <span class="${componentClassName}" role="${ifDefined(wrapperRole)}" aria-label="${this.iconTitle}" aria-hidden="${!this.iconTitle}">${unsafeHTML(this.renderSpriteSymbol())}</span>`;
+    }
+
+    /** Inline <svg> markup for the bundled sprite symbol matching `name` (empty box if unknown). */
+    private renderSpriteSymbol(): string {
+        const symbol = getSpriteSymbol(this.name);
+        const focusable = this.focusable ? 'true' : 'false';
+        return `<svg class="cre8-c-icon" xmlns="http://www.w3.org/2000/svg" focusable="${focusable}" aria-hidden="true"${symbol?.attrs ?? ''}>${symbol?.body ?? ''}</svg>`;
     }
 }
 
