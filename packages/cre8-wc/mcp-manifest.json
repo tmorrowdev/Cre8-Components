@@ -3206,8 +3206,7 @@
       "properties": {
         "iconUrl": {
           "type": "string",
-          "default": "iconSprite",
-          "description": "Icon path\n1) This points to the file where the icon sprite lives\n2) This method of pathing will soon be depricated"
+          "description": "URL of an external icon sprite. When set (or when `window.Cre8_ICON_URL` is set)\nthe icon renders `<use href=\"{iconUrl}#{name}\">`, which only works for a\nsame-origin sprite. Leave unset to inline the symbol from the bundled sprite."
         },
         "iconTitle": {
           "type": "string",

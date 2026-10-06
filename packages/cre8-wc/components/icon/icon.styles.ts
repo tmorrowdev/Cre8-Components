@@ -609,6 +609,7 @@ span.ripple {
   height: var(--cre8-icon-height, 1rem);
   width: var(--cre8-icon-width, 1rem);
   color: var(--cre8-icon-fill, currentColor);
+  fill: currentColor;
 }
 
 cre8-icon {
