@@ -23,7 +23,9 @@ A brand file only has to state what it changes.
 Which brands exist depends on where the tokens come from, and that varies more
 than it looks: the cre8-wc 3.x line ships three (blank, cre8, cre8-vivid),
 while working branches of the design system carry a dozen or more. Nothing
-here assumes a particular set. The base is chosen from whatever is present,
+here assumes a particular set. On top of whatever cre8-wc provides, this
+package bundles its own brands under `cre8_mcp_ui/brands/` — today just
+`regal`, the Regal Bank demo brand — so they exist against any cre8-wc. The base is chosen from whatever is present,
 and a brand that is missing fails loudly with the brands that do exist — plus,
 when a judge is configured, a suggestion of which one was probably meant (see
 `cre8_mcp_ui.brand_judge`).
@@ -78,19 +80,39 @@ def brands_dir() -> Path:
     )
 
 
+# Brands this package ships itself. They are demo brands for mcp-ui pages, not
+# design-system themes, so they live here rather than in cre8-wc.
+_BUNDLED_BRANDS = Path(__file__).resolve().parent / "brands"
+
+
+def _brand_css(brand: str) -> Path:
+    """A brand's css directory. cre8-wc wins over a bundled brand of the same name."""
+    own = brands_dir() / brand / "css"
+    bundled = _BUNDLED_BRANDS / brand / "css"
+    if not own.is_dir() and bundled.is_dir():
+        return bundled
+    return own
+
+
+def _brand_names(d: Path) -> set[str]:
+    if not d.is_dir():
+        return set()
+    return {p.name for p in d.iterdir() if (p / "css" / "tokens_brand.css").is_file()}
+
+
 def available_brands() -> list[str]:
-    d = brands_dir()
-    return sorted(p.name for p in d.iterdir() if (p / "css" / "tokens_brand.css").is_file())
+    return sorted(_brand_names(brands_dir()) | _brand_names(_BUNDLED_BRANDS))
 
 
 def is_complete(brand: str) -> bool:
     """A complete brand supplies both layers, so it can stand as a base."""
-    css = brands_dir() / brand / "css"
+    css = _brand_css(brand)
     return (css / f"tokens_{brand}.css").is_file() and (css / "tokens_brand.css").is_file()
 
 
 # Preferred bases, most specific first. `minimalist` is what Regal Bank was
-# designed on; `blank` is the unbranded complete brand the 3.x line ships;
+# designed on (gone since 3.x; Regal now states its own identity over `blank`);
+# `blank` is the unbranded complete brand the 3.x line ships;
 # `whitelabel` filled that role in 2.x. This is an ordered preference over known
 # names, which is code's job — no judgment is needed to pick among them.
 _BASE_PREFERENCE = ("minimalist", "blank", "whitelabel")
@@ -113,10 +135,9 @@ def demo_brand(preferred: str = "regal", fallback: str = "cre8") -> str:
     """The brand the bundled Regal Bank page is themed with.
 
     An explicit CRE8_MCP_UI_BRAND always wins, and fails loudly if it names a
-    brand that does not exist. Otherwise Regal's own brand where it is
-    installed, and the flagship `cre8` brand on the 3.x line, which ships
-    without it. Callers log the choice; it is a stated default, not a silent
-    substitution.
+    brand that does not exist. Otherwise Regal's own brand, which this package
+    bundles, so the `cre8` fallback only matters if that bundle is stripped.
+    Callers log the choice; it is a stated default, not a silent substitution.
     """
     explicit = os.environ.get("CRE8_MCP_UI_BRAND")
     if explicit:
@@ -134,24 +155,26 @@ DEFAULT_BASE: str | None = None
 
 _CACHE: dict[tuple[Path, str, bool, str], str] = {}
 
-# Aeonik ships with the minimalist brand as woff2. It is embedded as data: URIs
-# rather than linked, because an mcp-ui resource is a single HTML document with
-# no companion assets to serve, and hosts commonly forbid external requests
+# Brand fonts, as woff2 under <brand>/assets/fonts. They are embedded as data:
+# URIs rather than linked, because an mcp-ui resource is a single HTML document
+# with no companion assets to serve, and hosts commonly forbid external requests
 # (the cre8 marketing site, for instance, sets `font-src 'self'`). Embedding is
-# the only form that survives both. Where minimalist is absent — the 3.x line —
-# there is nothing to embed and pages use the brand's font stack.
-_FONT_FACES = (
-    ("Aeonik", 300, "minimalist/assets/fonts/Aeonik-Light.woff2"),
-    ("Aeonik", 400, "minimalist/assets/fonts/Aeonik-Regular.woff2"),
-    ("Aeonik", 700, "minimalist/assets/fonts/Aeonik-Bold.woff2"),
-)
+# the only form that survives both. Only the brand that uses a font pays for it;
+# other brands use their own font stack.
+_FONT_FACES = {
+    "regal": (
+        ("Aeonik", 300, "Aeonik-Light.woff2"),
+        ("Aeonik", 400, "Aeonik-Regular.woff2"),
+        ("Aeonik", 700, "Aeonik-Bold.woff2"),
+    ),
+}
 
 
-def _embedded_fonts() -> str:
-    root = brands_dir()
+def _embedded_fonts(brand: str) -> str:
+    fonts = _brand_css(brand).parent / "assets" / "fonts"
     out = []
-    for family, weight, rel in _FONT_FACES:
-        path = root / rel
+    for family, weight, name in _FONT_FACES.get(brand, ()):
+        path = fonts / name
         if not path.is_file():
             continue
         b64 = base64.b64encode(path.read_bytes()).decode("ascii")
@@ -194,7 +217,10 @@ def _missing_brand(brand: str, judge) -> tuple[str, BrandSuggestion | None]:
         # The judge is advice inside an error path. If it fails, the caller
         # still needs the real error, not the judge's.
         try:
-            suggestion = judge(brand, describe_brands(brands_dir(), available))
+            bundled_only = sorted(_brand_names(_BUNDLED_BRANDS) - _brand_names(brands_dir()))
+            profiles = describe_brands(brands_dir(), [b for b in available if b not in bundled_only])
+            profiles |= describe_brands(_BUNDLED_BRANDS, bundled_only)
+            suggestion = judge(brand, profiles)
         except Exception:  # noqa: BLE001
             suggestion = None
     msg = (
@@ -268,7 +294,7 @@ def load_brand_theme(
     """
     root = brands_dir()
     base_name = base or default_base()
-    brand_file = root / brand / "css" / "tokens_brand.css"
+    brand_file = _brand_css(brand) / "tokens_brand.css"
 
     if not brand_file.is_file():
         active_judge = default_judge() if judge is _USE_DEFAULT_JUDGE else judge
@@ -307,14 +333,14 @@ def load_brand_theme(
     css = _CACHE[key]
     if not page_extras:
         return css
-    return "\n".join((_embedded_fonts(), _PAGE_EXTRAS_TAIL, css))
+    return "\n".join((_embedded_fonts(brand), _PAGE_EXTRAS_TAIL, css))
 
 
 def __getattr__(name: str) -> str:
     # This was a module-level constant, so `import cre8_mcp_ui` read files from
-    # disk and raised whenever the regal brand was absent — which it is from the
-    # whole 3.x line. Callers that never touched Regal still could not import
-    # the package. It is now resolved on first access.
+    # disk and raised whenever the regal brand (or a base for it) was absent.
+    # Callers that never touched Regal still could not import the package. It
+    # is now resolved on first access.
     if name == "REGAL_THEME_CSS":
         return load_brand_theme("regal")
     raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

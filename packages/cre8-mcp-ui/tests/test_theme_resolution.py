@@ -123,16 +123,14 @@ def test_cache_follows_the_token_root(tokens, tmp_path, monkeypatch):
 
 # ── importing must not require any particular brand ──
 
-def test_package_imports_without_the_regal_brand(tmp_path):
+def test_regal_ships_with_the_package(tmp_path):
+    """Regal is bundled, so it loads against a cre8-wc that only has `blank`."""
     brands = tmp_path / "lib" / "design-tokens" / "brands"
     _brand(brands, "blank", complete=True)
     probe = (
         "import cre8_mcp_ui\n"
-        "from cre8_mcp_ui.theme import UnknownBrandError\n"
-        "try:\n"
-        "    cre8_mcp_ui.REGAL_THEME_CSS\n"
-        "except UnknownBrandError:\n"
-        "    print('lazy')\n"
+        "css = cre8_mcp_ui.REGAL_THEME_CSS\n"
+        "print('aeonik' if \"font-family:'Aeonik'\" in css else 'no font')\n"
     )
     env = {**os.environ, "CRE8_WC_ROOT": str(tmp_path), "PYTHONPATH": str(PKG_ROOT)}
     env.pop("TYPESAFE_API_KEY", None)
@@ -142,21 +140,21 @@ def test_package_imports_without_the_regal_brand(tmp_path):
         capture_output=True, text=True, check=False,
     )
     assert out.returncode == 0, out.stderr
-    assert out.stdout.strip() == "lazy"
+    assert out.stdout.strip() == "aeonik"
 
 
 # ── unknown brands, with and without a judge ──
 
 def test_unknown_brand_is_loud_and_lists_what_exists(tokens):
-    with pytest.raises(theme.UnknownBrandError, match="Available brands: accent, blank, cre8") as err:
-        theme.load_brand_theme("regal", judge=None)
+    with pytest.raises(theme.UnknownBrandError, match="Available brands: accent, blank, cre8, regal") as err:
+        theme.load_brand_theme("acme", judge=None)
     assert err.value.suggestion is None
 
 
 def test_no_key_means_no_judge_and_no_network(tokens):
     assert default_judge() is None
     with pytest.raises(theme.UnknownBrandError) as err:
-        theme.load_brand_theme("regal")
+        theme.load_brand_theme("acme")
     assert err.value.suggestion is None
 
 
@@ -187,20 +185,20 @@ def test_auto_resolve_applies_a_confident_suggestion_and_warns(tokens):
 
 def test_auto_resolve_refuses_a_doubtful_suggestion(tokens):
     with pytest.raises(theme.UnknownBrandError):
-        theme.load_brand_theme("regal", judge=_fixed("cre8", 0.42), auto_resolve=True)
+        theme.load_brand_theme("acme", judge=_fixed("cre8", 0.42), auto_resolve=True)
 
 
 def test_no_match_is_reported_and_never_applied(tokens):
     with pytest.raises(theme.UnknownBrandError, match="No available brand looks like a match"):
-        theme.load_brand_theme("regal", judge=_fixed(None, 0.95), auto_resolve=True)
+        theme.load_brand_theme("acme", judge=_fixed(None, 0.95), auto_resolve=True)
 
 
 def test_a_failing_judge_does_not_hide_the_real_error(tokens):
     def broken(requested, profiles):
         raise RuntimeError("judge exploded")
 
-    with pytest.raises(theme.UnknownBrandError, match="No token file for brand 'regal'"):
-        theme.load_brand_theme("regal", judge=broken)
+    with pytest.raises(theme.UnknownBrandError, match="No token file for brand 'acme'"):
+        theme.load_brand_theme("acme", judge=broken)
 
 
 # ── what the judge is shown ──
@@ -320,11 +318,15 @@ def test_known_rename_still_needs_opt_in_but_then_applies(tokens):
 
 # ── the bundled page's brand ──
 
-def test_demo_brand_prefers_regal_then_cre8(tokens, monkeypatch):
+def test_demo_brand_is_the_bundled_regal(tokens, monkeypatch):
     monkeypatch.delenv("CRE8_MCP_UI_BRAND", raising=False)
-    assert theme.demo_brand() == "cre8"
-    _brand(tokens, "regal", complete=False)
     assert theme.demo_brand() == "regal"
+
+
+def test_demo_brand_falls_back_to_cre8_without_the_bundle(tokens, tmp_path, monkeypatch):
+    monkeypatch.delenv("CRE8_MCP_UI_BRAND", raising=False)
+    monkeypatch.setattr(theme, "_BUNDLED_BRANDS", tmp_path / "no-bundle")
+    assert theme.demo_brand() == "cre8"
 
 
 def test_demo_brand_env_wins_and_is_not_second_guessed(tokens, monkeypatch):

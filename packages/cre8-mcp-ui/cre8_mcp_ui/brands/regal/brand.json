@@ -2,7 +2,7 @@
   "$comment": "Regal Bank is a fictional brand used to demonstrate cre8's brand-consumption path. It is not a real financial institution and nothing in the generated UI is a real product offer.",
   "brand": "regal",
   "displayName": "Regal Bank",
-  "basedOn": "minimalist",
+  "basedOn": "blank",
   "voice": {
     "tone": "plain, unhurried, precise",
     "avoid": ["exclamation marks", "growth-hack phrasing", "invented statistics"]

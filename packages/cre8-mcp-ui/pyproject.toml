@@ -30,4 +30,4 @@ build-backend = "setuptools.build_meta"
 packages = ["cre8_mcp_ui", "cre8_mcp_ui.pages"]
 
 [tool.setuptools.package-data]
-cre8_mcp_ui = ["assets/*.html"]
+cre8_mcp_ui = ["assets/*.html", "brands/*/brand.json", "brands/*/css/*.css", "brands/*/assets/fonts/*.woff2"]
