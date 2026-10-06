@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cre8 — Live demo: a brand in, production UI out</title>
+<meta name="description" content="Point Cre8 at a brand definition and any LLM can generate accessible, on-brand UI from 85 components — no hand-written CSS.">
+<meta name="theme-color" content="#0F172A">
+<link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+
+<!-- Cre8 a2ui base tokens (vendored, self-contained) -->
+<link rel="stylesheet" href="/vendor/cre8-theme.css">
+<!-- Generated brand sheets, each scoped to [data-brand="…"] so they cannot
+     repaint this page's own chrome. Both are loaded; the demo flips one attribute. -->
+<link rel="stylesheet" href="/vendor/brand-regal.css">
+<link rel="stylesheet" href="/vendor/brand-alt.css">
+
+<!-- Vendored Cre8 web components — self-contained, no external requests -->
+<script type="module" src="/vendor/cre8-wc.esm.js"></script>
+<script type="module" src="/assets/demo.js"></script>
+
+<style>
+  :root {
+    --blue: #3B82F6;
+    --blue-deep: #1D4ED8;
+    --pink: #EC4899;
+    --ink: #0F172A;
+    --ink-2: #1E293B;
+    --paper: #F8FAFC;
+    --line: rgba(255,255,255,0.10);
+    --mut: rgba(226,232,240,0.74);
+  }
+  /* The reset deliberately excludes #canvas. The generated page's slotted
+     content lives in light DOM, so a universal `*` reset reaches into it and
+     flattens paragraph spacing — the UI then renders subtly wrong in a way that
+     looks like a design-system bug rather than a demo-page bug. */
+  *:not(#canvas, #canvas *) { margin: 0; padding: 0; box-sizing: border-box; }
+  #canvas, #canvas * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; background: #0F172A; }
+  /* `html body`, not `body`: the cre8-wc bundle injects its own global body rule
+     at runtime (after this block, so it wins on equal specificity) setting
+     `background: var(--background-default)` — a variable nothing defines, which
+     computes to transparent and drops this page to a white backdrop with pale
+     text. The extra specificity is the fix. */
+  html body {
+    background: var(--ink);
+    color: #E2E8F0;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  a { color: inherit; }
+
+  .wrap { max-width: 1320px; margin: 0 auto; padding: 0 24px; }
+
+  header.top {
+    border-bottom: 1px solid var(--line);
+    background: rgba(15,23,42,.88);
+    backdrop-filter: blur(8px);
+    position: sticky; top: 0; z-index: 30;
+  }
+  header.top .wrap {
+    display: flex; align-items: center; gap: 16px; padding-top: 14px; padding-bottom: 14px;
+  }
+  .brandmark { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -.2px; }
+  .brandmark img { width: 26px; height: 26px; }
+  .top nav { margin-left: auto; display: flex; gap: 22px; font-size: 14px; color: var(--mut); }
+  .top nav a { text-decoration: none; }
+  .top nav a:hover { color: #fff; }
+
+  .hero { padding: 44px 0 26px; }
+  .eyebrow {
+    display: inline-block; font-size: 12px; letter-spacing: 1.4px; text-transform: uppercase;
+    color: #93C5FD; background: rgba(59,130,246,.14); border: 1px solid rgba(59,130,246,.3);
+    padding: 5px 12px; border-radius: 999px; margin-bottom: 16px;
+  }
+  h1 { font-size: clamp(28px, 4vw, 46px); line-height: 1.1; letter-spacing: -1px; font-weight: 700; }
+  h1 .grad {
+    background: linear-gradient(96deg, var(--blue), var(--pink));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .lede { margin-top: 14px; color: var(--mut); font-size: 17px; line-height: 1.6; max-width: 68ch; }
+
+  .controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 24px 0 8px; }
+  button.play, button.ghost {
+    font: inherit; font-weight: 600; font-size: 15px; cursor: pointer;
+    padding: 11px 22px; border-radius: 999px; border: 1px solid transparent;
+    transition: transform .12s, background .18s, border-color .18s;
+  }
+  button.play { background: var(--blue); color: #fff; }
+  button.play:hover { background: var(--blue-deep); transform: translateY(-1px); }
+  button.play[disabled] { opacity: .5; cursor: default; transform: none; }
+  button.ghost { background: transparent; color: #E2E8F0; border-color: var(--line); }
+  button.ghost[aria-pressed="true"] { border-color: var(--blue); background: rgba(59,130,246,.16); color: #fff; }
+  .switcher { display: flex; gap: 8px; margin-left: auto; align-items: center; }
+  .switcher .lbl { font-size: 12.5px; color: var(--mut); letter-spacing: .4px; text-transform: uppercase; }
+
+  /* ── stage ─────────────────────────────────────────────────────── */
+  .stage { display: grid; grid-template-columns: 380px 1fr; gap: 20px; padding-bottom: 30px; }
+  @media (max-width: 1040px) { .stage { grid-template-columns: 1fr; } }
+
+  .side { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+  .card {
+    background: rgba(30,41,59,.55); border: 1px solid var(--line);
+    border-radius: 14px; padding: 15px 16px; min-width: 0;
+  }
+  .card h3 {
+    font-size: 11.5px; letter-spacing: 1.1px; text-transform: uppercase;
+    color: rgba(226,232,240,.55); font-weight: 600; margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .card h3 .num {
+    width: 18px; height: 18px; border-radius: 50%; flex: 0 0 auto;
+    background: rgba(59,130,246,.2); color: #93C5FD;
+    font-size: 10.5px; display: grid; place-items: center; letter-spacing: 0;
+  }
+  .card.on { border-color: rgba(59,130,246,.45); background: rgba(59,130,246,.08); }
+  .card.on h3 { color: #93C5FD; }
+  .card.on h3 .num { background: var(--blue); color: #fff; }
+
+  pre {
+    font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+    font-size: 11.5px; line-height: 1.62; color: #CBD5E1;
+    white-space: pre-wrap; word-break: break-word; margin: 0;
+    max-height: 178px; overflow: auto;
+  }
+  pre .k { color: #7DD3FC; } pre .s { color: #A7F3D0; }
+  pre .c { color: #64748B; font-style: italic; } pre .n { color: #FCD34D; }
+
+  .meter { display: flex; gap: 10px; flex-wrap: wrap; }
+  .chip {
+    background: rgba(15,23,42,.7); border: 1px solid var(--line); border-radius: 9px;
+    padding: 8px 12px; flex: 1 1 auto; min-width: 88px;
+  }
+  .chip .v { font-size: 20px; font-weight: 700; color: #fff; font-variant-numeric: tabular-nums; }
+  .chip .l { font-size: 11px; color: var(--mut); margin-top: 1px; }
+
+  /* ── the browser frame holding generated UI ────────────────────── */
+  .viewport {
+    border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+    background: #fff; display: flex; flex-direction: column; min-width: 0;
+    box-shadow: 0 24px 60px rgba(0,0,0,.34);
+  }
+  .chrome {
+    background: #E7EAF0; padding: 8px 12px; display: flex; align-items: center; gap: 8px;
+    flex: 0 0 auto; border-bottom: 1px solid #D3D8E2;
+  }
+  .chrome .dot { width: 10px; height: 10px; border-radius: 50%; background: #C2C8D4; }
+  .chrome .url {
+    margin-left: 8px; background: #fff; border: 1px solid #D3D8E2; border-radius: 6px;
+    padding: 3px 10px; font-size: 11.5px; color: #55607A; flex: 1 1 auto;
+    font-family: ui-monospace, Menlo, monospace; white-space: nowrap; overflow: hidden;
+  }
+  #preview {
+    height: 560px; overflow: auto; background: #fff;
+    /* generated UI inherits its brand tokens from the data-brand attribute */
+  }
+  /* The generated page is a desktop layout. Rendering it into a ~740px column
+     would compress its nav and grids into something that reads as broken, so it
+     is laid out at a true desktop width and scaled down to fit. #fit carries the
+     scaled height so the scrollbar stays honest. */
+  #canvas { width: 1240px; transform-origin: top left; }
+  #canvas > * { display: block; }
+  #preview .placeholder {
+    height: 540px; display: grid; place-items: center; text-align: center;
+    color: #98A2B3; font-size: 14px; padding: 30px;
+  }
+  /* sections fade in as the demo reveals them */
+  #canvas [data-reveal] { opacity: 0; transform: translateY(8px); }
+  #canvas [data-reveal="in"] { opacity: 1; transform: none; transition: opacity .42s, transform .42s; }
+
+  /* Compensating for the vendored bundle's age, not styling the brand.
+     /vendor/cre8-wc.esm.js is v2.0.4; in that build cre8-link-list's shadow <ul>
+     is display:flex with no gap, so horizontal nav items run together. The
+     slotted item hosts are the flex items, so they can be spaced from here.
+     Drop this block when the vendored bundle is refreshed past 2.0.4. */
+  #canvas cre8-link-list[behavior="horizontal"] cre8-link-list-item { margin-right: 22px; }
+  #canvas cre8-utility-nav cre8-utility-nav-item { margin-right: 18px; }
+
+  footer.foot {
+    border-top: 1px solid var(--line); padding: 22px 0 40px;
+    color: var(--mut); font-size: 13px; line-height: 1.6;
+  }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(1px,1px,1px,1px); }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <span class="brandmark"><img src="/assets/logo.svg" alt="">Cre8</span>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/#components">Components</a>
+      <a href="/demo" aria-current="page">Live demo</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="eyebrow">Live demo</span>
+    <h1>A brand goes in.<br><span class="grad">Production UI comes out.</span></h1>
+    <p class="lede">
+      Cre8 hands any LLM a machine-readable catalog and a brand's tokens. The model
+      writes a schema — never CSS — and 85 accessible components render it on brand.
+      Everything below runs in this page: the schema is the same one the MCP tool
+      returns, and the components are the shipped build.
+    </p>
+
+    <div class="controls">
+      <button class="play" id="run" type="button">Run the demo</button>
+      <button class="ghost" id="replay" type="button">Reset</button>
+      <div class="switcher" role="group" aria-label="Brand">
+        <span class="lbl">Brand</span>
+        <!-- buttons injected by demo.js from the generated manifest -->
+      </div>
+    </div>
+  </section>
+
+  <section class="stage">
+    <div class="side">
+      <div class="card" id="s1">
+        <h3><span class="num">1</span> Brand definition consumed</h3>
+        <pre id="brandOut"><span class="c">// press Run</span></pre>
+      </div>
+      <div class="card" id="s2">
+        <h3><span class="num">2</span> Tokens resolved</h3>
+        <div class="meter" id="tokenOut">
+          <div class="chip"><div class="v">—</div><div class="l">tokens</div></div>
+          <div class="chip"><div class="v">—</div><div class="l">layers</div></div>
+        </div>
+      </div>
+      <div class="card" id="s3">
+        <h3><span class="num">3</span> Model emits a2ui schema</h3>
+        <pre id="schemaOut"><span class="c">// waiting</span></pre>
+      </div>
+      <div class="card" id="s4">
+        <h3><span class="num">4</span> Rendered with real components</h3>
+        <div class="meter" id="statOut"></div>
+      </div>
+    </div>
+
+    <div class="viewport">
+      <div class="chrome">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="url" id="url">ui://cre8-mcp-ui/regal-home</span>
+      </div>
+      <div id="preview" data-brand="regal">
+        <div id="fit"><div id="canvas">
+          <div class="placeholder">The generated UI renders here.</div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p><strong>Regal Bank is a fictional brand</strong>, used to demonstrate consuming a brand
+    definition. It is not a real financial institution and nothing rendered above is a real
+    product offer. Cre8 is a design system by Cre8 Solutions LLC.</p>
+  </footer>
+</main>
+
+</body>
+</html>

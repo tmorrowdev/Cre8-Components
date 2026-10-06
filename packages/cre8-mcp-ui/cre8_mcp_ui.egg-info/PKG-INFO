@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: cre8-mcp-ui
+Version: 0.1.0
+Summary: Serves cre8-wc UIs as interactive mcp-ui resources from a FastMCP server.
+Requires-Python: >=3.11
+Requires-Dist: mcp<2,>=1.2.0
+Requires-Dist: mcp-ui-server>=1.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0.0; extra == "dev"
+Provides-Extra: judge
+Requires-Dist: typesafe-sdk>=0.7.2; extra == "judge"
+Provides-Extra: recording
+Requires-Dist: playwright>=1.55; extra == "recording"

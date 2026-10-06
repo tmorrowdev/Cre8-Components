@@ -1,0 +1,41 @@
+{
+  "$comment": "Regal Bank is a fictional brand used to demonstrate cre8's brand-consumption path. It is not a real financial institution and nothing in the generated UI is a real product offer.",
+  "brand": "regal",
+  "displayName": "Regal Bank",
+  "basedOn": "minimalist",
+  "voice": {
+    "tone": "plain, unhurried, precise",
+    "avoid": ["exclamation marks", "growth-hack phrasing", "invented statistics"]
+  },
+  "identity": {
+    "geometry": {
+      "cornerStyle": "square",
+      "radiusButton": "0px",
+      "radiusContainer": "0px",
+      "note": "Square corners are the brand's strongest signal. Nothing on a Regal surface is rounded."
+    },
+    "palette": {
+      "ink": "#132342",
+      "inkHover": "#0C1730",
+      "inkActive": "#080F20",
+      "surface": "#FFFFFF",
+      "surfaceSubtle": "#F8F8F9",
+      "surfaceBrand": "#EDF8FD",
+      "line": "#B9BCC0",
+      "textMuted": "#979AA0",
+      "knockout": "#FFFFFF",
+      "success": "#3C8700",
+      "error": "#E4292F"
+    },
+    "type": {
+      "family": "Aeonik",
+      "fallback": ["sans-serif"],
+      "weights": [300, 400, 700]
+    }
+  },
+  "tokenFile": "css/tokens_brand.css",
+  "layersOver": [
+    "minimalist/css/tokens_minimalist.css",
+    "minimalist/css/tokens_brand.css"
+  ]
+}
