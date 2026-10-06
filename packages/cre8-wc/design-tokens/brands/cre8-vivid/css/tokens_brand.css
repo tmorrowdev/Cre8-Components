@@ -1,8 +1,9 @@
 /**
  * cre8-vivid — a high-saturation brand for cre8.
  *
- * Derived from cre8 and identical to it in structure, typography and
- * spacing. What changes is colour, and one change carries the rest:
+ * Derived from cre8 and identical to it in structure and spacing scale.
+ * What changes is colour and type (Sora, not Plus Jakarta Sans), and one
+ * change carries the rest:
  *
  *   The a2ui status ramp maps success to cyan and error to pink. Neither hue
  *   means what it says, and the two sit close enough that an alert's status has
@@ -107,23 +108,23 @@
   --cre8-color-footer-link-hover: #93C5FD;
   --cre8-color-footer-link-default: #93C5FD;
   --cre8-spacing-0: 0rem;
-  --cre8-spacing-2: 0.125rem;
-  --cre8-spacing-4: 0.25rem;
-  --cre8-spacing-6: 0.375rem;
-  --cre8-spacing-8: 0.5rem;
-  --cre8-spacing-12: 0.75rem;
-  --cre8-spacing-14: 0.875rem;
-  --cre8-spacing-16: 1rem;
-  --cre8-spacing-18: 1.125rem;
-  --cre8-spacing-24: 1.5rem;
-  --cre8-spacing-32: 2rem;
-  --cre8-spacing-40: 2.5rem;
-  --cre8-spacing-48: 3rem;
-  --cre8-spacing-64: 4rem;
-  --cre8-spacing-80: 5rem;
-  --cre8-spacing-96: 6rem;
-  --cre8-spacing-120: 7.5rem;
-  --cre8-spacing-160: 10rem;
+  --cre8-spacing-2: calc(var(--cre8-seed-space) * 0.5);
+  --cre8-spacing-4: calc(var(--cre8-seed-space) * 1);
+  --cre8-spacing-6: calc(var(--cre8-seed-space) * 1.5);
+  --cre8-spacing-8: calc(var(--cre8-seed-space) * 2);
+  --cre8-spacing-12: calc(var(--cre8-seed-space) * 3);
+  --cre8-spacing-14: calc(var(--cre8-seed-space) * 3.5);
+  --cre8-spacing-16: calc(var(--cre8-seed-space) * 4);
+  --cre8-spacing-18: calc(var(--cre8-seed-space) * 4.5);
+  --cre8-spacing-24: calc(var(--cre8-seed-space) * 6);
+  --cre8-spacing-32: calc(var(--cre8-seed-space) * 8);
+  --cre8-spacing-40: calc(var(--cre8-seed-space) * 10);
+  --cre8-spacing-48: calc(var(--cre8-seed-space) * 12);
+  --cre8-spacing-64: calc(var(--cre8-seed-space) * 16);
+  --cre8-spacing-80: calc(var(--cre8-seed-space) * 20);
+  --cre8-spacing-96: calc(var(--cre8-seed-space) * 24);
+  --cre8-spacing-120: calc(var(--cre8-seed-space) * 30);
+  --cre8-spacing-160: calc(var(--cre8-seed-space) * 40);
   --cre8-color-button-primary-bg: #4F46E5;
   --cre8-color-button-primary-inverse-bg: #BFDBFE;
   --cre8-color-button-primary-bg-hover: #4338CA;
@@ -617,28 +618,61 @@
 }
 
 /*
- * Typography and ramp steps the component tier references but this sheet never
- * defined. They were masked while Storybook loaded every brand at once; loaded
- * alone, text fell back to the UA serif. Neutral is Tailwind slate and primary
- * is Tailwind indigo, the two ramps the values above are drawn from.
+ * Seeds, spacing roles and type roles. Vivid states these itself rather than
+ * borrowing them from whichever brand happens to load first: the font is Sora
+ * (A2UI uses Plus Jakarta Sans), and the spacing scale above derives from
+ * --cre8-seed-space, so one value rescales spacing, padding and the sizes that
+ * follow from it. Neutral is Tailwind slate and primary is Tailwind indigo,
+ * the two ramps the colour values above are drawn from.
  */
 :root {
-  --cre8-font-family-base: "Plus Jakarta Sans", sans-serif;
+  --cre8-seed-font: "Sora", sans-serif;
+  --cre8-seed-space: 0.25rem;
+
+  /* Padding: a narrow 0.5x-6x slice of the spacing scale, so retheming
+     component padding does not also retheme page layout. Components pad
+     through these, never --cre8-spacing-* directly. */
+  --cre8-padding-2: var(--cre8-spacing-2);
+  --cre8-padding-4: var(--cre8-spacing-4);
+  --cre8-padding-8: var(--cre8-spacing-8);
+  --cre8-padding-16: var(--cre8-spacing-16);
+  --cre8-padding-24: var(--cre8-spacing-24);
+
+  --cre8-icon-size-small: calc(var(--cre8-seed-space) * 3.5);
+  --cre8-icon-size-default: calc(var(--cre8-seed-space) * 4);
+  --cre8-icon-size-large: calc(var(--cre8-seed-space) * 4.5);
+  --cre8-badge-padding-horizontal: calc(var(--cre8-seed-space) * 1.5);
+  --cre8-badge-padding-vertical: calc(var(--cre8-seed-space) * 0.5);
+  --cre8-progress-meter-height: calc(var(--cre8-seed-space) * 2);
+
+  --cre8-font-family-base: var(--cre8-seed-font);
+  --cre8-font-weight-regular: 400;
+  --cre8-font-weight-medium: 500;
+  --cre8-font-weight-semibold: 600;
+  --cre8-font-weight-bold: 700;
+  --cre8-line-height-tight: 1.12;
+  --cre8-line-height-snug: 1.25;
+  --cre8-line-height-normal: 1.33;
+  --cre8-line-height-relaxed: 1.4;
+  --cre8-line-height-loose: 1.5;
+
+  /* Legacy aliases, named for a vendor or an index. Kept so nothing breaks. */
   --cre8-font-families-inter: var(--cre8-font-family-base);
-  --cre8-font-weights-inter-0: 400;
-  --cre8-font-weights-inter-1: 500;
-  --cre8-font-weights-inter-2: 700;
-  --cre8-font-weights-inter-3: 600;
-  --cre8-line-heights-0: 1.25;
-  --cre8-line-heights-1: 1.12;
+  --cre8-font-weights-inter-0: var(--cre8-font-weight-regular);
+  --cre8-font-weights-inter-1: var(--cre8-font-weight-medium);
+  --cre8-font-weights-inter-2: var(--cre8-font-weight-bold);
+  --cre8-font-weights-inter-3: var(--cre8-font-weight-semibold);
+  --cre8-line-heights-0: var(--cre8-line-height-snug);
+  --cre8-line-heights-1: var(--cre8-line-height-tight);
   --cre8-line-heights-2: 1.14;
   --cre8-line-heights-3: 1.2;
   --cre8-line-heights-4: 1.3;
-  --cre8-line-heights-5: 1.33;
-  --cre8-line-heights-6: 1.4;
-  --cre8-line-heights-7: 1.5;
+  --cre8-line-heights-5: var(--cre8-line-height-normal);
+  --cre8-line-heights-6: var(--cre8-line-height-relaxed);
+  --cre8-line-heights-7: var(--cre8-line-height-loose);
   --cre8-line-heights-8: 1.43;
   --cre8-line-heights-11: 1.16;
+
   --cre8-neutral-50: #F8FAFC;
   --cre8-neutral-400: #94A3B8;
   --cre8-neutral-500: #64748B;

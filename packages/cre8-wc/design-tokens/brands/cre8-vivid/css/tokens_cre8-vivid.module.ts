@@ -1,40 +1,33 @@
 const vivid = `
+/*
+ * Sora (SIL Open Font License 1.1, see assets/fonts/Sora-OFL.txt), from
+ * @fontsource-variable/sora 5.3.0. One variable file per subset covers every
+ * weight cre8 uses (400-700). Self-hosted so it loads under \`font-src 'self'\`.
+ */
 @font-face {
-	font-family: 'Plus Jakarta Sans';
+	font-family: 'Sora';
 	font-style: normal;
-	font-weight: 400;
-	src: url('assets/fonts/PlusJakartaSans-Regular.woff2') format('woff2');
+	font-weight: 100 800;
+	src: url('assets/fonts/Sora-LatinExt.woff2') format('woff2-variations'), url('assets/fonts/Sora-LatinExt.woff2') format('woff2');
+	unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
 	font-display: fallback;
 }
 
 @font-face {
-	font-family: 'Plus Jakarta Sans';
-	font-style: medium;
-	font-weight: 500;
-	src: url('assets/fonts/PlusJakartaSans-Medium.woff2') format('woff2');
-	font-display: fallback;
-}
-
-@font-face {
-	font-family: 'Plus Jakarta Sans';
-	font-style: medium;
-	font-weight: 600;
-	src: url('assets/fonts/PlusJakartaSans-SemiBold.woff2') format('woff2');
-	font-display: fallback;
-}
-
-@font-face {
-	font-family: 'Plus Jakarta Sans';
+	font-family: 'Sora';
 	font-style: normal;
-	font-weight: 700;
-	src: url('assets/fonts/PlusJakartaSans-Bold.woff2') format('woff2');
+	font-weight: 100 800;
+	src: url('assets/fonts/Sora-Latin.woff2') format('woff2-variations'), url('assets/fonts/Sora-Latin.woff2') format('woff2');
+	unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 	font-display: fallback;
 }
+
 /**
  * cre8-vivid — a high-saturation brand for cre8.
  *
- * Derived from cre8 and identical to it in structure, typography and
- * spacing. What changes is colour, and one change carries the rest:
+ * Derived from cre8 and identical to it in structure and spacing scale.
+ * What changes is colour and type (Sora, not Plus Jakarta Sans), and one
+ * change carries the rest:
  *
  *   The a2ui status ramp maps success to cyan and error to pink. Neither hue
  *   means what it says, and the two sit close enough that an alert's status has
@@ -139,23 +132,23 @@ const vivid = `
   --cre8-color-footer-link-hover: #93C5FD;
   --cre8-color-footer-link-default: #93C5FD;
   --cre8-spacing-0: 0rem;
-  --cre8-spacing-2: 0.125rem;
-  --cre8-spacing-4: 0.25rem;
-  --cre8-spacing-6: 0.375rem;
-  --cre8-spacing-8: 0.5rem;
-  --cre8-spacing-12: 0.75rem;
-  --cre8-spacing-14: 0.875rem;
-  --cre8-spacing-16: 1rem;
-  --cre8-spacing-18: 1.125rem;
-  --cre8-spacing-24: 1.5rem;
-  --cre8-spacing-32: 2rem;
-  --cre8-spacing-40: 2.5rem;
-  --cre8-spacing-48: 3rem;
-  --cre8-spacing-64: 4rem;
-  --cre8-spacing-80: 5rem;
-  --cre8-spacing-96: 6rem;
-  --cre8-spacing-120: 7.5rem;
-  --cre8-spacing-160: 10rem;
+  --cre8-spacing-2: calc(var(--cre8-seed-space) * 0.5);
+  --cre8-spacing-4: calc(var(--cre8-seed-space) * 1);
+  --cre8-spacing-6: calc(var(--cre8-seed-space) * 1.5);
+  --cre8-spacing-8: calc(var(--cre8-seed-space) * 2);
+  --cre8-spacing-12: calc(var(--cre8-seed-space) * 3);
+  --cre8-spacing-14: calc(var(--cre8-seed-space) * 3.5);
+  --cre8-spacing-16: calc(var(--cre8-seed-space) * 4);
+  --cre8-spacing-18: calc(var(--cre8-seed-space) * 4.5);
+  --cre8-spacing-24: calc(var(--cre8-seed-space) * 6);
+  --cre8-spacing-32: calc(var(--cre8-seed-space) * 8);
+  --cre8-spacing-40: calc(var(--cre8-seed-space) * 10);
+  --cre8-spacing-48: calc(var(--cre8-seed-space) * 12);
+  --cre8-spacing-64: calc(var(--cre8-seed-space) * 16);
+  --cre8-spacing-80: calc(var(--cre8-seed-space) * 20);
+  --cre8-spacing-96: calc(var(--cre8-seed-space) * 24);
+  --cre8-spacing-120: calc(var(--cre8-seed-space) * 30);
+  --cre8-spacing-160: calc(var(--cre8-seed-space) * 40);
   --cre8-color-button-primary-bg: #4F46E5;
   --cre8-color-button-primary-inverse-bg: #BFDBFE;
   --cre8-color-button-primary-bg-hover: #4338CA;
@@ -638,7 +631,85 @@ const vivid = `
 
     --cre8-gradient-brand-rich: linear-gradient(150deg, #4338CA 0%, #6D28D9 45%, #0891B2 100%);
   }
+
+  /* Padding alias tier. 21 components pad through these; without them
+     every one renders flush to its border and nothing errors. */
+  --cre8-padding-2: var(--cre8-spacing-2);
+  --cre8-padding-4: var(--cre8-spacing-4);
+  --cre8-padding-8: var(--cre8-spacing-8);
+  --cre8-padding-16: var(--cre8-spacing-16);
+  --cre8-padding-24: var(--cre8-spacing-24);
 }
+
+/*
+ * Seeds, spacing roles and type roles. Vivid states these itself rather than
+ * borrowing them from whichever brand happens to load first: the font is Sora
+ * (A2UI uses Plus Jakarta Sans), and the spacing scale above derives from
+ * --cre8-seed-space, so one value rescales spacing, padding and the sizes that
+ * follow from it. Neutral is Tailwind slate and primary is Tailwind indigo,
+ * the two ramps the colour values above are drawn from.
+ */
+:root {
+  --cre8-seed-font: "Sora", sans-serif;
+  --cre8-seed-space: 0.25rem;
+
+  /* Padding: a narrow 0.5x-6x slice of the spacing scale, so retheming
+     component padding does not also retheme page layout. Components pad
+     through these, never --cre8-spacing-* directly. */
+  --cre8-padding-2: var(--cre8-spacing-2);
+  --cre8-padding-4: var(--cre8-spacing-4);
+  --cre8-padding-8: var(--cre8-spacing-8);
+  --cre8-padding-16: var(--cre8-spacing-16);
+  --cre8-padding-24: var(--cre8-spacing-24);
+
+  --cre8-icon-size-small: calc(var(--cre8-seed-space) * 3.5);
+  --cre8-icon-size-default: calc(var(--cre8-seed-space) * 4);
+  --cre8-icon-size-large: calc(var(--cre8-seed-space) * 4.5);
+  --cre8-badge-padding-horizontal: calc(var(--cre8-seed-space) * 1.5);
+  --cre8-badge-padding-vertical: calc(var(--cre8-seed-space) * 0.5);
+  --cre8-progress-meter-height: calc(var(--cre8-seed-space) * 2);
+
+  --cre8-font-family-base: var(--cre8-seed-font);
+  --cre8-font-weight-regular: 400;
+  --cre8-font-weight-medium: 500;
+  --cre8-font-weight-semibold: 600;
+  --cre8-font-weight-bold: 700;
+  --cre8-line-height-tight: 1.12;
+  --cre8-line-height-snug: 1.25;
+  --cre8-line-height-normal: 1.33;
+  --cre8-line-height-relaxed: 1.4;
+  --cre8-line-height-loose: 1.5;
+
+  /* Legacy aliases, named for a vendor or an index. Kept so nothing breaks. */
+  --cre8-font-families-inter: var(--cre8-font-family-base);
+  --cre8-font-weights-inter-0: var(--cre8-font-weight-regular);
+  --cre8-font-weights-inter-1: var(--cre8-font-weight-medium);
+  --cre8-font-weights-inter-2: var(--cre8-font-weight-bold);
+  --cre8-font-weights-inter-3: var(--cre8-font-weight-semibold);
+  --cre8-line-heights-0: var(--cre8-line-height-snug);
+  --cre8-line-heights-1: var(--cre8-line-height-tight);
+  --cre8-line-heights-2: 1.14;
+  --cre8-line-heights-3: 1.2;
+  --cre8-line-heights-4: 1.3;
+  --cre8-line-heights-5: var(--cre8-line-height-normal);
+  --cre8-line-heights-6: var(--cre8-line-height-relaxed);
+  --cre8-line-heights-7: var(--cre8-line-height-loose);
+  --cre8-line-heights-8: 1.43;
+  --cre8-line-heights-11: 1.16;
+
+  --cre8-neutral-50: #F8FAFC;
+  --cre8-neutral-400: #94A3B8;
+  --cre8-neutral-500: #64748B;
+  --cre8-neutral-600: #475569;
+  --cre8-neutral-700: #334155;
+  --cre8-neutral-800: #1E293B;
+  --cre8-neutral-900: #0F172A;
+  --cre8-primary-200: #C7D2FE;
+  --cre8-primary-300: #A5B4FC;
+  --cre8-primary-800: #3730A3;
+  --cre8-primary-900: #312E81;
+}
+
 :root{--cre8-typography-body-xlarge-font-family: var(--cre8-font-families-inter);
       --cre8-typography-body-xlarge-font-size: var(--cre8-font-size-5);
       --cre8-typography-body-xlarge-font-weight: var(--cre8-font-weights-inter-0);
@@ -884,42 +955,6 @@ const vivid = `
       --cre8-typography-meta-small-font-weight: var(--cre8-font-weights-inter-2);
       --cre8-typography-meta-small-line-height: var(--cre8-line-heights-3);
       --cre8-typography-meta-small-text-decoration: var(--cre8-text-decoration-none);
-      --cre8-typography-meta-small-text-transform: var(--cre8-text-case-uppercase);}
-/*
- * Typography and ramp steps the component tier references but this sheet never
- * defined. They were masked while Storybook loaded every brand at once; loaded
- * alone, text fell back to the UA serif. Neutral is Tailwind slate and primary
- * is Tailwind indigo, the two ramps the values above are drawn from.
- */
-:root {
-  --cre8-font-family-base: "Plus Jakarta Sans", sans-serif;
-  --cre8-font-families-inter: var(--cre8-font-family-base);
-  --cre8-font-weights-inter-0: 400;
-  --cre8-font-weights-inter-1: 500;
-  --cre8-font-weights-inter-2: 700;
-  --cre8-font-weights-inter-3: 600;
-  --cre8-line-heights-0: 1.25;
-  --cre8-line-heights-1: 1.12;
-  --cre8-line-heights-2: 1.14;
-  --cre8-line-heights-3: 1.2;
-  --cre8-line-heights-4: 1.3;
-  --cre8-line-heights-5: 1.33;
-  --cre8-line-heights-6: 1.4;
-  --cre8-line-heights-7: 1.5;
-  --cre8-line-heights-8: 1.43;
-  --cre8-line-heights-11: 1.16;
-  --cre8-neutral-50: #F8FAFC;
-  --cre8-neutral-400: #94A3B8;
-  --cre8-neutral-500: #64748B;
-  --cre8-neutral-600: #475569;
-  --cre8-neutral-700: #334155;
-  --cre8-neutral-800: #1E293B;
-  --cre8-neutral-900: #0F172A;
-  --cre8-primary-200: #C7D2FE;
-  --cre8-primary-300: #A5B4FC;
-  --cre8-primary-800: #3730A3;
-  --cre8-primary-900: #312E81;
-}
-`;
+      --cre8-typography-meta-small-text-transform: var(--cre8-text-case-uppercase);}`;
 
 export default vivid;
