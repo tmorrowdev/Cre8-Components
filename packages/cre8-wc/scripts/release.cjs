@@ -6,6 +6,14 @@ const path = require('path');
 const VersionBumper = require('./version-bump.cjs');
 
 /**
+ * The manual remedy printed whenever the lockfile could not be refreshed
+ * automatically. Kept in one place so both messages stay identical.
+ */
+function lockfileSyncCommand(version) {
+  return `pnpm -w install --lockfile-only && git add pnpm-lock.yaml && git commit -m "chore: sync pnpm-lock.yaml for v${version}"`;
+}
+
+/**
  * Automated release script for CI/CD pipelines
  * Combines version bump, build, and optional publishing
  */
@@ -165,6 +173,47 @@ class ReleaseManager {
     this.exec('git -C ../.. add -A');
     this.exec(`git commit -m "chore: bump version to ${version}"`);
     console.log('✅ Version bump committed\n');
+  }
+
+  /**
+   * Refresh pnpm-lock.yaml for the specifiers syncWorkspaceVersions() rewrote
+   * and land it in its own commit. Only valid once @tmorrow/cre8-react@version
+   * is on npm: pnpm resolves the ^version range against the registry and
+   * fails with ERR_PNPM_NO_MATCHING_VERSION before the publish has happened,
+   * which is why this cannot run before commitVersionBump().
+   */
+  syncLockfile(version, { push = false } = {}) {
+    console.log('🔒 Refreshing pnpm-lock.yaml for the bumped specifiers...');
+    try {
+      // A just-published version can take a few seconds to show up in the
+      // registry metadata; give it a couple of chances before giving up.
+      for (let attempt = 1; ; attempt++) {
+        try {
+          this.exec('pnpm -w install --lockfile-only');
+          break;
+        } catch (error) {
+          if (attempt >= 3) throw error;
+          this.exec('sleep 15');
+        }
+      }
+      const changed = this.exec('git -C ../.. status --porcelain -- pnpm-lock.yaml', { silent: true });
+      if (!changed) {
+        console.log('✅ pnpm-lock.yaml already in sync\n');
+        return;
+      }
+      this.exec('git -C ../.. add pnpm-lock.yaml');
+      this.exec(`git commit -m "chore: sync pnpm-lock.yaml for v${version}"`);
+      console.log('✅ pnpm-lock.yaml refreshed and committed');
+      if (push) {
+        this.exec('git push');
+        console.log('✅ Pushed lockfile commit to remote');
+      }
+      console.log();
+    } catch {
+      // Everything is already published and tagged; don't fail the release
+      // over housekeeping. Say exactly what is left to do instead.
+      console.log(`⚠️  Could not refresh pnpm-lock.yaml automatically. Run:\n    ${lockfileSyncCommand(version)}\n`);
+    }
   }
 
   /**
@@ -386,6 +435,17 @@ class ReleaseManager {
           console.log('❌ Failed to publish @tmorrow/cre8-mcp\n');
           throw error;
         }
+      }
+
+      // syncWorkspaceVersions() moved cre8-mcp's @tmorrow/cre8-react specifier
+      // to ^newVersion, and pnpm-lock.yaml still records the old one. CI and
+      // Vercel install with --frozen-lockfile, so leaving it stale fails every
+      // install on the branch (2.3.5 shipped exactly that way). The refresh
+      // has to wait until after the publish above, see syncLockfile().
+      if (publish) {
+        this.syncLockfile(newVersion, { push });
+      } else {
+        console.log(`⚠️  pnpm-lock.yaml is stale: cre8-mcp now depends on @tmorrow/cre8-react@^${newVersion}, which pnpm cannot resolve until that version is published. After publishing, run:\n    ${lockfileSyncCommand(newVersion)}\n`);
       }
 
       console.log(`🎉 Release ${newVersion} completed successfully!`);
