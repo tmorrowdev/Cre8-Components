@@ -33,6 +33,7 @@ import {
 import { UI_TOOL_NAMES, handleUiTool, uiTools, type UiToolContext } from './ui-tools.js';
 import { embeddedViewerBase } from './embedded-viewer.js';
 import { GetCompositionSchema, compositionTool, handleGetComposition } from './composition.js';
+import { A2uiV1Schema, a2uiV1Tool, handleA2uiV1 } from './a2ui-v1.js';
 import {
   Cre8GuideSchema,
   GetContentModelSchema,
@@ -80,7 +81,7 @@ export function createMcpServer(options: McpServerOptions = {}): Server {
   );
 
   server.setRequestHandler(ListToolsRequestSchema, async () => ({
-    tools: [...tools, ...knowledgeTools, compositionTool, ...uiTools],
+    tools: [...tools, ...knowledgeTools, compositionTool, a2uiV1Tool, ...uiTools],
   }));
 
   server.setRequestHandler(CallToolRequestSchema, async (request) => {
@@ -121,6 +122,9 @@ export function createMcpServer(options: McpServerOptions = {}): Server {
           break;
         case 'cre8_guide':
           result = handleCre8Guide(Cre8GuideSchema.parse(args));
+          break;
+        case 'a2ui_v1':
+          result = handleA2uiV1(A2uiV1Schema.parse(args));
           break;
         case 'validate_a2ui_spec':
           result = handleValidateA2uiSpec({ spec: ValidateA2uiSpecSchema.parse(args).spec });

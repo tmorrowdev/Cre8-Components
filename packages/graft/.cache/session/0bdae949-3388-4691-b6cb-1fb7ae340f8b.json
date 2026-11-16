@@ -1,0 +1,12 @@
+{
+  "lastQuery": "fix commit graph so latest code is on main",
+  "perAgentQuery": {},
+  "graftReads": 0,
+  "sourceReads": 0,
+  "savedTokens": 0,
+  "injectedPointers": [],
+  "nudges": 0,
+  "inputCostMicros": 1091693,
+  "inputTokensBilled": 1387050,
+  "lastBillingUuid": "a5023b8d-e522-46d2-b8e8-54d72d4de513"
+}

@@ -20,3 +20,6 @@ react-wrappers/*
 ./react-wrappers/**
 !react-wrappers/package.json
 ./react-wrappers/dist-storybook/**
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/

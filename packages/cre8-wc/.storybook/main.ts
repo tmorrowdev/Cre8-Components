@@ -13,6 +13,7 @@ const config: StorybookConfig = {
     '../components/**/*.stories.@(js|jsx|ts|tsx|mdx)',
     './components/icon-grid/icon-grid.stories.ts',
     './patterns/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    './pages/**/*.stories.@(js|jsx|ts|tsx|mdx)',
     './components/system-docs/*.mdx'
   ],
   staticDirs: [

@@ -1,6 +1,6 @@
 @import './tokens_brand.css';
 @import './fonts.css';
-:root{--cre8-typography-body-xlarge-font-family: var(--cre8-font-families-inter);
+:root{/*  * Typeface: Aeonik.  *  * Vivid's 41 typography tokens all resolve through  * --cre8-font-families-inter, whose name is historical rather than  * descriptive -- it has never resolved to Inter here. The whole chain is  * restated so the sheet yields Aeonik whether or not a base brand is  * loaded underneath it.  *  * Aeonik ships Light/Regular/Bold (300/400/700); requests for 500 and 600  * resolve to the nearest available weight.  */ --cre8-seed-font: "Aeonik", sans-serif; --cre8-font-family-base: var(--cre8-seed-font); --cre8-font-families-inter: var(--cre8-font-family-base);--cre8-typography-body-xlarge-font-family: var(--cre8-font-families-inter);
       --cre8-typography-body-xlarge-font-size: var(--cre8-font-size-5);
       --cre8-typography-body-xlarge-font-weight: var(--cre8-font-weights-inter-0);
       --cre8-typography-body-xlarge-line-height: var(--cre8-line-heights-7);

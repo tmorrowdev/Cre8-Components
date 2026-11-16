@@ -51,6 +51,22 @@ const vivid = `
  */
 
 :root {
+  /*
+   * Typeface: Aeonik.
+   *
+   * Vivid's 41 typography tokens all resolve through
+   * --cre8-font-families-inter, whose name is historical rather than
+   * descriptive -- it has never resolved to Inter here. The whole chain is
+   * restated so the sheet yields Aeonik whether or not a base brand is
+   * loaded underneath it.
+   *
+   * Aeonik ships Light/Regular/Bold (300/400/700); requests for 500 and 600
+   * resolve to the nearest available weight.
+   */
+  --cre8-seed-font: "Aeonik", sans-serif;
+  --cre8-font-family-base: var(--cre8-seed-font);
+  --cre8-font-families-inter: var(--cre8-font-family-base);
+
   --cre8-desktop-menu-padding-vertical-padding: 1rem;
   --cre8-desktop-menu-padding-horizontal-padding: 0.5rem;
   --cre8-input-padding: 0.625rem 0.875rem;

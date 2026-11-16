@@ -6,11 +6,6 @@ import './css/styleguide-only.ts';
 
 // import starbucksStyles from '../design-tokens/starbucks/tokens.module';
 // import target from '../design-tokens/target/tokens.module.css';
-import cre8Legacy from '../design-tokens/brands/cre8-legacy/css/tokens_cre8-legacy.module.ts';
-import cre8 from '../design-tokens/brands/cre8/css/tokens_cre8.module.ts';
-import blue from '../design-tokens/brands/blue/css/tokens_blue.module.ts';
-import marketing from '../design-tokens/brands/marketing/css/tokens_marketing.module.ts';
-import minimalist from '../design-tokens/brands/minimalist/css/tokens_minimalist.module.ts';
 import a2ui from '../design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.module.ts';
 import vivid from '../design-tokens/brands/cre8-vivid/css/tokens_cre8-vivid.module.ts';
 import whitelabel from '../design-tokens/brands/whitelabel/css/tokens_whitelabel.module.ts';
@@ -69,21 +64,37 @@ document.head.appendChild(headStyleElement);
 const excludeArray = ['shadowRootOptions', 'formAssociated', 'field'];
 
 // Apply theme styles to document head
+/*
+ * Three themes only. `cre8` is the a2ui token set, which is the current
+ * cre8 brand; `Blank` is the unbranded whitelabel set.
+ *
+ * Order matters: these are appended to <head> in array order, so a later
+ * sheet wins over an earlier one when both are enabled. Vivid relies on
+ * that - see BASE_LAYER below.
+ */
 const themeStyles = [
-  { name: 'Cre8 Default', styles: cre8 },
-  { name: 'Cre8 Legacy', styles: cre8Legacy },
-  { name: 'Blue', styles: blue },
-  { name: 'Marketing', styles: marketing },
-  { name: 'Minimalist', styles: minimalist },
-  { name: 'A2UI', styles: a2ui },
+  { name: 'cre8', styles: a2ui },
   { name: 'Vivid', styles: vivid },
-  { name: 'Whitelabel', styles: whitelabel },
+  { name: 'Blank', styles: whitelabel },
 ];
+
+/*
+ * Vivid is an overlay, not a complete brand: it defines 730 custom
+ * properties against a2ui's 1205 and contributes no `--cre8-padding-*`
+ * tier at all, so enabling it on its own leaves ~21 components rendering
+ * padding-less. Layer it over the cre8 (a2ui) base the way a consuming
+ * app would, rather than shipping a theme that looks broken.
+ */
+const BASE_LAYER: Record<string, string[]> = {
+  Vivid: ['cre8'],
+};
+
+const themeId = (name: string) => `theme-${name.toLowerCase().replace(/\s+/g, '-')}`;
 
 // Inject all theme styles with unique IDs
 themeStyles.forEach(theme => {
   const styleElement = document.createElement('style');
-  styleElement.id = `theme-${theme.name.toLowerCase().replace(/\s+/g, '-')}`;
+  styleElement.id = themeId(theme.name);
   styleElement.innerHTML = (theme.styles as any).default || theme.styles.toString();
   document.head.appendChild(styleElement);
 });
@@ -93,20 +104,14 @@ const preview: Preview = {
   globalTypes: {
     theme: {
       description: 'Global theme for components',
-      defaultValue: 'Cre8 Default',
+      defaultValue: 'cre8',
       toolbar: {
         title: 'Theme',
         icon: 'paintbrush',
         items: [
-          { value: 'Cre8 Default', title: 'Cre8 Default' },
-          { value: 'Cre8 Legacy', title: 'Cre8 Legacy' },
-          { value: 'Legacy', title: 'Legacy' },
-          { value: 'Blue', title: 'Blue' },
-          { value: 'Marketing', title: 'Marketing' },
-          { value: 'Minimalist', title: 'Minimalist' },
-          { value: 'A2UI', title: 'A2UI' },
+          { value: 'cre8', title: 'cre8' },
           { value: 'Vivid', title: 'Vivid' },
-          { value: 'Whitelabel', title: 'Whitelabel' },
+          { value: 'Blank', title: 'Blank' },
         ],
         dynamicTitle: true,
       },
@@ -114,13 +119,14 @@ const preview: Preview = {
   },
   decorators: [
     (story, context) => {
-      const selectedTheme = context.globals.theme || 'A2UI';
+      const selectedTheme = context.globals.theme || 'cre8';
+      const active = new Set([...(BASE_LAYER[selectedTheme] ?? []), selectedTheme]);
 
-      // Enable/disable theme stylesheets
+      // Enable the selected theme and any base layer it depends on.
       themeStyles.forEach(theme => {
-        const styleElement = document.getElementById(`theme-${theme.name.toLowerCase().replace(/\s+/g, '-')}`) as HTMLStyleElement;
+        const styleElement = document.getElementById(themeId(theme.name)) as HTMLStyleElement;
         if (styleElement) {
-          styleElement.disabled = theme.name !== selectedTheme;
+          styleElement.disabled = !active.has(theme.name);
         }
       });
 
@@ -181,7 +187,7 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: ['Documentation', 'cre8 Components', ' Patterns'],
+        order: ['Documentation', 'Pages', 'cre8 Components', ' Patterns'],
       },
     },
   },
