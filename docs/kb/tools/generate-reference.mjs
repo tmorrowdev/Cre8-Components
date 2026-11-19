@@ -555,35 +555,62 @@ part upstream.
 writeFileSync(resolve(KB, 'reference/parts.md'), partsMd);
 
 /**
- * Tokens. The KB documented four theming methods but never the vocabulary —
- * a blind test showed an agent could pick the right method, tier and dark-mode
+ * Tokens. The KB documented theming methods but never the vocabulary — a blind
+ * test showed an agent could pick the right method, tier and dark-mode
  * mechanism and still not finish a theme, because only ~9 token names appeared
- * anywhere in the prose and none was a surface or foreground token. The
- * semantic tier is the one you override, and it is small enough to list whole.
+ * anywhere in the prose and none was a surface or foreground token.
+ *
+ * Read from the cre8 brand's generated tokens_brand.css, whose sections are
+ * the tiers (TIER 0 seed … TIER 3b legacy), and joined with the hand-authored
+ * usage intents in design-tokens/schema/token-intents.json — the same file the
+ * MCP list_tokens tool serves. A seed or semantic token with no intent fails
+ * the run: the vocabulary an agent writes against must say what each name is for.
  */
-const TIERS = [
-  ['Semantic (tier 2)', resolve(REPO, 'packages/2-semantic.css')],
-  ['Primitive (tier 1)', resolve(REPO, 'packages/1-primitives.css')],
-  ['Component (tier 3)', resolve(REPO, 'packages/3-components.css')],
-];
+const TOKENS_CSS = resolve(WC, 'design-tokens/brands/cre8/css/tokens_brand.css');
+const INTENTS = JSON.parse(readFileSync(resolve(WC, 'design-tokens/schema/token-intents.json'), 'utf8'));
 
-const tokensIn = (file) => {
-  let css;
-  try {
-    css = readFileSync(file, 'utf8');
-  } catch {
-    return new Map();
-  }
+const tokenCss = readFileSync(TOKENS_CSS, 'utf8');
+const section = (from, to) => {
+  const a = tokenCss.indexOf(from);
+  const b = to ? tokenCss.indexOf(to, a + 1) : tokenCss.length;
+  if (a < 0 || b < 0) throw new Error(`tokens_brand.css: section "${from}" not found`);
+  return tokenCss.slice(a, b);
+};
+const declsIn = (css) => {
   const out = new Map();
-  for (const m of css.matchAll(/(--cre8-[a-z0-9-]+)\s*:\s*([^;]+);/g)) {
-    out.set(m[1], m[2].trim());
-  }
+  for (const m of css.matchAll(/(--cre8-[a-z0-9-]+)\s*:\s*([^;]+);/g)) if (!out.has(m[1])) out.set(m[1], m[2].trim());
   return out;
 };
+const pick = (map, keep) => new Map([...map].filter(([n]) => keep(n)));
+const isLegacy = (n) => n.startsWith('--cre8-color-');
 
-const semantic = tokensIn(TIERS[0][1]);
-const primitives = tokensIn(TIERS[1][1]);
-const componentTokens = tokensIn(TIERS[2][1]);
+const seeds = declsIn(section('TIER 0', 'TIER 1'));
+const tier2 = declsIn(section('TIER 2', 'TIER 3 '));
+const semantic = pick(tier2, (n) => !isLegacy(n) && !n.startsWith('--cre8-mode-'));
+const primitives = new Map([
+  ...declsIn(section('TIER 1', 'TIER 2')),
+  ...pick(tier2, (n) => n.startsWith('--cre8-mode-')),
+]);
+const tier3 = declsIn(section('TIER 3 ', 'TIER 3b'));
+const componentTokens = pick(tier3, (n) => !isLegacy(n));
+const legacyTokens = new Map([
+  ...pick(tier2, isLegacy),
+  ...pick(tier3, isLegacy),
+  ...declsIn(section('TIER 3b', 'MODE —')),
+]);
+
+const missingIntent = [...seeds.keys(), ...semantic.keys()].filter((n) => !INTENTS.tokens[n]);
+if (missingIntent.length) {
+  throw new Error(
+    `token-intents.json has no entry for: ${missingIntent.join(', ')}. ` +
+      'Add a use/never line for each before regenerating.'
+  );
+}
+const intentLine = (n) => {
+  const i = INTENTS.tokens[n];
+  return `Use for ${i.use}. Never for ${i.never}.`;
+};
+const cell = (text) => text.replace(/\|/g, '\\|');
 
 const groupBy = (map, depth) => {
   const g = new Map();
@@ -599,62 +626,86 @@ let tk = `---
 title: Design Token Reference
 generated: true
 generator: docs/kb/tools/generate-reference.mjs
-source: packages/1-primitives.css, packages/2-semantic.css, packages/3-components.css
+source: packages/cre8-wc/design-tokens/brands/cre8/css/tokens_brand.css, packages/cre8-wc/design-tokens/schema/token-intents.json
 intents:
   - "what tokens can I override"
   - "what is the token for background or text or border"
   - "which token do I use for a surface color"
   - "is this token name real"
+  - "what does this token mean"
+  - "what are the seed tokens"
 ---
 
 # Design Token Reference
 
 <!-- DO NOT EDIT BY HAND. Regenerate with: node docs/kb/tools/generate-reference.mjs -->
 
-Every \`--cre8-*\` token, by tier. **This is the vocabulary**; the grammar — which
-tier to override and how — is in [Token Theming](../03-token-theming.md).
+Every \`--cre8-*\` token, by tier. **This is the vocabulary**; the grammar — how a
+brand sets the seeds and how modes and scoped rebrands work — is in
+[Token Theming](../03-token-theming.md). The usage lines come from
+\`design-tokens/schema/token-intents.json\`, which the MCP \`list_tokens\` tool serves.
 
-| Tier | Count | Override it when |
+| Tier | Count | You… |
 |---|---|---|
-| Semantic (tier 2) | ${semantic.size} | Almost always. This expresses intent and is what branding should change |
-| Primitive (tier 1) | ${primitives.size} | You want every use of a hue to move |
-| Component (tier 3) | ${componentTokens.size} | One component needs a one-off, accepting the debt |
+| Seed (tier 0) | ${seeds.size} | Set these, through \`brand.json\`. The only literals in the system |
+| Primitive (tier 1) | ${primitives.size} | Never edit. Ramps and scales derived from the seeds |
+| Semantic (tier 2) | ${semantic.size} | Read these in CSS. The only tier \`data-mode\` touches |
+| Component (tier 3) | ${componentTokens.size} | Leave alone, except for a genuine one-off on one component |
+| Legacy aliases | ${legacyTokens.size} | Never write new code against. \`--cre8-color-*\` names kept so old styles resolve |
 
 A name not in this file does not exist. \`var(--cre8-…)\` with no definition and no
 fallback renders as nothing, silently — which is why
 [Verifying a theme](../03-token-theming.md#verifying-a-theme) tells you to check, and why \`pnpm kb:check\`
-fails on any token named in these pages that is not defined here.
+fails on any token named in these pages that is not defined.
 
-## Semantic tokens, tier 2: the ones to override
+## Seed tokens, tier 0: what a brand sets
 
-The complete list. Values shown are the \`cre8\` brand's; a brand override
-redefines the same names.
+Each seed is set from the \`brand.json\` field shown. Values are the \`cre8\`
+brand's. To change one, change the brand, not the CSS — see
+[Rebrand in three steps](../03-token-theming.md#rebrand-in-three-steps).
+
+| Token | brand.json | Value | Use |
+|---|---|---|---|
+`;
+for (const [name, value] of seeds) {
+  const i = INTENTS.tokens[name];
+  tk += `| \`${name}\` | \`${i.brandField}\` | \`${cell(value)}\` | ${cell(i.use)} |\n`;
+}
+
+tk += `
+## Semantic tokens, tier 2: the ones to read
+
+The complete list. Values are the \`cre8\` brand's; every brand defines the same
+names. **Mode** marks tokens that flip under \`data-mode="inverse"\` / \`"auto"\`.
+Each has a legacy alias with \`color-\` inserted after \`--cre8-\`.
 
 `;
-
 for (const [family, entries] of groupBy(semantic, 1)) {
-  tk += `### \`--cre8-${family}-*\`\n\n| Token | Value |\n|---|---|\n`;
+  tk += `### \`--cre8-${family}-*\`\n\n| Token | Value | Mode | Use for … never for … |\n|---|---|---|---|\n`;
   for (const [name, value] of entries.sort(([a], [b]) => a.localeCompare(b))) {
-    tk += `| \`${name}\` | \`${value}\` |\n`;
+    const mode = INTENTS.tokens[name].modeAware ? 'yes' : '';
+    tk += `| \`${name}\` | \`${cell(value)}\` | ${mode} | ${cell(intentLine(name))} |\n`;
   }
   tk += '\n';
 }
 
 tk += `## Primitive tokens (tier 1)
 
-${primitives.size} raw values with no meaning attached. Grouped by family; these are
-what semantic tokens point at.
+${primitives.size} values with no meaning attached, all derived from the seeds.
+Grouped by family; these are what semantic tokens point at. A ramp step does not
+follow \`data-mode\`, which is the practical reason not to read one directly.
 
 | Family | Count | Example |
 |---|---|---|
 ${groupBy(primitives, 1)
-  .map(([fam, e]) => `| \`--cre8-${fam}-*\` | ${e.length} | \`${e[0][0]}\` = \`${e[0][1]}\` |`)
+  .map(([fam, e]) => `| \`--cre8-${fam}-*\` | ${e.length} | \`${e[0][0]}\` = \`${cell(e[0][1])}\` |`)
   .join('\n')}
 
 ## Component tokens (tier 3)
 
-${componentTokens.size} tokens scoped to a single component. Grouped by the component
-they belong to — override one of these only for a genuine one-off.
+${componentTokens.size} aliases scoped to a single component, each pointing at a
+semantic token. Grouped by the component they belong to — override one only for a
+genuine one-off.
 
 | Component prefix | Count |
 |---|---|
@@ -662,21 +713,28 @@ ${groupBy(componentTokens, 1)
   .map(([fam, e]) => `| \`--cre8-${fam}-*\` | ${e.length} |`)
   .join('\n')}
 
+## Legacy aliases
+
+${legacyTokens.size} older names, mostly \`--cre8-color-*\`, still emitted so
+existing component styles resolve to the value they always had. Drop the
+\`color-\` prefix to get the semantic name; do not use these in new code.
+
 ## What is missing
 
-Tokens are generated from Figma, so this list is what the pipeline produced —
-not necessarily everything a theme needs. Notably there is **no dedicated focus
-token family**, although [Verifying a theme](../03-token-theming.md#verifying-a-theme) warns that a
-brand which darkens backgrounds without adjusting focus indicators ships
-invisible focus rings. Check focus visibility by eye; the tokens will not tell
-you.
+There is **no dedicated focus token family** in the semantic tier. Focus colour,
+width and offset are brand fields (\`focus\` in \`brand.json\`), and the contrast
+guard does not see a focus ring against every surface it can land on. Check focus
+visibility by eye, in both modes — see
+[Verifying a theme](../03-token-theming.md#verifying-a-theme).
 `;
 
 writeFileSync(resolve(KB, 'reference/tokens.md'), tk);
 const tokenFacts = {
+  seed: seeds.size,
   semantic: semantic.size,
   primitive: primitives.size,
   component: componentTokens.size,
+  legacy: legacyTokens.size,
 };
 const surfaceFacts = { props: propCount, componentsWithParts: partsByTag.length };
 const eventFacts = {
@@ -780,10 +838,15 @@ const intents = [
   ['how do I show tabular data', '02-composition-patterns.md#data-display'],
   ['slot vs child vs prop', '02-composition-patterns.md#the-three-ways-to-pass-content'],
   ['how do I change the colors', '03-token-theming.md'],
-  ['how do I brand this for a client', '03-token-theming.md#method-2-brand-override-file'],
+  ['how do I brand this for a client', '03-token-theming.md#rebrand-in-three-steps'],
+  ['what is brand.json or the brand contract', '03-token-theming.md#brandjson-is-the-single-source'],
+  ['how do I rebrand one part of the page', '03-token-theming.md#scoped-rebrand-with-data-cre8-theme'],
+  ['which mcp tools theme or rebrand cre8', '03-token-theming.md#mcp-tools-for-agents'],
+  ['how do I check a brand meets contrast', '03-token-theming.md#the-contrast-guard'],
+  ['what does a token mean and when should I use it', 'reference/tokens.md'],
   ['why is my css not applying to a component', '03-token-theming.md#styling-across-the-shadow-boundary'],
   ['how do I add dark mode', '03-token-theming.md#dark-mode-and-modes-in-general'],
-  ['how do I generate a theme from a website', '03-token-theming.md#method-4-generated-themes'],
+  ['how do I generate a theme from a website', '03-token-theming.md#generating-a-brand-from-a-website'],
   ['how do agents emit cre8 ui', '04-a2ui.md'],
   ['what is the a2ui spec shape', '04-a2ui.md#the-cre8-dialect'],
   ['how do I validate an a2ui spec', '04-a2ui.md#validation'],

@@ -192,7 +192,27 @@
     },
     {
       "intent": "how do I brand this for a client",
-      "path": "03-token-theming.md#method-2-brand-override-file"
+      "path": "03-token-theming.md#rebrand-in-three-steps"
+    },
+    {
+      "intent": "what is brand.json or the brand contract",
+      "path": "03-token-theming.md#brandjson-is-the-single-source"
+    },
+    {
+      "intent": "how do I rebrand one part of the page",
+      "path": "03-token-theming.md#scoped-rebrand-with-data-cre8-theme"
+    },
+    {
+      "intent": "which mcp tools theme or rebrand cre8",
+      "path": "03-token-theming.md#mcp-tools-for-agents"
+    },
+    {
+      "intent": "how do I check a brand meets contrast",
+      "path": "03-token-theming.md#the-contrast-guard"
+    },
+    {
+      "intent": "what does a token mean and when should I use it",
+      "path": "reference/tokens.md"
     },
     {
       "intent": "why is my css not applying to a component",
@@ -204,7 +224,7 @@
     },
     {
       "intent": "how do I generate a theme from a website",
-      "path": "03-token-theming.md#method-4-generated-themes"
+      "path": "03-token-theming.md#generating-a-brand-from-a-website"
     },
     {
       "intent": "how do agents emit cre8 ui",

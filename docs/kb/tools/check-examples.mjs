@@ -376,6 +376,23 @@ const exportMatches = (subpath) =>
     return subpath.startsWith(head) && subpath.endsWith(tail) && subpath.length > head.length;
   });
 
+/**
+ * Scripts promised by a cross-workstream interface contract but owned, and
+ * wired into package.json, by another workstream. Accepted with a note rather
+ * than a failure, so the KB can document the contracted CLI before the branch
+ * that adds it lands. Once the script exists it is checked like any other.
+ */
+const CONTRACT_FILES = [resolve(WC, 'design-tokens/BRAND_CONTRACT.md')];
+const contractedScripts = new Set();
+for (const file of CONTRACT_FILES) {
+  try {
+    for (const m of readFileSync(file, 'utf8').matchAll(/\bpnpm\s+([a-z0-9:_-]+)/g)) contractedScripts.add(m[1]);
+  } catch {
+    /* no contract, nothing promised */
+  }
+}
+const pendingContracted = new Set();
+
 let commandsChecked = 0;
 let importsChecked = 0;
 
@@ -394,6 +411,10 @@ for (const file of walk(KB)) {
     }
     commandsChecked += 1;
     if (!allScripts.has(script)) {
+      if (contractedScripts.has(script)) {
+        pendingContracted.add(script);
+        continue;
+      }
       fail(rel, `"pnpm ${script}" is not a script in any workspace package.json`);
     }
   }
@@ -444,3 +465,8 @@ console.log(
     `${commandsChecked} command(s), ${importsChecked} import path(s) resolve, ` +
     `shipped examples match documented status (${known} known-failing)`
 );
+if (pendingContracted.size) {
+  console.log(
+    `note — contracted but not yet in package.json (accepted): ${[...pendingContracted].map((s) => `pnpm ${s}`).join(', ')}`
+  );
+}
