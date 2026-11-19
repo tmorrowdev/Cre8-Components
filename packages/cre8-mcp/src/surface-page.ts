@@ -141,6 +141,18 @@ function connect() {
     } catch {
       return;
     }
+    if (message.type === 'surface.style') {
+      // A brand restyle from apply_brand. Viewer-only: it never reaches the
+      // model. textContent, not innerHTML, so the css cannot become markup.
+      let el = document.getElementById('cre8-surface-brand');
+      if (!el) {
+        el = document.createElement('style');
+        el.id = 'cre8-surface-brand';
+        document.head.appendChild(el);
+      }
+      el.textContent = message.css ?? '';
+      return;
+    }
     try {
       // A create message is always a full resync — a fresh viewer and a
       // reconnecting one take the same path.

@@ -1,0 +1,10 @@
+{
+  "$schema": "../../../schema/brand.schema.json",
+  "$comment": "Test fixture: a yellow primary fails white-on-primary and primary-on-white. The generator must correct both.",
+  "name": "yellow",
+  "color": {
+    "primary": { "$type": "color", "$value": "#facc15" },
+    "neutral": { "$type": "color", "$value": "#71717a" }
+  },
+  "accessibility": { "contrastTarget": "AA" }
+}

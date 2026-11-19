@@ -43,7 +43,15 @@ pnpm --filter @tmorrow/cre8-mcp build
 | `generate_code` | A component tree as JSON in, HTML or JSX out. |
 | `get_a2ui_catalog`, `validate_a2ui_spec` | The A2UI schema, and validation of a spec against it. |
 | `get_content_model`, `get_composition`, `cre8_guide` | What goes inside a component, what is observed nesting inside it, and the prose guide. |
+| `list_tokens` | The `--cre8-*` vocabulary by tier (seed, primitive, semantic, component, legacy), each with a "use for / never for" line from `design-tokens/schema/token-intents.json`. |
+| `get_brand_contract`, `list_brands` | The `brand.json` schema with an authoring guide, and the brands this server has. |
+| `validate_brand`, `apply_brand` | Schema + contrast check of a brand, and the generated CSS for it. `apply_brand { surface_id }` restyles a live surface in place. |
 | `ui_open_surface`, `ui_stream`, `ui_get_surface`, `ui_events`, `ui_close_surface` | Streaming UI. See below. |
+
+The brand tools call `design-tokens/tools/brand.mjs` from a cre8 source
+checkout (set `CRE8_WC_ROOT`, or `CRE8_BRAND_MODULE` to the module itself); a
+published `@tmorrow/cre8-wc` does not ship it, and those tools then say so.
+`list_tokens`, `get_brand_contract` and `list_brands` still answer from JSON.
 
 ## Streaming surfaces over stdio
 
@@ -79,6 +87,8 @@ per-request instances.
 | `CRE8_MCP_TENANTS` | Per-tenant tokens and rate limits; see `src/tenants.ts`. Leaves the public catalog anonymous, keeps the surface API closed. |
 | `CRE8_MCP_THEME` | Default brand token sheet for surfaces (default `cre8`). |
 | `CRE8_WC_ROOT` | Point at a checkout of `@tmorrow/cre8-wc` to serve its assets instead of the installed copy's. |
+| `CRE8_BRAND_MODULE` | Exact path to `brand.mjs` for the brand tools (default `<CRE8_WC_ROOT>/design-tokens/tools/brand.mjs`). |
+| `CRE8_BRANDS_DIR` | Directory of `<name>/brand.json` brands (default `<cre8-wc>/design-tokens/brands`). |
 
 ## Develop
 

@@ -45,15 +45,18 @@ Agents: the same routing table is machine-readable at
 | I want to… | Go to |
 |---|---|
 | Load the theme stylesheet in the first place | [Choosing an integration](06-frameworks.md#choosing-an-integration) |
-| Change one color in one place | [Method 1: scoped custom property override](03-token-theming.md#method-1-scoped-custom-property-override) |
-| Brand the whole system for a client | [Method 2: brand override file](03-token-theming.md#method-2-brand-override-file) |
-| Add a new brand to the repo properly | [Method 3: a new brand directory](03-token-theming.md#method-3-a-new-brand-directory) |
-| Generate a theme from an existing website | [Method 4: generated themes](03-token-theming.md#method-4-generated-themes) |
+| Rebrand one region or one screen | [Scoped rebrand with data-cre8-theme](03-token-theming.md#scoped-rebrand-with-data-cre8-theme) |
+| Brand the whole system for a client | [Rebrand in three steps](03-token-theming.md#rebrand-in-three-steps) |
+| Add a new brand to the repo properly | [brand.json is the single source](03-token-theming.md#brandjson-is-the-single-source) |
+| Generate a brand from an existing website | [Generating a brand from a website](03-token-theming.md#generating-a-brand-from-a-website) |
+| Check a brand's contrast before shipping it | [The contrast guard](03-token-theming.md#the-contrast-guard) |
+| Regenerate or check brand CSS (`tokens:build`, `tokens:check`) | [The CLIs](03-token-theming.md#the-clis) |
+| Theme from an agent over MCP | [MCP tools for agents](03-token-theming.md#mcp-tools-for-agents) |
 | Add dark mode | [Dark mode and modes in general](03-token-theming.md#dark-mode-and-modes-in-general) |
 | Work out why my CSS is not reaching inside a component | [Styling across the shadow boundary](03-token-theming.md#styling-across-the-shadow-boundary) |
 | Find which parts of a component I can style | [`reference/parts.md`](reference/parts.md) |
-| Understand the three token tiers | [The three tiers](03-token-theming.md#the-three-tiers) |
-| Find the token name for a background, text, or border | [`reference/tokens.md`](reference/tokens.md) |
+| Understand the token tiers (seed, primitive, semantic, component) | [The four tiers](03-token-theming.md#the-four-tiers) |
+| Find the token name for a background, text, or border, and when to use it | [`reference/tokens.md`](reference/tokens.md) |
 | Check whether a token name is real | [`reference/tokens.md`](reference/tokens.md) |
 
 ## I am writing an agent

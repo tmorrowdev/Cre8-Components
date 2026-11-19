@@ -177,7 +177,9 @@ export function createApp(options: AppOptions = {}): Hono {
         catalog: 'GET /a2ui/catalog?view=metadata|component|full&component=cre8-button',
         component: 'GET /a2ui/catalog/:name',
         validate: 'POST /a2ui/validate  body: { spec: ComponentSpec }',
+        context: 'GET /a2ui/context?projection=compact&categories=Forms&budget=1500&brand=cre8  (brand adds its copy voice)',
       },
+      brands: 'MCP tools list_tokens, get_brand_contract, list_brands, validate_brand, apply_brand (POST /mcp)',
       streamingSurfaces: {
         create: 'POST /surfaces  body: { title?, root?, data? }',
         list: 'GET /surfaces',
@@ -404,6 +406,7 @@ export function createApp(options: AppOptions = {}): Hono {
           projection,
           budget,
           pinned: csv('pinned'),
+          brand: c.req.query('brand'),
         })
       );
     } catch (err) {

@@ -15,6 +15,7 @@
 import { readFileSync } from 'fs';
 import { createRequire } from 'module';
 import { loadA2uiCatalog } from './handlers.js';
+import { brandVoice, type BrandVoice } from './brand-tools.js';
 
 export interface CompactPropSpec {
   type?: string | string[];
@@ -69,6 +70,12 @@ export interface GetA2uiContextInput {
    * substituted a checkbox for a password input.
    */
   pinned?: string[];
+  /**
+   * Brand the generated UI will wear. Its `voice` (tone, words to prefer and
+   * avoid) rides along, because the model choosing components is the same one
+   * writing their labels, and copy is where an off-brand surface shows first.
+   */
+  brand?: string;
 }
 
 export interface A2uiContextResult {
@@ -80,6 +87,8 @@ export interface A2uiContextResult {
   truncated: boolean;
   droppedCount: number;
   estimatedTokens: number;
+  /** Present when `brand` was asked for. `voice` is null if the brand sets none. */
+  brand?: { name: string; displayName?: string; voice: BrandVoice | null };
 }
 
 /**
@@ -98,6 +107,7 @@ function normalize(name: string): string {
 export function handleGetA2uiContext(input: GetA2uiContextInput): A2uiContextResult {
   const compact = loadCompactCatalog();
   const projection = input.projection ?? 'compact';
+  const brand = input.brand ? brandContext(input.brand) : undefined;
 
   const byName = new Map(compact.components.map((c) => [c.name, c]));
 
@@ -141,6 +151,7 @@ export function handleGetA2uiContext(input: GetA2uiContextInput): A2uiContextRes
       truncated: false,
       droppedCount: 0,
       estimatedTokens: estimateTokens(components),
+      ...(brand ? { brand } : {}),
     };
   }
 
@@ -172,5 +183,11 @@ export function handleGetA2uiContext(input: GetA2uiContextInput): A2uiContextRes
     truncated: kept.length < candidates.length,
     droppedCount: candidates.length - kept.length,
     estimatedTokens: used,
+    ...(brand ? { brand } : {}),
   };
+}
+
+function brandContext(name: string): NonNullable<A2uiContextResult['brand']> {
+  const { displayName, voice } = brandVoice(name);
+  return { name, ...(displayName ? { displayName } : {}), voice };
 }

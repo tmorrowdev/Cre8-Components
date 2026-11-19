@@ -742,12 +742,12 @@ span.ripple {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: var(--cre8-color-bg-opacity-default);
   z-index: 1;
 }
 .cre8-c-hero--has-overlay .cre8-c-hero__body {
   z-index: 2;
-  --cre8-color-content-default: #ffffff;
-  --cre8-color-content-subtle: rgba(255, 255, 255, 0.85);
+  --cre8-color-content-default: var(--cre8-neutral-0);
+  --cre8-color-content-subtle: oklch(from var(--cre8-neutral-0) l c h / 0.85);
 }`;
 export default styles;

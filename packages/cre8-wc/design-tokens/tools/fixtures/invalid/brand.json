@@ -1,0 +1,9 @@
+{
+  "$comment": "Test fixture: schema violations.",
+  "name": "Invalid Name",
+  "color": {
+    "primary": { "$type": "color", "$value": "blue" }
+  },
+  "shape": { "radius": { "$type": "dimension", "$value": "24" } },
+  "sparkle": true
+}

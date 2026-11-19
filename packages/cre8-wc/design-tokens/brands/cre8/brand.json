@@ -1,0 +1,49 @@
+{
+  "$schema": "../../schema/brand.schema.json",
+  "name": "cre8",
+  "displayName": "cre8",
+  "description": "The default brand. What a surface gets when it asks for nothing.",
+  "extends": null,
+  "color": {
+    "primary": { "$type": "color", "$value": "#3b82f6" },
+    "neutral": { "$type": "color", "$value": "#64748b" },
+    "accent":  { "$type": "color", "$value": "#7c3aed" },
+    "success": { "$type": "color", "$value": "#06b6d4" },
+    "warning": { "$type": "color", "$value": "#f59e0b" },
+    "error":   { "$type": "color", "$value": "#ec4899" }
+  },
+  "typography": {
+    "body": { "$type": "fontFamily", "$value": ["Plus Jakarta Sans", "sans-serif"] },
+    "baseSize": { "$type": "dimension", "$value": "1rem" },
+    "weights": {
+      "regular": { "$type": "fontWeight", "$value": 400 },
+      "medium": { "$type": "fontWeight", "$value": 500 },
+      "semibold": { "$type": "fontWeight", "$value": 600 },
+      "bold": { "$type": "fontWeight", "$value": 700 }
+    },
+    "fontFaces": [
+      { "family": "Plus Jakarta Sans", "src": "assets/fonts/PlusJakartaSans-Regular.woff2", "weight": 400, "display": "fallback" },
+      { "family": "Plus Jakarta Sans", "src": "assets/fonts/PlusJakartaSans-Medium.woff2", "weight": 500, "display": "fallback" },
+      { "family": "Plus Jakarta Sans", "src": "assets/fonts/PlusJakartaSans-SemiBold.woff2", "weight": 600, "display": "fallback" },
+      { "family": "Plus Jakarta Sans", "src": "assets/fonts/PlusJakartaSans-Bold.woff2", "weight": 700, "display": "fallback" }
+    ]
+  },
+  "shape": {
+    "radius": { "$type": "dimension", "$value": "24px" },
+    "borderWidth": { "$type": "dimension", "$value": "0.0625rem" }
+  },
+  "space": { "base": { "$type": "dimension", "$value": "0.25rem" }, "density": "comfortable" },
+  "elevation": { "style": "standard" },
+  "accessibility": {
+    "contrastTarget": "AA",
+    "waive": [
+      { "fg": "content-knockout", "bg": "bg-brand-strong", "mode": "light", "reason": "White on primary-500 is 3.68:1. The primary button is cre8's signature; deepening it to primary-600 (5.17:1) is a visible change awaiting a design decision." },
+      { "fg": "content-link", "bg": "bg-default", "mode": "light", "reason": "primary-500 links are 3.68:1; primary-600 would pass (5.17:1). Pending the same decision as the primary button." },
+      { "fg": "content-brand", "bg": "bg-default", "mode": "light", "reason": "Same colour as content-link; same pending decision." },
+      { "fg": "border-strong", "bg": "bg-default", "mode": "light", "reason": "neutral-400 checkbox borders are 2.56:1 against the 3:1 UI minimum; neutral-500 would pass." },
+      { "fg": "content-success", "bg": "bg-success", "mode": "light", "reason": "Cyan success-600 on its tint is 3.54:1; success-700 would pass." },
+      { "fg": "content-error", "bg": "bg-error", "mode": "light", "reason": "error-600 on its tint is 4.21:1; error-700 would pass." },
+      { "fg": "content-error", "bg": "bg-default", "mode": "inverse", "reason": "error-600 on the inverse surface is 3.18:1; error-400 would pass. Status colours are not mode-aware yet." }
+    ]
+  }
+}

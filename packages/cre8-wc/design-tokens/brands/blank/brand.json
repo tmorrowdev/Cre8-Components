@@ -1,0 +1,26 @@
+{
+  "$schema": "../../schema/brand.schema.json",
+  "name": "blank",
+  "displayName": "blank",
+  "description": "The unbranded base: a muted slate primary, the conventional green/red/amber status mapping, a system font stack and a modest 8px radius. Nothing here should read as someone's brand before it is reseeded.",
+  "extends": null,
+  "color": {
+    "primary": { "$type": "color", "$value": "#475569" },
+    "neutral": { "$type": "color", "$value": "#64748b" },
+    "accent":  { "$type": "color", "$value": "#6366f1" },
+    "success": { "$type": "color", "$value": "#16a34a" },
+    "warning": { "$type": "color", "$value": "#d97706" },
+    "error":   { "$type": "color", "$value": "#dc2626" }
+  },
+  "typography": {
+    "body": { "$type": "fontFamily", "$value": ["system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"] },
+    "baseSize": { "$type": "dimension", "$value": "1rem" }
+  },
+  "shape": {
+    "radius": { "$type": "dimension", "$value": "8px" },
+    "borderWidth": { "$type": "dimension", "$value": "0.0625rem" }
+  },
+  "space": { "base": { "$type": "dimension", "$value": "0.25rem" }, "density": "comfortable" },
+  "elevation": { "style": "standard" },
+  "accessibility": { "contrastTarget": "AA" }
+}

@@ -4,6 +4,8 @@ intents:
   - "what does this term mean"
   - "define a2ui"
   - "define semantic token"
+  - "what is a seed token"
+  - "what is the brand contract"
   - "what is a compound component"
 see_also: [00-orientation, 03-token-theming, 04-a2ui]
 ---
@@ -27,10 +29,16 @@ updates. They are related, not interchangeable — see
 must be set as properties. The A2UI renderer decides between them using the
 catalog's `x-kind` annotation; see [How props actually reach the element](04-a2ui.md#how-props-actually-reach-the-element).
 
-**Brand** — A named set of token values under
-`design-tokens/brands/<name>/`, selecting a design language. Distinct from a
-**mode** (light/dark), which is a lighting condition within a brand. Fifteen
-brands ship today.
+**Brand** — A design language, defined by one `brand.json` under
+`design-tokens/brands/<name>/`; its stylesheets are generated from it. Distinct
+from a **mode**, which is a lighting condition within a brand. See
+[brand.json is the single source](03-token-theming.md#brandjson-is-the-single-source).
+
+**Brand contract** — The JSON Schema every `brand.json` validates against,
+`design-tokens/schema/brand.schema.json`, together with the module interface in
+`design-tokens/BRAND_CONTRACT.md` that the CLIs and the MCP brand tools share. It
+defines what a brand may change: seeds, typography, shape, spacing, elevation,
+motion, focus, contrast target, voice, and a warned `overrides` escape hatch.
 
 **Catalog** — `a2ui/catalog.json`. A JSON Schema 2020-12 document describing every
 component's props, enums, slots, and events. It is what `validateSpec` checks
@@ -51,8 +59,8 @@ reach past the shadow boundary; see
 double import does not throw.
 
 **Design token** — A named design decision stored as a CSS custom property
-(`--cre8-*`). Layered in three tiers: primitive, semantic, component. See
-[The three tiers](03-token-theming.md#the-three-tiers).
+(`--cre8-*`). Layered in four tiers: seed, primitive, semantic, component. See
+[The four tiers](03-token-theming.md#the-four-tiers).
 
 **Form-associated custom element** — A custom element with
 `static formAssociated = true`, which the browser treats as a real form control:
@@ -76,20 +84,33 @@ MCP server and the KB's derived pages both read from these; they are the closest
 thing to a source of truth about the public API.
 
 **MCP** — Model Context Protocol, the interface `packages/cre8-mcp` implements to
-expose the catalog to agents. Seven tools; see
+expose the catalog, live surfaces and brand tooling to agents. Twenty tools; see
 [The tool surface](05-ai-fluency.md#the-tool-surface).
+
+**Mode** — A lighting condition within a brand, set with `data-mode`:
+`inverse` (dark) or `auto` (follows `prefers-color-scheme`). Only the semantic tier
+changes; pair it with `data-cre8-theme` to scope it to an element. See
+[Dark mode and modes in general](03-token-theming.md#dark-mode-and-modes-in-general).
 
 **Presentational component** — A component with no business logic, no data
 fetching, and no application state. cre8's hard constraint, not a preference: it
 is what makes components expressible as A2UI data. See
 [The mental model](00-orientation.md#the-mental-model).
 
-**Primitive token** — Tier 1. A raw value with no meaning attached
-(`--cre8-cyan-70`). Change one and every use of that hue moves.
+**Primitive token** — Tier 1. A ramp step or scale value derived from a seed,
+with no meaning attached (`--cre8-primary-600`). Never edited directly; change the
+seed and the ramp follows.
+
+**Seed** — Tier 0. The only literal values in the token system
+(`--cre8-seed-primary`, `--cre8-seed-neutral`, `--cre8-seed-font`,
+`--cre8-seed-radius`, …), each set from a `brand.json` field. Every other token
+derives from the seeds, which is why a rebrand is a handful of values. See
+[The four tiers](03-token-theming.md#the-four-tiers).
 
 **Semantic token** — Tier 2. A purpose, defined in terms of a primitive
-(`--cre8-bg-brand-strong: var(--cre8-cyan-70)`). The tier you should override when
-branding, because it expresses intent rather than appearance.
+(`--cre8-bg-brand-strong`). The tier CSS should read, and the only tier a mode
+swap touches. Each has a "use for / never for" line in
+[`reference/tokens.md`](reference/tokens.md).
 
 **Component token** — Tier 3. One component's specific need
 (`--cre8-header-bg-default`). Narrowest blast radius, and the easiest way to

@@ -17,7 +17,7 @@ import { createRequire } from 'node:module';
 import { dirname, join, resolve } from 'node:path';
 import type { Hono } from 'hono';
 import { streamSSE } from 'hono/streaming';
-import type { SurfaceMessage } from '@tmorrow/cre8-wc/a2ui/stream/index.js';
+import type { ViewerMessage } from './surfaces.js';
 import { renderSurfacePage } from './surface-page.js';
 import { SurfaceNotFoundError, surfaceStore } from './surfaces.js';
 
@@ -49,7 +49,7 @@ let wcRootCache: string | null = null;
  * which is how you point a running server at a local build of the design system
  * without reinstalling.
  */
-function wcRoot(): string {
+export function wcRoot(): string {
   if (wcRootCache) return wcRootCache;
   const override = process.env.CRE8_WC_ROOT;
   if (override) {
@@ -246,7 +246,7 @@ export function mountSurfaceViewer(app: Hono): void {
     if (!surfaceStore.has(surfaceId)) return c.json({ error: 'No such surface' }, 404);
 
     return streamSSE(c, async (stream) => {
-      const queue: SurfaceMessage[] = [];
+      const queue: ViewerMessage[] = [];
       let wake: (() => void) | null = null;
       let aborted = false;
 

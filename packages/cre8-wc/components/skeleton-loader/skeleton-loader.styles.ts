@@ -595,14 +595,14 @@ span.ripple {
 
 /**
  * Skeleton Loader
- * The hard coded value for color here is intentional and is uniform across all brands
+ * Neutral surface tokens, so the shimmer follows the brand's neutral and the mode.
  */
 .cre8-c-skeleton-loader {
   width: 100%;
   height: auto;
   border-radius: var(--cre8-border-radius-small);
   aspect-ratio: 16/3;
-  background: linear-gradient(-90deg, #f6f6f6 0%, #ebebeb 50%, #f6f6f6 100%);
+  background: linear-gradient(-90deg, var(--cre8-color-bg-subtle) 0%, var(--cre8-color-bg-disabled) 50%, var(--cre8-color-bg-subtle) 100%);
   background-size: 400% 400%;
   animation: pulse 1.25s linear infinite;
 }

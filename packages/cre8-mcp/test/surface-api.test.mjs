@@ -377,13 +377,13 @@ await test('an unknown brand or a non-css file is refused', async () => {
 
 await test('a surface remembers its theme and the page links it', async () => {
   const created = await post('/surfaces', {
-    theme: 'cre8-a2ui',
+    theme: 'cre8-vivid',
     root: { component: 'cre8-layout-container' },
   });
   const { surfaceId, theme } = await created.json();
-  assertEqual(theme, 'cre8-a2ui');
+  assertEqual(theme, 'cre8-vivid');
   const html = await (await req(`/surfaces/${surfaceId}`)).text();
-  assert(html.includes('/themes/cre8-a2ui/tokens.css'), 'the page must link its brand sheet');
+  assert(html.includes('/themes/cre8-vivid/tokens.css'), 'the page must link its brand sheet');
 });
 
 await test('an unknown theme is rejected at creation, not at render', async () => {

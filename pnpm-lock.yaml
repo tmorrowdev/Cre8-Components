@@ -286,6 +286,12 @@ importers:
       '@wc-toolkit/storybook-helpers':
         specifier: ^10.5.1
         version: 10.5.1(lit@3.3.1)(storybook@10.5.4)
+      ajv:
+        specifier: ^8.18.0
+        version: 8.18.0
+      axe-core:
+        specifier: ^4.11.2
+        version: 4.11.2
       clone:
         specifier: ^2.1.2
         version: 2.1.2
