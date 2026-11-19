@@ -1,0 +1,16 @@
+{
+  "$comment": "Test fixture: a brand that extends cre8 and carries voice.",
+  "name": "acme",
+  "displayName": "Acme",
+  "description": "Fixture brand for cre8-mcp tests.",
+  "extends": "cre8",
+  "color": {
+    "primary": { "$type": "color", "$value": "#0f766e" },
+    "neutral": { "$type": "color", "$value": "#57534e" }
+  },
+  "voice": {
+    "tone": "Plain, warm, brief.",
+    "avoid": ["synergy", "exclamation marks"],
+    "prefer": ["you", "short verbs"]
+  }
+}
