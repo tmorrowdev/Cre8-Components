@@ -49,7 +49,7 @@
     "check:skills": "node a2ui/check-skill-fidelity.mjs",
     "tokens:build": "node design-tokens/tools/brand-cli.mjs build",
     "tokens:check": "node design-tokens/tools/brand-cli.mjs check",
-    "test:tokens": "node --test design-tokens/tools/"
+    "test:tokens": "node --test design-tokens/tools/*.test.mjs"
   },
   "type": "module",
   "module": "lib/index.js",

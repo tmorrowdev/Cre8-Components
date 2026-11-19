@@ -27,7 +27,8 @@ import { createResolver, parseSheet } from './lib/resolve.mjs';
 const require = createRequire(import.meta.url);
 const TOOLS_DIR = path.dirname(fileURLToPath(import.meta.url));
 export const DESIGN_TOKENS_DIR = path.resolve(TOOLS_DIR, '..');
-export const BRANDS_DIR = path.join(DESIGN_TOKENS_DIR, 'brands');
+/** Where brands live. CRE8_BRANDS_DIR overrides it (tests run the CLI against a scratch copy). */
+export const BRANDS_DIR = process.env.CRE8_BRANDS_DIR ? path.resolve(process.env.CRE8_BRANDS_DIR) : path.join(DESIGN_TOKENS_DIR, 'brands');
 const SCHEMA_PATH = path.join(DESIGN_TOKENS_DIR, 'schema', 'brand.schema.json');
 const TEMPLATE_BRAND = fs.readFileSync(path.join(TOOLS_DIR, 'templates', 'tokens_brand.css.tpl'), 'utf8');
 const TEMPLATE_THEME = fs.readFileSync(path.join(TOOLS_DIR, 'templates', 'tokens_theme.css.tpl'), 'utf8');
@@ -578,7 +579,7 @@ function planContrast(cfg, primitives, autoCorrect) {
     const flipFirst = before < 3;
     const order = flipFirst
       ? [...knockout.map((k) => ({ k, b: bg[0] })), ...bg.slice(1).flatMap((b) => knockout.map((k) => ({ k, b })))]
-      : bg.flatMap((b) => knockout.map((k) => ({ k, b })));
+      : [...bg.map((b) => ({ k: knockout[0], b })), ...bg.flatMap((b) => knockout.slice(1).map((k) => ({ k, b })))];
     const chosen = order.find(({ k, b }) => ratio(k, b) >= need) || null;
     if (!chosen) continue;
     const idx = bg.indexOf(chosen.b);
