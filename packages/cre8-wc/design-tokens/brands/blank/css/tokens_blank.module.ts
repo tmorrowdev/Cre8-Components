@@ -1,17 +1,34 @@
+// GENERATED from brand.json by tools/brand.mjs — do not edit.
+// Storybook's inlined copy of fonts.css + tokens_brand.css + tokens_blank.css.
 const blank = `
+/* GENERATED from brand.json by tools/brand.mjs — do not edit. */
 /**
- * blank: all tokens
+ * blank ships no custom typeface — the font seeds resolve to
+ * system or already-loaded families, so there is nothing to declare here.
+ * A brand that adds typography.fontFaces to brand.json gets its @font-face
+ * rules generated into this file.
+ */
+
+/**
+ * GENERATED from brand.json by tools/brand.mjs — do not edit.
+ * Edit design-tokens/brands/blank/brand.json, then run \`pnpm tokens:build blank\`.
  *
- * The blank base brand. Same four-tier structure as cre8 — literal
- * values appear in exactly one place, the seed — but the seed itself is
- * deliberately unbranded: a muted slate primary, the conventional
- * green/red/amber status mapping, a system font stack, and a modest 8px
- * radius. Nothing here should read as "someone's brand" before it is
- * reseeded. Rebranding means overriding the seed block below, not editing
- * this file.
+ * blank — The unbranded base: a muted slate primary, the conventional green/red/amber status mapping, a system font stack and a modest 8px radius. Nothing here should read as someone's brand before it is reseeded.
+ *
+ * Four tiers, each referencing only the tier above it. Literal values appear
+ * in exactly one place — the seed — so rebranding means overriding the seed
+ * block, not editing this file.
  *
  * The legacy --cre8-color-* names are still emitted, as aliases, in tier 3.
- * Every one resolves to the value it had before the restructure.
+ *
+ * ramp: primary: seed L 0.446 vs template 0.623; step lightness re-anchored around the seed
+ * ramp: success: seed L 0.627 vs template 0.715; step lightness re-anchored around the seed
+ * ramp: error: seed L 0.577 vs template 0.656; step lightness re-anchored around the seed
+ * ramp: warning: seed L 0.666 vs template 0.769; step lightness re-anchored around the seed
+ * ramp: accent: seed L 0.585 vs template 0.541; step lightness re-anchored around the seed
+ * contrast guard: light: border-strong neutral-400 (2.56:1) -> neutral-500 (4.76:1) on bg-default
+ * contrast guard: light: content-success success-600 (4.29:1) -> success-700 (6.2:1) on bg-success
+ * contrast guard: inverse: content-error error-600 (2.5:1) -> error-300 (7.12:1) on bg-default
  */
 
 :root {
@@ -20,12 +37,6 @@ const blank = `
    TIER 0 · SEED — the only literals in the system
    Owned by the integrator. Override these and every tier below follows.
    Nothing else in this file is a literal colour.
-
-   These particular values are deliberately unbranded — a neutral slate
-   primary and the conventional success/error/warning mapping (green/red/
-   amber, not this system's own cre8 default of cyan/pink/amber) — so
-   that an app looks like a blank, professional default before anyone runs
-   the cre8-brand skill against it, and fully like the target brand after.
    =========================================================================== */
   --cre8-seed-primary: #475569;
   --cre8-seed-neutral: #64748b;
@@ -38,6 +49,8 @@ const blank = `
   --cre8-seed-space: 0.25rem;
   --cre8-seed-font-size: 1rem;
   --cre8-seed-border-width: 0.0625rem;
+  --cre8-seed-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --cre8-seed-density: 1;
 }
 
 /* A custom property is substituted where it is DECLARED, not where it is
@@ -62,16 +75,17 @@ const blank = `
    =========================================================================== */
 
   /* primary */
+  /* primary: seed L 0.446 vs template 0.623; step lightness re-anchored around the seed */
   --cre8-primary-50: oklch(from var(--cre8-seed-primary) 0.9705 calc(c * 0.0754) calc(h - 5.21));
-  --cre8-primary-100: oklch(from var(--cre8-seed-primary) 0.9319 calc(c * 0.168) calc(h - 4.23));
-  --cre8-primary-200: oklch(from var(--cre8-seed-primary) 0.8823 calc(c * 0.3035) calc(h - 5.69));
-  --cre8-primary-300: oklch(from var(--cre8-seed-primary) 0.8091 calc(c * 0.5085) calc(h - 8));
-  --cre8-primary-400: oklch(from var(--cre8-seed-primary) 0.7137 calc(c * 0.7626) calc(h - 5.19));
+  --cre8-primary-100: oklch(from var(--cre8-seed-primary) 0.9122 calc(c * 0.168) calc(h - 4.23));
+  --cre8-primary-200: oklch(from var(--cre8-seed-primary) 0.8372 calc(c * 0.3035) calc(h - 5.69));
+  --cre8-primary-300: oklch(from var(--cre8-seed-primary) 0.7266 calc(c * 0.5085) calc(h - 8));
+  --cre8-primary-400: oklch(from var(--cre8-seed-primary) 0.5825 calc(c * 0.7626) calc(h - 5.19));
   --cre8-primary-500: var(--cre8-seed-primary);
-  --cre8-primary-600: oklch(from var(--cre8-seed-primary) 0.5461 calc(c * 1.1446) calc(h + 3.07));
-  --cre8-primary-700: oklch(from var(--cre8-seed-primary) 0.4882 calc(c * 1.155) calc(h + 4.56));
-  --cre8-primary-800: oklch(from var(--cre8-seed-primary) 0.4244 calc(c * 0.962) calc(h + 5.82));
-  --cre8-primary-900: oklch(from var(--cre8-seed-primary) 0.3791 calc(c * 0.7327) calc(h + 5.71));
+  --cre8-primary-600: oklch(from var(--cre8-seed-primary) 0.4087 calc(c * 1.1446) calc(h + 3.07));
+  --cre8-primary-700: oklch(from var(--cre8-seed-primary) 0.3809 calc(c * 1.155) calc(h + 4.56));
+  --cre8-primary-800: oklch(from var(--cre8-seed-primary) 0.3504 calc(c * 0.962) calc(h + 5.82));
+  --cre8-primary-900: oklch(from var(--cre8-seed-primary) 0.3287 calc(c * 0.7327) calc(h + 5.71));
   --cre8-primary-950: oklch(from var(--cre8-seed-primary) 0.2823 calc(c * 0.4651) calc(h + 8.12));
 
   /* neutral */
@@ -89,26 +103,29 @@ const blank = `
   --cre8-neutral-950: oklch(from var(--cre8-seed-neutral) 0.1288 calc(c * 0.9972) calc(h + 7.28));
 
   /* success */
+  /* success: seed L 0.627 vs template 0.715; step lightness re-anchored around the seed */
   --cre8-success-50: oklch(from var(--cre8-seed-success) 0.9841 calc(c * 0.1502) calc(h - 14.35));
-  --cre8-success-400: oklch(from var(--cre8-seed-success) 0.7971 calc(c * 1.0648) calc(h - 3.69));
+  --cre8-success-400: oklch(from var(--cre8-seed-success) 0.7361 calc(c * 1.0648) calc(h - 3.69));
   --cre8-success-500: var(--cre8-seed-success);
-  --cre8-success-600: oklch(from var(--cre8-seed-success) 0.6089 calc(c * 0.8823) calc(h + 6.5));
+  --cre8-success-600: oklch(from var(--cre8-seed-success) 0.5488 calc(c * 0.8823) calc(h + 6.5));
 
   /* error */
+  /* error: seed L 0.577 vs template 0.656; step lightness re-anchored around the seed */
   --cre8-error-50: oklch(from var(--cre8-seed-error) 0.9714 calc(c * 0.0668) calc(h - 11.11));
-  --cre8-error-100: oklch(from var(--cre8-seed-error) 0.9482 calc(c * 0.1305) calc(h - 12.05));
-  --cre8-error-200: oklch(from var(--cre8-seed-error) 0.8994 calc(c * 0.278) calc(h - 11.08));
-  --cre8-error-300: oklch(from var(--cre8-seed-error) 0.8228 calc(c * 0.5171) calc(h - 8.29));
-  --cre8-error-400: oklch(from var(--cre8-seed-error) 0.7253 calc(c * 0.8274) calc(h - 4.55));
+  --cre8-error-100: oklch(from var(--cre8-seed-error) 0.9424 calc(c * 0.1305) calc(h - 12.05));
+  --cre8-error-200: oklch(from var(--cre8-seed-error) 0.8814 calc(c * 0.278) calc(h - 11.08));
+  --cre8-error-300: oklch(from var(--cre8-seed-error) 0.7857 calc(c * 0.5171) calc(h - 8.29));
+  --cre8-error-400: oklch(from var(--cre8-seed-error) 0.6638 calc(c * 0.8274) calc(h - 4.55));
   --cre8-error-500: var(--cre8-seed-error);
-  --cre8-error-600: oklch(from var(--cre8-seed-error) 0.5916 calc(c * 1.0293) calc(h + 6.28));
-  --cre8-error-700: oklch(from var(--cre8-seed-error) 0.5246 calc(c * 0.9395) calc(h + 9.65));
+  --cre8-error-600: oklch(from var(--cre8-seed-error) 0.5311 calc(c * 1.0293) calc(h + 6.28));
+  --cre8-error-700: oklch(from var(--cre8-seed-error) 0.4832 calc(c * 0.9395) calc(h + 9.65));
 
   /* warning */
+  /* warning: seed L 0.666 vs template 0.769; step lightness re-anchored around the seed */
   --cre8-warning-50: oklch(from var(--cre8-seed-warning) 0.9869 calc(c * 0.13) calc(h + 25.2));
-  --cre8-warning-400: oklch(from var(--cre8-seed-warning) 0.8369 calc(c * 0.9986) calc(h + 14.35));
+  --cre8-warning-400: oklch(from var(--cre8-seed-warning) 0.7663 calc(c * 0.9986) calc(h + 14.35));
   --cre8-warning-500: var(--cre8-seed-warning);
-  --cre8-warning-600: oklch(from var(--cre8-seed-warning) 0.6658 calc(c * 0.956) calc(h - 11.76));
+  --cre8-warning-600: oklch(from var(--cre8-seed-warning) 0.5902 calc(c * 0.956) calc(h - 11.76));
 
   /* accent
      -50 and -500 added by hand (not from the original generator, which never
@@ -117,10 +134,31 @@ const blank = `
      identity step, not the per-hue-tuned coefficients the rest of this ramp
      uses -- close enough for a light tint and a mid-strength fill, not a
      claim of the same precision. */
+  /* accent: seed L 0.585 vs template 0.541; step lightness re-anchored around the seed */
   --cre8-accent-50: oklch(from var(--cre8-seed-accent) 0.96 calc(c * 0.15) h);
-  --cre8-accent-200: oklch(from var(--cre8-seed-accent) 0.9024 calc(c * 0.245) calc(h + 13.69));
+  --cre8-accent-200: oklch(from var(--cre8-seed-accent) 0.9085 calc(c * 0.245) calc(h + 13.69));
   --cre8-accent-500: oklch(from var(--cre8-seed-accent) calc(l + 0.08) c h);
   --cre8-accent-600: var(--cre8-seed-accent);
+
+  /* Extended steps — darker status/accent steps the hand-maintained sheet
+     never had. Contrast-correction candidates; nothing reads them by default. */
+  --cre8-success-700: oklch(from var(--cre8-seed-success) 0.4597 calc(c * 0.95) h);
+  --cre8-success-800: oklch(from var(--cre8-seed-success) 0.4126 calc(c * 0.8) h);
+  --cre8-success-900: oklch(from var(--cre8-seed-success) 0.3791 calc(c * 0.65) h);
+  --cre8-error-800: oklch(from var(--cre8-seed-error) 0.4115 calc(c * 0.85) calc(h + 9.65));
+  --cre8-error-900: oklch(from var(--cre8-seed-error) 0.3791 calc(c * 0.7) calc(h + 9.65));
+  --cre8-warning-700: oklch(from var(--cre8-seed-warning) 0.4594 calc(c * 0.95) h);
+  --cre8-warning-800: oklch(from var(--cre8-seed-warning) 0.4124 calc(c * 0.8) h);
+  --cre8-warning-900: oklch(from var(--cre8-seed-warning) 0.3791 calc(c * 0.65) h);
+  --cre8-accent-700: oklch(from var(--cre8-seed-accent) 0.5122 calc(c * 0.95) h);
+  --cre8-accent-800: oklch(from var(--cre8-seed-accent) 0.4244 calc(c * 0.8) h);
+
+  /* info — the info status ramp. Without an info seed it is the accent ramp,
+     which is what info has always read. */
+  --cre8-info-50: var(--cre8-accent-50);
+  --cre8-info-500: var(--cre8-accent-500);
+  --cre8-info-600: var(--cre8-accent-600);
+  --cre8-info-700: var(--cre8-accent-700);
 
   /* Overlays — neutral-900 at fixed alpha */
   --cre8-overlay-transparent: oklch(from var(--cre8-neutral-900) l c h / 0);
@@ -158,11 +196,11 @@ const blank = `
      math -- so retheming padding doesn't also retheme page layout. Component
      padding should reference these, never --cre8-spacing-* directly; gap and
      margin (genuine layout) can still reach the full scale above. */
-  --cre8-padding-2: var(--cre8-spacing-2);
-  --cre8-padding-4: var(--cre8-spacing-4);
-  --cre8-padding-8: var(--cre8-spacing-8);
-  --cre8-padding-16: var(--cre8-spacing-16);
-  --cre8-padding-24: var(--cre8-spacing-24);
+  --cre8-padding-2: calc(var(--cre8-spacing-2) * var(--cre8-seed-density));
+  --cre8-padding-4: calc(var(--cre8-spacing-4) * var(--cre8-seed-density));
+  --cre8-padding-8: calc(var(--cre8-spacing-8) * var(--cre8-seed-density));
+  --cre8-padding-16: calc(var(--cre8-spacing-16) * var(--cre8-seed-density));
+  --cre8-padding-24: calc(var(--cre8-spacing-24) * var(--cre8-seed-density));
 
   /* Font size — multiples of the font-size seed */
   --cre8-font-size-0: calc(var(--cre8-seed-font-size) * 0.75);
@@ -203,6 +241,8 @@ const blank = `
 
   /* Type — role names, never vendor names */
   --cre8-font-family-base: var(--cre8-seed-font);
+  --cre8-font-family-display: var(--cre8-seed-font);
+  --cre8-font-family-mono: var(--cre8-seed-font-mono);
   --cre8-font-weight-regular: 400;
   --cre8-font-weight-medium: 500;
   --cre8-font-weight-semibold: 600;
@@ -212,6 +252,16 @@ const blank = `
   --cre8-line-height-normal: 1.33;
   --cre8-line-height-relaxed: 1.4;
   --cre8-line-height-loose: 1.5;
+
+  /* Motion — zeroed under prefers-reduced-motion (end of file) */
+  --cre8-duration-fast: 100ms;
+  --cre8-duration-base: 200ms;
+  --cre8-duration-slow: 300ms;
+  --cre8-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --cre8-easing-emphasized: cubic-bezier(0.3, 0, 0, 1);
+
+  /* Control gap — the space between a control's parts, scaled by density */
+  --cre8-control-gap: calc(var(--cre8-seed-space) * 2 * var(--cre8-seed-density));
 
 /* ===========================================================================
    TIER 2 · SEMANTIC — purpose, not colour
@@ -223,6 +273,8 @@ const blank = `
    =========================================================================== */
 
   /* Mode indirection — light. Overridden by [data-mode="inverse"]. */
+  /* contrast guard: border-strong neutral-400 (2.56:1) -> neutral-500 (4.76:1) on bg-default */
+  /* contrast guard: content-success success-600 (4.29:1) -> success-700 (6.2:1) on bg-success */
   --cre8-mode-bg-default: var(--cre8-neutral-0);
   --cre8-mode-bg-default-hover: var(--cre8-neutral-50);
   --cre8-mode-bg-subtle: var(--cre8-neutral-100);
@@ -241,8 +293,10 @@ const blank = `
   --cre8-mode-content-link: var(--cre8-primary-500);
   --cre8-mode-content-link-hover: var(--cre8-primary-600);
   --cre8-mode-border-default: var(--cre8-neutral-200);
-  --cre8-mode-border-strong: var(--cre8-neutral-400);
+  --cre8-mode-border-strong: var(--cre8-neutral-500);
   --cre8-mode-border-brand: var(--cre8-primary-500);
+  --cre8-mode-focus-ring-color: var(--cre8-primary-500);
+  --cre8-mode-content-error: var(--cre8-error-600);
 
   --cre8-bg-default: var(--cre8-mode-bg-default);
   --cre8-color-bg-default: var(--cre8-bg-default);
@@ -290,9 +344,9 @@ const blank = `
   --cre8-color-bg-warning: var(--cre8-bg-warning);
   --cre8-bg-warning-strong: var(--cre8-warning-500);
   --cre8-color-bg-warning-strong: var(--cre8-bg-warning-strong);
-  --cre8-bg-info: var(--cre8-accent-50);
+  --cre8-bg-info: var(--cre8-info-50);
   --cre8-color-bg-info: var(--cre8-bg-info);
-  --cre8-bg-info-strong: var(--cre8-accent-500);
+  --cre8-bg-info-strong: var(--cre8-info-500);
   --cre8-color-bg-info-strong: var(--cre8-bg-info-strong);
   --cre8-bg-attention: var(--cre8-neutral-0);
   --cre8-color-bg-attention: var(--cre8-bg-attention);
@@ -320,17 +374,17 @@ const blank = `
   --cre8-color-content-brand-strong: var(--cre8-content-brand-strong);
   --cre8-content-brand-knockout: var(--cre8-success-50);
   --cre8-color-content-brand-knockout: var(--cre8-content-brand-knockout);
-  --cre8-content-success: var(--cre8-success-600);
+  --cre8-content-success: var(--cre8-success-700);
   --cre8-color-content-success: var(--cre8-content-success);
   --cre8-content-success-icon: var(--cre8-success-600);
   --cre8-color-content-success-icon: var(--cre8-content-success-icon);
-  --cre8-content-error: var(--cre8-error-600);
+  --cre8-content-error: var(--cre8-mode-content-error);
   --cre8-color-content-error: var(--cre8-content-error);
   --cre8-content-error-icon: var(--cre8-error-600);
   --cre8-color-content-error-icon: var(--cre8-content-error-icon);
   --cre8-content-warning-icon: var(--cre8-warning-600);
   --cre8-color-content-warning-icon: var(--cre8-content-warning-icon);
-  --cre8-content-info-icon: var(--cre8-accent-500);
+  --cre8-content-info-icon: var(--cre8-info-500);
   --cre8-color-content-info-icon: var(--cre8-content-info-icon);
   --cre8-content-attention-icon: var(--cre8-primary-400);
   --cre8-color-content-attention-icon: var(--cre8-content-attention-icon);
@@ -378,7 +432,7 @@ const blank = `
   --cre8-color-border-error: var(--cre8-border-error);
   --cre8-border-warning: var(--cre8-warning-400);
   --cre8-color-border-warning: var(--cre8-border-warning);
-  --cre8-border-info: var(--cre8-accent-500);
+  --cre8-border-info: var(--cre8-info-500);
   --cre8-color-border-info: var(--cre8-border-info);
   --cre8-border-attention: var(--cre8-primary-400);
   --cre8-color-border-attention: var(--cre8-border-attention);
@@ -390,6 +444,25 @@ const blank = `
   --cre8-color-border-inverse-active-outline: var(--cre8-border-inverse-active-outline);
   --cre8-link-bg-active: var(--cre8-neutral-900);
   --cre8-color-link-bg-active: var(--cre8-link-bg-active);
+
+  /* Focus ring */
+  --cre8-focus-ring-color: var(--cre8-mode-focus-ring-color);
+  --cre8-focus-ring-width: 2px;
+  --cre8-focus-ring-offset: 2px;
+
+  /* Chart — categorical series, in order (derived from primary and accent) */
+  --cre8-chart-1: var(--cre8-primary-500);
+  --cre8-chart-2: var(--cre8-accent-600);
+  --cre8-chart-3: var(--cre8-primary-300);
+  --cre8-chart-4: var(--cre8-accent-500);
+  --cre8-chart-5: var(--cre8-primary-700);
+  --cre8-chart-6: var(--cre8-accent-800);
+
+  /* Brand gradient — primary into accent */
+  --cre8-gradient-brand-from: var(--cre8-primary-500);
+  --cre8-gradient-brand-to: var(--cre8-accent-600);
+  --cre8-gradient-brand: linear-gradient(135deg, var(--cre8-gradient-brand-from) 0%, var(--cre8-gradient-brand-to) 100%);
+  --cre8-gradient-brand-rich: linear-gradient(150deg, var(--cre8-gradient-brand-from) 0%, var(--cre8-accent-600) 42%, var(--cre8-gradient-brand-to) 100%);
 
 /* ===========================================================================
    TIER 3 · COMPONENT — aliases only
@@ -987,29 +1060,29 @@ const blank = `
   --cre8-color-button-tertiary-danger-inverse-outline: var(--cre8-button-tertiary-danger-inverse-outline);
 
   /* Component sizing — multiples of the spacing scale */
-  --cre8-desktop-menu-padding-vertical-padding: calc(var(--cre8-seed-space) * 4);
-  --cre8-desktop-menu-padding-horizontal-padding: calc(var(--cre8-seed-space) * 2);
-  --cre8-input-padding: calc(var(--cre8-seed-space) * 2.5) calc(var(--cre8-seed-space) * 3.5);
+  --cre8-desktop-menu-padding-vertical-padding: calc(var(--cre8-seed-space) * 4 * var(--cre8-seed-density));
+  --cre8-desktop-menu-padding-horizontal-padding: calc(var(--cre8-seed-space) * 2 * var(--cre8-seed-density));
+  --cre8-input-padding: calc(var(--cre8-seed-space) * 2.5 * var(--cre8-seed-density)) calc(var(--cre8-seed-space) * 3.5 * var(--cre8-seed-density));
   --cre8-input-label-margin-left: 0;
-  --cre8-button-padding-vertical-small: calc(var(--cre8-seed-space) * 2);
-  --cre8-button-padding-vertical-medium: calc(var(--cre8-seed-space) * 3);
-  --cre8-button-padding-vertical-large: calc(var(--cre8-seed-space) * 4);
-  --cre8-button-padding-vertical-icon-only: calc(var(--cre8-seed-space) * 2);
-  --cre8-button-padding-vertical-small-icon-only: calc(var(--cre8-seed-space) * 2);
-  --cre8-button-padding-vertical-medium-icon-only: calc(var(--cre8-seed-space) * 4);
-  --cre8-button-padding-vertical-large-icon-only: calc(var(--cre8-seed-space) * 4);
-  --cre8-button-padding-horizontal-small: calc(var(--cre8-seed-space) * 4);
-  --cre8-button-padding-horizontal-medium: calc(var(--cre8-seed-space) * 6);
-  --cre8-button-padding-horizontal-large: calc(var(--cre8-seed-space) * 8);
-  --cre8-button-padding-horizontal-icon-only: calc(var(--cre8-seed-space) * 2);
-  --cre8-button-padding-horizontal-small-icon-only: calc(var(--cre8-seed-space) * 2);
-  --cre8-button-padding-horizontal-medium-icon-only: calc(var(--cre8-seed-space) * 4);
-  --cre8-button-padding-horizontal-large-icon-only: calc(var(--cre8-seed-space) * 4);
+  --cre8-button-padding-vertical-small: calc(var(--cre8-seed-space) * 2 * var(--cre8-seed-density));
+  --cre8-button-padding-vertical-medium: calc(var(--cre8-seed-space) * 3 * var(--cre8-seed-density));
+  --cre8-button-padding-vertical-large: calc(var(--cre8-seed-space) * 4 * var(--cre8-seed-density));
+  --cre8-button-padding-vertical-icon-only: calc(var(--cre8-seed-space) * 2 * var(--cre8-seed-density));
+  --cre8-button-padding-vertical-small-icon-only: calc(var(--cre8-seed-space) * 2 * var(--cre8-seed-density));
+  --cre8-button-padding-vertical-medium-icon-only: calc(var(--cre8-seed-space) * 4 * var(--cre8-seed-density));
+  --cre8-button-padding-vertical-large-icon-only: calc(var(--cre8-seed-space) * 4 * var(--cre8-seed-density));
+  --cre8-button-padding-horizontal-small: calc(var(--cre8-seed-space) * 4 * var(--cre8-seed-density));
+  --cre8-button-padding-horizontal-medium: calc(var(--cre8-seed-space) * 6 * var(--cre8-seed-density));
+  --cre8-button-padding-horizontal-large: calc(var(--cre8-seed-space) * 8 * var(--cre8-seed-density));
+  --cre8-button-padding-horizontal-icon-only: calc(var(--cre8-seed-space) * 2 * var(--cre8-seed-density));
+  --cre8-button-padding-horizontal-small-icon-only: calc(var(--cre8-seed-space) * 2 * var(--cre8-seed-density));
+  --cre8-button-padding-horizontal-medium-icon-only: calc(var(--cre8-seed-space) * 4 * var(--cre8-seed-density));
+  --cre8-button-padding-horizontal-large-icon-only: calc(var(--cre8-seed-space) * 4 * var(--cre8-seed-density));
   --cre8-icon-size-small: calc(var(--cre8-seed-space) * 3.5);
   --cre8-icon-size-default: calc(var(--cre8-seed-space) * 4);
   --cre8-icon-size-large: calc(var(--cre8-seed-space) * 4.5);
-  --cre8-badge-padding-horizontal: calc(var(--cre8-seed-space) * 1.5);
-  --cre8-badge-padding-vertical: calc(var(--cre8-seed-space) * 0.5);
+  --cre8-badge-padding-horizontal: calc(var(--cre8-seed-space) * 1.5 * var(--cre8-seed-density));
+  --cre8-badge-padding-vertical: calc(var(--cre8-seed-space) * 0.5 * var(--cre8-seed-density));
   --cre8-progress-meter-height: calc(var(--cre8-seed-space) * 2);
 
 /* ===========================================================================
@@ -1101,6 +1174,7 @@ const blank = `
    [data-cre8-theme] on any element to scope the mode to that subtree.
    =========================================================================== */
 [data-mode="inverse"] {
+  /* contrast guard: content-error error-600 (2.5:1) -> error-300 (7.12:1) on bg-default */
   --cre8-mode-bg-default: var(--cre8-neutral-800);
   --cre8-mode-bg-default-hover: var(--cre8-neutral-700);
   --cre8-mode-bg-subtle: var(--cre8-neutral-900);
@@ -1121,6 +1195,8 @@ const blank = `
   --cre8-mode-border-default: var(--cre8-neutral-700);
   --cre8-mode-border-strong: var(--cre8-neutral-500);
   --cre8-mode-border-brand: var(--cre8-primary-300);
+  --cre8-mode-focus-ring-color: var(--cre8-primary-300);
+  --cre8-mode-content-error: var(--cre8-error-300);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1145,18 +1221,32 @@ const blank = `
     --cre8-mode-border-default: var(--cre8-neutral-700);
     --cre8-mode-border-strong: var(--cre8-neutral-500);
     --cre8-mode-border-brand: var(--cre8-primary-300);
+    --cre8-mode-focus-ring-color: var(--cre8-primary-300);
+    --cre8-mode-content-error: var(--cre8-error-300);
+  }
+}
+
+/* Reduced motion — durations collapse to zero; easings are left alone. */
+@media (prefers-reduced-motion: reduce) {
+  :root,
+  [data-cre8-theme] {
+    --cre8-duration-fast: 0ms;
+    --cre8-duration-base: 0ms;
+    --cre8-duration-slow: 0ms;
   }
 }
 
 /**
- * blank ships no custom typeface on purpose — --cre8-seed-font resolves
- * to the system font stack, so there is nothing to declare here. Once an
- * integrator reseeds --cre8-seed-font to a real brand typeface, that
- * typeface's own @font-face rules (if it isn't a system/Google font) belong
- * in the integrator's own stylesheet, loaded after this one.
+ * GENERATED from brand.json by tools/brand.mjs — do not edit.
+ * Edit design-tokens/brands/blank/brand.json, then run \`pnpm tokens:build blank\`.
+ *
+ * blank — The unbranded base: a muted slate primary, the conventional green/red/amber status mapping, a system font stack and a modest 8px radius. Nothing here should read as someone's brand before it is reseeded.
+ *
+ * Theme entry point: the token sheet, the brand's fonts, and the typography
+ * roles. Headings (title, headline, display) read --cre8-font-family-display.
  */
-
-:root{--cre8-typography-body-xlarge-font-family: var(--cre8-font-families-inter);
+:root,
+[data-cre8-theme]{--cre8-typography-body-xlarge-font-family: var(--cre8-font-families-inter);
       --cre8-typography-body-xlarge-font-size: var(--cre8-font-size-5);
       --cre8-typography-body-xlarge-font-weight: var(--cre8-font-weights-inter-0);
       --cre8-typography-body-xlarge-line-height: var(--cre8-line-heights-7);
@@ -1246,133 +1336,133 @@ const blank = `
       --cre8-typography-label-small-line-height: var(--cre8-line-heights-7);
       --cre8-typography-label-small-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-label-small-text-transform: var(--cre8-text-case-none);
---cre8-typography-title-xlarge-font-family: var(--cre8-font-families-inter);
+--cre8-typography-title-xlarge-font-family: var(--cre8-font-family-display);
       --cre8-typography-title-xlarge-font-size: var(--cre8-font-size-8);
       --cre8-typography-title-xlarge-font-weight: var(--cre8-font-weights-inter-1);
       --cre8-typography-title-xlarge-line-height: var(--cre8-line-heights-4);
       --cre8-typography-title-xlarge-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-title-xlarge-text-transform: var(--cre8-text-case-none);
---cre8-typography-title-xlarge-mobile-font-family: var(--cre8-font-families-inter);
+--cre8-typography-title-xlarge-mobile-font-family: var(--cre8-font-family-display);
       --cre8-typography-title-xlarge-mobile-font-size: var(--cre8-font-size-7);
       --cre8-typography-title-xlarge-mobile-font-weight: var(--cre8-font-weights-inter-1);
       --cre8-typography-title-xlarge-mobile-line-height: var(--cre8-line-heights-4);
       --cre8-typography-title-xlarge-mobile-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-title-xlarge-mobile-text-transform: var(--cre8-text-case-none);
---cre8-typography-title-large-font-family: var(--cre8-font-families-inter);
+--cre8-typography-title-large-font-family: var(--cre8-font-family-display);
       --cre8-typography-title-large-font-size: var(--cre8-font-size-6);
       --cre8-typography-title-large-font-weight: var(--cre8-font-weights-inter-1);
       --cre8-typography-title-large-line-height: var(--cre8-line-heights-1);
       --cre8-typography-title-large-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-title-large-text-transform: var(--cre8-text-case-none);
---cre8-typography-title-large-mobile-font-family: var(--cre8-font-families-inter);
+--cre8-typography-title-large-mobile-font-family: var(--cre8-font-family-display);
       --cre8-typography-title-large-mobile-font-size: var(--cre8-font-size-5);
       --cre8-typography-title-large-mobile-font-weight: var(--cre8-font-weights-inter-1);
       --cre8-typography-title-large-mobile-line-height: var(--cre8-line-heights-1);
       --cre8-typography-title-large-mobile-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-title-large-mobile-text-transform: var(--cre8-text-case-none);
---cre8-typography-title-default-font-family: var(--cre8-font-families-inter);
+--cre8-typography-title-default-font-family: var(--cre8-font-family-display);
       --cre8-typography-title-default-font-size: var(--cre8-font-size-5);
       --cre8-typography-title-default-font-weight: var(--cre8-font-weights-inter-1);
       --cre8-typography-title-default-line-height: var(--cre8-line-heights-2);
       --cre8-typography-title-default-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-title-default-text-transform: var(--cre8-text-case-none);
---cre8-typography-title-default-mobile-font-family: var(--cre8-font-families-inter);
+--cre8-typography-title-default-mobile-font-family: var(--cre8-font-family-display);
       --cre8-typography-title-default-mobile-font-size: var(--cre8-font-size-3);
       --cre8-typography-title-default-mobile-font-weight: var(--cre8-font-weights-inter-1);
       --cre8-typography-title-default-mobile-line-height: var(--cre8-line-heights-2);
       --cre8-typography-title-default-mobile-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-title-default-mobile-text-transform: var(--cre8-text-case-none);
---cre8-typography-title-small-font-family: var(--cre8-font-families-inter);
+--cre8-typography-title-small-font-family: var(--cre8-font-family-display);
       --cre8-typography-title-small-font-size: var(--cre8-font-size-3);
       --cre8-typography-title-small-font-weight: var(--cre8-font-weights-inter-1);
       --cre8-typography-title-small-line-height: var(--cre8-line-heights-6);
       --cre8-typography-title-small-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-title-small-text-transform: var(--cre8-text-case-none);
---cre8-typography-title-small-mobile-font-family: var(--cre8-font-families-inter);
+--cre8-typography-title-small-mobile-font-family: var(--cre8-font-family-display);
       --cre8-typography-title-small-mobile-font-size: var(--cre8-font-size-2);
       --cre8-typography-title-small-mobile-font-weight: var(--cre8-font-weights-inter-1);
       --cre8-typography-title-small-mobile-line-height: var(--cre8-line-heights-6);
       --cre8-typography-title-small-mobile-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-title-small-mobile-text-transform: var(--cre8-text-case-none);
---cre8-typography-headline-large-font-family: var(--cre8-font-families-inter);
+--cre8-typography-headline-large-font-family: var(--cre8-font-family-display);
       --cre8-typography-headline-large-font-size: var(--cre8-font-size-9);
       --cre8-typography-headline-large-font-weight: var(--cre8-font-weights-inter-3);
       --cre8-typography-headline-large-line-height: var(--cre8-line-heights-0);
       --cre8-typography-headline-large-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-headline-large-text-transform: var(--cre8-text-case-none);
---cre8-typography-headline-large-mobile-font-family: var(--cre8-font-families-inter);
+--cre8-typography-headline-large-mobile-font-family: var(--cre8-font-family-display);
       --cre8-typography-headline-large-mobile-font-size: var(--cre8-font-size-8);
       --cre8-typography-headline-large-mobile-font-weight: var(--cre8-font-weights-inter-3);
       --cre8-typography-headline-large-mobile-line-height: var(--cre8-line-heights-0);
       --cre8-typography-headline-large-mobile-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-headline-large-mobile-text-transform: var(--cre8-text-case-none);
---cre8-typography-headline-default-font-family: var(--cre8-font-families-inter);
+--cre8-typography-headline-default-font-family: var(--cre8-font-family-display);
       --cre8-typography-headline-default-font-size: var(--cre8-font-size-8);
       --cre8-typography-headline-default-font-weight: var(--cre8-font-weights-inter-3);
       --cre8-typography-headline-default-line-height: var(--cre8-line-heights-0);
       --cre8-typography-headline-default-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-headline-default-text-transform: var(--cre8-text-case-none);
---cre8-typography-headline-default-mobile-font-family: var(--cre8-font-families-inter);
+--cre8-typography-headline-default-mobile-font-family: var(--cre8-font-family-display);
       --cre8-typography-headline-default-mobile-font-size: var(--cre8-font-size-7);
       --cre8-typography-headline-default-mobile-font-weight: var(--cre8-font-weights-inter-3);
       --cre8-typography-headline-default-mobile-line-height: var(--cre8-line-heights-0);
       --cre8-typography-headline-default-mobile-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-headline-default-mobile-text-transform: var(--cre8-text-case-none);
---cre8-typography-headline-small-font-family: var(--cre8-font-families-inter);
+--cre8-typography-headline-small-font-family: var(--cre8-font-family-display);
       --cre8-typography-headline-small-font-size: var(--cre8-font-size-7);
       --cre8-typography-headline-small-font-weight: var(--cre8-font-weights-inter-3);
       --cre8-typography-headline-small-line-height: var(--cre8-line-heights-0);
       --cre8-typography-headline-small-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-headline-small-text-transform: var(--cre8-text-case-none);
---cre8-typography-headline-small-mobile-font-family: var(--cre8-font-families-inter);
+--cre8-typography-headline-small-mobile-font-family: var(--cre8-font-family-display);
       --cre8-typography-headline-small-mobile-font-size: var(--cre8-font-size-6);
       --cre8-typography-headline-small-mobile-font-weight: var(--cre8-font-weights-inter-3);
       --cre8-typography-headline-small-mobile-line-height: var(--cre8-line-heights-0);
       --cre8-typography-headline-small-mobile-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-headline-small-mobile-text-transform: var(--cre8-text-case-none);
---cre8-typography-headline-xsmall-font-family: var(--cre8-font-families-inter);
+--cre8-typography-headline-xsmall-font-family: var(--cre8-font-family-display);
       --cre8-typography-headline-xsmall-font-size: var(--cre8-font-size-5);
       --cre8-typography-headline-xsmall-font-weight: var(--cre8-font-weights-inter-3);
       --cre8-typography-headline-xsmall-line-height: var(--cre8-line-heights-0);
       --cre8-typography-headline-xsmall-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-headline-xsmall-text-transform: var(--cre8-text-case-none);
---cre8-typography-headline-xsmall-mobile-font-family: var(--cre8-font-families-inter);
+--cre8-typography-headline-xsmall-mobile-font-family: var(--cre8-font-family-display);
       --cre8-typography-headline-xsmall-mobile-font-size: var(--cre8-font-size-5);
       --cre8-typography-headline-xsmall-mobile-font-weight: var(--cre8-font-weights-inter-3);
       --cre8-typography-headline-xsmall-mobile-line-height: var(--cre8-line-heights-0);
       --cre8-typography-headline-xsmall-mobile-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-headline-xsmall-mobile-text-transform: var(--cre8-text-case-none);
---cre8-typography-display-large-font-family: var(--cre8-font-families-inter);
+--cre8-typography-display-large-font-family: var(--cre8-font-family-display);
       --cre8-typography-display-large-font-size: var(--cre8-font-size-13);
       --cre8-typography-display-large-font-weight: var(--cre8-font-weights-inter-2);
       --cre8-typography-display-large-line-height: var(--cre8-line-heights-0);
       --cre8-typography-display-large-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-display-large-text-transform: var(--cre8-text-case-none);
---cre8-typography-display-large-mobile-font-family: var(--cre8-font-families-inter);
+--cre8-typography-display-large-mobile-font-family: var(--cre8-font-family-display);
       --cre8-typography-display-large-mobile-font-size: var(--cre8-font-size-12);
       --cre8-typography-display-large-mobile-font-weight: var(--cre8-font-weights-inter-2);
       --cre8-typography-display-large-mobile-line-height: var(--cre8-line-heights-0);
       --cre8-typography-display-large-mobile-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-display-large-mobile-text-transform: var(--cre8-text-case-none);
---cre8-typography-display-default-font-family: var(--cre8-font-families-inter);
+--cre8-typography-display-default-font-family: var(--cre8-font-family-display);
       --cre8-typography-display-default-font-size: var(--cre8-font-size-11);
       --cre8-typography-display-default-font-weight: var(--cre8-font-weights-inter-2);
       --cre8-typography-display-default-line-height: var(--cre8-line-heights-0);
       --cre8-typography-display-default-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-display-default-text-transform: var(--cre8-text-case-none);
---cre8-typography-display-default-mobile-font-family: var(--cre8-font-families-inter);
+--cre8-typography-display-default-mobile-font-family: var(--cre8-font-family-display);
       --cre8-typography-display-default-mobile-font-size: var(--cre8-font-size-10);
       --cre8-typography-display-default-mobile-font-weight: var(--cre8-font-weights-inter-2);
       --cre8-typography-display-default-mobile-line-height: var(--cre8-line-heights-0);
       --cre8-typography-display-default-mobile-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-display-default-mobile-text-transform: var(--cre8-text-case-none);
---cre8-typography-display-small-font-family: var(--cre8-font-families-inter);
+--cre8-typography-display-small-font-family: var(--cre8-font-family-display);
       --cre8-typography-display-small-font-size: var(--cre8-font-size-9);
       --cre8-typography-display-small-font-weight: var(--cre8-font-weights-inter-2);
       --cre8-typography-display-small-line-height: var(--cre8-line-heights-0);
       --cre8-typography-display-small-text-decoration: var(--cre8-text-decoration-none);
       --cre8-typography-display-small-text-transform: var(--cre8-text-case-none);
---cre8-typography-display-small-mobile-font-family: var(--cre8-font-families-inter);
+--cre8-typography-display-small-mobile-font-family: var(--cre8-font-family-display);
       --cre8-typography-display-small-mobile-font-size: var(--cre8-font-size-8);
       --cre8-typography-display-small-mobile-font-weight: var(--cre8-font-weights-inter-2);
       --cre8-typography-display-small-mobile-line-height: var(--cre8-line-heights-0);
@@ -1401,6 +1491,7 @@ const blank = `
       --cre8-typography-meta-small-font-weight: var(--cre8-font-weights-inter-2);
       --cre8-typography-meta-small-line-height: var(--cre8-line-heights-3);
       --cre8-typography-meta-small-text-decoration: var(--cre8-text-decoration-none);
-      --cre8-typography-meta-small-text-transform: var(--cre8-text-case-uppercase);}`;
+      --cre8-typography-meta-small-text-transform: var(--cre8-text-case-uppercase);}
+`;
 
 export default blank;
