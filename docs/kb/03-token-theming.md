@@ -121,25 +121,43 @@ is teal" — and survive upstream primitive renames better.
 
 ### Method 3: a new brand directory
 
-Brands live in `packages/cre8-wc/design-tokens/brands/<name>/`. Three exist
+Brands live in `packages/cre8-wc/design-tokens/brands/<name>/`. Four exist
 today:
 
 | Brand | Role |
 |---|---|
 | `cre8` | The default. What a surface or page gets when it asks for nothing. |
-| `cre8-vivid` | Marketing treatment — same structure, its own colour layer. |
+| `cre8-vivid` | Marketing treatment — indigo/cyan, conventional status hues, pill buttons; extends `cre8`. |
 | `blank` | Unbranded base, for a consumer bringing their own colours. |
+| `regal` | A fictional bank (navy, square corners, Aeonik, flat) used to demo brand consumption. |
 
-The set was cut from fifteen to these three; the rest were experiments and
-one-off client themes that nothing shipped against.
-
-The shape to copy is `brands/cre8/css/`:
+A brand is one file, `brand.json`, validated against
+`design-tokens/schema/brand.schema.json`. Everything in its `css/` directory is
+**generated** from it and must not be hand-edited:
 
 | File | Role |
 |---|---|
-| `tokens_brand.css` | The brand's own values |
-| `tokens_<brand>.css` | The full theme: imports `tokens_brand.css` + `fonts.css`, then component-tier tokens |
-| `fonts.css` | `@font-face` declarations |
+| `css/tokens_brand.css` | The four-tier token sheet: seed → primitive ramps → semantic (with the `--cre8-mode-*` indirection) → component, plus legacy `--cre8-color-*` aliases |
+| `css/tokens_<brand>.css` | The full theme: imports `tokens_brand.css` + `fonts.css`, then the typography roles |
+| `css/fonts.css` | `@font-face` rules from `typography.fontFaces` |
+| `css/tokens_<brand>.module.ts` | Storybook's inlined copy (cre8, cre8-vivid, blank only) |
+
+To add or change a brand: write `brands/<name>/brand.json` (copy one, or set
+`"extends": "cre8"` and change only what differs), then
+
+```sh
+pnpm --filter @tmorrow/cre8-wc tokens:build <name>   # regenerate
+pnpm --filter @tmorrow/cre8-wc tokens:check          # validate all brands, contrast, staleness
+```
+
+`tokens:check` fails on a schema error, a text/background pair below the
+brand's WCAG target (`accessibility.contrastTarget`) in light or inverse mode,
+or generated css that no longer matches its `brand.json`. Where a derived pair
+would fail (a yellow primary under white text, say), the generator picks the
+passing ramp step or the dark knockout and records the choice in the generated
+file's header. The programmatic interface (`loadBrand`, `validateBrand`,
+`generateBrandCss`, `checkContrast`, `listTokens`, `resolveToken`) is
+documented in `design-tokens/BRAND_CONTRACT.md`.
 
 Consumers then import through the package export:
 
@@ -148,13 +166,6 @@ import '@tmorrow/cre8-wc/themes/cre8';
 ```
 
 which resolves to `lib/design-tokens/brands/<brand>/css/tokens_<brand>.css`.
-
-> **Uniformity.** All three brands now have the same shape: `css/fonts.css`,
-> `css/tokens_brand.css` and `css/tokens_<brand>.css`. That was not true of the
-> fifteen — some carried only a `.module.ts`, one only raw Figma JSON, one no
-> `css/` directory at all — and only brands with a `css/tokens_<brand>.css` are
-> reachable through the `./themes/*` export. If you add a brand, match this
-> shape or it will not be loadable by consumers.
 
 **Use when:** the brand is a first-class artifact other projects will consume.
 
