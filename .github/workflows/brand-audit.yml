@@ -1,0 +1,71 @@
+name: Brand audit
+
+# Renders every cre8 component under every brand in design-tokens/brands, in
+# light and inverse mode, and fails only on regressions against the committed
+# baseline (packages/cre8-wc/scripts/brand-audit.baseline.json):
+#   - a var(--cre8-*) a component reads that a brand no longer resolves
+#   - more axe colour-contrast violations in a component than the baseline allows
+# Leaked literals are reported in the summary but never fail the job.
+# To accept a change, run `pnpm --filter @tmorrow/cre8-wc audit:brands:update`
+# (or copy baseline.next.json from this job's artifact) and commit it.
+
+on:
+  pull_request:
+    paths:
+      - 'packages/cre8-wc/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: brand-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  brand-audit:
+    name: every component × every brand × light/inverse
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 8.11.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: Unit-test the audit's resolver
+        run: pnpm --filter @tmorrow/cre8-wc test:brand-audit
+
+      # The page loads cdn/cre8-wc.esm.js. Rebuild it from this PR's sources so
+      # SCSS and component changes are what gets audited, not the committed bundle.
+      - name: Compile component styles and build the CDN bundle
+        run: |
+          pnpm --filter @tmorrow/cre8-wc compile-styles
+          pnpm --filter @tmorrow/cre8-wc build:cdn
+
+      - name: Install Chromium
+        working-directory: packages/cre8-wc
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Run brand audit
+        run: pnpm --filter @tmorrow/cre8-wc audit:brands
+
+      - name: Job summary
+        if: always()
+        run: |
+          f=packages/cre8-wc/brand-audit-report/summary.md
+          if [ -f "$f" ]; then cat "$f" >> "$GITHUB_STEP_SUMMARY"; else echo "Brand audit produced no summary." >> "$GITHUB_STEP_SUMMARY"; fi
+
+      - name: Upload report and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: brand-audit-report
+          path: packages/cre8-wc/brand-audit-report/
+          if-no-files-found: warn
+          retention-days: 14
