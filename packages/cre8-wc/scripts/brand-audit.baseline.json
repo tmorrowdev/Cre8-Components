@@ -22,10 +22,9 @@
           "--cre8-header-top-background",
           "--cre8-theme-box-shadow-md",
           "--cre8-theme-color-core-text",
-          "--cre8-theme-color-inverted",
-          "--cre8-theme-color-utility-information"
+          "--cre8-theme-color-inverted"
         ],
-        "contrast": null
+        "contrast": {}
       },
       "inverse": {
         "unresolved": [
@@ -47,10 +46,9 @@
           "--cre8-header-top-background",
           "--cre8-theme-box-shadow-md",
           "--cre8-theme-color-core-text",
-          "--cre8-theme-color-inverted",
-          "--cre8-theme-color-utility-information"
+          "--cre8-theme-color-inverted"
         ],
-        "contrast": null
+        "contrast": {}
       }
     },
     "cre8": {
@@ -74,10 +72,9 @@
           "--cre8-header-top-background",
           "--cre8-theme-box-shadow-md",
           "--cre8-theme-color-core-text",
-          "--cre8-theme-color-inverted",
-          "--cre8-theme-color-utility-information"
+          "--cre8-theme-color-inverted"
         ],
-        "contrast": null
+        "contrast": {}
       },
       "inverse": {
         "unresolved": [
@@ -99,10 +96,9 @@
           "--cre8-header-top-background",
           "--cre8-theme-box-shadow-md",
           "--cre8-theme-color-core-text",
-          "--cre8-theme-color-inverted",
-          "--cre8-theme-color-utility-information"
+          "--cre8-theme-color-inverted"
         ],
-        "contrast": null
+        "contrast": {}
       }
     },
     "cre8-vivid": {
@@ -126,10 +122,9 @@
           "--cre8-header-top-background",
           "--cre8-theme-box-shadow-md",
           "--cre8-theme-color-core-text",
-          "--cre8-theme-color-inverted",
-          "--cre8-theme-color-utility-information"
+          "--cre8-theme-color-inverted"
         ],
-        "contrast": null
+        "contrast": {}
       },
       "inverse": {
         "unresolved": [
@@ -151,10 +146,9 @@
           "--cre8-header-top-background",
           "--cre8-theme-box-shadow-md",
           "--cre8-theme-color-core-text",
-          "--cre8-theme-color-inverted",
-          "--cre8-theme-color-utility-information"
+          "--cre8-theme-color-inverted"
         ],
-        "contrast": null
+        "contrast": {}
       }
     },
     "regal": {
@@ -178,10 +172,9 @@
           "--cre8-header-top-background",
           "--cre8-theme-box-shadow-md",
           "--cre8-theme-color-core-text",
-          "--cre8-theme-color-inverted",
-          "--cre8-theme-color-utility-information"
+          "--cre8-theme-color-inverted"
         ],
-        "contrast": null
+        "contrast": {}
       },
       "inverse": {
         "unresolved": [
@@ -203,10 +196,9 @@
           "--cre8-header-top-background",
           "--cre8-theme-box-shadow-md",
           "--cre8-theme-color-core-text",
-          "--cre8-theme-color-inverted",
-          "--cre8-theme-color-utility-information"
+          "--cre8-theme-color-inverted"
         ],
-        "contrast": null
+        "contrast": {}
       }
     }
   }
