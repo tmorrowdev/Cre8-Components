@@ -245,7 +245,10 @@ is installed). This matters more than it sounds: cre8 components carry their own
 shadow styles but read every value from a `--cre8-*` custom property, so a page
 without the token sheet renders structurally correct and completely unstyled.
 Theming is a viewer concern — it changes nothing about the spec, which is why
-[the four theming methods](03-token-theming.md) all still apply.
+[Token Theming](03-token-theming.md) all still applies. To change the brand of a
+surface that is already open, call `apply_brand` with its `surface_id`: every
+viewer swaps in the new brand stylesheet without a reload, and late viewers get it
+on connect.
 
 From an agent, the whole loop is five tools:
 

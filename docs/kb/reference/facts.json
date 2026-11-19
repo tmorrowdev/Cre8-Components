@@ -5,14 +5,14 @@
     "a2uiCatalog": "packages/cre8-wc/a2ui/catalog.json"
   },
   "library": "@tmorrow/cre8-wc",
-  "libraryVersion": "2.3.10",
+  "libraryVersion": "3.0.1",
   "reactLibrary": "@tmorrow/cre8-react",
-  "reactVersion": "2.3.10",
+  "reactVersion": "3.0.1",
   "reactFramework": "React 18+ via @lit/react",
   "tagPrefix": "cre8",
   "framework": "Lit 3.3.1",
   "catalogId": "cre8-wc",
-  "catalogVersion": "2.3.10",
+  "catalogVersion": "3.0.1",
   "counts": {
     "wc": 88,
     "react": 88,
@@ -59,13 +59,15 @@
     "componentsWithParts": 11
   },
   "tokens": {
+    "seed": 11,
     "semantic": 73,
-    "primitive": 360,
-    "component": 299
+    "primitive": 128,
+    "component": 315,
+    "legacy": 432
   },
   "knowledgeGraph": {
     "nodes": 232,
-    "edges": 1480
+    "edges": 1486
   },
   "patternNames": [
     "Login Form",

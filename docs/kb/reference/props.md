@@ -964,7 +964,7 @@ No declared props — this component is configured entirely by its content.
 | `focusable` | boolean |  |  | attribute |
 | `name` | string |  |  | attribute |
 | `svg` | string |  |  | attribute |
-| `iconUrl` | string |  | `iconSprite` | **property** |
+| `iconUrl` | string |  |  | **property** |
 | `iconTitle` | string |  |  | **property** |
 
 ### `cre8-logo`

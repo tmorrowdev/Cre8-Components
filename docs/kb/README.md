@@ -26,7 +26,7 @@ can do the same thing mechanically against
 | [Orientation](00-orientation.md) | What cre8 is, what the layers are, and which one you are touching |
 | [Components](01-components.md) | How the component library is organized and what its conventions mean |
 | [Composition Patterns](02-composition-patterns.md) | How to assemble components into pages that hold together |
-| [Token Theming](03-token-theming.md) | How to change how everything looks, at four different levels of commitment |
+| [Token Theming](03-token-theming.md) | How to change how everything looks: seeds in `brand.json`, generated CSS, scoped rebrands, modes, and the contrast guard |
 | [A2UI — Agent-Generated UI](04-a2ui.md) | How an agent emits cre8 UI as data, and how that is validated |
 | [Streaming UI — live surfaces](08-streaming-ui.md) | How an agent builds UI a human watches, patch by patch, and how clicks come back |
 | [AI Fluency in cre8](05-ai-fluency.md) | How to work *with* an AI on cre8 well — delegating, describing, checking, owning |
@@ -159,15 +159,15 @@ here were all of that kind, and all passed every check at the time.
 ## Linking conventions
 
 - **Use standard markdown links** — `[label](02-composition-patterns.md)` and
-  `[label](03-token-theming.md#the-three-tiers)`. Relative to the file you are
+  `[label](03-token-theming.md#the-four-tiers)`. Relative to the file you are
   writing in, so pages under `reference/` link back up with `../`.
 - **Do not use `[[wiki-links]]`.** They render as literal text on GitHub, which
   only supports that syntax in Wikis, not in repository files. This KB used them
   for most of its life and 228 links were dead to anyone reading on GitHub;
   `kb:check` now rejects the syntax so it cannot come back.
 - **Link text should read as prose**, not as a filename — "see
-  [the three tiers](03-token-theming.md#the-three-tiers)", not "see
-  [03-token-theming#the-three-tiers]".
+  [the four tiers](03-token-theming.md#the-four-tiers)", not "see
+  [03-token-theming#the-four-tiers]".
 - **Intent links** read `→ *If you want to X, see [page](page.md)*` and appear at
   the end of each section. They are the primary navigation; the table of contents
   is a fallback for people who already know the shape of the system.

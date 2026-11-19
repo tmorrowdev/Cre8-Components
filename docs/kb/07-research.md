@@ -80,7 +80,7 @@ The Design Tokens Community Group's interchange format; the first stable version
 standards track — a community specification. This is the direction cre8's
 Figma-generated token pipeline is converging on, and the reason tiers 1–3 are
 generated rather than hand-written
-([The three tiers](03-token-theming.md#the-three-tiers)).
+([The four tiers](03-token-theming.md#the-four-tiers)).
 
 **Brad Frost — Creating Themeable Design Systems** [canonical]
 <https://bradfrost.com/blog/post/creating-themeable-design-systems/>
@@ -203,8 +203,8 @@ complex properties are bridged into React's model — the mechanism behind
 [React](06-frameworks.md#react).
 
 **Puppeteer** [canonical] <https://pptr.dev/>
-The scraping half of the theme generator described in
-[Method 4: generated themes](03-token-theming.md#method-4-generated-themes).
+The scraping half of the never-wired theme generator in `agent-docs/THEME_GENERATOR.md`;
+the working path is [Generating a brand from a website](03-token-theming.md#generating-a-brand-from-a-website).
 
 ## Provenance and drift
 

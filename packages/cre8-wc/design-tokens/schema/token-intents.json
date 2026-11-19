@@ -1,0 +1,619 @@
+{
+  "$comment": "Machine-readable usage intent for cre8 design tokens. Served by the cre8-mcp list_tokens tool and read by docs/kb/tools/generate-reference.mjs. Seed and semantic tiers are listed token by token; primitive, component and legacy tiers are covered by patterns. Hand-authored: when a semantic token is added to tokens_brand.css, add it here (generate-reference fails on a semantic token with no intent).",
+  "version": 1,
+  "tiers": {
+    "seed": {
+      "order": 0,
+      "summary": "The only literals in the system. Set from brand.json; every other tier derives from them.",
+      "change": "Edit brand.json, then pnpm tokens:build. Never hand-set in CSS except as a scoped override on a [data-cre8-theme] element."
+    },
+    "primitive": {
+      "order": 1,
+      "summary": "OKLCH ramps (50..950) and raw scales derived from the seeds. No meaning attached.",
+      "change": "Never directly. Change the seed."
+    },
+    "semantic": {
+      "order": 2,
+      "summary": "Purpose, not colour. The tier components and app CSS should read. The only tier data-mode touches.",
+      "change": "Read these in your CSS. Override one only for a deliberate, scoped exception; prefer a seed."
+    },
+    "component": {
+      "order": 3,
+      "summary": "One component's aliases onto semantic tokens.",
+      "change": "Only for a genuine one-off on one component, via brand.json overrides (warned) or a scoped rule."
+    },
+    "legacy": {
+      "order": 4,
+      "summary": "Old --cre8-color-* names kept as aliases so existing component styles resolve.",
+      "change": "Never write new code against these; use the semantic name without the color- prefix."
+    }
+  },
+  "tokens": {
+    "--cre8-seed-primary": {
+      "tier": "seed",
+      "brandField": "color.primary",
+      "use": "the brand hue; the primary-50..950 ramp, buttons, links, focus and selection all derive from it",
+      "never": "hand-setting in a stylesheet; set it in brand.json so the ramps and the contrast guard follow"
+    },
+    "--cre8-seed-neutral": {
+      "tier": "seed",
+      "brandField": "color.neutral",
+      "use": "the grey family; surfaces, borders and body text derive from it, and a tinted neutral sets the brand temperature",
+      "never": "hand-setting in a stylesheet; set it in brand.json so the ramps and the contrast guard follow"
+    },
+    "--cre8-seed-accent": {
+      "tier": "seed",
+      "brandField": "color.accent",
+      "use": "the secondary brand hue; info states, visited links, highlights and charts derive from it",
+      "never": "hand-setting in a stylesheet; set it in brand.json so the ramps and the contrast guard follow"
+    },
+    "--cre8-seed-success": {
+      "tier": "seed",
+      "brandField": "color.success",
+      "use": "the success hue; positive status backgrounds, borders and text derive from it",
+      "never": "hand-setting in a stylesheet; set it in brand.json so the ramps and the contrast guard follow"
+    },
+    "--cre8-seed-warning": {
+      "tier": "seed",
+      "brandField": "color.warning",
+      "use": "the warning hue; caution status backgrounds, borders and icons derive from it",
+      "never": "hand-setting in a stylesheet; set it in brand.json so the ramps and the contrast guard follow"
+    },
+    "--cre8-seed-error": {
+      "tier": "seed",
+      "brandField": "color.error",
+      "use": "the error hue; destructive and invalid-state backgrounds, borders and text derive from it",
+      "never": "hand-setting in a stylesheet; set it in brand.json so the ramps and the contrast guard follow"
+    },
+    "--cre8-seed-font": {
+      "tier": "seed",
+      "brandField": "typography.body",
+      "use": "the body/UI font stack every typography token resolves through",
+      "never": "hand-setting in a stylesheet; set it in brand.json so the ramps and the contrast guard follow"
+    },
+    "--cre8-seed-font-size": {
+      "tier": "seed",
+      "brandField": "typography.baseSize",
+      "use": "the body text size; the type scale is computed from it",
+      "never": "hand-setting in a stylesheet; set it in brand.json so the ramps and the contrast guard follow"
+    },
+    "--cre8-seed-radius": {
+      "tier": "seed",
+      "brandField": "shape.radius",
+      "use": "the container corner radius; control, button and pill radii derive from it",
+      "never": "hand-setting in a stylesheet; set it in brand.json so the ramps and the contrast guard follow"
+    },
+    "--cre8-seed-space": {
+      "tier": "seed",
+      "brandField": "space.base",
+      "use": "the 1-step spacing unit; the spacing and padding scales multiply it",
+      "never": "hand-setting in a stylesheet; set it in brand.json so the ramps and the contrast guard follow"
+    },
+    "--cre8-seed-border-width": {
+      "tier": "seed",
+      "brandField": "shape.borderWidth",
+      "use": "the default hairline width for borders and dividers",
+      "never": "hand-setting in a stylesheet; set it in brand.json so the ramps and the contrast guard follow"
+    },
+    "--cre8-bg-default": {
+      "tier": "semantic",
+      "use": "the page and default component surface",
+      "never": "text or icons; use a --cre8-content-* token",
+      "modeAware": true,
+      "legacyAlias": "--cre8-color-bg-default"
+    },
+    "--cre8-bg-default-hover": {
+      "tier": "semantic",
+      "use": "the hover state of a default-surface row, item or ghost control",
+      "never": "resting surfaces",
+      "modeAware": true,
+      "legacyAlias": "--cre8-color-bg-default-hover"
+    },
+    "--cre8-bg-default-active": {
+      "tier": "semantic",
+      "use": "the pressed/selected state of a default-surface item",
+      "never": "hover; use --cre8-bg-default-hover",
+      "legacyAlias": "--cre8-color-bg-default-active"
+    },
+    "--cre8-bg-subtle": {
+      "tier": "semantic",
+      "use": "recessed areas: wells, table stripes, sidebars, code blocks",
+      "never": "the main page surface or any text",
+      "modeAware": true,
+      "legacyAlias": "--cre8-color-bg-subtle"
+    },
+    "--cre8-bg-moderate": {
+      "tier": "semantic",
+      "use": "mid-grey fills such as track backgrounds and placeholders",
+      "never": "text backgrounds; contrast with body text is not guaranteed",
+      "legacyAlias": "--cre8-color-bg-moderate"
+    },
+    "--cre8-bg-inverse-moderate": {
+      "tier": "semantic",
+      "use": "mid-grey fills on an inverse (dark) region",
+      "never": "light-mode surfaces",
+      "legacyAlias": "--cre8-color-bg-inverse-moderate"
+    },
+    "--cre8-bg-strong": {
+      "tier": "semantic",
+      "use": "high-emphasis neutral fills: tooltips, toasts, dark bands on a light page",
+      "never": "large page areas; pair text on it with --cre8-content-knockout",
+      "modeAware": true,
+      "legacyAlias": "--cre8-color-bg-strong"
+    },
+    "--cre8-bg-disabled": {
+      "tier": "semantic",
+      "use": "the fill of a disabled control",
+      "never": "read-only or inactive-but-usable states",
+      "modeAware": true,
+      "legacyAlias": "--cre8-color-bg-disabled"
+    },
+    "--cre8-bg-brand": {
+      "tier": "semantic",
+      "use": "a light brand-tinted surface behind brand content (selected nav, callouts)",
+      "never": "primary buttons; use --cre8-bg-brand-strong",
+      "modeAware": true,
+      "legacyAlias": "--cre8-color-bg-brand"
+    },
+    "--cre8-bg-brand-active": {
+      "tier": "semantic",
+      "use": "pressed/selected on a --cre8-bg-brand surface",
+      "never": "hover",
+      "legacyAlias": "--cre8-color-bg-brand-active"
+    },
+    "--cre8-bg-brand-hover": {
+      "tier": "semantic",
+      "use": "hover on a --cre8-bg-brand surface",
+      "never": "resting surfaces",
+      "modeAware": true,
+      "legacyAlias": "--cre8-color-bg-brand-hover"
+    },
+    "--cre8-bg-brand-strong": {
+      "tier": "semantic",
+      "use": "the primary action fill: primary buttons, active toggles, brand bars",
+      "never": "large page backgrounds or body-text backgrounds; text on it is --cre8-content-knockout",
+      "modeAware": true,
+      "legacyAlias": "--cre8-color-bg-brand-strong"
+    },
+    "--cre8-bg-brand-strong-hover": {
+      "tier": "semantic",
+      "use": "hover on a --cre8-bg-brand-strong fill",
+      "never": "resting state",
+      "modeAware": true,
+      "legacyAlias": "--cre8-color-bg-brand-strong-hover"
+    },
+    "--cre8-bg-brand-strong-active": {
+      "tier": "semantic",
+      "use": "pressed state of a --cre8-bg-brand-strong fill",
+      "never": "hover",
+      "legacyAlias": "--cre8-color-bg-brand-strong-active"
+    },
+    "--cre8-bg-brand-xstrong": {
+      "tier": "semantic",
+      "use": "the darkest brand fill, for emphasis on or next to bg-brand-strong (headers, hero bands)",
+      "never": "default buttons; use --cre8-bg-brand-strong",
+      "legacyAlias": "--cre8-color-bg-brand-xstrong"
+    },
+    "--cre8-bg-brand-xstrong-hover": {
+      "tier": "semantic",
+      "use": "hover on a --cre8-bg-brand-xstrong fill",
+      "never": "resting state",
+      "legacyAlias": "--cre8-color-bg-brand-xstrong-hover"
+    },
+    "--cre8-bg-brand-xstrong-active": {
+      "tier": "semantic",
+      "use": "pressed state of a --cre8-bg-brand-xstrong fill",
+      "never": "hover",
+      "legacyAlias": "--cre8-color-bg-brand-xstrong-active"
+    },
+    "--cre8-bg-success": {
+      "tier": "semantic",
+      "use": "a light success background (alert, badge, row highlight)",
+      "never": "success text; use --cre8-content-success",
+      "legacyAlias": "--cre8-color-bg-success"
+    },
+    "--cre8-bg-success-strong": {
+      "tier": "semantic",
+      "use": "a solid success fill (filled badge, progress complete)",
+      "never": "large areas or text backgrounds without checking contrast",
+      "legacyAlias": "--cre8-color-bg-success-strong"
+    },
+    "--cre8-bg-error": {
+      "tier": "semantic",
+      "use": "a light error background (inline error, alert)",
+      "never": "error text; use --cre8-content-error",
+      "legacyAlias": "--cre8-color-bg-error"
+    },
+    "--cre8-bg-error-strong": {
+      "tier": "semantic",
+      "use": "a solid error fill (destructive button, filled error badge)",
+      "never": "decorative brand accents",
+      "legacyAlias": "--cre8-color-bg-error-strong"
+    },
+    "--cre8-bg-warning": {
+      "tier": "semantic",
+      "use": "a light warning background (caution alert)",
+      "never": "warning icons; use --cre8-content-warning-icon",
+      "legacyAlias": "--cre8-color-bg-warning"
+    },
+    "--cre8-bg-warning-strong": {
+      "tier": "semantic",
+      "use": "a solid warning fill (filled warning badge)",
+      "never": "text backgrounds without checking contrast",
+      "legacyAlias": "--cre8-color-bg-warning-strong"
+    },
+    "--cre8-bg-info": {
+      "tier": "semantic",
+      "use": "a light informational background (info alert, tip)",
+      "never": "brand surfaces; use --cre8-bg-brand",
+      "legacyAlias": "--cre8-color-bg-info"
+    },
+    "--cre8-bg-info-strong": {
+      "tier": "semantic",
+      "use": "a solid informational fill (filled info badge)",
+      "never": "primary actions",
+      "legacyAlias": "--cre8-color-bg-info-strong"
+    },
+    "--cre8-bg-attention": {
+      "tier": "semantic",
+      "use": "the surface behind an attention-state element",
+      "never": "status meaning; attention is emphasis, not success/error",
+      "legacyAlias": "--cre8-color-bg-attention"
+    },
+    "--cre8-bg-attention-strong": {
+      "tier": "semantic",
+      "use": "a solid attention fill (new/featured markers, highlight chips)",
+      "never": "error or warning states",
+      "legacyAlias": "--cre8-color-bg-attention-strong"
+    },
+    "--cre8-bg-opacity-transparent": {
+      "tier": "semantic",
+      "use": "a fully transparent fill that keeps the token chain (ghost buttons)",
+      "never": "hiding content; use display or visibility",
+      "legacyAlias": "--cre8-color-bg-opacity-transparent"
+    },
+    "--cre8-bg-opacity-default": {
+      "tier": "semantic",
+      "use": "the scrim behind modals and drawers",
+      "never": "opaque surfaces",
+      "legacyAlias": "--cre8-color-bg-opacity-default"
+    },
+    "--cre8-bg-active": {
+      "tier": "semantic",
+      "use": "the fill of an active/current item in a dark-on-light treatment (current tab pill)",
+      "never": "hover feedback",
+      "legacyAlias": "--cre8-color-bg-active"
+    },
+    "--cre8-bg-inverse-active": {
+      "tier": "semantic",
+      "use": "the fill of an active item inside an inverse region",
+      "never": "light-mode surfaces",
+      "legacyAlias": "--cre8-color-bg-inverse-active"
+    },
+    "--cre8-content-default": {
+      "tier": "semantic",
+      "use": "body text and default icons",
+      "never": "text on brand-strong or strong fills; use --cre8-content-knockout",
+      "modeAware": true,
+      "legacyAlias": "--cre8-color-content-default"
+    },
+    "--cre8-content-subtle": {
+      "tier": "semantic",
+      "use": "secondary text: captions, helper text, metadata, placeholders",
+      "never": "body copy or anything the user must read to act; check it meets 4.5:1 where it carries meaning",
+      "modeAware": true,
+      "legacyAlias": "--cre8-color-content-subtle"
+    },
+    "--cre8-content-disabled": {
+      "tier": "semantic",
+      "use": "text and icons of disabled controls",
+      "never": "de-emphasised but active text; use --cre8-content-subtle",
+      "modeAware": true,
+      "legacyAlias": "--cre8-color-content-disabled"
+    },
+    "--cre8-content-knockout": {
+      "tier": "semantic",
+      "use": "text and icons on strong fills (bg-brand-strong, bg-strong, *-strong status fills)",
+      "never": "text on default surfaces, where it is invisible",
+      "modeAware": true,
+      "legacyAlias": "--cre8-color-content-knockout"
+    },
+    "--cre8-content-brand": {
+      "tier": "semantic",
+      "use": "brand-coloured text and icons: emphasis, active nav labels",
+      "never": "links; use --cre8-content-link so visited/hover states work",
+      "modeAware": true,
+      "legacyAlias": "--cre8-color-content-brand"
+    },
+    "--cre8-content-brand-strong": {
+      "tier": "semantic",
+      "use": "higher-contrast brand text on tinted brand surfaces",
+      "never": "body copy",
+      "modeAware": true,
+      "legacyAlias": "--cre8-color-content-brand-strong"
+    },
+    "--cre8-content-brand-knockout": {
+      "tier": "semantic",
+      "use": "brand-tinted text on dark brand fills",
+      "never": "text on light surfaces",
+      "legacyAlias": "--cre8-color-content-brand-knockout"
+    },
+    "--cre8-content-success": {
+      "tier": "semantic",
+      "use": "success message text",
+      "never": "icons alone; use --cre8-content-success-icon",
+      "legacyAlias": "--cre8-color-content-success"
+    },
+    "--cre8-content-success-icon": {
+      "tier": "semantic",
+      "use": "success status icons",
+      "never": "running text",
+      "legacyAlias": "--cre8-color-content-success-icon"
+    },
+    "--cre8-content-error": {
+      "tier": "semantic",
+      "use": "error message and validation text",
+      "never": "decorative red; error colour means something is wrong",
+      "legacyAlias": "--cre8-color-content-error"
+    },
+    "--cre8-content-error-icon": {
+      "tier": "semantic",
+      "use": "error status icons",
+      "never": "running text",
+      "legacyAlias": "--cre8-color-content-error-icon"
+    },
+    "--cre8-content-warning-icon": {
+      "tier": "semantic",
+      "use": "warning status icons",
+      "never": "warning text on light backgrounds; contrast is usually too low",
+      "legacyAlias": "--cre8-color-content-warning-icon"
+    },
+    "--cre8-content-info-icon": {
+      "tier": "semantic",
+      "use": "informational status icons",
+      "never": "links or brand emphasis",
+      "legacyAlias": "--cre8-color-content-info-icon"
+    },
+    "--cre8-content-attention-icon": {
+      "tier": "semantic",
+      "use": "attention/featured icons",
+      "never": "status meaning",
+      "legacyAlias": "--cre8-color-content-attention-icon"
+    },
+    "--cre8-content-link": {
+      "tier": "semantic",
+      "use": "link text at rest",
+      "never": "non-navigational emphasis; use --cre8-content-brand",
+      "modeAware": true,
+      "legacyAlias": "--cre8-color-content-link"
+    },
+    "--cre8-content-inverse-link": {
+      "tier": "semantic",
+      "use": "link text inside an inverse (dark) region",
+      "never": "links on light surfaces",
+      "legacyAlias": "--cre8-color-content-inverse-link"
+    },
+    "--cre8-content-link-hover": {
+      "tier": "semantic",
+      "use": "link text on hover",
+      "never": "resting links",
+      "modeAware": true,
+      "legacyAlias": "--cre8-color-content-link-hover"
+    },
+    "--cre8-content-inverse-link-hover": {
+      "tier": "semantic",
+      "use": "hovered links inside an inverse region",
+      "never": "light surfaces",
+      "legacyAlias": "--cre8-color-content-inverse-link-hover"
+    },
+    "--cre8-content-link-focus": {
+      "tier": "semantic",
+      "use": "link text while focused (sits on the focus fill)",
+      "never": "focus rings; the ring is a border/outline token",
+      "legacyAlias": "--cre8-color-content-link-focus"
+    },
+    "--cre8-content-inverse-link-focus": {
+      "tier": "semantic",
+      "use": "focused links inside an inverse region",
+      "never": "light surfaces",
+      "legacyAlias": "--cre8-color-content-inverse-link-focus"
+    },
+    "--cre8-content-link-visited": {
+      "tier": "semantic",
+      "use": "visited links",
+      "never": "unvisited links",
+      "legacyAlias": "--cre8-color-content-link-visited"
+    },
+    "--cre8-content-inverse-link-visited": {
+      "tier": "semantic",
+      "use": "visited links inside an inverse region",
+      "never": "light surfaces",
+      "legacyAlias": "--cre8-color-content-inverse-link-visited"
+    },
+    "--cre8-content-link-disabled": {
+      "tier": "semantic",
+      "use": "links that cannot be followed",
+      "never": "subtle text; use --cre8-content-subtle",
+      "legacyAlias": "--cre8-color-content-link-disabled"
+    },
+    "--cre8-content-inverse-link-disabled": {
+      "tier": "semantic",
+      "use": "disabled links inside an inverse region",
+      "never": "light surfaces",
+      "legacyAlias": "--cre8-color-content-inverse-link-disabled"
+    },
+    "--cre8-content-link-active": {
+      "tier": "semantic",
+      "use": "link text while pressed",
+      "never": "current-page nav items",
+      "legacyAlias": "--cre8-color-content-link-active"
+    },
+    "--cre8-content-inverse-link-active": {
+      "tier": "semantic",
+      "use": "pressed links inside an inverse region",
+      "never": "light surfaces",
+      "legacyAlias": "--cre8-color-content-inverse-link-active"
+    },
+    "--cre8-border-default": {
+      "tier": "semantic",
+      "use": "default borders and dividers: cards, inputs, table rules",
+      "never": "focus indication; use --cre8-border-active-outline",
+      "modeAware": true,
+      "legacyAlias": "--cre8-color-border-default"
+    },
+    "--cre8-border-strong": {
+      "tier": "semantic",
+      "use": "high-emphasis borders: input outlines that must meet 3:1, separators that must read",
+      "never": "decorative hairlines; use --cre8-border-default",
+      "modeAware": true,
+      "legacyAlias": "--cre8-color-border-strong"
+    },
+    "--cre8-border-knockout": {
+      "tier": "semantic",
+      "use": "borders on strong/dark fills",
+      "never": "borders on default surfaces",
+      "legacyAlias": "--cre8-color-border-knockout"
+    },
+    "--cre8-border-disabled": {
+      "tier": "semantic",
+      "use": "borders of disabled controls",
+      "never": "subtle borders on active controls",
+      "legacyAlias": "--cre8-color-border-disabled"
+    },
+    "--cre8-border-brand": {
+      "tier": "semantic",
+      "use": "brand-coloured borders: selected cards, active inputs",
+      "never": "error or focus states",
+      "modeAware": true,
+      "legacyAlias": "--cre8-color-border-brand"
+    },
+    "--cre8-border-brand-subtle": {
+      "tier": "semantic",
+      "use": "light brand borders on tinted brand surfaces",
+      "never": "borders that must meet 3:1",
+      "legacyAlias": "--cre8-color-border-brand-subtle"
+    },
+    "--cre8-border-brand-strong": {
+      "tier": "semantic",
+      "use": "high-contrast brand borders",
+      "never": "default borders",
+      "legacyAlias": "--cre8-color-border-brand-strong"
+    },
+    "--cre8-border-success": {
+      "tier": "semantic",
+      "use": "success-state borders (valid input, success alert)",
+      "never": "neutral borders",
+      "legacyAlias": "--cre8-color-border-success"
+    },
+    "--cre8-border-error": {
+      "tier": "semantic",
+      "use": "error-state borders (invalid input, error alert)",
+      "never": "neutral or brand borders",
+      "legacyAlias": "--cre8-color-border-error"
+    },
+    "--cre8-border-warning": {
+      "tier": "semantic",
+      "use": "warning-state borders",
+      "never": "error states",
+      "legacyAlias": "--cre8-color-border-warning"
+    },
+    "--cre8-border-info": {
+      "tier": "semantic",
+      "use": "informational borders",
+      "never": "brand selection",
+      "legacyAlias": "--cre8-color-border-info"
+    },
+    "--cre8-border-attention": {
+      "tier": "semantic",
+      "use": "attention/featured borders",
+      "never": "status meaning",
+      "legacyAlias": "--cre8-color-border-attention"
+    },
+    "--cre8-border-transparent": {
+      "tier": "semantic",
+      "use": "a transparent border that reserves space so state changes do not shift layout",
+      "never": "hiding borders on purpose-built borderless components",
+      "legacyAlias": "--cre8-color-border-transparent"
+    },
+    "--cre8-border-active-outline": {
+      "tier": "semantic",
+      "use": "the focus ring / active outline on light surfaces",
+      "never": "decorative borders; never remove it without a replacement",
+      "legacyAlias": "--cre8-color-border-active-outline"
+    },
+    "--cre8-border-inverse-active-outline": {
+      "tier": "semantic",
+      "use": "the focus ring / active outline inside an inverse region",
+      "never": "light surfaces",
+      "legacyAlias": "--cre8-color-border-inverse-active-outline"
+    },
+    "--cre8-link-bg-active": {
+      "tier": "semantic",
+      "use": "the background of a pressed or focused link",
+      "never": "link text colour",
+      "legacyAlias": "--cre8-color-link-bg-active"
+    }
+  },
+  "patterns": [
+    {
+      "pattern": "^--cre8-(primary|neutral|accent|success|warning|error)-(0|50|[1-9]00|950)$",
+      "tier": "primitive",
+      "use": "a specific step of a seed ramp, only when no semantic token carries the meaning",
+      "never": "component or app CSS where a semantic token exists; a ramp step does not flip with data-mode"
+    },
+    {
+      "pattern": "^--cre8-overlay-",
+      "tier": "primitive",
+      "use": "translucent scrims, via --cre8-bg-opacity-*",
+      "never": "opaque surfaces"
+    },
+    {
+      "pattern": "^--cre8-(spacing|padding)-",
+      "tier": "primitive",
+      "use": "gaps and padding on the space scale derived from --cre8-seed-space",
+      "never": "literal px/rem spacing in component CSS"
+    },
+    {
+      "pattern": "^--cre8-(font-size|font-weight|line-height|letter-spacing|font-family)-",
+      "tier": "primitive",
+      "use": "type scale steps derived from the typography seeds; prefer --cre8-typography-* composites",
+      "never": "literal font sizes or weights"
+    },
+    {
+      "pattern": "^--cre8-(radius|border-radius)-",
+      "tier": "primitive",
+      "use": "corner radii derived from --cre8-seed-radius",
+      "never": "literal radii"
+    },
+    {
+      "pattern": "^--cre8-border-width-",
+      "tier": "primitive",
+      "use": "border widths derived from --cre8-seed-border-width",
+      "never": "literal widths"
+    },
+    {
+      "pattern": "^--cre8-mode-",
+      "tier": "primitive",
+      "use": "internal light/inverse indirection that data-mode remaps",
+      "never": "reading or setting directly; read the semantic token instead"
+    },
+    {
+      "pattern": "^--cre8-typography-",
+      "tier": "component",
+      "use": "a complete text style (family, size, weight, line height) for one typographic role",
+      "never": "mixing parts of two roles"
+    },
+    {
+      "pattern": "^--cre8-color-",
+      "tier": "legacy",
+      "use": "nothing new; kept so existing component styles resolve",
+      "never": "new code; drop the color- prefix to get the semantic name"
+    },
+    {
+      "pattern": "^--cre8-(button|header|footer|field|card|tabs?|nav|menu|modal|badge|alert|link|desktop-menu|header-submenu|header-menu)-",
+      "tier": "component",
+      "use": "restyling one component in a scoped one-off",
+      "never": "brand-wide changes; change a seed so every component follows"
+    }
+  ]
+}

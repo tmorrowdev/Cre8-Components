@@ -13,7 +13,7 @@ intents:
 
 <!-- DO NOT EDIT BY HAND. Regenerate with: node docs/kb/tools/generate-reference.mjs -->
 
-Every component in `@tmorrow/cre8-wc` v2.3.10, grouped by the
+Every component in `@tmorrow/cre8-wc` v3.0.1, grouped by the
 job it does. The **React** column is the `@tmorrow/cre8-react` wrapper name;
 the **A2UI** column says whether an agent can emit the component through the
 [A2UI catalog](../04-a2ui.md).
@@ -202,9 +202,9 @@ know the tag.
 
 | Surface | Components |
 |---|---|
-| Web components (`@tmorrow/cre8-wc` v2.3.10) | 88 |
-| React wrappers (`@tmorrow/cre8-react` v2.3.10) | 88 |
-| A2UI catalog entries (`https://cre8.dev/a2ui/catalogs/cre8-wc/2.3.10`) | 88 |
+| Web components (`@tmorrow/cre8-wc` v3.0.1) | 88 |
+| React wrappers (`@tmorrow/cre8-react` v3.0.1) | 88 |
+| A2UI catalog entries (`https://cre8.dev/a2ui/catalogs/cre8-wc/3.0.1`) | 88 |
 
 If these three numbers disagree, the wrappers or the catalog are stale relative to
 the components — regenerate them before trusting a count you find elsewhere.
