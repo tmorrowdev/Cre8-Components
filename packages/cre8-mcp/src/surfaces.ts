@@ -25,7 +25,26 @@ import type { ComponentSpec } from '@tmorrow/cre8-wc/a2ui/index.js';
 import { loadA2uiCatalog } from './handlers.js';
 import { DEFAULT_THEME, themeExists } from './surface-routes.js';
 
-export type SurfaceListener = (message: SurfaceMessage) => void;
+/**
+ * A viewer-only message: restyle the page with a brand stylesheet. It is not
+ * part of the A2UI stream protocol and never reaches the `SurfaceModel`,
+ * because a brand changes how the tree looks, not what it is — the same
+ * reason `theme` is a viewer concern rather than part of the spec. It carries
+ * no `seq`, so it cannot desynchronise a viewer's model.
+ */
+export interface SurfaceStyleMessage {
+  v: 1;
+  type: 'surface.style';
+  surfaceId: string;
+  /** Brand name the css was generated from, for display and snapshots. */
+  brand: string;
+  /** Stylesheet text. Applied as the textContent of one <style> element. */
+  css: string;
+}
+
+export type ViewerMessage = SurfaceMessage | SurfaceStyleMessage;
+
+export type SurfaceListener = (message: ViewerMessage) => void;
 
 export interface CreateSurfaceInput {
   title?: string;
@@ -39,6 +58,8 @@ export interface SurfaceSummary {
   surfaceId: string;
   title?: string;
   theme: string;
+  /** Brand applied in place with apply_brand, if any. Overrides `theme`'s values. */
+  brandOverride?: string;
   state: SurfaceState;
   seq: number;
   viewers: number;
@@ -68,6 +89,8 @@ class SurfaceRecord {
   readonly events: SurfaceEventMessage[] = [];
   readonly waiters = new Set<Waiter>();
   eventSeq = 0;
+  /** Live brand restyle applied with apply_brand, replayed to late viewers. */
+  style: { brand: string; css: string } | null = null;
   readonly createdAt = new Date().toISOString();
   updatedAt = new Date().toISOString();
 
@@ -213,6 +236,20 @@ export class SurfaceStore {
     });
   }
 
+  /**
+   * Restyle a live surface with a generated brand stylesheet. Every connected
+   * viewer swaps it in immediately and a viewer that connects later gets it
+   * right after its resync, so the brand survives a reconnect. Passing null
+   * removes the override and the page falls back to its `theme` sheet.
+   */
+  setStyle(surfaceId: string, style: { brand: string; css: string } | null): SurfaceSummary {
+    const record = this.get(surfaceId);
+    record.style = style;
+    record.updatedAt = new Date().toISOString();
+    this.broadcast(record, this.styleMessage(record));
+    return this.summarize(record);
+  }
+
   close(surfaceId: string): void {
     const record = this.surfaces.get(surfaceId);
     if (!record) return;
@@ -241,6 +278,7 @@ export class SurfaceStore {
     state: SurfaceState;
     seq: number;
     theme: string;
+    brandOverride?: string;
     root: ComponentSpec | null;
     data: Record<string, unknown>;
   } {
@@ -250,6 +288,7 @@ export class SurfaceStore {
       surfaceId,
       title: model.title,
       theme: record.theme,
+      ...(record.style ? { brandOverride: record.style.brand } : {}),
       state: model.state,
       seq: model.seq,
       root: model.snapshot(),
@@ -266,6 +305,9 @@ export class SurfaceStore {
     const record = this.get(surfaceId);
     record.listeners.add(listener);
     listener(this.replayMessage(record));
+    // After the create: the viewer resets on surface.create, which would
+    // otherwise discard a style sent ahead of it.
+    if (record.style) listener(this.styleMessage(record));
     return () => {
       record.listeners.delete(listener);
     };
@@ -351,6 +393,11 @@ export class SurfaceStore {
   private dispatch(record: SurfaceRecord, message: SurfaceMessage): SurfaceSummary {
     record.model.apply(message);
     record.updatedAt = new Date().toISOString();
+    this.broadcast(record, message);
+    return this.summarize(record);
+  }
+
+  private broadcast(record: SurfaceRecord, message: ViewerMessage): void {
     for (const listener of [...record.listeners]) {
       try {
         listener(message);
@@ -359,7 +406,16 @@ export class SurfaceStore {
         record.listeners.delete(listener);
       }
     }
-    return this.summarize(record);
+  }
+
+  private styleMessage(record: SurfaceRecord): SurfaceStyleMessage {
+    return {
+      v: 1,
+      type: 'surface.style',
+      surfaceId: record.surfaceId,
+      brand: record.style?.brand ?? record.theme,
+      css: record.style?.css ?? '',
+    };
   }
 
   private summarize(record: SurfaceRecord): SurfaceSummary {
@@ -367,6 +423,7 @@ export class SurfaceStore {
       surfaceId: record.surfaceId,
       title: record.model.title,
       theme: record.theme,
+      ...(record.style ? { brandOverride: record.style.brand } : {}),
       state: record.model.state,
       seq: record.model.seq,
       viewers: record.listeners.size,
