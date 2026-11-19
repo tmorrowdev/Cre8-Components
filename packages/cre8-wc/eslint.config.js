@@ -27,7 +27,6 @@ export default tseslint.config(
       'scripts/extract-tokens.js',
       'webpack.config.cjs',
       'extract-tokens.cjs',
-      'token-config.js',
     ]
   },
 
