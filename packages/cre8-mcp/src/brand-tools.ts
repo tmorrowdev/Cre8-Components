@@ -402,6 +402,9 @@ export async function handleListBrands(): Promise<string> {
       bodyFont: typography.body?.$value ?? null,
       contrastTarget: (merged.accessibility as { contrastTarget?: string } | undefined)?.contrastTarget ?? 'AA',
       hasVoice: brandVoice(name).voice !== null,
+      // An older brand.json shape (no `name`, no `color` seeds) predates the
+      // contract: readable for voice, not validatable or regenerable as is.
+      ...(raw.name === name ? {} : { predatesContract: true }),
     });
   }
 

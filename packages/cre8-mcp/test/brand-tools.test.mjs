@@ -306,5 +306,17 @@ await test('ui_open_surface adds no voice when the theme brand sets none', async
   assert(!('voice' in summary), 'no voice on a brand that sets none');
 });
 
+await test('ui_open_surface returns the theme voice from the real regal brand.json', async () => {
+  const saved = process.env.CRE8_BRANDS_DIR;
+  process.env.CRE8_BRANDS_DIR = fileURLToPath(new URL('../../cre8-wc/design-tokens/brands', import.meta.url));
+  try {
+    const opened = await rpc('tools/call', { name: 'ui_open_surface', arguments: { theme: 'regal' } });
+    const summary = JSON.parse(opened.content[0].text);
+    assert(summary.voice?.avoid?.includes('exclamation marks'), JSON.stringify(summary.voice));
+  } finally {
+    process.env.CRE8_BRANDS_DIR = saved;
+  }
+});
+
 console.log(`\n${passed} passed, ${failures.length} failed`);
 if (failures.length) process.exit(1);
