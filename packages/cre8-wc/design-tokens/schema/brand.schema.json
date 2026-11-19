@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cre8.solutions/schema/brand.schema.json",
+  "title": "cre8 brand contract",
+  "description": "The single source of truth for a cre8 brand. Every value a brand may change lives here; tokens_brand.css and tokens_<brand>.css are generated from it. Leaf values follow the W3C DTCG format ({ $type, $value }). Anything not set falls back to the brand named in `extends`, then to the cre8 defaults.",
+  "type": "object",
+  "required": ["name", "color"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "$comment": { "type": "string" },
+    "name": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$", "description": "Directory name and theme export key: @tmorrow/cre8-wc/themes/<name>." },
+    "displayName": { "type": "string" },
+    "description": { "type": "string" },
+    "extends": { "type": ["string", "null"], "pattern": "^[a-z][a-z0-9-]*$", "description": "Another brand whose values fill anything left unset here. Must exist in design-tokens/brands/." },
+    "color": {
+      "type": "object",
+      "description": "Seed colours. Each produces an 11-step OKLCH ramp (50..950) by relative colour syntax; the seed itself is step 500.",
+      "required": ["primary", "neutral"],
+      "additionalProperties": false,
+      "properties": {
+        "primary": { "$ref": "#/$defs/color", "description": "Brand colour: buttons, links, focus, selection." },
+        "neutral": { "$ref": "#/$defs/color", "description": "Greys: surfaces, borders, body text. A tinted neutral gives the brand its temperature." },
+        "accent": { "$ref": "#/$defs/color", "description": "Secondary brand colour for highlights and charts." },
+        "success": { "$ref": "#/$defs/color" },
+        "warning": { "$ref": "#/$defs/color" },
+        "error": { "$ref": "#/$defs/color" },
+        "info": { "$ref": "#/$defs/color", "description": "Defaults to primary." },
+        "chart": { "type": "array", "items": { "$ref": "#/$defs/color" }, "minItems": 3, "maxItems": 12, "description": "Categorical data-viz series, in order. Defaults to a palette derived from primary and accent." }
+      }
+    },
+    "typography": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "body": { "$ref": "#/$defs/fontFamily", "description": "Running text and UI controls." },
+        "display": { "$ref": "#/$defs/fontFamily", "description": "Headings and hero text. Defaults to body." },
+        "mono": { "$ref": "#/$defs/fontFamily", "description": "Code and tabular figures." },
+        "baseSize": { "$ref": "#/$defs/dimension", "description": "Body text size; font-size-4 in the scale. Default 1rem." },
+        "scaleRatio": { "$ref": "#/$defs/number", "description": "Modular scale ratio between adjacent type steps, 1.067 to 1.618. Default 1.2." },
+        "weights": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "regular": { "$ref": "#/$defs/fontWeight" },
+            "medium": { "$ref": "#/$defs/fontWeight" },
+            "semibold": { "$ref": "#/$defs/fontWeight" },
+            "bold": { "$ref": "#/$defs/fontWeight" }
+          }
+        },
+        "fontFaces": {
+          "type": "array",
+          "description": "@font-face rules emitted into fonts.css. src is relative to the brand's css/ directory or an https URL.",
+          "items": {
+            "type": "object",
+            "required": ["family", "src", "weight"],
+            "additionalProperties": false,
+            "properties": {
+              "family": { "type": "string" },
+              "src": { "type": "string" },
+              "weight": { "type": ["integer", "string"] },
+              "style": { "type": "string", "enum": ["normal", "italic"], "default": "normal" },
+              "display": { "type": "string", "enum": ["auto", "block", "swap", "fallback", "optional"], "default": "swap" }
+            }
+          }
+        }
+      }
+    },
+    "shape": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "radius": { "$ref": "#/$defs/dimension", "description": "Container radius; every other radius is derived from it unless set below. 0px gives a square brand." },
+        "controlRadius": { "$ref": "#/$defs/dimension", "description": "Inputs, checkboxes, tabs. Default radius / 2." },
+        "buttonRadius": { "$ref": "#/$defs/dimension", "description": "Buttons. Default radius * 2; use 9999px for pill buttons." },
+        "borderWidth": { "$ref": "#/$defs/dimension", "description": "Default 1px (0.0625rem)." }
+      }
+    },
+    "space": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "base": { "$ref": "#/$defs/dimension", "description": "The 1-step spacing unit. Default 0.25rem." },
+        "density": { "type": "string", "enum": ["compact", "comfortable", "spacious"], "default": "comfortable", "description": "Scales control padding and gaps: compact 0.8x, spacious 1.25x." }
+      }
+    },
+    "elevation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "style": { "type": "string", "enum": ["flat", "subtle", "standard", "dramatic"], "default": "standard", "description": "flat removes shadows and relies on borders." },
+        "shadowColor": { "$ref": "#/$defs/color", "description": "Default neutral-900." }
+      }
+    },
+    "motion": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "durationFast": { "$ref": "#/$defs/duration" },
+        "durationBase": { "$ref": "#/$defs/duration" },
+        "durationSlow": { "$ref": "#/$defs/duration" },
+        "easing": { "$ref": "#/$defs/cubicBezier" },
+        "easingEmphasized": { "$ref": "#/$defs/cubicBezier" }
+      }
+    },
+    "focus": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "color": { "$ref": "#/$defs/colorOrRef", "description": "Default {color.primary.500}." },
+        "width": { "$ref": "#/$defs/dimension", "description": "Default 2px." },
+        "offset": { "$ref": "#/$defs/dimension", "description": "Default 2px." }
+      }
+    },
+    "accessibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "contrastTarget": { "type": "string", "enum": ["AA", "AAA"], "default": "AA", "description": "The generator and validator fail if any required text/background pair falls below this WCAG 2.2 level in light or dark mode." }
+      }
+    },
+    "voice": {
+      "type": "object",
+      "description": "Guidance for agents writing copy on this brand's surfaces. Not rendered.",
+      "additionalProperties": false,
+      "properties": {
+        "tone": { "type": "string" },
+        "avoid": { "type": "array", "items": { "type": "string" } },
+        "prefer": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "overrides": {
+      "type": "object",
+      "description": "Escape hatch: literal values for specific --cre8-* tokens, applied last. The validator warns on each one; prefer a seed.",
+      "propertyNames": { "pattern": "^--cre8-[a-z0-9-]+$" },
+      "additionalProperties": { "type": "string" }
+    }
+  },
+  "$defs": {
+    "color": {
+      "type": "object", "required": ["$value"], "additionalProperties": false,
+      "properties": { "$type": { "const": "color" }, "$value": { "type": "string", "pattern": "^(#([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})|oklch\\(.+\\))$" }, "$description": { "type": "string" } }
+    },
+    "colorOrRef": {
+      "type": "object", "required": ["$value"], "additionalProperties": false,
+      "properties": { "$type": { "const": "color" }, "$value": { "type": "string", "pattern": "^(#([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})|oklch\\(.+\\)|\\{color\\.[a-z]+\\.(50|[1-9]00|950)\\})$" }, "$description": { "type": "string" } }
+    },
+    "dimension": {
+      "type": "object", "required": ["$value"], "additionalProperties": false,
+      "properties": { "$type": { "const": "dimension" }, "$value": { "type": "string", "pattern": "^-?[0-9]*\\.?[0-9]+(px|rem)$" }, "$description": { "type": "string" } }
+    },
+    "number": {
+      "type": "object", "required": ["$value"], "additionalProperties": false,
+      "properties": { "$type": { "const": "number" }, "$value": { "type": "number", "minimum": 1.067, "maximum": 1.618 }, "$description": { "type": "string" } }
+    },
+    "fontWeight": {
+      "type": "object", "required": ["$value"], "additionalProperties": false,
+      "properties": { "$type": { "const": "fontWeight" }, "$value": { "type": "integer", "minimum": 100, "maximum": 900 } }
+    },
+    "fontFamily": {
+      "type": "object", "required": ["$value"], "additionalProperties": false,
+      "properties": { "$type": { "const": "fontFamily" }, "$value": { "type": "array", "items": { "type": "string" }, "minItems": 1 }, "$description": { "type": "string" } }
+    },
+    "duration": {
+      "type": "object", "required": ["$value"], "additionalProperties": false,
+      "properties": { "$type": { "const": "duration" }, "$value": { "type": "string", "pattern": "^[0-9]+ms$" } }
+    },
+    "cubicBezier": {
+      "type": "object", "required": ["$value"], "additionalProperties": false,
+      "properties": { "$type": { "const": "cubicBezier" }, "$value": { "type": "array", "items": { "type": "number" }, "minItems": 4, "maxItems": 4 } }
+    }
+  }
+}
