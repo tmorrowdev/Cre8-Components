@@ -643,10 +643,10 @@ span.ripple {
 }
 .cre8-c-progress-meter--indeterminate .cre8-c-progress-meter__progress {
   --cre8-progress-meter-background: repeating-linear-gradient(-45deg,
-      #009bdf,
-      #009bdf 10px,
-      #00628e 10px,
-      #00628e 20px);
+      var(--cre8-color-bg-brand-strong),
+      var(--cre8-color-bg-brand-strong) 10px,
+      var(--cre8-color-bg-brand-strong-active) 10px,
+      var(--cre8-color-bg-brand-strong-active) 20px);
 }
 
 /**
