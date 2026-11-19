@@ -20,7 +20,7 @@
  * contrast guard: inverse: bg-info info-50 (1.09:1) -> info-950 (13.14:1)
  * contrast guard: inverse: bg-attention neutral-0 (1.03:1) -> neutral-900 (16.29:1)
  * contrast guard: light: content-subtle neutral-500 (2.82:1) -> neutral-600 (4.99:1) on bg-default
- * contrast guard: inverse: content-link primary-300 (3.71:1) -> primary-200 (6.43:1) on bg-default
+ * contrast guard: inverse: content-link primary-300 (3.71:1) -> primary-200 (6.43:1) on bg-default, bg-brand
  * contrast guard: inverse: content-brand primary-300 (3.71:1) -> primary-200 (6.43:1) on bg-default
  * contrast guard: light: border-strong neutral-400 (1.89:1) -> neutral-600 (4.99:1) on bg-default
  * contrast guard: inverse: content-success success-600 (2.18:1) -> success-400 (4.63:1) on bg-success, bg-default
@@ -1207,7 +1207,7 @@
   /* contrast guard: bg-warning warning-50 (1:1) -> warning-950 (13.37:1) */
   /* contrast guard: bg-info info-50 (1.09:1) -> info-950 (13.14:1) */
   /* contrast guard: bg-attention neutral-0 (1.03:1) -> neutral-900 (16.29:1) */
-  /* contrast guard: content-link primary-300 (3.71:1) -> primary-200 (6.43:1) on bg-default */
+  /* contrast guard: content-link primary-300 (3.71:1) -> primary-200 (6.43:1) on bg-default, bg-brand */
   /* contrast guard: content-brand primary-300 (3.71:1) -> primary-200 (6.43:1) on bg-default */
   /* contrast guard: content-success success-600 (2.18:1) -> success-400 (4.63:1) on bg-success, bg-default */
   /* contrast guard: content-error error-600 (2.24:1) -> error-300 (6.2:1) on bg-error, bg-default */

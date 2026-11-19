@@ -537,6 +537,9 @@ export const CONTRAST_PAIRS = [
   { fg: 'content-default', bg: 'bg-warning-strong', kind: 'text', modes: ['light', 'inverse'] },
   ...['success', 'error', 'info', 'warning', 'attention'].map((s) => ({ fg: 'content-default', bg: `bg-${s}`, kind: 'text', modes: ['light', 'inverse'] })),
   { fg: 'content-inverse', bg: 'bg-brand-xstrong', kind: 'text', modes: ['light', 'inverse'] },
+  // A branded band is an inverse-mode region on bg-brand.
+  { fg: 'content-default', bg: 'bg-brand', kind: 'text', modes: ['inverse'] },
+  { fg: 'content-link', bg: 'bg-brand', kind: 'text', modes: ['inverse'] },
   { fg: 'border-strong', bg: 'bg-default', kind: 'ui', modes: ['light', 'inverse'] },
   { fg: 'focus-ring-color', bg: 'bg-default', kind: 'ui', modes: ['light', 'inverse'] },
 ];

@@ -142,7 +142,7 @@ Each has a legacy alias with `color-` inserted after `--cre8-`.
 | `--cre8-content-error` | `var(--cre8-mode-content-error)` |  | Use for error message and validation text. Never for decorative red; error colour means something is wrong. |
 | `--cre8-content-error-icon` | `var(--cre8-error-600)` |  | Use for error status icons. Never for running text. |
 | `--cre8-content-info-icon` | `var(--cre8-info-500)` |  | Use for informational status icons. Never for links or brand emphasis. |
-| `--cre8-content-inverse` | `var(--cre8-neutral-0)` |  | Use for text on surfaces that stay dark in every mode: the footer, a branded band (bg-brand-xstrong). Never for text on default or subtle surfaces; on fills that flip with the mode use --cre8-content-knockout. |
+| `--cre8-content-inverse` | `var(--cre8-neutral-0)` |  | Use for text on surfaces that stay dark in every mode, such as the footer (bg-brand-xstrong). Never for text on default or subtle surfaces; on fills that flip with the mode use --cre8-content-knockout. |
 | `--cre8-content-inverse-link` | `var(--cre8-primary-200)` |  | Use for link text inside an inverse (dark) region. Never for links on light surfaces. |
 | `--cre8-content-inverse-link-active` | `var(--cre8-primary-400)` |  | Use for pressed links inside an inverse region. Never for light surfaces. |
 | `--cre8-content-inverse-link-disabled` | `var(--cre8-neutral-200)` |  | Use for disabled links inside an inverse region. Never for light surfaces. |
