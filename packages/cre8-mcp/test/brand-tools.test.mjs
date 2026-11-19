@@ -13,6 +13,7 @@
  */
 
 import { fileURLToPath } from 'node:url';
+import { readFileSync } from 'node:fs';
 
 const fixture = (p) => fileURLToPath(new URL(`./fixtures/${p}`, import.meta.url));
 process.env.CRE8_BRAND_MODULE = fixture('brand-stub.mjs');
@@ -131,7 +132,9 @@ await test('list_tokens still names seed and semantic tokens when brand.mjs is m
   setBrandModule(null);
   try {
     const body = JSON.parse(await handleListTokens({}));
-    assertEqual(body.count, 84, '11 seeds + 73 semantic from the intents file');
+    const intents = JSON.parse(readFileSync(new URL('../../cre8-wc/design-tokens/schema/token-intents.json', import.meta.url), 'utf8'));
+    const expected = Object.values(intents.tokens).filter((t) => t.tier === 'seed' || t.tier === 'semantic').length;
+    assertEqual(body.count, expected, 'every seed and semantic token in the intents file');
     assert(body.tokens.every((t) => t.value === null));
     assert(body.valuesFrom.startsWith('unavailable'));
   } finally {
