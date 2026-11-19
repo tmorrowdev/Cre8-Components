@@ -46,7 +46,10 @@
     "audit:render": "node a2ui/render-audit.mjs",
     "audit:render:check": "node a2ui/render-audit.mjs --check",
     "check:parity": "node a2ui/check-layer-parity.mjs",
-    "check:skills": "node a2ui/check-skill-fidelity.mjs"
+    "check:skills": "node a2ui/check-skill-fidelity.mjs",
+    "tokens:build": "node design-tokens/tools/brand-cli.mjs build",
+    "tokens:check": "node design-tokens/tools/brand-cli.mjs check",
+    "test:tokens": "node --test design-tokens/tools/"
   },
   "type": "module",
   "module": "lib/index.js",
@@ -163,6 +166,7 @@
     "@vitest/browser-playwright": "4.1.8",
     "@vitest/coverage-v8": "^4.1.10",
     "@wc-toolkit/storybook-helpers": "^10.5.1",
+    "ajv": "^8.18.0",
     "clone": "^2.1.2",
     "css-parse": "2.0.0",
     "del-cli": "^7.0.0",

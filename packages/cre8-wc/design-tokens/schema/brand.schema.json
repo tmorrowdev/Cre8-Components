@@ -13,6 +13,7 @@
     "displayName": { "type": "string" },
     "description": { "type": "string" },
     "extends": { "type": ["string", "null"], "pattern": "^[a-z][a-z0-9-]*$", "description": "Another brand whose values fill anything left unset here. Must exist in design-tokens/brands/." },
+    "colorScheme": { "type": "string", "enum": ["light", "auto"], "default": "light", "description": "light: inverse mode only where [data-mode=\"inverse\"] (or [data-mode=\"auto\"] on a dark system) is set. auto: a document with no data-mode at all also follows the system's dark preference." },
     "color": {
       "type": "object",
       "description": "Seed colours. Each produces an 11-step OKLCH ramp (50..950) by relative colour syntax; the seed itself is step 500.",
@@ -25,7 +26,7 @@
         "success": { "$ref": "#/$defs/color" },
         "warning": { "$ref": "#/$defs/color" },
         "error": { "$ref": "#/$defs/color" },
-        "info": { "$ref": "#/$defs/color", "description": "Defaults to primary." },
+        "info": { "$ref": "#/$defs/color", "description": "Info status colour. Unset, info reads the accent ramp, which is what info has always read in cre8." },
         "chart": { "type": "array", "items": { "$ref": "#/$defs/color" }, "minItems": 3, "maxItems": 12, "description": "Categorical data-viz series, in order. Defaults to a palette derived from primary and accent." }
       }
     },
@@ -36,8 +37,8 @@
         "body": { "$ref": "#/$defs/fontFamily", "description": "Running text and UI controls." },
         "display": { "$ref": "#/$defs/fontFamily", "description": "Headings and hero text. Defaults to body." },
         "mono": { "$ref": "#/$defs/fontFamily", "description": "Code and tabular figures." },
-        "baseSize": { "$ref": "#/$defs/dimension", "description": "Body text size; font-size-4 in the scale. Default 1rem." },
-        "scaleRatio": { "$ref": "#/$defs/number", "description": "Modular scale ratio between adjacent type steps, 1.067 to 1.618. Default 1.2." },
+        "baseSize": { "$ref": "#/$defs/dimension", "description": "Body text size; font-size-2 in the scale (steps 0-1 smaller, 3-13 larger). Default 1rem." },
+        "scaleRatio": { "$ref": "#/$defs/number", "description": "Modular scale ratio between adjacent type steps, 1.067 to 1.618: step n = baseSize * ratio^(n-2). Unset keeps cre8's hand-tuned steps (0.75, 0.875, 1, 1.125, 1.25, 1.5, 1.75, 2, 2.5, 3, 3.5, 4, 4.5, 5 x baseSize)." },
         "weights": {
           "type": "object",
           "additionalProperties": false,
@@ -116,7 +117,22 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "contrastTarget": { "type": "string", "enum": ["AA", "AAA"], "default": "AA", "description": "The generator and validator fail if any required text/background pair falls below this WCAG 2.2 level in light or dark mode." }
+        "contrastTarget": { "type": "string", "enum": ["AA", "AAA"], "default": "AA", "description": "The generator and validator fail if any required text/background pair falls below this WCAG 2.2 level in light or dark mode. Failing derived pairs are auto-corrected to a passing ramp step by the generator." },
+        "waive": {
+          "type": "array",
+          "description": "Known contrast failures the brand accepts for now. A waived pair is neither auto-corrected nor failed; each waiver is a validator warning. Delete a waiver to let the generator pick a passing ramp step.",
+          "items": {
+            "type": "object",
+            "required": ["fg", "bg", "reason"],
+            "additionalProperties": false,
+            "properties": {
+              "fg": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$", "description": "Semantic token without the --cre8- prefix, e.g. content-link." },
+              "bg": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+              "mode": { "type": "string", "enum": ["light", "inverse"], "description": "Omit to waive both modes." },
+              "reason": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
       }
     },
     "voice": {
