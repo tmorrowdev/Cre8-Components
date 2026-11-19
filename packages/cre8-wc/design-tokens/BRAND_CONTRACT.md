@@ -46,9 +46,9 @@ ramp step (or, for a fill the knockout barely reads on, the dark knockout),
 and the choice is recorded in the generated file's header and next to the
 mode block. A brand may instead accept a known failure with
 `accessibility.waive: [{ fg, bg, mode?, reason }]`; waived pairs are left as
-they are, reported as warnings, and do not fail the check. cre8 waives seven
-pairs so that its generated sheet resolves exactly as it did before (see
-brands/cre8/brand.json for the list and what the guard would pick).
+they are, reported as warnings, and do not fail the check. No shipped brand
+uses a waiver; cre8's corrections (primary-600 button and links, darker status
+text) are listed in its generated sheet's header.
 
 ### Schema additions since the first draft
 - `colorScheme: 'light' | 'auto'` — `auto` also applies the inverse mode to a

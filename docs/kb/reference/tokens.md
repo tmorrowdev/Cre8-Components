@@ -24,7 +24,7 @@ brand sets the seeds and how modes and scoped rebrands work — is in
 | Tier | Count | You… |
 |---|---|---|
 | Seed (tier 0) | 13 | Set these, through `brand.json`. The only literals in the system |
-| Primitive (tier 1) | 151 | Never edit. Ramps and scales derived from the seeds |
+| Primitive (tier 1) | 152 | Never edit. Ramps and scales derived from the seeds |
 | Semantic (tier 2) | 86 | Read these in CSS. The only tier `data-mode` touches |
 | Component (tier 3) | 315 | Leave alone, except for a genuine one-off on one component |
 | Legacy aliases | 432 | Never write new code against. `--cre8-color-*` names kept so old styles resolve |
@@ -139,7 +139,7 @@ Each has a legacy alias with `color-` inserted after `--cre8-`.
 | `--cre8-content-brand-strong` | `var(--cre8-mode-content-brand-strong)` | yes | Use for higher-contrast brand text on tinted brand surfaces. Never for body copy. |
 | `--cre8-content-default` | `var(--cre8-mode-content-default)` | yes | Use for body text and default icons. Never for text on brand-strong or strong fills; use --cre8-content-knockout. |
 | `--cre8-content-disabled` | `var(--cre8-mode-content-disabled)` | yes | Use for text and icons of disabled controls. Never for de-emphasised but active text; use --cre8-content-subtle. |
-| `--cre8-content-error` | `var(--cre8-error-600)` |  | Use for error message and validation text. Never for decorative red; error colour means something is wrong. |
+| `--cre8-content-error` | `var(--cre8-mode-content-error)` |  | Use for error message and validation text. Never for decorative red; error colour means something is wrong. |
 | `--cre8-content-error-icon` | `var(--cre8-error-600)` |  | Use for error status icons. Never for running text. |
 | `--cre8-content-info-icon` | `var(--cre8-info-500)` |  | Use for informational status icons. Never for links or brand emphasis. |
 | `--cre8-content-inverse-link` | `var(--cre8-primary-200)` |  | Use for link text inside an inverse (dark) region. Never for links on light surfaces. |
@@ -156,7 +156,7 @@ Each has a legacy alias with `color-` inserted after `--cre8-`.
 | `--cre8-content-link-hover` | `var(--cre8-mode-content-link-hover)` | yes | Use for link text on hover. Never for resting links. |
 | `--cre8-content-link-visited` | `var(--cre8-accent-600)` |  | Use for visited links. Never for unvisited links. |
 | `--cre8-content-subtle` | `var(--cre8-mode-content-subtle)` | yes | Use for secondary text: captions, helper text, metadata, placeholders. Never for body copy or anything the user must read to act; check it meets 4.5:1 where it carries meaning. |
-| `--cre8-content-success` | `var(--cre8-success-600)` |  | Use for success message text. Never for icons alone; use --cre8-content-success-icon. |
+| `--cre8-content-success` | `var(--cre8-success-700)` |  | Use for success message text. Never for icons alone; use --cre8-content-success-icon. |
 | `--cre8-content-success-icon` | `var(--cre8-success-600)` |  | Use for success status icons. Never for running text. |
 | `--cre8-content-warning-icon` | `var(--cre8-warning-600)` |  | Use for warning status icons. Never for warning text on light backgrounds; contrast is usually too low. |
 
@@ -185,7 +185,7 @@ Each has a legacy alias with `color-` inserted after `--cre8-`.
 
 ## Primitive tokens (tier 1)
 
-151 values with no meaning attached, all derived from the seeds.
+152 values with no meaning attached, all derived from the seeds.
 Grouped by family; these are what semantic tokens point at. A ramp step does not
 follow `data-mode`, which is the practical reason not to read one directly.
 
@@ -200,7 +200,7 @@ follow `data-mode`, which is the practical reason not to read one directly.
 | `--cre8-font-*` | 21 | `--cre8-font-size-0` = `calc(var(--cre8-seed-font-size) * 0.75)` |
 | `--cre8-info-*` | 4 | `--cre8-info-50` = `var(--cre8-accent-50)` |
 | `--cre8-line-*` | 5 | `--cre8-line-height-tight` = `1.12` |
-| `--cre8-mode-*` | 21 | `--cre8-mode-bg-default` = `var(--cre8-neutral-0)` |
+| `--cre8-mode-*` | 22 | `--cre8-mode-bg-default` = `var(--cre8-neutral-0)` |
 | `--cre8-neutral-*` | 12 | `--cre8-neutral-0` = `oklch(from var(--cre8-seed-neutral) 1 calc(c * 0) calc(h - 167.54))` |
 | `--cre8-overlay-*` | 4 | `--cre8-overlay-transparent` = `oklch(from var(--cre8-neutral-900) l c h / 0)` |
 | `--cre8-padding-*` | 5 | `--cre8-padding-2` = `calc(var(--cre8-spacing-2) * var(--cre8-seed-density))` |
