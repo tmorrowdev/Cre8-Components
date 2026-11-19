@@ -600,7 +600,7 @@ span.ripple {
   text-decoration: var(--cre8-typography-body-default-text-decoration);
   text-transform: var(--cre8-typography-body-default-text-transform);
   background: var(--cre8-color-bg-brand-xstrong);
-  color: var(--cre8-color-content-knockout);
+  color: var(--cre8-color-content-inverse);
   padding-top: var(--cre8-spacing-40);
   padding-bottom: var(--cre8-spacing-48);
 }

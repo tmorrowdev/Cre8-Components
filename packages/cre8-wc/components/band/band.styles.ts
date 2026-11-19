@@ -616,8 +616,8 @@ span.ripple {
  * Branded variant
  */
 .cre8-c-band--branded {
-  color: var(--cre8-color-content-knockout);
-  background: var(--cre8-theme-color-utility-information);
+  color: var(--cre8-color-content-inverse);
+  background: var(--cre8-color-bg-brand-xstrong);
 }
 
 /**

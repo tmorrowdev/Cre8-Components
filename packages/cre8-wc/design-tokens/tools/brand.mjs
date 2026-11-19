@@ -536,6 +536,7 @@ export const CONTRAST_PAIRS = [
   ...['success', 'error', 'info', 'attention'].map((s) => ({ fg: 'content-knockout', bg: `bg-${s}-strong`, kind: 'text', modes: ['light', 'inverse'] })),
   { fg: 'content-default', bg: 'bg-warning-strong', kind: 'text', modes: ['light', 'inverse'] },
   ...['success', 'error', 'info', 'warning', 'attention'].map((s) => ({ fg: 'content-default', bg: `bg-${s}`, kind: 'text', modes: ['light', 'inverse'] })),
+  { fg: 'content-inverse', bg: 'bg-brand-xstrong', kind: 'text', modes: ['light', 'inverse'] },
   { fg: 'border-strong', bg: 'bg-default', kind: 'ui', modes: ['light', 'inverse'] },
   { fg: 'focus-ring-color', bg: 'bg-default', kind: 'ui', modes: ['light', 'inverse'] },
 ];

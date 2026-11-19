@@ -25,9 +25,9 @@ brand sets the seeds and how modes and scoped rebrands work — is in
 |---|---|---|
 | Seed (tier 0) | 13 | Set these, through `brand.json`. The only literals in the system |
 | Primitive (tier 1) | 172 | Never edit. Ramps and scales derived from the seeds |
-| Semantic (tier 2) | 86 | Read these in CSS. The only tier `data-mode` touches |
+| Semantic (tier 2) | 87 | Read these in CSS. The only tier `data-mode` touches |
 | Component (tier 3) | 315 | Leave alone, except for a genuine one-off on one component |
-| Legacy aliases | 432 | Never write new code against. `--cre8-color-*` names kept so old styles resolve |
+| Legacy aliases | 433 | Never write new code against. `--cre8-color-*` names kept so old styles resolve |
 
 A name not in this file does not exist. `var(--cre8-…)` with no definition and no
 fallback renders as nothing, silently — which is why
@@ -142,6 +142,7 @@ Each has a legacy alias with `color-` inserted after `--cre8-`.
 | `--cre8-content-error` | `var(--cre8-mode-content-error)` |  | Use for error message and validation text. Never for decorative red; error colour means something is wrong. |
 | `--cre8-content-error-icon` | `var(--cre8-error-600)` |  | Use for error status icons. Never for running text. |
 | `--cre8-content-info-icon` | `var(--cre8-info-500)` |  | Use for informational status icons. Never for links or brand emphasis. |
+| `--cre8-content-inverse` | `var(--cre8-neutral-0)` |  | Use for text on surfaces that stay dark in every mode: the footer, a branded band (bg-brand-xstrong). Never for text on default or subtle surfaces; on fills that flip with the mode use --cre8-content-knockout. |
 | `--cre8-content-inverse-link` | `var(--cre8-primary-200)` |  | Use for link text inside an inverse (dark) region. Never for links on light surfaces. |
 | `--cre8-content-inverse-link-active` | `var(--cre8-primary-400)` |  | Use for pressed links inside an inverse region. Never for light surfaces. |
 | `--cre8-content-inverse-link-disabled` | `var(--cre8-neutral-200)` |  | Use for disabled links inside an inverse region. Never for light surfaces. |
@@ -229,7 +230,7 @@ genuine one-off.
 
 ## Legacy aliases
 
-432 older names, mostly `--cre8-color-*`, still emitted so
+433 older names, mostly `--cre8-color-*`, still emitted so
 existing component styles resolve to the value they always had. Drop the
 `color-` prefix to get the semantic name; do not use these in new code.
 

@@ -176,6 +176,8 @@
   --cre8-color-content-disabled: var(--cre8-content-disabled);
   --cre8-content-knockout: var(--cre8-mode-content-knockout);
   --cre8-color-content-knockout: var(--cre8-content-knockout);
+  --cre8-content-inverse: var(--cre8-neutral-0);
+  --cre8-color-content-inverse: var(--cre8-content-inverse);
   --cre8-content-brand: var(--cre8-mode-content-brand);
   --cre8-color-content-brand: var(--cre8-content-brand);
   --cre8-content-brand-strong: var(--cre8-mode-content-brand-strong);
