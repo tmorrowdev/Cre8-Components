@@ -20,3 +20,4 @@ react-wrappers/*
 ./react-wrappers/**
 !react-wrappers/package.json
 ./react-wrappers/dist-storybook/**
+brand-audit-report/

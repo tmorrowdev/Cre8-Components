@@ -289,6 +289,9 @@ importers:
       ajv:
         specifier: ^8.18.0
         version: 8.18.0
+      axe-core:
+        specifier: ^4.11.2
+        version: 4.11.2
       clone:
         specifier: ^2.1.2
         version: 2.1.2
