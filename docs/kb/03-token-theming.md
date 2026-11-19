@@ -218,6 +218,13 @@ brand waives anything: the default `cre8` brand lets the guard deepen its
 primary button and links to primary-600 (white on it is 5.17:1) and darken
 its status text, so it meets AA.
 
+Status colours are mode-aware too. The guard picks each status fill
+(`bg-success-strong`, `bg-error-strong`, `bg-info-strong`, `bg-warning-strong`,
+`bg-attention-strong`) so the text components put on it passes in light and
+inverse mode, and swaps each status tint (`bg-success`, `bg-info` and so on)
+for a dark -950 step in inverse mode. `color.attentionRamp` (`primary`, the
+default, or `accent`) chooses which ramp the attention status reads.
+
 The guard covers what the seeds generate. It does not cover `overrides`, a
 semantic token you set by hand, or text you colour yourself — check those by eye.
 

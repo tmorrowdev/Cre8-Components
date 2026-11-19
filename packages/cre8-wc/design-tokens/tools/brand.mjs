@@ -235,6 +235,7 @@ function normalise(brand) {
       primary: colour('primary'), neutral: colour('neutral'), accent: colour('accent'),
       success: colour('success'), warning: colour('warning'), error: colour('error'),
       info: val(c.info), chart: c.chart ? c.chart.map(val) : null,
+      attentionRamp: val(c.attentionRamp) ?? 'primary',
     },
     typography: {
       body: val(t.body) ?? DEFAULTS.typography.body,
@@ -350,6 +351,19 @@ function rampLines(cfg) {
     out.push(decl('--cre8-info-700', 'oklch(from var(--cre8-seed-info) calc(l - 0.16) c h)'));
   } else {
     for (const k of ['50', '500', '600', '700']) out.push(decl(`--cre8-info-${k}`, `var(--cre8-accent-${k})`));
+  }
+  out.push('');
+  out.push('  /* Status steps for the contrast guard: lighter info and success steps for');
+  out.push('     fills under dark text in inverse mode, and a dark -950 tint per status');
+  out.push('     for inverse-mode status backgrounds. Nothing reads them unless the guard');
+  out.push('     picks them. */');
+  out.push(decl('--cre8-info-400', 'oklch(from var(--cre8-info-500) calc(l + 0.08) calc(c * 0.9) h)'));
+  out.push(decl('--cre8-info-300', 'oklch(from var(--cre8-info-500) calc(l + 0.16) calc(c * 0.7) h)'));
+  out.push(decl('--cre8-info-800', 'oklch(from var(--cre8-info-500) calc(l - 0.24) c h)'));
+  out.push(decl('--cre8-success-300', 'oklch(from var(--cre8-success-500) calc(l + 0.1) calc(c * 0.7) h)'));
+  out.push(decl('--cre8-warning-300', 'oklch(from var(--cre8-warning-500) calc(l + 0.08) calc(c * 0.7) h)'));
+  for (const r of ['success', 'error', 'warning', 'info']) {
+    out.push(decl(`--cre8-${r}-950`, `oklch(from var(--cre8-${r}-500) 0.3 calc(c * 0.45) h)`));
   }
   return { text: out.join('\n'), notes };
 }
@@ -505,8 +519,7 @@ const MODE_INVERSE = {
 /**
  * The pairs the guard checks. `kind: text` needs 4.5:1 (AA) / 7:1 (AAA);
  * `kind: ui` (component boundaries, focus indicators) needs 3:1.
- * Status tints (bg-success, bg-error) are not mode-aware, so the status
- * text-on-tint pairs are checked in light mode only.
+ * Status fills and tints are mode-aware: the guard picks each one per mode.
  */
 export const CONTRAST_PAIRS = [
   { fg: 'content-default', bg: 'bg-default', kind: 'text', modes: ['light', 'inverse'] },
@@ -515,9 +528,14 @@ export const CONTRAST_PAIRS = [
   { fg: 'content-knockout', bg: 'bg-brand-strong', kind: 'text', modes: ['light', 'inverse'] },
   { fg: 'content-link', bg: 'bg-default', kind: 'text', modes: ['light', 'inverse'] },
   { fg: 'content-brand', bg: 'bg-default', kind: 'text', modes: ['light', 'inverse'] },
-  { fg: 'content-success', bg: 'bg-success', kind: 'text', modes: ['light'] },
-  { fg: 'content-error', bg: 'bg-error', kind: 'text', modes: ['light'] },
+  { fg: 'content-success', bg: 'bg-success', kind: 'text', modes: ['light', 'inverse'] },
+  { fg: 'content-success', bg: 'bg-default', kind: 'text', modes: ['light', 'inverse'] },
+  { fg: 'content-error', bg: 'bg-error', kind: 'text', modes: ['light', 'inverse'] },
   { fg: 'content-error', bg: 'bg-default', kind: 'text', modes: ['light', 'inverse'] },
+  // Status fills: badges, alerts and the danger button put text on these.
+  ...['success', 'error', 'info', 'attention'].map((s) => ({ fg: 'content-knockout', bg: `bg-${s}-strong`, kind: 'text', modes: ['light', 'inverse'] })),
+  { fg: 'content-default', bg: 'bg-warning-strong', kind: 'text', modes: ['light', 'inverse'] },
+  ...['success', 'error', 'info', 'warning', 'attention'].map((s) => ({ fg: 'content-default', bg: `bg-${s}`, kind: 'text', modes: ['light', 'inverse'] })),
   { fg: 'border-strong', bg: 'bg-default', kind: 'ui', modes: ['light', 'inverse'] },
   { fg: 'focus-ring-color', bg: 'bg-default', kind: 'ui', modes: ['light', 'inverse'] },
 ];
@@ -532,9 +550,31 @@ const CANDIDATES = {
   'content-brand': { light: steps('primary', [500, 600, 700, 800, 900, 950]), inverse: steps('primary', [300, 200, 100, 50]), follower: 'content-brand-strong' },
   'border-strong': { light: steps('neutral', [400, 500, 600, 700]), inverse: steps('neutral', [500, 400, 300, 200]) },
   'focus-ring-color': { light: steps('primary', [500, 600, 700, 800, 900]), inverse: steps('primary', [300, 200, 400, 100]) },
-  'content-success': { light: steps('success', [600, 700, 800, 900]) },
+  'content-success': { light: steps('success', [600, 700, 800, 900]), inverse: steps('success', [600, 400, 300, 50]) },
   'content-error': { light: steps('error', [600, 700, 800, 900]), inverse: steps('error', [600, 400, 300, 200]) },
 };
+/**
+ * Status fills and tints, made mode-aware. `text` is the token components put
+ * on the fill; candidates are tried in order and the first that passes wins.
+ */
+const STATUS_FILLS = {
+  'bg-success': { text: ['content-default'], light: steps('success', [50]), inverse: steps('success', [950]) },
+  'bg-error': { text: ['content-default'], light: steps('error', [50]), inverse: steps('error', [950]) },
+  'bg-warning': { text: ['content-default'], light: steps('warning', [50]), inverse: steps('warning', [950]) },
+  'bg-info': { text: ['content-default'], light: steps('info', [50]), inverse: steps('info', [950]) },
+  'bg-attention': { text: ['content-default'], light: ['neutral-0'], inverse: ['neutral-900'] },
+  'bg-success-strong': { text: ['content-knockout'], light: steps('success', [500, 600, 700, 800, 900, 400, 300]), inverse: steps('success', [500, 400, 300, 600, 700, 800]) },
+  'bg-error-strong': { text: ['content-knockout'], light: steps('error', [500, 600, 700, 800, 900, 400, 300]), inverse: steps('error', [500, 400, 300, 200, 600, 700, 800]) },
+  'bg-info-strong': { text: ['content-knockout'], light: steps('info', [500, 600, 700, 800, 400, 300]), inverse: steps('info', [500, 400, 300, 600, 700, 800]) },
+  'bg-attention-strong': { text: ['content-knockout'], light: steps('primary', [400, 500, 600, 700, 800, 300, 200]), inverse: steps('primary', [400, 300, 200, 100, 500, 600, 700]) },
+  'bg-warning-strong': { text: ['content-default'], light: steps('warning', [500, 400, 300, 600, 700]), inverse: steps('warning', [500, 600, 700, 800, 900, 400, 300]) },
+};
+const STATUS_DEFAULT = {
+  'bg-success': 'success-50', 'bg-error': 'error-50', 'bg-warning': 'warning-50', 'bg-info': 'info-50', 'bg-attention': 'neutral-0',
+  'bg-success-strong': 'success-500', 'bg-error-strong': 'error-500', 'bg-warning-strong': 'warning-500',
+  'bg-info-strong': 'info-500', 'bg-attention-strong': 'primary-400',
+};
+
 const KNOCKOUT = {
   light: { knockout: steps('neutral', [0, 900, 950]), bg: steps('primary', [500, 600, 700, 800, 900]) },
   inverse: { knockout: steps('neutral', [900, 950, 0]), bg: steps('primary', [300, 200, 100, 400, 500]) },
@@ -559,12 +599,47 @@ function planContrast(cfg, primitives, autoCorrect) {
   const target = cfg.contrastTarget;
   const colourOf = (ref) => primitives(ref);
   const ratio = (a, b) => contrastRatio(colourOf(a), colourOf(b));
+  const fmtR = (r) => `${num(r, 2)}:1`;
   const bgOf = (mode, bg) => {
     const map = mode === 'light' ? light : inverse;
     if (map[bg]) return map[bg];
-    return { 'bg-success': 'success-50', 'bg-error': 'error-50' }[bg];
+    if (statusChoice[mode][bg]) return statusChoice[mode][bg];
+    return start[bg];
   };
-  const fmtR = (r) => `${num(r, 2)}:1`;
+  const statusChoice = { light: {}, inverse: {} };
+  // The attention status reads primary by default, or accent when the brand says so.
+  const fills = { ...STATUS_FILLS }; const start = { ...STATUS_DEFAULT };
+  if (cfg.color.attentionRamp === 'accent') {
+    fills['bg-attention'] = { text: ['content-default'], light: steps('accent', [50]), inverse: ['neutral-900'] };
+    fills['bg-attention-strong'] = { text: ['content-knockout'], light: steps('accent', [500, 600, 700, 800, 200]), inverse: steps('accent', [500, 200, 50, 600, 700]) };
+    start['bg-attention'] = 'accent-50'; start['bg-attention-strong'] = 'accent-500';
+  }
+  const exists = (ref) => { try { return Boolean(colourOf(ref)); } catch { return false; } };
+  // Pick a fill per mode for each status token whose text pairs must pass.
+  const pickStatus = (names) => {
+    for (const name of names) {
+      const spec = fills[name];
+      for (const mode of ['light', 'inverse']) {
+        const relevant = CONTRAST_PAIRS.filter((p) => p.bg === name && spec.text.includes(p.fg) && p.modes.includes(mode) && !isWaived(cfg, p.fg, p.bg, mode));
+        const map = mode === 'light' ? light : inverse;
+        const textRef = (fg) => map[fg] || (semantic[fg] && !modeSplit.has(fg) ? semantic[fg] : null);
+        const passes = (ref) => relevant.every((p) => !textRef(p.fg) || ratio(textRef(p.fg), ref) >= required(p.kind, target));
+        const current = start[name];
+        const list = spec[mode].filter(exists);
+        const pick = passes(current) && mode === 'light' ? current : list.find(passes) || list[0] || current;
+        statusChoice[mode][name] = pick;
+        if (pick !== current && relevant.length) {
+          const worst = (ref) => Math.min(...relevant.filter((p) => textRef(p.fg)).map((p) => ratio(textRef(p.fg), ref)));
+          notes.push(`${mode}: ${name} ${current} (${fmtR(worst(current))}) -> ${pick} (${fmtR(worst(pick))})`);
+        }
+      }
+      const { light: l, inverse: i } = { light: statusChoice.light[name], inverse: statusChoice.inverse[name] };
+      if (l === STATUS_DEFAULT[name] && i === STATUS_DEFAULT[name]) continue; // the template already says this
+      semantic[name] = l;
+      if (l !== i) { modeSplit.add(name); light[name] = l; inverse[name] = i; }
+    }
+  };
+  pickStatus(Object.keys(STATUS_FILLS).filter((n) => !n.endsWith('-strong')));
 
   // Knockout on brand-strong: flip the knockout first, then deepen the fill.
   for (const mode of ['light', 'inverse']) {
@@ -624,6 +699,7 @@ function planContrast(cfg, primitives, autoCorrect) {
       inverse[token] = chosenByMode.inverse;
     }
   }
+  pickStatus(Object.keys(STATUS_FILLS).filter((n) => n.endsWith('-strong')));
   return { light, inverse, semantic, modeSplit, notes, focusLiteral };
 }
 

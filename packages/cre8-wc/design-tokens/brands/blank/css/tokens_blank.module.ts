@@ -26,9 +26,21 @@ const blank = `
  * ramp: error: seed L 0.577 vs template 0.656; step lightness re-anchored around the seed
  * ramp: warning: seed L 0.666 vs template 0.769; step lightness re-anchored around the seed
  * ramp: accent: seed L 0.585 vs template 0.541; step lightness re-anchored around the seed
+ * contrast guard: inverse: bg-success success-50 (1.01:1) -> success-950 (12.66:1)
+ * contrast guard: inverse: bg-error error-50 (1.04:1) -> error-950 (13.56:1)
+ * contrast guard: inverse: bg-warning warning-50 (1:1) -> warning-950 (13.28:1)
+ * contrast guard: inverse: bg-info info-50 (1.08:1) -> info-950 (13.33:1)
+ * contrast guard: inverse: bg-attention neutral-0 (1.05:1) -> neutral-900 (17.06:1)
  * contrast guard: light: border-strong neutral-400 (2.56:1) -> neutral-500 (4.76:1) on bg-default
- * contrast guard: light: content-success success-600 (4.29:1) -> success-700 (6.2:1) on bg-success
- * contrast guard: inverse: content-error error-600 (2.5:1) -> error-300 (7.12:1) on bg-default
+ * contrast guard: light: content-success success-600 (4.29:1) -> success-700 (6.2:1) on bg-success, bg-default
+ * contrast guard: inverse: content-success success-700 (2.06:1) -> success-400 (6.05:1) on bg-success, bg-default
+ * contrast guard: inverse: content-error error-600 (2.43:1) -> error-300 (6.9:1) on bg-error, bg-default
+ * contrast guard: light: bg-success-strong success-500 (3.3:1) -> success-700 (6.44:1)
+ * contrast guard: inverse: bg-error-strong error-500 (3.7:1) -> error-400 (5.36:1)
+ * contrast guard: light: bg-info-strong info-500 (3.31:1) -> info-700 (6.09:1)
+ * contrast guard: light: bg-attention-strong primary-400 (4.23:1) -> primary-500 (7.58:1)
+ * contrast guard: inverse: bg-attention-strong primary-400 (4.22:1) -> primary-300 (7.39:1)
+ * contrast guard: inverse: bg-warning-strong warning-500 (3.05:1) -> warning-700 (7.1:1)
  */
 
 :root {
@@ -160,6 +172,20 @@ const blank = `
   --cre8-info-600: var(--cre8-accent-600);
   --cre8-info-700: var(--cre8-accent-700);
 
+  /* Status steps for the contrast guard: lighter info and success steps for
+     fills under dark text in inverse mode, and a dark -950 tint per status
+     for inverse-mode status backgrounds. Nothing reads them unless the guard
+     picks them. */
+  --cre8-info-400: oklch(from var(--cre8-info-500) calc(l + 0.08) calc(c * 0.9) h);
+  --cre8-info-300: oklch(from var(--cre8-info-500) calc(l + 0.16) calc(c * 0.7) h);
+  --cre8-info-800: oklch(from var(--cre8-info-500) calc(l - 0.24) c h);
+  --cre8-success-300: oklch(from var(--cre8-success-500) calc(l + 0.1) calc(c * 0.7) h);
+  --cre8-warning-300: oklch(from var(--cre8-warning-500) calc(l + 0.08) calc(c * 0.7) h);
+  --cre8-success-950: oklch(from var(--cre8-success-500) 0.3 calc(c * 0.45) h);
+  --cre8-error-950: oklch(from var(--cre8-error-500) 0.3 calc(c * 0.45) h);
+  --cre8-warning-950: oklch(from var(--cre8-warning-500) 0.3 calc(c * 0.45) h);
+  --cre8-info-950: oklch(from var(--cre8-info-500) 0.3 calc(c * 0.45) h);
+
   /* Overlays — neutral-900 at fixed alpha */
   --cre8-overlay-transparent: oklch(from var(--cre8-neutral-900) l c h / 0);
   --cre8-overlay-10: oklch(from var(--cre8-neutral-900) l c h / 0.1);
@@ -274,7 +300,10 @@ const blank = `
 
   /* Mode indirection — light. Overridden by [data-mode="inverse"]. */
   /* contrast guard: border-strong neutral-400 (2.56:1) -> neutral-500 (4.76:1) on bg-default */
-  /* contrast guard: content-success success-600 (4.29:1) -> success-700 (6.2:1) on bg-success */
+  /* contrast guard: content-success success-600 (4.29:1) -> success-700 (6.2:1) on bg-success, bg-default */
+  /* contrast guard: bg-success-strong success-500 (3.3:1) -> success-700 (6.44:1) */
+  /* contrast guard: bg-info-strong info-500 (3.31:1) -> info-700 (6.09:1) */
+  /* contrast guard: bg-attention-strong primary-400 (4.23:1) -> primary-500 (7.58:1) */
   --cre8-mode-bg-default: var(--cre8-neutral-0);
   --cre8-mode-bg-default-hover: var(--cre8-neutral-50);
   --cre8-mode-bg-subtle: var(--cre8-neutral-100);
@@ -296,7 +325,18 @@ const blank = `
   --cre8-mode-border-strong: var(--cre8-neutral-500);
   --cre8-mode-border-brand: var(--cre8-primary-500);
   --cre8-mode-focus-ring-color: var(--cre8-primary-500);
+  --cre8-mode-bg-success: var(--cre8-success-50);
+  --cre8-mode-bg-error: var(--cre8-error-50);
+  --cre8-mode-bg-warning: var(--cre8-warning-50);
+  --cre8-mode-bg-info: var(--cre8-info-50);
+  --cre8-mode-bg-attention: var(--cre8-neutral-0);
+  --cre8-mode-content-success: var(--cre8-success-700);
   --cre8-mode-content-error: var(--cre8-error-600);
+  --cre8-mode-bg-success-strong: var(--cre8-success-700);
+  --cre8-mode-bg-error-strong: var(--cre8-error-500);
+  --cre8-mode-bg-info-strong: var(--cre8-info-700);
+  --cre8-mode-bg-attention-strong: var(--cre8-primary-500);
+  --cre8-mode-bg-warning-strong: var(--cre8-warning-500);
 
   --cre8-bg-default: var(--cre8-mode-bg-default);
   --cre8-color-bg-default: var(--cre8-bg-default);
@@ -332,25 +372,25 @@ const blank = `
   --cre8-color-bg-brand-xstrong-hover: var(--cre8-bg-brand-xstrong-hover);
   --cre8-bg-brand-xstrong-active: var(--cre8-primary-900);
   --cre8-color-bg-brand-xstrong-active: var(--cre8-bg-brand-xstrong-active);
-  --cre8-bg-success: var(--cre8-success-50);
+  --cre8-bg-success: var(--cre8-mode-bg-success);
   --cre8-color-bg-success: var(--cre8-bg-success);
-  --cre8-bg-success-strong: var(--cre8-success-500);
+  --cre8-bg-success-strong: var(--cre8-mode-bg-success-strong);
   --cre8-color-bg-success-strong: var(--cre8-bg-success-strong);
-  --cre8-bg-error: var(--cre8-error-50);
+  --cre8-bg-error: var(--cre8-mode-bg-error);
   --cre8-color-bg-error: var(--cre8-bg-error);
-  --cre8-bg-error-strong: var(--cre8-error-500);
+  --cre8-bg-error-strong: var(--cre8-mode-bg-error-strong);
   --cre8-color-bg-error-strong: var(--cre8-bg-error-strong);
-  --cre8-bg-warning: var(--cre8-warning-50);
+  --cre8-bg-warning: var(--cre8-mode-bg-warning);
   --cre8-color-bg-warning: var(--cre8-bg-warning);
-  --cre8-bg-warning-strong: var(--cre8-warning-500);
+  --cre8-bg-warning-strong: var(--cre8-mode-bg-warning-strong);
   --cre8-color-bg-warning-strong: var(--cre8-bg-warning-strong);
-  --cre8-bg-info: var(--cre8-info-50);
+  --cre8-bg-info: var(--cre8-mode-bg-info);
   --cre8-color-bg-info: var(--cre8-bg-info);
-  --cre8-bg-info-strong: var(--cre8-info-500);
+  --cre8-bg-info-strong: var(--cre8-mode-bg-info-strong);
   --cre8-color-bg-info-strong: var(--cre8-bg-info-strong);
-  --cre8-bg-attention: var(--cre8-neutral-0);
+  --cre8-bg-attention: var(--cre8-mode-bg-attention);
   --cre8-color-bg-attention: var(--cre8-bg-attention);
-  --cre8-bg-attention-strong: var(--cre8-primary-400);
+  --cre8-bg-attention-strong: var(--cre8-mode-bg-attention-strong);
   --cre8-color-bg-attention-strong: var(--cre8-bg-attention-strong);
   --cre8-bg-opacity-transparent: var(--cre8-overlay-transparent);
   --cre8-color-bg-opacity-transparent: var(--cre8-bg-opacity-transparent);
@@ -374,7 +414,7 @@ const blank = `
   --cre8-color-content-brand-strong: var(--cre8-content-brand-strong);
   --cre8-content-brand-knockout: var(--cre8-success-50);
   --cre8-color-content-brand-knockout: var(--cre8-content-brand-knockout);
-  --cre8-content-success: var(--cre8-success-700);
+  --cre8-content-success: var(--cre8-mode-content-success);
   --cre8-color-content-success: var(--cre8-content-success);
   --cre8-content-success-icon: var(--cre8-success-600);
   --cre8-color-content-success-icon: var(--cre8-content-success-icon);
@@ -1174,7 +1214,16 @@ const blank = `
    [data-cre8-theme] on any element to scope the mode to that subtree.
    =========================================================================== */
 [data-mode="inverse"] {
-  /* contrast guard: content-error error-600 (2.5:1) -> error-300 (7.12:1) on bg-default */
+  /* contrast guard: bg-success success-50 (1.01:1) -> success-950 (12.66:1) */
+  /* contrast guard: bg-error error-50 (1.04:1) -> error-950 (13.56:1) */
+  /* contrast guard: bg-warning warning-50 (1:1) -> warning-950 (13.28:1) */
+  /* contrast guard: bg-info info-50 (1.08:1) -> info-950 (13.33:1) */
+  /* contrast guard: bg-attention neutral-0 (1.05:1) -> neutral-900 (17.06:1) */
+  /* contrast guard: content-success success-700 (2.06:1) -> success-400 (6.05:1) on bg-success, bg-default */
+  /* contrast guard: content-error error-600 (2.43:1) -> error-300 (6.9:1) on bg-error, bg-default */
+  /* contrast guard: bg-error-strong error-500 (3.7:1) -> error-400 (5.36:1) */
+  /* contrast guard: bg-attention-strong primary-400 (4.22:1) -> primary-300 (7.39:1) */
+  /* contrast guard: bg-warning-strong warning-500 (3.05:1) -> warning-700 (7.1:1) */
   --cre8-mode-bg-default: var(--cre8-neutral-800);
   --cre8-mode-bg-default-hover: var(--cre8-neutral-700);
   --cre8-mode-bg-subtle: var(--cre8-neutral-900);
@@ -1196,7 +1245,18 @@ const blank = `
   --cre8-mode-border-strong: var(--cre8-neutral-500);
   --cre8-mode-border-brand: var(--cre8-primary-300);
   --cre8-mode-focus-ring-color: var(--cre8-primary-300);
+  --cre8-mode-bg-success: var(--cre8-success-950);
+  --cre8-mode-bg-error: var(--cre8-error-950);
+  --cre8-mode-bg-warning: var(--cre8-warning-950);
+  --cre8-mode-bg-info: var(--cre8-info-950);
+  --cre8-mode-bg-attention: var(--cre8-neutral-900);
+  --cre8-mode-content-success: var(--cre8-success-400);
   --cre8-mode-content-error: var(--cre8-error-300);
+  --cre8-mode-bg-success-strong: var(--cre8-success-500);
+  --cre8-mode-bg-error-strong: var(--cre8-error-400);
+  --cre8-mode-bg-info-strong: var(--cre8-info-500);
+  --cre8-mode-bg-attention-strong: var(--cre8-primary-300);
+  --cre8-mode-bg-warning-strong: var(--cre8-warning-700);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1222,7 +1282,18 @@ const blank = `
     --cre8-mode-border-strong: var(--cre8-neutral-500);
     --cre8-mode-border-brand: var(--cre8-primary-300);
     --cre8-mode-focus-ring-color: var(--cre8-primary-300);
+    --cre8-mode-bg-success: var(--cre8-success-950);
+    --cre8-mode-bg-error: var(--cre8-error-950);
+    --cre8-mode-bg-warning: var(--cre8-warning-950);
+    --cre8-mode-bg-info: var(--cre8-info-950);
+    --cre8-mode-bg-attention: var(--cre8-neutral-900);
+    --cre8-mode-content-success: var(--cre8-success-400);
     --cre8-mode-content-error: var(--cre8-error-300);
+    --cre8-mode-bg-success-strong: var(--cre8-success-500);
+    --cre8-mode-bg-error-strong: var(--cre8-error-400);
+    --cre8-mode-bg-info-strong: var(--cre8-info-500);
+    --cre8-mode-bg-attention-strong: var(--cre8-primary-300);
+    --cre8-mode-bg-warning-strong: var(--cre8-warning-700);
   }
 }
 

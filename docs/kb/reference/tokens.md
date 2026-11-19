@@ -24,7 +24,7 @@ brand sets the seeds and how modes and scoped rebrands work — is in
 | Tier | Count | You… |
 |---|---|---|
 | Seed (tier 0) | 13 | Set these, through `brand.json`. The only literals in the system |
-| Primitive (tier 1) | 152 | Never edit. Ramps and scales derived from the seeds |
+| Primitive (tier 1) | 172 | Never edit. Ramps and scales derived from the seeds |
 | Semantic (tier 2) | 86 | Read these in CSS. The only tier `data-mode` touches |
 | Component (tier 3) | 315 | Leave alone, except for a genuine one-off on one component |
 | Legacy aliases | 432 | Never write new code against. `--cre8-color-*` names kept so old styles resolve |
@@ -67,8 +67,8 @@ Each has a legacy alias with `color-` inserted after `--cre8-`.
 | Token | Value | Mode | Use for … never for … |
 |---|---|---|---|
 | `--cre8-bg-active` | `var(--cre8-neutral-900)` |  | Use for the fill of an active/current item in a dark-on-light treatment (current tab pill). Never for hover feedback. |
-| `--cre8-bg-attention` | `var(--cre8-neutral-0)` |  | Use for the surface behind an attention-state element. Never for status meaning; attention is emphasis, not success/error. |
-| `--cre8-bg-attention-strong` | `var(--cre8-primary-400)` |  | Use for a solid attention fill (new/featured markers, highlight chips). Never for error or warning states. |
+| `--cre8-bg-attention` | `var(--cre8-mode-bg-attention)` |  | Use for the surface behind an attention-state element. Never for status meaning; attention is emphasis, not success/error. |
+| `--cre8-bg-attention-strong` | `var(--cre8-mode-bg-attention-strong)` |  | Use for a solid attention fill (new/featured markers, highlight chips). Never for error or warning states. |
 | `--cre8-bg-brand` | `var(--cre8-mode-bg-brand)` | yes | Use for a light brand-tinted surface behind brand content (selected nav, callouts). Never for primary buttons; use --cre8-bg-brand-strong. |
 | `--cre8-bg-brand-active` | `var(--cre8-primary-200)` |  | Use for pressed/selected on a --cre8-bg-brand surface. Never for hover. |
 | `--cre8-bg-brand-hover` | `var(--cre8-mode-bg-brand-hover)` | yes | Use for hover on a --cre8-bg-brand surface. Never for resting surfaces. |
@@ -82,10 +82,10 @@ Each has a legacy alias with `color-` inserted after `--cre8-`.
 | `--cre8-bg-default-active` | `var(--cre8-primary-100)` |  | Use for the pressed/selected state of a default-surface item. Never for hover; use --cre8-bg-default-hover. |
 | `--cre8-bg-default-hover` | `var(--cre8-mode-bg-default-hover)` | yes | Use for the hover state of a default-surface row, item or ghost control. Never for resting surfaces. |
 | `--cre8-bg-disabled` | `var(--cre8-mode-bg-disabled)` | yes | Use for the fill of a disabled control. Never for read-only or inactive-but-usable states. |
-| `--cre8-bg-error` | `var(--cre8-error-50)` |  | Use for a light error background (inline error, alert). Never for error text; use --cre8-content-error. |
-| `--cre8-bg-error-strong` | `var(--cre8-error-500)` |  | Use for a solid error fill (destructive button, filled error badge). Never for decorative brand accents. |
-| `--cre8-bg-info` | `var(--cre8-info-50)` |  | Use for a light informational background (info alert, tip). Never for brand surfaces; use --cre8-bg-brand. |
-| `--cre8-bg-info-strong` | `var(--cre8-info-500)` |  | Use for a solid informational fill (filled info badge). Never for primary actions. |
+| `--cre8-bg-error` | `var(--cre8-mode-bg-error)` |  | Use for a light error background (inline error, alert). Never for error text; use --cre8-content-error. |
+| `--cre8-bg-error-strong` | `var(--cre8-mode-bg-error-strong)` |  | Use for a solid error fill (destructive button, filled error badge). Never for decorative brand accents. |
+| `--cre8-bg-info` | `var(--cre8-mode-bg-info)` |  | Use for a light informational background (info alert, tip). Never for brand surfaces; use --cre8-bg-brand. |
+| `--cre8-bg-info-strong` | `var(--cre8-mode-bg-info-strong)` |  | Use for a solid informational fill (filled info badge). Never for primary actions. |
 | `--cre8-bg-inverse-active` | `var(--cre8-neutral-0)` |  | Use for the fill of an active item inside an inverse region. Never for light-mode surfaces. |
 | `--cre8-bg-inverse-moderate` | `var(--cre8-neutral-500)` |  | Use for mid-grey fills on an inverse (dark) region. Never for light-mode surfaces. |
 | `--cre8-bg-moderate` | `var(--cre8-neutral-400)` |  | Use for mid-grey fills such as track backgrounds and placeholders. Never for text backgrounds; contrast with body text is not guaranteed. |
@@ -93,10 +93,10 @@ Each has a legacy alias with `color-` inserted after `--cre8-`.
 | `--cre8-bg-opacity-transparent` | `var(--cre8-overlay-transparent)` |  | Use for a fully transparent fill that keeps the token chain (ghost buttons). Never for hiding content; use display or visibility. |
 | `--cre8-bg-strong` | `var(--cre8-mode-bg-strong)` | yes | Use for high-emphasis neutral fills: tooltips, toasts, dark bands on a light page. Never for large page areas; pair text on it with --cre8-content-knockout. |
 | `--cre8-bg-subtle` | `var(--cre8-mode-bg-subtle)` | yes | Use for recessed areas: wells, table stripes, sidebars, code blocks. Never for the main page surface or any text. |
-| `--cre8-bg-success` | `var(--cre8-success-50)` |  | Use for a light success background (alert, badge, row highlight). Never for success text; use --cre8-content-success. |
-| `--cre8-bg-success-strong` | `var(--cre8-success-500)` |  | Use for a solid success fill (filled badge, progress complete). Never for large areas or text backgrounds without checking contrast. |
-| `--cre8-bg-warning` | `var(--cre8-warning-50)` |  | Use for a light warning background (caution alert). Never for warning icons; use --cre8-content-warning-icon. |
-| `--cre8-bg-warning-strong` | `var(--cre8-warning-500)` |  | Use for a solid warning fill (filled warning badge). Never for text backgrounds without checking contrast. |
+| `--cre8-bg-success` | `var(--cre8-mode-bg-success)` |  | Use for a light success background (alert, badge, row highlight). Never for success text; use --cre8-content-success. |
+| `--cre8-bg-success-strong` | `var(--cre8-mode-bg-success-strong)` |  | Use for a solid success fill (filled badge, progress complete). Never for large areas or text backgrounds without checking contrast. |
+| `--cre8-bg-warning` | `var(--cre8-mode-bg-warning)` |  | Use for a light warning background (caution alert). Never for warning icons; use --cre8-content-warning-icon. |
+| `--cre8-bg-warning-strong` | `var(--cre8-mode-bg-warning-strong)` |  | Use for a solid warning fill (filled warning badge). Never for text backgrounds without checking contrast. |
 
 ### `--cre8-border-*`
 
@@ -156,7 +156,7 @@ Each has a legacy alias with `color-` inserted after `--cre8-`.
 | `--cre8-content-link-hover` | `var(--cre8-mode-content-link-hover)` | yes | Use for link text on hover. Never for resting links. |
 | `--cre8-content-link-visited` | `var(--cre8-accent-600)` |  | Use for visited links. Never for unvisited links. |
 | `--cre8-content-subtle` | `var(--cre8-mode-content-subtle)` | yes | Use for secondary text: captions, helper text, metadata, placeholders. Never for body copy or anything the user must read to act; check it meets 4.5:1 where it carries meaning. |
-| `--cre8-content-success` | `var(--cre8-success-700)` |  | Use for success message text. Never for icons alone; use --cre8-content-success-icon. |
+| `--cre8-content-success` | `var(--cre8-mode-content-success)` |  | Use for success message text. Never for icons alone; use --cre8-content-success-icon. |
 | `--cre8-content-success-icon` | `var(--cre8-success-600)` |  | Use for success status icons. Never for running text. |
 | `--cre8-content-warning-icon` | `var(--cre8-warning-600)` |  | Use for warning status icons. Never for warning text on light backgrounds; contrast is usually too low. |
 
@@ -185,7 +185,7 @@ Each has a legacy alias with `color-` inserted after `--cre8-`.
 
 ## Primitive tokens (tier 1)
 
-152 values with no meaning attached, all derived from the seeds.
+172 values with no meaning attached, all derived from the seeds.
 Grouped by family; these are what semantic tokens point at. A ramp step does not
 follow `data-mode`, which is the practical reason not to read one directly.
 
@@ -196,19 +196,19 @@ follow `data-mode`, which is the practical reason not to read one directly.
 | `--cre8-control-*` | 1 | `--cre8-control-gap` = `calc(var(--cre8-seed-space) * 2 * var(--cre8-seed-density))` |
 | `--cre8-duration-*` | 3 | `--cre8-duration-fast` = `100ms` |
 | `--cre8-easing-*` | 2 | `--cre8-easing-standard` = `cubic-bezier(0.2, 0, 0, 1)` |
-| `--cre8-error-*` | 10 | `--cre8-error-50` = `oklch(from var(--cre8-seed-error) 0.9714 calc(c * 0.0668) calc(h - 11.11))` |
+| `--cre8-error-*` | 11 | `--cre8-error-50` = `oklch(from var(--cre8-seed-error) 0.9714 calc(c * 0.0668) calc(h - 11.11))` |
 | `--cre8-font-*` | 21 | `--cre8-font-size-0` = `calc(var(--cre8-seed-font-size) * 0.75)` |
-| `--cre8-info-*` | 4 | `--cre8-info-50` = `var(--cre8-accent-50)` |
+| `--cre8-info-*` | 8 | `--cre8-info-50` = `var(--cre8-accent-50)` |
 | `--cre8-line-*` | 5 | `--cre8-line-height-tight` = `1.12` |
-| `--cre8-mode-*` | 22 | `--cre8-mode-bg-default` = `var(--cre8-neutral-0)` |
+| `--cre8-mode-*` | 33 | `--cre8-mode-bg-default` = `var(--cre8-neutral-0)` |
 | `--cre8-neutral-*` | 12 | `--cre8-neutral-0` = `oklch(from var(--cre8-seed-neutral) 1 calc(c * 0) calc(h - 167.54))` |
 | `--cre8-overlay-*` | 4 | `--cre8-overlay-transparent` = `oklch(from var(--cre8-neutral-900) l c h / 0)` |
 | `--cre8-padding-*` | 5 | `--cre8-padding-2` = `calc(var(--cre8-spacing-2) * var(--cre8-seed-density))` |
 | `--cre8-primary-*` | 11 | `--cre8-primary-50` = `oklch(from var(--cre8-seed-primary) 0.9705 calc(c * 0.0754) calc(h - 5.21))` |
 | `--cre8-radius-*` | 10 | `--cre8-radius-none` = `0px` |
 | `--cre8-spacing-*` | 18 | `--cre8-spacing-0` = `0rem` |
-| `--cre8-success-*` | 7 | `--cre8-success-50` = `oklch(from var(--cre8-seed-success) 0.9841 calc(c * 0.1502) calc(h - 14.35))` |
-| `--cre8-warning-*` | 7 | `--cre8-warning-50` = `oklch(from var(--cre8-seed-warning) 0.9869 calc(c * 0.13) calc(h + 25.2))` |
+| `--cre8-success-*` | 9 | `--cre8-success-50` = `oklch(from var(--cre8-seed-success) 0.9841 calc(c * 0.1502) calc(h - 14.35))` |
+| `--cre8-warning-*` | 9 | `--cre8-warning-50` = `oklch(from var(--cre8-seed-warning) 0.9869 calc(c * 0.13) calc(h + 25.2))` |
 
 ## Component tokens (tier 3)
 

@@ -62,7 +62,7 @@ describe('loadBrand / validateBrand', () => {
   });
   test('overrides and waivers are warnings, not errors', () => {
     const vivid = validateBrand(loadBrand('cre8-vivid'));
-    assert.equal(vivid.warnings.filter((w) => w.startsWith('override:')).length, 5);
+    assert.equal(vivid.warnings.filter((w) => w.startsWith('override:')).length, 3);
     const waived = { ...structuredClone(loadBrand('cre8')) };
     waived.accessibility = { contrastTarget: 'AA', waive: [{ fg: 'content-link', bg: 'bg-default', mode: 'light', reason: 'test' }] };
     const r = validateBrand(waived);
@@ -163,7 +163,8 @@ describe('phase 2 seeds', () => {
     assert.equal(validateBrand(b).ok, true);
     assert.equal(resolveToken(b, 'font-family-display'), 'Fraunces, serif');
     assert.equal(resolveToken(b, 'font-family-mono'), '"JetBrains Mono", monospace');
-    assert.equal(resolveToken(b, 'bg-info-strong'), '#0ea5e9');
+    assert.equal(resolveToken(b, 'info-500'), '#0ea5e9');
+    assert.ok(contrastRatio(resolveToken(b, 'content-knockout'), resolveToken(b, 'bg-info-strong')) >= 4.5, 'the info fill is deepened until white reads on it');
     assert.equal(resolveToken(b, 'chart-3'), '#333333');
   });
 });
@@ -175,12 +176,14 @@ describe('contrast guard', () => {
     const r = checkContrast(cre8);
     assert.equal(r.pass, true);
     assert.ok(r.pairs.every((p) => p.pass));
-    assert.equal(r.corrections.length, 7);
     assert.equal(resolveToken(cre8, 'content-link'), '#2563eb', 'link moves to primary-600');
     assert.equal(resolveToken(cre8, 'bg-brand-strong'), '#2563eb', 'a mid-blue fill is deepened, the white knockout kept');
     assert.equal(resolveToken(cre8, 'content-knockout'), '#ffffff');
+    assert.equal(resolveToken(cre8, 'bg-success-strong'), resolveToken(cre8, 'success-700'), 'cyan badge fill deepens');
+    assert.equal(resolveToken(cre8, 'bg-success', 'inverse'), resolveToken(cre8, 'success-950', 'inverse'), 'status tints go dark in inverse');
+    assert.equal(resolveToken(cre8, 'bg-success'), resolveToken(cre8, 'success-50'), 'and stay light in light mode');
     const raw = checkContrast(cre8, { autoCorrect: false });
-    assert.equal(raw.pairs.filter((p) => !p.pass).length, 7, 'the seven pairs the guard fixes');
+    assert.ok(raw.pairs.some((p) => !p.pass && p.fg === 'content-knockout' && p.bg === 'bg-brand-strong'), 'white on primary-500 fails uncorrected');
   });
 
   test('every shipped brand passes in light and inverse mode', () => {

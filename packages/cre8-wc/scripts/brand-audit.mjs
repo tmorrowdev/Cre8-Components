@@ -501,14 +501,14 @@ function renderMarkdown(rep, fails) {
         for (const v of r.contrast.violations || []) {
           if (!v.data) continue;
           const key = `${v.component} ${v.data.fg} on ${v.data.bg}`;
-          const p = pairs.get(key) || { ...v.data, component: v.component, n: 0 };
+          const p = pairs.get(key) || { ...v.data, component: v.component, target: v.target, n: 0 };
           p.n += 1;
           pairs.set(key, p);
         }
         if (pairs.size) {
           L.push('Failing colour pairs:', '');
           for (const p of [...pairs.values()].sort((a, z) => z.n - a.n)) {
-            L.push(`- ${p.component}: \`${p.fg}\` on \`${p.bg}\` is ${p.ratio}:1, needs ${p.expected} (${p.n}×)`);
+            L.push(`- ${p.component}: \`${p.fg}\` on \`${p.bg}\` is ${p.ratio}:1, needs ${p.expected} (${p.n}×), e.g. \`${String(p.target).slice(0, 140)}\``);
           }
           L.push('');
         }
