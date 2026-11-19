@@ -50,7 +50,7 @@ Some concrete calls:
 - **"Emit this wireframe as cre8 markup"** → automation. Fully specified,
   mechanically checkable, and the validator will catch what goes wrong.
 - **"Theme this for the client's brand"** → automation for extraction
-  (`brand-theme-extractor` produces a token override file), human judgment for
+  (`brand-theme-extractor` produces a `brand.json`), human judgment for
   approval. Contrast ratios and focus visibility are not things to accept on
   trust; see [Verifying a theme](03-token-theming.md#verifying-a-theme).
 - **"Add a component to the library"** → augmentation, then careful automation.
@@ -59,7 +59,7 @@ Some concrete calls:
   starting, because the drift is silent.
 
 **Do not delegate** the choice of which token tier to edit
-([The three tiers](03-token-theming.md#the-three-tiers)), whether a component belongs in the
+([The four tiers](03-token-theming.md#the-four-tiers)), whether a component belongs in the
 library at all, or accessibility acceptance. Those are judgment calls whose cost
 of being wrong lands on users, not on you.
 
@@ -169,7 +169,7 @@ custom elements fail quietly.
 
 ## The tool surface
 
-**MCP server** — `packages/cre8-mcp`, fifteen tools over one connection
+**MCP server** — `packages/cre8-mcp`, twenty tools over one connection
 (stdio, or Streamable HTTP at `POST /mcp`):
 
 | Tool | Use it for |
@@ -184,6 +184,11 @@ custom elements fail quietly.
 | `generate_code` | Component tree → HTML or JSX |
 | `get_a2ui_catalog` | Catalog metadata, one component, or the full schema |
 | `validate_a2ui_spec` | Check a spec tree before rendering |
+| `list_tokens` | Token names by tier, each with what to use it for and what never to |
+| `get_brand_contract` | The `brand.json` schema and an authoring guide |
+| `list_brands` | Installed brands, their seeds, and whether they carry copy voice |
+| `validate_brand` | Schema + contrast check of a brand |
+| `apply_brand` | Generated CSS for a brand, or restyle a live surface with `surface_id` |
 | `ui_open_surface` | Open a live surface and get a URL a human can watch |
 | `ui_stream` | Patch that surface — ops, data, status — as you work |
 | `ui_get_surface` | Read the current tree back when you have lost track of paths |
@@ -196,7 +201,7 @@ will paste, `ui_open_surface` when the deliverable is the interface itself. See
 
 **Skills** — `cre8-a2ui` (web components), `cre8-a2ui-react` (React),
 `cre8-mcp-ui` (serving cre8 UI through a Python MCP server),
-`frontend-development`, `brand-theme-extractor` (URL → CSS token override).
+`frontend-development`, `brand-theme-extractor` (URL → `brand.json`).
 
 **Docs an agent can read directly** — `agent-docs/COMPONENTS.md` (generated prop
 tables), `agent-docs/CODE_GUIDELINES.md` (conventions), `a2ui/examples/` (valid
@@ -222,7 +227,8 @@ confidently wrong.
 | React `onClick` never fires | Custom events do not map to React's synthetic props | [The four interop problems](06-frameworks.md#the-four-interop-problems) |
 | "93 components" | Marketing copy; manifests say 85 | [Provenance and drift](07-research.md#provenance-and-drift) |
 | Spec valid, catalog stale | Artifacts carry independent version stamps and can diverge | [Keeping the A2UI artifacts in sync](04-a2ui.md#keeping-the-a2ui-artifacts-in-sync) |
-| `pnpm generate-theme` not found | Documented in `THEME_GENERATOR.md`, absent from `package.json` | [Method 4: generated themes](03-token-theming.md#method-4-generated-themes) |
+| `pnpm generate-theme` not found | Documented in `THEME_GENERATOR.md`, never wired up; the working path is `brand.json` | [Generating a brand from a website](03-token-theming.md#generating-a-brand-from-a-website) |
+| Hex values in a theme or component CSS | A brand is seeds in `brand.json`; CSS reads semantic tokens | [Rebrand in three steps](03-token-theming.md#rebrand-in-three-steps) |
 | A value validates but renders unstyled | A hand-written catalog override disagrees with the component (the `label-default` case, now fixed) | [What validation cannot catch](04-a2ui.md#what-validation-cannot-catch) |
 | `children` on a card/button/table-row is rejected | 25 components are slot-only; 6 take no free content at all | [Children vs slots: the rule that breaks specs](04-a2ui.md#children-vs-slots-the-rule-that-breaks-specs) |
 | Button label passed as children | Every other UI system works that way; cre8 uses the `text` prop | [Children vs slots: the rule that breaks specs](04-a2ui.md#children-vs-slots-the-rule-that-breaks-specs) |
