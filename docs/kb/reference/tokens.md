@@ -23,9 +23,9 @@ brand sets the seeds and how modes and scoped rebrands work — is in
 
 | Tier | Count | You… |
 |---|---|---|
-| Seed (tier 0) | 11 | Set these, through `brand.json`. The only literals in the system |
-| Primitive (tier 1) | 128 | Never edit. Ramps and scales derived from the seeds |
-| Semantic (tier 2) | 73 | Read these in CSS. The only tier `data-mode` touches |
+| Seed (tier 0) | 13 | Set these, through `brand.json`. The only literals in the system |
+| Primitive (tier 1) | 151 | Never edit. Ramps and scales derived from the seeds |
+| Semantic (tier 2) | 86 | Read these in CSS. The only tier `data-mode` touches |
 | Component (tier 3) | 315 | Leave alone, except for a genuine one-off on one component |
 | Legacy aliases | 432 | Never write new code against. `--cre8-color-*` names kept so old styles resolve |
 
@@ -53,6 +53,8 @@ brand's. To change one, change the brand, not the CSS — see
 | `--cre8-seed-space` | `space.base` | `0.25rem` | the 1-step spacing unit; the spacing and padding scales multiply it |
 | `--cre8-seed-font-size` | `typography.baseSize` | `1rem` | the body text size; the type scale is computed from it |
 | `--cre8-seed-border-width` | `shape.borderWidth` | `0.0625rem` | the default hairline width for borders and dividers |
+| `--cre8-seed-font-mono` | `typography.mono` | `ui-monospace, SFMono-Regular, Menlo, Consolas, monospace` | the monospace family for code, data tables and tabular figures |
+| `--cre8-seed-density` | `space.density` | `1` | the multiplier on control padding (compact 0.8, comfortable 1, spacious 1.25) |
 
 ## Semantic tokens, tier 2: the ones to read
 
@@ -82,8 +84,8 @@ Each has a legacy alias with `color-` inserted after `--cre8-`.
 | `--cre8-bg-disabled` | `var(--cre8-mode-bg-disabled)` | yes | Use for the fill of a disabled control. Never for read-only or inactive-but-usable states. |
 | `--cre8-bg-error` | `var(--cre8-error-50)` |  | Use for a light error background (inline error, alert). Never for error text; use --cre8-content-error. |
 | `--cre8-bg-error-strong` | `var(--cre8-error-500)` |  | Use for a solid error fill (destructive button, filled error badge). Never for decorative brand accents. |
-| `--cre8-bg-info` | `var(--cre8-accent-50)` |  | Use for a light informational background (info alert, tip). Never for brand surfaces; use --cre8-bg-brand. |
-| `--cre8-bg-info-strong` | `var(--cre8-accent-500)` |  | Use for a solid informational fill (filled info badge). Never for primary actions. |
+| `--cre8-bg-info` | `var(--cre8-info-50)` |  | Use for a light informational background (info alert, tip). Never for brand surfaces; use --cre8-bg-brand. |
+| `--cre8-bg-info-strong` | `var(--cre8-info-500)` |  | Use for a solid informational fill (filled info badge). Never for primary actions. |
 | `--cre8-bg-inverse-active` | `var(--cre8-neutral-0)` |  | Use for the fill of an active item inside an inverse region. Never for light-mode surfaces. |
 | `--cre8-bg-inverse-moderate` | `var(--cre8-neutral-500)` |  | Use for mid-grey fills on an inverse (dark) region. Never for light-mode surfaces. |
 | `--cre8-bg-moderate` | `var(--cre8-neutral-400)` |  | Use for mid-grey fills such as track backgrounds and placeholders. Never for text backgrounds; contrast with body text is not guaranteed. |
@@ -108,13 +110,24 @@ Each has a legacy alias with `color-` inserted after `--cre8-`.
 | `--cre8-border-default` | `var(--cre8-mode-border-default)` | yes | Use for default borders and dividers: cards, inputs, table rules. Never for focus indication; use --cre8-border-active-outline. |
 | `--cre8-border-disabled` | `var(--cre8-neutral-300)` |  | Use for borders of disabled controls. Never for subtle borders on active controls. |
 | `--cre8-border-error` | `var(--cre8-error-400)` |  | Use for error-state borders (invalid input, error alert). Never for neutral or brand borders. |
-| `--cre8-border-info` | `var(--cre8-accent-500)` |  | Use for informational borders. Never for brand selection. |
+| `--cre8-border-info` | `var(--cre8-info-500)` |  | Use for informational borders. Never for brand selection. |
 | `--cre8-border-inverse-active-outline` | `var(--cre8-primary-200)` |  | Use for the focus ring / active outline inside an inverse region. Never for light surfaces. |
 | `--cre8-border-knockout` | `var(--cre8-neutral-0)` |  | Use for borders on strong/dark fills. Never for borders on default surfaces. |
 | `--cre8-border-strong` | `var(--cre8-mode-border-strong)` | yes | Use for high-emphasis borders: input outlines that must meet 3:1, separators that must read. Never for decorative hairlines; use --cre8-border-default. |
 | `--cre8-border-success` | `var(--cre8-success-400)` |  | Use for success-state borders (valid input, success alert). Never for neutral borders. |
 | `--cre8-border-transparent` | `var(--cre8-overlay-transparent)` |  | Use for a transparent border that reserves space so state changes do not shift layout. Never for hiding borders on purpose-built borderless components. |
 | `--cre8-border-warning` | `var(--cre8-warning-400)` |  | Use for warning-state borders. Never for error states. |
+
+### `--cre8-chart-*`
+
+| Token | Value | Mode | Use for … never for … |
+|---|---|---|---|
+| `--cre8-chart-1` | `var(--cre8-primary-500)` |  | Use for categorical data-viz series 1, in order, for lines, bars and legend swatches. Never for status meaning (use success/warning/error) or text on a chart fill without checking contrast. |
+| `--cre8-chart-2` | `var(--cre8-accent-600)` |  | Use for categorical data-viz series 2, in order, for lines, bars and legend swatches. Never for status meaning (use success/warning/error) or text on a chart fill without checking contrast. |
+| `--cre8-chart-3` | `var(--cre8-primary-300)` |  | Use for categorical data-viz series 3, in order, for lines, bars and legend swatches. Never for status meaning (use success/warning/error) or text on a chart fill without checking contrast. |
+| `--cre8-chart-4` | `var(--cre8-accent-500)` |  | Use for categorical data-viz series 4, in order, for lines, bars and legend swatches. Never for status meaning (use success/warning/error) or text on a chart fill without checking contrast. |
+| `--cre8-chart-5` | `var(--cre8-primary-700)` |  | Use for categorical data-viz series 5, in order, for lines, bars and legend swatches. Never for status meaning (use success/warning/error) or text on a chart fill without checking contrast. |
+| `--cre8-chart-6` | `var(--cre8-accent-800)` |  | Use for categorical data-viz series 6, in order, for lines, bars and legend swatches. Never for status meaning (use success/warning/error) or text on a chart fill without checking contrast. |
 
 ### `--cre8-content-*`
 
@@ -128,7 +141,7 @@ Each has a legacy alias with `color-` inserted after `--cre8-`.
 | `--cre8-content-disabled` | `var(--cre8-mode-content-disabled)` | yes | Use for text and icons of disabled controls. Never for de-emphasised but active text; use --cre8-content-subtle. |
 | `--cre8-content-error` | `var(--cre8-error-600)` |  | Use for error message and validation text. Never for decorative red; error colour means something is wrong. |
 | `--cre8-content-error-icon` | `var(--cre8-error-600)` |  | Use for error status icons. Never for running text. |
-| `--cre8-content-info-icon` | `var(--cre8-accent-500)` |  | Use for informational status icons. Never for links or brand emphasis. |
+| `--cre8-content-info-icon` | `var(--cre8-info-500)` |  | Use for informational status icons. Never for links or brand emphasis. |
 | `--cre8-content-inverse-link` | `var(--cre8-primary-200)` |  | Use for link text inside an inverse (dark) region. Never for links on light surfaces. |
 | `--cre8-content-inverse-link-active` | `var(--cre8-primary-400)` |  | Use for pressed links inside an inverse region. Never for light surfaces. |
 | `--cre8-content-inverse-link-disabled` | `var(--cre8-neutral-200)` |  | Use for disabled links inside an inverse region. Never for light surfaces. |
@@ -147,6 +160,23 @@ Each has a legacy alias with `color-` inserted after `--cre8-`.
 | `--cre8-content-success-icon` | `var(--cre8-success-600)` |  | Use for success status icons. Never for running text. |
 | `--cre8-content-warning-icon` | `var(--cre8-warning-600)` |  | Use for warning status icons. Never for warning text on light backgrounds; contrast is usually too low. |
 
+### `--cre8-focus-*`
+
+| Token | Value | Mode | Use for … never for … |
+|---|---|---|---|
+| `--cre8-focus-ring-color` | `var(--cre8-mode-focus-ring-color)` |  | Use for the outline colour of a keyboard focus indicator. Never for borders or selection fills; it is checked for 3:1 against the background only as a focus ring. |
+| `--cre8-focus-ring-offset` | `2px` |  | Use for outline-offset of a keyboard focus indicator. Never for spacing between elements. |
+| `--cre8-focus-ring-width` | `2px` |  | Use for the outline width of a keyboard focus indicator. Never for border widths. |
+
+### `--cre8-gradient-*`
+
+| Token | Value | Mode | Use for … never for … |
+|---|---|---|---|
+| `--cre8-gradient-brand` | `linear-gradient(135deg, var(--cre8-gradient-brand-from) 0%, var(--cre8-gradient-brand-to) 100%)` |  | Use for the default brand gradient (background-image) for hero and marketing surfaces. Never for text, borders, or any small UI element; behind text, check contrast against the darkest stop. |
+| `--cre8-gradient-brand-from` | `var(--cre8-primary-500)` |  | Use for the start stop of the brand gradient. Never for text, borders, or any small UI element; behind text, check contrast against the darkest stop. |
+| `--cre8-gradient-brand-rich` | `linear-gradient(150deg, var(--cre8-gradient-brand-from) 0%, var(--cre8-accent-600) 42%, var(--cre8-gradient-brand-to) 100%)` |  | Use for a deeper, higher-chroma brand gradient for large display surfaces. Never for text, borders, or any small UI element; behind text, check contrast against the darkest stop. |
+| `--cre8-gradient-brand-to` | `var(--cre8-accent-600)` |  | Use for the end stop of the brand gradient. Never for text, borders, or any small UI element; behind text, check contrast against the darkest stop. |
+
 ### `--cre8-link-*`
 
 | Token | Value | Mode | Use for … never for … |
@@ -155,26 +185,30 @@ Each has a legacy alias with `color-` inserted after `--cre8-`.
 
 ## Primitive tokens (tier 1)
 
-128 values with no meaning attached, all derived from the seeds.
+151 values with no meaning attached, all derived from the seeds.
 Grouped by family; these are what semantic tokens point at. A ramp step does not
 follow `data-mode`, which is the practical reason not to read one directly.
 
 | Family | Count | Example |
 |---|---|---|
-| `--cre8-accent-*` | 4 | `--cre8-accent-50` = `oklch(from var(--cre8-seed-accent) 0.96 calc(c * 0.15) h)` |
+| `--cre8-accent-*` | 6 | `--cre8-accent-50` = `oklch(from var(--cre8-seed-accent) 0.96 calc(c * 0.15) h)` |
 | `--cre8-border-*` | 4 | `--cre8-border-width-none` = `0rem` |
-| `--cre8-error-*` | 8 | `--cre8-error-50` = `oklch(from var(--cre8-seed-error) 0.9714 calc(c * 0.0668) calc(h - 11.11))` |
-| `--cre8-font-*` | 19 | `--cre8-font-size-0` = `calc(var(--cre8-seed-font-size) * 0.75)` |
+| `--cre8-control-*` | 1 | `--cre8-control-gap` = `calc(var(--cre8-seed-space) * 2 * var(--cre8-seed-density))` |
+| `--cre8-duration-*` | 3 | `--cre8-duration-fast` = `100ms` |
+| `--cre8-easing-*` | 2 | `--cre8-easing-standard` = `cubic-bezier(0.2, 0, 0, 1)` |
+| `--cre8-error-*` | 10 | `--cre8-error-50` = `oklch(from var(--cre8-seed-error) 0.9714 calc(c * 0.0668) calc(h - 11.11))` |
+| `--cre8-font-*` | 21 | `--cre8-font-size-0` = `calc(var(--cre8-seed-font-size) * 0.75)` |
+| `--cre8-info-*` | 4 | `--cre8-info-50` = `var(--cre8-accent-50)` |
 | `--cre8-line-*` | 5 | `--cre8-line-height-tight` = `1.12` |
-| `--cre8-mode-*` | 20 | `--cre8-mode-bg-default` = `var(--cre8-neutral-0)` |
+| `--cre8-mode-*` | 21 | `--cre8-mode-bg-default` = `var(--cre8-neutral-0)` |
 | `--cre8-neutral-*` | 12 | `--cre8-neutral-0` = `oklch(from var(--cre8-seed-neutral) 1 calc(c * 0) calc(h - 167.54))` |
 | `--cre8-overlay-*` | 4 | `--cre8-overlay-transparent` = `oklch(from var(--cre8-neutral-900) l c h / 0)` |
-| `--cre8-padding-*` | 5 | `--cre8-padding-2` = `var(--cre8-spacing-2)` |
+| `--cre8-padding-*` | 5 | `--cre8-padding-2` = `calc(var(--cre8-spacing-2) * var(--cre8-seed-density))` |
 | `--cre8-primary-*` | 11 | `--cre8-primary-50` = `oklch(from var(--cre8-seed-primary) 0.9705 calc(c * 0.0754) calc(h - 5.21))` |
 | `--cre8-radius-*` | 10 | `--cre8-radius-none` = `0px` |
 | `--cre8-spacing-*` | 18 | `--cre8-spacing-0` = `0rem` |
-| `--cre8-success-*` | 4 | `--cre8-success-50` = `oklch(from var(--cre8-seed-success) 0.9841 calc(c * 0.1502) calc(h - 14.35))` |
-| `--cre8-warning-*` | 4 | `--cre8-warning-50` = `oklch(from var(--cre8-seed-warning) 0.9869 calc(c * 0.13) calc(h + 25.2))` |
+| `--cre8-success-*` | 7 | `--cre8-success-50` = `oklch(from var(--cre8-seed-success) 0.9841 calc(c * 0.1502) calc(h - 14.35))` |
+| `--cre8-warning-*` | 7 | `--cre8-warning-50` = `oklch(from var(--cre8-seed-warning) 0.9869 calc(c * 0.13) calc(h + 25.2))` |
 
 ## Component tokens (tier 3)
 

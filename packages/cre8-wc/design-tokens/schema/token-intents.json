@@ -552,6 +552,92 @@
       "use": "the background of a pressed or focused link",
       "never": "link text colour",
       "legacyAlias": "--cre8-color-link-bg-active"
+    },
+    "--cre8-seed-font-mono": {
+      "tier": "seed",
+      "brandField": "typography.mono",
+      "use": "the monospace family for code, data tables and tabular figures",
+      "never": "hand-setting in a stylesheet; set it in brand.json so the ramps and the contrast guard follow"
+    },
+    "--cre8-seed-density": {
+      "tier": "seed",
+      "brandField": "space.density",
+      "use": "the multiplier on control padding (compact 0.8, comfortable 1, spacious 1.25)",
+      "never": "scaling layout gaps or type; it only scales control padding. Set it via space.density in brand.json"
+    },
+    "--cre8-focus-ring-color": {
+      "tier": "semantic",
+      "brandField": "focus.color",
+      "use": "the outline colour of a keyboard focus indicator",
+      "never": "borders or selection fills; it is checked for 3:1 against the background only as a focus ring"
+    },
+    "--cre8-focus-ring-width": {
+      "tier": "semantic",
+      "brandField": "focus.width",
+      "use": "the outline width of a keyboard focus indicator",
+      "never": "border widths"
+    },
+    "--cre8-focus-ring-offset": {
+      "tier": "semantic",
+      "brandField": "focus.offset",
+      "use": "outline-offset of a keyboard focus indicator",
+      "never": "spacing between elements"
+    },
+    "--cre8-chart-1": {
+      "tier": "semantic",
+      "brandField": "color.chart",
+      "use": "categorical data-viz series 1, in order, for lines, bars and legend swatches",
+      "never": "status meaning (use success/warning/error) or text on a chart fill without checking contrast"
+    },
+    "--cre8-chart-2": {
+      "tier": "semantic",
+      "brandField": "color.chart",
+      "use": "categorical data-viz series 2, in order, for lines, bars and legend swatches",
+      "never": "status meaning (use success/warning/error) or text on a chart fill without checking contrast"
+    },
+    "--cre8-chart-3": {
+      "tier": "semantic",
+      "brandField": "color.chart",
+      "use": "categorical data-viz series 3, in order, for lines, bars and legend swatches",
+      "never": "status meaning (use success/warning/error) or text on a chart fill without checking contrast"
+    },
+    "--cre8-chart-4": {
+      "tier": "semantic",
+      "brandField": "color.chart",
+      "use": "categorical data-viz series 4, in order, for lines, bars and legend swatches",
+      "never": "status meaning (use success/warning/error) or text on a chart fill without checking contrast"
+    },
+    "--cre8-chart-5": {
+      "tier": "semantic",
+      "brandField": "color.chart",
+      "use": "categorical data-viz series 5, in order, for lines, bars and legend swatches",
+      "never": "status meaning (use success/warning/error) or text on a chart fill without checking contrast"
+    },
+    "--cre8-chart-6": {
+      "tier": "semantic",
+      "brandField": "color.chart",
+      "use": "categorical data-viz series 6, in order, for lines, bars and legend swatches",
+      "never": "status meaning (use success/warning/error) or text on a chart fill without checking contrast"
+    },
+    "--cre8-gradient-brand-from": {
+      "tier": "semantic",
+      "use": "the start stop of the brand gradient",
+      "never": "text, borders, or any small UI element; behind text, check contrast against the darkest stop"
+    },
+    "--cre8-gradient-brand-to": {
+      "tier": "semantic",
+      "use": "the end stop of the brand gradient",
+      "never": "text, borders, or any small UI element; behind text, check contrast against the darkest stop"
+    },
+    "--cre8-gradient-brand": {
+      "tier": "semantic",
+      "use": "the default brand gradient (background-image) for hero and marketing surfaces",
+      "never": "text, borders, or any small UI element; behind text, check contrast against the darkest stop"
+    },
+    "--cre8-gradient-brand-rich": {
+      "tier": "semantic",
+      "use": "a deeper, higher-chroma brand gradient for large display surfaces",
+      "never": "text, borders, or any small UI element; behind text, check contrast against the darkest stop"
     }
   },
   "patterns": [
