@@ -83,28 +83,27 @@ const preview: Preview = {
   globalTypes: {
     theme: {
       description: 'Global theme for components',
-      defaultValue: 'Cre8 Default',
+      defaultValue: 'Cre8',
       toolbar: {
         title: 'Theme',
         icon: 'paintbrush',
-        items: [
-          { value: 'Cre8 Default', title: 'Cre8 Default' },
-          { value: 'Cre8 Legacy', title: 'Cre8 Legacy' },
-          { value: 'Legacy', title: 'Legacy' },
-          { value: 'Blue', title: 'Blue' },
-          { value: 'Marketing', title: 'Marketing' },
-          { value: 'Minimalist', title: 'Minimalist' },
-          { value: 'A2UI', title: 'A2UI' },
-          { value: 'Vivid', title: 'Vivid' },
-          { value: 'Whitelabel', title: 'Whitelabel' },
-        ],
+        // Values must match the `name` of an entry in `themeStyles` above;
+        // the decorator enables the stylesheet whose name equals the value.
+        items: themeStyles.map(({ name }) => ({ value: name, title: name })),
         dynamicTitle: true,
       },
     },
   },
   decorators: [
     (story, context) => {
-      const selectedTheme = context.globals.theme || 'A2UI';
+      // Fall back to the first brand when the global is unset or stale (an old
+      // URL or saved toolbar value naming a theme that no longer exists).
+      // Otherwise every brand stylesheet is disabled and components render
+      // with no tokens at all.
+      const requested = context.globals.theme;
+      const selectedTheme = themeStyles.some(({ name }) => name === requested)
+        ? requested
+        : themeStyles[0].name;
 
       // Enable/disable theme stylesheets
       themeStyles.forEach(theme => {
