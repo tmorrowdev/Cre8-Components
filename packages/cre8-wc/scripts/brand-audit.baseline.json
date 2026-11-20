@@ -124,7 +124,7 @@
           "--cre8-theme-color-core-text",
           "--cre8-theme-color-inverted"
         ],
-        "contrast": null
+        "contrast": {}
       },
       "inverse": {
         "unresolved": [
@@ -148,7 +148,7 @@
           "--cre8-theme-color-core-text",
           "--cre8-theme-color-inverted"
         ],
-        "contrast": null
+        "contrast": {}
       }
     },
     "cre8-vivid": {
