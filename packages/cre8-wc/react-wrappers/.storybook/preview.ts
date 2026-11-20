@@ -2,6 +2,7 @@ import '../../.storybook/css/styleguide-only.css';
 import cre8 from '../../design-tokens/brands/cre8/css/tokens_cre8.module.ts';
 import vivid from '../../design-tokens/brands/cre8-vivid/css/tokens_cre8-vivid.module.ts';
 import blank from '../../design-tokens/brands/blank/css/tokens_blank.module.ts';
+import cre8A2ui from '../../design-tokens/brands/cre8-a2ui/css/tokens_cre8-a2ui.module.ts';
 
 import headStyles from '../../design-tokens/core/scss/theming/head.scss?inline';
 
@@ -15,6 +16,7 @@ const themeStyles = [
   { name: 'Cre8', styles: cre8 },
   { name: 'Cre8 Vivid', styles: vivid },
   { name: 'Blank', styles: blank },
+  { name: 'A2UI (Mira)', styles: cre8A2ui },
 ];
 
 // Inject all theme styles with unique IDs

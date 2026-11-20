@@ -1,0 +1,46 @@
+{
+  "$schema": "../../schema/brand.schema.json",
+  "$comment": "Values follow the shadcn/ui create preset b1D5U0GW (style Mira, base colour neutral, theme sky, font Manrope, radius default). Colours are the preset's own OKLCH values.",
+  "name": "cre8-a2ui",
+  "displayName": "cre8 A2UI (Mira)",
+  "description": "The theme agent-rendered A2UI surfaces use. Calm and compact: true neutral greys, one sky-blue accent, Manrope throughout, 10px cards with hairline borders instead of shadows, 8px controls.",
+  "extends": null,
+  "colorScheme": "light",
+  "color": {
+    "primary": { "$type": "color", "$value": "oklch(0.5 0.134 242.749)", "$description": "shadcn sky theme --primary (sky-700): buttons, links, focus." },
+    "neutral": { "$type": "color", "$value": "oklch(0.556 0 0)", "$description": "shadcn neutral (--muted-foreground): untinted greys, no blue cast." },
+    "accent":  { "$type": "color", "$value": "oklch(0.685 0.169 237.323)", "$description": "A lighter sky (shadcn sky --chart-2) for highlights and charts." },
+    "info":    { "$type": "color", "$value": "oklch(0.5 0.134 242.749)", "$description": "Info reads as the brand sky, so the theme keeps one accent hue." },
+    "success": { "$type": "color", "$value": "oklch(0.596 0.145 163.225)" },
+    "warning": { "$type": "color", "$value": "oklch(0.666 0.179 58.318)" },
+    "error":   { "$type": "color", "$value": "oklch(0.577 0.245 27.325)", "$description": "shadcn --destructive." }
+  },
+  "typography": {
+    "body": { "$type": "fontFamily", "$value": ["Manrope", "system-ui", "sans-serif"] },
+    "baseSize": { "$type": "dimension", "$value": "0.875rem", "$description": "Mira sets UI text small (text-sm/text-xs)." },
+    "weights": {
+      "regular": { "$type": "fontWeight", "$value": 400 },
+      "medium": { "$type": "fontWeight", "$value": 500 },
+      "semibold": { "$type": "fontWeight", "$value": 600 },
+      "bold": { "$type": "fontWeight", "$value": 700 }
+    },
+    "fontFaces": [
+      { "family": "Manrope", "src": "assets/fonts/Manrope-Regular.woff2", "weight": 400, "display": "swap" },
+      { "family": "Manrope", "src": "assets/fonts/Manrope-Medium.woff2", "weight": 500, "display": "swap" },
+      { "family": "Manrope", "src": "assets/fonts/Manrope-SemiBold.woff2", "weight": 600, "display": "swap" },
+      { "family": "Manrope", "src": "assets/fonts/Manrope-Bold.woff2", "weight": 700, "display": "swap" }
+    ]
+  },
+  "shape": {
+    "radius": { "$type": "dimension", "$value": "10px", "$description": "shadcn --radius 0.625rem; Mira cards are rounded-lg." },
+    "controlRadius": { "$type": "dimension", "$value": "8px", "$description": "Mira inputs and selects are rounded-md." },
+    "buttonRadius": { "$type": "dimension", "$value": "8px", "$description": "Mira buttons are rounded-md, not pills." },
+    "borderWidth": { "$type": "dimension", "$value": "1px" }
+  },
+  "space": { "base": { "$type": "dimension", "$value": "0.25rem" }, "density": "compact" },
+  "elevation": { "style": "subtle" },
+  "motion": {
+    "durationFast": { "$type": "duration", "$value": "100ms" }
+  },
+  "accessibility": { "contrastTarget": "AA", "waive": [] }
+}
