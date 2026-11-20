@@ -187,6 +187,14 @@ for (const [name, b] of Object.entries(report.brands)) {
 const nextBaseline = buildBaseline(report, baseline);
 writeFileSync(join(OUT, 'brand-audit.json'), JSON.stringify(report, null, 2) + '\n');
 writeFileSync(join(OUT, 'baseline.next.json'), JSON.stringify(nextBaseline, null, 2) + '\n');
+if (process.env.CI && flag('print-baseline')) {
+  // Artifact downloads are not always reachable; the job log always is.
+  console.log('::group::baseline.next.json');
+  console.log('BASELINE-BEGIN');
+  console.log(JSON.stringify(nextBaseline));
+  console.log('BASELINE-END');
+  console.log('::endgroup::');
+}
 const md = renderMarkdown(report, failures);
 writeFileSync(join(OUT, 'summary.md'), md);
 console.log(md);
@@ -488,6 +496,22 @@ function renderMarkdown(rep, fails) {
         L.push('Contrast violations by component:', '');
         for (const [tag, n] of Object.entries(r.contrast.byComponent).sort(([, a], [, z]) => z - a)) L.push(`- ${tag}: ${n}`);
         L.push('');
+        // The distinct failing colour pairs, so a fix can target the tokens behind them.
+        const pairs = new Map();
+        for (const v of r.contrast.violations || []) {
+          if (!v.data) continue;
+          const key = `${v.component} ${v.data.fg} on ${v.data.bg}`;
+          const p = pairs.get(key) || { ...v.data, component: v.component, target: v.target, n: 0 };
+          p.n += 1;
+          pairs.set(key, p);
+        }
+        if (pairs.size) {
+          L.push('Failing colour pairs:', '');
+          for (const p of [...pairs.values()].sort((a, z) => z.n - a.n)) {
+            L.push(`- ${p.component}: \`${p.fg}\` on \`${p.bg}\` is ${p.ratio}:1, needs ${p.expected} (${p.n}×), e.g. \`${String(p.target).slice(0, 140)}\``);
+          }
+          L.push('');
+        }
       }
       L.push('</details>', '');
     }

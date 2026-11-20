@@ -53,7 +53,7 @@ jobs:
         run: pnpm exec playwright install --with-deps chromium
 
       - name: Run brand audit
-        run: pnpm --filter @tmorrow/cre8-wc audit:brands
+        run: pnpm --filter @tmorrow/cre8-wc audit:brands --print-baseline
 
       - name: Job summary
         if: always()

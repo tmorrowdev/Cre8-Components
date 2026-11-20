@@ -614,10 +614,12 @@ span.ripple {
 
 /**
  * Branded variant
+ * 1) The host is put in inverse mode (see band.ts), so this fill and every
+ *    component slotted inside read the inverse tokens and pass contrast.
  */
 .cre8-c-band--branded {
-  color: var(--cre8-color-content-knockout);
-  background: var(--cre8-theme-color-utility-information);
+  color: var(--cre8-color-content-default);
+  background: var(--cre8-color-bg-brand); /* 1 */
 }
 
 /**

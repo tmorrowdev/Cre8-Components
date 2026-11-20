@@ -60,10 +60,10 @@
   },
   "tokens": {
     "seed": 13,
-    "semantic": 86,
-    "primitive": 151,
+    "semantic": 87,
+    "primitive": 172,
     "component": 315,
-    "legacy": 432
+    "legacy": 433
   },
   "knowledgeGraph": {
     "nodes": 232,

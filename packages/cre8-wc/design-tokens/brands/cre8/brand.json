@@ -36,14 +36,6 @@
   "elevation": { "style": "standard" },
   "accessibility": {
     "contrastTarget": "AA",
-    "waive": [
-      { "fg": "content-knockout", "bg": "bg-brand-strong", "mode": "light", "reason": "White on primary-500 is 3.68:1. The primary button is cre8's signature; deepening it to primary-600 (5.17:1) is a visible change awaiting a design decision." },
-      { "fg": "content-link", "bg": "bg-default", "mode": "light", "reason": "primary-500 links are 3.68:1; primary-600 would pass (5.17:1). Pending the same decision as the primary button." },
-      { "fg": "content-brand", "bg": "bg-default", "mode": "light", "reason": "Same colour as content-link; same pending decision." },
-      { "fg": "border-strong", "bg": "bg-default", "mode": "light", "reason": "neutral-400 checkbox borders are 2.56:1 against the 3:1 UI minimum; neutral-500 would pass." },
-      { "fg": "content-success", "bg": "bg-success", "mode": "light", "reason": "Cyan success-600 on its tint is 3.54:1; success-700 would pass." },
-      { "fg": "content-error", "bg": "bg-error", "mode": "light", "reason": "error-600 on its tint is 4.21:1; error-700 would pass." },
-      { "fg": "content-error", "bg": "bg-default", "mode": "inverse", "reason": "error-600 on the inverse surface is 3.18:1; error-400 would pass. Status colours are not mode-aware yet." }
-    ]
+    "waive": []
   }
 }

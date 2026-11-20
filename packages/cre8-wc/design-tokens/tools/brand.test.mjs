@@ -62,9 +62,12 @@ describe('loadBrand / validateBrand', () => {
   });
   test('overrides and waivers are warnings, not errors', () => {
     const vivid = validateBrand(loadBrand('cre8-vivid'));
-    assert.equal(vivid.warnings.filter((w) => w.startsWith('override:')).length, 5);
-    const cre8 = validateBrand(loadBrand('cre8'));
-    assert.equal(cre8.warnings.filter((w) => w.startsWith('contrast waived')).length, 7);
+    assert.equal(vivid.warnings.filter((w) => w.startsWith('override:')).length, 3);
+    const waived = { ...structuredClone(loadBrand('cre8')) };
+    waived.accessibility = { contrastTarget: 'AA', waive: [{ fg: 'content-link', bg: 'bg-default', mode: 'light', reason: 'test' }] };
+    const r = validateBrand(waived);
+    assert.equal(r.ok, true);
+    assert.equal(r.warnings.filter((w) => w.startsWith('contrast waived')).length, 1);
   });
 });
 
@@ -80,9 +83,9 @@ describe('generate: cre8 round trip', () => {
     }
   });
 
-  test('every token of the hand-maintained sheet is emitted and resolves identically', () => {
+  test('with the guard off, every token of the hand-maintained sheet is emitted and resolves identically', () => {
     const legacy = parseSheet(fs.readFileSync(path.join(FIXTURES, 'cre8-legacy-tokens_brand.css.fixture'), 'utf8'));
-    const generated = parseSheet(brandCss);
+    const generated = parseSheet(generateBrandCss(cre8, { autoCorrect: false }).brandCss);
     const a = createResolver(legacy); const b = createResolver(generated);
     let compared = 0;
     for (const name of legacy.base.keys()) {
@@ -160,27 +163,27 @@ describe('phase 2 seeds', () => {
     assert.equal(validateBrand(b).ok, true);
     assert.equal(resolveToken(b, 'font-family-display'), 'Fraunces, serif');
     assert.equal(resolveToken(b, 'font-family-mono'), '"JetBrains Mono", monospace');
-    assert.equal(resolveToken(b, 'bg-info-strong'), '#0ea5e9');
+    assert.equal(resolveToken(b, 'info-500'), '#0ea5e9');
+    assert.ok(contrastRatio(resolveToken(b, 'content-knockout'), resolveToken(b, 'bg-info-strong')) >= 4.5, 'the info fill is deepened until white reads on it');
     assert.equal(resolveToken(b, 'chart-3'), '#333333');
   });
 });
 
 describe('contrast guard', () => {
-  test('cre8 passes only because of its seven waivers', () => {
+  test('cre8 passes with no waivers: primary deepens to 600, status text darkens', () => {
     const cre8 = loadBrand('cre8');
+    assert.deepEqual(cre8.accessibility.waive ?? [], []);
     const r = checkContrast(cre8);
     assert.equal(r.pass, true);
-    assert.deepEqual(r.corrections, [], 'waived pairs are never corrected');
-    const failing = r.pairs.filter((p) => !p.pass);
-    assert.equal(failing.length, 7);
-    assert.ok(failing.every((p) => p.waived));
-    const unwaived = { ...structuredClone(cre8), accessibility: { contrastTarget: 'AA' } };
-    const fixed = checkContrast(unwaived);
-    assert.equal(fixed.pass, true);
-    assert.ok(fixed.pairs.every((p) => p.pass));
-    assert.equal(resolveToken(unwaived, 'content-link'), '#2563eb', 'link moves to primary-600');
-    assert.equal(resolveToken(unwaived, 'bg-brand-strong'), '#2563eb', 'a mid-blue fill is deepened, the white knockout kept');
-    assert.equal(resolveToken(unwaived, 'content-knockout'), '#ffffff');
+    assert.ok(r.pairs.every((p) => p.pass));
+    assert.equal(resolveToken(cre8, 'content-link'), '#2563eb', 'link moves to primary-600');
+    assert.equal(resolveToken(cre8, 'bg-brand-strong'), '#2563eb', 'a mid-blue fill is deepened, the white knockout kept');
+    assert.equal(resolveToken(cre8, 'content-knockout'), '#ffffff');
+    assert.equal(resolveToken(cre8, 'bg-success-strong'), resolveToken(cre8, 'success-700'), 'cyan badge fill deepens');
+    assert.equal(resolveToken(cre8, 'bg-success', 'inverse'), resolveToken(cre8, 'success-950', 'inverse'), 'status tints go dark in inverse');
+    assert.equal(resolveToken(cre8, 'bg-success'), resolveToken(cre8, 'success-50'), 'and stay light in light mode');
+    const raw = checkContrast(cre8, { autoCorrect: false });
+    assert.ok(raw.pairs.some((p) => !p.pass && p.fg === 'content-knockout' && p.bg === 'bg-brand-strong'), 'white on primary-500 fails uncorrected');
   });
 
   test('every shipped brand passes in light and inverse mode', () => {

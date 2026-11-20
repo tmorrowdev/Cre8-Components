@@ -27,6 +27,11 @@
         "warning": { "$ref": "#/$defs/color" },
         "error": { "$ref": "#/$defs/color" },
         "info": { "$ref": "#/$defs/color", "description": "Info status colour. Unset, info reads the accent ramp, which is what info has always read in cre8." },
+        "attentionRamp": {
+          "type": "object", "additionalProperties": false, "required": ["$value"],
+          "properties": { "$type": { "const": "other" }, "$value": { "enum": ["primary", "accent"] }, "$description": { "type": "string" } },
+          "description": "Which ramp the attention status reads: primary (the default) or accent. The contrast guard picks the step per mode."
+        },
         "chart": { "type": "array", "items": { "$ref": "#/$defs/color" }, "minItems": 3, "maxItems": 12, "description": "Categorical data-viz series, in order. Defaults to a palette derived from primary and accent." }
       }
     },

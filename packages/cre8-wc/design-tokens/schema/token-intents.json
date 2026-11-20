@@ -318,6 +318,13 @@
       "modeAware": true,
       "legacyAlias": "--cre8-color-content-knockout"
     },
+    "--cre8-content-inverse": {
+      "tier": "semantic",
+      "use": "text on surfaces that stay dark in every mode, such as the footer (bg-brand-xstrong)",
+      "never": "text on default or subtle surfaces; on fills that flip with the mode use --cre8-content-knockout",
+      "modeAware": false,
+      "legacyAlias": "--cre8-color-content-inverse"
+    },
     "--cre8-content-brand": {
       "tier": "semantic",
       "use": "brand-coloured text and icons: emphasis, active nav labels",
