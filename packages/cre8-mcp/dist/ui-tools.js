@@ -10,6 +10,7 @@
 import { z } from 'zod';
 import { renderSurfacePage } from './surface-page.js';
 import { surfaceStore } from './surfaces.js';
+import { brandVoice } from './brand-tools.js';
 const SPEC_SHAPE = 'A2UI ComponentSpec: { component, props?, children?, slots?, events? }. Content goes through ' +
     'EITHER children OR slots, never both — the catalog decides which, and getting it wrong is the ' +
     'single most common failure. Check with get_a2ui_catalog view="component" first. Button labels ' +
@@ -46,7 +47,9 @@ export const uiTools = [
                 theme: {
                     type: 'string',
                     description: 'Brand token sheet the viewer loads (default "cre8"). GET /themes on the same server ' +
-                        'lists what is installed. Theming is a viewer concern — it changes nothing about the spec.',
+                        'lists what is installed. Theming is a viewer concern — it changes nothing about the spec. ' +
+                        'To restyle the surface later, or with a brand that is not installed, use apply_brand ' +
+                        'with surface_id.',
                 },
             },
         },
@@ -192,10 +195,20 @@ export async function handleUiTool(name, args, ctx) {
                 theme: input.theme,
             });
             const url = await viewerUrl(ctx, summary.surfaceId);
+            // The theme's copy guidance, when its brand.json has one: whoever is
+            // about to stream labels into this surface should write them on-brand.
+            let voice;
+            try {
+                voice = brandVoice(summary.theme).voice ?? undefined;
+            }
+            catch {
+                voice = undefined;
+            }
             const blocks = [
                 json({
                     ...summary,
                     url,
+                    ...(voice ? { voice } : {}),
                     next: 'Give this URL to the user, then call ui_stream with ops to build the UI live.',
                 }),
             ];

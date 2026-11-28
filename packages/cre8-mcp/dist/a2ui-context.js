@@ -14,6 +14,7 @@
 import { readFileSync } from 'fs';
 import { createRequire } from 'module';
 import { loadA2uiCatalog } from './handlers.js';
+import { brandVoice } from './brand-tools.js';
 let compactCache = null;
 export function loadCompactCatalog() {
     if (compactCache)
@@ -37,6 +38,7 @@ function normalize(name) {
 export function handleGetA2uiContext(input) {
     const compact = loadCompactCatalog();
     const projection = input.projection ?? 'compact';
+    const brand = input.brand ? brandContext(input.brand) : undefined;
     const byName = new Map(compact.components.map((c) => [c.name, c]));
     let candidates;
     if (input.names?.length) {
@@ -77,6 +79,7 @@ export function handleGetA2uiContext(input) {
             truncated: false,
             droppedCount: 0,
             estimatedTokens: estimateTokens(components),
+            ...(brand ? { brand } : {}),
         };
     }
     const pinned = new Set((input.pinned ?? []).map(normalize));
@@ -105,5 +108,10 @@ export function handleGetA2uiContext(input) {
         truncated: kept.length < candidates.length,
         droppedCount: candidates.length - kept.length,
         estimatedTokens: used,
+        ...(brand ? { brand } : {}),
     };
+}
+function brandContext(name) {
+    const { displayName, voice } = brandVoice(name);
+    return { name, ...(displayName ? { displayName } : {}), voice };
 }

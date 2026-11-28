@@ -14,7 +14,24 @@
 import { SurfaceModel } from '@tmorrow/cre8-wc/a2ui/stream/index.js';
 import type { DataPatch, PatchOp, SurfaceEventMessage, SurfaceMessage, SurfaceState } from '@tmorrow/cre8-wc/a2ui/stream/index.js';
 import type { ComponentSpec } from '@tmorrow/cre8-wc/a2ui/index.js';
-export type SurfaceListener = (message: SurfaceMessage) => void;
+/**
+ * A viewer-only message: restyle the page with a brand stylesheet. It is not
+ * part of the A2UI stream protocol and never reaches the `SurfaceModel`,
+ * because a brand changes how the tree looks, not what it is — the same
+ * reason `theme` is a viewer concern rather than part of the spec. It carries
+ * no `seq`, so it cannot desynchronise a viewer's model.
+ */
+export interface SurfaceStyleMessage {
+    v: 1;
+    type: 'surface.style';
+    surfaceId: string;
+    /** Brand name the css was generated from, for display and snapshots. */
+    brand: string;
+    /** Stylesheet text. Applied as the textContent of one <style> element. */
+    css: string;
+}
+export type ViewerMessage = SurfaceMessage | SurfaceStyleMessage;
+export type SurfaceListener = (message: ViewerMessage) => void;
 export interface CreateSurfaceInput {
     title?: string;
     root?: ComponentSpec;
@@ -26,6 +43,8 @@ export interface SurfaceSummary {
     surfaceId: string;
     title?: string;
     theme: string;
+    /** Brand applied in place with apply_brand, if any. Overrides `theme`'s values. */
+    brandOverride?: string;
     state: SurfaceState;
     seq: number;
     viewers: number;
@@ -54,6 +73,11 @@ declare class SurfaceRecord {
     readonly events: SurfaceEventMessage[];
     readonly waiters: Set<Waiter>;
     eventSeq: number;
+    /** Live brand restyle applied with apply_brand, replayed to late viewers. */
+    style: {
+        brand: string;
+        css: string;
+    } | null;
     readonly createdAt: string;
     updatedAt: string;
     constructor(surfaceId: string, model: SurfaceModel, theme: string);
@@ -84,6 +108,16 @@ export declare class SurfaceStore {
     setSpec(surfaceId: string, spec: ComponentSpec | null): SurfaceSummary;
     setData(surfaceId: string, patches: DataPatch[]): SurfaceSummary;
     setStatus(surfaceId: string, state: SurfaceState, message?: string): SurfaceSummary;
+    /**
+     * Restyle a live surface with a generated brand stylesheet. Every connected
+     * viewer swaps it in immediately and a viewer that connects later gets it
+     * right after its resync, so the brand survives a reconnect. Passing null
+     * removes the override and the page falls back to its `theme` sheet.
+     */
+    setStyle(surfaceId: string, style: {
+        brand: string;
+        css: string;
+    } | null): SurfaceSummary;
     close(surfaceId: string): void;
     /** The tree as it stands, bindings resolved — for snapshots and mcp-ui HTML. */
     snapshot(surfaceId: string): {
@@ -92,6 +126,7 @@ export declare class SurfaceStore {
         state: SurfaceState;
         seq: number;
         theme: string;
+        brandOverride?: string;
         root: ComponentSpec | null;
         data: Record<string, unknown>;
     };
@@ -111,6 +146,8 @@ export declare class SurfaceStore {
      */
     awaitEvents(surfaceId: string, since?: number, timeoutMs?: number): Promise<SurfaceEventMessage[]>;
     private dispatch;
+    private broadcast;
+    private styleMessage;
     private summarize;
     private sweep;
 }

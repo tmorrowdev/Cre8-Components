@@ -9,7 +9,7 @@ export interface Cre8IconProps {
   name?: string;
   /** Raw SVG markup to render. Preferred over `name`/sprite-path icons. */
   svg?: string | undefined;
-  /** Icon path 1) This points to the file where the icon sprite lives 2) This method of pathing will soon be depricated */
+  /** URL of an external icon sprite. When set (or when `window.Cre8_ICON_URL` is set) the icon renders `<use href="{iconUrl}#{name}">`, which only works for a same-origin sprite. Leave unset to inline the symbol from the bundled sprite. */
   iconUrl?: string | undefined;
   /** Icon Title, this string is used for the aira-label of the svg */
   iconTitle?: string | undefined;

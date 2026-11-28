@@ -13,6 +13,7 @@ import { tools, ListComponentsSchema, GetComponentSchema, GetPatternsSchema, Sea
 import { handleListComponents, handleGetComponent, handleGetPatterns, handleSearchComponents, handleGenerateCode, handleGetA2uiCatalog, handleValidateA2uiSpec, } from './handlers.js';
 import { UI_TOOL_NAMES, handleUiTool, uiTools } from './ui-tools.js';
 import { embeddedViewerBase } from './embedded-viewer.js';
+import { BRAND_TOOL_NAMES, brandTools, handleBrandTool } from './brand-tools.js';
 import { GetCompositionSchema, compositionTool, handleGetComposition } from './composition.js';
 import { Cre8GuideSchema, GetContentModelSchema, handleCre8Guide, handleGetContentModel, knowledgeTools, } from './knowledge-tools.js';
 /**
@@ -36,13 +37,16 @@ export function createMcpServer(options = {}) {
     };
     const server = new Server({ name: 'cre8-mcp', version: SERVER_VERSION }, { capabilities: { tools: {} } });
     server.setRequestHandler(ListToolsRequestSchema, async () => ({
-        tools: [...tools, ...knowledgeTools, compositionTool, ...uiTools],
+        tools: [...tools, ...knowledgeTools, compositionTool, ...brandTools, ...uiTools],
     }));
     server.setRequestHandler(CallToolRequestSchema, async (request) => {
         const { name, arguments: args } = request.params;
         try {
             if (UI_TOOL_NAMES.has(name)) {
                 return { content: await handleUiTool(name, args, uiContext) };
+            }
+            if (BRAND_TOOL_NAMES.has(name)) {
+                return { content: [{ type: 'text', text: await handleBrandTool(name, args) }] };
             }
             let result;
             switch (name) {

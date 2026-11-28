@@ -1,5 +1,5 @@
 {
-  "version": "3.0.1",
+  "version": "3.0.2",
   "library": "@tmorrow/cre8-react",
   "componentPrefix": "Cre8",
   "description": "React wrappers for cre8 Web Components (@tmorrow/cre8-wc)",
@@ -2896,8 +2896,7 @@
         },
         "iconUrl": {
           "type": "string",
-          "default": "iconSprite",
-          "description": "Icon path\n1) This points to the file where the icon sprite lives\n2) This method of pathing will soon be depricated"
+          "description": "URL of an external icon sprite. When set (or when `window.Cre8_ICON_URL` is set)\nthe icon renders `<use href=\"{iconUrl}#{name}\">`, which only works for a\nsame-origin sprite. Leave unset to inline the symbol from the bundled sprite."
         },
         "iconTitle": {
           "type": "string",
@@ -3818,7 +3817,7 @@
   },
   "dependencies": {
     "@lit/react": "^1.0.8",
-    "@tmorrow/cre8-wc": "^3.0.1",
+    "@tmorrow/cre8-wc": "^3.0.2",
     "react": ">=18",
     "react-dom": ">=18"
   }

@@ -43,7 +43,7 @@ let wcRootCache = null;
  * which is how you point a running server at a local build of the design system
  * without reinstalling.
  */
-function wcRoot() {
+export function wcRoot() {
     if (wcRootCache)
         return wcRootCache;
     const override = process.env.CRE8_WC_ROOT;

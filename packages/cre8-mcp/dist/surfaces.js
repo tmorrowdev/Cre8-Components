@@ -23,6 +23,8 @@ class SurfaceRecord {
     events = [];
     waiters = new Set();
     eventSeq = 0;
+    /** Live brand restyle applied with apply_brand, replayed to late viewers. */
+    style = null;
     createdAt = new Date().toISOString();
     updatedAt = new Date().toISOString();
     constructor(surfaceId, model, theme) {
@@ -147,6 +149,19 @@ export class SurfaceStore {
             message,
         });
     }
+    /**
+     * Restyle a live surface with a generated brand stylesheet. Every connected
+     * viewer swaps it in immediately and a viewer that connects later gets it
+     * right after its resync, so the brand survives a reconnect. Passing null
+     * removes the override and the page falls back to its `theme` sheet.
+     */
+    setStyle(surfaceId, style) {
+        const record = this.get(surfaceId);
+        record.style = style;
+        record.updatedAt = new Date().toISOString();
+        this.broadcast(record, this.styleMessage(record));
+        return this.summarize(record);
+    }
     close(surfaceId) {
         const record = this.surfaces.get(surfaceId);
         if (!record)
@@ -177,6 +192,7 @@ export class SurfaceStore {
             surfaceId,
             title: model.title,
             theme: record.theme,
+            ...(record.style ? { brandOverride: record.style.brand } : {}),
             state: model.state,
             seq: model.seq,
             root: model.snapshot(),
@@ -192,6 +208,10 @@ export class SurfaceStore {
         const record = this.get(surfaceId);
         record.listeners.add(listener);
         listener(this.replayMessage(record));
+        // After the create: the viewer resets on surface.create, which would
+        // otherwise discard a style sent ahead of it.
+        if (record.style)
+            listener(this.styleMessage(record));
         return () => {
             record.listeners.delete(listener);
         };
@@ -266,6 +286,10 @@ export class SurfaceStore {
     dispatch(record, message) {
         record.model.apply(message);
         record.updatedAt = new Date().toISOString();
+        this.broadcast(record, message);
+        return this.summarize(record);
+    }
+    broadcast(record, message) {
         for (const listener of [...record.listeners]) {
             try {
                 listener(message);
@@ -275,13 +299,22 @@ export class SurfaceStore {
                 record.listeners.delete(listener);
             }
         }
-        return this.summarize(record);
+    }
+    styleMessage(record) {
+        return {
+            v: 1,
+            type: 'surface.style',
+            surfaceId: record.surfaceId,
+            brand: record.style?.brand ?? record.theme,
+            css: record.style?.css ?? '',
+        };
     }
     summarize(record) {
         return {
             surfaceId: record.surfaceId,
             title: record.model.title,
             theme: record.theme,
+            ...(record.style ? { brandOverride: record.style.brand } : {}),
             state: record.model.state,
             seq: record.model.seq,
             viewers: record.listeners.size,

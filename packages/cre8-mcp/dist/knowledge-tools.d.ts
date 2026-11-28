@@ -56,7 +56,7 @@ export declare const knowledgeTools: ({
         properties: {
             topic: {
                 type: string;
-                enum: ("events" | "overview" | "content-model" | "streaming" | "validation")[];
+                enum: ("events" | "streaming" | "validation" | "overview" | "content-model")[];
                 description: string;
             };
             component?: undefined;
@@ -77,9 +77,9 @@ export declare const GetContentModelSchema: z.ZodObject<{
 export declare const Cre8GuideSchema: z.ZodObject<{
     topic: z.ZodOptional<z.ZodEnum<["overview", "content-model", "streaming", "events", "validation"]>>;
 }, "strip", z.ZodTypeAny, {
-    topic?: "events" | "overview" | "content-model" | "streaming" | "validation" | undefined;
+    topic?: "events" | "streaming" | "validation" | "overview" | "content-model" | undefined;
 }, {
-    topic?: "events" | "overview" | "content-model" | "streaming" | "validation" | undefined;
+    topic?: "events" | "streaming" | "validation" | "overview" | "content-model" | undefined;
 }>;
 export declare const KNOWLEDGE_TOOL_NAMES: Set<string>;
 export {};

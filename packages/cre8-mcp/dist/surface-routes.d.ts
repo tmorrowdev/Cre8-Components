@@ -12,6 +12,12 @@
  * the only write it can do is report an event that already happened.
  */
 import type { Hono } from 'hono';
+/**
+ * Where the installed `@tmorrow/cre8-wc` lives. `CRE8_WC_ROOT` overrides it,
+ * which is how you point a running server at a local build of the design system
+ * without reinstalling.
+ */
+export declare function wcRoot(): string;
 export declare function themeExists(brand: string): boolean;
 export declare const DEFAULT_THEME: string;
 export declare function mountSurfaceViewer(app: Hono): void;

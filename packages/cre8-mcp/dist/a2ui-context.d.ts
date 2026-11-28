@@ -11,6 +11,7 @@
  * model taking the whole compact catalog, an on-device model taking a few hundred
  * tokens of it, and an MCP host taking full prose for a narrow selection.
  */
+import { type BrandVoice } from './brand-tools.js';
 export interface CompactPropSpec {
     type?: string | string[];
     enum?: string[];
@@ -52,6 +53,12 @@ export interface GetA2uiContextInput {
      * substituted a checkbox for a password input.
      */
     pinned?: string[];
+    /**
+     * Brand the generated UI will wear. Its `voice` (tone, words to prefer and
+     * avoid) rides along, because the model choosing components is the same one
+     * writing their labels, and copy is where an off-brand surface shows first.
+     */
+    brand?: string;
 }
 export interface A2uiContextResult {
     contractVersion: number;
@@ -62,6 +69,12 @@ export interface A2uiContextResult {
     truncated: boolean;
     droppedCount: number;
     estimatedTokens: number;
+    /** Present when `brand` was asked for. `voice` is null if the brand sets none. */
+    brand?: {
+        name: string;
+        displayName?: string;
+        voice: BrandVoice | null;
+    };
 }
 export declare function handleGetA2uiContext(input: GetA2uiContextInput): A2uiContextResult;
 export {};

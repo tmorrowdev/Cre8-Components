@@ -165,13 +165,13 @@ export declare const UiOpenSurfaceSchema: z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     data?: Record<string, unknown> | undefined;
     title?: string | undefined;
-    spec?: Record<string, unknown> | undefined;
     theme?: string | undefined;
+    spec?: Record<string, unknown> | undefined;
 }, {
     data?: Record<string, unknown> | undefined;
     title?: string | undefined;
-    spec?: Record<string, unknown> | undefined;
     theme?: string | undefined;
+    spec?: Record<string, unknown> | undefined;
 }>;
 export declare const UiStreamSchema: z.ZodObject<{
     surfaceId: z.ZodString;
@@ -183,16 +183,16 @@ export declare const UiStreamSchema: z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     surfaceId: string;
     data?: Record<string, unknown>[] | undefined;
+    ops?: Record<string, unknown>[] | undefined;
     status?: "error" | "streaming" | "idle" | "done" | undefined;
     spec?: Record<string, unknown> | undefined;
-    ops?: Record<string, unknown>[] | undefined;
     statusMessage?: string | undefined;
 }, {
     surfaceId: string;
     data?: Record<string, unknown>[] | undefined;
+    ops?: Record<string, unknown>[] | undefined;
     status?: "error" | "streaming" | "idle" | "done" | undefined;
     spec?: Record<string, unknown> | undefined;
-    ops?: Record<string, unknown>[] | undefined;
     statusMessage?: string | undefined;
 }>;
 export declare const UiGetSurfaceSchema: z.ZodObject<{
