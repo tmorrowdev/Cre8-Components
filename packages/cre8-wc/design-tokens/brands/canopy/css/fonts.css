@@ -1,0 +1,24 @@
+/* GENERATED from brand.json by tools/brand.mjs — do not edit. */
+@font-face {
+	font-family: 'Google Sans Flex';
+	font-style: normal;
+	font-weight: 100 900;
+	src: url('assets/fonts/GoogleSansFlex-Variable.woff2') format('woff2');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Bricolage Grotesque';
+	font-style: normal;
+	font-weight: 200 800;
+	src: url('assets/fonts/BricolageGrotesque-Variable.woff2') format('woff2');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'JetBrains Mono';
+	font-style: normal;
+	font-weight: 100 800;
+	src: url('assets/fonts/JetBrainsMono-Variable.woff2') format('woff2');
+	font-display: swap;
+}

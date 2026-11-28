@@ -35,7 +35,7 @@ describe('colour math', () => {
 
 describe('loadBrand / validateBrand', () => {
   test('every shipped brand validates', () => {
-    assert.deepEqual(listBrands(), ['blank', 'cre8', 'cre8-a2ui', 'cre8-vivid', 'regal']);
+    assert.deepEqual(listBrands(), ['blank', 'canopy', 'cre8', 'cre8-a2ui', 'cre8-vivid', 'regal']);
     for (const name of listBrands()) {
       const r = validateBrand(loadBrand(name));
       assert.equal(r.ok, true, `${name}: ${r.errors.join('; ')}`);

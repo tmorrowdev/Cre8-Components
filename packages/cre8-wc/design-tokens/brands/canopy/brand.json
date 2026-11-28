@@ -1,0 +1,66 @@
+{
+  "$schema": "../../schema/brand.schema.json",
+  "$comment": "motion.easingEmphasized is a light spring (about 4% overshoot) for position, size and shape; keep colour and opacity on the standard easing. Canopy is the flagship brand: the theme to show first and to reach for on new work. cre8 stays the default a surface gets when it asks for nothing, so existing consumers do not change. Seeds are OKLCH; the hex in each description is an approximate sRGB reading.",
+  "name": "canopy",
+  "displayName": "Canopy",
+  "description": "The flagship brand. A greenhouse for software: forest green on olive-tinted neutrals with an orchid accent, 12px corners, olive-tinted shadows, Google Sans Flex with Bricolage Grotesque headings.",
+  "extends": null,
+  "colorScheme": "light",
+  "color": {
+    "primary": { "$type": "color", "$value": "oklch(0.53 0.15 150)", "$description": "Forest green (about #15803d): buttons, links, focus, brand fills." },
+    "neutral": { "$type": "color", "$value": "oklch(0.55 0.018 108)", "$description": "Olive-stone (about #76776a). The olive tint warms surfaces, borders and text without turning them cream." },
+    "accent":  { "$type": "color", "$value": "oklch(0.66 0.13 340)", "$description": "Orchid (about #c46a9a): highlights, charts, the far end of the brand gradient. For text use the 700 step." },
+    "info":    { "$type": "color", "$value": "oklch(0.58 0.10 220)", "$description": "Steel teal-blue, so info does not read as the orchid accent or as success." },
+    "success": { "$type": "color", "$value": "oklch(0.60 0.118 185)", "$description": "Jade teal (about #009689), shifted away from the primary green. Always pair with an icon and a label." },
+    "warning": { "$type": "color", "$value": "oklch(0.77 0.18 70)", "$description": "Amber (about #f59e0b)." },
+    "error":   { "$type": "color", "$value": "oklch(0.58 0.23 27)", "$description": "Signal red (about #dc2626), well away from the orchid accent." },
+    "chart": [
+      { "$type": "color", "$value": "oklch(0.53 0.14 152)", "$description": "Forest." },
+      { "$type": "color", "$value": "oklch(0.62 0.15 340)", "$description": "Orchid." },
+      { "$type": "color", "$value": "oklch(0.75 0.15 75)", "$description": "Amber." },
+      { "$type": "color", "$value": "oklch(0.58 0.10 220)", "$description": "Steel teal." },
+      { "$type": "color", "$value": "oklch(0.60 0.14 40)", "$description": "Terracotta." },
+      { "$type": "color", "$value": "oklch(0.62 0.10 115)", "$description": "Olive. Forest, olive and terracotta are close for red-green colour blindness: label series directly." }
+    ]
+  },
+  "typography": {
+    "body": { "$type": "fontFamily", "$value": ["Google Sans Flex", "system-ui", "sans-serif"] },
+    "display": { "$type": "fontFamily", "$value": ["Bricolage Grotesque", "Google Sans Flex", "system-ui", "sans-serif"] },
+    "mono": { "$type": "fontFamily", "$value": ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"] },
+    "baseSize": { "$type": "dimension", "$value": "1rem" },
+    "weights": {
+      "regular": { "$type": "fontWeight", "$value": 400 },
+      "medium": { "$type": "fontWeight", "$value": 500 },
+      "semibold": { "$type": "fontWeight", "$value": 600 },
+      "bold": { "$type": "fontWeight", "$value": 700 }
+    },
+    "fontFaces": [
+      { "family": "Google Sans Flex", "src": "assets/fonts/GoogleSansFlex-Variable.woff2", "weight": "100 900", "display": "swap" },
+      { "family": "Bricolage Grotesque", "src": "assets/fonts/BricolageGrotesque-Variable.woff2", "weight": "200 800", "display": "swap" },
+      { "family": "JetBrains Mono", "src": "assets/fonts/JetBrainsMono-Variable.woff2", "weight": "100 800", "display": "swap" }
+    ]
+  },
+  "shape": {
+    "radius": { "$type": "dimension", "$value": "12px", "$description": "Cards and containers. Half of cre8's 24px." },
+    "controlRadius": { "$type": "dimension", "$value": "8px", "$description": "Inputs, selects, tabs." },
+    "buttonRadius": { "$type": "dimension", "$value": "12px", "$description": "Soft-square buttons, not pills: the clearest shape difference from cre8." },
+    "borderWidth": { "$type": "dimension", "$value": "1px" }
+  },
+  "space": { "base": { "$type": "dimension", "$value": "0.25rem" }, "density": "comfortable" },
+  "elevation": {
+    "style": "standard",
+    "shadowColor": { "$type": "color", "$value": "oklch(0.3 0.03 108)", "$description": "Shadows carry the neutral's olive hue instead of grey." }
+  },
+  "motion": {
+    "durationFast": { "$type": "duration", "$value": "100ms" },
+    "durationBase": { "$type": "duration", "$value": "200ms" },
+    "durationSlow": { "$type": "duration", "$value": "300ms" },
+    "easing": { "$type": "cubicBezier", "$value": [0.2, 0, 0, 1] },
+    "easingEmphasized": { "$type": "cubicBezier", "$value": [0.34, 1.36, 0.64, 1] }
+  },
+  "accessibility": { "contrastTarget": "AA", "waive": [] },
+  "voice": {
+    "tone": "calm, plain, precise",
+    "avoid": ["sparkle emoji as an AI signifier", "exclamation marks", "invented statistics"]
+  }
+}

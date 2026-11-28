@@ -1,4 +1,5 @@
 import '../../.storybook/css/styleguide-only.css';
+import canopy from '../../design-tokens/brands/canopy/css/tokens_canopy.module.ts';
 import cre8 from '../../design-tokens/brands/cre8/css/tokens_cre8.module.ts';
 import vivid from '../../design-tokens/brands/cre8-vivid/css/tokens_cre8-vivid.module.ts';
 import blank from '../../design-tokens/brands/blank/css/tokens_blank.module.ts';
@@ -13,6 +14,7 @@ document.head.appendChild(headStyleElement);
 
 // Theme definitions
 const themeStyles = [
+  { name: 'Canopy', styles: canopy },
   { name: 'Cre8', styles: cre8 },
   { name: 'Cre8 Vivid', styles: vivid },
   { name: 'Blank', styles: blank },

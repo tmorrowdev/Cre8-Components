@@ -6,6 +6,7 @@ import './css/styleguide-only.ts';
 
 // import starbucksStyles from '../design-tokens/starbucks/tokens.module';
 // import target from '../design-tokens/target/tokens.module.css';
+import canopy from '../design-tokens/brands/canopy/css/tokens_canopy.module.ts';
 import cre8 from '../design-tokens/brands/cre8/css/tokens_cre8.module.ts';
 import vivid from '../design-tokens/brands/cre8-vivid/css/tokens_cre8-vivid.module.ts';
 import blank from '../design-tokens/brands/blank/css/tokens_blank.module.ts';
@@ -65,7 +66,9 @@ document.head.appendChild(headStyleElement);
 const excludeArray = ['shadowRootOptions', 'formAssociated', 'field'];
 
 // Apply theme styles to document head
+// Canopy is the flagship brand, so it is listed first and is the picker's default.
 const themeStyles = [
+  { name: 'Canopy', styles: canopy },
   { name: 'Cre8', styles: cre8 },
   { name: 'Cre8 Vivid', styles: vivid },
   { name: 'Blank', styles: blank },
@@ -85,7 +88,7 @@ const preview: Preview = {
   globalTypes: {
     theme: {
       description: 'Global theme for components',
-      defaultValue: 'Cre8',
+      defaultValue: 'Canopy',
       toolbar: {
         title: 'Theme',
         icon: 'paintbrush',
