@@ -10,6 +10,12 @@ This CHANGELOG lists changes for all `packages` contained within this repository
 
 ## Unreleased
 
+### Added — `canopy`, the flagship brand
+
+A new brand at `design-tokens/brands/canopy`, generated from its `brand.json` like the others: forest-green primary, olive-tinted neutrals, orchid accent, a steel-teal info ramp, a six-colour chart palette, 12px container radius with soft-square (12px) buttons, olive-tinted shadows, and a lightly sprung emphasized easing. It ships Google Sans Flex (body), Bricolage Grotesque (headings) and JetBrains Mono as variable woff2 files, each under the SIL Open Font License (licences beside the fonts). The contrast guard passes AA on all 48 pairs in light and inverse.
+
+Load it with `import '@tmorrow/cre8-wc/themes/canopy'`. Storybook's theme picker lists it first and opens on it. **`cre8` remains the default brand**, so existing consumers see no change. The brand audit baseline covers Canopy's token resolution (the same 19 pre-existing unresolved tokens as `cre8`); its rendered contrast is not baselined yet — run `pnpm --filter @tmorrow/cre8-wc audit:brands:update` with a browser to add it.
+
 ### ⚠️ Deprecated — event names normalized to kebab-case
 
 Emitted event names now follow a single convention: lowercase kebab-case shaped as `component-action` (`tab-change`, `modal-close`, `chart-click`). Previously 16 components used five different conventions — bare word, camelCase, kebab-case, `cre8-`-prefixed kebab, and dotted — with no rule mapping a component to its event name. The convention is now written down in [`agent-docs/CODE_GUIDELINES.md`](packages/cre8-wc/agent-docs/CODE_GUIDELINES.md#event-names).

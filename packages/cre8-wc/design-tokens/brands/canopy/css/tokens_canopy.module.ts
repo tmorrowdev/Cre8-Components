@@ -1,0 +1,1592 @@
+// GENERATED from brand.json by tools/brand.mjs — do not edit.
+// Storybook's inlined copy of fonts.css + tokens_brand.css + tokens_canopy.css.
+const canopy = `
+/* GENERATED from brand.json by tools/brand.mjs — do not edit. */
+@font-face {
+	font-family: 'Google Sans Flex';
+	font-style: normal;
+	font-weight: 100 900;
+	src: url('/assets/fonts/GoogleSansFlex-Variable.woff2') format('woff2');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Bricolage Grotesque';
+	font-style: normal;
+	font-weight: 200 800;
+	src: url('/assets/fonts/BricolageGrotesque-Variable.woff2') format('woff2');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'JetBrains Mono';
+	font-style: normal;
+	font-weight: 100 800;
+	src: url('/assets/fonts/JetBrainsMono-Variable.woff2') format('woff2');
+	font-display: swap;
+}
+
+/**
+ * GENERATED from brand.json by tools/brand.mjs — do not edit.
+ * Edit design-tokens/brands/canopy/brand.json, then run \`pnpm tokens:build canopy\`.
+ *
+ * Canopy — The flagship brand. A greenhouse for software: forest green on olive-tinted neutrals with an orchid accent, 12px corners, olive-tinted shadows, Google Sans Flex with Bricolage Grotesque headings.
+ *
+ * Four tiers, each referencing only the tier above it. Literal values appear
+ * in exactly one place — the seed — so rebranding means overriding the seed
+ * block, not editing this file.
+ *
+ * The legacy --cre8-color-* names are still emitted, as aliases, in tier 3.
+ *
+ * ramp: primary: seed L 0.53 vs template 0.623; step lightness re-anchored around the seed
+ * ramp: success: seed L 0.6 vs template 0.715; step lightness re-anchored around the seed
+ * ramp: error: seed L 0.58 vs template 0.656; step lightness re-anchored around the seed
+ * ramp: accent: seed L 0.66 vs template 0.541; step lightness re-anchored around the seed
+ * contrast guard: inverse: bg-success success-50 (1.01:1) -> success-950 (12.73:1)
+ * contrast guard: inverse: bg-error error-50 (1.05:1) -> error-950 (13.6:1)
+ * contrast guard: inverse: bg-warning warning-50 (1.01:1) -> warning-950 (13.19:1)
+ * contrast guard: inverse: bg-info info-50 (1.07:1) -> info-950 (12.87:1)
+ * contrast guard: inverse: bg-attention neutral-0 (1.05:1) -> neutral-900 (16.98:1)
+ * contrast guard: light: border-strong neutral-400 (2.56:1) -> neutral-500 (4.84:1) on bg-default
+ * contrast guard: inverse: content-success success-600 (2.71:1) -> success-400 (5.63:1) on bg-success, bg-default
+ * contrast guard: inverse: content-error error-600 (2.52:1) -> error-300 (6.93:1) on bg-error, bg-default
+ * contrast guard: light: bg-success-strong success-500 (3.66:1) -> success-600 (4.91:1)
+ * contrast guard: inverse: bg-error-strong error-500 (3.69:1) -> error-400 (5.35:1)
+ * contrast guard: light: bg-info-strong info-500 (4.15:1) -> info-600 (5.73:1)
+ * contrast guard: inverse: bg-info-strong info-500 (4.28:1) -> info-400 (5.87:1)
+ * contrast guard: light: bg-attention-strong primary-400 (3.15:1) -> primary-500 (4.91:1)
+ * contrast guard: inverse: bg-warning-strong warning-500 (2.04:1) -> warning-700 (6.18:1)
+ */
+
+:root {
+
+/* ===========================================================================
+   TIER 0 · SEED — the only literals in the system
+   Owned by the integrator. Override these and every tier below follows.
+   Nothing else in this file is a literal colour.
+   =========================================================================== */
+  --cre8-seed-primary: oklch(0.53 0.15 150);
+  --cre8-seed-neutral: oklch(0.55 0.018 108);
+  --cre8-seed-success: oklch(0.60 0.118 185);
+  --cre8-seed-error: oklch(0.58 0.23 27);
+  --cre8-seed-warning: oklch(0.77 0.18 70);
+  --cre8-seed-accent: oklch(0.66 0.13 340);
+  --cre8-seed-font: "Google Sans Flex", system-ui, sans-serif;
+  --cre8-seed-radius: 12px;
+  --cre8-seed-space: 0.25rem;
+  --cre8-seed-font-size: 1rem;
+  --cre8-seed-border-width: 1px;
+  --cre8-seed-info: oklch(0.58 0.10 220);
+  --cre8-seed-font-display: "Bricolage Grotesque", "Google Sans Flex", system-ui, sans-serif;
+  --cre8-seed-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --cre8-seed-radius-control: 8px;
+  --cre8-seed-radius-button: 12px;
+  --cre8-seed-density: 1;
+  --cre8-seed-shadow: oklch(0.3 0.03 108);
+  --cre8-seed-chart-1: oklch(0.53 0.14 152);
+  --cre8-seed-chart-2: oklch(0.62 0.15 340);
+  --cre8-seed-chart-3: oklch(0.75 0.15 75);
+  --cre8-seed-chart-4: oklch(0.58 0.10 220);
+  --cre8-seed-chart-5: oklch(0.60 0.14 40);
+  --cre8-seed-chart-6: oklch(0.62 0.10 115);
+}
+
+/* A custom property is substituted where it is DECLARED, not where it is
+   read. Declaring the tiers only on :root would mean a [data-mode] or a
+   reseeded subtree changed the semantic layer while every component token
+   stayed pinned to the value it resolved to at :root. So the stack is
+   declared for :root and for any element carrying [data-cre8-theme], which
+   is what makes subtree rebranding and scoped modes actually resolve.
+
+     <div data-cre8-theme style="--cre8-seed-primary:#7C3AED">   scoped brand
+     <div data-cre8-theme data-mode="inverse">                   scoped mode
+     <html data-mode="inverse">                                  whole document
+*/
+:root,
+[data-cre8-theme] {
+
+/* ===========================================================================
+   TIER 1 · PRIMITIVE — ramps derived from the seed
+   Generated, never hand-edited. Each step reproduces the ramp this brand
+   shipped before the restructure exactly (dE = 0) when the seed is unchanged.
+   Relative colour syntax: Chrome 119+, Safari 16.4+, Firefox 128+.
+   =========================================================================== */
+
+  /* primary */
+  /* primary: seed L 0.53 vs template 0.623; step lightness re-anchored around the seed */
+  --cre8-primary-50: oklch(from var(--cre8-seed-primary) 0.9705 calc(c * 0.0754) calc(h - 5.21));
+  --cre8-primary-100: oklch(from var(--cre8-seed-primary) 0.9216 calc(c * 0.168) calc(h - 4.23));
+  --cre8-primary-200: oklch(from var(--cre8-seed-primary) 0.8587 calc(c * 0.3035) calc(h - 5.69));
+  --cre8-primary-300: oklch(from var(--cre8-seed-primary) 0.7659 calc(c * 0.5085) calc(h - 8));
+  --cre8-primary-400: oklch(from var(--cre8-seed-primary) 0.6449 calc(c * 0.7626) calc(h - 5.19));
+  --cre8-primary-500: var(--cre8-seed-primary);
+  --cre8-primary-600: oklch(from var(--cre8-seed-primary) 0.474 calc(c * 1.1446) calc(h + 3.07));
+  --cre8-primary-700: oklch(from var(--cre8-seed-primary) 0.432 calc(c * 1.155) calc(h + 4.56));
+  --cre8-primary-800: oklch(from var(--cre8-seed-primary) 0.3856 calc(c * 0.962) calc(h + 5.82));
+  --cre8-primary-900: oklch(from var(--cre8-seed-primary) 0.3527 calc(c * 0.7327) calc(h + 5.71));
+  --cre8-primary-950: oklch(from var(--cre8-seed-primary) 0.2823 calc(c * 0.4651) calc(h + 8.12));
+
+  /* neutral */
+  --cre8-neutral-0: oklch(from var(--cre8-seed-neutral) 1 calc(c * 0) calc(h - 167.54));
+  --cre8-neutral-50: oklch(from var(--cre8-seed-neutral) 0.9842 calc(c * 0.0838) calc(h - 9.56));
+  --cre8-neutral-100: oklch(from var(--cre8-seed-neutral) 0.9683 calc(c * 0.1683) calc(h - 9.52));
+  --cre8-neutral-200: oklch(from var(--cre8-seed-neutral) 0.9288 calc(c * 0.3099) calc(h - 1.91));
+  --cre8-neutral-300: oklch(from var(--cre8-seed-neutral) 0.869 calc(c * 0.4875) calc(h - 4.52));
+  --cre8-neutral-400: oklch(from var(--cre8-seed-neutral) 0.7107 calc(c * 0.8624) calc(h - 0.63));
+  --cre8-neutral-500: var(--cre8-seed-neutral);
+  --cre8-neutral-600: oklch(from var(--cre8-seed-neutral) 0.4455 calc(c * 0.9197) calc(h - 0.14));
+  --cre8-neutral-700: oklch(from var(--cre8-seed-neutral) 0.3717 calc(c * 0.9617) calc(h - 0.13));
+  --cre8-neutral-800: oklch(from var(--cre8-seed-neutral) 0.2795 calc(c * 0.905) calc(h + 2.61));
+  --cre8-neutral-900: oklch(from var(--cre8-seed-neutral) 0.2077 calc(c * 0.9781) calc(h + 8.34));
+  --cre8-neutral-950: oklch(from var(--cre8-seed-neutral) 0.1288 calc(c * 0.9972) calc(h + 7.28));
+
+  /* success */
+  /* success: seed L 0.6 vs template 0.715; step lightness re-anchored around the seed */
+  --cre8-success-50: oklch(from var(--cre8-seed-success) 0.9841 calc(c * 0.1502) calc(h - 14.35));
+  --cre8-success-400: oklch(from var(--cre8-seed-success) 0.7173 calc(c * 1.0648) calc(h - 3.69));
+  --cre8-success-500: var(--cre8-seed-success);
+  --cre8-success-600: oklch(from var(--cre8-seed-success) 0.5303 calc(c * 0.8823) calc(h + 6.5));
+
+  /* error */
+  /* error: seed L 0.58 vs template 0.656; step lightness re-anchored around the seed */
+  --cre8-error-50: oklch(from var(--cre8-seed-error) 0.9714 calc(c * 0.0668) calc(h - 11.11));
+  --cre8-error-100: oklch(from var(--cre8-seed-error) 0.9426 calc(c * 0.1305) calc(h - 12.05));
+  --cre8-error-200: oklch(from var(--cre8-seed-error) 0.8821 calc(c * 0.278) calc(h - 11.08));
+  --cre8-error-300: oklch(from var(--cre8-seed-error) 0.787 calc(c * 0.5171) calc(h - 8.29));
+  --cre8-error-400: oklch(from var(--cre8-seed-error) 0.6661 calc(c * 0.8274) calc(h - 4.55));
+  --cre8-error-500: var(--cre8-seed-error);
+  --cre8-error-600: oklch(from var(--cre8-seed-error) 0.5333 calc(c * 1.0293) calc(h + 6.28));
+  --cre8-error-700: oklch(from var(--cre8-seed-error) 0.4847 calc(c * 0.9395) calc(h + 9.65));
+
+  /* warning */
+  --cre8-warning-50: oklch(from var(--cre8-seed-warning) 0.9869 calc(c * 0.13) calc(h + 25.2));
+  --cre8-warning-400: oklch(from var(--cre8-seed-warning) 0.8369 calc(c * 0.9986) calc(h + 14.35));
+  --cre8-warning-500: var(--cre8-seed-warning);
+  --cre8-warning-600: oklch(from var(--cre8-seed-warning) 0.6658 calc(c * 0.956) calc(h - 11.76));
+
+  /* accent
+     -50 and -500 added by hand (not from the original generator, which never
+     emitted them) to give info-status tokens a real ramp to point at instead
+     of borrowing primary's. Simple relative lightness offsets from the -600
+     identity step, not the per-hue-tuned coefficients the rest of this ramp
+     uses -- close enough for a light tint and a mid-strength fill, not a
+     claim of the same precision. */
+  /* accent: seed L 0.66 vs template 0.541; step lightness re-anchored around the seed */
+  --cre8-accent-50: oklch(from var(--cre8-seed-accent) 0.96 calc(c * 0.15) h);
+  --cre8-accent-200: oklch(from var(--cre8-seed-accent) 0.9187 calc(c * 0.245) calc(h + 13.69));
+  --cre8-accent-500: oklch(from var(--cre8-seed-accent) calc(l + 0.08) c h);
+  --cre8-accent-600: var(--cre8-seed-accent);
+
+  /* Extended steps — darker status/accent steps the hand-maintained sheet
+     never had. Contrast-correction candidates; nothing reads them by default. */
+  --cre8-success-700: oklch(from var(--cre8-seed-success) 0.4509 calc(c * 0.95) h);
+  --cre8-success-800: oklch(from var(--cre8-seed-success) 0.4089 calc(c * 0.8) h);
+  --cre8-success-900: oklch(from var(--cre8-seed-success) 0.3791 calc(c * 0.65) h);
+  --cre8-error-800: oklch(from var(--cre8-seed-error) 0.412 calc(c * 0.85) calc(h + 9.65));
+  --cre8-error-900: oklch(from var(--cre8-seed-error) 0.3791 calc(c * 0.7) calc(h + 9.65));
+  --cre8-warning-700: oklch(from var(--cre8-seed-warning) 0.4882 calc(c * 0.95) h);
+  --cre8-warning-800: oklch(from var(--cre8-seed-warning) 0.4244 calc(c * 0.8) h);
+  --cre8-warning-900: oklch(from var(--cre8-seed-warning) 0.3791 calc(c * 0.65) h);
+  --cre8-accent-700: oklch(from var(--cre8-seed-accent) 0.5529 calc(c * 0.95) h);
+  --cre8-accent-800: oklch(from var(--cre8-seed-accent) 0.4244 calc(c * 0.8) h);
+
+  /* info — the info status ramp. Without an info seed it is the accent ramp,
+     which is what info has always read. */
+  --cre8-info-50: oklch(from var(--cre8-seed-info) 0.96 calc(c * 0.15) h);
+  --cre8-info-500: var(--cre8-seed-info);
+  --cre8-info-600: oklch(from var(--cre8-seed-info) calc(l - 0.08) c h);
+  --cre8-info-700: oklch(from var(--cre8-seed-info) calc(l - 0.16) c h);
+
+  /* Status steps for the contrast guard: lighter info and success steps for
+     fills under dark text in inverse mode, and a dark -950 tint per status
+     for inverse-mode status backgrounds. Nothing reads them unless the guard
+     picks them. */
+  --cre8-info-400: oklch(from var(--cre8-info-500) calc(l + 0.08) calc(c * 0.9) h);
+  --cre8-info-300: oklch(from var(--cre8-info-500) calc(l + 0.16) calc(c * 0.7) h);
+  --cre8-info-800: oklch(from var(--cre8-info-500) calc(l - 0.24) c h);
+  --cre8-success-300: oklch(from var(--cre8-success-500) calc(l + 0.1) calc(c * 0.7) h);
+  --cre8-warning-300: oklch(from var(--cre8-warning-500) calc(l + 0.08) calc(c * 0.7) h);
+  --cre8-success-950: oklch(from var(--cre8-success-500) 0.3 calc(c * 0.45) h);
+  --cre8-error-950: oklch(from var(--cre8-error-500) 0.3 calc(c * 0.45) h);
+  --cre8-warning-950: oklch(from var(--cre8-warning-500) 0.3 calc(c * 0.45) h);
+  --cre8-info-950: oklch(from var(--cre8-info-500) 0.3 calc(c * 0.45) h);
+
+  /* Overlays — neutral-900 at fixed alpha */
+  --cre8-overlay-transparent: oklch(from var(--cre8-neutral-900) l c h / 0);
+  --cre8-overlay-10: oklch(from var(--cre8-neutral-900) l c h / 0.1);
+  --cre8-overlay-20: oklch(from var(--cre8-neutral-900) l c h / 0.2);
+  --cre8-overlay-50: oklch(from var(--cre8-neutral-900) l c h / 0.5);
+
+  /* Spacing — multiples of the space seed */
+  --cre8-spacing-0: 0rem;
+  --cre8-spacing-2: calc(var(--cre8-seed-space) * 0.5);
+  --cre8-spacing-4: calc(var(--cre8-seed-space) * 1);
+  --cre8-spacing-6: calc(var(--cre8-seed-space) * 1.5);
+  --cre8-spacing-8: calc(var(--cre8-seed-space) * 2);
+  --cre8-spacing-12: calc(var(--cre8-seed-space) * 3);
+  --cre8-spacing-14: calc(var(--cre8-seed-space) * 3.5);
+  --cre8-spacing-16: calc(var(--cre8-seed-space) * 4);
+  --cre8-spacing-18: calc(var(--cre8-seed-space) * 4.5);
+  --cre8-spacing-24: calc(var(--cre8-seed-space) * 6);
+  --cre8-spacing-32: calc(var(--cre8-seed-space) * 8);
+  --cre8-spacing-40: calc(var(--cre8-seed-space) * 10);
+  --cre8-spacing-48: calc(var(--cre8-seed-space) * 12);
+  --cre8-spacing-64: calc(var(--cre8-seed-space) * 16);
+  --cre8-spacing-80: calc(var(--cre8-seed-space) * 20);
+  --cre8-spacing-96: calc(var(--cre8-seed-space) * 24);
+  --cre8-spacing-120: calc(var(--cre8-seed-space) * 30);
+  --cre8-spacing-160: calc(var(--cre8-seed-space) * 40);
+
+  /* Padding — a deliberately narrow slice of the spacing scale.
+     The full scale above spans a 0.5x-40x range (80x), which is right for
+     layout gaps and section margins but wrong for component padding: reseed
+     --cre8-seed-space for a chunkier padding feel and the *layout* end of
+     that same scale swings by tens of pixels for a change meant to nudge
+     button/card padding by a couple of pixels. Padding gets its own 0.5x-6x
+     range (12x) instead -- aliases of the existing tight-end steps, not new
+     math -- so retheming padding doesn't also retheme page layout. Component
+     padding should reference these, never --cre8-spacing-* directly; gap and
+     margin (genuine layout) can still reach the full scale above. */
+  --cre8-padding-2: calc(var(--cre8-spacing-2) * var(--cre8-seed-density));
+  --cre8-padding-4: calc(var(--cre8-spacing-4) * var(--cre8-seed-density));
+  --cre8-padding-8: calc(var(--cre8-spacing-8) * var(--cre8-seed-density));
+  --cre8-padding-16: calc(var(--cre8-spacing-16) * var(--cre8-seed-density));
+  --cre8-padding-24: calc(var(--cre8-spacing-24) * var(--cre8-seed-density));
+
+  /* Font size — multiples of the font-size seed */
+  --cre8-font-size-0: calc(var(--cre8-seed-font-size) * 0.75);
+  --cre8-font-size-1: calc(var(--cre8-seed-font-size) * 0.875);
+  --cre8-font-size-2: var(--cre8-seed-font-size);
+  --cre8-font-size-3: calc(var(--cre8-seed-font-size) * 1.125);
+  --cre8-font-size-4: calc(var(--cre8-seed-font-size) * 1.25);
+  --cre8-font-size-5: calc(var(--cre8-seed-font-size) * 1.5);
+  --cre8-font-size-6: calc(var(--cre8-seed-font-size) * 1.75);
+  --cre8-font-size-7: calc(var(--cre8-seed-font-size) * 2);
+  --cre8-font-size-8: calc(var(--cre8-seed-font-size) * 2.5);
+  --cre8-font-size-9: calc(var(--cre8-seed-font-size) * 3);
+  --cre8-font-size-10: calc(var(--cre8-seed-font-size) * 3.5);
+  --cre8-font-size-11: calc(var(--cre8-seed-font-size) * 4);
+  --cre8-font-size-12: calc(var(--cre8-seed-font-size) * 4.5);
+  --cre8-font-size-13: calc(var(--cre8-seed-font-size) * 5);
+
+  /* Radii — multiples of the radius seed */
+  --cre8-radius-none: 0px;
+  --cre8-radius-checkbox: calc(var(--cre8-seed-radius-control) / 3);
+  --cre8-radius-small: var(--cre8-seed-radius-control);
+  --cre8-radius-field: var(--cre8-seed-radius-control);
+  --cre8-radius-field-brand: var(--cre8-seed-radius-control);
+  --cre8-radius-tabs: var(--cre8-seed-radius-control);
+  --cre8-radius-large: var(--cre8-seed-radius);
+  --cre8-radius-container: var(--cre8-seed-radius);
+  /* Buttons take their own radius seed (brand.json shape.buttonRadius). */
+  --cre8-radius-button: var(--cre8-seed-radius-button);
+  --cre8-radius-pill: calc(var(--cre8-seed-radius) * 37.5);
+
+  /* Border width — multiples of the border-width seed */
+  --cre8-border-width-none: 0rem;
+  --cre8-border-width-default: var(--cre8-seed-border-width);
+  --cre8-border-width-focus: calc(var(--cre8-seed-border-width) * 2);
+  --cre8-border-width-large: calc(var(--cre8-seed-border-width) * 4);
+
+  /* Type — role names, never vendor names */
+  --cre8-font-family-base: var(--cre8-seed-font);
+  --cre8-font-family-display: var(--cre8-seed-font-display);
+  --cre8-font-family-mono: var(--cre8-seed-font-mono);
+  --cre8-font-weight-regular: 400;
+  --cre8-font-weight-medium: 500;
+  --cre8-font-weight-semibold: 600;
+  --cre8-font-weight-bold: 700;
+  --cre8-line-height-tight: 1.12;
+  --cre8-line-height-snug: 1.25;
+  --cre8-line-height-normal: 1.33;
+  --cre8-line-height-relaxed: 1.4;
+  --cre8-line-height-loose: 1.5;
+
+  /* Motion — zeroed under prefers-reduced-motion (end of file) */
+  --cre8-duration-fast: 100ms;
+  --cre8-duration-base: 200ms;
+  --cre8-duration-slow: 300ms;
+  --cre8-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --cre8-easing-emphasized: cubic-bezier(0.34, 1.36, 0.64, 1);
+
+  /* Control gap — the space between a control's parts, scaled by density */
+  --cre8-control-gap: calc(var(--cre8-seed-space) * 2 * var(--cre8-seed-density));
+
+/* ===========================================================================
+   TIER 2 · SEMANTIC — purpose, not colour
+   The only tier a mode swap touches. Mode-dependent entries read a
+   --cre8-mode-* indirection whose light values are set just below and whose
+   dark values come from the [data-mode] block at the end of the file.
+   Each token is emitted twice: the role name, and the legacy --cre8-color-*
+   alias that existing component styles already read.
+   =========================================================================== */
+
+  /* Mode indirection — light. Overridden by [data-mode="inverse"]. */
+  /* contrast guard: border-strong neutral-400 (2.56:1) -> neutral-500 (4.84:1) on bg-default */
+  /* contrast guard: bg-success-strong success-500 (3.66:1) -> success-600 (4.91:1) */
+  /* contrast guard: bg-info-strong info-500 (4.15:1) -> info-600 (5.73:1) */
+  /* contrast guard: bg-attention-strong primary-400 (3.15:1) -> primary-500 (4.91:1) */
+  --cre8-mode-bg-default: var(--cre8-neutral-0);
+  --cre8-mode-bg-default-hover: var(--cre8-neutral-50);
+  --cre8-mode-bg-subtle: var(--cre8-neutral-100);
+  --cre8-mode-bg-strong: var(--cre8-neutral-800);
+  --cre8-mode-bg-disabled: var(--cre8-neutral-200);
+  --cre8-mode-bg-brand: var(--cre8-neutral-0);
+  --cre8-mode-bg-brand-hover: var(--cre8-primary-100);
+  --cre8-mode-bg-brand-strong: var(--cre8-primary-500);
+  --cre8-mode-bg-brand-strong-hover: var(--cre8-primary-600);
+  --cre8-mode-content-default: var(--cre8-neutral-900);
+  --cre8-mode-content-subtle: var(--cre8-neutral-500);
+  --cre8-mode-content-disabled: var(--cre8-neutral-400);
+  --cre8-mode-content-knockout: var(--cre8-neutral-0);
+  --cre8-mode-content-brand: var(--cre8-primary-500);
+  --cre8-mode-content-brand-strong: var(--cre8-primary-600);
+  --cre8-mode-content-link: var(--cre8-primary-500);
+  --cre8-mode-content-link-hover: var(--cre8-primary-600);
+  --cre8-mode-border-default: var(--cre8-neutral-200);
+  --cre8-mode-border-strong: var(--cre8-neutral-500);
+  --cre8-mode-border-brand: var(--cre8-primary-500);
+  --cre8-mode-focus-ring-color: var(--cre8-primary-500);
+  --cre8-mode-bg-success: var(--cre8-success-50);
+  --cre8-mode-bg-error: var(--cre8-error-50);
+  --cre8-mode-bg-warning: var(--cre8-warning-50);
+  --cre8-mode-bg-info: var(--cre8-info-50);
+  --cre8-mode-bg-attention: var(--cre8-neutral-0);
+  --cre8-mode-content-success: var(--cre8-success-600);
+  --cre8-mode-content-error: var(--cre8-error-600);
+  --cre8-mode-bg-success-strong: var(--cre8-success-600);
+  --cre8-mode-bg-error-strong: var(--cre8-error-500);
+  --cre8-mode-bg-info-strong: var(--cre8-info-600);
+  --cre8-mode-bg-attention-strong: var(--cre8-primary-500);
+  --cre8-mode-bg-warning-strong: var(--cre8-warning-500);
+
+  --cre8-bg-default: var(--cre8-mode-bg-default);
+  --cre8-color-bg-default: var(--cre8-bg-default);
+  --cre8-bg-default-hover: var(--cre8-mode-bg-default-hover);
+  --cre8-color-bg-default-hover: var(--cre8-bg-default-hover);
+  --cre8-bg-default-active: var(--cre8-primary-100);
+  --cre8-color-bg-default-active: var(--cre8-bg-default-active);
+  --cre8-bg-subtle: var(--cre8-mode-bg-subtle);
+  --cre8-color-bg-subtle: var(--cre8-bg-subtle);
+  --cre8-bg-moderate: var(--cre8-neutral-400);
+  --cre8-color-bg-moderate: var(--cre8-bg-moderate);
+  --cre8-bg-inverse-moderate: var(--cre8-neutral-500);
+  --cre8-color-bg-inverse-moderate: var(--cre8-bg-inverse-moderate);
+  --cre8-bg-strong: var(--cre8-mode-bg-strong);
+  --cre8-color-bg-strong: var(--cre8-bg-strong);
+  --cre8-bg-disabled: var(--cre8-mode-bg-disabled);
+  --cre8-color-bg-disabled: var(--cre8-bg-disabled);
+  --cre8-bg-brand: var(--cre8-mode-bg-brand);
+  --cre8-color-bg-brand: var(--cre8-bg-brand);
+  --cre8-bg-brand-active: var(--cre8-primary-200);
+  --cre8-color-bg-brand-active: var(--cre8-bg-brand-active);
+  --cre8-bg-brand-hover: var(--cre8-mode-bg-brand-hover);
+  --cre8-color-bg-brand-hover: var(--cre8-bg-brand-hover);
+  --cre8-bg-brand-strong: var(--cre8-mode-bg-brand-strong);
+  --cre8-color-bg-brand-strong: var(--cre8-bg-brand-strong);
+  --cre8-bg-brand-strong-hover: var(--cre8-mode-bg-brand-strong-hover);
+  --cre8-color-bg-brand-strong-hover: var(--cre8-bg-brand-strong-hover);
+  --cre8-bg-brand-strong-active: var(--cre8-primary-700);
+  --cre8-color-bg-brand-strong-active: var(--cre8-bg-brand-strong-active);
+  --cre8-bg-brand-xstrong: var(--cre8-primary-800);
+  --cre8-color-bg-brand-xstrong: var(--cre8-bg-brand-xstrong);
+  --cre8-bg-brand-xstrong-hover: var(--cre8-primary-700);
+  --cre8-color-bg-brand-xstrong-hover: var(--cre8-bg-brand-xstrong-hover);
+  --cre8-bg-brand-xstrong-active: var(--cre8-primary-900);
+  --cre8-color-bg-brand-xstrong-active: var(--cre8-bg-brand-xstrong-active);
+  --cre8-bg-success: var(--cre8-mode-bg-success);
+  --cre8-color-bg-success: var(--cre8-bg-success);
+  --cre8-bg-success-strong: var(--cre8-mode-bg-success-strong);
+  --cre8-color-bg-success-strong: var(--cre8-bg-success-strong);
+  --cre8-bg-error: var(--cre8-mode-bg-error);
+  --cre8-color-bg-error: var(--cre8-bg-error);
+  --cre8-bg-error-strong: var(--cre8-mode-bg-error-strong);
+  --cre8-color-bg-error-strong: var(--cre8-bg-error-strong);
+  --cre8-bg-warning: var(--cre8-mode-bg-warning);
+  --cre8-color-bg-warning: var(--cre8-bg-warning);
+  --cre8-bg-warning-strong: var(--cre8-mode-bg-warning-strong);
+  --cre8-color-bg-warning-strong: var(--cre8-bg-warning-strong);
+  --cre8-bg-info: var(--cre8-mode-bg-info);
+  --cre8-color-bg-info: var(--cre8-bg-info);
+  --cre8-bg-info-strong: var(--cre8-mode-bg-info-strong);
+  --cre8-color-bg-info-strong: var(--cre8-bg-info-strong);
+  --cre8-bg-attention: var(--cre8-mode-bg-attention);
+  --cre8-color-bg-attention: var(--cre8-bg-attention);
+  --cre8-bg-attention-strong: var(--cre8-mode-bg-attention-strong);
+  --cre8-color-bg-attention-strong: var(--cre8-bg-attention-strong);
+  --cre8-bg-opacity-transparent: var(--cre8-overlay-transparent);
+  --cre8-color-bg-opacity-transparent: var(--cre8-bg-opacity-transparent);
+  --cre8-bg-opacity-default: var(--cre8-overlay-50);
+  --cre8-color-bg-opacity-default: var(--cre8-bg-opacity-default);
+  --cre8-bg-active: var(--cre8-neutral-900);
+  --cre8-color-bg-active: var(--cre8-bg-active);
+  --cre8-bg-inverse-active: var(--cre8-neutral-0);
+  --cre8-color-bg-inverse-active: var(--cre8-bg-inverse-active);
+  --cre8-content-default: var(--cre8-mode-content-default);
+  --cre8-color-content-default: var(--cre8-content-default);
+  --cre8-content-subtle: var(--cre8-mode-content-subtle);
+  --cre8-color-content-subtle: var(--cre8-content-subtle);
+  --cre8-content-disabled: var(--cre8-mode-content-disabled);
+  --cre8-color-content-disabled: var(--cre8-content-disabled);
+  --cre8-content-knockout: var(--cre8-mode-content-knockout);
+  --cre8-color-content-knockout: var(--cre8-content-knockout);
+  --cre8-content-inverse: var(--cre8-neutral-0);
+  --cre8-color-content-inverse: var(--cre8-content-inverse);
+  --cre8-content-brand: var(--cre8-mode-content-brand);
+  --cre8-color-content-brand: var(--cre8-content-brand);
+  --cre8-content-brand-strong: var(--cre8-mode-content-brand-strong);
+  --cre8-color-content-brand-strong: var(--cre8-content-brand-strong);
+  --cre8-content-brand-knockout: var(--cre8-success-50);
+  --cre8-color-content-brand-knockout: var(--cre8-content-brand-knockout);
+  --cre8-content-success: var(--cre8-mode-content-success);
+  --cre8-color-content-success: var(--cre8-content-success);
+  --cre8-content-success-icon: var(--cre8-success-600);
+  --cre8-color-content-success-icon: var(--cre8-content-success-icon);
+  --cre8-content-error: var(--cre8-mode-content-error);
+  --cre8-color-content-error: var(--cre8-content-error);
+  --cre8-content-error-icon: var(--cre8-error-600);
+  --cre8-color-content-error-icon: var(--cre8-content-error-icon);
+  --cre8-content-warning-icon: var(--cre8-warning-600);
+  --cre8-color-content-warning-icon: var(--cre8-content-warning-icon);
+  --cre8-content-info-icon: var(--cre8-info-500);
+  --cre8-color-content-info-icon: var(--cre8-content-info-icon);
+  --cre8-content-attention-icon: var(--cre8-primary-400);
+  --cre8-color-content-attention-icon: var(--cre8-content-attention-icon);
+  --cre8-content-link: var(--cre8-mode-content-link);
+  --cre8-color-content-link: var(--cre8-content-link);
+  --cre8-content-inverse-link: var(--cre8-primary-200);
+  --cre8-color-content-inverse-link: var(--cre8-content-inverse-link);
+  --cre8-content-link-hover: var(--cre8-mode-content-link-hover);
+  --cre8-color-content-link-hover: var(--cre8-content-link-hover);
+  --cre8-content-inverse-link-hover: var(--cre8-primary-300);
+  --cre8-color-content-inverse-link-hover: var(--cre8-content-inverse-link-hover);
+  --cre8-content-link-focus: var(--cre8-neutral-0);
+  --cre8-color-content-link-focus: var(--cre8-content-link-focus);
+  --cre8-content-inverse-link-focus: var(--cre8-neutral-900);
+  --cre8-color-content-inverse-link-focus: var(--cre8-content-inverse-link-focus);
+  --cre8-content-link-visited: var(--cre8-accent-600);
+  --cre8-color-content-link-visited: var(--cre8-content-link-visited);
+  --cre8-content-inverse-link-visited: var(--cre8-accent-200);
+  --cre8-color-content-inverse-link-visited: var(--cre8-content-inverse-link-visited);
+  --cre8-content-link-disabled: var(--cre8-neutral-600);
+  --cre8-color-content-link-disabled: var(--cre8-content-link-disabled);
+  --cre8-content-inverse-link-disabled: var(--cre8-neutral-200);
+  --cre8-color-content-inverse-link-disabled: var(--cre8-content-inverse-link-disabled);
+  --cre8-content-link-active: var(--cre8-primary-700);
+  --cre8-color-content-link-active: var(--cre8-content-link-active);
+  --cre8-content-inverse-link-active: var(--cre8-primary-400);
+  --cre8-color-content-inverse-link-active: var(--cre8-content-inverse-link-active);
+  --cre8-border-default: var(--cre8-mode-border-default);
+  --cre8-color-border-default: var(--cre8-border-default);
+  --cre8-border-strong: var(--cre8-mode-border-strong);
+  --cre8-color-border-strong: var(--cre8-border-strong);
+  --cre8-border-knockout: var(--cre8-neutral-0);
+  --cre8-color-border-knockout: var(--cre8-border-knockout);
+  --cre8-border-disabled: var(--cre8-neutral-300);
+  --cre8-color-border-disabled: var(--cre8-border-disabled);
+  --cre8-border-brand: var(--cre8-mode-border-brand);
+  --cre8-color-border-brand: var(--cre8-border-brand);
+  --cre8-border-brand-subtle: var(--cre8-primary-300);
+  --cre8-color-border-brand-subtle: var(--cre8-border-brand-subtle);
+  --cre8-border-brand-strong: var(--cre8-primary-600);
+  --cre8-color-border-brand-strong: var(--cre8-border-brand-strong);
+  --cre8-border-success: var(--cre8-success-400);
+  --cre8-color-border-success: var(--cre8-border-success);
+  --cre8-border-error: var(--cre8-error-400);
+  --cre8-color-border-error: var(--cre8-border-error);
+  --cre8-border-warning: var(--cre8-warning-400);
+  --cre8-color-border-warning: var(--cre8-border-warning);
+  --cre8-border-info: var(--cre8-info-500);
+  --cre8-color-border-info: var(--cre8-border-info);
+  --cre8-border-attention: var(--cre8-primary-400);
+  --cre8-color-border-attention: var(--cre8-border-attention);
+  --cre8-border-transparent: var(--cre8-overlay-transparent);
+  --cre8-color-border-transparent: var(--cre8-border-transparent);
+  --cre8-border-active-outline: var(--cre8-primary-600);
+  --cre8-color-border-active-outline: var(--cre8-border-active-outline);
+  --cre8-border-inverse-active-outline: var(--cre8-primary-200);
+  --cre8-color-border-inverse-active-outline: var(--cre8-border-inverse-active-outline);
+  --cre8-link-bg-active: var(--cre8-neutral-900);
+  --cre8-color-link-bg-active: var(--cre8-link-bg-active);
+
+  /* Focus ring */
+  --cre8-focus-ring-color: var(--cre8-mode-focus-ring-color);
+  --cre8-focus-ring-width: 2px;
+  --cre8-focus-ring-offset: 2px;
+
+  /* Chart — categorical series, in order */
+  --cre8-chart-1: var(--cre8-seed-chart-1);
+  --cre8-chart-2: var(--cre8-seed-chart-2);
+  --cre8-chart-3: var(--cre8-seed-chart-3);
+  --cre8-chart-4: var(--cre8-seed-chart-4);
+  --cre8-chart-5: var(--cre8-seed-chart-5);
+  --cre8-chart-6: var(--cre8-seed-chart-6);
+
+  /* Brand gradient — primary into accent */
+  --cre8-gradient-brand-from: var(--cre8-primary-500);
+  --cre8-gradient-brand-to: var(--cre8-accent-600);
+  --cre8-gradient-brand: linear-gradient(135deg, var(--cre8-gradient-brand-from) 0%, var(--cre8-gradient-brand-to) 100%);
+  --cre8-gradient-brand-rich: linear-gradient(150deg, var(--cre8-gradient-brand-from) 0%, var(--cre8-accent-600) 42%, var(--cre8-gradient-brand-to) 100%);
+
+/* ===========================================================================
+   TIER 3 · COMPONENT — aliases only
+   No literals. Each points at a semantic token where one carries the same
+   value, otherwise at a primitive. Legacy --cre8-color-* names are emitted
+   alongside so existing component styles keep resolving unchanged.
+   =========================================================================== */
+
+  /* header */
+  --cre8-header-bg-default: var(--cre8-bg-default);
+  --cre8-color-header-bg-default: var(--cre8-header-bg-default);
+  --cre8-header-inverse-bg-default: var(--cre8-bg-brand-strong);
+  --cre8-color-header-inverse-bg-default: var(--cre8-header-inverse-bg-default);
+  --cre8-header-menu-bg-default: var(--cre8-bg-default);
+  --cre8-color-header-menu-bg-default: var(--cre8-header-menu-bg-default);
+  --cre8-header-menu-inverse-bg-default: var(--cre8-bg-brand-strong);
+  --cre8-color-header-menu-inverse-bg-default: var(--cre8-header-menu-inverse-bg-default);
+  --cre8-header-menu-bg-hover: var(--cre8-bg-default-hover);
+  --cre8-color-header-menu-bg-hover: var(--cre8-header-menu-bg-hover);
+  --cre8-header-menu-inverse-bg-hover: var(--cre8-bg-brand-strong-hover);
+  --cre8-color-header-menu-inverse-bg-hover: var(--cre8-header-menu-inverse-bg-hover);
+  --cre8-header-menu-bg-focus: var(--cre8-bg-default-hover);
+  --cre8-color-header-menu-bg-focus: var(--cre8-header-menu-bg-focus);
+  --cre8-header-menu-inverse-bg-focus: var(--cre8-bg-brand-strong-hover);
+  --cre8-color-header-menu-inverse-bg-focus: var(--cre8-header-menu-inverse-bg-focus);
+  --cre8-header-menu-bg-active: var(--cre8-bg-disabled);
+  --cre8-color-header-menu-bg-active: var(--cre8-header-menu-bg-active);
+  --cre8-header-menu-inverse-bg-active: var(--cre8-bg-brand-strong-active);
+  --cre8-color-header-menu-inverse-bg-active: var(--cre8-header-menu-inverse-bg-active);
+  --cre8-header-menu-bg-pressed: var(--cre8-bg-disabled);
+  --cre8-color-header-menu-bg-pressed: var(--cre8-header-menu-bg-pressed);
+  --cre8-header-menu-inverse-bg-pressed: var(--cre8-bg-brand-strong-active);
+  --cre8-color-header-menu-inverse-bg-pressed: var(--cre8-header-menu-inverse-bg-pressed);
+  --cre8-header-menu-bg-selected: var(--cre8-bg-default-hover);
+  --cre8-color-header-menu-bg-selected: var(--cre8-header-menu-bg-selected);
+  --cre8-header-menu-inverse-bg-selected: var(--cre8-bg-brand-strong-hover);
+  --cre8-color-header-menu-inverse-bg-selected: var(--cre8-header-menu-inverse-bg-selected);
+  --cre8-header-menu-content-default: var(--cre8-content-brand);
+  --cre8-color-header-menu-content-default: var(--cre8-header-menu-content-default);
+  --cre8-header-menu-inverse-content-default: var(--cre8-content-knockout);
+  --cre8-color-header-menu-inverse-content-default: var(--cre8-header-menu-inverse-content-default);
+  --cre8-header-menu-content-hover: var(--cre8-content-link-hover);
+  --cre8-color-header-menu-content-hover: var(--cre8-header-menu-content-hover);
+  --cre8-header-menu-inverse-content-hover: var(--cre8-content-knockout);
+  --cre8-color-header-menu-inverse-content-hover: var(--cre8-header-menu-inverse-content-hover);
+  --cre8-header-menu-content-focus: var(--cre8-content-brand);
+  --cre8-color-header-menu-content-focus: var(--cre8-header-menu-content-focus);
+  --cre8-header-menu-inverse-content-focus: var(--cre8-content-knockout);
+  --cre8-color-header-menu-inverse-content-focus: var(--cre8-header-menu-inverse-content-focus);
+  --cre8-header-menu-content-active: var(--cre8-content-link-active);
+  --cre8-color-header-menu-content-active: var(--cre8-header-menu-content-active);
+  --cre8-header-menu-inverse-content-active: var(--cre8-content-knockout);
+  --cre8-color-header-menu-inverse-content-active: var(--cre8-header-menu-inverse-content-active);
+  --cre8-header-menu-content-pressed: var(--cre8-content-link-active);
+  --cre8-color-header-menu-content-pressed: var(--cre8-header-menu-content-pressed);
+  --cre8-header-menu-inverse-content-pressed: var(--cre8-content-knockout);
+  --cre8-color-header-menu-inverse-content-pressed: var(--cre8-header-menu-inverse-content-pressed);
+  --cre8-header-menu-content-selected: var(--cre8-content-link-hover);
+  --cre8-color-header-menu-content-selected: var(--cre8-header-menu-content-selected);
+  --cre8-header-menu-inverse-content-selected: var(--cre8-content-knockout);
+  --cre8-color-header-menu-inverse-content-selected: var(--cre8-header-menu-inverse-content-selected);
+  --cre8-header-menu-border-default: var(--cre8-border-transparent);
+  --cre8-color-header-menu-border-default: var(--cre8-header-menu-border-default);
+  --cre8-header-menu-inverse-border-default: var(--cre8-border-transparent);
+  --cre8-color-header-menu-inverse-border-default: var(--cre8-header-menu-inverse-border-default);
+  --cre8-header-menu-border-hover: var(--cre8-border-transparent);
+  --cre8-color-header-menu-border-hover: var(--cre8-header-menu-border-hover);
+  --cre8-header-menu-inverse-border-hover: var(--cre8-border-knockout);
+  --cre8-color-header-menu-inverse-border-hover: var(--cre8-header-menu-inverse-border-hover);
+  --cre8-header-menu-border-focus: var(--cre8-border-brand-strong);
+  --cre8-color-header-menu-border-focus: var(--cre8-header-menu-border-focus);
+  --cre8-header-menu-inverse-border-focus: var(--cre8-border-knockout);
+  --cre8-color-header-menu-inverse-border-focus: var(--cre8-header-menu-inverse-border-focus);
+  --cre8-header-menu-border-active: var(--cre8-border-brand);
+  --cre8-color-header-menu-border-active: var(--cre8-header-menu-border-active);
+  --cre8-header-menu-inverse-border-active: var(--cre8-border-knockout);
+  --cre8-color-header-menu-inverse-border-active: var(--cre8-header-menu-inverse-border-active);
+  --cre8-header-menu-border-pressed: var(--cre8-border-brand);
+  --cre8-color-header-menu-border-pressed: var(--cre8-header-menu-border-pressed);
+  --cre8-header-menu-inverse-border-pressed: var(--cre8-border-knockout);
+  --cre8-color-header-menu-inverse-border-pressed: var(--cre8-header-menu-inverse-border-pressed);
+  --cre8-header-menu-border-selected: var(--cre8-border-brand-strong);
+  --cre8-color-header-menu-border-selected: var(--cre8-header-menu-border-selected);
+  --cre8-header-menu-inverse-border-selected: var(--cre8-neutral-50);
+  --cre8-color-header-menu-inverse-border-selected: var(--cre8-header-menu-inverse-border-selected);
+  --cre8-header-submenu-bg-default: var(--cre8-bg-default);
+  --cre8-color-header-submenu-bg-default: var(--cre8-header-submenu-bg-default);
+  --cre8-header-submenu-inverse-bg-default: var(--cre8-bg-brand-strong);
+  --cre8-color-header-submenu-inverse-bg-default: var(--cre8-header-submenu-inverse-bg-default);
+  --cre8-header-submenu-bg-hover: var(--cre8-bg-default-hover);
+  --cre8-color-header-submenu-bg-hover: var(--cre8-header-submenu-bg-hover);
+  --cre8-header-submenu-inverse-bg-hover: var(--cre8-bg-brand-strong-hover);
+  --cre8-color-header-submenu-inverse-bg-hover: var(--cre8-header-submenu-inverse-bg-hover);
+  --cre8-header-submenu-bg-focus: var(--cre8-bg-default);
+  --cre8-color-header-submenu-bg-focus: var(--cre8-header-submenu-bg-focus);
+  --cre8-header-submenu-inverse-bg-focus: var(--cre8-bg-brand-strong);
+  --cre8-color-header-submenu-inverse-bg-focus: var(--cre8-header-submenu-inverse-bg-focus);
+  --cre8-header-submenu-bg-active: var(--cre8-bg-disabled);
+  --cre8-color-header-submenu-bg-active: var(--cre8-header-submenu-bg-active);
+  --cre8-header-submenu-inverse-bg-active: var(--cre8-bg-brand-strong-active);
+  --cre8-color-header-submenu-inverse-bg-active: var(--cre8-header-submenu-inverse-bg-active);
+  --cre8-header-submenu-bg-pressed: var(--cre8-bg-disabled);
+  --cre8-color-header-submenu-bg-pressed: var(--cre8-header-submenu-bg-pressed);
+  --cre8-header-submenu-inverse-bg-pressed: var(--cre8-bg-brand-strong-active);
+  --cre8-color-header-submenu-inverse-bg-pressed: var(--cre8-header-submenu-inverse-bg-pressed);
+  --cre8-header-submenu-bg-selected: var(--cre8-bg-default-hover);
+  --cre8-color-header-submenu-bg-selected: var(--cre8-header-submenu-bg-selected);
+  --cre8-header-submenu-inverse-bg-selected: var(--cre8-bg-brand-strong-hover);
+  --cre8-color-header-submenu-inverse-bg-selected: var(--cre8-header-submenu-inverse-bg-selected);
+  --cre8-header-submenu-content-default: var(--cre8-content-brand);
+  --cre8-color-header-submenu-content-default: var(--cre8-header-submenu-content-default);
+  --cre8-header-submenu-inverse-content-default: var(--cre8-content-knockout);
+  --cre8-color-header-submenu-inverse-content-default: var(--cre8-header-submenu-inverse-content-default);
+  --cre8-header-submenu-content-hover: var(--cre8-content-link-hover);
+  --cre8-color-header-submenu-content-hover: var(--cre8-header-submenu-content-hover);
+  --cre8-header-submenu-inverse-content-hover: var(--cre8-content-knockout);
+  --cre8-color-header-submenu-inverse-content-hover: var(--cre8-header-submenu-inverse-content-hover);
+  --cre8-header-submenu-content-focus: var(--cre8-content-link-hover);
+  --cre8-color-header-submenu-content-focus: var(--cre8-header-submenu-content-focus);
+  --cre8-header-submenu-inverse-content-focus: var(--cre8-content-knockout);
+  --cre8-color-header-submenu-inverse-content-focus: var(--cre8-header-submenu-inverse-content-focus);
+  --cre8-header-submenu-content-active: var(--cre8-content-link-active);
+  --cre8-color-header-submenu-content-active: var(--cre8-header-submenu-content-active);
+  --cre8-header-submenu-inverse-content-active: var(--cre8-content-knockout);
+  --cre8-color-header-submenu-inverse-content-active: var(--cre8-header-submenu-inverse-content-active);
+  --cre8-header-submenu-content-pressed: var(--cre8-content-link-active);
+  --cre8-color-header-submenu-content-pressed: var(--cre8-header-submenu-content-pressed);
+  --cre8-header-submenu-inverse-content-pressed: var(--cre8-content-knockout);
+  --cre8-color-header-submenu-inverse-content-pressed: var(--cre8-header-submenu-inverse-content-pressed);
+  --cre8-header-submenu-content-selected: var(--cre8-content-brand);
+  --cre8-color-header-submenu-content-selected: var(--cre8-header-submenu-content-selected);
+  --cre8-header-submenu-inverse-content-selected: var(--cre8-content-knockout);
+  --cre8-color-header-submenu-inverse-content-selected: var(--cre8-header-submenu-inverse-content-selected);
+  --cre8-header-submenu-border-default: var(--cre8-border-knockout);
+  --cre8-color-header-submenu-border-default: var(--cre8-header-submenu-border-default);
+  --cre8-header-submenu-inverse-border-default: var(--cre8-border-brand);
+  --cre8-color-header-submenu-inverse-border-default: var(--cre8-header-submenu-inverse-border-default);
+  --cre8-header-submenu-border-hover: var(--cre8-neutral-50);
+  --cre8-color-header-submenu-border-hover: var(--cre8-header-submenu-border-hover);
+  --cre8-header-submenu-inverse-border-hover: var(--cre8-border-brand-strong);
+  --cre8-color-header-submenu-inverse-border-hover: var(--cre8-header-submenu-inverse-border-hover);
+  --cre8-header-submenu-border-focus: var(--cre8-border-brand);
+  --cre8-color-header-submenu-border-focus: var(--cre8-header-submenu-border-focus);
+  --cre8-header-submenu-inverse-border-focus: var(--cre8-border-knockout);
+  --cre8-color-header-submenu-inverse-border-focus: var(--cre8-header-submenu-inverse-border-focus);
+  --cre8-header-submenu-border-active: var(--cre8-border-default);
+  --cre8-color-header-submenu-border-active: var(--cre8-header-submenu-border-active);
+  --cre8-header-submenu-inverse-border-active: var(--cre8-primary-700);
+  --cre8-color-header-submenu-inverse-border-active: var(--cre8-header-submenu-inverse-border-active);
+  --cre8-header-submenu-border-pressed: var(--cre8-border-default);
+  --cre8-color-header-submenu-border-pressed: var(--cre8-header-submenu-border-pressed);
+  --cre8-header-submenu-inverse-border-pressed: var(--cre8-primary-700);
+  --cre8-color-header-submenu-inverse-border-pressed: var(--cre8-header-submenu-inverse-border-pressed);
+  --cre8-header-submenu-border-selected: var(--cre8-border-brand-strong);
+  --cre8-color-header-submenu-border-selected: var(--cre8-header-submenu-border-selected);
+  --cre8-header-submenu-inverse-border-selected: var(--cre8-neutral-50);
+  --cre8-color-header-submenu-inverse-border-selected: var(--cre8-header-submenu-inverse-border-selected);
+  --cre8-header-bg-secondary: var(--cre8-bg-brand-strong);
+  --cre8-color-header-bg-secondary: var(--cre8-header-bg-secondary);
+  --cre8-header-inverse-bg-secondary: var(--cre8-bg-default);
+  --cre8-color-header-inverse-bg-secondary: var(--cre8-header-inverse-bg-secondary);
+  --cre8-header-bg-tertiary: var(--cre8-bg-brand-strong);
+  --cre8-color-header-bg-tertiary: var(--cre8-header-bg-tertiary);
+  --cre8-header-inverse-bg-tertiary: var(--cre8-bg-default);
+  --cre8-color-header-inverse-bg-tertiary: var(--cre8-header-inverse-bg-tertiary);
+
+  /* footer */
+  --cre8-footer-bg-default: var(--cre8-bg-brand-xstrong);
+  --cre8-color-footer-bg-default: var(--cre8-footer-bg-default);
+  --cre8-footer-bg-secondary: var(--cre8-bg-default-hover);
+  --cre8-color-footer-bg-secondary: var(--cre8-footer-bg-secondary);
+  --cre8-footer-content-secondary: var(--cre8-content-knockout);
+  --cre8-color-footer-content-secondary: var(--cre8-footer-content-secondary);
+  --cre8-footer-link-hover: var(--cre8-content-inverse-link-hover);
+  --cre8-color-footer-link-hover: var(--cre8-footer-link-hover);
+  --cre8-footer-link-default: var(--cre8-content-inverse-link-hover);
+  --cre8-color-footer-link-default: var(--cre8-footer-link-default);
+
+  /* button */
+  --cre8-button-primary-bg: var(--cre8-bg-brand-strong);
+  --cre8-color-button-primary-bg: var(--cre8-button-primary-bg);
+  --cre8-button-primary-inverse-bg: var(--cre8-bg-brand-active);
+  --cre8-color-button-primary-inverse-bg: var(--cre8-button-primary-inverse-bg);
+  --cre8-button-primary-bg-hover: var(--cre8-bg-brand-strong-hover);
+  --cre8-color-button-primary-bg-hover: var(--cre8-button-primary-bg-hover);
+  --cre8-button-primary-inverse-bg-hover: var(--cre8-primary-300);
+  --cre8-color-button-primary-inverse-bg-hover: var(--cre8-button-primary-inverse-bg-hover);
+  --cre8-button-primary-bg-active: var(--cre8-bg-brand-strong-active);
+  --cre8-color-button-primary-bg-active: var(--cre8-button-primary-bg-active);
+  --cre8-button-primary-inverse-bg-active: var(--cre8-bg-attention-strong);
+  --cre8-color-button-primary-inverse-bg-active: var(--cre8-button-primary-inverse-bg-active);
+  --cre8-button-primary-bg-disabled: var(--cre8-bg-disabled);
+  --cre8-color-button-primary-bg-disabled: var(--cre8-button-primary-bg-disabled);
+  --cre8-button-primary-inverse-bg-disabled: var(--cre8-bg-inverse-moderate);
+  --cre8-color-button-primary-inverse-bg-disabled: var(--cre8-button-primary-inverse-bg-disabled);
+  --cre8-button-primary-content: var(--cre8-content-knockout);
+  --cre8-color-button-primary-content: var(--cre8-button-primary-content);
+  --cre8-button-primary-inverse-content: var(--cre8-primary-800);
+  --cre8-color-button-primary-inverse-content: var(--cre8-button-primary-inverse-content);
+  --cre8-button-primary-content-hover: var(--cre8-content-knockout);
+  --cre8-color-button-primary-content-hover: var(--cre8-button-primary-content-hover);
+  --cre8-button-primary-inverse-content-hover: var(--cre8-primary-800);
+  --cre8-color-button-primary-inverse-content-hover: var(--cre8-button-primary-inverse-content-hover);
+  --cre8-button-primary-content-active: var(--cre8-content-knockout);
+  --cre8-color-button-primary-content-active: var(--cre8-button-primary-content-active);
+  --cre8-button-primary-inverse-content-active: var(--cre8-primary-800);
+  --cre8-color-button-primary-inverse-content-active: var(--cre8-button-primary-inverse-content-active);
+  --cre8-button-primary-content-disabled: var(--cre8-content-link-disabled);
+  --cre8-color-button-primary-content-disabled: var(--cre8-button-primary-content-disabled);
+  --cre8-button-primary-inverse-content-disabled: var(--cre8-neutral-800);
+  --cre8-color-button-primary-inverse-content-disabled: var(--cre8-button-primary-inverse-content-disabled);
+  --cre8-button-primary-border: var(--cre8-border-brand);
+  --cre8-color-button-primary-border: var(--cre8-button-primary-border);
+  --cre8-button-primary-inverse-border: var(--cre8-border-inverse-active-outline);
+  --cre8-color-button-primary-inverse-border: var(--cre8-button-primary-inverse-border);
+  --cre8-button-primary-border-hover: var(--cre8-border-brand-strong);
+  --cre8-color-button-primary-border-hover: var(--cre8-button-primary-border-hover);
+  --cre8-button-primary-inverse-border-hover: var(--cre8-border-brand-subtle);
+  --cre8-color-button-primary-inverse-border-hover: var(--cre8-button-primary-inverse-border-hover);
+  --cre8-button-primary-border-active: var(--cre8-primary-700);
+  --cre8-color-button-primary-border-active: var(--cre8-button-primary-border-active);
+  --cre8-button-primary-inverse-border-active: var(--cre8-border-attention);
+  --cre8-color-button-primary-inverse-border-active: var(--cre8-button-primary-inverse-border-active);
+  --cre8-button-primary-border-disabled: var(--cre8-border-default);
+  --cre8-color-button-primary-border-disabled: var(--cre8-button-primary-border-disabled);
+  --cre8-button-primary-inverse-border-disabled: var(--cre8-border-strong);
+  --cre8-color-button-primary-inverse-border-disabled: var(--cre8-button-primary-inverse-border-disabled);
+  --cre8-button-primary-outline: var(--cre8-primary-700);
+  --cre8-color-button-primary-outline: var(--cre8-button-primary-outline);
+  --cre8-button-primary-inverse-outline: var(--cre8-border-inverse-active-outline);
+  --cre8-color-button-primary-inverse-outline: var(--cre8-button-primary-inverse-outline);
+  --cre8-button-primary-danger-bg: var(--cre8-bg-error-strong);
+  --cre8-color-button-primary-danger-bg: var(--cre8-button-primary-danger-bg);
+  --cre8-button-primary-danger-inverse-bg: var(--cre8-error-300);
+  --cre8-color-button-primary-danger-inverse-bg: var(--cre8-button-primary-danger-inverse-bg);
+  --cre8-button-primary-danger-bg-hover: var(--cre8-error-600);
+  --cre8-color-button-primary-danger-bg-hover: var(--cre8-button-primary-danger-bg-hover);
+  --cre8-button-primary-danger-inverse-bg-hover: var(--cre8-error-200);
+  --cre8-color-button-primary-danger-inverse-bg-hover: var(--cre8-button-primary-danger-inverse-bg-hover);
+  --cre8-button-primary-danger-bg-active: var(--cre8-error-700);
+  --cre8-color-button-primary-danger-bg-active: var(--cre8-button-primary-danger-bg-active);
+  --cre8-button-primary-danger-inverse-bg-active: var(--cre8-error-100);
+  --cre8-color-button-primary-danger-inverse-bg-active: var(--cre8-button-primary-danger-inverse-bg-active);
+  --cre8-button-primary-danger-bg-disabled: var(--cre8-bg-disabled);
+  --cre8-color-button-primary-danger-bg-disabled: var(--cre8-button-primary-danger-bg-disabled);
+  --cre8-button-primary-danger-inverse-bg-disabled: var(--cre8-bg-inverse-moderate);
+  --cre8-color-button-primary-danger-inverse-bg-disabled: var(--cre8-button-primary-danger-inverse-bg-disabled);
+  --cre8-button-primary-danger-content: var(--cre8-content-knockout);
+  --cre8-color-button-primary-danger-content: var(--cre8-button-primary-danger-content);
+  --cre8-button-primary-danger-inverse-content: var(--cre8-content-default);
+  --cre8-color-button-primary-danger-inverse-content: var(--cre8-button-primary-danger-inverse-content);
+  --cre8-button-primary-danger-content-hover: var(--cre8-content-knockout);
+  --cre8-color-button-primary-danger-content-hover: var(--cre8-button-primary-danger-content-hover);
+  --cre8-button-primary-danger-inverse-content-hover: var(--cre8-content-default);
+  --cre8-color-button-primary-danger-inverse-content-hover: var(--cre8-button-primary-danger-inverse-content-hover);
+  --cre8-button-primary-danger-content-active: var(--cre8-content-knockout);
+  --cre8-color-button-primary-danger-content-active: var(--cre8-button-primary-danger-content-active);
+  --cre8-button-primary-danger-inverse-content-active: var(--cre8-content-default);
+  --cre8-color-button-primary-danger-inverse-content-active: var(--cre8-button-primary-danger-inverse-content-active);
+  --cre8-button-primary-danger-content-disabled: var(--cre8-content-link-disabled);
+  --cre8-color-button-primary-danger-content-disabled: var(--cre8-button-primary-danger-content-disabled);
+  --cre8-button-primary-danger-inverse-content-disabled: var(--cre8-neutral-800);
+  --cre8-color-button-primary-danger-inverse-content-disabled: var(--cre8-button-primary-danger-inverse-content-disabled);
+  --cre8-button-primary-danger-border: var(--cre8-error-500);
+  --cre8-color-button-primary-danger-border: var(--cre8-button-primary-danger-border);
+  --cre8-button-primary-danger-inverse-border: var(--cre8-error-300);
+  --cre8-color-button-primary-danger-inverse-border: var(--cre8-button-primary-danger-inverse-border);
+  --cre8-button-primary-danger-border-hover: var(--cre8-error-600);
+  --cre8-color-button-primary-danger-border-hover: var(--cre8-button-primary-danger-border-hover);
+  --cre8-button-primary-danger-inverse-border-hover: var(--cre8-error-200);
+  --cre8-color-button-primary-danger-inverse-border-hover: var(--cre8-button-primary-danger-inverse-border-hover);
+  --cre8-button-primary-danger-border-active: var(--cre8-error-700);
+  --cre8-color-button-primary-danger-border-active: var(--cre8-button-primary-danger-border-active);
+  --cre8-button-primary-danger-inverse-border-active: var(--cre8-error-100);
+  --cre8-color-button-primary-danger-inverse-border-active: var(--cre8-button-primary-danger-inverse-border-active);
+  --cre8-button-primary-danger-border-disabled: var(--cre8-border-default);
+  --cre8-color-button-primary-danger-border-disabled: var(--cre8-button-primary-danger-border-disabled);
+  --cre8-button-primary-danger-inverse-border-disabled: var(--cre8-border-strong);
+  --cre8-color-button-primary-danger-inverse-border-disabled: var(--cre8-button-primary-danger-inverse-border-disabled);
+  --cre8-button-primary-danger-outline: var(--cre8-primary-700);
+  --cre8-color-button-primary-danger-outline: var(--cre8-button-primary-danger-outline);
+  --cre8-button-primary-danger-inverse-outline: var(--cre8-border-inverse-active-outline);
+  --cre8-color-button-primary-danger-inverse-outline: var(--cre8-button-primary-danger-inverse-outline);
+  --cre8-button-secondary-neutral-bg: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-secondary-neutral-bg: var(--cre8-button-secondary-neutral-bg);
+  --cre8-button-secondary-neutral-inverse-bg: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-secondary-neutral-inverse-bg: var(--cre8-button-secondary-neutral-inverse-bg);
+  --cre8-button-secondary-neutral-content: var(--cre8-content-default);
+  --cre8-color-button-secondary-neutral-content: var(--cre8-button-secondary-neutral-content);
+  --cre8-button-secondary-neutral-inverse-content: var(--cre8-content-knockout);
+  --cre8-color-button-secondary-neutral-inverse-content: var(--cre8-button-secondary-neutral-inverse-content);
+  --cre8-button-secondary-neutral-border: var(--cre8-neutral-900);
+  --cre8-color-button-secondary-neutral-border: var(--cre8-button-secondary-neutral-border);
+  --cre8-button-secondary-neutral-inverse-border: var(--cre8-border-knockout);
+  --cre8-color-button-secondary-neutral-inverse-border: var(--cre8-button-secondary-neutral-inverse-border);
+  --cre8-button-secondary-neutral-bg-hover: var(--cre8-overlay-10);
+  --cre8-color-button-secondary-neutral-bg-hover: var(--cre8-button-secondary-neutral-bg-hover);
+  --cre8-button-secondary-neutral-inverse-bg-hover: var(--cre8-overlay-20);
+  --cre8-color-button-secondary-neutral-inverse-bg-hover: var(--cre8-button-secondary-neutral-inverse-bg-hover);
+  --cre8-button-secondary-neutral-content-hover: var(--cre8-content-default);
+  --cre8-color-button-secondary-neutral-content-hover: var(--cre8-button-secondary-neutral-content-hover);
+  --cre8-button-secondary-neutral-inverse-content-hover: var(--cre8-content-knockout);
+  --cre8-color-button-secondary-neutral-inverse-content-hover: var(--cre8-button-secondary-neutral-inverse-content-hover);
+  --cre8-button-secondary-neutral-border-hover: var(--cre8-neutral-900);
+  --cre8-color-button-secondary-neutral-border-hover: var(--cre8-button-secondary-neutral-border-hover);
+  --cre8-button-secondary-neutral-inverse-border-hover: var(--cre8-border-knockout);
+  --cre8-color-button-secondary-neutral-inverse-border-hover: var(--cre8-button-secondary-neutral-inverse-border-hover);
+  --cre8-button-secondary-neutral-border-active: var(--cre8-neutral-900);
+  --cre8-color-button-secondary-neutral-border-active: var(--cre8-button-secondary-neutral-border-active);
+  --cre8-button-secondary-neutral-inverse-border-active: var(--cre8-border-knockout);
+  --cre8-color-button-secondary-neutral-inverse-border-active: var(--cre8-button-secondary-neutral-inverse-border-active);
+  --cre8-button-secondary-neutral-bg-active: var(--cre8-overlay-20);
+  --cre8-color-button-secondary-neutral-bg-active: var(--cre8-button-secondary-neutral-bg-active);
+  --cre8-button-secondary-neutral-inverse-bg-active: var(--cre8-bg-opacity-default);
+  --cre8-color-button-secondary-neutral-inverse-bg-active: var(--cre8-button-secondary-neutral-inverse-bg-active);
+  --cre8-button-secondary-neutral-content-active: var(--cre8-content-default);
+  --cre8-color-button-secondary-neutral-content-active: var(--cre8-button-secondary-neutral-content-active);
+  --cre8-button-secondary-neutral-inverse-content-active: var(--cre8-content-knockout);
+  --cre8-color-button-secondary-neutral-inverse-content-active: var(--cre8-button-secondary-neutral-inverse-content-active);
+  --cre8-button-secondary-neutral-bg-disabled: var(--cre8-bg-disabled);
+  --cre8-color-button-secondary-neutral-bg-disabled: var(--cre8-button-secondary-neutral-bg-disabled);
+  --cre8-button-secondary-neutral-inverse-bg-disabled: var(--cre8-bg-inverse-moderate);
+  --cre8-color-button-secondary-neutral-inverse-bg-disabled: var(--cre8-button-secondary-neutral-inverse-bg-disabled);
+  --cre8-button-secondary-neutral-border-disabled: var(--cre8-border-default);
+  --cre8-color-button-secondary-neutral-border-disabled: var(--cre8-button-secondary-neutral-border-disabled);
+  --cre8-button-secondary-neutral-inverse-border-disabled: var(--cre8-border-strong);
+  --cre8-color-button-secondary-neutral-inverse-border-disabled: var(--cre8-button-secondary-neutral-inverse-border-disabled);
+  --cre8-button-secondary-neutral-content-disabled: var(--cre8-content-link-disabled);
+  --cre8-color-button-secondary-neutral-content-disabled: var(--cre8-button-secondary-neutral-content-disabled);
+  --cre8-button-secondary-neutral-inverse-content-disabled: var(--cre8-neutral-800);
+  --cre8-color-button-secondary-neutral-inverse-content-disabled: var(--cre8-button-secondary-neutral-inverse-content-disabled);
+  --cre8-button-secondary-neutral-outline: var(--cre8-primary-900);
+  --cre8-color-button-secondary-neutral-outline: var(--cre8-button-secondary-neutral-outline);
+  --cre8-button-secondary-neutral-inverse-outline: var(--cre8-border-inverse-active-outline);
+  --cre8-color-button-secondary-neutral-inverse-outline: var(--cre8-button-secondary-neutral-inverse-outline);
+  --cre8-button-secondary-bg: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-secondary-bg: var(--cre8-button-secondary-bg);
+  --cre8-button-secondary-inverse-bg: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-secondary-inverse-bg: var(--cre8-button-secondary-inverse-bg);
+  --cre8-button-secondary-bg-hover: var(--cre8-bg-info);
+  --cre8-color-button-secondary-bg-hover: var(--cre8-button-secondary-bg-hover);
+  --cre8-button-secondary-inverse-bg-hover: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-secondary-inverse-bg-hover: var(--cre8-button-secondary-inverse-bg-hover);
+  --cre8-button-secondary-bg-active: var(--cre8-bg-brand-hover);
+  --cre8-color-button-secondary-bg-active: var(--cre8-button-secondary-bg-active);
+  --cre8-button-secondary-inverse-bg-active: var(--cre8-bg-brand-xstrong-active);
+  --cre8-color-button-secondary-inverse-bg-active: var(--cre8-button-secondary-inverse-bg-active);
+  --cre8-button-secondary-bg-disabled: var(--cre8-bg-disabled);
+  --cre8-color-button-secondary-bg-disabled: var(--cre8-button-secondary-bg-disabled);
+  --cre8-button-secondary-inverse-bg-disabled: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-secondary-inverse-bg-disabled: var(--cre8-button-secondary-inverse-bg-disabled);
+  --cre8-button-secondary-content: var(--cre8-content-brand);
+  --cre8-color-button-secondary-content: var(--cre8-button-secondary-content);
+  --cre8-button-secondary-inverse-content: var(--cre8-content-inverse-link);
+  --cre8-color-button-secondary-inverse-content: var(--cre8-button-secondary-inverse-content);
+  --cre8-button-secondary-content-hover: var(--cre8-content-link-hover);
+  --cre8-color-button-secondary-content-hover: var(--cre8-button-secondary-content-hover);
+  --cre8-button-secondary-inverse-content-hover: var(--cre8-content-inverse-link-hover);
+  --cre8-color-button-secondary-inverse-content-hover: var(--cre8-button-secondary-inverse-content-hover);
+  --cre8-button-secondary-content-active: var(--cre8-content-link-active);
+  --cre8-color-button-secondary-content-active: var(--cre8-button-secondary-content-active);
+  --cre8-button-secondary-inverse-content-active: var(--cre8-content-attention-icon);
+  --cre8-color-button-secondary-inverse-content-active: var(--cre8-button-secondary-inverse-content-active);
+  --cre8-button-secondary-content-disabled: var(--cre8-content-link-disabled);
+  --cre8-color-button-secondary-content-disabled: var(--cre8-button-secondary-content-disabled);
+  --cre8-button-secondary-inverse-content-disabled: var(--cre8-content-subtle);
+  --cre8-color-button-secondary-inverse-content-disabled: var(--cre8-button-secondary-inverse-content-disabled);
+  --cre8-button-secondary-border: var(--cre8-border-brand);
+  --cre8-color-button-secondary-border: var(--cre8-button-secondary-border);
+  --cre8-button-secondary-inverse-border: var(--cre8-border-inverse-active-outline);
+  --cre8-color-button-secondary-inverse-border: var(--cre8-button-secondary-inverse-border);
+  --cre8-button-secondary-border-hover: var(--cre8-border-brand-strong);
+  --cre8-color-button-secondary-border-hover: var(--cre8-button-secondary-border-hover);
+  --cre8-button-secondary-inverse-border-hover: var(--cre8-border-brand-subtle);
+  --cre8-color-button-secondary-inverse-border-hover: var(--cre8-button-secondary-inverse-border-hover);
+  --cre8-button-secondary-border-active: var(--cre8-primary-700);
+  --cre8-color-button-secondary-border-active: var(--cre8-button-secondary-border-active);
+  --cre8-button-secondary-inverse-border-active: var(--cre8-border-attention);
+  --cre8-color-button-secondary-inverse-border-active: var(--cre8-button-secondary-inverse-border-active);
+  --cre8-button-secondary-border-disabled: var(--cre8-border-strong);
+  --cre8-color-button-secondary-border-disabled: var(--cre8-button-secondary-border-disabled);
+  --cre8-button-secondary-inverse-border-disabled: var(--cre8-border-strong);
+  --cre8-color-button-secondary-inverse-border-disabled: var(--cre8-button-secondary-inverse-border-disabled);
+  --cre8-button-secondary-outline: var(--cre8-primary-700);
+  --cre8-color-button-secondary-outline: var(--cre8-button-secondary-outline);
+  --cre8-button-secondary-inverse-outline: var(--cre8-border-brand-subtle);
+  --cre8-color-button-secondary-inverse-outline: var(--cre8-button-secondary-inverse-outline);
+  --cre8-button-secondary-danger-bg: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-secondary-danger-bg: var(--cre8-button-secondary-danger-bg);
+  --cre8-button-secondary-danger-inverse-bg: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-secondary-danger-inverse-bg: var(--cre8-button-secondary-danger-inverse-bg);
+  --cre8-button-secondary-danger-bg-hover: var(--cre8-error-600);
+  --cre8-color-button-secondary-danger-bg-hover: var(--cre8-button-secondary-danger-bg-hover);
+  --cre8-button-secondary-danger-inverse-bg-hover: var(--cre8-error-200);
+  --cre8-color-button-secondary-danger-inverse-bg-hover: var(--cre8-button-secondary-danger-inverse-bg-hover);
+  --cre8-button-secondary-danger-bg-active: var(--cre8-error-700);
+  --cre8-color-button-secondary-danger-bg-active: var(--cre8-button-secondary-danger-bg-active);
+  --cre8-button-secondary-danger-inverse-bg-active: var(--cre8-error-100);
+  --cre8-color-button-secondary-danger-inverse-bg-active: var(--cre8-button-secondary-danger-inverse-bg-active);
+  --cre8-button-secondary-danger-bg-disabled: var(--cre8-bg-disabled);
+  --cre8-color-button-secondary-danger-bg-disabled: var(--cre8-button-secondary-danger-bg-disabled);
+  --cre8-button-secondary-danger-inverse-bg-disabled: var(--cre8-bg-inverse-moderate);
+  --cre8-color-button-secondary-danger-inverse-bg-disabled: var(--cre8-button-secondary-danger-inverse-bg-disabled);
+  --cre8-button-secondary-danger-content: var(--cre8-error-500);
+  --cre8-color-button-secondary-danger-content: var(--cre8-button-secondary-danger-content);
+  --cre8-button-secondary-danger-inverse-content: var(--cre8-error-400);
+  --cre8-color-button-secondary-danger-inverse-content: var(--cre8-button-secondary-danger-inverse-content);
+  --cre8-button-secondary-danger-content-hover: var(--cre8-content-knockout);
+  --cre8-color-button-secondary-danger-content-hover: var(--cre8-button-secondary-danger-content-hover);
+  --cre8-button-secondary-danger-inverse-content-hover: var(--cre8-content-default);
+  --cre8-color-button-secondary-danger-inverse-content-hover: var(--cre8-button-secondary-danger-inverse-content-hover);
+  --cre8-button-secondary-danger-content-active: var(--cre8-content-knockout);
+  --cre8-color-button-secondary-danger-content-active: var(--cre8-button-secondary-danger-content-active);
+  --cre8-button-secondary-danger-inverse-content-active: var(--cre8-content-default);
+  --cre8-color-button-secondary-danger-inverse-content-active: var(--cre8-button-secondary-danger-inverse-content-active);
+  --cre8-button-secondary-danger-content-disabled: var(--cre8-content-link-disabled);
+  --cre8-color-button-secondary-danger-content-disabled: var(--cre8-button-secondary-danger-content-disabled);
+  --cre8-button-secondary-danger-inverse-content-disabled: var(--cre8-neutral-800);
+  --cre8-color-button-secondary-danger-inverse-content-disabled: var(--cre8-button-secondary-danger-inverse-content-disabled);
+  --cre8-button-secondary-danger-border: var(--cre8-error-500);
+  --cre8-color-button-secondary-danger-border: var(--cre8-button-secondary-danger-border);
+  --cre8-button-secondary-danger-inverse-border: var(--cre8-border-error);
+  --cre8-color-button-secondary-danger-inverse-border: var(--cre8-button-secondary-danger-inverse-border);
+  --cre8-button-secondary-danger-border-hover: var(--cre8-error-600);
+  --cre8-color-button-secondary-danger-border-hover: var(--cre8-button-secondary-danger-border-hover);
+  --cre8-button-secondary-danger-inverse-border-hover: var(--cre8-error-200);
+  --cre8-color-button-secondary-danger-inverse-border-hover: var(--cre8-button-secondary-danger-inverse-border-hover);
+  --cre8-button-secondary-danger-border-active: var(--cre8-error-700);
+  --cre8-color-button-secondary-danger-border-active: var(--cre8-button-secondary-danger-border-active);
+  --cre8-button-secondary-danger-inverse-border-active: var(--cre8-error-100);
+  --cre8-color-button-secondary-danger-inverse-border-active: var(--cre8-button-secondary-danger-inverse-border-active);
+  --cre8-button-secondary-danger-border-disabled: var(--cre8-border-default);
+  --cre8-color-button-secondary-danger-border-disabled: var(--cre8-button-secondary-danger-border-disabled);
+  --cre8-button-secondary-danger-inverse-border-disabled: var(--cre8-border-strong);
+  --cre8-color-button-secondary-danger-inverse-border-disabled: var(--cre8-button-secondary-danger-inverse-border-disabled);
+  --cre8-button-secondary-danger-outline: var(--cre8-primary-700);
+  --cre8-color-button-secondary-danger-outline: var(--cre8-button-secondary-danger-outline);
+  --cre8-button-secondary-danger-inverse-outline: var(--cre8-border-inverse-active-outline);
+  --cre8-color-button-secondary-danger-inverse-outline: var(--cre8-button-secondary-danger-inverse-outline);
+  --cre8-button-tertiary-bg: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-tertiary-bg: var(--cre8-button-tertiary-bg);
+  --cre8-button-tertiary-inverse-bg: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-tertiary-inverse-bg: var(--cre8-button-tertiary-inverse-bg);
+  --cre8-button-tertiary-bg-hover: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-tertiary-bg-hover: var(--cre8-button-tertiary-bg-hover);
+  --cre8-button-tertiary-inverse-bg-hover: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-tertiary-inverse-bg-hover: var(--cre8-button-tertiary-inverse-bg-hover);
+  --cre8-button-tertiary-bg-active: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-tertiary-bg-active: var(--cre8-button-tertiary-bg-active);
+  --cre8-button-tertiary-inverse-bg-active: var(--cre8-primary-950);
+  --cre8-color-button-tertiary-inverse-bg-active: var(--cre8-button-tertiary-inverse-bg-active);
+  --cre8-button-tertiary-bg-disabled: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-tertiary-bg-disabled: var(--cre8-button-tertiary-bg-disabled);
+  --cre8-button-tertiary-inverse-bg-disabled: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-tertiary-inverse-bg-disabled: var(--cre8-button-tertiary-inverse-bg-disabled);
+  --cre8-button-tertiary-content: var(--cre8-content-brand);
+  --cre8-color-button-tertiary-content: var(--cre8-button-tertiary-content);
+  --cre8-button-tertiary-inverse-content: var(--cre8-content-inverse-link);
+  --cre8-color-button-tertiary-inverse-content: var(--cre8-button-tertiary-inverse-content);
+  --cre8-button-tertiary-content-hover: var(--cre8-content-link-hover);
+  --cre8-color-button-tertiary-content-hover: var(--cre8-button-tertiary-content-hover);
+  --cre8-button-tertiary-inverse-content-hover: var(--cre8-content-inverse-link-hover);
+  --cre8-color-button-tertiary-inverse-content-hover: var(--cre8-button-tertiary-inverse-content-hover);
+  --cre8-button-tertiary-content-active: var(--cre8-content-link-active);
+  --cre8-color-button-tertiary-content-active: var(--cre8-button-tertiary-content-active);
+  --cre8-button-tertiary-inverse-content-active: var(--cre8-content-attention-icon);
+  --cre8-color-button-tertiary-inverse-content-active: var(--cre8-button-tertiary-inverse-content-active);
+  --cre8-button-tertiary-content-disabled: var(--cre8-content-link-disabled);
+  --cre8-color-button-tertiary-content-disabled: var(--cre8-button-tertiary-content-disabled);
+  --cre8-button-tertiary-inverse-content-disabled: var(--cre8-content-subtle);
+  --cre8-color-button-tertiary-inverse-content-disabled: var(--cre8-button-tertiary-inverse-content-disabled);
+  --cre8-button-tertiary-border: var(--cre8-border-transparent);
+  --cre8-color-button-tertiary-border: var(--cre8-button-tertiary-border);
+  --cre8-button-tertiary-inverse-border: var(--cre8-border-transparent);
+  --cre8-color-button-tertiary-inverse-border: var(--cre8-button-tertiary-inverse-border);
+  --cre8-button-tertiary-border-hover: var(--cre8-border-brand-strong);
+  --cre8-color-button-tertiary-border-hover: var(--cre8-button-tertiary-border-hover);
+  --cre8-button-tertiary-inverse-border-hover: var(--cre8-border-brand-subtle);
+  --cre8-color-button-tertiary-inverse-border-hover: var(--cre8-button-tertiary-inverse-border-hover);
+  --cre8-button-tertiary-border-active: var(--cre8-primary-700);
+  --cre8-color-button-tertiary-border-active: var(--cre8-button-tertiary-border-active);
+  --cre8-button-tertiary-inverse-border-active: var(--cre8-border-attention);
+  --cre8-color-button-tertiary-inverse-border-active: var(--cre8-button-tertiary-inverse-border-active);
+  --cre8-button-tertiary-border-disabled: var(--cre8-border-transparent);
+  --cre8-color-button-tertiary-border-disabled: var(--cre8-button-tertiary-border-disabled);
+  --cre8-button-tertiary-inverse-border-disabled: var(--cre8-border-transparent);
+  --cre8-color-button-tertiary-inverse-border-disabled: var(--cre8-button-tertiary-inverse-border-disabled);
+  --cre8-button-tertiary-outline: var(--cre8-primary-700);
+  --cre8-color-button-tertiary-outline: var(--cre8-button-tertiary-outline);
+  --cre8-button-tertiary-inverse-outline: var(--cre8-border-brand-subtle);
+  --cre8-color-button-tertiary-inverse-outline: var(--cre8-button-tertiary-inverse-outline);
+  --cre8-button-tertiary-neutral-bg: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-tertiary-neutral-bg: var(--cre8-button-tertiary-neutral-bg);
+  --cre8-button-tertiary-neutral-inverse-bg: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-tertiary-neutral-inverse-bg: var(--cre8-button-tertiary-neutral-inverse-bg);
+  --cre8-button-tertiary-neutral-content: var(--cre8-content-default);
+  --cre8-color-button-tertiary-neutral-content: var(--cre8-button-tertiary-neutral-content);
+  --cre8-button-tertiary-neutral-inverse-content: var(--cre8-content-knockout);
+  --cre8-color-button-tertiary-neutral-inverse-content: var(--cre8-button-tertiary-neutral-inverse-content);
+  --cre8-button-tertiary-neutral-border: var(--cre8-border-transparent);
+  --cre8-color-button-tertiary-neutral-border: var(--cre8-button-tertiary-neutral-border);
+  --cre8-button-tertiary-neutral-inverse-border: var(--cre8-border-transparent);
+  --cre8-color-button-tertiary-neutral-inverse-border: var(--cre8-button-tertiary-neutral-inverse-border);
+  --cre8-button-tertiary-neutral-bg-hover: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-tertiary-neutral-bg-hover: var(--cre8-button-tertiary-neutral-bg-hover);
+  --cre8-button-tertiary-neutral-inverse-bg-hover: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-tertiary-neutral-inverse-bg-hover: var(--cre8-button-tertiary-neutral-inverse-bg-hover);
+  --cre8-button-tertiary-neutral-content-hover: var(--cre8-content-default);
+  --cre8-color-button-tertiary-neutral-content-hover: var(--cre8-button-tertiary-neutral-content-hover);
+  --cre8-button-tertiary-neutral-inverse-content-hover: var(--cre8-content-knockout);
+  --cre8-color-button-tertiary-neutral-inverse-content-hover: var(--cre8-button-tertiary-neutral-inverse-content-hover);
+  --cre8-button-tertiary-neutral-border-hover: var(--cre8-neutral-900);
+  --cre8-color-button-tertiary-neutral-border-hover: var(--cre8-button-tertiary-neutral-border-hover);
+  --cre8-button-tertiary-neutral-inverse-border-hover: var(--cre8-border-knockout);
+  --cre8-color-button-tertiary-neutral-inverse-border-hover: var(--cre8-button-tertiary-neutral-inverse-border-hover);
+  --cre8-button-tertiary-neutral-border-active: var(--cre8-neutral-900);
+  --cre8-color-button-tertiary-neutral-border-active: var(--cre8-button-tertiary-neutral-border-active);
+  --cre8-button-tertiary-neutral-inverse-border-active: var(--cre8-border-knockout);
+  --cre8-color-button-tertiary-neutral-inverse-border-active: var(--cre8-button-tertiary-neutral-inverse-border-active);
+  --cre8-button-tertiary-neutral-bg-active: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-tertiary-neutral-bg-active: var(--cre8-button-tertiary-neutral-bg-active);
+  --cre8-button-tertiary-neutral-inverse-bg-active: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-tertiary-neutral-inverse-bg-active: var(--cre8-button-tertiary-neutral-inverse-bg-active);
+  --cre8-button-tertiary-neutral-content-active: var(--cre8-content-default);
+  --cre8-color-button-tertiary-neutral-content-active: var(--cre8-button-tertiary-neutral-content-active);
+  --cre8-button-tertiary-neutral-inverse-content-active: var(--cre8-content-knockout);
+  --cre8-color-button-tertiary-neutral-inverse-content-active: var(--cre8-button-tertiary-neutral-inverse-content-active);
+  --cre8-button-tertiary-neutral-bg-disabled: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-tertiary-neutral-bg-disabled: var(--cre8-button-tertiary-neutral-bg-disabled);
+  --cre8-button-tertiary-neutral-inverse-bg-disabled: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-tertiary-neutral-inverse-bg-disabled: var(--cre8-button-tertiary-neutral-inverse-bg-disabled);
+  --cre8-button-tertiary-neutral-border-disabled: var(--cre8-border-transparent);
+  --cre8-color-button-tertiary-neutral-border-disabled: var(--cre8-button-tertiary-neutral-border-disabled);
+  --cre8-button-tertiary-neutral-inverse-border-disabled: var(--cre8-border-transparent);
+  --cre8-color-button-tertiary-neutral-inverse-border-disabled: var(--cre8-button-tertiary-neutral-inverse-border-disabled);
+  --cre8-button-tertiary-neutral-content-disabled: var(--cre8-content-link-disabled);
+  --cre8-color-button-tertiary-neutral-content-disabled: var(--cre8-button-tertiary-neutral-content-disabled);
+  --cre8-button-tertiary-neutral-inverse-content-disabled: var(--cre8-neutral-800);
+  --cre8-color-button-tertiary-neutral-inverse-content-disabled: var(--cre8-button-tertiary-neutral-inverse-content-disabled);
+  --cre8-button-tertiary-neutral-outline: var(--cre8-primary-900);
+  --cre8-color-button-tertiary-neutral-outline: var(--cre8-button-tertiary-neutral-outline);
+  --cre8-button-tertiary-neutral-inverse-outline: var(--cre8-border-inverse-active-outline);
+  --cre8-color-button-tertiary-neutral-inverse-outline: var(--cre8-button-tertiary-neutral-inverse-outline);
+  --cre8-button-tertiary-danger-bg: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-tertiary-danger-bg: var(--cre8-button-tertiary-danger-bg);
+  --cre8-button-tertiary-danger-inverse-bg: var(--cre8-bg-opacity-transparent);
+  --cre8-color-button-tertiary-danger-inverse-bg: var(--cre8-button-tertiary-danger-inverse-bg);
+  --cre8-button-tertiary-danger-bg-hover: var(--cre8-error-600);
+  --cre8-color-button-tertiary-danger-bg-hover: var(--cre8-button-tertiary-danger-bg-hover);
+  --cre8-button-tertiary-danger-inverse-bg-hover: var(--cre8-error-200);
+  --cre8-color-button-tertiary-danger-inverse-bg-hover: var(--cre8-button-tertiary-danger-inverse-bg-hover);
+  --cre8-button-tertiary-danger-bg-active: var(--cre8-error-700);
+  --cre8-color-button-tertiary-danger-bg-active: var(--cre8-button-tertiary-danger-bg-active);
+  --cre8-button-tertiary-danger-inverse-bg-active: var(--cre8-error-100);
+  --cre8-color-button-tertiary-danger-inverse-bg-active: var(--cre8-button-tertiary-danger-inverse-bg-active);
+  --cre8-button-tertiary-danger-bg-disabled: var(--cre8-bg-disabled);
+  --cre8-color-button-tertiary-danger-bg-disabled: var(--cre8-button-tertiary-danger-bg-disabled);
+  --cre8-button-tertiary-danger-inverse-bg-disabled: var(--cre8-bg-inverse-moderate);
+  --cre8-color-button-tertiary-danger-inverse-bg-disabled: var(--cre8-button-tertiary-danger-inverse-bg-disabled);
+  --cre8-button-tertiary-danger-content: var(--cre8-error-500);
+  --cre8-color-button-tertiary-danger-content: var(--cre8-button-tertiary-danger-content);
+  --cre8-button-tertiary-danger-inverse-content: var(--cre8-error-400);
+  --cre8-color-button-tertiary-danger-inverse-content: var(--cre8-button-tertiary-danger-inverse-content);
+  --cre8-button-tertiary-danger-content-hover: var(--cre8-content-knockout);
+  --cre8-color-button-tertiary-danger-content-hover: var(--cre8-button-tertiary-danger-content-hover);
+  --cre8-button-tertiary-danger-inverse-content-hover: var(--cre8-content-default);
+  --cre8-color-button-tertiary-danger-inverse-content-hover: var(--cre8-button-tertiary-danger-inverse-content-hover);
+  --cre8-button-tertiary-danger-content-active: var(--cre8-content-knockout);
+  --cre8-color-button-tertiary-danger-content-active: var(--cre8-button-tertiary-danger-content-active);
+  --cre8-button-tertiary-danger-inverse-content-active: var(--cre8-content-default);
+  --cre8-color-button-tertiary-danger-inverse-content-active: var(--cre8-button-tertiary-danger-inverse-content-active);
+  --cre8-button-tertiary-danger-content-disabled: var(--cre8-content-link-disabled);
+  --cre8-color-button-tertiary-danger-content-disabled: var(--cre8-button-tertiary-danger-content-disabled);
+  --cre8-button-tertiary-danger-inverse-content-disabled: var(--cre8-neutral-800);
+  --cre8-color-button-tertiary-danger-inverse-content-disabled: var(--cre8-button-tertiary-danger-inverse-content-disabled);
+  --cre8-button-tertiary-danger-border: var(--cre8-border-transparent);
+  --cre8-color-button-tertiary-danger-border: var(--cre8-button-tertiary-danger-border);
+  --cre8-button-tertiary-danger-inverse-border: var(--cre8-border-transparent);
+  --cre8-color-button-tertiary-danger-inverse-border: var(--cre8-button-tertiary-danger-inverse-border);
+  --cre8-button-tertiary-danger-border-hover: var(--cre8-error-600);
+  --cre8-color-button-tertiary-danger-border-hover: var(--cre8-button-tertiary-danger-border-hover);
+  --cre8-button-tertiary-danger-inverse-border-hover: var(--cre8-error-200);
+  --cre8-color-button-tertiary-danger-inverse-border-hover: var(--cre8-button-tertiary-danger-inverse-border-hover);
+  --cre8-button-tertiary-danger-border-active: var(--cre8-error-700);
+  --cre8-color-button-tertiary-danger-border-active: var(--cre8-button-tertiary-danger-border-active);
+  --cre8-button-tertiary-danger-inverse-border-active: var(--cre8-error-100);
+  --cre8-color-button-tertiary-danger-inverse-border-active: var(--cre8-button-tertiary-danger-inverse-border-active);
+  --cre8-button-tertiary-danger-border-disabled: var(--cre8-border-default);
+  --cre8-color-button-tertiary-danger-border-disabled: var(--cre8-button-tertiary-danger-border-disabled);
+  --cre8-button-tertiary-danger-inverse-border-disabled: var(--cre8-border-strong);
+  --cre8-color-button-tertiary-danger-inverse-border-disabled: var(--cre8-button-tertiary-danger-inverse-border-disabled);
+  --cre8-button-tertiary-danger-outline: var(--cre8-primary-700);
+  --cre8-color-button-tertiary-danger-outline: var(--cre8-button-tertiary-danger-outline);
+  --cre8-button-tertiary-danger-inverse-outline: var(--cre8-border-inverse-active-outline);
+  --cre8-color-button-tertiary-danger-inverse-outline: var(--cre8-button-tertiary-danger-inverse-outline);
+
+  /* Component sizing — multiples of the spacing scale */
+  --cre8-desktop-menu-padding-vertical-padding: calc(var(--cre8-seed-space) * 4 * var(--cre8-seed-density));
+  --cre8-desktop-menu-padding-horizontal-padding: calc(var(--cre8-seed-space) * 2 * var(--cre8-seed-density));
+  --cre8-input-padding: calc(var(--cre8-seed-space) * 2.5 * var(--cre8-seed-density)) calc(var(--cre8-seed-space) * 3.5 * var(--cre8-seed-density));
+  --cre8-input-label-margin-left: 0;
+  --cre8-button-padding-vertical-small: calc(var(--cre8-seed-space) * 2 * var(--cre8-seed-density));
+  --cre8-button-padding-vertical-medium: calc(var(--cre8-seed-space) * 3 * var(--cre8-seed-density));
+  --cre8-button-padding-vertical-large: calc(var(--cre8-seed-space) * 4 * var(--cre8-seed-density));
+  --cre8-button-padding-vertical-icon-only: calc(var(--cre8-seed-space) * 2 * var(--cre8-seed-density));
+  --cre8-button-padding-vertical-small-icon-only: calc(var(--cre8-seed-space) * 2 * var(--cre8-seed-density));
+  --cre8-button-padding-vertical-medium-icon-only: calc(var(--cre8-seed-space) * 4 * var(--cre8-seed-density));
+  --cre8-button-padding-vertical-large-icon-only: calc(var(--cre8-seed-space) * 4 * var(--cre8-seed-density));
+  --cre8-button-padding-horizontal-small: calc(var(--cre8-seed-space) * 4 * var(--cre8-seed-density));
+  --cre8-button-padding-horizontal-medium: calc(var(--cre8-seed-space) * 6 * var(--cre8-seed-density));
+  --cre8-button-padding-horizontal-large: calc(var(--cre8-seed-space) * 8 * var(--cre8-seed-density));
+  --cre8-button-padding-horizontal-icon-only: calc(var(--cre8-seed-space) * 2 * var(--cre8-seed-density));
+  --cre8-button-padding-horizontal-small-icon-only: calc(var(--cre8-seed-space) * 2 * var(--cre8-seed-density));
+  --cre8-button-padding-horizontal-medium-icon-only: calc(var(--cre8-seed-space) * 4 * var(--cre8-seed-density));
+  --cre8-button-padding-horizontal-large-icon-only: calc(var(--cre8-seed-space) * 4 * var(--cre8-seed-density));
+  --cre8-icon-size-small: calc(var(--cre8-seed-space) * 3.5);
+  --cre8-icon-size-default: calc(var(--cre8-seed-space) * 4);
+  --cre8-icon-size-large: calc(var(--cre8-seed-space) * 4.5);
+  --cre8-badge-padding-horizontal: calc(var(--cre8-seed-space) * 1.5 * var(--cre8-seed-density));
+  --cre8-badge-padding-vertical: calc(var(--cre8-seed-space) * 0.5 * var(--cre8-seed-density));
+  --cre8-progress-meter-height: calc(var(--cre8-seed-space) * 2);
+
+/* ===========================================================================
+   TIER 3b · LEGACY ALIASES — names that describe a vendor or an index
+   Kept so nothing breaks. Prefer the role names in tier 1.
+   =========================================================================== */
+  --cre8-font-families-inter: var(--cre8-font-family-base);
+  --cre8-font-weights-inter-0: var(--cre8-font-weight-regular);
+  --cre8-font-weights-inter-1: var(--cre8-font-weight-medium);
+  --cre8-font-weights-inter-2: var(--cre8-font-weight-bold);
+  --cre8-font-weights-inter-3: var(--cre8-font-weight-semibold);
+  --cre8-line-heights-0: var(--cre8-line-height-snug);
+  --cre8-line-heights-1: var(--cre8-line-height-tight);
+  --cre8-line-heights-2: 1.14;
+  --cre8-line-heights-3: 1.2;
+  --cre8-line-heights-4: 1.3;
+  --cre8-line-heights-5: var(--cre8-line-height-normal);
+  --cre8-line-heights-6: var(--cre8-line-height-relaxed);
+  --cre8-line-heights-7: var(--cre8-line-height-loose);
+  --cre8-line-heights-8: 1.43;
+  --cre8-line-heights-9: 1.11;
+  --cre8-line-heights-10: 1.13;
+  --cre8-line-heights-11: 1.16;
+  --cre8-line-heights-12: 0.48;
+  --cre8-line-heights-13: 0.4;
+  --cre8-line-heights-14: 0.32;
+  --cre8-line-heights-15: 0.28;
+  --cre8-line-heights-16: 0.24;
+  --cre8-line-heights-17: 0.2;
+  --cre8-line-heights-18: 0.16;
+  --cre8-border-radius-default: var(--cre8-radius-field);
+  --cre8-border-radius-round: var(--cre8-radius-pill);
+  --cre8-border-radius-button: var(--cre8-radius-button);
+  --cre8-border-radius-badge: var(--cre8-radius-pill);
+  --cre8-border-radius-brand: var(--cre8-radius-pill);
+  --cre8-border-radius-none: var(--cre8-radius-none);
+  --cre8-border-radius-checkbox: var(--cre8-radius-checkbox);
+  --cre8-border-radius-small: var(--cre8-radius-small);
+  --cre8-border-radius-field: var(--cre8-radius-field);
+  --cre8-border-radius-field-brand: var(--cre8-radius-field-brand);
+  --cre8-border-radius-tabs: var(--cre8-radius-tabs);
+  --cre8-border-radius-large: var(--cre8-radius-large);
+  --cre8-border-radius-container: var(--cre8-radius-container);
+  --cre8-border-radius-pill: var(--cre8-radius-pill);
+  --cre8-border-width-button-tertiary-outline-focus: var(--cre8-border-width-focus);
+  --cre8-border-width-button-default: var(--cre8-border-width-focus);
+  --cre8-border-width-tab-selected: var(--cre8-border-width-focus);
+  --cre8-border-width-tab-default: var(--cre8-border-width-focus);
+
+  /* Verbatim — no brand meaning */
+  --cre8-letter-spacing-0: -1.5;
+  --cre8-letter-spacing-1: -1;
+  --cre8-letter-spacing-2: -0.5;
+  --cre8-letter-spacing-3: 0;
+  --cre8-letter-spacing-4: 2;
+  --cre8-letter-spacing-5: 1;
+  --cre8-letter-spacing-6: 1.5;
+  --cre8-paragraph-spacing-0: 0;
+  --cre8-text-case-none: none;
+  --cre8-text-case-uppercase: uppercase;
+  --cre8-text-decoration-none: none;
+  --cre8-text-decoration-underline: underline;
+  --cre8-paragraph-indent-0: 0px;
+  --cre8-border-style-button-tertiary-outline-focus: solid;
+  --cre8-border-style-default: solid;
+  --cre8-breakpoint-xsm: 375px;
+  --cre8-breakpoint-sm: 560px;
+  --cre8-breakpoint-md: 768px;
+  --cre8-breakpoint-lg: 960px;
+  --cre8-breakpoint-xl: 1200px;
+  --cre8-breakpoint-xxl: 1400px;
+
+  /* Elevation — neutral-tinted, driven by the overlay primitives */
+  --cre8-shadow-none: none;
+  --cre8-shadow-button: none;
+  --cre8-shadow-small: 0 1px 3px 0 oklch(from var(--cre8-seed-shadow) l c h / 0.06);
+  --cre8-shadow-default: 0 4px 12px 0 oklch(from var(--cre8-seed-shadow) l c h / 0.08);
+  --cre8-shadow-large: 0 8px 24px 0 oklch(from var(--cre8-seed-shadow) l c h / 0.12);
+}
+
+/* ===========================================================================
+   MODE — the 152 hand-maintained inverse tokens collapse to this block.
+   Only the mode indirection is remapped; the semantic and component tiers
+   re-resolve through it, so every component follows with no per-component
+   work. The legacy --cre8-color-*-inverse-* names are still emitted above
+   and still resolve to their original values.
+
+   Put [data-mode] on <html> for the whole document, or pair it with
+   [data-cre8-theme] on any element to scope the mode to that subtree.
+   =========================================================================== */
+[data-mode="inverse"] {
+  /* contrast guard: bg-success success-50 (1.01:1) -> success-950 (12.73:1) */
+  /* contrast guard: bg-error error-50 (1.05:1) -> error-950 (13.6:1) */
+  /* contrast guard: bg-warning warning-50 (1.01:1) -> warning-950 (13.19:1) */
+  /* contrast guard: bg-info info-50 (1.07:1) -> info-950 (12.87:1) */
+  /* contrast guard: bg-attention neutral-0 (1.05:1) -> neutral-900 (16.98:1) */
+  /* contrast guard: content-success success-600 (2.71:1) -> success-400 (5.63:1) on bg-success, bg-default */
+  /* contrast guard: content-error error-600 (2.52:1) -> error-300 (6.93:1) on bg-error, bg-default */
+  /* contrast guard: bg-error-strong error-500 (3.69:1) -> error-400 (5.35:1) */
+  /* contrast guard: bg-info-strong info-500 (4.28:1) -> info-400 (5.87:1) */
+  /* contrast guard: bg-warning-strong warning-500 (2.04:1) -> warning-700 (6.18:1) */
+  --cre8-mode-bg-default: var(--cre8-neutral-800);
+  --cre8-mode-bg-default-hover: var(--cre8-neutral-700);
+  --cre8-mode-bg-subtle: var(--cre8-neutral-900);
+  --cre8-mode-bg-strong: var(--cre8-neutral-50);
+  --cre8-mode-bg-disabled: var(--cre8-neutral-700);
+  --cre8-mode-bg-brand: var(--cre8-primary-900);
+  --cre8-mode-bg-brand-hover: var(--cre8-primary-800);
+  --cre8-mode-bg-brand-strong: var(--cre8-primary-300);
+  --cre8-mode-bg-brand-strong-hover: var(--cre8-primary-200);
+  --cre8-mode-content-default: var(--cre8-neutral-50);
+  --cre8-mode-content-subtle: var(--cre8-neutral-400);
+  --cre8-mode-content-disabled: var(--cre8-neutral-600);
+  --cre8-mode-content-knockout: var(--cre8-neutral-900);
+  --cre8-mode-content-brand: var(--cre8-primary-300);
+  --cre8-mode-content-brand-strong: var(--cre8-primary-200);
+  --cre8-mode-content-link: var(--cre8-primary-300);
+  --cre8-mode-content-link-hover: var(--cre8-primary-200);
+  --cre8-mode-border-default: var(--cre8-neutral-700);
+  --cre8-mode-border-strong: var(--cre8-neutral-500);
+  --cre8-mode-border-brand: var(--cre8-primary-300);
+  --cre8-mode-focus-ring-color: var(--cre8-primary-300);
+  --cre8-mode-bg-success: var(--cre8-success-950);
+  --cre8-mode-bg-error: var(--cre8-error-950);
+  --cre8-mode-bg-warning: var(--cre8-warning-950);
+  --cre8-mode-bg-info: var(--cre8-info-950);
+  --cre8-mode-bg-attention: var(--cre8-neutral-900);
+  --cre8-mode-content-success: var(--cre8-success-400);
+  --cre8-mode-content-error: var(--cre8-error-300);
+  --cre8-mode-bg-success-strong: var(--cre8-success-500);
+  --cre8-mode-bg-error-strong: var(--cre8-error-400);
+  --cre8-mode-bg-info-strong: var(--cre8-info-400);
+  --cre8-mode-bg-attention-strong: var(--cre8-primary-400);
+  --cre8-mode-bg-warning-strong: var(--cre8-warning-700);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-mode="auto"] {
+    --cre8-mode-bg-default: var(--cre8-neutral-800);
+    --cre8-mode-bg-default-hover: var(--cre8-neutral-700);
+    --cre8-mode-bg-subtle: var(--cre8-neutral-900);
+    --cre8-mode-bg-strong: var(--cre8-neutral-50);
+    --cre8-mode-bg-disabled: var(--cre8-neutral-700);
+    --cre8-mode-bg-brand: var(--cre8-primary-900);
+    --cre8-mode-bg-brand-hover: var(--cre8-primary-800);
+    --cre8-mode-bg-brand-strong: var(--cre8-primary-300);
+    --cre8-mode-bg-brand-strong-hover: var(--cre8-primary-200);
+    --cre8-mode-content-default: var(--cre8-neutral-50);
+    --cre8-mode-content-subtle: var(--cre8-neutral-400);
+    --cre8-mode-content-disabled: var(--cre8-neutral-600);
+    --cre8-mode-content-knockout: var(--cre8-neutral-900);
+    --cre8-mode-content-brand: var(--cre8-primary-300);
+    --cre8-mode-content-brand-strong: var(--cre8-primary-200);
+    --cre8-mode-content-link: var(--cre8-primary-300);
+    --cre8-mode-content-link-hover: var(--cre8-primary-200);
+    --cre8-mode-border-default: var(--cre8-neutral-700);
+    --cre8-mode-border-strong: var(--cre8-neutral-500);
+    --cre8-mode-border-brand: var(--cre8-primary-300);
+    --cre8-mode-focus-ring-color: var(--cre8-primary-300);
+    --cre8-mode-bg-success: var(--cre8-success-950);
+    --cre8-mode-bg-error: var(--cre8-error-950);
+    --cre8-mode-bg-warning: var(--cre8-warning-950);
+    --cre8-mode-bg-info: var(--cre8-info-950);
+    --cre8-mode-bg-attention: var(--cre8-neutral-900);
+    --cre8-mode-content-success: var(--cre8-success-400);
+    --cre8-mode-content-error: var(--cre8-error-300);
+    --cre8-mode-bg-success-strong: var(--cre8-success-500);
+    --cre8-mode-bg-error-strong: var(--cre8-error-400);
+    --cre8-mode-bg-info-strong: var(--cre8-info-400);
+    --cre8-mode-bg-attention-strong: var(--cre8-primary-400);
+    --cre8-mode-bg-warning-strong: var(--cre8-warning-700);
+  }
+}
+
+/* Reduced motion — durations collapse to zero; easings are left alone. */
+@media (prefers-reduced-motion: reduce) {
+  :root,
+  [data-cre8-theme] {
+    --cre8-duration-fast: 0ms;
+    --cre8-duration-base: 0ms;
+    --cre8-duration-slow: 0ms;
+  }
+}
+
+/**
+ * GENERATED from brand.json by tools/brand.mjs — do not edit.
+ * Edit design-tokens/brands/canopy/brand.json, then run \`pnpm tokens:build canopy\`.
+ *
+ * Canopy — The flagship brand. A greenhouse for software: forest green on olive-tinted neutrals with an orchid accent, 12px corners, olive-tinted shadows, Google Sans Flex with Bricolage Grotesque headings.
+ *
+ * Theme entry point: the token sheet, the brand's fonts, and the typography
+ * roles. Headings (title, headline, display) read --cre8-font-family-display.
+ */
+:root,
+[data-cre8-theme]{--cre8-typography-body-xlarge-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-xlarge-font-size: var(--cre8-font-size-5);
+      --cre8-typography-body-xlarge-font-weight: var(--cre8-font-weights-inter-0);
+      --cre8-typography-body-xlarge-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-body-xlarge-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-body-xlarge-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-xlarge-strong-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-xlarge-strong-font-size: var(--cre8-font-size-5);
+      --cre8-typography-body-xlarge-strong-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-body-xlarge-strong-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-body-xlarge-strong-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-body-xlarge-strong-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-xlarge-link-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-xlarge-link-font-size: var(--cre8-font-size-5);
+      --cre8-typography-body-xlarge-link-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-body-xlarge-link-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-body-xlarge-link-text-decoration: var(--cre8-text-decoration-underline);
+      --cre8-typography-body-xlarge-link-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-large-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-large-font-size: var(--cre8-font-size-3);
+      --cre8-typography-body-large-font-weight: var(--cre8-font-weights-inter-0);
+      --cre8-typography-body-large-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-body-large-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-body-large-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-large-strong-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-large-strong-font-size: var(--cre8-font-size-3);
+      --cre8-typography-body-large-strong-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-body-large-strong-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-body-large-strong-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-body-large-strong-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-default-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-default-font-size: var(--cre8-font-size-2);
+      --cre8-typography-body-default-font-weight: var(--cre8-font-weights-inter-0);
+      --cre8-typography-body-default-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-body-default-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-body-default-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-default-strong-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-default-strong-font-size: var(--cre8-font-size-2);
+      --cre8-typography-body-default-strong-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-body-default-strong-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-body-default-strong-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-body-default-strong-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-small-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-small-font-size: var(--cre8-font-size-1);
+      --cre8-typography-body-small-font-weight: var(--cre8-font-weights-inter-0);
+      --cre8-typography-body-small-line-height: var(--cre8-line-heights-8);
+      --cre8-typography-body-small-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-body-small-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-small-strong-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-small-strong-font-size: var(--cre8-font-size-1);
+      --cre8-typography-body-small-strong-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-body-small-strong-line-height: var(--cre8-line-heights-8);
+      --cre8-typography-body-small-strong-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-body-small-strong-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-large-link-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-large-link-font-size: var(--cre8-font-size-3);
+      --cre8-typography-body-large-link-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-body-large-link-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-body-large-link-text-decoration: var(--cre8-text-decoration-underline);
+      --cre8-typography-body-large-link-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-default-link-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-default-link-font-size: var(--cre8-font-size-2);
+      --cre8-typography-body-default-link-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-body-default-link-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-body-default-link-text-decoration: var(--cre8-text-decoration-underline);
+      --cre8-typography-body-default-link-text-transform: var(--cre8-text-case-none);
+--cre8-typography-body-small-link-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-body-small-link-font-size: var(--cre8-font-size-1);
+      --cre8-typography-body-small-link-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-body-small-link-line-height: var(--cre8-line-heights-8);
+      --cre8-typography-body-small-link-text-decoration: var(--cre8-text-decoration-underline);
+      --cre8-typography-body-small-link-text-transform: var(--cre8-text-case-none);
+--cre8-typography-label-default-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-label-default-font-size: var(--cre8-font-size-2);
+      --cre8-typography-label-default-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-label-default-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-label-default-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-label-default-text-transform: var(--cre8-text-case-none);
+--cre8-typography-label-large-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-label-large-font-size: var(--cre8-font-size-3);
+      --cre8-typography-label-large-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-label-large-line-height: var(--cre8-line-heights-5);
+      --cre8-typography-label-large-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-label-large-text-transform: var(--cre8-text-case-none);
+--cre8-typography-label-small-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-label-small-font-size: var(--cre8-font-size-1);
+      --cre8-typography-label-small-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-label-small-line-height: var(--cre8-line-heights-7);
+      --cre8-typography-label-small-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-label-small-text-transform: var(--cre8-text-case-none);
+--cre8-typography-title-xlarge-font-family: var(--cre8-font-family-display);
+      --cre8-typography-title-xlarge-font-size: var(--cre8-font-size-8);
+      --cre8-typography-title-xlarge-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-title-xlarge-line-height: var(--cre8-line-heights-4);
+      --cre8-typography-title-xlarge-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-title-xlarge-text-transform: var(--cre8-text-case-none);
+--cre8-typography-title-xlarge-mobile-font-family: var(--cre8-font-family-display);
+      --cre8-typography-title-xlarge-mobile-font-size: var(--cre8-font-size-7);
+      --cre8-typography-title-xlarge-mobile-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-title-xlarge-mobile-line-height: var(--cre8-line-heights-4);
+      --cre8-typography-title-xlarge-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-title-xlarge-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-title-large-font-family: var(--cre8-font-family-display);
+      --cre8-typography-title-large-font-size: var(--cre8-font-size-6);
+      --cre8-typography-title-large-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-title-large-line-height: var(--cre8-line-heights-1);
+      --cre8-typography-title-large-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-title-large-text-transform: var(--cre8-text-case-none);
+--cre8-typography-title-large-mobile-font-family: var(--cre8-font-family-display);
+      --cre8-typography-title-large-mobile-font-size: var(--cre8-font-size-5);
+      --cre8-typography-title-large-mobile-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-title-large-mobile-line-height: var(--cre8-line-heights-1);
+      --cre8-typography-title-large-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-title-large-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-title-default-font-family: var(--cre8-font-family-display);
+      --cre8-typography-title-default-font-size: var(--cre8-font-size-5);
+      --cre8-typography-title-default-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-title-default-line-height: var(--cre8-line-heights-2);
+      --cre8-typography-title-default-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-title-default-text-transform: var(--cre8-text-case-none);
+--cre8-typography-title-default-mobile-font-family: var(--cre8-font-family-display);
+      --cre8-typography-title-default-mobile-font-size: var(--cre8-font-size-3);
+      --cre8-typography-title-default-mobile-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-title-default-mobile-line-height: var(--cre8-line-heights-2);
+      --cre8-typography-title-default-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-title-default-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-title-small-font-family: var(--cre8-font-family-display);
+      --cre8-typography-title-small-font-size: var(--cre8-font-size-3);
+      --cre8-typography-title-small-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-title-small-line-height: var(--cre8-line-heights-6);
+      --cre8-typography-title-small-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-title-small-text-transform: var(--cre8-text-case-none);
+--cre8-typography-title-small-mobile-font-family: var(--cre8-font-family-display);
+      --cre8-typography-title-small-mobile-font-size: var(--cre8-font-size-2);
+      --cre8-typography-title-small-mobile-font-weight: var(--cre8-font-weights-inter-1);
+      --cre8-typography-title-small-mobile-line-height: var(--cre8-line-heights-6);
+      --cre8-typography-title-small-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-title-small-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-headline-large-font-family: var(--cre8-font-family-display);
+      --cre8-typography-headline-large-font-size: var(--cre8-font-size-9);
+      --cre8-typography-headline-large-font-weight: var(--cre8-font-weights-inter-3);
+      --cre8-typography-headline-large-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-headline-large-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-headline-large-text-transform: var(--cre8-text-case-none);
+--cre8-typography-headline-large-mobile-font-family: var(--cre8-font-family-display);
+      --cre8-typography-headline-large-mobile-font-size: var(--cre8-font-size-8);
+      --cre8-typography-headline-large-mobile-font-weight: var(--cre8-font-weights-inter-3);
+      --cre8-typography-headline-large-mobile-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-headline-large-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-headline-large-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-headline-default-font-family: var(--cre8-font-family-display);
+      --cre8-typography-headline-default-font-size: var(--cre8-font-size-8);
+      --cre8-typography-headline-default-font-weight: var(--cre8-font-weights-inter-3);
+      --cre8-typography-headline-default-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-headline-default-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-headline-default-text-transform: var(--cre8-text-case-none);
+--cre8-typography-headline-default-mobile-font-family: var(--cre8-font-family-display);
+      --cre8-typography-headline-default-mobile-font-size: var(--cre8-font-size-7);
+      --cre8-typography-headline-default-mobile-font-weight: var(--cre8-font-weights-inter-3);
+      --cre8-typography-headline-default-mobile-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-headline-default-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-headline-default-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-headline-small-font-family: var(--cre8-font-family-display);
+      --cre8-typography-headline-small-font-size: var(--cre8-font-size-7);
+      --cre8-typography-headline-small-font-weight: var(--cre8-font-weights-inter-3);
+      --cre8-typography-headline-small-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-headline-small-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-headline-small-text-transform: var(--cre8-text-case-none);
+--cre8-typography-headline-small-mobile-font-family: var(--cre8-font-family-display);
+      --cre8-typography-headline-small-mobile-font-size: var(--cre8-font-size-6);
+      --cre8-typography-headline-small-mobile-font-weight: var(--cre8-font-weights-inter-3);
+      --cre8-typography-headline-small-mobile-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-headline-small-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-headline-small-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-headline-xsmall-font-family: var(--cre8-font-family-display);
+      --cre8-typography-headline-xsmall-font-size: var(--cre8-font-size-5);
+      --cre8-typography-headline-xsmall-font-weight: var(--cre8-font-weights-inter-3);
+      --cre8-typography-headline-xsmall-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-headline-xsmall-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-headline-xsmall-text-transform: var(--cre8-text-case-none);
+--cre8-typography-headline-xsmall-mobile-font-family: var(--cre8-font-family-display);
+      --cre8-typography-headline-xsmall-mobile-font-size: var(--cre8-font-size-5);
+      --cre8-typography-headline-xsmall-mobile-font-weight: var(--cre8-font-weights-inter-3);
+      --cre8-typography-headline-xsmall-mobile-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-headline-xsmall-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-headline-xsmall-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-display-large-font-family: var(--cre8-font-family-display);
+      --cre8-typography-display-large-font-size: var(--cre8-font-size-13);
+      --cre8-typography-display-large-font-weight: var(--cre8-font-weights-inter-2);
+      --cre8-typography-display-large-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-display-large-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-display-large-text-transform: var(--cre8-text-case-none);
+--cre8-typography-display-large-mobile-font-family: var(--cre8-font-family-display);
+      --cre8-typography-display-large-mobile-font-size: var(--cre8-font-size-12);
+      --cre8-typography-display-large-mobile-font-weight: var(--cre8-font-weights-inter-2);
+      --cre8-typography-display-large-mobile-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-display-large-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-display-large-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-display-default-font-family: var(--cre8-font-family-display);
+      --cre8-typography-display-default-font-size: var(--cre8-font-size-11);
+      --cre8-typography-display-default-font-weight: var(--cre8-font-weights-inter-2);
+      --cre8-typography-display-default-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-display-default-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-display-default-text-transform: var(--cre8-text-case-none);
+--cre8-typography-display-default-mobile-font-family: var(--cre8-font-family-display);
+      --cre8-typography-display-default-mobile-font-size: var(--cre8-font-size-10);
+      --cre8-typography-display-default-mobile-font-weight: var(--cre8-font-weights-inter-2);
+      --cre8-typography-display-default-mobile-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-display-default-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-display-default-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-display-small-font-family: var(--cre8-font-family-display);
+      --cre8-typography-display-small-font-size: var(--cre8-font-size-9);
+      --cre8-typography-display-small-font-weight: var(--cre8-font-weights-inter-2);
+      --cre8-typography-display-small-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-display-small-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-display-small-text-transform: var(--cre8-text-case-none);
+--cre8-typography-display-small-mobile-font-family: var(--cre8-font-family-display);
+      --cre8-typography-display-small-mobile-font-size: var(--cre8-font-size-8);
+      --cre8-typography-display-small-mobile-font-weight: var(--cre8-font-weights-inter-2);
+      --cre8-typography-display-small-mobile-line-height: var(--cre8-line-heights-0);
+      --cre8-typography-display-small-mobile-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-display-small-mobile-text-transform: var(--cre8-text-case-none);
+--cre8-typography-meta-default-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-meta-default-font-size: var(--cre8-font-size-2);
+      --cre8-typography-meta-default-font-weight: var(--cre8-font-weights-inter-2);
+      --cre8-typography-meta-default-line-height: var(--cre8-line-heights-3);
+      --cre8-typography-meta-default-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-meta-default-text-transform: var(--cre8-text-case-uppercase);
+--cre8-typography-meta-default-sentence-case-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-meta-default-sentence-case-font-size: var(--cre8-font-size-2);
+      --cre8-typography-meta-default-sentence-case-font-weight: var(--cre8-font-weights-inter-2);
+      --cre8-typography-meta-default-sentence-case-line-height: var(--cre8-line-heights-11);
+      --cre8-typography-meta-default-sentence-case-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-meta-default-sentence-case-text-transform: var(--cre8-text-case-none);
+--cre8-typography-meta-large-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-meta-large-font-size: var(--cre8-font-size-4);
+      --cre8-typography-meta-large-font-weight: var(--cre8-font-weights-inter-2);
+      --cre8-typography-meta-large-line-height: var(--cre8-line-heights-3);
+      --cre8-typography-meta-large-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-meta-large-text-transform: var(--cre8-text-case-uppercase);
+--cre8-typography-meta-small-font-family: var(--cre8-font-families-inter);
+      --cre8-typography-meta-small-font-size: var(--cre8-font-size-1);
+      --cre8-typography-meta-small-font-weight: var(--cre8-font-weights-inter-2);
+      --cre8-typography-meta-small-line-height: var(--cre8-line-heights-3);
+      --cre8-typography-meta-small-text-decoration: var(--cre8-text-decoration-none);
+      --cre8-typography-meta-small-text-transform: var(--cre8-text-case-uppercase);}
+`;
+
+export default canopy;

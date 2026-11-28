@@ -61,6 +61,9 @@ import '@tmorrow/cre8-wc/themes/cre8';
 <cre8-button text="Save" variant="primary"></cre8-button>
 ```
 
+`cre8` is the default theme. For new work, try the flagship brand, Canopy
+(forest green, olive neutrals, orchid accent): `import '@tmorrow/cre8-wc/themes/canopy';`
+
 
 
 

@@ -53,6 +53,21 @@ sheet `@import`s its two siblings, `tokens_brand.css` (every tier) and
 [Plain HTML and CDN](06-frameworks.md#plain-html-and-cdn). If components render
 unstyled, check this first rather than debugging your overrides.
 
+### Shipped brands
+
+| Brand | Import | What it is |
+|---|---|---|
+| `canopy` | `@tmorrow/cre8-wc/themes/canopy` | The flagship. Forest green on olive-tinted neutrals with an orchid accent, 12px corners, soft-square buttons, olive-tinted shadows; Google Sans Flex with Bricolage Grotesque headings and JetBrains Mono. Start new work here. |
+| `cre8` | `@tmorrow/cre8-wc/themes/cre8` | The default: what a surface gets when it asks for nothing. Blue on slate, 24px corners, pill buttons, Plus Jakarta Sans. |
+| `cre8-vivid` | `@tmorrow/cre8-wc/themes/cre8-vivid` | A high-saturation overlay on `cre8`. |
+| `cre8-a2ui` | `@tmorrow/cre8-wc/themes/cre8-a2ui` | The compact theme agent-rendered A2UI surfaces use. |
+| `blank` | `@tmorrow/cre8-wc/themes/blank` | A neutral base to rebrand from. |
+| `regal` | `@tmorrow/cre8-wc/themes/regal` | A fictional bank, kept as a rebranding demonstration. |
+
+`canopy` being the flagship changes what is shown first (Storybook's theme
+picker opens on it), not what loads by default: nothing switches brand until
+you import a different theme.
+
 ## The four tiers
 
 Each tier references only the tier above it, and literal values appear in exactly
